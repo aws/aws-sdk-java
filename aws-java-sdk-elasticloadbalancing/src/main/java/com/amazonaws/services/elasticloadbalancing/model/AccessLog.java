@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>AccessLog</code> data type.
+ * Information about the <code>AccessLog</code> attribute.
  * </p>
  */
 public class AccessLog implements Serializable, Cloneable {

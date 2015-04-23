@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified EndPoint is not valid.
+ * The specified endpoint is not valid.
  * </p>
  */        
 public class InvalidInstanceException extends AmazonServiceException {

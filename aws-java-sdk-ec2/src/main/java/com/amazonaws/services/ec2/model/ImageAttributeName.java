@@ -24,7 +24,8 @@ public enum ImageAttributeName {
     Ramdisk("ramdisk"),
     LaunchPermission("launchPermission"),
     ProductCodes("productCodes"),
-    BlockDeviceMapping("blockDeviceMapping");
+    BlockDeviceMapping("blockDeviceMapping"),
+    SriovNetSupport("sriovNetSupport");
 
     private String value;
 
@@ -60,6 +61,8 @@ public enum ImageAttributeName {
             return ImageAttributeName.ProductCodes;
         } else if ("blockDeviceMapping".equals(value)) {
             return ImageAttributeName.BlockDeviceMapping;
+        } else if ("sriovNetSupport".equals(value)) {
+            return ImageAttributeName.SriovNetSupport;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

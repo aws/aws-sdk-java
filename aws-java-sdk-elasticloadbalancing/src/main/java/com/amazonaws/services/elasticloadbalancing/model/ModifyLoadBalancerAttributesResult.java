@@ -17,9 +17,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output for the ModifyLoadBalancerAttributes action.
- * </p>
+ * 
  */
 public class ModifyLoadBalancerAttributesResult implements Serializable, Cloneable {
 
@@ -29,7 +27,7 @@ public class ModifyLoadBalancerAttributesResult implements Serializable, Cloneab
     private String loadBalancerName;
 
     /**
-     * The <code>LoadBalancerAttributes</code> data type.
+     * The attributes for a load balancer.
      */
     private LoadBalancerAttributes loadBalancerAttributes;
 
@@ -67,29 +65,29 @@ public class ModifyLoadBalancerAttributesResult implements Serializable, Cloneab
     }
 
     /**
-     * The <code>LoadBalancerAttributes</code> data type.
+     * The attributes for a load balancer.
      *
-     * @return The <code>LoadBalancerAttributes</code> data type.
+     * @return The attributes for a load balancer.
      */
     public LoadBalancerAttributes getLoadBalancerAttributes() {
         return loadBalancerAttributes;
     }
     
     /**
-     * The <code>LoadBalancerAttributes</code> data type.
+     * The attributes for a load balancer.
      *
-     * @param loadBalancerAttributes The <code>LoadBalancerAttributes</code> data type.
+     * @param loadBalancerAttributes The attributes for a load balancer.
      */
     public void setLoadBalancerAttributes(LoadBalancerAttributes loadBalancerAttributes) {
         this.loadBalancerAttributes = loadBalancerAttributes;
     }
     
     /**
-     * The <code>LoadBalancerAttributes</code> data type.
+     * The attributes for a load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerAttributes The <code>LoadBalancerAttributes</code> data type.
+     * @param loadBalancerAttributes The attributes for a load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

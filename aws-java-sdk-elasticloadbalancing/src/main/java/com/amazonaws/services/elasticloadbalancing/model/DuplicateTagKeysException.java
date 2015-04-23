@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The same tag key specified multiple times.
+ * A tag key was specified more than once.
  * </p>
  */        
 public class DuplicateTagKeysException extends AmazonServiceException {

@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class MetricGranularityType implements Serializable, Cloneable {
 
     /**
-     * The granularity.
+     * The granularity. The only valid value is <code>1Minute</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -33,33 +33,33 @@ public class MetricGranularityType implements Serializable, Cloneable {
     private String granularity;
 
     /**
-     * The granularity.
+     * The granularity. The only valid value is <code>1Minute</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The granularity.
+     * @return The granularity. The only valid value is <code>1Minute</code>.
      */
     public String getGranularity() {
         return granularity;
     }
     
     /**
-     * The granularity.
+     * The granularity. The only valid value is <code>1Minute</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param granularity The granularity.
+     * @param granularity The granularity. The only valid value is <code>1Minute</code>.
      */
     public void setGranularity(String granularity) {
         this.granularity = granularity;
     }
     
     /**
-     * The granularity.
+     * The granularity. The only valid value is <code>1Minute</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -67,7 +67,7 @@ public class MetricGranularityType implements Serializable, Cloneable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param granularity The granularity.
+     * @param granularity The granularity. The only valid value is <code>1Minute</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

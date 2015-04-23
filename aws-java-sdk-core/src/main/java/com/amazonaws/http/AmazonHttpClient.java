@@ -654,8 +654,8 @@ public class AmazonHttpClient {
                 // ie when retried exception is null
                 if (p.retriedException != null) {
                     pauseBeforeNextRetry(request.getOriginalRequest(),
-                            p.retriedException, p.requestCount,
-                            config.getRetryPolicy());
+                        p.retriedException, p.requestCount,
+                        config.getRetryPolicy());
                 }
             } finally {
                 awsRequestMetrics.endEvent(RetryPauseTime);
@@ -693,11 +693,15 @@ public class AmazonHttpClient {
         p.resetBeforeHttpRequest();
         publishProgress(listener, ProgressEventType.HTTP_REQUEST_STARTED_EVENT);
         awsRequestMetrics.startEvent(HttpRequestTime);
+
+        /////////// Send HTTP request ////////////
         try {
-            p.apacheResponse = httpClient.execute(p.apacheRequest, httpContext);
+            p.apacheResponse = logRequestId(
+                httpClient.execute(p.apacheRequest, httpContext));
         } finally {
             awsRequestMetrics.endEvent(HttpRequestTime);
         }
+
         publishProgress(listener, ProgressEventType.HTTP_REQUEST_COMPLETED_EVENT);
         final StatusLine statusLine = p.apacheResponse.getStatusLine();
         final int statusCode = statusLine == null ? -1 : statusLine.getStatusCode();
@@ -776,6 +780,21 @@ public class AmazonHttpClient {
         return null; // => retry
     }
 
+    /**
+     * Used to log the "x-amzn-RequestId" header at INFO level, if any, from the
+     * response. This method assumes the apache http request/response has just
+     * been successfully executed.
+     */
+    private org.apache.http.HttpResponse logRequestId(
+            final org.apache.http.HttpResponse res) {
+        if (log.isInfoEnabled()) {
+            final Header reqIdHeader = res.getFirstHeader(
+                    HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER);
+            log.info(HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER
+                    + ": " + (reqIdHeader == null ? "not available" : reqIdHeader.getValue()));
+        }
+        return res;
+    }
     /**
      * Captures the connection pool metrics.
      */

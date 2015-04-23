@@ -24,9 +24,10 @@ import com.amazonaws.services.ec2.model.transform.ImportInstanceRequestMarshalle
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#importInstance(ImportInstanceRequest) ImportInstance operation}.
  * <p>
  * Creates an import instance task using metadata from the specified disk
- * image. After importing the image, you then upload it using the
- * <code>ec2-import-volume</code> command in the EC2 command line tools.
- * For more information, see
+ * image. ImportInstance only supports single-volume VMs. To import
+ * multi-volume VMs, use ImportImage. After importing the image, you then
+ * upload it using the <code>ec2-import-volume</code> command in the EC2
+ * command line tools. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
@@ -41,7 +42,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
     private String description;
 
     /**
-     * <p/>
+     * 
      */
     private ImportInstanceLaunchSpecification launchSpecification;
 
@@ -92,29 +93,29 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * <p/>
+     * 
      *
-     * @return <p/>
+     * @return 
      */
     public ImportInstanceLaunchSpecification getLaunchSpecification() {
         return launchSpecification;
     }
     
     /**
-     * <p/>
+     * 
      *
-     * @param launchSpecification <p/>
+     * @param launchSpecification 
      */
     public void setLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
     }
     
     /**
-     * <p/>
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchSpecification <p/>
+     * @param launchSpecification 
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

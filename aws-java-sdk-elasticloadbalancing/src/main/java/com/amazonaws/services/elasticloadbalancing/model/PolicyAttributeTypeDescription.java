@@ -18,25 +18,24 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>PolicyAttributeTypeDescription</code> data type. This data
- * type is used to describe values that are acceptable for the policy
- * attribute.
+ * Information about a policy attribute type.
  * </p>
  */
 public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
 
     /**
-     * The name of the attribute associated with the policy type.
+     * The name of the attribute.
      */
     private String attributeName;
 
     /**
-     * The type of attribute. For example, Boolean, Integer, etc.
+     * The type of the attribute. For example, <code>Boolean</code> or
+     * <code>Integer</code>.
      */
     private String attributeType;
 
     /**
-     * A human-readable description of the attribute.
+     * A description of the attribute.
      */
     private String description;
 
@@ -46,7 +45,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
     private String defaultValue;
 
     /**
-     * The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
+     * The cardinality of the attribute. <p>Valid values: <ul> <li>ONE(1) :
      * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can
      * be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      * are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
@@ -55,29 +54,29 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
     private String cardinality;
 
     /**
-     * The name of the attribute associated with the policy type.
+     * The name of the attribute.
      *
-     * @return The name of the attribute associated with the policy type.
+     * @return The name of the attribute.
      */
     public String getAttributeName() {
         return attributeName;
     }
     
     /**
-     * The name of the attribute associated with the policy type.
+     * The name of the attribute.
      *
-     * @param attributeName The name of the attribute associated with the policy type.
+     * @param attributeName The name of the attribute.
      */
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
     
     /**
-     * The name of the attribute associated with the policy type.
+     * The name of the attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeName The name of the attribute associated with the policy type.
+     * @param attributeName The name of the attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -88,29 +87,35 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
     }
 
     /**
-     * The type of attribute. For example, Boolean, Integer, etc.
+     * The type of the attribute. For example, <code>Boolean</code> or
+     * <code>Integer</code>.
      *
-     * @return The type of attribute. For example, Boolean, Integer, etc.
+     * @return The type of the attribute. For example, <code>Boolean</code> or
+     *         <code>Integer</code>.
      */
     public String getAttributeType() {
         return attributeType;
     }
     
     /**
-     * The type of attribute. For example, Boolean, Integer, etc.
+     * The type of the attribute. For example, <code>Boolean</code> or
+     * <code>Integer</code>.
      *
-     * @param attributeType The type of attribute. For example, Boolean, Integer, etc.
+     * @param attributeType The type of the attribute. For example, <code>Boolean</code> or
+     *         <code>Integer</code>.
      */
     public void setAttributeType(String attributeType) {
         this.attributeType = attributeType;
     }
     
     /**
-     * The type of attribute. For example, Boolean, Integer, etc.
+     * The type of the attribute. For example, <code>Boolean</code> or
+     * <code>Integer</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeType The type of attribute. For example, Boolean, Integer, etc.
+     * @param attributeType The type of the attribute. For example, <code>Boolean</code> or
+     *         <code>Integer</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -121,29 +126,29 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
     }
 
     /**
-     * A human-readable description of the attribute.
+     * A description of the attribute.
      *
-     * @return A human-readable description of the attribute.
+     * @return A description of the attribute.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * A human-readable description of the attribute.
+     * A description of the attribute.
      *
-     * @param description A human-readable description of the attribute.
+     * @param description A description of the attribute.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * A human-readable description of the attribute.
+     * A description of the attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description A human-readable description of the attribute.
+     * @param description A description of the attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -187,13 +192,13 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
     }
 
     /**
-     * The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
+     * The cardinality of the attribute. <p>Valid values: <ul> <li>ONE(1) :
      * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can
      * be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      * are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
      * are allowed</li> </ul>
      *
-     * @return The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
+     * @return The cardinality of the attribute. <p>Valid values: <ul> <li>ONE(1) :
      *         Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can
      *         be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      *         are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
@@ -204,13 +209,13 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
     }
     
     /**
-     * The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
+     * The cardinality of the attribute. <p>Valid values: <ul> <li>ONE(1) :
      * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can
      * be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      * are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
      * are allowed</li> </ul>
      *
-     * @param cardinality The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
+     * @param cardinality The cardinality of the attribute. <p>Valid values: <ul> <li>ONE(1) :
      *         Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can
      *         be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      *         are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
@@ -221,7 +226,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
     }
     
     /**
-     * The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
+     * The cardinality of the attribute. <p>Valid values: <ul> <li>ONE(1) :
      * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can
      * be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      * are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
@@ -229,7 +234,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cardinality The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
+     * @param cardinality The cardinality of the attribute. <p>Valid values: <ul> <li>ONE(1) :
      *         Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can
      *         be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      *         are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values

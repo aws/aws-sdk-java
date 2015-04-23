@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAdjustmentTypes(DescribeAdjustmentTypesRequest) DescribeAdjustmentTypes operation}.
  * <p>
- * Lists the policy adjustment types for use with PutScalingPolicy.
+ * Describes the policy adjustment types for use with PutScalingPolicy.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAdjustmentTypes(DescribeAdjustmentTypesRequest)

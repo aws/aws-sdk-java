@@ -18,15 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the
- * DescribeLoadBalancers action to describe the configuration of the
- * back-end server.
+ * Information about the configuration of a back-end server.
  * </p>
  */
 public class BackendServerDescription implements Serializable, Cloneable {
 
     /**
-     * Provides the port on which the back-end server is listening.
+     * The port on which the back-end server is listening.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
@@ -34,43 +32,43 @@ public class BackendServerDescription implements Serializable, Cloneable {
     private Integer instancePort;
 
     /**
-     * Provides a list of policy names enabled for the back-end server.
+     * The names of the policies enabled for the back-end server.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNames;
 
     /**
-     * Provides the port on which the back-end server is listening.
+     * The port on which the back-end server is listening.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @return Provides the port on which the back-end server is listening.
+     * @return The port on which the back-end server is listening.
      */
     public Integer getInstancePort() {
         return instancePort;
     }
     
     /**
-     * Provides the port on which the back-end server is listening.
+     * The port on which the back-end server is listening.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @param instancePort Provides the port on which the back-end server is listening.
+     * @param instancePort The port on which the back-end server is listening.
      */
     public void setInstancePort(Integer instancePort) {
         this.instancePort = instancePort;
     }
     
     /**
-     * Provides the port on which the back-end server is listening.
+     * The port on which the back-end server is listening.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @param instancePort Provides the port on which the back-end server is listening.
+     * @param instancePort The port on which the back-end server is listening.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -81,9 +79,9 @@ public class BackendServerDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Provides a list of policy names enabled for the back-end server.
+     * The names of the policies enabled for the back-end server.
      *
-     * @return Provides a list of policy names enabled for the back-end server.
+     * @return The names of the policies enabled for the back-end server.
      */
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
@@ -94,9 +92,9 @@ public class BackendServerDescription implements Serializable, Cloneable {
     }
     
     /**
-     * Provides a list of policy names enabled for the back-end server.
+     * The names of the policies enabled for the back-end server.
      *
-     * @param policyNames Provides a list of policy names enabled for the back-end server.
+     * @param policyNames The names of the policies enabled for the back-end server.
      */
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
@@ -109,7 +107,7 @@ public class BackendServerDescription implements Serializable, Cloneable {
     }
     
     /**
-     * Provides a list of policy names enabled for the back-end server.
+     * The names of the policies enabled for the back-end server.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPolicyNames(java.util.Collection)} or {@link
@@ -118,7 +116,7 @@ public class BackendServerDescription implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyNames Provides a list of policy names enabled for the back-end server.
+     * @param policyNames The names of the policies enabled for the back-end server.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -132,11 +130,11 @@ public class BackendServerDescription implements Serializable, Cloneable {
     }
     
     /**
-     * Provides a list of policy names enabled for the back-end server.
+     * The names of the policies enabled for the back-end server.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyNames Provides a list of policy names enabled for the back-end server.
+     * @param policyNames The names of the policies enabled for the back-end server.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

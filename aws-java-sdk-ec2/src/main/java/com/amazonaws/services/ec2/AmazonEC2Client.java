@@ -2551,6 +2551,54 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Displays details about an import snapshot tasks that is already
+     * created.
+     * </p>
+     *
+     * @param describeImportSnapshotTasksRequest Container for the necessary
+     *           parameters to execute the DescribeImportSnapshotTasks service method
+     *           on AmazonEC2.
+     * 
+     * @return The response from the DescribeImportSnapshotTasks service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeImportSnapshotTasksResult describeImportSnapshotTasks(DescribeImportSnapshotTasksRequest describeImportSnapshotTasksRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeImportSnapshotTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeImportSnapshotTasksRequest> request = null;
+        Response<DescribeImportSnapshotTasksResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeImportSnapshotTasksRequestMarshaller().marshall(super.beforeMarshalling(describeImportSnapshotTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeImportSnapshotTasksResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Resets an attribute of an AMI to its default value.
      * </p>
      * <p>
@@ -3507,6 +3555,52 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Cancels an in-process import virtual machine or import snapshot task.
+     * </p>
+     *
+     * @param cancelImportTaskRequest Container for the necessary parameters
+     *           to execute the CancelImportTask service method on AmazonEC2.
+     * 
+     * @return The response from the CancelImportTask service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CancelImportTaskResult cancelImportTask(CancelImportTaskRequest cancelImportTaskRequest) {
+        ExecutionContext executionContext = createExecutionContext(cancelImportTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelImportTaskRequest> request = null;
+        Response<CancelImportTaskResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelImportTaskRequestMarshaller().marshall(super.beforeMarshalling(cancelImportTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new CancelImportTaskResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Describes the specified Amazon EBS volumes.
      * </p>
      * <p>
@@ -3847,6 +3941,54 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Displays details about an import virtual machine or import snapshot
+     * tasks that are already created.
+     * </p>
+     *
+     * @param describeImportImageTasksRequest Container for the necessary
+     *           parameters to execute the DescribeImportImageTasks service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeImportImageTasks service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeImportImageTasksResult describeImportImageTasks(DescribeImportImageTasksRequest describeImportImageTasksRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeImportImageTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeImportImageTasksRequest> request = null;
+        Response<DescribeImportImageTasksResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeImportImageTasksRequestMarshaller().marshall(super.beforeMarshalling(describeImportImageTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeImportImageTasksResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
@@ -3953,9 +4095,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Creates an import instance task using metadata from the specified
-     * disk image. After importing the image, you then upload it using the
-     * <code>ec2-import-volume</code> command in the EC2 command line tools.
-     * For more information, see
+     * disk image. ImportInstance only supports single-volume VMs. To import
+     * multi-volume VMs, use ImportImage. After importing the image, you then
+     * upload it using the <code>ec2-import-volume</code> command in the EC2
+     * command line tools. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -4392,6 +4535,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You cannot create more than one customer gateway
+     * with the same VPN type, IP address, and BGP ASN parameter values. If
+     * you run an identical request more than one time, the first request
+     * creates the customer gateway, and subsequent requests return
+     * information about the existing customer gateway. The subsequent
+     * requests do not create new customer gateway resources.
+     * </p>
      *
      * @param createCustomerGatewayRequest Container for the necessary
      *           parameters to execute the CreateCustomerGateway service method on
@@ -4697,6 +4848,53 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             response = invoke(request, new CreateVpnConnectionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Import single or multi-volume disk images or Amazon EBS snapshots
+     * into an Amazon Machine Image (AMI).
+     * </p>
+     *
+     * @param importImageRequest Container for the necessary parameters to
+     *           execute the ImportImage service method on AmazonEC2.
+     * 
+     * @return The response from the ImportImage service method, as returned
+     *         by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ImportImageResult importImage(ImportImageRequest importImageRequest) {
+        ExecutionContext executionContext = createExecutionContext(importImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportImageRequest> request = null;
+        Response<ImportImageResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportImageRequestMarshaller().marshall(super.beforeMarshalling(importImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ImportImageResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -5382,6 +5580,56 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Modifies the specified attribute of the specified instance. You can
+     * specify only one attribute at a time.
+     * </p>
+     * <p>
+     * To modify some attributes, the instance must be stopped. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html"> Modifying Attributes of a Stopped Instance </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     *
+     * @param modifyInstanceAttributeRequest Container for the necessary
+     *           parameters to execute the ModifyInstanceAttribute service method on
+     *           AmazonEC2.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void modifyInstanceAttribute(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyInstanceAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyInstanceAttributeRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyInstanceAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
      * Cancels the specified Reserved Instance listing in the Reserved
      * Instance Marketplace.
      * </p>
@@ -5430,56 +5678,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Modifies the specified attribute of the specified instance. You can
-     * specify only one attribute at a time.
-     * </p>
-     * <p>
-     * To modify some attributes, the instance must be stopped. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html"> Modifying Attributes of a Stopped Instance </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
-     * </p>
-     *
-     * @param modifyInstanceAttributeRequest Container for the necessary
-     *           parameters to execute the ModifyInstanceAttribute service method on
-     *           AmazonEC2.
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void modifyInstanceAttribute(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest) {
-        ExecutionContext executionContext = createExecutionContext(modifyInstanceAttributeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ModifyInstanceAttributeRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ModifyInstanceAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceAttributeRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            invoke(request, null, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null);
         }
     }
     
@@ -6566,6 +6764,53 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Import a disk into an Amazon Elastic Block Store (Amazon EBS)
+     * snapshot.
+     * </p>
+     *
+     * @param importSnapshotRequest Container for the necessary parameters to
+     *           execute the ImportSnapshot service method on AmazonEC2.
+     * 
+     * @return The response from the ImportSnapshot service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ImportSnapshotResult importSnapshot(ImportSnapshotRequest importSnapshotRequest) {
+        ExecutionContext executionContext = createExecutionContext(importSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportSnapshotRequest> request = null;
+        Response<ImportSnapshotResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportSnapshotRequestMarshaller().marshall(super.beforeMarshalling(importSnapshotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ImportSnapshotResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -9430,6 +9675,28 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Displays details about an import snapshot tasks that is already
+     * created.
+     * </p>
+     * 
+     * @return The response from the DescribeImportSnapshotTasks service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeImportSnapshotTasksResult describeImportSnapshotTasks() throws AmazonServiceException, AmazonClientException {
+        return describeImportSnapshotTasks(new DescribeImportSnapshotTasksRequest());
+    }
+    
+    /**
+     * <p>
      * Describes one or more of your VPN connections.
      * </p>
      * <p>
@@ -9553,6 +9820,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public CreateVpcPeeringConnectionResult createVpcPeeringConnection() throws AmazonServiceException, AmazonClientException {
         return createVpcPeeringConnection(new CreateVpcPeeringConnectionRequest());
+    }
+    
+    /**
+     * <p>
+     * Cancels an in-process import virtual machine or import snapshot task.
+     * </p>
+     * 
+     * @return The response from the CancelImportTask service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CancelImportTaskResult cancelImportTask() throws AmazonServiceException, AmazonClientException {
+        return cancelImportTask(new CancelImportTaskRequest());
     }
     
     /**
@@ -9693,6 +9981,28 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Displays details about an import virtual machine or import snapshot
+     * tasks that are already created.
+     * </p>
+     * 
+     * @return The response from the DescribeImportImageTasks service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeImportImageTasksResult describeImportImageTasks() throws AmazonServiceException, AmazonClientException {
+        return describeImportImageTasks(new DescribeImportImageTasksRequest());
+    }
+    
+    /**
+     * <p>
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
@@ -9824,6 +10134,28 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeConversionTasksResult describeConversionTasks() throws AmazonServiceException, AmazonClientException {
         return describeConversionTasks(new DescribeConversionTasksRequest());
+    }
+    
+    /**
+     * <p>
+     * Import single or multi-volume disk images or Amazon EBS snapshots
+     * into an Amazon Machine Image (AMI).
+     * </p>
+     * 
+     * @return The response from the ImportImage service method, as returned
+     *         by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ImportImageResult importImage() throws AmazonServiceException, AmazonClientException {
+        return importImage(new ImportImageRequest());
     }
     
     /**
@@ -10088,6 +10420,28 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeTagsResult describeTags() throws AmazonServiceException, AmazonClientException {
         return describeTags(new DescribeTagsRequest());
+    }
+    
+    /**
+     * <p>
+     * Import a disk into an Amazon Elastic Block Store (Amazon EBS)
+     * snapshot.
+     * </p>
+     * 
+     * @return The response from the ImportSnapshot service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ImportSnapshotResult importSnapshot() throws AmazonServiceException, AmazonClientException {
+        return importSnapshot(new ImportSnapshotRequest());
     }
     
     /**

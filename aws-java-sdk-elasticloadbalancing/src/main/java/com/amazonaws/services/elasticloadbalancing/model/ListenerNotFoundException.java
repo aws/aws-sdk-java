@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Load balancer does not have a listener configured at the given port.
+ * The load balancer does not have a listener configured at the specified
+ * port.
  * </p>
  */        
 public class ListenerNotFoundException extends AmazonServiceException {

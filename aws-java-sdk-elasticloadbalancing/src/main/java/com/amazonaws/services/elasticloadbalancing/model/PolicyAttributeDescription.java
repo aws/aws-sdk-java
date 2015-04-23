@@ -18,47 +18,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>PolicyAttributeDescription</code> data type. This data type
- * is used to describe the attributes and values associated with a
- * policy.
+ * Information about a policy attribute.
  * </p>
  */
 public class PolicyAttributeDescription implements Serializable, Cloneable {
 
     /**
-     * The name of the attribute associated with the policy.
+     * The name of the attribute.
      */
     private String attributeName;
 
     /**
-     * The value of the attribute associated with the policy.
+     * The value of the attribute.
      */
     private String attributeValue;
 
     /**
-     * The name of the attribute associated with the policy.
+     * The name of the attribute.
      *
-     * @return The name of the attribute associated with the policy.
+     * @return The name of the attribute.
      */
     public String getAttributeName() {
         return attributeName;
     }
     
     /**
-     * The name of the attribute associated with the policy.
+     * The name of the attribute.
      *
-     * @param attributeName The name of the attribute associated with the policy.
+     * @param attributeName The name of the attribute.
      */
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
     
     /**
-     * The name of the attribute associated with the policy.
+     * The name of the attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeName The name of the attribute associated with the policy.
+     * @param attributeName The name of the attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -69,29 +67,29 @@ public class PolicyAttributeDescription implements Serializable, Cloneable {
     }
 
     /**
-     * The value of the attribute associated with the policy.
+     * The value of the attribute.
      *
-     * @return The value of the attribute associated with the policy.
+     * @return The value of the attribute.
      */
     public String getAttributeValue() {
         return attributeValue;
     }
     
     /**
-     * The value of the attribute associated with the policy.
+     * The value of the attribute.
      *
-     * @param attributeValue The value of the attribute associated with the policy.
+     * @param attributeValue The value of the attribute.
      */
     public void setAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;
     }
     
     /**
-     * The value of the attribute associated with the policy.
+     * The value of the attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeValue The value of the attribute associated with the policy.
+     * @param attributeValue The value of the attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

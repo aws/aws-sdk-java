@@ -25,8 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * group size.
  * </p>
  * <p>
- * <b>NOTE:</b>This call simply makes a termination request. The
- * instances is not terminated immediately.
+ * This call simply makes a termination request. The instances is not
+ * terminated immediately.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#terminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest)

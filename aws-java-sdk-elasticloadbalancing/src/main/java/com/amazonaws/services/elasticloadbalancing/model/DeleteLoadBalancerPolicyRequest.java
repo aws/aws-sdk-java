@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest) DeleteLoadBalancerPolicy operation}.
  * <p>
- * Deletes a policy from the load balancer. The specified policy must
- * not be enabled for any listeners.
+ * Deletes the specified policy from the specified load balancer. This
+ * policy must not be enabled for any listeners.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest)
@@ -30,12 +30,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The mnemonic name associated with the load balancer.
+     * The name of the load balancer.
      */
     private String loadBalancerName;
 
     /**
-     * The mnemonic name for the policy being deleted.
+     * The name of the policy.
      */
     private String policyName;
 
@@ -50,9 +50,8 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param loadBalancerName The mnemonic name associated with the load
-     * balancer.
-     * @param policyName The mnemonic name for the policy being deleted.
+     * @param loadBalancerName The name of the load balancer.
+     * @param policyName The name of the policy.
      */
     public DeleteLoadBalancerPolicyRequest(String loadBalancerName, String policyName) {
         setLoadBalancerName(loadBalancerName);
@@ -60,29 +59,29 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * The mnemonic name associated with the load balancer.
+     * The name of the load balancer.
      *
-     * @return The mnemonic name associated with the load balancer.
+     * @return The name of the load balancer.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The mnemonic name associated with the load balancer.
+     * The name of the load balancer.
      *
-     * @param loadBalancerName The mnemonic name associated with the load balancer.
+     * @param loadBalancerName The name of the load balancer.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The mnemonic name associated with the load balancer.
+     * The name of the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The mnemonic name associated with the load balancer.
+     * @param loadBalancerName The name of the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -93,29 +92,29 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * The mnemonic name for the policy being deleted.
+     * The name of the policy.
      *
-     * @return The mnemonic name for the policy being deleted.
+     * @return The name of the policy.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * The mnemonic name for the policy being deleted.
+     * The name of the policy.
      *
-     * @param policyName The mnemonic name for the policy being deleted.
+     * @param policyName The name of the policy.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * The mnemonic name for the policy being deleted.
+     * The name of the policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyName The mnemonic name for the policy being deleted.
+     * @param policyName The name of the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

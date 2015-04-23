@@ -34,6 +34,12 @@ public class Hit implements Serializable, Cloneable {
     private java.util.Map<String,java.util.List<String>> fields;
 
     /**
+     * The expressions returned from a document that matches the search
+     * request.
+     */
+    private java.util.Map<String,String> exprs;
+
+    /**
      * The highlights returned from a document that matches the search
      * request.
      */
@@ -140,6 +146,80 @@ public class Hit implements Serializable, Cloneable {
   }
   
     /**
+     * The expressions returned from a document that matches the search
+     * request.
+     *
+     * @return The expressions returned from a document that matches the search
+     *         request.
+     */
+    public java.util.Map<String,String> getExprs() {
+        
+        if (exprs == null) {
+            exprs = new java.util.HashMap<String,String>();
+        }
+        return exprs;
+    }
+    
+    /**
+     * The expressions returned from a document that matches the search
+     * request.
+     *
+     * @param exprs The expressions returned from a document that matches the search
+     *         request.
+     */
+    public void setExprs(java.util.Map<String,String> exprs) {
+        this.exprs = exprs;
+    }
+    
+    /**
+     * The expressions returned from a document that matches the search
+     * request.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param exprs The expressions returned from a document that matches the search
+     *         request.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Hit withExprs(java.util.Map<String,String> exprs) {
+        setExprs(exprs);
+        return this;
+    }
+
+    /**
+     * The expressions returned from a document that matches the search
+     * request.
+     * <p>
+     * The method adds a new key-value pair into Exprs parameter, and returns
+     * a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Exprs.
+     * @param value The corresponding value of the entry to be added into Exprs.
+     */
+  public Hit addExprsEntry(String key, String value) {
+    if (null == this.exprs) {
+      this.exprs = new java.util.HashMap<String,String>();
+    }
+    if (this.exprs.containsKey(key))
+      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+    this.exprs.put(key, value);
+    return this;
+  }
+
+  /**
+   * Removes all the entries added into Exprs.
+   * <p>
+   * Returns a reference to this object so that method calls can be chained together.
+   */
+  public Hit clearExprsEntries() {
+    this.exprs = null;
+    return this;
+  }
+  
+    /**
      * The highlights returned from a document that matches the search
      * request.
      *
@@ -227,6 +307,7 @@ public class Hit implements Serializable, Cloneable {
         sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getFields() != null) sb.append("Fields: " + getFields() + ",");
+        if (getExprs() != null) sb.append("Exprs: " + getExprs() + ",");
         if (getHighlights() != null) sb.append("Highlights: " + getHighlights() );
         sb.append("}");
         return sb.toString();
@@ -239,6 +320,7 @@ public class Hit implements Serializable, Cloneable {
         
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
         hashCode = prime * hashCode + ((getFields() == null) ? 0 : getFields().hashCode()); 
+        hashCode = prime * hashCode + ((getExprs() == null) ? 0 : getExprs().hashCode()); 
         hashCode = prime * hashCode + ((getHighlights() == null) ? 0 : getHighlights().hashCode()); 
         return hashCode;
     }
@@ -255,6 +337,8 @@ public class Hit implements Serializable, Cloneable {
         if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
         if (other.getFields() == null ^ this.getFields() == null) return false;
         if (other.getFields() != null && other.getFields().equals(this.getFields()) == false) return false; 
+        if (other.getExprs() == null ^ this.getExprs() == null) return false;
+        if (other.getExprs() != null && other.getExprs().equals(this.getExprs()) == false) return false; 
         if (other.getHighlights() == null ^ this.getHighlights() == null) return false;
         if (other.getHighlights() != null && other.getHighlights().equals(this.getHighlights()) == false) return false; 
         return true;

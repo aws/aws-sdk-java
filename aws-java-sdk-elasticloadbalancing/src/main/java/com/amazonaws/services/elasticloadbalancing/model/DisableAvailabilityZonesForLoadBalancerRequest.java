@@ -21,18 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#disableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest) DisableAvailabilityZonesForLoadBalancer operation}.
  * <p>
- * Removes the specified EC2 Availability Zones from the set of
- * configured Availability Zones for the load balancer.
+ * Removes the specified Availability Zones from the set of Availability
+ * Zones for the specified load balancer.
  * </p>
  * <p>
  * There must be at least one Availability Zone registered with a load
- * balancer at all times. Once an Availability Zone is removed, all the
+ * balancer at all times. After an Availability Zone is removed, all
  * instances registered with the load balancer that are in the removed
- * Availability Zone go into the <i>OutOfService</i> state. Upon
- * Availability Zone removal, the load balancer attempts to equally
- * balance the traffic among its remaining usable Availability Zones.
- * Trying to remove an Availability Zone that was not associated with the
- * load balancer does nothing.
+ * Availability Zone go into the <code>OutOfService</code> state. Then,
+ * the load balancer attempts to equally balance the traffic among its
+ * remaining Availability Zones.
  * </p>
  * <p>
  * For more information, see
@@ -45,15 +43,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name associated with the load balancer.
+     * The name of the load balancer.
      */
     private String loadBalancerName;
 
     /**
-     * A list of Availability Zones to be removed from the load balancer.
-     * <note> There must be at least one Availability Zone registered with a
-     * load balancer at all times. Specified Availability Zones must be in
-     * the same region. </note>
+     * The Availability Zones.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
 
@@ -68,11 +63,8 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param loadBalancerName The name associated with the load balancer.
-     * @param availabilityZones A list of Availability Zones to be removed
-     * from the load balancer. <note> There must be at least one Availability
-     * Zone registered with a load balancer at all times. Specified
-     * Availability Zones must be in the same region. </note>
+     * @param loadBalancerName The name of the load balancer.
+     * @param availabilityZones The Availability Zones.
      */
     public DisableAvailabilityZonesForLoadBalancerRequest(String loadBalancerName, java.util.List<String> availabilityZones) {
         setLoadBalancerName(loadBalancerName);
@@ -80,29 +72,29 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
     }
 
     /**
-     * The name associated with the load balancer.
+     * The name of the load balancer.
      *
-     * @return The name associated with the load balancer.
+     * @return The name of the load balancer.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The name associated with the load balancer.
+     * The name of the load balancer.
      *
-     * @param loadBalancerName The name associated with the load balancer.
+     * @param loadBalancerName The name of the load balancer.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The name associated with the load balancer.
+     * The name of the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The name associated with the load balancer.
+     * @param loadBalancerName The name of the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -113,15 +105,9 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
     }
 
     /**
-     * A list of Availability Zones to be removed from the load balancer.
-     * <note> There must be at least one Availability Zone registered with a
-     * load balancer at all times. Specified Availability Zones must be in
-     * the same region. </note>
+     * The Availability Zones.
      *
-     * @return A list of Availability Zones to be removed from the load balancer.
-     *         <note> There must be at least one Availability Zone registered with a
-     *         load balancer at all times. Specified Availability Zones must be in
-     *         the same region. </note>
+     * @return The Availability Zones.
      */
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
@@ -132,15 +118,9 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
     }
     
     /**
-     * A list of Availability Zones to be removed from the load balancer.
-     * <note> There must be at least one Availability Zone registered with a
-     * load balancer at all times. Specified Availability Zones must be in
-     * the same region. </note>
+     * The Availability Zones.
      *
-     * @param availabilityZones A list of Availability Zones to be removed from the load balancer.
-     *         <note> There must be at least one Availability Zone registered with a
-     *         load balancer at all times. Specified Availability Zones must be in
-     *         the same region. </note>
+     * @param availabilityZones The Availability Zones.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -153,10 +133,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
     }
     
     /**
-     * A list of Availability Zones to be removed from the load balancer.
-     * <note> There must be at least one Availability Zone registered with a
-     * load balancer at all times. Specified Availability Zones must be in
-     * the same region. </note>
+     * The Availability Zones.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
@@ -165,10 +142,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of Availability Zones to be removed from the load balancer.
-     *         <note> There must be at least one Availability Zone registered with a
-     *         load balancer at all times. Specified Availability Zones must be in
-     *         the same region. </note>
+     * @param availabilityZones The Availability Zones.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -182,17 +156,11 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
     }
     
     /**
-     * A list of Availability Zones to be removed from the load balancer.
-     * <note> There must be at least one Availability Zone registered with a
-     * load balancer at all times. Specified Availability Zones must be in
-     * the same region. </note>
+     * The Availability Zones.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of Availability Zones to be removed from the load balancer.
-     *         <note> There must be at least one Availability Zone registered with a
-     *         load balancer at all times. Specified Availability Zones must be in
-     *         the same region. </note>
+     * @param availabilityZones The Availability Zones.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -218,7 +218,8 @@ public interface AmazonSimpleEmailService {
      * returns a structure describing identity notification attributes.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * This action is throttled at one request per second and can only get
+     * notification attributes for up to 100 identities at a time.
      * </p>
      * <p>
      * For more information about using notifications with Amazon SES, see
@@ -312,7 +313,8 @@ public interface AmazonSimpleEmailService {
      * 
      * </ul>
      * <p>
-     * This action is throttled at one request per second.
+     * This action is throttled at one request per second and can only get
+     * DKIM attributes for up to 100 identities at a time.
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, go
@@ -380,10 +382,10 @@ public interface AmazonSimpleEmailService {
      * </p>
      * <p>
      * <b>IMPORTANT:</b> You can only send email from verified email
-     * addresses and domains. If you have not requested production access to
-     * Amazon SES, you must also verify every recipient email address except
-     * for the recipients provided by the Amazon SES mailbox simulator. For
-     * more information, go to the Amazon SES Developer Guide.
+     * addresses and domains. If your account is still in the Amazon SES
+     * sandbox, you must also verify every recipient email address except for
+     * the recipients provided by the Amazon SES mailbox simulator. For more
+     * information, go to the Amazon SES Developer Guide.
      * </p>
      * <p>
      * The total size of the message cannot exceed 10 MB. This includes any
@@ -464,7 +466,8 @@ public interface AmazonSimpleEmailService {
      * token for each identity.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * This action is throttled at one request per second and can only get
+     * verification attributes for up to 100 identities at a time.
      * </p>
      *
      * @param getIdentityVerificationAttributesRequest Container for the
@@ -637,10 +640,10 @@ public interface AmazonSimpleEmailService {
      * </p>
      * <p>
      * <b>IMPORTANT:</b> You can only send email from verified email
-     * addresses and domains. If you have not requested production access to
-     * Amazon SES, you must also verify every recipient email address except
-     * for the recipients provided by the Amazon SES mailbox simulator. For
-     * more information, go to the Amazon SES Developer Guide.
+     * addresses and domains. If your account is still in the Amazon SES
+     * sandbox, you must also verify every recipient email address except for
+     * the recipients provided by the Amazon SES mailbox simulator. For more
+     * information, go to the Amazon SES Developer Guide.
      * </p>
      * <p>
      * The total size of the message cannot exceed 10 MB.

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For information about requesting an increase in these limits, see
  * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> AWS Service Limits </a>
- * .
+ * in the <i>Amazon Web Services General Reference</i> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAccountLimits(DescribeAccountLimitsRequest)

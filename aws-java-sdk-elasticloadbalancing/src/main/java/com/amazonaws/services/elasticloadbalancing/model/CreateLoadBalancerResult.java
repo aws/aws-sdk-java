@@ -17,41 +17,39 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output for the CreateLoadBalancer action.
- * </p>
+ * 
  */
 public class CreateLoadBalancerResult implements Serializable, Cloneable {
 
     /**
-     * The DNS name for the load balancer.
+     * The DNS name of the load balancer.
      */
     private String dNSName;
 
     /**
-     * The DNS name for the load balancer.
+     * The DNS name of the load balancer.
      *
-     * @return The DNS name for the load balancer.
+     * @return The DNS name of the load balancer.
      */
     public String getDNSName() {
         return dNSName;
     }
     
     /**
-     * The DNS name for the load balancer.
+     * The DNS name of the load balancer.
      *
-     * @param dNSName The DNS name for the load balancer.
+     * @param dNSName The DNS name of the load balancer.
      */
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
     }
     
     /**
-     * The DNS name for the load balancer.
+     * The DNS name of the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dNSName The DNS name for the load balancer.
+     * @param dNSName The DNS name of the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

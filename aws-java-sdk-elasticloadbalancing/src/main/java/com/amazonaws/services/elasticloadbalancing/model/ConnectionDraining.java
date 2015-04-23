@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>ConnectionDraining</code> data type.
+ * Information about the <code>ConnectionDraining</code> attribute.
  * </p>
  */
 public class ConnectionDraining implements Serializable, Cloneable {
@@ -30,8 +30,8 @@ public class ConnectionDraining implements Serializable, Cloneable {
     private Boolean enabled;
 
     /**
-     * Specifies the maximum time (in seconds) to keep the existing
-     * connections open before deregistering the instances.
+     * The maximum time, in seconds, to keep the existing connections open
+     * before deregistering the instances.
      */
     private Integer timeout;
 
@@ -86,35 +86,35 @@ public class ConnectionDraining implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies the maximum time (in seconds) to keep the existing
-     * connections open before deregistering the instances.
+     * The maximum time, in seconds, to keep the existing connections open
+     * before deregistering the instances.
      *
-     * @return Specifies the maximum time (in seconds) to keep the existing
-     *         connections open before deregistering the instances.
+     * @return The maximum time, in seconds, to keep the existing connections open
+     *         before deregistering the instances.
      */
     public Integer getTimeout() {
         return timeout;
     }
     
     /**
-     * Specifies the maximum time (in seconds) to keep the existing
-     * connections open before deregistering the instances.
+     * The maximum time, in seconds, to keep the existing connections open
+     * before deregistering the instances.
      *
-     * @param timeout Specifies the maximum time (in seconds) to keep the existing
-     *         connections open before deregistering the instances.
+     * @param timeout The maximum time, in seconds, to keep the existing connections open
+     *         before deregistering the instances.
      */
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
     
     /**
-     * Specifies the maximum time (in seconds) to keep the existing
-     * connections open before deregistering the instances.
+     * The maximum time, in seconds, to keep the existing connections open
+     * before deregistering the instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param timeout Specifies the maximum time (in seconds) to keep the existing
-     *         connections open before deregistering the instances.
+     * @param timeout The maximum time, in seconds, to keep the existing connections open
+     *         before deregistering the instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

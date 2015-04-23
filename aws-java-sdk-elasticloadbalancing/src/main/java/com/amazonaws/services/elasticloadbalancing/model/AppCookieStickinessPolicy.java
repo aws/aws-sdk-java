@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The AppCookieStickinessPolicy data type.
+ * Information about a policy for application-controlled session
+ * stickiness.
  * </p>
  */
 public class AppCookieStickinessPolicy implements Serializable, Cloneable {

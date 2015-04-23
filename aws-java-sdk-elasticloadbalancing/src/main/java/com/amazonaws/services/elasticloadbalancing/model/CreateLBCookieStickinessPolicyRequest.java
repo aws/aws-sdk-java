@@ -21,29 +21,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest) CreateLBCookieStickinessPolicy operation}.
  * <p>
- * Generates a stickiness policy with sticky session lifetimes
- * controlled by the lifetime of the browser (user-agent) or a specified
- * expiration period. This policy can be associated only with HTTP/HTTPS
- * listeners.
+ * Generates a stickiness policy with sticky session lifetimes controlled
+ * by the lifetime of the browser (user-agent) or a specified expiration
+ * period. This policy can be associated only with HTTP/HTTPS listeners.
  * </p>
  * <p>
  * When a load balancer implements this policy, the load balancer uses a
- * special cookie to track the backend server instance for each request.
+ * special cookie to track the back-end server instance for each request.
  * When the load balancer receives a request, it first checks to see if
  * this cookie is present in the request. If so, the load balancer sends
  * the request to the application server specified in the cookie. If not,
  * the load balancer sends the request to a server that is chosen based
- * on the existing load balancing algorithm.
+ * on the existing load-balancing algorithm.
  * </p>
  * <p>
- * A cookie is inserted into the response for binding subsequent
- * requests from the same user to that server. The validity of the cookie
- * is based on the cookie expiration time, which is specified in the
- * policy configuration.
+ * A cookie is inserted into the response for binding subsequent requests
+ * from the same user to that server. The validity of the cookie is based
+ * on the cookie expiration time, which is specified in the policy
+ * configuration.
  * </p>
  * <p>
  * For more information, see
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies"> Enabling Duration-Based Session Stickiness </a>
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies"> Duration-Based Session Stickiness </a>
  * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *
@@ -52,20 +51,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name associated with the load balancer.
+     * The name of the load balancer.
      */
     private String loadBalancerName;
 
     /**
-     * The name of the policy being created. The name must be unique within
+     * The name of the policy being created. This name must be unique within
      * the set of policies for this load balancer.
      */
     private String policyName;
 
     /**
-     * The time period in seconds after which the cookie should be considered
-     * stale. Not specifying this parameter indicates that the sticky session
-     * will last for the duration of the browser session.
+     * The time period, in seconds, after which the cookie should be
+     * considered stale. If you do not specify this parameter, the sticky
+     * session lasts for the duration of the browser session.
      */
     private Long cookieExpirationPeriod;
 
@@ -80,8 +79,8 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param loadBalancerName The name associated with the load balancer.
-     * @param policyName The name of the policy being created. The name must
+     * @param loadBalancerName The name of the load balancer.
+     * @param policyName The name of the policy being created. This name must
      * be unique within the set of policies for this load balancer.
      */
     public CreateLBCookieStickinessPolicyRequest(String loadBalancerName, String policyName) {
@@ -90,29 +89,29 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
     }
 
     /**
-     * The name associated with the load balancer.
+     * The name of the load balancer.
      *
-     * @return The name associated with the load balancer.
+     * @return The name of the load balancer.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The name associated with the load balancer.
+     * The name of the load balancer.
      *
-     * @param loadBalancerName The name associated with the load balancer.
+     * @param loadBalancerName The name of the load balancer.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The name associated with the load balancer.
+     * The name of the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The name associated with the load balancer.
+     * @param loadBalancerName The name of the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -123,10 +122,10 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
     }
 
     /**
-     * The name of the policy being created. The name must be unique within
+     * The name of the policy being created. This name must be unique within
      * the set of policies for this load balancer.
      *
-     * @return The name of the policy being created. The name must be unique within
+     * @return The name of the policy being created. This name must be unique within
      *         the set of policies for this load balancer.
      */
     public String getPolicyName() {
@@ -134,10 +133,10 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
     }
     
     /**
-     * The name of the policy being created. The name must be unique within
+     * The name of the policy being created. This name must be unique within
      * the set of policies for this load balancer.
      *
-     * @param policyName The name of the policy being created. The name must be unique within
+     * @param policyName The name of the policy being created. This name must be unique within
      *         the set of policies for this load balancer.
      */
     public void setPolicyName(String policyName) {
@@ -145,12 +144,12 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
     }
     
     /**
-     * The name of the policy being created. The name must be unique within
+     * The name of the policy being created. This name must be unique within
      * the set of policies for this load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyName The name of the policy being created. The name must be unique within
+     * @param policyName The name of the policy being created. This name must be unique within
      *         the set of policies for this load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -162,41 +161,41 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
     }
 
     /**
-     * The time period in seconds after which the cookie should be considered
-     * stale. Not specifying this parameter indicates that the sticky session
-     * will last for the duration of the browser session.
+     * The time period, in seconds, after which the cookie should be
+     * considered stale. If you do not specify this parameter, the sticky
+     * session lasts for the duration of the browser session.
      *
-     * @return The time period in seconds after which the cookie should be considered
-     *         stale. Not specifying this parameter indicates that the sticky session
-     *         will last for the duration of the browser session.
+     * @return The time period, in seconds, after which the cookie should be
+     *         considered stale. If you do not specify this parameter, the sticky
+     *         session lasts for the duration of the browser session.
      */
     public Long getCookieExpirationPeriod() {
         return cookieExpirationPeriod;
     }
     
     /**
-     * The time period in seconds after which the cookie should be considered
-     * stale. Not specifying this parameter indicates that the sticky session
-     * will last for the duration of the browser session.
+     * The time period, in seconds, after which the cookie should be
+     * considered stale. If you do not specify this parameter, the sticky
+     * session lasts for the duration of the browser session.
      *
-     * @param cookieExpirationPeriod The time period in seconds after which the cookie should be considered
-     *         stale. Not specifying this parameter indicates that the sticky session
-     *         will last for the duration of the browser session.
+     * @param cookieExpirationPeriod The time period, in seconds, after which the cookie should be
+     *         considered stale. If you do not specify this parameter, the sticky
+     *         session lasts for the duration of the browser session.
      */
     public void setCookieExpirationPeriod(Long cookieExpirationPeriod) {
         this.cookieExpirationPeriod = cookieExpirationPeriod;
     }
     
     /**
-     * The time period in seconds after which the cookie should be considered
-     * stale. Not specifying this parameter indicates that the sticky session
-     * will last for the duration of the browser session.
+     * The time period, in seconds, after which the cookie should be
+     * considered stale. If you do not specify this parameter, the sticky
+     * session lasts for the duration of the browser session.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cookieExpirationPeriod The time period in seconds after which the cookie should be considered
-     *         stale. Not specifying this parameter indicates that the sticky session
-     *         will last for the duration of the browser session.
+     * @param cookieExpirationPeriod The time period, in seconds, after which the cookie should be
+     *         considered stale. If you do not specify this parameter, the sticky
+     *         session lasts for the duration of the browser session.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

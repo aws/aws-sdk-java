@@ -17,12 +17,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output for the
- * </p>
- * AddTags <p>
- * action.
- * </p>
+ * 
  */
 public class AddTagsResult implements Serializable, Cloneable {
 

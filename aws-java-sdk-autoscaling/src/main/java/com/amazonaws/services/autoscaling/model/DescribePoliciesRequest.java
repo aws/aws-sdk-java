@@ -23,12 +23,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Describes the policies for the specified Auto Scaling group.
  * </p>
- * <p>
- * You can specify a maximum number of items to be returned with a single
- * call. If there are more items to return, the call returns a token. To
- * get the next set of items, repeat the call with the returned token in
- * the <code>NextToken</code> parameter.
- * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describePolicies(DescribePoliciesRequest)
  */

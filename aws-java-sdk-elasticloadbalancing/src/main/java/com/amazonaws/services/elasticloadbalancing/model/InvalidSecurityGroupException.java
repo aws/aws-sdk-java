@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * One or more specified security groups do not exist.
+ * One or more of the specified security groups do not exist.
  * </p>
  */        
 public class InvalidSecurityGroupException extends AmazonServiceException {

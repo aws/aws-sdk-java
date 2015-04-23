@@ -17,9 +17,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output for the CreateLoadBalancerPolicy action.
- * </p>
+ * 
  */
 public class CreateLoadBalancerPolicyResult implements Serializable, Cloneable {
 

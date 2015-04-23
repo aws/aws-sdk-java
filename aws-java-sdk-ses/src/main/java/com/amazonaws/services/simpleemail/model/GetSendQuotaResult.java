@@ -26,12 +26,14 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
 
     /**
      * The maximum number of emails the user is allowed to send in a 24-hour
-     * interval.
+     * interval. A value of -1 signifies an unlimited quota.
      */
     private Double max24HourSend;
 
     /**
-     * The maximum number of emails the user is allowed to send per second.
+     * The maximum number of emails that Amazon SES can accept from the
+     * user's account per second. <note>The rate at which Amazon SES accepts
+     * the user's messages might be less than the maximum send rate.</note>
      */
     private Double maxSendRate;
 
@@ -42,10 +44,10 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
 
     /**
      * The maximum number of emails the user is allowed to send in a 24-hour
-     * interval.
+     * interval. A value of -1 signifies an unlimited quota.
      *
      * @return The maximum number of emails the user is allowed to send in a 24-hour
-     *         interval.
+     *         interval. A value of -1 signifies an unlimited quota.
      */
     public Double getMax24HourSend() {
         return max24HourSend;
@@ -53,10 +55,10 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
     
     /**
      * The maximum number of emails the user is allowed to send in a 24-hour
-     * interval.
+     * interval. A value of -1 signifies an unlimited quota.
      *
      * @param max24HourSend The maximum number of emails the user is allowed to send in a 24-hour
-     *         interval.
+     *         interval. A value of -1 signifies an unlimited quota.
      */
     public void setMax24HourSend(Double max24HourSend) {
         this.max24HourSend = max24HourSend;
@@ -64,12 +66,12 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
     
     /**
      * The maximum number of emails the user is allowed to send in a 24-hour
-     * interval.
+     * interval. A value of -1 signifies an unlimited quota.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param max24HourSend The maximum number of emails the user is allowed to send in a 24-hour
-     *         interval.
+     *         interval. A value of -1 signifies an unlimited quota.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -80,29 +82,41 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
     }
 
     /**
-     * The maximum number of emails the user is allowed to send per second.
+     * The maximum number of emails that Amazon SES can accept from the
+     * user's account per second. <note>The rate at which Amazon SES accepts
+     * the user's messages might be less than the maximum send rate.</note>
      *
-     * @return The maximum number of emails the user is allowed to send per second.
+     * @return The maximum number of emails that Amazon SES can accept from the
+     *         user's account per second. <note>The rate at which Amazon SES accepts
+     *         the user's messages might be less than the maximum send rate.</note>
      */
     public Double getMaxSendRate() {
         return maxSendRate;
     }
     
     /**
-     * The maximum number of emails the user is allowed to send per second.
+     * The maximum number of emails that Amazon SES can accept from the
+     * user's account per second. <note>The rate at which Amazon SES accepts
+     * the user's messages might be less than the maximum send rate.</note>
      *
-     * @param maxSendRate The maximum number of emails the user is allowed to send per second.
+     * @param maxSendRate The maximum number of emails that Amazon SES can accept from the
+     *         user's account per second. <note>The rate at which Amazon SES accepts
+     *         the user's messages might be less than the maximum send rate.</note>
      */
     public void setMaxSendRate(Double maxSendRate) {
         this.maxSendRate = maxSendRate;
     }
     
     /**
-     * The maximum number of emails the user is allowed to send per second.
+     * The maximum number of emails that Amazon SES can accept from the
+     * user's account per second. <note>The rate at which Amazon SES accepts
+     * the user's messages might be less than the maximum send rate.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxSendRate The maximum number of emails the user is allowed to send per second.
+     * @param maxSendRate The maximum number of emails that Amazon SES can accept from the
+     *         user's account per second. <note>The rate at which Amazon SES accepts
+     *         the user's messages might be less than the maximum send rate.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

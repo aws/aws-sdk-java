@@ -39,12 +39,15 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
     private String autoScalingGroupName;
 
     /**
-     * One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     * <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     * <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     * <li><p>GroupStandbyInstances</li>
-     * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul> <p>If you omit this parameter, all metrics are disabled.
+     * One or more metrics. If you omit this parameter, all metrics are
+     * disabled. <ul> <li><p><code>GroupMinSize</code></li>
+     * <li><p><code>GroupMaxSize</code></li>
+     * <li><p><code>GroupDesiredCapacity</code></li>
+     * <li><p><code>GroupInServiceInstances</code></li>
+     * <li><p><code>GroupPendingInstances</code></li>
+     * <li><p><code>GroupStandbyInstances</code></li>
+     * <li><p><code>GroupTerminatingInstances</code></li>
+     * <li><p><code>GroupTotalInstances</code></li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> metrics;
 
@@ -94,19 +97,25 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     * <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     * <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     * <li><p>GroupStandbyInstances</li>
-     * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul> <p>If you omit this parameter, all metrics are disabled.
+     * One or more metrics. If you omit this parameter, all metrics are
+     * disabled. <ul> <li><p><code>GroupMinSize</code></li>
+     * <li><p><code>GroupMaxSize</code></li>
+     * <li><p><code>GroupDesiredCapacity</code></li>
+     * <li><p><code>GroupInServiceInstances</code></li>
+     * <li><p><code>GroupPendingInstances</code></li>
+     * <li><p><code>GroupStandbyInstances</code></li>
+     * <li><p><code>GroupTerminatingInstances</code></li>
+     * <li><p><code>GroupTotalInstances</code></li> </ul>
      *
-     * @return One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     *         <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     *         <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     *         <li><p>GroupStandbyInstances</li>
-     *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul> <p>If you omit this parameter, all metrics are disabled.
+     * @return One or more metrics. If you omit this parameter, all metrics are
+     *         disabled. <ul> <li><p><code>GroupMinSize</code></li>
+     *         <li><p><code>GroupMaxSize</code></li>
+     *         <li><p><code>GroupDesiredCapacity</code></li>
+     *         <li><p><code>GroupInServiceInstances</code></li>
+     *         <li><p><code>GroupPendingInstances</code></li>
+     *         <li><p><code>GroupStandbyInstances</code></li>
+     *         <li><p><code>GroupTerminatingInstances</code></li>
+     *         <li><p><code>GroupTotalInstances</code></li> </ul>
      */
     public java.util.List<String> getMetrics() {
         if (metrics == null) {
@@ -117,19 +126,25 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     * <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     * <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     * <li><p>GroupStandbyInstances</li>
-     * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul> <p>If you omit this parameter, all metrics are disabled.
+     * One or more metrics. If you omit this parameter, all metrics are
+     * disabled. <ul> <li><p><code>GroupMinSize</code></li>
+     * <li><p><code>GroupMaxSize</code></li>
+     * <li><p><code>GroupDesiredCapacity</code></li>
+     * <li><p><code>GroupInServiceInstances</code></li>
+     * <li><p><code>GroupPendingInstances</code></li>
+     * <li><p><code>GroupStandbyInstances</code></li>
+     * <li><p><code>GroupTerminatingInstances</code></li>
+     * <li><p><code>GroupTotalInstances</code></li> </ul>
      *
-     * @param metrics One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     *         <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     *         <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     *         <li><p>GroupStandbyInstances</li>
-     *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul> <p>If you omit this parameter, all metrics are disabled.
+     * @param metrics One or more metrics. If you omit this parameter, all metrics are
+     *         disabled. <ul> <li><p><code>GroupMinSize</code></li>
+     *         <li><p><code>GroupMaxSize</code></li>
+     *         <li><p><code>GroupDesiredCapacity</code></li>
+     *         <li><p><code>GroupInServiceInstances</code></li>
+     *         <li><p><code>GroupPendingInstances</code></li>
+     *         <li><p><code>GroupStandbyInstances</code></li>
+     *         <li><p><code>GroupTerminatingInstances</code></li>
+     *         <li><p><code>GroupTotalInstances</code></li> </ul>
      */
     public void setMetrics(java.util.Collection<String> metrics) {
         if (metrics == null) {
@@ -142,12 +157,15 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     * <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     * <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     * <li><p>GroupStandbyInstances</li>
-     * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul> <p>If you omit this parameter, all metrics are disabled.
+     * One or more metrics. If you omit this parameter, all metrics are
+     * disabled. <ul> <li><p><code>GroupMinSize</code></li>
+     * <li><p><code>GroupMaxSize</code></li>
+     * <li><p><code>GroupDesiredCapacity</code></li>
+     * <li><p><code>GroupInServiceInstances</code></li>
+     * <li><p><code>GroupPendingInstances</code></li>
+     * <li><p><code>GroupStandbyInstances</code></li>
+     * <li><p><code>GroupTerminatingInstances</code></li>
+     * <li><p><code>GroupTotalInstances</code></li> </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setMetrics(java.util.Collection)} or {@link
@@ -156,12 +174,15 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param metrics One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     *         <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     *         <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     *         <li><p>GroupStandbyInstances</li>
-     *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul> <p>If you omit this parameter, all metrics are disabled.
+     * @param metrics One or more metrics. If you omit this parameter, all metrics are
+     *         disabled. <ul> <li><p><code>GroupMinSize</code></li>
+     *         <li><p><code>GroupMaxSize</code></li>
+     *         <li><p><code>GroupDesiredCapacity</code></li>
+     *         <li><p><code>GroupInServiceInstances</code></li>
+     *         <li><p><code>GroupPendingInstances</code></li>
+     *         <li><p><code>GroupStandbyInstances</code></li>
+     *         <li><p><code>GroupTerminatingInstances</code></li>
+     *         <li><p><code>GroupTotalInstances</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -175,21 +196,27 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     * <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     * <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     * <li><p>GroupStandbyInstances</li>
-     * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul> <p>If you omit this parameter, all metrics are disabled.
+     * One or more metrics. If you omit this parameter, all metrics are
+     * disabled. <ul> <li><p><code>GroupMinSize</code></li>
+     * <li><p><code>GroupMaxSize</code></li>
+     * <li><p><code>GroupDesiredCapacity</code></li>
+     * <li><p><code>GroupInServiceInstances</code></li>
+     * <li><p><code>GroupPendingInstances</code></li>
+     * <li><p><code>GroupStandbyInstances</code></li>
+     * <li><p><code>GroupTerminatingInstances</code></li>
+     * <li><p><code>GroupTotalInstances</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param metrics One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     *         <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     *         <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     *         <li><p>GroupStandbyInstances</li>
-     *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul> <p>If you omit this parameter, all metrics are disabled.
+     * @param metrics One or more metrics. If you omit this parameter, all metrics are
+     *         disabled. <ul> <li><p><code>GroupMinSize</code></li>
+     *         <li><p><code>GroupMaxSize</code></li>
+     *         <li><p><code>GroupDesiredCapacity</code></li>
+     *         <li><p><code>GroupInServiceInstances</code></li>
+     *         <li><p><code>GroupPendingInstances</code></li>
+     *         <li><p><code>GroupStandbyInstances</code></li>
+     *         <li><p><code>GroupTerminatingInstances</code></li>
+     *         <li><p><code>GroupTotalInstances</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>CrossZoneLoadBalancing</code> data type.
+ * Information about the <code>CrossZoneLoadBalancing</code> attribute.
  * </p>
  */
 public class CrossZoneLoadBalancing implements Serializable, Cloneable {

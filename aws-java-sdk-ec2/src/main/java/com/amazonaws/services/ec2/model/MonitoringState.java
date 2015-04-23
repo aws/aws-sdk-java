@@ -20,6 +20,7 @@ package com.amazonaws.services.ec2.model;
 public enum MonitoringState {
     
     Disabled("disabled"),
+    Disabling("disabling"),
     Enabled("enabled"),
     Pending("pending");
 
@@ -47,6 +48,8 @@ public enum MonitoringState {
         
         } else if ("disabled".equals(value)) {
             return MonitoringState.Disabled;
+        } else if ("disabling".equals(value)) {
+            return MonitoringState.Disabling;
         } else if ("enabled".equals(value)) {
             return MonitoringState.Enabled;
         } else if ("pending".equals(value)) {

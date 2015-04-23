@@ -14,6 +14,8 @@
  */
 package com.amazonaws.regions;
 
+import org.apache.commons.logging.LogFactory;
+
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.util.EC2MetadataUtils;
 
@@ -76,14 +78,13 @@ public enum Regions {
      */
     public static Region getCurrentRegion() {
         try {
-            EC2MetadataUtils.InstanceInfo instanceInfo = EC2MetadataUtils
-                    .getInstanceInfo();
-            if (instanceInfo == null || instanceInfo.getRegion() == null) {
-                return null;
-            }
-            return Region.getRegion(fromName(instanceInfo.getRegion()));
+            final String region = EC2MetadataUtils.getEC2InstanceRegion();
+            if (region != null)
+                return Region.getRegion(fromName(region));
         } catch (AmazonClientException e) {
-            return null;
+            LogFactory.getLog(Regions.class).debug(
+                "Ignoring failure to retrieve the region: " + e.getMessage());
         }
+        return null;
     }
 }

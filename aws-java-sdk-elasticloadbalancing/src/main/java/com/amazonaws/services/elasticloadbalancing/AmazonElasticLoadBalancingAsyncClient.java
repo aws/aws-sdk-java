@@ -35,58 +35,20 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * Elastic Load Balancing <p>
- * Elastic Load Balancing is a way to automatically distribute incoming
- * web traffic across applications that run on multiple Amazon Elastic
- * Compute Cloud (Amazon EC2) instances.
+ * Elastic Load Balancing automatically distributes incoming web traffic
+ * across multiple Amazon EC2 instances.
  * </p>
  * <p>
- * You can create, access, and manage Elastic Load Balancing using the
- * AWS Management Console, the AWS Command Line Interface (AWS CLI), the
- * Query API, or the AWS SDKs. For more information about Elastic Load
- * Balancing interfaces, see
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/SvcIntro_Interfaces.html"> Accessing Elastic Load Balancing </a>
- * .
+ * All Elastic Load Balancing actions and commands are <i>idempotent</i>
+ * , which means that they complete no more than one time. If you repeat
+ * a request or a command, the action succeeds with a 200 OK response
+ * code.
  * </p>
  * <p>
- * This reference guide contains documentation for the Query API and the
- * AWS CLI commands, to manage Elastic Load Balancing.
- * </p>
- * <p>
- * For detailed information about Elastic Load Balancing features and
- * their associated actions or commands, go to
+ * For detailed information about the features of Elastic Load Balancing,
+ * see
  * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html"> Managing Load Balancers </a>
  * in the <i>Elastic Load Balancing Developer Guide</i> .
- * </p>
- * <p>
- * This reference guide is based on the current WSDL, which is available
- * at:
- * <a href="http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl"> </a>
- * .
- * </p>
- * <p>
- * <b>Endpoints</b>
- * </p>
- * <p>
- * The examples in this guide assume that your load balancers are created
- * in the US East (Northern Virginia) region and use us-east-1 as the
- * endpoint.
- * </p>
- * <p>
- * You can create your load balancers in other AWS regions. For
- * information about regions and endpoints supported by Elastic Load
- * Balancing, see
- * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a>
- * in the Amazon Web Services General Reference.
- * </p>
- * <p>
- * <b>Idempotency</b>
- * </p>
- * <p>
- * All Elastic Load Balancing Query API actions and AWS CLI commands are
- * designed to be idempotent. An <i>idempotent</i> action or command
- * completes no more than one time. If you repeat a request or a command
- * using the same values the action will succeed with a 200 OK response
- * code.
  * </p>
  */
 public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBalancingClient
@@ -323,11 +285,11 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
             
     /**
      * <p>
-     * Returns meta-information on the specified load balancer policies
-     * defined by the Elastic Load Balancing service. The policy types that
-     * are returned from this action can be used in a
-     * CreateLoadBalancerPolicy action to instantiate specific policy
-     * configurations that will be applied to a load balancer.
+     * Describes the specified load balancer policy types.
+     * </p>
+     * <p>
+     * You can use these policy types with CreateLoadBalancerPolicy to
+     * create policy configurations for a load balancer.
      * </p>
      *
      * @param describeLoadBalancerPolicyTypesRequest Container for the
@@ -358,11 +320,11 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Returns meta-information on the specified load balancer policies
-     * defined by the Elastic Load Balancing service. The policy types that
-     * are returned from this action can be used in a
-     * CreateLoadBalancerPolicy action to instantiate specific policy
-     * configurations that will be applied to a load balancer.
+     * Describes the specified load balancer policy types.
+     * </p>
+     * <p>
+     * You can use these policy types with CreateLoadBalancerPolicy to
+     * create policy configurations for a load balancer.
      * </p>
      *
      * @param describeLoadBalancerPolicyTypesRequest Container for the
@@ -407,12 +369,12 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Specifies the health check settings to use for evaluating the health
+     * Specifies the health check settings to use when evaluating the health
      * state of your back-end instances.
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck"> Health Check </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck"> Health Checks </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -444,12 +406,12 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Specifies the health check settings to use for evaluating the health
+     * Specifies the health check settings to use when evaluating the health
      * state of your back-end instances.
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck"> Health Check </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck"> Health Checks </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -495,15 +457,14 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Removes subnets from the set of configured subnets in the Amazon
-     * Virtual Private Cloud (Amazon VPC) for the load balancer.
+     * Removes the specified subnets from the set of configured subnets for
+     * the load balancer.
      * </p>
      * <p>
-     * After a subnet is removed all of the EC2 instances registered with
-     * the load balancer that are in the removed subnet will go into the
-     * <i>OutOfService</i> state. When a subnet is removed, the load balancer
-     * will balance the traffic among the remaining routable subnets for the
-     * load balancer.
+     * After a subnet is removed, all EC2 instances registered with the load
+     * balancer in the removed subnet go into the <code>OutOfService</code>
+     * state. Then, the load balancer balances the traffic among the
+     * remaining routable subnets.
      * </p>
      *
      * @param detachLoadBalancerFromSubnetsRequest Container for the
@@ -534,15 +495,14 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Removes subnets from the set of configured subnets in the Amazon
-     * Virtual Private Cloud (Amazon VPC) for the load balancer.
+     * Removes the specified subnets from the set of configured subnets for
+     * the load balancer.
      * </p>
      * <p>
-     * After a subnet is removed all of the EC2 instances registered with
-     * the load balancer that are in the removed subnet will go into the
-     * <i>OutOfService</i> state. When a subnet is removed, the load balancer
-     * will balance the traffic among the remaining routable subnets for the
-     * load balancer.
+     * After a subnet is removed, all EC2 instances registered with the load
+     * balancer in the removed subnet go into the <code>OutOfService</code>
+     * state. Then, the load balancer balances the traffic among the
+     * remaining routable subnets.
      * </p>
      *
      * @param detachLoadBalancerFromSubnetsRequest Container for the
@@ -587,14 +547,13 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Adds one or more tags for the specified load balancer. Each load
-     * balancer can have a maximum of 10 tags. Each tag consists of a key and
-     * an optional value.
+     * Adds the specified tags to the specified load balancer. Each load
+     * balancer can have a maximum of 10 tags.
      * </p>
      * <p>
-     * Tag keys must be unique for each load balancer. If a tag with the
-     * same key is already associated with the load balancer, this action
-     * will update the value of the key.
+     * Each tag consists of a key and an optional value. If a tag with the
+     * same key is already associated with the load balancer,
+     * <code>AddTags</code> updates its value.
      * </p>
      * <p>
      * For more information, see
@@ -628,14 +587,13 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Adds one or more tags for the specified load balancer. Each load
-     * balancer can have a maximum of 10 tags. Each tag consists of a key and
-     * an optional value.
+     * Adds the specified tags to the specified load balancer. Each load
+     * balancer can have a maximum of 10 tags.
      * </p>
      * <p>
-     * Tag keys must be unique for each load balancer. If a tag with the
-     * same key is already associated with the load balancer, this action
-     * will update the value of the key.
+     * Each tag consists of a key and an optional value. If a tag with the
+     * same key is already associated with the load balancer,
+     * <code>AddTags</code> updates its value.
      * </p>
      * <p>
      * For more information, see
@@ -683,7 +641,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Modifies the attributes of a specified load balancer.
+     * Modifies the attributes of the specified load balancer.
      * </p>
      * <p>
      * You can modify the load balancer attributes, such as
@@ -694,7 +652,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * timeout value for your load balancer.
      * </p>
      * <p>
-     * For more information, see the following:
+     * For more information, see the following in the <i>Elastic Load
+     * Balancing Developer Guide</i> :
      * </p>
      * 
      * <ul>
@@ -741,7 +700,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Modifies the attributes of a specified load balancer.
+     * Modifies the attributes of the specified load balancer.
      * </p>
      * <p>
      * You can modify the load balancer attributes, such as
@@ -752,7 +711,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * timeout value for your load balancer.
      * </p>
      * <p>
-     * For more information, see the following:
+     * For more information, see the following in the <i>Elastic Load
+     * Balancing Developer Guide</i> :
      * </p>
      * 
      * <ul>
@@ -813,10 +773,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Creates one or more listeners on a load balancer for the specified
-     * port. If a listener with the given port does not already exist, it
-     * will be created; otherwise, the properties of the new listener must
-     * match the properties of the existing listener.
+     * Creates one or more listeners for the specified load balancer. If a
+     * listener with the specified port does not already exist, it is
+     * created; otherwise, the properties of the new listener must match the
+     * properties of the existing listener.
      * </p>
      * <p>
      * For more information, see
@@ -853,10 +813,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Creates one or more listeners on a load balancer for the specified
-     * port. If a listener with the given port does not already exist, it
-     * will be created; otherwise, the properties of the new listener must
-     * match the properties of the existing listener.
+     * Creates one or more listeners for the specified load balancer. If a
+     * listener with the specified port does not already exist, it is
+     * created; otherwise, the properties of the new listener must match the
+     * properties of the existing listener.
      * </p>
      * <p>
      * For more information, see
@@ -905,7 +865,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Deletes listeners from the load balancer for the specified port.
+     * Deletes the specified listeners from the specified load balancer.
      * </p>
      *
      * @param deleteLoadBalancerListenersRequest Container for the necessary
@@ -937,7 +897,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Deletes listeners from the load balancer for the specified port.
+     * Deletes the specified listeners from the specified load balancer.
      * </p>
      *
      * @param deleteLoadBalancerListenersRequest Container for the necessary
@@ -988,24 +948,19 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * <p>
      * This policy is similar to the policy created by
      * CreateLBCookieStickinessPolicy, except that the lifetime of the
-     * special Elastic Load Balancing cookie follows the lifetime of the
-     * application-generated cookie specified in the policy configuration.
-     * The load balancer only inserts a new stickiness cookie when the
-     * application response includes a new application cookie.
+     * special Elastic Load Balancing cookie, <code>AWSELB</code> , follows
+     * the lifetime of the application-generated cookie specified in the
+     * policy configuration. The load balancer only inserts a new stickiness
+     * cookie when the application response includes a new application
+     * cookie.
      * </p>
      * <p>
      * If the application cookie is explicitly removed or expires, the
      * session stops being sticky until a new application cookie is issued.
      * </p>
      * <p>
-     * <b>NOTE:</b> An application client must receive and send two cookies:
-     * the application-generated cookie and the special Elastic Load
-     * Balancing cookie named AWSELB. This is the default behavior for many
-     * common web browsers.
-     * </p>
-     * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Enabling Application-Controlled Session Stickiness </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Application-Controlled Session Stickiness </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -1044,24 +999,19 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * <p>
      * This policy is similar to the policy created by
      * CreateLBCookieStickinessPolicy, except that the lifetime of the
-     * special Elastic Load Balancing cookie follows the lifetime of the
-     * application-generated cookie specified in the policy configuration.
-     * The load balancer only inserts a new stickiness cookie when the
-     * application response includes a new application cookie.
+     * special Elastic Load Balancing cookie, <code>AWSELB</code> , follows
+     * the lifetime of the application-generated cookie specified in the
+     * policy configuration. The load balancer only inserts a new stickiness
+     * cookie when the application response includes a new application
+     * cookie.
      * </p>
      * <p>
      * If the application cookie is explicitly removed or expires, the
      * session stops being sticky until a new application cookie is issued.
      * </p>
      * <p>
-     * <b>NOTE:</b> An application client must receive and send two cookies:
-     * the application-generated cookie and the special Elastic Load
-     * Balancing cookie named AWSELB. This is the default behavior for many
-     * common web browsers.
-     * </p>
-     * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Enabling Application-Controlled Session Stickiness </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Application-Controlled Session Stickiness </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -1107,13 +1057,13 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Associates one or more security groups with your load balancer in
-     * Amazon Virtual Private Cloud (Amazon VPC). The provided security group
-     * IDs will override any currently applied security groups.
+     * Associates one or more security groups with your load balancer in a
+     * virtual private cloud (VPC). The specified security groups override
+     * the previously associated security groups.
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html"> Manage Security Groups in Amazon VPC </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html"> Manage Security Groups for Amazon VPC </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -1145,13 +1095,13 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Associates one or more security groups with your load balancer in
-     * Amazon Virtual Private Cloud (Amazon VPC). The provided security group
-     * IDs will override any currently applied security groups.
+     * Associates one or more security groups with your load balancer in a
+     * virtual private cloud (VPC). The specified security groups override
+     * the previously associated security groups.
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html"> Manage Security Groups in Amazon VPC </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html"> Manage Security Groups for Amazon VPC </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -1197,14 +1147,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Returns detailed descriptions of the policies. If you specify a load
-     * balancer name, the action returns the descriptions of all the policies
-     * created for the load balancer. If you specify a policy name associated
-     * with your load balancer, the action returns the description of that
-     * policy. If you don't specify a load balancer name, the action returns
-     * descriptions of the specified sample policies, or descriptions of all
-     * the sample policies. The names of the sample policies have the
-     * <code>ELBSample-</code> prefix.
+     * Describes the specified policies.
+     * </p>
+     * <p>
+     * If you specify a load balancer name, the action returns the
+     * descriptions of all policies created for the load balancer. If you
+     * specify a policy name associated with your load balancer, the action
+     * returns the description of that policy. If you don't specify a load
+     * balancer name, the action returns descriptions of the specified sample
+     * policies, or descriptions of all sample policies. The names of the
+     * sample policies have the <code>ELBSample-</code> prefix.
      * </p>
      *
      * @param describeLoadBalancerPoliciesRequest Container for the necessary
@@ -1235,14 +1187,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Returns detailed descriptions of the policies. If you specify a load
-     * balancer name, the action returns the descriptions of all the policies
-     * created for the load balancer. If you specify a policy name associated
-     * with your load balancer, the action returns the description of that
-     * policy. If you don't specify a load balancer name, the action returns
-     * descriptions of the specified sample policies, or descriptions of all
-     * the sample policies. The names of the sample policies have the
-     * <code>ELBSample-</code> prefix.
+     * Describes the specified policies.
+     * </p>
+     * <p>
+     * If you specify a load balancer name, the action returns the
+     * descriptions of all policies created for the load balancer. If you
+     * specify a policy name associated with your load balancer, the action
+     * returns the description of that policy. If you don't specify a load
+     * balancer name, the action returns descriptions of the specified sample
+     * policies, or descriptions of all sample policies. The names of the
+     * sample policies have the <code>ELBSample-</code> prefix.
      * </p>
      *
      * @param describeLoadBalancerPoliciesRequest Container for the necessary
@@ -1287,8 +1241,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Associates, updates, or disables a policy with a listener on the load
-     * balancer. You can associate multiple policies with a listener.
+     * Associates, updates, or disables a policy with a listener for the
+     * specified load balancer. You can associate multiple policies with a
+     * listener.
      * </p>
      *
      * @param setLoadBalancerPoliciesOfListenerRequest Container for the
@@ -1319,8 +1274,9 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Associates, updates, or disables a policy with a listener on the load
-     * balancer. You can associate multiple policies with a listener.
+     * Associates, updates, or disables a policy with a listener for the
+     * specified load balancer. You can associate multiple policies with a
+     * listener.
      * </p>
      *
      * @param setLoadBalancerPoliciesOfListenerRequest Container for the
@@ -1365,18 +1321,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Removes the specified EC2 Availability Zones from the set of
-     * configured Availability Zones for the load balancer.
+     * Removes the specified Availability Zones from the set of Availability
+     * Zones for the specified load balancer.
      * </p>
      * <p>
      * There must be at least one Availability Zone registered with a load
-     * balancer at all times. Once an Availability Zone is removed, all the
+     * balancer at all times. After an Availability Zone is removed, all
      * instances registered with the load balancer that are in the removed
-     * Availability Zone go into the <i>OutOfService</i> state. Upon
-     * Availability Zone removal, the load balancer attempts to equally
-     * balance the traffic among its remaining usable Availability Zones.
-     * Trying to remove an Availability Zone that was not associated with the
-     * load balancer does nothing.
+     * Availability Zone go into the <code>OutOfService</code> state. Then,
+     * the load balancer attempts to equally balance the traffic among its
+     * remaining Availability Zones.
      * </p>
      * <p>
      * For more information, see
@@ -1413,18 +1367,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Removes the specified EC2 Availability Zones from the set of
-     * configured Availability Zones for the load balancer.
+     * Removes the specified Availability Zones from the set of Availability
+     * Zones for the specified load balancer.
      * </p>
      * <p>
      * There must be at least one Availability Zone registered with a load
-     * balancer at all times. Once an Availability Zone is removed, all the
+     * balancer at all times. After an Availability Zone is removed, all
      * instances registered with the load balancer that are in the removed
-     * Availability Zone go into the <i>OutOfService</i> state. Upon
-     * Availability Zone removal, the load balancer attempts to equally
-     * balance the traffic among its remaining usable Availability Zones.
-     * Trying to remove an Availability Zone that was not associated with the
-     * load balancer does nothing.
+     * Availability Zone go into the <code>OutOfService</code> state. Then,
+     * the load balancer attempts to equally balance the traffic among its
+     * remaining Availability Zones.
      * </p>
      * <p>
      * For more information, see
@@ -1475,13 +1427,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Returns the current state of the specified instances registered with
-     * the specified load balancer. If no instances are specified, the state
-     * of all the instances registered with the load balancer is returned.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must provide the same account credentials as those
-     * that were used to create the load balancer.
+     * Describes the state of the specified instances registered with the
+     * specified load balancer. If no instances are specified, the call
+     * describes the state of all instances registered with the load
+     * balancer, not including any terminated instances.
      * </p>
      *
      * @param describeInstanceHealthRequest Container for the necessary
@@ -1512,13 +1461,10 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Returns the current state of the specified instances registered with
-     * the specified load balancer. If no instances are specified, the state
-     * of all the instances registered with the load balancer is returned.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must provide the same account credentials as those
-     * that were used to create the load balancer.
+     * Describes the state of the specified instances registered with the
+     * specified load balancer. If no instances are specified, the call
+     * describes the state of all instances registered with the load
+     * balancer, not including any terminated instances.
      * </p>
      *
      * @param describeInstanceHealthRequest Container for the necessary
@@ -1563,8 +1509,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Deletes a policy from the load balancer. The specified policy must
-     * not be enabled for any listeners.
+     * Deletes the specified policy from the specified load balancer. This
+     * policy must not be enabled for any listeners.
      * </p>
      *
      * @param deleteLoadBalancerPolicyRequest Container for the necessary
@@ -1595,8 +1541,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Deletes a policy from the load balancer. The specified policy must
-     * not be enabled for any listeners.
+     * Deletes the specified policy from the specified load balancer. This
+     * policy must not be enabled for any listeners.
      * </p>
      *
      * @param deleteLoadBalancerPolicyRequest Container for the necessary
@@ -1641,7 +1587,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Describes the tags associated with one or more load balancers.
+     * Describes the tags associated with the specified load balancers.
      * </p>
      *
      * @param describeTagsRequest Container for the necessary parameters to
@@ -1671,7 +1617,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Describes the tags associated with one or more load balancers.
+     * Describes the tags associated with the specified load balancers.
      * </p>
      *
      * @param describeTagsRequest Container for the necessary parameters to
@@ -1715,10 +1661,13 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Creates a new policy that contains the necessary attributes depending
-     * on the policy type. Policies are settings that are saved for your load
-     * balancer and that can be applied to the front-end listener, or the
-     * back-end application server, depending on your policy type.
+     * Creates a policy with the specified attributes for the specified load
+     * balancer.
+     * </p>
+     * <p>
+     * Policies are settings that are saved for your load balancer and that
+     * can be applied to the front-end listener or the back-end application
+     * server, depending on the policy type.
      * </p>
      *
      * @param createLoadBalancerPolicyRequest Container for the necessary
@@ -1749,10 +1698,13 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Creates a new policy that contains the necessary attributes depending
-     * on the policy type. Policies are settings that are saved for your load
-     * balancer and that can be applied to the front-end listener, or the
-     * back-end application server, depending on your policy type.
+     * Creates a policy with the specified attributes for the specified load
+     * balancer.
+     * </p>
+     * <p>
+     * Policies are settings that are saved for your load balancer and that
+     * can be applied to the front-end listener or the back-end application
+     * server, depending on the policy type.
      * </p>
      *
      * @param createLoadBalancerPolicyRequest Container for the necessary
@@ -1869,20 +1821,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Adds one or more EC2 Availability Zones to the load balancer.
+     * Adds the specified Availability Zones to the set of Availability
+     * Zones for the specified load balancer.
      * </p>
      * <p>
      * The load balancer evenly distributes requests across all its
      * registered Availability Zones that contain instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> The new EC2 Availability Zones to be added must be in
-     * the same EC2 Region as the Availability Zones for which the load
-     * balancer was created.
-     * </p>
-     * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"> Expand a Load Balanced Application to an Additional Availability Zone </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"> Add Availability Zone </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -1915,20 +1863,16 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Adds one or more EC2 Availability Zones to the load balancer.
+     * Adds the specified Availability Zones to the set of Availability
+     * Zones for the specified load balancer.
      * </p>
      * <p>
      * The load balancer evenly distributes requests across all its
      * registered Availability Zones that contain instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> The new EC2 Availability Zones to be added must be in
-     * the same EC2 Region as the Availability Zones for which the load
-     * balancer was created.
-     * </p>
-     * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"> Expand a Load Balanced Application to an Additional Availability Zone </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"> Add Availability Zone </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -1978,20 +1922,15 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * Deletes the specified load balancer.
      * </p>
      * <p>
-     * If attempting to recreate the load balancer, you must reconfigure all
-     * the settings. The DNS name associated with a deleted load balancer
-     * will no longer be usable. Once deleted, the name and associated DNS
-     * record of the load balancer no longer exist and traffic sent to any of
-     * its IP addresses will no longer be delivered to back-end instances.
+     * If you are attempting to recreate a load balancer, you must
+     * reconfigure all settings. The DNS name associated with a deleted load
+     * balancer are no longer usable. The name and associated DNS record of
+     * the deleted load balancer no longer exist and traffic sent to any of
+     * its IP addresses is no longer delivered to back-end instances.
      * </p>
      * <p>
-     * To successfully call this API, you must provide the same account
-     * credentials as were used to create the load balancer.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> By design, if the load balancer does not exist or has
-     * already been deleted, a call to DeleteLoadBalancer action still
-     * succeeds.
+     * If the load balancer does not exist or has already been deleted, the
+     * call to <code>DeleteLoadBalancer</code> still succeeds.
      * </p>
      *
      * @param deleteLoadBalancerRequest Container for the necessary
@@ -2026,20 +1965,15 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * Deletes the specified load balancer.
      * </p>
      * <p>
-     * If attempting to recreate the load balancer, you must reconfigure all
-     * the settings. The DNS name associated with a deleted load balancer
-     * will no longer be usable. Once deleted, the name and associated DNS
-     * record of the load balancer no longer exist and traffic sent to any of
-     * its IP addresses will no longer be delivered to back-end instances.
+     * If you are attempting to recreate a load balancer, you must
+     * reconfigure all settings. The DNS name associated with a deleted load
+     * balancer are no longer usable. The name and associated DNS record of
+     * the deleted load balancer no longer exist and traffic sent to any of
+     * its IP addresses is no longer delivered to back-end instances.
      * </p>
      * <p>
-     * To successfully call this API, you must provide the same account
-     * credentials as were used to create the load balancer.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> By design, if the load balancer does not exist or has
-     * already been deleted, a call to DeleteLoadBalancer action still
-     * succeeds.
+     * If the load balancer does not exist or has already been deleted, the
+     * call to <code>DeleteLoadBalancer</code> still succeeds.
      * </p>
      *
      * @param deleteLoadBalancerRequest Container for the necessary
@@ -2083,54 +2017,40 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Creates a new load balancer.
+     * Creates a load balancer.
      * </p>
      * <p>
-     * After the call has completed successfully, a new load balancer is
-     * created with a unique Domain Name Service (DNS) name. The DNS name
-     * includes the name of the AWS region in which the load balance was
-     * created. For example, if your load balancer was created in the United
-     * States, the DNS name might end with either of the following:
+     * If the call completes successfully, a new load balancer is created
+     * with a unique Domain Name Service (DNS) name. The DNS name includes
+     * the name of the AWS region in which the load balancer was created. For
+     * example, the DNS name might end with either of the following:
      * </p>
      * 
      * <ul>
-     * <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia
-     * region) </li>
-     * <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California
-     * region) </li>
+     * <li> <code>us-east-1.elb.amazonaws.com</code> </li>
+     * <li> <code>us-west-2.elb.amazonaws.com</code> </li>
      * 
      * </ul>
      * <p>
      * For information about the AWS regions supported by Elastic Load
      * Balancing, see
      * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a>
-     * .
+     * in the <i>Amazon Web Services General Reference</i> .
      * </p>
      * <p>
-     * You can create up to 20 load balancers per region per account.
+     * You can create up to 20 load balancers per region per account. You
+     * can request an increase for the number of load balancers for your
+     * account. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-limits.html"> Elastic Load Balancing Limits </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      * <p>
-     * Elastic Load Balancing supports load balancing your Amazon EC2
-     * instances launched within any one of the following platforms:
+     * Elastic Load Balancing supports load balancing your EC2 instances
+     * launched in either the EC2-Classic or EC2-VPC platform. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Elastic Load Balancing in EC2-Classic </a> or <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Elastic Load Balancing in a VPC </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
-     * 
-     * <ul>
-     * <li> <i>EC2-Classic</i> <p>
-     * For information on creating and managing your load balancers in
-     * EC2-Classic, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Deploy Elastic Load Balancing in Amazon EC2-Classic </a>
-     * .
-     * </p>
-     * </li>
-     * <li> <i>EC2-VPC</i> <p>
-     * For information on creating and managing your load balancers in
-     * EC2-VPC, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
-     * .
-     * </p>
-     * </li>
-     * 
-     * </ul>
      *
      * @param createLoadBalancerRequest Container for the necessary
      *           parameters to execute the CreateLoadBalancer operation on
@@ -2160,54 +2080,40 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Creates a new load balancer.
+     * Creates a load balancer.
      * </p>
      * <p>
-     * After the call has completed successfully, a new load balancer is
-     * created with a unique Domain Name Service (DNS) name. The DNS name
-     * includes the name of the AWS region in which the load balance was
-     * created. For example, if your load balancer was created in the United
-     * States, the DNS name might end with either of the following:
+     * If the call completes successfully, a new load balancer is created
+     * with a unique Domain Name Service (DNS) name. The DNS name includes
+     * the name of the AWS region in which the load balancer was created. For
+     * example, the DNS name might end with either of the following:
      * </p>
      * 
      * <ul>
-     * <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia
-     * region) </li>
-     * <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California
-     * region) </li>
+     * <li> <code>us-east-1.elb.amazonaws.com</code> </li>
+     * <li> <code>us-west-2.elb.amazonaws.com</code> </li>
      * 
      * </ul>
      * <p>
      * For information about the AWS regions supported by Elastic Load
      * Balancing, see
      * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a>
-     * .
+     * in the <i>Amazon Web Services General Reference</i> .
      * </p>
      * <p>
-     * You can create up to 20 load balancers per region per account.
+     * You can create up to 20 load balancers per region per account. You
+     * can request an increase for the number of load balancers for your
+     * account. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-limits.html"> Elastic Load Balancing Limits </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      * <p>
-     * Elastic Load Balancing supports load balancing your Amazon EC2
-     * instances launched within any one of the following platforms:
+     * Elastic Load Balancing supports load balancing your EC2 instances
+     * launched in either the EC2-Classic or EC2-VPC platform. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Elastic Load Balancing in EC2-Classic </a> or <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Elastic Load Balancing in a VPC </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
-     * 
-     * <ul>
-     * <li> <i>EC2-Classic</i> <p>
-     * For information on creating and managing your load balancers in
-     * EC2-Classic, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Deploy Elastic Load Balancing in Amazon EC2-Classic </a>
-     * .
-     * </p>
-     * </li>
-     * <li> <i>EC2-VPC</i> <p>
-     * For information on creating and managing your load balancers in
-     * EC2-VPC, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
-     * .
-     * </p>
-     * </li>
-     * 
-     * </ul>
      *
      * @param createLoadBalancerRequest Container for the necessary
      *           parameters to execute the CreateLoadBalancer operation on
@@ -2251,23 +2157,21 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Replaces the current set of policies associated with a port on which
-     * the back-end server is listening with a new set of policies. After the
-     * policies have been created using CreateLoadBalancerPolicy, they can be
-     * applied here as a list. At this time, only the back-end server
-     * authentication policy type can be applied to the back-end ports; this
-     * policy type is composed of multiple public key policies.
+     * Replaces the set of policies associated with the specified port on
+     * which the back-end server is listening with a new set of policies. At
+     * this time, only the back-end server authentication policy type can be
+     * applied to the back-end ports; this policy type is composed of
+     * multiple public key policies.
      * </p>
      * <p>
-     * <b>NOTE:</b> The SetLoadBalancerPoliciesForBackendServer replaces the
-     * current set of policies associated with the specified instance port.
-     * Every time you use this action to enable the policies, use the
-     * PolicyNames parameter to list all the policies you want to enable.
+     * Each time you use
+     * <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the
+     * policies, use the <code>PolicyNames</code> parameter to list the
+     * policies that you want to enable.
      * </p>
      * <p>
-     * You can use DescribeLoadBalancers or DescribeLoadBalancerPolicies
-     * action to verify that the policy has been associated with the back-end
-     * server.
+     * You can use DescribeLoadBalancers or DescribeLoadBalancerPolicies to
+     * verify that the policy is associated with the back-end server.
      * </p>
      *
      * @param setLoadBalancerPoliciesForBackendServerRequest Container for
@@ -2299,23 +2203,21 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Replaces the current set of policies associated with a port on which
-     * the back-end server is listening with a new set of policies. After the
-     * policies have been created using CreateLoadBalancerPolicy, they can be
-     * applied here as a list. At this time, only the back-end server
-     * authentication policy type can be applied to the back-end ports; this
-     * policy type is composed of multiple public key policies.
+     * Replaces the set of policies associated with the specified port on
+     * which the back-end server is listening with a new set of policies. At
+     * this time, only the back-end server authentication policy type can be
+     * applied to the back-end ports; this policy type is composed of
+     * multiple public key policies.
      * </p>
      * <p>
-     * <b>NOTE:</b> The SetLoadBalancerPoliciesForBackendServer replaces the
-     * current set of policies associated with the specified instance port.
-     * Every time you use this action to enable the policies, use the
-     * PolicyNames parameter to list all the policies you want to enable.
+     * Each time you use
+     * <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the
+     * policies, use the <code>PolicyNames</code> parameter to list the
+     * policies that you want to enable.
      * </p>
      * <p>
-     * You can use DescribeLoadBalancers or DescribeLoadBalancerPolicies
-     * action to verify that the policy has been associated with the back-end
-     * server.
+     * You can use DescribeLoadBalancers or DescribeLoadBalancerPolicies to
+     * verify that the policy is associated with the back-end server.
      * </p>
      *
      * @param setLoadBalancerPoliciesForBackendServerRequest Container for
@@ -2361,21 +2263,18 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Deregisters instances from the load balancer. Once the instance is
-     * deregistered, it will stop receiving traffic from the load balancer.
+     * Deregisters the specified instances from the specified load balancer.
+     * After the instance is deregistered, it no longer receives traffic from
+     * the load balancer.
      * </p>
      * <p>
-     * In order to successfully call this API, the same account credentials
-     * as those used to create the load balancer must be provided.
+     * You can use DescribeLoadBalancers to verify that the instance is
+     * deregistered from the load balancer.
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> Deregister and Register Amazon EC2 Instances </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
-     * </p>
-     * <p>
-     * You can use DescribeLoadBalancers to verify if the instance is
-     * deregistered from the load balancer.
      * </p>
      *
      * @param deregisterInstancesFromLoadBalancerRequest Container for the
@@ -2407,21 +2306,18 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Deregisters instances from the load balancer. Once the instance is
-     * deregistered, it will stop receiving traffic from the load balancer.
+     * Deregisters the specified instances from the specified load balancer.
+     * After the instance is deregistered, it no longer receives traffic from
+     * the load balancer.
      * </p>
      * <p>
-     * In order to successfully call this API, the same account credentials
-     * as those used to create the load balancer must be provided.
+     * You can use DescribeLoadBalancers to verify that the instance is
+     * deregistered from the load balancer.
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> Deregister and Register Amazon EC2 Instances </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
-     * </p>
-     * <p>
-     * You can use DescribeLoadBalancers to verify if the instance is
-     * deregistered from the load balancer.
      * </p>
      *
      * @param deregisterInstancesFromLoadBalancerRequest Container for the
@@ -2472,7 +2368,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * that was used on the same load balancer and port.
      * </p>
      * <p>
-     * For more information on updating your SSL certificate, see
+     * For more information about updating your SSL certificate, see
      * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate for a Load Balancer </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
@@ -2512,7 +2408,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * that was used on the same load balancer and port.
      * </p>
      * <p>
-     * For more information on updating your SSL certificate, see
+     * For more information about updating your SSL certificate, see
      * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate for a Load Balancer </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
@@ -2559,8 +2455,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Returns detailed information about all of the attributes associated
-     * with the specified load balancer.
+     * Describes the attributes for the specified load balancer.
      * </p>
      *
      * @param describeLoadBalancerAttributesRequest Container for the
@@ -2591,8 +2486,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Returns detailed information about all of the attributes associated
-     * with the specified load balancer.
+     * Describes the attributes for the specified load balancer.
      * </p>
      *
      * @param describeLoadBalancerAttributesRequest Container for the
@@ -2644,12 +2538,12 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * </p>
      * <p>
      * When a load balancer implements this policy, the load balancer uses a
-     * special cookie to track the backend server instance for each request.
+     * special cookie to track the back-end server instance for each request.
      * When the load balancer receives a request, it first checks to see if
      * this cookie is present in the request. If so, the load balancer sends
      * the request to the application server specified in the cookie. If not,
      * the load balancer sends the request to a server that is chosen based
-     * on the existing load balancing algorithm.
+     * on the existing load-balancing algorithm.
      * </p>
      * <p>
      * A cookie is inserted into the response for binding subsequent
@@ -2659,7 +2553,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies"> Enabling Duration-Based Session Stickiness </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies"> Duration-Based Session Stickiness </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -2698,12 +2592,12 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * </p>
      * <p>
      * When a load balancer implements this policy, the load balancer uses a
-     * special cookie to track the backend server instance for each request.
+     * special cookie to track the back-end server instance for each request.
      * When the load balancer receives a request, it first checks to see if
      * this cookie is present in the request. If so, the load balancer sends
      * the request to the application server specified in the cookie. If not,
      * the load balancer sends the request to a server that is chosen based
-     * on the existing load balancing algorithm.
+     * on the existing load-balancing algorithm.
      * </p>
      * <p>
      * A cookie is inserted into the response for binding subsequent
@@ -2713,7 +2607,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies"> Enabling Duration-Based Session Stickiness </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies"> Duration-Based Session Stickiness </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -2759,13 +2653,13 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Adds one or more subnets to the set of configured subnets in the
-     * Amazon Virtual Private Cloud (Amazon VPC) for the load balancer.
+     * Adds one or more subnets to the set of configured subnets for the
+     * specified load balancer.
      * </p>
      * <p>
-     * The load balancers evenly distribute requests across all of the
-     * registered subnets. For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
+     * The load balancer evenly distributes requests across all registered
+     * subnets. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Elastic Load Balancing in Amazon VPC </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -2797,13 +2691,13 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Adds one or more subnets to the set of configured subnets in the
-     * Amazon Virtual Private Cloud (Amazon VPC) for the load balancer.
+     * Adds one or more subnets to the set of configured subnets for the
+     * specified load balancer.
      * </p>
      * <p>
-     * The load balancers evenly distribute requests across all of the
-     * registered subnets. For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
+     * The load balancer evenly distributes requests across all registered
+     * subnets. For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Elastic Load Balancing in Amazon VPC </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      *
@@ -2849,43 +2743,43 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Adds new instances to the load balancer.
+     * Adds the specified instances to the specified load balancer.
      * </p>
      * <p>
-     * Once the instance is registered, it starts receiving traffic and
-     * requests from the load balancer. Any instance that is not in any of
-     * the Availability Zones registered for the load balancer will be moved
-     * to the <i>OutOfService</i> state. It will move to the <i>InService</i>
-     * state when the Availability Zone is added to the load balancer.
+     * The instance must be a running instance in the same network as the
+     * load balancer (EC2-Classic or the same VPC). If you have EC2-Classic
+     * instances and a load balancer in a VPC with ClassicLink enabled, you
+     * can link the EC2-Classic instances to that VPC and then register the
+     * linked EC2-Classic instances with the load balancer in the VPC.
      * </p>
      * <p>
-     * When an instance registered with a load balancer is stopped and then
-     * restarted, the IP addresses associated with the instance changes.
+     * Note that <code>RegisterInstanceWithLoadBalancer</code> completes
+     * when the request has been registered. Instance registration happens
+     * shortly afterwards. To check the state of the registered instances,
+     * use DescribeLoadBalancers or DescribeInstanceHealth.
+     * </p>
+     * <p>
+     * After the instance is registered, it starts receiving traffic and
+     * requests from the load balancer. Any instance that is not in one of
+     * the Availability Zones registered for the load balancer is moved to
+     * the <code>OutOfService</code> state. If an Availability Zone is added
+     * to the load balancer later, any instances registered with the load
+     * balancer move to the <code>InService</code> state.
+     * </p>
+     * <p>
+     * If you stop an instance registered with a load balancer and then
+     * start it, the IP addresses associated with the instance changes.
      * Elastic Load Balancing cannot recognize the new IP address, which
      * prevents it from routing traffic to the instances. We recommend that
-     * you de-register your Amazon EC2 instances from your load balancer
-     * after you stop your instance, and then register the load balancer with
-     * your instance after you've restarted. To de-register your instances
-     * from load balancer, use DeregisterInstancesFromLoadBalancer action.
+     * you use the following sequence: stop the instance, deregister the
+     * instance, start the instance, and then register the instance. To
+     * deregister instances from a load balancer, use
+     * DeregisterInstancesFromLoadBalancer.
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> Deregister and Register EC2 Instances </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
-     * </p>
-     * <p>
-     * <b>NOTE:</b> In order for this call to be successful, you must
-     * provide the same account credentials as those that were used to create
-     * the load balancer.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Completion of this API does not guarantee that operation
-     * has completed. Rather, it means that the request has been registered
-     * and the changes will happen shortly.
-     * </p>
-     * <p>
-     * You can use DescribeLoadBalancers or DescribeInstanceHealth action to
-     * check the state of the newly registered instances.
      * </p>
      *
      * @param registerInstancesWithLoadBalancerRequest Container for the
@@ -2916,43 +2810,43 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Adds new instances to the load balancer.
+     * Adds the specified instances to the specified load balancer.
      * </p>
      * <p>
-     * Once the instance is registered, it starts receiving traffic and
-     * requests from the load balancer. Any instance that is not in any of
-     * the Availability Zones registered for the load balancer will be moved
-     * to the <i>OutOfService</i> state. It will move to the <i>InService</i>
-     * state when the Availability Zone is added to the load balancer.
+     * The instance must be a running instance in the same network as the
+     * load balancer (EC2-Classic or the same VPC). If you have EC2-Classic
+     * instances and a load balancer in a VPC with ClassicLink enabled, you
+     * can link the EC2-Classic instances to that VPC and then register the
+     * linked EC2-Classic instances with the load balancer in the VPC.
      * </p>
      * <p>
-     * When an instance registered with a load balancer is stopped and then
-     * restarted, the IP addresses associated with the instance changes.
+     * Note that <code>RegisterInstanceWithLoadBalancer</code> completes
+     * when the request has been registered. Instance registration happens
+     * shortly afterwards. To check the state of the registered instances,
+     * use DescribeLoadBalancers or DescribeInstanceHealth.
+     * </p>
+     * <p>
+     * After the instance is registered, it starts receiving traffic and
+     * requests from the load balancer. Any instance that is not in one of
+     * the Availability Zones registered for the load balancer is moved to
+     * the <code>OutOfService</code> state. If an Availability Zone is added
+     * to the load balancer later, any instances registered with the load
+     * balancer move to the <code>InService</code> state.
+     * </p>
+     * <p>
+     * If you stop an instance registered with a load balancer and then
+     * start it, the IP addresses associated with the instance changes.
      * Elastic Load Balancing cannot recognize the new IP address, which
      * prevents it from routing traffic to the instances. We recommend that
-     * you de-register your Amazon EC2 instances from your load balancer
-     * after you stop your instance, and then register the load balancer with
-     * your instance after you've restarted. To de-register your instances
-     * from load balancer, use DeregisterInstancesFromLoadBalancer action.
+     * you use the following sequence: stop the instance, deregister the
+     * instance, start the instance, and then register the instance. To
+     * deregister instances from a load balancer, use
+     * DeregisterInstancesFromLoadBalancer.
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon EC2 Instances </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> Deregister and Register EC2 Instances </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
-     * </p>
-     * <p>
-     * <b>NOTE:</b> In order for this call to be successful, you must
-     * provide the same account credentials as those that were used to create
-     * the load balancer.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Completion of this API does not guarantee that operation
-     * has completed. Rather, it means that the request has been registered
-     * and the changes will happen shortly.
-     * </p>
-     * <p>
-     * You can use DescribeLoadBalancers or DescribeInstanceHealth action to
-     * check the state of the newly registered instances.
      * </p>
      *
      * @param registerInstancesWithLoadBalancerRequest Container for the
@@ -2997,15 +2891,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Returns detailed configuration information for all the load balancers
-     * created for the account. If you specify load balancer names, the
-     * action returns configuration information of the specified load
-     * balancers.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> In order to retrieve this information, you must provide
-     * the same account credentials that was used to create the load
-     * balancer.
+     * Describes the specified the load balancers. If no load balancers are
+     * specified, the call describes all of your load balancers.
      * </p>
      *
      * @param describeLoadBalancersRequest Container for the necessary
@@ -3036,15 +2923,8 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
     /**
      * <p>
-     * Returns detailed configuration information for all the load balancers
-     * created for the account. If you specify load balancer names, the
-     * action returns configuration information of the specified load
-     * balancers.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> In order to retrieve this information, you must provide
-     * the same account credentials that was used to create the load
-     * balancer.
+     * Describes the specified the load balancers. If no load balancers are
+     * specified, the call describes all of your load balancers.
      * </p>
      *
      * @param describeLoadBalancersRequest Container for the necessary

@@ -127,10 +127,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * [EC2-VPC] Changes the security groups of the instance. You must
      * specify at least one security group, even if it's just the default
      * security group for the VPC. You must specify the security group ID,
-     * not the security group name. <p>For example, if you want the instance
-     * to be in sg-1a1a1a1a and sg-9b9b9b9b, specify
-     * <code>GroupId.1=sg-1a1a1a1a</code> and
-     * <code>GroupId.2=sg-9b9b9b9b</code>.
+     * not the security group name.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groups;
 
@@ -851,18 +848,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * [EC2-VPC] Changes the security groups of the instance. You must
      * specify at least one security group, even if it's just the default
      * security group for the VPC. You must specify the security group ID,
-     * not the security group name. <p>For example, if you want the instance
-     * to be in sg-1a1a1a1a and sg-9b9b9b9b, specify
-     * <code>GroupId.1=sg-1a1a1a1a</code> and
-     * <code>GroupId.2=sg-9b9b9b9b</code>.
+     * not the security group name.
      *
      * @return [EC2-VPC] Changes the security groups of the instance. You must
      *         specify at least one security group, even if it's just the default
      *         security group for the VPC. You must specify the security group ID,
-     *         not the security group name. <p>For example, if you want the instance
-     *         to be in sg-1a1a1a1a and sg-9b9b9b9b, specify
-     *         <code>GroupId.1=sg-1a1a1a1a</code> and
-     *         <code>GroupId.2=sg-9b9b9b9b</code>.
+     *         not the security group name.
      */
     public java.util.List<String> getGroups() {
         if (groups == null) {
@@ -876,18 +867,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * [EC2-VPC] Changes the security groups of the instance. You must
      * specify at least one security group, even if it's just the default
      * security group for the VPC. You must specify the security group ID,
-     * not the security group name. <p>For example, if you want the instance
-     * to be in sg-1a1a1a1a and sg-9b9b9b9b, specify
-     * <code>GroupId.1=sg-1a1a1a1a</code> and
-     * <code>GroupId.2=sg-9b9b9b9b</code>.
+     * not the security group name.
      *
      * @param groups [EC2-VPC] Changes the security groups of the instance. You must
      *         specify at least one security group, even if it's just the default
      *         security group for the VPC. You must specify the security group ID,
-     *         not the security group name. <p>For example, if you want the instance
-     *         to be in sg-1a1a1a1a and sg-9b9b9b9b, specify
-     *         <code>GroupId.1=sg-1a1a1a1a</code> and
-     *         <code>GroupId.2=sg-9b9b9b9b</code>.
+     *         not the security group name.
      */
     public void setGroups(java.util.Collection<String> groups) {
         if (groups == null) {
@@ -903,10 +888,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * [EC2-VPC] Changes the security groups of the instance. You must
      * specify at least one security group, even if it's just the default
      * security group for the VPC. You must specify the security group ID,
-     * not the security group name. <p>For example, if you want the instance
-     * to be in sg-1a1a1a1a and sg-9b9b9b9b, specify
-     * <code>GroupId.1=sg-1a1a1a1a</code> and
-     * <code>GroupId.2=sg-9b9b9b9b</code>.
+     * not the security group name.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setGroups(java.util.Collection)} or {@link
@@ -918,10 +900,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * @param groups [EC2-VPC] Changes the security groups of the instance. You must
      *         specify at least one security group, even if it's just the default
      *         security group for the VPC. You must specify the security group ID,
-     *         not the security group name. <p>For example, if you want the instance
-     *         to be in sg-1a1a1a1a and sg-9b9b9b9b, specify
-     *         <code>GroupId.1=sg-1a1a1a1a</code> and
-     *         <code>GroupId.2=sg-9b9b9b9b</code>.
+     *         not the security group name.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -938,20 +917,14 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * [EC2-VPC] Changes the security groups of the instance. You must
      * specify at least one security group, even if it's just the default
      * security group for the VPC. You must specify the security group ID,
-     * not the security group name. <p>For example, if you want the instance
-     * to be in sg-1a1a1a1a and sg-9b9b9b9b, specify
-     * <code>GroupId.1=sg-1a1a1a1a</code> and
-     * <code>GroupId.2=sg-9b9b9b9b</code>.
+     * not the security group name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups [EC2-VPC] Changes the security groups of the instance. You must
      *         specify at least one security group, even if it's just the default
      *         security group for the VPC. You must specify the security group ID,
-     *         not the security group name. <p>For example, if you want the instance
-     *         to be in sg-1a1a1a1a and sg-9b9b9b9b, specify
-     *         <code>GroupId.1=sg-1a1a1a1a</code> and
-     *         <code>GroupId.2=sg-9b9b9b9b</code>.
+     *         not the security group name.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

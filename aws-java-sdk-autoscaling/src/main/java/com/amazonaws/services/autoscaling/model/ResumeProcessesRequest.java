@@ -43,10 +43,14 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements S
     private String autoScalingGroupName;
 
     /**
-     * One or more of the following processes: <ul> <li>Launch</li>
-     * <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
-     * <li>AZRebalance</li> <li>AlarmNotification</li>
-     * <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
+     * One or more of the following processes: <ul>
+     * <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
+     * <li><p><code>HealthCheck</code></li>
+     * <li><p><code>ReplaceUnhealthy</code></li>
+     * <li><p><code>AZRebalance</code></li>
+     * <li><p><code>AlarmNotification</code></li>
+     * <li><p><code>ScheduledActions</code></li>
+     * <li><p><code>AddToLoadBalancer</code></li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> scalingProcesses;
 
@@ -96,15 +100,23 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * One or more of the following processes: <ul> <li>Launch</li>
-     * <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
-     * <li>AZRebalance</li> <li>AlarmNotification</li>
-     * <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
+     * One or more of the following processes: <ul>
+     * <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
+     * <li><p><code>HealthCheck</code></li>
+     * <li><p><code>ReplaceUnhealthy</code></li>
+     * <li><p><code>AZRebalance</code></li>
+     * <li><p><code>AlarmNotification</code></li>
+     * <li><p><code>ScheduledActions</code></li>
+     * <li><p><code>AddToLoadBalancer</code></li> </ul>
      *
-     * @return One or more of the following processes: <ul> <li>Launch</li>
-     *         <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
-     *         <li>AZRebalance</li> <li>AlarmNotification</li>
-     *         <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
+     * @return One or more of the following processes: <ul>
+     *         <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
+     *         <li><p><code>HealthCheck</code></li>
+     *         <li><p><code>ReplaceUnhealthy</code></li>
+     *         <li><p><code>AZRebalance</code></li>
+     *         <li><p><code>AlarmNotification</code></li>
+     *         <li><p><code>ScheduledActions</code></li>
+     *         <li><p><code>AddToLoadBalancer</code></li> </ul>
      */
     public java.util.List<String> getScalingProcesses() {
         if (scalingProcesses == null) {
@@ -115,15 +127,23 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more of the following processes: <ul> <li>Launch</li>
-     * <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
-     * <li>AZRebalance</li> <li>AlarmNotification</li>
-     * <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
+     * One or more of the following processes: <ul>
+     * <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
+     * <li><p><code>HealthCheck</code></li>
+     * <li><p><code>ReplaceUnhealthy</code></li>
+     * <li><p><code>AZRebalance</code></li>
+     * <li><p><code>AlarmNotification</code></li>
+     * <li><p><code>ScheduledActions</code></li>
+     * <li><p><code>AddToLoadBalancer</code></li> </ul>
      *
-     * @param scalingProcesses One or more of the following processes: <ul> <li>Launch</li>
-     *         <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
-     *         <li>AZRebalance</li> <li>AlarmNotification</li>
-     *         <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
+     * @param scalingProcesses One or more of the following processes: <ul>
+     *         <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
+     *         <li><p><code>HealthCheck</code></li>
+     *         <li><p><code>ReplaceUnhealthy</code></li>
+     *         <li><p><code>AZRebalance</code></li>
+     *         <li><p><code>AlarmNotification</code></li>
+     *         <li><p><code>ScheduledActions</code></li>
+     *         <li><p><code>AddToLoadBalancer</code></li> </ul>
      */
     public void setScalingProcesses(java.util.Collection<String> scalingProcesses) {
         if (scalingProcesses == null) {
@@ -136,10 +156,14 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more of the following processes: <ul> <li>Launch</li>
-     * <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
-     * <li>AZRebalance</li> <li>AlarmNotification</li>
-     * <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
+     * One or more of the following processes: <ul>
+     * <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
+     * <li><p><code>HealthCheck</code></li>
+     * <li><p><code>ReplaceUnhealthy</code></li>
+     * <li><p><code>AZRebalance</code></li>
+     * <li><p><code>AlarmNotification</code></li>
+     * <li><p><code>ScheduledActions</code></li>
+     * <li><p><code>AddToLoadBalancer</code></li> </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setScalingProcesses(java.util.Collection)} or {@link
@@ -148,10 +172,14 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements S
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scalingProcesses One or more of the following processes: <ul> <li>Launch</li>
-     *         <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
-     *         <li>AZRebalance</li> <li>AlarmNotification</li>
-     *         <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
+     * @param scalingProcesses One or more of the following processes: <ul>
+     *         <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
+     *         <li><p><code>HealthCheck</code></li>
+     *         <li><p><code>ReplaceUnhealthy</code></li>
+     *         <li><p><code>AZRebalance</code></li>
+     *         <li><p><code>AlarmNotification</code></li>
+     *         <li><p><code>ScheduledActions</code></li>
+     *         <li><p><code>AddToLoadBalancer</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -165,17 +193,25 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more of the following processes: <ul> <li>Launch</li>
-     * <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
-     * <li>AZRebalance</li> <li>AlarmNotification</li>
-     * <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
+     * One or more of the following processes: <ul>
+     * <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
+     * <li><p><code>HealthCheck</code></li>
+     * <li><p><code>ReplaceUnhealthy</code></li>
+     * <li><p><code>AZRebalance</code></li>
+     * <li><p><code>AlarmNotification</code></li>
+     * <li><p><code>ScheduledActions</code></li>
+     * <li><p><code>AddToLoadBalancer</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scalingProcesses One or more of the following processes: <ul> <li>Launch</li>
-     *         <li>Terminate</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li>
-     *         <li>AZRebalance</li> <li>AlarmNotification</li>
-     *         <li>ScheduledActions</li> <li>AddToLoadBalancer</li> </ul>
+     * @param scalingProcesses One or more of the following processes: <ul>
+     *         <li><p><code>Launch</code></li> <li><p><code>Terminate</code></li>
+     *         <li><p><code>HealthCheck</code></li>
+     *         <li><p><code>ReplaceUnhealthy</code></li>
+     *         <li><p><code>AZRebalance</code></li>
+     *         <li><p><code>AlarmNotification</code></li>
+     *         <li><p><code>ScheduledActions</code></li>
+     *         <li><p><code>AddToLoadBalancer</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

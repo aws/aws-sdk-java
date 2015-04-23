@@ -17,41 +17,39 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output for the ConfigureHealthCheck action.
- * </p>
+ * 
  */
 public class ConfigureHealthCheckResult implements Serializable, Cloneable {
 
     /**
-     * The updated healthcheck for the instances.
+     * The updated health check.
      */
     private HealthCheck healthCheck;
 
     /**
-     * The updated healthcheck for the instances.
+     * The updated health check.
      *
-     * @return The updated healthcheck for the instances.
+     * @return The updated health check.
      */
     public HealthCheck getHealthCheck() {
         return healthCheck;
     }
     
     /**
-     * The updated healthcheck for the instances.
+     * The updated health check.
      *
-     * @param healthCheck The updated healthcheck for the instances.
+     * @param healthCheck The updated health check.
      */
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
     
     /**
-     * The updated healthcheck for the instances.
+     * The updated health check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param healthCheck The updated healthcheck for the instances.
+     * @param healthCheck The updated health check.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

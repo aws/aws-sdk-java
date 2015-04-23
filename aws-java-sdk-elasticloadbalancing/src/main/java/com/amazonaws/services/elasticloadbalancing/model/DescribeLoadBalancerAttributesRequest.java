@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest) DescribeLoadBalancerAttributes operation}.
  * <p>
- * Returns detailed information about all of the attributes associated
- * with the specified load balancer.
+ * Describes the attributes for the specified load balancer.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest)

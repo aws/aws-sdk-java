@@ -139,7 +139,7 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * The device name of the root device (for example,
-     * <filename>/dev/sda1</filename> or <filename>xvda</filename>).
+     * <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      */
     private String rootDeviceName;
 
@@ -1131,10 +1131,10 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * The device name of the root device (for example,
-     * <filename>/dev/sda1</filename> or <filename>xvda</filename>).
+     * <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      *
      * @return The device name of the root device (for example,
-     *         <filename>/dev/sda1</filename> or <filename>xvda</filename>).
+     *         <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      */
     public String getRootDeviceName() {
         return rootDeviceName;
@@ -1142,10 +1142,10 @@ public class Image implements Serializable, Cloneable {
     
     /**
      * The device name of the root device (for example,
-     * <filename>/dev/sda1</filename> or <filename>xvda</filename>).
+     * <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      *
      * @param rootDeviceName The device name of the root device (for example,
-     *         <filename>/dev/sda1</filename> or <filename>xvda</filename>).
+     *         <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      */
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
@@ -1153,12 +1153,12 @@ public class Image implements Serializable, Cloneable {
     
     /**
      * The device name of the root device (for example,
-     * <filename>/dev/sda1</filename> or <filename>xvda</filename>).
+     * <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rootDeviceName The device name of the root device (for example,
-     *         <filename>/dev/sda1</filename> or <filename>xvda</filename>).
+     *         <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

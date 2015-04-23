@@ -159,7 +159,8 @@ public class Instance implements Serializable, Cloneable {
     private String rootDeviceType;
 
     /**
-     * The root device name (for example, <code>/dev/sda1</code>).
+     * The root device name (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).
      */
     private String rootDeviceName;
 
@@ -1300,29 +1301,35 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The root device name (for example, <code>/dev/sda1</code>).
+     * The root device name (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).
      *
-     * @return The root device name (for example, <code>/dev/sda1</code>).
+     * @return The root device name (for example, <code>/dev/sda1</code> or
+     *         <code>/dev/xvda</code>).
      */
     public String getRootDeviceName() {
         return rootDeviceName;
     }
     
     /**
-     * The root device name (for example, <code>/dev/sda1</code>).
+     * The root device name (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).
      *
-     * @param rootDeviceName The root device name (for example, <code>/dev/sda1</code>).
+     * @param rootDeviceName The root device name (for example, <code>/dev/sda1</code> or
+     *         <code>/dev/xvda</code>).
      */
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
     }
     
     /**
-     * The root device name (for example, <code>/dev/sda1</code>).
+     * The root device name (for example, <code>/dev/sda1</code> or
+     * <code>/dev/xvda</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param rootDeviceName The root device name (for example, <code>/dev/sda1</code>).
+     * @param rootDeviceName The root device name (for example, <code>/dev/sda1</code> or
+     *         <code>/dev/xvda</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

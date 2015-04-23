@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The key of a tag to be removed.
+ * The key of a tag.
  * </p>
  */
 public class TagKeyOnly implements Serializable, Cloneable {

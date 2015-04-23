@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * One or more subnets were not found.
+ * One or more of the specified subnets do not exist.
  * </p>
  */        
 public class SubnetNotFoundException extends AmazonServiceException {

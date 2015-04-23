@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The descriptions of all the tags associated with load balancer.
+ * The tags associated with a load balancer.
  * </p>
  */
 public class TagDescription implements Serializable, Cloneable {
@@ -29,7 +29,7 @@ public class TagDescription implements Serializable, Cloneable {
     private String loadBalancerName;
 
     /**
-     * List of tags associated with the load balancer.
+     * The tags.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -70,12 +70,12 @@ public class TagDescription implements Serializable, Cloneable {
     }
 
     /**
-     * List of tags associated with the load balancer.
+     * The tags.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return List of tags associated with the load balancer.
+     * @return The tags.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -86,12 +86,12 @@ public class TagDescription implements Serializable, Cloneable {
     }
     
     /**
-     * List of tags associated with the load balancer.
+     * The tags.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param tags List of tags associated with the load balancer.
+     * @param tags The tags.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -104,7 +104,7 @@ public class TagDescription implements Serializable, Cloneable {
     }
     
     /**
-     * List of tags associated with the load balancer.
+     * The tags.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTags(java.util.Collection)} or {@link
@@ -116,7 +116,7 @@ public class TagDescription implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param tags List of tags associated with the load balancer.
+     * @param tags The tags.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -130,14 +130,14 @@ public class TagDescription implements Serializable, Cloneable {
     }
     
     /**
-     * List of tags associated with the load balancer.
+     * The tags.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param tags List of tags associated with the load balancer.
+     * @param tags The tags.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

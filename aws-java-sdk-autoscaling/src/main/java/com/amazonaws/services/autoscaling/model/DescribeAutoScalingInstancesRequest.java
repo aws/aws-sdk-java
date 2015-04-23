@@ -24,13 +24,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes one or more Auto Scaling instances. If a list is not
  * provided, the call describes all instances.
  * </p>
- * <p>
- * You can describe up to a maximum of 50 instances with a single call.
- * By default, a call returns up to 20 instances. If there are more items
- * to return, the call returns a token. To get the next set of items,
- * repeat the call with the returned token in the <code>NextToken</code>
- * parameter.
- * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingInstances(DescribeAutoScalingInstancesRequest)
  */

@@ -25,7 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * returns a structure describing identity notification attributes.
  * </p>
  * <p>
- * This action is throttled at one request per second.
+ * This action is throttled at one request per second and can only get
+ * notification attributes for up to 100 identities at a time.
  * </p>
  * <p>
  * For more information about using notifications with Amazon SES, see

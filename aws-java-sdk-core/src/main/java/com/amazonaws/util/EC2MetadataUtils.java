@@ -28,10 +28,10 @@ import org.apache.commons.logging.LogFactory;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.internal.EC2MetadataClient;
 import com.amazonaws.util.json.Jackson;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 
@@ -43,15 +43,17 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategy;
  * retrieve their content from the Amazon S3 bucket you specify at launch. To
  * add a new customer at any time, simply create a bucket for the customer, add
  * their content, and launch your AMI.<br>
- * 
+ *
  * More information about Amazon EC2 Metadata
- * 
+ *
  * @see <a
  *      href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Amazon
  *      EC2 User Guide: Instance Metadata</a>
  */
 public class EC2MetadataUtils {
 
+    private static final String REGION = "region";
+    private static final String INSTANCE_IDENTITY_DOCUMENT = "instance-identity/document";
     private static final String EC2_METADATA_ROOT = "/latest/meta-data";
     private static final String EC2_USERDATA_ROOT = "/latest/user-data/";
     private static final String EC2_DYNAMICDATA_ROOT = "/latest/dynamic/";
@@ -216,24 +218,60 @@ public class EC2MetadataUtils {
     }
 
     /**
+     * The instance info is only guaranteed to be a JSON document per
+     * http://docs
+     * .aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html
+     * <p>
+     * This method is only a best attempt to capture the instance info as a
+     * typed object.
+     * <p>
      * Get an InstanceInfo object with dynamic information about this instance.
      */
     public static InstanceInfo getInstanceInfo() {
-        String json = getData(EC2_DYNAMICDATA_ROOT
-                + "instance-identity/document");
-        if (null == json) {
-            return null;
-        }
+        return doGetInstanceInfo(getData(
+                EC2_DYNAMICDATA_ROOT + INSTANCE_IDENTITY_DOCUMENT));
+    }
 
-        try {
-            InstanceInfo instanceInfo = Jackson.fromJsonString(json,
-                    InstanceInfo.class);
-            return instanceInfo;
-        } catch (Exception e) {
-            log.warn("Unable to parse dynamic EC2 instance info (" + json
-                    + ") : " + e.getMessage(), e);
-            return null;
+    static InstanceInfo doGetInstanceInfo(String json) {
+        if (null != json) {
+            try {
+                InstanceInfo instanceInfo = Jackson.fromJsonString(json,
+                        InstanceInfo.class);
+                return instanceInfo;
+            } catch (Exception e) {
+                log.warn("Unable to parse dynamic EC2 instance info (" + json
+                        + ") : " + e.getMessage(), e);
+            }
         }
+        return null;
+    }
+
+    /**
+     * Returns the current region of this running EC2 instance; or null if
+     * it is unable to do so. The method avoids interpreting other parts of the
+     * instance info JSON document to minimize potential failure.
+     * <p>
+     * The instance info is only guaranteed to be a JSON document per
+     * http://docs
+     * .aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html
+     */
+    public static String getEC2InstanceRegion() {
+        return doGetEC2InstanceRegion(getData(
+                EC2_DYNAMICDATA_ROOT + INSTANCE_IDENTITY_DOCUMENT));
+    }
+
+    static String doGetEC2InstanceRegion(final String json) {
+        if (null != json) {
+            try {
+                JsonNode node = mapper.readTree(json.getBytes(StringUtils.UTF8));
+                JsonNode region = node.findValue(REGION);
+                return region.asText();
+            } catch (Exception e) {
+                log.warn("Unable to parse EC2 instance info (" + json
+                        + ") : " + e.getMessage(), e);
+            }
+        }
+        return null;
     }
 
     /**
@@ -401,15 +439,20 @@ public class EC2MetadataUtils {
     }
 
     /**
-     * Dynamic information about the current instance such as region,
-     * instanceId, private IP address, etc.
+     * This POJO is a best attempt to capture the instance info which is only
+     * guaranteed to be a JSON document per
+     * http://docs.aws.amazon.com/AWSEC2/latest
+     * /UserGuide/ec2-instance-metadata.html
+     *
+     * Instance info includes dynamic information about the current instance
+     * such as region, instanceId, private IP address, etc.
      */
     public static class InstanceInfo {
         private final String pendingTime;
         private final String instanceType;
         private final String imageId;
         private final String instanceId;
-        private final String billingProducts;
+        private final String[] billingProducts;
         private final String architecture;
         private final String accountId;
         private final String kernelId;
@@ -418,7 +461,7 @@ public class EC2MetadataUtils {
         private final String version;
         private final String availabilityZone;
         private final String privateIp;
-        private final String devpayProductCodes;
+        private final String[] devpayProductCodes;
 
         @JsonCreator
         public InstanceInfo(
@@ -426,21 +469,22 @@ public class EC2MetadataUtils {
                 @JsonProperty(value = "instanceType", required = true) String instanceType,
                 @JsonProperty(value = "imageId", required = true) String imageId,
                 @JsonProperty(value = "instanceId", required = true) String instanceId,
-                @JsonProperty(value = "billingProducts", required = false) String billingProducts,
+                @JsonProperty(value = "billingProducts", required = false) String[] billingProducts,
                 @JsonProperty(value = "architecture", required = true) String architecture,
                 @JsonProperty(value = "accountId", required = true) String accountId,
                 @JsonProperty(value = "kernelId", required = true) String kernelId,
                 @JsonProperty(value = "ramdiskId", required = false) String ramdiskId,
-                @JsonProperty(value = "region", required = true) String region,
+                @JsonProperty(value = REGION, required = true) String region,
                 @JsonProperty(value = "version", required = true) String version,
                 @JsonProperty(value = "availabilityZone", required = true) String availabilityZone,
                 @JsonProperty(value = "privateIp", required = true) String privateIp,
-                @JsonProperty(value = "devpayProductCodes", required = false) String devpayProductCodes) {
+                @JsonProperty(value = "devpayProductCodes", required = false) String[] devpayProductCodes) {
             this.pendingTime = pendingTime;
             this.instanceType = instanceType;
             this.imageId = imageId;
             this.instanceId = instanceId;
-            this.billingProducts = billingProducts;
+            this.billingProducts = billingProducts == null
+                    ? null : billingProducts.clone();
             this.architecture = architecture;
             this.accountId = accountId;
             this.kernelId = kernelId;
@@ -449,7 +493,8 @@ public class EC2MetadataUtils {
             this.version = version;
             this.availabilityZone = availabilityZone;
             this.privateIp = privateIp;
-            this.devpayProductCodes = devpayProductCodes;
+            this.devpayProductCodes = devpayProductCodes == null
+                    ? null : devpayProductCodes.clone();
         }
 
         public String getPendingTime() {
@@ -468,8 +513,8 @@ public class EC2MetadataUtils {
             return instanceId;
         }
 
-        public String getBillingProducts() {
-            return billingProducts;
+        public String[] getBillingProducts() {
+            return billingProducts == null ? null : billingProducts.clone();
         }
 
         public String getArchitecture() {
@@ -504,8 +549,8 @@ public class EC2MetadataUtils {
             return privateIp;
         }
 
-        public String getDevpayProductCodes() {
-            return devpayProductCodes;
+        public String[] getDevpayProductCodes() {
+            return devpayProductCodes == null ? null : devpayProductCodes.clone();
         }
     }
 
@@ -602,21 +647,21 @@ public class EC2MetadataUtils {
         }
 
         /**
-         * ID of the Amazon EC2-VPC subnet in which the interface resides.<br>
+         * ID of the subnet in which the interface resides.<br>
          * Returned only for Amazon EC2 instances launched into a VPC.
          */
-        public String getSubnetId() {
-            return getData("subnet-id");
-        }
+         public String getSubnetId() {
+             return getData("subnet-id");
+         }
 
         /**
          * The CIDR block of the Amazon EC2-VPC in which the interface
          * resides.<br>
          * Returned only for Amazon EC2 instances launched into a VPC.
          */
-        public String getVpcIPv4CidrBlock() {
-            return getData("vpc-ipv4-cidr-block");
-        }
+         public String getVpcIPv4CidrBlock() {
+             return getData("vpc-ipv4-cidr-block");
+         }
 
         /**
          * ID of the Amazon EC2-VPC in which the interface resides.<br>
@@ -629,7 +674,7 @@ public class EC2MetadataUtils {
         /**
          * Get the private IPv4 address(es) that are associated with the
          * public-ip address and assigned to that interface.
-         * 
+         *
          * @param publicIp
          *            The public IP address
          * @return Private IPv4 address(es) associated with the public IP

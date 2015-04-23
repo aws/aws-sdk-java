@@ -102,9 +102,9 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             Map<String, String> metadata = unmarshallerContext.getMetadata();
             Map<String, String> responseHeaders = response.getHeaders();
             if (responseHeaders != null) {
-                if (responseHeaders.get("x-amzn-RequestId") != null) {
+                if (responseHeaders.get(X_AMZN_REQUEST_ID_HEADER) != null) {
                     metadata.put(ResponseMetadata.AWS_REQUEST_ID,
-                            responseHeaders.get("x-amzn-RequestId"));
+                            responseHeaders.get(X_AMZN_REQUEST_ID_HEADER));
                 }
             }
             awsResponse.setResponseMetadata(new ResponseMetadata(metadata));

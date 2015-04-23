@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the AWS account has no associated users.
  * </p>
  * <p>
- * <b>NOTE:</b> Because the body of a X.509 certificate can be large, you
+ * <b>NOTE:</b>Because the body of a X.509 certificate can be large, you
  * should use POST rather than GET when calling UploadSigningCertificate.
  * For information about setting up signatures and authorization through
  * the API, go to Signing AWS API Requests in the AWS General Reference.

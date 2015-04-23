@@ -51,9 +51,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     private String scheduledActionARN;
 
     /**
-     * <code>Time</code> is deprecated. <p>The time that the action is
-     * scheduled to begin. <code>Time</code> is an alias for
-     * <code>StartTime</code>.
+     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
      */
     private java.util.Date time;
 
@@ -72,7 +70,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     private java.util.Date endTime;
 
     /**
-     * The regular schedule that an action occurs.
+     * The recurring schedule for the action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -231,41 +229,29 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     }
 
     /**
-     * <code>Time</code> is deprecated. <p>The time that the action is
-     * scheduled to begin. <code>Time</code> is an alias for
-     * <code>StartTime</code>.
+     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
      *
-     * @return <code>Time</code> is deprecated. <p>The time that the action is
-     *         scheduled to begin. <code>Time</code> is an alias for
-     *         <code>StartTime</code>.
+     * @return <code>Time</code> is deprecated; use <code>StartTime</code> instead.
      */
     public java.util.Date getTime() {
         return time;
     }
     
     /**
-     * <code>Time</code> is deprecated. <p>The time that the action is
-     * scheduled to begin. <code>Time</code> is an alias for
-     * <code>StartTime</code>.
+     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
      *
-     * @param time <code>Time</code> is deprecated. <p>The time that the action is
-     *         scheduled to begin. <code>Time</code> is an alias for
-     *         <code>StartTime</code>.
+     * @param time <code>Time</code> is deprecated; use <code>StartTime</code> instead.
      */
     public void setTime(java.util.Date time) {
         this.time = time;
     }
     
     /**
-     * <code>Time</code> is deprecated. <p>The time that the action is
-     * scheduled to begin. <code>Time</code> is an alias for
-     * <code>StartTime</code>.
+     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param time <code>Time</code> is deprecated. <p>The time that the action is
-     *         scheduled to begin. <code>Time</code> is an alias for
-     *         <code>StartTime</code>.
+     * @param time <code>Time</code> is deprecated; use <code>StartTime</code> instead.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -366,33 +352,33 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     }
 
     /**
-     * The regular schedule that an action occurs.
+     * The recurring schedule for the action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The regular schedule that an action occurs.
+     * @return The recurring schedule for the action.
      */
     public String getRecurrence() {
         return recurrence;
     }
     
     /**
-     * The regular schedule that an action occurs.
+     * The recurring schedule for the action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param recurrence The regular schedule that an action occurs.
+     * @param recurrence The recurring schedule for the action.
      */
     public void setRecurrence(String recurrence) {
         this.recurrence = recurrence;
     }
     
     /**
-     * The regular schedule that an action occurs.
+     * The recurring schedule for the action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -400,7 +386,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param recurrence The regular schedule that an action occurs.
+     * @param recurrence The recurring schedule for the action.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -21,9 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSigningCertificates(ListSigningCertificatesRequest) ListSigningCertificates operation}.
  * <p>
- * Returns information about the signing certificates associated with
- * the specified user. If there are none, the action returns an empty
- * list.
+ * Returns information about the signing certificates associated with the
+ * specified user. If there are none, the action returns an empty list.
  * </p>
  * <p>
  * Although each user is limited to a small number of signing

@@ -21,10 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateSigningCertificate(UpdateSigningCertificateRequest) UpdateSigningCertificate operation}.
  * <p>
- * Changes the status of the specified signing certificate from active
- * to disabled, or vice versa. This action can be used to disable a
- * user's signing certificate as part of a certificate rotation work
- * flow.
+ * Changes the status of the specified signing certificate from active to
+ * disabled, or vice versa. This action can be used to disable a user's
+ * signing certificate as part of a certificate rotation work flow.
  * </p>
  * <p>
  * If the <code>UserName</code> field is not specified, the UserName is
@@ -32,11 +31,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * request. Because this action works for access keys under the AWS
  * account, you can use this action to manage root credentials even if
  * the AWS account has no associated users.
- * </p>
- * <p>
- * For information about rotating certificates, see
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
- * in the <i>Using IAM</i> guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateSigningCertificate(UpdateSigningCertificateRequest)

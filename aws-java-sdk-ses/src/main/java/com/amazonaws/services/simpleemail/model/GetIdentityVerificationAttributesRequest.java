@@ -26,7 +26,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * token for each identity.
  * </p>
  * <p>
- * This action is throttled at one request per second.
+ * This action is throttled at one request per second and can only get
+ * verification attributes for up to 100 identities at a time.
  * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest)

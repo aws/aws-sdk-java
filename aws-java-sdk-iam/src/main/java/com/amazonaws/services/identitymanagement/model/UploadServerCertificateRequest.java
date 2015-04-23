@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
- * <b>NOTE:</b> Because the body of the public key certificate, private
+ * <b>NOTE:</b>Because the body of the public key certificate, private
  * key, and the certificate chain can be large, you should use POST
  * rather than GET when calling UploadServerCertificate. For information
  * about setting up signatures and authorization through the API, go to

@@ -21,15 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancers(DescribeLoadBalancersRequest) DescribeLoadBalancers operation}.
  * <p>
- * Returns detailed configuration information for all the load balancers
- * created for the account. If you specify load balancer names, the
- * action returns configuration information of the specified load
- * balancers.
- * </p>
- * <p>
- * <b>NOTE:</b> In order to retrieve this information, you must provide
- * the same account credentials that was used to create the load
- * balancer.
+ * Describes the specified the load balancers. If no load balancers are
+ * specified, the call describes all of your load balancers.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancers(DescribeLoadBalancersRequest)
@@ -37,19 +30,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * A list of load balancer names associated with the account.
+     * The names of the load balancers.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> loadBalancerNames;
 
     /**
-     * An optional parameter used for pagination of results from this call.
-     * If specified, the response includes only records beyond the marker.
+     * The marker for the next set of results. (You received this marker from
+     * a previous call.)
      */
     private String marker;
 
     /**
-     * The number of results returned in each page. The default is 400. You
-     * cannot specify a page size greater than 400 or less than 1.
+     * The maximum number of results to return with this call (a number from
+     * 1 to 400). The default is 400.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 400<br/>
@@ -67,17 +60,16 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param loadBalancerNames A list of load balancer names associated with
-     * the account.
+     * @param loadBalancerNames The names of the load balancers.
      */
     public DescribeLoadBalancersRequest(java.util.List<String> loadBalancerNames) {
         setLoadBalancerNames(loadBalancerNames);
     }
 
     /**
-     * A list of load balancer names associated with the account.
+     * The names of the load balancers.
      *
-     * @return A list of load balancer names associated with the account.
+     * @return The names of the load balancers.
      */
     public java.util.List<String> getLoadBalancerNames() {
         if (loadBalancerNames == null) {
@@ -88,9 +80,9 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * A list of load balancer names associated with the account.
+     * The names of the load balancers.
      *
-     * @param loadBalancerNames A list of load balancer names associated with the account.
+     * @param loadBalancerNames The names of the load balancers.
      */
     public void setLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
@@ -103,7 +95,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * A list of load balancer names associated with the account.
+     * The names of the load balancers.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLoadBalancerNames(java.util.Collection)} or
@@ -112,7 +104,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerNames A list of load balancer names associated with the account.
+     * @param loadBalancerNames The names of the load balancers.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -126,11 +118,11 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * A list of load balancer names associated with the account.
+     * The names of the load balancers.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerNames A list of load balancer names associated with the account.
+     * @param loadBalancerNames The names of the load balancers.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -148,35 +140,35 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * An optional parameter used for pagination of results from this call.
-     * If specified, the response includes only records beyond the marker.
+     * The marker for the next set of results. (You received this marker from
+     * a previous call.)
      *
-     * @return An optional parameter used for pagination of results from this call.
-     *         If specified, the response includes only records beyond the marker.
+     * @return The marker for the next set of results. (You received this marker from
+     *         a previous call.)
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * An optional parameter used for pagination of results from this call.
-     * If specified, the response includes only records beyond the marker.
+     * The marker for the next set of results. (You received this marker from
+     * a previous call.)
      *
-     * @param marker An optional parameter used for pagination of results from this call.
-     *         If specified, the response includes only records beyond the marker.
+     * @param marker The marker for the next set of results. (You received this marker from
+     *         a previous call.)
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * An optional parameter used for pagination of results from this call.
-     * If specified, the response includes only records beyond the marker.
+     * The marker for the next set of results. (You received this marker from
+     * a previous call.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional parameter used for pagination of results from this call.
-     *         If specified, the response includes only records beyond the marker.
+     * @param marker The marker for the next set of results. (You received this marker from
+     *         a previous call.)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -187,44 +179,44 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The number of results returned in each page. The default is 400. You
-     * cannot specify a page size greater than 400 or less than 1.
+     * The maximum number of results to return with this call (a number from
+     * 1 to 400). The default is 400.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 400<br/>
      *
-     * @return The number of results returned in each page. The default is 400. You
-     *         cannot specify a page size greater than 400 or less than 1.
+     * @return The maximum number of results to return with this call (a number from
+     *         1 to 400). The default is 400.
      */
     public Integer getPageSize() {
         return pageSize;
     }
     
     /**
-     * The number of results returned in each page. The default is 400. You
-     * cannot specify a page size greater than 400 or less than 1.
+     * The maximum number of results to return with this call (a number from
+     * 1 to 400). The default is 400.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 400<br/>
      *
-     * @param pageSize The number of results returned in each page. The default is 400. You
-     *         cannot specify a page size greater than 400 or less than 1.
+     * @param pageSize The maximum number of results to return with this call (a number from
+     *         1 to 400). The default is 400.
      */
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
     
     /**
-     * The number of results returned in each page. The default is 400. You
-     * cannot specify a page size greater than 400 or less than 1.
+     * The maximum number of results to return with this call (a number from
+     * 1 to 400). The default is 400.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 400<br/>
      *
-     * @param pageSize The number of results returned in each page. The default is 400. You
-     *         cannot specify a page size greater than 400 or less than 1.
+     * @param pageSize The maximum number of results to return with this call (a number from
+     *         1 to 400). The default is 400.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

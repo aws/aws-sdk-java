@@ -18,45 +18,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>AdditionalAttribute</code> data type.
+ * This data type is reserved.
  * </p>
  */
 public class AdditionalAttribute implements Serializable, Cloneable {
 
     /**
-     * Reserved for future use.
+     * This parameter is reserved.
      */
     private String key;
 
     /**
-     * Reserved for future use.
+     * This parameter is reserved.
      */
     private String value;
 
     /**
-     * Reserved for future use.
+     * This parameter is reserved.
      *
-     * @return Reserved for future use.
+     * @return This parameter is reserved.
      */
     public String getKey() {
         return key;
     }
     
     /**
-     * Reserved for future use.
+     * This parameter is reserved.
      *
-     * @param key Reserved for future use.
+     * @param key This parameter is reserved.
      */
     public void setKey(String key) {
         this.key = key;
     }
     
     /**
-     * Reserved for future use.
+     * This parameter is reserved.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param key Reserved for future use.
+     * @param key This parameter is reserved.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -67,29 +67,29 @@ public class AdditionalAttribute implements Serializable, Cloneable {
     }
 
     /**
-     * Reserved for future use.
+     * This parameter is reserved.
      *
-     * @return Reserved for future use.
+     * @return This parameter is reserved.
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * Reserved for future use.
+     * This parameter is reserved.
      *
-     * @param value Reserved for future use.
+     * @param value This parameter is reserved.
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * Reserved for future use.
+     * This parameter is reserved.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value Reserved for future use.
+     * @param value This parameter is reserved.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

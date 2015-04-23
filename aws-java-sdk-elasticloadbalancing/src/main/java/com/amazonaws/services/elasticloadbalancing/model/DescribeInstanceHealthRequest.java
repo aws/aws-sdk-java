@@ -21,13 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeInstanceHealth(DescribeInstanceHealthRequest) DescribeInstanceHealth operation}.
  * <p>
- * Returns the current state of the specified instances registered with
- * the specified load balancer. If no instances are specified, the state
- * of all the instances registered with the load balancer is returned.
- * </p>
- * <p>
- * <b>NOTE:</b> You must provide the same account credentials as those
- * that were used to create the load balancer.
+ * Describes the state of the specified instances registered with the
+ * specified load balancer. If no instances are specified, the call
+ * describes the state of all instances registered with the load
+ * balancer, not including any terminated instances.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeInstanceHealth(DescribeInstanceHealthRequest)
@@ -40,7 +37,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
     private String loadBalancerName;
 
     /**
-     * A list of instance IDs whose states are being queried.
+     * The IDs of the instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instances;
 
@@ -95,9 +92,9 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * A list of instance IDs whose states are being queried.
+     * The IDs of the instances.
      *
-     * @return A list of instance IDs whose states are being queried.
+     * @return The IDs of the instances.
      */
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
@@ -108,9 +105,9 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * A list of instance IDs whose states are being queried.
+     * The IDs of the instances.
      *
-     * @param instances A list of instance IDs whose states are being queried.
+     * @param instances The IDs of the instances.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
@@ -123,7 +120,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * A list of instance IDs whose states are being queried.
+     * The IDs of the instances.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInstances(java.util.Collection)} or {@link
@@ -132,7 +129,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances A list of instance IDs whose states are being queried.
+     * @param instances The IDs of the instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -146,11 +143,11 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * A list of instance IDs whose states are being queried.
+     * The IDs of the instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances A list of instance IDs whose states are being queried.
+     * @param instances The IDs of the instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

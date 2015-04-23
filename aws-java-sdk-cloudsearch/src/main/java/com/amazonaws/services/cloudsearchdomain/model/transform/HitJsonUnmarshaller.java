@@ -53,6 +53,10 @@ public class HitJsonUnmarshaller implements Unmarshaller<Hit, JsonUnmarshallerCo
                     context.nextToken();
                     hit.setFields(new MapUnmarshaller<String,java.util.List<String>>(StringJsonUnmarshaller.getInstance(), new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance())).unmarshall(context));
                 }
+                if (context.testExpression("exprs", targetDepth)) {
+                    context.nextToken();
+                    hit.setExprs(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("highlights", targetDepth)) {
                     context.nextToken();
                     hit.setHighlights(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));

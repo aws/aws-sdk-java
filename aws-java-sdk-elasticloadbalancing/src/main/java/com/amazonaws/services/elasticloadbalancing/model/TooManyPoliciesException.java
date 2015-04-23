@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Quota for number of policies for this load balancer has already been
+ * The quota for the number of policies for this load balancer has been
  * reached.
  * </p>
  */        

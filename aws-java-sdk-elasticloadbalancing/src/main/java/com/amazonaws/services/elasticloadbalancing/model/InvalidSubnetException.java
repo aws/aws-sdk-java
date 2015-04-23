@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The VPC has no Internet gateway.
+ * The specified VPC has no associated Internet gateway.
  * </p>
  */        
 public class InvalidSubnetException extends AmazonServiceException {

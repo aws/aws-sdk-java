@@ -3138,6 +3138,61 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Displays details about an import snapshot tasks that is already
+     * created.
+     * </p>
+     *
+     * @param describeImportSnapshotTasksRequest Container for the necessary
+     *           parameters to execute the DescribeImportSnapshotTasks operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeImportSnapshotTasks service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeImportSnapshotTasksResult> describeImportSnapshotTasksAsync(DescribeImportSnapshotTasksRequest describeImportSnapshotTasksRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Displays details about an import snapshot tasks that is already
+     * created.
+     * </p>
+     *
+     * @param describeImportSnapshotTasksRequest Container for the necessary
+     *           parameters to execute the DescribeImportSnapshotTasks operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeImportSnapshotTasks service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeImportSnapshotTasksResult> describeImportSnapshotTasksAsync(DescribeImportSnapshotTasksRequest describeImportSnapshotTasksRequest,
+            AsyncHandler<DescribeImportSnapshotTasksRequest, DescribeImportSnapshotTasksResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Resets an attribute of an AMI to its default value.
      * </p>
      * <p>
@@ -4370,6 +4425,57 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Cancels an in-process import virtual machine or import snapshot task.
+     * </p>
+     *
+     * @param cancelImportTaskRequest Container for the necessary parameters
+     *           to execute the CancelImportTask operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelImportTask service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CancelImportTaskResult> cancelImportTaskAsync(CancelImportTaskRequest cancelImportTaskRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Cancels an in-process import virtual machine or import snapshot task.
+     * </p>
+     *
+     * @param cancelImportTaskRequest Container for the necessary parameters
+     *           to execute the CancelImportTask operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelImportTask service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CancelImportTaskResult> cancelImportTaskAsync(CancelImportTaskRequest cancelImportTaskRequest,
+            AsyncHandler<CancelImportTaskRequest, CancelImportTaskResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Describes the specified Amazon EBS volumes.
      * </p>
      * <p>
@@ -4808,6 +4914,61 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Displays details about an import virtual machine or import snapshot
+     * tasks that are already created.
+     * </p>
+     *
+     * @param describeImportImageTasksRequest Container for the necessary
+     *           parameters to execute the DescribeImportImageTasks operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeImportImageTasks service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeImportImageTasksResult> describeImportImageTasksAsync(DescribeImportImageTasksRequest describeImportImageTasksRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Displays details about an import virtual machine or import snapshot
+     * tasks that are already created.
+     * </p>
+     *
+     * @param describeImportImageTasksRequest Container for the necessary
+     *           parameters to execute the DescribeImportImageTasks operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeImportImageTasks service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeImportImageTasksResult> describeImportImageTasksAsync(DescribeImportImageTasksRequest describeImportImageTasksRequest,
+            AsyncHandler<DescribeImportImageTasksRequest, DescribeImportImageTasksResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
@@ -4933,9 +5094,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates an import instance task using metadata from the specified
-     * disk image. After importing the image, you then upload it using the
-     * <code>ec2-import-volume</code> command in the EC2 command line tools.
-     * For more information, see
+     * disk image. ImportInstance only supports single-volume VMs. To import
+     * multi-volume VMs, use ImportImage. After importing the image, you then
+     * upload it using the <code>ec2-import-volume</code> command in the EC2
+     * command line tools. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -4961,9 +5123,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates an import instance task using metadata from the specified
-     * disk image. After importing the image, you then upload it using the
-     * <code>ec2-import-volume</code> command in the EC2 command line tools.
-     * For more information, see
+     * disk image. ImportInstance only supports single-volume VMs. To import
+     * multi-volume VMs, use ImportImage. After importing the image, you then
+     * upload it using the <code>ec2-import-volume</code> command in the EC2
+     * command line tools. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -5490,6 +5653,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You cannot create more than one customer gateway
+     * with the same VPN type, IP address, and BGP ASN parameter values. If
+     * you run an identical request more than one time, the first request
+     * creates the customer gateway, and subsequent requests return
+     * information about the existing customer gateway. The subsequent
+     * requests do not create new customer gateway resources.
+     * </p>
      *
      * @param createCustomerGatewayRequest Container for the necessary
      *           parameters to execute the CreateCustomerGateway operation on
@@ -5535,6 +5706,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * For more information about VPN customer gateways, see
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You cannot create more than one customer gateway
+     * with the same VPN type, IP address, and BGP ASN parameter values. If
+     * you run an identical request more than one time, the first request
+     * creates the customer gateway, and subsequent requests return
+     * information about the existing customer gateway. The subsequent
+     * requests do not create new customer gateway resources.
      * </p>
      *
      * @param createCustomerGatewayRequest Container for the necessary
@@ -5908,6 +6087,59 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     public Future<CreateVpnConnectionResult> createVpnConnectionAsync(CreateVpnConnectionRequest createVpnConnectionRequest,
             AsyncHandler<CreateVpnConnectionRequest, CreateVpnConnectionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Import single or multi-volume disk images or Amazon EBS snapshots
+     * into an Amazon Machine Image (AMI).
+     * </p>
+     *
+     * @param importImageRequest Container for the necessary parameters to
+     *           execute the ImportImage operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ImportImage service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ImportImageResult> importImageAsync(ImportImageRequest importImageRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Import single or multi-volume disk images or Amazon EBS snapshots
+     * into an Amazon Machine Image (AMI).
+     * </p>
+     *
+     * @param importImageRequest Container for the necessary parameters to
+     *           execute the ImportImage operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ImportImage service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ImportImageResult> importImageAsync(ImportImageRequest importImageRequest,
+            AsyncHandler<ImportImageRequest, ImportImageResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -6786,73 +7018,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Cancels the specified Reserved Instance listing in the Reserved
-     * Instance Marketplace.
-     * </p>
-     * <p>
-     * For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
-     * </p>
-     *
-     * @param cancelReservedInstancesListingRequest Container for the
-     *           necessary parameters to execute the CancelReservedInstancesListing
-     *           operation on AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CancelReservedInstancesListing service method, as returned by
-     *         AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CancelReservedInstancesListingResult> cancelReservedInstancesListingAsync(CancelReservedInstancesListingRequest cancelReservedInstancesListingRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Cancels the specified Reserved Instance listing in the Reserved
-     * Instance Marketplace.
-     * </p>
-     * <p>
-     * For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
-     * </p>
-     *
-     * @param cancelReservedInstancesListingRequest Container for the
-     *           necessary parameters to execute the CancelReservedInstancesListing
-     *           operation on AmazonEC2.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CancelReservedInstancesListing service method, as returned by
-     *         AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CancelReservedInstancesListingResult> cancelReservedInstancesListingAsync(CancelReservedInstancesListingRequest cancelReservedInstancesListingRequest,
-            AsyncHandler<CancelReservedInstancesListingRequest, CancelReservedInstancesListingResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Modifies the specified attribute of the specified instance. You can
      * specify only one attribute at a time.
      * </p>
@@ -6916,6 +7081,73 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     public Future<Void> modifyInstanceAttributeAsync(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest,
             AsyncHandler<ModifyInstanceAttributeRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Cancels the specified Reserved Instance listing in the Reserved
+     * Instance Marketplace.
+     * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+     * </p>
+     *
+     * @param cancelReservedInstancesListingRequest Container for the
+     *           necessary parameters to execute the CancelReservedInstancesListing
+     *           operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelReservedInstancesListing service method, as returned by
+     *         AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CancelReservedInstancesListingResult> cancelReservedInstancesListingAsync(CancelReservedInstancesListingRequest cancelReservedInstancesListingRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Cancels the specified Reserved Instance listing in the Reserved
+     * Instance Marketplace.
+     * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+     * </p>
+     *
+     * @param cancelReservedInstancesListingRequest Container for the
+     *           necessary parameters to execute the CancelReservedInstancesListing
+     *           operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelReservedInstancesListing service method, as returned by
+     *         AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CancelReservedInstancesListingResult> cancelReservedInstancesListingAsync(CancelReservedInstancesListingRequest cancelReservedInstancesListingRequest,
+            AsyncHandler<CancelReservedInstancesListingRequest, CancelReservedInstancesListingResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -8303,6 +8535,59 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     public Future<Void> disableVgwRoutePropagationAsync(DisableVgwRoutePropagationRequest disableVgwRoutePropagationRequest,
             AsyncHandler<DisableVgwRoutePropagationRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Import a disk into an Amazon Elastic Block Store (Amazon EBS)
+     * snapshot.
+     * </p>
+     *
+     * @param importSnapshotRequest Container for the necessary parameters to
+     *           execute the ImportSnapshot operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ImportSnapshot service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ImportSnapshotResult> importSnapshotAsync(ImportSnapshotRequest importSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Import a disk into an Amazon Elastic Block Store (Amazon EBS)
+     * snapshot.
+     * </p>
+     *
+     * @param importSnapshotRequest Container for the necessary parameters to
+     *           execute the ImportSnapshot operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ImportSnapshot service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ImportSnapshotResult> importSnapshotAsync(ImportSnapshotRequest importSnapshotRequest,
+            AsyncHandler<ImportSnapshotRequest, ImportSnapshotResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

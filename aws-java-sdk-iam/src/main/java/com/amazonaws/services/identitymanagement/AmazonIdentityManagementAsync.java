@@ -26,15 +26,15 @@ import com.amazonaws.services.identitymanagement.model.*;
  * Each asynchronous method will return a Java Future object, and users are also allowed
  * to provide a callback handler.
  * AWS Identity and Access Management <p>
- * AWS Identity and Access Management (IAM) is a web service that you
- * can use to manage users and user permissions under your AWS account.
- * This guide provides descriptions of IAM actions that you can call
+ * AWS Identity and Access Management (IAM) is a web service that you can
+ * use to manage users and user permissions under your AWS account. This
+ * guide provides descriptions of IAM actions that you can call
  * programmatically. For general information about IAM, see
  * <a href="http://aws.amazon.com/iam/"> AWS Identity and Access Management (IAM) </a> . For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/"> Using IAM </a>
  * .
  * </p>
  * <p>
- * <b>NOTE:</b> AWS provides SDKs that consist of libraries and sample
+ * <b>NOTE:</b>AWS provides SDKs that consist of libraries and sample
  * code for various programming languages and platforms (Java, Ruby,
  * .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
  * programmatic access to IAM and AWS. For example, the SDKs take care of
@@ -73,19 +73,6 @@ import com.amazonaws.services.identitymanagement.model.*;
  * you do not have to update it to use Signature Version 4. However, some
  * operations now require Signature Version 4. The documentation for
  * operations that require version 4 indicate this requirement.
- * </p>
- * <p>
- * <b>Recording API requests</b>
- * </p>
- * <p>
- * IAM supports AWS CloudTrail, which is a service that records AWS
- * calls for your AWS account and delivers log files to an Amazon S3
- * bucket. By using information collected by CloudTrail, you can
- * determine what requests were successfully made to IAM, who made the
- * request, when it was made, and so on. To learn more about CloudTrail,
- * including how to turn it on and find your log files, see the
- * <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/whatisawscloudtrail.html"> AWS CloudTrail User Guide </a>
- * .
  * </p>
  * <p>
  * <b>Additional Resources</b>
@@ -618,11 +605,6 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * account, you can use this action to manage root credentials even if
      * the AWS account has no associated users.
      * </p>
-     * <p>
-     * For information about rotating certificates, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
      *
      * @param updateSigningCertificateRequest Container for the necessary
      *           parameters to execute the UpdateSigningCertificate operation on
@@ -657,11 +639,6 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * request. Because this action works for access keys under the AWS
      * account, you can use this action to manage root credentials even if
      * the AWS account has no associated users.
-     * </p>
-     * <p>
-     * For information about rotating certificates, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
-     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param updateSigningCertificateRequest Container for the necessary
@@ -1068,7 +1045,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Updates the metadata document for an existing SAML provider.
      * </p>
      * <p>
-     * <b>NOTE:</b> This operation requires Signature Version 4.
+     * <b>NOTE:</b>This operation requires Signature Version 4.
      * </p>
      *
      * @param updateSAMLProviderRequest Container for the necessary
@@ -1096,7 +1073,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Updates the metadata document for an existing SAML provider.
      * </p>
      * <p>
-     * <b>NOTE:</b> This operation requires Signature Version 4.
+     * <b>NOTE:</b>This operation requires Signature Version 4.
      * </p>
      *
      * @param updateSAMLProviderRequest Container for the necessary
@@ -1137,7 +1114,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>NOTE:</b> Because the body of the public key certificate, private
+     * <b>NOTE:</b>Because the body of the public key certificate, private
      * key, and the certificate chain can be large, you should use POST
      * rather than GET when calling UploadServerCertificate. For information
      * about setting up signatures and authorization through the API, go to
@@ -1179,7 +1156,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>NOTE:</b> Because the body of the public key certificate, private
+     * <b>NOTE:</b>Because the body of the public key certificate, private
      * key, and the certificate chain can be large, you should use POST
      * rather than GET when calling UploadServerCertificate. For information
      * about setting up signatures and authorization through the API, go to
@@ -1464,7 +1441,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * .
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
+     * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
      * running with the role you are about to delete. Deleting a role or
      * instance profile that is associated with a running instance will break
      * any applications running on the instance.
@@ -1496,7 +1473,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * .
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
+     * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
      * running with the role you are about to delete. Deleting a role or
      * instance profile that is associated with a running instance will break
      * any applications running on the instance.
@@ -1916,7 +1893,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> The seed information contained in the QR code and
+     * <b>IMPORTANT:</b>The seed information contained in the QR code and
      * the Base32 string should be treated like any other secret access
      * information, such as your AWS access keys or your passwords. After you
      * provision your virtual device, you should ensure that the information
@@ -1959,7 +1936,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> The seed information contained in the QR code and
+     * <b>IMPORTANT:</b>The seed information contained in the QR code and
      * the Base32 string should be treated like any other secret access
      * information, such as your AWS access keys or your passwords. After you
      * provision your virtual device, you should ensure that the information
@@ -2070,6 +2047,75 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
+     * Lists the account aliases associated with the account. For
+     * information about using an AWS account alias, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listAccountAliasesRequest Container for the necessary
+     *           parameters to execute the ListAccountAliases operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListAccountAliases service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListAccountAliasesResult> listAccountAliasesAsync(ListAccountAliasesRequest listAccountAliasesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Lists the account aliases associated with the account. For
+     * information about using an AWS account alias, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listAccountAliasesRequest Container for the necessary
+     *           parameters to execute the ListAccountAliases operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListAccountAliases service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListAccountAliasesResult> listAccountAliasesAsync(ListAccountAliasesRequest listAccountAliasesRequest,
+            AsyncHandler<ListAccountAliasesRequest, ListAccountAliasesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Creates an IAM entity to describe an identity provider (IdP) that
      * supports
      * <a href="http://openid.net/connect/"> OpenID Connect (OIDC) </a>
@@ -2167,75 +2213,6 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      */
     public Future<CreateOpenIDConnectProviderResult> createOpenIDConnectProviderAsync(CreateOpenIDConnectProviderRequest createOpenIDConnectProviderRequest,
             AsyncHandler<CreateOpenIDConnectProviderRequest, CreateOpenIDConnectProviderResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Lists the account aliases associated with the account. For
-     * information about using an AWS account alias, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param listAccountAliasesRequest Container for the necessary
-     *           parameters to execute the ListAccountAliases operation on
-     *           AmazonIdentityManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListAccountAliases service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListAccountAliasesResult> listAccountAliasesAsync(ListAccountAliasesRequest listAccountAliasesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Lists the account aliases associated with the account. For
-     * information about using an AWS account alias, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param listAccountAliasesRequest Container for the necessary
-     *           parameters to execute the ListAccountAliases operation on
-     *           AmazonIdentityManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListAccountAliases service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListAccountAliasesResult> listAccountAliasesAsync(ListAccountAliasesRequest listAccountAliasesRequest,
-            AsyncHandler<ListAccountAliasesRequest, ListAccountAliasesResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -2489,12 +2466,12 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * the AWS account has no associated users.
      * </p>
      * <p>
-     * <b>NOTE:</b> Because the body of a X.509 certificate can be large,
-     * you should use POST rather than GET when calling
-     * UploadSigningCertificate. For information about setting up signatures
-     * and authorization through the API, go to Signing AWS API Requests in
-     * the AWS General Reference. For general information about using the
-     * Query API with IAM, go to Making Query Requests in the Using IAMguide.
+     * <b>NOTE:</b>Because the body of a X.509 certificate can be large, you
+     * should use POST rather than GET when calling UploadSigningCertificate.
+     * For information about setting up signatures and authorization through
+     * the API, go to Signing AWS API Requests in the AWS General Reference.
+     * For general information about using the Query API with IAM, go to
+     * Making Query Requests in the Using IAMguide.
      * </p>
      *
      * @param uploadSigningCertificateRequest Container for the necessary
@@ -2533,12 +2510,12 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * the AWS account has no associated users.
      * </p>
      * <p>
-     * <b>NOTE:</b> Because the body of a X.509 certificate can be large,
-     * you should use POST rather than GET when calling
-     * UploadSigningCertificate. For information about setting up signatures
-     * and authorization through the API, go to Signing AWS API Requests in
-     * the AWS General Reference. For general information about using the
-     * Query API with IAM, go to Making Query Requests in the Using IAMguide.
+     * <b>NOTE:</b>Because the body of a X.509 certificate can be large, you
+     * should use POST rather than GET when calling UploadSigningCertificate.
+     * For information about setting up signatures and authorization through
+     * the API, go to Signing AWS API Requests in the AWS General Reference.
+     * For general information about using the Query API with IAM, go to
+     * Making Query Requests in the Using IAMguide.
      * </p>
      *
      * @param uploadSigningCertificateRequest Container for the necessary
@@ -2888,7 +2865,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * the AWS account has no associated users.
      * </p>
      * <p>
-     * <b>NOTE:</b> To ensure the security of your AWS account, the secret
+     * <b>NOTE:</b>To ensure the security of your AWS account, the secret
      * access key is accessible only during key and user creation.
      * </p>
      *
@@ -2929,7 +2906,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * the AWS account has no associated users.
      * </p>
      * <p>
-     * <b>NOTE:</b> To ensure the security of your AWS account, the secret
+     * <b>NOTE:</b>To ensure the security of your AWS account, the secret
      * access key is accessible only during key and user creation.
      * </p>
      *
@@ -4200,7 +4177,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Managing Server Certificates in the Using IAM guide.
      * </p>
      * <p>
-     * <b>NOTE:</b> To change a server certificate name the requester must
+     * <b>NOTE:</b>To change a server certificate name the requester must
      * have appropriate permissions on both the source object and the target
      * object. For example, to change the name from ProductionCert to
      * ProdCert, the entity making the request must have permission on
@@ -4238,7 +4215,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Managing Server Certificates in the Using IAM guide.
      * </p>
      * <p>
-     * <b>NOTE:</b> To change a server certificate name the requester must
+     * <b>NOTE:</b>To change a server certificate name the requester must
      * have appropriate permissions on both the source object and the target
      * object. For example, to change the name from ProductionCert to
      * ProdCert, the entity making the request must have permission on
@@ -4540,7 +4517,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Groups in the Using IAM guide.
      * </p>
      * <p>
-     * <b>NOTE:</b> To change a group name the requester must have
+     * <b>NOTE:</b>To change a group name the requester must have
      * appropriate permissions on both the source object and the target
      * object. For example, to change Managers to MGRs, the entity making the
      * request must have permission on Managers and MGRs, or must have
@@ -4576,7 +4553,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Groups in the Using IAM guide.
      * </p>
      * <p>
-     * <b>NOTE:</b> To change a group name the requester must have
+     * <b>NOTE:</b>To change a group name the requester must have
      * appropriate permissions on both the source object and the target
      * object. For example, to change Managers to MGRs, the entity making the
      * request must have permission on Managers and MGRs, or must have
@@ -6247,7 +6224,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * provider was created or updated.
      * </p>
      * <p>
-     * <b>NOTE:</b> This operation requires Signature Version 4.
+     * <b>NOTE:</b>This operation requires Signature Version 4.
      * </p>
      *
      * @param getSAMLProviderRequest Container for the necessary parameters
@@ -6275,7 +6252,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * provider was created or updated.
      * </p>
      * <p>
-     * <b>NOTE:</b> This operation requires Signature Version 4.
+     * <b>NOTE:</b>This operation requires Signature Version 4.
      * </p>
      *
      * @param getSAMLProviderRequest Container for the necessary parameters
@@ -6797,6 +6774,67 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      */
     public Future<ListUserPoliciesResult> listUserPoliciesAsync(ListUserPoliciesRequest listUserPoliciesRequest,
             AsyncHandler<ListUserPoliciesRequest, ListUserPoliciesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Retrieves information about when the specified access key was last
+     * used. The information includes the date and time of last use, along
+     * with the AWS service and region that were specified in the last
+     * request made with that key.
+     * </p>
+     *
+     * @param getAccessKeyLastUsedRequest Container for the necessary
+     *           parameters to execute the GetAccessKeyLastUsed operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetAccessKeyLastUsed service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetAccessKeyLastUsedResult> getAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest getAccessKeyLastUsedRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Retrieves information about when the specified access key was last
+     * used. The information includes the date and time of last use, along
+     * with the AWS service and region that were specified in the last
+     * request made with that key.
+     * </p>
+     *
+     * @param getAccessKeyLastUsedRequest Container for the necessary
+     *           parameters to execute the GetAccessKeyLastUsed operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetAccessKeyLastUsed service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetAccessKeyLastUsedResult> getAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest getAccessKeyLastUsedRequest,
+            AsyncHandler<GetAccessKeyLastUsedRequest, GetAccessKeyLastUsedResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

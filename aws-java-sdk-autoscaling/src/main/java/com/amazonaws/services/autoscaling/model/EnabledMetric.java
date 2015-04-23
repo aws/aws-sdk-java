@@ -24,7 +24,14 @@ import java.io.Serializable;
 public class EnabledMetric implements Serializable, Cloneable {
 
     /**
-     * The name of the metric.
+     * The name of the metric. <ul> <li><p><code>GroupMinSize</code></li>
+     * <li><p><code>GroupMaxSize</code></li>
+     * <li><p><code>GroupDesiredCapacity</code></li>
+     * <li><p><code>GroupInServiceInstances</code></li>
+     * <li><p><code>GroupPendingInstances</code></li>
+     * <li><p><code>GroupStandbyInstances</code></li>
+     * <li><p><code>GroupTerminatingInstances</code></li>
+     * <li><p><code>GroupTotalInstances</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -33,7 +40,8 @@ public class EnabledMetric implements Serializable, Cloneable {
     private String metric;
 
     /**
-     * The granularity of the metric.
+     * The granularity of the metric. The only valid value is
+     * <code>1Minute</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -42,33 +50,68 @@ public class EnabledMetric implements Serializable, Cloneable {
     private String granularity;
 
     /**
-     * The name of the metric.
+     * The name of the metric. <ul> <li><p><code>GroupMinSize</code></li>
+     * <li><p><code>GroupMaxSize</code></li>
+     * <li><p><code>GroupDesiredCapacity</code></li>
+     * <li><p><code>GroupInServiceInstances</code></li>
+     * <li><p><code>GroupPendingInstances</code></li>
+     * <li><p><code>GroupStandbyInstances</code></li>
+     * <li><p><code>GroupTerminatingInstances</code></li>
+     * <li><p><code>GroupTotalInstances</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the metric.
+     * @return The name of the metric. <ul> <li><p><code>GroupMinSize</code></li>
+     *         <li><p><code>GroupMaxSize</code></li>
+     *         <li><p><code>GroupDesiredCapacity</code></li>
+     *         <li><p><code>GroupInServiceInstances</code></li>
+     *         <li><p><code>GroupPendingInstances</code></li>
+     *         <li><p><code>GroupStandbyInstances</code></li>
+     *         <li><p><code>GroupTerminatingInstances</code></li>
+     *         <li><p><code>GroupTotalInstances</code></li> </ul>
      */
     public String getMetric() {
         return metric;
     }
     
     /**
-     * The name of the metric.
+     * The name of the metric. <ul> <li><p><code>GroupMinSize</code></li>
+     * <li><p><code>GroupMaxSize</code></li>
+     * <li><p><code>GroupDesiredCapacity</code></li>
+     * <li><p><code>GroupInServiceInstances</code></li>
+     * <li><p><code>GroupPendingInstances</code></li>
+     * <li><p><code>GroupStandbyInstances</code></li>
+     * <li><p><code>GroupTerminatingInstances</code></li>
+     * <li><p><code>GroupTotalInstances</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param metric The name of the metric.
+     * @param metric The name of the metric. <ul> <li><p><code>GroupMinSize</code></li>
+     *         <li><p><code>GroupMaxSize</code></li>
+     *         <li><p><code>GroupDesiredCapacity</code></li>
+     *         <li><p><code>GroupInServiceInstances</code></li>
+     *         <li><p><code>GroupPendingInstances</code></li>
+     *         <li><p><code>GroupStandbyInstances</code></li>
+     *         <li><p><code>GroupTerminatingInstances</code></li>
+     *         <li><p><code>GroupTotalInstances</code></li> </ul>
      */
     public void setMetric(String metric) {
         this.metric = metric;
     }
     
     /**
-     * The name of the metric.
+     * The name of the metric. <ul> <li><p><code>GroupMinSize</code></li>
+     * <li><p><code>GroupMaxSize</code></li>
+     * <li><p><code>GroupDesiredCapacity</code></li>
+     * <li><p><code>GroupInServiceInstances</code></li>
+     * <li><p><code>GroupPendingInstances</code></li>
+     * <li><p><code>GroupStandbyInstances</code></li>
+     * <li><p><code>GroupTerminatingInstances</code></li>
+     * <li><p><code>GroupTotalInstances</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -76,7 +119,14 @@ public class EnabledMetric implements Serializable, Cloneable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param metric The name of the metric.
+     * @param metric The name of the metric. <ul> <li><p><code>GroupMinSize</code></li>
+     *         <li><p><code>GroupMaxSize</code></li>
+     *         <li><p><code>GroupDesiredCapacity</code></li>
+     *         <li><p><code>GroupInServiceInstances</code></li>
+     *         <li><p><code>GroupPendingInstances</code></li>
+     *         <li><p><code>GroupStandbyInstances</code></li>
+     *         <li><p><code>GroupTerminatingInstances</code></li>
+     *         <li><p><code>GroupTotalInstances</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -87,33 +137,38 @@ public class EnabledMetric implements Serializable, Cloneable {
     }
 
     /**
-     * The granularity of the metric.
+     * The granularity of the metric. The only valid value is
+     * <code>1Minute</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The granularity of the metric.
+     * @return The granularity of the metric. The only valid value is
+     *         <code>1Minute</code>.
      */
     public String getGranularity() {
         return granularity;
     }
     
     /**
-     * The granularity of the metric.
+     * The granularity of the metric. The only valid value is
+     * <code>1Minute</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param granularity The granularity of the metric.
+     * @param granularity The granularity of the metric. The only valid value is
+     *         <code>1Minute</code>.
      */
     public void setGranularity(String granularity) {
         this.granularity = granularity;
     }
     
     /**
-     * The granularity of the metric.
+     * The granularity of the metric. The only valid value is
+     * <code>1Minute</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -121,7 +176,8 @@ public class EnabledMetric implements Serializable, Cloneable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param granularity The granularity of the metric.
+     * @param granularity The granularity of the metric. The only valid value is
+     *         <code>1Minute</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

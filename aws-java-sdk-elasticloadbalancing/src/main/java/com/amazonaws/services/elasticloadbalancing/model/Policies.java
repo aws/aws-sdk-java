@@ -18,25 +18,25 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The policies data type.
+ * The policies for a load balancer.
  * </p>
  */
 public class Policies implements Serializable, Cloneable {
 
     /**
-     * A list of the <a>AppCookieStickinessPolicy</a> objects created with
+     * The stickiness policies created using
      * <a>CreateAppCookieStickinessPolicy</a>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AppCookieStickinessPolicy> appCookieStickinessPolicies;
 
     /**
-     * A list of <a>LBCookieStickinessPolicy</a> objects created with
-     * <a>CreateAppCookieStickinessPolicy</a>.
+     * The stickiness policies created using
+     * <a>CreateLBCookieStickinessPolicy</a>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<LBCookieStickinessPolicy> lBCookieStickinessPolicies;
 
     /**
-     * A list of policy names other than the stickiness policies.
+     * The policies other than the stickiness policies.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> otherPolicies;
 
@@ -47,10 +47,10 @@ public class Policies implements Serializable, Cloneable {
     public Policies() {}
     
     /**
-     * A list of the <a>AppCookieStickinessPolicy</a> objects created with
+     * The stickiness policies created using
      * <a>CreateAppCookieStickinessPolicy</a>.
      *
-     * @return A list of the <a>AppCookieStickinessPolicy</a> objects created with
+     * @return The stickiness policies created using
      *         <a>CreateAppCookieStickinessPolicy</a>.
      */
     public java.util.List<AppCookieStickinessPolicy> getAppCookieStickinessPolicies() {
@@ -62,10 +62,10 @@ public class Policies implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the <a>AppCookieStickinessPolicy</a> objects created with
+     * The stickiness policies created using
      * <a>CreateAppCookieStickinessPolicy</a>.
      *
-     * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicy</a> objects created with
+     * @param appCookieStickinessPolicies The stickiness policies created using
      *         <a>CreateAppCookieStickinessPolicy</a>.
      */
     public void setAppCookieStickinessPolicies(java.util.Collection<AppCookieStickinessPolicy> appCookieStickinessPolicies) {
@@ -79,7 +79,7 @@ public class Policies implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the <a>AppCookieStickinessPolicy</a> objects created with
+     * The stickiness policies created using
      * <a>CreateAppCookieStickinessPolicy</a>.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -90,7 +90,7 @@ public class Policies implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicy</a> objects created with
+     * @param appCookieStickinessPolicies The stickiness policies created using
      *         <a>CreateAppCookieStickinessPolicy</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -105,12 +105,12 @@ public class Policies implements Serializable, Cloneable {
     }
     
     /**
-     * A list of the <a>AppCookieStickinessPolicy</a> objects created with
+     * The stickiness policies created using
      * <a>CreateAppCookieStickinessPolicy</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicy</a> objects created with
+     * @param appCookieStickinessPolicies The stickiness policies created using
      *         <a>CreateAppCookieStickinessPolicy</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -129,11 +129,11 @@ public class Policies implements Serializable, Cloneable {
     }
 
     /**
-     * A list of <a>LBCookieStickinessPolicy</a> objects created with
-     * <a>CreateAppCookieStickinessPolicy</a>.
+     * The stickiness policies created using
+     * <a>CreateLBCookieStickinessPolicy</a>.
      *
-     * @return A list of <a>LBCookieStickinessPolicy</a> objects created with
-     *         <a>CreateAppCookieStickinessPolicy</a>.
+     * @return The stickiness policies created using
+     *         <a>CreateLBCookieStickinessPolicy</a>.
      */
     public java.util.List<LBCookieStickinessPolicy> getLBCookieStickinessPolicies() {
         if (lBCookieStickinessPolicies == null) {
@@ -144,11 +144,11 @@ public class Policies implements Serializable, Cloneable {
     }
     
     /**
-     * A list of <a>LBCookieStickinessPolicy</a> objects created with
-     * <a>CreateAppCookieStickinessPolicy</a>.
+     * The stickiness policies created using
+     * <a>CreateLBCookieStickinessPolicy</a>.
      *
-     * @param lBCookieStickinessPolicies A list of <a>LBCookieStickinessPolicy</a> objects created with
-     *         <a>CreateAppCookieStickinessPolicy</a>.
+     * @param lBCookieStickinessPolicies The stickiness policies created using
+     *         <a>CreateLBCookieStickinessPolicy</a>.
      */
     public void setLBCookieStickinessPolicies(java.util.Collection<LBCookieStickinessPolicy> lBCookieStickinessPolicies) {
         if (lBCookieStickinessPolicies == null) {
@@ -161,8 +161,8 @@ public class Policies implements Serializable, Cloneable {
     }
     
     /**
-     * A list of <a>LBCookieStickinessPolicy</a> objects created with
-     * <a>CreateAppCookieStickinessPolicy</a>.
+     * The stickiness policies created using
+     * <a>CreateLBCookieStickinessPolicy</a>.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLBCookieStickinessPolicies(java.util.Collection)}
@@ -171,8 +171,8 @@ public class Policies implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lBCookieStickinessPolicies A list of <a>LBCookieStickinessPolicy</a> objects created with
-     *         <a>CreateAppCookieStickinessPolicy</a>.
+     * @param lBCookieStickinessPolicies The stickiness policies created using
+     *         <a>CreateLBCookieStickinessPolicy</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -186,13 +186,13 @@ public class Policies implements Serializable, Cloneable {
     }
     
     /**
-     * A list of <a>LBCookieStickinessPolicy</a> objects created with
-     * <a>CreateAppCookieStickinessPolicy</a>.
+     * The stickiness policies created using
+     * <a>CreateLBCookieStickinessPolicy</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lBCookieStickinessPolicies A list of <a>LBCookieStickinessPolicy</a> objects created with
-     *         <a>CreateAppCookieStickinessPolicy</a>.
+     * @param lBCookieStickinessPolicies The stickiness policies created using
+     *         <a>CreateLBCookieStickinessPolicy</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -210,9 +210,9 @@ public class Policies implements Serializable, Cloneable {
     }
 
     /**
-     * A list of policy names other than the stickiness policies.
+     * The policies other than the stickiness policies.
      *
-     * @return A list of policy names other than the stickiness policies.
+     * @return The policies other than the stickiness policies.
      */
     public java.util.List<String> getOtherPolicies() {
         if (otherPolicies == null) {
@@ -223,9 +223,9 @@ public class Policies implements Serializable, Cloneable {
     }
     
     /**
-     * A list of policy names other than the stickiness policies.
+     * The policies other than the stickiness policies.
      *
-     * @param otherPolicies A list of policy names other than the stickiness policies.
+     * @param otherPolicies The policies other than the stickiness policies.
      */
     public void setOtherPolicies(java.util.Collection<String> otherPolicies) {
         if (otherPolicies == null) {
@@ -238,7 +238,7 @@ public class Policies implements Serializable, Cloneable {
     }
     
     /**
-     * A list of policy names other than the stickiness policies.
+     * The policies other than the stickiness policies.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setOtherPolicies(java.util.Collection)} or {@link
@@ -247,7 +247,7 @@ public class Policies implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param otherPolicies A list of policy names other than the stickiness policies.
+     * @param otherPolicies The policies other than the stickiness policies.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -261,11 +261,11 @@ public class Policies implements Serializable, Cloneable {
     }
     
     /**
-     * A list of policy names other than the stickiness policies.
+     * The policies other than the stickiness policies.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param otherPolicies A list of policy names other than the stickiness policies.
+     * @param otherPolicies The policies other than the stickiness policies.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
