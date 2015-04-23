@@ -18,8 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The limit for the number of Auto Scaling groups or launch
- * configurations has already been reached.
+ * You have already reached a limit for your Auto Scaling resources (for
+ * example, groups, launch configurations, or lifecycle hooks). For more
+ * information, see DescribeAccountLimits.
  * </p>
  */        
 public class LimitExceededException extends AmazonServiceException {

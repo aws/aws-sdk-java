@@ -21,10 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancerPolicy(CreateLoadBalancerPolicyRequest) CreateLoadBalancerPolicy operation}.
  * <p>
- * Creates a new policy that contains the necessary attributes depending
- * on the policy type. Policies are settings that are saved for your load
- * balancer and that can be applied to the front-end listener, or the
- * back-end application server, depending on your policy type.
+ * Creates a policy with the specified attributes for the specified load
+ * balancer.
+ * </p>
+ * <p>
+ * Policies are settings that are saved for your load balancer and that
+ * can be applied to the front-end listener or the back-end application
+ * server, depending on the policy type.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancerPolicy(CreateLoadBalancerPolicyRequest)
@@ -32,59 +35,51 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name associated with the LoadBalancer for which the policy is
-     * being created.
+     * The name of the load balancer.
      */
     private String loadBalancerName;
 
     /**
-     * The name of the load balancer policy being created. The name must be
+     * The name of the load balancer policy to be created. This name must be
      * unique within the set of policies for this load balancer.
      */
     private String policyName;
 
     /**
-     * The name of the base policy type being used to create this policy. To
-     * get the list of policy types, use the
-     * <a>DescribeLoadBalancerPolicyTypes</a> action.
+     * The name of the base policy type. To get the list of policy types, use
+     * <a>DescribeLoadBalancerPolicyTypes</a>.
      */
     private String policyTypeName;
 
     /**
-     * A list of attributes associated with the policy being created.
+     * The attributes for the policy.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PolicyAttribute> policyAttributes;
 
     /**
-     * The name associated with the LoadBalancer for which the policy is
-     * being created.
+     * The name of the load balancer.
      *
-     * @return The name associated with the LoadBalancer for which the policy is
-     *         being created.
+     * @return The name of the load balancer.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer for which the policy is
-     * being created.
+     * The name of the load balancer.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer for which the policy is
-     *         being created.
+     * @param loadBalancerName The name of the load balancer.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer for which the policy is
-     * being created.
+     * The name of the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer for which the policy is
-     *         being created.
+     * @param loadBalancerName The name of the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -95,10 +90,10 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * The name of the load balancer policy being created. The name must be
+     * The name of the load balancer policy to be created. This name must be
      * unique within the set of policies for this load balancer.
      *
-     * @return The name of the load balancer policy being created. The name must be
+     * @return The name of the load balancer policy to be created. This name must be
      *         unique within the set of policies for this load balancer.
      */
     public String getPolicyName() {
@@ -106,10 +101,10 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * The name of the load balancer policy being created. The name must be
+     * The name of the load balancer policy to be created. This name must be
      * unique within the set of policies for this load balancer.
      *
-     * @param policyName The name of the load balancer policy being created. The name must be
+     * @param policyName The name of the load balancer policy to be created. This name must be
      *         unique within the set of policies for this load balancer.
      */
     public void setPolicyName(String policyName) {
@@ -117,12 +112,12 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * The name of the load balancer policy being created. The name must be
+     * The name of the load balancer policy to be created. This name must be
      * unique within the set of policies for this load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyName The name of the load balancer policy being created. The name must be
+     * @param policyName The name of the load balancer policy to be created. This name must be
      *         unique within the set of policies for this load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -134,41 +129,35 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * The name of the base policy type being used to create this policy. To
-     * get the list of policy types, use the
-     * <a>DescribeLoadBalancerPolicyTypes</a> action.
+     * The name of the base policy type. To get the list of policy types, use
+     * <a>DescribeLoadBalancerPolicyTypes</a>.
      *
-     * @return The name of the base policy type being used to create this policy. To
-     *         get the list of policy types, use the
-     *         <a>DescribeLoadBalancerPolicyTypes</a> action.
+     * @return The name of the base policy type. To get the list of policy types, use
+     *         <a>DescribeLoadBalancerPolicyTypes</a>.
      */
     public String getPolicyTypeName() {
         return policyTypeName;
     }
     
     /**
-     * The name of the base policy type being used to create this policy. To
-     * get the list of policy types, use the
-     * <a>DescribeLoadBalancerPolicyTypes</a> action.
+     * The name of the base policy type. To get the list of policy types, use
+     * <a>DescribeLoadBalancerPolicyTypes</a>.
      *
-     * @param policyTypeName The name of the base policy type being used to create this policy. To
-     *         get the list of policy types, use the
-     *         <a>DescribeLoadBalancerPolicyTypes</a> action.
+     * @param policyTypeName The name of the base policy type. To get the list of policy types, use
+     *         <a>DescribeLoadBalancerPolicyTypes</a>.
      */
     public void setPolicyTypeName(String policyTypeName) {
         this.policyTypeName = policyTypeName;
     }
     
     /**
-     * The name of the base policy type being used to create this policy. To
-     * get the list of policy types, use the
-     * <a>DescribeLoadBalancerPolicyTypes</a> action.
+     * The name of the base policy type. To get the list of policy types, use
+     * <a>DescribeLoadBalancerPolicyTypes</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyTypeName The name of the base policy type being used to create this policy. To
-     *         get the list of policy types, use the
-     *         <a>DescribeLoadBalancerPolicyTypes</a> action.
+     * @param policyTypeName The name of the base policy type. To get the list of policy types, use
+     *         <a>DescribeLoadBalancerPolicyTypes</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -179,9 +168,9 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * A list of attributes associated with the policy being created.
+     * The attributes for the policy.
      *
-     * @return A list of attributes associated with the policy being created.
+     * @return The attributes for the policy.
      */
     public java.util.List<PolicyAttribute> getPolicyAttributes() {
         if (policyAttributes == null) {
@@ -192,9 +181,9 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A list of attributes associated with the policy being created.
+     * The attributes for the policy.
      *
-     * @param policyAttributes A list of attributes associated with the policy being created.
+     * @param policyAttributes The attributes for the policy.
      */
     public void setPolicyAttributes(java.util.Collection<PolicyAttribute> policyAttributes) {
         if (policyAttributes == null) {
@@ -207,7 +196,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A list of attributes associated with the policy being created.
+     * The attributes for the policy.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPolicyAttributes(java.util.Collection)} or {@link
@@ -216,7 +205,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyAttributes A list of attributes associated with the policy being created.
+     * @param policyAttributes The attributes for the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -230,11 +219,11 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A list of attributes associated with the policy being created.
+     * The attributes for the policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyAttributes A list of attributes associated with the policy being created.
+     * @param policyAttributes The attributes for the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

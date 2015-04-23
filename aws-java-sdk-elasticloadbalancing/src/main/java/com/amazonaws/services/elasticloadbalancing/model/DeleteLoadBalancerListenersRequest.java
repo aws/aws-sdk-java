@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest) DeleteLoadBalancerListeners operation}.
  * <p>
- * Deletes listeners from the load balancer for the specified port.
+ * Deletes the specified listeners from the specified load balancer.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest)
@@ -29,13 +29,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The mnemonic name associated with the load balancer.
+     * The name of the load balancer.
      */
     private String loadBalancerName;
 
     /**
-     * The client port number(s) of the load balancer listener(s) to be
-     * removed.
+     * The client port numbers of the listeners.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Integer> loadBalancerPorts;
 
@@ -50,10 +49,8 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param loadBalancerName The mnemonic name associated with the load
-     * balancer.
-     * @param loadBalancerPorts The client port number(s) of the load
-     * balancer listener(s) to be removed.
+     * @param loadBalancerName The name of the load balancer.
+     * @param loadBalancerPorts The client port numbers of the listeners.
      */
     public DeleteLoadBalancerListenersRequest(String loadBalancerName, java.util.List<Integer> loadBalancerPorts) {
         setLoadBalancerName(loadBalancerName);
@@ -61,29 +58,29 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * The mnemonic name associated with the load balancer.
+     * The name of the load balancer.
      *
-     * @return The mnemonic name associated with the load balancer.
+     * @return The name of the load balancer.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The mnemonic name associated with the load balancer.
+     * The name of the load balancer.
      *
-     * @param loadBalancerName The mnemonic name associated with the load balancer.
+     * @param loadBalancerName The name of the load balancer.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The mnemonic name associated with the load balancer.
+     * The name of the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The mnemonic name associated with the load balancer.
+     * @param loadBalancerName The name of the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -94,11 +91,9 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * The client port number(s) of the load balancer listener(s) to be
-     * removed.
+     * The client port numbers of the listeners.
      *
-     * @return The client port number(s) of the load balancer listener(s) to be
-     *         removed.
+     * @return The client port numbers of the listeners.
      */
     public java.util.List<Integer> getLoadBalancerPorts() {
         if (loadBalancerPorts == null) {
@@ -109,11 +104,9 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The client port number(s) of the load balancer listener(s) to be
-     * removed.
+     * The client port numbers of the listeners.
      *
-     * @param loadBalancerPorts The client port number(s) of the load balancer listener(s) to be
-     *         removed.
+     * @param loadBalancerPorts The client port numbers of the listeners.
      */
     public void setLoadBalancerPorts(java.util.Collection<Integer> loadBalancerPorts) {
         if (loadBalancerPorts == null) {
@@ -126,8 +119,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The client port number(s) of the load balancer listener(s) to be
-     * removed.
+     * The client port numbers of the listeners.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLoadBalancerPorts(java.util.Collection)} or
@@ -136,8 +128,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerPorts The client port number(s) of the load balancer listener(s) to be
-     *         removed.
+     * @param loadBalancerPorts The client port numbers of the listeners.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -151,13 +142,11 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * The client port number(s) of the load balancer listener(s) to be
-     * removed.
+     * The client port numbers of the listeners.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerPorts The client port number(s) of the load balancer listener(s) to be
-     *         removed.
+     * @param loadBalancerPorts The client port numbers of the listeners.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

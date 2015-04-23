@@ -28,24 +28,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * This policy is similar to the policy created by
  * CreateLBCookieStickinessPolicy, except that the lifetime of the
- * special Elastic Load Balancing cookie follows the lifetime of the
- * application-generated cookie specified in the policy configuration.
- * The load balancer only inserts a new stickiness cookie when the
- * application response includes a new application cookie.
+ * special Elastic Load Balancing cookie, <code>AWSELB</code> ,
+ * follows the lifetime of the application-generated cookie
+ * specified in the policy configuration. The load balancer only inserts
+ * a new stickiness cookie when the application response includes a new
+ * application cookie.
  * </p>
  * <p>
  * If the application cookie is explicitly removed or expires, the
  * session stops being sticky until a new application cookie is issued.
  * </p>
  * <p>
- * <b>NOTE:</b> An application client must receive and send two cookies:
- * the application-generated cookie and the special Elastic Load
- * Balancing cookie named AWSELB. This is the default behavior for many
- * common web browsers.
- * </p>
- * <p>
  * For more information, see
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Enabling Application-Controlled Session Stickiness </a>
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Application-Controlled Session Stickiness </a>
  * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *
@@ -59,13 +54,13 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     private String loadBalancerName;
 
     /**
-     * The name of the policy being created. The name must be unique within
+     * The name of the policy being created. This name must be unique within
      * the set of policies for this load balancer.
      */
     private String policyName;
 
     /**
-     * Name of the application cookie used for stickiness.
+     * The name of the application cookie used for stickiness.
      */
     private String cookieName;
 
@@ -81,9 +76,10 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
      * initialize any additional object members.
      * 
      * @param loadBalancerName The name of the load balancer.
-     * @param policyName The name of the policy being created. The name must
+     * @param policyName The name of the policy being created. This name must
      * be unique within the set of policies for this load balancer.
-     * @param cookieName Name of the application cookie used for stickiness.
+     * @param cookieName The name of the application cookie used for
+     * stickiness.
      */
     public CreateAppCookieStickinessPolicyRequest(String loadBalancerName, String policyName, String cookieName) {
         setLoadBalancerName(loadBalancerName);
@@ -125,10 +121,10 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * The name of the policy being created. The name must be unique within
+     * The name of the policy being created. This name must be unique within
      * the set of policies for this load balancer.
      *
-     * @return The name of the policy being created. The name must be unique within
+     * @return The name of the policy being created. This name must be unique within
      *         the set of policies for this load balancer.
      */
     public String getPolicyName() {
@@ -136,10 +132,10 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * The name of the policy being created. The name must be unique within
+     * The name of the policy being created. This name must be unique within
      * the set of policies for this load balancer.
      *
-     * @param policyName The name of the policy being created. The name must be unique within
+     * @param policyName The name of the policy being created. This name must be unique within
      *         the set of policies for this load balancer.
      */
     public void setPolicyName(String policyName) {
@@ -147,12 +143,12 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * The name of the policy being created. The name must be unique within
+     * The name of the policy being created. This name must be unique within
      * the set of policies for this load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyName The name of the policy being created. The name must be unique within
+     * @param policyName The name of the policy being created. This name must be unique within
      *         the set of policies for this load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -164,29 +160,29 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * Name of the application cookie used for stickiness.
+     * The name of the application cookie used for stickiness.
      *
-     * @return Name of the application cookie used for stickiness.
+     * @return The name of the application cookie used for stickiness.
      */
     public String getCookieName() {
         return cookieName;
     }
     
     /**
-     * Name of the application cookie used for stickiness.
+     * The name of the application cookie used for stickiness.
      *
-     * @param cookieName Name of the application cookie used for stickiness.
+     * @param cookieName The name of the application cookie used for stickiness.
      */
     public void setCookieName(String cookieName) {
         this.cookieName = cookieName;
     }
     
     /**
-     * Name of the application cookie used for stickiness.
+     * The name of the application cookie used for stickiness.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cookieName Name of the application cookie used for stickiness.
+     * @param cookieName The name of the application cookie used for stickiness.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -27,7 +27,7 @@ public class Monitoring implements Serializable, Cloneable {
      * Indicates whether monitoring is enabled for the instance.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>disabled, enabled, pending
+     * <b>Allowed Values: </b>disabled, disabling, enabled, pending
      */
     private String state;
 
@@ -35,7 +35,7 @@ public class Monitoring implements Serializable, Cloneable {
      * Indicates whether monitoring is enabled for the instance.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>disabled, enabled, pending
+     * <b>Allowed Values: </b>disabled, disabling, enabled, pending
      *
      * @return Indicates whether monitoring is enabled for the instance.
      *
@@ -49,7 +49,7 @@ public class Monitoring implements Serializable, Cloneable {
      * Indicates whether monitoring is enabled for the instance.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>disabled, enabled, pending
+     * <b>Allowed Values: </b>disabled, disabling, enabled, pending
      *
      * @param state Indicates whether monitoring is enabled for the instance.
      *
@@ -65,7 +65,7 @@ public class Monitoring implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>disabled, enabled, pending
+     * <b>Allowed Values: </b>disabled, disabling, enabled, pending
      *
      * @param state Indicates whether monitoring is enabled for the instance.
      *
@@ -83,7 +83,7 @@ public class Monitoring implements Serializable, Cloneable {
      * Indicates whether monitoring is enabled for the instance.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>disabled, enabled, pending
+     * <b>Allowed Values: </b>disabled, disabling, enabled, pending
      *
      * @param state Indicates whether monitoring is enabled for the instance.
      *
@@ -99,7 +99,7 @@ public class Monitoring implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>disabled, enabled, pending
+     * <b>Allowed Values: </b>disabled, disabling, enabled, pending
      *
      * @param state Indicates whether monitoring is enabled for the instance.
      *

@@ -20,15 +20,18 @@ import java.io.Serializable;
  * <p>
  * Describes a policy adjustment type.
  * </p>
+ * <p>
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html"> Dynamic Scaling </a>
+ * in the <i>Auto Scaling Developer Guide</i> .
+ * </p>
  */
 public class AdjustmentType implements Serializable, Cloneable {
 
     /**
      * The policy adjustment type. The valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
-     * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
+     * <code>PercentChangeInCapacity</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -39,9 +42,7 @@ public class AdjustmentType implements Serializable, Cloneable {
     /**
      * The policy adjustment type. The valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
-     * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
+     * <code>PercentChangeInCapacity</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -49,9 +50,7 @@ public class AdjustmentType implements Serializable, Cloneable {
      *
      * @return The policy adjustment type. The valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentChangeInCapacity</code>. <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
-     *         Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
+     *         <code>PercentChangeInCapacity</code>.
      */
     public String getAdjustmentType() {
         return adjustmentType;
@@ -60,9 +59,7 @@ public class AdjustmentType implements Serializable, Cloneable {
     /**
      * The policy adjustment type. The valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
-     * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
+     * <code>PercentChangeInCapacity</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -70,9 +67,7 @@ public class AdjustmentType implements Serializable, Cloneable {
      *
      * @param adjustmentType The policy adjustment type. The valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentChangeInCapacity</code>. <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
-     *         Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
+     *         <code>PercentChangeInCapacity</code>.
      */
     public void setAdjustmentType(String adjustmentType) {
         this.adjustmentType = adjustmentType;
@@ -81,9 +76,7 @@ public class AdjustmentType implements Serializable, Cloneable {
     /**
      * The policy adjustment type. The valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
-     * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
+     * <code>PercentChangeInCapacity</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -93,9 +86,7 @@ public class AdjustmentType implements Serializable, Cloneable {
      *
      * @param adjustmentType The policy adjustment type. The valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentChangeInCapacity</code>. <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
-     *         Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
+     *         <code>PercentChangeInCapacity</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

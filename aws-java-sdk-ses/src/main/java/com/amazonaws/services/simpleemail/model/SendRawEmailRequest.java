@@ -28,10 +28,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * <b>IMPORTANT:</b> You can only send email from verified email
- * addresses and domains. If you have not requested production access to
- * Amazon SES, you must also verify every recipient email address except
- * for the recipients provided by the Amazon SES mailbox simulator. For
- * more information, go to the Amazon SES Developer Guide.
+ * addresses and domains. If your account is still in the Amazon SES
+ * sandbox, you must also verify every recipient email address except for
+ * the recipients provided by the Amazon SES mailbox simulator. For more
+ * information, go to the Amazon SES Developer Guide.
  * </p>
  * <p>
  * The total size of the message cannot exceed 10 MB. This includes any
@@ -63,10 +63,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SendRawEmailRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The identity's email address. <p> By default, the string must be 7-bit
-     * ASCII. If the text must contain any other characters, then you must
-     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     * MIME encoded-word syntax uses the following form:
+     * The identity's email address. If you do not provide a value for this
+     * parameter, you must specify a "From" address in the raw text of the
+     * message. (You can also specify both.) <p> By default, the string must
+     * be 7-bit ASCII. If the text must contain any other characters, then
+     * you must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     * string. MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * <note>If you specify the <code>Source</code> parameter and have
@@ -123,10 +125,12 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The identity's email address. <p> By default, the string must be 7-bit
-     * ASCII. If the text must contain any other characters, then you must
-     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     * MIME encoded-word syntax uses the following form:
+     * The identity's email address. If you do not provide a value for this
+     * parameter, you must specify a "From" address in the raw text of the
+     * message. (You can also specify both.) <p> By default, the string must
+     * be 7-bit ASCII. If the text must contain any other characters, then
+     * you must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     * string. MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * <note>If you specify the <code>Source</code> parameter and have
@@ -135,10 +139,12 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      * <i>Return-Path</i> header that you might include in the raw text of
      * the message. </note>
      *
-     * @return The identity's email address. <p> By default, the string must be 7-bit
-     *         ASCII. If the text must contain any other characters, then you must
-     *         use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     *         MIME encoded-word syntax uses the following form:
+     * @return The identity's email address. If you do not provide a value for this
+     *         parameter, you must specify a "From" address in the raw text of the
+     *         message. (You can also specify both.) <p> By default, the string must
+     *         be 7-bit ASCII. If the text must contain any other characters, then
+     *         you must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     *         string. MIME encoded-word syntax uses the following form:
      *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
      *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      *         <note>If you specify the <code>Source</code> parameter and have
@@ -152,10 +158,12 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The identity's email address. <p> By default, the string must be 7-bit
-     * ASCII. If the text must contain any other characters, then you must
-     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     * MIME encoded-word syntax uses the following form:
+     * The identity's email address. If you do not provide a value for this
+     * parameter, you must specify a "From" address in the raw text of the
+     * message. (You can also specify both.) <p> By default, the string must
+     * be 7-bit ASCII. If the text must contain any other characters, then
+     * you must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     * string. MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * <note>If you specify the <code>Source</code> parameter and have
@@ -164,10 +172,12 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      * <i>Return-Path</i> header that you might include in the raw text of
      * the message. </note>
      *
-     * @param source The identity's email address. <p> By default, the string must be 7-bit
-     *         ASCII. If the text must contain any other characters, then you must
-     *         use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     *         MIME encoded-word syntax uses the following form:
+     * @param source The identity's email address. If you do not provide a value for this
+     *         parameter, you must specify a "From" address in the raw text of the
+     *         message. (You can also specify both.) <p> By default, the string must
+     *         be 7-bit ASCII. If the text must contain any other characters, then
+     *         you must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     *         string. MIME encoded-word syntax uses the following form:
      *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
      *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      *         <note>If you specify the <code>Source</code> parameter and have
@@ -181,10 +191,12 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The identity's email address. <p> By default, the string must be 7-bit
-     * ASCII. If the text must contain any other characters, then you must
-     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     * MIME encoded-word syntax uses the following form:
+     * The identity's email address. If you do not provide a value for this
+     * parameter, you must specify a "From" address in the raw text of the
+     * message. (You can also specify both.) <p> By default, the string must
+     * be 7-bit ASCII. If the text must contain any other characters, then
+     * you must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     * string. MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * <note>If you specify the <code>Source</code> parameter and have
@@ -195,10 +207,12 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param source The identity's email address. <p> By default, the string must be 7-bit
-     *         ASCII. If the text must contain any other characters, then you must
-     *         use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     *         MIME encoded-word syntax uses the following form:
+     * @param source The identity's email address. If you do not provide a value for this
+     *         parameter, you must specify a "From" address in the raw text of the
+     *         message. (You can also specify both.) <p> By default, the string must
+     *         be 7-bit ASCII. If the text must contain any other characters, then
+     *         you must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     *         string. MIME encoded-word syntax uses the following form:
      *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
      *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      *         <note>If you specify the <code>Source</code> parameter and have

@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Policy with the same name exists for this load balancer. Please
- * choose another name.
+ * A policy with the specified name already exists for this load
+ * balancer.
  * </p>
  */        
 public class DuplicatePolicyNameException extends AmazonServiceException {

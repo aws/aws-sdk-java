@@ -31,10 +31,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html"> Scheduled Scaling </a>
  * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
- * <p>
- * <b>NOTE:</b> Auto Scaling supports the date and time expressed in
- * "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only.
- * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest)
  */
@@ -59,22 +55,19 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     private String scheduledActionName;
 
     /**
-     * <code>Time</code> is deprecated. <p>The time for this action to start.
-     * <code>Time</code> is an alias for <code>StartTime</code> and can be
-     * specified instead of <code>StartTime</code>, or vice versa. If both
-     * <code>Time</code> and <code>StartTime</code> are specified, their
-     * values should be identical. Otherwise,
-     * <code>PutScheduledUpdateGroupAction</code> will return an error.
+     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * <p>The time for this action to start. If both <code>Time</code> and
+     * <code>StartTime</code> are specified, their values must be identical.
      */
     private java.util.Date time;
 
     /**
-     * The time for this action to start, as in <code>--start-time
-     * 2010-06-01T00:00:00Z</code>. <p>If you try to schedule your action in
-     * the past, Auto Scaling returns an error message. <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the
-     * recurring action will start and stop.
+     * The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
+     * UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>). <p>If
+     * you try to schedule your action in the past, Auto Scaling returns an
+     * error message. <p>When <code>StartTime</code> and <code>EndTime</code>
+     * are specified with <code>Recurrence</code>, they form the boundaries
+     * of when the recurring action starts and stops.
      */
     private java.util.Date startTime;
 
@@ -85,12 +78,11 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
 
     /**
      * The time when recurring future actions will start. Start time is
-     * specified by the user following the Unix cron syntax format. For
-     * information about cron syntax, go to <a
-     * href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free
-     * Encyclopedia</a>. <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     * form the boundaries of when the recurring action will start and stop.
+     * specified by the user following the Unix cron syntax format. For more
+     * information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a>
+     * in Wikipedia. <p>When <code>StartTime</code> and <code>EndTime</code>
+     * are specified with <code>Recurrence</code>, they form the boundaries
+     * of when the recurring action will start and stop.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -99,7 +91,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     private String recurrence;
 
     /**
-     * The minimum size for the new Auto Scaling group.
+     * The minimum size for the Auto Scaling group.
      */
     private Integer minSize;
 
@@ -109,8 +101,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     private Integer maxSize;
 
     /**
-     * The number of Amazon EC2 instances that should be running in the
-     * group.
+     * The number of EC2 instances that should be running in the group.
      */
     private Integer desiredCapacity;
 
@@ -205,59 +196,41 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     }
 
     /**
-     * <code>Time</code> is deprecated. <p>The time for this action to start.
-     * <code>Time</code> is an alias for <code>StartTime</code> and can be
-     * specified instead of <code>StartTime</code>, or vice versa. If both
-     * <code>Time</code> and <code>StartTime</code> are specified, their
-     * values should be identical. Otherwise,
-     * <code>PutScheduledUpdateGroupAction</code> will return an error.
+     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * <p>The time for this action to start. If both <code>Time</code> and
+     * <code>StartTime</code> are specified, their values must be identical.
      *
-     * @return <code>Time</code> is deprecated. <p>The time for this action to start.
-     *         <code>Time</code> is an alias for <code>StartTime</code> and can be
-     *         specified instead of <code>StartTime</code>, or vice versa. If both
-     *         <code>Time</code> and <code>StartTime</code> are specified, their
-     *         values should be identical. Otherwise,
-     *         <code>PutScheduledUpdateGroupAction</code> will return an error.
+     * @return <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     *         <p>The time for this action to start. If both <code>Time</code> and
+     *         <code>StartTime</code> are specified, their values must be identical.
      */
     public java.util.Date getTime() {
         return time;
     }
     
     /**
-     * <code>Time</code> is deprecated. <p>The time for this action to start.
-     * <code>Time</code> is an alias for <code>StartTime</code> and can be
-     * specified instead of <code>StartTime</code>, or vice versa. If both
-     * <code>Time</code> and <code>StartTime</code> are specified, their
-     * values should be identical. Otherwise,
-     * <code>PutScheduledUpdateGroupAction</code> will return an error.
+     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * <p>The time for this action to start. If both <code>Time</code> and
+     * <code>StartTime</code> are specified, their values must be identical.
      *
-     * @param time <code>Time</code> is deprecated. <p>The time for this action to start.
-     *         <code>Time</code> is an alias for <code>StartTime</code> and can be
-     *         specified instead of <code>StartTime</code>, or vice versa. If both
-     *         <code>Time</code> and <code>StartTime</code> are specified, their
-     *         values should be identical. Otherwise,
-     *         <code>PutScheduledUpdateGroupAction</code> will return an error.
+     * @param time <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     *         <p>The time for this action to start. If both <code>Time</code> and
+     *         <code>StartTime</code> are specified, their values must be identical.
      */
     public void setTime(java.util.Date time) {
         this.time = time;
     }
     
     /**
-     * <code>Time</code> is deprecated. <p>The time for this action to start.
-     * <code>Time</code> is an alias for <code>StartTime</code> and can be
-     * specified instead of <code>StartTime</code>, or vice versa. If both
-     * <code>Time</code> and <code>StartTime</code> are specified, their
-     * values should be identical. Otherwise,
-     * <code>PutScheduledUpdateGroupAction</code> will return an error.
+     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * <p>The time for this action to start. If both <code>Time</code> and
+     * <code>StartTime</code> are specified, their values must be identical.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param time <code>Time</code> is deprecated. <p>The time for this action to start.
-     *         <code>Time</code> is an alias for <code>StartTime</code> and can be
-     *         specified instead of <code>StartTime</code>, or vice versa. If both
-     *         <code>Time</code> and <code>StartTime</code> are specified, their
-     *         values should be identical. Otherwise,
-     *         <code>PutScheduledUpdateGroupAction</code> will return an error.
+     * @param time <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     *         <p>The time for this action to start. If both <code>Time</code> and
+     *         <code>StartTime</code> are specified, their values must be identical.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -268,59 +241,59 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     }
 
     /**
-     * The time for this action to start, as in <code>--start-time
-     * 2010-06-01T00:00:00Z</code>. <p>If you try to schedule your action in
-     * the past, Auto Scaling returns an error message. <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the
-     * recurring action will start and stop.
+     * The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
+     * UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>). <p>If
+     * you try to schedule your action in the past, Auto Scaling returns an
+     * error message. <p>When <code>StartTime</code> and <code>EndTime</code>
+     * are specified with <code>Recurrence</code>, they form the boundaries
+     * of when the recurring action starts and stops.
      *
-     * @return The time for this action to start, as in <code>--start-time
-     *         2010-06-01T00:00:00Z</code>. <p>If you try to schedule your action in
-     *         the past, Auto Scaling returns an error message. <p>When
-     *         <code>StartTime</code> and <code>EndTime</code> are specified with
-     *         <code>Recurrence</code>, they form the boundaries of when the
-     *         recurring action will start and stop.
+     * @return The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
+     *         UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>). <p>If
+     *         you try to schedule your action in the past, Auto Scaling returns an
+     *         error message. <p>When <code>StartTime</code> and <code>EndTime</code>
+     *         are specified with <code>Recurrence</code>, they form the boundaries
+     *         of when the recurring action starts and stops.
      */
     public java.util.Date getStartTime() {
         return startTime;
     }
     
     /**
-     * The time for this action to start, as in <code>--start-time
-     * 2010-06-01T00:00:00Z</code>. <p>If you try to schedule your action in
-     * the past, Auto Scaling returns an error message. <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the
-     * recurring action will start and stop.
+     * The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
+     * UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>). <p>If
+     * you try to schedule your action in the past, Auto Scaling returns an
+     * error message. <p>When <code>StartTime</code> and <code>EndTime</code>
+     * are specified with <code>Recurrence</code>, they form the boundaries
+     * of when the recurring action starts and stops.
      *
-     * @param startTime The time for this action to start, as in <code>--start-time
-     *         2010-06-01T00:00:00Z</code>. <p>If you try to schedule your action in
-     *         the past, Auto Scaling returns an error message. <p>When
-     *         <code>StartTime</code> and <code>EndTime</code> are specified with
-     *         <code>Recurrence</code>, they form the boundaries of when the
-     *         recurring action will start and stop.
+     * @param startTime The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
+     *         UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>). <p>If
+     *         you try to schedule your action in the past, Auto Scaling returns an
+     *         error message. <p>When <code>StartTime</code> and <code>EndTime</code>
+     *         are specified with <code>Recurrence</code>, they form the boundaries
+     *         of when the recurring action starts and stops.
      */
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
     
     /**
-     * The time for this action to start, as in <code>--start-time
-     * 2010-06-01T00:00:00Z</code>. <p>If you try to schedule your action in
-     * the past, Auto Scaling returns an error message. <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the
-     * recurring action will start and stop.
+     * The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
+     * UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>). <p>If
+     * you try to schedule your action in the past, Auto Scaling returns an
+     * error message. <p>When <code>StartTime</code> and <code>EndTime</code>
+     * are specified with <code>Recurrence</code>, they form the boundaries
+     * of when the recurring action starts and stops.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startTime The time for this action to start, as in <code>--start-time
-     *         2010-06-01T00:00:00Z</code>. <p>If you try to schedule your action in
-     *         the past, Auto Scaling returns an error message. <p>When
-     *         <code>StartTime</code> and <code>EndTime</code> are specified with
-     *         <code>Recurrence</code>, they form the boundaries of when the
-     *         recurring action will start and stop.
+     * @param startTime The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
+     *         UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>). <p>If
+     *         you try to schedule your action in the past, Auto Scaling returns an
+     *         error message. <p>When <code>StartTime</code> and <code>EndTime</code>
+     *         are specified with <code>Recurrence</code>, they form the boundaries
+     *         of when the recurring action starts and stops.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -365,24 +338,22 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
 
     /**
      * The time when recurring future actions will start. Start time is
-     * specified by the user following the Unix cron syntax format. For
-     * information about cron syntax, go to <a
-     * href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free
-     * Encyclopedia</a>. <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     * form the boundaries of when the recurring action will start and stop.
+     * specified by the user following the Unix cron syntax format. For more
+     * information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a>
+     * in Wikipedia. <p>When <code>StartTime</code> and <code>EndTime</code>
+     * are specified with <code>Recurrence</code>, they form the boundaries
+     * of when the recurring action will start and stop.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The time when recurring future actions will start. Start time is
-     *         specified by the user following the Unix cron syntax format. For
-     *         information about cron syntax, go to <a
-     *         href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free
-     *         Encyclopedia</a>. <p>When <code>StartTime</code> and
-     *         <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     *         form the boundaries of when the recurring action will start and stop.
+     *         specified by the user following the Unix cron syntax format. For more
+     *         information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a>
+     *         in Wikipedia. <p>When <code>StartTime</code> and <code>EndTime</code>
+     *         are specified with <code>Recurrence</code>, they form the boundaries
+     *         of when the recurring action will start and stop.
      */
     public String getRecurrence() {
         return recurrence;
@@ -390,24 +361,22 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     
     /**
      * The time when recurring future actions will start. Start time is
-     * specified by the user following the Unix cron syntax format. For
-     * information about cron syntax, go to <a
-     * href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free
-     * Encyclopedia</a>. <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     * form the boundaries of when the recurring action will start and stop.
+     * specified by the user following the Unix cron syntax format. For more
+     * information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a>
+     * in Wikipedia. <p>When <code>StartTime</code> and <code>EndTime</code>
+     * are specified with <code>Recurrence</code>, they form the boundaries
+     * of when the recurring action will start and stop.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param recurrence The time when recurring future actions will start. Start time is
-     *         specified by the user following the Unix cron syntax format. For
-     *         information about cron syntax, go to <a
-     *         href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free
-     *         Encyclopedia</a>. <p>When <code>StartTime</code> and
-     *         <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     *         form the boundaries of when the recurring action will start and stop.
+     *         specified by the user following the Unix cron syntax format. For more
+     *         information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a>
+     *         in Wikipedia. <p>When <code>StartTime</code> and <code>EndTime</code>
+     *         are specified with <code>Recurrence</code>, they form the boundaries
+     *         of when the recurring action will start and stop.
      */
     public void setRecurrence(String recurrence) {
         this.recurrence = recurrence;
@@ -415,12 +384,11 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     
     /**
      * The time when recurring future actions will start. Start time is
-     * specified by the user following the Unix cron syntax format. For
-     * information about cron syntax, go to <a
-     * href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free
-     * Encyclopedia</a>. <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     * form the boundaries of when the recurring action will start and stop.
+     * specified by the user following the Unix cron syntax format. For more
+     * information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a>
+     * in Wikipedia. <p>When <code>StartTime</code> and <code>EndTime</code>
+     * are specified with <code>Recurrence</code>, they form the boundaries
+     * of when the recurring action will start and stop.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -429,12 +397,11 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param recurrence The time when recurring future actions will start. Start time is
-     *         specified by the user following the Unix cron syntax format. For
-     *         information about cron syntax, go to <a
-     *         href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free
-     *         Encyclopedia</a>. <p>When <code>StartTime</code> and
-     *         <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     *         form the boundaries of when the recurring action will start and stop.
+     *         specified by the user following the Unix cron syntax format. For more
+     *         information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a>
+     *         in Wikipedia. <p>When <code>StartTime</code> and <code>EndTime</code>
+     *         are specified with <code>Recurrence</code>, they form the boundaries
+     *         of when the recurring action will start and stop.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -445,29 +412,29 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     }
 
     /**
-     * The minimum size for the new Auto Scaling group.
+     * The minimum size for the Auto Scaling group.
      *
-     * @return The minimum size for the new Auto Scaling group.
+     * @return The minimum size for the Auto Scaling group.
      */
     public Integer getMinSize() {
         return minSize;
     }
     
     /**
-     * The minimum size for the new Auto Scaling group.
+     * The minimum size for the Auto Scaling group.
      *
-     * @param minSize The minimum size for the new Auto Scaling group.
+     * @param minSize The minimum size for the Auto Scaling group.
      */
     public void setMinSize(Integer minSize) {
         this.minSize = minSize;
     }
     
     /**
-     * The minimum size for the new Auto Scaling group.
+     * The minimum size for the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param minSize The minimum size for the new Auto Scaling group.
+     * @param minSize The minimum size for the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -511,35 +478,29 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     }
 
     /**
-     * The number of Amazon EC2 instances that should be running in the
-     * group.
+     * The number of EC2 instances that should be running in the group.
      *
-     * @return The number of Amazon EC2 instances that should be running in the
-     *         group.
+     * @return The number of EC2 instances that should be running in the group.
      */
     public Integer getDesiredCapacity() {
         return desiredCapacity;
     }
     
     /**
-     * The number of Amazon EC2 instances that should be running in the
-     * group.
+     * The number of EC2 instances that should be running in the group.
      *
-     * @param desiredCapacity The number of Amazon EC2 instances that should be running in the
-     *         group.
+     * @param desiredCapacity The number of EC2 instances that should be running in the group.
      */
     public void setDesiredCapacity(Integer desiredCapacity) {
         this.desiredCapacity = desiredCapacity;
     }
     
     /**
-     * The number of Amazon EC2 instances that should be running in the
-     * group.
+     * The number of EC2 instances that should be running in the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param desiredCapacity The number of Amazon EC2 instances that should be running in the
-     *         group.
+     * @param desiredCapacity The number of EC2 instances that should be running in the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

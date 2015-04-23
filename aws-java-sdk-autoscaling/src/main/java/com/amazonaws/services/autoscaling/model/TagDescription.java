@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a tag applied to an Auto Scaling group.
+ * Describes a tag for an Auto Scaling group.
  * </p>
  */
 public class TagDescription implements Serializable, Cloneable {
@@ -32,8 +32,8 @@ public class TagDescription implements Serializable, Cloneable {
     private String resourceId;
 
     /**
-     * The kind of resource to which the tag is applied. Currently, Auto
-     * Scaling supports the <code>auto-scaling-group</code> resource type.
+     * The type of resource. The only supported value is
+     * <code>auto-scaling-group</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
@@ -59,10 +59,8 @@ public class TagDescription implements Serializable, Cloneable {
     private String value;
 
     /**
-     * Specifies whether the tag is applied to instances launched after the
-     * tag is created. The same behavior applies to updates: If you change a
-     * tag, it is applied to all instances launched after you made the
-     * change.
+     * Determines whether the tag is added to new instances as they are
+     * launched in the group.
      */
     private Boolean propagateAtLaunch;
 
@@ -109,44 +107,44 @@ public class TagDescription implements Serializable, Cloneable {
     }
 
     /**
-     * The kind of resource to which the tag is applied. Currently, Auto
-     * Scaling supports the <code>auto-scaling-group</code> resource type.
+     * The type of resource. The only supported value is
+     * <code>auto-scaling-group</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The kind of resource to which the tag is applied. Currently, Auto
-     *         Scaling supports the <code>auto-scaling-group</code> resource type.
+     * @return The type of resource. The only supported value is
+     *         <code>auto-scaling-group</code>.
      */
     public String getResourceType() {
         return resourceType;
     }
     
     /**
-     * The kind of resource to which the tag is applied. Currently, Auto
-     * Scaling supports the <code>auto-scaling-group</code> resource type.
+     * The type of resource. The only supported value is
+     * <code>auto-scaling-group</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param resourceType The kind of resource to which the tag is applied. Currently, Auto
-     *         Scaling supports the <code>auto-scaling-group</code> resource type.
+     * @param resourceType The type of resource. The only supported value is
+     *         <code>auto-scaling-group</code>.
      */
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
     
     /**
-     * The kind of resource to which the tag is applied. Currently, Auto
-     * Scaling supports the <code>auto-scaling-group</code> resource type.
+     * The type of resource. The only supported value is
+     * <code>auto-scaling-group</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param resourceType The kind of resource to which the tag is applied. Currently, Auto
-     *         Scaling supports the <code>auto-scaling-group</code> resource type.
+     * @param resourceType The type of resource. The only supported value is
+     *         <code>auto-scaling-group</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -247,47 +245,35 @@ public class TagDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether the tag is applied to instances launched after the
-     * tag is created. The same behavior applies to updates: If you change a
-     * tag, it is applied to all instances launched after you made the
-     * change.
+     * Determines whether the tag is added to new instances as they are
+     * launched in the group.
      *
-     * @return Specifies whether the tag is applied to instances launched after the
-     *         tag is created. The same behavior applies to updates: If you change a
-     *         tag, it is applied to all instances launched after you made the
-     *         change.
+     * @return Determines whether the tag is added to new instances as they are
+     *         launched in the group.
      */
     public Boolean isPropagateAtLaunch() {
         return propagateAtLaunch;
     }
     
     /**
-     * Specifies whether the tag is applied to instances launched after the
-     * tag is created. The same behavior applies to updates: If you change a
-     * tag, it is applied to all instances launched after you made the
-     * change.
+     * Determines whether the tag is added to new instances as they are
+     * launched in the group.
      *
-     * @param propagateAtLaunch Specifies whether the tag is applied to instances launched after the
-     *         tag is created. The same behavior applies to updates: If you change a
-     *         tag, it is applied to all instances launched after you made the
-     *         change.
+     * @param propagateAtLaunch Determines whether the tag is added to new instances as they are
+     *         launched in the group.
      */
     public void setPropagateAtLaunch(Boolean propagateAtLaunch) {
         this.propagateAtLaunch = propagateAtLaunch;
     }
     
     /**
-     * Specifies whether the tag is applied to instances launched after the
-     * tag is created. The same behavior applies to updates: If you change a
-     * tag, it is applied to all instances launched after you made the
-     * change.
+     * Determines whether the tag is added to new instances as they are
+     * launched in the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param propagateAtLaunch Specifies whether the tag is applied to instances launched after the
-     *         tag is created. The same behavior applies to updates: If you change a
-     *         tag, it is applied to all instances launched after you made the
-     *         change.
+     * @param propagateAtLaunch Determines whether the tag is added to new instances as they are
+     *         launched in the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -298,15 +284,11 @@ public class TagDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether the tag is applied to instances launched after the
-     * tag is created. The same behavior applies to updates: If you change a
-     * tag, it is applied to all instances launched after you made the
-     * change.
+     * Determines whether the tag is added to new instances as they are
+     * launched in the group.
      *
-     * @return Specifies whether the tag is applied to instances launched after the
-     *         tag is created. The same behavior applies to updates: If you change a
-     *         tag, it is applied to all instances launched after you made the
-     *         change.
+     * @return Determines whether the tag is added to new instances as they are
+     *         launched in the group.
      */
     public Boolean getPropagateAtLaunch() {
         return propagateAtLaunch;

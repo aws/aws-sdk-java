@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest) ModifyLoadBalancerAttributes operation}.
  * <p>
- * Modifies the attributes of a specified load balancer.
+ * Modifies the attributes of the specified load balancer.
  * </p>
  * <p>
  * You can modify the load balancer attributes, such as
@@ -33,7 +33,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * timeout value for your load balancer.
  * </p>
  * <p>
- * For more information, see the following:
+ * For more information, see the following in the <i>Elastic Load
+ * Balancing Developer Guide</i> :
  * </p>
  * 
  * <ul>
@@ -62,7 +63,7 @@ public class ModifyLoadBalancerAttributesRequest extends AmazonWebServiceRequest
     private String loadBalancerName;
 
     /**
-     * Attributes of the load balancer.
+     * The attributes of the load balancer.
      */
     private LoadBalancerAttributes loadBalancerAttributes;
 
@@ -100,29 +101,29 @@ public class ModifyLoadBalancerAttributesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Attributes of the load balancer.
+     * The attributes of the load balancer.
      *
-     * @return Attributes of the load balancer.
+     * @return The attributes of the load balancer.
      */
     public LoadBalancerAttributes getLoadBalancerAttributes() {
         return loadBalancerAttributes;
     }
     
     /**
-     * Attributes of the load balancer.
+     * The attributes of the load balancer.
      *
-     * @param loadBalancerAttributes Attributes of the load balancer.
+     * @param loadBalancerAttributes The attributes of the load balancer.
      */
     public void setLoadBalancerAttributes(LoadBalancerAttributes loadBalancerAttributes) {
         this.loadBalancerAttributes = loadBalancerAttributes;
     }
     
     /**
-     * Attributes of the load balancer.
+     * The attributes of the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerAttributes Attributes of the load balancer.
+     * @param loadBalancerAttributes The attributes of the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

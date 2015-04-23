@@ -18,10 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a long-running process that represents a change to your Auto
- * Scaling group, such as changing its size. This can also be a process
- * to replace an instance, or a process to perform any other long-running
- * operations.
+ * Describes scaling activity, which is a long-running process that
+ * represents a change to your Auto Scaling group, such as changing its
+ * size or replacing an instance.
  * </p>
  */
 public class Activity implements Serializable, Cloneable {
@@ -44,7 +43,7 @@ public class Activity implements Serializable, Cloneable {
     private String autoScalingGroupName;
 
     /**
-     * A friendly, more verbose description of the scaling activity.
+     * A friendly, more verbose description of the activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
@@ -52,7 +51,7 @@ public class Activity implements Serializable, Cloneable {
     private String description;
 
     /**
-     * The reason the activity was begun.
+     * The reason the activity began.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1023<br/>
@@ -61,12 +60,12 @@ public class Activity implements Serializable, Cloneable {
     private String cause;
 
     /**
-     * The start time of this activity.
+     * The start time of the activity.
      */
     private java.util.Date startTime;
 
     /**
-     * The end time of this activity.
+     * The end time of the activity.
      */
     private java.util.Date endTime;
 
@@ -93,7 +92,7 @@ public class Activity implements Serializable, Cloneable {
     private Integer progress;
 
     /**
-     * The details about the scaling activity.
+     * The details about the activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
@@ -188,38 +187,38 @@ public class Activity implements Serializable, Cloneable {
     }
 
     /**
-     * A friendly, more verbose description of the scaling activity.
+     * A friendly, more verbose description of the activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return A friendly, more verbose description of the scaling activity.
+     * @return A friendly, more verbose description of the activity.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * A friendly, more verbose description of the scaling activity.
+     * A friendly, more verbose description of the activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param description A friendly, more verbose description of the scaling activity.
+     * @param description A friendly, more verbose description of the activity.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * A friendly, more verbose description of the scaling activity.
+     * A friendly, more verbose description of the activity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param description A friendly, more verbose description of the scaling activity.
+     * @param description A friendly, more verbose description of the activity.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -230,33 +229,33 @@ public class Activity implements Serializable, Cloneable {
     }
 
     /**
-     * The reason the activity was begun.
+     * The reason the activity began.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1023<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The reason the activity was begun.
+     * @return The reason the activity began.
      */
     public String getCause() {
         return cause;
     }
     
     /**
-     * The reason the activity was begun.
+     * The reason the activity began.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1023<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param cause The reason the activity was begun.
+     * @param cause The reason the activity began.
      */
     public void setCause(String cause) {
         this.cause = cause;
     }
     
     /**
-     * The reason the activity was begun.
+     * The reason the activity began.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -264,7 +263,7 @@ public class Activity implements Serializable, Cloneable {
      * <b>Length: </b>1 - 1023<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param cause The reason the activity was begun.
+     * @param cause The reason the activity began.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -275,29 +274,29 @@ public class Activity implements Serializable, Cloneable {
     }
 
     /**
-     * The start time of this activity.
+     * The start time of the activity.
      *
-     * @return The start time of this activity.
+     * @return The start time of the activity.
      */
     public java.util.Date getStartTime() {
         return startTime;
     }
     
     /**
-     * The start time of this activity.
+     * The start time of the activity.
      *
-     * @param startTime The start time of this activity.
+     * @param startTime The start time of the activity.
      */
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
     
     /**
-     * The start time of this activity.
+     * The start time of the activity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startTime The start time of this activity.
+     * @param startTime The start time of the activity.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -308,29 +307,29 @@ public class Activity implements Serializable, Cloneable {
     }
 
     /**
-     * The end time of this activity.
+     * The end time of the activity.
      *
-     * @return The end time of this activity.
+     * @return The end time of the activity.
      */
     public java.util.Date getEndTime() {
         return endTime;
     }
     
     /**
-     * The end time of this activity.
+     * The end time of the activity.
      *
-     * @param endTime The end time of this activity.
+     * @param endTime The end time of the activity.
      */
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
     
     /**
-     * The end time of this activity.
+     * The end time of the activity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endTime The end time of this activity.
+     * @param endTime The end time of the activity.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -501,38 +500,38 @@ public class Activity implements Serializable, Cloneable {
     }
 
     /**
-     * The details about the scaling activity.
+     * The details about the activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The details about the scaling activity.
+     * @return The details about the activity.
      */
     public String getDetails() {
         return details;
     }
     
     /**
-     * The details about the scaling activity.
+     * The details about the activity.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param details The details about the scaling activity.
+     * @param details The details about the activity.
      */
     public void setDetails(String details) {
         this.details = details;
     }
     
     /**
-     * The details about the scaling activity.
+     * The details about the activity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param details The details about the scaling activity.
+     * @param details The details about the activity.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

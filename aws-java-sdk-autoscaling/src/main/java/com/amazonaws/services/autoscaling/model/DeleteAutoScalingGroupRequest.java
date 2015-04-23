@@ -28,9 +28,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * progress.
  * </p>
  * <p>
- * To remove all instances before calling DeleteAutoScalingGroup, you can
- * call UpdateAutoScalingGroup to set the minimum and maximum size of the
- * AutoScalingGroup to zero.
+ * To remove all instances before calling
+ * <code>DeleteAutoScalingGroup</code> ,
+ * call UpdateAutoScalingGroup to set the minimum and maximum
+ * size of the Auto Scaling group to zero.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteAutoScalingGroup(DeleteAutoScalingGroupRequest)

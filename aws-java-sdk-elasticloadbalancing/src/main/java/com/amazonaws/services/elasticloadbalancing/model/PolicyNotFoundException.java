@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * One or more specified policies were not found.
+ * One or more of the specified policies do not exist.
  * </p>
  */        
 public class PolicyNotFoundException extends AmazonServiceException {

@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Requested configuration change is invalid.
+ * The requested configuration change is not valid.
  * </p>
  */        
 public class InvalidConfigurationRequestException extends AmazonServiceException {

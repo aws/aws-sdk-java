@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest) SetLoadBalancerPoliciesOfListener operation}.
  * <p>
- * Associates, updates, or disables a policy with a listener on the load
- * balancer. You can associate multiple policies with a listener.
+ * Associates, updates, or disables a policy with a listener for the
+ * specified load balancer. You can associate multiple policies with a
+ * listener.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest)
@@ -35,13 +36,13 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     private String loadBalancerName;
 
     /**
-     * The external port of the load balancer to associate the policy.
+     * The external port of the load balancer for the policy.
      */
     private Integer loadBalancerPort;
 
     /**
-     * List of policies to be associated with the listener. If the list is
-     * empty, the current policy is removed from the listener.
+     * The names of the policies. If the list is empty, the current policy is
+     * removed from the listener.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNames;
 
@@ -57,11 +58,10 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      * initialize any additional object members.
      * 
      * @param loadBalancerName The name of the load balancer.
-     * @param loadBalancerPort The external port of the load balancer to
-     * associate the policy.
-     * @param policyNames List of policies to be associated with the
-     * listener. If the list is empty, the current policy is removed from the
-     * listener.
+     * @param loadBalancerPort The external port of the load balancer for the
+     * policy.
+     * @param policyNames The names of the policies. If the list is empty,
+     * the current policy is removed from the listener.
      */
     public SetLoadBalancerPoliciesOfListenerRequest(String loadBalancerName, Integer loadBalancerPort, java.util.List<String> policyNames) {
         setLoadBalancerName(loadBalancerName);
@@ -103,29 +103,29 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     }
 
     /**
-     * The external port of the load balancer to associate the policy.
+     * The external port of the load balancer for the policy.
      *
-     * @return The external port of the load balancer to associate the policy.
+     * @return The external port of the load balancer for the policy.
      */
     public Integer getLoadBalancerPort() {
         return loadBalancerPort;
     }
     
     /**
-     * The external port of the load balancer to associate the policy.
+     * The external port of the load balancer for the policy.
      *
-     * @param loadBalancerPort The external port of the load balancer to associate the policy.
+     * @param loadBalancerPort The external port of the load balancer for the policy.
      */
     public void setLoadBalancerPort(Integer loadBalancerPort) {
         this.loadBalancerPort = loadBalancerPort;
     }
     
     /**
-     * The external port of the load balancer to associate the policy.
+     * The external port of the load balancer for the policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerPort The external port of the load balancer to associate the policy.
+     * @param loadBalancerPort The external port of the load balancer for the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -136,11 +136,11 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     }
 
     /**
-     * List of policies to be associated with the listener. If the list is
-     * empty, the current policy is removed from the listener.
+     * The names of the policies. If the list is empty, the current policy is
+     * removed from the listener.
      *
-     * @return List of policies to be associated with the listener. If the list is
-     *         empty, the current policy is removed from the listener.
+     * @return The names of the policies. If the list is empty, the current policy is
+     *         removed from the listener.
      */
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
@@ -151,11 +151,11 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     }
     
     /**
-     * List of policies to be associated with the listener. If the list is
-     * empty, the current policy is removed from the listener.
+     * The names of the policies. If the list is empty, the current policy is
+     * removed from the listener.
      *
-     * @param policyNames List of policies to be associated with the listener. If the list is
-     *         empty, the current policy is removed from the listener.
+     * @param policyNames The names of the policies. If the list is empty, the current policy is
+     *         removed from the listener.
      */
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
@@ -168,8 +168,8 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     }
     
     /**
-     * List of policies to be associated with the listener. If the list is
-     * empty, the current policy is removed from the listener.
+     * The names of the policies. If the list is empty, the current policy is
+     * removed from the listener.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPolicyNames(java.util.Collection)} or {@link
@@ -178,8 +178,8 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyNames List of policies to be associated with the listener. If the list is
-     *         empty, the current policy is removed from the listener.
+     * @param policyNames The names of the policies. If the list is empty, the current policy is
+     *         removed from the listener.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -193,13 +193,13 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     }
     
     /**
-     * List of policies to be associated with the listener. If the list is
-     * empty, the current policy is removed from the listener.
+     * The names of the policies. If the list is empty, the current policy is
+     * removed from the listener.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyNames List of policies to be associated with the listener. If the list is
-     *         empty, the current policy is removed from the listener.
+     * @param policyNames The names of the policies. If the list is empty, the current policy is
+     *         removed from the listener.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

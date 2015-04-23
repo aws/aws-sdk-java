@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For more information, see
- * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html"> Attach Amazon EC2 Instances to Your Existing Auto Scaling Group </a>
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html"> Attach EC2 Instances to Your Auto Scaling Group </a>
  * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *

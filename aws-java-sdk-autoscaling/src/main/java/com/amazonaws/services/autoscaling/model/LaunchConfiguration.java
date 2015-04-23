@@ -60,7 +60,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private String keyName;
 
     /**
-     * The security groups to associate with the EC2 instances.
+     * The security groups to associate with the instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroups;
 
@@ -88,7 +88,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> classicLinkVPCSecurityGroups;
 
     /**
-     * The user data available to the EC2 instances.
+     * The user data available to the instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
@@ -97,7 +97,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private String userData;
 
     /**
-     * The instance type for the EC2 instances.
+     * The instance type for the instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -124,9 +124,8 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private String ramdiskId;
 
     /**
-     * A block device mapping that specifies how block devices are exposed to
-     * the instance. Each mapping is made up of a <code>virtualName</code>
-     * and a <code>deviceName</code>.
+     * A block device mapping, which specifies the block devices for the
+     * instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
@@ -166,7 +165,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private Boolean ebsOptimized;
 
     /**
-     * Specifies whether the EC2 instances are associated with a public IP
+     * Specifies whether the instances are associated with a public IP
      * address (<code>true</code>) or not (<code>false</code>).
      */
     private Boolean associatePublicIpAddress;
@@ -175,7 +174,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * The tenancy of the instance, either <code>default</code> or
      * <code>dedicated</code>. An instance with <code>dedicated</code>
      * tenancy runs in an isolated, single-tenant hardware and can only be
-     * launched in a VPC.
+     * launched into a VPC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -364,9 +363,9 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * The security groups to associate with the EC2 instances.
+     * The security groups to associate with the instances.
      *
-     * @return The security groups to associate with the EC2 instances.
+     * @return The security groups to associate with the instances.
      */
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
@@ -377,9 +376,9 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * The security groups to associate with the EC2 instances.
+     * The security groups to associate with the instances.
      *
-     * @param securityGroups The security groups to associate with the EC2 instances.
+     * @param securityGroups The security groups to associate with the instances.
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
@@ -392,7 +391,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * The security groups to associate with the EC2 instances.
+     * The security groups to associate with the instances.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
@@ -401,7 +400,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The security groups to associate with the EC2 instances.
+     * @param securityGroups The security groups to associate with the instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -415,11 +414,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * The security groups to associate with the EC2 instances.
+     * The security groups to associate with the instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The security groups to associate with the EC2 instances.
+     * @param securityGroups The security groups to associate with the instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -620,33 +619,33 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * The user data available to the EC2 instances.
+     * The user data available to the instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The user data available to the EC2 instances.
+     * @return The user data available to the instances.
      */
     public String getUserData() {
         return userData;
     }
     
     /**
-     * The user data available to the EC2 instances.
+     * The user data available to the instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param userData The user data available to the EC2 instances.
+     * @param userData The user data available to the instances.
      */
     public void setUserData(String userData) {
         this.userData = userData;
     }
     
     /**
-     * The user data available to the EC2 instances.
+     * The user data available to the instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -654,7 +653,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param userData The user data available to the EC2 instances.
+     * @param userData The user data available to the instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -665,33 +664,33 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * The instance type for the EC2 instances.
+     * The instance type for the instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The instance type for the EC2 instances.
+     * @return The instance type for the instances.
      */
     public String getInstanceType() {
         return instanceType;
     }
     
     /**
-     * The instance type for the EC2 instances.
+     * The instance type for the instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param instanceType The instance type for the EC2 instances.
+     * @param instanceType The instance type for the instances.
      */
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
     
     /**
-     * The instance type for the EC2 instances.
+     * The instance type for the instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -699,7 +698,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param instanceType The instance type for the EC2 instances.
+     * @param instanceType The instance type for the instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -800,13 +799,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * A block device mapping that specifies how block devices are exposed to
-     * the instance. Each mapping is made up of a <code>virtualName</code>
-     * and a <code>deviceName</code>.
+     * A block device mapping, which specifies the block devices for the
+     * instance.
      *
-     * @return A block device mapping that specifies how block devices are exposed to
-     *         the instance. Each mapping is made up of a <code>virtualName</code>
-     *         and a <code>deviceName</code>.
+     * @return A block device mapping, which specifies the block devices for the
+     *         instance.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
@@ -817,13 +814,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * A block device mapping that specifies how block devices are exposed to
-     * the instance. Each mapping is made up of a <code>virtualName</code>
-     * and a <code>deviceName</code>.
+     * A block device mapping, which specifies the block devices for the
+     * instance.
      *
-     * @param blockDeviceMappings A block device mapping that specifies how block devices are exposed to
-     *         the instance. Each mapping is made up of a <code>virtualName</code>
-     *         and a <code>deviceName</code>.
+     * @param blockDeviceMappings A block device mapping, which specifies the block devices for the
+     *         instance.
      */
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -836,9 +831,8 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * A block device mapping that specifies how block devices are exposed to
-     * the instance. Each mapping is made up of a <code>virtualName</code>
-     * and a <code>deviceName</code>.
+     * A block device mapping, which specifies the block devices for the
+     * instance.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
@@ -847,9 +841,8 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings A block device mapping that specifies how block devices are exposed to
-     *         the instance. Each mapping is made up of a <code>virtualName</code>
-     *         and a <code>deviceName</code>.
+     * @param blockDeviceMappings A block device mapping, which specifies the block devices for the
+     *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -863,15 +856,13 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * A block device mapping that specifies how block devices are exposed to
-     * the instance. Each mapping is made up of a <code>virtualName</code>
-     * and a <code>deviceName</code>.
+     * A block device mapping, which specifies the block devices for the
+     * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings A block device mapping that specifies how block devices are exposed to
-     *         the instance. Each mapping is made up of a <code>virtualName</code>
-     *         and a <code>deviceName</code>.
+     * @param blockDeviceMappings A block device mapping, which specifies the block devices for the
+     *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1104,10 +1095,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether the EC2 instances are associated with a public IP
+     * Specifies whether the instances are associated with a public IP
      * address (<code>true</code>) or not (<code>false</code>).
      *
-     * @return Specifies whether the EC2 instances are associated with a public IP
+     * @return Specifies whether the instances are associated with a public IP
      *         address (<code>true</code>) or not (<code>false</code>).
      */
     public Boolean isAssociatePublicIpAddress() {
@@ -1115,10 +1106,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * Specifies whether the EC2 instances are associated with a public IP
+     * Specifies whether the instances are associated with a public IP
      * address (<code>true</code>) or not (<code>false</code>).
      *
-     * @param associatePublicIpAddress Specifies whether the EC2 instances are associated with a public IP
+     * @param associatePublicIpAddress Specifies whether the instances are associated with a public IP
      *         address (<code>true</code>) or not (<code>false</code>).
      */
     public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
@@ -1126,12 +1117,12 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * Specifies whether the EC2 instances are associated with a public IP
+     * Specifies whether the instances are associated with a public IP
      * address (<code>true</code>) or not (<code>false</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param associatePublicIpAddress Specifies whether the EC2 instances are associated with a public IP
+     * @param associatePublicIpAddress Specifies whether the instances are associated with a public IP
      *         address (<code>true</code>) or not (<code>false</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -1143,10 +1134,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether the EC2 instances are associated with a public IP
+     * Specifies whether the instances are associated with a public IP
      * address (<code>true</code>) or not (<code>false</code>).
      *
-     * @return Specifies whether the EC2 instances are associated with a public IP
+     * @return Specifies whether the instances are associated with a public IP
      *         address (<code>true</code>) or not (<code>false</code>).
      */
     public Boolean getAssociatePublicIpAddress() {
@@ -1157,7 +1148,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * The tenancy of the instance, either <code>default</code> or
      * <code>dedicated</code>. An instance with <code>dedicated</code>
      * tenancy runs in an isolated, single-tenant hardware and can only be
-     * launched in a VPC.
+     * launched into a VPC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -1166,7 +1157,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return The tenancy of the instance, either <code>default</code> or
      *         <code>dedicated</code>. An instance with <code>dedicated</code>
      *         tenancy runs in an isolated, single-tenant hardware and can only be
-     *         launched in a VPC.
+     *         launched into a VPC.
      */
     public String getPlacementTenancy() {
         return placementTenancy;
@@ -1176,7 +1167,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * The tenancy of the instance, either <code>default</code> or
      * <code>dedicated</code>. An instance with <code>dedicated</code>
      * tenancy runs in an isolated, single-tenant hardware and can only be
-     * launched in a VPC.
+     * launched into a VPC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -1185,7 +1176,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param placementTenancy The tenancy of the instance, either <code>default</code> or
      *         <code>dedicated</code>. An instance with <code>dedicated</code>
      *         tenancy runs in an isolated, single-tenant hardware and can only be
-     *         launched in a VPC.
+     *         launched into a VPC.
      */
     public void setPlacementTenancy(String placementTenancy) {
         this.placementTenancy = placementTenancy;
@@ -1195,7 +1186,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * The tenancy of the instance, either <code>default</code> or
      * <code>dedicated</code>. An instance with <code>dedicated</code>
      * tenancy runs in an isolated, single-tenant hardware and can only be
-     * launched in a VPC.
+     * launched into a VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1206,7 +1197,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param placementTenancy The tenancy of the instance, either <code>default</code> or
      *         <code>dedicated</code>. An instance with <code>dedicated</code>
      *         tenancy runs in an isolated, single-tenant hardware and can only be
-     *         launched in a VPC.
+     *         launched into a VPC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

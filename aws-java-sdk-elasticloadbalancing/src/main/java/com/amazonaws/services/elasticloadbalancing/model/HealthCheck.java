@@ -18,33 +18,32 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The HealthCheck data type.
+ * Information about a health check.
  * </p>
  */
 public class HealthCheck implements Serializable, Cloneable {
 
     /**
-     * Specifies the instance being checked. The protocol is either TCP,
-     * HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
-     * 65535. <note> <p> TCP is the default, specified as a TCP: port pair,
-     * for example "TCP:5000". In this case a healthcheck simply attempts to
-     * open a TCP connection to the instance on the specified port. Failure
-     * to connect within the configured timeout is considered unhealthy.
-     * <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
-     * For HTTP or HTTPS protocol, the situation is different. You have to
+     * The instance being checked. The protocol is either TCP, HTTP, HTTPS,
+     * or SSL. The range of valid ports is one (1) through 65535. <p>TCP is
+     * the default, specified as a TCP: port pair, for example "TCP:5000". In
+     * this case, a health check simply attempts to open a TCP connection to
+     * the instance on the specified port. Failure to connect within the
+     * configured timeout is considered unhealthy. <p>SSL is also specified
+     * as SSL: port pair, for example, SSL:5000. <p>For HTTP/HTTPS, you must
      * include a ping path in the string. HTTP is specified as a
      * HTTP:port;/;PathToPing; grouping, for example
      * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      * issued to the instance on the given port and path. Any answer other
-     * than "200 OK" within the timeout period is considered unhealthy. <p>
-     * The total length of the HTTP ping target needs to be 1024 16-bit
-     * Unicode characters or less. </note>
+     * than "200 OK" within the timeout period is considered unhealthy.
+     * <p>The total length of the HTTP ping target must be 1024 16-bit
+     * Unicode characters or less.
      */
     private String target;
 
     /**
-     * Specifies the approximate interval, in seconds, between health checks
-     * of an individual instance.
+     * The approximate interval, in seconds, between health checks of an
+     * individual instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
@@ -52,9 +51,9 @@ public class HealthCheck implements Serializable, Cloneable {
     private Integer interval;
 
     /**
-     * Specifies the amount of time, in seconds, during which no response
-     * means a failed health probe. <note> This value must be less than the
-     * <i>Interval</i> value. </note>
+     * The amount of time, in seconds, during which no response means a
+     * failed health check. <p>This value must be less than the
+     * <code>Interval</code> value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
@@ -62,8 +61,8 @@ public class HealthCheck implements Serializable, Cloneable {
     private Integer timeout;
 
     /**
-     * Specifies the number of consecutive health probe failures required
-     * before moving the instance to the <i>Unhealthy</i> state.
+     * The number of consecutive health check failures required before moving
+     * the instance to the <code>Unhealthy</code> state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
@@ -71,8 +70,8 @@ public class HealthCheck implements Serializable, Cloneable {
     private Integer unhealthyThreshold;
 
     /**
-     * Specifies the number of consecutive health probe successes required
-     * before moving the instance to the <i>Healthy</i> state.
+     * The number of consecutive health checks successes required before
+     * moving the instance to the <code>Healthy</code> state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
@@ -90,32 +89,31 @@ public class HealthCheck implements Serializable, Cloneable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param target Specifies the instance being checked. The protocol is
-     * either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1)
-     * through 65535. <note> <p> TCP is the default, specified as a TCP: port
-     * pair, for example "TCP:5000". In this case a healthcheck simply
-     * attempts to open a TCP connection to the instance on the specified
-     * port. Failure to connect within the configured timeout is considered
-     * unhealthy. <p>SSL is also specified as SSL: port pair, for example,
-     * SSL:5000. <p> For HTTP or HTTPS protocol, the situation is different.
-     * You have to include a ping path in the string. HTTP is specified as a
-     * HTTP:port;/;PathToPing; grouping, for example
+     * @param target The instance being checked. The protocol is either TCP,
+     * HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
+     * 65535. <p>TCP is the default, specified as a TCP: port pair, for
+     * example "TCP:5000". In this case, a health check simply attempts to
+     * open a TCP connection to the instance on the specified port. Failure
+     * to connect within the configured timeout is considered unhealthy.
+     * <p>SSL is also specified as SSL: port pair, for example, SSL:5000.
+     * <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is
+     * specified as a HTTP:port;/;PathToPing; grouping, for example
      * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      * issued to the instance on the given port and path. Any answer other
-     * than "200 OK" within the timeout period is considered unhealthy. <p>
-     * The total length of the HTTP ping target needs to be 1024 16-bit
-     * Unicode characters or less. </note>
-     * @param interval Specifies the approximate interval, in seconds,
-     * between health checks of an individual instance.
-     * @param timeout Specifies the amount of time, in seconds, during which
-     * no response means a failed health probe. <note> This value must be
-     * less than the <i>Interval</i> value. </note>
-     * @param unhealthyThreshold Specifies the number of consecutive health
-     * probe failures required before moving the instance to the
-     * <i>Unhealthy</i> state.
-     * @param healthyThreshold Specifies the number of consecutive health
-     * probe successes required before moving the instance to the
-     * <i>Healthy</i> state.
+     * than "200 OK" within the timeout period is considered unhealthy.
+     * <p>The total length of the HTTP ping target must be 1024 16-bit
+     * Unicode characters or less.
+     * @param interval The approximate interval, in seconds, between health
+     * checks of an individual instance.
+     * @param timeout The amount of time, in seconds, during which no
+     * response means a failed health check. <p>This value must be less than
+     * the <code>Interval</code> value.
+     * @param unhealthyThreshold The number of consecutive health check
+     * failures required before moving the instance to the
+     * <code>Unhealthy</code> state.
+     * @param healthyThreshold The number of consecutive health checks
+     * successes required before moving the instance to the
+     * <code>Healthy</code> state.
      */
     public HealthCheck(String target, Integer interval, Integer timeout, Integer unhealthyThreshold, Integer healthyThreshold) {
         setTarget(target);
@@ -126,113 +124,107 @@ public class HealthCheck implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies the instance being checked. The protocol is either TCP,
-     * HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
-     * 65535. <note> <p> TCP is the default, specified as a TCP: port pair,
-     * for example "TCP:5000". In this case a healthcheck simply attempts to
-     * open a TCP connection to the instance on the specified port. Failure
-     * to connect within the configured timeout is considered unhealthy.
-     * <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
-     * For HTTP or HTTPS protocol, the situation is different. You have to
+     * The instance being checked. The protocol is either TCP, HTTP, HTTPS,
+     * or SSL. The range of valid ports is one (1) through 65535. <p>TCP is
+     * the default, specified as a TCP: port pair, for example "TCP:5000". In
+     * this case, a health check simply attempts to open a TCP connection to
+     * the instance on the specified port. Failure to connect within the
+     * configured timeout is considered unhealthy. <p>SSL is also specified
+     * as SSL: port pair, for example, SSL:5000. <p>For HTTP/HTTPS, you must
      * include a ping path in the string. HTTP is specified as a
      * HTTP:port;/;PathToPing; grouping, for example
      * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      * issued to the instance on the given port and path. Any answer other
-     * than "200 OK" within the timeout period is considered unhealthy. <p>
-     * The total length of the HTTP ping target needs to be 1024 16-bit
-     * Unicode characters or less. </note>
+     * than "200 OK" within the timeout period is considered unhealthy.
+     * <p>The total length of the HTTP ping target must be 1024 16-bit
+     * Unicode characters or less.
      *
-     * @return Specifies the instance being checked. The protocol is either TCP,
-     *         HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
-     *         65535. <note> <p> TCP is the default, specified as a TCP: port pair,
-     *         for example "TCP:5000". In this case a healthcheck simply attempts to
-     *         open a TCP connection to the instance on the specified port. Failure
-     *         to connect within the configured timeout is considered unhealthy.
-     *         <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
-     *         For HTTP or HTTPS protocol, the situation is different. You have to
+     * @return The instance being checked. The protocol is either TCP, HTTP, HTTPS,
+     *         or SSL. The range of valid ports is one (1) through 65535. <p>TCP is
+     *         the default, specified as a TCP: port pair, for example "TCP:5000". In
+     *         this case, a health check simply attempts to open a TCP connection to
+     *         the instance on the specified port. Failure to connect within the
+     *         configured timeout is considered unhealthy. <p>SSL is also specified
+     *         as SSL: port pair, for example, SSL:5000. <p>For HTTP/HTTPS, you must
      *         include a ping path in the string. HTTP is specified as a
      *         HTTP:port;/;PathToPing; grouping, for example
      *         "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      *         issued to the instance on the given port and path. Any answer other
-     *         than "200 OK" within the timeout period is considered unhealthy. <p>
-     *         The total length of the HTTP ping target needs to be 1024 16-bit
-     *         Unicode characters or less. </note>
+     *         than "200 OK" within the timeout period is considered unhealthy.
+     *         <p>The total length of the HTTP ping target must be 1024 16-bit
+     *         Unicode characters or less.
      */
     public String getTarget() {
         return target;
     }
     
     /**
-     * Specifies the instance being checked. The protocol is either TCP,
-     * HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
-     * 65535. <note> <p> TCP is the default, specified as a TCP: port pair,
-     * for example "TCP:5000". In this case a healthcheck simply attempts to
-     * open a TCP connection to the instance on the specified port. Failure
-     * to connect within the configured timeout is considered unhealthy.
-     * <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
-     * For HTTP or HTTPS protocol, the situation is different. You have to
+     * The instance being checked. The protocol is either TCP, HTTP, HTTPS,
+     * or SSL. The range of valid ports is one (1) through 65535. <p>TCP is
+     * the default, specified as a TCP: port pair, for example "TCP:5000". In
+     * this case, a health check simply attempts to open a TCP connection to
+     * the instance on the specified port. Failure to connect within the
+     * configured timeout is considered unhealthy. <p>SSL is also specified
+     * as SSL: port pair, for example, SSL:5000. <p>For HTTP/HTTPS, you must
      * include a ping path in the string. HTTP is specified as a
      * HTTP:port;/;PathToPing; grouping, for example
      * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      * issued to the instance on the given port and path. Any answer other
-     * than "200 OK" within the timeout period is considered unhealthy. <p>
-     * The total length of the HTTP ping target needs to be 1024 16-bit
-     * Unicode characters or less. </note>
+     * than "200 OK" within the timeout period is considered unhealthy.
+     * <p>The total length of the HTTP ping target must be 1024 16-bit
+     * Unicode characters or less.
      *
-     * @param target Specifies the instance being checked. The protocol is either TCP,
-     *         HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
-     *         65535. <note> <p> TCP is the default, specified as a TCP: port pair,
-     *         for example "TCP:5000". In this case a healthcheck simply attempts to
-     *         open a TCP connection to the instance on the specified port. Failure
-     *         to connect within the configured timeout is considered unhealthy.
-     *         <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
-     *         For HTTP or HTTPS protocol, the situation is different. You have to
+     * @param target The instance being checked. The protocol is either TCP, HTTP, HTTPS,
+     *         or SSL. The range of valid ports is one (1) through 65535. <p>TCP is
+     *         the default, specified as a TCP: port pair, for example "TCP:5000". In
+     *         this case, a health check simply attempts to open a TCP connection to
+     *         the instance on the specified port. Failure to connect within the
+     *         configured timeout is considered unhealthy. <p>SSL is also specified
+     *         as SSL: port pair, for example, SSL:5000. <p>For HTTP/HTTPS, you must
      *         include a ping path in the string. HTTP is specified as a
      *         HTTP:port;/;PathToPing; grouping, for example
      *         "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      *         issued to the instance on the given port and path. Any answer other
-     *         than "200 OK" within the timeout period is considered unhealthy. <p>
-     *         The total length of the HTTP ping target needs to be 1024 16-bit
-     *         Unicode characters or less. </note>
+     *         than "200 OK" within the timeout period is considered unhealthy.
+     *         <p>The total length of the HTTP ping target must be 1024 16-bit
+     *         Unicode characters or less.
      */
     public void setTarget(String target) {
         this.target = target;
     }
     
     /**
-     * Specifies the instance being checked. The protocol is either TCP,
-     * HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
-     * 65535. <note> <p> TCP is the default, specified as a TCP: port pair,
-     * for example "TCP:5000". In this case a healthcheck simply attempts to
-     * open a TCP connection to the instance on the specified port. Failure
-     * to connect within the configured timeout is considered unhealthy.
-     * <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
-     * For HTTP or HTTPS protocol, the situation is different. You have to
+     * The instance being checked. The protocol is either TCP, HTTP, HTTPS,
+     * or SSL. The range of valid ports is one (1) through 65535. <p>TCP is
+     * the default, specified as a TCP: port pair, for example "TCP:5000". In
+     * this case, a health check simply attempts to open a TCP connection to
+     * the instance on the specified port. Failure to connect within the
+     * configured timeout is considered unhealthy. <p>SSL is also specified
+     * as SSL: port pair, for example, SSL:5000. <p>For HTTP/HTTPS, you must
      * include a ping path in the string. HTTP is specified as a
      * HTTP:port;/;PathToPing; grouping, for example
      * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      * issued to the instance on the given port and path. Any answer other
-     * than "200 OK" within the timeout period is considered unhealthy. <p>
-     * The total length of the HTTP ping target needs to be 1024 16-bit
-     * Unicode characters or less. </note>
+     * than "200 OK" within the timeout period is considered unhealthy.
+     * <p>The total length of the HTTP ping target must be 1024 16-bit
+     * Unicode characters or less.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param target Specifies the instance being checked. The protocol is either TCP,
-     *         HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
-     *         65535. <note> <p> TCP is the default, specified as a TCP: port pair,
-     *         for example "TCP:5000". In this case a healthcheck simply attempts to
-     *         open a TCP connection to the instance on the specified port. Failure
-     *         to connect within the configured timeout is considered unhealthy.
-     *         <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
-     *         For HTTP or HTTPS protocol, the situation is different. You have to
+     * @param target The instance being checked. The protocol is either TCP, HTTP, HTTPS,
+     *         or SSL. The range of valid ports is one (1) through 65535. <p>TCP is
+     *         the default, specified as a TCP: port pair, for example "TCP:5000". In
+     *         this case, a health check simply attempts to open a TCP connection to
+     *         the instance on the specified port. Failure to connect within the
+     *         configured timeout is considered unhealthy. <p>SSL is also specified
+     *         as SSL: port pair, for example, SSL:5000. <p>For HTTP/HTTPS, you must
      *         include a ping path in the string. HTTP is specified as a
      *         HTTP:port;/;PathToPing; grouping, for example
      *         "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      *         issued to the instance on the given port and path. Any answer other
-     *         than "200 OK" within the timeout period is considered unhealthy. <p>
-     *         The total length of the HTTP ping target needs to be 1024 16-bit
-     *         Unicode characters or less. </note>
+     *         than "200 OK" within the timeout period is considered unhealthy.
+     *         <p>The total length of the HTTP ping target must be 1024 16-bit
+     *         Unicode characters or less.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -243,44 +235,44 @@ public class HealthCheck implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies the approximate interval, in seconds, between health checks
-     * of an individual instance.
+     * The approximate interval, in seconds, between health checks of an
+     * individual instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @return Specifies the approximate interval, in seconds, between health checks
-     *         of an individual instance.
+     * @return The approximate interval, in seconds, between health checks of an
+     *         individual instance.
      */
     public Integer getInterval() {
         return interval;
     }
     
     /**
-     * Specifies the approximate interval, in seconds, between health checks
-     * of an individual instance.
+     * The approximate interval, in seconds, between health checks of an
+     * individual instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @param interval Specifies the approximate interval, in seconds, between health checks
-     *         of an individual instance.
+     * @param interval The approximate interval, in seconds, between health checks of an
+     *         individual instance.
      */
     public void setInterval(Integer interval) {
         this.interval = interval;
     }
     
     /**
-     * Specifies the approximate interval, in seconds, between health checks
-     * of an individual instance.
+     * The approximate interval, in seconds, between health checks of an
+     * individual instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @param interval Specifies the approximate interval, in seconds, between health checks
-     *         of an individual instance.
+     * @param interval The approximate interval, in seconds, between health checks of an
+     *         individual instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -291,50 +283,50 @@ public class HealthCheck implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies the amount of time, in seconds, during which no response
-     * means a failed health probe. <note> This value must be less than the
-     * <i>Interval</i> value. </note>
+     * The amount of time, in seconds, during which no response means a
+     * failed health check. <p>This value must be less than the
+     * <code>Interval</code> value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @return Specifies the amount of time, in seconds, during which no response
-     *         means a failed health probe. <note> This value must be less than the
-     *         <i>Interval</i> value. </note>
+     * @return The amount of time, in seconds, during which no response means a
+     *         failed health check. <p>This value must be less than the
+     *         <code>Interval</code> value.
      */
     public Integer getTimeout() {
         return timeout;
     }
     
     /**
-     * Specifies the amount of time, in seconds, during which no response
-     * means a failed health probe. <note> This value must be less than the
-     * <i>Interval</i> value. </note>
+     * The amount of time, in seconds, during which no response means a
+     * failed health check. <p>This value must be less than the
+     * <code>Interval</code> value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @param timeout Specifies the amount of time, in seconds, during which no response
-     *         means a failed health probe. <note> This value must be less than the
-     *         <i>Interval</i> value. </note>
+     * @param timeout The amount of time, in seconds, during which no response means a
+     *         failed health check. <p>This value must be less than the
+     *         <code>Interval</code> value.
      */
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
     
     /**
-     * Specifies the amount of time, in seconds, during which no response
-     * means a failed health probe. <note> This value must be less than the
-     * <i>Interval</i> value. </note>
+     * The amount of time, in seconds, during which no response means a
+     * failed health check. <p>This value must be less than the
+     * <code>Interval</code> value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @param timeout Specifies the amount of time, in seconds, during which no response
-     *         means a failed health probe. <note> This value must be less than the
-     *         <i>Interval</i> value. </note>
+     * @param timeout The amount of time, in seconds, during which no response means a
+     *         failed health check. <p>This value must be less than the
+     *         <code>Interval</code> value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -345,44 +337,44 @@ public class HealthCheck implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies the number of consecutive health probe failures required
-     * before moving the instance to the <i>Unhealthy</i> state.
+     * The number of consecutive health check failures required before moving
+     * the instance to the <code>Unhealthy</code> state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @return Specifies the number of consecutive health probe failures required
-     *         before moving the instance to the <i>Unhealthy</i> state.
+     * @return The number of consecutive health check failures required before moving
+     *         the instance to the <code>Unhealthy</code> state.
      */
     public Integer getUnhealthyThreshold() {
         return unhealthyThreshold;
     }
     
     /**
-     * Specifies the number of consecutive health probe failures required
-     * before moving the instance to the <i>Unhealthy</i> state.
+     * The number of consecutive health check failures required before moving
+     * the instance to the <code>Unhealthy</code> state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @param unhealthyThreshold Specifies the number of consecutive health probe failures required
-     *         before moving the instance to the <i>Unhealthy</i> state.
+     * @param unhealthyThreshold The number of consecutive health check failures required before moving
+     *         the instance to the <code>Unhealthy</code> state.
      */
     public void setUnhealthyThreshold(Integer unhealthyThreshold) {
         this.unhealthyThreshold = unhealthyThreshold;
     }
     
     /**
-     * Specifies the number of consecutive health probe failures required
-     * before moving the instance to the <i>Unhealthy</i> state.
+     * The number of consecutive health check failures required before moving
+     * the instance to the <code>Unhealthy</code> state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @param unhealthyThreshold Specifies the number of consecutive health probe failures required
-     *         before moving the instance to the <i>Unhealthy</i> state.
+     * @param unhealthyThreshold The number of consecutive health check failures required before moving
+     *         the instance to the <code>Unhealthy</code> state.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -393,44 +385,44 @@ public class HealthCheck implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies the number of consecutive health probe successes required
-     * before moving the instance to the <i>Healthy</i> state.
+     * The number of consecutive health checks successes required before
+     * moving the instance to the <code>Healthy</code> state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @return Specifies the number of consecutive health probe successes required
-     *         before moving the instance to the <i>Healthy</i> state.
+     * @return The number of consecutive health checks successes required before
+     *         moving the instance to the <code>Healthy</code> state.
      */
     public Integer getHealthyThreshold() {
         return healthyThreshold;
     }
     
     /**
-     * Specifies the number of consecutive health probe successes required
-     * before moving the instance to the <i>Healthy</i> state.
+     * The number of consecutive health checks successes required before
+     * moving the instance to the <code>Healthy</code> state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @param healthyThreshold Specifies the number of consecutive health probe successes required
-     *         before moving the instance to the <i>Healthy</i> state.
+     * @param healthyThreshold The number of consecutive health checks successes required before
+     *         moving the instance to the <code>Healthy</code> state.
      */
     public void setHealthyThreshold(Integer healthyThreshold) {
         this.healthyThreshold = healthyThreshold;
     }
     
     /**
-     * Specifies the number of consecutive health probe successes required
-     * before moving the instance to the <i>Healthy</i> state.
+     * The number of consecutive health checks successes required before
+     * moving the instance to the <code>Healthy</code> state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @param healthyThreshold Specifies the number of consecutive health probe successes required
-     *         before moving the instance to the <i>Healthy</i> state.
+     * @param healthyThreshold The number of consecutive health checks successes required before
+     *         moving the instance to the <code>Healthy</code> state.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -17,24 +17,19 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output for the DeregisterInstancesFromLoadBalancer action.
- * </p>
+ * 
  */
 public class DeregisterInstancesFromLoadBalancerResult implements Serializable, Cloneable {
 
     /**
-     * An updated list of remaining instances registered with the load
-     * balancer.
+     * The remaining instances registered with the load balancer.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instances;
 
     /**
-     * An updated list of remaining instances registered with the load
-     * balancer.
+     * The remaining instances registered with the load balancer.
      *
-     * @return An updated list of remaining instances registered with the load
-     *         balancer.
+     * @return The remaining instances registered with the load balancer.
      */
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
@@ -45,11 +40,9 @@ public class DeregisterInstancesFromLoadBalancerResult implements Serializable, 
     }
     
     /**
-     * An updated list of remaining instances registered with the load
-     * balancer.
+     * The remaining instances registered with the load balancer.
      *
-     * @param instances An updated list of remaining instances registered with the load
-     *         balancer.
+     * @param instances The remaining instances registered with the load balancer.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
@@ -62,8 +55,7 @@ public class DeregisterInstancesFromLoadBalancerResult implements Serializable, 
     }
     
     /**
-     * An updated list of remaining instances registered with the load
-     * balancer.
+     * The remaining instances registered with the load balancer.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInstances(java.util.Collection)} or {@link
@@ -72,8 +64,7 @@ public class DeregisterInstancesFromLoadBalancerResult implements Serializable, 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances An updated list of remaining instances registered with the load
-     *         balancer.
+     * @param instances The remaining instances registered with the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -87,13 +78,11 @@ public class DeregisterInstancesFromLoadBalancerResult implements Serializable, 
     }
     
     /**
-     * An updated list of remaining instances registered with the load
-     * balancer.
+     * The remaining instances registered with the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances An updated list of remaining instances registered with the load
-     *         balancer.
+     * @param instances The remaining instances registered with the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

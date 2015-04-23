@@ -61,7 +61,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private Integer maxSize;
 
     /**
-     * The size of the group.
+     * The desired size of the group.
      */
     private Integer desiredCapacity;
 
@@ -142,13 +142,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private String vPCZoneIdentifier;
 
     /**
-     * The metrics enabled for this Auto Scaling group.
+     * The metrics enabled for the group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<EnabledMetric> enabledMetrics;
 
     /**
-     * The current state of the Auto Scaling group when a
-     * <a>DeleteAutoScalingGroup</a> action is in progress.
+     * The current state of the group when <a>DeleteAutoScalingGroup</a> is
+     * in progress.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -157,12 +157,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private String status;
 
     /**
-     * The tags for the Auto Scaling group.
+     * The tags for the group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<TagDescription> tags;
 
     /**
-     * The termination policies for this Auto Scaling group.
+     * The termination policies for the group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> terminationPolicies;
 
@@ -368,29 +368,29 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
-     * The size of the group.
+     * The desired size of the group.
      *
-     * @return The size of the group.
+     * @return The desired size of the group.
      */
     public Integer getDesiredCapacity() {
         return desiredCapacity;
     }
     
     /**
-     * The size of the group.
+     * The desired size of the group.
      *
-     * @param desiredCapacity The size of the group.
+     * @param desiredCapacity The desired size of the group.
      */
     public void setDesiredCapacity(Integer desiredCapacity) {
         this.desiredCapacity = desiredCapacity;
     }
     
     /**
-     * The size of the group.
+     * The desired size of the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param desiredCapacity The size of the group.
+     * @param desiredCapacity The desired size of the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1005,9 +1005,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
-     * The metrics enabled for this Auto Scaling group.
+     * The metrics enabled for the group.
      *
-     * @return The metrics enabled for this Auto Scaling group.
+     * @return The metrics enabled for the group.
      */
     public java.util.List<EnabledMetric> getEnabledMetrics() {
         if (enabledMetrics == null) {
@@ -1018,9 +1018,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
     
     /**
-     * The metrics enabled for this Auto Scaling group.
+     * The metrics enabled for the group.
      *
-     * @param enabledMetrics The metrics enabled for this Auto Scaling group.
+     * @param enabledMetrics The metrics enabled for the group.
      */
     public void setEnabledMetrics(java.util.Collection<EnabledMetric> enabledMetrics) {
         if (enabledMetrics == null) {
@@ -1033,7 +1033,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
     
     /**
-     * The metrics enabled for this Auto Scaling group.
+     * The metrics enabled for the group.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setEnabledMetrics(java.util.Collection)} or {@link
@@ -1042,7 +1042,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param enabledMetrics The metrics enabled for this Auto Scaling group.
+     * @param enabledMetrics The metrics enabled for the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1056,11 +1056,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
     
     /**
-     * The metrics enabled for this Auto Scaling group.
+     * The metrics enabled for the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param enabledMetrics The metrics enabled for this Auto Scaling group.
+     * @param enabledMetrics The metrics enabled for the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1078,38 +1078,38 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
-     * The current state of the Auto Scaling group when a
-     * <a>DeleteAutoScalingGroup</a> action is in progress.
+     * The current state of the group when <a>DeleteAutoScalingGroup</a> is
+     * in progress.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The current state of the Auto Scaling group when a
-     *         <a>DeleteAutoScalingGroup</a> action is in progress.
+     * @return The current state of the group when <a>DeleteAutoScalingGroup</a> is
+     *         in progress.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * The current state of the Auto Scaling group when a
-     * <a>DeleteAutoScalingGroup</a> action is in progress.
+     * The current state of the group when <a>DeleteAutoScalingGroup</a> is
+     * in progress.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param status The current state of the Auto Scaling group when a
-     *         <a>DeleteAutoScalingGroup</a> action is in progress.
+     * @param status The current state of the group when <a>DeleteAutoScalingGroup</a> is
+     *         in progress.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * The current state of the Auto Scaling group when a
-     * <a>DeleteAutoScalingGroup</a> action is in progress.
+     * The current state of the group when <a>DeleteAutoScalingGroup</a> is
+     * in progress.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1117,8 +1117,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param status The current state of the Auto Scaling group when a
-     *         <a>DeleteAutoScalingGroup</a> action is in progress.
+     * @param status The current state of the group when <a>DeleteAutoScalingGroup</a> is
+     *         in progress.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1129,9 +1129,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
-     * The tags for the Auto Scaling group.
+     * The tags for the group.
      *
-     * @return The tags for the Auto Scaling group.
+     * @return The tags for the group.
      */
     public java.util.List<TagDescription> getTags() {
         if (tags == null) {
@@ -1142,9 +1142,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
     
     /**
-     * The tags for the Auto Scaling group.
+     * The tags for the group.
      *
-     * @param tags The tags for the Auto Scaling group.
+     * @param tags The tags for the group.
      */
     public void setTags(java.util.Collection<TagDescription> tags) {
         if (tags == null) {
@@ -1157,7 +1157,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
     
     /**
-     * The tags for the Auto Scaling group.
+     * The tags for the group.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTags(java.util.Collection)} or {@link
@@ -1166,7 +1166,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags The tags for the Auto Scaling group.
+     * @param tags The tags for the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1180,11 +1180,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
     
     /**
-     * The tags for the Auto Scaling group.
+     * The tags for the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags The tags for the Auto Scaling group.
+     * @param tags The tags for the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1202,9 +1202,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
-     * The termination policies for this Auto Scaling group.
+     * The termination policies for the group.
      *
-     * @return The termination policies for this Auto Scaling group.
+     * @return The termination policies for the group.
      */
     public java.util.List<String> getTerminationPolicies() {
         if (terminationPolicies == null) {
@@ -1215,9 +1215,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
     
     /**
-     * The termination policies for this Auto Scaling group.
+     * The termination policies for the group.
      *
-     * @param terminationPolicies The termination policies for this Auto Scaling group.
+     * @param terminationPolicies The termination policies for the group.
      */
     public void setTerminationPolicies(java.util.Collection<String> terminationPolicies) {
         if (terminationPolicies == null) {
@@ -1230,7 +1230,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
     
     /**
-     * The termination policies for this Auto Scaling group.
+     * The termination policies for the group.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTerminationPolicies(java.util.Collection)} or
@@ -1239,7 +1239,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param terminationPolicies The termination policies for this Auto Scaling group.
+     * @param terminationPolicies The termination policies for the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1253,11 +1253,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
     
     /**
-     * The termination policies for this Auto Scaling group.
+     * The termination policies for the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param terminationPolicies The termination policies for this Auto Scaling group.
+     * @param terminationPolicies The termination policies for the group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

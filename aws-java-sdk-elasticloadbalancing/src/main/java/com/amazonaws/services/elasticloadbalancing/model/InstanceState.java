@@ -18,32 +18,49 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The InstanceState data type.
+ * Information about the state of a back-end instance.
  * </p>
  */
 public class InstanceState implements Serializable, Cloneable {
 
     /**
-     * Provides an EC2 instance ID.
+     * The ID of the instance.
      */
     private String instanceId;
 
     /**
-     * Specifies the current state of the instance. <p>Valid value:
-     * <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
+     * The current state of the instance. <p>Valid values:
+     * <code>InService</code> | <code>OutOfService</code> |
+     * <code>Unknown</code>
      */
     private String state;
 
     /**
-     * Provides information about the cause of <i>OutOfService</i> instances.
-     * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the load balancer. <p>Valid value:
-     * <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
+     * Information about the cause of <code>OutOfService</code> instances.
+     * Specifically, whether the cause is Elastic Load Balancing or the
+     * instance. <p>Valid values: <code>ELB</code> | <code>Instance</code> |
+     * <code>N/A</code>
      */
     private String reasonCode;
 
     /**
-     * Provides a description of the instance state.
+     * A description of the instance state. This string can contain one or
+     * more of the following messages. <ul> <li> <p><code>N/A</code> </li>
+     * <li> <p><code>A transient error occurred. Please try again
+     * later.</code> </li> <li> <p><code>Instance has failed at least the
+     * UnhealthyThreshold number of health checks consecutively.</code> </li>
+     * <li> <p><code>Instance has not passed the configured HealthyThreshold
+     * number of health checks consecutively.</code> </li> <li>
+     * <p><code>Instance registration is still in progress.</code> </li> <li>
+     * <p><code>Instance is in the EC2 Availability Zone for which
+     * LoadBalancer is not configured to route traffic to.</code> </li> <li>
+     * <p><code>Instance is not currently registered with the
+     * LoadBalancer.</code> </li> <li> <p><code>Instance deregistration
+     * currently in progress.</code> </li> <li> <p><code>Disable Availability
+     * Zone is currently in progress.</code> </li> <li> <p><code>Instance is
+     * in pending state.</code> </li> <li> <p><code>Instance is in stopped
+     * state.</code> </li> <li> <p><code>Instance is in terminated
+     * state.</code> </li> </ul>
      */
     private String description;
 
@@ -54,29 +71,29 @@ public class InstanceState implements Serializable, Cloneable {
     public InstanceState() {}
     
     /**
-     * Provides an EC2 instance ID.
+     * The ID of the instance.
      *
-     * @return Provides an EC2 instance ID.
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Provides an EC2 instance ID.
+     * The ID of the instance.
      *
-     * @param instanceId Provides an EC2 instance ID.
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Provides an EC2 instance ID.
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId Provides an EC2 instance ID.
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -87,35 +104,41 @@ public class InstanceState implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies the current state of the instance. <p>Valid value:
-     * <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
+     * The current state of the instance. <p>Valid values:
+     * <code>InService</code> | <code>OutOfService</code> |
+     * <code>Unknown</code>
      *
-     * @return Specifies the current state of the instance. <p>Valid value:
-     *         <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
+     * @return The current state of the instance. <p>Valid values:
+     *         <code>InService</code> | <code>OutOfService</code> |
+     *         <code>Unknown</code>
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Specifies the current state of the instance. <p>Valid value:
-     * <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
+     * The current state of the instance. <p>Valid values:
+     * <code>InService</code> | <code>OutOfService</code> |
+     * <code>Unknown</code>
      *
-     * @param state Specifies the current state of the instance. <p>Valid value:
-     *         <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
+     * @param state The current state of the instance. <p>Valid values:
+     *         <code>InService</code> | <code>OutOfService</code> |
+     *         <code>Unknown</code>
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Specifies the current state of the instance. <p>Valid value:
-     * <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
+     * The current state of the instance. <p>Valid values:
+     * <code>InService</code> | <code>OutOfService</code> |
+     * <code>Unknown</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state Specifies the current state of the instance. <p>Valid value:
-     *         <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
+     * @param state The current state of the instance. <p>Valid values:
+     *         <code>InService</code> | <code>OutOfService</code> |
+     *         <code>Unknown</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -126,47 +149,47 @@ public class InstanceState implements Serializable, Cloneable {
     }
 
     /**
-     * Provides information about the cause of <i>OutOfService</i> instances.
-     * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the load balancer. <p>Valid value:
-     * <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
+     * Information about the cause of <code>OutOfService</code> instances.
+     * Specifically, whether the cause is Elastic Load Balancing or the
+     * instance. <p>Valid values: <code>ELB</code> | <code>Instance</code> |
+     * <code>N/A</code>
      *
-     * @return Provides information about the cause of <i>OutOfService</i> instances.
-     *         Specifically, it indicates whether the cause is Elastic Load Balancing
-     *         or the instance behind the load balancer. <p>Valid value:
-     *         <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
+     * @return Information about the cause of <code>OutOfService</code> instances.
+     *         Specifically, whether the cause is Elastic Load Balancing or the
+     *         instance. <p>Valid values: <code>ELB</code> | <code>Instance</code> |
+     *         <code>N/A</code>
      */
     public String getReasonCode() {
         return reasonCode;
     }
     
     /**
-     * Provides information about the cause of <i>OutOfService</i> instances.
-     * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the load balancer. <p>Valid value:
-     * <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
+     * Information about the cause of <code>OutOfService</code> instances.
+     * Specifically, whether the cause is Elastic Load Balancing or the
+     * instance. <p>Valid values: <code>ELB</code> | <code>Instance</code> |
+     * <code>N/A</code>
      *
-     * @param reasonCode Provides information about the cause of <i>OutOfService</i> instances.
-     *         Specifically, it indicates whether the cause is Elastic Load Balancing
-     *         or the instance behind the load balancer. <p>Valid value:
-     *         <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
+     * @param reasonCode Information about the cause of <code>OutOfService</code> instances.
+     *         Specifically, whether the cause is Elastic Load Balancing or the
+     *         instance. <p>Valid values: <code>ELB</code> | <code>Instance</code> |
+     *         <code>N/A</code>
      */
     public void setReasonCode(String reasonCode) {
         this.reasonCode = reasonCode;
     }
     
     /**
-     * Provides information about the cause of <i>OutOfService</i> instances.
-     * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the load balancer. <p>Valid value:
-     * <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
+     * Information about the cause of <code>OutOfService</code> instances.
+     * Specifically, whether the cause is Elastic Load Balancing or the
+     * instance. <p>Valid values: <code>ELB</code> | <code>Instance</code> |
+     * <code>N/A</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reasonCode Provides information about the cause of <i>OutOfService</i> instances.
-     *         Specifically, it indicates whether the cause is Elastic Load Balancing
-     *         or the instance behind the load balancer. <p>Valid value:
-     *         <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
+     * @param reasonCode Information about the cause of <code>OutOfService</code> instances.
+     *         Specifically, whether the cause is Elastic Load Balancing or the
+     *         instance. <p>Valid values: <code>ELB</code> | <code>Instance</code> |
+     *         <code>N/A</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -177,29 +200,125 @@ public class InstanceState implements Serializable, Cloneable {
     }
 
     /**
-     * Provides a description of the instance state.
+     * A description of the instance state. This string can contain one or
+     * more of the following messages. <ul> <li> <p><code>N/A</code> </li>
+     * <li> <p><code>A transient error occurred. Please try again
+     * later.</code> </li> <li> <p><code>Instance has failed at least the
+     * UnhealthyThreshold number of health checks consecutively.</code> </li>
+     * <li> <p><code>Instance has not passed the configured HealthyThreshold
+     * number of health checks consecutively.</code> </li> <li>
+     * <p><code>Instance registration is still in progress.</code> </li> <li>
+     * <p><code>Instance is in the EC2 Availability Zone for which
+     * LoadBalancer is not configured to route traffic to.</code> </li> <li>
+     * <p><code>Instance is not currently registered with the
+     * LoadBalancer.</code> </li> <li> <p><code>Instance deregistration
+     * currently in progress.</code> </li> <li> <p><code>Disable Availability
+     * Zone is currently in progress.</code> </li> <li> <p><code>Instance is
+     * in pending state.</code> </li> <li> <p><code>Instance is in stopped
+     * state.</code> </li> <li> <p><code>Instance is in terminated
+     * state.</code> </li> </ul>
      *
-     * @return Provides a description of the instance state.
+     * @return A description of the instance state. This string can contain one or
+     *         more of the following messages. <ul> <li> <p><code>N/A</code> </li>
+     *         <li> <p><code>A transient error occurred. Please try again
+     *         later.</code> </li> <li> <p><code>Instance has failed at least the
+     *         UnhealthyThreshold number of health checks consecutively.</code> </li>
+     *         <li> <p><code>Instance has not passed the configured HealthyThreshold
+     *         number of health checks consecutively.</code> </li> <li>
+     *         <p><code>Instance registration is still in progress.</code> </li> <li>
+     *         <p><code>Instance is in the EC2 Availability Zone for which
+     *         LoadBalancer is not configured to route traffic to.</code> </li> <li>
+     *         <p><code>Instance is not currently registered with the
+     *         LoadBalancer.</code> </li> <li> <p><code>Instance deregistration
+     *         currently in progress.</code> </li> <li> <p><code>Disable Availability
+     *         Zone is currently in progress.</code> </li> <li> <p><code>Instance is
+     *         in pending state.</code> </li> <li> <p><code>Instance is in stopped
+     *         state.</code> </li> <li> <p><code>Instance is in terminated
+     *         state.</code> </li> </ul>
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Provides a description of the instance state.
+     * A description of the instance state. This string can contain one or
+     * more of the following messages. <ul> <li> <p><code>N/A</code> </li>
+     * <li> <p><code>A transient error occurred. Please try again
+     * later.</code> </li> <li> <p><code>Instance has failed at least the
+     * UnhealthyThreshold number of health checks consecutively.</code> </li>
+     * <li> <p><code>Instance has not passed the configured HealthyThreshold
+     * number of health checks consecutively.</code> </li> <li>
+     * <p><code>Instance registration is still in progress.</code> </li> <li>
+     * <p><code>Instance is in the EC2 Availability Zone for which
+     * LoadBalancer is not configured to route traffic to.</code> </li> <li>
+     * <p><code>Instance is not currently registered with the
+     * LoadBalancer.</code> </li> <li> <p><code>Instance deregistration
+     * currently in progress.</code> </li> <li> <p><code>Disable Availability
+     * Zone is currently in progress.</code> </li> <li> <p><code>Instance is
+     * in pending state.</code> </li> <li> <p><code>Instance is in stopped
+     * state.</code> </li> <li> <p><code>Instance is in terminated
+     * state.</code> </li> </ul>
      *
-     * @param description Provides a description of the instance state.
+     * @param description A description of the instance state. This string can contain one or
+     *         more of the following messages. <ul> <li> <p><code>N/A</code> </li>
+     *         <li> <p><code>A transient error occurred. Please try again
+     *         later.</code> </li> <li> <p><code>Instance has failed at least the
+     *         UnhealthyThreshold number of health checks consecutively.</code> </li>
+     *         <li> <p><code>Instance has not passed the configured HealthyThreshold
+     *         number of health checks consecutively.</code> </li> <li>
+     *         <p><code>Instance registration is still in progress.</code> </li> <li>
+     *         <p><code>Instance is in the EC2 Availability Zone for which
+     *         LoadBalancer is not configured to route traffic to.</code> </li> <li>
+     *         <p><code>Instance is not currently registered with the
+     *         LoadBalancer.</code> </li> <li> <p><code>Instance deregistration
+     *         currently in progress.</code> </li> <li> <p><code>Disable Availability
+     *         Zone is currently in progress.</code> </li> <li> <p><code>Instance is
+     *         in pending state.</code> </li> <li> <p><code>Instance is in stopped
+     *         state.</code> </li> <li> <p><code>Instance is in terminated
+     *         state.</code> </li> </ul>
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Provides a description of the instance state.
+     * A description of the instance state. This string can contain one or
+     * more of the following messages. <ul> <li> <p><code>N/A</code> </li>
+     * <li> <p><code>A transient error occurred. Please try again
+     * later.</code> </li> <li> <p><code>Instance has failed at least the
+     * UnhealthyThreshold number of health checks consecutively.</code> </li>
+     * <li> <p><code>Instance has not passed the configured HealthyThreshold
+     * number of health checks consecutively.</code> </li> <li>
+     * <p><code>Instance registration is still in progress.</code> </li> <li>
+     * <p><code>Instance is in the EC2 Availability Zone for which
+     * LoadBalancer is not configured to route traffic to.</code> </li> <li>
+     * <p><code>Instance is not currently registered with the
+     * LoadBalancer.</code> </li> <li> <p><code>Instance deregistration
+     * currently in progress.</code> </li> <li> <p><code>Disable Availability
+     * Zone is currently in progress.</code> </li> <li> <p><code>Instance is
+     * in pending state.</code> </li> <li> <p><code>Instance is in stopped
+     * state.</code> </li> <li> <p><code>Instance is in terminated
+     * state.</code> </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description Provides a description of the instance state.
+     * @param description A description of the instance state. This string can contain one or
+     *         more of the following messages. <ul> <li> <p><code>N/A</code> </li>
+     *         <li> <p><code>A transient error occurred. Please try again
+     *         later.</code> </li> <li> <p><code>Instance has failed at least the
+     *         UnhealthyThreshold number of health checks consecutively.</code> </li>
+     *         <li> <p><code>Instance has not passed the configured HealthyThreshold
+     *         number of health checks consecutively.</code> </li> <li>
+     *         <p><code>Instance registration is still in progress.</code> </li> <li>
+     *         <p><code>Instance is in the EC2 Availability Zone for which
+     *         LoadBalancer is not configured to route traffic to.</code> </li> <li>
+     *         <p><code>Instance is not currently registered with the
+     *         LoadBalancer.</code> </li> <li> <p><code>Instance deregistration
+     *         currently in progress.</code> </li> <li> <p><code>Disable Availability
+     *         Zone is currently in progress.</code> </li> <li> <p><code>Instance is
+     *         in pending state.</code> </li> <li> <p><code>Instance is in stopped
+     *         state.</code> </li> <li> <p><code>Instance is in terminated
+     *         state.</code> </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -25,7 +25,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable, Cl
 
     /**
      * The device name exposed to the instance (for example,
-     * <filename>/dev/sdh</filename>).
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     private String deviceName;
 
@@ -47,10 +47,10 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable, Cl
 
     /**
      * The device name exposed to the instance (for example,
-     * <filename>/dev/sdh</filename>).
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      *
      * @return The device name exposed to the instance (for example,
-     *         <filename>/dev/sdh</filename>).
+     *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     public String getDeviceName() {
         return deviceName;
@@ -58,10 +58,10 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable, Cl
     
     /**
      * The device name exposed to the instance (for example,
-     * <filename>/dev/sdh</filename>).
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      *
      * @param deviceName The device name exposed to the instance (for example,
-     *         <filename>/dev/sdh</filename>).
+     *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -69,12 +69,12 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable, Cl
     
     /**
      * The device name exposed to the instance (for example,
-     * <filename>/dev/sdh</filename>).
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deviceName The device name exposed to the instance (for example,
-     *         <filename>/dev/sdh</filename>).
+     *         <code>/dev/sdh</code> or <code>xvdh</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

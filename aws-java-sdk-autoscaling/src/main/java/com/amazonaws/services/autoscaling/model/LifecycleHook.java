@@ -59,7 +59,7 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * The state of the EC2 instance to which you want to attach the
      * lifecycle hook. For a list of lifecycle hook types, see
-     * <a>DescribeLifecycleHooks</a>.
+     * <a>DescribeLifecycleHookTypes</a>.
      */
     private String lifecycleTransition;
 
@@ -216,11 +216,11 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * The state of the EC2 instance to which you want to attach the
      * lifecycle hook. For a list of lifecycle hook types, see
-     * <a>DescribeLifecycleHooks</a>.
+     * <a>DescribeLifecycleHookTypes</a>.
      *
      * @return The state of the EC2 instance to which you want to attach the
      *         lifecycle hook. For a list of lifecycle hook types, see
-     *         <a>DescribeLifecycleHooks</a>.
+     *         <a>DescribeLifecycleHookTypes</a>.
      */
     public String getLifecycleTransition() {
         return lifecycleTransition;
@@ -229,11 +229,11 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * The state of the EC2 instance to which you want to attach the
      * lifecycle hook. For a list of lifecycle hook types, see
-     * <a>DescribeLifecycleHooks</a>.
+     * <a>DescribeLifecycleHookTypes</a>.
      *
      * @param lifecycleTransition The state of the EC2 instance to which you want to attach the
      *         lifecycle hook. For a list of lifecycle hook types, see
-     *         <a>DescribeLifecycleHooks</a>.
+     *         <a>DescribeLifecycleHookTypes</a>.
      */
     public void setLifecycleTransition(String lifecycleTransition) {
         this.lifecycleTransition = lifecycleTransition;
@@ -242,13 +242,13 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * The state of the EC2 instance to which you want to attach the
      * lifecycle hook. For a list of lifecycle hook types, see
-     * <a>DescribeLifecycleHooks</a>.
+     * <a>DescribeLifecycleHookTypes</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lifecycleTransition The state of the EC2 instance to which you want to attach the
      *         lifecycle hook. For a list of lifecycle hook types, see
-     *         <a>DescribeLifecycleHooks</a>.
+     *         <a>DescribeLifecycleHookTypes</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -44,7 +44,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * mapping for the AMI.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport
      */
     private String attribute;
 
@@ -129,7 +129,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * mapping for the AMI.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport
      *
      * @return The AMI attribute. <p><b>Note</b>: Depending on your account
      *         privileges, the <code>blockDeviceMapping</code> attribute may return a
@@ -151,7 +151,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * mapping for the AMI.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport
      *
      * @param attribute The AMI attribute. <p><b>Note</b>: Depending on your account
      *         privileges, the <code>blockDeviceMapping</code> attribute may return a
@@ -175,7 +175,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport
      *
      * @param attribute The AMI attribute. <p><b>Note</b>: Depending on your account
      *         privileges, the <code>blockDeviceMapping</code> attribute may return a
@@ -201,7 +201,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * mapping for the AMI.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport
      *
      * @param attribute The AMI attribute. <p><b>Note</b>: Depending on your account
      *         privileges, the <code>blockDeviceMapping</code> attribute may return a
@@ -225,7 +225,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport
      *
      * @param attribute The AMI attribute. <p><b>Note</b>: Depending on your account
      *         privileges, the <code>blockDeviceMapping</code> attribute may return a

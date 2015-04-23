@@ -18,13 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The Instance data type.
+ * The ID of a back-end instance.
  * </p>
  */
 public class Instance implements Serializable, Cloneable {
 
     /**
-     * Provides an EC2 instance ID.
+     * The ID of the instance.
      */
     private String instanceId;
 
@@ -39,36 +39,36 @@ public class Instance implements Serializable, Cloneable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param instanceId Provides an EC2 instance ID.
+     * @param instanceId The ID of the instance.
      */
     public Instance(String instanceId) {
         setInstanceId(instanceId);
     }
 
     /**
-     * Provides an EC2 instance ID.
+     * The ID of the instance.
      *
-     * @return Provides an EC2 instance ID.
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Provides an EC2 instance ID.
+     * The ID of the instance.
      *
-     * @param instanceId Provides an EC2 instance ID.
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Provides an EC2 instance ID.
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId Provides an EC2 instance ID.
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

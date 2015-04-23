@@ -77,7 +77,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private String policyARN;
 
     /**
-     * The CloudWatch Alarms related to the policy.
+     * The CloudWatch alarms related to the policy.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Alarm> alarms;
 
@@ -376,9 +376,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * The CloudWatch Alarms related to the policy.
+     * The CloudWatch alarms related to the policy.
      *
-     * @return The CloudWatch Alarms related to the policy.
+     * @return The CloudWatch alarms related to the policy.
      */
     public java.util.List<Alarm> getAlarms() {
         if (alarms == null) {
@@ -389,9 +389,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
     
     /**
-     * The CloudWatch Alarms related to the policy.
+     * The CloudWatch alarms related to the policy.
      *
-     * @param alarms The CloudWatch Alarms related to the policy.
+     * @param alarms The CloudWatch alarms related to the policy.
      */
     public void setAlarms(java.util.Collection<Alarm> alarms) {
         if (alarms == null) {
@@ -404,7 +404,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
     
     /**
-     * The CloudWatch Alarms related to the policy.
+     * The CloudWatch alarms related to the policy.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAlarms(java.util.Collection)} or {@link
@@ -413,7 +413,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alarms The CloudWatch Alarms related to the policy.
+     * @param alarms The CloudWatch alarms related to the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -427,11 +427,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
     
     /**
-     * The CloudWatch Alarms related to the policy.
+     * The CloudWatch alarms related to the policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alarms The CloudWatch Alarms related to the policy.
+     * @param alarms The CloudWatch alarms related to the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

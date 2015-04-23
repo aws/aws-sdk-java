@@ -281,7 +281,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * For information about requesting an increase in these limits, see
      * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> AWS Service Limits </a>
-     * .
+     * in the <i>Amazon Web Services General Reference</i> .
      * </p>
      *
      * @param describeAccountLimitsRequest Container for the necessary
@@ -318,7 +318,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * For information about requesting an increase in these limits, see
      * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> AWS Service Limits </a>
-     * .
+     * in the <i>Amazon Web Services General Reference</i> .
      * </p>
      *
      * @param describeAccountLimitsRequest Container for the necessary
@@ -366,12 +366,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * Describes one or more Auto Scaling groups. If a list of names is not
      * provided, the call describes all Auto Scaling groups.
      * </p>
-     * <p>
-     * You can specify a maximum number of items to be returned with a
-     * single call. If there are more items to return, the call returns a
-     * token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.
-     * </p>
      *
      * @param describeAutoScalingGroupsRequest Container for the necessary
      *           parameters to execute the DescribeAutoScalingGroups operation on
@@ -403,12 +397,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * Describes one or more Auto Scaling groups. If a list of names is not
      * provided, the call describes all Auto Scaling groups.
-     * </p>
-     * <p>
-     * You can specify a maximum number of items to be returned with a
-     * single call. If there are more items to return, the call returns a
-     * token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.
      * </p>
      *
      * @param describeAutoScalingGroupsRequest Container for the necessary
@@ -701,12 +689,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * Describes the policies for the specified Auto Scaling group.
      * </p>
-     * <p>
-     * You can specify a maximum number of items to be returned with a
-     * single call. If there are more items to return, the call returns a
-     * token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.
-     * </p>
      *
      * @param describePoliciesRequest Container for the necessary parameters
      *           to execute the DescribePolicies operation on AmazonAutoScaling.
@@ -735,12 +717,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     /**
      * <p>
      * Describes the policies for the specified Auto Scaling group.
-     * </p>
-     * <p>
-     * You can specify a maximum number of items to be returned with a
-     * single call. If there are more items to return, the call returns a
-     * token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.
      * </p>
      *
      * @param describePoliciesRequest Container for the necessary parameters
@@ -783,8 +759,8 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Returns scaling process types for use in the ResumeProcesses and
-     * SuspendProcesses actions.
+     * Describes the scaling process types for use with ResumeProcesses and
+     * SuspendProcesses.
      * </p>
      *
      * @param describeScalingProcessTypesRequest Container for the necessary
@@ -815,8 +791,8 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
 
     /**
      * <p>
-     * Returns scaling process types for use in the ResumeProcesses and
-     * SuspendProcesses actions.
+     * Describes the scaling process types for use with ResumeProcesses and
+     * SuspendProcesses.
      * </p>
      *
      * @param describeScalingProcessTypesRequest Container for the necessary
@@ -1038,7 +1014,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html"> Attach Amazon EC2 Instances to Your Existing Auto Scaling Group </a>
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html"> Attach EC2 Instances to Your Auto Scaling Group </a>
      * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
@@ -1074,7 +1050,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html"> Attach Amazon EC2 Instances to Your Existing Auto Scaling Group </a>
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html"> Attach EC2 Instances to Your Auto Scaling Group </a>
      * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
@@ -1123,12 +1099,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * by the start time. Activities still in progress appear first on the
      * list.
      * </p>
-     * <p>
-     * You can specify a maximum number of items to be returned with a
-     * single call. If there are more items to return, the call returns a
-     * token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.
-     * </p>
      *
      * @param describeScalingActivitiesRequest Container for the necessary
      *           parameters to execute the DescribeScalingActivities operation on
@@ -1163,12 +1133,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * returns all activities from the past six weeks. Activities are sorted
      * by the start time. Activities still in progress appear first on the
      * list.
-     * </p>
-     * <p>
-     * You can specify a maximum number of items to be returned with a
-     * single call. If there are more items to return, the call returns a
-     * token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.
      * </p>
      *
      * @param describeScalingActivitiesRequest Container for the necessary
@@ -1495,7 +1459,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Lists the termination policies supported by Auto Scaling.
+     * Describes the termination policies supported by Auto Scaling.
      * </p>
      *
      * @param describeTerminationPolicyTypesRequest Container for the
@@ -1526,7 +1490,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
 
     /**
      * <p>
-     * Lists the termination policies supported by Auto Scaling.
+     * Describes the termination policies supported by Auto Scaling.
      * </p>
      *
      * @param describeTerminationPolicyTypesRequest Container for the
@@ -2485,7 +2449,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Lists the notification types that are supported by Auto Scaling.
+     * Describes the notification types that are supported by Auto Scaling.
      * </p>
      *
      * @param describeAutoScalingNotificationTypesRequest Container for the
@@ -2516,7 +2480,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
 
     /**
      * <p>
-     * Lists the notification types that are supported by Auto Scaling.
+     * Describes the notification types that are supported by Auto Scaling.
      * </p>
      *
      * @param describeAutoScalingNotificationTypesRequest Container for the
@@ -2668,14 +2632,22 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * Creates or updates tags for the specified Auto Scaling group.
      * </p>
      * <p>
-     * <b>NOTE:</b> A tag's definition is composed of a resource ID,
-     * resource type, key and value, and the propagate flag. Value and the
-     * propagate flag are optional parameters. See the Request Parameters for
-     * more information.
+     * A tag is defined by its resource ID, resource type, key, value, and
+     * propagate flag. The value and the propagate flag are optional
+     * parameters. The only supported resource type is
+     * <code>auto-scaling-group</code> , and the resource ID must be the name
+     * of the group. The <code>PropagateAtLaunch</code> flag determines
+     * whether the tag is added to instances launched in the group. Valid
+     * values are <code>true</code> or <code>false</code> .
+     * </p>
+     * <p>
+     * When you specify a tag with a key that already exists, the operation
+     * overwrites the previous tag definition, and you do not get an error
+     * message.
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html"> Add, Modify, or Remove Auto Scaling Group Tags </a>
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html"> Tagging Auto Scaling Groups and Instances </a>
      * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
@@ -2710,14 +2682,22 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * Creates or updates tags for the specified Auto Scaling group.
      * </p>
      * <p>
-     * <b>NOTE:</b> A tag's definition is composed of a resource ID,
-     * resource type, key and value, and the propagate flag. Value and the
-     * propagate flag are optional parameters. See the Request Parameters for
-     * more information.
+     * A tag is defined by its resource ID, resource type, key, value, and
+     * propagate flag. The value and the propagate flag are optional
+     * parameters. The only supported resource type is
+     * <code>auto-scaling-group</code> , and the resource ID must be the name
+     * of the group. The <code>PropagateAtLaunch</code> flag determines
+     * whether the tag is added to instances launched in the group. Valid
+     * values are <code>true</code> or <code>false</code> .
+     * </p>
+     * <p>
+     * When you specify a tag with a key that already exists, the operation
+     * overwrites the previous tag definition, and you do not get an error
+     * message.
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html"> Add, Modify, or Remove Auto Scaling Group Tags </a>
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html"> Tagging Auto Scaling Groups and Instances </a>
      * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
      *
@@ -2850,13 +2830,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * Describes one or more Auto Scaling instances. If a list is not
      * provided, the call describes all instances.
      * </p>
-     * <p>
-     * You can describe up to a maximum of 50 instances with a single call.
-     * By default, a call returns up to 20 instances. If there are more items
-     * to return, the call returns a token. To get the next set of items,
-     * repeat the call with the returned token in the <code>NextToken</code>
-     * parameter.
-     * </p>
      *
      * @param describeAutoScalingInstancesRequest Container for the necessary
      *           parameters to execute the DescribeAutoScalingInstances operation on
@@ -2888,13 +2861,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * Describes one or more Auto Scaling instances. If a list is not
      * provided, the call describes all instances.
-     * </p>
-     * <p>
-     * You can describe up to a maximum of 50 instances with a single call.
-     * By default, a call returns up to 20 instances. If there are more items
-     * to return, the call returns a token. To get the next set of items,
-     * repeat the call with the returned token in the <code>NextToken</code>
-     * parameter.
      * </p>
      *
      * @param describeAutoScalingInstancesRequest Container for the necessary
@@ -3190,9 +3156,9 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * progress.
      * </p>
      * <p>
-     * To remove all instances before calling DeleteAutoScalingGroup, you
-     * can call UpdateAutoScalingGroup to set the minimum and maximum size of
-     * the AutoScalingGroup to zero.
+     * To remove all instances before calling
+     * <code>DeleteAutoScalingGroup</code> , call UpdateAutoScalingGroup to
+     * set the minimum and maximum size of the Auto Scaling group to zero.
      * </p>
      *
      * @param deleteAutoScalingGroupRequest Container for the necessary
@@ -3231,9 +3197,9 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * progress.
      * </p>
      * <p>
-     * To remove all instances before calling DeleteAutoScalingGroup, you
-     * can call UpdateAutoScalingGroup to set the minimum and maximum size of
-     * the AutoScalingGroup to zero.
+     * To remove all instances before calling
+     * <code>DeleteAutoScalingGroup</code> , call UpdateAutoScalingGroup to
+     * set the minimum and maximum size of the Auto Scaling group to zero.
      * </p>
      *
      * @param deleteAutoScalingGroupRequest Container for the necessary
@@ -3355,15 +3321,14 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Updates the configuration for the specified AutoScalingGroup.
+     * Updates the configuration for the specified Auto Scaling group.
      * </p>
      * <p>
-     * <b>NOTE:</b> To update an Auto Scaling group with a launch
-     * configuration that has the InstanceMonitoring flag set to False, you
-     * must first ensure that collection of group metrics is disabled.
-     * Otherwise, calls to UpdateAutoScalingGroup will fail. If you have
-     * previously enabled group metrics collection, you can disable
-     * collection of all group metrics by calling DisableMetricsCollection.
+     * To update an Auto Scaling group with a launch configuration with
+     * <code>InstanceMonitoring</code> set to <code>False</code> , you must
+     * first disable the collection of group metrics. Otherwise, you will get
+     * an error. If you have previously enabled the collection of group
+     * metrics, you can disable it using DisableMetricsCollection.
      * </p>
      * <p>
      * The new settings are registered upon the completion of this call. Any
@@ -3372,16 +3337,32 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * affected.
      * </p>
      * <p>
-     * <b>NOTE:</b> If a new value is specified for MinSize without
-     * specifying the value for DesiredCapacity, and if the new MinSize is
-     * larger than the current size of the Auto Scaling group, there will be
-     * an implicit call to SetDesiredCapacity to set the group to the new
-     * MinSize. If a new value is specified for MaxSize without specifying
-     * the value for DesiredCapacity, and the new MaxSize is smaller than the
-     * current size of the Auto Scaling group, there will be an implicit call
-     * to SetDesiredCapacity to set the group to the new MaxSize. All other
-     * optional parameters are left unchanged if not passed in the request.
+     * Note the following:
      * </p>
+     * 
+     * <ul>
+     * <li> <p>
+     * If you specify a new value for <code>MinSize</code> without
+     * specifying a value for <code>DesiredCapacity</code> , and the new
+     * <code>MinSize</code> is larger than the current size of the group, we
+     * implicitly call SetDesiredCapacity to set the size of the group to the
+     * new value of <code>MinSize</code> .
+     * </p>
+     * </li>
+     * <li> <p>
+     * If you specify a new value for <code>MaxSize</code> without
+     * specifying a value for <code>DesiredCapacity</code> , and the new
+     * <code>MaxSize</code> is smaller than the current size of the group, we
+     * implicitly call SetDesiredCapacity to set the size of the group to the
+     * new value of <code>MaxSize</code> .
+     * </p>
+     * </li>
+     * <li> <p>
+     * All other optional parameters are left unchanged if not specified.
+     * </p>
+     * </li>
+     * 
+     * </ul>
      *
      * @param updateAutoScalingGroupRequest Container for the necessary
      *           parameters to execute the UpdateAutoScalingGroup operation on
@@ -3412,15 +3393,14 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
 
     /**
      * <p>
-     * Updates the configuration for the specified AutoScalingGroup.
+     * Updates the configuration for the specified Auto Scaling group.
      * </p>
      * <p>
-     * <b>NOTE:</b> To update an Auto Scaling group with a launch
-     * configuration that has the InstanceMonitoring flag set to False, you
-     * must first ensure that collection of group metrics is disabled.
-     * Otherwise, calls to UpdateAutoScalingGroup will fail. If you have
-     * previously enabled group metrics collection, you can disable
-     * collection of all group metrics by calling DisableMetricsCollection.
+     * To update an Auto Scaling group with a launch configuration with
+     * <code>InstanceMonitoring</code> set to <code>False</code> , you must
+     * first disable the collection of group metrics. Otherwise, you will get
+     * an error. If you have previously enabled the collection of group
+     * metrics, you can disable it using DisableMetricsCollection.
      * </p>
      * <p>
      * The new settings are registered upon the completion of this call. Any
@@ -3429,16 +3409,32 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * affected.
      * </p>
      * <p>
-     * <b>NOTE:</b> If a new value is specified for MinSize without
-     * specifying the value for DesiredCapacity, and if the new MinSize is
-     * larger than the current size of the Auto Scaling group, there will be
-     * an implicit call to SetDesiredCapacity to set the group to the new
-     * MinSize. If a new value is specified for MaxSize without specifying
-     * the value for DesiredCapacity, and the new MaxSize is smaller than the
-     * current size of the Auto Scaling group, there will be an implicit call
-     * to SetDesiredCapacity to set the group to the new MaxSize. All other
-     * optional parameters are left unchanged if not passed in the request.
+     * Note the following:
      * </p>
+     * 
+     * <ul>
+     * <li> <p>
+     * If you specify a new value for <code>MinSize</code> without
+     * specifying a value for <code>DesiredCapacity</code> , and the new
+     * <code>MinSize</code> is larger than the current size of the group, we
+     * implicitly call SetDesiredCapacity to set the size of the group to the
+     * new value of <code>MinSize</code> .
+     * </p>
+     * </li>
+     * <li> <p>
+     * If you specify a new value for <code>MaxSize</code> without
+     * specifying a value for <code>DesiredCapacity</code> , and the new
+     * <code>MaxSize</code> is smaller than the current size of the group, we
+     * implicitly call SetDesiredCapacity to set the size of the group to the
+     * new value of <code>MaxSize</code> .
+     * </p>
+     * </li>
+     * <li> <p>
+     * All other optional parameters are left unchanged if not specified.
+     * </p>
+     * </li>
+     * 
+     * </ul>
      *
      * @param updateAutoScalingGroupRequest Container for the necessary
      *           parameters to execute the UpdateAutoScalingGroup operation on
@@ -3484,12 +3480,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * Describes one or more launch configurations. If you omit the list of
      * names, then the call describes all launch configurations.
      * </p>
-     * <p>
-     * You can specify a maximum number of items to be returned with a
-     * single call. If there are more items to return, the call returns a
-     * token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.
-     * </p>
      *
      * @param describeLaunchConfigurationsRequest Container for the necessary
      *           parameters to execute the DescribeLaunchConfigurations operation on
@@ -3521,12 +3511,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * Describes one or more launch configurations. If you omit the list of
      * names, then the call describes all launch configurations.
-     * </p>
-     * <p>
-     * You can specify a maximum number of items to be returned with a
-     * single call. If there are more items to return, the call returns a
-     * token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.
      * </p>
      *
      * @param describeLaunchConfigurationsRequest Container for the necessary
@@ -3571,7 +3555,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Lists the policy adjustment types for use with PutScalingPolicy.
+     * Describes the policy adjustment types for use with PutScalingPolicy.
      * </p>
      *
      * @param describeAdjustmentTypesRequest Container for the necessary
@@ -3602,7 +3586,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
 
     /**
      * <p>
-     * Lists the policy adjustment types for use with PutScalingPolicy.
+     * Describes the policy adjustment types for use with PutScalingPolicy.
      * </p>
      *
      * @param describeAdjustmentTypesRequest Container for the necessary
@@ -3647,8 +3631,8 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Lists the actions scheduled for your Auto Scaling group that haven't
-     * been executed. To list the actions that were already executed, use
+     * Describes the actions scheduled for your Auto Scaling group that
+     * haven't run. To describe the actions that have already run, use
      * DescribeScalingActivities.
      * </p>
      *
@@ -3680,8 +3664,8 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
 
     /**
      * <p>
-     * Lists the actions scheduled for your Auto Scaling group that haven't
-     * been executed. To list the actions that were already executed, use
+     * Describes the actions scheduled for your Auto Scaling group that
+     * haven't run. To describe the actions that have already run, use
      * DescribeScalingActivities.
      * </p>
      *
@@ -3853,10 +3837,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html"> Scheduled Scaling </a>
      * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
-     * <p>
-     * <b>NOTE:</b> Auto Scaling supports the date and time expressed in
-     * "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only.
-     * </p>
      *
      * @param putScheduledUpdateGroupActionRequest Container for the
      *           necessary parameters to execute the PutScheduledUpdateGroupAction
@@ -3896,10 +3876,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html"> Scheduled Scaling </a>
      * in the <i>Auto Scaling Developer Guide</i> .
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Auto Scaling supports the date and time expressed in
-     * "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only.
      * </p>
      *
      * @param putScheduledUpdateGroupActionRequest Container for the
@@ -3943,13 +3919,12 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Returns a list of metrics and a corresponding list of granularities
-     * for each metric.
+     * Describes the available CloudWatch metrics for Auto Scaling.
      * </p>
      * <p>
-     * <b>NOTE:</b> The GroupStandbyInstances metric is not returned by
-     * default. You must explicitly request it when calling
-     * EnableMetricsCollection.
+     * Note that the <code>GroupStandbyInstances</code> metric is not
+     * returned by default. You must explicitly request this metric when
+     * calling EnableMetricsCollection.
      * </p>
      *
      * @param describeMetricCollectionTypesRequest Container for the
@@ -3980,13 +3955,12 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
 
     /**
      * <p>
-     * Returns a list of metrics and a corresponding list of granularities
-     * for each metric.
+     * Describes the available CloudWatch metrics for Auto Scaling.
      * </p>
      * <p>
-     * <b>NOTE:</b> The GroupStandbyInstances metric is not returned by
-     * default. You must explicitly request it when calling
-     * EnableMetricsCollection.
+     * Note that the <code>GroupStandbyInstances</code> metric is not
+     * returned by default. You must explicitly request this metric when
+     * calling EnableMetricsCollection.
      * </p>
      *
      * @param describeMetricCollectionTypesRequest Container for the
@@ -4031,7 +4005,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Sets the size of the specified AutoScalingGroup.
+     * Sets the size of the specified Auto Scaling group.
      * </p>
      *
      * @param setDesiredCapacityRequest Container for the necessary
@@ -4062,7 +4036,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
 
     /**
      * <p>
-     * Sets the size of the specified AutoScalingGroup.
+     * Sets the size of the specified Auto Scaling group.
      * </p>
      *
      * @param setDesiredCapacityRequest Container for the necessary
@@ -4109,8 +4083,8 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * group size.
      * </p>
      * <p>
-     * <b>NOTE:</b>This call simply makes a termination request. The
-     * instances is not terminated immediately.
+     * This call simply makes a termination request. The instances is not
+     * terminated immediately.
      * </p>
      *
      * @param terminateInstanceInAutoScalingGroupRequest Container for the
@@ -4145,8 +4119,8 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * group size.
      * </p>
      * <p>
-     * <b>NOTE:</b>This call simply makes a termination request. The
-     * instances is not terminated immediately.
+     * This call simply makes a termination request. The instances is not
+     * terminated immediately.
      * </p>
      *
      * @param terminateInstanceInAutoScalingGroupRequest Container for the

@@ -25,8 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * specified user. If there are none, the action returns an empty list.
  * </p>
  * <p>
- * Although each user is limited to a small number of keys, you can
- * still paginate the results using the <code>MaxItems</code> and
+ * Although each user is limited to a small number of keys, you can still
+ * paginate the results using the <code>MaxItems</code> and
  * <code>Marker</code> parameters.
  * </p>
  * <p>
@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the AWS account has no associated users.
  * </p>
  * <p>
- * <b>NOTE:</b> To ensure the security of your AWS account, the secret
+ * <b>NOTE:</b>To ensure the security of your AWS account, the secret
  * access key is accessible only during key and user creation.
  * </p>
  *

@@ -35,7 +35,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> loadBalancerNames;
 
     /**
-     * A list of tag keys to remove.
+     * The list of tag keys to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -124,12 +124,12 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * A list of tag keys to remove.
+     * The list of tag keys to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return A list of tag keys to remove.
+     * @return The list of tag keys to remove.
      */
     public java.util.List<TagKeyOnly> getTags() {
         if (tags == null) {
@@ -140,12 +140,12 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * A list of tag keys to remove.
+     * The list of tag keys to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param tags A list of tag keys to remove.
+     * @param tags The list of tag keys to remove.
      */
     public void setTags(java.util.Collection<TagKeyOnly> tags) {
         if (tags == null) {
@@ -158,7 +158,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * A list of tag keys to remove.
+     * The list of tag keys to remove.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTags(java.util.Collection)} or {@link
@@ -170,7 +170,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param tags A list of tag keys to remove.
+     * @param tags The list of tag keys to remove.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -184,14 +184,14 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * A list of tag keys to remove.
+     * The list of tag keys to remove.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param tags A list of tag keys to remove.
+     * @param tags The list of tag keys to remove.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

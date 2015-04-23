@@ -26,10 +26,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * <b>IMPORTANT:</b> You can only send email from verified email
- * addresses and domains. If you have not requested production access to
- * Amazon SES, you must also verify every recipient email address except
- * for the recipients provided by the Amazon SES mailbox simulator. For
- * more information, go to the Amazon SES Developer Guide.
+ * addresses and domains. If your account is still in the Amazon SES
+ * sandbox, you must also verify every recipient email address except for
+ * the recipients provided by the Amazon SES mailbox simulator. For more
+ * information, go to the Amazon SES Developer Guide.
  * </p>
  * <p>
  * The total size of the message cannot exceed 10 MB.
@@ -85,7 +85,10 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      * when feedback forwarding is enabled. If the message cannot be
      * delivered to the recipient, then an error message will be returned
      * from the recipient's ISP; this message will then be forwarded to the
-     * email address specified by the <code>ReturnPath</code> parameter.
+     * email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email
+     * address must be either individually verified with Amazon SES, or from
+     * a domain that has been verified with Amazon SES.
      */
     private String returnPath;
 
@@ -331,13 +334,19 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      * when feedback forwarding is enabled. If the message cannot be
      * delivered to the recipient, then an error message will be returned
      * from the recipient's ISP; this message will then be forwarded to the
-     * email address specified by the <code>ReturnPath</code> parameter.
+     * email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email
+     * address must be either individually verified with Amazon SES, or from
+     * a domain that has been verified with Amazon SES.
      *
      * @return The email address to which bounces and complaints are to be forwarded
      *         when feedback forwarding is enabled. If the message cannot be
      *         delivered to the recipient, then an error message will be returned
      *         from the recipient's ISP; this message will then be forwarded to the
-     *         email address specified by the <code>ReturnPath</code> parameter.
+     *         email address specified by the <code>ReturnPath</code> parameter. The
+     *         <code>ReturnPath</code> parameter is never overwritten. This email
+     *         address must be either individually verified with Amazon SES, or from
+     *         a domain that has been verified with Amazon SES.
      */
     public String getReturnPath() {
         return returnPath;
@@ -348,13 +357,19 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      * when feedback forwarding is enabled. If the message cannot be
      * delivered to the recipient, then an error message will be returned
      * from the recipient's ISP; this message will then be forwarded to the
-     * email address specified by the <code>ReturnPath</code> parameter.
+     * email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email
+     * address must be either individually verified with Amazon SES, or from
+     * a domain that has been verified with Amazon SES.
      *
      * @param returnPath The email address to which bounces and complaints are to be forwarded
      *         when feedback forwarding is enabled. If the message cannot be
      *         delivered to the recipient, then an error message will be returned
      *         from the recipient's ISP; this message will then be forwarded to the
-     *         email address specified by the <code>ReturnPath</code> parameter.
+     *         email address specified by the <code>ReturnPath</code> parameter. The
+     *         <code>ReturnPath</code> parameter is never overwritten. This email
+     *         address must be either individually verified with Amazon SES, or from
+     *         a domain that has been verified with Amazon SES.
      */
     public void setReturnPath(String returnPath) {
         this.returnPath = returnPath;
@@ -365,7 +380,10 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      * when feedback forwarding is enabled. If the message cannot be
      * delivered to the recipient, then an error message will be returned
      * from the recipient's ISP; this message will then be forwarded to the
-     * email address specified by the <code>ReturnPath</code> parameter.
+     * email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email
+     * address must be either individually verified with Amazon SES, or from
+     * a domain that has been verified with Amazon SES.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -373,7 +391,10 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      *         when feedback forwarding is enabled. If the message cannot be
      *         delivered to the recipient, then an error message will be returned
      *         from the recipient's ISP; this message will then be forwarded to the
-     *         email address specified by the <code>ReturnPath</code> parameter.
+     *         email address specified by the <code>ReturnPath</code> parameter. The
+     *         <code>ReturnPath</code> parameter is never overwritten. This email
+     *         address must be either individually verified with Amazon SES, or from
+     *         a domain that has been verified with Amazon SES.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

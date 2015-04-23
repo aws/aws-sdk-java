@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#setDesiredCapacity(SetDesiredCapacityRequest) SetDesiredCapacity operation}.
  * <p>
- * Sets the size of the specified AutoScalingGroup.
+ * Sets the size of the specified Auto Scaling group.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#setDesiredCapacity(SetDesiredCapacityRequest)

@@ -17,42 +17,39 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The following element is returned in a structure named
- * <code>DescribeLoadBalancerAttributesResult</code> .
- * </p>
+ * 
  */
 public class DescribeLoadBalancerAttributesResult implements Serializable, Cloneable {
 
     /**
-     * The load balancer attributes structure.
+     * Information about the load balancer attributes.
      */
     private LoadBalancerAttributes loadBalancerAttributes;
 
     /**
-     * The load balancer attributes structure.
+     * Information about the load balancer attributes.
      *
-     * @return The load balancer attributes structure.
+     * @return Information about the load balancer attributes.
      */
     public LoadBalancerAttributes getLoadBalancerAttributes() {
         return loadBalancerAttributes;
     }
     
     /**
-     * The load balancer attributes structure.
+     * Information about the load balancer attributes.
      *
-     * @param loadBalancerAttributes The load balancer attributes structure.
+     * @param loadBalancerAttributes Information about the load balancer attributes.
      */
     public void setLoadBalancerAttributes(LoadBalancerAttributes loadBalancerAttributes) {
         this.loadBalancerAttributes = loadBalancerAttributes;
     }
     
     /**
-     * The load balancer attributes structure.
+     * Information about the load balancer attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerAttributes The load balancer attributes structure.
+     * @param loadBalancerAttributes Information about the load balancer attributes.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

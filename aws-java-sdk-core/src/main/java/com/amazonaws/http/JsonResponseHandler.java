@@ -116,7 +116,7 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             awsResponse.setResult(result);
 
             Map<String, String> metadata = unmarshallerContext.getMetadata();
-            metadata.put(ResponseMetadata.AWS_REQUEST_ID, response.getHeaders().get("x-amzn-RequestId"));
+            metadata.put(ResponseMetadata.AWS_REQUEST_ID, response.getHeaders().get(X_AMZN_REQUEST_ID_HEADER));
             awsResponse.setResponseMetadata(new ResponseMetadata(metadata));
 
             log.trace("Done parsing service response");

@@ -51,18 +51,17 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The number of instances by which to scale. <code>AdjustmentType</code>
-     * determines the interpretation of this number (e.g., as an absolute
-     * number or as a percentage of the existing Auto Scaling group size). A
-     * positive increment adds to the current capacity and a negative value
-     * removes from the current capacity.
+     * determines the interpretation of this number (for example, as an
+     * absolute number or as a percentage of the existing Auto Scaling group
+     * size). A positive increment adds to the current capacity and a
+     * negative value removes from the current capacity.
      */
     private Integer scalingAdjustment;
 
     /**
-     * Specifies whether the <code>ScalingAdjustment</code> is an absolute
-     * number or a percentage of the current capacity. Valid values are
-     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     * The adjustment type. Valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
@@ -184,16 +183,16 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The number of instances by which to scale. <code>AdjustmentType</code>
-     * determines the interpretation of this number (e.g., as an absolute
-     * number or as a percentage of the existing Auto Scaling group size). A
-     * positive increment adds to the current capacity and a negative value
-     * removes from the current capacity.
+     * determines the interpretation of this number (for example, as an
+     * absolute number or as a percentage of the existing Auto Scaling group
+     * size). A positive increment adds to the current capacity and a
+     * negative value removes from the current capacity.
      *
      * @return The number of instances by which to scale. <code>AdjustmentType</code>
-     *         determines the interpretation of this number (e.g., as an absolute
-     *         number or as a percentage of the existing Auto Scaling group size). A
-     *         positive increment adds to the current capacity and a negative value
-     *         removes from the current capacity.
+     *         determines the interpretation of this number (for example, as an
+     *         absolute number or as a percentage of the existing Auto Scaling group
+     *         size). A positive increment adds to the current capacity and a
+     *         negative value removes from the current capacity.
      */
     public Integer getScalingAdjustment() {
         return scalingAdjustment;
@@ -201,16 +200,16 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The number of instances by which to scale. <code>AdjustmentType</code>
-     * determines the interpretation of this number (e.g., as an absolute
-     * number or as a percentage of the existing Auto Scaling group size). A
-     * positive increment adds to the current capacity and a negative value
-     * removes from the current capacity.
+     * determines the interpretation of this number (for example, as an
+     * absolute number or as a percentage of the existing Auto Scaling group
+     * size). A positive increment adds to the current capacity and a
+     * negative value removes from the current capacity.
      *
      * @param scalingAdjustment The number of instances by which to scale. <code>AdjustmentType</code>
-     *         determines the interpretation of this number (e.g., as an absolute
-     *         number or as a percentage of the existing Auto Scaling group size). A
-     *         positive increment adds to the current capacity and a negative value
-     *         removes from the current capacity.
+     *         determines the interpretation of this number (for example, as an
+     *         absolute number or as a percentage of the existing Auto Scaling group
+     *         size). A positive increment adds to the current capacity and a
+     *         negative value removes from the current capacity.
      */
     public void setScalingAdjustment(Integer scalingAdjustment) {
         this.scalingAdjustment = scalingAdjustment;
@@ -218,18 +217,18 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The number of instances by which to scale. <code>AdjustmentType</code>
-     * determines the interpretation of this number (e.g., as an absolute
-     * number or as a percentage of the existing Auto Scaling group size). A
-     * positive increment adds to the current capacity and a negative value
-     * removes from the current capacity.
+     * determines the interpretation of this number (for example, as an
+     * absolute number or as a percentage of the existing Auto Scaling group
+     * size). A positive increment adds to the current capacity and a
+     * negative value removes from the current capacity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scalingAdjustment The number of instances by which to scale. <code>AdjustmentType</code>
-     *         determines the interpretation of this number (e.g., as an absolute
-     *         number or as a percentage of the existing Auto Scaling group size). A
-     *         positive increment adds to the current capacity and a negative value
-     *         removes from the current capacity.
+     *         determines the interpretation of this number (for example, as an
+     *         absolute number or as a percentage of the existing Auto Scaling group
+     *         size). A positive increment adds to the current capacity and a
+     *         negative value removes from the current capacity.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -240,10 +239,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Specifies whether the <code>ScalingAdjustment</code> is an absolute
-     * number or a percentage of the current capacity. Valid values are
-     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     * The adjustment type. Valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
@@ -251,10 +249,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies whether the <code>ScalingAdjustment</code> is an absolute
-     *         number or a percentage of the current capacity. Valid values are
-     *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     * @return The adjustment type. Valid values are <code>ChangeInCapacity</code>,
+     *         <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     *         <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
      *         Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      */
@@ -263,10 +260,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Specifies whether the <code>ScalingAdjustment</code> is an absolute
-     * number or a percentage of the current capacity. Valid values are
-     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     * The adjustment type. Valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
@@ -274,10 +270,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param adjustmentType Specifies whether the <code>ScalingAdjustment</code> is an absolute
-     *         number or a percentage of the current capacity. Valid values are
-     *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     * @param adjustmentType The adjustment type. Valid values are <code>ChangeInCapacity</code>,
+     *         <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     *         <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
      *         Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      */
@@ -286,10 +281,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Specifies whether the <code>ScalingAdjustment</code> is an absolute
-     * number or a percentage of the current capacity. Valid values are
-     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     * The adjustment type. Valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
@@ -299,10 +293,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param adjustmentType Specifies whether the <code>ScalingAdjustment</code> is an absolute
-     *         number or a percentage of the current capacity. Valid values are
-     *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentChangeInCapacity</code>. <p>For more information, see <a
+     * @param adjustmentType The adjustment type. Valid values are <code>ChangeInCapacity</code>,
+     *         <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     *         <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
      *         Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      *

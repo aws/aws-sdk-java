@@ -49,7 +49,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Se
     private String nextToken;
 
     /**
-     * The maximum number of identities per page. Possible values are 1-100
+     * The maximum number of identities per page. Possible values are 1-1000
      * inclusive.
      */
     private Integer maxItems;
@@ -190,10 +190,10 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The maximum number of identities per page. Possible values are 1-100
+     * The maximum number of identities per page. Possible values are 1-1000
      * inclusive.
      *
-     * @return The maximum number of identities per page. Possible values are 1-100
+     * @return The maximum number of identities per page. Possible values are 1-1000
      *         inclusive.
      */
     public Integer getMaxItems() {
@@ -201,10 +201,10 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The maximum number of identities per page. Possible values are 1-100
+     * The maximum number of identities per page. Possible values are 1-1000
      * inclusive.
      *
-     * @param maxItems The maximum number of identities per page. Possible values are 1-100
+     * @param maxItems The maximum number of identities per page. Possible values are 1-1000
      *         inclusive.
      */
     public void setMaxItems(Integer maxItems) {
@@ -212,12 +212,12 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The maximum number of identities per page. Possible values are 1-100
+     * The maximum number of identities per page. Possible values are 1-1000
      * inclusive.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxItems The maximum number of identities per page. Possible values are 1-100
+     * @param maxItems The maximum number of identities per page. Possible values are 1-1000
      *         inclusive.
      *
      * @return A reference to this updated object so that method calls can be chained

@@ -72,19 +72,17 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
     private String autoScalingGroupName;
 
     /**
-     * The Amazon EC2 instance state to which you want to attach the
-     * lifecycle hook. See <a>DescribeLifecycleHookTypes</a> for a list of
-     * available lifecycle hook types. <note> <p>This parameter is required
-     * for new lifecycle hooks, but optional when updating existing hooks.
-     * </note>
+     * The instance state to which you want to attach the lifecycle hook. For
+     * a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+     * <p>This parameter is required for new lifecycle hooks, but optional
+     * when updating existing hooks.
      */
     private String lifecycleTransition;
 
     /**
      * The ARN of the IAM role that allows the Auto Scaling group to publish
-     * to the specified notification target. <note> <p>This parameter is
-     * required for new lifecycle hooks, but optional when updating existing
-     * hooks. </note>
+     * to the specified notification target. <p>This parameter is required
+     * for new lifecycle hooks, but optional when updating existing hooks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -96,13 +94,12 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
      * The ARN of the notification target that Auto Scaling will use to
      * notify you when an instance is in the transition state for the
      * lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     * topic. <note> <p>This parameter is required for new lifecycle hooks,
-     * but optional when updating existing hooks. </note> <p>The notification
-     * message sent to the target will include: <ul>
-     * <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     * <li><b>AccountId</b>. The user account ID.</li>
-     * <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling
-     * group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
+     * topic. <p>This parameter is required for new lifecycle hooks, but
+     * optional when updating existing hooks. <p>The notification message
+     * sent to the target will include: <ul> <li><b>LifecycleActionToken</b>.
+     * The Lifecycle action token.</li> <li><b>AccountId</b>. The user
+     * account ID.</li> <li><b>AutoScalingGroupName</b>. The name of the Auto
+     * Scaling group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
      * name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
      * <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
      * <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul>
@@ -245,53 +242,47 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The Amazon EC2 instance state to which you want to attach the
-     * lifecycle hook. See <a>DescribeLifecycleHookTypes</a> for a list of
-     * available lifecycle hook types. <note> <p>This parameter is required
-     * for new lifecycle hooks, but optional when updating existing hooks.
-     * </note>
+     * The instance state to which you want to attach the lifecycle hook. For
+     * a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+     * <p>This parameter is required for new lifecycle hooks, but optional
+     * when updating existing hooks.
      *
-     * @return The Amazon EC2 instance state to which you want to attach the
-     *         lifecycle hook. See <a>DescribeLifecycleHookTypes</a> for a list of
-     *         available lifecycle hook types. <note> <p>This parameter is required
-     *         for new lifecycle hooks, but optional when updating existing hooks.
-     *         </note>
+     * @return The instance state to which you want to attach the lifecycle hook. For
+     *         a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+     *         <p>This parameter is required for new lifecycle hooks, but optional
+     *         when updating existing hooks.
      */
     public String getLifecycleTransition() {
         return lifecycleTransition;
     }
     
     /**
-     * The Amazon EC2 instance state to which you want to attach the
-     * lifecycle hook. See <a>DescribeLifecycleHookTypes</a> for a list of
-     * available lifecycle hook types. <note> <p>This parameter is required
-     * for new lifecycle hooks, but optional when updating existing hooks.
-     * </note>
+     * The instance state to which you want to attach the lifecycle hook. For
+     * a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+     * <p>This parameter is required for new lifecycle hooks, but optional
+     * when updating existing hooks.
      *
-     * @param lifecycleTransition The Amazon EC2 instance state to which you want to attach the
-     *         lifecycle hook. See <a>DescribeLifecycleHookTypes</a> for a list of
-     *         available lifecycle hook types. <note> <p>This parameter is required
-     *         for new lifecycle hooks, but optional when updating existing hooks.
-     *         </note>
+     * @param lifecycleTransition The instance state to which you want to attach the lifecycle hook. For
+     *         a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+     *         <p>This parameter is required for new lifecycle hooks, but optional
+     *         when updating existing hooks.
      */
     public void setLifecycleTransition(String lifecycleTransition) {
         this.lifecycleTransition = lifecycleTransition;
     }
     
     /**
-     * The Amazon EC2 instance state to which you want to attach the
-     * lifecycle hook. See <a>DescribeLifecycleHookTypes</a> for a list of
-     * available lifecycle hook types. <note> <p>This parameter is required
-     * for new lifecycle hooks, but optional when updating existing hooks.
-     * </note>
+     * The instance state to which you want to attach the lifecycle hook. For
+     * a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+     * <p>This parameter is required for new lifecycle hooks, but optional
+     * when updating existing hooks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lifecycleTransition The Amazon EC2 instance state to which you want to attach the
-     *         lifecycle hook. See <a>DescribeLifecycleHookTypes</a> for a list of
-     *         available lifecycle hook types. <note> <p>This parameter is required
-     *         for new lifecycle hooks, but optional when updating existing hooks.
-     *         </note>
+     * @param lifecycleTransition The instance state to which you want to attach the lifecycle hook. For
+     *         a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+     *         <p>This parameter is required for new lifecycle hooks, but optional
+     *         when updating existing hooks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -303,18 +294,16 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The ARN of the IAM role that allows the Auto Scaling group to publish
-     * to the specified notification target. <note> <p>This parameter is
-     * required for new lifecycle hooks, but optional when updating existing
-     * hooks. </note>
+     * to the specified notification target. <p>This parameter is required
+     * for new lifecycle hooks, but optional when updating existing hooks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The ARN of the IAM role that allows the Auto Scaling group to publish
-     *         to the specified notification target. <note> <p>This parameter is
-     *         required for new lifecycle hooks, but optional when updating existing
-     *         hooks. </note>
+     *         to the specified notification target. <p>This parameter is required
+     *         for new lifecycle hooks, but optional when updating existing hooks.
      */
     public String getRoleARN() {
         return roleARN;
@@ -322,18 +311,16 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The ARN of the IAM role that allows the Auto Scaling group to publish
-     * to the specified notification target. <note> <p>This parameter is
-     * required for new lifecycle hooks, but optional when updating existing
-     * hooks. </note>
+     * to the specified notification target. <p>This parameter is required
+     * for new lifecycle hooks, but optional when updating existing hooks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param roleARN The ARN of the IAM role that allows the Auto Scaling group to publish
-     *         to the specified notification target. <note> <p>This parameter is
-     *         required for new lifecycle hooks, but optional when updating existing
-     *         hooks. </note>
+     *         to the specified notification target. <p>This parameter is required
+     *         for new lifecycle hooks, but optional when updating existing hooks.
      */
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
@@ -341,9 +328,8 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The ARN of the IAM role that allows the Auto Scaling group to publish
-     * to the specified notification target. <note> <p>This parameter is
-     * required for new lifecycle hooks, but optional when updating existing
-     * hooks. </note>
+     * to the specified notification target. <p>This parameter is required
+     * for new lifecycle hooks, but optional when updating existing hooks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -352,9 +338,8 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param roleARN The ARN of the IAM role that allows the Auto Scaling group to publish
-     *         to the specified notification target. <note> <p>This parameter is
-     *         required for new lifecycle hooks, but optional when updating existing
-     *         hooks. </note>
+     *         to the specified notification target. <p>This parameter is required
+     *         for new lifecycle hooks, but optional when updating existing hooks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -368,13 +353,12 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
      * The ARN of the notification target that Auto Scaling will use to
      * notify you when an instance is in the transition state for the
      * lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     * topic. <note> <p>This parameter is required for new lifecycle hooks,
-     * but optional when updating existing hooks. </note> <p>The notification
-     * message sent to the target will include: <ul>
-     * <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     * <li><b>AccountId</b>. The user account ID.</li>
-     * <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling
-     * group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
+     * topic. <p>This parameter is required for new lifecycle hooks, but
+     * optional when updating existing hooks. <p>The notification message
+     * sent to the target will include: <ul> <li><b>LifecycleActionToken</b>.
+     * The Lifecycle action token.</li> <li><b>AccountId</b>. The user
+     * account ID.</li> <li><b>AutoScalingGroupName</b>. The name of the Auto
+     * Scaling group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
      * name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
      * <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
      * <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul>
@@ -392,13 +376,12 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
      * @return The ARN of the notification target that Auto Scaling will use to
      *         notify you when an instance is in the transition state for the
      *         lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     *         topic. <note> <p>This parameter is required for new lifecycle hooks,
-     *         but optional when updating existing hooks. </note> <p>The notification
-     *         message sent to the target will include: <ul>
-     *         <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     *         <li><b>AccountId</b>. The user account ID.</li>
-     *         <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling
-     *         group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
+     *         topic. <p>This parameter is required for new lifecycle hooks, but
+     *         optional when updating existing hooks. <p>The notification message
+     *         sent to the target will include: <ul> <li><b>LifecycleActionToken</b>.
+     *         The Lifecycle action token.</li> <li><b>AccountId</b>. The user
+     *         account ID.</li> <li><b>AutoScalingGroupName</b>. The name of the Auto
+     *         Scaling group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
      *         name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
      *         <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
      *         <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul>
@@ -417,13 +400,12 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
      * The ARN of the notification target that Auto Scaling will use to
      * notify you when an instance is in the transition state for the
      * lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     * topic. <note> <p>This parameter is required for new lifecycle hooks,
-     * but optional when updating existing hooks. </note> <p>The notification
-     * message sent to the target will include: <ul>
-     * <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     * <li><b>AccountId</b>. The user account ID.</li>
-     * <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling
-     * group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
+     * topic. <p>This parameter is required for new lifecycle hooks, but
+     * optional when updating existing hooks. <p>The notification message
+     * sent to the target will include: <ul> <li><b>LifecycleActionToken</b>.
+     * The Lifecycle action token.</li> <li><b>AccountId</b>. The user
+     * account ID.</li> <li><b>AutoScalingGroupName</b>. The name of the Auto
+     * Scaling group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
      * name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
      * <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
      * <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul>
@@ -441,13 +423,12 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
      * @param notificationTargetARN The ARN of the notification target that Auto Scaling will use to
      *         notify you when an instance is in the transition state for the
      *         lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     *         topic. <note> <p>This parameter is required for new lifecycle hooks,
-     *         but optional when updating existing hooks. </note> <p>The notification
-     *         message sent to the target will include: <ul>
-     *         <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     *         <li><b>AccountId</b>. The user account ID.</li>
-     *         <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling
-     *         group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
+     *         topic. <p>This parameter is required for new lifecycle hooks, but
+     *         optional when updating existing hooks. <p>The notification message
+     *         sent to the target will include: <ul> <li><b>LifecycleActionToken</b>.
+     *         The Lifecycle action token.</li> <li><b>AccountId</b>. The user
+     *         account ID.</li> <li><b>AutoScalingGroupName</b>. The name of the Auto
+     *         Scaling group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
      *         name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
      *         <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
      *         <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul>
@@ -466,13 +447,12 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
      * The ARN of the notification target that Auto Scaling will use to
      * notify you when an instance is in the transition state for the
      * lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     * topic. <note> <p>This parameter is required for new lifecycle hooks,
-     * but optional when updating existing hooks. </note> <p>The notification
-     * message sent to the target will include: <ul>
-     * <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     * <li><b>AccountId</b>. The user account ID.</li>
-     * <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling
-     * group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
+     * topic. <p>This parameter is required for new lifecycle hooks, but
+     * optional when updating existing hooks. <p>The notification message
+     * sent to the target will include: <ul> <li><b>LifecycleActionToken</b>.
+     * The Lifecycle action token.</li> <li><b>AccountId</b>. The user
+     * account ID.</li> <li><b>AutoScalingGroupName</b>. The name of the Auto
+     * Scaling group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
      * name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
      * <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
      * <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul>
@@ -492,13 +472,12 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements 
      * @param notificationTargetARN The ARN of the notification target that Auto Scaling will use to
      *         notify you when an instance is in the transition state for the
      *         lifecycle hook. This ARN target can be either an SQS queue or an SNS
-     *         topic. <note> <p>This parameter is required for new lifecycle hooks,
-     *         but optional when updating existing hooks. </note> <p>The notification
-     *         message sent to the target will include: <ul>
-     *         <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     *         <li><b>AccountId</b>. The user account ID.</li>
-     *         <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling
-     *         group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
+     *         topic. <p>This parameter is required for new lifecycle hooks, but
+     *         optional when updating existing hooks. <p>The notification message
+     *         sent to the target will include: <ul> <li><b>LifecycleActionToken</b>.
+     *         The Lifecycle action token.</li> <li><b>AccountId</b>. The user
+     *         account ID.</li> <li><b>AutoScalingGroupName</b>. The name of the Auto
+     *         Scaling group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook
      *         name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
      *         <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
      *         <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul>

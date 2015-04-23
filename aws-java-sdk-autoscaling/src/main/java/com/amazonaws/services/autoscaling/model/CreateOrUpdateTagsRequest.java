@@ -24,14 +24,22 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates or updates tags for the specified Auto Scaling group.
  * </p>
  * <p>
- * <b>NOTE:</b> A tag's definition is composed of a resource ID, resource
- * type, key and value, and the propagate flag. Value and the propagate
- * flag are optional parameters. See the Request Parameters for more
- * information.
+ * A tag is defined by its resource ID, resource type, key, value, and
+ * propagate flag. The value and the propagate flag are optional
+ * parameters. The only supported resource type is
+ * <code>auto-scaling-group</code> , and the resource ID must be the name
+ * of the group. The <code>PropagateAtLaunch</code> flag determines
+ * whether the tag is added to instances launched in the group. Valid
+ * values are <code>true</code> or <code>false</code> .
+ * </p>
+ * <p>
+ * When you specify a tag with a key that already exists, the operation
+ * overwrites the previous tag definition, and you do not get an error
+ * message.
  * </p>
  * <p>
  * For more information, see
- * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html"> Add, Modify, or Remove Auto Scaling Group Tags </a>
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html"> Tagging Auto Scaling Groups and Instances </a>
  * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
  *
@@ -40,59 +48,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The tag to be created or updated. Each tag should be defined by its
-     * resource type, resource ID, key, value, and a propagate flag. The
-     * resource type and resource ID identify the type and name of resource
-     * for which the tag is created. Currently,
-     * <code>auto-scaling-group</code> is the only supported resource type.
-     * The valid value for the resource ID is <i>groupname</i>. <p>The
-     * <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     * be applied to instances launched by the group. Valid values are
-     * <code>true</code> or <code>false</code>. However, instances that are
-     * already running will not get the new or updated tag. Likewise, when
-     * you modify a tag, the updated version will be applied only to new
-     * instances launched by the group after the change. Running instances
-     * that had the previous version of the tag will continue to have the
-     * older tag. <p>When you create a tag and a tag of the same name already
-     * exists, the operation overwrites the previous tag definition, but you
-     * will not get an error message.
+     * One or more tags.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The tag to be created or updated. Each tag should be defined by its
-     * resource type, resource ID, key, value, and a propagate flag. The
-     * resource type and resource ID identify the type and name of resource
-     * for which the tag is created. Currently,
-     * <code>auto-scaling-group</code> is the only supported resource type.
-     * The valid value for the resource ID is <i>groupname</i>. <p>The
-     * <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     * be applied to instances launched by the group. Valid values are
-     * <code>true</code> or <code>false</code>. However, instances that are
-     * already running will not get the new or updated tag. Likewise, when
-     * you modify a tag, the updated version will be applied only to new
-     * instances launched by the group after the change. Running instances
-     * that had the previous version of the tag will continue to have the
-     * older tag. <p>When you create a tag and a tag of the same name already
-     * exists, the operation overwrites the previous tag definition, but you
-     * will not get an error message.
+     * One or more tags.
      *
-     * @return The tag to be created or updated. Each tag should be defined by its
-     *         resource type, resource ID, key, value, and a propagate flag. The
-     *         resource type and resource ID identify the type and name of resource
-     *         for which the tag is created. Currently,
-     *         <code>auto-scaling-group</code> is the only supported resource type.
-     *         The valid value for the resource ID is <i>groupname</i>. <p>The
-     *         <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     *         be applied to instances launched by the group. Valid values are
-     *         <code>true</code> or <code>false</code>. However, instances that are
-     *         already running will not get the new or updated tag. Likewise, when
-     *         you modify a tag, the updated version will be applied only to new
-     *         instances launched by the group after the change. Running instances
-     *         that had the previous version of the tag will continue to have the
-     *         older tag. <p>When you create a tag and a tag of the same name already
-     *         exists, the operation overwrites the previous tag definition, but you
-     *         will not get an error message.
+     * @return One or more tags.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -103,39 +66,9 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The tag to be created or updated. Each tag should be defined by its
-     * resource type, resource ID, key, value, and a propagate flag. The
-     * resource type and resource ID identify the type and name of resource
-     * for which the tag is created. Currently,
-     * <code>auto-scaling-group</code> is the only supported resource type.
-     * The valid value for the resource ID is <i>groupname</i>. <p>The
-     * <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     * be applied to instances launched by the group. Valid values are
-     * <code>true</code> or <code>false</code>. However, instances that are
-     * already running will not get the new or updated tag. Likewise, when
-     * you modify a tag, the updated version will be applied only to new
-     * instances launched by the group after the change. Running instances
-     * that had the previous version of the tag will continue to have the
-     * older tag. <p>When you create a tag and a tag of the same name already
-     * exists, the operation overwrites the previous tag definition, but you
-     * will not get an error message.
+     * One or more tags.
      *
-     * @param tags The tag to be created or updated. Each tag should be defined by its
-     *         resource type, resource ID, key, value, and a propagate flag. The
-     *         resource type and resource ID identify the type and name of resource
-     *         for which the tag is created. Currently,
-     *         <code>auto-scaling-group</code> is the only supported resource type.
-     *         The valid value for the resource ID is <i>groupname</i>. <p>The
-     *         <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     *         be applied to instances launched by the group. Valid values are
-     *         <code>true</code> or <code>false</code>. However, instances that are
-     *         already running will not get the new or updated tag. Likewise, when
-     *         you modify a tag, the updated version will be applied only to new
-     *         instances launched by the group after the change. Running instances
-     *         that had the previous version of the tag will continue to have the
-     *         older tag. <p>When you create a tag and a tag of the same name already
-     *         exists, the operation overwrites the previous tag definition, but you
-     *         will not get an error message.
+     * @param tags One or more tags.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -148,22 +81,7 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The tag to be created or updated. Each tag should be defined by its
-     * resource type, resource ID, key, value, and a propagate flag. The
-     * resource type and resource ID identify the type and name of resource
-     * for which the tag is created. Currently,
-     * <code>auto-scaling-group</code> is the only supported resource type.
-     * The valid value for the resource ID is <i>groupname</i>. <p>The
-     * <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     * be applied to instances launched by the group. Valid values are
-     * <code>true</code> or <code>false</code>. However, instances that are
-     * already running will not get the new or updated tag. Likewise, when
-     * you modify a tag, the updated version will be applied only to new
-     * instances launched by the group after the change. Running instances
-     * that had the previous version of the tag will continue to have the
-     * older tag. <p>When you create a tag and a tag of the same name already
-     * exists, the operation overwrites the previous tag definition, but you
-     * will not get an error message.
+     * One or more tags.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTags(java.util.Collection)} or {@link
@@ -172,22 +90,7 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags The tag to be created or updated. Each tag should be defined by its
-     *         resource type, resource ID, key, value, and a propagate flag. The
-     *         resource type and resource ID identify the type and name of resource
-     *         for which the tag is created. Currently,
-     *         <code>auto-scaling-group</code> is the only supported resource type.
-     *         The valid value for the resource ID is <i>groupname</i>. <p>The
-     *         <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     *         be applied to instances launched by the group. Valid values are
-     *         <code>true</code> or <code>false</code>. However, instances that are
-     *         already running will not get the new or updated tag. Likewise, when
-     *         you modify a tag, the updated version will be applied only to new
-     *         instances launched by the group after the change. Running instances
-     *         that had the previous version of the tag will continue to have the
-     *         older tag. <p>When you create a tag and a tag of the same name already
-     *         exists, the operation overwrites the previous tag definition, but you
-     *         will not get an error message.
+     * @param tags One or more tags.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -201,41 +104,11 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The tag to be created or updated. Each tag should be defined by its
-     * resource type, resource ID, key, value, and a propagate flag. The
-     * resource type and resource ID identify the type and name of resource
-     * for which the tag is created. Currently,
-     * <code>auto-scaling-group</code> is the only supported resource type.
-     * The valid value for the resource ID is <i>groupname</i>. <p>The
-     * <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     * be applied to instances launched by the group. Valid values are
-     * <code>true</code> or <code>false</code>. However, instances that are
-     * already running will not get the new or updated tag. Likewise, when
-     * you modify a tag, the updated version will be applied only to new
-     * instances launched by the group after the change. Running instances
-     * that had the previous version of the tag will continue to have the
-     * older tag. <p>When you create a tag and a tag of the same name already
-     * exists, the operation overwrites the previous tag definition, but you
-     * will not get an error message.
+     * One or more tags.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tags The tag to be created or updated. Each tag should be defined by its
-     *         resource type, resource ID, key, value, and a propagate flag. The
-     *         resource type and resource ID identify the type and name of resource
-     *         for which the tag is created. Currently,
-     *         <code>auto-scaling-group</code> is the only supported resource type.
-     *         The valid value for the resource ID is <i>groupname</i>. <p>The
-     *         <code>PropagateAtLaunch</code> flag defines whether the new tag will
-     *         be applied to instances launched by the group. Valid values are
-     *         <code>true</code> or <code>false</code>. However, instances that are
-     *         already running will not get the new or updated tag. Likewise, when
-     *         you modify a tag, the updated version will be applied only to new
-     *         instances launched by the group after the change. Running instances
-     *         that had the previous version of the tag will continue to have the
-     *         older tag. <p>When you create a tag and a tag of the same name already
-     *         exists, the operation overwrites the previous tag definition, but you
-     *         will not get an error message.
+     * @param tags One or more tags.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

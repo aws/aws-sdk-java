@@ -43,7 +43,12 @@ public class NotificationConfiguration implements Serializable, Cloneable {
     private String topicARN;
 
     /**
-     * The types of events for an action to start.
+     * The types of events for an action to start. <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -148,33 +153,58 @@ public class NotificationConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * The types of events for an action to start.
+     * The types of events for an action to start. <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The types of events for an action to start.
+     * @return The types of events for an action to start. <ul>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
+     *         <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      */
     public String getNotificationType() {
         return notificationType;
     }
     
     /**
-     * The types of events for an action to start.
+     * The types of events for an action to start. <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param notificationType The types of events for an action to start.
+     * @param notificationType The types of events for an action to start. <ul>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
+     *         <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      */
     public void setNotificationType(String notificationType) {
         this.notificationType = notificationType;
     }
     
     /**
-     * The types of events for an action to start.
+     * The types of events for an action to start. <ul>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
+     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
+     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -182,7 +212,12 @@ public class NotificationConfiguration implements Serializable, Cloneable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param notificationType The types of events for an action to start.
+     * @param notificationType The types of events for an action to start. <ul>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></li>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></li>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></li>
+     *         <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></li>
+     *         <li><p><code>autoscaling:TEST_NOTIFICATION</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

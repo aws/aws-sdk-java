@@ -33,7 +33,7 @@ public class Instance implements Serializable, Cloneable {
     private String instanceId;
 
     /**
-     * The Availability Zone associated with this instance.
+     * The Availability Zone in which the instance is running.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -42,8 +42,8 @@ public class Instance implements Serializable, Cloneable {
     private String availabilityZone;
 
     /**
-     * A description of the current lifecycle state. <note> <p>The
-     * <code>Quarantined</code> lifecycle state is not used. </note>
+     * A description of the current lifecycle state. Note that the
+     * <code>Quarantined</code> state is not used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
@@ -114,33 +114,33 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The Availability Zone associated with this instance.
+     * The Availability Zone in which the instance is running.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The Availability Zone associated with this instance.
+     * @return The Availability Zone in which the instance is running.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The Availability Zone associated with this instance.
+     * The Availability Zone in which the instance is running.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param availabilityZone The Availability Zone associated with this instance.
+     * @param availabilityZone The Availability Zone in which the instance is running.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The Availability Zone associated with this instance.
+     * The Availability Zone in which the instance is running.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -148,7 +148,7 @@ public class Instance implements Serializable, Cloneable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param availabilityZone The Availability Zone associated with this instance.
+     * @param availabilityZone The Availability Zone in which the instance is running.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -159,14 +159,14 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * A description of the current lifecycle state. <note> <p>The
-     * <code>Quarantined</code> lifecycle state is not used. </note>
+     * A description of the current lifecycle state. Note that the
+     * <code>Quarantined</code> state is not used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
      *
-     * @return A description of the current lifecycle state. <note> <p>The
-     *         <code>Quarantined</code> lifecycle state is not used. </note>
+     * @return A description of the current lifecycle state. Note that the
+     *         <code>Quarantined</code> state is not used.
      *
      * @see LifecycleState
      */
@@ -175,14 +175,14 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * A description of the current lifecycle state. <note> <p>The
-     * <code>Quarantined</code> lifecycle state is not used. </note>
+     * A description of the current lifecycle state. Note that the
+     * <code>Quarantined</code> state is not used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
      *
-     * @param lifecycleState A description of the current lifecycle state. <note> <p>The
-     *         <code>Quarantined</code> lifecycle state is not used. </note>
+     * @param lifecycleState A description of the current lifecycle state. Note that the
+     *         <code>Quarantined</code> state is not used.
      *
      * @see LifecycleState
      */
@@ -191,16 +191,16 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * A description of the current lifecycle state. <note> <p>The
-     * <code>Quarantined</code> lifecycle state is not used. </note>
+     * A description of the current lifecycle state. Note that the
+     * <code>Quarantined</code> state is not used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
      *
-     * @param lifecycleState A description of the current lifecycle state. <note> <p>The
-     *         <code>Quarantined</code> lifecycle state is not used. </note>
+     * @param lifecycleState A description of the current lifecycle state. Note that the
+     *         <code>Quarantined</code> state is not used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -213,14 +213,14 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * A description of the current lifecycle state. <note> <p>The
-     * <code>Quarantined</code> lifecycle state is not used. </note>
+     * A description of the current lifecycle state. Note that the
+     * <code>Quarantined</code> state is not used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
      *
-     * @param lifecycleState A description of the current lifecycle state. <note> <p>The
-     *         <code>Quarantined</code> lifecycle state is not used. </note>
+     * @param lifecycleState A description of the current lifecycle state. Note that the
+     *         <code>Quarantined</code> state is not used.
      *
      * @see LifecycleState
      */
@@ -229,16 +229,16 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * A description of the current lifecycle state. <note> <p>The
-     * <code>Quarantined</code> lifecycle state is not used. </note>
+     * A description of the current lifecycle state. Note that the
+     * <code>Quarantined</code> state is not used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
      *
-     * @param lifecycleState A description of the current lifecycle state. <note> <p>The
-     *         <code>Quarantined</code> lifecycle state is not used. </note>
+     * @param lifecycleState A description of the current lifecycle state. Note that the
+     *         <code>Quarantined</code> state is not used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The load balancer name already exists for this account. Please choose
- * another name.
+ * The specified load balancer name already exists for this account.
  * </p>
  */        
 public class DuplicateLoadBalancerNameException extends AmazonServiceException {

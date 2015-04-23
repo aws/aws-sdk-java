@@ -18,12 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Metadata assigned to a load balancer consisting of key-value pair.
- * </p>
- * <p>
- * For more information, see
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb"> Tagging </a>
- * in the <i>Elastic Load Balancing Developer Guide</i> .
+ * Information about a tag.
  * </p>
  */
 public class Tag implements Serializable, Cloneable {

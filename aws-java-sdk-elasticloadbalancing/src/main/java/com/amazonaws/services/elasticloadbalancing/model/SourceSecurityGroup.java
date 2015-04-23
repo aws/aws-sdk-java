@@ -18,74 +18,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the
- * DescribeLoadBalancers action. For information about Elastic Load
- * Balancing security groups, go to
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-features.html#using-elb-security-groups"> Using Security Groups With Elastic Load Balancing </a>
- * in the <i>Elastic Load Balancing Developer Guide</i> .
- * 
+ * Information about a source security group.
  * </p>
  */
 public class SourceSecurityGroup implements Serializable, Cloneable {
 
     /**
-     * Owner of the source security group. Use this value for the
-     * <code>--source-group-user</code> parameter of the
-     * <code>ec2-authorize</code> command in the Amazon EC2 command line
-     * tool.
+     * The owner of the security group.
      */
     private String ownerAlias;
 
     /**
-     * Name of the source security group. Use this value for the
-     * <code>--source-group</code> parameter of the
-     * <code>ec2-authorize</code> command in the Amazon EC2 command line
-     * tool.
+     * The name of the security group.
      */
     private String groupName;
 
     /**
-     * Owner of the source security group. Use this value for the
-     * <code>--source-group-user</code> parameter of the
-     * <code>ec2-authorize</code> command in the Amazon EC2 command line
-     * tool.
+     * The owner of the security group.
      *
-     * @return Owner of the source security group. Use this value for the
-     *         <code>--source-group-user</code> parameter of the
-     *         <code>ec2-authorize</code> command in the Amazon EC2 command line
-     *         tool.
+     * @return The owner of the security group.
      */
     public String getOwnerAlias() {
         return ownerAlias;
     }
     
     /**
-     * Owner of the source security group. Use this value for the
-     * <code>--source-group-user</code> parameter of the
-     * <code>ec2-authorize</code> command in the Amazon EC2 command line
-     * tool.
+     * The owner of the security group.
      *
-     * @param ownerAlias Owner of the source security group. Use this value for the
-     *         <code>--source-group-user</code> parameter of the
-     *         <code>ec2-authorize</code> command in the Amazon EC2 command line
-     *         tool.
+     * @param ownerAlias The owner of the security group.
      */
     public void setOwnerAlias(String ownerAlias) {
         this.ownerAlias = ownerAlias;
     }
     
     /**
-     * Owner of the source security group. Use this value for the
-     * <code>--source-group-user</code> parameter of the
-     * <code>ec2-authorize</code> command in the Amazon EC2 command line
-     * tool.
+     * The owner of the security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ownerAlias Owner of the source security group. Use this value for the
-     *         <code>--source-group-user</code> parameter of the
-     *         <code>ec2-authorize</code> command in the Amazon EC2 command line
-     *         tool.
+     * @param ownerAlias The owner of the security group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -96,47 +67,29 @@ public class SourceSecurityGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Name of the source security group. Use this value for the
-     * <code>--source-group</code> parameter of the
-     * <code>ec2-authorize</code> command in the Amazon EC2 command line
-     * tool.
+     * The name of the security group.
      *
-     * @return Name of the source security group. Use this value for the
-     *         <code>--source-group</code> parameter of the
-     *         <code>ec2-authorize</code> command in the Amazon EC2 command line
-     *         tool.
+     * @return The name of the security group.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * Name of the source security group. Use this value for the
-     * <code>--source-group</code> parameter of the
-     * <code>ec2-authorize</code> command in the Amazon EC2 command line
-     * tool.
+     * The name of the security group.
      *
-     * @param groupName Name of the source security group. Use this value for the
-     *         <code>--source-group</code> parameter of the
-     *         <code>ec2-authorize</code> command in the Amazon EC2 command line
-     *         tool.
+     * @param groupName The name of the security group.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * Name of the source security group. Use this value for the
-     * <code>--source-group</code> parameter of the
-     * <code>ec2-authorize</code> command in the Amazon EC2 command line
-     * tool.
+     * The name of the security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName Name of the source security group. Use this value for the
-     *         <code>--source-group</code> parameter of the
-     *         <code>ec2-authorize</code> command in the Amazon EC2 command line
-     *         tool.
+     * @param groupName The name of the security group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

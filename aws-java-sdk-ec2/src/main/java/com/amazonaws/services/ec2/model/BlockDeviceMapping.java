@@ -39,7 +39,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * The device name exposed to the instance (for example,
-     * <code>/dev/sdh</code>).
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     private String deviceName;
 
@@ -144,10 +144,10 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * The device name exposed to the instance (for example,
-     * <code>/dev/sdh</code>).
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      *
      * @return The device name exposed to the instance (for example,
-     *         <code>/dev/sdh</code>).
+     *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     public String getDeviceName() {
         return deviceName;
@@ -155,10 +155,10 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     
     /**
      * The device name exposed to the instance (for example,
-     * <code>/dev/sdh</code>).
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      *
      * @param deviceName The device name exposed to the instance (for example,
-     *         <code>/dev/sdh</code>).
+     *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -166,12 +166,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     
     /**
      * The device name exposed to the instance (for example,
-     * <code>/dev/sdh</code>).
+     * <code>/dev/sdh</code> or <code>xvdh</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deviceName The device name exposed to the instance (for example,
-     *         <code>/dev/sdh</code>).
+     *         <code>/dev/sdh</code> or <code>xvdh</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

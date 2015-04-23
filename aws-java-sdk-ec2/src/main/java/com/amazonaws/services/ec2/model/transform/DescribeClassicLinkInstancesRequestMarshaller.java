@@ -39,7 +39,7 @@ public class DescribeClassicLinkInstancesRequestMarshaller implements Marshaller
 
         Request<DescribeClassicLinkInstancesRequest> request = new DefaultRequest<DescribeClassicLinkInstancesRequest>(describeClassicLinkInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeClassicLinkInstances");
-        request.addParameter("Version", "2014-10-01");
+        request.addParameter("Version", "2015-03-01");
 
         java.util.List<String> instanceIdsList = describeClassicLinkInstancesRequest.getInstanceIds();
         int instanceIdsListIndex = 1;

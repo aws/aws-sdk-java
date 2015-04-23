@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified load balancer attribute could not be found.
+ * The specified load balancer attribute does not exist.
  * </p>
  */        
 public class LoadBalancerAttributeNotFoundException extends AmazonServiceException {

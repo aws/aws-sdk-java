@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * that was used on the same load balancer and port.
  * </p>
  * <p>
- * For more information on updating your SSL certificate, see
+ * For more information about updating your SSL certificate, see
  * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate for a Load Balancer </a>
  * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
@@ -46,11 +46,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
     private Integer loadBalancerPort;
 
     /**
-     * The Amazon Resource Number (ARN) of the SSL certificate chain to use.
-     * For more information on SSL certificates, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">
-     * Managing Server Certificates</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.
+     * The Amazon Resource Name (ARN) of the SSL certificate.
      */
     private String sSLCertificateId;
 
@@ -68,12 +64,8 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
      * @param loadBalancerName The name of the load balancer.
      * @param loadBalancerPort The port that uses the specified SSL
      * certificate.
-     * @param sSLCertificateId The Amazon Resource Number (ARN) of the SSL
-     * certificate chain to use. For more information on SSL certificates,
-     * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">
-     * Managing Server Certificates</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.
+     * @param sSLCertificateId The Amazon Resource Name (ARN) of the SSL
+     * certificate.
      */
     public SetLoadBalancerListenerSSLCertificateRequest(String loadBalancerName, Integer loadBalancerPort, String sSLCertificateId) {
         setLoadBalancerName(loadBalancerName);
@@ -148,53 +140,29 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
     }
 
     /**
-     * The Amazon Resource Number (ARN) of the SSL certificate chain to use.
-     * For more information on SSL certificates, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">
-     * Managing Server Certificates</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.
+     * The Amazon Resource Name (ARN) of the SSL certificate.
      *
-     * @return The Amazon Resource Number (ARN) of the SSL certificate chain to use.
-     *         For more information on SSL certificates, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">
-     *         Managing Server Certificates</a> in the <i>AWS Identity and Access
-     *         Management User Guide</i>.
+     * @return The Amazon Resource Name (ARN) of the SSL certificate.
      */
     public String getSSLCertificateId() {
         return sSLCertificateId;
     }
     
     /**
-     * The Amazon Resource Number (ARN) of the SSL certificate chain to use.
-     * For more information on SSL certificates, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">
-     * Managing Server Certificates</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.
+     * The Amazon Resource Name (ARN) of the SSL certificate.
      *
-     * @param sSLCertificateId The Amazon Resource Number (ARN) of the SSL certificate chain to use.
-     *         For more information on SSL certificates, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">
-     *         Managing Server Certificates</a> in the <i>AWS Identity and Access
-     *         Management User Guide</i>.
+     * @param sSLCertificateId The Amazon Resource Name (ARN) of the SSL certificate.
      */
     public void setSSLCertificateId(String sSLCertificateId) {
         this.sSLCertificateId = sSLCertificateId;
     }
     
     /**
-     * The Amazon Resource Number (ARN) of the SSL certificate chain to use.
-     * For more information on SSL certificates, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">
-     * Managing Server Certificates</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.
+     * The Amazon Resource Name (ARN) of the SSL certificate.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sSLCertificateId The Amazon Resource Number (ARN) of the SSL certificate chain to use.
-     *         For more information on SSL certificates, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">
-     *         Managing Server Certificates</a> in the <i>AWS Identity and Access
-     *         Management User Guide</i>.
+     * @param sSLCertificateId The Amazon Resource Name (ARN) of the SSL certificate.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -22,40 +22,19 @@ import java.io.Serializable;
 public class DescribeMetricCollectionTypesResult implements Serializable, Cloneable {
 
     /**
-     * One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     * <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     * <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     * <li><p>GroupStandbyInstances</li>
-     * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
-     * returned by default. You must explicitly request it when calling
-     * <a>EnableMetricsCollection</a>. </note>
+     * One or more metrics.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType> metrics;
 
     /**
-     * The granularities for the listed metrics.
+     * The granularities for the metrics.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType> granularities;
 
     /**
-     * One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     * <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     * <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     * <li><p>GroupStandbyInstances</li>
-     * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
-     * returned by default. You must explicitly request it when calling
-     * <a>EnableMetricsCollection</a>. </note>
+     * One or more metrics.
      *
-     * @return One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     *         <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     *         <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     *         <li><p>GroupStandbyInstances</li>
-     *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
-     *         returned by default. You must explicitly request it when calling
-     *         <a>EnableMetricsCollection</a>. </note>
+     * @return One or more metrics.
      */
     public java.util.List<MetricCollectionType> getMetrics() {
         if (metrics == null) {
@@ -66,23 +45,9 @@ public class DescribeMetricCollectionTypesResult implements Serializable, Clonea
     }
     
     /**
-     * One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     * <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     * <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     * <li><p>GroupStandbyInstances</li>
-     * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
-     * returned by default. You must explicitly request it when calling
-     * <a>EnableMetricsCollection</a>. </note>
+     * One or more metrics.
      *
-     * @param metrics One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     *         <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     *         <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     *         <li><p>GroupStandbyInstances</li>
-     *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
-     *         returned by default. You must explicitly request it when calling
-     *         <a>EnableMetricsCollection</a>. </note>
+     * @param metrics One or more metrics.
      */
     public void setMetrics(java.util.Collection<MetricCollectionType> metrics) {
         if (metrics == null) {
@@ -95,14 +60,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable, Clonea
     }
     
     /**
-     * One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     * <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     * <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     * <li><p>GroupStandbyInstances</li>
-     * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
-     * returned by default. You must explicitly request it when calling
-     * <a>EnableMetricsCollection</a>. </note>
+     * One or more metrics.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setMetrics(java.util.Collection)} or {@link
@@ -111,14 +69,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable, Clonea
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param metrics One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     *         <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     *         <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     *         <li><p>GroupStandbyInstances</li>
-     *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
-     *         returned by default. You must explicitly request it when calling
-     *         <a>EnableMetricsCollection</a>. </note>
+     * @param metrics One or more metrics.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -132,25 +83,11 @@ public class DescribeMetricCollectionTypesResult implements Serializable, Clonea
     }
     
     /**
-     * One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     * <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     * <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     * <li><p>GroupStandbyInstances</li>
-     * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
-     * returned by default. You must explicitly request it when calling
-     * <a>EnableMetricsCollection</a>. </note>
+     * One or more metrics.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param metrics One or more of the following metrics: <ul> <li><p>GroupMinSize</li>
-     *         <li><p>GroupMaxSize</li> <li><p>GroupDesiredCapacity</li>
-     *         <li><p>GroupInServiceInstances</li> <li><p>GroupPendingInstances</li>
-     *         <li><p>GroupStandbyInstances</li>
-     *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
-     *         returned by default. You must explicitly request it when calling
-     *         <a>EnableMetricsCollection</a>. </note>
+     * @param metrics One or more metrics.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -168,9 +105,9 @@ public class DescribeMetricCollectionTypesResult implements Serializable, Clonea
     }
 
     /**
-     * The granularities for the listed metrics.
+     * The granularities for the metrics.
      *
-     * @return The granularities for the listed metrics.
+     * @return The granularities for the metrics.
      */
     public java.util.List<MetricGranularityType> getGranularities() {
         if (granularities == null) {
@@ -181,9 +118,9 @@ public class DescribeMetricCollectionTypesResult implements Serializable, Clonea
     }
     
     /**
-     * The granularities for the listed metrics.
+     * The granularities for the metrics.
      *
-     * @param granularities The granularities for the listed metrics.
+     * @param granularities The granularities for the metrics.
      */
     public void setGranularities(java.util.Collection<MetricGranularityType> granularities) {
         if (granularities == null) {
@@ -196,7 +133,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable, Clonea
     }
     
     /**
-     * The granularities for the listed metrics.
+     * The granularities for the metrics.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setGranularities(java.util.Collection)} or {@link
@@ -205,7 +142,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable, Clonea
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param granularities The granularities for the listed metrics.
+     * @param granularities The granularities for the metrics.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -219,11 +156,11 @@ public class DescribeMetricCollectionTypesResult implements Serializable, Clonea
     }
     
     /**
-     * The granularities for the listed metrics.
+     * The granularities for the metrics.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param granularities The granularities for the listed metrics.
+     * @param granularities The granularities for the metrics.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

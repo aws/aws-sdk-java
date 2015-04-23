@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeTags(DescribeTagsRequest) DescribeTags operation}.
  * <p>
- * Describes the tags associated with one or more load balancers.
+ * Describes the tags associated with the specified load balancers.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeTags(DescribeTagsRequest)
