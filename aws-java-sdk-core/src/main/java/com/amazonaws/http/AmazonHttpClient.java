@@ -150,7 +150,7 @@ public class AmazonHttpClient {
     private final ClientConfiguration config;
 
     /** Cache of metadata for recently executed requests for diagnostic purposes */
-    private final ResponseMetadataCache responseMetadataCache = new ResponseMetadataCache(50);
+    private final ResponseMetadataCache responseMetadataCache;
 
     /**
      * A request metric collector used specifically for this http client; or
@@ -204,6 +204,7 @@ public class AmazonHttpClient {
         this.config = config;
         this.httpClient = httpClient;
         this.requestMetricCollector = requestMetricCollector;
+        this.responseMetadataCache = new ResponseMetadataCache(config.getResponseMetadataCacheSize());
     }
 
     /**

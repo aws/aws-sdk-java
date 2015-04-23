@@ -79,6 +79,11 @@ public class ClientConfiguration {
      */
     public static final boolean DEFAULT_TCP_KEEP_ALIVE = false;
 
+    /**
+     * The default response metadata cache size.
+     */
+    public static final int DEFAULT_RESPONSE_METADATA_CACHE_SIZE = 50;
+
     /** The HTTP user agent header passed with all HTTP requests. */
     private String userAgent = DEFAULT_USER_AGENT;
 
@@ -197,6 +202,14 @@ public class ClientConfiguration {
     private boolean tcpKeepAlive = DEFAULT_TCP_KEEP_ALIVE;
     
     /**
+     * Size of the response metadata cache.
+     * <p>
+     * Response metadata is typically used for troubleshooting issues with AWS
+     * support staff when services aren't acting as expected.
+     */
+    private int responseMetadataCacheSize = DEFAULT_RESPONSE_METADATA_CACHE_SIZE;
+
+    /**
      * Can be used to specify custom specific Apache HTTP client configurations.
      */
     private final ApacheHttpClientConfig apacheHttpClientConfig;
@@ -226,6 +239,7 @@ public class ClientConfiguration {
         this.socketReceiveBufferSizeHint = other.socketReceiveBufferSizeHint;
         this.socketSendBufferSizeHint    = other.socketSendBufferSizeHint;
         this.signerOverride              = other.signerOverride;
+        this.responseMetadataCacheSize   = other.responseMetadataCacheSize;
         this.apacheHttpClientConfig =
             new ApacheHttpClientConfig(other.apacheHttpClientConfig);
     }
@@ -1137,6 +1151,33 @@ public class ClientConfiguration {
      */
     public ClientConfiguration withTcpKeepAlive(final boolean use) {
         setUseTcpKeepAlive(use);
+        return this;
+    }
+
+    /**
+     * Returns the response metadata cache size.
+     */
+    public int getResponseMetadataCacheSize() {
+        return responseMetadataCacheSize;
+    }
+
+    /**
+     * Sets the response metadata cache size. By default, it is set to
+     * {@value #DEFAULT_RESPONSE_METADATA_CACHE_SIZE}.
+     * @param responseMetadataCacheSize maximum cache size.
+     */
+    public void setResponseMetadataCacheSize(int responseMetadataCacheSize) {
+        this.responseMetadataCacheSize = responseMetadataCacheSize;
+    }
+
+    /**
+     * Sets the response metadata cache size. By default, it is set to
+     * {@value #DEFAULT_RESPONSE_METADATA_CACHE_SIZE}.
+     * @param responseMetadataCacheSize maximum cache size.
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withResponseMetadataCacheSize(int responseMetadataCacheSize) {
+        setResponseMetadataCacheSize(responseMetadataCacheSize);
         return this;
     }
 
