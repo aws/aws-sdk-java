@@ -56,7 +56,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * can still fail due to throttling on the individual tables. If you
  * delay the batch operation using exponential backoff, the individual
  * requests in the batch are much more likely to succeed. For more
- * information, go to Batch Operations and Error Handling in the Amazon
+ * information, see Batch Operations and Error Handling in the Amazon
  * DynamoDB Developer Guide.
  * </p>
  * <p>
@@ -73,10 +73,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * If you use a programming language that supports concurrency, such as
  * Java, you can use threads to write items in parallel. Your application
  * must include the necessary logic to manage the threads. With languages
- * that don't support threading, such as PHP, you must update provides an
- * alternative where the API performs the specified put and delete
- * operations in parallel, giving you the power of the thread pool
- * approach without having to introduce complexity into your application.
+ * that don't support threading, such as PHP, you must update or delete
+ * the specified items one at a time. In both situations,
+ * <i>BatchWriteItem</i> provides an alternative where the API performs
+ * the specified put and delete operations in parallel, giving you the
+ * power of the thread pool approach without having to introduce
+ * complexity into your application.
  * </p>
  * <p>
  * Parallel processing reduces latency, but each specified put and delete

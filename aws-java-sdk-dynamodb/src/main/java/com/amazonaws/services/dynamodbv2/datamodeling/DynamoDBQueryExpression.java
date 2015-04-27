@@ -43,15 +43,22 @@ public class DynamoDBQueryExpression <T> {
      * do not match the expression are not returned.
      */
     private String filterExpression;
+
+    /**
+     * The condition that specifies the key value(s) for items to be retrieved
+     * by the <i>Query</i> action.
+     */
+    private String keyConditionExpression;
+
     /**
      * One or more substitution variables for simplifying complex expressions.
      */
-    private java.util.Map<String, String> expressionAttributeNames;
+    private Map<String, String> expressionAttributeNames;
 
     /**
      * One or more values that can be substituted in an expression.
      */
-    private java.util.Map<String, AttributeValue> expressionAttributeValues;
+    private Map<String, AttributeValue> expressionAttributeValues;
 
     /**
      * Returns whether this query uses consistent reads.
@@ -437,6 +444,309 @@ public class DynamoDBQueryExpression <T> {
         return this;
     }
 
+    /**
+     * Returns the condition that specifies the key value(s) for items to be
+     * retrieved by the <i>Query</i> action.
+     * <p>
+     * The condition must perform an equality test on a single hash key value.
+     * The condition can also test for one or more range key values. A
+     * <i>Query</i> can use <i>KeyConditionExpression</i> to retrieve a single
+     * item with a given hash and range key value, or several items that have
+     * the same hash key value but different range key values.
+     * <p>
+     * The hash key equality test is required, and must be specified in the
+     * following format:
+     * <p>
+     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
+     * <p>
+     * If you also want to provide a range key condition, it must be combined
+     * using <i>AND</i> with the hash key condition. Following is an example,
+     * using the <b>=</b> comparison operator for the range key:
+     * <p>
+     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code> <i>AND</i>
+     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     * <p>
+     * Valid comparisons for the range key condition are as follows:
+     * <ul>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code> - true if
+     * the range key is equal to <code>:rangeval</code>.</li>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i><</i> <code>:rangeval</code> - true if
+     * the range key is less than <code>:rangeval</code>.</li>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i><=</i> <code>:rangeval</code> - true
+     * if the range key is less than or equal to <code>:rangeval</code>.</li>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i>></i> <code>:rangeval</code> - true if
+     * the range key is greater than <code>:rangeval</code>.</li>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i>>= </i><code>:rangeval</code> - true
+     * if the range key is greater than or equal to <code>:rangeval</code>.</li>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code>
+     * <i>AND</i> <code>:rangeval2</code> - true if the range key is less than
+     * or greater than <code>:rangeval1</code>, and less than or equal to
+     * <code>:rangeval2</code>.</li>
+     * <li>
+     * <p>
+     * <i>begins_with (</i><code>rangeAttributeName</code>,
+     * <code>:rangeval</code><i>)</i> - true if the range key begins with a
+     * particular operand. Note that the function name <code>begins_with</code>
+     * is case-sensitive.</li>
+     * </ul>
+     * <p>
+     * Use <i>ExpressionAttributeValues</i> (via {@link #withExpressionAttributeValues(Map)}) to
+     * replace tokens such as <code>:hashval</code> and <code>:rangeval</code>
+     * with actual values at runtime.
+     * <p>
+     * You can optionally use <i>ExpressionAttributeNames</i> (via
+     * {@link #withExpressionAttributeNames(Map)}) to replace the names of the hash and range
+     * attributes with placeholder tokens. This might be necessary if an
+     * attribute name conflicts with a DynamoDB reserved word. For example, the
+     * following <i>KeyConditionExpression</i> causes an error because
+     * <i>Size</i> is a reserved word:
+     * <ul>
+     * <li> <code>Size = :myval</code></li>
+     * </ul>
+     * <p>
+     * To work around this, define a placeholder (such a <code>#myval</code>) to
+     * represent the attribute name <i>Size</i>. <i>KeyConditionExpression</i>
+     * then is as follows:
+     * <ul>
+     * <li> <code>#S =
+     * :myval</code></li>
+     * </ul>
+     * <p>
+     * For a list of reserved words, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html"
+     * >Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <p>
+     * For more information on <i>ExpressionAttributeNames</i> and
+     * <i>ExpressionAttributeValues</i>, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html"
+     * >Using Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>. <note>
+     * <p>
+     * <i>KeyConditionExpression</i> replaces the legacy <i>KeyConditions</i>
+     * parameter. </note>
+     *
+     * @return The condition that specifies the key value(s) for items to be
+     *         retrieved by the <i>Query</i> action.
+     *         <p>
+     *         The condition must perform an equality test on a single hash key
+     *         value. The condition can also test for one or more range key
+     *         values. A <i>Query</i> can use <i>KeyConditionExpression</i> to
+     *         retrieve a single item with a given hash and range key value, or
+     *         several items that have the same hash key value but different
+     *         range key values.
+     *         <p>
+     *         The hash key equality test is required, and must be specified in
+     *         the following format:
+     *         <p>
+     *         <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
+     *         <p>
+     *         If you also want to provide a range key condition, it must be
+     *         combined using <i>AND</i> with the hash key condition. Following
+     *         is an example, using the <b>=</b> comparison operator for the
+     *         range key:
+     *         <p>
+     *         <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
+     *         <i>AND</i> <code>rangeAttributeName</code> <i>=</i>
+     *         <code>:rangeval</code>
+     *         <p>
+     *         Valid comparisons for the range key condition are as follows:
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code> -
+     *         true if the range key is equal to <code>:rangeval</code>.</li>
+     *         <li>
+     *         <p>
+     *         <code>rangeAttributeName</code> <i><</i> <code>:rangeval</code> -
+     *         true if the range key is less than <code>:rangeval</code>.</li>
+     *         <li>
+     *         <p>
+     *         <code>rangeAttributeName</code> <i><=</i> <code>:rangeval</code>
+     *         - true if the range key is less than or equal to
+     *         <code>:rangeval</code>.</li>
+     *         <li>
+     *         <p>
+     *         <code>rangeAttributeName</code> <i>></i> <code>:rangeval</code> -
+     *         true if the range key is greater than <code>:rangeval</code>.</li>
+     *         <li>
+     *         <p>
+     *         <code>rangeAttributeName</code> <i>>= </i><code>:rangeval</code>
+     *         - true if the range key is greater than or equal to
+     *         <code>:rangeval</code>.</li>
+     *         <li>
+     *         <p>
+     *         <code>rangeAttributeName</code> <i>BETWEEN</i>
+     *         <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true
+     *         if the range key is less than or greater than
+     *         <code>:rangeval1</code>, and less than or equal to
+     *         <code>:rangeval2</code>.</li>
+     *         <li>
+     *         <p>
+     *         <i>begins_with (</i><code>rangeAttributeName</code>,
+     *         <code>:rangeval</code><i>)</i> - true if the range key begins
+     *         with a particular operand. Note that the function name
+     *         <code>begins_with</code> is case-sensitive.</li>
+     *         </ul>
+     *         <p>
+     *         Use <i>ExpressionAttributeValues</i> (via
+     *         {@link #withExpressionAttributeValues(Map)}) to replace tokens such as
+     *         <code>:hashval</code> and <code>:rangeval</code> with actual
+     *         values at runtime.
+     *         <p>
+     *         You can optionally use <i>ExpressionAttributeNames</i> (via
+     *         {@link #withExpressionAttributeNames(Map)}) to replace the names of the hash and
+     *         range attributes with placeholder tokens. This might be necessary
+     *         if an attribute name conflicts with a DynamoDB reserved word. For
+     *         example, the following <i>KeyConditionExpression</i> causes an
+     *         error because <i>Size</i> is a reserved word:
+     *         <ul>
+     *         <li> <code>Size = :myval</code></li>
+     *         </ul>
+     *         <p>
+     *         To work around this, define a placeholder (such a
+     *         <code>#myval</code>) to represent the attribute name <i>Size</i>.
+     *         <i>KeyConditionExpression</i> then is as follows:
+     *         <ul>
+     *         <li> <code>#S =
+     *         :myval</code></li>
+     *         </ul>
+     *         <p>
+     *         For a list of reserved words, see <a href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html"
+     *         >Reserved Words</a> in the <i>Amazon DynamoDB Developer
+     *         Guide</i>.
+     *         <p>
+     *         For more information on <i>ExpressionAttributeNames</i> and
+     *         <i>ExpressionAttributeValues</i>, see <a href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html"
+     *         >Using Placeholders for Attribute Names and Values</a> in the
+     *         <i>Amazon DynamoDB Developer Guide</i>. <note>
+     *         <p>
+     *         <i>KeyConditionExpression</i> replaces the legacy
+     *         <i>KeyConditions</i> parameter. </note>
+     */
+    public String getKeyConditionExpression() {
+        return keyConditionExpression;
+    }
+
+    /**
+     * Sets the condition that specifies the key value(s) for items to be
+     * retrieved by the <i>Query</i> action.
+     * <p>
+     * The condition must perform an equality test on a single hash key value.
+     * The condition can also test for one or more range key values. A
+     * <i>Query</i> can use <i>KeyConditionExpression</i> to retrieve a single
+     * item with a given hash and range key value, or several items that have
+     * the same hash key value but different range key values.
+     * <p>
+     * The hash key equality test is required, and must be specified in the
+     * following format:
+     * <p>
+     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
+     * <p>
+     * If you also want to provide a range key condition, it must be combined
+     * using <i>AND</i> with the hash key condition. Following is an example,
+     * using the <b>=</b> comparison operator for the range key:
+     * <p>
+     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code> <i>AND</i>
+     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     * <p>
+     * Valid comparisons for the range key condition are as follows:
+     * <ul>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code> - true if
+     * the range key is equal to <code>:rangeval</code>.</li>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i><</i> <code>:rangeval</code> - true if
+     * the range key is less than <code>:rangeval</code>.</li>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i><=</i> <code>:rangeval</code> - true
+     * if the range key is less than or equal to <code>:rangeval</code>.</li>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i>></i> <code>:rangeval</code> - true if
+     * the range key is greater than <code>:rangeval</code>.</li>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i>>= </i><code>:rangeval</code> - true
+     * if the range key is greater than or equal to <code>:rangeval</code>.</li>
+     * <li>
+     * <p>
+     * <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code>
+     * <i>AND</i> <code>:rangeval2</code> - true if the range key is less than
+     * or greater than <code>:rangeval1</code>, and less than or equal to
+     * <code>:rangeval2</code>.</li>
+     * <li>
+     * <p>
+     * <i>begins_with (</i><code>rangeAttributeName</code>,
+     * <code>:rangeval</code><i>)</i> - true if the range key begins with a
+     * particular operand. Note that the function name <code>begins_with</code>
+     * is case-sensitive.</li>
+     * </ul>
+     * <p>
+     * Use <i>ExpressionAttributeValues</i> (via {@link #withExpressionAttributeValues(Map)}) to
+     * replace tokens such as <code>:hashval</code> and <code>:rangeval</code>
+     * with actual values at runtime.
+     * <p>
+     * You can optionally use <i>ExpressionAttributeNames</i> via
+     * {@link #withExpressionAttributeNames(Map)}) to replace the names of the hash and range
+     * attributes with placeholder tokens. This might be necessary if an
+     * attribute name conflicts with a DynamoDB reserved word. For example, the
+     * following <i>KeyConditionExpression</i> causes an error because
+     * <i>Size</i> is a reserved word:
+     * <ul>
+     * <li> <code>Size = :myval</code></li>
+     * </ul>
+     * <p>
+     * To work around this, define a placeholder (such a <code>#myval</code>) to
+     * represent the attribute name <i>Size</i>. <i>KeyConditionExpression</i>
+     * then is as follows:
+     * <ul>
+     * <li> <code>#S =
+     * :myval</code></li>
+     * </ul>
+     * <p>
+     * For a list of reserved words, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html"
+     * >Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <p>
+     * For more information on <i>ExpressionAttributeNames</i> and
+     * <i>ExpressionAttributeValues</i>, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html"
+     * >Using Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>. <note>
+     * <p>
+     * <i>KeyConditionExpression</i> replaces the legacy <i>KeyConditions</i>
+     * parameter. </note>
+     * <p>
+     * When a key expression is specified, the corresponding name-map and
+     * value-map can optionally be specified via {@link #withExpressionAttributeNames(Map)} and
+     * {@link #withExpressionAttributeValues(Map)}.
+     */
+    public void setKeyConditionExpression(String keyConditionExpression) {
+        this.keyConditionExpression = keyConditionExpression;
+    }
+
+    public DynamoDBQueryExpression<T> withKeyConditionExpression(
+            String keyConditionExpression) {
+        this.keyConditionExpression = keyConditionExpression;
+        return this;
+    }
     /**
      * One or more substitution variables for simplifying complex expressions.
      *

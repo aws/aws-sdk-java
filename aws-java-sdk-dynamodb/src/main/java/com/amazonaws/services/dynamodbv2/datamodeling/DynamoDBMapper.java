@@ -2109,7 +2109,7 @@ public class DynamoDBMapper {
 
         // Create hard copies of the original scan request with difference segment number.
         List<ScanRequest> parallelScanRequests = createParallelScanRequestsFromExpression(clazz, scanExpression, totalSegments, config);
-        ParallelScanTask parallelScanTask = new ParallelScanTask(this, db, parallelScanRequests);
+        ParallelScanTask parallelScanTask = new ParallelScanTask(db, parallelScanRequests);
 
         return new PaginatedParallelScanList<T>(this, clazz, db, parallelScanTask, config.getPaginationLoadingStrategy(), config);
     }
@@ -2410,35 +2410,35 @@ public class DynamoDBMapper {
         return parallelScanRequests;
     }
 
-    private <T> QueryRequest createQueryRequestFromExpression(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression, DynamoDBMapperConfig config) {
-        QueryRequest queryRequest = new QueryRequest();
-        queryRequest.setConsistentRead(queryExpression.isConsistentRead());
-        queryRequest.setTableName(getTableName(clazz, queryExpression.getHashKeyValues(), config));
-        queryRequest.setIndexName(queryExpression.getIndexName());
+    private <T> QueryRequest createQueryRequestFromExpression(Class<T> clazz,
+            DynamoDBQueryExpression<T> xpress, DynamoDBMapperConfig config) {
+        QueryRequest req = new QueryRequest();
+        req.setConsistentRead(xpress.isConsistentRead());
+        req.setTableName(getTableName(clazz, xpress.getHashKeyValues(), config));
+        req.setIndexName(xpress.getIndexName());
 
         ItemConverter converter = getConverter(config);
 
         // Hash key (primary or index) conditions
         Map<String, Condition> hashKeyConditions = getHashKeyEqualsConditions(
-                converter, queryExpression.getHashKeyValues());
+                converter, xpress.getHashKeyValues());
 
         // Range key (primary or index) conditions
-        Map<String, Condition> rangeKeyConditions = queryExpression.getRangeKeyConditions();
-        processKeyConditions(clazz, queryRequest, hashKeyConditions, rangeKeyConditions);
+        Map<String, Condition> rangeKeyConditions = xpress.getRangeKeyConditions();
+        req.setKeyConditionExpression(xpress.getKeyConditionExpression());
+        processKeyConditions(clazz, req, hashKeyConditions, rangeKeyConditions);
 
-        queryRequest.setScanIndexForward(queryExpression.isScanIndexForward());
-        queryRequest.setLimit(queryExpression.getLimit());
-        queryRequest.setExclusiveStartKey(queryExpression.getExclusiveStartKey());
-        queryRequest.setQueryFilter(queryExpression.getQueryFilter());
-        queryRequest.setConditionalOperator(queryExpression.getConditionalOperator());
-        queryRequest.setRequestMetricCollector(config.getRequestMetricCollector());
-        queryRequest.setFilterExpression(queryExpression.getFilterExpression());
-        queryRequest.setExpressionAttributeNames(queryExpression
-                .getExpressionAttributeNames());
-        queryRequest.setExpressionAttributeValues(queryExpression
-                .getExpressionAttributeValues());
-
-        return applyUserAgent(queryRequest);
+        req.withScanIndexForward(xpress.isScanIndexForward())
+           .withLimit(xpress.getLimit())
+           .withExclusiveStartKey(xpress.getExclusiveStartKey())
+           .withQueryFilter(xpress.getQueryFilter())
+           .withConditionalOperator(xpress.getConditionalOperator())
+           .withFilterExpression(xpress.getFilterExpression())
+           .withExpressionAttributeNames(xpress.getExpressionAttributeNames())
+           .withExpressionAttributeValues(xpress.getExpressionAttributeValues())
+           .withRequestMetricCollector(config.getRequestMetricCollector())
+           ;
+        return applyUserAgent(req);
     }
 
     /**
@@ -2464,8 +2464,23 @@ public class DynamoDBMapper {
                                       Map<String, Condition> hashKeyConditions,
                                       Map<String, Condition> rangeKeyConditions) {
         // There should be least one hash key condition.
-        if (hashKeyConditions == null || hashKeyConditions.isEmpty()) {
-            throw new IllegalArgumentException("Illegal query expression: No hash key condition is found in the query");
+        final String keyCondExpression = queryRequest.getKeyConditionExpression();
+        if (keyCondExpression == null) {
+            if (hashKeyConditions == null || hashKeyConditions.isEmpty()) {
+                throw new IllegalArgumentException(
+                    "Illegal query expression: No hash key condition is found in the query");
+            }
+        } else {
+            if (hashKeyConditions != null && !hashKeyConditions.isEmpty()) {
+                throw new IllegalArgumentException(
+                    "Illegal query expression: Either the hash key conditions or the key condition expression must be specified but not both.");
+            }
+            if (rangeKeyConditions != null && !rangeKeyConditions.isEmpty()) {
+                throw new IllegalArgumentException(
+                    "Illegal query expression: The range key conditions can only be specified when the key condition expression is not specified.");
+            }
+            // key condition expression is in use
+            return;
         }
         // We don't allow multiple range key conditions.
         if (rangeKeyConditions != null && rangeKeyConditions.size() > 1) {

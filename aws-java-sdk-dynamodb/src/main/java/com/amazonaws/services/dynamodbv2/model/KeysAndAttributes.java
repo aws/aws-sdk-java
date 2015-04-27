@@ -65,9 +65,11 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * be separated by commas. <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes
      * are not found, they will not appear in the result. <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      */
     private String projectionExpression;
 
@@ -84,7 +86,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -94,9 +96,10 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      */
     private java.util.Map<String,String> expressionAttributeNames;
 
@@ -359,9 +362,11 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * be separated by commas. <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes
      * are not found, they will not appear in the result. <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      *
      * @return A string that identifies one or more attributes to retrieve from the
      *         table. These attributes can include scalars, sets, or elements of a
@@ -369,9 +374,11 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         be separated by commas. <p>If no attribute names are specified, then
      *         all attributes will be returned. If any of the requested attributes
      *         are not found, they will not appear in the result. <p>For more
-     *         information, go to <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      */
     public String getProjectionExpression() {
         return projectionExpression;
@@ -384,9 +391,11 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * be separated by commas. <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes
      * are not found, they will not appear in the result. <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      *
      * @param projectionExpression A string that identifies one or more attributes to retrieve from the
      *         table. These attributes can include scalars, sets, or elements of a
@@ -394,9 +403,11 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         be separated by commas. <p>If no attribute names are specified, then
      *         all attributes will be returned. If any of the requested attributes
      *         are not found, they will not appear in the result. <p>For more
-     *         information, go to <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      */
     public void setProjectionExpression(String projectionExpression) {
         this.projectionExpression = projectionExpression;
@@ -409,9 +420,11 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * be separated by commas. <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes
      * are not found, they will not appear in the result. <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -421,9 +434,11 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         be separated by commas. <p>If no attribute names are specified, then
      *         all attributes will be returned. If any of the requested attributes
      *         are not found, they will not appear in the result. <p>For more
-     *         information, go to <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -446,7 +461,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -456,9 +471,10 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @return One or more substitution tokens for attribute names in an expression.
      *         The following are some use cases for using
@@ -472,7 +488,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -482,9 +498,10 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public java.util.Map<String,String> getExpressionAttributeNames() {
         
@@ -504,7 +521,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -514,9 +531,10 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @param expressionAttributeNames One or more substitution tokens for attribute names in an expression.
      *         The following are some use cases for using
@@ -530,7 +548,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -540,9 +558,10 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public void setExpressionAttributeNames(java.util.Map<String,String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -561,7 +580,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -571,9 +590,10 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -589,7 +609,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -599,9 +619,10 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -624,7 +645,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -634,9 +655,10 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * The method adds a new key-value pair into ExpressionAttributeNames
      * parameter, and returns a reference to this object so that method calls

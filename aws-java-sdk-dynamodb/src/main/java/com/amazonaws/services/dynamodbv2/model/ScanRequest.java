@@ -74,17 +74,17 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     private String indexName;
 
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application.
      * <p>
@@ -136,12 +136,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     private String select;
 
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>FilterExpression</i> instead. Note that if you use
-     * <i>ScanFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception.
-     * </important> <p>A condition that evaluates the scan results and
-     * returns only the desired values. <note><p>This parameter does not
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A condition that evaluates the scan results
+     * and returns only the desired values. <note><p>This parameter does not
      * support attributes of type List or Map.</note> <p>If you specify more
      * than one condition in the <i>ScanFilter</i> map, then by default all
      * of the conditions must evaluate to true. In other words, the
@@ -176,10 +176,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     private java.util.Map<String,Condition> scanFilter;
 
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -263,9 +263,11 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * be separated by commas. <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes
      * are not found, they will not appear in the result. <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      */
     private String projectionExpression;
 
@@ -273,12 +275,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * A string that contains conditions that DynamoDB applies after the
      * <i>Scan</i> operation, but before the data is returned to you. Items
      * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note><p>A <i>FilterExpression</i> is applied after the
+     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
      * items have already been read; the process of filtering does not
      * consume any additional read capacity units.</note> <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
+     * and <i>ConditionalOperator</i> parameters.</note>
      */
     private String filterExpression;
 
@@ -295,7 +299,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -305,9 +309,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      */
     private java.util.Map<String,String> expressionAttributeNames;
 
@@ -322,9 +327,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      */
     private java.util.Map<String,AttributeValue> expressionAttributeValues;
 
@@ -468,34 +474,34 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
 
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @return <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application.
      */
@@ -504,34 +510,34 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application.
      */
@@ -546,17 +552,17 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application.
      * <p>
@@ -570,17 +576,17 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application.
      *
@@ -596,17 +602,17 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application.
      * <p>
@@ -615,17 +621,17 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application.
      *
@@ -985,12 +991,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
 
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>FilterExpression</i> instead. Note that if you use
-     * <i>ScanFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception.
-     * </important> <p>A condition that evaluates the scan results and
-     * returns only the desired values. <note><p>This parameter does not
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A condition that evaluates the scan results
+     * and returns only the desired values. <note><p>This parameter does not
      * support attributes of type List or Map.</note> <p>If you specify more
      * than one condition in the <i>ScanFilter</i> map, then by default all
      * of the conditions must evaluate to true. In other words, the
@@ -1022,12 +1028,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.
      * </li> </ul>
      *
-     * @return <important> <p>There is a newer parameter available. Use
-     *         <i>FilterExpression</i> instead. Note that if you use
-     *         <i>ScanFilter</i> and <i>FilterExpression</i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception.
-     *         </important> <p>A condition that evaluates the scan results and
-     *         returns only the desired values. <note><p>This parameter does not
+     * @return <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A condition that evaluates the scan results
+     *         and returns only the desired values. <note><p>This parameter does not
      *         support attributes of type List or Map.</note> <p>If you specify more
      *         than one condition in the <i>ScanFilter</i> map, then by default all
      *         of the conditions must evaluate to true. In other words, the
@@ -1065,12 +1071,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>FilterExpression</i> instead. Note that if you use
-     * <i>ScanFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception.
-     * </important> <p>A condition that evaluates the scan results and
-     * returns only the desired values. <note><p>This parameter does not
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A condition that evaluates the scan results
+     * and returns only the desired values. <note><p>This parameter does not
      * support attributes of type List or Map.</note> <p>If you specify more
      * than one condition in the <i>ScanFilter</i> map, then by default all
      * of the conditions must evaluate to true. In other words, the
@@ -1102,12 +1108,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.
      * </li> </ul>
      *
-     * @param scanFilter <important> <p>There is a newer parameter available. Use
-     *         <i>FilterExpression</i> instead. Note that if you use
-     *         <i>ScanFilter</i> and <i>FilterExpression</i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception.
-     *         </important> <p>A condition that evaluates the scan results and
-     *         returns only the desired values. <note><p>This parameter does not
+     * @param scanFilter <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A condition that evaluates the scan results
+     *         and returns only the desired values. <note><p>This parameter does not
      *         support attributes of type List or Map.</note> <p>If you specify more
      *         than one condition in the <i>ScanFilter</i> map, then by default all
      *         of the conditions must evaluate to true. In other words, the
@@ -1144,12 +1150,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>FilterExpression</i> instead. Note that if you use
-     * <i>ScanFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception.
-     * </important> <p>A condition that evaluates the scan results and
-     * returns only the desired values. <note><p>This parameter does not
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A condition that evaluates the scan results
+     * and returns only the desired values. <note><p>This parameter does not
      * support attributes of type List or Map.</note> <p>If you specify more
      * than one condition in the <i>ScanFilter</i> map, then by default all
      * of the conditions must evaluate to true. In other words, the
@@ -1183,12 +1189,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scanFilter <important> <p>There is a newer parameter available. Use
-     *         <i>FilterExpression</i> instead. Note that if you use
-     *         <i>ScanFilter</i> and <i>FilterExpression</i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception.
-     *         </important> <p>A condition that evaluates the scan results and
-     *         returns only the desired values. <note><p>This parameter does not
+     * @param scanFilter <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A condition that evaluates the scan results
+     *         and returns only the desired values. <note><p>This parameter does not
      *         support attributes of type List or Map.</note> <p>If you specify more
      *         than one condition in the <i>ScanFilter</i> map, then by default all
      *         of the conditions must evaluate to true. In other words, the
@@ -1229,12 +1235,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
 
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>FilterExpression</i> instead. Note that if you use
-     * <i>ScanFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception.
-     * </important> <p>A condition that evaluates the scan results and
-     * returns only the desired values. <note><p>This parameter does not
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A condition that evaluates the scan results
+     * and returns only the desired values. <note><p>This parameter does not
      * support attributes of type List or Map.</note> <p>If you specify more
      * than one condition in the <i>ScanFilter</i> map, then by default all
      * of the conditions must evaluate to true. In other words, the
@@ -1294,10 +1300,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
   }
   
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -1311,10 +1317,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @return <important><p>There is a newer parameter available. Use
-     *         <i>ConditionExpression</i> instead. Note that if you use
-     *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     *         same time, DynamoDB will return a <i>ValidationException</i>
+     * @return <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
      *         exception. </important> <p>A logical operator to apply to the
      *         conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
      *         If all of the conditions evaluate to true, then the entire map
@@ -1332,10 +1338,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -1349,10 +1355,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator <important><p>There is a newer parameter available. Use
-     *         <i>ConditionExpression</i> instead. Note that if you use
-     *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     *         same time, DynamoDB will return a <i>ValidationException</i>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
      *         exception. </important> <p>A logical operator to apply to the
      *         conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
      *         If all of the conditions evaluate to true, then the entire map
@@ -1370,10 +1376,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -1389,10 +1395,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator <important><p>There is a newer parameter available. Use
-     *         <i>ConditionExpression</i> instead. Note that if you use
-     *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     *         same time, DynamoDB will return a <i>ValidationException</i>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
      *         exception. </important> <p>A logical operator to apply to the
      *         conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
      *         If all of the conditions evaluate to true, then the entire map
@@ -1414,10 +1420,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
 
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -1431,10 +1437,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator <important><p>There is a newer parameter available. Use
-     *         <i>ConditionExpression</i> instead. Note that if you use
-     *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     *         same time, DynamoDB will return a <i>ValidationException</i>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
      *         exception. </important> <p>A logical operator to apply to the
      *         conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
      *         If all of the conditions evaluate to true, then the entire map
@@ -1452,10 +1458,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -1471,10 +1477,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator <important><p>There is a newer parameter available. Use
-     *         <i>ConditionExpression</i> instead. Note that if you use
-     *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     *         same time, DynamoDB will return a <i>ValidationException</i>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
      *         exception. </important> <p>A logical operator to apply to the
      *         conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
      *         If all of the conditions evaluate to true, then the entire map
@@ -1999,9 +2005,11 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * be separated by commas. <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes
      * are not found, they will not appear in the result. <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      *
      * @return A string that identifies one or more attributes to retrieve from the
      *         specified table or index. These attributes can include scalars, sets,
@@ -2009,9 +2017,11 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         be separated by commas. <p>If no attribute names are specified, then
      *         all attributes will be returned. If any of the requested attributes
      *         are not found, they will not appear in the result. <p>For more
-     *         information, go to <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      */
     public String getProjectionExpression() {
         return projectionExpression;
@@ -2024,9 +2034,11 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * be separated by commas. <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes
      * are not found, they will not appear in the result. <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      *
      * @param projectionExpression A string that identifies one or more attributes to retrieve from the
      *         specified table or index. These attributes can include scalars, sets,
@@ -2034,9 +2046,11 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         be separated by commas. <p>If no attribute names are specified, then
      *         all attributes will be returned. If any of the requested attributes
      *         are not found, they will not appear in the result. <p>For more
-     *         information, go to <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      */
     public void setProjectionExpression(String projectionExpression) {
         this.projectionExpression = projectionExpression;
@@ -2049,9 +2063,11 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * be separated by commas. <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes
      * are not found, they will not appear in the result. <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -2061,9 +2077,11 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         be separated by commas. <p>If no attribute names are specified, then
      *         all attributes will be returned. If any of the requested attributes
      *         are not found, they will not appear in the result. <p>For more
-     *         information, go to <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2077,22 +2095,26 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * A string that contains conditions that DynamoDB applies after the
      * <i>Scan</i> operation, but before the data is returned to you. Items
      * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note><p>A <i>FilterExpression</i> is applied after the
+     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
      * items have already been read; the process of filtering does not
      * consume any additional read capacity units.</note> <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
+     * and <i>ConditionalOperator</i> parameters.</note>
      *
      * @return A string that contains conditions that DynamoDB applies after the
      *         <i>Scan</i> operation, but before the data is returned to you. Items
      *         that do not satisfy the <i>FilterExpression</i> criteria are not
-     *         returned. <note><p>A <i>FilterExpression</i> is applied after the
+     *         returned. <note> <p>A <i>FilterExpression</i> is applied after the
      *         items have already been read; the process of filtering does not
      *         consume any additional read capacity units.</note> <p>For more
-     *         information, go to <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      *         Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
+     *         and <i>ConditionalOperator</i> parameters.</note>
      */
     public String getFilterExpression() {
         return filterExpression;
@@ -2102,22 +2124,26 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * A string that contains conditions that DynamoDB applies after the
      * <i>Scan</i> operation, but before the data is returned to you. Items
      * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note><p>A <i>FilterExpression</i> is applied after the
+     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
      * items have already been read; the process of filtering does not
      * consume any additional read capacity units.</note> <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
+     * and <i>ConditionalOperator</i> parameters.</note>
      *
      * @param filterExpression A string that contains conditions that DynamoDB applies after the
      *         <i>Scan</i> operation, but before the data is returned to you. Items
      *         that do not satisfy the <i>FilterExpression</i> criteria are not
-     *         returned. <note><p>A <i>FilterExpression</i> is applied after the
+     *         returned. <note> <p>A <i>FilterExpression</i> is applied after the
      *         items have already been read; the process of filtering does not
      *         consume any additional read capacity units.</note> <p>For more
-     *         information, go to <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      *         Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
+     *         and <i>ConditionalOperator</i> parameters.</note>
      */
     public void setFilterExpression(String filterExpression) {
         this.filterExpression = filterExpression;
@@ -2127,24 +2153,28 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * A string that contains conditions that DynamoDB applies after the
      * <i>Scan</i> operation, but before the data is returned to you. Items
      * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note><p>A <i>FilterExpression</i> is applied after the
+     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
      * items have already been read; the process of filtering does not
      * consume any additional read capacity units.</note> <p>For more
-     * information, go to <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
+     * and <i>ConditionalOperator</i> parameters.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filterExpression A string that contains conditions that DynamoDB applies after the
      *         <i>Scan</i> operation, but before the data is returned to you. Items
      *         that do not satisfy the <i>FilterExpression</i> criteria are not
-     *         returned. <note><p>A <i>FilterExpression</i> is applied after the
+     *         returned. <note> <p>A <i>FilterExpression</i> is applied after the
      *         items have already been read; the process of filtering does not
      *         consume any additional read capacity units.</note> <p>For more
-     *         information, go to <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      *         Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
+     *         and <i>ConditionalOperator</i> parameters.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2167,7 +2197,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -2177,9 +2207,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @return One or more substitution tokens for attribute names in an expression.
      *         The following are some use cases for using
@@ -2193,7 +2224,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -2203,9 +2234,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public java.util.Map<String,String> getExpressionAttributeNames() {
         
@@ -2225,7 +2257,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -2235,9 +2267,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @param expressionAttributeNames One or more substitution tokens for attribute names in an expression.
      *         The following are some use cases for using
@@ -2251,7 +2284,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -2261,9 +2294,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public void setExpressionAttributeNames(java.util.Map<String,String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -2282,7 +2316,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -2292,9 +2326,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -2310,7 +2345,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -2320,9 +2355,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2345,7 +2381,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -2355,9 +2391,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * The method adds a new key-value pair into ExpressionAttributeNames
      * parameter, and returns a reference to this object so that method calls
@@ -2397,9 +2434,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @return One or more values that can be substituted in an expression. <p>Use
      *         the <b>:</b> (colon) character in an expression to dereference an
@@ -2411,9 +2449,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      *         <p>You could then use these values in an expression, such as this:
      *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         information on expression attribute values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public java.util.Map<String,AttributeValue> getExpressionAttributeValues() {
         
@@ -2431,9 +2470,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @param expressionAttributeValues One or more values that can be substituted in an expression. <p>Use
      *         the <b>:</b> (colon) character in an expression to dereference an
@@ -2445,9 +2485,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      *         <p>You could then use these values in an expression, such as this:
      *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         information on expression attribute values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public void setExpressionAttributeValues(java.util.Map<String,AttributeValue> expressionAttributeValues) {
         this.expressionAttributeValues = expressionAttributeValues;
@@ -2464,9 +2505,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -2480,9 +2522,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      *         <p>You could then use these values in an expression, such as this:
      *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         information on expression attribute values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2503,9 +2546,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * The method adds a new key-value pair into ExpressionAttributeValues
      * parameter, and returns a reference to this object so that method calls

@@ -35,13 +35,13 @@ import java.io.Serializable;
  * </p>
  * </li>
  * <li> <p>
- * >Use <i>Value</i> to specify a value that DynamoDB will compare
- * against an attribute. If the values match, then
- * <i>ExpectedAttributeValue</i> evaluates to true and the conditional
- * operation succeeds. Optionally, you can also set <i>Exists</i> to
- * false, indicating that you <i>do not</i> expect to find the attribute
- * value in the table. In this case, the conditional operation succeeds
- * only if the comparison evaluates to false.
+ * Use <i>Value</i> to specify a value that DynamoDB will compare against
+ * an attribute. If the values match, then <i>ExpectedAttributeValue</i>
+ * evaluates to true and the conditional operation succeeds. Optionally,
+ * you can also set <i>Exists</i> to false, indicating that you <i>do
+ * not</i> expect to find the attribute value in the table. In this case,
+ * the conditional operation succeeds only if the comparison evaluates to
+ * false.
  * </p>
  * </li>
  * 

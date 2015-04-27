@@ -19,6 +19,7 @@ import java.util.Map;
 
 import org.apache.http.annotation.ThreadSafe;
 
+import com.amazonaws.annotation.Beta;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.document.api.QueryApi;
 import com.amazonaws.services.dynamodbv2.document.api.ScanApi;
@@ -36,6 +37,8 @@ import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException;
 import com.amazonaws.services.dynamodbv2.model.TableDescription;
 import com.amazonaws.services.dynamodbv2.model.UpdateGlobalSecondaryIndexAction;
+import com.amazonaws.services.dynamodbv2.xspec.QueryExpressionSpec;
+import com.amazonaws.services.dynamodbv2.xspec.ScanExpressionSpec;
 
 /**
  * Represents a secondary index on a DynamoDB table. This covers
@@ -104,6 +107,15 @@ public class Index implements QueryApi, ScanApi {
             Map<String, Object> valueMap) {
         return queryDelegate.query(hashKey, rangeKeyCondition,
                 projectionExpression, filterExpression, nameMap, valueMap);
+    }
+
+    @Beta
+    public ItemCollection<QueryOutcome> query(KeyAttribute hashKey,
+            RangeKeyCondition rangeKeyCondition, QueryExpressionSpec queryExpressions) {
+        return queryDelegate.query(hashKey, rangeKeyCondition,
+                queryExpressions.getProjectionExpression(),
+                queryExpressions.getFilterExpression(),
+                queryExpressions.getNameMap(), queryExpressions.getValueMap());
     }
 
     @Override
@@ -350,6 +362,14 @@ public class Index implements QueryApi, ScanApi {
             String projectionExpression, Map<String, String> nameMap,
             Map<String, Object> valueMap) {
         return scanDelegate.scan(filterExpression, projectionExpression, nameMap, valueMap);
+    }
+
+    @Beta
+    public ItemCollection<ScanOutcome> scan(ScanExpressionSpec xspec) {
+        return scanDelegate.scan(xspec.getFilterExpression(), 
+                xspec.getProjectionExpression(),
+                xspec.getNameMap(), 
+                xspec.getValueMap());
     }
 
     @Override

@@ -8,7 +8,7 @@
  * <p>
  * This is the Amazon DynamoDB API Reference. This guide provides
  * descriptions and samples of the low-level DynamoDB API. For
- * information about DynamoDB application development, go to the
+ * information about DynamoDB application development, see the
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/"> Amazon DynamoDB Developer Guide </a>
  * .
  * </p>
@@ -18,14 +18,14 @@
  * Development Kits (SDKs). The easy-to-use libraries in the AWS SDKs
  * make it unnecessary to call the low-level DynamoDB API directly from
  * your application. The libraries take care of request authentication,
- * serialization, and connection management. For more information, go to
+ * serialization, and connection management. For more information, see
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html"> Using the AWS SDKs with DynamoDB </a>
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  * <p>
  * If you decide to code against the low-level DynamoDB API directly, you
  * will need to write the necessary code to authenticate your requests.
- * For more information on signing your requests, go to
+ * For more information on signing your requests, see
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/API.html"> Using the DynamoDB API </a>
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
@@ -71,7 +71,7 @@
  * 
  * </ul>
  * <p>
- * For conceptual information about managing tables, go to
+ * For conceptual information about managing tables, see
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html"> Working with Tables </a>
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
@@ -116,7 +116,7 @@
  * 
  * </ul>
  * <p>
- * For conceptual information about reading data, go to
+ * For conceptual information about reading data, see
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
@@ -158,7 +158,7 @@
  * 
  * </ul>
  * <p>
- * For conceptual information about modifying data, go to
+ * For conceptual information about modifying data, see
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>

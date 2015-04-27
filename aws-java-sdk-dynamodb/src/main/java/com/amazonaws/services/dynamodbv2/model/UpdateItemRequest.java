@@ -58,99 +58,99 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     private java.util.Map<String,AttributeValue> key;
 
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>UpdateExpression</i> instead. Note that if you use
-     * <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter can be used for modifying top-level attributes; however, it
-     * does not support individual list or map elements. </important> <p>The
-     * names of attributes to be modified, the action to perform on each, and
-     * the new value for each. If you are updating an attribute that is an
-     * index key attribute for any indexes on that table, the attribute type
-     * must match the index key type defined in the
-     * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes. <p>Attribute values
-     * cannot be null. String and Binary type attributes must have lengths
-     * greater than zero. Set type attributes must not be empty. Requests
-     * with empty values will be rejected with a <i>ValidationException</i>
-     * exception. <p>Each <i>AttributeUpdates</i> element consists of an
-     * attribute name to modify, along with the following: <ul> <li>
-     * <p><i>Value</i> - The new value, if applicable, for this attribute.
-     * </li> <li> <p><i>Action</i> - A value that specifies how to perform
-     * the update. This action is only valid for an existing attribute whose
-     * data type is Number or is a set; do not use <code>ADD</code> for other
-     * data types. <p>If an item with the specified primary key is found in
-     * the table, the following values perform the following actions: <ul>
-     * <li> <p><code>PUT</code> - Adds the specified attribute to the item.
-     * If the attribute already exists, it is replaced by the new value.
-     * </li> <li> <p><code>DELETE</code> - Removes the attribute and its
-     * value, if no value is specified for <code>DELETE</code>. The data type
-     * of the specified value must match the existing value's data type.
-     * <p>If a set of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
-     * <code>[a,c]</code>, then the final attribute value is
-     * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code> - Adds the specified value to the item, if the
-     * attribute does not already exist. If the attribute does exist, then
-     * the behavior of <code>ADD</code> depends on the data type of the
-     * attribute: <ul> <li> <p>If the existing attribute is a number, and if
-     * <i>Value</i> is also a number, then <i>Value</i> is mathematically
-     * added to the existing attribute. If <i>Value</i> is a negative number,
-     * then it is subtracted from the existing attribute. <note> <p>If you
-     * use <code>ADD</code> to increment or decrement a number value for an
-     * item that doesn't exist before the update, DynamoDB uses 0 as the
-     * initial value. <p>Similarly, if you use <code>ADD</code> for an
-     * existing item to increment or decrement an attribute value that
-     * doesn't exist before the update, DynamoDB uses <code>0</code> as the
-     * initial value. For example, suppose that the item you want to update
-     * doesn't have an attribute named <i>itemcount</i>, but you decide to
-     * <code>ADD</code> the number <code>3</code> to this attribute anyway.
-     * DynamoDB will create the <i>itemcount</i> attribute, set its initial
-     * value to <code>0</code>, and finally add <code>3</code> to it. The
-     * result will be a new <i>itemcount</i> attribute, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if <i>Value</i> is also a set, then <i>Value</i> is appended
-     * to the existing set. For example, if the attribute value is the set
-     * <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value is
-     * <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is
-     * specified for a set attribute and the attribute type specified does
-     * not match the existing set type. <p>Both sets must have the same
-     * primitive data type. For example, if the existing data type is a set
-     * of strings, <i>Value</i> must also be a set of strings. </li> </ul>
-     * </li> </ul> <p>If no item with the specified key is found in the
-     * table, the following values perform the following actions: <ul> <li>
-     * <p><code>PUT</code> - Causes DynamoDB to create a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code> - Nothing happens, because attributes cannot be
-     * deleted from a nonexistent item. The operation succeeds, but DynamoDB
-     * does not create a new item. </li> <li> <p><code>ADD</code> - Causes
-     * DynamoDB to create an item with the supplied primary key and number
-     * (or set of numbers) for the attribute value. The only data types
-     * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * provide any attributes that are part of an index key, then the data
-     * types for those attributes must match those of the schema in the
-     * table's attribute definition.
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>UpdateExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter can be used for modifying top-level
+     * attributes; however, it does not support individual list or map
+     * elements. </important> <p>The names of attributes to be modified, the
+     * action to perform on each, and the new value for each. If you are
+     * updating an attribute that is an index key attribute for any indexes
+     * on that table, the attribute type must match the index key type
+     * defined in the <i>AttributesDefinition</i> of the table description.
+     * You can use <i>UpdateItem</i> to update any nonkey attributes.
+     * <p>Attribute values cannot be null. String and Binary type attributes
+     * must have lengths greater than zero. Set type attributes must not be
+     * empty. Requests with empty values will be rejected with a
+     * <i>ValidationException</i> exception. <p>Each <i>AttributeUpdates</i>
+     * element consists of an attribute name to modify, along with the
+     * following: <ul> <li> <p><i>Value</i> - The new value, if applicable,
+     * for this attribute. </li> <li> <p><i>Action</i> - A value that
+     * specifies how to perform the update. This action is only valid for an
+     * existing attribute whose data type is Number or is a set; do not use
+     * <code>ADD</code> for other data types. <p>If an item with the
+     * specified primary key is found in the table, the following values
+     * perform the following actions: <ul> <li> <p><code>PUT</code> - Adds
+     * the specified attribute to the item. If the attribute already exists,
+     * it is replaced by the new value. </li> <li> <p><code>DELETE</code> -
+     * Removes the attribute and its value, if no value is specified for
+     * <code>DELETE</code>. The data type of the specified value must match
+     * the existing value's data type. <p>If a set of values is specified,
+     * then those values are subtracted from the old set. For example, if the
+     * attribute value was the set <code>[a,b,c]</code> and the
+     * <code>DELETE</code> action specifies <code>[a,c]</code>, then the
+     * final attribute value is <code>[b]</code>. Specifying an empty set is
+     * an error. </li> <li> <p><code>ADD</code> - Adds the specified value to
+     * the item, if the attribute does not already exist. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then <i>Value</i> is
+     * mathematically added to the existing attribute. If <i>Value</i> is a
+     * negative number, then it is subtracted from the existing attribute.
+     * <note> <p>If you use <code>ADD</code> to increment or decrement a
+     * number value for an item that doesn't exist before the update,
+     * DynamoDB uses 0 as the initial value. <p>Similarly, if you use
+     * <code>ADD</code> for an existing item to increment or decrement an
+     * attribute value that doesn't exist before the update, DynamoDB uses
+     * <code>0</code> as the initial value. For example, suppose that the
+     * item you want to update doesn't have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
+     * and finally add <code>3</code> to it. The result will be a new
+     * <i>itemcount</i> attribute, with a value of <code>3</code>. </note>
+     * </li> <li> <p>If the existing data type is a set, and if <i>Value</i>
+     * is also a set, then <i>Value</i> is appended to the existing set. For
+     * example, if the attribute value is the set <code>[1,2]</code>, and the
+     * <code>ADD</code> action specified <code>[3]</code>, then the final
+     * attribute value is <code>[1,2,3]</code>. An error occurs if an
+     * <code>ADD</code> action is specified for a set attribute and the
+     * attribute type specified does not match the existing set type. <p>Both
+     * sets must have the same primitive data type. For example, if the
+     * existing data type is a set of strings, <i>Value</i> must also be a
+     * set of strings. </li> </ul> </li> </ul> <p>If no item with the
+     * specified key is found in the table, the following values perform the
+     * following actions: <ul> <li> <p><code>PUT</code> - Causes DynamoDB to
+     * create a new item with the specified primary key, and then adds the
+     * attribute. </li> <li> <p><code>DELETE</code> - Nothing happens,
+     * because attributes cannot be deleted from a nonexistent item. The
+     * operation succeeds, but DynamoDB does not create a new item. </li>
+     * <li> <p><code>ADD</code> - Causes DynamoDB to create an item with the
+     * supplied primary key and number (or set of numbers) for the attribute
+     * value. The only data types allowed are Number and Number Set. </li>
+     * </ul> </li> </ul> <p>If you provide any attributes that are part of an
+     * index key, then the data types for those attributes must match those
+     * of the schema in the table's attribute definition.
      */
     private java.util.Map<String,AttributeValueUpdate> attributeUpdates;
 
     /**
-     * <important> <p>There is a newer parameter available. Use <i>
-     * ConditionExpression </i> instead. Note that if you use <i>Expected</i>
-     * and <i> ConditionExpression </i> at the same time, DynamoDB will
-     * return a <i>ValidationException</i> exception. </important> <p>A map
-     * of attribute/condition pairs. <i>Expected</i> provides a conditional
-     * block for the <i>UpdateItem</i> operation. <p>Each element of
-     * <i>Expected</i> consists of an attribute name, a comparison operator,
-     * and one or more values. DynamoDB compares the attribute with the
-     * value(s) you supplied, using the comparison operator. For each
-     * <i>Expected</i> element, the result of the evaluation is either true
-     * or false. <p>If you specify more than one element in the
-     * <i>Expected</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i> ConditionExpression </i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A map of attribute/condition pairs.
+     * <i>Expected</i> provides a conditional block for the <i>UpdateItem</i>
+     * operation. <p>Each element of <i>Expected</i> consists of an attribute
+     * name, a comparison operator, and one or more values. DynamoDB compares
+     * the attribute with the value(s) you supplied, using the comparison
+     * operator. For each <i>Expected</i> element, the result of the
+     * evaluation is either true or false. <p>If you specify more than one
+     * element in the <i>Expected</i> map, then by default all of the
+     * conditions must evaluate to true. In other words, the conditions are
+     * ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     * to OR the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>If the
      * <i>Expected</i> map evaluates to true, then the conditional operation
      * succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -312,10 +312,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     private java.util.Map<String,ExpectedAttributeValue> expected;
 
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ConditionExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -435,24 +435,27 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * top-level attributes, not nested attributes. </important> </li> </ul>
      * <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
-     * :value5</code> <p>For more information on update expressions, go to <a
+     * :value5</code> <p>For more information on update expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
      * Items and Attributes</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.
+     * Guide</i>. <note><p><i>UpdateExpression</i> replaces the legacy
+     * <i>AttributeUpdates</i> parameter.</note>
      */
     private String updateExpression;
 
     /**
      * A condition that must be satisfied in order for a conditional update
      * to succeed. <p>An expression can contain any of the following: <ul>
-     * <li> <p>Boolean functions: <code>attribute_exists |
-     * attribute_not_exists | contains | begins_with</code> <p>These function
-     * names are case-sensitive. </li> <li> <p>Comparison operators: <code> =
-     * | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p> Logical
-     * operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
-     * information on condition expressions, go to <a
+     * <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
+     * attribute_type | contains | begins_with | size</code> <p>These
+     * function names are case-sensitive. </li> <li> <p>Comparison operators:
+     * <code> = | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p>
+     * Logical operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
+     * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ConditionExpression</i> replaces the legacy
+     * <i>ConditionalOperator</i> and <i>Expected</i> parameters.</note>
      */
     private String conditionExpression;
 
@@ -469,7 +472,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -479,9 +482,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      */
     private java.util.Map<String,String> expressionAttributeNames;
 
@@ -496,9 +500,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      */
     private java.util.Map<String,AttributeValue> expressionAttributeValues;
 
@@ -520,80 +525,80 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * with a hash type primary key, you only need to provide the hash
      * attribute. For a hash-and-range type primary key, you must provide
      * both the hash attribute and the range attribute.
-     * @param attributeUpdates <important> <p>There is a newer parameter
-     * available. Use <i>UpdateExpression</i> instead. Note that if you use
-     * <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter can be used for modifying top-level attributes; however, it
-     * does not support individual list or map elements. </important> <p>The
-     * names of attributes to be modified, the action to perform on each, and
-     * the new value for each. If you are updating an attribute that is an
-     * index key attribute for any indexes on that table, the attribute type
-     * must match the index key type defined in the
-     * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes. <p>Attribute values
-     * cannot be null. String and Binary type attributes must have lengths
-     * greater than zero. Set type attributes must not be empty. Requests
-     * with empty values will be rejected with a <i>ValidationException</i>
-     * exception. <p>Each <i>AttributeUpdates</i> element consists of an
-     * attribute name to modify, along with the following: <ul> <li>
-     * <p><i>Value</i> - The new value, if applicable, for this attribute.
-     * </li> <li> <p><i>Action</i> - A value that specifies how to perform
-     * the update. This action is only valid for an existing attribute whose
-     * data type is Number or is a set; do not use <code>ADD</code> for other
-     * data types. <p>If an item with the specified primary key is found in
-     * the table, the following values perform the following actions: <ul>
-     * <li> <p><code>PUT</code> - Adds the specified attribute to the item.
-     * If the attribute already exists, it is replaced by the new value.
-     * </li> <li> <p><code>DELETE</code> - Removes the attribute and its
-     * value, if no value is specified for <code>DELETE</code>. The data type
-     * of the specified value must match the existing value's data type.
-     * <p>If a set of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
-     * <code>[a,c]</code>, then the final attribute value is
-     * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code> - Adds the specified value to the item, if the
-     * attribute does not already exist. If the attribute does exist, then
-     * the behavior of <code>ADD</code> depends on the data type of the
-     * attribute: <ul> <li> <p>If the existing attribute is a number, and if
-     * <i>Value</i> is also a number, then <i>Value</i> is mathematically
-     * added to the existing attribute. If <i>Value</i> is a negative number,
-     * then it is subtracted from the existing attribute. <note> <p>If you
-     * use <code>ADD</code> to increment or decrement a number value for an
-     * item that doesn't exist before the update, DynamoDB uses 0 as the
-     * initial value. <p>Similarly, if you use <code>ADD</code> for an
-     * existing item to increment or decrement an attribute value that
-     * doesn't exist before the update, DynamoDB uses <code>0</code> as the
-     * initial value. For example, suppose that the item you want to update
-     * doesn't have an attribute named <i>itemcount</i>, but you decide to
-     * <code>ADD</code> the number <code>3</code> to this attribute anyway.
-     * DynamoDB will create the <i>itemcount</i> attribute, set its initial
-     * value to <code>0</code>, and finally add <code>3</code> to it. The
-     * result will be a new <i>itemcount</i> attribute, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if <i>Value</i> is also a set, then <i>Value</i> is appended
-     * to the existing set. For example, if the attribute value is the set
-     * <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value is
-     * <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is
-     * specified for a set attribute and the attribute type specified does
-     * not match the existing set type. <p>Both sets must have the same
-     * primitive data type. For example, if the existing data type is a set
-     * of strings, <i>Value</i> must also be a set of strings. </li> </ul>
-     * </li> </ul> <p>If no item with the specified key is found in the
-     * table, the following values perform the following actions: <ul> <li>
-     * <p><code>PUT</code> - Causes DynamoDB to create a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code> - Nothing happens, because attributes cannot be
-     * deleted from a nonexistent item. The operation succeeds, but DynamoDB
-     * does not create a new item. </li> <li> <p><code>ADD</code> - Causes
-     * DynamoDB to create an item with the supplied primary key and number
-     * (or set of numbers) for the attribute value. The only data types
-     * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * provide any attributes that are part of an index key, then the data
-     * types for those attributes must match those of the schema in the
-     * table's attribute definition.
+     * @param attributeUpdates <important> <p>This is a legacy parameter, for
+     * backward compatibility. New applications should use
+     * <i>UpdateExpression</i> instead. Do not combine legacy parameters and
+     * expression parameters in a single API call; otherwise, DynamoDB will
+     * return a <i>ValidationException</i> exception. <p>This parameter can
+     * be used for modifying top-level attributes; however, it does not
+     * support individual list or map elements. </important> <p>The names of
+     * attributes to be modified, the action to perform on each, and the new
+     * value for each. If you are updating an attribute that is an index key
+     * attribute for any indexes on that table, the attribute type must match
+     * the index key type defined in the <i>AttributesDefinition</i> of the
+     * table description. You can use <i>UpdateItem</i> to update any nonkey
+     * attributes. <p>Attribute values cannot be null. String and Binary type
+     * attributes must have lengths greater than zero. Set type attributes
+     * must not be empty. Requests with empty values will be rejected with a
+     * <i>ValidationException</i> exception. <p>Each <i>AttributeUpdates</i>
+     * element consists of an attribute name to modify, along with the
+     * following: <ul> <li> <p><i>Value</i> - The new value, if applicable,
+     * for this attribute. </li> <li> <p><i>Action</i> - A value that
+     * specifies how to perform the update. This action is only valid for an
+     * existing attribute whose data type is Number or is a set; do not use
+     * <code>ADD</code> for other data types. <p>If an item with the
+     * specified primary key is found in the table, the following values
+     * perform the following actions: <ul> <li> <p><code>PUT</code> - Adds
+     * the specified attribute to the item. If the attribute already exists,
+     * it is replaced by the new value. </li> <li> <p><code>DELETE</code> -
+     * Removes the attribute and its value, if no value is specified for
+     * <code>DELETE</code>. The data type of the specified value must match
+     * the existing value's data type. <p>If a set of values is specified,
+     * then those values are subtracted from the old set. For example, if the
+     * attribute value was the set <code>[a,b,c]</code> and the
+     * <code>DELETE</code> action specifies <code>[a,c]</code>, then the
+     * final attribute value is <code>[b]</code>. Specifying an empty set is
+     * an error. </li> <li> <p><code>ADD</code> - Adds the specified value to
+     * the item, if the attribute does not already exist. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then <i>Value</i> is
+     * mathematically added to the existing attribute. If <i>Value</i> is a
+     * negative number, then it is subtracted from the existing attribute.
+     * <note> <p>If you use <code>ADD</code> to increment or decrement a
+     * number value for an item that doesn't exist before the update,
+     * DynamoDB uses 0 as the initial value. <p>Similarly, if you use
+     * <code>ADD</code> for an existing item to increment or decrement an
+     * attribute value that doesn't exist before the update, DynamoDB uses
+     * <code>0</code> as the initial value. For example, suppose that the
+     * item you want to update doesn't have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
+     * and finally add <code>3</code> to it. The result will be a new
+     * <i>itemcount</i> attribute, with a value of <code>3</code>. </note>
+     * </li> <li> <p>If the existing data type is a set, and if <i>Value</i>
+     * is also a set, then <i>Value</i> is appended to the existing set. For
+     * example, if the attribute value is the set <code>[1,2]</code>, and the
+     * <code>ADD</code> action specified <code>[3]</code>, then the final
+     * attribute value is <code>[1,2,3]</code>. An error occurs if an
+     * <code>ADD</code> action is specified for a set attribute and the
+     * attribute type specified does not match the existing set type. <p>Both
+     * sets must have the same primitive data type. For example, if the
+     * existing data type is a set of strings, <i>Value</i> must also be a
+     * set of strings. </li> </ul> </li> </ul> <p>If no item with the
+     * specified key is found in the table, the following values perform the
+     * following actions: <ul> <li> <p><code>PUT</code> - Causes DynamoDB to
+     * create a new item with the specified primary key, and then adds the
+     * attribute. </li> <li> <p><code>DELETE</code> - Nothing happens,
+     * because attributes cannot be deleted from a nonexistent item. The
+     * operation succeeds, but DynamoDB does not create a new item. </li>
+     * <li> <p><code>ADD</code> - Causes DynamoDB to create an item with the
+     * supplied primary key and number (or set of numbers) for the attribute
+     * value. The only data types allowed are Number and Number Set. </li>
+     * </ul> </li> </ul> <p>If you provide any attributes that are part of an
+     * index key, then the data types for those attributes must match those
+     * of the schema in the table's attribute definition.
      */
     public UpdateItemRequest(String tableName, java.util.Map<String,AttributeValue> key, java.util.Map<String,AttributeValueUpdate> attributeUpdates) {
         setTableName(tableName);
@@ -613,80 +618,80 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * with a hash type primary key, you only need to provide the hash
      * attribute. For a hash-and-range type primary key, you must provide
      * both the hash attribute and the range attribute.
-     * @param attributeUpdates <important> <p>There is a newer parameter
-     * available. Use <i>UpdateExpression</i> instead. Note that if you use
-     * <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter can be used for modifying top-level attributes; however, it
-     * does not support individual list or map elements. </important> <p>The
-     * names of attributes to be modified, the action to perform on each, and
-     * the new value for each. If you are updating an attribute that is an
-     * index key attribute for any indexes on that table, the attribute type
-     * must match the index key type defined in the
-     * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes. <p>Attribute values
-     * cannot be null. String and Binary type attributes must have lengths
-     * greater than zero. Set type attributes must not be empty. Requests
-     * with empty values will be rejected with a <i>ValidationException</i>
-     * exception. <p>Each <i>AttributeUpdates</i> element consists of an
-     * attribute name to modify, along with the following: <ul> <li>
-     * <p><i>Value</i> - The new value, if applicable, for this attribute.
-     * </li> <li> <p><i>Action</i> - A value that specifies how to perform
-     * the update. This action is only valid for an existing attribute whose
-     * data type is Number or is a set; do not use <code>ADD</code> for other
-     * data types. <p>If an item with the specified primary key is found in
-     * the table, the following values perform the following actions: <ul>
-     * <li> <p><code>PUT</code> - Adds the specified attribute to the item.
-     * If the attribute already exists, it is replaced by the new value.
-     * </li> <li> <p><code>DELETE</code> - Removes the attribute and its
-     * value, if no value is specified for <code>DELETE</code>. The data type
-     * of the specified value must match the existing value's data type.
-     * <p>If a set of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
-     * <code>[a,c]</code>, then the final attribute value is
-     * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code> - Adds the specified value to the item, if the
-     * attribute does not already exist. If the attribute does exist, then
-     * the behavior of <code>ADD</code> depends on the data type of the
-     * attribute: <ul> <li> <p>If the existing attribute is a number, and if
-     * <i>Value</i> is also a number, then <i>Value</i> is mathematically
-     * added to the existing attribute. If <i>Value</i> is a negative number,
-     * then it is subtracted from the existing attribute. <note> <p>If you
-     * use <code>ADD</code> to increment or decrement a number value for an
-     * item that doesn't exist before the update, DynamoDB uses 0 as the
-     * initial value. <p>Similarly, if you use <code>ADD</code> for an
-     * existing item to increment or decrement an attribute value that
-     * doesn't exist before the update, DynamoDB uses <code>0</code> as the
-     * initial value. For example, suppose that the item you want to update
-     * doesn't have an attribute named <i>itemcount</i>, but you decide to
-     * <code>ADD</code> the number <code>3</code> to this attribute anyway.
-     * DynamoDB will create the <i>itemcount</i> attribute, set its initial
-     * value to <code>0</code>, and finally add <code>3</code> to it. The
-     * result will be a new <i>itemcount</i> attribute, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if <i>Value</i> is also a set, then <i>Value</i> is appended
-     * to the existing set. For example, if the attribute value is the set
-     * <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value is
-     * <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is
-     * specified for a set attribute and the attribute type specified does
-     * not match the existing set type. <p>Both sets must have the same
-     * primitive data type. For example, if the existing data type is a set
-     * of strings, <i>Value</i> must also be a set of strings. </li> </ul>
-     * </li> </ul> <p>If no item with the specified key is found in the
-     * table, the following values perform the following actions: <ul> <li>
-     * <p><code>PUT</code> - Causes DynamoDB to create a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code> - Nothing happens, because attributes cannot be
-     * deleted from a nonexistent item. The operation succeeds, but DynamoDB
-     * does not create a new item. </li> <li> <p><code>ADD</code> - Causes
-     * DynamoDB to create an item with the supplied primary key and number
-     * (or set of numbers) for the attribute value. The only data types
-     * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * provide any attributes that are part of an index key, then the data
-     * types for those attributes must match those of the schema in the
-     * table's attribute definition.
+     * @param attributeUpdates <important> <p>This is a legacy parameter, for
+     * backward compatibility. New applications should use
+     * <i>UpdateExpression</i> instead. Do not combine legacy parameters and
+     * expression parameters in a single API call; otherwise, DynamoDB will
+     * return a <i>ValidationException</i> exception. <p>This parameter can
+     * be used for modifying top-level attributes; however, it does not
+     * support individual list or map elements. </important> <p>The names of
+     * attributes to be modified, the action to perform on each, and the new
+     * value for each. If you are updating an attribute that is an index key
+     * attribute for any indexes on that table, the attribute type must match
+     * the index key type defined in the <i>AttributesDefinition</i> of the
+     * table description. You can use <i>UpdateItem</i> to update any nonkey
+     * attributes. <p>Attribute values cannot be null. String and Binary type
+     * attributes must have lengths greater than zero. Set type attributes
+     * must not be empty. Requests with empty values will be rejected with a
+     * <i>ValidationException</i> exception. <p>Each <i>AttributeUpdates</i>
+     * element consists of an attribute name to modify, along with the
+     * following: <ul> <li> <p><i>Value</i> - The new value, if applicable,
+     * for this attribute. </li> <li> <p><i>Action</i> - A value that
+     * specifies how to perform the update. This action is only valid for an
+     * existing attribute whose data type is Number or is a set; do not use
+     * <code>ADD</code> for other data types. <p>If an item with the
+     * specified primary key is found in the table, the following values
+     * perform the following actions: <ul> <li> <p><code>PUT</code> - Adds
+     * the specified attribute to the item. If the attribute already exists,
+     * it is replaced by the new value. </li> <li> <p><code>DELETE</code> -
+     * Removes the attribute and its value, if no value is specified for
+     * <code>DELETE</code>. The data type of the specified value must match
+     * the existing value's data type. <p>If a set of values is specified,
+     * then those values are subtracted from the old set. For example, if the
+     * attribute value was the set <code>[a,b,c]</code> and the
+     * <code>DELETE</code> action specifies <code>[a,c]</code>, then the
+     * final attribute value is <code>[b]</code>. Specifying an empty set is
+     * an error. </li> <li> <p><code>ADD</code> - Adds the specified value to
+     * the item, if the attribute does not already exist. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then <i>Value</i> is
+     * mathematically added to the existing attribute. If <i>Value</i> is a
+     * negative number, then it is subtracted from the existing attribute.
+     * <note> <p>If you use <code>ADD</code> to increment or decrement a
+     * number value for an item that doesn't exist before the update,
+     * DynamoDB uses 0 as the initial value. <p>Similarly, if you use
+     * <code>ADD</code> for an existing item to increment or decrement an
+     * attribute value that doesn't exist before the update, DynamoDB uses
+     * <code>0</code> as the initial value. For example, suppose that the
+     * item you want to update doesn't have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
+     * and finally add <code>3</code> to it. The result will be a new
+     * <i>itemcount</i> attribute, with a value of <code>3</code>. </note>
+     * </li> <li> <p>If the existing data type is a set, and if <i>Value</i>
+     * is also a set, then <i>Value</i> is appended to the existing set. For
+     * example, if the attribute value is the set <code>[1,2]</code>, and the
+     * <code>ADD</code> action specified <code>[3]</code>, then the final
+     * attribute value is <code>[1,2,3]</code>. An error occurs if an
+     * <code>ADD</code> action is specified for a set attribute and the
+     * attribute type specified does not match the existing set type. <p>Both
+     * sets must have the same primitive data type. For example, if the
+     * existing data type is a set of strings, <i>Value</i> must also be a
+     * set of strings. </li> </ul> </li> </ul> <p>If no item with the
+     * specified key is found in the table, the following values perform the
+     * following actions: <ul> <li> <p><code>PUT</code> - Causes DynamoDB to
+     * create a new item with the specified primary key, and then adds the
+     * attribute. </li> <li> <p><code>DELETE</code> - Nothing happens,
+     * because attributes cannot be deleted from a nonexistent item. The
+     * operation succeeds, but DynamoDB does not create a new item. </li>
+     * <li> <p><code>ADD</code> - Causes DynamoDB to create an item with the
+     * supplied primary key and number (or set of numbers) for the attribute
+     * value. The only data types allowed are Number and Number Set. </li>
+     * </ul> </li> </ul> <p>If you provide any attributes that are part of an
+     * index key, then the data types for those attributes must match those
+     * of the schema in the table's attribute definition.
      * @param returnValues Use <i>ReturnValues</i> if you want to get the
      * item attributes as they appeared either before or after they were
      * updated. For <i>UpdateItem</i>, the valid values are: <ul> <li>
@@ -720,80 +725,80 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * with a hash type primary key, you only need to provide the hash
      * attribute. For a hash-and-range type primary key, you must provide
      * both the hash attribute and the range attribute.
-     * @param attributeUpdates <important> <p>There is a newer parameter
-     * available. Use <i>UpdateExpression</i> instead. Note that if you use
-     * <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter can be used for modifying top-level attributes; however, it
-     * does not support individual list or map elements. </important> <p>The
-     * names of attributes to be modified, the action to perform on each, and
-     * the new value for each. If you are updating an attribute that is an
-     * index key attribute for any indexes on that table, the attribute type
-     * must match the index key type defined in the
-     * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes. <p>Attribute values
-     * cannot be null. String and Binary type attributes must have lengths
-     * greater than zero. Set type attributes must not be empty. Requests
-     * with empty values will be rejected with a <i>ValidationException</i>
-     * exception. <p>Each <i>AttributeUpdates</i> element consists of an
-     * attribute name to modify, along with the following: <ul> <li>
-     * <p><i>Value</i> - The new value, if applicable, for this attribute.
-     * </li> <li> <p><i>Action</i> - A value that specifies how to perform
-     * the update. This action is only valid for an existing attribute whose
-     * data type is Number or is a set; do not use <code>ADD</code> for other
-     * data types. <p>If an item with the specified primary key is found in
-     * the table, the following values perform the following actions: <ul>
-     * <li> <p><code>PUT</code> - Adds the specified attribute to the item.
-     * If the attribute already exists, it is replaced by the new value.
-     * </li> <li> <p><code>DELETE</code> - Removes the attribute and its
-     * value, if no value is specified for <code>DELETE</code>. The data type
-     * of the specified value must match the existing value's data type.
-     * <p>If a set of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
-     * <code>[a,c]</code>, then the final attribute value is
-     * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code> - Adds the specified value to the item, if the
-     * attribute does not already exist. If the attribute does exist, then
-     * the behavior of <code>ADD</code> depends on the data type of the
-     * attribute: <ul> <li> <p>If the existing attribute is a number, and if
-     * <i>Value</i> is also a number, then <i>Value</i> is mathematically
-     * added to the existing attribute. If <i>Value</i> is a negative number,
-     * then it is subtracted from the existing attribute. <note> <p>If you
-     * use <code>ADD</code> to increment or decrement a number value for an
-     * item that doesn't exist before the update, DynamoDB uses 0 as the
-     * initial value. <p>Similarly, if you use <code>ADD</code> for an
-     * existing item to increment or decrement an attribute value that
-     * doesn't exist before the update, DynamoDB uses <code>0</code> as the
-     * initial value. For example, suppose that the item you want to update
-     * doesn't have an attribute named <i>itemcount</i>, but you decide to
-     * <code>ADD</code> the number <code>3</code> to this attribute anyway.
-     * DynamoDB will create the <i>itemcount</i> attribute, set its initial
-     * value to <code>0</code>, and finally add <code>3</code> to it. The
-     * result will be a new <i>itemcount</i> attribute, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if <i>Value</i> is also a set, then <i>Value</i> is appended
-     * to the existing set. For example, if the attribute value is the set
-     * <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value is
-     * <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is
-     * specified for a set attribute and the attribute type specified does
-     * not match the existing set type. <p>Both sets must have the same
-     * primitive data type. For example, if the existing data type is a set
-     * of strings, <i>Value</i> must also be a set of strings. </li> </ul>
-     * </li> </ul> <p>If no item with the specified key is found in the
-     * table, the following values perform the following actions: <ul> <li>
-     * <p><code>PUT</code> - Causes DynamoDB to create a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code> - Nothing happens, because attributes cannot be
-     * deleted from a nonexistent item. The operation succeeds, but DynamoDB
-     * does not create a new item. </li> <li> <p><code>ADD</code> - Causes
-     * DynamoDB to create an item with the supplied primary key and number
-     * (or set of numbers) for the attribute value. The only data types
-     * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * provide any attributes that are part of an index key, then the data
-     * types for those attributes must match those of the schema in the
-     * table's attribute definition.
+     * @param attributeUpdates <important> <p>This is a legacy parameter, for
+     * backward compatibility. New applications should use
+     * <i>UpdateExpression</i> instead. Do not combine legacy parameters and
+     * expression parameters in a single API call; otherwise, DynamoDB will
+     * return a <i>ValidationException</i> exception. <p>This parameter can
+     * be used for modifying top-level attributes; however, it does not
+     * support individual list or map elements. </important> <p>The names of
+     * attributes to be modified, the action to perform on each, and the new
+     * value for each. If you are updating an attribute that is an index key
+     * attribute for any indexes on that table, the attribute type must match
+     * the index key type defined in the <i>AttributesDefinition</i> of the
+     * table description. You can use <i>UpdateItem</i> to update any nonkey
+     * attributes. <p>Attribute values cannot be null. String and Binary type
+     * attributes must have lengths greater than zero. Set type attributes
+     * must not be empty. Requests with empty values will be rejected with a
+     * <i>ValidationException</i> exception. <p>Each <i>AttributeUpdates</i>
+     * element consists of an attribute name to modify, along with the
+     * following: <ul> <li> <p><i>Value</i> - The new value, if applicable,
+     * for this attribute. </li> <li> <p><i>Action</i> - A value that
+     * specifies how to perform the update. This action is only valid for an
+     * existing attribute whose data type is Number or is a set; do not use
+     * <code>ADD</code> for other data types. <p>If an item with the
+     * specified primary key is found in the table, the following values
+     * perform the following actions: <ul> <li> <p><code>PUT</code> - Adds
+     * the specified attribute to the item. If the attribute already exists,
+     * it is replaced by the new value. </li> <li> <p><code>DELETE</code> -
+     * Removes the attribute and its value, if no value is specified for
+     * <code>DELETE</code>. The data type of the specified value must match
+     * the existing value's data type. <p>If a set of values is specified,
+     * then those values are subtracted from the old set. For example, if the
+     * attribute value was the set <code>[a,b,c]</code> and the
+     * <code>DELETE</code> action specifies <code>[a,c]</code>, then the
+     * final attribute value is <code>[b]</code>. Specifying an empty set is
+     * an error. </li> <li> <p><code>ADD</code> - Adds the specified value to
+     * the item, if the attribute does not already exist. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then <i>Value</i> is
+     * mathematically added to the existing attribute. If <i>Value</i> is a
+     * negative number, then it is subtracted from the existing attribute.
+     * <note> <p>If you use <code>ADD</code> to increment or decrement a
+     * number value for an item that doesn't exist before the update,
+     * DynamoDB uses 0 as the initial value. <p>Similarly, if you use
+     * <code>ADD</code> for an existing item to increment or decrement an
+     * attribute value that doesn't exist before the update, DynamoDB uses
+     * <code>0</code> as the initial value. For example, suppose that the
+     * item you want to update doesn't have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
+     * and finally add <code>3</code> to it. The result will be a new
+     * <i>itemcount</i> attribute, with a value of <code>3</code>. </note>
+     * </li> <li> <p>If the existing data type is a set, and if <i>Value</i>
+     * is also a set, then <i>Value</i> is appended to the existing set. For
+     * example, if the attribute value is the set <code>[1,2]</code>, and the
+     * <code>ADD</code> action specified <code>[3]</code>, then the final
+     * attribute value is <code>[1,2,3]</code>. An error occurs if an
+     * <code>ADD</code> action is specified for a set attribute and the
+     * attribute type specified does not match the existing set type. <p>Both
+     * sets must have the same primitive data type. For example, if the
+     * existing data type is a set of strings, <i>Value</i> must also be a
+     * set of strings. </li> </ul> </li> </ul> <p>If no item with the
+     * specified key is found in the table, the following values perform the
+     * following actions: <ul> <li> <p><code>PUT</code> - Causes DynamoDB to
+     * create a new item with the specified primary key, and then adds the
+     * attribute. </li> <li> <p><code>DELETE</code> - Nothing happens,
+     * because attributes cannot be deleted from a nonexistent item. The
+     * operation succeeds, but DynamoDB does not create a new item. </li>
+     * <li> <p><code>ADD</code> - Causes DynamoDB to create an item with the
+     * supplied primary key and number (or set of numbers) for the attribute
+     * value. The only data types allowed are Number and Number Set. </li>
+     * </ul> </li> </ul> <p>If you provide any attributes that are part of an
+     * index key, then the data types for those attributes must match those
+     * of the schema in the table's attribute definition.
      * @param returnValues Use <i>ReturnValues</i> if you want to get the
      * item attributes as they appeared either before or after they were
      * updated. For <i>UpdateItem</i>, the valid values are: <ul> <li>
@@ -1007,155 +1012,155 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
   }
   
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>UpdateExpression</i> instead. Note that if you use
-     * <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter can be used for modifying top-level attributes; however, it
-     * does not support individual list or map elements. </important> <p>The
-     * names of attributes to be modified, the action to perform on each, and
-     * the new value for each. If you are updating an attribute that is an
-     * index key attribute for any indexes on that table, the attribute type
-     * must match the index key type defined in the
-     * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes. <p>Attribute values
-     * cannot be null. String and Binary type attributes must have lengths
-     * greater than zero. Set type attributes must not be empty. Requests
-     * with empty values will be rejected with a <i>ValidationException</i>
-     * exception. <p>Each <i>AttributeUpdates</i> element consists of an
-     * attribute name to modify, along with the following: <ul> <li>
-     * <p><i>Value</i> - The new value, if applicable, for this attribute.
-     * </li> <li> <p><i>Action</i> - A value that specifies how to perform
-     * the update. This action is only valid for an existing attribute whose
-     * data type is Number or is a set; do not use <code>ADD</code> for other
-     * data types. <p>If an item with the specified primary key is found in
-     * the table, the following values perform the following actions: <ul>
-     * <li> <p><code>PUT</code> - Adds the specified attribute to the item.
-     * If the attribute already exists, it is replaced by the new value.
-     * </li> <li> <p><code>DELETE</code> - Removes the attribute and its
-     * value, if no value is specified for <code>DELETE</code>. The data type
-     * of the specified value must match the existing value's data type.
-     * <p>If a set of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
-     * <code>[a,c]</code>, then the final attribute value is
-     * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code> - Adds the specified value to the item, if the
-     * attribute does not already exist. If the attribute does exist, then
-     * the behavior of <code>ADD</code> depends on the data type of the
-     * attribute: <ul> <li> <p>If the existing attribute is a number, and if
-     * <i>Value</i> is also a number, then <i>Value</i> is mathematically
-     * added to the existing attribute. If <i>Value</i> is a negative number,
-     * then it is subtracted from the existing attribute. <note> <p>If you
-     * use <code>ADD</code> to increment or decrement a number value for an
-     * item that doesn't exist before the update, DynamoDB uses 0 as the
-     * initial value. <p>Similarly, if you use <code>ADD</code> for an
-     * existing item to increment or decrement an attribute value that
-     * doesn't exist before the update, DynamoDB uses <code>0</code> as the
-     * initial value. For example, suppose that the item you want to update
-     * doesn't have an attribute named <i>itemcount</i>, but you decide to
-     * <code>ADD</code> the number <code>3</code> to this attribute anyway.
-     * DynamoDB will create the <i>itemcount</i> attribute, set its initial
-     * value to <code>0</code>, and finally add <code>3</code> to it. The
-     * result will be a new <i>itemcount</i> attribute, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if <i>Value</i> is also a set, then <i>Value</i> is appended
-     * to the existing set. For example, if the attribute value is the set
-     * <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value is
-     * <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is
-     * specified for a set attribute and the attribute type specified does
-     * not match the existing set type. <p>Both sets must have the same
-     * primitive data type. For example, if the existing data type is a set
-     * of strings, <i>Value</i> must also be a set of strings. </li> </ul>
-     * </li> </ul> <p>If no item with the specified key is found in the
-     * table, the following values perform the following actions: <ul> <li>
-     * <p><code>PUT</code> - Causes DynamoDB to create a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code> - Nothing happens, because attributes cannot be
-     * deleted from a nonexistent item. The operation succeeds, but DynamoDB
-     * does not create a new item. </li> <li> <p><code>ADD</code> - Causes
-     * DynamoDB to create an item with the supplied primary key and number
-     * (or set of numbers) for the attribute value. The only data types
-     * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * provide any attributes that are part of an index key, then the data
-     * types for those attributes must match those of the schema in the
-     * table's attribute definition.
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>UpdateExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter can be used for modifying top-level
+     * attributes; however, it does not support individual list or map
+     * elements. </important> <p>The names of attributes to be modified, the
+     * action to perform on each, and the new value for each. If you are
+     * updating an attribute that is an index key attribute for any indexes
+     * on that table, the attribute type must match the index key type
+     * defined in the <i>AttributesDefinition</i> of the table description.
+     * You can use <i>UpdateItem</i> to update any nonkey attributes.
+     * <p>Attribute values cannot be null. String and Binary type attributes
+     * must have lengths greater than zero. Set type attributes must not be
+     * empty. Requests with empty values will be rejected with a
+     * <i>ValidationException</i> exception. <p>Each <i>AttributeUpdates</i>
+     * element consists of an attribute name to modify, along with the
+     * following: <ul> <li> <p><i>Value</i> - The new value, if applicable,
+     * for this attribute. </li> <li> <p><i>Action</i> - A value that
+     * specifies how to perform the update. This action is only valid for an
+     * existing attribute whose data type is Number or is a set; do not use
+     * <code>ADD</code> for other data types. <p>If an item with the
+     * specified primary key is found in the table, the following values
+     * perform the following actions: <ul> <li> <p><code>PUT</code> - Adds
+     * the specified attribute to the item. If the attribute already exists,
+     * it is replaced by the new value. </li> <li> <p><code>DELETE</code> -
+     * Removes the attribute and its value, if no value is specified for
+     * <code>DELETE</code>. The data type of the specified value must match
+     * the existing value's data type. <p>If a set of values is specified,
+     * then those values are subtracted from the old set. For example, if the
+     * attribute value was the set <code>[a,b,c]</code> and the
+     * <code>DELETE</code> action specifies <code>[a,c]</code>, then the
+     * final attribute value is <code>[b]</code>. Specifying an empty set is
+     * an error. </li> <li> <p><code>ADD</code> - Adds the specified value to
+     * the item, if the attribute does not already exist. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then <i>Value</i> is
+     * mathematically added to the existing attribute. If <i>Value</i> is a
+     * negative number, then it is subtracted from the existing attribute.
+     * <note> <p>If you use <code>ADD</code> to increment or decrement a
+     * number value for an item that doesn't exist before the update,
+     * DynamoDB uses 0 as the initial value. <p>Similarly, if you use
+     * <code>ADD</code> for an existing item to increment or decrement an
+     * attribute value that doesn't exist before the update, DynamoDB uses
+     * <code>0</code> as the initial value. For example, suppose that the
+     * item you want to update doesn't have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
+     * and finally add <code>3</code> to it. The result will be a new
+     * <i>itemcount</i> attribute, with a value of <code>3</code>. </note>
+     * </li> <li> <p>If the existing data type is a set, and if <i>Value</i>
+     * is also a set, then <i>Value</i> is appended to the existing set. For
+     * example, if the attribute value is the set <code>[1,2]</code>, and the
+     * <code>ADD</code> action specified <code>[3]</code>, then the final
+     * attribute value is <code>[1,2,3]</code>. An error occurs if an
+     * <code>ADD</code> action is specified for a set attribute and the
+     * attribute type specified does not match the existing set type. <p>Both
+     * sets must have the same primitive data type. For example, if the
+     * existing data type is a set of strings, <i>Value</i> must also be a
+     * set of strings. </li> </ul> </li> </ul> <p>If no item with the
+     * specified key is found in the table, the following values perform the
+     * following actions: <ul> <li> <p><code>PUT</code> - Causes DynamoDB to
+     * create a new item with the specified primary key, and then adds the
+     * attribute. </li> <li> <p><code>DELETE</code> - Nothing happens,
+     * because attributes cannot be deleted from a nonexistent item. The
+     * operation succeeds, but DynamoDB does not create a new item. </li>
+     * <li> <p><code>ADD</code> - Causes DynamoDB to create an item with the
+     * supplied primary key and number (or set of numbers) for the attribute
+     * value. The only data types allowed are Number and Number Set. </li>
+     * </ul> </li> </ul> <p>If you provide any attributes that are part of an
+     * index key, then the data types for those attributes must match those
+     * of the schema in the table's attribute definition.
      *
-     * @return <important> <p>There is a newer parameter available. Use
-     *         <i>UpdateExpression</i> instead. Note that if you use
-     *         <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     *         parameter can be used for modifying top-level attributes; however, it
-     *         does not support individual list or map elements. </important> <p>The
-     *         names of attributes to be modified, the action to perform on each, and
-     *         the new value for each. If you are updating an attribute that is an
-     *         index key attribute for any indexes on that table, the attribute type
-     *         must match the index key type defined in the
-     *         <i>AttributesDefinition</i> of the table description. You can use
-     *         <i>UpdateItem</i> to update any nonkey attributes. <p>Attribute values
-     *         cannot be null. String and Binary type attributes must have lengths
-     *         greater than zero. Set type attributes must not be empty. Requests
-     *         with empty values will be rejected with a <i>ValidationException</i>
-     *         exception. <p>Each <i>AttributeUpdates</i> element consists of an
-     *         attribute name to modify, along with the following: <ul> <li>
-     *         <p><i>Value</i> - The new value, if applicable, for this attribute.
-     *         </li> <li> <p><i>Action</i> - A value that specifies how to perform
-     *         the update. This action is only valid for an existing attribute whose
-     *         data type is Number or is a set; do not use <code>ADD</code> for other
-     *         data types. <p>If an item with the specified primary key is found in
-     *         the table, the following values perform the following actions: <ul>
-     *         <li> <p><code>PUT</code> - Adds the specified attribute to the item.
-     *         If the attribute already exists, it is replaced by the new value.
-     *         </li> <li> <p><code>DELETE</code> - Removes the attribute and its
-     *         value, if no value is specified for <code>DELETE</code>. The data type
-     *         of the specified value must match the existing value's data type.
-     *         <p>If a set of values is specified, then those values are subtracted
-     *         from the old set. For example, if the attribute value was the set
-     *         <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
-     *         <code>[a,c]</code>, then the final attribute value is
-     *         <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     *         <p><code>ADD</code> - Adds the specified value to the item, if the
-     *         attribute does not already exist. If the attribute does exist, then
-     *         the behavior of <code>ADD</code> depends on the data type of the
-     *         attribute: <ul> <li> <p>If the existing attribute is a number, and if
-     *         <i>Value</i> is also a number, then <i>Value</i> is mathematically
-     *         added to the existing attribute. If <i>Value</i> is a negative number,
-     *         then it is subtracted from the existing attribute. <note> <p>If you
-     *         use <code>ADD</code> to increment or decrement a number value for an
-     *         item that doesn't exist before the update, DynamoDB uses 0 as the
-     *         initial value. <p>Similarly, if you use <code>ADD</code> for an
-     *         existing item to increment or decrement an attribute value that
-     *         doesn't exist before the update, DynamoDB uses <code>0</code> as the
-     *         initial value. For example, suppose that the item you want to update
-     *         doesn't have an attribute named <i>itemcount</i>, but you decide to
-     *         <code>ADD</code> the number <code>3</code> to this attribute anyway.
-     *         DynamoDB will create the <i>itemcount</i> attribute, set its initial
-     *         value to <code>0</code>, and finally add <code>3</code> to it. The
-     *         result will be a new <i>itemcount</i> attribute, with a value of
-     *         <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     *         set, and if <i>Value</i> is also a set, then <i>Value</i> is appended
-     *         to the existing set. For example, if the attribute value is the set
-     *         <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value is
-     *         <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is
-     *         specified for a set attribute and the attribute type specified does
-     *         not match the existing set type. <p>Both sets must have the same
-     *         primitive data type. For example, if the existing data type is a set
-     *         of strings, <i>Value</i> must also be a set of strings. </li> </ul>
-     *         </li> </ul> <p>If no item with the specified key is found in the
-     *         table, the following values perform the following actions: <ul> <li>
-     *         <p><code>PUT</code> - Causes DynamoDB to create a new item with the
-     *         specified primary key, and then adds the attribute. </li> <li>
-     *         <p><code>DELETE</code> - Nothing happens, because attributes cannot be
-     *         deleted from a nonexistent item. The operation succeeds, but DynamoDB
-     *         does not create a new item. </li> <li> <p><code>ADD</code> - Causes
-     *         DynamoDB to create an item with the supplied primary key and number
-     *         (or set of numbers) for the attribute value. The only data types
-     *         allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     *         provide any attributes that are part of an index key, then the data
-     *         types for those attributes must match those of the schema in the
-     *         table's attribute definition.
+     * @return <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>UpdateExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter can be used for modifying top-level
+     *         attributes; however, it does not support individual list or map
+     *         elements. </important> <p>The names of attributes to be modified, the
+     *         action to perform on each, and the new value for each. If you are
+     *         updating an attribute that is an index key attribute for any indexes
+     *         on that table, the attribute type must match the index key type
+     *         defined in the <i>AttributesDefinition</i> of the table description.
+     *         You can use <i>UpdateItem</i> to update any nonkey attributes.
+     *         <p>Attribute values cannot be null. String and Binary type attributes
+     *         must have lengths greater than zero. Set type attributes must not be
+     *         empty. Requests with empty values will be rejected with a
+     *         <i>ValidationException</i> exception. <p>Each <i>AttributeUpdates</i>
+     *         element consists of an attribute name to modify, along with the
+     *         following: <ul> <li> <p><i>Value</i> - The new value, if applicable,
+     *         for this attribute. </li> <li> <p><i>Action</i> - A value that
+     *         specifies how to perform the update. This action is only valid for an
+     *         existing attribute whose data type is Number or is a set; do not use
+     *         <code>ADD</code> for other data types. <p>If an item with the
+     *         specified primary key is found in the table, the following values
+     *         perform the following actions: <ul> <li> <p><code>PUT</code> - Adds
+     *         the specified attribute to the item. If the attribute already exists,
+     *         it is replaced by the new value. </li> <li> <p><code>DELETE</code> -
+     *         Removes the attribute and its value, if no value is specified for
+     *         <code>DELETE</code>. The data type of the specified value must match
+     *         the existing value's data type. <p>If a set of values is specified,
+     *         then those values are subtracted from the old set. For example, if the
+     *         attribute value was the set <code>[a,b,c]</code> and the
+     *         <code>DELETE</code> action specifies <code>[a,c]</code>, then the
+     *         final attribute value is <code>[b]</code>. Specifying an empty set is
+     *         an error. </li> <li> <p><code>ADD</code> - Adds the specified value to
+     *         the item, if the attribute does not already exist. If the attribute
+     *         does exist, then the behavior of <code>ADD</code> depends on the data
+     *         type of the attribute: <ul> <li> <p>If the existing attribute is a
+     *         number, and if <i>Value</i> is also a number, then <i>Value</i> is
+     *         mathematically added to the existing attribute. If <i>Value</i> is a
+     *         negative number, then it is subtracted from the existing attribute.
+     *         <note> <p>If you use <code>ADD</code> to increment or decrement a
+     *         number value for an item that doesn't exist before the update,
+     *         DynamoDB uses 0 as the initial value. <p>Similarly, if you use
+     *         <code>ADD</code> for an existing item to increment or decrement an
+     *         attribute value that doesn't exist before the update, DynamoDB uses
+     *         <code>0</code> as the initial value. For example, suppose that the
+     *         item you want to update doesn't have an attribute named
+     *         <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     *         <code>3</code> to this attribute anyway. DynamoDB will create the
+     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>,
+     *         and finally add <code>3</code> to it. The result will be a new
+     *         <i>itemcount</i> attribute, with a value of <code>3</code>. </note>
+     *         </li> <li> <p>If the existing data type is a set, and if <i>Value</i>
+     *         is also a set, then <i>Value</i> is appended to the existing set. For
+     *         example, if the attribute value is the set <code>[1,2]</code>, and the
+     *         <code>ADD</code> action specified <code>[3]</code>, then the final
+     *         attribute value is <code>[1,2,3]</code>. An error occurs if an
+     *         <code>ADD</code> action is specified for a set attribute and the
+     *         attribute type specified does not match the existing set type. <p>Both
+     *         sets must have the same primitive data type. For example, if the
+     *         existing data type is a set of strings, <i>Value</i> must also be a
+     *         set of strings. </li> </ul> </li> </ul> <p>If no item with the
+     *         specified key is found in the table, the following values perform the
+     *         following actions: <ul> <li> <p><code>PUT</code> - Causes DynamoDB to
+     *         create a new item with the specified primary key, and then adds the
+     *         attribute. </li> <li> <p><code>DELETE</code> - Nothing happens,
+     *         because attributes cannot be deleted from a nonexistent item. The
+     *         operation succeeds, but DynamoDB does not create a new item. </li>
+     *         <li> <p><code>ADD</code> - Causes DynamoDB to create an item with the
+     *         supplied primary key and number (or set of numbers) for the attribute
+     *         value. The only data types allowed are Number and Number Set. </li>
+     *         </ul> </li> </ul> <p>If you provide any attributes that are part of an
+     *         index key, then the data types for those attributes must match those
+     *         of the schema in the table's attribute definition.
      */
     public java.util.Map<String,AttributeValueUpdate> getAttributeUpdates() {
         
@@ -1163,312 +1168,312 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>UpdateExpression</i> instead. Note that if you use
-     * <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter can be used for modifying top-level attributes; however, it
-     * does not support individual list or map elements. </important> <p>The
-     * names of attributes to be modified, the action to perform on each, and
-     * the new value for each. If you are updating an attribute that is an
-     * index key attribute for any indexes on that table, the attribute type
-     * must match the index key type defined in the
-     * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes. <p>Attribute values
-     * cannot be null. String and Binary type attributes must have lengths
-     * greater than zero. Set type attributes must not be empty. Requests
-     * with empty values will be rejected with a <i>ValidationException</i>
-     * exception. <p>Each <i>AttributeUpdates</i> element consists of an
-     * attribute name to modify, along with the following: <ul> <li>
-     * <p><i>Value</i> - The new value, if applicable, for this attribute.
-     * </li> <li> <p><i>Action</i> - A value that specifies how to perform
-     * the update. This action is only valid for an existing attribute whose
-     * data type is Number or is a set; do not use <code>ADD</code> for other
-     * data types. <p>If an item with the specified primary key is found in
-     * the table, the following values perform the following actions: <ul>
-     * <li> <p><code>PUT</code> - Adds the specified attribute to the item.
-     * If the attribute already exists, it is replaced by the new value.
-     * </li> <li> <p><code>DELETE</code> - Removes the attribute and its
-     * value, if no value is specified for <code>DELETE</code>. The data type
-     * of the specified value must match the existing value's data type.
-     * <p>If a set of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
-     * <code>[a,c]</code>, then the final attribute value is
-     * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code> - Adds the specified value to the item, if the
-     * attribute does not already exist. If the attribute does exist, then
-     * the behavior of <code>ADD</code> depends on the data type of the
-     * attribute: <ul> <li> <p>If the existing attribute is a number, and if
-     * <i>Value</i> is also a number, then <i>Value</i> is mathematically
-     * added to the existing attribute. If <i>Value</i> is a negative number,
-     * then it is subtracted from the existing attribute. <note> <p>If you
-     * use <code>ADD</code> to increment or decrement a number value for an
-     * item that doesn't exist before the update, DynamoDB uses 0 as the
-     * initial value. <p>Similarly, if you use <code>ADD</code> for an
-     * existing item to increment or decrement an attribute value that
-     * doesn't exist before the update, DynamoDB uses <code>0</code> as the
-     * initial value. For example, suppose that the item you want to update
-     * doesn't have an attribute named <i>itemcount</i>, but you decide to
-     * <code>ADD</code> the number <code>3</code> to this attribute anyway.
-     * DynamoDB will create the <i>itemcount</i> attribute, set its initial
-     * value to <code>0</code>, and finally add <code>3</code> to it. The
-     * result will be a new <i>itemcount</i> attribute, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if <i>Value</i> is also a set, then <i>Value</i> is appended
-     * to the existing set. For example, if the attribute value is the set
-     * <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value is
-     * <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is
-     * specified for a set attribute and the attribute type specified does
-     * not match the existing set type. <p>Both sets must have the same
-     * primitive data type. For example, if the existing data type is a set
-     * of strings, <i>Value</i> must also be a set of strings. </li> </ul>
-     * </li> </ul> <p>If no item with the specified key is found in the
-     * table, the following values perform the following actions: <ul> <li>
-     * <p><code>PUT</code> - Causes DynamoDB to create a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code> - Nothing happens, because attributes cannot be
-     * deleted from a nonexistent item. The operation succeeds, but DynamoDB
-     * does not create a new item. </li> <li> <p><code>ADD</code> - Causes
-     * DynamoDB to create an item with the supplied primary key and number
-     * (or set of numbers) for the attribute value. The only data types
-     * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * provide any attributes that are part of an index key, then the data
-     * types for those attributes must match those of the schema in the
-     * table's attribute definition.
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>UpdateExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter can be used for modifying top-level
+     * attributes; however, it does not support individual list or map
+     * elements. </important> <p>The names of attributes to be modified, the
+     * action to perform on each, and the new value for each. If you are
+     * updating an attribute that is an index key attribute for any indexes
+     * on that table, the attribute type must match the index key type
+     * defined in the <i>AttributesDefinition</i> of the table description.
+     * You can use <i>UpdateItem</i> to update any nonkey attributes.
+     * <p>Attribute values cannot be null. String and Binary type attributes
+     * must have lengths greater than zero. Set type attributes must not be
+     * empty. Requests with empty values will be rejected with a
+     * <i>ValidationException</i> exception. <p>Each <i>AttributeUpdates</i>
+     * element consists of an attribute name to modify, along with the
+     * following: <ul> <li> <p><i>Value</i> - The new value, if applicable,
+     * for this attribute. </li> <li> <p><i>Action</i> - A value that
+     * specifies how to perform the update. This action is only valid for an
+     * existing attribute whose data type is Number or is a set; do not use
+     * <code>ADD</code> for other data types. <p>If an item with the
+     * specified primary key is found in the table, the following values
+     * perform the following actions: <ul> <li> <p><code>PUT</code> - Adds
+     * the specified attribute to the item. If the attribute already exists,
+     * it is replaced by the new value. </li> <li> <p><code>DELETE</code> -
+     * Removes the attribute and its value, if no value is specified for
+     * <code>DELETE</code>. The data type of the specified value must match
+     * the existing value's data type. <p>If a set of values is specified,
+     * then those values are subtracted from the old set. For example, if the
+     * attribute value was the set <code>[a,b,c]</code> and the
+     * <code>DELETE</code> action specifies <code>[a,c]</code>, then the
+     * final attribute value is <code>[b]</code>. Specifying an empty set is
+     * an error. </li> <li> <p><code>ADD</code> - Adds the specified value to
+     * the item, if the attribute does not already exist. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then <i>Value</i> is
+     * mathematically added to the existing attribute. If <i>Value</i> is a
+     * negative number, then it is subtracted from the existing attribute.
+     * <note> <p>If you use <code>ADD</code> to increment or decrement a
+     * number value for an item that doesn't exist before the update,
+     * DynamoDB uses 0 as the initial value. <p>Similarly, if you use
+     * <code>ADD</code> for an existing item to increment or decrement an
+     * attribute value that doesn't exist before the update, DynamoDB uses
+     * <code>0</code> as the initial value. For example, suppose that the
+     * item you want to update doesn't have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
+     * and finally add <code>3</code> to it. The result will be a new
+     * <i>itemcount</i> attribute, with a value of <code>3</code>. </note>
+     * </li> <li> <p>If the existing data type is a set, and if <i>Value</i>
+     * is also a set, then <i>Value</i> is appended to the existing set. For
+     * example, if the attribute value is the set <code>[1,2]</code>, and the
+     * <code>ADD</code> action specified <code>[3]</code>, then the final
+     * attribute value is <code>[1,2,3]</code>. An error occurs if an
+     * <code>ADD</code> action is specified for a set attribute and the
+     * attribute type specified does not match the existing set type. <p>Both
+     * sets must have the same primitive data type. For example, if the
+     * existing data type is a set of strings, <i>Value</i> must also be a
+     * set of strings. </li> </ul> </li> </ul> <p>If no item with the
+     * specified key is found in the table, the following values perform the
+     * following actions: <ul> <li> <p><code>PUT</code> - Causes DynamoDB to
+     * create a new item with the specified primary key, and then adds the
+     * attribute. </li> <li> <p><code>DELETE</code> - Nothing happens,
+     * because attributes cannot be deleted from a nonexistent item. The
+     * operation succeeds, but DynamoDB does not create a new item. </li>
+     * <li> <p><code>ADD</code> - Causes DynamoDB to create an item with the
+     * supplied primary key and number (or set of numbers) for the attribute
+     * value. The only data types allowed are Number and Number Set. </li>
+     * </ul> </li> </ul> <p>If you provide any attributes that are part of an
+     * index key, then the data types for those attributes must match those
+     * of the schema in the table's attribute definition.
      *
-     * @param attributeUpdates <important> <p>There is a newer parameter available. Use
-     *         <i>UpdateExpression</i> instead. Note that if you use
-     *         <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     *         parameter can be used for modifying top-level attributes; however, it
-     *         does not support individual list or map elements. </important> <p>The
-     *         names of attributes to be modified, the action to perform on each, and
-     *         the new value for each. If you are updating an attribute that is an
-     *         index key attribute for any indexes on that table, the attribute type
-     *         must match the index key type defined in the
-     *         <i>AttributesDefinition</i> of the table description. You can use
-     *         <i>UpdateItem</i> to update any nonkey attributes. <p>Attribute values
-     *         cannot be null. String and Binary type attributes must have lengths
-     *         greater than zero. Set type attributes must not be empty. Requests
-     *         with empty values will be rejected with a <i>ValidationException</i>
-     *         exception. <p>Each <i>AttributeUpdates</i> element consists of an
-     *         attribute name to modify, along with the following: <ul> <li>
-     *         <p><i>Value</i> - The new value, if applicable, for this attribute.
-     *         </li> <li> <p><i>Action</i> - A value that specifies how to perform
-     *         the update. This action is only valid for an existing attribute whose
-     *         data type is Number or is a set; do not use <code>ADD</code> for other
-     *         data types. <p>If an item with the specified primary key is found in
-     *         the table, the following values perform the following actions: <ul>
-     *         <li> <p><code>PUT</code> - Adds the specified attribute to the item.
-     *         If the attribute already exists, it is replaced by the new value.
-     *         </li> <li> <p><code>DELETE</code> - Removes the attribute and its
-     *         value, if no value is specified for <code>DELETE</code>. The data type
-     *         of the specified value must match the existing value's data type.
-     *         <p>If a set of values is specified, then those values are subtracted
-     *         from the old set. For example, if the attribute value was the set
-     *         <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
-     *         <code>[a,c]</code>, then the final attribute value is
-     *         <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     *         <p><code>ADD</code> - Adds the specified value to the item, if the
-     *         attribute does not already exist. If the attribute does exist, then
-     *         the behavior of <code>ADD</code> depends on the data type of the
-     *         attribute: <ul> <li> <p>If the existing attribute is a number, and if
-     *         <i>Value</i> is also a number, then <i>Value</i> is mathematically
-     *         added to the existing attribute. If <i>Value</i> is a negative number,
-     *         then it is subtracted from the existing attribute. <note> <p>If you
-     *         use <code>ADD</code> to increment or decrement a number value for an
-     *         item that doesn't exist before the update, DynamoDB uses 0 as the
-     *         initial value. <p>Similarly, if you use <code>ADD</code> for an
-     *         existing item to increment or decrement an attribute value that
-     *         doesn't exist before the update, DynamoDB uses <code>0</code> as the
-     *         initial value. For example, suppose that the item you want to update
-     *         doesn't have an attribute named <i>itemcount</i>, but you decide to
-     *         <code>ADD</code> the number <code>3</code> to this attribute anyway.
-     *         DynamoDB will create the <i>itemcount</i> attribute, set its initial
-     *         value to <code>0</code>, and finally add <code>3</code> to it. The
-     *         result will be a new <i>itemcount</i> attribute, with a value of
-     *         <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     *         set, and if <i>Value</i> is also a set, then <i>Value</i> is appended
-     *         to the existing set. For example, if the attribute value is the set
-     *         <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value is
-     *         <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is
-     *         specified for a set attribute and the attribute type specified does
-     *         not match the existing set type. <p>Both sets must have the same
-     *         primitive data type. For example, if the existing data type is a set
-     *         of strings, <i>Value</i> must also be a set of strings. </li> </ul>
-     *         </li> </ul> <p>If no item with the specified key is found in the
-     *         table, the following values perform the following actions: <ul> <li>
-     *         <p><code>PUT</code> - Causes DynamoDB to create a new item with the
-     *         specified primary key, and then adds the attribute. </li> <li>
-     *         <p><code>DELETE</code> - Nothing happens, because attributes cannot be
-     *         deleted from a nonexistent item. The operation succeeds, but DynamoDB
-     *         does not create a new item. </li> <li> <p><code>ADD</code> - Causes
-     *         DynamoDB to create an item with the supplied primary key and number
-     *         (or set of numbers) for the attribute value. The only data types
-     *         allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     *         provide any attributes that are part of an index key, then the data
-     *         types for those attributes must match those of the schema in the
-     *         table's attribute definition.
+     * @param attributeUpdates <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>UpdateExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter can be used for modifying top-level
+     *         attributes; however, it does not support individual list or map
+     *         elements. </important> <p>The names of attributes to be modified, the
+     *         action to perform on each, and the new value for each. If you are
+     *         updating an attribute that is an index key attribute for any indexes
+     *         on that table, the attribute type must match the index key type
+     *         defined in the <i>AttributesDefinition</i> of the table description.
+     *         You can use <i>UpdateItem</i> to update any nonkey attributes.
+     *         <p>Attribute values cannot be null. String and Binary type attributes
+     *         must have lengths greater than zero. Set type attributes must not be
+     *         empty. Requests with empty values will be rejected with a
+     *         <i>ValidationException</i> exception. <p>Each <i>AttributeUpdates</i>
+     *         element consists of an attribute name to modify, along with the
+     *         following: <ul> <li> <p><i>Value</i> - The new value, if applicable,
+     *         for this attribute. </li> <li> <p><i>Action</i> - A value that
+     *         specifies how to perform the update. This action is only valid for an
+     *         existing attribute whose data type is Number or is a set; do not use
+     *         <code>ADD</code> for other data types. <p>If an item with the
+     *         specified primary key is found in the table, the following values
+     *         perform the following actions: <ul> <li> <p><code>PUT</code> - Adds
+     *         the specified attribute to the item. If the attribute already exists,
+     *         it is replaced by the new value. </li> <li> <p><code>DELETE</code> -
+     *         Removes the attribute and its value, if no value is specified for
+     *         <code>DELETE</code>. The data type of the specified value must match
+     *         the existing value's data type. <p>If a set of values is specified,
+     *         then those values are subtracted from the old set. For example, if the
+     *         attribute value was the set <code>[a,b,c]</code> and the
+     *         <code>DELETE</code> action specifies <code>[a,c]</code>, then the
+     *         final attribute value is <code>[b]</code>. Specifying an empty set is
+     *         an error. </li> <li> <p><code>ADD</code> - Adds the specified value to
+     *         the item, if the attribute does not already exist. If the attribute
+     *         does exist, then the behavior of <code>ADD</code> depends on the data
+     *         type of the attribute: <ul> <li> <p>If the existing attribute is a
+     *         number, and if <i>Value</i> is also a number, then <i>Value</i> is
+     *         mathematically added to the existing attribute. If <i>Value</i> is a
+     *         negative number, then it is subtracted from the existing attribute.
+     *         <note> <p>If you use <code>ADD</code> to increment or decrement a
+     *         number value for an item that doesn't exist before the update,
+     *         DynamoDB uses 0 as the initial value. <p>Similarly, if you use
+     *         <code>ADD</code> for an existing item to increment or decrement an
+     *         attribute value that doesn't exist before the update, DynamoDB uses
+     *         <code>0</code> as the initial value. For example, suppose that the
+     *         item you want to update doesn't have an attribute named
+     *         <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     *         <code>3</code> to this attribute anyway. DynamoDB will create the
+     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>,
+     *         and finally add <code>3</code> to it. The result will be a new
+     *         <i>itemcount</i> attribute, with a value of <code>3</code>. </note>
+     *         </li> <li> <p>If the existing data type is a set, and if <i>Value</i>
+     *         is also a set, then <i>Value</i> is appended to the existing set. For
+     *         example, if the attribute value is the set <code>[1,2]</code>, and the
+     *         <code>ADD</code> action specified <code>[3]</code>, then the final
+     *         attribute value is <code>[1,2,3]</code>. An error occurs if an
+     *         <code>ADD</code> action is specified for a set attribute and the
+     *         attribute type specified does not match the existing set type. <p>Both
+     *         sets must have the same primitive data type. For example, if the
+     *         existing data type is a set of strings, <i>Value</i> must also be a
+     *         set of strings. </li> </ul> </li> </ul> <p>If no item with the
+     *         specified key is found in the table, the following values perform the
+     *         following actions: <ul> <li> <p><code>PUT</code> - Causes DynamoDB to
+     *         create a new item with the specified primary key, and then adds the
+     *         attribute. </li> <li> <p><code>DELETE</code> - Nothing happens,
+     *         because attributes cannot be deleted from a nonexistent item. The
+     *         operation succeeds, but DynamoDB does not create a new item. </li>
+     *         <li> <p><code>ADD</code> - Causes DynamoDB to create an item with the
+     *         supplied primary key and number (or set of numbers) for the attribute
+     *         value. The only data types allowed are Number and Number Set. </li>
+     *         </ul> </li> </ul> <p>If you provide any attributes that are part of an
+     *         index key, then the data types for those attributes must match those
+     *         of the schema in the table's attribute definition.
      */
     public void setAttributeUpdates(java.util.Map<String,AttributeValueUpdate> attributeUpdates) {
         this.attributeUpdates = attributeUpdates;
     }
     
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>UpdateExpression</i> instead. Note that if you use
-     * <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter can be used for modifying top-level attributes; however, it
-     * does not support individual list or map elements. </important> <p>The
-     * names of attributes to be modified, the action to perform on each, and
-     * the new value for each. If you are updating an attribute that is an
-     * index key attribute for any indexes on that table, the attribute type
-     * must match the index key type defined in the
-     * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes. <p>Attribute values
-     * cannot be null. String and Binary type attributes must have lengths
-     * greater than zero. Set type attributes must not be empty. Requests
-     * with empty values will be rejected with a <i>ValidationException</i>
-     * exception. <p>Each <i>AttributeUpdates</i> element consists of an
-     * attribute name to modify, along with the following: <ul> <li>
-     * <p><i>Value</i> - The new value, if applicable, for this attribute.
-     * </li> <li> <p><i>Action</i> - A value that specifies how to perform
-     * the update. This action is only valid for an existing attribute whose
-     * data type is Number or is a set; do not use <code>ADD</code> for other
-     * data types. <p>If an item with the specified primary key is found in
-     * the table, the following values perform the following actions: <ul>
-     * <li> <p><code>PUT</code> - Adds the specified attribute to the item.
-     * If the attribute already exists, it is replaced by the new value.
-     * </li> <li> <p><code>DELETE</code> - Removes the attribute and its
-     * value, if no value is specified for <code>DELETE</code>. The data type
-     * of the specified value must match the existing value's data type.
-     * <p>If a set of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
-     * <code>[a,c]</code>, then the final attribute value is
-     * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code> - Adds the specified value to the item, if the
-     * attribute does not already exist. If the attribute does exist, then
-     * the behavior of <code>ADD</code> depends on the data type of the
-     * attribute: <ul> <li> <p>If the existing attribute is a number, and if
-     * <i>Value</i> is also a number, then <i>Value</i> is mathematically
-     * added to the existing attribute. If <i>Value</i> is a negative number,
-     * then it is subtracted from the existing attribute. <note> <p>If you
-     * use <code>ADD</code> to increment or decrement a number value for an
-     * item that doesn't exist before the update, DynamoDB uses 0 as the
-     * initial value. <p>Similarly, if you use <code>ADD</code> for an
-     * existing item to increment or decrement an attribute value that
-     * doesn't exist before the update, DynamoDB uses <code>0</code> as the
-     * initial value. For example, suppose that the item you want to update
-     * doesn't have an attribute named <i>itemcount</i>, but you decide to
-     * <code>ADD</code> the number <code>3</code> to this attribute anyway.
-     * DynamoDB will create the <i>itemcount</i> attribute, set its initial
-     * value to <code>0</code>, and finally add <code>3</code> to it. The
-     * result will be a new <i>itemcount</i> attribute, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if <i>Value</i> is also a set, then <i>Value</i> is appended
-     * to the existing set. For example, if the attribute value is the set
-     * <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value is
-     * <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is
-     * specified for a set attribute and the attribute type specified does
-     * not match the existing set type. <p>Both sets must have the same
-     * primitive data type. For example, if the existing data type is a set
-     * of strings, <i>Value</i> must also be a set of strings. </li> </ul>
-     * </li> </ul> <p>If no item with the specified key is found in the
-     * table, the following values perform the following actions: <ul> <li>
-     * <p><code>PUT</code> - Causes DynamoDB to create a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code> - Nothing happens, because attributes cannot be
-     * deleted from a nonexistent item. The operation succeeds, but DynamoDB
-     * does not create a new item. </li> <li> <p><code>ADD</code> - Causes
-     * DynamoDB to create an item with the supplied primary key and number
-     * (or set of numbers) for the attribute value. The only data types
-     * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * provide any attributes that are part of an index key, then the data
-     * types for those attributes must match those of the schema in the
-     * table's attribute definition.
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>UpdateExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter can be used for modifying top-level
+     * attributes; however, it does not support individual list or map
+     * elements. </important> <p>The names of attributes to be modified, the
+     * action to perform on each, and the new value for each. If you are
+     * updating an attribute that is an index key attribute for any indexes
+     * on that table, the attribute type must match the index key type
+     * defined in the <i>AttributesDefinition</i> of the table description.
+     * You can use <i>UpdateItem</i> to update any nonkey attributes.
+     * <p>Attribute values cannot be null. String and Binary type attributes
+     * must have lengths greater than zero. Set type attributes must not be
+     * empty. Requests with empty values will be rejected with a
+     * <i>ValidationException</i> exception. <p>Each <i>AttributeUpdates</i>
+     * element consists of an attribute name to modify, along with the
+     * following: <ul> <li> <p><i>Value</i> - The new value, if applicable,
+     * for this attribute. </li> <li> <p><i>Action</i> - A value that
+     * specifies how to perform the update. This action is only valid for an
+     * existing attribute whose data type is Number or is a set; do not use
+     * <code>ADD</code> for other data types. <p>If an item with the
+     * specified primary key is found in the table, the following values
+     * perform the following actions: <ul> <li> <p><code>PUT</code> - Adds
+     * the specified attribute to the item. If the attribute already exists,
+     * it is replaced by the new value. </li> <li> <p><code>DELETE</code> -
+     * Removes the attribute and its value, if no value is specified for
+     * <code>DELETE</code>. The data type of the specified value must match
+     * the existing value's data type. <p>If a set of values is specified,
+     * then those values are subtracted from the old set. For example, if the
+     * attribute value was the set <code>[a,b,c]</code> and the
+     * <code>DELETE</code> action specifies <code>[a,c]</code>, then the
+     * final attribute value is <code>[b]</code>. Specifying an empty set is
+     * an error. </li> <li> <p><code>ADD</code> - Adds the specified value to
+     * the item, if the attribute does not already exist. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then <i>Value</i> is
+     * mathematically added to the existing attribute. If <i>Value</i> is a
+     * negative number, then it is subtracted from the existing attribute.
+     * <note> <p>If you use <code>ADD</code> to increment or decrement a
+     * number value for an item that doesn't exist before the update,
+     * DynamoDB uses 0 as the initial value. <p>Similarly, if you use
+     * <code>ADD</code> for an existing item to increment or decrement an
+     * attribute value that doesn't exist before the update, DynamoDB uses
+     * <code>0</code> as the initial value. For example, suppose that the
+     * item you want to update doesn't have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
+     * and finally add <code>3</code> to it. The result will be a new
+     * <i>itemcount</i> attribute, with a value of <code>3</code>. </note>
+     * </li> <li> <p>If the existing data type is a set, and if <i>Value</i>
+     * is also a set, then <i>Value</i> is appended to the existing set. For
+     * example, if the attribute value is the set <code>[1,2]</code>, and the
+     * <code>ADD</code> action specified <code>[3]</code>, then the final
+     * attribute value is <code>[1,2,3]</code>. An error occurs if an
+     * <code>ADD</code> action is specified for a set attribute and the
+     * attribute type specified does not match the existing set type. <p>Both
+     * sets must have the same primitive data type. For example, if the
+     * existing data type is a set of strings, <i>Value</i> must also be a
+     * set of strings. </li> </ul> </li> </ul> <p>If no item with the
+     * specified key is found in the table, the following values perform the
+     * following actions: <ul> <li> <p><code>PUT</code> - Causes DynamoDB to
+     * create a new item with the specified primary key, and then adds the
+     * attribute. </li> <li> <p><code>DELETE</code> - Nothing happens,
+     * because attributes cannot be deleted from a nonexistent item. The
+     * operation succeeds, but DynamoDB does not create a new item. </li>
+     * <li> <p><code>ADD</code> - Causes DynamoDB to create an item with the
+     * supplied primary key and number (or set of numbers) for the attribute
+     * value. The only data types allowed are Number and Number Set. </li>
+     * </ul> </li> </ul> <p>If you provide any attributes that are part of an
+     * index key, then the data types for those attributes must match those
+     * of the schema in the table's attribute definition.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeUpdates <important> <p>There is a newer parameter available. Use
-     *         <i>UpdateExpression</i> instead. Note that if you use
-     *         <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     *         parameter can be used for modifying top-level attributes; however, it
-     *         does not support individual list or map elements. </important> <p>The
-     *         names of attributes to be modified, the action to perform on each, and
-     *         the new value for each. If you are updating an attribute that is an
-     *         index key attribute for any indexes on that table, the attribute type
-     *         must match the index key type defined in the
-     *         <i>AttributesDefinition</i> of the table description. You can use
-     *         <i>UpdateItem</i> to update any nonkey attributes. <p>Attribute values
-     *         cannot be null. String and Binary type attributes must have lengths
-     *         greater than zero. Set type attributes must not be empty. Requests
-     *         with empty values will be rejected with a <i>ValidationException</i>
-     *         exception. <p>Each <i>AttributeUpdates</i> element consists of an
-     *         attribute name to modify, along with the following: <ul> <li>
-     *         <p><i>Value</i> - The new value, if applicable, for this attribute.
-     *         </li> <li> <p><i>Action</i> - A value that specifies how to perform
-     *         the update. This action is only valid for an existing attribute whose
-     *         data type is Number or is a set; do not use <code>ADD</code> for other
-     *         data types. <p>If an item with the specified primary key is found in
-     *         the table, the following values perform the following actions: <ul>
-     *         <li> <p><code>PUT</code> - Adds the specified attribute to the item.
-     *         If the attribute already exists, it is replaced by the new value.
-     *         </li> <li> <p><code>DELETE</code> - Removes the attribute and its
-     *         value, if no value is specified for <code>DELETE</code>. The data type
-     *         of the specified value must match the existing value's data type.
-     *         <p>If a set of values is specified, then those values are subtracted
-     *         from the old set. For example, if the attribute value was the set
-     *         <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
-     *         <code>[a,c]</code>, then the final attribute value is
-     *         <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     *         <p><code>ADD</code> - Adds the specified value to the item, if the
-     *         attribute does not already exist. If the attribute does exist, then
-     *         the behavior of <code>ADD</code> depends on the data type of the
-     *         attribute: <ul> <li> <p>If the existing attribute is a number, and if
-     *         <i>Value</i> is also a number, then <i>Value</i> is mathematically
-     *         added to the existing attribute. If <i>Value</i> is a negative number,
-     *         then it is subtracted from the existing attribute. <note> <p>If you
-     *         use <code>ADD</code> to increment or decrement a number value for an
-     *         item that doesn't exist before the update, DynamoDB uses 0 as the
-     *         initial value. <p>Similarly, if you use <code>ADD</code> for an
-     *         existing item to increment or decrement an attribute value that
-     *         doesn't exist before the update, DynamoDB uses <code>0</code> as the
-     *         initial value. For example, suppose that the item you want to update
-     *         doesn't have an attribute named <i>itemcount</i>, but you decide to
-     *         <code>ADD</code> the number <code>3</code> to this attribute anyway.
-     *         DynamoDB will create the <i>itemcount</i> attribute, set its initial
-     *         value to <code>0</code>, and finally add <code>3</code> to it. The
-     *         result will be a new <i>itemcount</i> attribute, with a value of
-     *         <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     *         set, and if <i>Value</i> is also a set, then <i>Value</i> is appended
-     *         to the existing set. For example, if the attribute value is the set
-     *         <code>[1,2]</code>, and the <code>ADD</code> action specified
-     *         <code>[3]</code>, then the final attribute value is
-     *         <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is
-     *         specified for a set attribute and the attribute type specified does
-     *         not match the existing set type. <p>Both sets must have the same
-     *         primitive data type. For example, if the existing data type is a set
-     *         of strings, <i>Value</i> must also be a set of strings. </li> </ul>
-     *         </li> </ul> <p>If no item with the specified key is found in the
-     *         table, the following values perform the following actions: <ul> <li>
-     *         <p><code>PUT</code> - Causes DynamoDB to create a new item with the
-     *         specified primary key, and then adds the attribute. </li> <li>
-     *         <p><code>DELETE</code> - Nothing happens, because attributes cannot be
-     *         deleted from a nonexistent item. The operation succeeds, but DynamoDB
-     *         does not create a new item. </li> <li> <p><code>ADD</code> - Causes
-     *         DynamoDB to create an item with the supplied primary key and number
-     *         (or set of numbers) for the attribute value. The only data types
-     *         allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     *         provide any attributes that are part of an index key, then the data
-     *         types for those attributes must match those of the schema in the
-     *         table's attribute definition.
+     * @param attributeUpdates <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>UpdateExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter can be used for modifying top-level
+     *         attributes; however, it does not support individual list or map
+     *         elements. </important> <p>The names of attributes to be modified, the
+     *         action to perform on each, and the new value for each. If you are
+     *         updating an attribute that is an index key attribute for any indexes
+     *         on that table, the attribute type must match the index key type
+     *         defined in the <i>AttributesDefinition</i> of the table description.
+     *         You can use <i>UpdateItem</i> to update any nonkey attributes.
+     *         <p>Attribute values cannot be null. String and Binary type attributes
+     *         must have lengths greater than zero. Set type attributes must not be
+     *         empty. Requests with empty values will be rejected with a
+     *         <i>ValidationException</i> exception. <p>Each <i>AttributeUpdates</i>
+     *         element consists of an attribute name to modify, along with the
+     *         following: <ul> <li> <p><i>Value</i> - The new value, if applicable,
+     *         for this attribute. </li> <li> <p><i>Action</i> - A value that
+     *         specifies how to perform the update. This action is only valid for an
+     *         existing attribute whose data type is Number or is a set; do not use
+     *         <code>ADD</code> for other data types. <p>If an item with the
+     *         specified primary key is found in the table, the following values
+     *         perform the following actions: <ul> <li> <p><code>PUT</code> - Adds
+     *         the specified attribute to the item. If the attribute already exists,
+     *         it is replaced by the new value. </li> <li> <p><code>DELETE</code> -
+     *         Removes the attribute and its value, if no value is specified for
+     *         <code>DELETE</code>. The data type of the specified value must match
+     *         the existing value's data type. <p>If a set of values is specified,
+     *         then those values are subtracted from the old set. For example, if the
+     *         attribute value was the set <code>[a,b,c]</code> and the
+     *         <code>DELETE</code> action specifies <code>[a,c]</code>, then the
+     *         final attribute value is <code>[b]</code>. Specifying an empty set is
+     *         an error. </li> <li> <p><code>ADD</code> - Adds the specified value to
+     *         the item, if the attribute does not already exist. If the attribute
+     *         does exist, then the behavior of <code>ADD</code> depends on the data
+     *         type of the attribute: <ul> <li> <p>If the existing attribute is a
+     *         number, and if <i>Value</i> is also a number, then <i>Value</i> is
+     *         mathematically added to the existing attribute. If <i>Value</i> is a
+     *         negative number, then it is subtracted from the existing attribute.
+     *         <note> <p>If you use <code>ADD</code> to increment or decrement a
+     *         number value for an item that doesn't exist before the update,
+     *         DynamoDB uses 0 as the initial value. <p>Similarly, if you use
+     *         <code>ADD</code> for an existing item to increment or decrement an
+     *         attribute value that doesn't exist before the update, DynamoDB uses
+     *         <code>0</code> as the initial value. For example, suppose that the
+     *         item you want to update doesn't have an attribute named
+     *         <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     *         <code>3</code> to this attribute anyway. DynamoDB will create the
+     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>,
+     *         and finally add <code>3</code> to it. The result will be a new
+     *         <i>itemcount</i> attribute, with a value of <code>3</code>. </note>
+     *         </li> <li> <p>If the existing data type is a set, and if <i>Value</i>
+     *         is also a set, then <i>Value</i> is appended to the existing set. For
+     *         example, if the attribute value is the set <code>[1,2]</code>, and the
+     *         <code>ADD</code> action specified <code>[3]</code>, then the final
+     *         attribute value is <code>[1,2,3]</code>. An error occurs if an
+     *         <code>ADD</code> action is specified for a set attribute and the
+     *         attribute type specified does not match the existing set type. <p>Both
+     *         sets must have the same primitive data type. For example, if the
+     *         existing data type is a set of strings, <i>Value</i> must also be a
+     *         set of strings. </li> </ul> </li> </ul> <p>If no item with the
+     *         specified key is found in the table, the following values perform the
+     *         following actions: <ul> <li> <p><code>PUT</code> - Causes DynamoDB to
+     *         create a new item with the specified primary key, and then adds the
+     *         attribute. </li> <li> <p><code>DELETE</code> - Nothing happens,
+     *         because attributes cannot be deleted from a nonexistent item. The
+     *         operation succeeds, but DynamoDB does not create a new item. </li>
+     *         <li> <p><code>ADD</code> - Causes DynamoDB to create an item with the
+     *         supplied primary key and number (or set of numbers) for the attribute
+     *         value. The only data types allowed are Number and Number Set. </li>
+     *         </ul> </li> </ul> <p>If you provide any attributes that are part of an
+     *         index key, then the data types for those attributes must match those
+     *         of the schema in the table's attribute definition.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1479,80 +1484,80 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>UpdateExpression</i> instead. Note that if you use
-     * <i>AttributeUpdates</i> and <i>UpdateExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception. <p>This
-     * parameter can be used for modifying top-level attributes; however, it
-     * does not support individual list or map elements. </important> <p>The
-     * names of attributes to be modified, the action to perform on each, and
-     * the new value for each. If you are updating an attribute that is an
-     * index key attribute for any indexes on that table, the attribute type
-     * must match the index key type defined in the
-     * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes. <p>Attribute values
-     * cannot be null. String and Binary type attributes must have lengths
-     * greater than zero. Set type attributes must not be empty. Requests
-     * with empty values will be rejected with a <i>ValidationException</i>
-     * exception. <p>Each <i>AttributeUpdates</i> element consists of an
-     * attribute name to modify, along with the following: <ul> <li>
-     * <p><i>Value</i> - The new value, if applicable, for this attribute.
-     * </li> <li> <p><i>Action</i> - A value that specifies how to perform
-     * the update. This action is only valid for an existing attribute whose
-     * data type is Number or is a set; do not use <code>ADD</code> for other
-     * data types. <p>If an item with the specified primary key is found in
-     * the table, the following values perform the following actions: <ul>
-     * <li> <p><code>PUT</code> - Adds the specified attribute to the item.
-     * If the attribute already exists, it is replaced by the new value.
-     * </li> <li> <p><code>DELETE</code> - Removes the attribute and its
-     * value, if no value is specified for <code>DELETE</code>. The data type
-     * of the specified value must match the existing value's data type.
-     * <p>If a set of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
-     * <code>[a,c]</code>, then the final attribute value is
-     * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code> - Adds the specified value to the item, if the
-     * attribute does not already exist. If the attribute does exist, then
-     * the behavior of <code>ADD</code> depends on the data type of the
-     * attribute: <ul> <li> <p>If the existing attribute is a number, and if
-     * <i>Value</i> is also a number, then <i>Value</i> is mathematically
-     * added to the existing attribute. If <i>Value</i> is a negative number,
-     * then it is subtracted from the existing attribute. <note> <p>If you
-     * use <code>ADD</code> to increment or decrement a number value for an
-     * item that doesn't exist before the update, DynamoDB uses 0 as the
-     * initial value. <p>Similarly, if you use <code>ADD</code> for an
-     * existing item to increment or decrement an attribute value that
-     * doesn't exist before the update, DynamoDB uses <code>0</code> as the
-     * initial value. For example, suppose that the item you want to update
-     * doesn't have an attribute named <i>itemcount</i>, but you decide to
-     * <code>ADD</code> the number <code>3</code> to this attribute anyway.
-     * DynamoDB will create the <i>itemcount</i> attribute, set its initial
-     * value to <code>0</code>, and finally add <code>3</code> to it. The
-     * result will be a new <i>itemcount</i> attribute, with a value of
-     * <code>3</code>. </note> </li> <li> <p>If the existing data type is a
-     * set, and if <i>Value</i> is also a set, then <i>Value</i> is appended
-     * to the existing set. For example, if the attribute value is the set
-     * <code>[1,2]</code>, and the <code>ADD</code> action specified
-     * <code>[3]</code>, then the final attribute value is
-     * <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is
-     * specified for a set attribute and the attribute type specified does
-     * not match the existing set type. <p>Both sets must have the same
-     * primitive data type. For example, if the existing data type is a set
-     * of strings, <i>Value</i> must also be a set of strings. </li> </ul>
-     * </li> </ul> <p>If no item with the specified key is found in the
-     * table, the following values perform the following actions: <ul> <li>
-     * <p><code>PUT</code> - Causes DynamoDB to create a new item with the
-     * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code> - Nothing happens, because attributes cannot be
-     * deleted from a nonexistent item. The operation succeeds, but DynamoDB
-     * does not create a new item. </li> <li> <p><code>ADD</code> - Causes
-     * DynamoDB to create an item with the supplied primary key and number
-     * (or set of numbers) for the attribute value. The only data types
-     * allowed are Number and Number Set. </li> </ul> </li> </ul> <p>If you
-     * provide any attributes that are part of an index key, then the data
-     * types for those attributes must match those of the schema in the
-     * table's attribute definition.
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>UpdateExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter can be used for modifying top-level
+     * attributes; however, it does not support individual list or map
+     * elements. </important> <p>The names of attributes to be modified, the
+     * action to perform on each, and the new value for each. If you are
+     * updating an attribute that is an index key attribute for any indexes
+     * on that table, the attribute type must match the index key type
+     * defined in the <i>AttributesDefinition</i> of the table description.
+     * You can use <i>UpdateItem</i> to update any nonkey attributes.
+     * <p>Attribute values cannot be null. String and Binary type attributes
+     * must have lengths greater than zero. Set type attributes must not be
+     * empty. Requests with empty values will be rejected with a
+     * <i>ValidationException</i> exception. <p>Each <i>AttributeUpdates</i>
+     * element consists of an attribute name to modify, along with the
+     * following: <ul> <li> <p><i>Value</i> - The new value, if applicable,
+     * for this attribute. </li> <li> <p><i>Action</i> - A value that
+     * specifies how to perform the update. This action is only valid for an
+     * existing attribute whose data type is Number or is a set; do not use
+     * <code>ADD</code> for other data types. <p>If an item with the
+     * specified primary key is found in the table, the following values
+     * perform the following actions: <ul> <li> <p><code>PUT</code> - Adds
+     * the specified attribute to the item. If the attribute already exists,
+     * it is replaced by the new value. </li> <li> <p><code>DELETE</code> -
+     * Removes the attribute and its value, if no value is specified for
+     * <code>DELETE</code>. The data type of the specified value must match
+     * the existing value's data type. <p>If a set of values is specified,
+     * then those values are subtracted from the old set. For example, if the
+     * attribute value was the set <code>[a,b,c]</code> and the
+     * <code>DELETE</code> action specifies <code>[a,c]</code>, then the
+     * final attribute value is <code>[b]</code>. Specifying an empty set is
+     * an error. </li> <li> <p><code>ADD</code> - Adds the specified value to
+     * the item, if the attribute does not already exist. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then <i>Value</i> is
+     * mathematically added to the existing attribute. If <i>Value</i> is a
+     * negative number, then it is subtracted from the existing attribute.
+     * <note> <p>If you use <code>ADD</code> to increment or decrement a
+     * number value for an item that doesn't exist before the update,
+     * DynamoDB uses 0 as the initial value. <p>Similarly, if you use
+     * <code>ADD</code> for an existing item to increment or decrement an
+     * attribute value that doesn't exist before the update, DynamoDB uses
+     * <code>0</code> as the initial value. For example, suppose that the
+     * item you want to update doesn't have an attribute named
+     * <i>itemcount</i>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <i>itemcount</i> attribute, set its initial value to <code>0</code>,
+     * and finally add <code>3</code> to it. The result will be a new
+     * <i>itemcount</i> attribute, with a value of <code>3</code>. </note>
+     * </li> <li> <p>If the existing data type is a set, and if <i>Value</i>
+     * is also a set, then <i>Value</i> is appended to the existing set. For
+     * example, if the attribute value is the set <code>[1,2]</code>, and the
+     * <code>ADD</code> action specified <code>[3]</code>, then the final
+     * attribute value is <code>[1,2,3]</code>. An error occurs if an
+     * <code>ADD</code> action is specified for a set attribute and the
+     * attribute type specified does not match the existing set type. <p>Both
+     * sets must have the same primitive data type. For example, if the
+     * existing data type is a set of strings, <i>Value</i> must also be a
+     * set of strings. </li> </ul> </li> </ul> <p>If no item with the
+     * specified key is found in the table, the following values perform the
+     * following actions: <ul> <li> <p><code>PUT</code> - Causes DynamoDB to
+     * create a new item with the specified primary key, and then adds the
+     * attribute. </li> <li> <p><code>DELETE</code> - Nothing happens,
+     * because attributes cannot be deleted from a nonexistent item. The
+     * operation succeeds, but DynamoDB does not create a new item. </li>
+     * <li> <p><code>ADD</code> - Causes DynamoDB to create an item with the
+     * supplied primary key and number (or set of numbers) for the attribute
+     * value. The only data types allowed are Number and Number Set. </li>
+     * </ul> </li> </ul> <p>If you provide any attributes that are part of an
+     * index key, then the data types for those attributes must match those
+     * of the schema in the table's attribute definition.
      * <p>
      * The method adds a new key-value pair into AttributeUpdates parameter,
      * and returns a reference to this object so that method calls can be
@@ -1582,21 +1587,21 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
   }
   
     /**
-     * <important> <p>There is a newer parameter available. Use <i>
-     * ConditionExpression </i> instead. Note that if you use <i>Expected</i>
-     * and <i> ConditionExpression </i> at the same time, DynamoDB will
-     * return a <i>ValidationException</i> exception. </important> <p>A map
-     * of attribute/condition pairs. <i>Expected</i> provides a conditional
-     * block for the <i>UpdateItem</i> operation. <p>Each element of
-     * <i>Expected</i> consists of an attribute name, a comparison operator,
-     * and one or more values. DynamoDB compares the attribute with the
-     * value(s) you supplied, using the comparison operator. For each
-     * <i>Expected</i> element, the result of the evaluation is either true
-     * or false. <p>If you specify more than one element in the
-     * <i>Expected</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i> ConditionExpression </i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A map of attribute/condition pairs.
+     * <i>Expected</i> provides a conditional block for the <i>UpdateItem</i>
+     * operation. <p>Each element of <i>Expected</i> consists of an attribute
+     * name, a comparison operator, and one or more values. DynamoDB compares
+     * the attribute with the value(s) you supplied, using the comparison
+     * operator. For each <i>Expected</i> element, the result of the
+     * evaluation is either true or false. <p>If you specify more than one
+     * element in the <i>Expected</i> map, then by default all of the
+     * conditions must evaluate to true. In other words, the conditions are
+     * ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     * to OR the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>If the
      * <i>Expected</i> map evaluates to true, then the conditional operation
      * succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -1755,21 +1760,21 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <i>ValidationException</i> exception. <note><p>This parameter does not
      * support attributes of type List or Map.</note>
      *
-     * @return <important> <p>There is a newer parameter available. Use <i>
-     *         ConditionExpression </i> instead. Note that if you use <i>Expected</i>
-     *         and <i> ConditionExpression </i> at the same time, DynamoDB will
-     *         return a <i>ValidationException</i> exception. </important> <p>A map
-     *         of attribute/condition pairs. <i>Expected</i> provides a conditional
-     *         block for the <i>UpdateItem</i> operation. <p>Each element of
-     *         <i>Expected</i> consists of an attribute name, a comparison operator,
-     *         and one or more values. DynamoDB compares the attribute with the
-     *         value(s) you supplied, using the comparison operator. For each
-     *         <i>Expected</i> element, the result of the evaluation is either true
-     *         or false. <p>If you specify more than one element in the
-     *         <i>Expected</i> map, then by default all of the conditions must
-     *         evaluate to true. In other words, the conditions are ANDed together.
-     *         (You can use the <i>ConditionalOperator</i> parameter to OR the
-     *         conditions instead. If you do this, then at least one of the
+     * @return <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i> ConditionExpression </i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A map of attribute/condition pairs.
+     *         <i>Expected</i> provides a conditional block for the <i>UpdateItem</i>
+     *         operation. <p>Each element of <i>Expected</i> consists of an attribute
+     *         name, a comparison operator, and one or more values. DynamoDB compares
+     *         the attribute with the value(s) you supplied, using the comparison
+     *         operator. For each <i>Expected</i> element, the result of the
+     *         evaluation is either true or false. <p>If you specify more than one
+     *         element in the <i>Expected</i> map, then by default all of the
+     *         conditions must evaluate to true. In other words, the conditions are
+     *         ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     *         to OR the conditions instead. If you do this, then at least one of the
      *         conditions must evaluate to true, rather than all of them.) <p>If the
      *         <i>Expected</i> map evaluates to true, then the conditional operation
      *         succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -1934,21 +1939,21 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * <important> <p>There is a newer parameter available. Use <i>
-     * ConditionExpression </i> instead. Note that if you use <i>Expected</i>
-     * and <i> ConditionExpression </i> at the same time, DynamoDB will
-     * return a <i>ValidationException</i> exception. </important> <p>A map
-     * of attribute/condition pairs. <i>Expected</i> provides a conditional
-     * block for the <i>UpdateItem</i> operation. <p>Each element of
-     * <i>Expected</i> consists of an attribute name, a comparison operator,
-     * and one or more values. DynamoDB compares the attribute with the
-     * value(s) you supplied, using the comparison operator. For each
-     * <i>Expected</i> element, the result of the evaluation is either true
-     * or false. <p>If you specify more than one element in the
-     * <i>Expected</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i> ConditionExpression </i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A map of attribute/condition pairs.
+     * <i>Expected</i> provides a conditional block for the <i>UpdateItem</i>
+     * operation. <p>Each element of <i>Expected</i> consists of an attribute
+     * name, a comparison operator, and one or more values. DynamoDB compares
+     * the attribute with the value(s) you supplied, using the comparison
+     * operator. For each <i>Expected</i> element, the result of the
+     * evaluation is either true or false. <p>If you specify more than one
+     * element in the <i>Expected</i> map, then by default all of the
+     * conditions must evaluate to true. In other words, the conditions are
+     * ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     * to OR the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>If the
      * <i>Expected</i> map evaluates to true, then the conditional operation
      * succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -2107,21 +2112,21 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <i>ValidationException</i> exception. <note><p>This parameter does not
      * support attributes of type List or Map.</note>
      *
-     * @param expected <important> <p>There is a newer parameter available. Use <i>
-     *         ConditionExpression </i> instead. Note that if you use <i>Expected</i>
-     *         and <i> ConditionExpression </i> at the same time, DynamoDB will
-     *         return a <i>ValidationException</i> exception. </important> <p>A map
-     *         of attribute/condition pairs. <i>Expected</i> provides a conditional
-     *         block for the <i>UpdateItem</i> operation. <p>Each element of
-     *         <i>Expected</i> consists of an attribute name, a comparison operator,
-     *         and one or more values. DynamoDB compares the attribute with the
-     *         value(s) you supplied, using the comparison operator. For each
-     *         <i>Expected</i> element, the result of the evaluation is either true
-     *         or false. <p>If you specify more than one element in the
-     *         <i>Expected</i> map, then by default all of the conditions must
-     *         evaluate to true. In other words, the conditions are ANDed together.
-     *         (You can use the <i>ConditionalOperator</i> parameter to OR the
-     *         conditions instead. If you do this, then at least one of the
+     * @param expected <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i> ConditionExpression </i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A map of attribute/condition pairs.
+     *         <i>Expected</i> provides a conditional block for the <i>UpdateItem</i>
+     *         operation. <p>Each element of <i>Expected</i> consists of an attribute
+     *         name, a comparison operator, and one or more values. DynamoDB compares
+     *         the attribute with the value(s) you supplied, using the comparison
+     *         operator. For each <i>Expected</i> element, the result of the
+     *         evaluation is either true or false. <p>If you specify more than one
+     *         element in the <i>Expected</i> map, then by default all of the
+     *         conditions must evaluate to true. In other words, the conditions are
+     *         ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     *         to OR the conditions instead. If you do this, then at least one of the
      *         conditions must evaluate to true, rather than all of them.) <p>If the
      *         <i>Expected</i> map evaluates to true, then the conditional operation
      *         succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -2285,21 +2290,21 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * <important> <p>There is a newer parameter available. Use <i>
-     * ConditionExpression </i> instead. Note that if you use <i>Expected</i>
-     * and <i> ConditionExpression </i> at the same time, DynamoDB will
-     * return a <i>ValidationException</i> exception. </important> <p>A map
-     * of attribute/condition pairs. <i>Expected</i> provides a conditional
-     * block for the <i>UpdateItem</i> operation. <p>Each element of
-     * <i>Expected</i> consists of an attribute name, a comparison operator,
-     * and one or more values. DynamoDB compares the attribute with the
-     * value(s) you supplied, using the comparison operator. For each
-     * <i>Expected</i> element, the result of the evaluation is either true
-     * or false. <p>If you specify more than one element in the
-     * <i>Expected</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i> ConditionExpression </i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A map of attribute/condition pairs.
+     * <i>Expected</i> provides a conditional block for the <i>UpdateItem</i>
+     * operation. <p>Each element of <i>Expected</i> consists of an attribute
+     * name, a comparison operator, and one or more values. DynamoDB compares
+     * the attribute with the value(s) you supplied, using the comparison
+     * operator. For each <i>Expected</i> element, the result of the
+     * evaluation is either true or false. <p>If you specify more than one
+     * element in the <i>Expected</i> map, then by default all of the
+     * conditions must evaluate to true. In other words, the conditions are
+     * ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     * to OR the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>If the
      * <i>Expected</i> map evaluates to true, then the conditional operation
      * succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -2460,21 +2465,21 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param expected <important> <p>There is a newer parameter available. Use <i>
-     *         ConditionExpression </i> instead. Note that if you use <i>Expected</i>
-     *         and <i> ConditionExpression </i> at the same time, DynamoDB will
-     *         return a <i>ValidationException</i> exception. </important> <p>A map
-     *         of attribute/condition pairs. <i>Expected</i> provides a conditional
-     *         block for the <i>UpdateItem</i> operation. <p>Each element of
-     *         <i>Expected</i> consists of an attribute name, a comparison operator,
-     *         and one or more values. DynamoDB compares the attribute with the
-     *         value(s) you supplied, using the comparison operator. For each
-     *         <i>Expected</i> element, the result of the evaluation is either true
-     *         or false. <p>If you specify more than one element in the
-     *         <i>Expected</i> map, then by default all of the conditions must
-     *         evaluate to true. In other words, the conditions are ANDed together.
-     *         (You can use the <i>ConditionalOperator</i> parameter to OR the
-     *         conditions instead. If you do this, then at least one of the
+     * @param expected <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i> ConditionExpression </i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A map of attribute/condition pairs.
+     *         <i>Expected</i> provides a conditional block for the <i>UpdateItem</i>
+     *         operation. <p>Each element of <i>Expected</i> consists of an attribute
+     *         name, a comparison operator, and one or more values. DynamoDB compares
+     *         the attribute with the value(s) you supplied, using the comparison
+     *         operator. For each <i>Expected</i> element, the result of the
+     *         evaluation is either true or false. <p>If you specify more than one
+     *         element in the <i>Expected</i> map, then by default all of the
+     *         conditions must evaluate to true. In other words, the conditions are
+     *         ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     *         to OR the conditions instead. If you do this, then at least one of the
      *         conditions must evaluate to true, rather than all of them.) <p>If the
      *         <i>Expected</i> map evaluates to true, then the conditional operation
      *         succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -2642,21 +2647,21 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * <important> <p>There is a newer parameter available. Use <i>
-     * ConditionExpression </i> instead. Note that if you use <i>Expected</i>
-     * and <i> ConditionExpression </i> at the same time, DynamoDB will
-     * return a <i>ValidationException</i> exception. </important> <p>A map
-     * of attribute/condition pairs. <i>Expected</i> provides a conditional
-     * block for the <i>UpdateItem</i> operation. <p>Each element of
-     * <i>Expected</i> consists of an attribute name, a comparison operator,
-     * and one or more values. DynamoDB compares the attribute with the
-     * value(s) you supplied, using the comparison operator. For each
-     * <i>Expected</i> element, the result of the evaluation is either true
-     * or false. <p>If you specify more than one element in the
-     * <i>Expected</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i> ConditionExpression </i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A map of attribute/condition pairs.
+     * <i>Expected</i> provides a conditional block for the <i>UpdateItem</i>
+     * operation. <p>Each element of <i>Expected</i> consists of an attribute
+     * name, a comparison operator, and one or more values. DynamoDB compares
+     * the attribute with the value(s) you supplied, using the comparison
+     * operator. For each <i>Expected</i> element, the result of the
+     * evaluation is either true or false. <p>If you specify more than one
+     * element in the <i>Expected</i> map, then by default all of the
+     * conditions must evaluate to true. In other words, the conditions are
+     * ANDed together. (You can use the <i>ConditionalOperator</i> parameter
+     * to OR the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>If the
      * <i>Expected</i> map evaluates to true, then the conditional operation
      * succeeds; otherwise, it fails. <p><i>Expected</i> contains the
@@ -2843,10 +2848,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
   }
   
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ConditionExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -2860,10 +2865,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @return <important> <p>There is a newer parameter available. Use
-     *         <i>ConditionExpression</i> instead. Note that if you use
-     *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     *         same time, DynamoDB will return a <i>ValidationException</i>
+     * @return <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ConditionExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
      *         exception. </important> <p>A logical operator to apply to the
      *         conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
      *         If all of the conditions evaluate to true, then the entire map
@@ -2881,10 +2886,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ConditionExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -2898,10 +2903,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator <important> <p>There is a newer parameter available. Use
-     *         <i>ConditionExpression</i> instead. Note that if you use
-     *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     *         same time, DynamoDB will return a <i>ValidationException</i>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ConditionExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
      *         exception. </important> <p>A logical operator to apply to the
      *         conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
      *         If all of the conditions evaluate to true, then the entire map
@@ -2919,10 +2924,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ConditionExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -2938,10 +2943,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator <important> <p>There is a newer parameter available. Use
-     *         <i>ConditionExpression</i> instead. Note that if you use
-     *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     *         same time, DynamoDB will return a <i>ValidationException</i>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ConditionExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
      *         exception. </important> <p>A logical operator to apply to the
      *         conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
      *         If all of the conditions evaluate to true, then the entire map
@@ -2963,10 +2968,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ConditionExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -2980,10 +2985,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator <important> <p>There is a newer parameter available. Use
-     *         <i>ConditionExpression</i> instead. Note that if you use
-     *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     *         same time, DynamoDB will return a <i>ValidationException</i>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ConditionExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
      *         exception. </important> <p>A logical operator to apply to the
      *         conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
      *         If all of the conditions evaluate to true, then the entire map
@@ -3001,10 +3006,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>ConditionExpression</i> instead. Note that if you use
-     * <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     * same time, DynamoDB will return a <i>ValidationException</i>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ConditionExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
      * exception. </important> <p>A logical operator to apply to the
      * conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
      * If all of the conditions evaluate to true, then the entire map
@@ -3020,10 +3025,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator <important> <p>There is a newer parameter available. Use
-     *         <i>ConditionExpression</i> instead. Note that if you use
-     *         <i>ConditionalOperator</i> and <i> ConditionExpression </i> at the
-     *         same time, DynamoDB will return a <i>ValidationException</i>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ConditionExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
      *         exception. </important> <p>A logical operator to apply to the
      *         conditions in the <i>Expected</i> map: <ul> <li><p><code>AND</code> -
      *         If all of the conditions evaluate to true, then the entire map
@@ -3541,10 +3546,11 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * top-level attributes, not nested attributes. </important> </li> </ul>
      * <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
-     * :value5</code> <p>For more information on update expressions, go to <a
+     * :value5</code> <p>For more information on update expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
      * Items and Attributes</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.
+     * Guide</i>. <note><p><i>UpdateExpression</i> replaces the legacy
+     * <i>AttributeUpdates</i> parameter.</note>
      *
      * @return An expression that defines one or more attributes to be updated, the
      *         action to be performed on them, and new value(s) for them. <p>The
@@ -3606,10 +3612,11 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         top-level attributes, not nested attributes. </important> </li> </ul>
      *         <p>You can have many actions in a single expression, such as the
      *         following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
-     *         :value5</code> <p>For more information on update expressions, go to <a
+     *         :value5</code> <p>For more information on update expressions, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
      *         Items and Attributes</a> in the <i>Amazon DynamoDB Developer
-     *         Guide</i>.
+     *         Guide</i>. <note><p><i>UpdateExpression</i> replaces the legacy
+     *         <i>AttributeUpdates</i> parameter.</note>
      */
     public String getUpdateExpression() {
         return updateExpression;
@@ -3676,10 +3683,11 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * top-level attributes, not nested attributes. </important> </li> </ul>
      * <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
-     * :value5</code> <p>For more information on update expressions, go to <a
+     * :value5</code> <p>For more information on update expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
      * Items and Attributes</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.
+     * Guide</i>. <note><p><i>UpdateExpression</i> replaces the legacy
+     * <i>AttributeUpdates</i> parameter.</note>
      *
      * @param updateExpression An expression that defines one or more attributes to be updated, the
      *         action to be performed on them, and new value(s) for them. <p>The
@@ -3741,10 +3749,11 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         top-level attributes, not nested attributes. </important> </li> </ul>
      *         <p>You can have many actions in a single expression, such as the
      *         following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
-     *         :value5</code> <p>For more information on update expressions, go to <a
+     *         :value5</code> <p>For more information on update expressions, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
      *         Items and Attributes</a> in the <i>Amazon DynamoDB Developer
-     *         Guide</i>.
+     *         Guide</i>. <note><p><i>UpdateExpression</i> replaces the legacy
+     *         <i>AttributeUpdates</i> parameter.</note>
      */
     public void setUpdateExpression(String updateExpression) {
         this.updateExpression = updateExpression;
@@ -3811,10 +3820,11 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * top-level attributes, not nested attributes. </important> </li> </ul>
      * <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
-     * :value5</code> <p>For more information on update expressions, go to <a
+     * :value5</code> <p>For more information on update expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
      * Items and Attributes</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.
+     * Guide</i>. <note><p><i>UpdateExpression</i> replaces the legacy
+     * <i>AttributeUpdates</i> parameter.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -3878,10 +3888,11 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         top-level attributes, not nested attributes. </important> </li> </ul>
      *         <p>You can have many actions in a single expression, such as the
      *         following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
-     *         :value5</code> <p>For more information on update expressions, go to <a
+     *         :value5</code> <p>For more information on update expressions, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
      *         Items and Attributes</a> in the <i>Amazon DynamoDB Developer
-     *         Guide</i>.
+     *         Guide</i>. <note><p><i>UpdateExpression</i> replaces the legacy
+     *         <i>AttributeUpdates</i> parameter.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -3894,25 +3905,29 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     /**
      * A condition that must be satisfied in order for a conditional update
      * to succeed. <p>An expression can contain any of the following: <ul>
-     * <li> <p>Boolean functions: <code>attribute_exists |
-     * attribute_not_exists | contains | begins_with</code> <p>These function
-     * names are case-sensitive. </li> <li> <p>Comparison operators: <code> =
-     * | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p> Logical
-     * operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
-     * information on condition expressions, go to <a
+     * <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
+     * attribute_type | contains | begins_with | size</code> <p>These
+     * function names are case-sensitive. </li> <li> <p>Comparison operators:
+     * <code> = | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p>
+     * Logical operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
+     * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ConditionExpression</i> replaces the legacy
+     * <i>ConditionalOperator</i> and <i>Expected</i> parameters.</note>
      *
      * @return A condition that must be satisfied in order for a conditional update
      *         to succeed. <p>An expression can contain any of the following: <ul>
-     *         <li> <p>Boolean functions: <code>attribute_exists |
-     *         attribute_not_exists | contains | begins_with</code> <p>These function
-     *         names are case-sensitive. </li> <li> <p>Comparison operators: <code> =
-     *         | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p> Logical
-     *         operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
-     *         information on condition expressions, go to <a
+     *         <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
+     *         attribute_type | contains | begins_with | size</code> <p>These
+     *         function names are case-sensitive. </li> <li> <p>Comparison operators:
+     *         <code> = | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p>
+     *         Logical operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
+     *         information on condition expressions, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ConditionExpression</i> replaces the legacy
+     *         <i>ConditionalOperator</i> and <i>Expected</i> parameters.</note>
      */
     public String getConditionExpression() {
         return conditionExpression;
@@ -3921,25 +3936,29 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     /**
      * A condition that must be satisfied in order for a conditional update
      * to succeed. <p>An expression can contain any of the following: <ul>
-     * <li> <p>Boolean functions: <code>attribute_exists |
-     * attribute_not_exists | contains | begins_with</code> <p>These function
-     * names are case-sensitive. </li> <li> <p>Comparison operators: <code> =
-     * | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p> Logical
-     * operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
-     * information on condition expressions, go to <a
+     * <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
+     * attribute_type | contains | begins_with | size</code> <p>These
+     * function names are case-sensitive. </li> <li> <p>Comparison operators:
+     * <code> = | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p>
+     * Logical operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
+     * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ConditionExpression</i> replaces the legacy
+     * <i>ConditionalOperator</i> and <i>Expected</i> parameters.</note>
      *
      * @param conditionExpression A condition that must be satisfied in order for a conditional update
      *         to succeed. <p>An expression can contain any of the following: <ul>
-     *         <li> <p>Boolean functions: <code>attribute_exists |
-     *         attribute_not_exists | contains | begins_with</code> <p>These function
-     *         names are case-sensitive. </li> <li> <p>Comparison operators: <code> =
-     *         | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p> Logical
-     *         operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
-     *         information on condition expressions, go to <a
+     *         <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
+     *         attribute_type | contains | begins_with | size</code> <p>These
+     *         function names are case-sensitive. </li> <li> <p>Comparison operators:
+     *         <code> = | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p>
+     *         Logical operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
+     *         information on condition expressions, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ConditionExpression</i> replaces the legacy
+     *         <i>ConditionalOperator</i> and <i>Expected</i> parameters.</note>
      */
     public void setConditionExpression(String conditionExpression) {
         this.conditionExpression = conditionExpression;
@@ -3948,27 +3967,31 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
     /**
      * A condition that must be satisfied in order for a conditional update
      * to succeed. <p>An expression can contain any of the following: <ul>
-     * <li> <p>Boolean functions: <code>attribute_exists |
-     * attribute_not_exists | contains | begins_with</code> <p>These function
-     * names are case-sensitive. </li> <li> <p>Comparison operators: <code> =
-     * | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p> Logical
-     * operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
-     * information on condition expressions, go to <a
+     * <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
+     * attribute_type | contains | begins_with | size</code> <p>These
+     * function names are case-sensitive. </li> <li> <p>Comparison operators:
+     * <code> = | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p>
+     * Logical operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
+     * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ConditionExpression</i> replaces the legacy
+     * <i>ConditionalOperator</i> and <i>Expected</i> parameters.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param conditionExpression A condition that must be satisfied in order for a conditional update
      *         to succeed. <p>An expression can contain any of the following: <ul>
-     *         <li> <p>Boolean functions: <code>attribute_exists |
-     *         attribute_not_exists | contains | begins_with</code> <p>These function
-     *         names are case-sensitive. </li> <li> <p>Comparison operators: <code> =
-     *         | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p> Logical
-     *         operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
-     *         information on condition expressions, go to <a
+     *         <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
+     *         attribute_type | contains | begins_with | size</code> <p>These
+     *         function names are case-sensitive. </li> <li> <p>Comparison operators:
+     *         <code> = | <> | < | > | <= | >= | BETWEEN | IN</code> </li> <li> <p>
+     *         Logical operators: <code>AND | OR | NOT</code> </li> </ul> <p>For more
+     *         information on condition expressions, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ConditionExpression</i> replaces the legacy
+     *         <i>ConditionalOperator</i> and <i>Expected</i> parameters.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -3991,7 +4014,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -4001,9 +4024,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @return One or more substitution tokens for attribute names in an expression.
      *         The following are some use cases for using
@@ -4017,7 +4041,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -4027,9 +4051,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public java.util.Map<String,String> getExpressionAttributeNames() {
         
@@ -4049,7 +4074,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -4059,9 +4084,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @param expressionAttributeNames One or more substitution tokens for attribute names in an expression.
      *         The following are some use cases for using
@@ -4075,7 +4101,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -4085,9 +4111,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public void setExpressionAttributeNames(java.util.Map<String,String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -4106,7 +4133,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -4116,9 +4143,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -4134,7 +4162,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -4144,9 +4172,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -4169,7 +4198,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -4179,9 +4208,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * The method adds a new key-value pair into ExpressionAttributeNames
      * parameter, and returns a reference to this object so that method calls
@@ -4221,9 +4251,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @return One or more values that can be substituted in an expression. <p>Use
      *         the <b>:</b> (colon) character in an expression to dereference an
@@ -4235,9 +4266,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      *         <p>You could then use these values in an expression, such as this:
      *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         information on expression attribute values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public java.util.Map<String,AttributeValue> getExpressionAttributeValues() {
         
@@ -4255,9 +4287,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @param expressionAttributeValues One or more values that can be substituted in an expression. <p>Use
      *         the <b>:</b> (colon) character in an expression to dereference an
@@ -4269,9 +4302,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      *         <p>You could then use these values in an expression, such as this:
      *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         information on expression attribute values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public void setExpressionAttributeValues(java.util.Map<String,AttributeValue> expressionAttributeValues) {
         this.expressionAttributeValues = expressionAttributeValues;
@@ -4288,9 +4322,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -4304,9 +4339,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      *         <p>You could then use these values in an expression, such as this:
      *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         information on expression attribute values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -4327,9 +4363,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * The method adds a new key-value pair into ExpressionAttributeValues
      * parameter, and returns a reference to this object so that method calls

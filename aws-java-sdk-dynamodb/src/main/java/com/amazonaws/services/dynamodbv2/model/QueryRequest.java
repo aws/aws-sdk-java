@@ -21,12 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#query(QueryRequest) Query operation}.
  * <p>
- * A <i>Query</i> operation directly accesses items from a table using
- * the table primary key, or from an index using the index key. You must
- * provide a specific hash key value. You can narrow the scope of the
- * query by using comparison operators on the range key value, or on the
- * index key. You can use the <i>ScanIndexForward</i> parameter to get
- * results in forward or reverse order, by range key or by index key.
+ * A <i>Query</i> operation uses the primary key of a table or a
+ * secondary index to directly access items from that table or index.
+ * </p>
+ * <p>
+ * Use the <i>KeyConditionExpression</i> parameter to provide a specific
+ * hash key value. The <i>Query</i> operation will return all of the
+ * items from the table or index with that hash key value. You can
+ * optionally narrow the scope of the <i>Query</i> operation by
+ * specifying a range key value and a comparison operator in
+ * <i>KeyConditionExpression</i> . You can use the
+ * <i>ScanIndexForward</i> parameter to get results in forward or reverse
+ * order, by range key or by index key.
  * </p>
  * <p>
  * Queries that do not return results consume the minimum number of read
@@ -35,19 +41,20 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If the total number of items meeting the query criteria exceeds the
  * result set size limit of 1 MB, the query stops and results are
- * returned to the user with <i>LastEvaluatedKey</i> to continue the
- * query in a subsequent operation. Unlike a <i>Scan</i> operation, a
- * <i>Query</i> operation never returns both an empty result set and a
- * <i>LastEvaluatedKey</i> . The <i>LastEvaluatedKey</i> is only provided
- * if the results exceed 1 MB, or if you have used <i>Limit</i> .
+ * returned to the user with the <i>LastEvaluatedKey</i> element to
+ * continue the query in a subsequent operation. Unlike a <i>Scan</i>
+ * operation, a <i>Query</i> operation never returns both an empty result
+ * set and a <i>LastEvaluatedKey</i> value. <i>LastEvaluatedKey</i> is
+ * only provided if the results exceed 1 MB, or if you have used the
+ * <i>Limit</i> parameter.
  * </p>
  * <p>
  * You can query a table, a local secondary index, or a global secondary
  * index. For a query on a table or on a local secondary index, you can
- * set <i>ConsistentRead</i> to true and obtain a strongly consistent
- * result. Global secondary indexes support eventually consistent reads
- * only, so do not specify <i>ConsistentRead</i> when querying a global
- * secondary index.
+ * set the <i>ConsistentRead</i> parameter to <code>true</code> and
+ * obtain a strongly consistent result. Global secondary indexes support
+ * eventually consistent reads only, so do not specify
+ * <i>ConsistentRead</i> when querying a global secondary index.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#query(QueryRequest)
@@ -65,7 +72,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
 
     /**
      * The name of an index to query. This index can be any local secondary
-     * index or global secondary index on the table.
+     * index or global secondary index on the table. Note that if you use the
+     * <i>IndexName</i> parameter, you must also provide <i>TableName.</i>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
@@ -108,7 +116,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <i>AttributesToGet</i> together in a single request, unless the value
      * for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
      * equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
+     * <i>Select</i>.) <note><p>If you use the <i>ProjectionExpression</i>
+     * parameter, then the value for <i>Select</i> can only be
+     * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i>
+     * will return an error.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
@@ -116,17 +127,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     private String select;
 
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application. <p>You cannot use both
      * <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
@@ -178,26 +189,31 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     private Boolean consistentRead;
 
     /**
-     * The selection criteria for the query. For a query on a table, you can
-     * have conditions only on the table primary key attributes. You must
-     * provide the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally provide a second condition, referring to
-     * the range key attribute. <note><p>If you do not provide a range key
-     * condition, all of the items that match the hash key will be retrieved.
-     * If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
-     * be applied after the items are retrieved.</note> <p>For a query on an
-     * index, you can have conditions only on the index key attributes. You
-     * must provide the index hash attribute name and value as an EQ
-     * condition. You can optionally provide a second condition, referring to
-     * the index key range attribute. <p>Each <i>KeyConditions</i> element
-     * consists of an attribute name to compare, along with the following:
-     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     * evaluate against the supplied attribute. The number of values in the
-     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
-     * Number, value comparisons are numeric. <p>String value comparisons for
-     * greater than, equals, or less than are based on ASCII character code
-     * values. For example, <code>a</code> is greater than <code>A</code>,
-     * and <code>a</code> is greater than <code>B</code>. For a list of code
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>KeyConditionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>The selection criteria for the query. For a
+     * query on a table, you can have conditions only on the table primary
+     * key attributes. You must provide the hash key attribute name and value
+     * as an <code>EQ</code> condition. You can optionally provide a second
+     * condition, referring to the range key attribute. <note> <p>If you
+     * don't provide a range key condition, all of the items that match the
+     * hash key will be retrieved. If a <i>FilterExpression</i> or
+     * <i>QueryFilter</i> is present, it will be applied after the items are
+     * retrieved.</note> <p>For a query on an index, you can have conditions
+     * only on the index key attributes. You must provide the index hash
+     * attribute name and value as an <code>EQ</code> condition. You can
+     * optionally provide a second condition, referring to the index key
+     * range attribute. <p>Each <i>KeyConditions</i> element consists of an
+     * attribute name to compare, along with the following: <ul> <li>
+     * <p><i>AttributeValueList</i> - One or more values to evaluate against
+     * the supplied attribute. The number of values in the list depends on
+     * the <i>ComparisonOperator</i> being used. <p>For type Number, value
+     * comparisons are numeric. <p>String value comparisons for greater than,
+     * equals, or less than are based on ASCII character code values. For
+     * example, <code>a</code> is greater than <code>A</code>, and
+     * <code>a</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
@@ -270,20 +286,20 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     private java.util.Map<String,Condition> keyConditions;
 
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>FilterExpression</i> instead. Note that if you use
-     * <i>QueryFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception.
-     * </important> <p>A condition that evaluates the query results after the
-     * items are read and returns only the desired values. <p>This parameter
-     * does not support attributes of type List or Map. <note><p>A
-     * <i>QueryFilter</i> is applied after the items have already been read;
-     * the process of filtering does not consume any additional read capacity
-     * units.</note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A condition that evaluates the query
+     * results after the items are read and returns only the desired values.
+     * <p>This parameter does not support attributes of type List or Map.
+     * <note> <p>A <i>QueryFilter</i> is applied after the items have already
+     * been read; the process of filtering does not consume any additional
+     * read capacity units.</note> <p>If you provide more than one condition
+     * in the <i>QueryFilter</i> map, then by default all of the conditions
+     * must evaluate to true. In other words, the conditions are ANDed
+     * together. (You can use the <i>ConditionalOperator</i> parameter to OR
+     * the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>Note
      * that <i>QueryFilter</i> does not allow key attributes. You cannot
      * define a filter condition on a hash key or range key. <p>Each
@@ -314,15 +330,19 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     private java.util.Map<String,Condition> queryFilter;
 
     /**
-     * A logical operator to apply to the conditions in a <i>QueryFilter</i>
-     * map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
-     * to true, then the entire map evaluates to true.</li>
-     * <li><p><code>OR</code> - If at least one of the conditions evaluate to
-     * true, then the entire map evaluates to true.</li> </ul> <p>If you omit
-     * <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-     * <p>The operation will succeed only if the entire map evaluates to
-     * true. <note><p>This parameter does not support attributes of type List
-     * or Map.</note>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in a <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
@@ -367,9 +387,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * JSON document. The attributes in the expression must be separated by
      * commas. <p>If no attribute names are specified, then all attributes
      * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * they will not appear in the result. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      */
     private String projectionExpression;
 
@@ -377,14 +399,77 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * A string that contains conditions that DynamoDB applies after the
      * <i>Query</i> operation, but before the data is returned to you. Items
      * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note><p>A <i>FilterExpression</i> is applied after the
+     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
      * items have already been read; the process of filtering does not
-     * consume any additional read capacity units.</note> <p>For more
-     * information, go to <a
+     * consume any additional read capacity units. </note> <p>For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>FilterExpression</i> replaces the legacy
+     * <i>QueryFilter</i> and <i>ConditionalOperator</i> parameters.</note>
      */
     private String filterExpression;
+
+    /**
+     * The condition that specifies the key value(s) for items to be
+     * retrieved by the <i>Query</i> action. <p>The condition must perform an
+     * equality test on a single hash key value. The condition can also
+     * perform one of several comparison tests on a single range key value.
+     * <i>Query</i> can use <i>KeyConditionExpression</i> to retrieve one
+     * item with a given hash and range key value, or several items that have
+     * the same hash key value but different range key values. <p>The hash
+     * key equality test is required, and must be specified in the following
+     * format: <p> <code>hashAttributeName</code> <i>=</i>
+     * <code>:hashval</code> <p>If you also want to provide a range key
+     * condition, it must be combined using <i>AND</i> with the hash key
+     * condition. Following is an example, using the <b>=</b> comparison
+     * operator for the range key: <p> <code>hashAttributeName</code>
+     * <i>=</i> <code>:hashval</code> <i>AND</i>
+     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     * <p>Valid comparisons for the range key condition are as follows: <ul>
+     * <li> <p><code>rangeAttributeName</code> <i>=</i>
+     * <code>:rangeval</code> - true if the range key is equal to
+     * <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     * <i><</i> <code>:rangeval</code> - true if the range key is less than
+     * <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     * <i><=</i> <code>:rangeval</code> - true if the range key is less than
+     * or equal to <code>:rangeval</code>. </li> <li>
+     * <p><code>rangeAttributeName</code> <i>></i> <code>:rangeval</code> -
+     * true if the range key is greater than <code>:rangeval</code>. </li>
+     * <li> <p><code>rangeAttributeName</code> <i>>=
+     * </i><code>:rangeval</code> - true if the range key is greater than or
+     * equal to <code>:rangeval</code>. </li> <li>
+     * <p><code>rangeAttributeName</code> <i>BETWEEN</i>
+     * <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true if
+     * the range key is greater than or equal to <code>:rangeval1</code>, and
+     * less than or equal to <code>:rangeval2</code>. </li> <li>
+     * <p><i>begins_with (</i><code>rangeAttributeName</code>,
+     * <code>:rangeval</code><i>)</i> - true if the range key begins with a
+     * particular operand. (You cannot use this function with a range key
+     * that is of type Number.) Note that the function name
+     * <code>begins_with</code> is case-sensitive. </li> </ul> <p>Use the
+     * <i>ExpressionAttributeValues</i> parameter to replace tokens such as
+     * <code>:hashval</code> and <code>:rangeval</code> with actual values at
+     * runtime. <p>You can optionally use the <i>ExpressionAttributeNames</i>
+     * parameter to replace the names of the hash and range attributes with
+     * placeholder tokens. This option might be necessary if an attribute
+     * name conflicts with a DynamoDB reserved word. For example, the
+     * following <i>KeyConditionExpression</i> parameter causes an error
+     * because <i>Size</i> is a reserved word: <ul> <li> <code>Size =
+     * :myval</code> </li> </ul> <p>To work around this, define a placeholder
+     * (such a <code>#S</code>) to represent the attribute name <i>Size</i>.
+     * <i>KeyConditionExpression</i> then is as follows: <ul> <li> <code>#S =
+     * :myval</code> </li> </ul> <p>For a list of reserved words, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>For more
+     * information on <i>ExpressionAttributeNames</i> and
+     * <i>ExpressionAttributeValues</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>. <note> <p><i>KeyConditionExpression</i>
+     * replaces the legacy <i>KeyConditions</i> parameter. </note>
+     */
+    private String keyConditionExpression;
 
     /**
      * One or more substitution tokens for attribute names in an expression.
@@ -399,7 +484,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -409,9 +494,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      */
     private java.util.Map<String,String> expressionAttributeNames;
 
@@ -426,9 +512,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      */
     private java.util.Map<String,AttributeValue> expressionAttributeValues;
 
@@ -496,14 +583,16 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
 
     /**
      * The name of an index to query. This index can be any local secondary
-     * index or global secondary index on the table.
+     * index or global secondary index on the table. Note that if you use the
+     * <i>IndexName</i> parameter, you must also provide <i>TableName.</i>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @return The name of an index to query. This index can be any local secondary
-     *         index or global secondary index on the table.
+     *         index or global secondary index on the table. Note that if you use the
+     *         <i>IndexName</i> parameter, you must also provide <i>TableName.</i>
      */
     public String getIndexName() {
         return indexName;
@@ -511,14 +600,16 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     
     /**
      * The name of an index to query. This index can be any local secondary
-     * index or global secondary index on the table.
+     * index or global secondary index on the table. Note that if you use the
+     * <i>IndexName</i> parameter, you must also provide <i>TableName.</i>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param indexName The name of an index to query. This index can be any local secondary
-     *         index or global secondary index on the table.
+     *         index or global secondary index on the table. Note that if you use the
+     *         <i>IndexName</i> parameter, you must also provide <i>TableName.</i>
      */
     public void setIndexName(String indexName) {
         this.indexName = indexName;
@@ -526,7 +617,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     
     /**
      * The name of an index to query. This index can be any local secondary
-     * index or global secondary index on the table.
+     * index or global secondary index on the table. Note that if you use the
+     * <i>IndexName</i> parameter, you must also provide <i>TableName.</i>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -535,7 +627,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param indexName The name of an index to query. This index can be any local secondary
-     *         index or global secondary index on the table.
+     *         index or global secondary index on the table. Note that if you use the
+     *         <i>IndexName</i> parameter, you must also provide <i>TableName.</i>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -580,7 +673,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <i>AttributesToGet</i> together in a single request, unless the value
      * for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
      * equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
+     * <i>Select</i>.) <note><p>If you use the <i>ProjectionExpression</i>
+     * parameter, then the value for <i>Select</i> can only be
+     * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i>
+     * will return an error.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
@@ -619,7 +715,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <i>AttributesToGet</i> together in a single request, unless the value
      *         for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
      *         equivalent to specifying <i>AttributesToGet</i> without any value for
-     *         <i>Select</i>.)
+     *         <i>Select</i>.) <note><p>If you use the <i>ProjectionExpression</i>
+     *         parameter, then the value for <i>Select</i> can only be
+     *         <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i>
+     *         will return an error.</note>
      *
      * @see Select
      */
@@ -662,7 +761,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <i>AttributesToGet</i> together in a single request, unless the value
      * for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
      * equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
+     * <i>Select</i>.) <note><p>If you use the <i>ProjectionExpression</i>
+     * parameter, then the value for <i>Select</i> can only be
+     * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i>
+     * will return an error.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
@@ -701,7 +803,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <i>AttributesToGet</i> together in a single request, unless the value
      *         for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
      *         equivalent to specifying <i>AttributesToGet</i> without any value for
-     *         <i>Select</i>.)
+     *         <i>Select</i>.) <note><p>If you use the <i>ProjectionExpression</i>
+     *         parameter, then the value for <i>Select</i> can only be
+     *         <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i>
+     *         will return an error.</note>
      *
      * @see Select
      */
@@ -744,7 +849,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <i>AttributesToGet</i> together in a single request, unless the value
      * for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
      * equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
+     * <i>Select</i>.) <note><p>If you use the <i>ProjectionExpression</i>
+     * parameter, then the value for <i>Select</i> can only be
+     * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i>
+     * will return an error.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -785,7 +893,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <i>AttributesToGet</i> together in a single request, unless the value
      *         for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
      *         equivalent to specifying <i>AttributesToGet</i> without any value for
-     *         <i>Select</i>.)
+     *         <i>Select</i>.) <note><p>If you use the <i>ProjectionExpression</i>
+     *         parameter, then the value for <i>Select</i> can only be
+     *         <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i>
+     *         will return an error.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -832,7 +943,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <i>AttributesToGet</i> together in a single request, unless the value
      * for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
      * equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
+     * <i>Select</i>.) <note><p>If you use the <i>ProjectionExpression</i>
+     * parameter, then the value for <i>Select</i> can only be
+     * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i>
+     * will return an error.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
@@ -871,7 +985,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <i>AttributesToGet</i> together in a single request, unless the value
      *         for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
      *         equivalent to specifying <i>AttributesToGet</i> without any value for
-     *         <i>Select</i>.)
+     *         <i>Select</i>.) <note><p>If you use the <i>ProjectionExpression</i>
+     *         parameter, then the value for <i>Select</i> can only be
+     *         <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i>
+     *         will return an error.</note>
      *
      * @see Select
      */
@@ -914,7 +1031,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <i>AttributesToGet</i> together in a single request, unless the value
      * for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
      * equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
+     * <i>Select</i>.) <note><p>If you use the <i>ProjectionExpression</i>
+     * parameter, then the value for <i>Select</i> can only be
+     * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i>
+     * will return an error.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -955,7 +1075,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <i>AttributesToGet</i> together in a single request, unless the value
      *         for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
      *         equivalent to specifying <i>AttributesToGet</i> without any value for
-     *         <i>Select</i>.)
+     *         <i>Select</i>.) <note><p>If you use the <i>ProjectionExpression</i>
+     *         parameter, then the value for <i>Select</i> can only be
+     *         <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i>
+     *         will return an error.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -968,17 +1091,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
 
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application. <p>You cannot use both
      * <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
@@ -998,17 +1121,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @return <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application. <p>You cannot use both
      *         <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
@@ -1030,17 +1153,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application. <p>You cannot use both
      * <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
@@ -1060,17 +1183,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application. <p>You cannot use both
      *         <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
@@ -1098,17 +1221,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application. <p>You cannot use both
      * <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
@@ -1135,17 +1258,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application. <p>You cannot use both
      *         <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
@@ -1174,17 +1297,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application. <p>You cannot use both
      * <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
@@ -1206,17 +1329,17 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application. <p>You cannot use both
      *         <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
@@ -1439,26 +1562,31 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
 
     /**
-     * The selection criteria for the query. For a query on a table, you can
-     * have conditions only on the table primary key attributes. You must
-     * provide the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally provide a second condition, referring to
-     * the range key attribute. <note><p>If you do not provide a range key
-     * condition, all of the items that match the hash key will be retrieved.
-     * If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
-     * be applied after the items are retrieved.</note> <p>For a query on an
-     * index, you can have conditions only on the index key attributes. You
-     * must provide the index hash attribute name and value as an EQ
-     * condition. You can optionally provide a second condition, referring to
-     * the index key range attribute. <p>Each <i>KeyConditions</i> element
-     * consists of an attribute name to compare, along with the following:
-     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     * evaluate against the supplied attribute. The number of values in the
-     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
-     * Number, value comparisons are numeric. <p>String value comparisons for
-     * greater than, equals, or less than are based on ASCII character code
-     * values. For example, <code>a</code> is greater than <code>A</code>,
-     * and <code>a</code> is greater than <code>B</code>. For a list of code
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>KeyConditionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>The selection criteria for the query. For a
+     * query on a table, you can have conditions only on the table primary
+     * key attributes. You must provide the hash key attribute name and value
+     * as an <code>EQ</code> condition. You can optionally provide a second
+     * condition, referring to the range key attribute. <note> <p>If you
+     * don't provide a range key condition, all of the items that match the
+     * hash key will be retrieved. If a <i>FilterExpression</i> or
+     * <i>QueryFilter</i> is present, it will be applied after the items are
+     * retrieved.</note> <p>For a query on an index, you can have conditions
+     * only on the index key attributes. You must provide the index hash
+     * attribute name and value as an <code>EQ</code> condition. You can
+     * optionally provide a second condition, referring to the index key
+     * range attribute. <p>Each <i>KeyConditions</i> element consists of an
+     * attribute name to compare, along with the following: <ul> <li>
+     * <p><i>AttributeValueList</i> - One or more values to evaluate against
+     * the supplied attribute. The number of values in the list depends on
+     * the <i>ComparisonOperator</i> being used. <p>For type Number, value
+     * comparisons are numeric. <p>String value comparisons for greater than,
+     * equals, or less than are based on ASCII character code values. For
+     * example, <code>a</code> is greater than <code>A</code>, and
+     * <code>a</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
@@ -1528,26 +1656,31 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.
      *
-     * @return The selection criteria for the query. For a query on a table, you can
-     *         have conditions only on the table primary key attributes. You must
-     *         provide the hash key attribute name and value as an <code>EQ</code>
-     *         condition. You can optionally provide a second condition, referring to
-     *         the range key attribute. <note><p>If you do not provide a range key
-     *         condition, all of the items that match the hash key will be retrieved.
-     *         If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
-     *         be applied after the items are retrieved.</note> <p>For a query on an
-     *         index, you can have conditions only on the index key attributes. You
-     *         must provide the index hash attribute name and value as an EQ
-     *         condition. You can optionally provide a second condition, referring to
-     *         the index key range attribute. <p>Each <i>KeyConditions</i> element
-     *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     *         evaluate against the supplied attribute. The number of values in the
-     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
-     *         Number, value comparisons are numeric. <p>String value comparisons for
-     *         greater than, equals, or less than are based on ASCII character code
-     *         values. For example, <code>a</code> is greater than <code>A</code>,
-     *         and <code>a</code> is greater than <code>B</code>. For a list of code
+     * @return <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>KeyConditionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>The selection criteria for the query. For a
+     *         query on a table, you can have conditions only on the table primary
+     *         key attributes. You must provide the hash key attribute name and value
+     *         as an <code>EQ</code> condition. You can optionally provide a second
+     *         condition, referring to the range key attribute. <note> <p>If you
+     *         don't provide a range key condition, all of the items that match the
+     *         hash key will be retrieved. If a <i>FilterExpression</i> or
+     *         <i>QueryFilter</i> is present, it will be applied after the items are
+     *         retrieved.</note> <p>For a query on an index, you can have conditions
+     *         only on the index key attributes. You must provide the index hash
+     *         attribute name and value as an <code>EQ</code> condition. You can
+     *         optionally provide a second condition, referring to the index key
+     *         range attribute. <p>Each <i>KeyConditions</i> element consists of an
+     *         attribute name to compare, along with the following: <ul> <li>
+     *         <p><i>AttributeValueList</i> - One or more values to evaluate against
+     *         the supplied attribute. The number of values in the list depends on
+     *         the <i>ComparisonOperator</i> being used. <p>For type Number, value
+     *         comparisons are numeric. <p>String value comparisons for greater than,
+     *         equals, or less than are based on ASCII character code values. For
+     *         example, <code>a</code> is greater than <code>A</code>, and
+     *         <code>a</code> is greater than <code>B</code>. For a list of code
      *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
@@ -1623,26 +1756,31 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * The selection criteria for the query. For a query on a table, you can
-     * have conditions only on the table primary key attributes. You must
-     * provide the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally provide a second condition, referring to
-     * the range key attribute. <note><p>If you do not provide a range key
-     * condition, all of the items that match the hash key will be retrieved.
-     * If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
-     * be applied after the items are retrieved.</note> <p>For a query on an
-     * index, you can have conditions only on the index key attributes. You
-     * must provide the index hash attribute name and value as an EQ
-     * condition. You can optionally provide a second condition, referring to
-     * the index key range attribute. <p>Each <i>KeyConditions</i> element
-     * consists of an attribute name to compare, along with the following:
-     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     * evaluate against the supplied attribute. The number of values in the
-     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
-     * Number, value comparisons are numeric. <p>String value comparisons for
-     * greater than, equals, or less than are based on ASCII character code
-     * values. For example, <code>a</code> is greater than <code>A</code>,
-     * and <code>a</code> is greater than <code>B</code>. For a list of code
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>KeyConditionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>The selection criteria for the query. For a
+     * query on a table, you can have conditions only on the table primary
+     * key attributes. You must provide the hash key attribute name and value
+     * as an <code>EQ</code> condition. You can optionally provide a second
+     * condition, referring to the range key attribute. <note> <p>If you
+     * don't provide a range key condition, all of the items that match the
+     * hash key will be retrieved. If a <i>FilterExpression</i> or
+     * <i>QueryFilter</i> is present, it will be applied after the items are
+     * retrieved.</note> <p>For a query on an index, you can have conditions
+     * only on the index key attributes. You must provide the index hash
+     * attribute name and value as an <code>EQ</code> condition. You can
+     * optionally provide a second condition, referring to the index key
+     * range attribute. <p>Each <i>KeyConditions</i> element consists of an
+     * attribute name to compare, along with the following: <ul> <li>
+     * <p><i>AttributeValueList</i> - One or more values to evaluate against
+     * the supplied attribute. The number of values in the list depends on
+     * the <i>ComparisonOperator</i> being used. <p>For type Number, value
+     * comparisons are numeric. <p>String value comparisons for greater than,
+     * equals, or less than are based on ASCII character code values. For
+     * example, <code>a</code> is greater than <code>A</code>, and
+     * <code>a</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
@@ -1712,26 +1850,31 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.
      *
-     * @param keyConditions The selection criteria for the query. For a query on a table, you can
-     *         have conditions only on the table primary key attributes. You must
-     *         provide the hash key attribute name and value as an <code>EQ</code>
-     *         condition. You can optionally provide a second condition, referring to
-     *         the range key attribute. <note><p>If you do not provide a range key
-     *         condition, all of the items that match the hash key will be retrieved.
-     *         If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
-     *         be applied after the items are retrieved.</note> <p>For a query on an
-     *         index, you can have conditions only on the index key attributes. You
-     *         must provide the index hash attribute name and value as an EQ
-     *         condition. You can optionally provide a second condition, referring to
-     *         the index key range attribute. <p>Each <i>KeyConditions</i> element
-     *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     *         evaluate against the supplied attribute. The number of values in the
-     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
-     *         Number, value comparisons are numeric. <p>String value comparisons for
-     *         greater than, equals, or less than are based on ASCII character code
-     *         values. For example, <code>a</code> is greater than <code>A</code>,
-     *         and <code>a</code> is greater than <code>B</code>. For a list of code
+     * @param keyConditions <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>KeyConditionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>The selection criteria for the query. For a
+     *         query on a table, you can have conditions only on the table primary
+     *         key attributes. You must provide the hash key attribute name and value
+     *         as an <code>EQ</code> condition. You can optionally provide a second
+     *         condition, referring to the range key attribute. <note> <p>If you
+     *         don't provide a range key condition, all of the items that match the
+     *         hash key will be retrieved. If a <i>FilterExpression</i> or
+     *         <i>QueryFilter</i> is present, it will be applied after the items are
+     *         retrieved.</note> <p>For a query on an index, you can have conditions
+     *         only on the index key attributes. You must provide the index hash
+     *         attribute name and value as an <code>EQ</code> condition. You can
+     *         optionally provide a second condition, referring to the index key
+     *         range attribute. <p>Each <i>KeyConditions</i> element consists of an
+     *         attribute name to compare, along with the following: <ul> <li>
+     *         <p><i>AttributeValueList</i> - One or more values to evaluate against
+     *         the supplied attribute. The number of values in the list depends on
+     *         the <i>ComparisonOperator</i> being used. <p>For type Number, value
+     *         comparisons are numeric. <p>String value comparisons for greater than,
+     *         equals, or less than are based on ASCII character code values. For
+     *         example, <code>a</code> is greater than <code>A</code>, and
+     *         <code>a</code> is greater than <code>B</code>. For a list of code
      *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
@@ -1806,26 +1949,31 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * The selection criteria for the query. For a query on a table, you can
-     * have conditions only on the table primary key attributes. You must
-     * provide the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally provide a second condition, referring to
-     * the range key attribute. <note><p>If you do not provide a range key
-     * condition, all of the items that match the hash key will be retrieved.
-     * If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
-     * be applied after the items are retrieved.</note> <p>For a query on an
-     * index, you can have conditions only on the index key attributes. You
-     * must provide the index hash attribute name and value as an EQ
-     * condition. You can optionally provide a second condition, referring to
-     * the index key range attribute. <p>Each <i>KeyConditions</i> element
-     * consists of an attribute name to compare, along with the following:
-     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     * evaluate against the supplied attribute. The number of values in the
-     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
-     * Number, value comparisons are numeric. <p>String value comparisons for
-     * greater than, equals, or less than are based on ASCII character code
-     * values. For example, <code>a</code> is greater than <code>A</code>,
-     * and <code>a</code> is greater than <code>B</code>. For a list of code
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>KeyConditionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>The selection criteria for the query. For a
+     * query on a table, you can have conditions only on the table primary
+     * key attributes. You must provide the hash key attribute name and value
+     * as an <code>EQ</code> condition. You can optionally provide a second
+     * condition, referring to the range key attribute. <note> <p>If you
+     * don't provide a range key condition, all of the items that match the
+     * hash key will be retrieved. If a <i>FilterExpression</i> or
+     * <i>QueryFilter</i> is present, it will be applied after the items are
+     * retrieved.</note> <p>For a query on an index, you can have conditions
+     * only on the index key attributes. You must provide the index hash
+     * attribute name and value as an <code>EQ</code> condition. You can
+     * optionally provide a second condition, referring to the index key
+     * range attribute. <p>Each <i>KeyConditions</i> element consists of an
+     * attribute name to compare, along with the following: <ul> <li>
+     * <p><i>AttributeValueList</i> - One or more values to evaluate against
+     * the supplied attribute. The number of values in the list depends on
+     * the <i>ComparisonOperator</i> being used. <p>For type Number, value
+     * comparisons are numeric. <p>String value comparisons for greater than,
+     * equals, or less than are based on ASCII character code values. For
+     * example, <code>a</code> is greater than <code>A</code>, and
+     * <code>a</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
@@ -1897,26 +2045,31 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyConditions The selection criteria for the query. For a query on a table, you can
-     *         have conditions only on the table primary key attributes. You must
-     *         provide the hash key attribute name and value as an <code>EQ</code>
-     *         condition. You can optionally provide a second condition, referring to
-     *         the range key attribute. <note><p>If you do not provide a range key
-     *         condition, all of the items that match the hash key will be retrieved.
-     *         If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
-     *         be applied after the items are retrieved.</note> <p>For a query on an
-     *         index, you can have conditions only on the index key attributes. You
-     *         must provide the index hash attribute name and value as an EQ
-     *         condition. You can optionally provide a second condition, referring to
-     *         the index key range attribute. <p>Each <i>KeyConditions</i> element
-     *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     *         evaluate against the supplied attribute. The number of values in the
-     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
-     *         Number, value comparisons are numeric. <p>String value comparisons for
-     *         greater than, equals, or less than are based on ASCII character code
-     *         values. For example, <code>a</code> is greater than <code>A</code>,
-     *         and <code>a</code> is greater than <code>B</code>. For a list of code
+     * @param keyConditions <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>KeyConditionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>The selection criteria for the query. For a
+     *         query on a table, you can have conditions only on the table primary
+     *         key attributes. You must provide the hash key attribute name and value
+     *         as an <code>EQ</code> condition. You can optionally provide a second
+     *         condition, referring to the range key attribute. <note> <p>If you
+     *         don't provide a range key condition, all of the items that match the
+     *         hash key will be retrieved. If a <i>FilterExpression</i> or
+     *         <i>QueryFilter</i> is present, it will be applied after the items are
+     *         retrieved.</note> <p>For a query on an index, you can have conditions
+     *         only on the index key attributes. You must provide the index hash
+     *         attribute name and value as an <code>EQ</code> condition. You can
+     *         optionally provide a second condition, referring to the index key
+     *         range attribute. <p>Each <i>KeyConditions</i> element consists of an
+     *         attribute name to compare, along with the following: <ul> <li>
+     *         <p><i>AttributeValueList</i> - One or more values to evaluate against
+     *         the supplied attribute. The number of values in the list depends on
+     *         the <i>ComparisonOperator</i> being used. <p>For type Number, value
+     *         comparisons are numeric. <p>String value comparisons for greater than,
+     *         equals, or less than are based on ASCII character code values. For
+     *         example, <code>a</code> is greater than <code>A</code>, and
+     *         <code>a</code> is greater than <code>B</code>. For a list of code
      *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
@@ -1995,26 +2148,31 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
 
     /**
-     * The selection criteria for the query. For a query on a table, you can
-     * have conditions only on the table primary key attributes. You must
-     * provide the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally provide a second condition, referring to
-     * the range key attribute. <note><p>If you do not provide a range key
-     * condition, all of the items that match the hash key will be retrieved.
-     * If a <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
-     * be applied after the items are retrieved.</note> <p>For a query on an
-     * index, you can have conditions only on the index key attributes. You
-     * must provide the index hash attribute name and value as an EQ
-     * condition. You can optionally provide a second condition, referring to
-     * the index key range attribute. <p>Each <i>KeyConditions</i> element
-     * consists of an attribute name to compare, along with the following:
-     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     * evaluate against the supplied attribute. The number of values in the
-     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
-     * Number, value comparisons are numeric. <p>String value comparisons for
-     * greater than, equals, or less than are based on ASCII character code
-     * values. For example, <code>a</code> is greater than <code>A</code>,
-     * and <code>a</code> is greater than <code>B</code>. For a list of code
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>KeyConditionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>The selection criteria for the query. For a
+     * query on a table, you can have conditions only on the table primary
+     * key attributes. You must provide the hash key attribute name and value
+     * as an <code>EQ</code> condition. You can optionally provide a second
+     * condition, referring to the range key attribute. <note> <p>If you
+     * don't provide a range key condition, all of the items that match the
+     * hash key will be retrieved. If a <i>FilterExpression</i> or
+     * <i>QueryFilter</i> is present, it will be applied after the items are
+     * retrieved.</note> <p>For a query on an index, you can have conditions
+     * only on the index key attributes. You must provide the index hash
+     * attribute name and value as an <code>EQ</code> condition. You can
+     * optionally provide a second condition, referring to the index key
+     * range attribute. <p>Each <i>KeyConditions</i> element consists of an
+     * attribute name to compare, along with the following: <ul> <li>
+     * <p><i>AttributeValueList</i> - One or more values to evaluate against
+     * the supplied attribute. The number of values in the list depends on
+     * the <i>ComparisonOperator</i> being used. <p>For type Number, value
+     * comparisons are numeric. <p>String value comparisons for greater than,
+     * equals, or less than are based on ASCII character code values. For
+     * example, <code>a</code> is greater than <code>A</code>, and
+     * <code>a</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
@@ -2112,20 +2270,20 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
   }
   
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>FilterExpression</i> instead. Note that if you use
-     * <i>QueryFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception.
-     * </important> <p>A condition that evaluates the query results after the
-     * items are read and returns only the desired values. <p>This parameter
-     * does not support attributes of type List or Map. <note><p>A
-     * <i>QueryFilter</i> is applied after the items have already been read;
-     * the process of filtering does not consume any additional read capacity
-     * units.</note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A condition that evaluates the query
+     * results after the items are read and returns only the desired values.
+     * <p>This parameter does not support attributes of type List or Map.
+     * <note> <p>A <i>QueryFilter</i> is applied after the items have already
+     * been read; the process of filtering does not consume any additional
+     * read capacity units.</note> <p>If you provide more than one condition
+     * in the <i>QueryFilter</i> map, then by default all of the conditions
+     * must evaluate to true. In other words, the conditions are ANDed
+     * together. (You can use the <i>ConditionalOperator</i> parameter to OR
+     * the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>Note
      * that <i>QueryFilter</i> does not allow key attributes. You cannot
      * define a filter condition on a hash key or range key. <p>Each
@@ -2153,20 +2311,20 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type. </li> </ul>
      *
-     * @return <important> <p>There is a newer parameter available. Use
-     *         <i>FilterExpression</i> instead. Note that if you use
-     *         <i>QueryFilter</i> and <i>FilterExpression</i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception.
-     *         </important> <p>A condition that evaluates the query results after the
-     *         items are read and returns only the desired values. <p>This parameter
-     *         does not support attributes of type List or Map. <note><p>A
-     *         <i>QueryFilter</i> is applied after the items have already been read;
-     *         the process of filtering does not consume any additional read capacity
-     *         units.</note> <p>If you provide more than one condition in the
-     *         <i>QueryFilter</i> map, then by default all of the conditions must
-     *         evaluate to true. In other words, the conditions are ANDed together.
-     *         (You can use the <i>ConditionalOperator</i> parameter to OR the
-     *         conditions instead. If you do this, then at least one of the
+     * @return <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A condition that evaluates the query
+     *         results after the items are read and returns only the desired values.
+     *         <p>This parameter does not support attributes of type List or Map.
+     *         <note> <p>A <i>QueryFilter</i> is applied after the items have already
+     *         been read; the process of filtering does not consume any additional
+     *         read capacity units.</note> <p>If you provide more than one condition
+     *         in the <i>QueryFilter</i> map, then by default all of the conditions
+     *         must evaluate to true. In other words, the conditions are ANDed
+     *         together. (You can use the <i>ConditionalOperator</i> parameter to OR
+     *         the conditions instead. If you do this, then at least one of the
      *         conditions must evaluate to true, rather than all of them.) <p>Note
      *         that <i>QueryFilter</i> does not allow key attributes. You cannot
      *         define a filter condition on a hash key or range key. <p>Each
@@ -2200,20 +2358,20 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>FilterExpression</i> instead. Note that if you use
-     * <i>QueryFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception.
-     * </important> <p>A condition that evaluates the query results after the
-     * items are read and returns only the desired values. <p>This parameter
-     * does not support attributes of type List or Map. <note><p>A
-     * <i>QueryFilter</i> is applied after the items have already been read;
-     * the process of filtering does not consume any additional read capacity
-     * units.</note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A condition that evaluates the query
+     * results after the items are read and returns only the desired values.
+     * <p>This parameter does not support attributes of type List or Map.
+     * <note> <p>A <i>QueryFilter</i> is applied after the items have already
+     * been read; the process of filtering does not consume any additional
+     * read capacity units.</note> <p>If you provide more than one condition
+     * in the <i>QueryFilter</i> map, then by default all of the conditions
+     * must evaluate to true. In other words, the conditions are ANDed
+     * together. (You can use the <i>ConditionalOperator</i> parameter to OR
+     * the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>Note
      * that <i>QueryFilter</i> does not allow key attributes. You cannot
      * define a filter condition on a hash key or range key. <p>Each
@@ -2241,20 +2399,20 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type. </li> </ul>
      *
-     * @param queryFilter <important> <p>There is a newer parameter available. Use
-     *         <i>FilterExpression</i> instead. Note that if you use
-     *         <i>QueryFilter</i> and <i>FilterExpression</i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception.
-     *         </important> <p>A condition that evaluates the query results after the
-     *         items are read and returns only the desired values. <p>This parameter
-     *         does not support attributes of type List or Map. <note><p>A
-     *         <i>QueryFilter</i> is applied after the items have already been read;
-     *         the process of filtering does not consume any additional read capacity
-     *         units.</note> <p>If you provide more than one condition in the
-     *         <i>QueryFilter</i> map, then by default all of the conditions must
-     *         evaluate to true. In other words, the conditions are ANDed together.
-     *         (You can use the <i>ConditionalOperator</i> parameter to OR the
-     *         conditions instead. If you do this, then at least one of the
+     * @param queryFilter <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A condition that evaluates the query
+     *         results after the items are read and returns only the desired values.
+     *         <p>This parameter does not support attributes of type List or Map.
+     *         <note> <p>A <i>QueryFilter</i> is applied after the items have already
+     *         been read; the process of filtering does not consume any additional
+     *         read capacity units.</note> <p>If you provide more than one condition
+     *         in the <i>QueryFilter</i> map, then by default all of the conditions
+     *         must evaluate to true. In other words, the conditions are ANDed
+     *         together. (You can use the <i>ConditionalOperator</i> parameter to OR
+     *         the conditions instead. If you do this, then at least one of the
      *         conditions must evaluate to true, rather than all of them.) <p>Note
      *         that <i>QueryFilter</i> does not allow key attributes. You cannot
      *         define a filter condition on a hash key or range key. <p>Each
@@ -2287,20 +2445,20 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>FilterExpression</i> instead. Note that if you use
-     * <i>QueryFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception.
-     * </important> <p>A condition that evaluates the query results after the
-     * items are read and returns only the desired values. <p>This parameter
-     * does not support attributes of type List or Map. <note><p>A
-     * <i>QueryFilter</i> is applied after the items have already been read;
-     * the process of filtering does not consume any additional read capacity
-     * units.</note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A condition that evaluates the query
+     * results after the items are read and returns only the desired values.
+     * <p>This parameter does not support attributes of type List or Map.
+     * <note> <p>A <i>QueryFilter</i> is applied after the items have already
+     * been read; the process of filtering does not consume any additional
+     * read capacity units.</note> <p>If you provide more than one condition
+     * in the <i>QueryFilter</i> map, then by default all of the conditions
+     * must evaluate to true. In other words, the conditions are ANDed
+     * together. (You can use the <i>ConditionalOperator</i> parameter to OR
+     * the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>Note
      * that <i>QueryFilter</i> does not allow key attributes. You cannot
      * define a filter condition on a hash key or range key. <p>Each
@@ -2330,20 +2488,20 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queryFilter <important> <p>There is a newer parameter available. Use
-     *         <i>FilterExpression</i> instead. Note that if you use
-     *         <i>QueryFilter</i> and <i>FilterExpression</i> at the same time,
-     *         DynamoDB will return a <i>ValidationException</i> exception.
-     *         </important> <p>A condition that evaluates the query results after the
-     *         items are read and returns only the desired values. <p>This parameter
-     *         does not support attributes of type List or Map. <note><p>A
-     *         <i>QueryFilter</i> is applied after the items have already been read;
-     *         the process of filtering does not consume any additional read capacity
-     *         units.</note> <p>If you provide more than one condition in the
-     *         <i>QueryFilter</i> map, then by default all of the conditions must
-     *         evaluate to true. In other words, the conditions are ANDed together.
-     *         (You can use the <i>ConditionalOperator</i> parameter to OR the
-     *         conditions instead. If you do this, then at least one of the
+     * @param queryFilter <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A condition that evaluates the query
+     *         results after the items are read and returns only the desired values.
+     *         <p>This parameter does not support attributes of type List or Map.
+     *         <note> <p>A <i>QueryFilter</i> is applied after the items have already
+     *         been read; the process of filtering does not consume any additional
+     *         read capacity units.</note> <p>If you provide more than one condition
+     *         in the <i>QueryFilter</i> map, then by default all of the conditions
+     *         must evaluate to true. In other words, the conditions are ANDed
+     *         together. (You can use the <i>ConditionalOperator</i> parameter to OR
+     *         the conditions instead. If you do this, then at least one of the
      *         conditions must evaluate to true, rather than all of them.) <p>Note
      *         that <i>QueryFilter</i> does not allow key attributes. You cannot
      *         define a filter condition on a hash key or range key. <p>Each
@@ -2380,20 +2538,20 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
 
     /**
-     * <important> <p>There is a newer parameter available. Use
-     * <i>FilterExpression</i> instead. Note that if you use
-     * <i>QueryFilter</i> and <i>FilterExpression</i> at the same time,
-     * DynamoDB will return a <i>ValidationException</i> exception.
-     * </important> <p>A condition that evaluates the query results after the
-     * items are read and returns only the desired values. <p>This parameter
-     * does not support attributes of type List or Map. <note><p>A
-     * <i>QueryFilter</i> is applied after the items have already been read;
-     * the process of filtering does not consume any additional read capacity
-     * units.</note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must
-     * evaluate to true. In other words, the conditions are ANDed together.
-     * (You can use the <i>ConditionalOperator</i> parameter to OR the
-     * conditions instead. If you do this, then at least one of the
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A condition that evaluates the query
+     * results after the items are read and returns only the desired values.
+     * <p>This parameter does not support attributes of type List or Map.
+     * <note> <p>A <i>QueryFilter</i> is applied after the items have already
+     * been read; the process of filtering does not consume any additional
+     * read capacity units.</note> <p>If you provide more than one condition
+     * in the <i>QueryFilter</i> map, then by default all of the conditions
+     * must evaluate to true. In other words, the conditions are ANDed
+     * together. (You can use the <i>ConditionalOperator</i> parameter to OR
+     * the conditions instead. If you do this, then at least one of the
      * conditions must evaluate to true, rather than all of them.) <p>Note
      * that <i>QueryFilter</i> does not allow key attributes. You cannot
      * define a filter condition on a hash key or range key. <p>Each
@@ -2449,28 +2607,36 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
   }
   
     /**
-     * A logical operator to apply to the conditions in a <i>QueryFilter</i>
-     * map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
-     * to true, then the entire map evaluates to true.</li>
-     * <li><p><code>OR</code> - If at least one of the conditions evaluate to
-     * true, then the entire map evaluates to true.</li> </ul> <p>If you omit
-     * <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-     * <p>The operation will succeed only if the entire map evaluates to
-     * true. <note><p>This parameter does not support attributes of type List
-     * or Map.</note>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in a <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @return A logical operator to apply to the conditions in a <i>QueryFilter</i>
-     *         map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
-     *         to true, then the entire map evaluates to true.</li>
-     *         <li><p><code>OR</code> - If at least one of the conditions evaluate to
-     *         true, then the entire map evaluates to true.</li> </ul> <p>If you omit
-     *         <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-     *         <p>The operation will succeed only if the entire map evaluates to
-     *         true. <note><p>This parameter does not support attributes of type List
-     *         or Map.</note>
+     * @return <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A logical operator to apply to the
+     *         conditions in a <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> -
+     *         If all of the conditions evaluate to true, then the entire map
+     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     *         the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true. <note><p>This parameter does not
+     *         support attributes of type List or Map.</note>
      *
      * @see ConditionalOperator
      */
@@ -2479,28 +2645,36 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * A logical operator to apply to the conditions in a <i>QueryFilter</i>
-     * map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
-     * to true, then the entire map evaluates to true.</li>
-     * <li><p><code>OR</code> - If at least one of the conditions evaluate to
-     * true, then the entire map evaluates to true.</li> </ul> <p>If you omit
-     * <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-     * <p>The operation will succeed only if the entire map evaluates to
-     * true. <note><p>This parameter does not support attributes of type List
-     * or Map.</note>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in a <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator A logical operator to apply to the conditions in a <i>QueryFilter</i>
-     *         map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
-     *         to true, then the entire map evaluates to true.</li>
-     *         <li><p><code>OR</code> - If at least one of the conditions evaluate to
-     *         true, then the entire map evaluates to true.</li> </ul> <p>If you omit
-     *         <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-     *         <p>The operation will succeed only if the entire map evaluates to
-     *         true. <note><p>This parameter does not support attributes of type List
-     *         or Map.</note>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A logical operator to apply to the
+     *         conditions in a <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> -
+     *         If all of the conditions evaluate to true, then the entire map
+     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     *         the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true. <note><p>This parameter does not
+     *         support attributes of type List or Map.</note>
      *
      * @see ConditionalOperator
      */
@@ -2509,30 +2683,38 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * A logical operator to apply to the conditions in a <i>QueryFilter</i>
-     * map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
-     * to true, then the entire map evaluates to true.</li>
-     * <li><p><code>OR</code> - If at least one of the conditions evaluate to
-     * true, then the entire map evaluates to true.</li> </ul> <p>If you omit
-     * <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-     * <p>The operation will succeed only if the entire map evaluates to
-     * true. <note><p>This parameter does not support attributes of type List
-     * or Map.</note>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in a <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator A logical operator to apply to the conditions in a <i>QueryFilter</i>
-     *         map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
-     *         to true, then the entire map evaluates to true.</li>
-     *         <li><p><code>OR</code> - If at least one of the conditions evaluate to
-     *         true, then the entire map evaluates to true.</li> </ul> <p>If you omit
-     *         <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-     *         <p>The operation will succeed only if the entire map evaluates to
-     *         true. <note><p>This parameter does not support attributes of type List
-     *         or Map.</note>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A logical operator to apply to the
+     *         conditions in a <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> -
+     *         If all of the conditions evaluate to true, then the entire map
+     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     *         the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true. <note><p>This parameter does not
+     *         support attributes of type List or Map.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2545,28 +2727,36 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
 
     /**
-     * A logical operator to apply to the conditions in a <i>QueryFilter</i>
-     * map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
-     * to true, then the entire map evaluates to true.</li>
-     * <li><p><code>OR</code> - If at least one of the conditions evaluate to
-     * true, then the entire map evaluates to true.</li> </ul> <p>If you omit
-     * <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-     * <p>The operation will succeed only if the entire map evaluates to
-     * true. <note><p>This parameter does not support attributes of type List
-     * or Map.</note>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in a <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator A logical operator to apply to the conditions in a <i>QueryFilter</i>
-     *         map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
-     *         to true, then the entire map evaluates to true.</li>
-     *         <li><p><code>OR</code> - If at least one of the conditions evaluate to
-     *         true, then the entire map evaluates to true.</li> </ul> <p>If you omit
-     *         <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-     *         <p>The operation will succeed only if the entire map evaluates to
-     *         true. <note><p>This parameter does not support attributes of type List
-     *         or Map.</note>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A logical operator to apply to the
+     *         conditions in a <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> -
+     *         If all of the conditions evaluate to true, then the entire map
+     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     *         the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true. <note><p>This parameter does not
+     *         support attributes of type List or Map.</note>
      *
      * @see ConditionalOperator
      */
@@ -2575,30 +2765,38 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * A logical operator to apply to the conditions in a <i>QueryFilter</i>
-     * map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
-     * to true, then the entire map evaluates to true.</li>
-     * <li><p><code>OR</code> - If at least one of the conditions evaluate to
-     * true, then the entire map evaluates to true.</li> </ul> <p>If you omit
-     * <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-     * <p>The operation will succeed only if the entire map evaluates to
-     * true. <note><p>This parameter does not support attributes of type List
-     * or Map.</note>
+     * <important> <p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>FilterExpression</i> instead. Do not
+     * combine legacy parameters and expression parameters in a single API
+     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. </important> <p>A logical operator to apply to the
+     * conditions in a <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> -
+     * If all of the conditions evaluate to true, then the entire map
+     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     * the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true. <note><p>This parameter does not
+     * support attributes of type List or Map.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AND, OR
      *
-     * @param conditionalOperator A logical operator to apply to the conditions in a <i>QueryFilter</i>
-     *         map: <ul> <li><p><code>AND</code> - If all of the conditions evaluate
-     *         to true, then the entire map evaluates to true.</li>
-     *         <li><p><code>OR</code> - If at least one of the conditions evaluate to
-     *         true, then the entire map evaluates to true.</li> </ul> <p>If you omit
-     *         <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-     *         <p>The operation will succeed only if the entire map evaluates to
-     *         true. <note><p>This parameter does not support attributes of type List
-     *         or Map.</note>
+     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single API
+     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. </important> <p>A logical operator to apply to the
+     *         conditions in a <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> -
+     *         If all of the conditions evaluate to true, then the entire map
+     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
+     *         the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true. <note><p>This parameter does not
+     *         support attributes of type List or Map.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2965,18 +3163,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * JSON document. The attributes in the expression must be separated by
      * commas. <p>If no attribute names are specified, then all attributes
      * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * they will not appear in the result. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      *
      * @return A string that identifies one or more attributes to retrieve from the
      *         table. These attributes can include scalars, sets, or elements of a
      *         JSON document. The attributes in the expression must be separated by
      *         commas. <p>If no attribute names are specified, then all attributes
      *         will be returned. If any of the requested attributes are not found,
-     *         they will not appear in the result. <p>For more information, go to <a
+     *         they will not appear in the result. <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      */
     public String getProjectionExpression() {
         return projectionExpression;
@@ -2988,18 +3190,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * JSON document. The attributes in the expression must be separated by
      * commas. <p>If no attribute names are specified, then all attributes
      * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * they will not appear in the result. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      *
      * @param projectionExpression A string that identifies one or more attributes to retrieve from the
      *         table. These attributes can include scalars, sets, or elements of a
      *         JSON document. The attributes in the expression must be separated by
      *         commas. <p>If no attribute names are specified, then all attributes
      *         will be returned. If any of the requested attributes are not found,
-     *         they will not appear in the result. <p>For more information, go to <a
+     *         they will not appear in the result. <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      */
     public void setProjectionExpression(String projectionExpression) {
         this.projectionExpression = projectionExpression;
@@ -3011,9 +3217,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * JSON document. The attributes in the expression must be separated by
      * commas. <p>If no attribute names are specified, then all attributes
      * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * they will not appear in the result. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -3022,9 +3230,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         JSON document. The attributes in the expression must be separated by
      *         commas. <p>If no attribute names are specified, then all attributes
      *         will be returned. If any of the requested attributes are not found,
-     *         they will not appear in the result. <p>For more information, go to <a
+     *         they will not appear in the result. <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -3038,22 +3248,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * A string that contains conditions that DynamoDB applies after the
      * <i>Query</i> operation, but before the data is returned to you. Items
      * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note><p>A <i>FilterExpression</i> is applied after the
+     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
      * items have already been read; the process of filtering does not
-     * consume any additional read capacity units.</note> <p>For more
-     * information, go to <a
+     * consume any additional read capacity units. </note> <p>For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>FilterExpression</i> replaces the legacy
+     * <i>QueryFilter</i> and <i>ConditionalOperator</i> parameters.</note>
      *
      * @return A string that contains conditions that DynamoDB applies after the
      *         <i>Query</i> operation, but before the data is returned to you. Items
      *         that do not satisfy the <i>FilterExpression</i> criteria are not
-     *         returned. <note><p>A <i>FilterExpression</i> is applied after the
+     *         returned. <note> <p>A <i>FilterExpression</i> is applied after the
      *         items have already been read; the process of filtering does not
-     *         consume any additional read capacity units.</note> <p>For more
-     *         information, go to <a
+     *         consume any additional read capacity units. </note> <p>For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      *         Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>FilterExpression</i> replaces the legacy
+     *         <i>QueryFilter</i> and <i>ConditionalOperator</i> parameters.</note>
      */
     public String getFilterExpression() {
         return filterExpression;
@@ -3063,22 +3277,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * A string that contains conditions that DynamoDB applies after the
      * <i>Query</i> operation, but before the data is returned to you. Items
      * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note><p>A <i>FilterExpression</i> is applied after the
+     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
      * items have already been read; the process of filtering does not
-     * consume any additional read capacity units.</note> <p>For more
-     * information, go to <a
+     * consume any additional read capacity units. </note> <p>For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>FilterExpression</i> replaces the legacy
+     * <i>QueryFilter</i> and <i>ConditionalOperator</i> parameters.</note>
      *
      * @param filterExpression A string that contains conditions that DynamoDB applies after the
      *         <i>Query</i> operation, but before the data is returned to you. Items
      *         that do not satisfy the <i>FilterExpression</i> criteria are not
-     *         returned. <note><p>A <i>FilterExpression</i> is applied after the
+     *         returned. <note> <p>A <i>FilterExpression</i> is applied after the
      *         items have already been read; the process of filtering does not
-     *         consume any additional read capacity units.</note> <p>For more
-     *         information, go to <a
+     *         consume any additional read capacity units. </note> <p>For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      *         Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>FilterExpression</i> replaces the legacy
+     *         <i>QueryFilter</i> and <i>ConditionalOperator</i> parameters.</note>
      */
     public void setFilterExpression(String filterExpression) {
         this.filterExpression = filterExpression;
@@ -3088,30 +3306,403 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * A string that contains conditions that DynamoDB applies after the
      * <i>Query</i> operation, but before the data is returned to you. Items
      * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note><p>A <i>FilterExpression</i> is applied after the
+     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
      * items have already been read; the process of filtering does not
-     * consume any additional read capacity units.</note> <p>For more
-     * information, go to <a
+     * consume any additional read capacity units. </note> <p>For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>FilterExpression</i> replaces the legacy
+     * <i>QueryFilter</i> and <i>ConditionalOperator</i> parameters.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filterExpression A string that contains conditions that DynamoDB applies after the
      *         <i>Query</i> operation, but before the data is returned to you. Items
      *         that do not satisfy the <i>FilterExpression</i> criteria are not
-     *         returned. <note><p>A <i>FilterExpression</i> is applied after the
+     *         returned. <note> <p>A <i>FilterExpression</i> is applied after the
      *         items have already been read; the process of filtering does not
-     *         consume any additional read capacity units.</note> <p>For more
-     *         information, go to <a
+     *         consume any additional read capacity units. </note> <p>For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      *         Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>FilterExpression</i> replaces the legacy
+     *         <i>QueryFilter</i> and <i>ConditionalOperator</i> parameters.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryRequest withFilterExpression(String filterExpression) {
         this.filterExpression = filterExpression;
+        return this;
+    }
+
+    /**
+     * The condition that specifies the key value(s) for items to be
+     * retrieved by the <i>Query</i> action. <p>The condition must perform an
+     * equality test on a single hash key value. The condition can also
+     * perform one of several comparison tests on a single range key value.
+     * <i>Query</i> can use <i>KeyConditionExpression</i> to retrieve one
+     * item with a given hash and range key value, or several items that have
+     * the same hash key value but different range key values. <p>The hash
+     * key equality test is required, and must be specified in the following
+     * format: <p> <code>hashAttributeName</code> <i>=</i>
+     * <code>:hashval</code> <p>If you also want to provide a range key
+     * condition, it must be combined using <i>AND</i> with the hash key
+     * condition. Following is an example, using the <b>=</b> comparison
+     * operator for the range key: <p> <code>hashAttributeName</code>
+     * <i>=</i> <code>:hashval</code> <i>AND</i>
+     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     * <p>Valid comparisons for the range key condition are as follows: <ul>
+     * <li> <p><code>rangeAttributeName</code> <i>=</i>
+     * <code>:rangeval</code> - true if the range key is equal to
+     * <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     * <i><</i> <code>:rangeval</code> - true if the range key is less than
+     * <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     * <i><=</i> <code>:rangeval</code> - true if the range key is less than
+     * or equal to <code>:rangeval</code>. </li> <li>
+     * <p><code>rangeAttributeName</code> <i>></i> <code>:rangeval</code> -
+     * true if the range key is greater than <code>:rangeval</code>. </li>
+     * <li> <p><code>rangeAttributeName</code> <i>>=
+     * </i><code>:rangeval</code> - true if the range key is greater than or
+     * equal to <code>:rangeval</code>. </li> <li>
+     * <p><code>rangeAttributeName</code> <i>BETWEEN</i>
+     * <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true if
+     * the range key is greater than or equal to <code>:rangeval1</code>, and
+     * less than or equal to <code>:rangeval2</code>. </li> <li>
+     * <p><i>begins_with (</i><code>rangeAttributeName</code>,
+     * <code>:rangeval</code><i>)</i> - true if the range key begins with a
+     * particular operand. (You cannot use this function with a range key
+     * that is of type Number.) Note that the function name
+     * <code>begins_with</code> is case-sensitive. </li> </ul> <p>Use the
+     * <i>ExpressionAttributeValues</i> parameter to replace tokens such as
+     * <code>:hashval</code> and <code>:rangeval</code> with actual values at
+     * runtime. <p>You can optionally use the <i>ExpressionAttributeNames</i>
+     * parameter to replace the names of the hash and range attributes with
+     * placeholder tokens. This option might be necessary if an attribute
+     * name conflicts with a DynamoDB reserved word. For example, the
+     * following <i>KeyConditionExpression</i> parameter causes an error
+     * because <i>Size</i> is a reserved word: <ul> <li> <code>Size =
+     * :myval</code> </li> </ul> <p>To work around this, define a placeholder
+     * (such a <code>#S</code>) to represent the attribute name <i>Size</i>.
+     * <i>KeyConditionExpression</i> then is as follows: <ul> <li> <code>#S =
+     * :myval</code> </li> </ul> <p>For a list of reserved words, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>For more
+     * information on <i>ExpressionAttributeNames</i> and
+     * <i>ExpressionAttributeValues</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>. <note> <p><i>KeyConditionExpression</i>
+     * replaces the legacy <i>KeyConditions</i> parameter. </note>
+     *
+     * @return The condition that specifies the key value(s) for items to be
+     *         retrieved by the <i>Query</i> action. <p>The condition must perform an
+     *         equality test on a single hash key value. The condition can also
+     *         perform one of several comparison tests on a single range key value.
+     *         <i>Query</i> can use <i>KeyConditionExpression</i> to retrieve one
+     *         item with a given hash and range key value, or several items that have
+     *         the same hash key value but different range key values. <p>The hash
+     *         key equality test is required, and must be specified in the following
+     *         format: <p> <code>hashAttributeName</code> <i>=</i>
+     *         <code>:hashval</code> <p>If you also want to provide a range key
+     *         condition, it must be combined using <i>AND</i> with the hash key
+     *         condition. Following is an example, using the <b>=</b> comparison
+     *         operator for the range key: <p> <code>hashAttributeName</code>
+     *         <i>=</i> <code>:hashval</code> <i>AND</i>
+     *         <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     *         <p>Valid comparisons for the range key condition are as follows: <ul>
+     *         <li> <p><code>rangeAttributeName</code> <i>=</i>
+     *         <code>:rangeval</code> - true if the range key is equal to
+     *         <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     *         <i><</i> <code>:rangeval</code> - true if the range key is less than
+     *         <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     *         <i><=</i> <code>:rangeval</code> - true if the range key is less than
+     *         or equal to <code>:rangeval</code>. </li> <li>
+     *         <p><code>rangeAttributeName</code> <i>></i> <code>:rangeval</code> -
+     *         true if the range key is greater than <code>:rangeval</code>. </li>
+     *         <li> <p><code>rangeAttributeName</code> <i>>=
+     *         </i><code>:rangeval</code> - true if the range key is greater than or
+     *         equal to <code>:rangeval</code>. </li> <li>
+     *         <p><code>rangeAttributeName</code> <i>BETWEEN</i>
+     *         <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true if
+     *         the range key is greater than or equal to <code>:rangeval1</code>, and
+     *         less than or equal to <code>:rangeval2</code>. </li> <li>
+     *         <p><i>begins_with (</i><code>rangeAttributeName</code>,
+     *         <code>:rangeval</code><i>)</i> - true if the range key begins with a
+     *         particular operand. (You cannot use this function with a range key
+     *         that is of type Number.) Note that the function name
+     *         <code>begins_with</code> is case-sensitive. </li> </ul> <p>Use the
+     *         <i>ExpressionAttributeValues</i> parameter to replace tokens such as
+     *         <code>:hashval</code> and <code>:rangeval</code> with actual values at
+     *         runtime. <p>You can optionally use the <i>ExpressionAttributeNames</i>
+     *         parameter to replace the names of the hash and range attributes with
+     *         placeholder tokens. This option might be necessary if an attribute
+     *         name conflicts with a DynamoDB reserved word. For example, the
+     *         following <i>KeyConditionExpression</i> parameter causes an error
+     *         because <i>Size</i> is a reserved word: <ul> <li> <code>Size =
+     *         :myval</code> </li> </ul> <p>To work around this, define a placeholder
+     *         (such a <code>#S</code>) to represent the attribute name <i>Size</i>.
+     *         <i>KeyConditionExpression</i> then is as follows: <ul> <li> <code>#S =
+     *         :myval</code> </li> </ul> <p>For a list of reserved words, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>For more
+     *         information on <i>ExpressionAttributeNames</i> and
+     *         <i>ExpressionAttributeValues</i>, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>. <note> <p><i>KeyConditionExpression</i>
+     *         replaces the legacy <i>KeyConditions</i> parameter. </note>
+     */
+    public String getKeyConditionExpression() {
+        return keyConditionExpression;
+    }
+    
+    /**
+     * The condition that specifies the key value(s) for items to be
+     * retrieved by the <i>Query</i> action. <p>The condition must perform an
+     * equality test on a single hash key value. The condition can also
+     * perform one of several comparison tests on a single range key value.
+     * <i>Query</i> can use <i>KeyConditionExpression</i> to retrieve one
+     * item with a given hash and range key value, or several items that have
+     * the same hash key value but different range key values. <p>The hash
+     * key equality test is required, and must be specified in the following
+     * format: <p> <code>hashAttributeName</code> <i>=</i>
+     * <code>:hashval</code> <p>If you also want to provide a range key
+     * condition, it must be combined using <i>AND</i> with the hash key
+     * condition. Following is an example, using the <b>=</b> comparison
+     * operator for the range key: <p> <code>hashAttributeName</code>
+     * <i>=</i> <code>:hashval</code> <i>AND</i>
+     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     * <p>Valid comparisons for the range key condition are as follows: <ul>
+     * <li> <p><code>rangeAttributeName</code> <i>=</i>
+     * <code>:rangeval</code> - true if the range key is equal to
+     * <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     * <i><</i> <code>:rangeval</code> - true if the range key is less than
+     * <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     * <i><=</i> <code>:rangeval</code> - true if the range key is less than
+     * or equal to <code>:rangeval</code>. </li> <li>
+     * <p><code>rangeAttributeName</code> <i>></i> <code>:rangeval</code> -
+     * true if the range key is greater than <code>:rangeval</code>. </li>
+     * <li> <p><code>rangeAttributeName</code> <i>>=
+     * </i><code>:rangeval</code> - true if the range key is greater than or
+     * equal to <code>:rangeval</code>. </li> <li>
+     * <p><code>rangeAttributeName</code> <i>BETWEEN</i>
+     * <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true if
+     * the range key is greater than or equal to <code>:rangeval1</code>, and
+     * less than or equal to <code>:rangeval2</code>. </li> <li>
+     * <p><i>begins_with (</i><code>rangeAttributeName</code>,
+     * <code>:rangeval</code><i>)</i> - true if the range key begins with a
+     * particular operand. (You cannot use this function with a range key
+     * that is of type Number.) Note that the function name
+     * <code>begins_with</code> is case-sensitive. </li> </ul> <p>Use the
+     * <i>ExpressionAttributeValues</i> parameter to replace tokens such as
+     * <code>:hashval</code> and <code>:rangeval</code> with actual values at
+     * runtime. <p>You can optionally use the <i>ExpressionAttributeNames</i>
+     * parameter to replace the names of the hash and range attributes with
+     * placeholder tokens. This option might be necessary if an attribute
+     * name conflicts with a DynamoDB reserved word. For example, the
+     * following <i>KeyConditionExpression</i> parameter causes an error
+     * because <i>Size</i> is a reserved word: <ul> <li> <code>Size =
+     * :myval</code> </li> </ul> <p>To work around this, define a placeholder
+     * (such a <code>#S</code>) to represent the attribute name <i>Size</i>.
+     * <i>KeyConditionExpression</i> then is as follows: <ul> <li> <code>#S =
+     * :myval</code> </li> </ul> <p>For a list of reserved words, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>For more
+     * information on <i>ExpressionAttributeNames</i> and
+     * <i>ExpressionAttributeValues</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>. <note> <p><i>KeyConditionExpression</i>
+     * replaces the legacy <i>KeyConditions</i> parameter. </note>
+     *
+     * @param keyConditionExpression The condition that specifies the key value(s) for items to be
+     *         retrieved by the <i>Query</i> action. <p>The condition must perform an
+     *         equality test on a single hash key value. The condition can also
+     *         perform one of several comparison tests on a single range key value.
+     *         <i>Query</i> can use <i>KeyConditionExpression</i> to retrieve one
+     *         item with a given hash and range key value, or several items that have
+     *         the same hash key value but different range key values. <p>The hash
+     *         key equality test is required, and must be specified in the following
+     *         format: <p> <code>hashAttributeName</code> <i>=</i>
+     *         <code>:hashval</code> <p>If you also want to provide a range key
+     *         condition, it must be combined using <i>AND</i> with the hash key
+     *         condition. Following is an example, using the <b>=</b> comparison
+     *         operator for the range key: <p> <code>hashAttributeName</code>
+     *         <i>=</i> <code>:hashval</code> <i>AND</i>
+     *         <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     *         <p>Valid comparisons for the range key condition are as follows: <ul>
+     *         <li> <p><code>rangeAttributeName</code> <i>=</i>
+     *         <code>:rangeval</code> - true if the range key is equal to
+     *         <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     *         <i><</i> <code>:rangeval</code> - true if the range key is less than
+     *         <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     *         <i><=</i> <code>:rangeval</code> - true if the range key is less than
+     *         or equal to <code>:rangeval</code>. </li> <li>
+     *         <p><code>rangeAttributeName</code> <i>></i> <code>:rangeval</code> -
+     *         true if the range key is greater than <code>:rangeval</code>. </li>
+     *         <li> <p><code>rangeAttributeName</code> <i>>=
+     *         </i><code>:rangeval</code> - true if the range key is greater than or
+     *         equal to <code>:rangeval</code>. </li> <li>
+     *         <p><code>rangeAttributeName</code> <i>BETWEEN</i>
+     *         <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true if
+     *         the range key is greater than or equal to <code>:rangeval1</code>, and
+     *         less than or equal to <code>:rangeval2</code>. </li> <li>
+     *         <p><i>begins_with (</i><code>rangeAttributeName</code>,
+     *         <code>:rangeval</code><i>)</i> - true if the range key begins with a
+     *         particular operand. (You cannot use this function with a range key
+     *         that is of type Number.) Note that the function name
+     *         <code>begins_with</code> is case-sensitive. </li> </ul> <p>Use the
+     *         <i>ExpressionAttributeValues</i> parameter to replace tokens such as
+     *         <code>:hashval</code> and <code>:rangeval</code> with actual values at
+     *         runtime. <p>You can optionally use the <i>ExpressionAttributeNames</i>
+     *         parameter to replace the names of the hash and range attributes with
+     *         placeholder tokens. This option might be necessary if an attribute
+     *         name conflicts with a DynamoDB reserved word. For example, the
+     *         following <i>KeyConditionExpression</i> parameter causes an error
+     *         because <i>Size</i> is a reserved word: <ul> <li> <code>Size =
+     *         :myval</code> </li> </ul> <p>To work around this, define a placeholder
+     *         (such a <code>#S</code>) to represent the attribute name <i>Size</i>.
+     *         <i>KeyConditionExpression</i> then is as follows: <ul> <li> <code>#S =
+     *         :myval</code> </li> </ul> <p>For a list of reserved words, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>For more
+     *         information on <i>ExpressionAttributeNames</i> and
+     *         <i>ExpressionAttributeValues</i>, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>. <note> <p><i>KeyConditionExpression</i>
+     *         replaces the legacy <i>KeyConditions</i> parameter. </note>
+     */
+    public void setKeyConditionExpression(String keyConditionExpression) {
+        this.keyConditionExpression = keyConditionExpression;
+    }
+    
+    /**
+     * The condition that specifies the key value(s) for items to be
+     * retrieved by the <i>Query</i> action. <p>The condition must perform an
+     * equality test on a single hash key value. The condition can also
+     * perform one of several comparison tests on a single range key value.
+     * <i>Query</i> can use <i>KeyConditionExpression</i> to retrieve one
+     * item with a given hash and range key value, or several items that have
+     * the same hash key value but different range key values. <p>The hash
+     * key equality test is required, and must be specified in the following
+     * format: <p> <code>hashAttributeName</code> <i>=</i>
+     * <code>:hashval</code> <p>If you also want to provide a range key
+     * condition, it must be combined using <i>AND</i> with the hash key
+     * condition. Following is an example, using the <b>=</b> comparison
+     * operator for the range key: <p> <code>hashAttributeName</code>
+     * <i>=</i> <code>:hashval</code> <i>AND</i>
+     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     * <p>Valid comparisons for the range key condition are as follows: <ul>
+     * <li> <p><code>rangeAttributeName</code> <i>=</i>
+     * <code>:rangeval</code> - true if the range key is equal to
+     * <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     * <i><</i> <code>:rangeval</code> - true if the range key is less than
+     * <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     * <i><=</i> <code>:rangeval</code> - true if the range key is less than
+     * or equal to <code>:rangeval</code>. </li> <li>
+     * <p><code>rangeAttributeName</code> <i>></i> <code>:rangeval</code> -
+     * true if the range key is greater than <code>:rangeval</code>. </li>
+     * <li> <p><code>rangeAttributeName</code> <i>>=
+     * </i><code>:rangeval</code> - true if the range key is greater than or
+     * equal to <code>:rangeval</code>. </li> <li>
+     * <p><code>rangeAttributeName</code> <i>BETWEEN</i>
+     * <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true if
+     * the range key is greater than or equal to <code>:rangeval1</code>, and
+     * less than or equal to <code>:rangeval2</code>. </li> <li>
+     * <p><i>begins_with (</i><code>rangeAttributeName</code>,
+     * <code>:rangeval</code><i>)</i> - true if the range key begins with a
+     * particular operand. (You cannot use this function with a range key
+     * that is of type Number.) Note that the function name
+     * <code>begins_with</code> is case-sensitive. </li> </ul> <p>Use the
+     * <i>ExpressionAttributeValues</i> parameter to replace tokens such as
+     * <code>:hashval</code> and <code>:rangeval</code> with actual values at
+     * runtime. <p>You can optionally use the <i>ExpressionAttributeNames</i>
+     * parameter to replace the names of the hash and range attributes with
+     * placeholder tokens. This option might be necessary if an attribute
+     * name conflicts with a DynamoDB reserved word. For example, the
+     * following <i>KeyConditionExpression</i> parameter causes an error
+     * because <i>Size</i> is a reserved word: <ul> <li> <code>Size =
+     * :myval</code> </li> </ul> <p>To work around this, define a placeholder
+     * (such a <code>#S</code>) to represent the attribute name <i>Size</i>.
+     * <i>KeyConditionExpression</i> then is as follows: <ul> <li> <code>#S =
+     * :myval</code> </li> </ul> <p>For a list of reserved words, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>For more
+     * information on <i>ExpressionAttributeNames</i> and
+     * <i>ExpressionAttributeValues</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>. <note> <p><i>KeyConditionExpression</i>
+     * replaces the legacy <i>KeyConditions</i> parameter. </note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param keyConditionExpression The condition that specifies the key value(s) for items to be
+     *         retrieved by the <i>Query</i> action. <p>The condition must perform an
+     *         equality test on a single hash key value. The condition can also
+     *         perform one of several comparison tests on a single range key value.
+     *         <i>Query</i> can use <i>KeyConditionExpression</i> to retrieve one
+     *         item with a given hash and range key value, or several items that have
+     *         the same hash key value but different range key values. <p>The hash
+     *         key equality test is required, and must be specified in the following
+     *         format: <p> <code>hashAttributeName</code> <i>=</i>
+     *         <code>:hashval</code> <p>If you also want to provide a range key
+     *         condition, it must be combined using <i>AND</i> with the hash key
+     *         condition. Following is an example, using the <b>=</b> comparison
+     *         operator for the range key: <p> <code>hashAttributeName</code>
+     *         <i>=</i> <code>:hashval</code> <i>AND</i>
+     *         <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     *         <p>Valid comparisons for the range key condition are as follows: <ul>
+     *         <li> <p><code>rangeAttributeName</code> <i>=</i>
+     *         <code>:rangeval</code> - true if the range key is equal to
+     *         <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     *         <i><</i> <code>:rangeval</code> - true if the range key is less than
+     *         <code>:rangeval</code>. </li> <li> <p><code>rangeAttributeName</code>
+     *         <i><=</i> <code>:rangeval</code> - true if the range key is less than
+     *         or equal to <code>:rangeval</code>. </li> <li>
+     *         <p><code>rangeAttributeName</code> <i>></i> <code>:rangeval</code> -
+     *         true if the range key is greater than <code>:rangeval</code>. </li>
+     *         <li> <p><code>rangeAttributeName</code> <i>>=
+     *         </i><code>:rangeval</code> - true if the range key is greater than or
+     *         equal to <code>:rangeval</code>. </li> <li>
+     *         <p><code>rangeAttributeName</code> <i>BETWEEN</i>
+     *         <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true if
+     *         the range key is greater than or equal to <code>:rangeval1</code>, and
+     *         less than or equal to <code>:rangeval2</code>. </li> <li>
+     *         <p><i>begins_with (</i><code>rangeAttributeName</code>,
+     *         <code>:rangeval</code><i>)</i> - true if the range key begins with a
+     *         particular operand. (You cannot use this function with a range key
+     *         that is of type Number.) Note that the function name
+     *         <code>begins_with</code> is case-sensitive. </li> </ul> <p>Use the
+     *         <i>ExpressionAttributeValues</i> parameter to replace tokens such as
+     *         <code>:hashval</code> and <code>:rangeval</code> with actual values at
+     *         runtime. <p>You can optionally use the <i>ExpressionAttributeNames</i>
+     *         parameter to replace the names of the hash and range attributes with
+     *         placeholder tokens. This option might be necessary if an attribute
+     *         name conflicts with a DynamoDB reserved word. For example, the
+     *         following <i>KeyConditionExpression</i> parameter causes an error
+     *         because <i>Size</i> is a reserved word: <ul> <li> <code>Size =
+     *         :myval</code> </li> </ul> <p>To work around this, define a placeholder
+     *         (such a <code>#S</code>) to represent the attribute name <i>Size</i>.
+     *         <i>KeyConditionExpression</i> then is as follows: <ul> <li> <code>#S =
+     *         :myval</code> </li> </ul> <p>For a list of reserved words, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>For more
+     *         information on <i>ExpressionAttributeNames</i> and
+     *         <i>ExpressionAttributeValues</i>, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>. <note> <p><i>KeyConditionExpression</i>
+     *         replaces the legacy <i>KeyConditions</i> parameter. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public QueryRequest withKeyConditionExpression(String keyConditionExpression) {
+        this.keyConditionExpression = keyConditionExpression;
         return this;
     }
 
@@ -3128,7 +3719,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -3138,9 +3729,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @return One or more substitution tokens for attribute names in an expression.
      *         The following are some use cases for using
@@ -3154,7 +3746,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -3164,9 +3756,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public java.util.Map<String,String> getExpressionAttributeNames() {
         
@@ -3186,7 +3779,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -3196,9 +3789,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @param expressionAttributeNames One or more substitution tokens for attribute names in an expression.
      *         The following are some use cases for using
@@ -3212,7 +3806,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -3222,9 +3816,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public void setExpressionAttributeNames(java.util.Map<String,String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -3243,7 +3838,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -3253,9 +3848,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -3271,7 +3867,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -3281,9 +3877,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -3306,7 +3903,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -3316,9 +3913,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * The method adds a new key-value pair into ExpressionAttributeNames
      * parameter, and returns a reference to this object so that method calls
@@ -3358,9 +3956,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @return One or more values that can be substituted in an expression. <p>Use
      *         the <b>:</b> (colon) character in an expression to dereference an
@@ -3372,9 +3971,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      *         <p>You could then use these values in an expression, such as this:
      *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         information on expression attribute values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public java.util.Map<String,AttributeValue> getExpressionAttributeValues() {
         
@@ -3392,9 +3992,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @param expressionAttributeValues One or more values that can be substituted in an expression. <p>Use
      *         the <b>:</b> (colon) character in an expression to dereference an
@@ -3406,9 +4007,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      *         <p>You could then use these values in an expression, such as this:
      *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         information on expression attribute values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public void setExpressionAttributeValues(java.util.Map<String,AttributeValue> expressionAttributeValues) {
         this.expressionAttributeValues = expressionAttributeValues;
@@ -3425,9 +4027,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -3441,9 +4044,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      *         <p>You could then use these values in an expression, such as this:
      *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     *         Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         information on expression attribute values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -3464,9 +4068,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
      * <p>You could then use these values in an expression, such as this:
      * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * information on expression attribute values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * The method adds a new key-value pair into ExpressionAttributeValues
      * parameter, and returns a reference to this object so that method calls
@@ -3521,6 +4126,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
         if (getProjectionExpression() != null) sb.append("ProjectionExpression: " + getProjectionExpression() + ",");
         if (getFilterExpression() != null) sb.append("FilterExpression: " + getFilterExpression() + ",");
+        if (getKeyConditionExpression() != null) sb.append("KeyConditionExpression: " + getKeyConditionExpression() + ",");
         if (getExpressionAttributeNames() != null) sb.append("ExpressionAttributeNames: " + getExpressionAttributeNames() + ",");
         if (getExpressionAttributeValues() != null) sb.append("ExpressionAttributeValues: " + getExpressionAttributeValues() );
         sb.append("}");
@@ -3546,6 +4152,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         hashCode = prime * hashCode + ((getReturnConsumedCapacity() == null) ? 0 : getReturnConsumedCapacity().hashCode()); 
         hashCode = prime * hashCode + ((getProjectionExpression() == null) ? 0 : getProjectionExpression().hashCode()); 
         hashCode = prime * hashCode + ((getFilterExpression() == null) ? 0 : getFilterExpression().hashCode()); 
+        hashCode = prime * hashCode + ((getKeyConditionExpression() == null) ? 0 : getKeyConditionExpression().hashCode()); 
         hashCode = prime * hashCode + ((getExpressionAttributeNames() == null) ? 0 : getExpressionAttributeNames().hashCode()); 
         hashCode = prime * hashCode + ((getExpressionAttributeValues() == null) ? 0 : getExpressionAttributeValues().hashCode()); 
         return hashCode;
@@ -3587,6 +4194,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         if (other.getProjectionExpression() != null && other.getProjectionExpression().equals(this.getProjectionExpression()) == false) return false; 
         if (other.getFilterExpression() == null ^ this.getFilterExpression() == null) return false;
         if (other.getFilterExpression() != null && other.getFilterExpression().equals(this.getFilterExpression()) == false) return false; 
+        if (other.getKeyConditionExpression() == null ^ this.getKeyConditionExpression() == null) return false;
+        if (other.getKeyConditionExpression() != null && other.getKeyConditionExpression().equals(this.getKeyConditionExpression()) == false) return false; 
         if (other.getExpressionAttributeNames() == null ^ this.getExpressionAttributeNames() == null) return false;
         if (other.getExpressionAttributeNames() != null && other.getExpressionAttributeNames().equals(this.getExpressionAttributeNames()) == false) return false; 
         if (other.getExpressionAttributeValues() == null ^ this.getExpressionAttributeValues() == null) return false;
