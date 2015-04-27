@@ -31,7 +31,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <p>
  * This is the Amazon DynamoDB API Reference. This guide provides
  * descriptions and samples of the low-level DynamoDB API. For
- * information about DynamoDB application development, go to the
+ * information about DynamoDB application development, see the
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/"> Amazon DynamoDB Developer Guide </a>
  * .
  * </p>
@@ -41,14 +41,14 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * Development Kits (SDKs). The easy-to-use libraries in the AWS SDKs
  * make it unnecessary to call the low-level DynamoDB API directly from
  * your application. The libraries take care of request authentication,
- * serialization, and connection management. For more information, go to
+ * serialization, and connection management. For more information, see
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html"> Using the AWS SDKs with DynamoDB </a>
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  * <p>
  * If you decide to code against the low-level DynamoDB API directly, you
  * will need to write the necessary code to authenticate your requests.
- * For more information on signing your requests, go to
+ * For more information on signing your requests, see
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/API.html"> Using the DynamoDB API </a>
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
@@ -94,7 +94,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * 
  * </ul>
  * <p>
- * For conceptual information about managing tables, go to
+ * For conceptual information about managing tables, see
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html"> Working with Tables </a>
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
@@ -139,7 +139,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * 
  * </ul>
  * <p>
- * For conceptual information about reading data, go to
+ * For conceptual information about reading data, see
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
@@ -181,7 +181,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * 
  * </ul>
  * <p>
- * For conceptual information about modifying data, go to
+ * For conceptual information about modifying data, see
  * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
  * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
@@ -509,7 +509,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * can still fail due to throttling on the individual tables. If you
      * delay the batch operation using exponential backoff, the individual
      * requests in the batch are much more likely to succeed. For more
-     * information, go to Batch Operations and Error Handling in the Amazon
+     * information, see Batch Operations and Error Handling in the Amazon
      * DynamoDB Developer Guide.
      * </p>
      * <p>
@@ -526,10 +526,12 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * If you use a programming language that supports concurrency, such as
      * Java, you can use threads to write items in parallel. Your application
      * must include the necessary logic to manage the threads. With languages
-     * that don't support threading, such as PHP, you must update provides an
-     * alternative where the API performs the specified put and delete
-     * operations in parallel, giving you the power of the thread pool
-     * approach without having to introduce complexity into your application.
+     * that don't support threading, such as PHP, you must update or delete
+     * the specified items one at a time. In both situations,
+     * <i>BatchWriteItem</i> provides an alternative where the API performs
+     * the specified put and delete operations in parallel, giving you the
+     * power of the thread pool approach without having to introduce
+     * complexity into your application.
      * </p>
      * <p>
      * Parallel processing reduces latency, but each specified put and
@@ -629,7 +631,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * can still fail due to throttling on the individual tables. If you
      * delay the batch operation using exponential backoff, the individual
      * requests in the batch are much more likely to succeed. For more
-     * information, go to Batch Operations and Error Handling in the Amazon
+     * information, see Batch Operations and Error Handling in the Amazon
      * DynamoDB Developer Guide.
      * </p>
      * <p>
@@ -646,10 +648,12 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * If you use a programming language that supports concurrency, such as
      * Java, you can use threads to write items in parallel. Your application
      * must include the necessary logic to manage the threads. With languages
-     * that don't support threading, such as PHP, you must update provides an
-     * alternative where the API performs the specified put and delete
-     * operations in parallel, giving you the power of the thread pool
-     * approach without having to introduce complexity into your application.
+     * that don't support threading, such as PHP, you must update or delete
+     * the specified items one at a time. In both situations,
+     * <i>BatchWriteItem</i> provides an alternative where the API performs
+     * the specified put and delete operations in parallel, giving you the
+     * power of the thread pool approach without having to introduce
+     * complexity into your application.
      * </p>
      * <p>
      * Parallel processing reduces latency, but each specified put and
@@ -1037,12 +1041,18 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
-     * A <i>Query</i> operation directly accesses items from a table using
-     * the table primary key, or from an index using the index key. You must
-     * provide a specific hash key value. You can narrow the scope of the
-     * query by using comparison operators on the range key value, or on the
-     * index key. You can use the <i>ScanIndexForward</i> parameter to get
-     * results in forward or reverse order, by range key or by index key.
+     * A <i>Query</i> operation uses the primary key of a table or a
+     * secondary index to directly access items from that table or index.
+     * </p>
+     * <p>
+     * Use the <i>KeyConditionExpression</i> parameter to provide a specific
+     * hash key value. The <i>Query</i> operation will return all of the
+     * items from the table or index with that hash key value. You can
+     * optionally narrow the scope of the <i>Query</i> operation by
+     * specifying a range key value and a comparison operator in
+     * <i>KeyConditionExpression</i> . You can use the
+     * <i>ScanIndexForward</i> parameter to get results in forward or reverse
+     * order, by range key or by index key.
      * </p>
      * <p>
      * Queries that do not return results consume the minimum number of read
@@ -1051,19 +1061,20 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * If the total number of items meeting the query criteria exceeds the
      * result set size limit of 1 MB, the query stops and results are
-     * returned to the user with <i>LastEvaluatedKey</i> to continue the
-     * query in a subsequent operation. Unlike a <i>Scan</i> operation, a
-     * <i>Query</i> operation never returns both an empty result set and a
-     * <i>LastEvaluatedKey</i> . The <i>LastEvaluatedKey</i> is only provided
-     * if the results exceed 1 MB, or if you have used <i>Limit</i> .
+     * returned to the user with the <i>LastEvaluatedKey</i> element to
+     * continue the query in a subsequent operation. Unlike a <i>Scan</i>
+     * operation, a <i>Query</i> operation never returns both an empty result
+     * set and a <i>LastEvaluatedKey</i> value. <i>LastEvaluatedKey</i> is
+     * only provided if the results exceed 1 MB, or if you have used the
+     * <i>Limit</i> parameter.
      * </p>
      * <p>
      * You can query a table, a local secondary index, or a global secondary
      * index. For a query on a table or on a local secondary index, you can
-     * set <i>ConsistentRead</i> to true and obtain a strongly consistent
-     * result. Global secondary indexes support eventually consistent reads
-     * only, so do not specify <i>ConsistentRead</i> when querying a global
-     * secondary index.
+     * set the <i>ConsistentRead</i> parameter to <code>true</code> and
+     * obtain a strongly consistent result. Global secondary indexes support
+     * eventually consistent reads only, so do not specify
+     * <i>ConsistentRead</i> when querying a global secondary index.
      * </p>
      *
      * @param queryRequest Container for the necessary parameters to execute
@@ -1086,12 +1097,18 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
-     * A <i>Query</i> operation directly accesses items from a table using
-     * the table primary key, or from an index using the index key. You must
-     * provide a specific hash key value. You can narrow the scope of the
-     * query by using comparison operators on the range key value, or on the
-     * index key. You can use the <i>ScanIndexForward</i> parameter to get
-     * results in forward or reverse order, by range key or by index key.
+     * A <i>Query</i> operation uses the primary key of a table or a
+     * secondary index to directly access items from that table or index.
+     * </p>
+     * <p>
+     * Use the <i>KeyConditionExpression</i> parameter to provide a specific
+     * hash key value. The <i>Query</i> operation will return all of the
+     * items from the table or index with that hash key value. You can
+     * optionally narrow the scope of the <i>Query</i> operation by
+     * specifying a range key value and a comparison operator in
+     * <i>KeyConditionExpression</i> . You can use the
+     * <i>ScanIndexForward</i> parameter to get results in forward or reverse
+     * order, by range key or by index key.
      * </p>
      * <p>
      * Queries that do not return results consume the minimum number of read
@@ -1100,19 +1117,20 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * If the total number of items meeting the query criteria exceeds the
      * result set size limit of 1 MB, the query stops and results are
-     * returned to the user with <i>LastEvaluatedKey</i> to continue the
-     * query in a subsequent operation. Unlike a <i>Scan</i> operation, a
-     * <i>Query</i> operation never returns both an empty result set and a
-     * <i>LastEvaluatedKey</i> . The <i>LastEvaluatedKey</i> is only provided
-     * if the results exceed 1 MB, or if you have used <i>Limit</i> .
+     * returned to the user with the <i>LastEvaluatedKey</i> element to
+     * continue the query in a subsequent operation. Unlike a <i>Scan</i>
+     * operation, a <i>Query</i> operation never returns both an empty result
+     * set and a <i>LastEvaluatedKey</i> value. <i>LastEvaluatedKey</i> is
+     * only provided if the results exceed 1 MB, or if you have used the
+     * <i>Limit</i> parameter.
      * </p>
      * <p>
      * You can query a table, a local secondary index, or a global secondary
      * index. For a query on a table or on a local secondary index, you can
-     * set <i>ConsistentRead</i> to true and obtain a strongly consistent
-     * result. Global secondary indexes support eventually consistent reads
-     * only, so do not specify <i>ConsistentRead</i> when querying a global
-     * secondary index.
+     * set the <i>ConsistentRead</i> parameter to <code>true</code> and
+     * obtain a strongly consistent result. Global secondary indexes support
+     * eventually consistent reads only, so do not specify
+     * <i>ConsistentRead</i> when querying a global secondary index.
      * </p>
      *
      * @param queryRequest Container for the necessary parameters to execute
@@ -1421,7 +1439,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * can still fail due to throttling on the individual tables. If you
      * delay the batch operation using exponential backoff, the individual
      * requests in the batch are much more likely to succeed. For more
-     * information, go to Batch Operations and Error Handling in the Amazon
+     * information, see Batch Operations and Error Handling in the Amazon
      * DynamoDB Developer Guide.
      * </p>
      * <p>
@@ -1506,7 +1524,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * can still fail due to throttling on the individual tables. If you
      * delay the batch operation using exponential backoff, the individual
      * requests in the batch are much more likely to succeed. For more
-     * information, go to Batch Operations and Error Handling in the Amazon
+     * information, see Batch Operations and Error Handling in the Amazon
      * DynamoDB Developer Guide.
      * </p>
      * <p>

@@ -57,17 +57,17 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     private java.util.Map<String,AttributeValue> key;
 
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application.
      * <p>
@@ -101,9 +101,11 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * JSON document. The attributes in the expression must be separated by
      * commas. <p>If no attribute names are specified, then all attributes
      * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * they will not appear in the result. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      */
     private String projectionExpression;
 
@@ -120,7 +122,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -130,9 +132,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      */
     private java.util.Map<String,String> expressionAttributeNames;
 
@@ -374,34 +377,34 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
   }
   
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @return <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application.
      */
@@ -410,34 +413,34 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application.
      */
@@ -452,17 +455,17 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application.
      * <p>
@@ -476,17 +479,17 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application.
      *
@@ -502,17 +505,17 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * <important><p>There is a newer parameter available. Use
-     * <i>ProjectionExpression</i> instead. Note that if you use
-     * <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     * time, DynamoDB will return a <i>ValidationException</i> exception.
-     * <p>This parameter allows you to retrieve attributes of type List or
-     * Map; however, it cannot retrieve individual elements within a List or
-     * a Map.</important> <p>The names of one or more attributes to retrieve.
-     * If no attribute names are provided, then all attributes will be
-     * returned. If any of the requested attributes are not found, they will
-     * not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     * effect on provisioned throughput consumption. DynamoDB determines
+     * <important><p>This is a legacy parameter, for backward compatibility.
+     * New applications should use <i>ProjectionExpression</i> instead. Do
+     * not combine legacy parameters and expression parameters in a single
+     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     * exception. <p>This parameter allows you to retrieve attributes of type
+     * List or Map; however, it cannot retrieve individual elements within a
+     * List or a Map.</important> <p>The names of one or more attributes to
+     * retrieve. If no attribute names are provided, then all attributes will
+     * be returned. If any of the requested attributes are not found, they
+     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     * no effect on provisioned throughput consumption. DynamoDB determines
      * capacity units consumed based on item size, not on the amount of data
      * that is returned to an application.
      * <p>
@@ -521,17 +524,17 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet <important><p>There is a newer parameter available. Use
-     *         <i>ProjectionExpression</i> instead. Note that if you use
-     *         <i>AttributesToGet</i> and <i>ProjectionExpression</i> at the same
-     *         time, DynamoDB will return a <i>ValidationException</i> exception.
-     *         <p>This parameter allows you to retrieve attributes of type List or
-     *         Map; however, it cannot retrieve individual elements within a List or
-     *         a Map.</important> <p>The names of one or more attributes to retrieve.
-     *         If no attribute names are provided, then all attributes will be
-     *         returned. If any of the requested attributes are not found, they will
-     *         not appear in the result. <p>Note that <i>AttributesToGet</i> has no
-     *         effect on provisioned throughput consumption. DynamoDB determines
+     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
+     *         New applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
+     *         exception. <p>This parameter allows you to retrieve attributes of type
+     *         List or Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.</important> <p>The names of one or more attributes to
+     *         retrieve. If no attribute names are provided, then all attributes will
+     *         be returned. If any of the requested attributes are not found, they
+     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
+     *         no effect on provisioned throughput consumption. DynamoDB determines
      *         capacity units consumed based on item size, not on the amount of data
      *         that is returned to an application.
      *
@@ -736,18 +739,22 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * JSON document. The attributes in the expression must be separated by
      * commas. <p>If no attribute names are specified, then all attributes
      * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * they will not appear in the result. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      *
      * @return A string that identifies one or more attributes to retrieve from the
      *         table. These attributes can include scalars, sets, or elements of a
      *         JSON document. The attributes in the expression must be separated by
      *         commas. <p>If no attribute names are specified, then all attributes
      *         will be returned. If any of the requested attributes are not found,
-     *         they will not appear in the result. <p>For more information, go to <a
+     *         they will not appear in the result. <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      */
     public String getProjectionExpression() {
         return projectionExpression;
@@ -759,18 +766,22 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * JSON document. The attributes in the expression must be separated by
      * commas. <p>If no attribute names are specified, then all attributes
      * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * they will not appear in the result. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      *
      * @param projectionExpression A string that identifies one or more attributes to retrieve from the
      *         table. These attributes can include scalars, sets, or elements of a
      *         JSON document. The attributes in the expression must be separated by
      *         commas. <p>If no attribute names are specified, then all attributes
      *         will be returned. If any of the requested attributes are not found,
-     *         they will not appear in the result. <p>For more information, go to <a
+     *         they will not appear in the result. <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      */
     public void setProjectionExpression(String projectionExpression) {
         this.projectionExpression = projectionExpression;
@@ -782,9 +793,11 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * JSON document. The attributes in the expression must be separated by
      * commas. <p>If no attribute names are specified, then all attributes
      * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result. <p>For more information, go to <a
+     * they will not appear in the result. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <note><p><i>ProjectionExpression</i> replaces the legacy
+     * <i>AttributesToGet</i> parameter.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -793,9 +806,11 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         JSON document. The attributes in the expression must be separated by
      *         commas. <p>If no attribute names are specified, then all attributes
      *         will be returned. If any of the requested attributes are not found,
-     *         they will not appear in the result. <p>For more information, go to <a
+     *         they will not appear in the result. <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <note><p><i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -818,7 +833,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -828,9 +843,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @return One or more substitution tokens for attribute names in an expression.
      *         The following are some use cases for using
@@ -844,7 +860,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -854,9 +870,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public java.util.Map<String,String> getExpressionAttributeNames() {
         
@@ -876,7 +893,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -886,9 +903,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      *
      * @param expressionAttributeNames One or more substitution tokens for attribute names in an expression.
      *         The following are some use cases for using
@@ -902,7 +920,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -912,9 +930,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      */
     public void setExpressionAttributeNames(java.util.Map<String,String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -933,7 +952,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -943,9 +962,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -961,7 +981,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      *         attribute conflicts with a reserved word, so it cannot be used
      *         directly in an expression. (For the complete list of reserved words,
-     *         go to <a
+     *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      *         around this, you could specify the following for
@@ -971,9 +991,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      *         with the <b>:</b> character are <i>expression attribute values</i>,
      *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         more information on expression attribute names, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     *         DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -996,7 +1017,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
      * attribute conflicts with a reserved word, so it cannot be used
      * directly in an expression. (For the complete list of reserved words,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
      * around this, you could specify the following for
@@ -1006,9 +1027,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
      * with the <b>:</b> character are <i>expression attribute values</i>,
      * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, go to <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information on expression attribute names, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
      * <p>
      * The method adds a new key-value pair into ExpressionAttributeNames
      * parameter, and returns a reference to this object so that method calls
