@@ -64,6 +64,20 @@ public class ResponseMetadataCacheTest {
         assertEquals(metadata4, cache.get(key4));
     }
 
+    /** Tests that the cache works correctly with size=0  */
+    @Test
+    public void TestEmpty() {
+        ResponseMetadataCache cache = new ResponseMetadataCache(0);
+
+        AmazonWebServiceRequest key = new TestRequest();
+        ResponseMetadata metadata = newResponseMetadata();
+        // Add item to the cache, it should be immediately evicted.
+        cache.add(key, metadata);
+
+        // get should return null
+        assertNull(cache.get(key));
+    }
+
     private class TestRequest extends AmazonWebServiceRequest {}
 
     private ResponseMetadata newResponseMetadata() {
