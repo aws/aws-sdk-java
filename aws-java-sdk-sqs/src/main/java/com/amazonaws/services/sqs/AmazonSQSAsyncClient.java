@@ -114,8 +114,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * </ul>
      *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All calls made using this new client object are non-blocking, and will immediately
+     * return a Java Future object that the caller can later check to see if the service
+     * call has actually completed.
      *
      * @see DefaultAWSCredentialsProviderChain
      */
@@ -134,8 +135,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * </ul>
      *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All calls made using this new client object are non-blocking, and will immediately
+     * return a Java Future object that the caller can later check to see if the service
+     * call has actually completed.
      *
      * @param clientConfiguration The client configuration options controlling how this
      *                       client connects to AmazonSQS
