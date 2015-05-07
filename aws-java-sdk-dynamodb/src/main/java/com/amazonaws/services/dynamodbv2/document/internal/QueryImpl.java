@@ -68,11 +68,11 @@ public class QueryImpl extends AbstractImpl implements QueryApi {
 
     @Override
     public ItemCollection<QueryOutcome> query(KeyAttribute hashKey,
-            RangeKeyCondition rangeKeyCondition, String conditionalExpression,
+            RangeKeyCondition rangeKeyCondition, String filterExpression,
             Map<String, String> nameMap, Map<String, Object> valueMap) {
         return doQuery(new QuerySpec().withHashKey(hashKey)
                 .withRangeKeyCondition(rangeKeyCondition)
-                .withFilterExpression(conditionalExpression)
+                .withFilterExpression(filterExpression)
                 .withNameMap(nameMap)
                 .withValueMap(valueMap));
     }
@@ -101,11 +101,13 @@ public class QueryImpl extends AbstractImpl implements QueryApi {
         QueryRequest req = spec.getRequest().withTableName(tableName);
         // hash key
         final KeyAttribute hashKey = spec.getHashKey();
-        req.addKeyConditionsEntry(hashKey.getName(),
-                new Condition()
-                .withComparisonOperator(ComparisonOperator.EQ)
-                .withAttributeValueList(InternalUtils.toAttributeValue(hashKey.getValue()))
-        );
+        if (hashKey != null) {
+            req.addKeyConditionsEntry(hashKey.getName(),
+                    new Condition()
+                    .withComparisonOperator(ComparisonOperator.EQ)
+                    .withAttributeValueList(InternalUtils.toAttributeValue(hashKey.getValue()))
+            );
+        }
         // range key condition
         RangeKeyCondition rangeKeyCond = spec.getRangeKeyCondition();
         if (rangeKeyCond != null) {
@@ -135,12 +137,9 @@ public class QueryImpl extends AbstractImpl implements QueryApi {
         // set up the value map, if any (when expression API is used)
         final Map<String,AttributeValue> attrValMap = InternalUtils.fromSimpleMap(spec.getValueMap());
         // set up expressions, if any
-        req.withConditionalOperator(spec.getConditionalOperator())
-            .withFilterExpression(spec.getFilterExpression())
-            .withProjectionExpression(spec.getProjectionExpression())
-            .withExpressionAttributeNames(spec.getNameMap())
-            .withExpressionAttributeValues(attrValMap)
-            ;
+        req.withExpressionAttributeNames(spec.getNameMap())
+           .withExpressionAttributeValues(attrValMap)
+           ;
         return new QueryCollection(getClient(), spec);
     }
 

@@ -27,11 +27,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
- * The example policy grants permission to an EC2 instance to assume the
- * role. The policy is URL-encoded according to RFC 3986. For more
- * information about RFC 3986, go to
- * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
- * .
+ * The policy in the following example grants permission to an EC2
+ * instance to assume the role.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createRole(CreateRoleRequest)

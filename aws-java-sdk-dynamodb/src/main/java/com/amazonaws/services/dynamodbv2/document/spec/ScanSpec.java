@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.amazonaws.annotation.Beta;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.dynamodbv2.document.KeyAttribute;
@@ -32,14 +33,13 @@ import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 import com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.Select;
+import com.amazonaws.services.dynamodbv2.xspec.ScanExpressionSpec;
 
 /**
  * API for fully specifying all the parameters of a Table-centric Scan API.
  */
 public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
     private Collection<ScanFilter> scanFilters;
-    private String filterExpression;
-    private String projectionExpression;
     private Map<String, String> nameMap;
     private Map<String, Object> valueMap;
 
@@ -98,20 +98,20 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
      * {@link #withNameMap(Map)} and {@link #withValueMap(Map)}.
      */
     public String getFilterExpression() {
-        return filterExpression;
+        return getRequest().getFilterExpression();
     }
 
-    public ScanSpec withFilterExpression(String expression) {
-        this.filterExpression = expression;
+    public ScanSpec withFilterExpression(String filterExpression) {
+        getRequest().setFilterExpression(filterExpression);
         return this;
     }
 
     public String getProjectionExpression() {
-        return projectionExpression;
+        return getRequest().getProjectionExpression();
     }
 
-    public ScanSpec withProjectionExpression(String expression) {
-        this.projectionExpression = expression;
+    public ScanSpec withProjectionExpression(String projectionExpression) {
+        getRequest().setProjectionExpression(projectionExpression);
         return this;
     }
 
@@ -209,7 +209,7 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
         }
         return this;
     }
-    
+
     public ScanSpec withExclusiveStartKey(
             String hashKeyName, Object hashKeyValue) {
         return withExclusiveStartKey(new KeyAttribute(hashKeyName, hashKeyValue));
@@ -260,5 +260,18 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
             RequestMetricCollector requestMetricCollector) {
         setRequestMetricCollector(requestMetricCollector);
         return this;
+    }
+
+    /**
+     * Convenient method to specify expressions (and the associated name map and
+     * value map) via {@link ScanExpressionSpec}.
+     */
+    @Beta
+    public ScanSpec withExpressionSpec(ScanExpressionSpec xspec) {
+        return withFilterExpression(xspec.getFilterExpression())
+              .withProjectionExpression(xspec.getProjectionExpression())
+              .withNameMap(xspec.getNameMap())
+              .withValueMap(xspec.getValueMap())
+              ;
     }
 }

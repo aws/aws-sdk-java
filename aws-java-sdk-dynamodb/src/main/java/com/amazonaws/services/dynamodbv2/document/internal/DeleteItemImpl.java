@@ -89,12 +89,10 @@ public class DeleteItemImpl extends AbstractImpl implements DeleteItemApi {
         final Map<String,AttributeValue> attrValMap =
             InternalUtils.fromSimpleMap(spec.getValueMap());
         // set up the request
-        req.withConditionalOperator(spec.getConditionalOperator())
-            .withConditionExpression(spec.getConditionExpression())
-            .withExpected(expectedMap)
-            .withExpressionAttributeNames(spec.getNameMap())
-            .withExpressionAttributeValues(attrValMap)
-            ;
+        req.withExpected(expectedMap)
+           .withExpressionAttributeNames(spec.getNameMap())
+           .withExpressionAttributeValues(attrValMap)
+           ;
         DeleteItemResult result = getClient().deleteItem(req);
         return new DeleteItemOutcome(result);
     }

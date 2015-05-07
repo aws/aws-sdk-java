@@ -65,7 +65,7 @@ public class S3ServiceMetric extends SimpleMetricType implements ServiceMetricTy
     private S3ServiceMetric(String name) { this.name = name; }
     @Override public String name() { return name; }
     @Override public String getServiceName() {
-        return Constants.S3_SERVICE_NAME;
+        return Constants.S3_SERVICE_DISPLAY_NAME;
     }
 
     private static abstract class S3ThroughputMetric extends S3ServiceMetric

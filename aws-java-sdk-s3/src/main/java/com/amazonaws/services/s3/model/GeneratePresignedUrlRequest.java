@@ -61,6 +61,13 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
     private Date expiration;
 
     /**
+     * True if the request content is set to zero byte instead of null. This is
+     * necessary to make pre-signed URL generation work for multi-part upload
+     * initiation using SigV4.  Ref: TT0050059365
+     */
+    private boolean zeroByteContent;
+
+    /**
      * An optional map of additional parameters to include in the pre-signed
      * URL. Adding additional request parameters enables more advanced
      * pre-signed URLs, such as accessing Amazon S3's torrent resource for an
@@ -556,6 +563,29 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
      */
     public GeneratePresignedUrlRequest withSSECustomerKeyAlgorithm(SSEAlgorithm algorithm) {
         setSSECustomerKeyAlgorithm(algorithm);
+        return this;
+    }
+
+    /**
+     * Returns true if zero byte content is to be used for generating pre-signed
+     * URL; false otherwise.
+     */
+    public boolean isZeroByteContent() {
+        return zeroByteContent;
+    }
+
+    /**
+     * Sets if zero byte content is to be used for generating pre-signed URL.
+     */
+    public void setZeroByteContent(boolean zeroByteContent) {
+        this.zeroByteContent = zeroByteContent;
+    }
+
+    /**
+     * Fluent method for {@link #setZeroByteContent(boolean)}.
+     */
+    public GeneratePresignedUrlRequest withZeroByteContent(boolean zeroByteContent) {
+        setZeroByteContent(zeroByteContent);
         return this;
     }
 

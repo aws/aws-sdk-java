@@ -94,10 +94,8 @@ public class UpdateItemImpl implements UpdateItemApi {
         final Map<String, ExpectedAttributeValue> expectedMap =
             InternalUtils.toExpectedAttributeValueMap(expected);
         request.setExpected(expectedMap);
-        request.setAttributeUpdates(InternalUtils.toAttributeValueUpdate(spec
-                .getAttributeUpdate()));
-        request.setConditionExpression(spec.getConditionExpression());
-        request.setUpdateExpression(spec.getUpdateExpression());
+        request.setAttributeUpdates(
+            InternalUtils.toAttributeValueUpdate(spec.getAttributeUpdate()));
         request.setExpressionAttributeNames(spec.getNameMap());
         request.setExpressionAttributeValues(
             InternalUtils.fromSimpleMap(spec.getValueMap()));

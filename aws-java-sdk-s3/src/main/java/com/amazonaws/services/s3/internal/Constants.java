@@ -30,8 +30,8 @@ public class Constants {
     /** Default hostname for the S3 service endpoint */
     public static final String S3_HOSTNAME = "s3.amazonaws.com";
 
-    /** Service name for Amazon S3 */
-    public static final String S3_SERVICE_NAME = "Amazon S3";
+    /** Service display name for Amazon S3 (not to be used in SigV4 signing) */
+    public static final String S3_SERVICE_DISPLAY_NAME = "Amazon S3";
 
     /** Default encoding used for text data */
     public static final String DEFAULT_ENCODING = "UTF-8";

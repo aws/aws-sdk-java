@@ -23,7 +23,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Returns a set of temporary security credentials for users who have
  * been authenticated in a mobile or web application with a web identity
- * provider, such as Login with Amazon, Facebook, or Google.
+ * provider, such as Amazon Cognito, Login with Amazon, Facebook, Google,
+ * or any OpenID Connect-compatible identity provider.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> For mobile applications, we recommend that you use Amazon
+ * Cognito. You can use Amazon Cognito with the AWS SDK for iOS and the
+ * AWS SDK for Android to uniquely identify a user and supply the user
+ * with a consistent identity throughout the lifetime of an application.
+ * To learn more about Amazon Cognito, see Amazon Cognito Overview in the
+ * AWS SDK for Android Developer Guide guide and Amazon Cognito Overview
+ * in the AWS SDK for iOS Developer Guide.
  * </p>
  * <p>
  * Calling <code>AssumeRoleWithWebIdentity</code> does not require the
@@ -70,7 +80,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For more information about how to use web identity federation and the
- * <code>AssumeRoleWithWebIdentity</code> , see the following resources:
+ * <code>AssumeRoleWithWebIdentity</code> API, see the following
+ * resources:
  * </p>
  * 
  * <ul>
@@ -95,18 +106,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Amazon S3. </li>
  * 
  * </ul>
- * <p>
- * </p>
- * <p>
- * </p>
- * <p>
- * </p>
- * <p>
- * </p>
- * <p>
- * </p>
- * <p>
- * </p>
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#assumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest)
  */
@@ -148,12 +147,13 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
     private String webIdentityToken;
 
     /**
-     * The fully-qualified host component of the domain name of the identity
-     * provider. Specify this value only for OAuth access tokens. Do not
-     * specify this value for OpenID Connect ID tokens, such as
-     * <code>accounts.google.com</code>. Do not include URL schemes and port
-     * numbers. Currently, <code>www.amazon.com</code> and
-     * <code>graph.facebook.com</code> are supported.
+     * The fully qualified host component of the domain name of the identity
+     * provider. <p>Specify this value only for OAuth 2.0 access tokens.
+     * Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity
+     * providers for OAuth 2.0 access tokens. Do not include URL schemes and
+     * port numbers. <p>Do not specify this value for OpenID Connect ID
+     * tokens.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 2048<br/>
@@ -380,68 +380,74 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The fully-qualified host component of the domain name of the identity
-     * provider. Specify this value only for OAuth access tokens. Do not
-     * specify this value for OpenID Connect ID tokens, such as
-     * <code>accounts.google.com</code>. Do not include URL schemes and port
-     * numbers. Currently, <code>www.amazon.com</code> and
-     * <code>graph.facebook.com</code> are supported.
+     * The fully qualified host component of the domain name of the identity
+     * provider. <p>Specify this value only for OAuth 2.0 access tokens.
+     * Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity
+     * providers for OAuth 2.0 access tokens. Do not include URL schemes and
+     * port numbers. <p>Do not specify this value for OpenID Connect ID
+     * tokens.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 2048<br/>
      *
-     * @return The fully-qualified host component of the domain name of the identity
-     *         provider. Specify this value only for OAuth access tokens. Do not
-     *         specify this value for OpenID Connect ID tokens, such as
-     *         <code>accounts.google.com</code>. Do not include URL schemes and port
-     *         numbers. Currently, <code>www.amazon.com</code> and
-     *         <code>graph.facebook.com</code> are supported.
+     * @return The fully qualified host component of the domain name of the identity
+     *         provider. <p>Specify this value only for OAuth 2.0 access tokens.
+     *         Currently <code>www.amazon.com</code> and
+     *         <code>graph.facebook.com</code> are the only supported identity
+     *         providers for OAuth 2.0 access tokens. Do not include URL schemes and
+     *         port numbers. <p>Do not specify this value for OpenID Connect ID
+     *         tokens.
      */
     public String getProviderId() {
         return providerId;
     }
     
     /**
-     * The fully-qualified host component of the domain name of the identity
-     * provider. Specify this value only for OAuth access tokens. Do not
-     * specify this value for OpenID Connect ID tokens, such as
-     * <code>accounts.google.com</code>. Do not include URL schemes and port
-     * numbers. Currently, <code>www.amazon.com</code> and
-     * <code>graph.facebook.com</code> are supported.
+     * The fully qualified host component of the domain name of the identity
+     * provider. <p>Specify this value only for OAuth 2.0 access tokens.
+     * Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity
+     * providers for OAuth 2.0 access tokens. Do not include URL schemes and
+     * port numbers. <p>Do not specify this value for OpenID Connect ID
+     * tokens.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 2048<br/>
      *
-     * @param providerId The fully-qualified host component of the domain name of the identity
-     *         provider. Specify this value only for OAuth access tokens. Do not
-     *         specify this value for OpenID Connect ID tokens, such as
-     *         <code>accounts.google.com</code>. Do not include URL schemes and port
-     *         numbers. Currently, <code>www.amazon.com</code> and
-     *         <code>graph.facebook.com</code> are supported.
+     * @param providerId The fully qualified host component of the domain name of the identity
+     *         provider. <p>Specify this value only for OAuth 2.0 access tokens.
+     *         Currently <code>www.amazon.com</code> and
+     *         <code>graph.facebook.com</code> are the only supported identity
+     *         providers for OAuth 2.0 access tokens. Do not include URL schemes and
+     *         port numbers. <p>Do not specify this value for OpenID Connect ID
+     *         tokens.
      */
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
     
     /**
-     * The fully-qualified host component of the domain name of the identity
-     * provider. Specify this value only for OAuth access tokens. Do not
-     * specify this value for OpenID Connect ID tokens, such as
-     * <code>accounts.google.com</code>. Do not include URL schemes and port
-     * numbers. Currently, <code>www.amazon.com</code> and
-     * <code>graph.facebook.com</code> are supported.
+     * The fully qualified host component of the domain name of the identity
+     * provider. <p>Specify this value only for OAuth 2.0 access tokens.
+     * Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity
+     * providers for OAuth 2.0 access tokens. Do not include URL schemes and
+     * port numbers. <p>Do not specify this value for OpenID Connect ID
+     * tokens.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 2048<br/>
      *
-     * @param providerId The fully-qualified host component of the domain name of the identity
-     *         provider. Specify this value only for OAuth access tokens. Do not
-     *         specify this value for OpenID Connect ID tokens, such as
-     *         <code>accounts.google.com</code>. Do not include URL schemes and port
-     *         numbers. Currently, <code>www.amazon.com</code> and
-     *         <code>graph.facebook.com</code> are supported.
+     * @param providerId The fully qualified host component of the domain name of the identity
+     *         provider. <p>Specify this value only for OAuth 2.0 access tokens.
+     *         Currently <code>www.amazon.com</code> and
+     *         <code>graph.facebook.com</code> are the only supported identity
+     *         providers for OAuth 2.0 access tokens. Do not include URL schemes and
+     *         port numbers. <p>Do not specify this value for OpenID Connect ID
+     *         tokens.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

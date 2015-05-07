@@ -34,8 +34,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * calls to AWS services. The credentials are valid for the duration that
  * you specified when calling <code>AssumeRoleWithSAML</code> , which can
  * be up to 3600 seconds (1 hour) or until the time specified in the SAML
- * authentication response's <code>NotOnOrAfter</code> value, whichever
- * is shorter.
+ * authentication response's <code>SessionNotOnOrAfter</code> value,
+ * whichever is shorter.
  * </p>
  * <p>
  * <b>NOTE:</b>The maximum duration for a session is 1 hour, and the
@@ -158,10 +158,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      * The duration, in seconds, of the role session. The value can range
      * from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
      * the value is set to 3600 seconds. An expiration can also be specified
-     * in the SAML authentication response's <code>NotOnOrAfter</code> value.
-     * The actual expiration time is whichever value is shorter. <note>The
-     * maximum duration for a session is 1 hour, and the minimum duration is
-     * 15 minutes, even if values outside this range are specified. </note>
+     * in the SAML authentication response's <code>SessionNotOnOrAfter</code>
+     * value. The actual expiration time is whichever value is shorter.
+     * <note>The maximum duration for a session is 1 hour, and the minimum
+     * duration is 15 minutes, even if values outside this range are
+     * specified. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>900 - 129600<br/>
@@ -445,10 +446,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      * The duration, in seconds, of the role session. The value can range
      * from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
      * the value is set to 3600 seconds. An expiration can also be specified
-     * in the SAML authentication response's <code>NotOnOrAfter</code> value.
-     * The actual expiration time is whichever value is shorter. <note>The
-     * maximum duration for a session is 1 hour, and the minimum duration is
-     * 15 minutes, even if values outside this range are specified. </note>
+     * in the SAML authentication response's <code>SessionNotOnOrAfter</code>
+     * value. The actual expiration time is whichever value is shorter.
+     * <note>The maximum duration for a session is 1 hour, and the minimum
+     * duration is 15 minutes, even if values outside this range are
+     * specified. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>900 - 129600<br/>
@@ -456,10 +458,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      * @return The duration, in seconds, of the role session. The value can range
      *         from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
      *         the value is set to 3600 seconds. An expiration can also be specified
-     *         in the SAML authentication response's <code>NotOnOrAfter</code> value.
-     *         The actual expiration time is whichever value is shorter. <note>The
-     *         maximum duration for a session is 1 hour, and the minimum duration is
-     *         15 minutes, even if values outside this range are specified. </note>
+     *         in the SAML authentication response's <code>SessionNotOnOrAfter</code>
+     *         value. The actual expiration time is whichever value is shorter.
+     *         <note>The maximum duration for a session is 1 hour, and the minimum
+     *         duration is 15 minutes, even if values outside this range are
+     *         specified. </note>
      */
     public Integer getDurationSeconds() {
         return durationSeconds;
@@ -469,10 +472,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      * The duration, in seconds, of the role session. The value can range
      * from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
      * the value is set to 3600 seconds. An expiration can also be specified
-     * in the SAML authentication response's <code>NotOnOrAfter</code> value.
-     * The actual expiration time is whichever value is shorter. <note>The
-     * maximum duration for a session is 1 hour, and the minimum duration is
-     * 15 minutes, even if values outside this range are specified. </note>
+     * in the SAML authentication response's <code>SessionNotOnOrAfter</code>
+     * value. The actual expiration time is whichever value is shorter.
+     * <note>The maximum duration for a session is 1 hour, and the minimum
+     * duration is 15 minutes, even if values outside this range are
+     * specified. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>900 - 129600<br/>
@@ -480,10 +484,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      * @param durationSeconds The duration, in seconds, of the role session. The value can range
      *         from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
      *         the value is set to 3600 seconds. An expiration can also be specified
-     *         in the SAML authentication response's <code>NotOnOrAfter</code> value.
-     *         The actual expiration time is whichever value is shorter. <note>The
-     *         maximum duration for a session is 1 hour, and the minimum duration is
-     *         15 minutes, even if values outside this range are specified. </note>
+     *         in the SAML authentication response's <code>SessionNotOnOrAfter</code>
+     *         value. The actual expiration time is whichever value is shorter.
+     *         <note>The maximum duration for a session is 1 hour, and the minimum
+     *         duration is 15 minutes, even if values outside this range are
+     *         specified. </note>
      */
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
@@ -493,10 +498,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      * The duration, in seconds, of the role session. The value can range
      * from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
      * the value is set to 3600 seconds. An expiration can also be specified
-     * in the SAML authentication response's <code>NotOnOrAfter</code> value.
-     * The actual expiration time is whichever value is shorter. <note>The
-     * maximum duration for a session is 1 hour, and the minimum duration is
-     * 15 minutes, even if values outside this range are specified. </note>
+     * in the SAML authentication response's <code>SessionNotOnOrAfter</code>
+     * value. The actual expiration time is whichever value is shorter.
+     * <note>The maximum duration for a session is 1 hour, and the minimum
+     * duration is 15 minutes, even if values outside this range are
+     * specified. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -506,10 +512,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      * @param durationSeconds The duration, in seconds, of the role session. The value can range
      *         from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
      *         the value is set to 3600 seconds. An expiration can also be specified
-     *         in the SAML authentication response's <code>NotOnOrAfter</code> value.
-     *         The actual expiration time is whichever value is shorter. <note>The
-     *         maximum duration for a session is 1 hour, and the minimum duration is
-     *         15 minutes, even if values outside this range are specified. </note>
+     *         in the SAML authentication response's <code>SessionNotOnOrAfter</code>
+     *         value. The actual expiration time is whichever value is shorter.
+     *         <note>The maximum duration for a session is 1 hour, and the minimum
+     *         duration is 15 minutes, even if values outside this range are
+     *         specified. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

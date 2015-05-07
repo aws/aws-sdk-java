@@ -22,6 +22,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
+import com.amazonaws.annotation.Beta;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.dynamodbv2.document.Expected;
@@ -31,6 +32,7 @@ import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
 import com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity;
 import com.amazonaws.services.dynamodbv2.model.ReturnItemCollectionMetrics;
 import com.amazonaws.services.dynamodbv2.model.ReturnValue;
+import com.amazonaws.services.dynamodbv2.xspec.PutItemExpressionSpec;
 
 /**
  * Full parameter specification for the PutItem API.
@@ -38,7 +40,6 @@ import com.amazonaws.services.dynamodbv2.model.ReturnValue;
 public class PutItemSpec extends AbstractSpec<PutItemRequest> {
     private Item item;
     private Collection<Expected> expected;
-    private String conditionExpression;
     private Map<String, String> nameMap;
     private Map<String, Object> valueMap;
 
@@ -82,12 +83,14 @@ public class PutItemSpec extends AbstractSpec<PutItemRequest> {
     }
 
     public String getConditionExpression() {
-        return conditionExpression;
+        return getRequest().getConditionExpression();
     }
+
     public PutItemSpec withConditionExpression(String conditionExpression) {
-        this.conditionExpression = conditionExpression;
+        getRequest().setConditionExpression(conditionExpression);
         return this;
     }
+
     public Map<String, String> getNameMap() {
         return nameMap;
     }
@@ -176,5 +179,17 @@ public class PutItemSpec extends AbstractSpec<PutItemRequest> {
             RequestMetricCollector requestMetricCollector) {
         setRequestMetricCollector(requestMetricCollector);
         return this;
+    }
+
+    /**
+     * Convenient method to specify expressions (and the associated name map and
+     * value map) via {@link PutItemExpressionSpec}.
+     */
+    @Beta
+    public PutItemSpec withExpressionSpec(PutItemExpressionSpec xspec) {
+        return withConditionExpression(xspec.getConditionExpression())
+              .withNameMap(xspec.getNameMap())
+              .withValueMap(xspec.getValueMap())
+              ;
     }
 }

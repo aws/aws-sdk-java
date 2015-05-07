@@ -144,13 +144,6 @@ public class AWSS3V4Signer extends AWS4Signer {
         content.mark(readLimit);
         while ((read = content.read(tmp)) != -1) {
             contentLength += read;
-            if (contentLength > readLimit) {
-                // Fail fast since the following reset won't work anyway
-                // due to limited buffer size
-                throw new ResetException(
-                    "Content length exceeded the reset buffer limit of "
-                    + readLimit);
-            }
         }
         try {
             content.reset();

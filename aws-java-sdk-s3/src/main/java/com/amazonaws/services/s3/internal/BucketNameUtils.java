@@ -111,6 +111,12 @@ public enum BucketNameUtils {
             }
 
             if (next == '.') {
+                if (previous == '\0') {
+                    return exception(
+                        throwOnError,
+                        "Bucket name should not begin with a period"
+                    );
+                }
                 if (previous == '.') {
                     return exception(
                         throwOnError,

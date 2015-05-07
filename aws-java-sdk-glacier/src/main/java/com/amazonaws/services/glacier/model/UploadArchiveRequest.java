@@ -83,11 +83,12 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
     private String vaultName;
 
     /**
-     * The <code>AccountId</code> is the AWS Account ID. You can specify
-     * either the AWS Account ID or optionally a '-', in which case Amazon
-     * Glacier uses the AWS Account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
-     * hyphens in it.
+     * The <code>AccountId</code> value is the AWS account ID of the account
+     * that owns the vault. You can either specify an AWS account ID or
+     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used
+     * to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      */
     private String accountId;
 
@@ -139,11 +140,12 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
      * initialize any additional object members.
      * 
      * @param vaultName The name of the vault.
-     * @param accountId The <code>AccountId</code> is the AWS Account ID. You
-     * can specify either the AWS Account ID or optionally a '-', in which
-     * case Amazon Glacier uses the AWS Account ID associated with the
-     * credentials used to sign the request. If you specify your Account ID,
-     * do not include hyphens in it.
+     * @param accountId The <code>AccountId</code> value is the AWS account
+     * ID of the account that owns the vault. You can either specify an AWS
+     * account ID or optionally a single '<code>-</code>' (hyphen), in which
+     * case Amazon Glacier uses the AWS account ID associated with the
+     * credentials used to sign the request. If you use an account ID, do not
+     * include any hyphens ('-') in the ID.
      * @param archiveDescription The optional description of the archive you
      * are uploading.
      * @param checksum The SHA256 tree hash of the data being uploaded.
@@ -224,53 +226,59 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * The <code>AccountId</code> is the AWS Account ID. You can specify
-     * either the AWS Account ID or optionally a '-', in which case Amazon
-     * Glacier uses the AWS Account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
-     * hyphens in it.
+     * The <code>AccountId</code> value is the AWS account ID of the account
+     * that owns the vault. You can either specify an AWS account ID or
+     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used
+     * to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      *
-     * @return The <code>AccountId</code> is the AWS Account ID. You can specify
-     *         either the AWS Account ID or optionally a '-', in which case Amazon
-     *         Glacier uses the AWS Account ID associated with the credentials used
-     *         to sign the request. If you specify your Account ID, do not include
-     *         hyphens in it.
+     * @return The <code>AccountId</code> value is the AWS account ID of the account
+     *         that owns the vault. You can either specify an AWS account ID or
+     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
+     *         Glacier uses the AWS account ID associated with the credentials used
+     *         to sign the request. If you use an account ID, do not include any
+     *         hyphens ('-') in the ID.
      */
     public String getAccountId() {
         return accountId;
     }
     
     /**
-     * The <code>AccountId</code> is the AWS Account ID. You can specify
-     * either the AWS Account ID or optionally a '-', in which case Amazon
-     * Glacier uses the AWS Account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
-     * hyphens in it.
+     * The <code>AccountId</code> value is the AWS account ID of the account
+     * that owns the vault. You can either specify an AWS account ID or
+     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used
+     * to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      *
-     * @param accountId The <code>AccountId</code> is the AWS Account ID. You can specify
-     *         either the AWS Account ID or optionally a '-', in which case Amazon
-     *         Glacier uses the AWS Account ID associated with the credentials used
-     *         to sign the request. If you specify your Account ID, do not include
-     *         hyphens in it.
+     * @param accountId The <code>AccountId</code> value is the AWS account ID of the account
+     *         that owns the vault. You can either specify an AWS account ID or
+     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
+     *         Glacier uses the AWS account ID associated with the credentials used
+     *         to sign the request. If you use an account ID, do not include any
+     *         hyphens ('-') in the ID.
      */
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
     
     /**
-     * The <code>AccountId</code> is the AWS Account ID. You can specify
-     * either the AWS Account ID or optionally a '-', in which case Amazon
-     * Glacier uses the AWS Account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
-     * hyphens in it.
+     * The <code>AccountId</code> value is the AWS account ID of the account
+     * that owns the vault. You can either specify an AWS account ID or
+     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used
+     * to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param accountId The <code>AccountId</code> is the AWS Account ID. You can specify
-     *         either the AWS Account ID or optionally a '-', in which case Amazon
-     *         Glacier uses the AWS Account ID associated with the credentials used
-     *         to sign the request. If you specify your Account ID, do not include
-     *         hyphens in it.
+     * @param accountId The <code>AccountId</code> value is the AWS account ID of the account
+     *         that owns the vault. You can either specify an AWS account ID or
+     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
+     *         Glacier uses the AWS account ID associated with the credentials used
+     *         to sign the request. If you use an account ID, do not include any
+     *         hyphens ('-') in the ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

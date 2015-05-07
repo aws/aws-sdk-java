@@ -88,12 +88,9 @@ public class ScanImpl extends AbstractImpl implements ScanApi {
         // set up the value map, if any (when expression API is used)
         final Map<String,AttributeValue> attrValMap = InternalUtils.fromSimpleMap(spec.getValueMap());
         // set up expressions, if any
-        req.withConditionalOperator(spec.getConditionalOperator())
-            .withFilterExpression(spec.getFilterExpression())
-            .withProjectionExpression(spec.getProjectionExpression())
-            .withExpressionAttributeNames(spec.getNameMap())
-            .withExpressionAttributeValues(attrValMap)
-            ;
+        req.withExpressionAttributeNames(spec.getNameMap())
+           .withExpressionAttributeValues(attrValMap)
+           ;
         return new ScanCollection(getClient(), spec);
     }
 }

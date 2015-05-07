@@ -22,7 +22,7 @@ import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * A bounded cache that has a FIFO eviction policy when the cache is full.
- * 
+ *
  * @param <T>
  *            value type
  */
@@ -31,7 +31,7 @@ public final class FIFOCache<T> {
     private final BoundedLinkedHashMap<String, T> map;
     private final ReadLock rlock;
     private final WriteLock wlock;
-    
+
     /**
      * @param maxSize
      *            the maximum number of entries of the cache
@@ -48,7 +48,7 @@ public final class FIFOCache<T> {
     }
 
     /**
-     * Adds an entry to the cache, evicting the ealiest entry if necessary.
+     * Adds an entry to the cache, evicting the earliest entry if necessary.
      */
     public T add(String key, T value) {
         wlock.lock();

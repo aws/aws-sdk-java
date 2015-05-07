@@ -14,19 +14,21 @@
  */
 package com.amazonaws.retry.internal;
 
+
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.Request;
+import com.amazonaws.http.HttpResponse;
 
 /**
  * For internal use only.
  */
 public interface AuthErrorRetryStrategy {
 
-    /**
-     * Returns an alternative signing context (consists of a new signer instance
-     * and a new request endpoint) that should be used to retry the request. Or
-     * null if it should not be retried.
-     */
-    AuthRetryParameters shouldRetryWithAuthParam(Request<?> originalRequest,
-            AmazonServiceException ase);
+	/**
+	 * Returns an alternative signing context (consists of a new signer instance
+	 * and a new request endpoint) that should be used to retry the request. Or
+	 * null if it should not be retried.
+	 */
+	AuthRetryParameters shouldRetryWithAuthParam(Request<?> originalRequest,
+			HttpResponse response, AmazonServiceException ase);
 }

@@ -198,4 +198,7 @@ public interface Headers {
 
     /** Header for the replication status of an Amazon S3 Object.*/
     public static final String OBJECT_REPLICATION_STATUS = "x-amz-replication-status";
+
+    /** Region where the request is being served */
+    public static final String S3_SERVING_REGION = "x-amz-region";
 }

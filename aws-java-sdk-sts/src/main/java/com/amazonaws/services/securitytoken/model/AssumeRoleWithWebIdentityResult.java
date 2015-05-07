@@ -18,9 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful call to the
- * AssumeRoleWithWebIdentity action, including temporary AWS credentials
- * that can be used to make AWS requests.
+ * Contains the response to a successful AssumeRoleWithWebIdentity
+ * request, including temporary AWS credentials that can be used to make
+ * AWS requests.
  * </p>
  */
 public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable {
@@ -37,9 +37,9 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      * that was submitted with the <code>AssumeRoleWithWebIdentity</code>
      * call. The identifier is typically unique to the user and the
      * application that acquired the <code>WebIdentityToken</code> (pairwise
-     * identifier). If an OpenID Connect ID token was submitted in the
-     * <code>WebIdentityToken</code>, this value is returned by the identity
-     * provider as the token's <code>sub</code> (Subject) claim.
+     * identifier). For OpenID Connect ID tokens, this field contains the
+     * value returned by the identity provider as the token's
+     * <code>sub</code> (Subject) claim.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>6 - 255<br/>
@@ -69,16 +69,16 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
     /**
      * The issuing authority of the web identity token presented. For OpenID
      * Connect ID Tokens this contains the value of the <code>iss</code>
-     * field. For OAuth 2.0 Access Tokens, this contains the value of the
+     * field. For OAuth 2.0 access tokens, this contains the value of the
      * <code>ProviderId</code> parameter that was passed in the
      * <code>AssumeRoleWithWebIdentity</code> request.
      */
     private String provider;
 
     /**
-     * The intended audience of the web identity token. This is traditionally
-     * the client identifier issued to the application that requested the web
-     * identity token.
+     * The intended audience (also known as client ID) of the web identity
+     * token. This is traditionally the client identifier issued to the
+     * application that requested the web identity token.
      */
     private String audience;
 
@@ -127,9 +127,9 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      * that was submitted with the <code>AssumeRoleWithWebIdentity</code>
      * call. The identifier is typically unique to the user and the
      * application that acquired the <code>WebIdentityToken</code> (pairwise
-     * identifier). If an OpenID Connect ID token was submitted in the
-     * <code>WebIdentityToken</code>, this value is returned by the identity
-     * provider as the token's <code>sub</code> (Subject) claim.
+     * identifier). For OpenID Connect ID tokens, this field contains the
+     * value returned by the identity provider as the token's
+     * <code>sub</code> (Subject) claim.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>6 - 255<br/>
@@ -139,9 +139,9 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *         that was submitted with the <code>AssumeRoleWithWebIdentity</code>
      *         call. The identifier is typically unique to the user and the
      *         application that acquired the <code>WebIdentityToken</code> (pairwise
-     *         identifier). If an OpenID Connect ID token was submitted in the
-     *         <code>WebIdentityToken</code>, this value is returned by the identity
-     *         provider as the token's <code>sub</code> (Subject) claim.
+     *         identifier). For OpenID Connect ID tokens, this field contains the
+     *         value returned by the identity provider as the token's
+     *         <code>sub</code> (Subject) claim.
      */
     public String getSubjectFromWebIdentityToken() {
         return subjectFromWebIdentityToken;
@@ -153,9 +153,9 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      * that was submitted with the <code>AssumeRoleWithWebIdentity</code>
      * call. The identifier is typically unique to the user and the
      * application that acquired the <code>WebIdentityToken</code> (pairwise
-     * identifier). If an OpenID Connect ID token was submitted in the
-     * <code>WebIdentityToken</code>, this value is returned by the identity
-     * provider as the token's <code>sub</code> (Subject) claim.
+     * identifier). For OpenID Connect ID tokens, this field contains the
+     * value returned by the identity provider as the token's
+     * <code>sub</code> (Subject) claim.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>6 - 255<br/>
@@ -165,9 +165,9 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *         that was submitted with the <code>AssumeRoleWithWebIdentity</code>
      *         call. The identifier is typically unique to the user and the
      *         application that acquired the <code>WebIdentityToken</code> (pairwise
-     *         identifier). If an OpenID Connect ID token was submitted in the
-     *         <code>WebIdentityToken</code>, this value is returned by the identity
-     *         provider as the token's <code>sub</code> (Subject) claim.
+     *         identifier). For OpenID Connect ID tokens, this field contains the
+     *         value returned by the identity provider as the token's
+     *         <code>sub</code> (Subject) claim.
      */
     public void setSubjectFromWebIdentityToken(String subjectFromWebIdentityToken) {
         this.subjectFromWebIdentityToken = subjectFromWebIdentityToken;
@@ -179,9 +179,9 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      * that was submitted with the <code>AssumeRoleWithWebIdentity</code>
      * call. The identifier is typically unique to the user and the
      * application that acquired the <code>WebIdentityToken</code> (pairwise
-     * identifier). If an OpenID Connect ID token was submitted in the
-     * <code>WebIdentityToken</code>, this value is returned by the identity
-     * provider as the token's <code>sub</code> (Subject) claim.
+     * identifier). For OpenID Connect ID tokens, this field contains the
+     * value returned by the identity provider as the token's
+     * <code>sub</code> (Subject) claim.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -193,9 +193,9 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *         that was submitted with the <code>AssumeRoleWithWebIdentity</code>
      *         call. The identifier is typically unique to the user and the
      *         application that acquired the <code>WebIdentityToken</code> (pairwise
-     *         identifier). If an OpenID Connect ID token was submitted in the
-     *         <code>WebIdentityToken</code>, this value is returned by the identity
-     *         provider as the token's <code>sub</code> (Subject) claim.
+     *         identifier). For OpenID Connect ID tokens, this field contains the
+     *         value returned by the identity provider as the token's
+     *         <code>sub</code> (Subject) claim.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -325,13 +325,13 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
     /**
      * The issuing authority of the web identity token presented. For OpenID
      * Connect ID Tokens this contains the value of the <code>iss</code>
-     * field. For OAuth 2.0 Access Tokens, this contains the value of the
+     * field. For OAuth 2.0 access tokens, this contains the value of the
      * <code>ProviderId</code> parameter that was passed in the
      * <code>AssumeRoleWithWebIdentity</code> request.
      *
      * @return The issuing authority of the web identity token presented. For OpenID
      *         Connect ID Tokens this contains the value of the <code>iss</code>
-     *         field. For OAuth 2.0 Access Tokens, this contains the value of the
+     *         field. For OAuth 2.0 access tokens, this contains the value of the
      *         <code>ProviderId</code> parameter that was passed in the
      *         <code>AssumeRoleWithWebIdentity</code> request.
      */
@@ -342,13 +342,13 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
     /**
      * The issuing authority of the web identity token presented. For OpenID
      * Connect ID Tokens this contains the value of the <code>iss</code>
-     * field. For OAuth 2.0 Access Tokens, this contains the value of the
+     * field. For OAuth 2.0 access tokens, this contains the value of the
      * <code>ProviderId</code> parameter that was passed in the
      * <code>AssumeRoleWithWebIdentity</code> request.
      *
      * @param provider The issuing authority of the web identity token presented. For OpenID
      *         Connect ID Tokens this contains the value of the <code>iss</code>
-     *         field. For OAuth 2.0 Access Tokens, this contains the value of the
+     *         field. For OAuth 2.0 access tokens, this contains the value of the
      *         <code>ProviderId</code> parameter that was passed in the
      *         <code>AssumeRoleWithWebIdentity</code> request.
      */
@@ -359,7 +359,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
     /**
      * The issuing authority of the web identity token presented. For OpenID
      * Connect ID Tokens this contains the value of the <code>iss</code>
-     * field. For OAuth 2.0 Access Tokens, this contains the value of the
+     * field. For OAuth 2.0 access tokens, this contains the value of the
      * <code>ProviderId</code> parameter that was passed in the
      * <code>AssumeRoleWithWebIdentity</code> request.
      * <p>
@@ -367,7 +367,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *
      * @param provider The issuing authority of the web identity token presented. For OpenID
      *         Connect ID Tokens this contains the value of the <code>iss</code>
-     *         field. For OAuth 2.0 Access Tokens, this contains the value of the
+     *         field. For OAuth 2.0 access tokens, this contains the value of the
      *         <code>ProviderId</code> parameter that was passed in the
      *         <code>AssumeRoleWithWebIdentity</code> request.
      *
@@ -380,41 +380,41 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
     }
 
     /**
-     * The intended audience of the web identity token. This is traditionally
-     * the client identifier issued to the application that requested the web
-     * identity token.
+     * The intended audience (also known as client ID) of the web identity
+     * token. This is traditionally the client identifier issued to the
+     * application that requested the web identity token.
      *
-     * @return The intended audience of the web identity token. This is traditionally
-     *         the client identifier issued to the application that requested the web
-     *         identity token.
+     * @return The intended audience (also known as client ID) of the web identity
+     *         token. This is traditionally the client identifier issued to the
+     *         application that requested the web identity token.
      */
     public String getAudience() {
         return audience;
     }
     
     /**
-     * The intended audience of the web identity token. This is traditionally
-     * the client identifier issued to the application that requested the web
-     * identity token.
+     * The intended audience (also known as client ID) of the web identity
+     * token. This is traditionally the client identifier issued to the
+     * application that requested the web identity token.
      *
-     * @param audience The intended audience of the web identity token. This is traditionally
-     *         the client identifier issued to the application that requested the web
-     *         identity token.
+     * @param audience The intended audience (also known as client ID) of the web identity
+     *         token. This is traditionally the client identifier issued to the
+     *         application that requested the web identity token.
      */
     public void setAudience(String audience) {
         this.audience = audience;
     }
     
     /**
-     * The intended audience of the web identity token. This is traditionally
-     * the client identifier issued to the application that requested the web
-     * identity token.
+     * The intended audience (also known as client ID) of the web identity
+     * token. This is traditionally the client identifier issued to the
+     * application that requested the web identity token.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param audience The intended audience of the web identity token. This is traditionally
-     *         the client identifier issued to the application that requested the web
-     *         identity token.
+     * @param audience The intended audience (also known as client ID) of the web identity
+     *         token. This is traditionally the client identifier issued to the
+     *         application that requested the web identity token.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

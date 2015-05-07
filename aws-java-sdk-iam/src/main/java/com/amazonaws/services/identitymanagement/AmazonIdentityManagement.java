@@ -1196,12 +1196,6 @@ public interface AmazonIdentityManagement {
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs"> ARNs </a> . For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
      * .
      * </p>
-     * <p>
-     * The returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
-     * .
-     * </p>
      *
      * @param getRoleRequest Container for the necessary parameters to
      *           execute the GetRole service method on AmazonIdentityManagement.
@@ -1355,10 +1349,10 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Retrieves information about all IAM users, groups, and roles in your
-     * account, including their relationships to one another and their
-     * policies. Use this API to obtain a snapshot of the configuration of
-     * IAM permissions (users, groups, roles, and policies) in your account.
+     * Retrieves information about all IAM users, groups, roles, and
+     * policies in your account, including their relationships to one
+     * another. Use this API to obtain a snapshot of the configuration of IAM
+     * permissions (users, groups, roles, and policies) in your account.
      * </p>
      * <p>
      * You can optionally filter the results using the <code>Filter</code>
@@ -3111,11 +3105,8 @@ public interface AmazonIdentityManagement {
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * The example policy grants permission to an EC2 instance to assume the
-     * role. The policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
-     * .
+     * The policy in the following example grants permission to an EC2
+     * instance to assume the role.
      * </p>
      *
      * @param createRoleRequest Container for the necessary parameters to
@@ -3773,12 +3764,6 @@ public interface AmazonIdentityManagement {
      * You can paginate the results using the <code>MaxItems</code> and
      * <code>Marker</code> parameters.
      * </p>
-     * <p>
-     * The returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
-     * .
-     * </p>
      *
      * @param listRolesRequest Container for the necessary parameters to
      *           execute the ListRoles service method on AmazonIdentityManagement.
@@ -4109,10 +4094,10 @@ public interface AmazonIdentityManagement {
     
     /**
      * <p>
-     * Retrieves information about all IAM users, groups, and roles in your
-     * account, including their relationships to one another and their
-     * policies. Use this API to obtain a snapshot of the configuration of
-     * IAM permissions (users, groups, roles, and policies) in your account.
+     * Retrieves information about all IAM users, groups, roles, and
+     * policies in your account, including their relationships to one
+     * another. Use this API to obtain a snapshot of the configuration of IAM
+     * permissions (users, groups, roles, and policies) in your account.
      * </p>
      * <p>
      * You can optionally filter the results using the <code>Filter</code>
@@ -4374,12 +4359,6 @@ public interface AmazonIdentityManagement {
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
      * <code>Marker</code> parameters.
-     * </p>
-     * <p>
-     * The returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
-     * .
      * </p>
      * 
      * @return The response from the ListRoles service method, as returned by
