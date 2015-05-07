@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.amazonaws.annotation.Beta;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.dynamodbv2.document.AttributeUpdate;
@@ -34,6 +35,7 @@ import com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity;
 import com.amazonaws.services.dynamodbv2.model.ReturnItemCollectionMetrics;
 import com.amazonaws.services.dynamodbv2.model.ReturnValue;
 import com.amazonaws.services.dynamodbv2.model.UpdateItemRequest;
+import com.amazonaws.services.dynamodbv2.xspec.UpdateItemExpressionSpec;
 
 /**
  * Full parameter specification for the UpdateItem API.
@@ -42,8 +44,6 @@ public class UpdateItemSpec extends AbstractSpecWithPrimaryKey<UpdateItemRequest
     private List<AttributeUpdate> attributes;
     private Collection<Expected> expected;
 
-    private String updateExpression;
-    private String conditionExpression;
     private Map<String, String> nameMap;
     private Map<String, Object> valueMap;
 
@@ -134,20 +134,20 @@ public class UpdateItemSpec extends AbstractSpecWithPrimaryKey<UpdateItemRequest
     }
 
     public String getUpdateExpression() {
-        return updateExpression;
+        return getRequest().getUpdateExpression();
     }
 
     public UpdateItemSpec withUpdateExpression(String updateExpression) {
-        this.updateExpression = updateExpression;
+        getRequest().setUpdateExpression(updateExpression);
         return this;
     }
 
     public String getConditionExpression() {
-        return conditionExpression;
+        return getRequest().getConditionExpression();
     }
 
     public UpdateItemSpec withConditionExpression(String conditionExpression) {
-        this.conditionExpression = conditionExpression;
+        getRequest().setConditionExpression(conditionExpression);
         return this;
     }
 
@@ -250,5 +250,18 @@ public class UpdateItemSpec extends AbstractSpecWithPrimaryKey<UpdateItemRequest
             RequestMetricCollector requestMetricCollector) {
         setRequestMetricCollector(requestMetricCollector);
         return this;
+    }
+
+    /**
+     * Convenient method to specify expressions (and the associated name map and
+     * value map) via {@link UpdateItemExpressionSpec}.
+     */
+    @Beta
+    public UpdateItemSpec withExpressionSpec(UpdateItemExpressionSpec xspec) {
+        return withUpdateExpression(xspec.getUpdateExpression())
+              .withConditionExpression(xspec.getConditionExpression())
+              .withNameMap(xspec.getNameMap())
+              .withValueMap(xspec.getValueMap())
+              ;
     }
 }

@@ -8,7 +8,7 @@
  * and Access Management (IAM) users or for users that you authenticate
  * (federated users). This guide provides descriptions of the STS API.
  * For more detailed information about using this service, go to
- * <a href="http://docs.aws.amazon.com/IAM/latest/UsingSTS/Welcome.html"> Using Temporary Security Credentials </a>
+ * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/Welcome.html"> Using Temporary Security Credentials </a>
  * .
  * </p>
  * <p>
@@ -24,7 +24,7 @@
  * <p>
  * For information about setting up signatures and authorization through
  * the API, go to
- * <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"> Signing AWS API Requests </a> in the <i>AWS General Reference</i> . For general information about the Query API, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"> Making Query Requests </a> in <i>Using IAM</i> . For information about using security tokens with other AWS products, go to <a href="http://docs.aws.amazon.com/IAM/latest/UsingSTS/UsingTokens.html"> Using Temporary Security Credentials to Access AWS </a>
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"> Signing AWS API Requests </a> in the <i>AWS General Reference</i> . For general information about the Query API, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"> Making Query Requests </a> in <i>Using IAM</i> . For information about using security tokens with other AWS products, go to <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html"> Using Temporary Security Credentials to Access AWS </a>
  * in <i>Using Temporary Security Credentials</i> .
  * </p>
  * <p>
@@ -36,6 +36,15 @@
  * </p>
  * <p>
  * <b>Endpoints</b>
+ * </p>
+ * <p>
+ * The AWS Security Token Service (STS) has a default endpoint of
+ * https://sts.amazonaws.com that maps to the US East (N. Virginia)
+ * region. Additional regions are available, but must first be activated
+ * in the AWS Management Console before you can use a different region's
+ * endpoint. For more information about activating a region for STS see
+ * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-enableregions.html"> Activating STS in a New Region </a>
+ * in the <i>Using Temporary Security Credentials</i> guide.
  * </p>
  * <p>
  * For information about STS endpoints, see
@@ -52,7 +61,7 @@
  * requests were successfully made to STS, who made the request, when it
  * was made, and so on. To learn more about CloudTrail, including how to
  * turn it on and find your log files, see the
- * <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/whatisawscloudtrail.html"> AWS CloudTrail User Guide </a>
+ * <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html"> AWS CloudTrail User Guide </a>
  * .
  * </p>
  */

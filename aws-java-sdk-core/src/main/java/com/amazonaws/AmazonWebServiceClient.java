@@ -34,6 +34,7 @@ import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
+import com.amazonaws.internal.DefaultServiceEndpointBuilder;
 import com.amazonaws.log.CommonsLogFactory;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
@@ -339,67 +340,37 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
-     * An alternative to {@link AmazonWebServiceClient#setEndpoint(String)}, sets the
-     * regional endpoint for this client's service calls. Callers can use this
-     * method to control which AWS region they want to work with.
+     * An alternative to {@link AmazonWebServiceClient#setEndpoint(String)}, sets the regional
+     * endpoint for this client's service calls. Callers can use this method to control which AWS
+     * region they want to work with.
      * <p>
-     * <b>This method is not threadsafe. A region should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit or retrying.</b>
+     * <b>This method is not threadsafe. A region should be configured when the client is created
+     * and before any service requests are made. Changing it afterwards creates inevitable race
+     * conditions for any service requests in transit or retrying.</b>
      * <p>
-     * By default, all service endpoints in all regions use the https protocol.
-     * To use http instead, specify it in the {@link ClientConfiguration}
-     * supplied at construction.
-     *
+     * By default, all service endpoints in all regions use the https protocol. To use http instead,
+     * specify it in the {@link ClientConfiguration} supplied at construction.
+     * 
      * @param region
      *            The region this client will communicate with. See
-     *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
-     *            accessing a given region.
+     *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for accessing a given
+     *            region.
      * @throws java.lang.IllegalArgumentException
-     *             If the given region is null, or if this service isn't
-     *             available in the given region. See
-     *             {@link Region#isServiceSupported(String)}
+     *             If the given region is null, or if this service isn't available in the given
+     *             region. See {@link Region#isServiceSupported(String)}
      * @see Region#getRegion(com.amazonaws.regions.Regions)
-     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider,
+     *      ClientConfiguration)
      */
     public void setRegion(Region region) throws IllegalArgumentException {
-        if ( region == null ) {
+        if (region == null) {
             throw new IllegalArgumentException("No region provided");
         }
-
-        String serviceName = getServiceNameIntern();
-        String serviceEndpoint;
-
-        if ( region.isServiceSupported(serviceName) ) {
-
-            serviceEndpoint = region.getServiceEndpoint(serviceName);
-
-            int protocolIdx = serviceEndpoint.indexOf("://");
-            // Strip off the protocol to allow the client config to specify it
-            if ( protocolIdx >= 0 ) {
-                serviceEndpoint =
-                    serviceEndpoint.substring(protocolIdx + "://".length());
-            }
-
-        } else {
-
-            serviceEndpoint = String.format("%s.%s.%s",
-                                            serviceName,
-                                            region.getName(),
-                                            region.getDomain());
-
-            log.info("{" + serviceName + ", " + region.getName() + "} was not "
-                     + "found in region metadata, trying to construct an "
-                     + "endpoint using the standard pattern for this region: '"
-                     + serviceEndpoint + "'.");
-
-        }
-
-        URI uri = toURI(serviceEndpoint);
-        Signer signer = computeSignerByServiceRegion(serviceName,
-                region.getName(), signerRegionOverride, false);
-        synchronized(this)  {
+        final String serviceNameForEndpoint = getServiceNameIntern();
+        URI uri = new DefaultServiceEndpointBuilder(serviceNameForEndpoint, clientConfiguration.getProtocol()
+                .toString()).withRegion(region).getServiceEndpoint();
+        Signer signer = computeSignerByServiceRegion(serviceNameForEndpoint, region.getName(), signerRegionOverride, false);
+        synchronized (this) {
             this.endpoint = uri;
             this.signer = signer;
         }

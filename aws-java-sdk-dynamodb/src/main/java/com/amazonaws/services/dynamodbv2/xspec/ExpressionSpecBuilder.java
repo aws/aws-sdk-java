@@ -40,14 +40,14 @@ import com.amazonaws.annotation.Beta;
  * This builder object is not thread-safe but you can reuse or build on (the
  * specific states of) a builder by cloning it into separate instances for use
  * in a concurrent environment.
- * 
+ *
  * <h3>Sample Usage 1: Conditional Updates with Expressions</h3>
- * 
+ *
  * <pre class="brush: java">
  * import static com.amazonaws.services.dynamodbv2.xspec.ExpressionSpecBuilder.*;
  * ...
  * Table table = dynamo.getTable(TABLE_NAME);
- * 
+ *
  * UpdateItemExpressionSpec xspec = new ExpressionSpecBuilder()
  *      // SET num1 = num1 + 20
  *      .addUpdate(
@@ -60,29 +60,29 @@ import com.amazonaws.annotation.Beta;
  *      .withCondition(
  *          N("num2").between(0, 100)
  *      ).buildForUpdate();
- * 
+ *
  * table.updateItem(HASH_KEY_NAME, "hashKeyValue", RANGE_KEY_NAME, 0, xspec);
  * </pre>
- * 
+ *
  * <h3>Sample Usage 2: Conditional Updates with complex Condition Expression</h3>
  * <p>
  * Let's say you want to include a complex condition expression such as:
- * 
+ *
  * <pre>
  *   (attribute_not_exists(item_version) AND attribute_not_exists(config_id) AND attribute_not_exists(config_version)) OR
  *   (item_version < 123) OR
  *   (item_version = 123 AND config_id < 456) OR
  *   (item_version = 123 AND config_id = 456 AND config_version < 999)
  * </pre>
- * 
+ *
  * Here is how:
  * <p>
- * 
+ *
  * <pre class="brush: java">
  * import static com.amazonaws.services.dynamodbv2.xspec.ExpressionSpecBuilder.*;
  * ...
  * Table table = dynamo.getTable(TABLE_NAME);
- * 
+ *
  * UpdateItemExpressionSpec xspec = new ExpressionSpecBuilder()
  *      // SET num1 = num1 + 20
  *      .addUpdate(
@@ -104,15 +104,15 @@ import com.amazonaws.annotation.Beta;
  *              .and( N("config_id").eq(456) )
  *              .and( N("config_version").lt(999) ))
  *      ).buildForUpdate();
- * 
+ *
  * table.updateItem(HASH_KEY_NAME, "hashKeyValue", RANGE_KEY_NAME, 0, xspec);
  * </pre>
- * 
+ *
  * <h3>Sample Usage 3: Scan with Filter Expression</h3>
  * <p>
  * Without ExpressionSpecBuilder, the code (using the DynamoDB Document API)
  * could be something like:
- * 
+ *
  * <pre class="brush: java">
  * ItemCollection&lt;?&gt; col = table.scan(
  *         &quot;(#hk = :hashkeyAttrValue) AND (#rk BETWEEN :lo AND :hi)&quot;,
@@ -120,10 +120,10 @@ import com.amazonaws.annotation.Beta;
  *         new ValueMap().withString(&quot;:hashkeyAttrValue&quot;, &quot;allDataTypes&quot;)
  *                 .withInt(&quot;:lo&quot;, 1).withInt(&quot;:hi&quot;, 10));
  * </pre>
- * 
+ *
  * In contrast, using ExpressionSpecBuilder:
  * <p>
- * 
+ *
  * <pre class="brush: java">
  * import static com.amazonaws.services.dynamodbv2.xspec.ExpressionSpecBuilder.*;
  * ...
@@ -132,17 +132,17 @@ import com.amazonaws.annotation.Beta;
  *         S(HASH_KEY_NAME).eq("allDataTypes")
  *             .and(N(RANGE_KEY_NAME).between(1, 10))
  * ).buildForScan();
- * 
+ *
  * ItemCollection<?> col = table.scan(xspec);
  * </pre>
- * 
+ *
  * <h3>Sample Usage 4: Updates with SET, ADD, DELETE and REMOVE</h3>
- * 
+ *
  * <pre class="brush: java">
  * import static com.amazonaws.services.dynamodbv2.xspec.ExpressionSpecBuilder.*;
  * ...
  * Table table = dynamo.getTable(TABLE_NAME);
- * 
+ *
  * UpdateItemExpressionSpec xspec = new ExpressionSpecBuilder()
  *     .addUpdate(S("mapAttr.colors[0]").set("red"))
  *     .addUpdate(S("mapAttr.colors[1]").set("blue"))
@@ -152,14 +152,14 @@ import com.amazonaws.annotation.Beta;
  *     .addUpdate(SS("mapAttr.brands").delete("Facebook", "LinkedIn"))
  *     .addUpdate(attribute("mapAttr.foo").remove())
  *     .buildForUpdate();
- * 
+ *
  * assertEquals("SET #0.#1[0] = :0, #0.#1[1] = :1, #0.#2 = list_append(#0.#2, :2) ADD #0.#3 :3 DELETE #0.#4 :4 REMOVE #0.#5",
  *     xspec.getUpdateExpression());
- *     
+ *
  * final String hashkey = "addRemoveDeleteColors";
  * table.updateItem(HASH_KEY_NAME, hashkey, RANGE_KEY_NAME, 0, xspec);
  * </pre>
- * 
+ *
  * @see PathOperand
  */
 @Beta
@@ -201,14 +201,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      *  ItemCollection<?> col = table.query(HASH_KEY_NAME, "allDataTypes",
      *      new RangeKeyCondition("range_key_name").between(1, 10), xspec);
      * </pre>
-     * 
+     *
      * <h3>Sample Usage: Conditional Updates with Expressions</h3>
-     * 
+     *
      * <pre class="brush: java">
      * import static com.amazonaws.services.dynamodbv2.xspec.ExpressionSpecBuilder.*;
      * ...
      * Table table = dynamo.getTable(TABLE_NAME);
-     * 
+     *
      * UpdateItemExpressionSpec xspec = new ExpressionSpecBuilder()
      *      // SET num1 = num1 + 20
      *      .addUpdate(
@@ -221,14 +221,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      *      .withCondition(
      *          N("num2").between(0, 100)
      *      ).buildForUpdate();
-     * 
+     *
      * table.updateItem(HASH_KEY_NAME, "hashKeyValue", RANGE_KEY_NAME, 0, xspec);
      * </pre>
      * <h3>Sample Usage: Scan with Filter Expression</h3>
      * <p>
      * Without ExpressionSpecBuilder, the code (using the DynamoDB Document API)
      * could be something like:
-     * 
+     *
      * <pre class="brush: java">
      * ItemCollection&lt;?&gt; col = table.scan(
      *         &quot;(#hk = :hashkeyAttrValue) AND (#rk BETWEEN :lo AND :hi)&quot;,
@@ -236,10 +236,10 @@ public final class ExpressionSpecBuilder implements Cloneable {
      *         new ValueMap().withString(&quot;:hashkeyAttrValue&quot;, &quot;allDataTypes&quot;)
      *                 .withInt(&quot;:lo&quot;, 1).withInt(&quot;:hi&quot;, 10));
      * </pre>
-     * 
+     *
      * In contrast, using ExpressionSpecBuilder:
      * <p>
-     * 
+     *
      * <pre class="brush: java">
      * import static com.amazonaws.services.dynamodbv2.xspec.ExpressionSpecBuilder.*;
      * ...
@@ -248,17 +248,17 @@ public final class ExpressionSpecBuilder implements Cloneable {
      *         S(HASH_KEY_NAME).eq("allDataTypes")
      *             .and(N(RANGE_KEY_NAME).between(1, 10))
      * ).buildForScan();
-     * 
+     *
      * ItemCollection<?> col = table.scan(xspec);
      * </pre>
-     * 
+     *
      * <h3>Sample Usage: Conditional Updates with Expressions</h3>
-     * 
+     *
      * <pre class="brush: java">
      * import static com.amazonaws.services.dynamodbv2.xspec.ExpressionSpecBuilder.*;
      * ...
      * Table table = dynamo.getTable(TABLE_NAME);
-     * 
+     *
      * UpdateItemExpressionSpec xspec = new ExpressionSpecBuilder()
      *      // SET num1 = num1 + 20
      *      .addUpdate(
@@ -271,29 +271,29 @@ public final class ExpressionSpecBuilder implements Cloneable {
      *      .withCondition(
      *          N("num2").between(0, 100)
      *      ).buildForUpdate();
-     * 
+     *
      * table.updateItem(HASH_KEY_NAME, "hashKeyValue", RANGE_KEY_NAME, 0, xspec);
      * </pre>
-     * 
+     *
      * <h3>Sample Usage: Conditional Updates with complex Condition Expression</h3>
      * <p>
      * Let's say you want to include a complex condition expression such as:
-     * 
+     *
      * <pre>
      *   (attribute_not_exists(item_version) AND attribute_not_exists(config_id) AND attribute_not_exists(config_version)) OR
      *   (item_version < 123) OR
      *   (item_version = 123 AND config_id < 456) OR
      *   (item_version = 123 AND config_id = 456 AND config_version < 999)
      * </pre>
-     * 
+     *
      * Here is how:
      * <p>
-     * 
+     *
      * <pre class="brush: java">
      * import static com.amazonaws.services.dynamodbv2.xspec.ExpressionSpecBuilder.*;
      * ...
      * Table table = dynamo.getTable(TABLE_NAME);
-     * 
+     *
      * UpdateItemExpressionSpec xspec = new ExpressionSpecBuilder()
      *      // SET num1 = num1 + 20
      *      .addUpdate(
@@ -315,17 +315,17 @@ public final class ExpressionSpecBuilder implements Cloneable {
      *              .and( N("config_id").eq(456) )
      *              .and( N("config_version").lt(999) ))
      *      ).buildForUpdate();
-     * 
+     *
      * table.updateItem(HASH_KEY_NAME, "hashKeyValue", RANGE_KEY_NAME, 0, xspec);
      * </pre>
-     * 
+     *
      * <h3>Sample Usage: Updates with SET, ADD, DELETE and REMOVE</h3>
-     * 
+     *
      * <pre class="brush: java">
      * import static com.amazonaws.services.dynamodbv2.xspec.ExpressionSpecBuilder.*;
      * ...
      * Table table = dynamo.getTable(TABLE_NAME);
-     * 
+     *
      * UpdateItemExpressionSpec xspec = new ExpressionSpecBuilder()
      *     .addUpdate(S("mapAttr.colors[0]").set("red"))
      *     .addUpdate(S("mapAttr.colors[1]").set("blue"))
@@ -335,14 +335,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      *     .addUpdate(SS("mapAttr.brands").delete("Facebook", "LinkedIn"))
      *     .addUpdate(attribute("mapAttr.foo").remove())
      *     .buildForUpdate();
-     * 
+     *
      * assertEquals("SET #0.#1[0] = :0, #0.#1[1] = :1, #0.#2 = list_append(#0.#2, :2) ADD #0.#3 :3 DELETE #0.#4 :4 REMOVE #0.#5",
      *     xspec.getUpdateExpression());
-     *     
+     *
      * final String hashkey = "addRemoveDeleteColors";
      * table.updateItem(HASH_KEY_NAME, hashkey, RANGE_KEY_NAME, 0, xspec);
      * </pre>
-     * 
+     *
      * @see PathOperand
      */
     public ExpressionSpecBuilder() {
@@ -502,6 +502,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
     }
 
     /**
+     * Returns an expression specification for use in a <code>PutItem</code>
+     * request to DynamoDB.
+     */
+    public PutItemExpressionSpec buildForPut() {
+        return new PutItemExpressionSpec(this);
+    }
+
+    /**
      * Builds and returns the update expression to be used in a dynamodb
      * request; or null if there is none.
      */
@@ -569,14 +577,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param pathOperand
      *            path operand that refers to the attribute
      * @param operand
@@ -592,14 +600,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to an attribute
      * @param defaultValue
@@ -618,14 +626,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to an attribute
      * @param defaultValue
@@ -644,14 +652,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to an attribute
      * @param defaultValue
@@ -670,14 +678,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to an attribute
      * @param defaultValue
@@ -696,14 +704,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to an attribute
      * @param defaultValue
@@ -722,14 +730,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to an attribute
      * @param defaultValue
@@ -748,14 +756,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to an attribute
      * @param defaultValue
@@ -774,14 +782,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to an attribute
      * @param defaultValue
@@ -800,14 +808,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to an attribute
      * @param defaultValue
@@ -826,14 +834,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to an attribute
      * @param defaultValue
@@ -852,14 +860,14 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to an attribute
      * @param defaultValue
@@ -878,13 +886,13 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >list_append(operand, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
      * "list_append(operand, operand) ??? This function evaluates to a list with a
-     * new element added to it. You can append the new element to the start or 
+     * new element added to it. You can append the new element to the start or
      * the end of the list by reversing the order of the operands."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to a list attribute
      * @param value
@@ -901,13 +909,13 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >list_append(operand, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
      * "list_append(operand, operand) ??? This function evaluates to a list with a
-     * new element added to it. You can append the new element to the start or 
+     * new element added to it. You can append the new element to the start or
      * the end of the list by reversing the order of the operands."
      * </pre>
-     * 
+     *
      * @param path
      *            document path to a list attribute
      * @param value
@@ -924,13 +932,13 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >list_append(operand, operand)</a> function call; used for building
      * expression.
-     * 
+     *
      * <pre>
      * "list_append(operand, operand) ??? This function evaluates to a list with a
-     * new element added to it. You can append the new element to the start or 
+     * new element added to it. You can append the new element to the start or
      * the end of the list by reversing the order of the operands."
      * </pre>
-     * 
+     *
      * @param value
      *            list of values to be appended to
      * @param path
@@ -1165,7 +1173,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
     /**
      * Returns an explicitly parenthesized condition, ie '(' condition ')' used
      * in building condition expressions.
-     * 
+     *
      * @see #_(Condition)
      */
     public static <T> ParenthesizedCondition parenthesize(Condition condition) {

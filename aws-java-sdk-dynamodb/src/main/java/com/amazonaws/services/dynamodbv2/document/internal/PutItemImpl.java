@@ -78,8 +78,6 @@ public class PutItemImpl extends AbstractImpl implements PutItemApi {
             InternalUtils.fromSimpleMap(spec.getValueMap());
         // set up the request
         req.withItem(attributes)
-            .withConditionalOperator(spec.getConditionalOperator())
-            .withConditionExpression(spec.getConditionExpression())
             .withExpected(expectedMap)
             .withExpressionAttributeNames(spec.getNameMap())
             .withExpressionAttributeValues(attrValMap)

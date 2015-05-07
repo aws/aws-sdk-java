@@ -49,6 +49,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.internal.ReleasableInputStream;
 import com.amazonaws.internal.ResettableInputStream;
 import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.services.kms.AWSKMSClient;
@@ -142,7 +143,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     /**
      * Returns the length of the ciphertext computed from the length of the
      * plaintext.
-     * 
+     *
      * @param plaintextLength
      *            a non-negative number
      * @return a non-negative number
@@ -176,11 +177,11 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             cleanupDataSource(req, fileOrig, isOrig, wrappedReq.getInputStream(), log);
         }
     }
-    
+
     /**
      * Puts an encrypted object into S3, and puts an instruction file into S3.
      * Encryption info is stored in the instruction file.
-     * 
+     *
      * @param putObjectRequest
      *            The request object containing all the parameters to upload a
      *            new object to Amazon S3.
@@ -270,7 +271,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     abstract void updateUploadContext(T uploadContext, SdkFilterInputStream is);
     /**
      * {@inheritDoc}
-     * 
+     *
      * <p>
      * <b>NOTE:</b> Because the encryption process requires context from
      * previous blocks, parts uploaded with the AmazonS3EncryptionClient (as
@@ -401,7 +402,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
 
     protected final ObjectMetadata updateMetadataWithContentCryptoMaterial(
             ObjectMetadata metadata, File file, ContentCryptoMaterial instruction) {
-        if (metadata == null) 
+        if (metadata == null)
             metadata = new ObjectMetadata();
         if (file != null) {
             Mimetypes mimetypes = Mimetypes.getInstance();
@@ -409,11 +410,11 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         }
         return instruction.toObjectMetadata(metadata, cryptoConfig.getCryptoMode());
     }
-    
+
     /**
      * Creates and returns a non-null content crypto material for the given
      * request.
-     * 
+     *
      * @throws AmazonClientException if no encryption material can be found.
      */
     protected final ContentCryptoMaterial createContentCryptoMaterial(
@@ -444,7 +445,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             // if there is no material description, fall thru to use
             // the per s3 client level encryption  materials
         }
-        // per s3 client level encryption materials 
+        // per s3 client level encryption materials
         return newContentCryptoMaterial(this.kekMaterialsProvider,
                 cryptoConfig.getCryptoProvider(), req);
     }
@@ -458,10 +459,10 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             EncryptionMaterialsProvider kekMaterialProvider,
             Map<String, String> materialsDescription, Provider provider,
             AmazonWebServiceRequest req) {
-        EncryptionMaterials kekMaterials = 
+        EncryptionMaterials kekMaterials =
             kekMaterialProvider.getEncryptionMaterials(materialsDescription);
         if (kekMaterials == null) {
-            return null; 
+            return null;
         }
         return buildContentCryptoMaterial(kekMaterials, provider, req);
     }
@@ -469,9 +470,9 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     /**
      * Returns a non-null content encryption material generated with the given kek
      * material and security providers.
-     * 
+     *
      * @throws AmazonClientException if no encryption material can be found from
-     * the given encryption material provider. 
+     * the given encryption material provider.
      */
     private ContentCryptoMaterial newContentCryptoMaterial(
             EncryptionMaterialsProvider kekMaterialProvider,
@@ -527,7 +528,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                 .withRequestMetricCollector(req.getRequestMetricCollector())
                 ;
             GenerateDataKeyResult keyGenRes = kms.generateDataKey(keyGenReq);
-            final SecretKey cek = 
+            final SecretKey cek =
                 new SecretKeySpec(copyAllBytesFrom(keyGenRes.getPlaintext()),
                         contentCryptoScheme.getKeyGeneratorAlgorithm());
             byte[] keyBlob = copyAllBytesFrom(keyGenRes.getCiphertextBlob());
@@ -537,7 +538,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         } else {
             // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
             return ContentCryptoMaterial.create(
-                    generateCEK(kekMaterials, provider), 
+                    generateCEK(kekMaterials, provider),
                     iv, kekMaterials, cryptoScheme, provider, kms, req);
         }
     }
@@ -551,12 +552,12 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         final String keygenAlgo = contentCryptoScheme.getKeyGeneratorAlgorithm();
         KeyGenerator generator;
         try {
-            generator = providerIn == null 
-                ? KeyGenerator.getInstance(keygenAlgo) 
+            generator = providerIn == null
+                ? KeyGenerator.getInstance(keygenAlgo)
                 : KeyGenerator.getInstance(keygenAlgo, providerIn);
             generator.init(contentCryptoScheme.getKeyLengthInBits(),
                     cryptoScheme.getSecureRandom());
-            // Set to true iff the key encryption involves the use of BC's public key 
+            // Set to true iff the key encryption involves the use of BC's public key
             boolean involvesBCPublicKey = false;
             KeyPair keypair = kekMaterials.getKeyPair();
             if (keypair != null) {
@@ -634,7 +635,9 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         InputStream isCurr = null;
         try {
             if (fileOrig == null) {
-                isCurr = isOrig;
+                // When input is a FileInputStream, this wrapping enables
+                // unlimited mark-and-reset
+                isCurr = isOrig == null ? null : ReleasableInputStream.wrap(isOrig);
             } else {
                 isCurr = new ResettableInputStream(fileOrig);
             }
@@ -642,7 +645,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                 // S3 allows a single PUT to be no more than 5GB, which
                 // therefore won't exceed the maximum length that can be
                 // encrypted either using any cipher such as CBC or GCM.
-                
+
                 // This ensures the plain-text read from the underlying data
                 // stream has the same length as the expected total.
                 isCurr = new LengthCheckInputStream(isCurr, plaintextLength,
@@ -729,7 +732,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
 
     /**
      * Appends a user agent to the request's USER_AGENT client marker.
-     * This method is intended only for internal use by the AWS SDK. 
+     * This method is intended only for internal use by the AWS SDK.
      */
     final <X extends AmazonWebServiceRequest> X appendUserAgent(
             X request, String userAgent) {
@@ -741,7 +744,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
      * Checks if the the crypto scheme used in the given content crypto material
      * is allowed to be used in this crypto module. Default is no-op. Subclass
      * may override.
-     * 
+     *
      * @throws SecurityException
      *             if the crypto scheme used in the given content crypto
      *             material is not allowed in this crypto module.
@@ -753,7 +756,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     /**
      * Retrieves an instruction file from S3; or null if no instruction file is
      * found.
-     * 
+     *
      * @param s3ObjectId
      *            the S3 object id (not the instruction file id)
      * @param instFileSuffix
@@ -832,12 +835,12 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
 
     /**
      * Returns the content crypto material of an existing S3 object.
-     * 
+     *
      * @param s3w
      *            an existing S3 object (wrapper)
      * @param s3objectId
      *            the object id used to retrieve the existing S3 object
-     * 
+     *
      * @return a non-null content crypto material.
      */
     private ContentCryptoMaterial contentCryptoMaterialOf(S3ObjectWrapper s3w) {
@@ -851,7 +854,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                     kms
                 );
         }
-        S3ObjectWrapper orig_ifile = 
+        S3ObjectWrapper orig_ifile =
             fetchInstructionFile(s3w.getS3ObjectId(), null);
         if (orig_ifile == null) {
             throw new IllegalArgumentException(
@@ -893,7 +896,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
 
     /**
      * Creates and return a get object request for an instruction file.
-     * 
+     *
      * @param s3objectId
      *      an S3 object id (not the instruction file id)
      * @param instFileSuffix

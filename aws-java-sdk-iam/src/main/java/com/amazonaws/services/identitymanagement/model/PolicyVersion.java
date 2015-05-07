@@ -35,9 +35,10 @@ public class PolicyVersion implements Serializable, Cloneable {
 
     /**
      * The policy document. <p>The policy document is returned in the
-     * response to the <a>GetPolicyVersion</a> operation. It is not included
-     * in the response to the <a>ListPolicyVersions</a> or
-     * <a>GetAccountAuthorizationDetails</a> operations.
+     * response to the <a>GetPolicyVersion</a> and
+     * <a>GetAccountAuthorizationDetails</a> operations. It is not returned
+     * in the response to the <a>CreatePolicyVersion</a> or
+     * <a>ListPolicyVersions</a> operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
@@ -69,18 +70,20 @@ public class PolicyVersion implements Serializable, Cloneable {
 
     /**
      * The policy document. <p>The policy document is returned in the
-     * response to the <a>GetPolicyVersion</a> operation. It is not included
-     * in the response to the <a>ListPolicyVersions</a> or
-     * <a>GetAccountAuthorizationDetails</a> operations.
+     * response to the <a>GetPolicyVersion</a> and
+     * <a>GetAccountAuthorizationDetails</a> operations. It is not returned
+     * in the response to the <a>CreatePolicyVersion</a> or
+     * <a>ListPolicyVersions</a> operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @return The policy document. <p>The policy document is returned in the
-     *         response to the <a>GetPolicyVersion</a> operation. It is not included
-     *         in the response to the <a>ListPolicyVersions</a> or
-     *         <a>GetAccountAuthorizationDetails</a> operations.
+     *         response to the <a>GetPolicyVersion</a> and
+     *         <a>GetAccountAuthorizationDetails</a> operations. It is not returned
+     *         in the response to the <a>CreatePolicyVersion</a> or
+     *         <a>ListPolicyVersions</a> operations.
      */
     public String getDocument() {
         return document;
@@ -88,18 +91,20 @@ public class PolicyVersion implements Serializable, Cloneable {
     
     /**
      * The policy document. <p>The policy document is returned in the
-     * response to the <a>GetPolicyVersion</a> operation. It is not included
-     * in the response to the <a>ListPolicyVersions</a> or
-     * <a>GetAccountAuthorizationDetails</a> operations.
+     * response to the <a>GetPolicyVersion</a> and
+     * <a>GetAccountAuthorizationDetails</a> operations. It is not returned
+     * in the response to the <a>CreatePolicyVersion</a> or
+     * <a>ListPolicyVersions</a> operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param document The policy document. <p>The policy document is returned in the
-     *         response to the <a>GetPolicyVersion</a> operation. It is not included
-     *         in the response to the <a>ListPolicyVersions</a> or
-     *         <a>GetAccountAuthorizationDetails</a> operations.
+     *         response to the <a>GetPolicyVersion</a> and
+     *         <a>GetAccountAuthorizationDetails</a> operations. It is not returned
+     *         in the response to the <a>CreatePolicyVersion</a> or
+     *         <a>ListPolicyVersions</a> operations.
      */
     public void setDocument(String document) {
         this.document = document;
@@ -107,9 +112,10 @@ public class PolicyVersion implements Serializable, Cloneable {
     
     /**
      * The policy document. <p>The policy document is returned in the
-     * response to the <a>GetPolicyVersion</a> operation. It is not included
-     * in the response to the <a>ListPolicyVersions</a> or
-     * <a>GetAccountAuthorizationDetails</a> operations.
+     * response to the <a>GetPolicyVersion</a> and
+     * <a>GetAccountAuthorizationDetails</a> operations. It is not returned
+     * in the response to the <a>CreatePolicyVersion</a> or
+     * <a>ListPolicyVersions</a> operations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -118,9 +124,10 @@ public class PolicyVersion implements Serializable, Cloneable {
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param document The policy document. <p>The policy document is returned in the
-     *         response to the <a>GetPolicyVersion</a> operation. It is not included
-     *         in the response to the <a>ListPolicyVersions</a> or
-     *         <a>GetAccountAuthorizationDetails</a> operations.
+     *         response to the <a>GetPolicyVersion</a> and
+     *         <a>GetAccountAuthorizationDetails</a> operations. It is not returned
+     *         in the response to the <a>CreatePolicyVersion</a> or
+     *         <a>ListPolicyVersions</a> operations.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -32,10 +32,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * application.
  * </p>
  * <p>
- * <b>Note:</b> Do not use this call in mobile applications or
- * client-based web applications that directly get temporary security
- * credentials. For those types of applications, use
- * <code>AssumeRoleWithWebIdentity</code> .
+ * <b>NOTE:</b> If you are creating a mobile-based or browser-based app
+ * that can authenticate users using a web identity provider like Login
+ * with Amazon, Facebook, Google, or an OpenID Connect-compatible
+ * identity provider, we recommend that you use Amazon Cognito or
+ * AssumeRoleWithWebIdentity. For more information, see Creating
+ * Temporary Security Credentials for Mobile Apps Using Identity
+ * Providers in Using Temporary Security Credentials.
  * </p>
  * <p>
  * The <code>GetFederationToken</code> action must be called by using the

@@ -31,12 +31,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * You can paginate the results using the <code>MaxItems</code> and
  * <code>Marker</code> parameters.
  * </p>
- * <p>
- * The returned policy is URL-encoded according to RFC 3986. For more
- * information about RFC 3986, go to
- * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
- * .
- * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRoles(ListRolesRequest)
  */

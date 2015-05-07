@@ -20,18 +20,19 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.annotation.Beta;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.dynamodbv2.document.KeyAttribute;
 import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
 import com.amazonaws.services.dynamodbv2.model.GetItemRequest;
 import com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity;
+import com.amazonaws.services.dynamodbv2.xspec.GetItemExpressionSpec;
 
 /**
  * Full parameter specification for the GetItem API.
  */
 public class GetItemSpec extends AbstractSpecWithPrimaryKey<GetItemRequest> {
-    private String projectionExpression;
     private Map<String, String> nameMap;
 
     public GetItemSpec() {
@@ -94,7 +95,7 @@ public class GetItemSpec extends AbstractSpecWithPrimaryKey<GetItemRequest> {
     }
 
     public String getProjectionExpression() {
-        return projectionExpression;
+        return getRequest().getProjectionExpression();
     }
 
     /**
@@ -103,8 +104,8 @@ public class GetItemSpec extends AbstractSpecWithPrimaryKey<GetItemRequest> {
      * attributes-to-get must not be specified if a projection expression has
      * been specified.)
      */
-    public GetItemSpec withProjectionExpression(String expression) {
-        this.projectionExpression = expression;
+    public GetItemSpec withProjectionExpression(String projectionExpression) {
+        getRequest().setProjectionExpression(projectionExpression);
         return this;
     }
 
@@ -139,5 +140,16 @@ public class GetItemSpec extends AbstractSpecWithPrimaryKey<GetItemRequest> {
             RequestMetricCollector requestMetricCollector) {
         setRequestMetricCollector(requestMetricCollector);
         return this;
+    }
+
+    /**
+     * Convenient method to specify expressions (and the associated name map and
+     * value map) via {@link GetItemExpressionSpec}.
+     */
+    @Beta
+    public GetItemSpec withExpressionSpec(GetItemExpressionSpec xspec) {
+        return withProjectionExpression(xspec.getProjectionExpression())
+              .withNameMap(xspec.getNameMap())
+              ;
     }
 }

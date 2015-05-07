@@ -22,7 +22,7 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.transfer.internal.DownloadImpl;
 
 final class DownloadTaskImpl implements
-        ServiceUtils.RetryableS3DownloadTask 
+        ServiceUtils.RetryableS3DownloadTask
 {
     private final AmazonS3 s3;
     private final DownloadImpl download;
@@ -44,16 +44,8 @@ final class DownloadTaskImpl implements
 
     @Override
     public boolean needIntegrityCheck() {
-        // Don't perform the integrity check
-        // if the stream data is wrapped
-        // in a decryption stream, or if
-        // we're only looking at a range of
-        // the data, since otherwise the
-        // checksum won't match up.
-        if (getObjectRequest.getRange() != null)
-            return false;
-        if (s3 instanceof AmazonS3Encryption)
-            return false;
-        return true;
+        // Don't perform the integrity check if the checksum won't matchup.
+        return !(s3 instanceof AmazonS3Encryption)
+            && !ServiceUtils.skipMd5CheckPerRequest(getObjectRequest);
     }
 }

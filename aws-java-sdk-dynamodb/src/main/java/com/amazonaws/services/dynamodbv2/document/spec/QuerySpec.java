@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.amazonaws.annotation.Beta;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.dynamodbv2.document.KeyAttribute;
@@ -33,16 +34,15 @@ import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 import com.amazonaws.services.dynamodbv2.model.QueryRequest;
 import com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity;
 import com.amazonaws.services.dynamodbv2.model.Select;
+import com.amazonaws.services.dynamodbv2.xspec.QueryExpressionSpec;
 
 /**
- * Full parameter specification for the DeleteItem API.
+ * Full parameter specification for the Query API.
  */
 public class QuerySpec extends AbstractCollectionSpec<QueryRequest> {
     private KeyAttribute hashKey;
     private RangeKeyCondition rangeKeyCondition;
     private Collection<QueryFilter> queryFilters;
-    private String filterExpression;
-    private String projectionExpression;
     private Map<String, String> nameMap;
     private Map<String, Object> valueMap;
 
@@ -73,6 +73,22 @@ public class QuerySpec extends AbstractCollectionSpec<QueryRequest> {
     public QuerySpec withRangeKeyCondition(RangeKeyCondition rangeKeyCondition) {
         this.rangeKeyCondition = rangeKeyCondition;
         return this;
+    }
+
+    /**
+     * When a key condition expression is specified, the corresponding name-map
+     * and value-map can optionally be specified via {@link #withNameMap(Map)}
+     * and {@link #withValueMap(Map)}. (Note the hash key and range key
+     * conditions must not be specified if a key condition expression has been
+     * specified.)
+     */
+    public QuerySpec withKeyConditionExpression(String keyConditionExpression) {
+        getRequest().withKeyConditionExpression(keyConditionExpression);
+        return this;
+    }
+
+    public String getKeyConditionExpression() {
+        return getRequest().getKeyConditionExpression();
     }
 
     public QuerySpec withAttributesToGet(String... attributes) {
@@ -128,13 +144,13 @@ public class QuerySpec extends AbstractCollectionSpec<QueryRequest> {
      * {@link #withValueMap(Map)}. (Note query filters must not be specified if
      * a filter expression has been specified.)
      */
-    public QuerySpec withFilterExpression(String expression) {
-        this.filterExpression = expression;
+    public QuerySpec withFilterExpression(String filterExpression) {
+        getRequest().withFilterExpression(filterExpression);
         return this;
     }
 
     public String getFilterExpression() {
-        return filterExpression;
+        return getRequest().getFilterExpression();
     }
 
     /**
@@ -143,13 +159,13 @@ public class QuerySpec extends AbstractCollectionSpec<QueryRequest> {
      * {@link #withValueMap(Map)}. (Note attributes-to-get must not be specified
      * if a projection expression has been specified.)
      */
-    public QuerySpec withProjectionExpression(String expression) {
-        this.projectionExpression = expression;
+    public QuerySpec withProjectionExpression(String projectionExpression) {
+        getRequest().withProjectionExpression(projectionExpression);
         return this;
     }
 
     public String getProjectionExpression() {
-        return projectionExpression;
+        return getRequest().getProjectionExpression();
     }
 
     public Map<String, String> getNameMap() {
@@ -235,7 +251,7 @@ public class QuerySpec extends AbstractCollectionSpec<QueryRequest> {
         }
         return this;
     }
-    
+
     public QuerySpec withExclusiveStartKey(
             String hashKeyName, Object hashKeyValue) {
         return withExclusiveStartKey(new KeyAttribute(hashKeyName, hashKeyValue));
@@ -286,5 +302,19 @@ public class QuerySpec extends AbstractCollectionSpec<QueryRequest> {
             RequestMetricCollector requestMetricCollector) {
         setRequestMetricCollector(requestMetricCollector);
         return this;
+    }
+
+    /**
+     * Convenient method to specify expressions (and the associated name map and
+     * value map) via {@link QueryExpressionSpec}.
+     */
+    @Beta
+    public QuerySpec withExpressionSpec(QueryExpressionSpec xspec) {
+        return withKeyConditionExpression(xspec.getKeyConditionExpression())
+              .withFilterExpression(xspec.getFilterExpression())
+              .withProjectionExpression(xspec.getProjectionExpression())
+              .withNameMap(xspec.getNameMap())
+              .withValueMap(xspec.getValueMap())
+              ;
     }
 }

@@ -30,7 +30,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -85,7 +84,11 @@ import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.internal.DefaultServiceEndpointBuilder;
+import com.amazonaws.internal.IdentityEndpointBuilder;
+import com.amazonaws.internal.ReleasableInputStream;
 import com.amazonaws.internal.ResettableInputStream;
+import com.amazonaws.internal.ServiceEndpointBuilder;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
@@ -106,6 +109,7 @@ import com.amazonaws.services.s3.internal.S3ExecutionContext;
 import com.amazonaws.services.s3.internal.S3MetadataResponseHandler;
 import com.amazonaws.services.s3.internal.S3ObjectResponseHandler;
 import com.amazonaws.services.s3.internal.S3QueryStringSigner;
+import com.amazonaws.services.s3.internal.S3RequestEndpointResolver;
 import com.amazonaws.services.s3.internal.S3Signer;
 import com.amazonaws.services.s3.internal.S3StringResponseHandler;
 import com.amazonaws.services.s3.internal.S3V4AuthErrorRetryStrategy;
@@ -508,7 +512,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * you'll need to call setRegion(Region.getRegion(Regions.US_EAST_1))
          * to explicitly tell us which region to include in the signature.
          */
-
         hasExplicitRegion = !(Constants.S3_HOSTNAME.equals(endpoint));
         super.setEndpoint(endpoint);
     }
@@ -518,7 +521,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         hasExplicitRegion = true;
         super.setRegion(region);
     }
-
 
     /**
      * <p>
@@ -772,18 +774,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * *must* specify a location constraint. Try to derive the region from
          * the endpoint.
          */
-        if (!(this.endpoint.getHost().equals(Constants.S3_HOSTNAME))
-                && (region == null || region.isEmpty())) {
-
+        if (!isStandardEndpoint() && (region == null || region.isEmpty())) {
             try {
-                region = RegionUtils
-                    .getRegionByEndpoint(this.endpoint.getHost())
-                    .getName();
+                region = RegionUtils.getRegionByEndpoint(this.endpoint.getHost()).getName();
             } catch (IllegalArgumentException exception) {
                 // Endpoint does not correspond to a known region; send the
                 // request with no location constraint and hope for the best.
             }
-
         }
 
         /*
@@ -1188,9 +1185,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             // we're downloading the whole object, by default we wrap the
             // stream in a validator that calculates an MD5 of the downloaded
             // bytes and complains if what we received doesn't match the Etag.
-            if (!skipContentMd5IntegrityCheck(getObjectRequest)
-                    && !ServiceUtils.skipContentMd5IntegrityCheck(s3Object
-                            .getObjectMetadata())) {
+            if (!ServiceUtils.skipMd5CheckPerRequest(getObjectRequest)
+            &&  !ServiceUtils.skipMd5CheckPerResponse(s3Object.getObjectMetadata())) {
                 byte[] serverSideHash = null;
                 String etag = s3Object.getObjectMetadata().getETag();
                 if (etag != null && ServiceUtils.isMultipartUploadETag(etag) == false) {
@@ -1254,7 +1250,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             @Override
             public boolean needIntegrityCheck() {
-                return !skipContentMd5IntegrityCheck(getObjectRequest);
+                return !ServiceUtils.skipMd5CheckPerRequest(getObjectRequest);
             }
 
         }, ServiceUtils.OVERWRITE_MODE);
@@ -1264,31 +1260,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return s3Object.getObjectMetadata();
     }
 
-    /**
-     * Returns whether the specified request should skip MD5 check on the
-     * requested object content.
-     */
-    private static boolean skipContentMd5IntegrityCheck(AmazonWebServiceRequest request) {
-        if (request instanceof GetObjectRequest) {
-            if (System.getProperty("com.amazonaws.services.s3.disableGetObjectMD5Validation") != null)
-                return true;
-
-            GetObjectRequest getObjectRequest = (GetObjectRequest)request;
-            // Skip MD5 check for range get
-            if (getObjectRequest.getRange() != null)
-                return true;
-            if (getObjectRequest.getSSECustomerKey() != null)
-                return true;
-        } else if (request instanceof PutObjectRequest) {
-            PutObjectRequest putObjectRequest = (PutObjectRequest)request;
-            return putObjectRequest.getSSECustomerKey() != null
-                    || putObjectRequest.getSSEAwsKeyManagementParams() != null;
-        } else if (request instanceof UploadPartRequest) {
-            UploadPartRequest uploadPartRequest = (UploadPartRequest)request;
-            return uploadPartRequest.getSSECustomerKey() != null;
-        }
-        return false;
-    }
 
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucket(java.lang.String)
@@ -1345,10 +1316,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             metadata = new ObjectMetadata();
         rejectNull(bucketName, "The bucket name parameter must be specified when uploading an object");
         rejectNull(key, "The key parameter must be specified when uploading an object");
-        final boolean skipContentMd5Check = skipContentMd5IntegrityCheck(putObjectRequest);
+        final boolean skipContentMd5Check = ServiceUtils.skipMd5CheckPerRequest(putObjectRequest);
         // If a file is specified for upload, we need to pull some additional
         // information from it to auto-configure a few options
-        if (file != null) {
+        if (file == null) {
+            // When input is a FileInputStream, this wrapping enables
+            // unlimited mark-and-reset
+            if (input != null)
+                input = ReleasableInputStream.wrap(input);
+        } else {
             // Always set the content length, even if it's already set
             metadata.setContentLength(file.length());
             final boolean calculateMD5 = metadata.getContentMD5() == null;
@@ -1434,8 +1410,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     input = lcis;
                 }
             }
-            if (metadata.getContentMD5() == null
-                    && !skipContentMd5Check ) {
+            if (metadata.getContentMD5() == null && !skipContentMd5Check) {
                 /*
                  * If the user hasn't set the content MD5, then we don't want to
                  * buffer the whole stream in memory just to calculate it. Instead,
@@ -2500,6 +2475,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<GeneratePresignedUrlRequest> request = createRequest(
                 bucketName, key, req, httpMethod);
 
+        if (req.isZeroByteContent())
+            request.setContent(new ByteArrayInputStream(new byte[0]));
+
         for (Entry<String, String> entry : req.getRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
@@ -2772,6 +2750,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 if (isOrig == null) {
                     throw new IllegalArgumentException(
                         "A File or InputStream must be specified when uploading part");
+                } else {
+                    // When isCurr is a FileInputStream, this wrapping enables
+                    // unlimited mark-and-reset
+                    isCurr = ReleasableInputStream.wrap(isCurr);
                 }
                 // Make backward compatible with buffer size via system property
                 final Integer bufsize = Constants.getS3StreamBufferSize();
@@ -2790,13 +2772,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                             + fileOrig, e);
                 }
             }
-            isCurr = new InputSubstream(isCurr,
+            isCurr = new InputSubstream(
+                    isCurr,
                     uploadPartRequest.getFileOffset(),
                     partSize,
                     uploadPartRequest.isLastPart());
             MD5DigestCalculatingInputStream md5DigestStream = null;
             if (uploadPartRequest.getMd5Digest() == null
-             && !skipContentMd5IntegrityCheck(uploadPartRequest)) {
+            && !ServiceUtils.skipMd5CheckPerRequest(uploadPartRequest)) {
                 /*
                  * If the user hasn't set the content MD5, then we don't want to
                  * buffer the whole stream in memory just to calculate it. Instead,
@@ -2826,7 +2809,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             final String etag = metadata.getETag();
 
             if (md5DigestStream != null
-                    && !ServiceUtils.skipContentMd5IntegrityCheck(metadata)) {
+            && !ServiceUtils.skipMd5CheckPerResponse(metadata)) {
                 byte[] clientSideHash = md5DigestStream.getMd5Digest();
                 byte[] serverSideHash = BinaryUtils.fromHex(etag);
 
@@ -3037,11 +3020,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                   final String bucketName,
                                   final String key) {
         final Signer signer = getSigner();
-        final boolean isSignerOverridden =
-                clientConfiguration != null
-             && clientConfiguration.getSignerOverride() != null;
-
-        if (!isSignerOverridden) {
+        if (!isSignerOverridden()) {
             final AmazonWebServiceRequest req = request.getOriginalRequest();
 
             if (!(signer instanceof AWSS3V4Signer) && (upgradeToSigV4(req))) {
@@ -3057,13 +3036,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 String regionOverride = getSignerRegionOverride();
                 if (regionOverride == null) {
                     if (!hasExplicitRegion) {
-                        throw new AmazonClientException(
-                            "Signature Version 4 requires knowing the region of "
-                            + "the bucket you're trying to access. You can "
-                            + "configure a region by calling AmazonS3Client."
-                            + "setRegion(Region) or AmazonS3Client.setEndpoint("
-                            + "String) with a region-specific endpoint such as "
-                            + "\"s3-us-west-2.amazonaws.com\".");
+                        throw new AmazonClientException("Signature Version 4 requires knowing the region of "
+                                + "the bucket you're trying to access. You can "
+                                + "configure a region by calling AmazonS3Client."
+                                + "setRegion(Region) or AmazonS3Client.setEndpoint("
+                                + "String) with a region-specific endpoint such as "
+                                + "\"s3-us-west-2.amazonaws.com\".");
                     }
                 } else {
                     v4Signer.setRegionName(regionOverride);
@@ -3091,11 +3069,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return signer;
     }
 
+    /**
+     * Has signer been explicitly overriden in the configuration?
+     */
+    private boolean isSignerOverridden() {
+        return clientConfiguration != null
+          && clientConfiguration.getSignerOverride() != null;
+    }
+
     private boolean isKMSPutRequest(AmazonWebServiceRequest originalRequest) {
+        boolean isPutRequest = (originalRequest instanceof PutObjectRequest);
 
-        boolean putRequest = (originalRequest instanceof PutObjectRequest);
-
-        if (putRequest) {
+        if (isPutRequest) {
             return (((PutObjectRequest) originalRequest)
                     .getSSEAwsKeyManagementParams() != null);
         }
@@ -3104,14 +3089,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     private boolean upgradeToSigV4(AmazonWebServiceRequest req) {
-
-        final boolean isStandardEnpoint = getEndpoint().getHost().equals(
-                Constants.S3_HOSTNAME);
-
         // User has said to always use SigV4 - this will fail if the user
         // attempts to read from or write to a non-US-Standard bucket without
         // explicitly setting the region.
-
         if (System.getProperty(ENFORCE_S3_SIGV4_SYSTEM_PROPERTY) != null) {
             return true;
         }
@@ -3126,8 +3106,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         // For all PutObjectRequests that involve KMS we upgrade to SigV4 if the
         // endpoint is a non-standard endpoint.
-
-        if (!isStandardEnpoint) {
+        if (!isStandardEndpoint()) {
             return ((System.getProperty(ENABLE_S3_SIGV4_SYSTEM_PROPERTY) != null)
                     || (req instanceof GetObjectRequest) || (isKMSPutRequest(req)));
         }
@@ -3136,6 +3115,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // endpoint that requires SigV4).
 
         return false;
+    }
+
+    private boolean isStandardEndpoint() {
+        return Constants.S3_HOSTNAME.equals(endpoint.getHost());
     }
 
     /**
@@ -3201,26 +3184,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             for (RequestHandler2 requestHandler2 : requestHandler2s) {
                 requestHandler2.beforeRequest(request);
             }
-        }
-    }
-
-    /**
-     * Converts the current endpoint set for this client into virtual addressing
-     * style, by placing the name of the specified bucket before the S3 service
-     * endpoint.
-     *
-     * @param bucketName
-     *            The name of the bucket to use in the virtual addressing style
-     *            of the returned URI.
-     *
-     * @return A new URI, creating from the current service endpoint URI and the
-     *         specified bucket.
-     */
-    private URI convertToVirtualHostEndpoint(String bucketName) {
-        try {
-            return new URI(endpoint.getScheme() + "://" + bucketName + "." + endpoint.getAuthority());
-        } catch (URISyntaxException e) {
-            throw new IllegalArgumentException("Invalid bucket name: " + bucketName, e);
         }
     }
 
@@ -3584,8 +3547,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *         key.
      */
     public URL getUrl(String bucketName, String key) {
-        Request<?> request = new DefaultRequest<Object>(Constants.S3_SERVICE_NAME);
-        configRequest(request, bucketName, key);
+        Request<?> request = new DefaultRequest<Object>(Constants.S3_SERVICE_DISPLAY_NAME);
+        resolveRequestEndpoint(request, bucketName, key);
         return ServiceUtils.convertRequestToUrl(request);
     }
 
@@ -3627,63 +3590,28 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *         headers or parameters, and execute.
      */
     protected <X extends AmazonWebServiceRequest> Request<X> createRequest(String bucketName, String key, X originalRequest, HttpMethodName httpMethod) {
-        Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_NAME);
+        Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_DISPLAY_NAME);
         request.setHttpMethod(httpMethod);
-        configRequest(request, bucketName, key);
+        resolveRequestEndpoint(request, bucketName, key);
         return request;
     }
 
     /**
-     * Configure the given request with the specified bucket name and key.
-     * @return the request configured
+     * Configure the given request with an endpoint and resource path based on the bucket name and
+     * key provided
      */
-    private void configRequest(
-        Request<?> request, String bucketName, String key)
-    {
-        if ( !clientOptions.isPathStyleAccess()
-             && BucketNameUtils.isDNSBucketName(bucketName)
-             && !validIP(endpoint.getHost()) ) {
-            request.setEndpoint(convertToVirtualHostEndpoint(bucketName));
-            /*
-             * If the key name starts with a slash character, in order to
-             * prevent it being treated as a path delimiter, we need to add
-             * another slash before the key name.
-             * {@see com.amazonaws.http.HttpRequestFactory#createHttpRequest}
-             */
-            if (key != null && key.startsWith("/")) {
-                key = "/" + key;
-            }
-            request.setResourcePath(key);
-        } else {
-            request.setEndpoint(endpoint);
-
-            if (bucketName != null) {
-                request.setResourcePath(bucketName + "/" + (key != null ? key : ""));
-            }
-        }
+    private void resolveRequestEndpoint(Request<?> request, String bucketName, String key) {
+        buildEndpointResolver(new IdentityEndpointBuilder(endpoint), bucketName, key)
+            .resolveRequestEndpoint(request);
     }
 
-    private boolean validIP(String IP) {
-        if (IP == null) {
-            return false;
-        }
-        String[] tokens = IP.split("\\.");
-        if (tokens.length != 4) {
-            return false;
-        }
-        for (String token : tokens) {
-            int tokenInt;
-            try {
-                tokenInt = Integer.parseInt(token);
-            } catch (NumberFormatException ase) {
-                return false;
-            }
-            if (tokenInt < 0 || tokenInt > 255) {
-                return false;
-            }
+    private S3RequestEndpointResolver buildDefaultEndpointResolver(String protocol, String bucketName, String key) {
+        return new S3RequestEndpointResolver(new DefaultServiceEndpointBuilder(
+                getServiceNameIntern(), protocol), clientOptions.isPathStyleAccess(), bucketName, key);
+    }
 
-        }
-        return true;
+    private S3RequestEndpointResolver buildEndpointResolver(ServiceEndpointBuilder serviceEndpointBuilder, String bucketName, String key) {
+        return new S3RequestEndpointResolver(serviceEndpointBuilder, clientOptions.isPathStyleAccess(), bucketName, key);
     }
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
@@ -3706,7 +3634,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         checkHttps(originalRequest);
         ExecutionContext executionContext = createExecutionContext(originalRequest);
         // Retry V4 auth errors
-        executionContext.setAuthErrorRetryStrategy(new S3V4AuthErrorRetryStrategy(bucket));
+        executionContext.setAuthErrorRetryStrategy(new S3V4AuthErrorRetryStrategy(buildDefaultEndpointResolver(
+                getProtocol(request), bucket, key)));
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         // Binds the request metrics to the current request.
         request.setAWSRequestMetrics(awsRequestMetrics);
@@ -3897,9 +3826,16 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return endpoint;
     }
 
+    private static String getProtocol(Request<?> request) {
+        if (request == null || request.getEndpoint() == null) {
+            return null;
+        }
+        return request.getEndpoint().getScheme();
+    }
+
     /**
-     * Creates and returns a multi-part upload initiation request from the given
-     * upload-object request.
+     * Creates and returns a multi-part upload initiation request from the given upload-object
+     * request.
      */
     protected final InitiateMultipartUploadRequest newInitiateMultipartUploadRequest(
             UploadObjectRequest req) {

@@ -1086,6 +1086,12 @@
         <Hostname>cloudhsm.ap-southeast-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>codedeploy</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>codedeploy.ap-southeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>kms</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1456,6 +1462,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>lambda.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>codedeploy</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>codedeploy.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>kms</ServiceName>
@@ -1984,6 +1996,12 @@
     <Region>
       <Name>us-gov-west-1</Name>
       <Endpoint>
+        <ServiceName>kms</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>kms.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>cloudtrail</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -2111,6 +2129,8 @@
       <FullName>AWS CodeDeploy</FullName>
       <RegionName>us-east-1</RegionName>
       <RegionName>us-west-2</RegionName>
+      <RegionName>ap-southeast-2</RegionName>
+      <RegionName>eu-west-1</RegionName>
     </Service>
     <Service>
       <Name>config</Name>
@@ -2129,6 +2149,7 @@
       <RegionName>sa-east-1</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>cognito-sync</Name>

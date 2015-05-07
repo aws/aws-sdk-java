@@ -61,8 +61,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements Seri
     private String path;
 
     /**
-     * The policy document. <p>The policy must be URL-encoded according to <a
-     * href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
+     * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
@@ -188,38 +187,33 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The policy document. <p>The policy must be URL-encoded according to <a
-     * href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
+     * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return The policy document. <p>The policy must be URL-encoded according to <a
-     *         href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
+     * @return The policy document.
      */
     public String getPolicyDocument() {
         return policyDocument;
     }
     
     /**
-     * The policy document. <p>The policy must be URL-encoded according to <a
-     * href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
+     * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param policyDocument The policy document. <p>The policy must be URL-encoded according to <a
-     *         href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
+     * @param policyDocument The policy document.
      */
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
     
     /**
-     * The policy document. <p>The policy must be URL-encoded according to <a
-     * href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
+     * The policy document.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -227,8 +221,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements Seri
      * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param policyDocument The policy document. <p>The policy must be URL-encoded according to <a
-     *         href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a>.
+     * @param policyDocument The policy document.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

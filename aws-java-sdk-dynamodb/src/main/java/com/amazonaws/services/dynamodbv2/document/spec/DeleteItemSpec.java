@@ -22,6 +22,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
+import com.amazonaws.annotation.Beta;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.dynamodbv2.document.Expected;
@@ -32,6 +33,7 @@ import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity;
 import com.amazonaws.services.dynamodbv2.model.ReturnItemCollectionMetrics;
 import com.amazonaws.services.dynamodbv2.model.ReturnValue;
+import com.amazonaws.services.dynamodbv2.xspec.DeleteItemExpressionSpec;
 
 /**
  * Full parameter specification for the DeleteItem API.
@@ -39,7 +41,6 @@ import com.amazonaws.services.dynamodbv2.model.ReturnValue;
 public class DeleteItemSpec extends AbstractSpecWithPrimaryKey<DeleteItemRequest> {
     private Collection<Expected> expected;
 
-    private String conditionExpression;
     private Map<String, String> nameMap;
     private Map<String, Object> valueMap;
 
@@ -101,11 +102,11 @@ public class DeleteItemSpec extends AbstractSpecWithPrimaryKey<DeleteItemRequest
     }
 
     public String getConditionExpression() {
-        return conditionExpression;
+        return getRequest().getConditionExpression();
     }
 
     public DeleteItemSpec withConditionExpression(String conditionExpression) {
-        this.conditionExpression = conditionExpression;
+        getRequest().setConditionExpression(conditionExpression);
         return this;
     }
 
@@ -192,5 +193,17 @@ public class DeleteItemSpec extends AbstractSpecWithPrimaryKey<DeleteItemRequest
             RequestMetricCollector requestMetricCollector) {
         setRequestMetricCollector(requestMetricCollector);
         return this;
+    }
+
+    /**
+     * Convenient method to specify expressions (and the associated name map and
+     * value map) via {@link DeleteItemExpressionSpec}.
+     */
+    @Beta
+    public DeleteItemSpec withExpressionSpec(DeleteItemExpressionSpec xspec) {
+        return withConditionExpression(xspec.getConditionExpression())
+              .withNameMap(xspec.getNameMap())
+              .withValueMap(xspec.getValueMap())
+              ;
     }
 }

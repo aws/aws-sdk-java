@@ -93,8 +93,7 @@ public class BatchGetItemImpl implements BatchGetItemApi {
             }
         }
         BatchGetItemRequest req = spec.getRequest()
-                .withRequestItems(requestItems)
-                .withReturnConsumedCapacity(spec.getReturnConsumedCapacity());
+                                  .withRequestItems(requestItems);
         BatchGetItemResult result = client.batchGetItem(req);
         return new BatchGetItemOutcome(result);
     }

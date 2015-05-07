@@ -714,6 +714,66 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This operation retrieves the <code>access-policy</code> subresource
+     * set on the vault???for more information on setting this subresource,
+     * see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html"> Set Vault Access Policy (PUT access-policy) </a> . If there is no access policy set on the vault, the operation returns a <code>404 Not found</code> error. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html"> Amazon Glacier Access Control with Vault Access Policies </a>
+     * .
+     * </p>
+     *
+     * @param getVaultAccessPolicyRequest Container for the necessary
+     *           parameters to execute the GetVaultAccessPolicy service method on
+     *           AmazonGlacier.
+     * 
+     * @return The response from the GetVaultAccessPolicy service method, as
+     *         returned by AmazonGlacier.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws MissingParameterValueException
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterValueException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetVaultAccessPolicyResult getVaultAccessPolicy(GetVaultAccessPolicyRequest getVaultAccessPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(getVaultAccessPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVaultAccessPolicyRequest> request = null;
+        Response<GetVaultAccessPolicyResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVaultAccessPolicyRequestMarshaller().marshall(super.beforeMarshalling(getVaultAccessPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<GetVaultAccessPolicyResult, JsonUnmarshallerContext> unmarshaller =
+                new GetVaultAccessPolicyResultJsonUnmarshaller();
+            JsonResponseHandler<GetVaultAccessPolicyResult> responseHandler =
+                new JsonResponseHandler<GetVaultAccessPolicyResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * This operation creates a new vault with the specified name. The name
      * of the vault must be unique within a region for an AWS account. You
      * can create up to 1,000 vaults per account. If you need to create more
@@ -1694,6 +1754,65 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This operation deletes the access policy associated with the
+     * specified vault. The operation is eventually consistent???that is, it
+     * might take some time for Amazon Glacier to completely remove the
+     * access policy, and you might still see the effect of the policy for a
+     * short time after you send the delete request.
+     * </p>
+     * <p>
+     * This operation is idempotent. You can invoke delete multiple times,
+     * even if there is no policy associated with the vault. For more
+     * information about vault access policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html"> Amazon Glacier Access Control with Vault Access Policies </a>
+     * .
+     * </p>
+     *
+     * @param deleteVaultAccessPolicyRequest Container for the necessary
+     *           parameters to execute the DeleteVaultAccessPolicy service method on
+     *           AmazonGlacier.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws MissingParameterValueException
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterValueException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest deleteVaultAccessPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteVaultAccessPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVaultAccessPolicyRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVaultAccessPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteVaultAccessPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
      * This operation uploads a part of an archive. You can upload archive
      * parts in any order. You can also upload them in parallel. You can
      * upload up to 10,000 parts for a multipart upload.
@@ -2163,6 +2282,62 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteVaultRequestMarshaller().marshall(super.beforeMarshalling(deleteVaultRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
+     * This operation configures an access policy for a vault and will
+     * overwrite an existing policy. To configure a vault access policy, send
+     * a PUT request to the <code>access-policy</code> subresource of the
+     * vault. An access policy is specific to a vault and is also called a
+     * vault subresource. You can set one access policy per vault and the
+     * policy can be up to 20 KB in size. For more information about vault
+     * access policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html"> Amazon Glacier Access Control with Vault Access Policies </a>
+     * .
+     * </p>
+     *
+     * @param setVaultAccessPolicyRequest Container for the necessary
+     *           parameters to execute the SetVaultAccessPolicy service method on
+     *           AmazonGlacier.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws MissingParameterValueException
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterValueException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setVaultAccessPolicy(SetVaultAccessPolicyRequest setVaultAccessPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(setVaultAccessPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetVaultAccessPolicyRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetVaultAccessPolicyRequestMarshaller().marshall(super.beforeMarshalling(setVaultAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

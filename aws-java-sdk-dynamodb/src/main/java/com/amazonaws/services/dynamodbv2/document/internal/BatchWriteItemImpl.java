@@ -107,8 +107,7 @@ public class BatchWriteItemImpl implements BatchWriteItemApi {
             }
         }
         BatchWriteItemRequest req = spec.getRequest()
-            .withRequestItems(requestItems)
-            .withReturnConsumedCapacity(spec.getReturnConsumedCapacity());
+                .withRequestItems(requestItems);
         BatchWriteItemResult result = client.batchWriteItem(req);
         return new BatchWriteItemOutcome(result);
     }

@@ -18,9 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful call to the AssumeRoleWithSAML
- * action, including temporary AWS credentials that can be used to make
- * AWS requests.
+ * Contains the response to a successful AssumeRoleWithSAML request,
+ * including temporary AWS credentials that can be used to make AWS
+ * requests.
  * </p>
  */
 public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
@@ -46,14 +46,45 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      */
     private Integer packedPolicySize;
 
+    /**
+     * The value of the <code>NameID</code> element in the
+     * <code>Subject</code> element of the SAML assertion.
+     */
     private String subject;
 
+    /**
+     * The format of the name ID, as defined by the <code>Format</code>
+     * attribute in the <code>NameID</code> element of the SAML assertion.
+     * Typical examples of the format are <code>transient</code> or
+     * <code>persistent</code>. <p> If the format includes the prefix
+     * <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is
+     * removed. For example,
+     * <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is
+     * returned as <code>transient</code>. If the format includes any other
+     * prefix, the format is returned with no modifications.
+     */
     private String subjectType;
 
+    /**
+     * The value of the <code>Issuer</code> element of the SAML assertion.
+     */
     private String issuer;
 
+    /**
+     * The value of the <code>Recipient</code> attribute of the
+     * <code>SubjectConfirmationData</code> element of the SAML assertion.
+     */
     private String audience;
 
+    /**
+     * A hash value based on the concatenation of the <code>Issuer</code>
+     * response value, the AWS account ID, and the friendly name (the last
+     * part of the ARN) of the SAML provider in IAM. The combination of
+     * <code>NameQualifier</code> and <code>Subject</code> can be used to
+     * uniquely identify a federated user. <p>The following pseudocode shows
+     * how the hash value is calculated: <p> <code>BASE64 ( SHA1 (
+     * "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
+     */
     private String nameQualifier;
 
     /**
@@ -183,29 +214,35 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the Subject property for this object.
+     * The value of the <code>NameID</code> element in the
+     * <code>Subject</code> element of the SAML assertion.
      *
-     * @return The value of the Subject property for this object.
+     * @return The value of the <code>NameID</code> element in the
+     *         <code>Subject</code> element of the SAML assertion.
      */
     public String getSubject() {
         return subject;
     }
     
     /**
-     * Sets the value of the Subject property for this object.
+     * The value of the <code>NameID</code> element in the
+     * <code>Subject</code> element of the SAML assertion.
      *
-     * @param subject The new value for the Subject property for this object.
+     * @param subject The value of the <code>NameID</code> element in the
+     *         <code>Subject</code> element of the SAML assertion.
      */
     public void setSubject(String subject) {
         this.subject = subject;
     }
     
     /**
-     * Sets the value of the Subject property for this object.
+     * The value of the <code>NameID</code> element in the
+     * <code>Subject</code> element of the SAML assertion.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subject The new value for the Subject property for this object.
+     * @param subject The value of the <code>NameID</code> element in the
+     *         <code>Subject</code> element of the SAML assertion.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -216,29 +253,77 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the SubjectType property for this object.
+     * The format of the name ID, as defined by the <code>Format</code>
+     * attribute in the <code>NameID</code> element of the SAML assertion.
+     * Typical examples of the format are <code>transient</code> or
+     * <code>persistent</code>. <p> If the format includes the prefix
+     * <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is
+     * removed. For example,
+     * <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is
+     * returned as <code>transient</code>. If the format includes any other
+     * prefix, the format is returned with no modifications.
      *
-     * @return The value of the SubjectType property for this object.
+     * @return The format of the name ID, as defined by the <code>Format</code>
+     *         attribute in the <code>NameID</code> element of the SAML assertion.
+     *         Typical examples of the format are <code>transient</code> or
+     *         <code>persistent</code>. <p> If the format includes the prefix
+     *         <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is
+     *         removed. For example,
+     *         <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is
+     *         returned as <code>transient</code>. If the format includes any other
+     *         prefix, the format is returned with no modifications.
      */
     public String getSubjectType() {
         return subjectType;
     }
     
     /**
-     * Sets the value of the SubjectType property for this object.
+     * The format of the name ID, as defined by the <code>Format</code>
+     * attribute in the <code>NameID</code> element of the SAML assertion.
+     * Typical examples of the format are <code>transient</code> or
+     * <code>persistent</code>. <p> If the format includes the prefix
+     * <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is
+     * removed. For example,
+     * <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is
+     * returned as <code>transient</code>. If the format includes any other
+     * prefix, the format is returned with no modifications.
      *
-     * @param subjectType The new value for the SubjectType property for this object.
+     * @param subjectType The format of the name ID, as defined by the <code>Format</code>
+     *         attribute in the <code>NameID</code> element of the SAML assertion.
+     *         Typical examples of the format are <code>transient</code> or
+     *         <code>persistent</code>. <p> If the format includes the prefix
+     *         <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is
+     *         removed. For example,
+     *         <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is
+     *         returned as <code>transient</code>. If the format includes any other
+     *         prefix, the format is returned with no modifications.
      */
     public void setSubjectType(String subjectType) {
         this.subjectType = subjectType;
     }
     
     /**
-     * Sets the value of the SubjectType property for this object.
+     * The format of the name ID, as defined by the <code>Format</code>
+     * attribute in the <code>NameID</code> element of the SAML assertion.
+     * Typical examples of the format are <code>transient</code> or
+     * <code>persistent</code>. <p> If the format includes the prefix
+     * <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is
+     * removed. For example,
+     * <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is
+     * returned as <code>transient</code>. If the format includes any other
+     * prefix, the format is returned with no modifications.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subjectType The new value for the SubjectType property for this object.
+     * @param subjectType The format of the name ID, as defined by the <code>Format</code>
+     *         attribute in the <code>NameID</code> element of the SAML assertion.
+     *         Typical examples of the format are <code>transient</code> or
+     *         <code>persistent</code>. <p> If the format includes the prefix
+     *         <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is
+     *         removed. For example,
+     *         <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is
+     *         returned as <code>transient</code>. If the format includes any other
+     *         prefix, the format is returned with no modifications.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -249,29 +334,29 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the Issuer property for this object.
+     * The value of the <code>Issuer</code> element of the SAML assertion.
      *
-     * @return The value of the Issuer property for this object.
+     * @return The value of the <code>Issuer</code> element of the SAML assertion.
      */
     public String getIssuer() {
         return issuer;
     }
     
     /**
-     * Sets the value of the Issuer property for this object.
+     * The value of the <code>Issuer</code> element of the SAML assertion.
      *
-     * @param issuer The new value for the Issuer property for this object.
+     * @param issuer The value of the <code>Issuer</code> element of the SAML assertion.
      */
     public void setIssuer(String issuer) {
         this.issuer = issuer;
     }
     
     /**
-     * Sets the value of the Issuer property for this object.
+     * The value of the <code>Issuer</code> element of the SAML assertion.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param issuer The new value for the Issuer property for this object.
+     * @param issuer The value of the <code>Issuer</code> element of the SAML assertion.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -282,29 +367,35 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the Audience property for this object.
+     * The value of the <code>Recipient</code> attribute of the
+     * <code>SubjectConfirmationData</code> element of the SAML assertion.
      *
-     * @return The value of the Audience property for this object.
+     * @return The value of the <code>Recipient</code> attribute of the
+     *         <code>SubjectConfirmationData</code> element of the SAML assertion.
      */
     public String getAudience() {
         return audience;
     }
     
     /**
-     * Sets the value of the Audience property for this object.
+     * The value of the <code>Recipient</code> attribute of the
+     * <code>SubjectConfirmationData</code> element of the SAML assertion.
      *
-     * @param audience The new value for the Audience property for this object.
+     * @param audience The value of the <code>Recipient</code> attribute of the
+     *         <code>SubjectConfirmationData</code> element of the SAML assertion.
      */
     public void setAudience(String audience) {
         this.audience = audience;
     }
     
     /**
-     * Sets the value of the Audience property for this object.
+     * The value of the <code>Recipient</code> attribute of the
+     * <code>SubjectConfirmationData</code> element of the SAML assertion.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param audience The new value for the Audience property for this object.
+     * @param audience The value of the <code>Recipient</code> attribute of the
+     *         <code>SubjectConfirmationData</code> element of the SAML assertion.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -315,29 +406,65 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the NameQualifier property for this object.
+     * A hash value based on the concatenation of the <code>Issuer</code>
+     * response value, the AWS account ID, and the friendly name (the last
+     * part of the ARN) of the SAML provider in IAM. The combination of
+     * <code>NameQualifier</code> and <code>Subject</code> can be used to
+     * uniquely identify a federated user. <p>The following pseudocode shows
+     * how the hash value is calculated: <p> <code>BASE64 ( SHA1 (
+     * "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
      *
-     * @return The value of the NameQualifier property for this object.
+     * @return A hash value based on the concatenation of the <code>Issuer</code>
+     *         response value, the AWS account ID, and the friendly name (the last
+     *         part of the ARN) of the SAML provider in IAM. The combination of
+     *         <code>NameQualifier</code> and <code>Subject</code> can be used to
+     *         uniquely identify a federated user. <p>The following pseudocode shows
+     *         how the hash value is calculated: <p> <code>BASE64 ( SHA1 (
+     *         "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
      */
     public String getNameQualifier() {
         return nameQualifier;
     }
     
     /**
-     * Sets the value of the NameQualifier property for this object.
+     * A hash value based on the concatenation of the <code>Issuer</code>
+     * response value, the AWS account ID, and the friendly name (the last
+     * part of the ARN) of the SAML provider in IAM. The combination of
+     * <code>NameQualifier</code> and <code>Subject</code> can be used to
+     * uniquely identify a federated user. <p>The following pseudocode shows
+     * how the hash value is calculated: <p> <code>BASE64 ( SHA1 (
+     * "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
      *
-     * @param nameQualifier The new value for the NameQualifier property for this object.
+     * @param nameQualifier A hash value based on the concatenation of the <code>Issuer</code>
+     *         response value, the AWS account ID, and the friendly name (the last
+     *         part of the ARN) of the SAML provider in IAM. The combination of
+     *         <code>NameQualifier</code> and <code>Subject</code> can be used to
+     *         uniquely identify a federated user. <p>The following pseudocode shows
+     *         how the hash value is calculated: <p> <code>BASE64 ( SHA1 (
+     *         "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
      */
     public void setNameQualifier(String nameQualifier) {
         this.nameQualifier = nameQualifier;
     }
     
     /**
-     * Sets the value of the NameQualifier property for this object.
+     * A hash value based on the concatenation of the <code>Issuer</code>
+     * response value, the AWS account ID, and the friendly name (the last
+     * part of the ARN) of the SAML provider in IAM. The combination of
+     * <code>NameQualifier</code> and <code>Subject</code> can be used to
+     * uniquely identify a federated user. <p>The following pseudocode shows
+     * how the hash value is calculated: <p> <code>BASE64 ( SHA1 (
+     * "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nameQualifier The new value for the NameQualifier property for this object.
+     * @param nameQualifier A hash value based on the concatenation of the <code>Issuer</code>
+     *         response value, the AWS account ID, and the friendly name (the last
+     *         part of the ARN) of the SAML provider in IAM. The combination of
+     *         <code>NameQualifier</code> and <code>Subject</code> can be used to
+     *         uniquely identify a federated user. <p>The following pseudocode shows
+     *         how the hash value is calculated: <p> <code>BASE64 ( SHA1 (
+     *         "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

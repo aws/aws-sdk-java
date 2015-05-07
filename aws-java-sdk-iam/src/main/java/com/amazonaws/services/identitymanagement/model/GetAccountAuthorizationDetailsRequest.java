@@ -21,10 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest) GetAccountAuthorizationDetails operation}.
  * <p>
- * Retrieves information about all IAM users, groups, and roles in your
- * account, including their relationships to one another and their
- * policies. Use this API to obtain a snapshot of the configuration of
- * IAM permissions (users, groups, roles, and policies) in your account.
+ * Retrieves information about all IAM users, groups, roles, and policies
+ * in your account, including their relationships to one another. Use
+ * this API to obtain a snapshot of the configuration of IAM permissions
+ * (users, groups, roles, and policies) in your account.
  * </p>
  * <p>
  * You can optionally filter the results using the <code>Filter</code>

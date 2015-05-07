@@ -18,9 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful call to the GetSessionToken
- * action, including temporary AWS credentials that can be used to make
- * AWS requests.
+ * Contains the response to a successful GetSessionToken request,
+ * including temporary AWS credentials that can be used to make AWS
+ * requests.
  * </p>
  */
 public class GetSessionTokenResult implements Serializable, Cloneable {

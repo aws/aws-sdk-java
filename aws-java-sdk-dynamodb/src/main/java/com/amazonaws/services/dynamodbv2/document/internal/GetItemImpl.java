@@ -72,10 +72,6 @@ public class GetItemImpl extends AbstractImpl implements GetItemApi {
         GetItemRequest req = spec.getRequest()
                 .withTableName(tableName)
                 .withKey(InternalUtils.toAttributeValueMap(spec.getKeyComponents()))
-                .withReturnConsumedCapacity(spec.getReturnConsumedCapacity())
-                .withAttributesToGet(spec.getAttributesToGet())
-                .withConsistentRead(spec.isConsistentRead())
-                .withProjectionExpression(spec.getProjectionExpression())
                 .withExpressionAttributeNames(spec.getNameMap());
 
         GetItemResult result = getClient().getItem(req);

@@ -18,9 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful call to the AssumeRole action,
- * including temporary AWS credentials that can be used to make AWS
- * requests.
+ * Contains the response to a successful AssumeRole request, including
+ * temporary AWS credentials that can be used to make AWS requests.
  * </p>
  */
 public class AssumeRoleResult implements Serializable, Cloneable {

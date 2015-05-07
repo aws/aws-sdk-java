@@ -39,10 +39,14 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.transfer.exception.FileLockException;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
@@ -253,7 +257,7 @@ public class ServiceUtils {
      * Same as {@link #downloadObjectToFile(S3Object, File, boolean, boolean)}
      * but has an additional expected file length parameter for integrity
      * checking purposes.
-     * 
+     *
      * @param expectedFileLength
      *            applicable only when appendData is true; the expected length
      *            of the file to append to.
@@ -261,7 +265,7 @@ public class ServiceUtils {
     public static void downloadToFile(S3Object s3Object,
         final File dstfile, boolean performIntegrityCheck,
         final boolean appendData,
-        final long expectedFileLength) 
+        final long expectedFileLength)
     {
         // attempt to create the parent if it doesn't exist
         File parentDirectory = dstfile.getParentFile();
@@ -311,12 +315,15 @@ public class ServiceUtils {
             // side
             // Server Side encryption with AWS KMS enabled objects has MD5 of
             // cipher text. So the MD5 validation needs to be skipped.
-            if (!(ServiceUtils.isMultipartUploadETag(s3Object
-                    .getObjectMetadata().getETag()))
-                    && !skipContentMd5IntegrityCheck(s3Object
-                            .getObjectMetadata())) {
-                clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(dstfile));
-                serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
+            final ObjectMetadata metadata = s3Object.getObjectMetadata();
+            if (metadata != null) {
+                final String etag = metadata.getETag();
+                if (!ServiceUtils.isMultipartUploadETag(etag)
+                &&  !skipMd5CheckPerResponse(metadata))
+                {
+                    clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(dstfile));
+                    serverSideHash = BinaryUtils.fromHex(etag);
+                }
             }
         } catch (Exception e) {
             log.warn("Unable to calculate MD5 hash to validate download: " + e.getMessage(), e);
@@ -339,16 +346,16 @@ public class ServiceUtils {
          * User defines how to get the S3Object from S3 for this RetryableS3DownloadTask.
          *
          * @return
-         * 		The S3Object containing a reference to an InputStream
-         *    	containing the object's data.
+         *         The S3Object containing a reference to an InputStream
+         *        containing the object's data.
          */
         public S3Object getS3ObjectStream ();
         /**
          * User defines whether integrity check is needed for this RetryableS3DownloadTask.
          *
          * @return
-         * 		Boolean value indicating whether this task requires integrity check
-         * 		after downloading the S3 object to file.
+         *         Boolean value indicating whether this task requires integrity check
+         *         after downloading the S3 object to file.
          */
         public boolean needIntegrityCheck ();
     }
@@ -360,10 +367,10 @@ public class ServiceUtils {
      * S3Object (when getObject request does not meet the specified constraints).
      *
      * @param file
-     * 			The file to store the object's data in.
+     *             The file to store the object's data in.
      * @param retryableS3DownloadTask
-     * 			The implementation of SafeS3DownloadTask interface which allows user to
-     * 			get access to all the visible variables at the calling site of this method.
+     *             The implementation of SafeS3DownloadTask interface which allows user to
+     *             get access to all the visible variables at the calling site of this method.
      */
     public static S3Object retryableDownloadS3ObjectToFile(File file,
             RetryableS3DownloadTask retryableS3DownloadTask, boolean appendData) {
@@ -385,9 +392,9 @@ public class ServiceUtils {
                     throw ace;
                 // Determine whether an immediate retry is needed according to the captured AmazonClientException.
                 // (There are three cases when downloadObjectToFile() throws AmazonClientException:
-                // 		1) SocketException or SSLProtocolException when writing to disk (e.g. when user aborts the download)
-                //		2) Other IOException when writing to disk
-                //		3) MD5 hashes don't match
+                //         1) SocketException or SSLProtocolException when writing to disk (e.g. when user aborts the download)
+                //        2) Other IOException when writing to disk
+                //        3) MD5 hashes don't match
                 // The current code will retry the download only when case 2) or 3) happens.
                 if (ace.getCause() instanceof SocketException || ace.getCause() instanceof SSLProtocolException) {
                     throw ace;
@@ -408,15 +415,59 @@ public class ServiceUtils {
     }
 
     /**
+     * Based on the given metadata of an S3 response,
      * Returns whether the specified request should skip MD5 check on the
-     * requested object content. Currently for Amazon S3 objects that have
-     * Server Side Encryption enabled with keys maintained in AWS Key Management
-     * System, the MD5 returned in the response will be the MD5 of the cipher
-     * text. Hence the MD5 check needs to be skipped for such Amazon S3 objects.
+     * requested object content.  Specifically, MD5 check should be skipped if
+     * either SSE-KMS or SSE-C is involved.
+     * <p>
+     * The reason is that when SSE-KMS or SSE-C is involved, the MD5 returned
+     * from the server side is the MD5 of the ciphertext, which will by definition
+     * mismatch the MD5 on the client side which is computed based on the plaintext.
      */
-    public static boolean skipContentMd5IntegrityCheck(ObjectMetadata metadata) {
-        return metadata == null ? false
-                : (metadata.getSSEAlgorithm() != null && metadata
-                        .getSSEAwsKmsKeyId() != null);
+    public static boolean skipMd5CheckPerResponse(ObjectMetadata metadata) {
+        return metadata != null
+            && (metadata.getSSEAwsKmsKeyId() != null
+            ||  metadata.getSSECustomerAlgorithm() != null);
+    }
+
+    /**
+     * Based on the given request object, returns whether the specified request
+     * should skip MD5 check on the requested object content. Specifically, MD5
+     * check should be skipped if one of the following condition is true:
+     * <ol>
+     * <li>The system property
+     *
+     * <pre>
+     * -Dcom.amazonaws.services.s3.disableGetObjectMD5Validation
+     * </pre>
+     *
+     * is specified;</li>
+     * <li>The request is a range-get operation</li>
+     * <li>The request is a GET object operation that involves SSE-C</li>
+     * <li>The request is a PUT object operation that involves SSE-C</li>
+     * <li>The request is a PUT object operation that involves SSE-KMS</li>
+     * <li>The request is an upload-part operation that involves SSE-C</li>
+     * </ol>
+     * Otherwise, MD5 check should not be skipped.
+     */
+    public static boolean skipMd5CheckPerRequest(AmazonWebServiceRequest request) {
+        if (request instanceof GetObjectRequest) {
+            if (System.getProperty("com.amazonaws.services.s3.disableGetObjectMD5Validation") != null)
+                return true;
+            GetObjectRequest getObjectRequest = (GetObjectRequest)request;
+            // Skip MD5 check for range get
+            if (getObjectRequest.getRange() != null)
+                return true;
+            if (getObjectRequest.getSSECustomerKey() != null)
+                return true;
+        } else if (request instanceof PutObjectRequest) {
+            PutObjectRequest putObjectRequest = (PutObjectRequest)request;
+            return putObjectRequest.getSSECustomerKey() != null
+                    || putObjectRequest.getSSEAwsKeyManagementParams() != null;
+        } else if (request instanceof UploadPartRequest) {
+            UploadPartRequest uploadPartRequest = (UploadPartRequest)request;
+            return uploadPartRequest.getSSECustomerKey() != null;
+        }
+        return false;
     }
 }

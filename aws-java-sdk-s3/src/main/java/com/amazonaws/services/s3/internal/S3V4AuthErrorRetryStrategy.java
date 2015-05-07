@@ -16,8 +16,6 @@ package com.amazonaws.services.s3.internal;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -25,111 +23,107 @@ import org.apache.http.annotation.Immutable;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
+import com.amazonaws.http.HttpResponse;
+import com.amazonaws.internal.SdkPredicate;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.retry.internal.AuthRetryParameters;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.Headers;
+import com.amazonaws.util.StringUtils;
 
 /**
- * The internal implementation of AuthErrorRetryStrategy which automatically
- * switches to V4 signer when the S3 returns auth error asking for v4
- * authentication.
+ * The internal implementation of AuthErrorRetryStrategy which automatically switches to V4 signer
+ * when the S3 returns auth error asking for v4 authentication.
  */
 @Immutable
 public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
 
-    private static Log log = LogFactory.getLog(AmazonS3Client.class);
+    private static Log log = LogFactory.getLog(S3V4AuthErrorRetryStrategy.class);
 
-    private static final String V4_REGION_WARNING =
-            "please use region-specific endpoint to access " +
-            "buckets located in regions that require V4 signing.";
+    private static final String V4_REGION_WARNING = "please use region-specific endpoint to access "
+            + "buckets located in regions that require V4 signing.";
 
-    private final String bucketName;
+    private final S3RequestEndpointResolver endpointResolver;
+    private final SdkPredicate<AmazonServiceException> sigV4RetryPredicate;
 
-    private static final List<String> ERROR_CODES_AUTH_ERROR;
-
-    private static final List<String> ERROR_MESSAGES_AUTH_ERROR;
-
-    static {
-        ERROR_CODES_AUTH_ERROR = new ArrayList<String>();
-        ERROR_CODES_AUTH_ERROR.add("InvalidRequest");
-        ERROR_CODES_AUTH_ERROR.add("InvalidArgument");
-
-        ERROR_MESSAGES_AUTH_ERROR = new ArrayList<String>();
-        ERROR_MESSAGES_AUTH_ERROR.add("Please use AWS4-HMAC-SHA256.");
-        ERROR_MESSAGES_AUTH_ERROR
-                .add("AWS KMS managed keys require AWS Signature Version 4.");
+    public S3V4AuthErrorRetryStrategy(S3RequestEndpointResolver endpointResolver) {
+        this.endpointResolver = endpointResolver;
+        this.sigV4RetryPredicate = new IsSigV4RetryablePredicate();
     }
 
-    public S3V4AuthErrorRetryStrategy(String bucketName) {
-        this.bucketName = bucketName;
+    /**
+     * Currently only used for testing
+     */
+    S3V4AuthErrorRetryStrategy(S3RequestEndpointResolver endpointResolver,
+            SdkPredicate<AmazonServiceException> isSigV4Retryable) {
+        this.endpointResolver = endpointResolver;
+        this.sigV4RetryPredicate = isSigV4Retryable;
     }
 
     @Override
     public AuthRetryParameters shouldRetryWithAuthParam(Request<?> request,
-            AmazonServiceException ase) {
-
-        /*
-         * If we get an auth error asking us to use v4 signer, retry the request with
-         *  - v4 signer
-         *  - virtual-host style addressing
-         *  - "s3-external-1.amazonaws.com" as the service endpoint
-         *  - "us-east-1" as the signer region
-         * This will trigger a 307 which will then redirect us to the correct region.
-         */
-        if ( isAwsV4SigningRequiredError(request.getOriginalRequest(), ase) ) {
-            if ( !BucketNameUtils.isDNSBucketName(bucketName) ) {
-                throw new AmazonClientException(V4_REGION_WARNING, ase);
-            }
-
-            AWSS3V4Signer v4Signer = new AWSS3V4Signer();
-            v4Signer.setRegionName("us-east-1");
-            v4Signer.setServiceName("s3");
-
-            URI bucketEndpoint = null;
-            try {
-                bucketEndpoint = new URI(String.format(
-                        "https://%s.s3-external-1.amazonaws.com", bucketName));
-            } catch (URISyntaxException e) {
-                throw new AmazonClientException(
-                        "Failed to re-send the request to \"s3-external-1.amazonaws.com\". " +
-                        V4_REGION_WARNING, e);
-            }
-
-            log.warn("Attempting to re-send the request to " +
-                    bucketEndpoint.getHost() + " with AWS V4 authentication. " +
-                    "To avoid this warning in the future, " +
-                    V4_REGION_WARNING);
-
-            return new AuthRetryParameters(v4Signer, bucketEndpoint);
+                                                        HttpResponse response,
+                                                        AmazonServiceException ase) {
+        if (!sigV4RetryPredicate.test(ase)) {
+            return null;
         }
+        if (hasServingRegionHeader(response)) {
+            return redirectToRegionInHeader(request, response);
+        } else if (canUseVirtualAddressing()) {
+            return redirectToS3External();
+        } else {
+            throw new AmazonClientException(V4_REGION_WARNING, ase);
+        }
+    }
 
-        return null;
+    private boolean canUseVirtualAddressing() {
+        return BucketNameUtils.isDNSBucketName(endpointResolver.getBucketName());
+    }
+
+    private AuthRetryParameters redirectToRegionInHeader(Request<?> request, HttpResponse response) {
+        final String region = getServingRegionHeader(response);
+        AWSS3V4Signer v4Signer = buildSigV4Signer(region);
+        endpointResolver.resolveRequestEndpoint(request, region);
+        return buildRetryParams(v4Signer, request.getEndpoint());
     }
 
     /**
-     * Returns true if the given AWS service exception indicates an auth error
-     * asking for V4 authentication.
+     * If the response doesn't have the x-amz-region header we have to resort to sending a request
+     * to s3-external-1
+     * 
+     * @return
      */
-    private static boolean isAwsV4SigningRequiredError(
-            AmazonWebServiceRequest originalRequest, AmazonServiceException ase) {
-        if (ase == null)
-            return false;
-
-        final String errorCode = ase.getErrorCode();
-        final String errorMsg = ase.getErrorMessage() != null ? ase
-                .getErrorMessage().trim() : null;
-
-        if (errorMsg != null) {
-            if (ERROR_CODES_AUTH_ERROR.contains(errorCode)) {
-                for (String possibleErrorMessage : ERROR_MESSAGES_AUTH_ERROR) {
-                    if (errorMsg.contains(possibleErrorMessage))
-                        return true;
-                }
-            }
+    private AuthRetryParameters redirectToS3External() {
+        AWSS3V4Signer v4Signer = buildSigV4Signer(Regions.US_EAST_1.toString());
+        try {
+            URI bucketEndpoint = new URI(String.format("https://%s.s3-external-1.amazonaws.com", endpointResolver.getBucketName()));
+            return buildRetryParams(v4Signer, bucketEndpoint);
+        } catch (URISyntaxException e) {
+            throw new AmazonClientException("Failed to re-send the request to \"s3-external-1.amazonaws.com\". "
+                    + V4_REGION_WARNING, e);
         }
+    }
 
-        return false;
+    private AWSS3V4Signer buildSigV4Signer(final String region) {
+        AWSS3V4Signer v4Signer = new AWSS3V4Signer();
+        v4Signer.setRegionName(region);
+        v4Signer.setServiceName(AmazonS3Client.S3_SERVICE_NAME);
+        return v4Signer;
+    }
+
+    private AuthRetryParameters buildRetryParams(AWSS3V4Signer signer, URI endpoint) {
+        log.warn("Attempting to re-send the request to " + endpoint.getHost() + " with AWS V4 authentication. "
+                + "To avoid this warning in the future, " + V4_REGION_WARNING);
+        return new AuthRetryParameters(signer, endpoint);
+    }
+
+    private static boolean hasServingRegionHeader(HttpResponse response) {
+        return !StringUtils.isNullOrEmpty(getServingRegionHeader(response));
+    }
+
+    private static String getServingRegionHeader(HttpResponse response) {
+        return response.getHeaders().get(Headers.S3_SERVING_REGION);
     }
 }

@@ -651,6 +651,67 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
 
     /**
      * <p>
+     * This operation retrieves the <code>access-policy</code> subresource
+     * set on the vault???for more information on setting this subresource,
+     * see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html"> Set Vault Access Policy (PUT access-policy) </a> . If there is no access policy set on the vault, the operation returns a <code>404 Not found</code> error. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html"> Amazon Glacier Access Control with Vault Access Policies </a>
+     * .
+     * </p>
+     *
+     * @param getVaultAccessPolicyRequest Container for the necessary
+     *           parameters to execute the GetVaultAccessPolicy operation on
+     *           AmazonGlacier.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetVaultAccessPolicy service method, as returned by AmazonGlacier.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetVaultAccessPolicyResult> getVaultAccessPolicyAsync(GetVaultAccessPolicyRequest getVaultAccessPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation retrieves the <code>access-policy</code> subresource
+     * set on the vault???for more information on setting this subresource,
+     * see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html"> Set Vault Access Policy (PUT access-policy) </a> . If there is no access policy set on the vault, the operation returns a <code>404 Not found</code> error. For more information about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html"> Amazon Glacier Access Control with Vault Access Policies </a>
+     * .
+     * </p>
+     *
+     * @param getVaultAccessPolicyRequest Container for the necessary
+     *           parameters to execute the GetVaultAccessPolicy operation on
+     *           AmazonGlacier.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetVaultAccessPolicy service method, as returned by AmazonGlacier.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetVaultAccessPolicyResult> getVaultAccessPolicyAsync(GetVaultAccessPolicyRequest getVaultAccessPolicyRequest,
+            AsyncHandler<GetVaultAccessPolicyRequest, GetVaultAccessPolicyResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * This operation creates a new vault with the specified name. The name
      * of the vault must be unique within a region for an AWS account. You
      * can create up to 1,000 vaults per account. If you need to create more
@@ -2102,6 +2163,81 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
 
     /**
      * <p>
+     * This operation deletes the access policy associated with the
+     * specified vault. The operation is eventually consistent???that is, it
+     * might take some time for Amazon Glacier to completely remove the
+     * access policy, and you might still see the effect of the policy for a
+     * short time after you send the delete request.
+     * </p>
+     * <p>
+     * This operation is idempotent. You can invoke delete multiple times,
+     * even if there is no policy associated with the vault. For more
+     * information about vault access policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html"> Amazon Glacier Access Control with Vault Access Policies </a>
+     * .
+     * </p>
+     *
+     * @param deleteVaultAccessPolicyRequest Container for the necessary
+     *           parameters to execute the DeleteVaultAccessPolicy operation on
+     *           AmazonGlacier.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteVaultAccessPolicy service method, as returned by AmazonGlacier.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteVaultAccessPolicyAsync(DeleteVaultAccessPolicyRequest deleteVaultAccessPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation deletes the access policy associated with the
+     * specified vault. The operation is eventually consistent???that is, it
+     * might take some time for Amazon Glacier to completely remove the
+     * access policy, and you might still see the effect of the policy for a
+     * short time after you send the delete request.
+     * </p>
+     * <p>
+     * This operation is idempotent. You can invoke delete multiple times,
+     * even if there is no policy associated with the vault. For more
+     * information about vault access policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html"> Amazon Glacier Access Control with Vault Access Policies </a>
+     * .
+     * </p>
+     *
+     * @param deleteVaultAccessPolicyRequest Container for the necessary
+     *           parameters to execute the DeleteVaultAccessPolicy operation on
+     *           AmazonGlacier.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteVaultAccessPolicy service method, as returned by AmazonGlacier.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteVaultAccessPolicyAsync(DeleteVaultAccessPolicyRequest deleteVaultAccessPolicyRequest,
+            AsyncHandler<DeleteVaultAccessPolicyRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * This operation uploads a part of an archive. You can upload archive
      * parts in any order. You can also upload them in parallel. You can
      * upload up to 10,000 parts for a multipart upload.
@@ -2752,6 +2888,75 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      */
     public Future<Void> deleteVaultAsync(DeleteVaultRequest deleteVaultRequest,
             AsyncHandler<DeleteVaultRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation configures an access policy for a vault and will
+     * overwrite an existing policy. To configure a vault access policy, send
+     * a PUT request to the <code>access-policy</code> subresource of the
+     * vault. An access policy is specific to a vault and is also called a
+     * vault subresource. You can set one access policy per vault and the
+     * policy can be up to 20 KB in size. For more information about vault
+     * access policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html"> Amazon Glacier Access Control with Vault Access Policies </a>
+     * .
+     * </p>
+     *
+     * @param setVaultAccessPolicyRequest Container for the necessary
+     *           parameters to execute the SetVaultAccessPolicy operation on
+     *           AmazonGlacier.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetVaultAccessPolicy service method, as returned by AmazonGlacier.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setVaultAccessPolicyAsync(SetVaultAccessPolicyRequest setVaultAccessPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation configures an access policy for a vault and will
+     * overwrite an existing policy. To configure a vault access policy, send
+     * a PUT request to the <code>access-policy</code> subresource of the
+     * vault. An access policy is specific to a vault and is also called a
+     * vault subresource. You can set one access policy per vault and the
+     * policy can be up to 20 KB in size. For more information about vault
+     * access policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html"> Amazon Glacier Access Control with Vault Access Policies </a>
+     * .
+     * </p>
+     *
+     * @param setVaultAccessPolicyRequest Container for the necessary
+     *           parameters to execute the SetVaultAccessPolicy operation on
+     *           AmazonGlacier.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetVaultAccessPolicy service method, as returned by AmazonGlacier.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setVaultAccessPolicyAsync(SetVaultAccessPolicyRequest setVaultAccessPolicyRequest,
+            AsyncHandler<SetVaultAccessPolicyRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
