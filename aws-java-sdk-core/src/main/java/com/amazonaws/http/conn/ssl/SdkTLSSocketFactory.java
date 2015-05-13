@@ -19,6 +19,9 @@ import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.security.AccessController;
+import java.security.PrivilegedActionException;
+import java.security.PrivilegedExceptionAction;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -130,26 +133,36 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
     private void verifyMasterSecret(final Socket sock) {
         if (sock instanceof SSLSocket) {
             SSLSocket ssl = (SSLSocket)sock;
-            SSLSession session = ssl.getSession();
+            final SSLSession session = ssl.getSession();
             if (session != null) {
-                String className = session.getClass().getName();
+                final String className = session.getClass().getName();
                 if ("sun.security.ssl.SSLSessionImpl".equals(className)) {
+                    boolean success = false;
+                    Object masterSecret = null;
                     try {
-                        Class<?> clazz = Class.forName(className);
-                        Method method = clazz.getDeclaredMethod("getMasterSecret");
-                        method.setAccessible(true);
-                        Object masterSecret = method.invoke(session);
-                        if (masterSecret == null)
-                            throw log(new SecurityException("Invalid SSL master secret"));
-                    } catch (ClassNotFoundException e) {
+                        masterSecret = AccessController.doPrivileged(new PrivilegedExceptionAction<Object>() {
+                          @Override
+                          public Object run() throws Exception {
+                            Class<?> clazz = Class.forName(className);
+                            Method method = clazz.getDeclaredMethod("getMasterSecret");
+                            method.setAccessible(true);
+                            return method.invoke(session);
+                          }
+                        });
+                        success = true;
+                    } catch (SecurityException e) {
                         failedToVerifyMasterSecret(e);
-                    } catch (NoSuchMethodException e) {
-                        failedToVerifyMasterSecret(e);
-                    } catch (IllegalAccessException e) {
-                        failedToVerifyMasterSecret(e);
-                    } catch (InvocationTargetException e) {
-                        failedToVerifyMasterSecret(e.getCause());
+                    } catch (PrivilegedActionException e) {
+                        // unwrap checked exception
+                        Throwable cause = e.getCause();
+                        if (cause instanceof InvocationTargetException) {
+                          // unwrap checked exception
+                          cause = cause.getCause();
+                        }
+                        failedToVerifyMasterSecret(cause);
                     }
+                    if (success && masterSecret == null)
+                      throw log(new SecurityException("Invalid SSL master secret"));
                 }
             }
         }
