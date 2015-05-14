@@ -52,8 +52,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
     private java.util.Date attachTime;
 
     /**
-     * Indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the EBS volume is deleted on instance termination.
      */
     private Boolean deleteOnTermination;
 
@@ -272,35 +271,29 @@ public class VolumeAttachment implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the EBS volume is deleted on instance termination.
      *
-     * @return Indicates whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @return Indicates whether the EBS volume is deleted on instance termination.
      */
     public Boolean isDeleteOnTermination() {
         return deleteOnTermination;
     }
     
     /**
-     * Indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the EBS volume is deleted on instance termination.
      *
-     * @param deleteOnTermination Indicates whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @param deleteOnTermination Indicates whether the EBS volume is deleted on instance termination.
      */
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
     
     /**
-     * Indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the EBS volume is deleted on instance termination.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deleteOnTermination Indicates whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @param deleteOnTermination Indicates whether the EBS volume is deleted on instance termination.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -311,11 +304,9 @@ public class VolumeAttachment implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the EBS volume is deleted on instance termination.
      *
-     * @return Indicates whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @return Indicates whether the EBS volume is deleted on instance termination.
      */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;

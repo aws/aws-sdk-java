@@ -63,6 +63,10 @@ public class ParameterDeclarationStaxUnmarshaller implements Unmarshaller<Parame
                     parameterDeclaration.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ParameterConstraints", targetDepth)) {
+                    parameterDeclaration.setParameterConstraints(ParameterConstraintsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return parameterDeclaration;

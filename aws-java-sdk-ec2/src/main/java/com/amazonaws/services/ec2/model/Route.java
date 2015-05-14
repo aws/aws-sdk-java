@@ -29,6 +29,11 @@ public class Route implements Serializable, Cloneable {
     private String destinationCidrBlock;
 
     /**
+     * The prefix of the AWS service.
+     */
+    private String destinationPrefixListId;
+
+    /**
      * The ID of a gateway attached to your VPC.
      */
     private String gatewayId;
@@ -108,6 +113,39 @@ public class Route implements Serializable, Cloneable {
      */
     public Route withDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
+        return this;
+    }
+
+    /**
+     * The prefix of the AWS service.
+     *
+     * @return The prefix of the AWS service.
+     */
+    public String getDestinationPrefixListId() {
+        return destinationPrefixListId;
+    }
+    
+    /**
+     * The prefix of the AWS service.
+     *
+     * @param destinationPrefixListId The prefix of the AWS service.
+     */
+    public void setDestinationPrefixListId(String destinationPrefixListId) {
+        this.destinationPrefixListId = destinationPrefixListId;
+    }
+    
+    /**
+     * The prefix of the AWS service.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param destinationPrefixListId The prefix of the AWS service.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Route withDestinationPrefixListId(String destinationPrefixListId) {
+        this.destinationPrefixListId = destinationPrefixListId;
         return this;
     }
 
@@ -543,6 +581,7 @@ public class Route implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");
+        if (getDestinationPrefixListId() != null) sb.append("DestinationPrefixListId: " + getDestinationPrefixListId() + ",");
         if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ",");
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getInstanceOwnerId() != null) sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ",");
@@ -560,6 +599,7 @@ public class Route implements Serializable, Cloneable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode()); 
+        hashCode = prime * hashCode + ((getDestinationPrefixListId() == null) ? 0 : getDestinationPrefixListId().hashCode()); 
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId().hashCode()); 
@@ -580,6 +620,8 @@ public class Route implements Serializable, Cloneable {
         
         if (other.getDestinationCidrBlock() == null ^ this.getDestinationCidrBlock() == null) return false;
         if (other.getDestinationCidrBlock() != null && other.getDestinationCidrBlock().equals(this.getDestinationCidrBlock()) == false) return false; 
+        if (other.getDestinationPrefixListId() == null ^ this.getDestinationPrefixListId() == null) return false;
+        if (other.getDestinationPrefixListId() != null && other.getDestinationPrefixListId().equals(this.getDestinationPrefixListId()) == false) return false; 
         if (other.getGatewayId() == null ^ this.getGatewayId() == null) return false;
         if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false) return false; 
         if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;

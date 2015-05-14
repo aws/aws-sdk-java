@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name or stack ID that you want to associate a policy with.
+     * The name or unique stack ID that you want to associate a policy with.
      */
     private String stackName;
 
@@ -58,29 +58,29 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
     private String stackPolicyURL;
 
     /**
-     * The name or stack ID that you want to associate a policy with.
+     * The name or unique stack ID that you want to associate a policy with.
      *
-     * @return The name or stack ID that you want to associate a policy with.
+     * @return The name or unique stack ID that you want to associate a policy with.
      */
     public String getStackName() {
         return stackName;
     }
     
     /**
-     * The name or stack ID that you want to associate a policy with.
+     * The name or unique stack ID that you want to associate a policy with.
      *
-     * @param stackName The name or stack ID that you want to associate a policy with.
+     * @param stackName The name or unique stack ID that you want to associate a policy with.
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
     
     /**
-     * The name or stack ID that you want to associate a policy with.
+     * The name or unique stack ID that you want to associate a policy with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackName The name or stack ID that you want to associate a policy with.
+     * @param stackName The name or unique stack ID that you want to associate a policy with.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

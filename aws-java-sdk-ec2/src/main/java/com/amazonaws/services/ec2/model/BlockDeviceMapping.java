@@ -44,8 +44,8 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     private String deviceName;
 
     /**
-     * Parameters used to automatically set up Amazon EBS volumes when the
-     * instance is launched.
+     * Parameters used to automatically set up EBS volumes when the instance
+     * is launched.
      */
     private EbsBlockDevice ebs;
 
@@ -182,35 +182,35 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     }
 
     /**
-     * Parameters used to automatically set up Amazon EBS volumes when the
-     * instance is launched.
+     * Parameters used to automatically set up EBS volumes when the instance
+     * is launched.
      *
-     * @return Parameters used to automatically set up Amazon EBS volumes when the
-     *         instance is launched.
+     * @return Parameters used to automatically set up EBS volumes when the instance
+     *         is launched.
      */
     public EbsBlockDevice getEbs() {
         return ebs;
     }
     
     /**
-     * Parameters used to automatically set up Amazon EBS volumes when the
-     * instance is launched.
+     * Parameters used to automatically set up EBS volumes when the instance
+     * is launched.
      *
-     * @param ebs Parameters used to automatically set up Amazon EBS volumes when the
-     *         instance is launched.
+     * @param ebs Parameters used to automatically set up EBS volumes when the instance
+     *         is launched.
      */
     public void setEbs(EbsBlockDevice ebs) {
         this.ebs = ebs;
     }
     
     /**
-     * Parameters used to automatically set up Amazon EBS volumes when the
-     * instance is launched.
+     * Parameters used to automatically set up EBS volumes when the instance
+     * is launched.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ebs Parameters used to automatically set up Amazon EBS volumes when the
-     *         instance is launched.
+     * @param ebs Parameters used to automatically set up EBS volumes when the instance
+     *         is launched.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

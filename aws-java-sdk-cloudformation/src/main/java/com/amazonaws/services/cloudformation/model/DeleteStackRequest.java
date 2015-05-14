@@ -31,34 +31,34 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name or the unique identifier associated with the stack.
+     * The name or the unique stack ID that is associated with the stack.
      */
     private String stackName;
 
     /**
-     * The name or the unique identifier associated with the stack.
+     * The name or the unique stack ID that is associated with the stack.
      *
-     * @return The name or the unique identifier associated with the stack.
+     * @return The name or the unique stack ID that is associated with the stack.
      */
     public String getStackName() {
         return stackName;
     }
     
     /**
-     * The name or the unique identifier associated with the stack.
+     * The name or the unique stack ID that is associated with the stack.
      *
-     * @param stackName The name or the unique identifier associated with the stack.
+     * @param stackName The name or the unique stack ID that is associated with the stack.
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
     
     /**
-     * The name or the unique identifier associated with the stack.
+     * The name or the unique stack ID that is associated with the stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackName The name or the unique identifier associated with the stack.
+     * @param stackName The name or the unique stack ID that is associated with the stack.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

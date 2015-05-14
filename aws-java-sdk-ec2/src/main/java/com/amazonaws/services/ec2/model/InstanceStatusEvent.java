@@ -18,13 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an instance event.
+ * Describes a scheduled event for an instance.
  * </p>
  */
 public class InstanceStatusEvent implements Serializable, Cloneable {
 
     /**
-     * The associated code of the event.
+     * The event code.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
@@ -32,7 +32,10 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
     private String code;
 
     /**
-     * A description of the event.
+     * A description of the event. <p>After a scheduled event is completed,
+     * it can still be described for up to a week. If the event has been
+     * completed, this description starts with the following text:
+     * [Completed].
      */
     private String description;
 
@@ -47,12 +50,12 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
     private java.util.Date notAfter;
 
     /**
-     * The associated code of the event.
+     * The event code.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
      *
-     * @return The associated code of the event.
+     * @return The event code.
      *
      * @see EventCode
      */
@@ -61,12 +64,12 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
     }
     
     /**
-     * The associated code of the event.
+     * The event code.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
      *
-     * @param code The associated code of the event.
+     * @param code The event code.
      *
      * @see EventCode
      */
@@ -75,14 +78,14 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
     }
     
     /**
-     * The associated code of the event.
+     * The event code.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
      *
-     * @param code The associated code of the event.
+     * @param code The event code.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -95,12 +98,12 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
     }
 
     /**
-     * The associated code of the event.
+     * The event code.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
      *
-     * @param code The associated code of the event.
+     * @param code The event code.
      *
      * @see EventCode
      */
@@ -109,14 +112,14 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
     }
     
     /**
-     * The associated code of the event.
+     * The event code.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop
      *
-     * @param code The associated code of the event.
+     * @param code The event code.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -129,29 +132,47 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
     }
 
     /**
-     * A description of the event.
+     * A description of the event. <p>After a scheduled event is completed,
+     * it can still be described for up to a week. If the event has been
+     * completed, this description starts with the following text:
+     * [Completed].
      *
-     * @return A description of the event.
+     * @return A description of the event. <p>After a scheduled event is completed,
+     *         it can still be described for up to a week. If the event has been
+     *         completed, this description starts with the following text:
+     *         [Completed].
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * A description of the event.
+     * A description of the event. <p>After a scheduled event is completed,
+     * it can still be described for up to a week. If the event has been
+     * completed, this description starts with the following text:
+     * [Completed].
      *
-     * @param description A description of the event.
+     * @param description A description of the event. <p>After a scheduled event is completed,
+     *         it can still be described for up to a week. If the event has been
+     *         completed, this description starts with the following text:
+     *         [Completed].
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * A description of the event.
+     * A description of the event. <p>After a scheduled event is completed,
+     * it can still be described for up to a week. If the event has been
+     * completed, this description starts with the following text:
+     * [Completed].
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description A description of the event.
+     * @param description A description of the event. <p>After a scheduled event is completed,
+     *         it can still be described for up to a week. If the event has been
+     *         completed, this description starts with the following text:
+     *         [Completed].
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

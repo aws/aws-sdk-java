@@ -36,10 +36,14 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      * name is not available.</li> <li><code>UNAVAILABLE_RESTRICTED</code>
      * ??? The domain name is forbidden.</li> <li><code>RESERVED</code> ???
      * The domain name has been reserved for another person or
-     * organization.</li> </ul>
+     * organization.</li> <li><code>DONT_KNOW</code> ??? The TLD registry
+     * didn't reply with a definitive answer about whether the domain name is
+     * available. Amazon Route 53 can return this response for a variety of
+     * reasons, for example, the registry is performing maintenance. Try
+     * again later.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED
+     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW
      */
     private String availability;
 
@@ -56,10 +60,14 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      * name is not available.</li> <li><code>UNAVAILABLE_RESTRICTED</code>
      * ??? The domain name is forbidden.</li> <li><code>RESERVED</code> ???
      * The domain name has been reserved for another person or
-     * organization.</li> </ul>
+     * organization.</li> <li><code>DONT_KNOW</code> ??? The TLD registry
+     * didn't reply with a definitive answer about whether the domain name is
+     * available. Amazon Route 53 can return this response for a variety of
+     * reasons, for example, the registry is performing maintenance. Try
+     * again later.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED
+     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW
      *
      * @return Whether the domain name is available for registering. <note> <p>You
      *         can only register domains designated as <code>AVAILABLE</code>.
@@ -73,7 +81,11 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      *         name is not available.</li> <li><code>UNAVAILABLE_RESTRICTED</code>
      *         ??? The domain name is forbidden.</li> <li><code>RESERVED</code> ???
      *         The domain name has been reserved for another person or
-     *         organization.</li> </ul>
+     *         organization.</li> <li><code>DONT_KNOW</code> ??? The TLD registry
+     *         didn't reply with a definitive answer about whether the domain name is
+     *         available. Amazon Route 53 can return this response for a variety of
+     *         reasons, for example, the registry is performing maintenance. Try
+     *         again later.</li> </ul>
      *
      * @see DomainAvailability
      */
@@ -94,10 +106,14 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      * name is not available.</li> <li><code>UNAVAILABLE_RESTRICTED</code>
      * ??? The domain name is forbidden.</li> <li><code>RESERVED</code> ???
      * The domain name has been reserved for another person or
-     * organization.</li> </ul>
+     * organization.</li> <li><code>DONT_KNOW</code> ??? The TLD registry
+     * didn't reply with a definitive answer about whether the domain name is
+     * available. Amazon Route 53 can return this response for a variety of
+     * reasons, for example, the registry is performing maintenance. Try
+     * again later.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED
+     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW
      *
      * @param availability Whether the domain name is available for registering. <note> <p>You
      *         can only register domains designated as <code>AVAILABLE</code>.
@@ -111,7 +127,11 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      *         name is not available.</li> <li><code>UNAVAILABLE_RESTRICTED</code>
      *         ??? The domain name is forbidden.</li> <li><code>RESERVED</code> ???
      *         The domain name has been reserved for another person or
-     *         organization.</li> </ul>
+     *         organization.</li> <li><code>DONT_KNOW</code> ??? The TLD registry
+     *         didn't reply with a definitive answer about whether the domain name is
+     *         available. Amazon Route 53 can return this response for a variety of
+     *         reasons, for example, the registry is performing maintenance. Try
+     *         again later.</li> </ul>
      *
      * @see DomainAvailability
      */
@@ -132,12 +152,16 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      * name is not available.</li> <li><code>UNAVAILABLE_RESTRICTED</code>
      * ??? The domain name is forbidden.</li> <li><code>RESERVED</code> ???
      * The domain name has been reserved for another person or
-     * organization.</li> </ul>
+     * organization.</li> <li><code>DONT_KNOW</code> ??? The TLD registry
+     * didn't reply with a definitive answer about whether the domain name is
+     * available. Amazon Route 53 can return this response for a variety of
+     * reasons, for example, the registry is performing maintenance. Try
+     * again later.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED
+     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW
      *
      * @param availability Whether the domain name is available for registering. <note> <p>You
      *         can only register domains designated as <code>AVAILABLE</code>.
@@ -151,7 +175,11 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      *         name is not available.</li> <li><code>UNAVAILABLE_RESTRICTED</code>
      *         ??? The domain name is forbidden.</li> <li><code>RESERVED</code> ???
      *         The domain name has been reserved for another person or
-     *         organization.</li> </ul>
+     *         organization.</li> <li><code>DONT_KNOW</code> ??? The TLD registry
+     *         didn't reply with a definitive answer about whether the domain name is
+     *         available. Amazon Route 53 can return this response for a variety of
+     *         reasons, for example, the registry is performing maintenance. Try
+     *         again later.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -176,10 +204,14 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      * name is not available.</li> <li><code>UNAVAILABLE_RESTRICTED</code>
      * ??? The domain name is forbidden.</li> <li><code>RESERVED</code> ???
      * The domain name has been reserved for another person or
-     * organization.</li> </ul>
+     * organization.</li> <li><code>DONT_KNOW</code> ??? The TLD registry
+     * didn't reply with a definitive answer about whether the domain name is
+     * available. Amazon Route 53 can return this response for a variety of
+     * reasons, for example, the registry is performing maintenance. Try
+     * again later.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED
+     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW
      *
      * @param availability Whether the domain name is available for registering. <note> <p>You
      *         can only register domains designated as <code>AVAILABLE</code>.
@@ -193,7 +225,11 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      *         name is not available.</li> <li><code>UNAVAILABLE_RESTRICTED</code>
      *         ??? The domain name is forbidden.</li> <li><code>RESERVED</code> ???
      *         The domain name has been reserved for another person or
-     *         organization.</li> </ul>
+     *         organization.</li> <li><code>DONT_KNOW</code> ??? The TLD registry
+     *         didn't reply with a definitive answer about whether the domain name is
+     *         available. Amazon Route 53 can return this response for a variety of
+     *         reasons, for example, the registry is performing maintenance. Try
+     *         again later.</li> </ul>
      *
      * @see DomainAvailability
      */
@@ -214,12 +250,16 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      * name is not available.</li> <li><code>UNAVAILABLE_RESTRICTED</code>
      * ??? The domain name is forbidden.</li> <li><code>RESERVED</code> ???
      * The domain name has been reserved for another person or
-     * organization.</li> </ul>
+     * organization.</li> <li><code>DONT_KNOW</code> ??? The TLD registry
+     * didn't reply with a definitive answer about whether the domain name is
+     * available. Amazon Route 53 can return this response for a variety of
+     * reasons, for example, the registry is performing maintenance. Try
+     * again later.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED
+     * <b>Allowed Values: </b>AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW
      *
      * @param availability Whether the domain name is available for registering. <note> <p>You
      *         can only register domains designated as <code>AVAILABLE</code>.
@@ -233,7 +273,11 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      *         name is not available.</li> <li><code>UNAVAILABLE_RESTRICTED</code>
      *         ??? The domain name is forbidden.</li> <li><code>RESERVED</code> ???
      *         The domain name has been reserved for another person or
-     *         organization.</li> </ul>
+     *         organization.</li> <li><code>DONT_KNOW</code> ??? The TLD registry
+     *         didn't reply with a definitive answer about whether the domain name is
+     *         available. Amazon Route 53 can return this response for a variety of
+     *         reasons, for example, the registry is performing maintenance. Try
+     *         again later.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

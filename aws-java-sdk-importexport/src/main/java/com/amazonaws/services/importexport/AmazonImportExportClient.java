@@ -304,10 +304,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
     
     /**
      * <p>
-     * This operation returns information about a job, including where the
-     * job is in the processing pipeline, the status of the results, and the
-     * signature value associated with the job. You can only return
-     * information about jobs you own.
+     * This operation generates a pre-paid UPS shipping label that you will
+     * use to ship your device to AWS for processing.
      * </p>
      *
      * @param getShippingLabelRequest Container for the necessary parameters

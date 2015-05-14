@@ -594,6 +594,61 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     
     /**
      * <p>
+     * Tests the filter pattern of a metric filter against a sample of log
+     * event messages. You can use this operation to validate the correctness
+     * of a metric filter pattern.
+     * </p>
+     *
+     * @param testMetricFilterRequest Container for the necessary parameters
+     *           to execute the TestMetricFilter service method on AWSLogs.
+     * 
+     * @return The response from the TestMetricFilter service method, as
+     *         returned by AWSLogs.
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public TestMetricFilterResult testMetricFilter(TestMetricFilterRequest testMetricFilterRequest) {
+        ExecutionContext executionContext = createExecutionContext(testMetricFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestMetricFilterRequest> request = null;
+        Response<TestMetricFilterResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestMetricFilterRequestMarshaller().marshall(super.beforeMarshalling(testMetricFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<TestMetricFilterResult, JsonUnmarshallerContext> unmarshaller =
+                new TestMetricFilterResultJsonUnmarshaller();
+            JsonResponseHandler<TestMetricFilterResult> responseHandler =
+                new JsonResponseHandler<TestMetricFilterResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Creates or updates a metric filter and associates it with the
      * specified log group. Metric filters allow you to configure rules to
      * extract metric data from log events ingested through
@@ -693,61 +748,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     
     /**
      * <p>
-     * Tests the filter pattern of a metric filter against a sample of log
-     * event messages. You can use this operation to validate the correctness
-     * of a metric filter pattern.
-     * </p>
-     *
-     * @param testMetricFilterRequest Container for the necessary parameters
-     *           to execute the TestMetricFilter service method on AWSLogs.
-     * 
-     * @return The response from the TestMetricFilter service method, as
-     *         returned by AWSLogs.
-     * 
-     * @throws ServiceUnavailableException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public TestMetricFilterResult testMetricFilter(TestMetricFilterRequest testMetricFilterRequest) {
-        ExecutionContext executionContext = createExecutionContext(testMetricFilterRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<TestMetricFilterRequest> request = null;
-        Response<TestMetricFilterResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new TestMetricFilterRequestMarshaller().marshall(super.beforeMarshalling(testMetricFilterRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<TestMetricFilterResult, JsonUnmarshallerContext> unmarshaller =
-                new TestMetricFilterResultJsonUnmarshaller();
-            JsonResponseHandler<TestMetricFilterResult> responseHandler =
-                new JsonResponseHandler<TestMetricFilterResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
      * Uploads a batch of log events to the specified log stream.
      * </p>
      * <p>
@@ -816,6 +816,77 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 new PutLogEventsResultJsonUnmarshaller();
             JsonResponseHandler<PutLogEventsResult> responseHandler =
                 new JsonResponseHandler<PutLogEventsResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves log events, optionally filtered by a filter pattern from
+     * the specified log group. You can provide an optional time range to
+     * filter the results on the event <code>timestamp</code> . You can limit
+     * the streams searched to an explicit list of
+     * <code>logStreamNames</code> .
+     * </p>
+     * <p>
+     * By default, this operation returns as much matching log events as can
+     * fit in a response size of 1MB, up to 10,000 log events, or all the
+     * events found within a time-bounded scan window. If the response
+     * includes a <code>nextToken</code> , then there is more data to search,
+     * and the search can be resumed with a new request providing the
+     * nextToken. The response will contain a list of
+     * <code>searchedLogStreams</code> that contains information about which
+     * streams were searched in the request and whether they have been
+     * searched completely or require further pagination. The
+     * <code>limit</code> parameter in the request. can be used to specify
+     * the maximum number of events to return in a page.
+     * </p>
+     *
+     * @param filterLogEventsRequest Container for the necessary parameters
+     *           to execute the FilterLogEvents service method on AWSLogs.
+     * 
+     * @return The response from the FilterLogEvents service method, as
+     *         returned by AWSLogs.
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public FilterLogEventsResult filterLogEvents(FilterLogEventsRequest filterLogEventsRequest) {
+        ExecutionContext executionContext = createExecutionContext(filterLogEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<FilterLogEventsRequest> request = null;
+        Response<FilterLogEventsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new FilterLogEventsRequestMarshaller().marshall(super.beforeMarshalling(filterLogEventsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<FilterLogEventsResult, JsonUnmarshallerContext> unmarshaller =
+                new FilterLogEventsResultJsonUnmarshaller();
+            JsonResponseHandler<FilterLogEventsResult> responseHandler =
+                new JsonResponseHandler<FilterLogEventsResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
 

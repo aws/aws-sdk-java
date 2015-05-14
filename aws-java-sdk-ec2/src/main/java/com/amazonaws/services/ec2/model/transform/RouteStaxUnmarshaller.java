@@ -47,6 +47,10 @@ public class RouteStaxUnmarshaller implements Unmarshaller<Route, StaxUnmarshall
                     route.setDestinationCidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("destinationPrefixListId", targetDepth)) {
+                    route.setDestinationPrefixListId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("gatewayId", targetDepth)) {
                     route.setGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

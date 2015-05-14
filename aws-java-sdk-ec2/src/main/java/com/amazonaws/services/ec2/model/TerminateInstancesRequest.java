@@ -31,9 +31,9 @@ import com.amazonaws.services.ec2.model.transform.TerminateInstancesRequestMarsh
  * approximately one hour).
  * </p>
  * <p>
- * By default, Amazon EC2 deletes all Amazon EBS volumes that were
- * attached when the instance launched. Volumes attached after instance
- * launch continue running.
+ * By default, Amazon EC2 deletes all EBS volumes that were attached when
+ * the instance launched. Volumes attached after instance launch continue
+ * running.
  * </p>
  * <p>
  * You can stop, start, and terminate EBS-backed instances. You can only

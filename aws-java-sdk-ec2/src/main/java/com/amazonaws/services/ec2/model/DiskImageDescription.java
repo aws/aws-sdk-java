@@ -17,7 +17,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes a disk image.
+ * </p>
  */
 public class DiskImageDescription implements Serializable, Cloneable {
 
@@ -30,7 +32,7 @@ public class DiskImageDescription implements Serializable, Cloneable {
     private String format;
 
     /**
-     * The size of the disk image.
+     * The size of the disk image, in GiB.
      */
     private Long size;
 
@@ -133,29 +135,29 @@ public class DiskImageDescription implements Serializable, Cloneable {
     }
 
     /**
-     * The size of the disk image.
+     * The size of the disk image, in GiB.
      *
-     * @return The size of the disk image.
+     * @return The size of the disk image, in GiB.
      */
     public Long getSize() {
         return size;
     }
     
     /**
-     * The size of the disk image.
+     * The size of the disk image, in GiB.
      *
-     * @param size The size of the disk image.
+     * @param size The size of the disk image, in GiB.
      */
     public void setSize(Long size) {
         this.size = size;
     }
     
     /**
-     * The size of the disk image.
+     * The size of the disk image, in GiB.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param size The size of the disk image.
+     * @param size The size of the disk image, in GiB.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

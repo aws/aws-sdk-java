@@ -325,6 +325,33 @@ public interface AWSLogs {
 
     /**
      * <p>
+     * Tests the filter pattern of a metric filter against a sample of log
+     * event messages. You can use this operation to validate the correctness
+     * of a metric filter pattern.
+     * </p>
+     *
+     * @param testMetricFilterRequest Container for the necessary parameters
+     *           to execute the TestMetricFilter service method on AWSLogs.
+     * 
+     * @return The response from the TestMetricFilter service method, as
+     *         returned by AWSLogs.
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public TestMetricFilterResult testMetricFilter(TestMetricFilterRequest testMetricFilterRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Creates or updates a metric filter and associates it with the
      * specified log group. Metric filters allow you to configure rules to
      * extract metric data from log events ingested through
@@ -380,33 +407,6 @@ public interface AWSLogs {
 
     /**
      * <p>
-     * Tests the filter pattern of a metric filter against a sample of log
-     * event messages. You can use this operation to validate the correctness
-     * of a metric filter pattern.
-     * </p>
-     *
-     * @param testMetricFilterRequest Container for the necessary parameters
-     *           to execute the TestMetricFilter service method on AWSLogs.
-     * 
-     * @return The response from the TestMetricFilter service method, as
-     *         returned by AWSLogs.
-     * 
-     * @throws ServiceUnavailableException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public TestMetricFilterResult testMetricFilter(TestMetricFilterRequest testMetricFilterRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Uploads a batch of log events to the specified log stream.
      * </p>
      * <p>
@@ -455,6 +455,49 @@ public interface AWSLogs {
      *             either a problem with the data in the request, or a server side issue.
      */
     public PutLogEventsResult putLogEvents(PutLogEventsRequest putLogEventsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Retrieves log events, optionally filtered by a filter pattern from
+     * the specified log group. You can provide an optional time range to
+     * filter the results on the event <code>timestamp</code> . You can limit
+     * the streams searched to an explicit list of
+     * <code>logStreamNames</code> .
+     * </p>
+     * <p>
+     * By default, this operation returns as much matching log events as can
+     * fit in a response size of 1MB, up to 10,000 log events, or all the
+     * events found within a time-bounded scan window. If the response
+     * includes a <code>nextToken</code> , then there is more data to search,
+     * and the search can be resumed with a new request providing the
+     * nextToken. The response will contain a list of
+     * <code>searchedLogStreams</code> that contains information about which
+     * streams were searched in the request and whether they have been
+     * searched completely or require further pagination. The
+     * <code>limit</code> parameter in the request. can be used to specify
+     * the maximum number of events to return in a page.
+     * </p>
+     *
+     * @param filterLogEventsRequest Container for the necessary parameters
+     *           to execute the FilterLogEvents service method on AWSLogs.
+     * 
+     * @return The response from the FilterLogEvents service method, as
+     *         returned by AWSLogs.
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public FilterLogEventsResult filterLogEvents(FilterLogEventsRequest filterLogEventsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class ImportInstanceResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * Information about the conversion task.
      */
     private ConversionTask conversionTask;
 
     /**
-     * 
+     * Information about the conversion task.
      *
-     * @return 
+     * @return Information about the conversion task.
      */
     public ConversionTask getConversionTask() {
         return conversionTask;
     }
     
     /**
-     * 
+     * Information about the conversion task.
      *
-     * @param conversionTask 
+     * @param conversionTask Information about the conversion task.
      */
     public void setConversionTask(ConversionTask conversionTask) {
         this.conversionTask = conversionTask;
     }
     
     /**
-     * 
+     * Information about the conversion task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param conversionTask 
+     * @param conversionTask Information about the conversion task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

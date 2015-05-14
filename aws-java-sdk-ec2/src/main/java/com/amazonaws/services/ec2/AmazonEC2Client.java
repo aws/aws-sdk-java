@@ -376,8 +376,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Detaches an Amazon EBS volume from an instance. Make sure to unmount
-     * any file systems on the device within your operating system before
+     * Restores an Elastic IP address that was previously moved to the
+     * EC2-VPC platform back to the EC2-Classic platform. You cannot move an
+     * Elastic IP address that was originally allocated for use in EC2-VPC.
+     * The Elastic IP address must not be associated with an instance or
+     * network interface.
+     * </p>
+     *
+     * @param restoreAddressToClassicRequest Container for the necessary
+     *           parameters to execute the RestoreAddressToClassic service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the RestoreAddressToClassic service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RestoreAddressToClassicResult restoreAddressToClassic(RestoreAddressToClassicRequest restoreAddressToClassicRequest) {
+        ExecutionContext executionContext = createExecutionContext(restoreAddressToClassicRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestoreAddressToClassicRequest> request = null;
+        Response<RestoreAddressToClassicResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestoreAddressToClassicRequestMarshaller().marshall(super.beforeMarshalling(restoreAddressToClassicRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new RestoreAddressToClassicResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Detaches an EBS volume from an instance. Make sure to unmount any
+     * file systems on the device within your operating system before
      * detaching the volume. Failure to do so results in the volume being
      * stuck in a busy state while detaching.
      * </p>
@@ -690,7 +741,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Exports a running or stopped instance to an Amazon S3 bucket.
+     * Exports a running or stopped instance to an S3 bucket.
      * </p>
      * <p>
      * For information about the supported operating systems, image formats,
@@ -733,71 +784,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             response = invoke(request, new CreateInstanceExportTaskResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Retrieves the encrypted administrator password for an instance
-     * running Windows.
-     * </p>
-     * <p>
-     * The Windows password is generated at boot if the
-     * <code>EC2Config</code> service plugin, <code>Ec2SetPassword</code> ,
-     * is enabled. This usually only happens the first time an AMI is
-     * launched, and then <code>Ec2SetPassword</code> is automatically
-     * disabled. The password is not generated for rebundled AMIs unless
-     * <code>Ec2SetPassword</code> is enabled before bundling.
-     * </p>
-     * <p>
-     * The password is encrypted using the key pair that you specified when
-     * you launched the instance. You must provide the corresponding key pair
-     * file.
-     * </p>
-     * <p>
-     * Password generation and encryption takes a few moments. We recommend
-     * that you wait up to 15 minutes after launching an instance before
-     * trying to retrieve the generated password.
-     * </p>
-     *
-     * @param getPasswordDataRequest Container for the necessary parameters
-     *           to execute the GetPasswordData service method on AmazonEC2.
-     * 
-     * @return The response from the GetPasswordData service method, as
-     *         returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetPasswordDataResult getPasswordData(GetPasswordDataRequest getPasswordDataRequest) {
-        ExecutionContext executionContext = createExecutionContext(getPasswordDataRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetPasswordDataRequest> request = null;
-        Response<GetPasswordDataResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetPasswordDataRequestMarshaller().marshall(super.beforeMarshalling(getPasswordDataRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new GetPasswordDataResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -928,6 +914,71 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Retrieves the encrypted administrator password for an instance
+     * running Windows.
+     * </p>
+     * <p>
+     * The Windows password is generated at boot if the
+     * <code>EC2Config</code> service plugin, <code>Ec2SetPassword</code> ,
+     * is enabled. This usually only happens the first time an AMI is
+     * launched, and then <code>Ec2SetPassword</code> is automatically
+     * disabled. The password is not generated for rebundled AMIs unless
+     * <code>Ec2SetPassword</code> is enabled before bundling.
+     * </p>
+     * <p>
+     * The password is encrypted using the key pair that you specified when
+     * you launched the instance. You must provide the corresponding key pair
+     * file.
+     * </p>
+     * <p>
+     * Password generation and encryption takes a few moments. We recommend
+     * that you wait up to 15 minutes after launching an instance before
+     * trying to retrieve the generated password.
+     * </p>
+     *
+     * @param getPasswordDataRequest Container for the necessary parameters
+     *           to execute the GetPasswordData service method on AmazonEC2.
+     * 
+     * @return The response from the GetPasswordData service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetPasswordDataResult getPasswordData(GetPasswordDataRequest getPasswordDataRequest) {
+        ExecutionContext executionContext = createExecutionContext(getPasswordDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPasswordDataRequest> request = null;
+        Response<GetPasswordDataResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPasswordDataRequestMarshaller().marshall(super.beforeMarshalling(getPasswordDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new GetPasswordDataResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -1384,6 +1435,55 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             response = invoke(request, new DescribeRegionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes one or more specified VPC endpoints. Deleting the endpoint
+     * also deletes the endpoint routes in the route tables that were
+     * associated with the endpoint.
+     * </p>
+     *
+     * @param deleteVpcEndpointsRequest Container for the necessary
+     *           parameters to execute the DeleteVpcEndpoints service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DeleteVpcEndpoints service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteVpcEndpointsResult deleteVpcEndpoints(DeleteVpcEndpointsRequest deleteVpcEndpointsRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteVpcEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVpcEndpointsRequest> request = null;
+        Response<DeleteVpcEndpointsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVpcEndpointsRequestMarshaller().marshall(super.beforeMarshalling(deleteVpcEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DeleteVpcEndpointsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -2329,6 +2429,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Moves an Elastic IP address from the EC2-Classic platform to the
+     * EC2-VPC platform. The Elastic IP address must be allocated to your
+     * account, and it must not be associated with an instance. After the
+     * Elastic IP address is moved, it is no longer available for use in the
+     * EC2-Classic platform, unless you move it back using the
+     * RestoreAddressToClassic request. You cannot move an Elastic IP address
+     * that's allocated for use in the EC2-VPC platform to the EC2-Classic
+     * platform.
+     * </p>
+     *
+     * @param moveAddressToVpcRequest Container for the necessary parameters
+     *           to execute the MoveAddressToVpc service method on AmazonEC2.
+     * 
+     * @return The response from the MoveAddressToVpc service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public MoveAddressToVpcResult moveAddressToVpc(MoveAddressToVpcRequest moveAddressToVpcRequest) {
+        ExecutionContext executionContext = createExecutionContext(moveAddressToVpcRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<MoveAddressToVpcRequest> request = null;
+        Response<MoveAddressToVpcResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new MoveAddressToVpcRequestMarshaller().marshall(super.beforeMarshalling(moveAddressToVpcRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new MoveAddressToVpcResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Deletes the specified virtual private gateway. We recommend that
      * before you delete a virtual private gateway, you detach it from the
      * VPC and delete the VPN connection. Note that you don't need to delete
@@ -2375,18 +2528,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Attaches an Amazon EBS volume to a running or stopped instance and
-     * exposes it to the instance with the specified device name.
+     * Attaches an EBS volume to a running or stopped instance and exposes
+     * it to the instance with the specified device name.
      * </p>
      * <p>
-     * Encrypted Amazon EBS volumes may only be attached to instances that
-     * support Amazon EBS encryption. For more information, see
+     * Encrypted EBS volumes may only be attached to instances that support
+     * Amazon EBS encryption. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * For a list of supported device names, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching an Amazon EBS Volume to an Instance </a> . Any device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"> Amazon EC2 Instance Store </a>
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching an EBS Volume to an Instance </a> . Any device names that aren't reserved for instance store volumes can be used for EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"> Amazon EC2 Instance Store </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
@@ -2409,7 +2562,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * .
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see
+     * For more information about EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching Amazon EBS Volumes </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -2551,8 +2704,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Displays details about an import snapshot tasks that is already
-     * created.
+     * Describes your import snapshot tasks.
      * </p>
      *
      * @param describeImportSnapshotTasksRequest Container for the necessary
@@ -2741,9 +2893,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Creates a snapshot of an Amazon EBS volume and stores it in Amazon
-     * S3. You can use snapshots for backups, to make copies of Amazon EBS
-     * volumes, and to save data before shutting down an instance.
+     * Creates a snapshot of an EBS volume and stores it in Amazon S3. You
+     * can use snapshots for backups, to make copies of EBS volumes, and to
+     * save data before shutting down an instance.
      * </p>
      * <p>
      * When a snapshot is created, any AWS Marketplace product codes that
@@ -2751,20 +2903,20 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * You can take a snapshot of an attached volume that is in use.
-     * However, snapshots only capture data that has been written to your
-     * Amazon EBS volume at the time the snapshot command is issued; this may
-     * exclude any data that has been cached by any applications or the
-     * operating system. If you can pause any file systems on the volume long
-     * enough to take a snapshot, your snapshot should be complete. However,
-     * if you cannot pause all file writes to the volume, you should unmount
-     * the volume from within the instance, issue the snapshot command, and
-     * then remount the volume to ensure a consistent and complete snapshot.
-     * You may remount and use your volume while the snapshot status is
+     * However, snapshots only capture data that has been written to your EBS
+     * volume at the time the snapshot command is issued; this may exclude
+     * any data that has been cached by any applications or the operating
+     * system. If you can pause any file systems on the volume long enough to
+     * take a snapshot, your snapshot should be complete. However, if you
+     * cannot pause all file writes to the volume, you should unmount the
+     * volume from within the instance, issue the snapshot command, and then
+     * remount the volume to ensure a consistent and complete snapshot. You
+     * may remount and use your volume while the snapshot status is
      * <code>pending</code> .
      * </p>
      * <p>
-     * To create a snapshot for Amazon EBS volumes that serve as root
-     * devices, you should stop the instance before taking the snapshot.
+     * To create a snapshot for EBS volumes that serve as root devices, you
+     * should stop the instance before taking the snapshot.
      * </p>
      * <p>
      * Snapshots that are taken from encrypted volumes are automatically
@@ -2821,7 +2973,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Deletes the specified Amazon EBS volume. The volume must be in the
+     * Deletes the specified EBS volume. The volume must be in the
      * <code>available</code> state (not attached to an instance).
      * </p>
      * <p>
@@ -3601,7 +3753,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the specified Amazon EBS volumes.
+     * Describes the specified EBS volumes.
      * </p>
      * <p>
      * If you are describing a long list of volumes, you can paginate the
@@ -3614,7 +3766,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * results.
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see
+     * For more information about EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -3941,6 +4093,57 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Describes available AWS services in a prefix list format, which
+     * includes the prefix list name and prefix list ID of the service and
+     * the IP address range for the service. A prefix list ID is required for
+     * creating an outbound security group rule that allows traffic from a
+     * VPC to access an AWS service through a VPC endpoint.
+     * </p>
+     *
+     * @param describePrefixListsRequest Container for the necessary
+     *           parameters to execute the DescribePrefixLists service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribePrefixLists service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribePrefixListsResult describePrefixLists(DescribePrefixListsRequest describePrefixListsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describePrefixListsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePrefixListsRequest> request = null;
+        Response<DescribePrefixListsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePrefixListsRequestMarshaller().marshall(super.beforeMarshalling(describePrefixListsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribePrefixListsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Displays details about an import virtual machine or import snapshot
      * tasks that are already created.
      * </p>
@@ -4095,10 +4298,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Creates an import instance task using metadata from the specified
-     * disk image. ImportInstance only supports single-volume VMs. To import
-     * multi-volume VMs, use ImportImage. After importing the image, you then
-     * upload it using the <code>ec2-import-volume</code> command in the EC2
-     * command line tools. For more information, see
+     * disk image. <code>ImportInstance</code> only supports single-volume
+     * VMs. To import multi-volume VMs, use ImportImage. After importing the
+     * image, you then upload it using the <code>ec2-import-volume</code>
+     * command in the EC2 command line tools. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -4740,6 +4943,56 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Describes your Elastic IP addresses that are being moved to the
+     * EC2-VPC platform, or that are being restored to the EC2-Classic
+     * platform. This request does not return information about any other
+     * Elastic IP addresses in your account.
+     * </p>
+     *
+     * @param describeMovingAddressesRequest Container for the necessary
+     *           parameters to execute the DescribeMovingAddresses service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeMovingAddresses service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeMovingAddressesResult describeMovingAddresses(DescribeMovingAddressesRequest describeMovingAddressesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeMovingAddressesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMovingAddressesRequest> request = null;
+        Response<DescribeMovingAddressesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMovingAddressesRequestMarshaller().marshall(super.beforeMarshalling(describeMovingAddressesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeMovingAddressesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Describes one or more of your conversion tasks. For more information,
      * see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
@@ -4858,8 +5111,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Import single or multi-volume disk images or Amazon EBS snapshots
-     * into an Amazon Machine Image (AMI).
+     * Import single or multi-volume disk images or EBS snapshots into an
+     * Amazon Machine Image (AMI).
      * </p>
      *
      * @param importImageRequest Container for the necessary parameters to
@@ -5358,49 +5611,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Deletes the specified network ACL. You can't delete the ACL if it's
-     * associated with any subnets. You can't delete the default network ACL.
-     * </p>
-     *
-     * @param deleteNetworkAclRequest Container for the necessary parameters
-     *           to execute the DeleteNetworkAcl service method on AmazonEC2.
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteNetworkAcl(DeleteNetworkAclRequest deleteNetworkAclRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteNetworkAclRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteNetworkAclRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteNetworkAclRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkAclRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            invoke(request, null, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Modifies a volume attribute.
      * </p>
      * <p>
@@ -5440,6 +5650,49 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ModifyVolumeAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyVolumeAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified network ACL. You can't delete the ACL if it's
+     * associated with any subnets. You can't delete the default network ACL.
+     * </p>
+     *
+     * @param deleteNetworkAclRequest Container for the necessary parameters
+     *           to execute the DeleteNetworkAcl service method on AmazonEC2.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteNetworkAcl(DeleteNetworkAclRequest deleteNetworkAclRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteNetworkAclRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteNetworkAclRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNetworkAclRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkAclRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -6052,6 +6305,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @param createRouteRequest Container for the necessary parameters to
      *           execute the CreateRoute service method on AmazonEC2.
      * 
+     * @return The response from the CreateRoute service method, as returned
+     *         by AmazonEC2.
      * 
      *
      * @throws AmazonClientException
@@ -6062,11 +6317,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *             If an error response is returned by AmazonEC2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void createRoute(CreateRouteRequest createRouteRequest) {
+    public CreateRouteResult createRoute(CreateRouteRequest createRouteRequest) {
         ExecutionContext executionContext = createExecutionContext(createRouteRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CreateRouteRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRouteRequest> request = null;
+        Response<CreateRouteResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6078,11 +6334,66 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            response = invoke(request, new CreateRouteResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
 
         } finally {
             
-            endClientExecution(awsRequestMetrics, request, null);
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Creates a VPC endpoint for a specified AWS service. An endpoint
+     * enables you to create a private connection between your VPC and
+     * another AWS service in your account. You can specify an endpoint
+     * policy to attach to the endpoint that will control access to the
+     * service from your VPC. You can also specify the VPC route tables that
+     * use the endpoint.
+     * </p>
+     * <p>
+     * Currently, only endpoints to Amazon S3 are supported.
+     * </p>
+     *
+     * @param createVpcEndpointRequest Container for the necessary parameters
+     *           to execute the CreateVpcEndpoint service method on AmazonEC2.
+     * 
+     * @return The response from the CreateVpcEndpoint service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateVpcEndpointResult createVpcEndpoint(CreateVpcEndpointRequest createVpcEndpointRequest) {
+        ExecutionContext executionContext = createExecutionContext(createVpcEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVpcEndpointRequest> request = null;
+        Response<CreateVpcEndpointResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVpcEndpointRequestMarshaller().marshall(super.beforeMarshalling(createVpcEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new CreateVpcEndpointResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -6090,7 +6401,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Initiates the copy of an AMI from the specified source region to the
      * current region. You specify the destination region by using its
-     * endpoint when making the request. AMIs that use encrypted Amazon EBS
+     * endpoint when making the request. AMIs that use encrypted EBS
      * snapshots cannot be copied with this method.
      * </p>
      * <p>
@@ -6482,7 +6793,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * specify only one attribute at a time.
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see
+     * For more information about EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -6769,8 +7080,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Import a disk into an Amazon Elastic Block Store (Amazon EBS)
-     * snapshot.
+     * Imports a disk into an EBS snapshot.
      * </p>
      *
      * @param importSnapshotRequest Container for the necessary parameters to
@@ -7054,9 +7364,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * approximately one hour).
      * </p>
      * <p>
-     * By default, Amazon EC2 deletes all Amazon EBS volumes that were
-     * attached when the instance launched. Volumes attached after instance
-     * launch continue running.
+     * By default, Amazon EC2 deletes all EBS volumes that were attached
+     * when the instance launched. Volumes attached after instance launch
+     * continue running.
      * </p>
      * <p>
      * You can stop, start, and terminate EBS-backed instances. You can only
@@ -7110,6 +7420,54 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             response = invoke(request, new TerminateInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Modifies attributes of a specified VPC endpoint. You can modify the
+     * policy associated with the endpoint, and you can add and remove route
+     * tables associated with the endpoint.
+     * </p>
+     *
+     * @param modifyVpcEndpointRequest Container for the necessary parameters
+     *           to execute the ModifyVpcEndpoint service method on AmazonEC2.
+     * 
+     * @return The response from the ModifyVpcEndpoint service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ModifyVpcEndpointResult modifyVpcEndpoint(ModifyVpcEndpointRequest modifyVpcEndpointRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyVpcEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVpcEndpointRequest> request = null;
+        Response<ModifyVpcEndpointResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVpcEndpointRequestMarshaller().marshall(super.beforeMarshalling(modifyVpcEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ModifyVpcEndpointResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -7213,7 +7571,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * specify only one attribute at a time.
      * </p>
      * <p>
-     * For more information about Amazon EBS snapshots, see
+     * For more information about EBS snapshots, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -7718,15 +8076,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Creates an Amazon EBS volume that can be attached to an instance in
-     * the same Availability Zone. The volume is created in the regional
-     * endpoint that you send the HTTP request to. For more information see
+     * Creates an EBS volume that can be attached to an instance in the same
+     * Availability Zone. The volume is created in the regional endpoint that
+     * you send the HTTP request to. For more information see
      * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html"> Regions and Endpoints </a>
      * .
      * </p>
      * <p>
-     * You can create a new empty volume or restore a volume from an Amazon
-     * EBS snapshot. Any AWS Marketplace product codes from the snapshot are
+     * You can create a new empty volume or restore a volume from an EBS
+     * snapshot. Any AWS Marketplace product codes from the snapshot are
      * propagated to the volume.
      * </p>
      * <p>
@@ -7786,96 +8144,39 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the status of one or more instances, including any
-     * scheduled events.
+     * Describes the status of one or more instances.
      * </p>
      * <p>
-     * Instance status has two main components:
+     * Instance status includes the following components:
      * </p>
      * 
      * <ul>
      * <li> <p>
-     * System Status reports impaired functionality that stems from issues
-     * related to the systems that support an instance, such as such as
-     * hardware failures and network connectivity problems. This call reports
-     * such problems as impaired reachability.
-     * </p>
-     * </li>
-     * <li> <p>
-     * Instance Status reports impaired functionality that arises from
-     * problems internal to the instance. This call reports such problems as
-     * impaired reachability.
-     * </p>
-     * </li>
-     * 
-     * </ul>
-     * <p>
-     * Instance status provides information about four types of scheduled
-     * events for an instance that may require your attention:
-     * </p>
-     * 
-     * <ul>
-     * <li> <p>
-     * Scheduled Reboot: When Amazon EC2 determines that an instance must be
-     * rebooted, the instances status returns one of two event codes:
-     * <code>system-reboot</code> or <code>instance-reboot</code> . System
-     * reboot commonly occurs if certain maintenance or upgrade operations
-     * require a reboot of the underlying host that supports an instance.
-     * Instance reboot commonly occurs if the instance must be rebooted,
-     * rather than the underlying host. Rebooting events include a scheduled
-     * start and end time.
-     * </p>
-     * </li>
-     * <li> <p>
-     * System Maintenance: When Amazon EC2 determines that an instance
-     * requires maintenance that requires power or network impact, the
-     * instance status is the event code <code>system-maintenance</code> .
-     * System maintenance is either power maintenance or network maintenance.
-     * For power maintenance, your instance will be unavailable for a brief
-     * period of time and then rebooted. For network maintenance, your
-     * instance will experience a brief loss of network connectivity. System
-     * maintenance events include a scheduled start and end time. You will
-     * also be notified by email if one of your instances is set for system
-     * maintenance. The email message indicates when your instance is
-     * scheduled for maintenance.
-     * </p>
-     * </li>
-     * <li> <p>
-     * Scheduled Retirement: When Amazon EC2 determines that an instance
-     * must be shut down, the instance status is the event code
-     * <code>instance-retirement</code> . Retirement commonly occurs when the
-     * underlying host is degraded and must be replaced. Retirement events
-     * include a scheduled start and end time. You will also be notified by
-     * email if one of your instances is set to retiring. The email message
-     * indicates when your instance will be permanently retired.
-     * </p>
-     * </li>
-     * <li> <p>
-     * Scheduled Stop: When Amazon EC2 determines that an instance must be
-     * shut down, the instances status returns an event code called
-     * <code>instance-stop</code> . Stop events include a scheduled start and
-     * end time. You will also be notified by email if one of your instances
-     * is set to stop. The email message indicates when your instance will be
-     * stopped.
-     * </p>
-     * </li>
-     * 
-     * </ul>
-     * <p>
-     * When your instance is retired, it will either be terminated (if its
-     * root device type is the instance-store) or stopped (if its root device
-     * type is an EBS volume). Instances stopped due to retirement will not
-     * be restarted, but you can do so manually. You can also avoid
-     * retirement of EBS-backed instances by manually restarting your
-     * instance when its event code is <code>instance-retirement</code> .
-     * This ensures that your instance is started on a different underlying
-     * host.
-     * </p>
-     * <p>
-     * For more information about failed status checks, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html"> Troubleshooting Instances with Failed Status Checks </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions"> Working with an Instance That Has a Scheduled Event </a>
+     * <b>Status checks</b> - Amazon EC2 performs status checks on running
+     * EC2 instances to identify hardware and software issues. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html"> Status Checks for Your Instances </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html"> Troubleshooting Instances with Failed Status Checks </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
+     * </li>
+     * <li> <p>
+     * <b>Scheduled events</b> - Amazon EC2 can schedule events (such as
+     * reboot, stop, or terminate) for your instances related to hardware
+     * issues, software updates, or system maintenance. For more information,
+     * see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html"> Scheduled Events for Your Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     * </li>
+     * <li> <p>
+     * <b>Instance state</b> - You can manage your instances from the moment
+     * you launch them through their termination. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     * </li>
+     * 
+     * </ul>
      *
      * @param describeInstanceStatusRequest Container for the necessary
      *           parameters to execute the DescribeInstanceStatus service method on
@@ -8172,9 +8473,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * the volume.
      * </p>
      * <p>
-     * You cannot delete a snapshot of the root device of an Amazon EBS
-     * volume used by a registered AMI. You must first de-register the AMI
-     * before you can delete the snapshot.
+     * You cannot delete a snapshot of the root device of an EBS volume used
+     * by a registered AMI. You must first de-register the AMI before you can
+     * delete the snapshot.
      * </p>
      * <p>
      * For more information, see
@@ -8574,14 +8875,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Copies a point-in-time snapshot of an Amazon EBS volume and stores it
-     * in Amazon S3. You can copy the snapshot within the same region or from
-     * one region to another. You can use the snapshot to create Amazon EBS
-     * volumes or Amazon Machine Images (AMIs). The snapshot is copied to the
+     * Copies a point-in-time snapshot of an EBS volume and stores it in
+     * Amazon S3. You can copy the snapshot within the same region or from
+     * one region to another. You can use the snapshot to create EBS volumes
+     * or Amazon Machine Images (AMIs). The snapshot is copied to the
      * regional endpoint that you send the HTTP request to.
      * </p>
      * <p>
-     * Copies of encrypted Amazon EBS snapshots remain encrypted. Copies of
+     * Copies of encrypted EBS snapshots remain encrypted. Copies of
      * unencrypted snapshots remain unencrypted.
      * </p>
      * <p>
@@ -8628,6 +8929,54 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             response = invoke(request, new CopySnapshotResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Describes all supported AWS services that can be specified when
+     * creating a VPC endpoint.
+     * </p>
+     *
+     * @param describeVpcEndpointServicesRequest Container for the necessary
+     *           parameters to execute the DescribeVpcEndpointServices service method
+     *           on AmazonEC2.
+     * 
+     * @return The response from the DescribeVpcEndpointServices service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVpcEndpointServicesResult describeVpcEndpointServices(DescribeVpcEndpointServicesRequest describeVpcEndpointServicesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeVpcEndpointServicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVpcEndpointServicesRequest> request = null;
+        Response<DescribeVpcEndpointServicesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVpcEndpointServicesRequestMarshaller().marshall(super.beforeMarshalling(describeVpcEndpointServicesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeVpcEndpointServicesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -8915,7 +9264,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes one or more of the Amazon EBS snapshots available to you.
+     * Describes one or more of the EBS snapshots available to you.
      * Available snapshots include public snapshots available for any AWS
      * account to launch, private snapshots that you own, and private
      * snapshots owned by another AWS account but for which you've been given
@@ -8972,7 +9321,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * results.
      * </p>
      * <p>
-     * For more information about Amazon EBS snapshots, see
+     * For more information about EBS snapshots, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -9290,6 +9639,53 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Describes one or more of your VPC endpoints.
+     * </p>
+     *
+     * @param describeVpcEndpointsRequest Container for the necessary
+     *           parameters to execute the DescribeVpcEndpoints service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeVpcEndpoints service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVpcEndpointsResult describeVpcEndpoints(DescribeVpcEndpointsRequest describeVpcEndpointsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeVpcEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVpcEndpointsRequest> request = null;
+        Response<DescribeVpcEndpointsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVpcEndpointsRequestMarshaller().marshall(super.beforeMarshalling(describeVpcEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeVpcEndpointsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -9675,8 +10071,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Displays details about an import snapshot tasks that is already
-     * created.
+     * Describes your import snapshot tasks.
      * </p>
      * 
      * @return The response from the DescribeImportSnapshotTasks service
@@ -9845,7 +10240,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the specified Amazon EBS volumes.
+     * Describes the specified EBS volumes.
      * </p>
      * <p>
      * If you are describing a long list of volumes, you can paginate the
@@ -9858,7 +10253,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * results.
      * </p>
      * <p>
-     * For more information about Amazon EBS volumes, see
+     * For more information about EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -9977,6 +10372,31 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeDhcpOptionsResult describeDhcpOptions() throws AmazonServiceException, AmazonClientException {
         return describeDhcpOptions(new DescribeDhcpOptionsRequest());
+    }
+    
+    /**
+     * <p>
+     * Describes available AWS services in a prefix list format, which
+     * includes the prefix list name and prefix list ID of the service and
+     * the IP address range for the service. A prefix list ID is required for
+     * creating an outbound security group rule that allows traffic from a
+     * VPC to access an AWS service through a VPC endpoint.
+     * </p>
+     * 
+     * @return The response from the DescribePrefixLists service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribePrefixListsResult describePrefixLists() throws AmazonServiceException, AmazonClientException {
+        return describePrefixLists(new DescribePrefixListsRequest());
     }
     
     /**
@@ -10114,6 +10534,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Describes your Elastic IP addresses that are being moved to the
+     * EC2-VPC platform, or that are being restored to the EC2-Classic
+     * platform. This request does not return information about any other
+     * Elastic IP addresses in your account.
+     * </p>
+     * 
+     * @return The response from the DescribeMovingAddresses service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeMovingAddressesResult describeMovingAddresses() throws AmazonServiceException, AmazonClientException {
+        return describeMovingAddresses(new DescribeMovingAddressesRequest());
+    }
+    
+    /**
+     * <p>
      * Describes one or more of your conversion tasks. For more information,
      * see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
@@ -10138,8 +10582,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Import single or multi-volume disk images or Amazon EBS snapshots
-     * into an Amazon Machine Image (AMI).
+     * Import single or multi-volume disk images or EBS snapshots into an
+     * Amazon Machine Image (AMI).
      * </p>
      * 
      * @return The response from the ImportImage service method, as returned
@@ -10424,8 +10868,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Import a disk into an Amazon Elastic Block Store (Amazon EBS)
-     * snapshot.
+     * Imports a disk into an EBS snapshot.
      * </p>
      * 
      * @return The response from the ImportSnapshot service method, as
@@ -10549,96 +10992,39 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the status of one or more instances, including any
-     * scheduled events.
+     * Describes the status of one or more instances.
      * </p>
      * <p>
-     * Instance status has two main components:
+     * Instance status includes the following components:
      * </p>
      * 
      * <ul>
      * <li> <p>
-     * System Status reports impaired functionality that stems from issues
-     * related to the systems that support an instance, such as such as
-     * hardware failures and network connectivity problems. This call reports
-     * such problems as impaired reachability.
-     * </p>
-     * </li>
-     * <li> <p>
-     * Instance Status reports impaired functionality that arises from
-     * problems internal to the instance. This call reports such problems as
-     * impaired reachability.
-     * </p>
-     * </li>
-     * 
-     * </ul>
-     * <p>
-     * Instance status provides information about four types of scheduled
-     * events for an instance that may require your attention:
-     * </p>
-     * 
-     * <ul>
-     * <li> <p>
-     * Scheduled Reboot: When Amazon EC2 determines that an instance must be
-     * rebooted, the instances status returns one of two event codes:
-     * <code>system-reboot</code> or <code>instance-reboot</code> . System
-     * reboot commonly occurs if certain maintenance or upgrade operations
-     * require a reboot of the underlying host that supports an instance.
-     * Instance reboot commonly occurs if the instance must be rebooted,
-     * rather than the underlying host. Rebooting events include a scheduled
-     * start and end time.
-     * </p>
-     * </li>
-     * <li> <p>
-     * System Maintenance: When Amazon EC2 determines that an instance
-     * requires maintenance that requires power or network impact, the
-     * instance status is the event code <code>system-maintenance</code> .
-     * System maintenance is either power maintenance or network maintenance.
-     * For power maintenance, your instance will be unavailable for a brief
-     * period of time and then rebooted. For network maintenance, your
-     * instance will experience a brief loss of network connectivity. System
-     * maintenance events include a scheduled start and end time. You will
-     * also be notified by email if one of your instances is set for system
-     * maintenance. The email message indicates when your instance is
-     * scheduled for maintenance.
-     * </p>
-     * </li>
-     * <li> <p>
-     * Scheduled Retirement: When Amazon EC2 determines that an instance
-     * must be shut down, the instance status is the event code
-     * <code>instance-retirement</code> . Retirement commonly occurs when the
-     * underlying host is degraded and must be replaced. Retirement events
-     * include a scheduled start and end time. You will also be notified by
-     * email if one of your instances is set to retiring. The email message
-     * indicates when your instance will be permanently retired.
-     * </p>
-     * </li>
-     * <li> <p>
-     * Scheduled Stop: When Amazon EC2 determines that an instance must be
-     * shut down, the instances status returns an event code called
-     * <code>instance-stop</code> . Stop events include a scheduled start and
-     * end time. You will also be notified by email if one of your instances
-     * is set to stop. The email message indicates when your instance will be
-     * stopped.
-     * </p>
-     * </li>
-     * 
-     * </ul>
-     * <p>
-     * When your instance is retired, it will either be terminated (if its
-     * root device type is the instance-store) or stopped (if its root device
-     * type is an EBS volume). Instances stopped due to retirement will not
-     * be restarted, but you can do so manually. You can also avoid
-     * retirement of EBS-backed instances by manually restarting your
-     * instance when its event code is <code>instance-retirement</code> .
-     * This ensures that your instance is started on a different underlying
-     * host.
-     * </p>
-     * <p>
-     * For more information about failed status checks, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html"> Troubleshooting Instances with Failed Status Checks </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions"> Working with an Instance That Has a Scheduled Event </a>
+     * <b>Status checks</b> - Amazon EC2 performs status checks on running
+     * EC2 instances to identify hardware and software issues. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html"> Status Checks for Your Instances </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html"> Troubleshooting Instances with Failed Status Checks </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
+     * </li>
+     * <li> <p>
+     * <b>Scheduled events</b> - Amazon EC2 can schedule events (such as
+     * reboot, stop, or terminate) for your instances related to hardware
+     * issues, software updates, or system maintenance. For more information,
+     * see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html"> Scheduled Events for Your Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     * </li>
+     * <li> <p>
+     * <b>Instance state</b> - You can manage your instances from the moment
+     * you launch them through their termination. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     * </li>
+     * 
+     * </ul>
      * 
      * @return The response from the DescribeInstanceStatus service method,
      *         as returned by AmazonEC2.
@@ -10715,6 +11101,28 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Describes all supported AWS services that can be specified when
+     * creating a VPC endpoint.
+     * </p>
+     * 
+     * @return The response from the DescribeVpcEndpointServices service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVpcEndpointServicesResult describeVpcEndpointServices() throws AmazonServiceException, AmazonClientException {
+        return describeVpcEndpointServices(new DescribeVpcEndpointServicesRequest());
+    }
+    
+    /**
+     * <p>
      * Acquires an Elastic IP address.
      * </p>
      * <p>
@@ -10742,7 +11150,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes one or more of the Amazon EBS snapshots available to you.
+     * Describes one or more of the EBS snapshots available to you.
      * Available snapshots include public snapshots available for any AWS
      * account to launch, private snapshots that you own, and private
      * snapshots owned by another AWS account but for which you've been given
@@ -10799,7 +11207,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * results.
      * </p>
      * <p>
-     * For more information about Amazon EBS snapshots, see
+     * For more information about EBS snapshots, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
@@ -10818,6 +11226,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeSnapshotsResult describeSnapshots() throws AmazonServiceException, AmazonClientException {
         return describeSnapshots(new DescribeSnapshotsRequest());
+    }
+    
+    /**
+     * <p>
+     * Describes one or more of your VPC endpoints.
+     * </p>
+     * 
+     * @return The response from the DescribeVpcEndpoints service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVpcEndpointsResult describeVpcEndpoints() throws AmazonServiceException, AmazonClientException {
+        return describeVpcEndpoints(new DescribeVpcEndpointsRequest());
     }
     
     /**

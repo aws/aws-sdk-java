@@ -15,7 +15,9 @@
 package com.amazonaws.services.s3.transfer.internal;
 
 import java.io.File;
+import java.io.FileInputStream;
 
+import com.amazonaws.internal.ReleasableInputStream;
 import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.SSECustomerKey;
@@ -44,6 +46,13 @@ public class UploadPartRequestFactory {
     private SSECustomerKey sseCustomerKey;
     private final int totalNumberOfParts;
 
+    /**
+     * Wrapped to provide necessary mark-and-reset support for the underlying
+     * input stream. In particular, it provides support for unlimited
+     * mark-and-reset if the underlying stream is a {@link FileInputStream}.
+     */
+    private ReleasableInputStream wrappedStream;
+
     public UploadPartRequestFactory(PutObjectRequest origReq, String uploadId, long optimalPartSize) {
         this.origReq = origReq;
         this.uploadId = uploadId;
@@ -55,6 +64,9 @@ public class UploadPartRequestFactory {
         this.sseCustomerKey = origReq.getSSECustomerKey();
         this.totalNumberOfParts = (int) Math.ceil((double) this.remainingBytes
                 / this.optimalPartSize);
+        if (origReq.getInputStream() != null) {
+            wrappedStream = ReleasableInputStream.wrap(origReq.getInputStream());
+        }
     }
 
     public synchronized boolean hasMoreRequests() {
@@ -66,12 +78,12 @@ public class UploadPartRequestFactory {
         boolean isLastPart = (remainingBytes - partSize <= 0);
 
         UploadPartRequest req = null;
-        if (origReq.getInputStream() != null) {
+        if (wrappedStream != null) {
             req = new UploadPartRequest()
                 .withBucketName(bucketName)
                 .withKey(key)
                 .withUploadId(uploadId)
-                .withInputStream(new InputSubstream(origReq.getInputStream(), 0, partSize, isLastPart))
+                .withInputStream(new InputSubstream(wrappedStream, 0, partSize, isLastPart))
                 .withPartNumber(partNumber++)
                 .withPartSize(partSize);
         } else {
@@ -96,6 +108,7 @@ public class UploadPartRequestFactory {
         req.withGeneralProgressListener(origReq.getGeneralProgressListener())
            .withRequestMetricCollector(origReq.getRequestMetricCollector())
            ;
+        req.getRequestClientOptions().setReadLimit(origReq.getReadLimit());
         return req;
     }
 

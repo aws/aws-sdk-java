@@ -23,15 +23,15 @@ import com.amazonaws.services.ec2.model.transform.CreateVolumeRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVolume(CreateVolumeRequest) CreateVolume operation}.
  * <p>
- * Creates an Amazon EBS volume that can be attached to an instance in
- * the same Availability Zone. The volume is created in the regional
- * endpoint that you send the HTTP request to. For more information see
+ * Creates an EBS volume that can be attached to an instance in the same
+ * Availability Zone. The volume is created in the regional endpoint that
+ * you send the HTTP request to. For more information see
  * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html"> Regions and Endpoints </a>
  * .
  * </p>
  * <p>
- * You can create a new empty volume or restore a volume from an Amazon
- * EBS snapshot. Any AWS Marketplace product codes from the snapshot are
+ * You can create a new empty volume or restore a volume from an EBS
+ * snapshot. Any AWS Marketplace product codes from the snapshot are
  * propagated to the volume.
  * </p>
  * <p>

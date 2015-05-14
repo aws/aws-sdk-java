@@ -150,8 +150,8 @@ public class Instance implements Serializable, Cloneable {
     private String architecture;
 
     /**
-     * The root device type used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The root device type used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
@@ -1209,14 +1209,14 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The root device type used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The root device type used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @return The root device type used by the AMI. The AMI can use an Amazon EBS
-     *         volume or an instance store volume.
+     * @return The root device type used by the AMI. The AMI can use an EBS volume or
+     *         an instance store volume.
      *
      * @see DeviceType
      */
@@ -1225,14 +1225,14 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * The root device type used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The root device type used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS
-     *         volume or an instance store volume.
+     * @param rootDeviceType The root device type used by the AMI. The AMI can use an EBS volume or
+     *         an instance store volume.
      *
      * @see DeviceType
      */
@@ -1241,16 +1241,16 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * The root device type used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The root device type used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS
-     *         volume or an instance store volume.
+     * @param rootDeviceType The root device type used by the AMI. The AMI can use an EBS volume or
+     *         an instance store volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1263,14 +1263,14 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The root device type used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The root device type used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS
-     *         volume or an instance store volume.
+     * @param rootDeviceType The root device type used by the AMI. The AMI can use an EBS volume or
+     *         an instance store volume.
      *
      * @see DeviceType
      */
@@ -1279,16 +1279,16 @@ public class Instance implements Serializable, Cloneable {
     }
     
     /**
-     * The root device type used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The root device type used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS
-     *         volume or an instance store volume.
+     * @param rootDeviceType The root device type used by the AMI. The AMI can use an EBS volume or
+     *         an instance store volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

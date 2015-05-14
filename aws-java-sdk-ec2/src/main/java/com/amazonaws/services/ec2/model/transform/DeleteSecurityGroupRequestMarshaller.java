@@ -39,7 +39,7 @@ public class DeleteSecurityGroupRequestMarshaller implements Marshaller<Request<
 
         Request<DeleteSecurityGroupRequest> request = new DefaultRequest<DeleteSecurityGroupRequest>(deleteSecurityGroupRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteSecurityGroup");
-        request.addParameter("Version", "2015-03-01");
+        request.addParameter("Version", "2015-04-15");
 
         if (deleteSecurityGroupRequest.getGroupName() != null) {
             request.addParameter("GroupName", StringUtils.fromString(deleteSecurityGroupRequest.getGroupName()));

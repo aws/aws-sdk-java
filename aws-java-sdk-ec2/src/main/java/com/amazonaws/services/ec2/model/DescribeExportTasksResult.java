@@ -22,14 +22,14 @@ import java.io.Serializable;
 public class DescribeExportTasksResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * Information about the export tasks.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ExportTask> exportTasks;
 
     /**
-     * 
+     * Information about the export tasks.
      *
-     * @return 
+     * @return Information about the export tasks.
      */
     public java.util.List<ExportTask> getExportTasks() {
         if (exportTasks == null) {
@@ -40,9 +40,9 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the export tasks.
      *
-     * @param exportTasks 
+     * @param exportTasks Information about the export tasks.
      */
     public void setExportTasks(java.util.Collection<ExportTask> exportTasks) {
         if (exportTasks == null) {
@@ -55,7 +55,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the export tasks.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setExportTasks(java.util.Collection)} or {@link
@@ -64,7 +64,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportTasks 
+     * @param exportTasks Information about the export tasks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -78,11 +78,11 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the export tasks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportTasks 
+     * @param exportTasks Information about the export tasks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

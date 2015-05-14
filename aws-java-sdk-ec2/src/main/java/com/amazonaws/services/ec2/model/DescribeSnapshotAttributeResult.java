@@ -22,7 +22,7 @@ import java.io.Serializable;
 public class DescribeSnapshotAttributeResult implements Serializable, Cloneable {
 
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      */
     private String snapshotId;
 
@@ -37,29 +37,29 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
     private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
 
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      *
-     * @return The ID of the Amazon EBS snapshot.
+     * @return The ID of the EBS snapshot.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      *
-     * @param snapshotId The ID of the Amazon EBS snapshot.
+     * @param snapshotId The ID of the EBS snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotId The ID of the Amazon EBS snapshot.
+     * @param snapshotId The ID of the EBS snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

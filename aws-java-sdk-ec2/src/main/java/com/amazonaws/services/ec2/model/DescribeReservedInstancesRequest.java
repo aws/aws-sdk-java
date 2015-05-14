@@ -59,7 +59,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
      * time at which the Reserved Instance purchase request was placed (for
      * example, 2014-08-07T11:54:42.000Z). </li> <li> <p><code>state</code> -
-     * The state of the Reserved Instance (<code>pending-payment</code> |
+     * The state of the Reserved Instance (<code>payment-pending</code> |
      * <code>active</code> | <code>payment-failed</code> |
      * <code>retired</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -188,7 +188,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
      * time at which the Reserved Instance purchase request was placed (for
      * example, 2014-08-07T11:54:42.000Z). </li> <li> <p><code>state</code> -
-     * The state of the Reserved Instance (<code>pending-payment</code> |
+     * The state of the Reserved Instance (<code>payment-pending</code> |
      * <code>active</code> | <code>payment-failed</code> |
      * <code>retired</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -223,7 +223,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *         ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
      *         time at which the Reserved Instance purchase request was placed (for
      *         example, 2014-08-07T11:54:42.000Z). </li> <li> <p><code>state</code> -
-     *         The state of the Reserved Instance (<code>pending-payment</code> |
+     *         The state of the Reserved Instance (<code>payment-pending</code> |
      *         <code>active</code> | <code>payment-failed</code> |
      *         <code>retired</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -267,7 +267,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
      * time at which the Reserved Instance purchase request was placed (for
      * example, 2014-08-07T11:54:42.000Z). </li> <li> <p><code>state</code> -
-     * The state of the Reserved Instance (<code>pending-payment</code> |
+     * The state of the Reserved Instance (<code>payment-pending</code> |
      * <code>active</code> | <code>payment-failed</code> |
      * <code>retired</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -302,7 +302,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *         ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
      *         time at which the Reserved Instance purchase request was placed (for
      *         example, 2014-08-07T11:54:42.000Z). </li> <li> <p><code>state</code> -
-     *         The state of the Reserved Instance (<code>pending-payment</code> |
+     *         The state of the Reserved Instance (<code>payment-pending</code> |
      *         <code>active</code> | <code>payment-failed</code> |
      *         <code>retired</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -348,7 +348,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
      * time at which the Reserved Instance purchase request was placed (for
      * example, 2014-08-07T11:54:42.000Z). </li> <li> <p><code>state</code> -
-     * The state of the Reserved Instance (<code>pending-payment</code> |
+     * The state of the Reserved Instance (<code>payment-pending</code> |
      * <code>active</code> | <code>payment-failed</code> |
      * <code>retired</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -390,7 +390,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *         ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
      *         time at which the Reserved Instance purchase request was placed (for
      *         example, 2014-08-07T11:54:42.000Z). </li> <li> <p><code>state</code> -
-     *         The state of the Reserved Instance (<code>pending-payment</code> |
+     *         The state of the Reserved Instance (<code>payment-pending</code> |
      *         <code>active</code> | <code>payment-failed</code> |
      *         <code>retired</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -437,7 +437,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
      * time at which the Reserved Instance purchase request was placed (for
      * example, 2014-08-07T11:54:42.000Z). </li> <li> <p><code>state</code> -
-     * The state of the Reserved Instance (<code>pending-payment</code> |
+     * The state of the Reserved Instance (<code>payment-pending</code> |
      * <code>active</code> | <code>payment-failed</code> |
      * <code>retired</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -474,7 +474,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *         ID of the Reserved Instance. </li> <li> <p><code>start</code> - The
      *         time at which the Reserved Instance purchase request was placed (for
      *         example, 2014-08-07T11:54:42.000Z). </li> <li> <p><code>state</code> -
-     *         The state of the Reserved Instance (<code>pending-payment</code> |
+     *         The state of the Reserved Instance (<code>payment-pending</code> |
      *         <code>active</code> | <code>payment-failed</code> |
      *         <code>retired</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value

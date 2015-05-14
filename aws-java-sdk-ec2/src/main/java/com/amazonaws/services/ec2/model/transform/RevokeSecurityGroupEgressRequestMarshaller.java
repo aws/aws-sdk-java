@@ -39,7 +39,7 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
 
         Request<RevokeSecurityGroupEgressRequest> request = new DefaultRequest<RevokeSecurityGroupEgressRequest>(revokeSecurityGroupEgressRequest, "AmazonEC2");
         request.addParameter("Action", "RevokeSecurityGroupEgress");
-        request.addParameter("Version", "2015-03-01");
+        request.addParameter("Version", "2015-04-15");
 
         if (revokeSecurityGroupEgressRequest.getGroupId() != null) {
             request.addParameter("GroupId", StringUtils.fromString(revokeSecurityGroupEgressRequest.getGroupId()));
@@ -108,6 +108,20 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
                     }
 
                     ipRangesListIndex++;
+                }
+
+                java.util.List<PrefixListId> prefixListIdsList = ipPermissionMember.getPrefixListIds();
+                int prefixListIdsListIndex = 1;
+
+                for (PrefixListId prefixListIdsListValue : prefixListIdsList) {
+                    PrefixListId prefixListIdMember = prefixListIdsListValue;
+                    if (prefixListIdMember != null) {
+                        if (prefixListIdMember.getPrefixListId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex + ".PrefixListId", StringUtils.fromString(prefixListIdMember.getPrefixListId()));
+                        }
+                    }
+
+                    prefixListIdsListIndex++;
                 }
             }
 

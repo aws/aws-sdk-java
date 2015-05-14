@@ -36,49 +36,49 @@ import com.amazonaws.services.ec2.model.transform.ImportVolumeRequestMarshaller;
 public class ImportVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportVolumeRequest> {
 
     /**
-     * The Availability Zone for the resulting Amazon EBS volume.
+     * The Availability Zone for the resulting EBS volume.
      */
     private String availabilityZone;
 
     /**
-     * 
+     * The disk image.
      */
     private DiskImageDetail image;
 
     /**
-     * An optional description for the volume being imported.
+     * A description of the volume.
      */
     private String description;
 
     /**
-     * 
+     * The volume size.
      */
     private VolumeDetail volume;
 
     /**
-     * The Availability Zone for the resulting Amazon EBS volume.
+     * The Availability Zone for the resulting EBS volume.
      *
-     * @return The Availability Zone for the resulting Amazon EBS volume.
+     * @return The Availability Zone for the resulting EBS volume.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The Availability Zone for the resulting Amazon EBS volume.
+     * The Availability Zone for the resulting EBS volume.
      *
-     * @param availabilityZone The Availability Zone for the resulting Amazon EBS volume.
+     * @param availabilityZone The Availability Zone for the resulting EBS volume.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The Availability Zone for the resulting Amazon EBS volume.
+     * The Availability Zone for the resulting EBS volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The Availability Zone for the resulting Amazon EBS volume.
+     * @param availabilityZone The Availability Zone for the resulting EBS volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -89,29 +89,29 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * 
+     * The disk image.
      *
-     * @return 
+     * @return The disk image.
      */
     public DiskImageDetail getImage() {
         return image;
     }
     
     /**
-     * 
+     * The disk image.
      *
-     * @param image 
+     * @param image The disk image.
      */
     public void setImage(DiskImageDetail image) {
         this.image = image;
     }
     
     /**
-     * 
+     * The disk image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param image 
+     * @param image The disk image.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -122,29 +122,29 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * An optional description for the volume being imported.
+     * A description of the volume.
      *
-     * @return An optional description for the volume being imported.
+     * @return A description of the volume.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * An optional description for the volume being imported.
+     * A description of the volume.
      *
-     * @param description An optional description for the volume being imported.
+     * @param description A description of the volume.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * An optional description for the volume being imported.
+     * A description of the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description An optional description for the volume being imported.
+     * @param description A description of the volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -155,29 +155,29 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * 
+     * The volume size.
      *
-     * @return 
+     * @return The volume size.
      */
     public VolumeDetail getVolume() {
         return volume;
     }
     
     /**
-     * 
+     * The volume size.
      *
-     * @param volume 
+     * @param volume The volume size.
      */
     public void setVolume(VolumeDetail volume) {
         this.volume = volume;
     }
     
     /**
-     * 
+     * The volume size.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volume 
+     * @param volume The volume size.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

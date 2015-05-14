@@ -54,7 +54,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
     private String statusMessage;
 
     /**
-     * 
+     * A description of the task.
      */
     private String description;
 
@@ -257,29 +257,29 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * A description of the task.
      *
-     * @return 
+     * @return A description of the task.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * 
+     * A description of the task.
      *
-     * @param description 
+     * @param description A description of the task.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * 
+     * A description of the task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description 
+     * @param description A description of the task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

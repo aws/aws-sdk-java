@@ -30,41 +30,41 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetStackPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name or stack ID that is associated with the stack whose policy
-     * you want to get.
+     * The name or unique stack ID that is associated with the stack whose
+     * policy you want to get.
      */
     private String stackName;
 
     /**
-     * The name or stack ID that is associated with the stack whose policy
-     * you want to get.
+     * The name or unique stack ID that is associated with the stack whose
+     * policy you want to get.
      *
-     * @return The name or stack ID that is associated with the stack whose policy
-     *         you want to get.
+     * @return The name or unique stack ID that is associated with the stack whose
+     *         policy you want to get.
      */
     public String getStackName() {
         return stackName;
     }
     
     /**
-     * The name or stack ID that is associated with the stack whose policy
-     * you want to get.
+     * The name or unique stack ID that is associated with the stack whose
+     * policy you want to get.
      *
-     * @param stackName The name or stack ID that is associated with the stack whose policy
-     *         you want to get.
+     * @param stackName The name or unique stack ID that is associated with the stack whose
+     *         policy you want to get.
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
     
     /**
-     * The name or stack ID that is associated with the stack whose policy
-     * you want to get.
+     * The name or unique stack ID that is associated with the stack whose
+     * policy you want to get.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackName The name or stack ID that is associated with the stack whose policy
-     *         you want to get.
+     * @param stackName The name or unique stack ID that is associated with the stack whose
+     *         policy you want to get.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

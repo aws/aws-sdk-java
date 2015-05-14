@@ -17,22 +17,25 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes an import image task.
+ * </p>
  */
 public class ImportImageTask implements Serializable, Cloneable {
 
     /**
-     * The ID of the import task.
+     * The ID of the import image task.
      */
     private String importTaskId;
 
     /**
-     * Architecture of the VM being imported.
+     * The architecture of the virtual machine. <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code>
      */
     private String architecture;
 
     /**
-     * License type of the VM being imported.
+     * The license type of the virtual machine.
      */
     private String licenseType;
 
@@ -42,64 +45,66 @@ public class ImportImageTask implements Serializable, Cloneable {
     private String platform;
 
     /**
-     * Target hypervisor for the import task.
+     * The target hypervisor for the import task. <p>Valid values:
+     * <code>xen</code>
      */
     private String hypervisor;
 
     /**
-     * Description of the import task.
+     * A description of the import task.
      */
     private String description;
 
     /**
-     * 
+     * Information about the snapshots.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SnapshotDetail> snapshotDetails;
 
     /**
-     * The Amazon Machine Image (AMI) ID of the imported virtual machine.
+     * The ID of the Amazon Machine Image (AMI) of the imported virtual
+     * machine.
      */
     private String imageId;
 
     /**
-     * The percentage of progress of the ImportImage task.
+     * The percentage of progress of the import image task.
      */
     private String progress;
 
     /**
-     * A descriptive status message for the ImportImage task.
+     * A descriptive status message for the import image task.
      */
     private String statusMessage;
 
     /**
-     * A brief status for the ImportImage task.
+     * A brief status for the import image task.
      */
     private String status;
 
     /**
-     * The ID of the import task.
+     * The ID of the import image task.
      *
-     * @return The ID of the import task.
+     * @return The ID of the import image task.
      */
     public String getImportTaskId() {
         return importTaskId;
     }
     
     /**
-     * The ID of the import task.
+     * The ID of the import image task.
      *
-     * @param importTaskId The ID of the import task.
+     * @param importTaskId The ID of the import image task.
      */
     public void setImportTaskId(String importTaskId) {
         this.importTaskId = importTaskId;
     }
     
     /**
-     * The ID of the import task.
+     * The ID of the import image task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importTaskId The ID of the import task.
+     * @param importTaskId The ID of the import image task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -110,29 +115,35 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
 
     /**
-     * Architecture of the VM being imported.
+     * The architecture of the virtual machine. <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code>
      *
-     * @return Architecture of the VM being imported.
+     * @return The architecture of the virtual machine. <p>Valid values:
+     *         <code>i386</code> | <code>x86_64</code>
      */
     public String getArchitecture() {
         return architecture;
     }
     
     /**
-     * Architecture of the VM being imported.
+     * The architecture of the virtual machine. <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code>
      *
-     * @param architecture Architecture of the VM being imported.
+     * @param architecture The architecture of the virtual machine. <p>Valid values:
+     *         <code>i386</code> | <code>x86_64</code>
      */
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
     
     /**
-     * Architecture of the VM being imported.
+     * The architecture of the virtual machine. <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param architecture Architecture of the VM being imported.
+     * @param architecture The architecture of the virtual machine. <p>Valid values:
+     *         <code>i386</code> | <code>x86_64</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -143,29 +154,29 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
 
     /**
-     * License type of the VM being imported.
+     * The license type of the virtual machine.
      *
-     * @return License type of the VM being imported.
+     * @return The license type of the virtual machine.
      */
     public String getLicenseType() {
         return licenseType;
     }
     
     /**
-     * License type of the VM being imported.
+     * The license type of the virtual machine.
      *
-     * @param licenseType License type of the VM being imported.
+     * @param licenseType The license type of the virtual machine.
      */
     public void setLicenseType(String licenseType) {
         this.licenseType = licenseType;
     }
     
     /**
-     * License type of the VM being imported.
+     * The license type of the virtual machine.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param licenseType License type of the VM being imported.
+     * @param licenseType The license type of the virtual machine.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -209,29 +220,35 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
 
     /**
-     * Target hypervisor for the import task.
+     * The target hypervisor for the import task. <p>Valid values:
+     * <code>xen</code>
      *
-     * @return Target hypervisor for the import task.
+     * @return The target hypervisor for the import task. <p>Valid values:
+     *         <code>xen</code>
      */
     public String getHypervisor() {
         return hypervisor;
     }
     
     /**
-     * Target hypervisor for the import task.
+     * The target hypervisor for the import task. <p>Valid values:
+     * <code>xen</code>
      *
-     * @param hypervisor Target hypervisor for the import task.
+     * @param hypervisor The target hypervisor for the import task. <p>Valid values:
+     *         <code>xen</code>
      */
     public void setHypervisor(String hypervisor) {
         this.hypervisor = hypervisor;
     }
     
     /**
-     * Target hypervisor for the import task.
+     * The target hypervisor for the import task. <p>Valid values:
+     * <code>xen</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hypervisor Target hypervisor for the import task.
+     * @param hypervisor The target hypervisor for the import task. <p>Valid values:
+     *         <code>xen</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -242,29 +259,29 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
 
     /**
-     * Description of the import task.
+     * A description of the import task.
      *
-     * @return Description of the import task.
+     * @return A description of the import task.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Description of the import task.
+     * A description of the import task.
      *
-     * @param description Description of the import task.
+     * @param description A description of the import task.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Description of the import task.
+     * A description of the import task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description Description of the import task.
+     * @param description A description of the import task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -275,9 +292,9 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * Information about the snapshots.
      *
-     * @return 
+     * @return Information about the snapshots.
      */
     public java.util.List<SnapshotDetail> getSnapshotDetails() {
         if (snapshotDetails == null) {
@@ -288,9 +305,9 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the snapshots.
      *
-     * @param snapshotDetails 
+     * @param snapshotDetails Information about the snapshots.
      */
     public void setSnapshotDetails(java.util.Collection<SnapshotDetail> snapshotDetails) {
         if (snapshotDetails == null) {
@@ -303,7 +320,7 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the snapshots.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setSnapshotDetails(java.util.Collection)} or {@link
@@ -312,7 +329,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotDetails 
+     * @param snapshotDetails Information about the snapshots.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -326,11 +343,11 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the snapshots.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotDetails 
+     * @param snapshotDetails Information about the snapshots.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -348,29 +365,35 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon Machine Image (AMI) ID of the imported virtual machine.
+     * The ID of the Amazon Machine Image (AMI) of the imported virtual
+     * machine.
      *
-     * @return The Amazon Machine Image (AMI) ID of the imported virtual machine.
+     * @return The ID of the Amazon Machine Image (AMI) of the imported virtual
+     *         machine.
      */
     public String getImageId() {
         return imageId;
     }
     
     /**
-     * The Amazon Machine Image (AMI) ID of the imported virtual machine.
+     * The ID of the Amazon Machine Image (AMI) of the imported virtual
+     * machine.
      *
-     * @param imageId The Amazon Machine Image (AMI) ID of the imported virtual machine.
+     * @param imageId The ID of the Amazon Machine Image (AMI) of the imported virtual
+     *         machine.
      */
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
     
     /**
-     * The Amazon Machine Image (AMI) ID of the imported virtual machine.
+     * The ID of the Amazon Machine Image (AMI) of the imported virtual
+     * machine.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param imageId The Amazon Machine Image (AMI) ID of the imported virtual machine.
+     * @param imageId The ID of the Amazon Machine Image (AMI) of the imported virtual
+     *         machine.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -381,29 +404,29 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
 
     /**
-     * The percentage of progress of the ImportImage task.
+     * The percentage of progress of the import image task.
      *
-     * @return The percentage of progress of the ImportImage task.
+     * @return The percentage of progress of the import image task.
      */
     public String getProgress() {
         return progress;
     }
     
     /**
-     * The percentage of progress of the ImportImage task.
+     * The percentage of progress of the import image task.
      *
-     * @param progress The percentage of progress of the ImportImage task.
+     * @param progress The percentage of progress of the import image task.
      */
     public void setProgress(String progress) {
         this.progress = progress;
     }
     
     /**
-     * The percentage of progress of the ImportImage task.
+     * The percentage of progress of the import image task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param progress The percentage of progress of the ImportImage task.
+     * @param progress The percentage of progress of the import image task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -414,29 +437,29 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
 
     /**
-     * A descriptive status message for the ImportImage task.
+     * A descriptive status message for the import image task.
      *
-     * @return A descriptive status message for the ImportImage task.
+     * @return A descriptive status message for the import image task.
      */
     public String getStatusMessage() {
         return statusMessage;
     }
     
     /**
-     * A descriptive status message for the ImportImage task.
+     * A descriptive status message for the import image task.
      *
-     * @param statusMessage A descriptive status message for the ImportImage task.
+     * @param statusMessage A descriptive status message for the import image task.
      */
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
     
     /**
-     * A descriptive status message for the ImportImage task.
+     * A descriptive status message for the import image task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statusMessage A descriptive status message for the ImportImage task.
+     * @param statusMessage A descriptive status message for the import image task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -447,29 +470,29 @@ public class ImportImageTask implements Serializable, Cloneable {
     }
 
     /**
-     * A brief status for the ImportImage task.
+     * A brief status for the import image task.
      *
-     * @return A brief status for the ImportImage task.
+     * @return A brief status for the import image task.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * A brief status for the ImportImage task.
+     * A brief status for the import image task.
      *
-     * @param status A brief status for the ImportImage task.
+     * @param status A brief status for the import image task.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * A brief status for the ImportImage task.
+     * A brief status for the import image task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status A brief status for the ImportImage task.
+     * @param status A brief status for the import image task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -39,7 +39,7 @@ public class Image implements Serializable, Cloneable {
      * instance.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>available, deregistered
+     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
      */
     private String state;
 
@@ -129,8 +129,8 @@ public class Image implements Serializable, Cloneable {
     private String description;
 
     /**
-     * The type of root device used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume
+     * or an instance store volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
@@ -241,7 +241,7 @@ public class Image implements Serializable, Cloneable {
      * instance.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>available, deregistered
+     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
      *
      * @return The current state of the AMI. If the state is <code>available</code>,
      *         the image is successfully registered and can be used to launch an
@@ -259,7 +259,7 @@ public class Image implements Serializable, Cloneable {
      * instance.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>available, deregistered
+     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
      *
      * @param state The current state of the AMI. If the state is <code>available</code>,
      *         the image is successfully registered and can be used to launch an
@@ -279,7 +279,7 @@ public class Image implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>available, deregistered
+     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
      *
      * @param state The current state of the AMI. If the state is <code>available</code>,
      *         the image is successfully registered and can be used to launch an
@@ -301,7 +301,7 @@ public class Image implements Serializable, Cloneable {
      * instance.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>available, deregistered
+     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
      *
      * @param state The current state of the AMI. If the state is <code>available</code>,
      *         the image is successfully registered and can be used to launch an
@@ -321,7 +321,7 @@ public class Image implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>available, deregistered
+     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
      *
      * @param state The current state of the AMI. If the state is <code>available</code>,
      *         the image is successfully registered and can be used to launch an
@@ -1038,14 +1038,14 @@ public class Image implements Serializable, Cloneable {
     }
 
     /**
-     * The type of root device used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume
+     * or an instance store volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @return The type of root device used by the AMI. The AMI can use an Amazon EBS
-     *         volume or an instance store volume.
+     * @return The type of root device used by the AMI. The AMI can use an EBS volume
+     *         or an instance store volume.
      *
      * @see DeviceType
      */
@@ -1054,14 +1054,14 @@ public class Image implements Serializable, Cloneable {
     }
     
     /**
-     * The type of root device used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume
+     * or an instance store volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an Amazon EBS
-     *         volume or an instance store volume.
+     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an EBS volume
+     *         or an instance store volume.
      *
      * @see DeviceType
      */
@@ -1070,16 +1070,16 @@ public class Image implements Serializable, Cloneable {
     }
     
     /**
-     * The type of root device used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume
+     * or an instance store volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an Amazon EBS
-     *         volume or an instance store volume.
+     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an EBS volume
+     *         or an instance store volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1092,14 +1092,14 @@ public class Image implements Serializable, Cloneable {
     }
 
     /**
-     * The type of root device used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume
+     * or an instance store volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an Amazon EBS
-     *         volume or an instance store volume.
+     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an EBS volume
+     *         or an instance store volume.
      *
      * @see DeviceType
      */
@@ -1108,16 +1108,16 @@ public class Image implements Serializable, Cloneable {
     }
     
     /**
-     * The type of root device used by the AMI. The AMI can use an Amazon EBS
-     * volume or an instance store volume.
+     * The type of root device used by the AMI. The AMI can use an EBS volume
+     * or an instance store volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ebs, instance-store
      *
-     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an Amazon EBS
-     *         volume or an instance store volume.
+     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an EBS volume
+     *         or an instance store volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

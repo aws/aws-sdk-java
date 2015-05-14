@@ -22,27 +22,27 @@ import java.io.Serializable;
 public class ImportImageResult implements Serializable, Cloneable {
 
     /**
-     * The task id of the ImportImage task.
+     * The task ID of the import image task.
      */
     private String importTaskId;
 
     /**
-     * Architecture of the virtual machine being imported.
+     * The architecture of the virtual machine.
      */
     private String architecture;
 
     /**
-     * License type of the virtual machine being imported.
+     * The license type of the virtual machine.
      */
     private String licenseType;
 
     /**
-     * Operating system of the VM being imported.
+     * The operating system of the virtual machine.
      */
     private String platform;
 
     /**
-     * Target hypervisor of the import task.
+     * The target hypervisor of the import task.
      */
     private String hypervisor;
 
@@ -52,17 +52,17 @@ public class ImportImageResult implements Serializable, Cloneable {
     private String description;
 
     /**
-     * 
+     * Information about the snapshots.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SnapshotDetail> snapshotDetails;
 
     /**
-     * The Amazon Machine Image (AMI) ID created by the import task.
+     * The ID of the Amazon Machine Image (AMI) created by the import task.
      */
     private String imageId;
 
     /**
-     * The task's progress.
+     * The progress of the task.
      */
     private String progress;
 
@@ -77,29 +77,29 @@ public class ImportImageResult implements Serializable, Cloneable {
     private String status;
 
     /**
-     * The task id of the ImportImage task.
+     * The task ID of the import image task.
      *
-     * @return The task id of the ImportImage task.
+     * @return The task ID of the import image task.
      */
     public String getImportTaskId() {
         return importTaskId;
     }
     
     /**
-     * The task id of the ImportImage task.
+     * The task ID of the import image task.
      *
-     * @param importTaskId The task id of the ImportImage task.
+     * @param importTaskId The task ID of the import image task.
      */
     public void setImportTaskId(String importTaskId) {
         this.importTaskId = importTaskId;
     }
     
     /**
-     * The task id of the ImportImage task.
+     * The task ID of the import image task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importTaskId The task id of the ImportImage task.
+     * @param importTaskId The task ID of the import image task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -110,29 +110,29 @@ public class ImportImageResult implements Serializable, Cloneable {
     }
 
     /**
-     * Architecture of the virtual machine being imported.
+     * The architecture of the virtual machine.
      *
-     * @return Architecture of the virtual machine being imported.
+     * @return The architecture of the virtual machine.
      */
     public String getArchitecture() {
         return architecture;
     }
     
     /**
-     * Architecture of the virtual machine being imported.
+     * The architecture of the virtual machine.
      *
-     * @param architecture Architecture of the virtual machine being imported.
+     * @param architecture The architecture of the virtual machine.
      */
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
     
     /**
-     * Architecture of the virtual machine being imported.
+     * The architecture of the virtual machine.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param architecture Architecture of the virtual machine being imported.
+     * @param architecture The architecture of the virtual machine.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -143,29 +143,29 @@ public class ImportImageResult implements Serializable, Cloneable {
     }
 
     /**
-     * License type of the virtual machine being imported.
+     * The license type of the virtual machine.
      *
-     * @return License type of the virtual machine being imported.
+     * @return The license type of the virtual machine.
      */
     public String getLicenseType() {
         return licenseType;
     }
     
     /**
-     * License type of the virtual machine being imported.
+     * The license type of the virtual machine.
      *
-     * @param licenseType License type of the virtual machine being imported.
+     * @param licenseType The license type of the virtual machine.
      */
     public void setLicenseType(String licenseType) {
         this.licenseType = licenseType;
     }
     
     /**
-     * License type of the virtual machine being imported.
+     * The license type of the virtual machine.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param licenseType License type of the virtual machine being imported.
+     * @param licenseType The license type of the virtual machine.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -176,29 +176,29 @@ public class ImportImageResult implements Serializable, Cloneable {
     }
 
     /**
-     * Operating system of the VM being imported.
+     * The operating system of the virtual machine.
      *
-     * @return Operating system of the VM being imported.
+     * @return The operating system of the virtual machine.
      */
     public String getPlatform() {
         return platform;
     }
     
     /**
-     * Operating system of the VM being imported.
+     * The operating system of the virtual machine.
      *
-     * @param platform Operating system of the VM being imported.
+     * @param platform The operating system of the virtual machine.
      */
     public void setPlatform(String platform) {
         this.platform = platform;
     }
     
     /**
-     * Operating system of the VM being imported.
+     * The operating system of the virtual machine.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param platform Operating system of the VM being imported.
+     * @param platform The operating system of the virtual machine.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -209,29 +209,29 @@ public class ImportImageResult implements Serializable, Cloneable {
     }
 
     /**
-     * Target hypervisor of the import task.
+     * The target hypervisor of the import task.
      *
-     * @return Target hypervisor of the import task.
+     * @return The target hypervisor of the import task.
      */
     public String getHypervisor() {
         return hypervisor;
     }
     
     /**
-     * Target hypervisor of the import task.
+     * The target hypervisor of the import task.
      *
-     * @param hypervisor Target hypervisor of the import task.
+     * @param hypervisor The target hypervisor of the import task.
      */
     public void setHypervisor(String hypervisor) {
         this.hypervisor = hypervisor;
     }
     
     /**
-     * Target hypervisor of the import task.
+     * The target hypervisor of the import task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hypervisor Target hypervisor of the import task.
+     * @param hypervisor The target hypervisor of the import task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -275,9 +275,9 @@ public class ImportImageResult implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * Information about the snapshots.
      *
-     * @return 
+     * @return Information about the snapshots.
      */
     public java.util.List<SnapshotDetail> getSnapshotDetails() {
         if (snapshotDetails == null) {
@@ -288,9 +288,9 @@ public class ImportImageResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the snapshots.
      *
-     * @param snapshotDetails 
+     * @param snapshotDetails Information about the snapshots.
      */
     public void setSnapshotDetails(java.util.Collection<SnapshotDetail> snapshotDetails) {
         if (snapshotDetails == null) {
@@ -303,7 +303,7 @@ public class ImportImageResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the snapshots.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setSnapshotDetails(java.util.Collection)} or {@link
@@ -312,7 +312,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotDetails 
+     * @param snapshotDetails Information about the snapshots.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -326,11 +326,11 @@ public class ImportImageResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the snapshots.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotDetails 
+     * @param snapshotDetails Information about the snapshots.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -348,29 +348,29 @@ public class ImportImageResult implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon Machine Image (AMI) ID created by the import task.
+     * The ID of the Amazon Machine Image (AMI) created by the import task.
      *
-     * @return The Amazon Machine Image (AMI) ID created by the import task.
+     * @return The ID of the Amazon Machine Image (AMI) created by the import task.
      */
     public String getImageId() {
         return imageId;
     }
     
     /**
-     * The Amazon Machine Image (AMI) ID created by the import task.
+     * The ID of the Amazon Machine Image (AMI) created by the import task.
      *
-     * @param imageId The Amazon Machine Image (AMI) ID created by the import task.
+     * @param imageId The ID of the Amazon Machine Image (AMI) created by the import task.
      */
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
     
     /**
-     * The Amazon Machine Image (AMI) ID created by the import task.
+     * The ID of the Amazon Machine Image (AMI) created by the import task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param imageId The Amazon Machine Image (AMI) ID created by the import task.
+     * @param imageId The ID of the Amazon Machine Image (AMI) created by the import task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -381,29 +381,29 @@ public class ImportImageResult implements Serializable, Cloneable {
     }
 
     /**
-     * The task's progress.
+     * The progress of the task.
      *
-     * @return The task's progress.
+     * @return The progress of the task.
      */
     public String getProgress() {
         return progress;
     }
     
     /**
-     * The task's progress.
+     * The progress of the task.
      *
-     * @param progress The task's progress.
+     * @param progress The progress of the task.
      */
     public void setProgress(String progress) {
         this.progress = progress;
     }
     
     /**
-     * The task's progress.
+     * The progress of the task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param progress The task's progress.
+     * @param progress The progress of the task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

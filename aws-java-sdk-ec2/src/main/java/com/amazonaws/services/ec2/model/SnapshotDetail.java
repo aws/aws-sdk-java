@@ -18,18 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The details of the snapshot created from the imported disk.
+ * Describes the snapshot created from the imported disk.
  * </p>
  */
 public class SnapshotDetail implements Serializable, Cloneable {
 
     /**
-     * The size of the disk in the snapshot.
+     * The size of the disk in the snapshot, in GiB.
      */
     private Double diskImageSize;
 
     /**
-     * Description for the snapshot.
+     * A description for the snapshot.
      */
     private String description;
 
@@ -49,7 +49,7 @@ public class SnapshotDetail implements Serializable, Cloneable {
     private UserBucketDetails userBucket;
 
     /**
-     * The Amazon EBS block device mapping for the snapshot.
+     * The block device mapping for the snapshot.
      */
     private String deviceName;
 
@@ -74,29 +74,29 @@ public class SnapshotDetail implements Serializable, Cloneable {
     private String status;
 
     /**
-     * The size of the disk in the snapshot.
+     * The size of the disk in the snapshot, in GiB.
      *
-     * @return The size of the disk in the snapshot.
+     * @return The size of the disk in the snapshot, in GiB.
      */
     public Double getDiskImageSize() {
         return diskImageSize;
     }
     
     /**
-     * The size of the disk in the snapshot.
+     * The size of the disk in the snapshot, in GiB.
      *
-     * @param diskImageSize The size of the disk in the snapshot.
+     * @param diskImageSize The size of the disk in the snapshot, in GiB.
      */
     public void setDiskImageSize(Double diskImageSize) {
         this.diskImageSize = diskImageSize;
     }
     
     /**
-     * The size of the disk in the snapshot.
+     * The size of the disk in the snapshot, in GiB.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskImageSize The size of the disk in the snapshot.
+     * @param diskImageSize The size of the disk in the snapshot, in GiB.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -107,29 +107,29 @@ public class SnapshotDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Description for the snapshot.
+     * A description for the snapshot.
      *
-     * @return Description for the snapshot.
+     * @return A description for the snapshot.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Description for the snapshot.
+     * A description for the snapshot.
      *
-     * @param description Description for the snapshot.
+     * @param description A description for the snapshot.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Description for the snapshot.
+     * A description for the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description Description for the snapshot.
+     * @param description A description for the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -239,29 +239,29 @@ public class SnapshotDetail implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon EBS block device mapping for the snapshot.
+     * The block device mapping for the snapshot.
      *
-     * @return The Amazon EBS block device mapping for the snapshot.
+     * @return The block device mapping for the snapshot.
      */
     public String getDeviceName() {
         return deviceName;
     }
     
     /**
-     * The Amazon EBS block device mapping for the snapshot.
+     * The block device mapping for the snapshot.
      *
-     * @param deviceName The Amazon EBS block device mapping for the snapshot.
+     * @param deviceName The block device mapping for the snapshot.
      */
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
     
     /**
-     * The Amazon EBS block device mapping for the snapshot.
+     * The block device mapping for the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deviceName The Amazon EBS block device mapping for the snapshot.
+     * @param deviceName The block device mapping for the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

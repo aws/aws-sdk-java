@@ -23,8 +23,7 @@ import com.amazonaws.services.ec2.model.transform.ImportSnapshotRequestMarshalle
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#importSnapshot(ImportSnapshotRequest) ImportSnapshot operation}.
  * <p>
- * Import a disk into an Amazon Elastic Block Store (Amazon EBS)
- * snapshot.
+ * Imports a disk into an EBS snapshot.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importSnapshot(ImportSnapshotRequest)
@@ -32,55 +31,55 @@ import com.amazonaws.services.ec2.model.transform.ImportSnapshotRequestMarshalle
 public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportSnapshotRequest> {
 
     /**
-     * The description string for the ImportSnapshot task.
+     * The description string for the import snapshot task.
      */
     private String description;
 
     /**
-     * 
+     * Information about the disk container.
      */
     private SnapshotDiskContainer diskContainer;
 
     /**
-     * 
+     * The client-specific data.
      */
     private ClientData clientData;
 
     /**
-     * Token to enable idempotency for VM import requests (optional).
+     * Token to enable idempotency for VM import requests.
      */
     private String clientToken;
 
     /**
-     * The name of the role to use when not using the default role name
-     * 'vmimport' (optional).
+     * The name of the role to use when not using the default role,
+     * 'vmimport'.
      */
     private String roleName;
 
     /**
-     * The description string for the ImportSnapshot task.
+     * The description string for the import snapshot task.
      *
-     * @return The description string for the ImportSnapshot task.
+     * @return The description string for the import snapshot task.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * The description string for the ImportSnapshot task.
+     * The description string for the import snapshot task.
      *
-     * @param description The description string for the ImportSnapshot task.
+     * @param description The description string for the import snapshot task.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * The description string for the ImportSnapshot task.
+     * The description string for the import snapshot task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The description string for the ImportSnapshot task.
+     * @param description The description string for the import snapshot task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -91,29 +90,29 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * 
+     * Information about the disk container.
      *
-     * @return 
+     * @return Information about the disk container.
      */
     public SnapshotDiskContainer getDiskContainer() {
         return diskContainer;
     }
     
     /**
-     * 
+     * Information about the disk container.
      *
-     * @param diskContainer 
+     * @param diskContainer Information about the disk container.
      */
     public void setDiskContainer(SnapshotDiskContainer diskContainer) {
         this.diskContainer = diskContainer;
     }
     
     /**
-     * 
+     * Information about the disk container.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskContainer 
+     * @param diskContainer Information about the disk container.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -124,29 +123,29 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * 
+     * The client-specific data.
      *
-     * @return 
+     * @return The client-specific data.
      */
     public ClientData getClientData() {
         return clientData;
     }
     
     /**
-     * 
+     * The client-specific data.
      *
-     * @param clientData 
+     * @param clientData The client-specific data.
      */
     public void setClientData(ClientData clientData) {
         this.clientData = clientData;
     }
     
     /**
-     * 
+     * The client-specific data.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clientData 
+     * @param clientData The client-specific data.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -157,29 +156,29 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Token to enable idempotency for VM import requests (optional).
+     * Token to enable idempotency for VM import requests.
      *
-     * @return Token to enable idempotency for VM import requests (optional).
+     * @return Token to enable idempotency for VM import requests.
      */
     public String getClientToken() {
         return clientToken;
     }
     
     /**
-     * Token to enable idempotency for VM import requests (optional).
+     * Token to enable idempotency for VM import requests.
      *
-     * @param clientToken Token to enable idempotency for VM import requests (optional).
+     * @param clientToken Token to enable idempotency for VM import requests.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
     
     /**
-     * Token to enable idempotency for VM import requests (optional).
+     * Token to enable idempotency for VM import requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clientToken Token to enable idempotency for VM import requests (optional).
+     * @param clientToken Token to enable idempotency for VM import requests.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -190,35 +189,35 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The name of the role to use when not using the default role name
-     * 'vmimport' (optional).
+     * The name of the role to use when not using the default role,
+     * 'vmimport'.
      *
-     * @return The name of the role to use when not using the default role name
-     *         'vmimport' (optional).
+     * @return The name of the role to use when not using the default role,
+     *         'vmimport'.
      */
     public String getRoleName() {
         return roleName;
     }
     
     /**
-     * The name of the role to use when not using the default role name
-     * 'vmimport' (optional).
+     * The name of the role to use when not using the default role,
+     * 'vmimport'.
      *
-     * @param roleName The name of the role to use when not using the default role name
-     *         'vmimport' (optional).
+     * @param roleName The name of the role to use when not using the default role,
+     *         'vmimport'.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
     
     /**
-     * The name of the role to use when not using the default role name
-     * 'vmimport' (optional).
+     * The name of the role to use when not using the default role,
+     * 'vmimport'.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param roleName The name of the role to use when not using the default role name
-     *         'vmimport' (optional).
+     * @param roleName The name of the role to use when not using the default role,
+     *         'vmimport'.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

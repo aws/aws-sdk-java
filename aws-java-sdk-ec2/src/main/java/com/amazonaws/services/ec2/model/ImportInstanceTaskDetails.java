@@ -17,17 +17,19 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes an import instance task.
+ * </p>
  */
 public class ImportInstanceTaskDetails implements Serializable, Cloneable {
 
     /**
-     * 
+     * One or more volumes.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ImportInstanceVolumeDetailItem> volumes;
 
     /**
-     * 
+     * The ID of the instance.
      */
     private String instanceId;
 
@@ -40,14 +42,14 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
     private String platform;
 
     /**
-     * 
+     * A description of the task.
      */
     private String description;
 
     /**
-     * 
+     * One or more volumes.
      *
-     * @return 
+     * @return One or more volumes.
      */
     public java.util.List<ImportInstanceVolumeDetailItem> getVolumes() {
         if (volumes == null) {
@@ -58,9 +60,9 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * One or more volumes.
      *
-     * @param volumes 
+     * @param volumes One or more volumes.
      */
     public void setVolumes(java.util.Collection<ImportInstanceVolumeDetailItem> volumes) {
         if (volumes == null) {
@@ -73,7 +75,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * One or more volumes.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setVolumes(java.util.Collection)} or {@link
@@ -82,7 +84,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumes 
+     * @param volumes One or more volumes.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -96,11 +98,11 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * One or more volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumes 
+     * @param volumes One or more volumes.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -118,29 +120,29 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The ID of the instance.
      *
-     * @return 
+     * @return The ID of the instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * 
+     * The ID of the instance.
      *
-     * @param instanceId 
+     * @param instanceId The ID of the instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * 
+     * The ID of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId 
+     * @param instanceId The ID of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -233,29 +235,29 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * A description of the task.
      *
-     * @return 
+     * @return A description of the task.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * 
+     * A description of the task.
      *
-     * @param description 
+     * @param description A description of the task.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * 
+     * A description of the task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description 
+     * @param description A description of the task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

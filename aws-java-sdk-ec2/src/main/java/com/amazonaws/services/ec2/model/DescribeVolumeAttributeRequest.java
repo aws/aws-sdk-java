@@ -27,7 +27,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumeAttributeRequest
  * specify only one attribute at a time.
  * </p>
  * <p>
- * For more information about Amazon EBS volumes, see
+ * For more information about EBS volumes, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>

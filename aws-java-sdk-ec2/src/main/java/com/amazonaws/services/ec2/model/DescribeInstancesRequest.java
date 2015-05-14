@@ -52,24 +52,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone of the
      * instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     * - The attach time for an Amazon EBS volume mapped to the instance, for
+     * - The attach time for an EBS volume mapped to the instance, for
      * example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      * <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
-     * that indicates whether the Amazon EBS volume is deleted on instance
+     * that indicates whether the EBS volume is deleted on instance
      * termination. </li> <li>
      * <p><code>block-device-mapping.device-name</code> - The device name for
-     * the Amazon EBS volume (for example, <code>/dev/sdh</code> or
+     * the EBS volume (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>). </li> <li>
-     * <p><code>block-device-mapping.status</code> - The status for the
-     * Amazon EBS volume (<code>attaching</code> | <code>attached</code> |
+     * <p><code>block-device-mapping.status</code> - The status for the EBS
+     * volume (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>block-device-mapping.volume-id</code> - The volume ID of the
-     * Amazon EBS volume. </li> <li> <p><code>client-token</code> - The
-     * idempotency token you provided when you launched the instance. </li>
-     * <li> <p><code>dns-name</code> - The public DNS name of the instance.
-     * </li> <li> <p><code>group-id</code> - The ID of the security group for
-     * the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
-     * - The name of the security group for the instance. EC2-Classic only.
+     * EBS volume. </li> <li> <p><code>client-token</code> - The idempotency
+     * token you provided when you launched the instance. </li> <li>
+     * <p><code>dns-name</code> - The public DNS name of the instance. </li>
+     * <li> <p><code>group-id</code> - The ID of the security group for the
+     * instance. EC2-Classic only. </li> <li> <p><code>group-name</code> -
+     * The name of the security group for the instance. EC2-Classic only.
      * </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
      * instance (<code>ovm</code> | <code>xen</code>). </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile
@@ -325,24 +325,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone of the
      * instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     * - The attach time for an Amazon EBS volume mapped to the instance, for
+     * - The attach time for an EBS volume mapped to the instance, for
      * example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      * <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
-     * that indicates whether the Amazon EBS volume is deleted on instance
+     * that indicates whether the EBS volume is deleted on instance
      * termination. </li> <li>
      * <p><code>block-device-mapping.device-name</code> - The device name for
-     * the Amazon EBS volume (for example, <code>/dev/sdh</code> or
+     * the EBS volume (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>). </li> <li>
-     * <p><code>block-device-mapping.status</code> - The status for the
-     * Amazon EBS volume (<code>attaching</code> | <code>attached</code> |
+     * <p><code>block-device-mapping.status</code> - The status for the EBS
+     * volume (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>block-device-mapping.volume-id</code> - The volume ID of the
-     * Amazon EBS volume. </li> <li> <p><code>client-token</code> - The
-     * idempotency token you provided when you launched the instance. </li>
-     * <li> <p><code>dns-name</code> - The public DNS name of the instance.
-     * </li> <li> <p><code>group-id</code> - The ID of the security group for
-     * the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
-     * - The name of the security group for the instance. EC2-Classic only.
+     * EBS volume. </li> <li> <p><code>client-token</code> - The idempotency
+     * token you provided when you launched the instance. </li> <li>
+     * <p><code>dns-name</code> - The public DNS name of the instance. </li>
+     * <li> <p><code>group-id</code> - The ID of the security group for the
+     * instance. EC2-Classic only. </li> <li> <p><code>group-name</code> -
+     * The name of the security group for the instance. EC2-Classic only.
      * </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
      * instance (<code>ovm</code> | <code>xen</code>). </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile
@@ -506,24 +506,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone of the
      *         instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     *         - The attach time for an Amazon EBS volume mapped to the instance, for
+     *         - The attach time for an EBS volume mapped to the instance, for
      *         example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      *         <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
-     *         that indicates whether the Amazon EBS volume is deleted on instance
+     *         that indicates whether the EBS volume is deleted on instance
      *         termination. </li> <li>
      *         <p><code>block-device-mapping.device-name</code> - The device name for
-     *         the Amazon EBS volume (for example, <code>/dev/sdh</code> or
+     *         the EBS volume (for example, <code>/dev/sdh</code> or
      *         <code>xvdh</code>). </li> <li>
-     *         <p><code>block-device-mapping.status</code> - The status for the
-     *         Amazon EBS volume (<code>attaching</code> | <code>attached</code> |
+     *         <p><code>block-device-mapping.status</code> - The status for the EBS
+     *         volume (<code>attaching</code> | <code>attached</code> |
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>block-device-mapping.volume-id</code> - The volume ID of the
-     *         Amazon EBS volume. </li> <li> <p><code>client-token</code> - The
-     *         idempotency token you provided when you launched the instance. </li>
-     *         <li> <p><code>dns-name</code> - The public DNS name of the instance.
-     *         </li> <li> <p><code>group-id</code> - The ID of the security group for
-     *         the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
-     *         - The name of the security group for the instance. EC2-Classic only.
+     *         EBS volume. </li> <li> <p><code>client-token</code> - The idempotency
+     *         token you provided when you launched the instance. </li> <li>
+     *         <p><code>dns-name</code> - The public DNS name of the instance. </li>
+     *         <li> <p><code>group-id</code> - The ID of the security group for the
+     *         instance. EC2-Classic only. </li> <li> <p><code>group-name</code> -
+     *         The name of the security group for the instance. EC2-Classic only.
      *         </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
      *         instance (<code>ovm</code> | <code>xen</code>). </li> <li>
      *         <p><code>iam-instance-profile.arn</code> - The instance profile
@@ -696,24 +696,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone of the
      * instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     * - The attach time for an Amazon EBS volume mapped to the instance, for
+     * - The attach time for an EBS volume mapped to the instance, for
      * example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      * <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
-     * that indicates whether the Amazon EBS volume is deleted on instance
+     * that indicates whether the EBS volume is deleted on instance
      * termination. </li> <li>
      * <p><code>block-device-mapping.device-name</code> - The device name for
-     * the Amazon EBS volume (for example, <code>/dev/sdh</code> or
+     * the EBS volume (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>). </li> <li>
-     * <p><code>block-device-mapping.status</code> - The status for the
-     * Amazon EBS volume (<code>attaching</code> | <code>attached</code> |
+     * <p><code>block-device-mapping.status</code> - The status for the EBS
+     * volume (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>block-device-mapping.volume-id</code> - The volume ID of the
-     * Amazon EBS volume. </li> <li> <p><code>client-token</code> - The
-     * idempotency token you provided when you launched the instance. </li>
-     * <li> <p><code>dns-name</code> - The public DNS name of the instance.
-     * </li> <li> <p><code>group-id</code> - The ID of the security group for
-     * the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
-     * - The name of the security group for the instance. EC2-Classic only.
+     * EBS volume. </li> <li> <p><code>client-token</code> - The idempotency
+     * token you provided when you launched the instance. </li> <li>
+     * <p><code>dns-name</code> - The public DNS name of the instance. </li>
+     * <li> <p><code>group-id</code> - The ID of the security group for the
+     * instance. EC2-Classic only. </li> <li> <p><code>group-name</code> -
+     * The name of the security group for the instance. EC2-Classic only.
      * </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
      * instance (<code>ovm</code> | <code>xen</code>). </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile
@@ -877,24 +877,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone of the
      *         instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     *         - The attach time for an Amazon EBS volume mapped to the instance, for
+     *         - The attach time for an EBS volume mapped to the instance, for
      *         example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      *         <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
-     *         that indicates whether the Amazon EBS volume is deleted on instance
+     *         that indicates whether the EBS volume is deleted on instance
      *         termination. </li> <li>
      *         <p><code>block-device-mapping.device-name</code> - The device name for
-     *         the Amazon EBS volume (for example, <code>/dev/sdh</code> or
+     *         the EBS volume (for example, <code>/dev/sdh</code> or
      *         <code>xvdh</code>). </li> <li>
-     *         <p><code>block-device-mapping.status</code> - The status for the
-     *         Amazon EBS volume (<code>attaching</code> | <code>attached</code> |
+     *         <p><code>block-device-mapping.status</code> - The status for the EBS
+     *         volume (<code>attaching</code> | <code>attached</code> |
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>block-device-mapping.volume-id</code> - The volume ID of the
-     *         Amazon EBS volume. </li> <li> <p><code>client-token</code> - The
-     *         idempotency token you provided when you launched the instance. </li>
-     *         <li> <p><code>dns-name</code> - The public DNS name of the instance.
-     *         </li> <li> <p><code>group-id</code> - The ID of the security group for
-     *         the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
-     *         - The name of the security group for the instance. EC2-Classic only.
+     *         EBS volume. </li> <li> <p><code>client-token</code> - The idempotency
+     *         token you provided when you launched the instance. </li> <li>
+     *         <p><code>dns-name</code> - The public DNS name of the instance. </li>
+     *         <li> <p><code>group-id</code> - The ID of the security group for the
+     *         instance. EC2-Classic only. </li> <li> <p><code>group-name</code> -
+     *         The name of the security group for the instance. EC2-Classic only.
      *         </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
      *         instance (<code>ovm</code> | <code>xen</code>). </li> <li>
      *         <p><code>iam-instance-profile.arn</code> - The instance profile
@@ -1069,24 +1069,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone of the
      * instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     * - The attach time for an Amazon EBS volume mapped to the instance, for
+     * - The attach time for an EBS volume mapped to the instance, for
      * example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      * <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
-     * that indicates whether the Amazon EBS volume is deleted on instance
+     * that indicates whether the EBS volume is deleted on instance
      * termination. </li> <li>
      * <p><code>block-device-mapping.device-name</code> - The device name for
-     * the Amazon EBS volume (for example, <code>/dev/sdh</code> or
+     * the EBS volume (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>). </li> <li>
-     * <p><code>block-device-mapping.status</code> - The status for the
-     * Amazon EBS volume (<code>attaching</code> | <code>attached</code> |
+     * <p><code>block-device-mapping.status</code> - The status for the EBS
+     * volume (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>block-device-mapping.volume-id</code> - The volume ID of the
-     * Amazon EBS volume. </li> <li> <p><code>client-token</code> - The
-     * idempotency token you provided when you launched the instance. </li>
-     * <li> <p><code>dns-name</code> - The public DNS name of the instance.
-     * </li> <li> <p><code>group-id</code> - The ID of the security group for
-     * the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
-     * - The name of the security group for the instance. EC2-Classic only.
+     * EBS volume. </li> <li> <p><code>client-token</code> - The idempotency
+     * token you provided when you launched the instance. </li> <li>
+     * <p><code>dns-name</code> - The public DNS name of the instance. </li>
+     * <li> <p><code>group-id</code> - The ID of the security group for the
+     * instance. EC2-Classic only. </li> <li> <p><code>group-name</code> -
+     * The name of the security group for the instance. EC2-Classic only.
      * </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
      * instance (<code>ovm</code> | <code>xen</code>). </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile
@@ -1257,24 +1257,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone of the
      *         instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     *         - The attach time for an Amazon EBS volume mapped to the instance, for
+     *         - The attach time for an EBS volume mapped to the instance, for
      *         example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      *         <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
-     *         that indicates whether the Amazon EBS volume is deleted on instance
+     *         that indicates whether the EBS volume is deleted on instance
      *         termination. </li> <li>
      *         <p><code>block-device-mapping.device-name</code> - The device name for
-     *         the Amazon EBS volume (for example, <code>/dev/sdh</code> or
+     *         the EBS volume (for example, <code>/dev/sdh</code> or
      *         <code>xvdh</code>). </li> <li>
-     *         <p><code>block-device-mapping.status</code> - The status for the
-     *         Amazon EBS volume (<code>attaching</code> | <code>attached</code> |
+     *         <p><code>block-device-mapping.status</code> - The status for the EBS
+     *         volume (<code>attaching</code> | <code>attached</code> |
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>block-device-mapping.volume-id</code> - The volume ID of the
-     *         Amazon EBS volume. </li> <li> <p><code>client-token</code> - The
-     *         idempotency token you provided when you launched the instance. </li>
-     *         <li> <p><code>dns-name</code> - The public DNS name of the instance.
-     *         </li> <li> <p><code>group-id</code> - The ID of the security group for
-     *         the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
-     *         - The name of the security group for the instance. EC2-Classic only.
+     *         EBS volume. </li> <li> <p><code>client-token</code> - The idempotency
+     *         token you provided when you launched the instance. </li> <li>
+     *         <p><code>dns-name</code> - The public DNS name of the instance. </li>
+     *         <li> <p><code>group-id</code> - The ID of the security group for the
+     *         instance. EC2-Classic only. </li> <li> <p><code>group-name</code> -
+     *         The name of the security group for the instance. EC2-Classic only.
      *         </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
      *         instance (<code>ovm</code> | <code>xen</code>). </li> <li>
      *         <p><code>iam-instance-profile.arn</code> - The instance profile
@@ -1450,24 +1450,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone of the
      * instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     * - The attach time for an Amazon EBS volume mapped to the instance, for
+     * - The attach time for an EBS volume mapped to the instance, for
      * example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      * <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
-     * that indicates whether the Amazon EBS volume is deleted on instance
+     * that indicates whether the EBS volume is deleted on instance
      * termination. </li> <li>
      * <p><code>block-device-mapping.device-name</code> - The device name for
-     * the Amazon EBS volume (for example, <code>/dev/sdh</code> or
+     * the EBS volume (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>). </li> <li>
-     * <p><code>block-device-mapping.status</code> - The status for the
-     * Amazon EBS volume (<code>attaching</code> | <code>attached</code> |
+     * <p><code>block-device-mapping.status</code> - The status for the EBS
+     * volume (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>block-device-mapping.volume-id</code> - The volume ID of the
-     * Amazon EBS volume. </li> <li> <p><code>client-token</code> - The
-     * idempotency token you provided when you launched the instance. </li>
-     * <li> <p><code>dns-name</code> - The public DNS name of the instance.
-     * </li> <li> <p><code>group-id</code> - The ID of the security group for
-     * the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
-     * - The name of the security group for the instance. EC2-Classic only.
+     * EBS volume. </li> <li> <p><code>client-token</code> - The idempotency
+     * token you provided when you launched the instance. </li> <li>
+     * <p><code>dns-name</code> - The public DNS name of the instance. </li>
+     * <li> <p><code>group-id</code> - The ID of the security group for the
+     * instance. EC2-Classic only. </li> <li> <p><code>group-name</code> -
+     * The name of the security group for the instance. EC2-Classic only.
      * </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
      * instance (<code>ovm</code> | <code>xen</code>). </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile
@@ -1633,24 +1633,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone of the
      *         instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     *         - The attach time for an Amazon EBS volume mapped to the instance, for
+     *         - The attach time for an EBS volume mapped to the instance, for
      *         example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      *         <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
-     *         that indicates whether the Amazon EBS volume is deleted on instance
+     *         that indicates whether the EBS volume is deleted on instance
      *         termination. </li> <li>
      *         <p><code>block-device-mapping.device-name</code> - The device name for
-     *         the Amazon EBS volume (for example, <code>/dev/sdh</code> or
+     *         the EBS volume (for example, <code>/dev/sdh</code> or
      *         <code>xvdh</code>). </li> <li>
-     *         <p><code>block-device-mapping.status</code> - The status for the
-     *         Amazon EBS volume (<code>attaching</code> | <code>attached</code> |
+     *         <p><code>block-device-mapping.status</code> - The status for the EBS
+     *         volume (<code>attaching</code> | <code>attached</code> |
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>block-device-mapping.volume-id</code> - The volume ID of the
-     *         Amazon EBS volume. </li> <li> <p><code>client-token</code> - The
-     *         idempotency token you provided when you launched the instance. </li>
-     *         <li> <p><code>dns-name</code> - The public DNS name of the instance.
-     *         </li> <li> <p><code>group-id</code> - The ID of the security group for
-     *         the instance. EC2-Classic only. </li> <li> <p><code>group-name</code>
-     *         - The name of the security group for the instance. EC2-Classic only.
+     *         EBS volume. </li> <li> <p><code>client-token</code> - The idempotency
+     *         token you provided when you launched the instance. </li> <li>
+     *         <p><code>dns-name</code> - The public DNS name of the instance. </li>
+     *         <li> <p><code>group-id</code> - The ID of the security group for the
+     *         instance. EC2-Classic only. </li> <li> <p><code>group-name</code> -
+     *         The name of the security group for the instance. EC2-Classic only.
      *         </li> <li> <p><code>hypervisor</code> - The hypervisor type of the
      *         instance (<code>ovm</code> | <code>xen</code>). </li> <li>
      *         <p><code>iam-instance-profile.arn</code> - The instance profile

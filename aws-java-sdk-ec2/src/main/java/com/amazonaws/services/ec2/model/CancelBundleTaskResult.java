@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class CancelBundleTaskResult implements Serializable, Cloneable {
 
     /**
-     * The bundle task.
+     * Information about the bundle task.
      */
     private BundleTask bundleTask;
 
     /**
-     * The bundle task.
+     * Information about the bundle task.
      *
-     * @return The bundle task.
+     * @return Information about the bundle task.
      */
     public BundleTask getBundleTask() {
         return bundleTask;
     }
     
     /**
-     * The bundle task.
+     * Information about the bundle task.
      *
-     * @param bundleTask The bundle task.
+     * @param bundleTask Information about the bundle task.
      */
     public void setBundleTask(BundleTask bundleTask) {
         this.bundleTask = bundleTask;
     }
     
     /**
-     * The bundle task.
+     * Information about the bundle task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bundleTask The bundle task.
+     * @param bundleTask Information about the bundle task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

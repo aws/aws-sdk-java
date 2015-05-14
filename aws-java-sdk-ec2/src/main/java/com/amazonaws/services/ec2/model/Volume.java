@@ -57,7 +57,7 @@ public class Volume implements Serializable, Cloneable {
     private java.util.Date createTime;
 
     /**
-     * 
+     * Information about the volume attachments.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeAttachment> attachments;
 
@@ -353,9 +353,9 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * Information about the volume attachments.
      *
-     * @return 
+     * @return Information about the volume attachments.
      */
     public java.util.List<VolumeAttachment> getAttachments() {
         if (attachments == null) {
@@ -366,9 +366,9 @@ public class Volume implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the volume attachments.
      *
-     * @param attachments 
+     * @param attachments Information about the volume attachments.
      */
     public void setAttachments(java.util.Collection<VolumeAttachment> attachments) {
         if (attachments == null) {
@@ -381,7 +381,7 @@ public class Volume implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the volume attachments.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAttachments(java.util.Collection)} or {@link
@@ -390,7 +390,7 @@ public class Volume implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachments 
+     * @param attachments Information about the volume attachments.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -404,11 +404,11 @@ public class Volume implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the volume attachments.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachments 
+     * @param attachments Information about the volume attachments.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
