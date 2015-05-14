@@ -29,14 +29,41 @@ public enum SNSActions implements Action {
     /** Action for the ConfirmSubscription operation. */
     ConfirmSubscription("sns:ConfirmSubscription"),
 
+    /** Action for the CreatePlatformApplication operation. */
+    CreatePlatformApplication("sns:CreatePlatformApplication"),
+
+    /** Action for the CreatePlatformEndpoint operation. */
+    CreatePlatformEndpoint("sns:CreatePlatformEndpoint"),
+
     /** Action for the CreateTopic operation. */
     CreateTopic("sns:CreateTopic"),
+
+    /** Action for the DeleteEndpoint operation. */
+    DeleteEndpoint("sns:DeleteEndpoint"),
+
+    /** Action for the DeletePlatformApplication operation. */
+    DeletePlatformApplication("sns:DeletePlatformApplication"),
 
     /** Action for the DeleteTopic operation. */
     DeleteTopic("sns:DeleteTopic"),
 
+    /** Action for the GetEndpointAttributes operation. */
+    GetEndpointAttributes("sns:GetEndpointAttributes"),
+
+    /** Action for the GetPlatformApplicationAttributes operation. */
+    GetPlatformApplicationAttributes("sns:GetPlatformApplicationAttributes"),
+
+    /** Action for the GetSubscriptionAttributes operation. */
+    GetSubscriptionAttributes("sns:GetSubscriptionAttributes"),
+
     /** Action for the GetTopicAttributes operation. */
     GetTopicAttributes("sns:GetTopicAttributes"),
+
+    /** Action for the ListEndpointsByPlatformApplication operation. */
+    ListEndpointsByPlatformApplication("sns:ListEndpointsByPlatformApplication"),
+
+    /** Action for the ListPlatformApplications operation. */
+    ListPlatformApplications("sns:ListPlatformApplications"),
 
     /** Action for the ListSubscriptions operation. */
     ListSubscriptions("sns:ListSubscriptions"),
@@ -52,6 +79,15 @@ public enum SNSActions implements Action {
 
     /** Action for the RemovePermission operation. */
     RemovePermission("sns:RemovePermission"),
+
+    /** Action for the SetEndpointAttributes operation. */
+    SetEndpointAttributes("sns:SetEndpointAttributes"),
+
+    /** Action for the SetPlatformApplicationAttributes operation. */
+    SetPlatformApplicationAttributes("sns:SetPlatformApplicationAttributes"),
+
+    /** Action for the SetSubscriptionAttributes operation. */
+    SetSubscriptionAttributes("sns:SetSubscriptionAttributes"),
 
     /** Action for the SetTopicAttributes operation. */
     SetTopicAttributes("sns:SetTopicAttributes"),

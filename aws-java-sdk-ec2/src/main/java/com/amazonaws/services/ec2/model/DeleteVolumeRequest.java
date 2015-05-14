@@ -23,7 +23,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteVolumeRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVolume(DeleteVolumeRequest) DeleteVolume operation}.
  * <p>
- * Deletes the specified Amazon EBS volume. The volume must be in the
+ * Deletes the specified EBS volume. The volume must be in the
  * <code>available</code> state (not attached to an instance).
  * </p>
  * <p>

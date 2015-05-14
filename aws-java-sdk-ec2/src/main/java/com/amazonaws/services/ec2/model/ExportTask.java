@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an export task.
+ * Describes an instance export task.
  * </p>
  */
 public class ExportTask implements Serializable, Cloneable {
@@ -34,7 +34,7 @@ public class ExportTask implements Serializable, Cloneable {
     private String description;
 
     /**
-     * The state of the conversion task.
+     * The state of the export task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
@@ -47,12 +47,12 @@ public class ExportTask implements Serializable, Cloneable {
     private String statusMessage;
 
     /**
-     * The instance being exported.
+     * Information about the instance to export.
      */
     private InstanceExportDetails instanceExportDetails;
 
     /**
-     * 
+     * Information about the export task.
      */
     private ExportToS3Task exportToS3Task;
 
@@ -123,12 +123,12 @@ public class ExportTask implements Serializable, Cloneable {
     }
 
     /**
-     * The state of the conversion task.
+     * The state of the export task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @return The state of the conversion task.
+     * @return The state of the export task.
      *
      * @see ExportTaskState
      */
@@ -137,12 +137,12 @@ public class ExportTask implements Serializable, Cloneable {
     }
     
     /**
-     * The state of the conversion task.
+     * The state of the export task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The state of the conversion task.
+     * @param state The state of the export task.
      *
      * @see ExportTaskState
      */
@@ -151,14 +151,14 @@ public class ExportTask implements Serializable, Cloneable {
     }
     
     /**
-     * The state of the conversion task.
+     * The state of the export task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The state of the conversion task.
+     * @param state The state of the export task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -171,12 +171,12 @@ public class ExportTask implements Serializable, Cloneable {
     }
 
     /**
-     * The state of the conversion task.
+     * The state of the export task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The state of the conversion task.
+     * @param state The state of the export task.
      *
      * @see ExportTaskState
      */
@@ -185,14 +185,14 @@ public class ExportTask implements Serializable, Cloneable {
     }
     
     /**
-     * The state of the conversion task.
+     * The state of the export task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, cancelling, cancelled, completed
      *
-     * @param state The state of the conversion task.
+     * @param state The state of the export task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -238,29 +238,29 @@ public class ExportTask implements Serializable, Cloneable {
     }
 
     /**
-     * The instance being exported.
+     * Information about the instance to export.
      *
-     * @return The instance being exported.
+     * @return Information about the instance to export.
      */
     public InstanceExportDetails getInstanceExportDetails() {
         return instanceExportDetails;
     }
     
     /**
-     * The instance being exported.
+     * Information about the instance to export.
      *
-     * @param instanceExportDetails The instance being exported.
+     * @param instanceExportDetails Information about the instance to export.
      */
     public void setInstanceExportDetails(InstanceExportDetails instanceExportDetails) {
         this.instanceExportDetails = instanceExportDetails;
     }
     
     /**
-     * The instance being exported.
+     * Information about the instance to export.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceExportDetails The instance being exported.
+     * @param instanceExportDetails Information about the instance to export.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -271,29 +271,29 @@ public class ExportTask implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * Information about the export task.
      *
-     * @return 
+     * @return Information about the export task.
      */
     public ExportToS3Task getExportToS3Task() {
         return exportToS3Task;
     }
     
     /**
-     * 
+     * Information about the export task.
      *
-     * @param exportToS3Task 
+     * @param exportToS3Task Information about the export task.
      */
     public void setExportToS3Task(ExportToS3Task exportToS3Task) {
         this.exportToS3Task = exportToS3Task;
     }
     
     /**
-     * 
+     * Information about the export task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportToS3Task 
+     * @param exportToS3Task Information about the export task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

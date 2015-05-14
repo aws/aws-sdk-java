@@ -22,22 +22,23 @@ import java.io.Serializable;
 public class DescribeImportSnapshotTasksResult implements Serializable, Cloneable {
 
     /**
-     * A list of zero or more ImportSnapshot tasks that are currently active
-     * or completed/cancelled in the previous 7 days.
+     * A list of zero or more import snapshot tasks that are currently active
+     * or were completed or canceled in the previous 7 days.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ImportSnapshotTask> importSnapshotTasks;
 
     /**
-     * The token to get to the next page of paginated describe requests.
+     * The token to use to get the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      */
     private String nextToken;
 
     /**
-     * A list of zero or more ImportSnapshot tasks that are currently active
-     * or completed/cancelled in the previous 7 days.
+     * A list of zero or more import snapshot tasks that are currently active
+     * or were completed or canceled in the previous 7 days.
      *
-     * @return A list of zero or more ImportSnapshot tasks that are currently active
-     *         or completed/cancelled in the previous 7 days.
+     * @return A list of zero or more import snapshot tasks that are currently active
+     *         or were completed or canceled in the previous 7 days.
      */
     public java.util.List<ImportSnapshotTask> getImportSnapshotTasks() {
         if (importSnapshotTasks == null) {
@@ -48,11 +49,11 @@ public class DescribeImportSnapshotTasksResult implements Serializable, Cloneabl
     }
     
     /**
-     * A list of zero or more ImportSnapshot tasks that are currently active
-     * or completed/cancelled in the previous 7 days.
+     * A list of zero or more import snapshot tasks that are currently active
+     * or were completed or canceled in the previous 7 days.
      *
-     * @param importSnapshotTasks A list of zero or more ImportSnapshot tasks that are currently active
-     *         or completed/cancelled in the previous 7 days.
+     * @param importSnapshotTasks A list of zero or more import snapshot tasks that are currently active
+     *         or were completed or canceled in the previous 7 days.
      */
     public void setImportSnapshotTasks(java.util.Collection<ImportSnapshotTask> importSnapshotTasks) {
         if (importSnapshotTasks == null) {
@@ -65,8 +66,8 @@ public class DescribeImportSnapshotTasksResult implements Serializable, Cloneabl
     }
     
     /**
-     * A list of zero or more ImportSnapshot tasks that are currently active
-     * or completed/cancelled in the previous 7 days.
+     * A list of zero or more import snapshot tasks that are currently active
+     * or were completed or canceled in the previous 7 days.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setImportSnapshotTasks(java.util.Collection)} or
@@ -75,8 +76,8 @@ public class DescribeImportSnapshotTasksResult implements Serializable, Cloneabl
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importSnapshotTasks A list of zero or more ImportSnapshot tasks that are currently active
-     *         or completed/cancelled in the previous 7 days.
+     * @param importSnapshotTasks A list of zero or more import snapshot tasks that are currently active
+     *         or were completed or canceled in the previous 7 days.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -90,13 +91,13 @@ public class DescribeImportSnapshotTasksResult implements Serializable, Cloneabl
     }
     
     /**
-     * A list of zero or more ImportSnapshot tasks that are currently active
-     * or completed/cancelled in the previous 7 days.
+     * A list of zero or more import snapshot tasks that are currently active
+     * or were completed or canceled in the previous 7 days.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importSnapshotTasks A list of zero or more ImportSnapshot tasks that are currently active
-     *         or completed/cancelled in the previous 7 days.
+     * @param importSnapshotTasks A list of zero or more import snapshot tasks that are currently active
+     *         or were completed or canceled in the previous 7 days.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -114,29 +115,35 @@ public class DescribeImportSnapshotTasksResult implements Serializable, Cloneabl
     }
 
     /**
-     * The token to get to the next page of paginated describe requests.
+     * The token to use to get the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      *
-     * @return The token to get to the next page of paginated describe requests.
+     * @return The token to use to get the next page of results. This value is
+     *         <code>null</code> when there are no more results to return.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The token to get to the next page of paginated describe requests.
+     * The token to use to get the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      *
-     * @param nextToken The token to get to the next page of paginated describe requests.
+     * @param nextToken The token to use to get the next page of results. This value is
+     *         <code>null</code> when there are no more results to return.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The token to get to the next page of paginated describe requests.
+     * The token to use to get the next page of results. This value is
+     * <code>null</code> when there are no more results to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The token to get to the next page of paginated describe requests.
+     * @param nextToken The token to use to get the next page of results. This value is
+     *         <code>null</code> when there are no more results to return.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

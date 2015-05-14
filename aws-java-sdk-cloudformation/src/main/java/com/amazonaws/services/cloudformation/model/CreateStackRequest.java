@@ -31,10 +31,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateStackRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name associated with the stack. The name must be unique within
-     * your AWS account. <note>Must contain only alphanumeric characters
-     * (case sensitive) and start with an alpha character. Maximum length of
-     * the name is 255 characters.</note>
+     * The name that is associated with the stack. The name must be unique in
+     * the region in which you are creating the stack. <note>A stack name can
+     * contain only alphanumeric characters (case sensitive) and hyphens. It
+     * must start with an alphabetic character and cannot be longer than 255
+     * characters.</note>
      */
     private String stackName;
 
@@ -53,7 +54,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * template (max size: 460,800 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -108,8 +109,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * specifying this parameter. <p>Currently, the only valid value is
      * <code>CAPABILITY_IAM</code>, which is required for the following
      * resources: <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-     * AWS::CloudFormation::Stack</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
@@ -174,47 +173,53 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The name associated with the stack. The name must be unique within
-     * your AWS account. <note>Must contain only alphanumeric characters
-     * (case sensitive) and start with an alpha character. Maximum length of
-     * the name is 255 characters.</note>
+     * The name that is associated with the stack. The name must be unique in
+     * the region in which you are creating the stack. <note>A stack name can
+     * contain only alphanumeric characters (case sensitive) and hyphens. It
+     * must start with an alphabetic character and cannot be longer than 255
+     * characters.</note>
      *
-     * @return The name associated with the stack. The name must be unique within
-     *         your AWS account. <note>Must contain only alphanumeric characters
-     *         (case sensitive) and start with an alpha character. Maximum length of
-     *         the name is 255 characters.</note>
+     * @return The name that is associated with the stack. The name must be unique in
+     *         the region in which you are creating the stack. <note>A stack name can
+     *         contain only alphanumeric characters (case sensitive) and hyphens. It
+     *         must start with an alphabetic character and cannot be longer than 255
+     *         characters.</note>
      */
     public String getStackName() {
         return stackName;
     }
     
     /**
-     * The name associated with the stack. The name must be unique within
-     * your AWS account. <note>Must contain only alphanumeric characters
-     * (case sensitive) and start with an alpha character. Maximum length of
-     * the name is 255 characters.</note>
+     * The name that is associated with the stack. The name must be unique in
+     * the region in which you are creating the stack. <note>A stack name can
+     * contain only alphanumeric characters (case sensitive) and hyphens. It
+     * must start with an alphabetic character and cannot be longer than 255
+     * characters.</note>
      *
-     * @param stackName The name associated with the stack. The name must be unique within
-     *         your AWS account. <note>Must contain only alphanumeric characters
-     *         (case sensitive) and start with an alpha character. Maximum length of
-     *         the name is 255 characters.</note>
+     * @param stackName The name that is associated with the stack. The name must be unique in
+     *         the region in which you are creating the stack. <note>A stack name can
+     *         contain only alphanumeric characters (case sensitive) and hyphens. It
+     *         must start with an alphabetic character and cannot be longer than 255
+     *         characters.</note>
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
     
     /**
-     * The name associated with the stack. The name must be unique within
-     * your AWS account. <note>Must contain only alphanumeric characters
-     * (case sensitive) and start with an alpha character. Maximum length of
-     * the name is 255 characters.</note>
+     * The name that is associated with the stack. The name must be unique in
+     * the region in which you are creating the stack. <note>A stack name can
+     * contain only alphanumeric characters (case sensitive) and hyphens. It
+     * must start with an alphabetic character and cannot be longer than 255
+     * characters.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackName The name associated with the stack. The name must be unique within
-     *         your AWS account. <note>Must contain only alphanumeric characters
-     *         (case sensitive) and start with an alpha character. Maximum length of
-     *         the name is 255 characters.</note>
+     * @param stackName The name that is associated with the stack. The name must be unique in
+     *         the region in which you are creating the stack. <note>A stack name can
+     *         contain only alphanumeric characters (case sensitive) and hyphens. It
+     *         must start with an alphabetic character and cannot be longer than 255
+     *         characters.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -298,7 +303,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * template (max size: 460,800 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -309,7 +314,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1024<br/>
      *
      * @return Location of file containing the template body. The URL must point to a
-     *         template (max size: 307,200 bytes) located in an S3 bucket in the same
+     *         template (max size: 460,800 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to the <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -322,7 +327,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * template (max size: 460,800 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -333,7 +338,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template (max size: 307,200 bytes) located in an S3 bucket in the same
+     *         template (max size: 460,800 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to the <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -346,7 +351,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * template (max size: 460,800 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -359,7 +364,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template (max size: 307,200 bytes) located in an S3 bucket in the same
+     *         template (max size: 460,800 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to the <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -692,8 +697,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * specifying this parameter. <p>Currently, the only valid value is
      * <code>CAPABILITY_IAM</code>, which is required for the following
      * resources: <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-     * AWS::CloudFormation::Stack</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
@@ -719,8 +722,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         specifying this parameter. <p>Currently, the only valid value is
      *         <code>CAPABILITY_IAM</code>, which is required for the following
      *         resources: <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-     *         AWS::CloudFormation::Stack</a>, <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      *         AWS::IAM::AccessKey</a>, <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
@@ -755,8 +756,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * specifying this parameter. <p>Currently, the only valid value is
      * <code>CAPABILITY_IAM</code>, which is required for the following
      * resources: <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-     * AWS::CloudFormation::Stack</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
@@ -782,8 +781,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         specifying this parameter. <p>Currently, the only valid value is
      *         <code>CAPABILITY_IAM</code>, which is required for the following
      *         resources: <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-     *         AWS::CloudFormation::Stack</a>, <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      *         AWS::IAM::AccessKey</a>, <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
@@ -820,8 +817,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * specifying this parameter. <p>Currently, the only valid value is
      * <code>CAPABILITY_IAM</code>, which is required for the following
      * resources: <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-     * AWS::CloudFormation::Stack</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
@@ -854,8 +849,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         specifying this parameter. <p>Currently, the only valid value is
      *         <code>CAPABILITY_IAM</code>, which is required for the following
      *         resources: <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-     *         AWS::CloudFormation::Stack</a>, <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      *         AWS::IAM::AccessKey</a>, <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
@@ -893,8 +886,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * specifying this parameter. <p>Currently, the only valid value is
      * <code>CAPABILITY_IAM</code>, which is required for the following
      * resources: <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-     * AWS::CloudFormation::Stack</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
@@ -922,8 +913,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         specifying this parameter. <p>Currently, the only valid value is
      *         <code>CAPABILITY_IAM</code>, which is required for the following
      *         resources: <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-     *         AWS::CloudFormation::Stack</a>, <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      *         AWS::IAM::AccessKey</a>, <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
@@ -965,8 +954,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * specifying this parameter. <p>Currently, the only valid value is
      * <code>CAPABILITY_IAM</code>, which is required for the following
      * resources: <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-     * AWS::CloudFormation::Stack</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>, <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
@@ -994,8 +981,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         specifying this parameter. <p>Currently, the only valid value is
      *         <code>CAPABILITY_IAM</code>, which is required for the following
      *         resources: <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-     *         AWS::CloudFormation::Stack</a>, <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      *         AWS::IAM::AccessKey</a>, <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">

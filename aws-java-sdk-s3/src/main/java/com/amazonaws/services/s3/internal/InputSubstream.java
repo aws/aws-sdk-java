@@ -36,7 +36,7 @@ public final class InputSubstream extends SdkFilterInputStream {
      * Constructs a new InputSubstream so that when callers start reading from
      * this stream they'll start at the specified offset in the real stream and
      * after they've read the specified length, this stream will look empty.
-     * 
+     *
      * @param in
      *            The input stream to wrap.
      * @param offset
@@ -86,7 +86,7 @@ public final class InputSubstream extends SdkFilterInputStream {
             currentPosition += skippedBytes;
         }
 
-        long bytesRemaining = 
+        long bytesRemaining =
             (requestedLength + requestedOffset) - currentPosition;
         if (bytesRemaining <= 0)
             return -1;
@@ -125,10 +125,15 @@ public final class InputSubstream extends SdkFilterInputStream {
         if (currentPosition < requestedOffset)
             bytesRemaining = requestedLength;
         else {
-            bytesRemaining = 
+            bytesRemaining =
                 (requestedLength + requestedOffset) - currentPosition;
         }
 
         return (int) Math.min(bytesRemaining, super.available());
+    }
+
+    /** Strictly used for testing only. */
+    InputStream getWrappedInputStream() {
+        return in;
     }
 }

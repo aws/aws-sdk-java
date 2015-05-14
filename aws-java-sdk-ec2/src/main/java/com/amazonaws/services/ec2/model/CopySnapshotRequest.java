@@ -23,14 +23,14 @@ import com.amazonaws.services.ec2.model.transform.CopySnapshotRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#copySnapshot(CopySnapshotRequest) CopySnapshot operation}.
  * <p>
- * Copies a point-in-time snapshot of an Amazon EBS volume and stores it
- * in Amazon S3. You can copy the snapshot within the same region or from
- * one region to another. You can use the snapshot to create Amazon EBS
- * volumes or Amazon Machine Images (AMIs). The snapshot is copied to the
+ * Copies a point-in-time snapshot of an EBS volume and stores it in
+ * Amazon S3. You can copy the snapshot within the same region or from
+ * one region to another. You can use the snapshot to create EBS volumes
+ * or Amazon Machine Images (AMIs). The snapshot is copied to the
  * regional endpoint that you send the HTTP request to.
  * </p>
  * <p>
- * Copies of encrypted Amazon EBS snapshots remain encrypted. Copies of
+ * Copies of encrypted EBS snapshots remain encrypted. Copies of
  * unencrypted snapshots remain unencrypted.
  * </p>
  * <p>
@@ -54,12 +54,12 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     private String sourceRegion;
 
     /**
-     * The ID of the Amazon EBS snapshot to copy.
+     * The ID of the EBS snapshot to copy.
      */
     private String sourceSnapshotId;
 
     /**
-     * A description for the new Amazon EBS snapshot.
+     * A description for the EBS snapshot.
      */
     private String description;
 
@@ -85,9 +85,9 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * and include the <code>SourceRegion</code>,
      * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS
-     * Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that
-     * is described in <a
+     * Signature Version 4. Because EBS snapshots are stored in Amazon S3,
+     * the signing algorithm for this parameter uses the same logic that is
+     * described in <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests by Using Query Parameters (AWS Signature Version 4)</a> in
      * the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
@@ -131,29 +131,29 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The ID of the Amazon EBS snapshot to copy.
+     * The ID of the EBS snapshot to copy.
      *
-     * @return The ID of the Amazon EBS snapshot to copy.
+     * @return The ID of the EBS snapshot to copy.
      */
     public String getSourceSnapshotId() {
         return sourceSnapshotId;
     }
     
     /**
-     * The ID of the Amazon EBS snapshot to copy.
+     * The ID of the EBS snapshot to copy.
      *
-     * @param sourceSnapshotId The ID of the Amazon EBS snapshot to copy.
+     * @param sourceSnapshotId The ID of the EBS snapshot to copy.
      */
     public void setSourceSnapshotId(String sourceSnapshotId) {
         this.sourceSnapshotId = sourceSnapshotId;
     }
     
     /**
-     * The ID of the Amazon EBS snapshot to copy.
+     * The ID of the EBS snapshot to copy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceSnapshotId The ID of the Amazon EBS snapshot to copy.
+     * @param sourceSnapshotId The ID of the EBS snapshot to copy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -164,29 +164,29 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * A description for the new Amazon EBS snapshot.
+     * A description for the EBS snapshot.
      *
-     * @return A description for the new Amazon EBS snapshot.
+     * @return A description for the EBS snapshot.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * A description for the new Amazon EBS snapshot.
+     * A description for the EBS snapshot.
      *
-     * @param description A description for the new Amazon EBS snapshot.
+     * @param description A description for the EBS snapshot.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * A description for the new Amazon EBS snapshot.
+     * A description for the EBS snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description A description for the new Amazon EBS snapshot.
+     * @param description A description for the EBS snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -286,9 +286,9 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * and include the <code>SourceRegion</code>,
      * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS
-     * Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that
-     * is described in <a
+     * Signature Version 4. Because EBS snapshots are stored in Amazon S3,
+     * the signing algorithm for this parameter uses the same logic that is
+     * described in <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests by Using Query Parameters (AWS Signature Version 4)</a> in
      * the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
@@ -304,9 +304,9 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *         and include the <code>SourceRegion</code>,
      *         <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      *         parameters. The <code>PresignedUrl</code> must be signed using AWS
-     *         Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
-     *         S3, the signing algorithm for this parameter uses the same logic that
-     *         is described in <a
+     *         Signature Version 4. Because EBS snapshots are stored in Amazon S3,
+     *         the signing algorithm for this parameter uses the same logic that is
+     *         described in <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      *         Requests by Using Query Parameters (AWS Signature Version 4)</a> in
      *         the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
@@ -327,9 +327,9 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * and include the <code>SourceRegion</code>,
      * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS
-     * Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that
-     * is described in <a
+     * Signature Version 4. Because EBS snapshots are stored in Amazon S3,
+     * the signing algorithm for this parameter uses the same logic that is
+     * described in <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests by Using Query Parameters (AWS Signature Version 4)</a> in
      * the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
@@ -345,9 +345,9 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *         and include the <code>SourceRegion</code>,
      *         <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      *         parameters. The <code>PresignedUrl</code> must be signed using AWS
-     *         Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
-     *         S3, the signing algorithm for this parameter uses the same logic that
-     *         is described in <a
+     *         Signature Version 4. Because EBS snapshots are stored in Amazon S3,
+     *         the signing algorithm for this parameter uses the same logic that is
+     *         described in <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      *         Requests by Using Query Parameters (AWS Signature Version 4)</a> in
      *         the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
@@ -368,9 +368,9 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * and include the <code>SourceRegion</code>,
      * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS
-     * Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that
-     * is described in <a
+     * Signature Version 4. Because EBS snapshots are stored in Amazon S3,
+     * the signing algorithm for this parameter uses the same logic that is
+     * described in <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests by Using Query Parameters (AWS Signature Version 4)</a> in
      * the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
@@ -388,9 +388,9 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *         and include the <code>SourceRegion</code>,
      *         <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      *         parameters. The <code>PresignedUrl</code> must be signed using AWS
-     *         Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
-     *         S3, the signing algorithm for this parameter uses the same logic that
-     *         is described in <a
+     *         Signature Version 4. Because EBS snapshots are stored in Amazon S3,
+     *         the signing algorithm for this parameter uses the same logic that is
+     *         described in <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      *         Requests by Using Query Parameters (AWS Signature Version 4)</a> in
      *         the <i>Amazon Simple Storage Service API Reference</i>. An invalid or

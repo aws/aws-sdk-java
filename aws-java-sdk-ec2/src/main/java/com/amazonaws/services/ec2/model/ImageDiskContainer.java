@@ -18,18 +18,20 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The disk container object for an ImportImage task.
+ * Describes the disk container object for an import image task.
  * </p>
  */
 public class ImageDiskContainer implements Serializable, Cloneable {
 
     /**
-     * The description of the disk image (optional).
+     * The description of the disk image.
      */
     private String description;
 
     /**
-     * The format of the disk image being imported (optional).
+     * The format of the disk image being imported. <p>Valid values:
+     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
+     * <code>OVA</code>
      */
     private String format;
 
@@ -40,44 +42,44 @@ public class ImageDiskContainer implements Serializable, Cloneable {
     private String url;
 
     /**
-     * 
+     * The S3 bucket for the disk image.
      */
     private UserBucket userBucket;
 
     /**
-     * The Amazon EBS block device mapping for the disk (optional).
+     * The block device mapping for the disk.
      */
     private String deviceName;
 
     /**
-     * The Amazon EBS snapshot ID to be used for importing the snapshot.
+     * The ID of the EBS snapshot to be used for importing the snapshot.
      */
     private String snapshotId;
 
     /**
-     * The description of the disk image (optional).
+     * The description of the disk image.
      *
-     * @return The description of the disk image (optional).
+     * @return The description of the disk image.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * The description of the disk image (optional).
+     * The description of the disk image.
      *
-     * @param description The description of the disk image (optional).
+     * @param description The description of the disk image.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * The description of the disk image (optional).
+     * The description of the disk image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The description of the disk image (optional).
+     * @param description The description of the disk image.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -88,29 +90,41 @@ public class ImageDiskContainer implements Serializable, Cloneable {
     }
 
     /**
-     * The format of the disk image being imported (optional).
+     * The format of the disk image being imported. <p>Valid values:
+     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
+     * <code>OVA</code>
      *
-     * @return The format of the disk image being imported (optional).
+     * @return The format of the disk image being imported. <p>Valid values:
+     *         <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
+     *         <code>OVA</code>
      */
     public String getFormat() {
         return format;
     }
     
     /**
-     * The format of the disk image being imported (optional).
+     * The format of the disk image being imported. <p>Valid values:
+     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
+     * <code>OVA</code>
      *
-     * @param format The format of the disk image being imported (optional).
+     * @param format The format of the disk image being imported. <p>Valid values:
+     *         <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
+     *         <code>OVA</code>
      */
     public void setFormat(String format) {
         this.format = format;
     }
     
     /**
-     * The format of the disk image being imported (optional).
+     * The format of the disk image being imported. <p>Valid values:
+     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
+     * <code>OVA</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param format The format of the disk image being imported (optional).
+     * @param format The format of the disk image being imported. <p>Valid values:
+     *         <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
+     *         <code>OVA</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -160,29 +174,29 @@ public class ImageDiskContainer implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The S3 bucket for the disk image.
      *
-     * @return 
+     * @return The S3 bucket for the disk image.
      */
     public UserBucket getUserBucket() {
         return userBucket;
     }
     
     /**
-     * 
+     * The S3 bucket for the disk image.
      *
-     * @param userBucket 
+     * @param userBucket The S3 bucket for the disk image.
      */
     public void setUserBucket(UserBucket userBucket) {
         this.userBucket = userBucket;
     }
     
     /**
-     * 
+     * The S3 bucket for the disk image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userBucket 
+     * @param userBucket The S3 bucket for the disk image.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -193,29 +207,29 @@ public class ImageDiskContainer implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon EBS block device mapping for the disk (optional).
+     * The block device mapping for the disk.
      *
-     * @return The Amazon EBS block device mapping for the disk (optional).
+     * @return The block device mapping for the disk.
      */
     public String getDeviceName() {
         return deviceName;
     }
     
     /**
-     * The Amazon EBS block device mapping for the disk (optional).
+     * The block device mapping for the disk.
      *
-     * @param deviceName The Amazon EBS block device mapping for the disk (optional).
+     * @param deviceName The block device mapping for the disk.
      */
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
     
     /**
-     * The Amazon EBS block device mapping for the disk (optional).
+     * The block device mapping for the disk.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deviceName The Amazon EBS block device mapping for the disk (optional).
+     * @param deviceName The block device mapping for the disk.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -226,29 +240,29 @@ public class ImageDiskContainer implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon EBS snapshot ID to be used for importing the snapshot.
+     * The ID of the EBS snapshot to be used for importing the snapshot.
      *
-     * @return The Amazon EBS snapshot ID to be used for importing the snapshot.
+     * @return The ID of the EBS snapshot to be used for importing the snapshot.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The Amazon EBS snapshot ID to be used for importing the snapshot.
+     * The ID of the EBS snapshot to be used for importing the snapshot.
      *
-     * @param snapshotId The Amazon EBS snapshot ID to be used for importing the snapshot.
+     * @param snapshotId The ID of the EBS snapshot to be used for importing the snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The Amazon EBS snapshot ID to be used for importing the snapshot.
+     * The ID of the EBS snapshot to be used for importing the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotId The Amazon EBS snapshot ID to be used for importing the snapshot.
+     * @param snapshotId The ID of the EBS snapshot to be used for importing the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

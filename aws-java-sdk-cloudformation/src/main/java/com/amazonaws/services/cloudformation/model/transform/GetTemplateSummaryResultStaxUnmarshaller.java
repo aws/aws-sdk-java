@@ -63,6 +63,10 @@ public class GetTemplateSummaryResultStaxUnmarshaller implements Unmarshaller<Ge
                     getTemplateSummaryResult.setVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Metadata", targetDepth)) {
+                    getTemplateSummaryResult.setMetadata(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return getTemplateSummaryResult;

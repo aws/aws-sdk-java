@@ -22,44 +22,44 @@ import java.io.Serializable;
 public class ImportSnapshotResult implements Serializable, Cloneable {
 
     /**
-     * Task ID of the ImportSnapshot task.
+     * The ID of the import snapshot task.
      */
     private String importTaskId;
 
     /**
-     * 
+     * Information about the import snapshot task.
      */
     private SnapshotTaskDetail snapshotTaskDetail;
 
     /**
-     * Description of the import snapshot task.
+     * A description of the import snapshot task.
      */
     private String description;
 
     /**
-     * Task ID of the ImportSnapshot task.
+     * The ID of the import snapshot task.
      *
-     * @return Task ID of the ImportSnapshot task.
+     * @return The ID of the import snapshot task.
      */
     public String getImportTaskId() {
         return importTaskId;
     }
     
     /**
-     * Task ID of the ImportSnapshot task.
+     * The ID of the import snapshot task.
      *
-     * @param importTaskId Task ID of the ImportSnapshot task.
+     * @param importTaskId The ID of the import snapshot task.
      */
     public void setImportTaskId(String importTaskId) {
         this.importTaskId = importTaskId;
     }
     
     /**
-     * Task ID of the ImportSnapshot task.
+     * The ID of the import snapshot task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importTaskId Task ID of the ImportSnapshot task.
+     * @param importTaskId The ID of the import snapshot task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -70,29 +70,29 @@ public class ImportSnapshotResult implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * Information about the import snapshot task.
      *
-     * @return 
+     * @return Information about the import snapshot task.
      */
     public SnapshotTaskDetail getSnapshotTaskDetail() {
         return snapshotTaskDetail;
     }
     
     /**
-     * 
+     * Information about the import snapshot task.
      *
-     * @param snapshotTaskDetail 
+     * @param snapshotTaskDetail Information about the import snapshot task.
      */
     public void setSnapshotTaskDetail(SnapshotTaskDetail snapshotTaskDetail) {
         this.snapshotTaskDetail = snapshotTaskDetail;
     }
     
     /**
-     * 
+     * Information about the import snapshot task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotTaskDetail 
+     * @param snapshotTaskDetail Information about the import snapshot task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -103,29 +103,29 @@ public class ImportSnapshotResult implements Serializable, Cloneable {
     }
 
     /**
-     * Description of the import snapshot task.
+     * A description of the import snapshot task.
      *
-     * @return Description of the import snapshot task.
+     * @return A description of the import snapshot task.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Description of the import snapshot task.
+     * A description of the import snapshot task.
      *
-     * @param description Description of the import snapshot task.
+     * @param description A description of the import snapshot task.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Description of the import snapshot task.
+     * A description of the import snapshot task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description Description of the import snapshot task.
+     * @param description A description of the import snapshot task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

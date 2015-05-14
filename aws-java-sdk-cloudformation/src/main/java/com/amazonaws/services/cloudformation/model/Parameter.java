@@ -24,7 +24,9 @@ import java.io.Serializable;
 public class Parameter implements Serializable, Cloneable {
 
     /**
-     * The key associated with the parameter.
+     * The key associated with the parameter. If you don't specify a key and
+     * value for a particular parameter, AWS CloudFormation uses the default
+     * value that is specified in your template.
      */
     private String parameterKey;
 
@@ -34,35 +36,48 @@ public class Parameter implements Serializable, Cloneable {
     private String parameterValue;
 
     /**
-     * During a stack update, use the existing parameter value that is being
-     * used for the stack.
+     * During a stack update, use the existing parameter value that the stack
+     * is using for a given parameter key. If you specify <code>true</code>,
+     * do not specify a parameter value.
      */
     private Boolean usePreviousValue;
 
     /**
-     * The key associated with the parameter.
+     * The key associated with the parameter. If you don't specify a key and
+     * value for a particular parameter, AWS CloudFormation uses the default
+     * value that is specified in your template.
      *
-     * @return The key associated with the parameter.
+     * @return The key associated with the parameter. If you don't specify a key and
+     *         value for a particular parameter, AWS CloudFormation uses the default
+     *         value that is specified in your template.
      */
     public String getParameterKey() {
         return parameterKey;
     }
     
     /**
-     * The key associated with the parameter.
+     * The key associated with the parameter. If you don't specify a key and
+     * value for a particular parameter, AWS CloudFormation uses the default
+     * value that is specified in your template.
      *
-     * @param parameterKey The key associated with the parameter.
+     * @param parameterKey The key associated with the parameter. If you don't specify a key and
+     *         value for a particular parameter, AWS CloudFormation uses the default
+     *         value that is specified in your template.
      */
     public void setParameterKey(String parameterKey) {
         this.parameterKey = parameterKey;
     }
     
     /**
-     * The key associated with the parameter.
+     * The key associated with the parameter. If you don't specify a key and
+     * value for a particular parameter, AWS CloudFormation uses the default
+     * value that is specified in your template.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterKey The key associated with the parameter.
+     * @param parameterKey The key associated with the parameter. If you don't specify a key and
+     *         value for a particular parameter, AWS CloudFormation uses the default
+     *         value that is specified in your template.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -106,35 +121,41 @@ public class Parameter implements Serializable, Cloneable {
     }
 
     /**
-     * During a stack update, use the existing parameter value that is being
-     * used for the stack.
+     * During a stack update, use the existing parameter value that the stack
+     * is using for a given parameter key. If you specify <code>true</code>,
+     * do not specify a parameter value.
      *
-     * @return During a stack update, use the existing parameter value that is being
-     *         used for the stack.
+     * @return During a stack update, use the existing parameter value that the stack
+     *         is using for a given parameter key. If you specify <code>true</code>,
+     *         do not specify a parameter value.
      */
     public Boolean isUsePreviousValue() {
         return usePreviousValue;
     }
     
     /**
-     * During a stack update, use the existing parameter value that is being
-     * used for the stack.
+     * During a stack update, use the existing parameter value that the stack
+     * is using for a given parameter key. If you specify <code>true</code>,
+     * do not specify a parameter value.
      *
-     * @param usePreviousValue During a stack update, use the existing parameter value that is being
-     *         used for the stack.
+     * @param usePreviousValue During a stack update, use the existing parameter value that the stack
+     *         is using for a given parameter key. If you specify <code>true</code>,
+     *         do not specify a parameter value.
      */
     public void setUsePreviousValue(Boolean usePreviousValue) {
         this.usePreviousValue = usePreviousValue;
     }
     
     /**
-     * During a stack update, use the existing parameter value that is being
-     * used for the stack.
+     * During a stack update, use the existing parameter value that the stack
+     * is using for a given parameter key. If you specify <code>true</code>,
+     * do not specify a parameter value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param usePreviousValue During a stack update, use the existing parameter value that is being
-     *         used for the stack.
+     * @param usePreviousValue During a stack update, use the existing parameter value that the stack
+     *         is using for a given parameter key. If you specify <code>true</code>,
+     *         do not specify a parameter value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -145,11 +166,13 @@ public class Parameter implements Serializable, Cloneable {
     }
 
     /**
-     * During a stack update, use the existing parameter value that is being
-     * used for the stack.
+     * During a stack update, use the existing parameter value that the stack
+     * is using for a given parameter key. If you specify <code>true</code>,
+     * do not specify a parameter value.
      *
-     * @return During a stack update, use the existing parameter value that is being
-     *         used for the stack.
+     * @return During a stack update, use the existing parameter value that the stack
+     *         is using for a given parameter key. If you specify <code>true</code>,
+     *         do not specify a parameter value.
      */
     public Boolean getUsePreviousValue() {
         return usePreviousValue;

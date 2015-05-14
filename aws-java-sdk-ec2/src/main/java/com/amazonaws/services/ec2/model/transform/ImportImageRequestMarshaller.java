@@ -39,7 +39,7 @@ public class ImportImageRequestMarshaller implements Marshaller<Request<ImportIm
 
         Request<ImportImageRequest> request = new DefaultRequest<ImportImageRequest>(importImageRequest, "AmazonEC2");
         request.addParameter("Action", "ImportImage");
-        request.addParameter("Version", "2015-03-01");
+        request.addParameter("Version", "2015-04-15");
 
         if (importImageRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(importImageRequest.getDescription()));

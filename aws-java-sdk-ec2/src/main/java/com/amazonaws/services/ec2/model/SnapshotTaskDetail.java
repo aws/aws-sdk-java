@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class SnapshotTaskDetail implements Serializable, Cloneable {
 
     /**
-     * The size of the disk in the snapshot.
+     * The size of the disk in the snapshot, in GiB.
      */
     private Double diskImageSize;
 
@@ -44,7 +44,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
     private String url;
 
     /**
-     * 
+     * The S3 bucket for the disk image.
      */
     private UserBucketDetails userBucket;
 
@@ -54,44 +54,44 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
     private String snapshotId;
 
     /**
-     * The percentage of completion for the ImportSnapshot task.
+     * The percentage of completion for the import snapshot task.
      */
     private String progress;
 
     /**
-     * A detailed status message for the ImportSnapshot task.
+     * A detailed status message for the import snapshot task.
      */
     private String statusMessage;
 
     /**
-     * A brief status for the ImportSnapshot task.
+     * A brief status for the import snapshot task.
      */
     private String status;
 
     /**
-     * The size of the disk in the snapshot.
+     * The size of the disk in the snapshot, in GiB.
      *
-     * @return The size of the disk in the snapshot.
+     * @return The size of the disk in the snapshot, in GiB.
      */
     public Double getDiskImageSize() {
         return diskImageSize;
     }
     
     /**
-     * The size of the disk in the snapshot.
+     * The size of the disk in the snapshot, in GiB.
      *
-     * @param diskImageSize The size of the disk in the snapshot.
+     * @param diskImageSize The size of the disk in the snapshot, in GiB.
      */
     public void setDiskImageSize(Double diskImageSize) {
         this.diskImageSize = diskImageSize;
     }
     
     /**
-     * The size of the disk in the snapshot.
+     * The size of the disk in the snapshot, in GiB.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskImageSize The size of the disk in the snapshot.
+     * @param diskImageSize The size of the disk in the snapshot, in GiB.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -201,29 +201,29 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The S3 bucket for the disk image.
      *
-     * @return 
+     * @return The S3 bucket for the disk image.
      */
     public UserBucketDetails getUserBucket() {
         return userBucket;
     }
     
     /**
-     * 
+     * The S3 bucket for the disk image.
      *
-     * @param userBucket 
+     * @param userBucket The S3 bucket for the disk image.
      */
     public void setUserBucket(UserBucketDetails userBucket) {
         this.userBucket = userBucket;
     }
     
     /**
-     * 
+     * The S3 bucket for the disk image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userBucket 
+     * @param userBucket The S3 bucket for the disk image.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -267,29 +267,29 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
     }
 
     /**
-     * The percentage of completion for the ImportSnapshot task.
+     * The percentage of completion for the import snapshot task.
      *
-     * @return The percentage of completion for the ImportSnapshot task.
+     * @return The percentage of completion for the import snapshot task.
      */
     public String getProgress() {
         return progress;
     }
     
     /**
-     * The percentage of completion for the ImportSnapshot task.
+     * The percentage of completion for the import snapshot task.
      *
-     * @param progress The percentage of completion for the ImportSnapshot task.
+     * @param progress The percentage of completion for the import snapshot task.
      */
     public void setProgress(String progress) {
         this.progress = progress;
     }
     
     /**
-     * The percentage of completion for the ImportSnapshot task.
+     * The percentage of completion for the import snapshot task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param progress The percentage of completion for the ImportSnapshot task.
+     * @param progress The percentage of completion for the import snapshot task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -300,29 +300,29 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
     }
 
     /**
-     * A detailed status message for the ImportSnapshot task.
+     * A detailed status message for the import snapshot task.
      *
-     * @return A detailed status message for the ImportSnapshot task.
+     * @return A detailed status message for the import snapshot task.
      */
     public String getStatusMessage() {
         return statusMessage;
     }
     
     /**
-     * A detailed status message for the ImportSnapshot task.
+     * A detailed status message for the import snapshot task.
      *
-     * @param statusMessage A detailed status message for the ImportSnapshot task.
+     * @param statusMessage A detailed status message for the import snapshot task.
      */
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
     
     /**
-     * A detailed status message for the ImportSnapshot task.
+     * A detailed status message for the import snapshot task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param statusMessage A detailed status message for the ImportSnapshot task.
+     * @param statusMessage A detailed status message for the import snapshot task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -333,29 +333,29 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
     }
 
     /**
-     * A brief status for the ImportSnapshot task.
+     * A brief status for the import snapshot task.
      *
-     * @return A brief status for the ImportSnapshot task.
+     * @return A brief status for the import snapshot task.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * A brief status for the ImportSnapshot task.
+     * A brief status for the import snapshot task.
      *
-     * @param status A brief status for the ImportSnapshot task.
+     * @param status A brief status for the import snapshot task.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * A brief status for the ImportSnapshot task.
+     * A brief status for the import snapshot task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status A brief status for the ImportSnapshot task.
+     * @param status A brief status for the import snapshot task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

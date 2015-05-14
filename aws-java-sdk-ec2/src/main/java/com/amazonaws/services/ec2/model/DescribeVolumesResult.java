@@ -22,7 +22,7 @@ import java.io.Serializable;
 public class DescribeVolumesResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * Information about the volumes.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Volume> volumes;
 
@@ -36,9 +36,9 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
     private String nextToken;
 
     /**
-     * 
+     * Information about the volumes.
      *
-     * @return 
+     * @return Information about the volumes.
      */
     public java.util.List<Volume> getVolumes() {
         if (volumes == null) {
@@ -49,9 +49,9 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the volumes.
      *
-     * @param volumes 
+     * @param volumes Information about the volumes.
      */
     public void setVolumes(java.util.Collection<Volume> volumes) {
         if (volumes == null) {
@@ -64,7 +64,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the volumes.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setVolumes(java.util.Collection)} or {@link
@@ -73,7 +73,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumes 
+     * @param volumes Information about the volumes.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -87,11 +87,11 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumes 
+     * @param volumes Information about the volumes.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

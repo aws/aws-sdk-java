@@ -22,46 +22,44 @@ import java.io.Serializable;
 public class CancelImportTaskResult implements Serializable, Cloneable {
 
     /**
-     * The task ID of the ImportImage or ImportSnapshot task being canceled.
+     * The ID of the task being canceled.
      */
     private String importTaskId;
 
     /**
-     * The current state of the ImportImage or ImportSnapshot task being
-     * canceled.
+     * The current state of the task being canceled.
      */
     private String state;
 
     /**
-     * The current state of the ImportImage or ImportSnapshot task being
-     * canceled.
+     * The current state of the task being canceled.
      */
     private String previousState;
 
     /**
-     * The task ID of the ImportImage or ImportSnapshot task being canceled.
+     * The ID of the task being canceled.
      *
-     * @return The task ID of the ImportImage or ImportSnapshot task being canceled.
+     * @return The ID of the task being canceled.
      */
     public String getImportTaskId() {
         return importTaskId;
     }
     
     /**
-     * The task ID of the ImportImage or ImportSnapshot task being canceled.
+     * The ID of the task being canceled.
      *
-     * @param importTaskId The task ID of the ImportImage or ImportSnapshot task being canceled.
+     * @param importTaskId The ID of the task being canceled.
      */
     public void setImportTaskId(String importTaskId) {
         this.importTaskId = importTaskId;
     }
     
     /**
-     * The task ID of the ImportImage or ImportSnapshot task being canceled.
+     * The ID of the task being canceled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importTaskId The task ID of the ImportImage or ImportSnapshot task being canceled.
+     * @param importTaskId The ID of the task being canceled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -72,35 +70,29 @@ public class CancelImportTaskResult implements Serializable, Cloneable {
     }
 
     /**
-     * The current state of the ImportImage or ImportSnapshot task being
-     * canceled.
+     * The current state of the task being canceled.
      *
-     * @return The current state of the ImportImage or ImportSnapshot task being
-     *         canceled.
+     * @return The current state of the task being canceled.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * The current state of the ImportImage or ImportSnapshot task being
-     * canceled.
+     * The current state of the task being canceled.
      *
-     * @param state The current state of the ImportImage or ImportSnapshot task being
-     *         canceled.
+     * @param state The current state of the task being canceled.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * The current state of the ImportImage or ImportSnapshot task being
-     * canceled.
+     * The current state of the task being canceled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The current state of the ImportImage or ImportSnapshot task being
-     *         canceled.
+     * @param state The current state of the task being canceled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -111,35 +103,29 @@ public class CancelImportTaskResult implements Serializable, Cloneable {
     }
 
     /**
-     * The current state of the ImportImage or ImportSnapshot task being
-     * canceled.
+     * The current state of the task being canceled.
      *
-     * @return The current state of the ImportImage or ImportSnapshot task being
-     *         canceled.
+     * @return The current state of the task being canceled.
      */
     public String getPreviousState() {
         return previousState;
     }
     
     /**
-     * The current state of the ImportImage or ImportSnapshot task being
-     * canceled.
+     * The current state of the task being canceled.
      *
-     * @param previousState The current state of the ImportImage or ImportSnapshot task being
-     *         canceled.
+     * @param previousState The current state of the task being canceled.
      */
     public void setPreviousState(String previousState) {
         this.previousState = previousState;
     }
     
     /**
-     * The current state of the ImportImage or ImportSnapshot task being
-     * canceled.
+     * The current state of the task being canceled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param previousState The current state of the ImportImage or ImportSnapshot task being
-     *         canceled.
+     * @param previousState The current state of the task being canceled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

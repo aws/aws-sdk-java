@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an Amazon EBS volume.
+ * Describes an EBS volume.
  * </p>
  */
 public class VolumeDetail implements Serializable, Cloneable {

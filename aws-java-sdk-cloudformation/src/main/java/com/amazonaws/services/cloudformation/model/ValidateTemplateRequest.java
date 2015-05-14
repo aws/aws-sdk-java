@@ -43,7 +43,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * template (max size: 460,800 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -129,7 +129,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * template (max size: 460,800 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -140,7 +140,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 1024<br/>
      *
      * @return Location of file containing the template body. The URL must point to a
-     *         template (max size: 307,200 bytes) located in an S3 bucket in the same
+     *         template (max size: 460,800 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -153,7 +153,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * template (max size: 460,800 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -164,7 +164,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template (max size: 307,200 bytes) located in an S3 bucket in the same
+     *         template (max size: 460,800 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -177,7 +177,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * template (max size: 460,800 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -190,7 +190,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template (max size: 307,200 bytes) located in an S3 bucket in the same
+     *         template (max size: 460,800 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You

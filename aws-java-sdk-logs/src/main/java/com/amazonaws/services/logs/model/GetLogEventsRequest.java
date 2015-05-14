@@ -77,7 +77,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as much log events as
+     * don't specify a value, the request would return as many log events as
      * can fit in a response size of 1MB, up to 10,000 log events.
      * <p>
      * <b>Constraints:</b><br/>
@@ -364,14 +364,14 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as much log events as
+     * don't specify a value, the request would return as many log events as
      * can fit in a response size of 1MB, up to 10,000 log events.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 10000<br/>
      *
      * @return The maximum number of log events returned in the response. If you
-     *         don't specify a value, the request would return as much log events as
+     *         don't specify a value, the request would return as many log events as
      *         can fit in a response size of 1MB, up to 10,000 log events.
      */
     public Integer getLimit() {
@@ -380,14 +380,14 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as much log events as
+     * don't specify a value, the request would return as many log events as
      * can fit in a response size of 1MB, up to 10,000 log events.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 10000<br/>
      *
      * @param limit The maximum number of log events returned in the response. If you
-     *         don't specify a value, the request would return as much log events as
+     *         don't specify a value, the request would return as many log events as
      *         can fit in a response size of 1MB, up to 10,000 log events.
      */
     public void setLimit(Integer limit) {
@@ -396,7 +396,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as much log events as
+     * don't specify a value, the request would return as many log events as
      * can fit in a response size of 1MB, up to 10,000 log events.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -405,7 +405,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * <b>Range: </b>1 - 10000<br/>
      *
      * @param limit The maximum number of log events returned in the response. If you
-     *         don't specify a value, the request would return as much log events as
+     *         don't specify a value, the request would return as many log events as
      *         can fit in a response size of 1MB, up to 10,000 log events.
      *
      * @return A reference to this updated object so that method calls can be chained

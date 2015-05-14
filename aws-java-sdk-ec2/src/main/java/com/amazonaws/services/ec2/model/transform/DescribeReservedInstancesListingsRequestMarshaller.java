@@ -39,7 +39,7 @@ public class DescribeReservedInstancesListingsRequestMarshaller implements Marsh
 
         Request<DescribeReservedInstancesListingsRequest> request = new DefaultRequest<DescribeReservedInstancesListingsRequest>(describeReservedInstancesListingsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstancesListings");
-        request.addParameter("Version", "2015-03-01");
+        request.addParameter("Version", "2015-04-15");
 
         if (describeReservedInstancesListingsRequest.getReservedInstancesId() != null) {
             request.addParameter("ReservedInstancesId", StringUtils.fromString(describeReservedInstancesListingsRequest.getReservedInstancesId()));

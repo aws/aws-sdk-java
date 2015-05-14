@@ -25,7 +25,8 @@ public enum DomainAvailability {
     UNAVAILABLE("UNAVAILABLE"),
     UNAVAILABLE_PREMIUM("UNAVAILABLE_PREMIUM"),
     UNAVAILABLE_RESTRICTED("UNAVAILABLE_RESTRICTED"),
-    RESERVED("RESERVED");
+    RESERVED("RESERVED"),
+    DONT_KNOW("DONT_KNOW");
 
     private String value;
 
@@ -63,6 +64,8 @@ public enum DomainAvailability {
             return DomainAvailability.UNAVAILABLE_RESTRICTED;
         } else if ("RESERVED".equals(value)) {
             return DomainAvailability.RESERVED;
+        } else if ("DONT_KNOW".equals(value)) {
+            return DomainAvailability.DONT_KNOW;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

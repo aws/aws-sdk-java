@@ -35,9 +35,9 @@ import com.amazonaws.services.ec2.model.transform.DeleteSnapshotRequestMarshalle
  * the volume.
  * </p>
  * <p>
- * You cannot delete a snapshot of the root device of an Amazon EBS
- * volume used by a registered AMI. You must first de-register the AMI
- * before you can delete the snapshot.
+ * You cannot delete a snapshot of the root device of an EBS volume used
+ * by a registered AMI. You must first de-register the AMI before you can
+ * delete the snapshot.
  * </p>
  * <p>
  * For more information, see
@@ -50,7 +50,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteSnapshotRequestMarshalle
 public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteSnapshotRequest> {
 
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      */
     private String snapshotId;
 
@@ -65,36 +65,36 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Se
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param snapshotId The ID of the Amazon EBS snapshot.
+     * @param snapshotId The ID of the EBS snapshot.
      */
     public DeleteSnapshotRequest(String snapshotId) {
         setSnapshotId(snapshotId);
     }
 
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      *
-     * @return The ID of the Amazon EBS snapshot.
+     * @return The ID of the EBS snapshot.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      *
-     * @param snapshotId The ID of the Amazon EBS snapshot.
+     * @param snapshotId The ID of the EBS snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotId The ID of the Amazon EBS snapshot.
+     * @param snapshotId The ID of the EBS snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

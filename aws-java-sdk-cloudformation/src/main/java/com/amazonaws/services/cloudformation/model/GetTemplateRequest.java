@@ -38,62 +38,62 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetTemplateRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name or the unique identifier associated with the stack, which are
-     * not always interchangeable: <ul> <li>Running stacks: You can specify
-     * either the stack's name or its unique stack ID.</li> <li>Deleted
-     * stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
-     * There is no default value.
+     * The name or the unique stack ID that is associated with the stack,
+     * which are not always interchangeable: <ul> <li>Running stacks: You can
+     * specify either the stack's name or its unique stack ID.</li>
+     * <li>Deleted stacks: You must specify the unique stack ID.</li> </ul>
+     * <p>Default: There is no default value.
      */
     private String stackName;
 
     /**
-     * The name or the unique identifier associated with the stack, which are
-     * not always interchangeable: <ul> <li>Running stacks: You can specify
-     * either the stack's name or its unique stack ID.</li> <li>Deleted
-     * stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
-     * There is no default value.
+     * The name or the unique stack ID that is associated with the stack,
+     * which are not always interchangeable: <ul> <li>Running stacks: You can
+     * specify either the stack's name or its unique stack ID.</li>
+     * <li>Deleted stacks: You must specify the unique stack ID.</li> </ul>
+     * <p>Default: There is no default value.
      *
-     * @return The name or the unique identifier associated with the stack, which are
-     *         not always interchangeable: <ul> <li>Running stacks: You can specify
-     *         either the stack's name or its unique stack ID.</li> <li>Deleted
-     *         stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
-     *         There is no default value.
+     * @return The name or the unique stack ID that is associated with the stack,
+     *         which are not always interchangeable: <ul> <li>Running stacks: You can
+     *         specify either the stack's name or its unique stack ID.</li>
+     *         <li>Deleted stacks: You must specify the unique stack ID.</li> </ul>
+     *         <p>Default: There is no default value.
      */
     public String getStackName() {
         return stackName;
     }
     
     /**
-     * The name or the unique identifier associated with the stack, which are
-     * not always interchangeable: <ul> <li>Running stacks: You can specify
-     * either the stack's name or its unique stack ID.</li> <li>Deleted
-     * stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
-     * There is no default value.
+     * The name or the unique stack ID that is associated with the stack,
+     * which are not always interchangeable: <ul> <li>Running stacks: You can
+     * specify either the stack's name or its unique stack ID.</li>
+     * <li>Deleted stacks: You must specify the unique stack ID.</li> </ul>
+     * <p>Default: There is no default value.
      *
-     * @param stackName The name or the unique identifier associated with the stack, which are
-     *         not always interchangeable: <ul> <li>Running stacks: You can specify
-     *         either the stack's name or its unique stack ID.</li> <li>Deleted
-     *         stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
-     *         There is no default value.
+     * @param stackName The name or the unique stack ID that is associated with the stack,
+     *         which are not always interchangeable: <ul> <li>Running stacks: You can
+     *         specify either the stack's name or its unique stack ID.</li>
+     *         <li>Deleted stacks: You must specify the unique stack ID.</li> </ul>
+     *         <p>Default: There is no default value.
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
     
     /**
-     * The name or the unique identifier associated with the stack, which are
-     * not always interchangeable: <ul> <li>Running stacks: You can specify
-     * either the stack's name or its unique stack ID.</li> <li>Deleted
-     * stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
-     * There is no default value.
+     * The name or the unique stack ID that is associated with the stack,
+     * which are not always interchangeable: <ul> <li>Running stacks: You can
+     * specify either the stack's name or its unique stack ID.</li>
+     * <li>Deleted stacks: You must specify the unique stack ID.</li> </ul>
+     * <p>Default: There is no default value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackName The name or the unique identifier associated with the stack, which are
-     *         not always interchangeable: <ul> <li>Running stacks: You can specify
-     *         either the stack's name or its unique stack ID.</li> <li>Deleted
-     *         stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
-     *         There is no default value.
+     * @param stackName The name or the unique stack ID that is associated with the stack,
+     *         which are not always interchangeable: <ul> <li>Running stacks: You can
+     *         specify either the stack's name or its unique stack ID.</li>
+     *         <li>Deleted stacks: You must specify the unique stack ID.</li> </ul>
+     *         <p>Default: There is no default value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

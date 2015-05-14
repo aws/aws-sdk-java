@@ -30,7 +30,7 @@ import com.amazonaws.services.securitytoken.model.Credentials;
  * Service to assume a Role and create temporary, short-lived sessions to use
  * for authentication.
  */
-public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsProvider {
+public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCredentialsProvider {
 
     /** Default duration for started sessions. */
     public static final int DEFAULT_DURATION_SECONDS = 900;
@@ -243,7 +243,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
 
     
     @Override
-    public AWSCredentials getCredentials() {
+    public AWSSessionCredentials getCredentials() {
         if (needsNewSession()) {
             startSession();
         }
@@ -405,6 +405,6 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
         public STSAssumeRoleSessionCredentialsProvider build() {
             return new STSAssumeRoleSessionCredentialsProvider(this);
         }
-    }
+	}
 
 }

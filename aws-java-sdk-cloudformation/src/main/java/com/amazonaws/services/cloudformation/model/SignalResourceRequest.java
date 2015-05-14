@@ -35,8 +35,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SignalResourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The stack name or ID that includes the resource that you want to
-     * signal.
+     * The stack name or unique stack ID that includes the resource that you
+     * want to signal.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -73,38 +73,38 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements Se
     private String status;
 
     /**
-     * The stack name or ID that includes the resource that you want to
-     * signal.
+     * The stack name or unique stack ID that includes the resource that you
+     * want to signal.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      * <b>Pattern: </b>([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)<br/>
      *
-     * @return The stack name or ID that includes the resource that you want to
-     *         signal.
+     * @return The stack name or unique stack ID that includes the resource that you
+     *         want to signal.
      */
     public String getStackName() {
         return stackName;
     }
     
     /**
-     * The stack name or ID that includes the resource that you want to
-     * signal.
+     * The stack name or unique stack ID that includes the resource that you
+     * want to signal.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      * <b>Pattern: </b>([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)<br/>
      *
-     * @param stackName The stack name or ID that includes the resource that you want to
-     *         signal.
+     * @param stackName The stack name or unique stack ID that includes the resource that you
+     *         want to signal.
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
     
     /**
-     * The stack name or ID that includes the resource that you want to
-     * signal.
+     * The stack name or unique stack ID that includes the resource that you
+     * want to signal.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -112,8 +112,8 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - <br/>
      * <b>Pattern: </b>([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)<br/>
      *
-     * @param stackName The stack name or ID that includes the resource that you want to
-     *         signal.
+     * @param stackName The stack name or unique stack ID that includes the resource that you
+     *         want to signal.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

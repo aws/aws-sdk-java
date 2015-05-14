@@ -19,8 +19,13 @@ package com.amazonaws.services.ec2.model;
  */
 public enum ImageState {
     
+    Pending("pending"),
     Available("available"),
-    Deregistered("deregistered");
+    Invalid("invalid"),
+    Deregistered("deregistered"),
+    Transient("transient"),
+    Failed("failed"),
+    Error("error");
 
     private String value;
 
@@ -44,10 +49,20 @@ public enum ImageState {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
+        } else if ("pending".equals(value)) {
+            return ImageState.Pending;
         } else if ("available".equals(value)) {
             return ImageState.Available;
+        } else if ("invalid".equals(value)) {
+            return ImageState.Invalid;
         } else if ("deregistered".equals(value)) {
             return ImageState.Deregistered;
+        } else if ("transient".equals(value)) {
+            return ImageState.Transient;
+        } else if ("failed".equals(value)) {
+            return ImageState.Failed;
+        } else if ("error".equals(value)) {
+            return ImageState.Error;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

@@ -24,10 +24,10 @@ import com.amazonaws.services.ec2.model.transform.ImportInstanceRequestMarshalle
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#importInstance(ImportInstanceRequest) ImportInstance operation}.
  * <p>
  * Creates an import instance task using metadata from the specified disk
- * image. ImportInstance only supports single-volume VMs. To import
- * multi-volume VMs, use ImportImage. After importing the image, you then
- * upload it using the <code>ec2-import-volume</code> command in the EC2
- * command line tools. For more information, see
+ * image. <code>ImportInstance</code> only supports single-volume VMs. To
+ * import multi-volume VMs, use ImportImage. After importing the image,
+ * you then upload it using the <code>ec2-import-volume</code> command in
+ * the EC2 command line tools. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
@@ -42,12 +42,12 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
     private String description;
 
     /**
-     * 
+     * The launch specification.
      */
     private ImportInstanceLaunchSpecification launchSpecification;
 
     /**
-     * 
+     * The disk image.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage> diskImages;
 
@@ -93,29 +93,29 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * 
+     * The launch specification.
      *
-     * @return 
+     * @return The launch specification.
      */
     public ImportInstanceLaunchSpecification getLaunchSpecification() {
         return launchSpecification;
     }
     
     /**
-     * 
+     * The launch specification.
      *
-     * @param launchSpecification 
+     * @param launchSpecification The launch specification.
      */
     public void setLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
     }
     
     /**
-     * 
+     * The launch specification.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchSpecification 
+     * @param launchSpecification The launch specification.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -126,9 +126,9 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * 
+     * The disk image.
      *
-     * @return 
+     * @return The disk image.
      */
     public java.util.List<DiskImage> getDiskImages() {
         if (diskImages == null) {
@@ -139,9 +139,9 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * 
+     * The disk image.
      *
-     * @param diskImages 
+     * @param diskImages The disk image.
      */
     public void setDiskImages(java.util.Collection<DiskImage> diskImages) {
         if (diskImages == null) {
@@ -154,7 +154,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * 
+     * The disk image.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setDiskImages(java.util.Collection)} or {@link
@@ -163,7 +163,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskImages 
+     * @param diskImages The disk image.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -177,11 +177,11 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * 
+     * The disk image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskImages 
+     * @param diskImages The disk image.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

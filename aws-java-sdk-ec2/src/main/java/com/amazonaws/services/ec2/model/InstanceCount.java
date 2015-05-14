@@ -32,7 +32,7 @@ public class InstanceCount implements Serializable, Cloneable {
     private String state;
 
     /**
-     * he number of listed Reserved Instances in the state specified by the
+     * The number of listed Reserved Instances in the state specified by the
      * <code>state</code>.
      */
     private Integer instanceCount;
@@ -120,10 +120,10 @@ public class InstanceCount implements Serializable, Cloneable {
     }
 
     /**
-     * he number of listed Reserved Instances in the state specified by the
+     * The number of listed Reserved Instances in the state specified by the
      * <code>state</code>.
      *
-     * @return he number of listed Reserved Instances in the state specified by the
+     * @return The number of listed Reserved Instances in the state specified by the
      *         <code>state</code>.
      */
     public Integer getInstanceCount() {
@@ -131,10 +131,10 @@ public class InstanceCount implements Serializable, Cloneable {
     }
     
     /**
-     * he number of listed Reserved Instances in the state specified by the
+     * The number of listed Reserved Instances in the state specified by the
      * <code>state</code>.
      *
-     * @param instanceCount he number of listed Reserved Instances in the state specified by the
+     * @param instanceCount The number of listed Reserved Instances in the state specified by the
      *         <code>state</code>.
      */
     public void setInstanceCount(Integer instanceCount) {
@@ -142,12 +142,12 @@ public class InstanceCount implements Serializable, Cloneable {
     }
     
     /**
-     * he number of listed Reserved Instances in the state specified by the
+     * The number of listed Reserved Instances in the state specified by the
      * <code>state</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceCount he number of listed Reserved Instances in the state specified by the
+     * @param instanceCount The number of listed Reserved Instances in the state specified by the
      *         <code>state</code>.
      *
      * @return A reference to this updated object so that method calls can be chained

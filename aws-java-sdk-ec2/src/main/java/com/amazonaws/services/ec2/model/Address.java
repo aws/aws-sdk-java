@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class Address implements Serializable, Cloneable {
 
     /**
-     * The ID of the instance the address is associated with (if any).
+     * The ID of the instance that the address is associated with (if any).
      */
     private String instanceId;
 
@@ -71,29 +71,29 @@ public class Address implements Serializable, Cloneable {
     private String privateIpAddress;
 
     /**
-     * The ID of the instance the address is associated with (if any).
+     * The ID of the instance that the address is associated with (if any).
      *
-     * @return The ID of the instance the address is associated with (if any).
+     * @return The ID of the instance that the address is associated with (if any).
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the instance the address is associated with (if any).
+     * The ID of the instance that the address is associated with (if any).
      *
-     * @param instanceId The ID of the instance the address is associated with (if any).
+     * @param instanceId The ID of the instance that the address is associated with (if any).
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the instance the address is associated with (if any).
+     * The ID of the instance that the address is associated with (if any).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The ID of the instance the address is associated with (if any).
+     * @param instanceId The ID of the instance that the address is associated with (if any).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

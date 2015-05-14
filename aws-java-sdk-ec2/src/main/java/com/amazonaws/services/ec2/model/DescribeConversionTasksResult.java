@@ -22,14 +22,14 @@ import java.io.Serializable;
 public class DescribeConversionTasksResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * Information about the conversion tasks.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ConversionTask> conversionTasks;
 
     /**
-     * 
+     * Information about the conversion tasks.
      *
-     * @return 
+     * @return Information about the conversion tasks.
      */
     public java.util.List<ConversionTask> getConversionTasks() {
         if (conversionTasks == null) {
@@ -40,9 +40,9 @@ public class DescribeConversionTasksResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the conversion tasks.
      *
-     * @param conversionTasks 
+     * @param conversionTasks Information about the conversion tasks.
      */
     public void setConversionTasks(java.util.Collection<ConversionTask> conversionTasks) {
         if (conversionTasks == null) {
@@ -55,7 +55,7 @@ public class DescribeConversionTasksResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the conversion tasks.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setConversionTasks(java.util.Collection)} or {@link
@@ -64,7 +64,7 @@ public class DescribeConversionTasksResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param conversionTasks 
+     * @param conversionTasks Information about the conversion tasks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -78,11 +78,11 @@ public class DescribeConversionTasksResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the conversion tasks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param conversionTasks 
+     * @param conversionTasks Information about the conversion tasks.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

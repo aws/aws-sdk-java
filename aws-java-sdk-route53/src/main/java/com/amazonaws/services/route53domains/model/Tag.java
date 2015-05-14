@@ -25,25 +25,25 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * The key (name) of a tag. <p>Type: String <p>Default: None <p>Valid
-     * values: A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each key can
+     * values: A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each key can
      * be 1-128 characters long. <p>Required: Yes
      */
     private String key;
 
     /**
      * The value of a tag. <p>Type: String <p>Default: None <p>Valid values:
-     * A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each value can be
+     * A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each value can be
      * 0-256 characters long. <p>Required: Yes
      */
     private String value;
 
     /**
      * The key (name) of a tag. <p>Type: String <p>Default: None <p>Valid
-     * values: A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each key can
+     * values: A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each key can
      * be 1-128 characters long. <p>Required: Yes
      *
      * @return The key (name) of a tag. <p>Type: String <p>Default: None <p>Valid
-     *         values: A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each key can
+     *         values: A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each key can
      *         be 1-128 characters long. <p>Required: Yes
      */
     public String getKey() {
@@ -52,11 +52,11 @@ public class Tag implements Serializable, Cloneable {
     
     /**
      * The key (name) of a tag. <p>Type: String <p>Default: None <p>Valid
-     * values: A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each key can
+     * values: A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each key can
      * be 1-128 characters long. <p>Required: Yes
      *
      * @param key The key (name) of a tag. <p>Type: String <p>Default: None <p>Valid
-     *         values: A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each key can
+     *         values: A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each key can
      *         be 1-128 characters long. <p>Required: Yes
      */
     public void setKey(String key) {
@@ -65,13 +65,13 @@ public class Tag implements Serializable, Cloneable {
     
     /**
      * The key (name) of a tag. <p>Type: String <p>Default: None <p>Valid
-     * values: A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each key can
+     * values: A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each key can
      * be 1-128 characters long. <p>Required: Yes
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param key The key (name) of a tag. <p>Type: String <p>Default: None <p>Valid
-     *         values: A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each key can
+     *         values: A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each key can
      *         be 1-128 characters long. <p>Required: Yes
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -84,11 +84,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * The value of a tag. <p>Type: String <p>Default: None <p>Valid values:
-     * A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each value can be
+     * A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each value can be
      * 0-256 characters long. <p>Required: Yes
      *
      * @return The value of a tag. <p>Type: String <p>Default: None <p>Valid values:
-     *         A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each value can be
+     *         A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each value can be
      *         0-256 characters long. <p>Required: Yes
      */
     public String getValue() {
@@ -97,11 +97,11 @@ public class Tag implements Serializable, Cloneable {
     
     /**
      * The value of a tag. <p>Type: String <p>Default: None <p>Valid values:
-     * A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each value can be
+     * A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each value can be
      * 0-256 characters long. <p>Required: Yes
      *
      * @param value The value of a tag. <p>Type: String <p>Default: None <p>Valid values:
-     *         A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each value can be
+     *         A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each value can be
      *         0-256 characters long. <p>Required: Yes
      */
     public void setValue(String value) {
@@ -110,13 +110,13 @@ public class Tag implements Serializable, Cloneable {
     
     /**
      * The value of a tag. <p>Type: String <p>Default: None <p>Valid values:
-     * A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each value can be
+     * A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each value can be
      * 0-256 characters long. <p>Required: Yes
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param value The value of a tag. <p>Type: String <p>Default: None <p>Valid values:
-     *         A-Z, a-z, 0-9, space, ".:/=+\-%@" <p>Constraints: Each value can be
+     *         A-Z, a-z, 0-9, space, ".:/=+\-@" <p>Constraints: Each value can be
      *         0-256 characters long. <p>Required: Yes
      *
      * @return A reference to this updated object so that method calls can be chained

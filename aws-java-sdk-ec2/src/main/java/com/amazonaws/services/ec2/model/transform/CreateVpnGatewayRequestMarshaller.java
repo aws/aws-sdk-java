@@ -39,7 +39,7 @@ public class CreateVpnGatewayRequestMarshaller implements Marshaller<Request<Cre
 
         Request<CreateVpnGatewayRequest> request = new DefaultRequest<CreateVpnGatewayRequest>(createVpnGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpnGateway");
-        request.addParameter("Version", "2015-03-01");
+        request.addParameter("Version", "2015-04-15");
 
         if (createVpnGatewayRequest.getType() != null) {
             request.addParameter("Type", StringUtils.fromString(createVpnGatewayRequest.getType()));

@@ -28,6 +28,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.AnonymousAWSCredentials;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.Region;
@@ -153,8 +154,11 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      */
     public AmazonS3EncryptionClient(
             EncryptionMaterialsProvider encryptionMaterialsProvider) {
-        this((AWSCredentialsProvider) null, encryptionMaterialsProvider,
-                new ClientConfiguration(), new CryptoConfiguration());
+
+        this(new StaticCredentialsProvider(new AnonymousAWSCredentials()),
+                encryptionMaterialsProvider,
+                new ClientConfiguration(),
+                new CryptoConfiguration());
     }
 
 
@@ -231,8 +235,11 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
     public AmazonS3EncryptionClient(
             EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
-        this((AWSCredentialsProvider) null, encryptionMaterialsProvider,
-                new ClientConfiguration(), cryptoConfig);
+
+        this(new StaticCredentialsProvider(new AnonymousAWSCredentials()),
+                encryptionMaterialsProvider,
+                new ClientConfiguration(),
+                cryptoConfig);
     }
 
     /**

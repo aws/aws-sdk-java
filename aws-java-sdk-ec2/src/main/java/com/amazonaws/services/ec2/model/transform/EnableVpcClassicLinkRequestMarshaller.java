@@ -39,7 +39,7 @@ public class EnableVpcClassicLinkRequestMarshaller implements Marshaller<Request
 
         Request<EnableVpcClassicLinkRequest> request = new DefaultRequest<EnableVpcClassicLinkRequest>(enableVpcClassicLinkRequest, "AmazonEC2");
         request.addParameter("Action", "EnableVpcClassicLink");
-        request.addParameter("Version", "2015-03-01");
+        request.addParameter("Version", "2015-04-15");
 
         if (enableVpcClassicLinkRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(enableVpcClassicLinkRequest.getVpcId()));

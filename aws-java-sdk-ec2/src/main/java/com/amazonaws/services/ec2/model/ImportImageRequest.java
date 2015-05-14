@@ -23,8 +23,8 @@ import com.amazonaws.services.ec2.model.transform.ImportImageRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#importImage(ImportImageRequest) ImportImage operation}.
  * <p>
- * Import single or multi-volume disk images or Amazon EBS snapshots into
- * an Amazon Machine Image (AMI).
+ * Import single or multi-volume disk images or EBS snapshots into an
+ * Amazon Machine Image (AMI).
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importImage(ImportImageRequest)
@@ -32,81 +32,84 @@ import com.amazonaws.services.ec2.model.transform.ImportImageRequestMarshaller;
 public class ImportImageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportImageRequest> {
 
     /**
-     * A description string for the import image task (optional).
+     * A description string for the import image task.
      */
     private String description;
 
     /**
-     * 
+     * Information about the disk containers.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ImageDiskContainer> diskContainers;
 
     /**
      * The license type to be used for the Amazon Machine Image (AMI) after
-     * importing (optional). <p><b>Note:</b> You may only use BYOL if you
-     * have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
+     * importing. <p><b>Note:</b> You may only use BYOL if you have existing
+     * licenses with rights to use these licenses in a third party cloud like
+     * AWS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide for Linux</i>. <p>Valid Values: AWS | BYOL
+     * User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
+     * <code>BYOL</code>
      */
     private String licenseType;
 
     /**
-     * The target hypervisor platform to use (optional).
+     * The target hypervisor platform. <p>Valid values: <code>xen</code>
      */
     private String hypervisor;
 
     /**
-     * The architecture of the virtual machine being imported (optional).
+     * The architecture of the virtual machine. <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code>
      */
     private String architecture;
 
     /**
-     * The operating system of the virtual machine being imported (optional).
+     * The operating system of the virtual machine. <p>Valid values:
+     * <code>Windows</code> | <code>Linux</code>
      */
     private String platform;
 
     /**
-     * Client-specific data.
+     * The client-specific data.
      */
     private ClientData clientData;
 
     /**
-     * The token to enable idempotency for VM import requests (optional).
+     * The token to enable idempotency for VM import requests.
      */
     private String clientToken;
 
     /**
-     * The name of the role to use when not using the default role name
-     * 'vmimport' (optional).
+     * The name of the role to use when not using the default role,
+     * 'vmimport'.
      */
     private String roleName;
 
     /**
-     * A description string for the import image task (optional).
+     * A description string for the import image task.
      *
-     * @return A description string for the import image task (optional).
+     * @return A description string for the import image task.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * A description string for the import image task (optional).
+     * A description string for the import image task.
      *
-     * @param description A description string for the import image task (optional).
+     * @param description A description string for the import image task.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * A description string for the import image task (optional).
+     * A description string for the import image task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description A description string for the import image task (optional).
+     * @param description A description string for the import image task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -117,9 +120,9 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * 
+     * Information about the disk containers.
      *
-     * @return 
+     * @return Information about the disk containers.
      */
     public java.util.List<ImageDiskContainer> getDiskContainers() {
         if (diskContainers == null) {
@@ -130,9 +133,9 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * 
+     * Information about the disk containers.
      *
-     * @param diskContainers 
+     * @param diskContainers Information about the disk containers.
      */
     public void setDiskContainers(java.util.Collection<ImageDiskContainer> diskContainers) {
         if (diskContainers == null) {
@@ -145,7 +148,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * 
+     * Information about the disk containers.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setDiskContainers(java.util.Collection)} or {@link
@@ -154,7 +157,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskContainers 
+     * @param diskContainers Information about the disk containers.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -168,11 +171,11 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * 
+     * Information about the disk containers.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskContainers 
+     * @param diskContainers Information about the disk containers.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -191,20 +194,22 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * The license type to be used for the Amazon Machine Image (AMI) after
-     * importing (optional). <p><b>Note:</b> You may only use BYOL if you
-     * have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
+     * importing. <p><b>Note:</b> You may only use BYOL if you have existing
+     * licenses with rights to use these licenses in a third party cloud like
+     * AWS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide for Linux</i>. <p>Valid Values: AWS | BYOL
+     * User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
+     * <code>BYOL</code>
      *
      * @return The license type to be used for the Amazon Machine Image (AMI) after
-     *         importing (optional). <p><b>Note:</b> You may only use BYOL if you
-     *         have existing licenses with rights to use these licenses in a third
-     *         party cloud like AWS. For more information, see <a
+     *         importing. <p><b>Note:</b> You may only use BYOL if you have existing
+     *         licenses with rights to use these licenses in a third party cloud like
+     *         AWS. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      *         Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     *         User Guide for Linux</i>. <p>Valid Values: AWS | BYOL
+     *         User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
+     *         <code>BYOL</code>
      */
     public String getLicenseType() {
         return licenseType;
@@ -212,20 +217,22 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * The license type to be used for the Amazon Machine Image (AMI) after
-     * importing (optional). <p><b>Note:</b> You may only use BYOL if you
-     * have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
+     * importing. <p><b>Note:</b> You may only use BYOL if you have existing
+     * licenses with rights to use these licenses in a third party cloud like
+     * AWS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide for Linux</i>. <p>Valid Values: AWS | BYOL
+     * User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
+     * <code>BYOL</code>
      *
      * @param licenseType The license type to be used for the Amazon Machine Image (AMI) after
-     *         importing (optional). <p><b>Note:</b> You may only use BYOL if you
-     *         have existing licenses with rights to use these licenses in a third
-     *         party cloud like AWS. For more information, see <a
+     *         importing. <p><b>Note:</b> You may only use BYOL if you have existing
+     *         licenses with rights to use these licenses in a third party cloud like
+     *         AWS. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      *         Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     *         User Guide for Linux</i>. <p>Valid Values: AWS | BYOL
+     *         User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
+     *         <code>BYOL</code>
      */
     public void setLicenseType(String licenseType) {
         this.licenseType = licenseType;
@@ -233,22 +240,24 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * The license type to be used for the Amazon Machine Image (AMI) after
-     * importing (optional). <p><b>Note:</b> You may only use BYOL if you
-     * have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
+     * importing. <p><b>Note:</b> You may only use BYOL if you have existing
+     * licenses with rights to use these licenses in a third party cloud like
+     * AWS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide for Linux</i>. <p>Valid Values: AWS | BYOL
+     * User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
+     * <code>BYOL</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param licenseType The license type to be used for the Amazon Machine Image (AMI) after
-     *         importing (optional). <p><b>Note:</b> You may only use BYOL if you
-     *         have existing licenses with rights to use these licenses in a third
-     *         party cloud like AWS. For more information, see <a
+     *         importing. <p><b>Note:</b> You may only use BYOL if you have existing
+     *         licenses with rights to use these licenses in a third party cloud like
+     *         AWS. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      *         Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     *         User Guide for Linux</i>. <p>Valid Values: AWS | BYOL
+     *         User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
+     *         <code>BYOL</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -259,29 +268,29 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The target hypervisor platform to use (optional).
+     * The target hypervisor platform. <p>Valid values: <code>xen</code>
      *
-     * @return The target hypervisor platform to use (optional).
+     * @return The target hypervisor platform. <p>Valid values: <code>xen</code>
      */
     public String getHypervisor() {
         return hypervisor;
     }
     
     /**
-     * The target hypervisor platform to use (optional).
+     * The target hypervisor platform. <p>Valid values: <code>xen</code>
      *
-     * @param hypervisor The target hypervisor platform to use (optional).
+     * @param hypervisor The target hypervisor platform. <p>Valid values: <code>xen</code>
      */
     public void setHypervisor(String hypervisor) {
         this.hypervisor = hypervisor;
     }
     
     /**
-     * The target hypervisor platform to use (optional).
+     * The target hypervisor platform. <p>Valid values: <code>xen</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hypervisor The target hypervisor platform to use (optional).
+     * @param hypervisor The target hypervisor platform. <p>Valid values: <code>xen</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -292,29 +301,35 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The architecture of the virtual machine being imported (optional).
+     * The architecture of the virtual machine. <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code>
      *
-     * @return The architecture of the virtual machine being imported (optional).
+     * @return The architecture of the virtual machine. <p>Valid values:
+     *         <code>i386</code> | <code>x86_64</code>
      */
     public String getArchitecture() {
         return architecture;
     }
     
     /**
-     * The architecture of the virtual machine being imported (optional).
+     * The architecture of the virtual machine. <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code>
      *
-     * @param architecture The architecture of the virtual machine being imported (optional).
+     * @param architecture The architecture of the virtual machine. <p>Valid values:
+     *         <code>i386</code> | <code>x86_64</code>
      */
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
     
     /**
-     * The architecture of the virtual machine being imported (optional).
+     * The architecture of the virtual machine. <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param architecture The architecture of the virtual machine being imported (optional).
+     * @param architecture The architecture of the virtual machine. <p>Valid values:
+     *         <code>i386</code> | <code>x86_64</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -325,29 +340,35 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The operating system of the virtual machine being imported (optional).
+     * The operating system of the virtual machine. <p>Valid values:
+     * <code>Windows</code> | <code>Linux</code>
      *
-     * @return The operating system of the virtual machine being imported (optional).
+     * @return The operating system of the virtual machine. <p>Valid values:
+     *         <code>Windows</code> | <code>Linux</code>
      */
     public String getPlatform() {
         return platform;
     }
     
     /**
-     * The operating system of the virtual machine being imported (optional).
+     * The operating system of the virtual machine. <p>Valid values:
+     * <code>Windows</code> | <code>Linux</code>
      *
-     * @param platform The operating system of the virtual machine being imported (optional).
+     * @param platform The operating system of the virtual machine. <p>Valid values:
+     *         <code>Windows</code> | <code>Linux</code>
      */
     public void setPlatform(String platform) {
         this.platform = platform;
     }
     
     /**
-     * The operating system of the virtual machine being imported (optional).
+     * The operating system of the virtual machine. <p>Valid values:
+     * <code>Windows</code> | <code>Linux</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param platform The operating system of the virtual machine being imported (optional).
+     * @param platform The operating system of the virtual machine. <p>Valid values:
+     *         <code>Windows</code> | <code>Linux</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -358,29 +379,29 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Client-specific data.
+     * The client-specific data.
      *
-     * @return Client-specific data.
+     * @return The client-specific data.
      */
     public ClientData getClientData() {
         return clientData;
     }
     
     /**
-     * Client-specific data.
+     * The client-specific data.
      *
-     * @param clientData Client-specific data.
+     * @param clientData The client-specific data.
      */
     public void setClientData(ClientData clientData) {
         this.clientData = clientData;
     }
     
     /**
-     * Client-specific data.
+     * The client-specific data.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clientData Client-specific data.
+     * @param clientData The client-specific data.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -391,29 +412,29 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The token to enable idempotency for VM import requests (optional).
+     * The token to enable idempotency for VM import requests.
      *
-     * @return The token to enable idempotency for VM import requests (optional).
+     * @return The token to enable idempotency for VM import requests.
      */
     public String getClientToken() {
         return clientToken;
     }
     
     /**
-     * The token to enable idempotency for VM import requests (optional).
+     * The token to enable idempotency for VM import requests.
      *
-     * @param clientToken The token to enable idempotency for VM import requests (optional).
+     * @param clientToken The token to enable idempotency for VM import requests.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
     
     /**
-     * The token to enable idempotency for VM import requests (optional).
+     * The token to enable idempotency for VM import requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clientToken The token to enable idempotency for VM import requests (optional).
+     * @param clientToken The token to enable idempotency for VM import requests.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -424,35 +445,35 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The name of the role to use when not using the default role name
-     * 'vmimport' (optional).
+     * The name of the role to use when not using the default role,
+     * 'vmimport'.
      *
-     * @return The name of the role to use when not using the default role name
-     *         'vmimport' (optional).
+     * @return The name of the role to use when not using the default role,
+     *         'vmimport'.
      */
     public String getRoleName() {
         return roleName;
     }
     
     /**
-     * The name of the role to use when not using the default role name
-     * 'vmimport' (optional).
+     * The name of the role to use when not using the default role,
+     * 'vmimport'.
      *
-     * @param roleName The name of the role to use when not using the default role name
-     *         'vmimport' (optional).
+     * @param roleName The name of the role to use when not using the default role,
+     *         'vmimport'.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
     
     /**
-     * The name of the role to use when not using the default role name
-     * 'vmimport' (optional).
+     * The name of the role to use when not using the default role,
+     * 'vmimport'.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param roleName The name of the role to use when not using the default role name
-     *         'vmimport' (optional).
+     * @param roleName The name of the role to use when not using the default role,
+     *         'vmimport'.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

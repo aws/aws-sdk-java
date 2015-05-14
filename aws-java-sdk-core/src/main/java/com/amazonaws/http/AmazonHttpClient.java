@@ -114,6 +114,11 @@ public class AmazonHttpClient {
     private static final String HEADER_USER_AGENT = "User-Agent";
 
     /**
+     * Logger used for the purpose of logging the AWS request id extracted
+     * either from the http header response or from the response body.
+     */
+    private static final Log requestIdLog = LogFactory.getLog("com.amazonaws.requestId");
+    /**
      * Logger providing detailed information on requests/responses. Users can
      * enable this logger to get access to AWS request IDs for responses,
      * individual requests and parameters sent to AWS, etc.
@@ -784,24 +789,52 @@ public class AmazonHttpClient {
     }
 
     /**
-     * Used to log the "x-amzn-RequestId" header at INFO level, if any, from the
-     * response. This method assumes the apache http request/response has just
-     * been successfully executed.
+     * Used to log the "x-amzn-RequestId" header at DEBUG level, if any, from
+     * the response. This method assumes the apache http request/response has
+     * just been successfully executed. The request id is logged using the
+     * "com.amazonaws.requestId" logger if it was enabled at DEBUG level;
+     * otherwise, it is logged at DEBUG level using the "com.amazonaws.request"
+     * logger.
      *
      * @return true if the AWS request id is available from the http header;
-     * false otherwise.
+     *         false otherwise.
      */
     private boolean logHeaderRequestId(final org.apache.http.HttpResponse res) {
         final Header reqIdHeader =
             res.getFirstHeader(HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER);
         final boolean isHeaderReqIdAvail = reqIdHeader != null;
 
-        if (log.isInfoEnabled()) {
-            log.info(HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER + ": "
-            + (isHeaderReqIdAvail ? reqIdHeader.getValue() : "not available"));
+        if (requestIdLog.isDebugEnabled() || requestLog.isDebugEnabled()) {
+            final String msg = HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER
+                + ": "
+                + (isHeaderReqIdAvail ? reqIdHeader.getValue() : "not available");
+            if (requestIdLog.isDebugEnabled())
+                requestIdLog.debug(msg);
+            else
+                requestLog.debug(msg);
         }
         return isHeaderReqIdAvail;
     }
+
+    /**
+     * Used to log the request id (extracted from the response) at DEBUG level.
+     * This method is called only if there is no request id present in the http
+     * response header. The request id is logged using the
+     * "com.amazonaws.requestId" logger if it was enabled at DEBUG level;
+     * otherwise, it is logged using at DEBUG level using the
+     * "com.amazonaws.request" logger.
+     */
+    private void logResponseRequestId(final String awsRequestId) {
+        if (requestIdLog.isDebugEnabled() || requestLog.isDebugEnabled()) {
+            final String msg = "AWS Request ID: "
+                    + (awsRequestId == null ? "not available" : awsRequestId);
+            if (requestIdLog.isDebugEnabled())
+                requestIdLog.debug(msg);
+            else
+                requestLog.debug(msg);
+        }
+    }
+
     /**
      * Captures the connection pool metrics.
      */
@@ -1038,10 +1071,10 @@ public class AmazonHttpClient {
                     + ", AWS Request ID: " + awsRequestId);
             }
 
-            if (!isHeaderReqIdAvail && log.isInfoEnabled()) {
+            if (!isHeaderReqIdAvail) {
                 // Logs the AWS request ID extracted from the payload if
                 // it is not available from the response header.
-                log.info("AWS Request ID: " + (awsRequestId == null ? "not available" : awsRequestId));
+                logResponseRequestId(awsRequestId);
             }
             awsRequestMetrics.addProperty(AWSRequestID, awsRequestId);
             return awsResponse.getResult();

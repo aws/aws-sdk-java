@@ -39,7 +39,7 @@ public class CreateRouteRequestMarshaller implements Marshaller<Request<CreateRo
 
         Request<CreateRouteRequest> request = new DefaultRequest<CreateRouteRequest>(createRouteRequest, "AmazonEC2");
         request.addParameter("Action", "CreateRoute");
-        request.addParameter("Version", "2015-03-01");
+        request.addParameter("Version", "2015-04-15");
 
         if (createRouteRequest.getRouteTableId() != null) {
             request.addParameter("RouteTableId", StringUtils.fromString(createRouteRequest.getRouteTableId()));
@@ -58,6 +58,9 @@ public class CreateRouteRequestMarshaller implements Marshaller<Request<CreateRo
         }
         if (createRouteRequest.getVpcPeeringConnectionId() != null) {
             request.addParameter("VpcPeeringConnectionId", StringUtils.fromString(createRouteRequest.getVpcPeeringConnectionId()));
+        }
+        if (createRouteRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(createRouteRequest.getClientToken()));
         }
 
         return request;

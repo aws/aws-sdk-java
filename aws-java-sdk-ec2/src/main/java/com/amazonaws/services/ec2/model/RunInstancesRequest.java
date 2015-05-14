@@ -105,9 +105,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you
-     * launch an instance without specifying a key pair, you can't connect to
-     * the instance. </important>
+     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you do
+     * not specify a key pair, you can't connect to the instance unless you
+     * choose an AMI that is configured to allow users another way to log in.
+     * </important>
      */
     private String keyName;
 
@@ -240,10 +241,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Indicates whether the instance is optimized for EBS I/O. This
      * optimization provides dedicated throughput to Amazon EBS and an
-     * optimized configuration stack to provide optimal Amazon EBS I/O
-     * performance. This optimization isn't available with all instance
-     * types. Additional usage charges apply when using an EBS-optimized
-     * instance. <p>Default: <code>false</code>
+     * optimized configuration stack to provide optimal EBS I/O performance.
+     * This optimization isn't available with all instance types. Additional
+     * usage charges apply when using an EBS-optimized instance. <p>Default:
+     * <code>false</code>
      */
     private Boolean ebsOptimized;
 
@@ -489,14 +490,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you
-     * launch an instance without specifying a key pair, you can't connect to
-     * the instance. </important>
+     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you do
+     * not specify a key pair, you can't connect to the instance unless you
+     * choose an AMI that is configured to allow users another way to log in.
+     * </important>
      *
      * @return The name of the key pair. You can create a key pair using
-     *         <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you
-     *         launch an instance without specifying a key pair, you can't connect to
-     *         the instance. </important>
+     *         <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you do
+     *         not specify a key pair, you can't connect to the instance unless you
+     *         choose an AMI that is configured to allow users another way to log in.
+     *         </important>
      */
     public String getKeyName() {
         return keyName;
@@ -504,14 +507,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you
-     * launch an instance without specifying a key pair, you can't connect to
-     * the instance. </important>
+     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you do
+     * not specify a key pair, you can't connect to the instance unless you
+     * choose an AMI that is configured to allow users another way to log in.
+     * </important>
      *
      * @param keyName The name of the key pair. You can create a key pair using
-     *         <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you
-     *         launch an instance without specifying a key pair, you can't connect to
-     *         the instance. </important>
+     *         <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you do
+     *         not specify a key pair, you can't connect to the instance unless you
+     *         choose an AMI that is configured to allow users another way to log in.
+     *         </important>
      */
     public void setKeyName(String keyName) {
         this.keyName = keyName;
@@ -519,16 +524,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you
-     * launch an instance without specifying a key pair, you can't connect to
-     * the instance. </important>
+     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you do
+     * not specify a key pair, you can't connect to the instance unless you
+     * choose an AMI that is configured to allow users another way to log in.
+     * </important>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyName The name of the key pair. You can create a key pair using
-     *         <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you
-     *         launch an instance without specifying a key pair, you can't connect to
-     *         the instance. </important>
+     *         <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> <p>If you do
+     *         not specify a key pair, you can't connect to the instance unless you
+     *         choose an AMI that is configured to allow users another way to log in.
+     *         </important>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1634,17 +1641,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Indicates whether the instance is optimized for EBS I/O. This
      * optimization provides dedicated throughput to Amazon EBS and an
-     * optimized configuration stack to provide optimal Amazon EBS I/O
-     * performance. This optimization isn't available with all instance
-     * types. Additional usage charges apply when using an EBS-optimized
-     * instance. <p>Default: <code>false</code>
+     * optimized configuration stack to provide optimal EBS I/O performance.
+     * This optimization isn't available with all instance types. Additional
+     * usage charges apply when using an EBS-optimized instance. <p>Default:
+     * <code>false</code>
      *
      * @return Indicates whether the instance is optimized for EBS I/O. This
      *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal Amazon EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS-optimized
-     *         instance. <p>Default: <code>false</code>
+     *         optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional
+     *         usage charges apply when using an EBS-optimized instance. <p>Default:
+     *         <code>false</code>
      */
     public Boolean isEbsOptimized() {
         return ebsOptimized;
@@ -1653,17 +1660,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Indicates whether the instance is optimized for EBS I/O. This
      * optimization provides dedicated throughput to Amazon EBS and an
-     * optimized configuration stack to provide optimal Amazon EBS I/O
-     * performance. This optimization isn't available with all instance
-     * types. Additional usage charges apply when using an EBS-optimized
-     * instance. <p>Default: <code>false</code>
+     * optimized configuration stack to provide optimal EBS I/O performance.
+     * This optimization isn't available with all instance types. Additional
+     * usage charges apply when using an EBS-optimized instance. <p>Default:
+     * <code>false</code>
      *
      * @param ebsOptimized Indicates whether the instance is optimized for EBS I/O. This
      *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal Amazon EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS-optimized
-     *         instance. <p>Default: <code>false</code>
+     *         optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional
+     *         usage charges apply when using an EBS-optimized instance. <p>Default:
+     *         <code>false</code>
      */
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
@@ -1672,19 +1679,19 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Indicates whether the instance is optimized for EBS I/O. This
      * optimization provides dedicated throughput to Amazon EBS and an
-     * optimized configuration stack to provide optimal Amazon EBS I/O
-     * performance. This optimization isn't available with all instance
-     * types. Additional usage charges apply when using an EBS-optimized
-     * instance. <p>Default: <code>false</code>
+     * optimized configuration stack to provide optimal EBS I/O performance.
+     * This optimization isn't available with all instance types. Additional
+     * usage charges apply when using an EBS-optimized instance. <p>Default:
+     * <code>false</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ebsOptimized Indicates whether the instance is optimized for EBS I/O. This
      *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal Amazon EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS-optimized
-     *         instance. <p>Default: <code>false</code>
+     *         optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional
+     *         usage charges apply when using an EBS-optimized instance. <p>Default:
+     *         <code>false</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1697,17 +1704,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Indicates whether the instance is optimized for EBS I/O. This
      * optimization provides dedicated throughput to Amazon EBS and an
-     * optimized configuration stack to provide optimal Amazon EBS I/O
-     * performance. This optimization isn't available with all instance
-     * types. Additional usage charges apply when using an EBS-optimized
-     * instance. <p>Default: <code>false</code>
+     * optimized configuration stack to provide optimal EBS I/O performance.
+     * This optimization isn't available with all instance types. Additional
+     * usage charges apply when using an EBS-optimized instance. <p>Default:
+     * <code>false</code>
      *
      * @return Indicates whether the instance is optimized for EBS I/O. This
      *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal Amazon EBS I/O
-     *         performance. This optimization isn't available with all instance
-     *         types. Additional usage charges apply when using an EBS-optimized
-     *         instance. <p>Default: <code>false</code>
+     *         optimized configuration stack to provide optimal EBS I/O performance.
+     *         This optimization isn't available with all instance types. Additional
+     *         usage charges apply when using an EBS-optimized instance. <p>Default:
+     *         <code>false</code>
      */
     public Boolean getEbsOptimized() {
         return ebsOptimized;
