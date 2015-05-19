@@ -42,7 +42,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      * (Optional) Whether the variable's value will be returned by the
      * <a>DescribeApps</a> action. To conceal an environment variable's
      * value, set <code>Secure</code> to <code>true</code>.
-     * <code>DescribeApps</code> then returns <code>**Filtered**</code>
+     * <code>DescribeApps</code> then returns <code>*****FILTERED*****</code>
      * instead of the actual value. The default value for <code>Secure</code>
      * is <code>false</code>.
      */
@@ -148,14 +148,14 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      * (Optional) Whether the variable's value will be returned by the
      * <a>DescribeApps</a> action. To conceal an environment variable's
      * value, set <code>Secure</code> to <code>true</code>.
-     * <code>DescribeApps</code> then returns <code>**Filtered**</code>
+     * <code>DescribeApps</code> then returns <code>*****FILTERED*****</code>
      * instead of the actual value. The default value for <code>Secure</code>
      * is <code>false</code>.
      *
      * @return (Optional) Whether the variable's value will be returned by the
      *         <a>DescribeApps</a> action. To conceal an environment variable's
      *         value, set <code>Secure</code> to <code>true</code>.
-     *         <code>DescribeApps</code> then returns <code>**Filtered**</code>
+     *         <code>DescribeApps</code> then returns <code>*****FILTERED*****</code>
      *         instead of the actual value. The default value for <code>Secure</code>
      *         is <code>false</code>.
      */
@@ -167,14 +167,14 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      * (Optional) Whether the variable's value will be returned by the
      * <a>DescribeApps</a> action. To conceal an environment variable's
      * value, set <code>Secure</code> to <code>true</code>.
-     * <code>DescribeApps</code> then returns <code>**Filtered**</code>
+     * <code>DescribeApps</code> then returns <code>*****FILTERED*****</code>
      * instead of the actual value. The default value for <code>Secure</code>
      * is <code>false</code>.
      *
      * @param secure (Optional) Whether the variable's value will be returned by the
      *         <a>DescribeApps</a> action. To conceal an environment variable's
      *         value, set <code>Secure</code> to <code>true</code>.
-     *         <code>DescribeApps</code> then returns <code>**Filtered**</code>
+     *         <code>DescribeApps</code> then returns <code>*****FILTERED*****</code>
      *         instead of the actual value. The default value for <code>Secure</code>
      *         is <code>false</code>.
      */
@@ -186,7 +186,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      * (Optional) Whether the variable's value will be returned by the
      * <a>DescribeApps</a> action. To conceal an environment variable's
      * value, set <code>Secure</code> to <code>true</code>.
-     * <code>DescribeApps</code> then returns <code>**Filtered**</code>
+     * <code>DescribeApps</code> then returns <code>*****FILTERED*****</code>
      * instead of the actual value. The default value for <code>Secure</code>
      * is <code>false</code>.
      * <p>
@@ -195,7 +195,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      * @param secure (Optional) Whether the variable's value will be returned by the
      *         <a>DescribeApps</a> action. To conceal an environment variable's
      *         value, set <code>Secure</code> to <code>true</code>.
-     *         <code>DescribeApps</code> then returns <code>**Filtered**</code>
+     *         <code>DescribeApps</code> then returns <code>*****FILTERED*****</code>
      *         instead of the actual value. The default value for <code>Secure</code>
      *         is <code>false</code>.
      *
@@ -211,14 +211,14 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      * (Optional) Whether the variable's value will be returned by the
      * <a>DescribeApps</a> action. To conceal an environment variable's
      * value, set <code>Secure</code> to <code>true</code>.
-     * <code>DescribeApps</code> then returns <code>**Filtered**</code>
+     * <code>DescribeApps</code> then returns <code>*****FILTERED*****</code>
      * instead of the actual value. The default value for <code>Secure</code>
      * is <code>false</code>.
      *
      * @return (Optional) Whether the variable's value will be returned by the
      *         <a>DescribeApps</a> action. To conceal an environment variable's
      *         value, set <code>Secure</code> to <code>true</code>.
-     *         <code>DescribeApps</code> then returns <code>**Filtered**</code>
+     *         <code>DescribeApps</code> then returns <code>*****FILTERED*****</code>
      *         instead of the actual value. The default value for <code>Secure</code>
      *         is <code>false</code>.
      */

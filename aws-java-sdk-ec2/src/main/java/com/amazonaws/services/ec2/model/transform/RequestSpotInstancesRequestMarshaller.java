@@ -44,6 +44,9 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
         if (requestSpotInstancesRequest.getSpotPrice() != null) {
             request.addParameter("SpotPrice", StringUtils.fromString(requestSpotInstancesRequest.getSpotPrice()));
         }
+        if (requestSpotInstancesRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(requestSpotInstancesRequest.getClientToken()));
+        }
         if (requestSpotInstancesRequest.getInstanceCount() != null) {
             request.addParameter("InstanceCount", StringUtils.fromInteger(requestSpotInstancesRequest.getInstanceCount()));
         }

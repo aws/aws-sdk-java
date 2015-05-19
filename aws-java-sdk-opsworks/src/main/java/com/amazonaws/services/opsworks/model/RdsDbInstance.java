@@ -39,7 +39,8 @@ public class RdsDbInstance implements Serializable, Cloneable {
     private String dbUser;
 
     /**
-     * The database password.
+     * AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the
+     * actual value.
      */
     private String dbPassword;
 
@@ -171,29 +172,35 @@ public class RdsDbInstance implements Serializable, Cloneable {
     }
 
     /**
-     * The database password.
+     * AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the
+     * actual value.
      *
-     * @return The database password.
+     * @return AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the
+     *         actual value.
      */
     public String getDbPassword() {
         return dbPassword;
     }
     
     /**
-     * The database password.
+     * AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the
+     * actual value.
      *
-     * @param dbPassword The database password.
+     * @param dbPassword AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the
+     *         actual value.
      */
     public void setDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
     }
     
     /**
-     * The database password.
+     * AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the
+     * actual value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dbPassword The database password.
+     * @param dbPassword AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the
+     *         actual value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

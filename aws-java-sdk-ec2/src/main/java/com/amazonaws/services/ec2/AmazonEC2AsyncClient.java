@@ -1959,6 +1959,80 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Describes the running instances for the specified Spot fleet.
+     * </p>
+     *
+     * @param describeSpotFleetInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeSpotFleetInstances operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSpotFleetInstances service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSpotFleetInstancesResult> describeSpotFleetInstancesAsync(final DescribeSpotFleetInstancesRequest describeSpotFleetInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSpotFleetInstancesResult>() {
+            public DescribeSpotFleetInstancesResult call() throws Exception {
+                return describeSpotFleetInstances(describeSpotFleetInstancesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes the running instances for the specified Spot fleet.
+     * </p>
+     *
+     * @param describeSpotFleetInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeSpotFleetInstances operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSpotFleetInstances service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSpotFleetInstancesResult> describeSpotFleetInstancesAsync(
+            final DescribeSpotFleetInstancesRequest describeSpotFleetInstancesRequest,
+            final AsyncHandler<DescribeSpotFleetInstancesRequest, DescribeSpotFleetInstancesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSpotFleetInstancesResult>() {
+            public DescribeSpotFleetInstancesResult call() throws Exception {
+              DescribeSpotFleetInstancesResult result;
+                try {
+                result = describeSpotFleetInstances(describeSpotFleetInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSpotFleetInstancesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Creates a security group.
      * </p>
      * <p>
@@ -2343,6 +2417,172 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Creates a set of DHCP options for your VPC. After creating the set,
+     * you must associate it with the VPC, causing all existing and new
+     * instances that you launch in the VPC to use this set of DHCP options.
+     * The following are the individual DHCP options you can specify. For
+     * more information about the options, see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * .
+     * </p>
+     * 
+     * <ul>
+     * <li> <code>domain-name-servers</code> - The IP addresses of up to
+     * four domain name servers, or <code>AmazonProvidedDNS</code> . The
+     * default DHCP option set specifies <code>AmazonProvidedDNS</code> . If
+     * specifying more than one domain name server, specify the IP addresses
+     * in a single parameter, separated by commas.</li>
+     * <li> <code>domain-name</code> - If you're using AmazonProvidedDNS in
+     * <code>us-east-1</code> , specify <code>ec2.internal</code> . If you're
+     * using AmazonProvidedDNS in another region, specify
+     * <code>region.compute.internal</code> (for example,
+     * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
+     * domain name (for example, <code>MyCompany.com</code> ).
+     * <b>Important</b> : Some Linux operating systems accept multiple domain
+     * names separated by spaces. However, Windows and other Linux operating
+     * systems treat the value as a single domain, which results in
+     * unexpected behavior. If your DHCP options set is associated with a VPC
+     * that has instances with multiple operating systems, specify only one
+     * domain name.</li>
+     * <li> <code>ntp-servers</code> - The IP addresses of up to four
+     * Network Time Protocol (NTP) servers.</li>
+     * <li> <code>netbios-name-servers</code> - The IP addresses of up to
+     * four NetBIOS name servers.</li>
+     * <li> <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4,
+     * or 8). We recommend that you specify 2 (broadcast and multicast are
+     * not currently supported). For more information about these node types,
+     * see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * . </li>
+     * 
+     * </ul>
+     * <p>
+     * Your VPC automatically starts out with a set of DHCP options that
+     * includes only a DNS server that we provide (AmazonProvidedDNS). If you
+     * create a set of options, and if your VPC has an Internet gateway, make
+     * sure to set the <code>domain-name-servers</code> option either to
+     * <code>AmazonProvidedDNS</code> or to a domain name server of your
+     * choice. For more information about DHCP options, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
+     * </p>
+     *
+     * @param createDhcpOptionsRequest Container for the necessary parameters
+     *           to execute the CreateDhcpOptions operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDhcpOptions service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateDhcpOptionsResult> createDhcpOptionsAsync(final CreateDhcpOptionsRequest createDhcpOptionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateDhcpOptionsResult>() {
+            public CreateDhcpOptionsResult call() throws Exception {
+                return createDhcpOptions(createDhcpOptionsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a set of DHCP options for your VPC. After creating the set,
+     * you must associate it with the VPC, causing all existing and new
+     * instances that you launch in the VPC to use this set of DHCP options.
+     * The following are the individual DHCP options you can specify. For
+     * more information about the options, see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * .
+     * </p>
+     * 
+     * <ul>
+     * <li> <code>domain-name-servers</code> - The IP addresses of up to
+     * four domain name servers, or <code>AmazonProvidedDNS</code> . The
+     * default DHCP option set specifies <code>AmazonProvidedDNS</code> . If
+     * specifying more than one domain name server, specify the IP addresses
+     * in a single parameter, separated by commas.</li>
+     * <li> <code>domain-name</code> - If you're using AmazonProvidedDNS in
+     * <code>us-east-1</code> , specify <code>ec2.internal</code> . If you're
+     * using AmazonProvidedDNS in another region, specify
+     * <code>region.compute.internal</code> (for example,
+     * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
+     * domain name (for example, <code>MyCompany.com</code> ).
+     * <b>Important</b> : Some Linux operating systems accept multiple domain
+     * names separated by spaces. However, Windows and other Linux operating
+     * systems treat the value as a single domain, which results in
+     * unexpected behavior. If your DHCP options set is associated with a VPC
+     * that has instances with multiple operating systems, specify only one
+     * domain name.</li>
+     * <li> <code>ntp-servers</code> - The IP addresses of up to four
+     * Network Time Protocol (NTP) servers.</li>
+     * <li> <code>netbios-name-servers</code> - The IP addresses of up to
+     * four NetBIOS name servers.</li>
+     * <li> <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4,
+     * or 8). We recommend that you specify 2 (broadcast and multicast are
+     * not currently supported). For more information about these node types,
+     * see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * . </li>
+     * 
+     * </ul>
+     * <p>
+     * Your VPC automatically starts out with a set of DHCP options that
+     * includes only a DNS server that we provide (AmazonProvidedDNS). If you
+     * create a set of options, and if your VPC has an Internet gateway, make
+     * sure to set the <code>domain-name-servers</code> option either to
+     * <code>AmazonProvidedDNS</code> or to a domain name server of your
+     * choice. For more information about DHCP options, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
+     * </p>
+     *
+     * @param createDhcpOptionsRequest Container for the necessary parameters
+     *           to execute the CreateDhcpOptions operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDhcpOptions service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateDhcpOptionsResult> createDhcpOptionsAsync(
+            final CreateDhcpOptionsRequest createDhcpOptionsRequest,
+            final AsyncHandler<CreateDhcpOptionsRequest, CreateDhcpOptionsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateDhcpOptionsResult>() {
+            public CreateDhcpOptionsResult call() throws Exception {
+              CreateDhcpOptionsResult result;
+                try {
+                result = createDhcpOptions(createDhcpOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDhcpOptionsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Deletes one or more specified VPC endpoints. Deleting the endpoint
      * also deletes the endpoint routes in the route tables that were
      * associated with the endpoint.
@@ -2538,172 +2778,6 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             throw ex;
               }
               asyncHandler.onSuccess(createReservedInstancesListingRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates a set of DHCP options for your VPC. After creating the set,
-     * you must associate it with the VPC, causing all existing and new
-     * instances that you launch in the VPC to use this set of DHCP options.
-     * The following are the individual DHCP options you can specify. For
-     * more information about the options, see
-     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
-     * .
-     * </p>
-     * 
-     * <ul>
-     * <li> <code>domain-name-servers</code> - The IP addresses of up to
-     * four domain name servers, or <code>AmazonProvidedDNS</code> . The
-     * default DHCP option set specifies <code>AmazonProvidedDNS</code> . If
-     * specifying more than one domain name server, specify the IP addresses
-     * in a single parameter, separated by commas.</li>
-     * <li> <code>domain-name</code> - If you're using AmazonProvidedDNS in
-     * <code>us-east-1</code> , specify <code>ec2.internal</code> . If you're
-     * using AmazonProvidedDNS in another region, specify
-     * <code>region.compute.internal</code> (for example,
-     * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
-     * domain name (for example, <code>MyCompany.com</code> ).
-     * <b>Important</b> : Some Linux operating systems accept multiple domain
-     * names separated by spaces. However, Windows and other Linux operating
-     * systems treat the value as a single domain, which results in
-     * unexpected behavior. If your DHCP options set is associated with a VPC
-     * that has instances with multiple operating systems, specify only one
-     * domain name.</li>
-     * <li> <code>ntp-servers</code> - The IP addresses of up to four
-     * Network Time Protocol (NTP) servers.</li>
-     * <li> <code>netbios-name-servers</code> - The IP addresses of up to
-     * four NetBIOS name servers.</li>
-     * <li> <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4,
-     * or 8). We recommend that you specify 2 (broadcast and multicast are
-     * not currently supported). For more information about these node types,
-     * see
-     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
-     * . </li>
-     * 
-     * </ul>
-     * <p>
-     * Your VPC automatically starts out with a set of DHCP options that
-     * includes only a DNS server that we provide (AmazonProvidedDNS). If you
-     * create a set of options, and if your VPC has an Internet gateway, make
-     * sure to set the <code>domain-name-servers</code> option either to
-     * <code>AmazonProvidedDNS</code> or to a domain name server of your
-     * choice. For more information about DHCP options, see
-     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
-     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
-     * </p>
-     *
-     * @param createDhcpOptionsRequest Container for the necessary parameters
-     *           to execute the CreateDhcpOptions operation on AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDhcpOptions service method, as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateDhcpOptionsResult> createDhcpOptionsAsync(final CreateDhcpOptionsRequest createDhcpOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateDhcpOptionsResult>() {
-            public CreateDhcpOptionsResult call() throws Exception {
-                return createDhcpOptions(createDhcpOptionsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates a set of DHCP options for your VPC. After creating the set,
-     * you must associate it with the VPC, causing all existing and new
-     * instances that you launch in the VPC to use this set of DHCP options.
-     * The following are the individual DHCP options you can specify. For
-     * more information about the options, see
-     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
-     * .
-     * </p>
-     * 
-     * <ul>
-     * <li> <code>domain-name-servers</code> - The IP addresses of up to
-     * four domain name servers, or <code>AmazonProvidedDNS</code> . The
-     * default DHCP option set specifies <code>AmazonProvidedDNS</code> . If
-     * specifying more than one domain name server, specify the IP addresses
-     * in a single parameter, separated by commas.</li>
-     * <li> <code>domain-name</code> - If you're using AmazonProvidedDNS in
-     * <code>us-east-1</code> , specify <code>ec2.internal</code> . If you're
-     * using AmazonProvidedDNS in another region, specify
-     * <code>region.compute.internal</code> (for example,
-     * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
-     * domain name (for example, <code>MyCompany.com</code> ).
-     * <b>Important</b> : Some Linux operating systems accept multiple domain
-     * names separated by spaces. However, Windows and other Linux operating
-     * systems treat the value as a single domain, which results in
-     * unexpected behavior. If your DHCP options set is associated with a VPC
-     * that has instances with multiple operating systems, specify only one
-     * domain name.</li>
-     * <li> <code>ntp-servers</code> - The IP addresses of up to four
-     * Network Time Protocol (NTP) servers.</li>
-     * <li> <code>netbios-name-servers</code> - The IP addresses of up to
-     * four NetBIOS name servers.</li>
-     * <li> <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4,
-     * or 8). We recommend that you specify 2 (broadcast and multicast are
-     * not currently supported). For more information about these node types,
-     * see
-     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
-     * . </li>
-     * 
-     * </ul>
-     * <p>
-     * Your VPC automatically starts out with a set of DHCP options that
-     * includes only a DNS server that we provide (AmazonProvidedDNS). If you
-     * create a set of options, and if your VPC has an Internet gateway, make
-     * sure to set the <code>domain-name-servers</code> option either to
-     * <code>AmazonProvidedDNS</code> or to a domain name server of your
-     * choice. For more information about DHCP options, see
-     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
-     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
-     * </p>
-     *
-     * @param createDhcpOptionsRequest Container for the necessary parameters
-     *           to execute the CreateDhcpOptions operation on AmazonEC2.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDhcpOptions service method, as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateDhcpOptionsResult> createDhcpOptionsAsync(
-            final CreateDhcpOptionsRequest createDhcpOptionsRequest,
-            final AsyncHandler<CreateDhcpOptionsRequest, CreateDhcpOptionsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateDhcpOptionsResult>() {
-            public CreateDhcpOptionsResult call() throws Exception {
-              CreateDhcpOptionsResult result;
-                try {
-                result = createDhcpOptions(createDhcpOptionsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createDhcpOptionsRequest, result);
                  return result;
         }
     });
@@ -5201,6 +5275,80 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Cancels the specified Spot fleet requests.
+     * </p>
+     *
+     * @param cancelSpotFleetRequestsRequest Container for the necessary
+     *           parameters to execute the CancelSpotFleetRequests operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelSpotFleetRequests service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CancelSpotFleetRequestsResult> cancelSpotFleetRequestsAsync(final CancelSpotFleetRequestsRequest cancelSpotFleetRequestsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CancelSpotFleetRequestsResult>() {
+            public CancelSpotFleetRequestsResult call() throws Exception {
+                return cancelSpotFleetRequests(cancelSpotFleetRequestsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Cancels the specified Spot fleet requests.
+     * </p>
+     *
+     * @param cancelSpotFleetRequestsRequest Container for the necessary
+     *           parameters to execute the CancelSpotFleetRequests operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelSpotFleetRequests service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CancelSpotFleetRequestsResult> cancelSpotFleetRequestsAsync(
+            final CancelSpotFleetRequestsRequest cancelSpotFleetRequestsRequest,
+            final AsyncHandler<CancelSpotFleetRequestsRequest, CancelSpotFleetRequestsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CancelSpotFleetRequestsResult>() {
+            public CancelSpotFleetRequestsResult call() throws Exception {
+              CancelSpotFleetRequestsResult result;
+                try {
+                result = cancelSpotFleetRequests(cancelSpotFleetRequestsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(cancelSpotFleetRequestsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Unassigns one or more secondary private IP addresses from a network
      * interface.
      * </p>
@@ -6876,6 +7024,88 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             throw ex;
               }
               asyncHandler.onSuccess(describePrefixListsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a Spot fleet request.
+     * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html"> Spot Fleets </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+     * </p>
+     *
+     * @param requestSpotFleetRequest Container for the necessary parameters
+     *           to execute the RequestSpotFleet operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RequestSpotFleet service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RequestSpotFleetResult> requestSpotFleetAsync(final RequestSpotFleetRequest requestSpotFleetRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<RequestSpotFleetResult>() {
+            public RequestSpotFleetResult call() throws Exception {
+                return requestSpotFleet(requestSpotFleetRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a Spot fleet request.
+     * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html"> Spot Fleets </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+     * </p>
+     *
+     * @param requestSpotFleetRequest Container for the necessary parameters
+     *           to execute the RequestSpotFleet operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RequestSpotFleet service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RequestSpotFleetResult> requestSpotFleetAsync(
+            final RequestSpotFleetRequest requestSpotFleetRequest,
+            final AsyncHandler<RequestSpotFleetRequest, RequestSpotFleetResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<RequestSpotFleetResult>() {
+            public RequestSpotFleetResult call() throws Exception {
+              RequestSpotFleetResult result;
+                try {
+                result = requestSpotFleet(requestSpotFleetRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(requestSpotFleetRequest, result);
                  return result;
         }
     });
@@ -8813,19 +9043,18 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Describes one or more of your subnets.
-     * </p>
-     * <p>
-     * For more information about subnets, see
-     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
-     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
+     * Describes one or more of your placement groups. For more information
+     * about placement groups and cluster instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
-     * @param describeSubnetsRequest Container for the necessary parameters
-     *           to execute the DescribeSubnets operation on AmazonEC2.
+     * @param describePlacementGroupsRequest Container for the necessary
+     *           parameters to execute the DescribePlacementGroups operation on
+     *           AmazonEC2.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeSubnets service method, as returned by AmazonEC2.
+     *         DescribePlacementGroups service method, as returned by AmazonEC2.
      * 
      *
      * @throws AmazonClientException
@@ -8836,34 +9065,33 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      *             If an error response is returned by AmazonEC2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeSubnetsResult> describeSubnetsAsync(final DescribeSubnetsRequest describeSubnetsRequest) 
+    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(final DescribePlacementGroupsRequest describePlacementGroupsRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeSubnetsResult>() {
-            public DescribeSubnetsResult call() throws Exception {
-                return describeSubnets(describeSubnetsRequest);
+        return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
+            public DescribePlacementGroupsResult call() throws Exception {
+                return describePlacementGroups(describePlacementGroupsRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Describes one or more of your subnets.
-     * </p>
-     * <p>
-     * For more information about subnets, see
-     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
-     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
+     * Describes one or more of your placement groups. For more information
+     * about placement groups and cluster instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
-     * @param describeSubnetsRequest Container for the necessary parameters
-     *           to execute the DescribeSubnets operation on AmazonEC2.
+     * @param describePlacementGroupsRequest Container for the necessary
+     *           parameters to execute the DescribePlacementGroups operation on
+     *           AmazonEC2.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeSubnets service method, as returned by AmazonEC2.
+     *         DescribePlacementGroups service method, as returned by AmazonEC2.
      * 
      *
      * @throws AmazonClientException
@@ -8874,20 +9102,20 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      *             If an error response is returned by AmazonEC2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeSubnetsResult> describeSubnetsAsync(
-            final DescribeSubnetsRequest describeSubnetsRequest,
-            final AsyncHandler<DescribeSubnetsRequest, DescribeSubnetsResult> asyncHandler)
+    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(
+            final DescribePlacementGroupsRequest describePlacementGroupsRequest,
+            final AsyncHandler<DescribePlacementGroupsRequest, DescribePlacementGroupsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeSubnetsResult>() {
-            public DescribeSubnetsResult call() throws Exception {
-              DescribeSubnetsResult result;
+        return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
+            public DescribePlacementGroupsResult call() throws Exception {
+              DescribePlacementGroupsResult result;
                 try {
-                result = describeSubnets(describeSubnetsRequest);
+                result = describePlacementGroups(describePlacementGroupsRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(describeSubnetsRequest, result);
+              asyncHandler.onSuccess(describePlacementGroupsRequest, result);
                  return result;
         }
     });
@@ -9049,18 +9277,19 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Describes one or more of your placement groups. For more information
-     * about placement groups and cluster instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * Describes one or more of your subnets.
+     * </p>
+     * <p>
+     * For more information about subnets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
-     * @param describePlacementGroupsRequest Container for the necessary
-     *           parameters to execute the DescribePlacementGroups operation on
-     *           AmazonEC2.
+     * @param describeSubnetsRequest Container for the necessary parameters
+     *           to execute the DescribeSubnets operation on AmazonEC2.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribePlacementGroups service method, as returned by AmazonEC2.
+     *         DescribeSubnets service method, as returned by AmazonEC2.
      * 
      *
      * @throws AmazonClientException
@@ -9071,33 +9300,34 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      *             If an error response is returned by AmazonEC2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(final DescribePlacementGroupsRequest describePlacementGroupsRequest) 
+    public Future<DescribeSubnetsResult> describeSubnetsAsync(final DescribeSubnetsRequest describeSubnetsRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
-            public DescribePlacementGroupsResult call() throws Exception {
-                return describePlacementGroups(describePlacementGroupsRequest);
+        return executorService.submit(new Callable<DescribeSubnetsResult>() {
+            public DescribeSubnetsResult call() throws Exception {
+                return describeSubnets(describeSubnetsRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Describes one or more of your placement groups. For more information
-     * about placement groups and cluster instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * Describes one or more of your subnets.
+     * </p>
+     * <p>
+     * For more information about subnets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
-     * @param describePlacementGroupsRequest Container for the necessary
-     *           parameters to execute the DescribePlacementGroups operation on
-     *           AmazonEC2.
+     * @param describeSubnetsRequest Container for the necessary parameters
+     *           to execute the DescribeSubnets operation on AmazonEC2.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribePlacementGroups service method, as returned by AmazonEC2.
+     *         DescribeSubnets service method, as returned by AmazonEC2.
      * 
      *
      * @throws AmazonClientException
@@ -9108,20 +9338,20 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      *             If an error response is returned by AmazonEC2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(
-            final DescribePlacementGroupsRequest describePlacementGroupsRequest,
-            final AsyncHandler<DescribePlacementGroupsRequest, DescribePlacementGroupsResult> asyncHandler)
+    public Future<DescribeSubnetsResult> describeSubnetsAsync(
+            final DescribeSubnetsRequest describeSubnetsRequest,
+            final AsyncHandler<DescribeSubnetsRequest, DescribeSubnetsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
-            public DescribePlacementGroupsResult call() throws Exception {
-              DescribePlacementGroupsResult result;
+        return executorService.submit(new Callable<DescribeSubnetsResult>() {
+            public DescribeSubnetsResult call() throws Exception {
+              DescribeSubnetsResult result;
                 try {
-                result = describePlacementGroups(describePlacementGroupsRequest);
+                result = describeSubnets(describeSubnetsRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(describePlacementGroupsRequest, result);
+              asyncHandler.onSuccess(describeSubnetsRequest, result);
                  return result;
         }
     });
@@ -11955,6 +12185,80 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Describes your Spot fleet requests.
+     * </p>
+     *
+     * @param describeSpotFleetRequestsRequest Container for the necessary
+     *           parameters to execute the DescribeSpotFleetRequests operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSpotFleetRequests service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSpotFleetRequestsResult> describeSpotFleetRequestsAsync(final DescribeSpotFleetRequestsRequest describeSpotFleetRequestsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSpotFleetRequestsResult>() {
+            public DescribeSpotFleetRequestsResult call() throws Exception {
+                return describeSpotFleetRequests(describeSpotFleetRequestsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes your Spot fleet requests.
+     * </p>
+     *
+     * @param describeSpotFleetRequestsRequest Container for the necessary
+     *           parameters to execute the DescribeSpotFleetRequests operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSpotFleetRequests service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSpotFleetRequestsResult> describeSpotFleetRequestsAsync(
+            final DescribeSpotFleetRequestsRequest describeSpotFleetRequestsRequest,
+            final AsyncHandler<DescribeSpotFleetRequestsRequest, DescribeSpotFleetRequestsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSpotFleetRequestsResult>() {
+            public DescribeSpotFleetRequestsResult call() throws Exception {
+              DescribeSpotFleetRequestsResult result;
+                try {
+                result = describeSpotFleetRequests(describeSpotFleetRequestsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSpotFleetRequestsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Purchases a Reserved Instance for use with your account. With Amazon
      * EC2 Reserved Instances, you obtain a capacity reservation for a
      * certain instance configuration over a specified period of time. You
@@ -14103,6 +14407,94 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
               }
               asyncHandler.onSuccess(assignPrivateIpAddressesRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Describes the events for the specified Spot fleet request during the
+     * specified time.
+     * </p>
+     * <p>
+     * Spot fleet events are delayed by up to 30 seconds before they can be
+     * described. This ensures that you can query by the last evaluated time
+     * and not miss a recorded event.
+     * </p>
+     *
+     * @param describeSpotFleetRequestHistoryRequest Container for the
+     *           necessary parameters to execute the DescribeSpotFleetRequestHistory
+     *           operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSpotFleetRequestHistory service method, as returned by
+     *         AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSpotFleetRequestHistoryResult> describeSpotFleetRequestHistoryAsync(final DescribeSpotFleetRequestHistoryRequest describeSpotFleetRequestHistoryRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSpotFleetRequestHistoryResult>() {
+            public DescribeSpotFleetRequestHistoryResult call() throws Exception {
+                return describeSpotFleetRequestHistory(describeSpotFleetRequestHistoryRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes the events for the specified Spot fleet request during the
+     * specified time.
+     * </p>
+     * <p>
+     * Spot fleet events are delayed by up to 30 seconds before they can be
+     * described. This ensures that you can query by the last evaluated time
+     * and not miss a recorded event.
+     * </p>
+     *
+     * @param describeSpotFleetRequestHistoryRequest Container for the
+     *           necessary parameters to execute the DescribeSpotFleetRequestHistory
+     *           operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSpotFleetRequestHistory service method, as returned by
+     *         AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSpotFleetRequestHistoryResult> describeSpotFleetRequestHistoryAsync(
+            final DescribeSpotFleetRequestHistoryRequest describeSpotFleetRequestHistoryRequest,
+            final AsyncHandler<DescribeSpotFleetRequestHistoryRequest, DescribeSpotFleetRequestHistoryResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSpotFleetRequestHistoryResult>() {
+            public DescribeSpotFleetRequestHistoryResult call() throws Exception {
+              DescribeSpotFleetRequestHistoryResult result;
+                try {
+                result = describeSpotFleetRequestHistory(describeSpotFleetRequestHistoryRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSpotFleetRequestHistoryRequest, result);
+                 return result;
         }
     });
     }

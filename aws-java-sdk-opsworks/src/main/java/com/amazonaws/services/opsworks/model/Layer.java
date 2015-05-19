@@ -52,7 +52,10 @@ public class Layer implements Serializable, Cloneable {
     private String shortname;
 
     /**
-     * The layer attributes.
+     * The layer attributes. <note>For the <code>HaproxyStatsPassword</code>,
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
+     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     * instead of the actual value</note>
      */
     private java.util.Map<String,String> attributes;
 
@@ -375,9 +378,15 @@ public class Layer implements Serializable, Cloneable {
     }
 
     /**
-     * The layer attributes.
+     * The layer attributes. <note>For the <code>HaproxyStatsPassword</code>,
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
+     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     * instead of the actual value</note>
      *
-     * @return The layer attributes.
+     * @return The layer attributes. <note>For the <code>HaproxyStatsPassword</code>,
+     *         <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
+     *         attributes, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     *         instead of the actual value</note>
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -388,20 +397,32 @@ public class Layer implements Serializable, Cloneable {
     }
     
     /**
-     * The layer attributes.
+     * The layer attributes. <note>For the <code>HaproxyStatsPassword</code>,
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
+     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     * instead of the actual value</note>
      *
-     * @param attributes The layer attributes.
+     * @param attributes The layer attributes. <note>For the <code>HaproxyStatsPassword</code>,
+     *         <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
+     *         attributes, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     *         instead of the actual value</note>
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * The layer attributes.
+     * The layer attributes. <note>For the <code>HaproxyStatsPassword</code>,
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
+     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     * instead of the actual value</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes The layer attributes.
+     * @param attributes The layer attributes. <note>For the <code>HaproxyStatsPassword</code>,
+     *         <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
+     *         attributes, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     *         instead of the actual value</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -412,7 +433,10 @@ public class Layer implements Serializable, Cloneable {
     }
 
     /**
-     * The layer attributes.
+     * The layer attributes. <note>For the <code>HaproxyStatsPassword</code>,
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
+     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     * instead of the actual value</note>
      * <p>
      * The method adds a new key-value pair into Attributes parameter, and
      * returns a reference to this object so that method calls can be chained

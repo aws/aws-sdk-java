@@ -47,7 +47,8 @@ public class SpotPrice implements Serializable, Cloneable {
     private String spotPrice;
 
     /**
-     * The date and time the request was created.
+     * The date and time the request was created, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
     private java.util.Date timestamp;
 
@@ -260,29 +261,35 @@ public class SpotPrice implements Serializable, Cloneable {
     }
 
     /**
-     * The date and time the request was created.
+     * The date and time the request was created, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *
-     * @return The date and time the request was created.
+     * @return The date and time the request was created, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
     
     /**
-     * The date and time the request was created.
+     * The date and time the request was created, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *
-     * @param timestamp The date and time the request was created.
+     * @param timestamp The date and time the request was created, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
     
     /**
-     * The date and time the request was created.
+     * The date and time the request was created, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param timestamp The date and time the request was created.
+     * @param timestamp The date and time the request was created, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

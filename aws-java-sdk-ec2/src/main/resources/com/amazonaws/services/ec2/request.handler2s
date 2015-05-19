@@ -1,1 +1,2 @@
 com.amazonaws.services.ec2.model.transform.GeneratePreSignUrlRequestHandler
+com.amazonaws.services.ec2.model.transform.TimestampFormatRequestHandler

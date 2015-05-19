@@ -29,7 +29,9 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
     private String code;
 
     /**
-     * The time of the most recent status update.
+     * The date and time of the most recent status update, in UTC format (for
+     * example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
     private java.util.Date updateTime;
 
@@ -72,29 +74,41 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
     }
 
     /**
-     * The time of the most recent status update.
+     * The date and time of the most recent status update, in UTC format (for
+     * example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *
-     * @return The time of the most recent status update.
+     * @return The date and time of the most recent status update, in UTC format (for
+     *         example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
     public java.util.Date getUpdateTime() {
         return updateTime;
     }
     
     /**
-     * The time of the most recent status update.
+     * The date and time of the most recent status update, in UTC format (for
+     * example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *
-     * @param updateTime The time of the most recent status update.
+     * @param updateTime The date and time of the most recent status update, in UTC format (for
+     *         example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
     public void setUpdateTime(java.util.Date updateTime) {
         this.updateTime = updateTime;
     }
     
     /**
-     * The time of the most recent status update.
+     * The date and time of the most recent status update, in UTC format (for
+     * example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param updateTime The time of the most recent status update.
+     * @param updateTime The date and time of the most recent status update, in UTC format (for
+     *         example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

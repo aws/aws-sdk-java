@@ -69,10 +69,10 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
      * A string that contains user-defined, custom JSON. It is used to
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
-     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
+     * characters such as '"'.: <p> <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration JSON</a>.
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
     private String customJson;
 
@@ -297,18 +297,18 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
      * A string that contains user-defined, custom JSON. It is used to
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
-     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
+     * characters such as '"'.: <p> <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration JSON</a>.
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.
      *
      * @return A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
-     *         characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
+     *         characters such as '"'.: <p> <code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
     public String getCustomJson() {
         return customJson;
@@ -318,18 +318,18 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
      * A string that contains user-defined, custom JSON. It is used to
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
-     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
+     * characters such as '"'.: <p> <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration JSON</a>.
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.
      *
      * @param customJson A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
-     *         characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
+     *         characters such as '"'.: <p> <code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
@@ -339,20 +339,20 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
      * A string that contains user-defined, custom JSON. It is used to
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
-     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
+     * characters such as '"'.: <p> <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration JSON</a>.
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customJson A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
-     *         characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
+     *         characters such as '"'.: <p> <code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         Custom JSON to Modify the Stack Configuration Attributes</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
