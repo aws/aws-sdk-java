@@ -58,7 +58,8 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     private String instanceType;
 
     /**
-     * For load-based or time-based instances, the type.
+     * For load-based or time-based instances, the type. Windows stacks can
+     * use only time-based instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
@@ -72,15 +73,15 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The instance's operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: An Amazon Linux
-     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is the current
-     * Amazon Linux version, such as <code>Amazon Linux 2014.09</code>. If
-     * you set this parameter to <code>Custom</code>, you must use the
-     * <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     * AMI that you want to use. For more information on the standard
-     * operating systems, see <a
+     * following. <p>For Windows stacks: Microsoft Windows Server 2012 R2.
+     * <p>For Linux stacks: <ul> <li>Standard operating systems: an Amazon
+     * Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu
+     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom
+     * AMIs: <code>Custom</code></li> </ul> <p>The default option is the
+     * current Amazon Linux version. If you set this parameter to
+     * <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     * AmiId parameter to specify the custom AMI that you want to use. For
+     * more information on the standard operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>For more information on how to use custom AMIs with
      * OpsWorks, see <a
@@ -310,12 +311,14 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * For load-based or time-based instances, the type.
+     * For load-based or time-based instances, the type. Windows stacks can
+     * use only time-based instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @return For load-based or time-based instances, the type.
+     * @return For load-based or time-based instances, the type. Windows stacks can
+     *         use only time-based instances.
      *
      * @see AutoScalingType
      */
@@ -324,12 +327,14 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * For load-based or time-based instances, the type.
+     * For load-based or time-based instances, the type. Windows stacks can
+     * use only time-based instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType For load-based or time-based instances, the type.
+     * @param autoScalingType For load-based or time-based instances, the type. Windows stacks can
+     *         use only time-based instances.
      *
      * @see AutoScalingType
      */
@@ -338,14 +343,16 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * For load-based or time-based instances, the type.
+     * For load-based or time-based instances, the type. Windows stacks can
+     * use only time-based instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType For load-based or time-based instances, the type.
+     * @param autoScalingType For load-based or time-based instances, the type. Windows stacks can
+     *         use only time-based instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -358,12 +365,14 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * For load-based or time-based instances, the type.
+     * For load-based or time-based instances, the type. Windows stacks can
+     * use only time-based instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType For load-based or time-based instances, the type.
+     * @param autoScalingType For load-based or time-based instances, the type. Windows stacks can
+     *         use only time-based instances.
      *
      * @see AutoScalingType
      */
@@ -372,14 +381,16 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * For load-based or time-based instances, the type.
+     * For load-based or time-based instances, the type. Windows stacks can
+     * use only time-based instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>load, timer
      *
-     * @param autoScalingType For load-based or time-based instances, the type.
+     * @param autoScalingType For load-based or time-based instances, the type. Windows stacks can
+     *         use only time-based instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -426,15 +437,15 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The instance's operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: An Amazon Linux
-     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is the current
-     * Amazon Linux version, such as <code>Amazon Linux 2014.09</code>. If
-     * you set this parameter to <code>Custom</code>, you must use the
-     * <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     * AMI that you want to use. For more information on the standard
-     * operating systems, see <a
+     * following. <p>For Windows stacks: Microsoft Windows Server 2012 R2.
+     * <p>For Linux stacks: <ul> <li>Standard operating systems: an Amazon
+     * Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu
+     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom
+     * AMIs: <code>Custom</code></li> </ul> <p>The default option is the
+     * current Amazon Linux version. If you set this parameter to
+     * <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     * AmiId parameter to specify the custom AMI that you want to use. For
+     * more information on the standard operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>For more information on how to use custom AMIs with
      * OpsWorks, see <a
@@ -442,15 +453,15 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      * Custom AMIs</a>.
      *
      * @return The instance's operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: An Amazon Linux
-     *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is the current
-     *         Amazon Linux version, such as <code>Amazon Linux 2014.09</code>. If
-     *         you set this parameter to <code>Custom</code>, you must use the
-     *         <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     *         AMI that you want to use. For more information on the standard
-     *         operating systems, see <a
+     *         following. <p>For Windows stacks: Microsoft Windows Server 2012 R2.
+     *         <p>For Linux stacks: <ul> <li>Standard operating systems: an Amazon
+     *         Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu
+     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom
+     *         AMIs: <code>Custom</code></li> </ul> <p>The default option is the
+     *         current Amazon Linux version. If you set this parameter to
+     *         <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     *         AmiId parameter to specify the custom AMI that you want to use. For
+     *         more information on the standard operating systems, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      *         Systems</a>For more information on how to use custom AMIs with
      *         OpsWorks, see <a
@@ -463,15 +474,15 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The instance's operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: An Amazon Linux
-     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is the current
-     * Amazon Linux version, such as <code>Amazon Linux 2014.09</code>. If
-     * you set this parameter to <code>Custom</code>, you must use the
-     * <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     * AMI that you want to use. For more information on the standard
-     * operating systems, see <a
+     * following. <p>For Windows stacks: Microsoft Windows Server 2012 R2.
+     * <p>For Linux stacks: <ul> <li>Standard operating systems: an Amazon
+     * Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu
+     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom
+     * AMIs: <code>Custom</code></li> </ul> <p>The default option is the
+     * current Amazon Linux version. If you set this parameter to
+     * <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     * AmiId parameter to specify the custom AMI that you want to use. For
+     * more information on the standard operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>For more information on how to use custom AMIs with
      * OpsWorks, see <a
@@ -479,15 +490,15 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      * Custom AMIs</a>.
      *
      * @param os The instance's operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: An Amazon Linux
-     *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is the current
-     *         Amazon Linux version, such as <code>Amazon Linux 2014.09</code>. If
-     *         you set this parameter to <code>Custom</code>, you must use the
-     *         <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     *         AMI that you want to use. For more information on the standard
-     *         operating systems, see <a
+     *         following. <p>For Windows stacks: Microsoft Windows Server 2012 R2.
+     *         <p>For Linux stacks: <ul> <li>Standard operating systems: an Amazon
+     *         Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu
+     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom
+     *         AMIs: <code>Custom</code></li> </ul> <p>The default option is the
+     *         current Amazon Linux version. If you set this parameter to
+     *         <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     *         AmiId parameter to specify the custom AMI that you want to use. For
+     *         more information on the standard operating systems, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      *         Systems</a>For more information on how to use custom AMIs with
      *         OpsWorks, see <a
@@ -500,15 +511,15 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The instance's operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: An Amazon Linux
-     * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is the current
-     * Amazon Linux version, such as <code>Amazon Linux 2014.09</code>. If
-     * you set this parameter to <code>Custom</code>, you must use the
-     * <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     * AMI that you want to use. For more information on the standard
-     * operating systems, see <a
+     * following. <p>For Windows stacks: Microsoft Windows Server 2012 R2.
+     * <p>For Linux stacks: <ul> <li>Standard operating systems: an Amazon
+     * Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu
+     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom
+     * AMIs: <code>Custom</code></li> </ul> <p>The default option is the
+     * current Amazon Linux version. If you set this parameter to
+     * <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     * AmiId parameter to specify the custom AMI that you want to use. For
+     * more information on the standard operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>For more information on how to use custom AMIs with
      * OpsWorks, see <a
@@ -518,15 +529,15 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param os The instance's operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: An Amazon Linux
-     *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is the current
-     *         Amazon Linux version, such as <code>Amazon Linux 2014.09</code>. If
-     *         you set this parameter to <code>Custom</code>, you must use the
-     *         <a>CreateInstance</a> action's AmiId parameter to specify the custom
-     *         AMI that you want to use. For more information on the standard
-     *         operating systems, see <a
+     *         following. <p>For Windows stacks: Microsoft Windows Server 2012 R2.
+     *         <p>For Linux stacks: <ul> <li>Standard operating systems: an Amazon
+     *         Linux version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu
+     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom
+     *         AMIs: <code>Custom</code></li> </ul> <p>The default option is the
+     *         current Amazon Linux version. If you set this parameter to
+     *         <code>Custom</code>, you must use the <a>CreateInstance</a> action's
+     *         AmiId parameter to specify the custom AMI that you want to use. For
+     *         more information on the standard operating systems, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      *         Systems</a>For more information on how to use custom AMIs with
      *         OpsWorks, see <a

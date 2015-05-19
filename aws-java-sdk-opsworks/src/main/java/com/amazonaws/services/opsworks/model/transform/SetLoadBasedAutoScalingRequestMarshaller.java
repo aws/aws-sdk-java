@@ -91,6 +91,20 @@ public class SetLoadBasedAutoScalingRequestMarshaller implements Marshaller<Requ
                 if (upScaling.getLoadThreshold() != null) {
                     jsonWriter.key("LoadThreshold").value(upScaling.getLoadThreshold());
                 }
+
+                com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(upScaling.getAlarms());
+                if (alarmsList != null && !(alarmsList.isAutoConstruct() && alarmsList.isEmpty())) {
+
+                    jsonWriter.key("Alarms");
+                    jsonWriter.array();
+
+                    for (String alarmsListValue : alarmsList) {
+                        if (alarmsListValue != null) {
+                            jsonWriter.value(alarmsListValue);
+                        }
+                    }
+                    jsonWriter.endArray();
+                }
                 jsonWriter.endObject();
             }
             AutoScalingThresholds downScaling = setLoadBasedAutoScalingRequest.getDownScaling();
@@ -116,6 +130,20 @@ public class SetLoadBasedAutoScalingRequestMarshaller implements Marshaller<Requ
                 }
                 if (downScaling.getLoadThreshold() != null) {
                     jsonWriter.key("LoadThreshold").value(downScaling.getLoadThreshold());
+                }
+
+                com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(downScaling.getAlarms());
+                if (alarmsList != null && !(alarmsList.isAutoConstruct() && alarmsList.isEmpty())) {
+
+                    jsonWriter.key("Alarms");
+                    jsonWriter.array();
+
+                    for (String alarmsListValue : alarmsList) {
+                        if (alarmsListValue != null) {
+                            jsonWriter.value(alarmsListValue);
+                        }
+                    }
+                    jsonWriter.endArray();
                 }
                 jsonWriter.endObject();
             }

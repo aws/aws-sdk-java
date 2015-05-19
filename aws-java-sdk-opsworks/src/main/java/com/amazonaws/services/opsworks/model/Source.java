@@ -48,17 +48,21 @@ public class Source implements Serializable, Cloneable {
     private String username;
 
     /**
-     * This parameter depends on the repository type. <ul> <li>For Amazon S3
-     * bundles, set <code>Password</code> to the appropriate IAM secret
-     * access key.</li> <li>For HTTP bundles and Subversion repositories, set
-     * <code>Password</code> to the password.</li> </ul> <p>For more
-     * information on how to safely handle IAM credentials, see <a
+     * When included in a request, the parameter depends on the repository
+     * type. <ul> <li>For Amazon S3 bundles, set <code>Password</code> to the
+     * appropriate IAM secret access key.</li> <li>For HTTP bundles and
+     * Subversion repositories, set <code>Password</code> to the
+     * password.</li> </ul> <p>For more information on how to safely handle
+     * IAM credentials, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
+     * <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     * instead of the actual value.
      */
     private String password;
 
     /**
-     * The repository's SSH key.
+     * In requests, the repository's SSH key. <p>In responses, AWS OpsWorks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.
      */
     private String sshKey;
 
@@ -237,59 +241,77 @@ public class Source implements Serializable, Cloneable {
     }
 
     /**
-     * This parameter depends on the repository type. <ul> <li>For Amazon S3
-     * bundles, set <code>Password</code> to the appropriate IAM secret
-     * access key.</li> <li>For HTTP bundles and Subversion repositories, set
-     * <code>Password</code> to the password.</li> </ul> <p>For more
-     * information on how to safely handle IAM credentials, see <a
+     * When included in a request, the parameter depends on the repository
+     * type. <ul> <li>For Amazon S3 bundles, set <code>Password</code> to the
+     * appropriate IAM secret access key.</li> <li>For HTTP bundles and
+     * Subversion repositories, set <code>Password</code> to the
+     * password.</li> </ul> <p>For more information on how to safely handle
+     * IAM credentials, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
+     * <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     * instead of the actual value.
      *
-     * @return This parameter depends on the repository type. <ul> <li>For Amazon S3
-     *         bundles, set <code>Password</code> to the appropriate IAM secret
-     *         access key.</li> <li>For HTTP bundles and Subversion repositories, set
-     *         <code>Password</code> to the password.</li> </ul> <p>For more
-     *         information on how to safely handle IAM credentials, see <a
+     * @return When included in a request, the parameter depends on the repository
+     *         type. <ul> <li>For Amazon S3 bundles, set <code>Password</code> to the
+     *         appropriate IAM secret access key.</li> <li>For HTTP bundles and
+     *         Subversion repositories, set <code>Password</code> to the
+     *         password.</li> </ul> <p>For more information on how to safely handle
+     *         IAM credentials, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
+     *         <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     *         instead of the actual value.
      */
     public String getPassword() {
         return password;
     }
     
     /**
-     * This parameter depends on the repository type. <ul> <li>For Amazon S3
-     * bundles, set <code>Password</code> to the appropriate IAM secret
-     * access key.</li> <li>For HTTP bundles and Subversion repositories, set
-     * <code>Password</code> to the password.</li> </ul> <p>For more
-     * information on how to safely handle IAM credentials, see <a
+     * When included in a request, the parameter depends on the repository
+     * type. <ul> <li>For Amazon S3 bundles, set <code>Password</code> to the
+     * appropriate IAM secret access key.</li> <li>For HTTP bundles and
+     * Subversion repositories, set <code>Password</code> to the
+     * password.</li> </ul> <p>For more information on how to safely handle
+     * IAM credentials, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
+     * <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     * instead of the actual value.
      *
-     * @param password This parameter depends on the repository type. <ul> <li>For Amazon S3
-     *         bundles, set <code>Password</code> to the appropriate IAM secret
-     *         access key.</li> <li>For HTTP bundles and Subversion repositories, set
-     *         <code>Password</code> to the password.</li> </ul> <p>For more
-     *         information on how to safely handle IAM credentials, see <a
+     * @param password When included in a request, the parameter depends on the repository
+     *         type. <ul> <li>For Amazon S3 bundles, set <code>Password</code> to the
+     *         appropriate IAM secret access key.</li> <li>For HTTP bundles and
+     *         Subversion repositories, set <code>Password</code> to the
+     *         password.</li> </ul> <p>For more information on how to safely handle
+     *         IAM credentials, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
+     *         <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     *         instead of the actual value.
      */
     public void setPassword(String password) {
         this.password = password;
     }
     
     /**
-     * This parameter depends on the repository type. <ul> <li>For Amazon S3
-     * bundles, set <code>Password</code> to the appropriate IAM secret
-     * access key.</li> <li>For HTTP bundles and Subversion repositories, set
-     * <code>Password</code> to the password.</li> </ul> <p>For more
-     * information on how to safely handle IAM credentials, see <a
+     * When included in a request, the parameter depends on the repository
+     * type. <ul> <li>For Amazon S3 bundles, set <code>Password</code> to the
+     * appropriate IAM secret access key.</li> <li>For HTTP bundles and
+     * Subversion repositories, set <code>Password</code> to the
+     * password.</li> </ul> <p>For more information on how to safely handle
+     * IAM credentials, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
+     * <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     * instead of the actual value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param password This parameter depends on the repository type. <ul> <li>For Amazon S3
-     *         bundles, set <code>Password</code> to the appropriate IAM secret
-     *         access key.</li> <li>For HTTP bundles and Subversion repositories, set
-     *         <code>Password</code> to the password.</li> </ul> <p>For more
-     *         information on how to safely handle IAM credentials, see <a
+     * @param password When included in a request, the parameter depends on the repository
+     *         type. <ul> <li>For Amazon S3 bundles, set <code>Password</code> to the
+     *         appropriate IAM secret access key.</li> <li>For HTTP bundles and
+     *         Subversion repositories, set <code>Password</code> to the
+     *         password.</li> </ul> <p>For more information on how to safely handle
+     *         IAM credentials, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
+     *         <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
+     *         instead of the actual value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -300,29 +322,35 @@ public class Source implements Serializable, Cloneable {
     }
 
     /**
-     * The repository's SSH key.
+     * In requests, the repository's SSH key. <p>In responses, AWS OpsWorks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.
      *
-     * @return The repository's SSH key.
+     * @return In requests, the repository's SSH key. <p>In responses, AWS OpsWorks
+     *         returns <code>*****FILTERED*****</code> instead of the actual value.
      */
     public String getSshKey() {
         return sshKey;
     }
     
     /**
-     * The repository's SSH key.
+     * In requests, the repository's SSH key. <p>In responses, AWS OpsWorks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.
      *
-     * @param sshKey The repository's SSH key.
+     * @param sshKey In requests, the repository's SSH key. <p>In responses, AWS OpsWorks
+     *         returns <code>*****FILTERED*****</code> instead of the actual value.
      */
     public void setSshKey(String sshKey) {
         this.sshKey = sshKey;
     }
     
     /**
-     * The repository's SSH key.
+     * In requests, the repository's SSH key. <p>In responses, AWS OpsWorks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sshKey The repository's SSH key.
+     * @param sshKey In requests, the repository's SSH key. <p>In responses, AWS OpsWorks
+     *         returns <code>*****FILTERED*****</code> instead of the actual value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -60,10 +60,10 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The user's permission level, which must be set to one of the following
-     * strings. You cannot set your own permissions level. <ul>
-     * <li><code>deny</code></li> <li><code>show</code></li>
-     * <li><code>deploy</code></li> <li><code>manage</code></li>
-     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * strings. You cannot set your own permissions level. <ul> <li>
+     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>
@@ -222,19 +222,19 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The user's permission level, which must be set to one of the following
-     * strings. You cannot set your own permissions level. <ul>
-     * <li><code>deny</code></li> <li><code>show</code></li>
-     * <li><code>deploy</code></li> <li><code>manage</code></li>
-     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * strings. You cannot set your own permissions level. <ul> <li>
+     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>
      *
      * @return The user's permission level, which must be set to one of the following
-     *         strings. You cannot set your own permissions level. <ul>
-     *         <li><code>deny</code></li> <li><code>show</code></li>
-     *         <li><code>deploy</code></li> <li><code>manage</code></li>
-     *         <li><code>iam_only</code></li> </ul> <p>For more information on the
+     *         strings. You cannot set your own permissions level. <ul> <li>
+     *         <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     *         <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     *         <code>iam_only</code> </li> </ul> <p>For more information on the
      *         permissions associated with these levels, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      *         User Permissions</a>
@@ -245,19 +245,19 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The user's permission level, which must be set to one of the following
-     * strings. You cannot set your own permissions level. <ul>
-     * <li><code>deny</code></li> <li><code>show</code></li>
-     * <li><code>deploy</code></li> <li><code>manage</code></li>
-     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * strings. You cannot set your own permissions level. <ul> <li>
+     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>
      *
      * @param level The user's permission level, which must be set to one of the following
-     *         strings. You cannot set your own permissions level. <ul>
-     *         <li><code>deny</code></li> <li><code>show</code></li>
-     *         <li><code>deploy</code></li> <li><code>manage</code></li>
-     *         <li><code>iam_only</code></li> </ul> <p>For more information on the
+     *         strings. You cannot set your own permissions level. <ul> <li>
+     *         <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     *         <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     *         <code>iam_only</code> </li> </ul> <p>For more information on the
      *         permissions associated with these levels, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      *         User Permissions</a>
@@ -268,10 +268,10 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The user's permission level, which must be set to one of the following
-     * strings. You cannot set your own permissions level. <ul>
-     * <li><code>deny</code></li> <li><code>show</code></li>
-     * <li><code>deploy</code></li> <li><code>manage</code></li>
-     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * strings. You cannot set your own permissions level. <ul> <li>
+     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>
@@ -279,10 +279,10 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param level The user's permission level, which must be set to one of the following
-     *         strings. You cannot set your own permissions level. <ul>
-     *         <li><code>deny</code></li> <li><code>show</code></li>
-     *         <li><code>deploy</code></li> <li><code>manage</code></li>
-     *         <li><code>iam_only</code></li> </ul> <p>For more information on the
+     *         strings. You cannot set your own permissions level. <ul> <li>
+     *         <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     *         <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     *         <code>iam_only</code> </li> </ul> <p>For more information on the
      *         permissions associated with these levels, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      *         User Permissions</a>

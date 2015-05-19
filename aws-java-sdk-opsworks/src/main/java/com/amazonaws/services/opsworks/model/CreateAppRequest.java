@@ -67,7 +67,9 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
      * AWS OpsWorks deploys an application to those instances that are
-     * members of the corresponding layer.
+     * members of the corresponding layer. If your app isn't one of the
+     * standard types, or you prefer to implement your own Deploy recipes,
+     * specify <code>other</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
@@ -328,7 +330,9 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
      * AWS OpsWorks deploys an application to those instances that are
-     * members of the corresponding layer.
+     * members of the corresponding layer. If your app isn't one of the
+     * standard types, or you prefer to implement your own Deploy recipes,
+     * specify <code>other</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
@@ -336,7 +340,9 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * @return The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
      *         AWS OpsWorks deploys an application to those instances that are
-     *         members of the corresponding layer.
+     *         members of the corresponding layer. If your app isn't one of the
+     *         standard types, or you prefer to implement your own Deploy recipes,
+     *         specify <code>other</code>.
      *
      * @see AppType
      */
@@ -348,7 +354,9 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
      * AWS OpsWorks deploys an application to those instances that are
-     * members of the corresponding layer.
+     * members of the corresponding layer. If your app isn't one of the
+     * standard types, or you prefer to implement your own Deploy recipes,
+     * specify <code>other</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
@@ -356,7 +364,9 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
      *         AWS OpsWorks deploys an application to those instances that are
-     *         members of the corresponding layer.
+     *         members of the corresponding layer. If your app isn't one of the
+     *         standard types, or you prefer to implement your own Deploy recipes,
+     *         specify <code>other</code>.
      *
      * @see AppType
      */
@@ -368,7 +378,9 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
      * AWS OpsWorks deploys an application to those instances that are
-     * members of the corresponding layer.
+     * members of the corresponding layer. If your app isn't one of the
+     * standard types, or you prefer to implement your own Deploy recipes,
+     * specify <code>other</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -378,7 +390,9 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
      *         AWS OpsWorks deploys an application to those instances that are
-     *         members of the corresponding layer.
+     *         members of the corresponding layer. If your app isn't one of the
+     *         standard types, or you prefer to implement your own Deploy recipes,
+     *         specify <code>other</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -394,7 +408,9 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
      * AWS OpsWorks deploys an application to those instances that are
-     * members of the corresponding layer.
+     * members of the corresponding layer. If your app isn't one of the
+     * standard types, or you prefer to implement your own Deploy recipes,
+     * specify <code>other</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
@@ -402,7 +418,9 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
      *         AWS OpsWorks deploys an application to those instances that are
-     *         members of the corresponding layer.
+     *         members of the corresponding layer. If your app isn't one of the
+     *         standard types, or you prefer to implement your own Deploy recipes,
+     *         specify <code>other</code>.
      *
      * @see AppType
      */
@@ -414,7 +432,9 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
      * AWS OpsWorks deploys an application to those instances that are
-     * members of the corresponding layer.
+     * members of the corresponding layer. If your app isn't one of the
+     * standard types, or you prefer to implement your own Deploy recipes,
+     * specify <code>other</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -424,7 +444,9 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
      *         AWS OpsWorks deploys an application to those instances that are
-     *         members of the corresponding layer.
+     *         members of the corresponding layer. If your app isn't one of the
+     *         standard types, or you prefer to implement your own Deploy recipes,
+     *         specify <code>other</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

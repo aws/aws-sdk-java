@@ -17,7 +17,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeSpotDatafeedSubscription.
+ * </p>
  */
 public class DescribeSpotDatafeedSubscriptionResult implements Serializable, Cloneable {
 

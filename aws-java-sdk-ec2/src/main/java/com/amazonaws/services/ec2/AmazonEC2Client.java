@@ -1212,6 +1212,53 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Describes the running instances for the specified Spot fleet.
+     * </p>
+     *
+     * @param describeSpotFleetInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeSpotFleetInstances service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeSpotFleetInstances service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeSpotFleetInstancesResult describeSpotFleetInstances(DescribeSpotFleetInstancesRequest describeSpotFleetInstancesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeSpotFleetInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSpotFleetInstancesRequest> request = null;
+        Response<DescribeSpotFleetInstancesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSpotFleetInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeSpotFleetInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeSpotFleetInstancesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Creates a security group.
      * </p>
      * <p>
@@ -1445,6 +1492,99 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Creates a set of DHCP options for your VPC. After creating the set,
+     * you must associate it with the VPC, causing all existing and new
+     * instances that you launch in the VPC to use this set of DHCP options.
+     * The following are the individual DHCP options you can specify. For
+     * more information about the options, see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * .
+     * </p>
+     * 
+     * <ul>
+     * <li> <code>domain-name-servers</code> - The IP addresses of up to
+     * four domain name servers, or <code>AmazonProvidedDNS</code> . The
+     * default DHCP option set specifies <code>AmazonProvidedDNS</code> . If
+     * specifying more than one domain name server, specify the IP addresses
+     * in a single parameter, separated by commas.</li>
+     * <li> <code>domain-name</code> - If you're using AmazonProvidedDNS in
+     * <code>us-east-1</code> , specify <code>ec2.internal</code> . If you're
+     * using AmazonProvidedDNS in another region, specify
+     * <code>region.compute.internal</code> (for example,
+     * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
+     * domain name (for example, <code>MyCompany.com</code> ).
+     * <b>Important</b> : Some Linux operating systems accept multiple domain
+     * names separated by spaces. However, Windows and other Linux operating
+     * systems treat the value as a single domain, which results in
+     * unexpected behavior. If your DHCP options set is associated with a VPC
+     * that has instances with multiple operating systems, specify only one
+     * domain name.</li>
+     * <li> <code>ntp-servers</code> - The IP addresses of up to four
+     * Network Time Protocol (NTP) servers.</li>
+     * <li> <code>netbios-name-servers</code> - The IP addresses of up to
+     * four NetBIOS name servers.</li>
+     * <li> <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4,
+     * or 8). We recommend that you specify 2 (broadcast and multicast are
+     * not currently supported). For more information about these node types,
+     * see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * . </li>
+     * 
+     * </ul>
+     * <p>
+     * Your VPC automatically starts out with a set of DHCP options that
+     * includes only a DNS server that we provide (AmazonProvidedDNS). If you
+     * create a set of options, and if your VPC has an Internet gateway, make
+     * sure to set the <code>domain-name-servers</code> option either to
+     * <code>AmazonProvidedDNS</code> or to a domain name server of your
+     * choice. For more information about DHCP options, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
+     * </p>
+     *
+     * @param createDhcpOptionsRequest Container for the necessary parameters
+     *           to execute the CreateDhcpOptions service method on AmazonEC2.
+     * 
+     * @return The response from the CreateDhcpOptions service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateDhcpOptionsResult createDhcpOptions(CreateDhcpOptionsRequest createDhcpOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDhcpOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDhcpOptionsRequest> request = null;
+        Response<CreateDhcpOptionsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDhcpOptionsRequestMarshaller().marshall(super.beforeMarshalling(createDhcpOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new CreateDhcpOptionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Deletes one or more specified VPC endpoints. Deleting the endpoint
      * also deletes the endpoint routes in the route tables that were
      * associated with the endpoint.
@@ -1556,99 +1696,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             response = invoke(request, new CreateReservedInstancesListingResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Creates a set of DHCP options for your VPC. After creating the set,
-     * you must associate it with the VPC, causing all existing and new
-     * instances that you launch in the VPC to use this set of DHCP options.
-     * The following are the individual DHCP options you can specify. For
-     * more information about the options, see
-     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
-     * .
-     * </p>
-     * 
-     * <ul>
-     * <li> <code>domain-name-servers</code> - The IP addresses of up to
-     * four domain name servers, or <code>AmazonProvidedDNS</code> . The
-     * default DHCP option set specifies <code>AmazonProvidedDNS</code> . If
-     * specifying more than one domain name server, specify the IP addresses
-     * in a single parameter, separated by commas.</li>
-     * <li> <code>domain-name</code> - If you're using AmazonProvidedDNS in
-     * <code>us-east-1</code> , specify <code>ec2.internal</code> . If you're
-     * using AmazonProvidedDNS in another region, specify
-     * <code>region.compute.internal</code> (for example,
-     * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
-     * domain name (for example, <code>MyCompany.com</code> ).
-     * <b>Important</b> : Some Linux operating systems accept multiple domain
-     * names separated by spaces. However, Windows and other Linux operating
-     * systems treat the value as a single domain, which results in
-     * unexpected behavior. If your DHCP options set is associated with a VPC
-     * that has instances with multiple operating systems, specify only one
-     * domain name.</li>
-     * <li> <code>ntp-servers</code> - The IP addresses of up to four
-     * Network Time Protocol (NTP) servers.</li>
-     * <li> <code>netbios-name-servers</code> - The IP addresses of up to
-     * four NetBIOS name servers.</li>
-     * <li> <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4,
-     * or 8). We recommend that you specify 2 (broadcast and multicast are
-     * not currently supported). For more information about these node types,
-     * see
-     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
-     * . </li>
-     * 
-     * </ul>
-     * <p>
-     * Your VPC automatically starts out with a set of DHCP options that
-     * includes only a DNS server that we provide (AmazonProvidedDNS). If you
-     * create a set of options, and if your VPC has an Internet gateway, make
-     * sure to set the <code>domain-name-servers</code> option either to
-     * <code>AmazonProvidedDNS</code> or to a domain name server of your
-     * choice. For more information about DHCP options, see
-     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
-     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
-     * </p>
-     *
-     * @param createDhcpOptionsRequest Container for the necessary parameters
-     *           to execute the CreateDhcpOptions service method on AmazonEC2.
-     * 
-     * @return The response from the CreateDhcpOptions service method, as
-     *         returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateDhcpOptionsResult createDhcpOptions(CreateDhcpOptionsRequest createDhcpOptionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(createDhcpOptionsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateDhcpOptionsRequest> request = null;
-        Response<CreateDhcpOptionsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateDhcpOptionsRequestMarshaller().marshall(super.beforeMarshalling(createDhcpOptionsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new CreateDhcpOptionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -3132,6 +3179,53 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Cancels the specified Spot fleet requests.
+     * </p>
+     *
+     * @param cancelSpotFleetRequestsRequest Container for the necessary
+     *           parameters to execute the CancelSpotFleetRequests service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the CancelSpotFleetRequests service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CancelSpotFleetRequestsResult cancelSpotFleetRequests(CancelSpotFleetRequestsRequest cancelSpotFleetRequestsRequest) {
+        ExecutionContext executionContext = createExecutionContext(cancelSpotFleetRequestsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelSpotFleetRequestsRequest> request = null;
+        Response<CancelSpotFleetRequestsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelSpotFleetRequestsRequestMarshaller().marshall(super.beforeMarshalling(cancelSpotFleetRequestsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new CancelSpotFleetRequestsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Unassigns one or more secondary private IP addresses from a network
      * interface.
      * </p>
@@ -4134,6 +4228,57 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             response = invoke(request, new DescribePrefixListsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Creates a Spot fleet request.
+     * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html"> Spot Fleets </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+     * </p>
+     *
+     * @param requestSpotFleetRequest Container for the necessary parameters
+     *           to execute the RequestSpotFleet service method on AmazonEC2.
+     * 
+     * @return The response from the RequestSpotFleet service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RequestSpotFleetResult requestSpotFleet(RequestSpotFleetRequest requestSpotFleetRequest) {
+        ExecutionContext executionContext = createExecutionContext(requestSpotFleetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RequestSpotFleetRequest> request = null;
+        Response<RequestSpotFleetResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RequestSpotFleetRequestMarshaller().marshall(super.beforeMarshalling(requestSpotFleetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new RequestSpotFleetResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -5308,19 +5453,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes one or more of your subnets.
-     * </p>
-     * <p>
-     * For more information about subnets, see
-     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
-     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
+     * Describes one or more of your placement groups. For more information
+     * about placement groups and cluster instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
-     * @param describeSubnetsRequest Container for the necessary parameters
-     *           to execute the DescribeSubnets service method on AmazonEC2.
+     * @param describePlacementGroupsRequest Container for the necessary
+     *           parameters to execute the DescribePlacementGroups service method on
+     *           AmazonEC2.
      * 
-     * @return The response from the DescribeSubnets service method, as
-     *         returned by AmazonEC2.
+     * @return The response from the DescribePlacementGroups service method,
+     *         as returned by AmazonEC2.
      * 
      *
      * @throws AmazonClientException
@@ -5331,24 +5475,24 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *             If an error response is returned by AmazonEC2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeSubnetsResult describeSubnets(DescribeSubnetsRequest describeSubnetsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeSubnetsRequest);
+    public DescribePlacementGroupsResult describePlacementGroups(DescribePlacementGroupsRequest describePlacementGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describePlacementGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeSubnetsRequest> request = null;
-        Response<DescribeSubnetsResult> response = null;
+        Request<DescribePlacementGroupsRequest> request = null;
+        Response<DescribePlacementGroupsResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSubnetsRequestMarshaller().marshall(super.beforeMarshalling(describeSubnetsRequest));
+                request = new DescribePlacementGroupsRequestMarshaller().marshall(super.beforeMarshalling(describePlacementGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new DescribeSubnetsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribePlacementGroupsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -5446,18 +5590,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes one or more of your placement groups. For more information
-     * about placement groups and cluster instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * Describes one or more of your subnets.
+     * </p>
+     * <p>
+     * For more information about subnets, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
-     * @param describePlacementGroupsRequest Container for the necessary
-     *           parameters to execute the DescribePlacementGroups service method on
-     *           AmazonEC2.
+     * @param describeSubnetsRequest Container for the necessary parameters
+     *           to execute the DescribeSubnets service method on AmazonEC2.
      * 
-     * @return The response from the DescribePlacementGroups service method,
-     *         as returned by AmazonEC2.
+     * @return The response from the DescribeSubnets service method, as
+     *         returned by AmazonEC2.
      * 
      *
      * @throws AmazonClientException
@@ -5468,24 +5613,24 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      *             If an error response is returned by AmazonEC2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribePlacementGroupsResult describePlacementGroups(DescribePlacementGroupsRequest describePlacementGroupsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describePlacementGroupsRequest);
+    public DescribeSubnetsResult describeSubnets(DescribeSubnetsRequest describeSubnetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeSubnetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribePlacementGroupsRequest> request = null;
-        Response<DescribePlacementGroupsResult> response = null;
+        Request<DescribeSubnetsRequest> request = null;
+        Response<DescribeSubnetsResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePlacementGroupsRequestMarshaller().marshall(super.beforeMarshalling(describePlacementGroupsRequest));
+                request = new DescribeSubnetsRequestMarshaller().marshall(super.beforeMarshalling(describeSubnetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new DescribePlacementGroupsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeSubnetsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -7183,6 +7328,53 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Describes your Spot fleet requests.
+     * </p>
+     *
+     * @param describeSpotFleetRequestsRequest Container for the necessary
+     *           parameters to execute the DescribeSpotFleetRequests service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeSpotFleetRequests service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeSpotFleetRequestsResult describeSpotFleetRequests(DescribeSpotFleetRequestsRequest describeSpotFleetRequestsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeSpotFleetRequestsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSpotFleetRequestsRequest> request = null;
+        Response<DescribeSpotFleetRequestsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSpotFleetRequestsRequestMarshaller().marshall(super.beforeMarshalling(describeSpotFleetRequestsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeSpotFleetRequestsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Purchases a Reserved Instance for use with your account. With Amazon
      * EC2 Reserved Instances, you obtain a capacity reservation for a
      * certain instance configuration over a specified period of time. You
@@ -8456,6 +8648,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Describes the events for the specified Spot fleet request during the
+     * specified time.
+     * </p>
+     * <p>
+     * Spot fleet events are delayed by up to 30 seconds before they can be
+     * described. This ensures that you can query by the last evaluated time
+     * and not miss a recorded event.
+     * </p>
+     *
+     * @param describeSpotFleetRequestHistoryRequest Container for the
+     *           necessary parameters to execute the DescribeSpotFleetRequestHistory
+     *           service method on AmazonEC2.
+     * 
+     * @return The response from the DescribeSpotFleetRequestHistory service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeSpotFleetRequestHistoryResult describeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest describeSpotFleetRequestHistoryRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeSpotFleetRequestHistoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSpotFleetRequestHistoryRequest> request = null;
+        Response<DescribeSpotFleetRequestHistoryResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSpotFleetRequestHistoryRequestMarshaller().marshall(super.beforeMarshalling(describeSpotFleetRequestHistoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeSpotFleetRequestHistoryResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -10625,6 +10870,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Describes one or more of your placement groups. For more information
+     * about placement groups and cluster instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     * 
+     * @return The response from the DescribePlacementGroups service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribePlacementGroupsResult describePlacementGroups() throws AmazonServiceException, AmazonClientException {
+        return describePlacementGroups(new DescribePlacementGroupsRequest());
+    }
+    
+    /**
+     * <p>
      * Describes one or more of your subnets.
      * </p>
      * <p>
@@ -10647,30 +10916,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeSubnetsResult describeSubnets() throws AmazonServiceException, AmazonClientException {
         return describeSubnets(new DescribeSubnetsRequest());
-    }
-    
-    /**
-     * <p>
-     * Describes one or more of your placement groups. For more information
-     * about placement groups and cluster instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
-     * </p>
-     * 
-     * @return The response from the DescribePlacementGroups service method,
-     *         as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribePlacementGroupsResult describePlacementGroups() throws AmazonServiceException, AmazonClientException {
-        return describePlacementGroups(new DescribePlacementGroupsRequest());
     }
     
     /**
@@ -10885,6 +11130,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public ImportSnapshotResult importSnapshot() throws AmazonServiceException, AmazonClientException {
         return importSnapshot(new ImportSnapshotRequest());
+    }
+    
+    /**
+     * <p>
+     * Describes your Spot fleet requests.
+     * </p>
+     * 
+     * @return The response from the DescribeSpotFleetRequests service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeSpotFleetRequestsResult describeSpotFleetRequests() throws AmazonServiceException, AmazonClientException {
+        return describeSpotFleetRequests(new DescribeSpotFleetRequestsRequest());
     }
     
     /**

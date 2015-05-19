@@ -82,14 +82,14 @@ public class Instance implements Serializable, Cloneable {
     private String instanceProfileArn;
 
     /**
-     * The instance status: <ul> <li><code>booting</code></li>
-     * <li><code>connection_lost</code></li> <li><code>online</code></li>
-     * <li><code>pending</code></li> <li><code>rebooting</code></li>
-     * <li><code>requested</code></li> <li><code>running_setup</code></li>
-     * <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
-     * <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     * <li><code>stopping</code></li> <li><code>terminated</code></li>
-     * <li><code>terminating</code></li> </ul>
+     * The instance status: <ul> <li> <code>booting</code> </li> <li>
+     * <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
+     * <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
+     * <code>requested</code> </li> <li> <code>running_setup</code> </li>
+     * <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code>
+     * </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code>
+     * </li> <li> <code>stopping</code> </li> <li> <code>terminated</code>
+     * </li> <li> <code>terminating</code> </li> </ul>
      */
     private String status;
 
@@ -738,71 +738,71 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * The instance status: <ul> <li><code>booting</code></li>
-     * <li><code>connection_lost</code></li> <li><code>online</code></li>
-     * <li><code>pending</code></li> <li><code>rebooting</code></li>
-     * <li><code>requested</code></li> <li><code>running_setup</code></li>
-     * <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
-     * <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     * <li><code>stopping</code></li> <li><code>terminated</code></li>
-     * <li><code>terminating</code></li> </ul>
+     * The instance status: <ul> <li> <code>booting</code> </li> <li>
+     * <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
+     * <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
+     * <code>requested</code> </li> <li> <code>running_setup</code> </li>
+     * <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code>
+     * </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code>
+     * </li> <li> <code>stopping</code> </li> <li> <code>terminated</code>
+     * </li> <li> <code>terminating</code> </li> </ul>
      *
-     * @return The instance status: <ul> <li><code>booting</code></li>
-     *         <li><code>connection_lost</code></li> <li><code>online</code></li>
-     *         <li><code>pending</code></li> <li><code>rebooting</code></li>
-     *         <li><code>requested</code></li> <li><code>running_setup</code></li>
-     *         <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
-     *         <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     *         <li><code>stopping</code></li> <li><code>terminated</code></li>
-     *         <li><code>terminating</code></li> </ul>
+     * @return The instance status: <ul> <li> <code>booting</code> </li> <li>
+     *         <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
+     *         <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
+     *         <code>requested</code> </li> <li> <code>running_setup</code> </li>
+     *         <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code>
+     *         </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code>
+     *         </li> <li> <code>stopping</code> </li> <li> <code>terminated</code>
+     *         </li> <li> <code>terminating</code> </li> </ul>
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * The instance status: <ul> <li><code>booting</code></li>
-     * <li><code>connection_lost</code></li> <li><code>online</code></li>
-     * <li><code>pending</code></li> <li><code>rebooting</code></li>
-     * <li><code>requested</code></li> <li><code>running_setup</code></li>
-     * <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
-     * <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     * <li><code>stopping</code></li> <li><code>terminated</code></li>
-     * <li><code>terminating</code></li> </ul>
+     * The instance status: <ul> <li> <code>booting</code> </li> <li>
+     * <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
+     * <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
+     * <code>requested</code> </li> <li> <code>running_setup</code> </li>
+     * <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code>
+     * </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code>
+     * </li> <li> <code>stopping</code> </li> <li> <code>terminated</code>
+     * </li> <li> <code>terminating</code> </li> </ul>
      *
-     * @param status The instance status: <ul> <li><code>booting</code></li>
-     *         <li><code>connection_lost</code></li> <li><code>online</code></li>
-     *         <li><code>pending</code></li> <li><code>rebooting</code></li>
-     *         <li><code>requested</code></li> <li><code>running_setup</code></li>
-     *         <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
-     *         <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     *         <li><code>stopping</code></li> <li><code>terminated</code></li>
-     *         <li><code>terminating</code></li> </ul>
+     * @param status The instance status: <ul> <li> <code>booting</code> </li> <li>
+     *         <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
+     *         <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
+     *         <code>requested</code> </li> <li> <code>running_setup</code> </li>
+     *         <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code>
+     *         </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code>
+     *         </li> <li> <code>stopping</code> </li> <li> <code>terminated</code>
+     *         </li> <li> <code>terminating</code> </li> </ul>
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * The instance status: <ul> <li><code>booting</code></li>
-     * <li><code>connection_lost</code></li> <li><code>online</code></li>
-     * <li><code>pending</code></li> <li><code>rebooting</code></li>
-     * <li><code>requested</code></li> <li><code>running_setup</code></li>
-     * <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
-     * <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     * <li><code>stopping</code></li> <li><code>terminated</code></li>
-     * <li><code>terminating</code></li> </ul>
+     * The instance status: <ul> <li> <code>booting</code> </li> <li>
+     * <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
+     * <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
+     * <code>requested</code> </li> <li> <code>running_setup</code> </li>
+     * <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code>
+     * </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code>
+     * </li> <li> <code>stopping</code> </li> <li> <code>terminated</code>
+     * </li> <li> <code>terminating</code> </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The instance status: <ul> <li><code>booting</code></li>
-     *         <li><code>connection_lost</code></li> <li><code>online</code></li>
-     *         <li><code>pending</code></li> <li><code>rebooting</code></li>
-     *         <li><code>requested</code></li> <li><code>running_setup</code></li>
-     *         <li><code>setup_failed</code></li> <li><code>shutting_down</code></li>
-     *         <li><code>start_failed</code></li> <li><code>stopped</code></li>
-     *         <li><code>stopping</code></li> <li><code>terminated</code></li>
-     *         <li><code>terminating</code></li> </ul>
+     * @param status The instance status: <ul> <li> <code>booting</code> </li> <li>
+     *         <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
+     *         <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
+     *         <code>requested</code> </li> <li> <code>running_setup</code> </li>
+     *         <li> <code>setup_failed</code> </li> <li> <code>shutting_down</code>
+     *         </li> <li> <code>start_failed</code> </li> <li> <code>stopped</code>
+     *         </li> <li> <code>stopping</code> </li> <li> <code>terminated</code>
+     *         </li> <li> <code>terminating</code> </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

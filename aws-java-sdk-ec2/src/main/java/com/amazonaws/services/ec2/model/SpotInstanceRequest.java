@@ -67,19 +67,23 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     private SpotInstanceStatus status;
 
     /**
-     * The start date of the request. If this is a one-time request, the
+     * The start date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     * this is a one-time request, the request becomes active at this date
+     * and time and remains active until all instances launch, the request
+     * expires, or the request is canceled. If the request is persistent, the
      * request becomes active at this date and time and remains active until
-     * all instances launch, the request expires, or the request is canceled.
-     * If the request is persistent, the request becomes active at this date
-     * and time and remains active until it expires or is canceled.
+     * it expires or is canceled.
      */
     private java.util.Date validFrom;
 
     /**
-     * The end date of the request. If this is a one-time request, the
-     * request remains active until all instances launch, the request is
-     * canceled, or this date is reached. If the request is persistent, it
-     * remains active until it is canceled or this date is reached.
+     * The end date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     * this is a one-time request, the request remains active until all
+     * instances launch, the request is canceled, or this date is reached. If
+     * the request is persistent, it remains active until it is canceled or
+     * this date is reached.
      */
     private java.util.Date validUntil;
 
@@ -108,7 +112,9 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     private String instanceId;
 
     /**
-     * The time stamp when the Spot Instance request was created.
+     * The date and time when the Spot Instance request was created, in UTC
+     * format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
     private java.util.Date createTime;
 
@@ -489,53 +495,65 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     }
 
     /**
-     * The start date of the request. If this is a one-time request, the
+     * The start date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     * this is a one-time request, the request becomes active at this date
+     * and time and remains active until all instances launch, the request
+     * expires, or the request is canceled. If the request is persistent, the
      * request becomes active at this date and time and remains active until
-     * all instances launch, the request expires, or the request is canceled.
-     * If the request is persistent, the request becomes active at this date
-     * and time and remains active until it expires or is canceled.
+     * it expires or is canceled.
      *
-     * @return The start date of the request. If this is a one-time request, the
+     * @return The start date of the request, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     *         this is a one-time request, the request becomes active at this date
+     *         and time and remains active until all instances launch, the request
+     *         expires, or the request is canceled. If the request is persistent, the
      *         request becomes active at this date and time and remains active until
-     *         all instances launch, the request expires, or the request is canceled.
-     *         If the request is persistent, the request becomes active at this date
-     *         and time and remains active until it expires or is canceled.
+     *         it expires or is canceled.
      */
     public java.util.Date getValidFrom() {
         return validFrom;
     }
     
     /**
-     * The start date of the request. If this is a one-time request, the
+     * The start date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     * this is a one-time request, the request becomes active at this date
+     * and time and remains active until all instances launch, the request
+     * expires, or the request is canceled. If the request is persistent, the
      * request becomes active at this date and time and remains active until
-     * all instances launch, the request expires, or the request is canceled.
-     * If the request is persistent, the request becomes active at this date
-     * and time and remains active until it expires or is canceled.
+     * it expires or is canceled.
      *
-     * @param validFrom The start date of the request. If this is a one-time request, the
+     * @param validFrom The start date of the request, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     *         this is a one-time request, the request becomes active at this date
+     *         and time and remains active until all instances launch, the request
+     *         expires, or the request is canceled. If the request is persistent, the
      *         request becomes active at this date and time and remains active until
-     *         all instances launch, the request expires, or the request is canceled.
-     *         If the request is persistent, the request becomes active at this date
-     *         and time and remains active until it expires or is canceled.
+     *         it expires or is canceled.
      */
     public void setValidFrom(java.util.Date validFrom) {
         this.validFrom = validFrom;
     }
     
     /**
-     * The start date of the request. If this is a one-time request, the
+     * The start date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     * this is a one-time request, the request becomes active at this date
+     * and time and remains active until all instances launch, the request
+     * expires, or the request is canceled. If the request is persistent, the
      * request becomes active at this date and time and remains active until
-     * all instances launch, the request expires, or the request is canceled.
-     * If the request is persistent, the request becomes active at this date
-     * and time and remains active until it expires or is canceled.
+     * it expires or is canceled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validFrom The start date of the request. If this is a one-time request, the
+     * @param validFrom The start date of the request, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     *         this is a one-time request, the request becomes active at this date
+     *         and time and remains active until all instances launch, the request
+     *         expires, or the request is canceled. If the request is persistent, the
      *         request becomes active at this date and time and remains active until
-     *         all instances launch, the request expires, or the request is canceled.
-     *         If the request is persistent, the request becomes active at this date
-     *         and time and remains active until it expires or is canceled.
+     *         it expires or is canceled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -546,47 +564,59 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     }
 
     /**
-     * The end date of the request. If this is a one-time request, the
-     * request remains active until all instances launch, the request is
-     * canceled, or this date is reached. If the request is persistent, it
-     * remains active until it is canceled or this date is reached.
+     * The end date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     * this is a one-time request, the request remains active until all
+     * instances launch, the request is canceled, or this date is reached. If
+     * the request is persistent, it remains active until it is canceled or
+     * this date is reached.
      *
-     * @return The end date of the request. If this is a one-time request, the
-     *         request remains active until all instances launch, the request is
-     *         canceled, or this date is reached. If the request is persistent, it
-     *         remains active until it is canceled or this date is reached.
+     * @return The end date of the request, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     *         this is a one-time request, the request remains active until all
+     *         instances launch, the request is canceled, or this date is reached. If
+     *         the request is persistent, it remains active until it is canceled or
+     *         this date is reached.
      */
     public java.util.Date getValidUntil() {
         return validUntil;
     }
     
     /**
-     * The end date of the request. If this is a one-time request, the
-     * request remains active until all instances launch, the request is
-     * canceled, or this date is reached. If the request is persistent, it
-     * remains active until it is canceled or this date is reached.
+     * The end date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     * this is a one-time request, the request remains active until all
+     * instances launch, the request is canceled, or this date is reached. If
+     * the request is persistent, it remains active until it is canceled or
+     * this date is reached.
      *
-     * @param validUntil The end date of the request. If this is a one-time request, the
-     *         request remains active until all instances launch, the request is
-     *         canceled, or this date is reached. If the request is persistent, it
-     *         remains active until it is canceled or this date is reached.
+     * @param validUntil The end date of the request, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     *         this is a one-time request, the request remains active until all
+     *         instances launch, the request is canceled, or this date is reached. If
+     *         the request is persistent, it remains active until it is canceled or
+     *         this date is reached.
      */
     public void setValidUntil(java.util.Date validUntil) {
         this.validUntil = validUntil;
     }
     
     /**
-     * The end date of the request. If this is a one-time request, the
-     * request remains active until all instances launch, the request is
-     * canceled, or this date is reached. If the request is persistent, it
-     * remains active until it is canceled or this date is reached.
+     * The end date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     * this is a one-time request, the request remains active until all
+     * instances launch, the request is canceled, or this date is reached. If
+     * the request is persistent, it remains active until it is canceled or
+     * this date is reached.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validUntil The end date of the request. If this is a one-time request, the
-     *         request remains active until all instances launch, the request is
-     *         canceled, or this date is reached. If the request is persistent, it
-     *         remains active until it is canceled or this date is reached.
+     * @param validUntil The end date of the request, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
+     *         this is a one-time request, the request remains active until all
+     *         instances launch, the request is canceled, or this date is reached. If
+     *         the request is persistent, it remains active until it is canceled or
+     *         this date is reached.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -753,29 +783,41 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     }
 
     /**
-     * The time stamp when the Spot Instance request was created.
+     * The date and time when the Spot Instance request was created, in UTC
+     * format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *
-     * @return The time stamp when the Spot Instance request was created.
+     * @return The date and time when the Spot Instance request was created, in UTC
+     *         format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
     public java.util.Date getCreateTime() {
         return createTime;
     }
     
     /**
-     * The time stamp when the Spot Instance request was created.
+     * The date and time when the Spot Instance request was created, in UTC
+     * format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *
-     * @param createTime The time stamp when the Spot Instance request was created.
+     * @param createTime The date and time when the Spot Instance request was created, in UTC
+     *         format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
     
     /**
-     * The time stamp when the Spot Instance request was created.
+     * The date and time when the Spot Instance request was created, in UTC
+     * format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createTime The time stamp when the Spot Instance request was created.
+     * @param createTime The date and time when the Spot Instance request was created, in UTC
+     *         format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

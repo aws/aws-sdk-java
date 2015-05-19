@@ -36,20 +36,22 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the following commands are
-     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
-     * have an optional <code>Args</code> parameter named
-     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-     * migrate the database. The default setting is
-     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
-     * back to the previous version. When you update an app, AWS OpsWorks
-     * stores the previous version, up to a maximum of five versions. You can
-     * use this command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <note>The update_dependencies and
+     * install_dependencies commands are supported only for Linux instances.
+     * You can run the commands successfully on Windows instances, but they
+     * do nothing.</note> <p>For apps, the following commands are available:
+     * <ul> <li><code>deploy</code>: Deploy an app. Ruby on Rails apps have
+     * an optional <code>Args</code> parameter named <code>migrate</code>.
+     * Set <code>Args</code> to {"migrate":["true"]} to migrate the database.
+     * The default setting is {"migrate":["false"]}.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, AWS OpsWorks stores the previous version, up
+     * to a maximum of five versions. You can use this command to roll an app
+     * back as many as four versions.</li> <li><code>start</code>: Start the
+     * app's web or application server.</li> <li><code>stop</code>: Stop the
+     * app's web or application server.</li> <li><code>restart</code>:
+     * Restart the app's web or application server.</li>
+     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
@@ -58,7 +60,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
 
     /**
      * The arguments of those commands that take arguments. It should be set
-     * to a JSON object with the following format: <p><code>{"arg_name1" :
+     * to a JSON object with the following format: <p> <code>{"arg_name1" :
      * ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
      * ...}</code> <p>The <code>update_dependencies</code> command takes two
      * arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
@@ -89,20 +91,22 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the following commands are
-     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
-     * have an optional <code>Args</code> parameter named
-     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-     * migrate the database. The default setting is
-     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
-     * back to the previous version. When you update an app, AWS OpsWorks
-     * stores the previous version, up to a maximum of five versions. You can
-     * use this command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <note>The update_dependencies and
+     * install_dependencies commands are supported only for Linux instances.
+     * You can run the commands successfully on Windows instances, but they
+     * do nothing.</note> <p>For apps, the following commands are available:
+     * <ul> <li><code>deploy</code>: Deploy an app. Ruby on Rails apps have
+     * an optional <code>Args</code> parameter named <code>migrate</code>.
+     * Set <code>Args</code> to {"migrate":["true"]} to migrate the database.
+     * The default setting is {"migrate":["false"]}.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, AWS OpsWorks stores the previous version, up
+     * to a maximum of five versions. You can use this command to roll an app
+     * back as many as four versions.</li> <li><code>start</code>: Start the
+     * app's web or application server.</li> <li><code>stop</code>: Stop the
+     * app's web or application server.</li> <li><code>restart</code>:
+     * Restart the app's web or application server.</li>
+     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
@@ -119,20 +123,22 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code>update_dependencies</code>: Update the stack's
-     *         dependencies.</li> </ul> <p>For apps, the following commands are
-     *         available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
-     *         have an optional <code>Args</code> parameter named
-     *         <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-     *         migrate the database. The default setting is
-     *         {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
-     *         back to the previous version. When you update an app, AWS OpsWorks
-     *         stores the previous version, up to a maximum of five versions. You can
-     *         use this command to roll an app back as many as four versions.</li>
-     *         <li><code>start</code>: Start the app's web or application
-     *         server.</li> <li><code>stop</code>: Stop the app's web or application
-     *         server.</li> <li><code>restart</code>: Restart the app's web or
-     *         application server.</li> <li><code>undeploy</code>: Undeploy the
-     *         app.</li> </ul>
+     *         dependencies.</li> </ul> <note>The update_dependencies and
+     *         install_dependencies commands are supported only for Linux instances.
+     *         You can run the commands successfully on Windows instances, but they
+     *         do nothing.</note> <p>For apps, the following commands are available:
+     *         <ul> <li><code>deploy</code>: Deploy an app. Ruby on Rails apps have
+     *         an optional <code>Args</code> parameter named <code>migrate</code>.
+     *         Set <code>Args</code> to {"migrate":["true"]} to migrate the database.
+     *         The default setting is {"migrate":["false"]}.</li>
+     *         <li><code>rollback</code> Roll the app back to the previous version.
+     *         When you update an app, AWS OpsWorks stores the previous version, up
+     *         to a maximum of five versions. You can use this command to roll an app
+     *         back as many as four versions.</li> <li><code>start</code>: Start the
+     *         app's web or application server.</li> <li><code>stop</code>: Stop the
+     *         app's web or application server.</li> <li><code>restart</code>:
+     *         Restart the app's web or application server.</li>
+     *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      *
      * @see DeploymentCommandName
      */
@@ -153,20 +159,22 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the following commands are
-     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
-     * have an optional <code>Args</code> parameter named
-     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-     * migrate the database. The default setting is
-     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
-     * back to the previous version. When you update an app, AWS OpsWorks
-     * stores the previous version, up to a maximum of five versions. You can
-     * use this command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <note>The update_dependencies and
+     * install_dependencies commands are supported only for Linux instances.
+     * You can run the commands successfully on Windows instances, but they
+     * do nothing.</note> <p>For apps, the following commands are available:
+     * <ul> <li><code>deploy</code>: Deploy an app. Ruby on Rails apps have
+     * an optional <code>Args</code> parameter named <code>migrate</code>.
+     * Set <code>Args</code> to {"migrate":["true"]} to migrate the database.
+     * The default setting is {"migrate":["false"]}.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, AWS OpsWorks stores the previous version, up
+     * to a maximum of five versions. You can use this command to roll an app
+     * back as many as four versions.</li> <li><code>start</code>: Start the
+     * app's web or application server.</li> <li><code>stop</code>: Stop the
+     * app's web or application server.</li> <li><code>restart</code>:
+     * Restart the app's web or application server.</li>
+     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
@@ -183,20 +191,22 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code>update_dependencies</code>: Update the stack's
-     *         dependencies.</li> </ul> <p>For apps, the following commands are
-     *         available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
-     *         have an optional <code>Args</code> parameter named
-     *         <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-     *         migrate the database. The default setting is
-     *         {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
-     *         back to the previous version. When you update an app, AWS OpsWorks
-     *         stores the previous version, up to a maximum of five versions. You can
-     *         use this command to roll an app back as many as four versions.</li>
-     *         <li><code>start</code>: Start the app's web or application
-     *         server.</li> <li><code>stop</code>: Stop the app's web or application
-     *         server.</li> <li><code>restart</code>: Restart the app's web or
-     *         application server.</li> <li><code>undeploy</code>: Undeploy the
-     *         app.</li> </ul>
+     *         dependencies.</li> </ul> <note>The update_dependencies and
+     *         install_dependencies commands are supported only for Linux instances.
+     *         You can run the commands successfully on Windows instances, but they
+     *         do nothing.</note> <p>For apps, the following commands are available:
+     *         <ul> <li><code>deploy</code>: Deploy an app. Ruby on Rails apps have
+     *         an optional <code>Args</code> parameter named <code>migrate</code>.
+     *         Set <code>Args</code> to {"migrate":["true"]} to migrate the database.
+     *         The default setting is {"migrate":["false"]}.</li>
+     *         <li><code>rollback</code> Roll the app back to the previous version.
+     *         When you update an app, AWS OpsWorks stores the previous version, up
+     *         to a maximum of five versions. You can use this command to roll an app
+     *         back as many as four versions.</li> <li><code>start</code>: Start the
+     *         app's web or application server.</li> <li><code>stop</code>: Stop the
+     *         app's web or application server.</li> <li><code>restart</code>:
+     *         Restart the app's web or application server.</li>
+     *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      *
      * @see DeploymentCommandName
      */
@@ -217,20 +227,22 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the following commands are
-     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
-     * have an optional <code>Args</code> parameter named
-     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-     * migrate the database. The default setting is
-     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
-     * back to the previous version. When you update an app, AWS OpsWorks
-     * stores the previous version, up to a maximum of five versions. You can
-     * use this command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <note>The update_dependencies and
+     * install_dependencies commands are supported only for Linux instances.
+     * You can run the commands successfully on Windows instances, but they
+     * do nothing.</note> <p>For apps, the following commands are available:
+     * <ul> <li><code>deploy</code>: Deploy an app. Ruby on Rails apps have
+     * an optional <code>Args</code> parameter named <code>migrate</code>.
+     * Set <code>Args</code> to {"migrate":["true"]} to migrate the database.
+     * The default setting is {"migrate":["false"]}.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, AWS OpsWorks stores the previous version, up
+     * to a maximum of five versions. You can use this command to roll an app
+     * back as many as four versions.</li> <li><code>start</code>: Start the
+     * app's web or application server.</li> <li><code>stop</code>: Stop the
+     * app's web or application server.</li> <li><code>restart</code>:
+     * Restart the app's web or application server.</li>
+     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -249,20 +261,22 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code>update_dependencies</code>: Update the stack's
-     *         dependencies.</li> </ul> <p>For apps, the following commands are
-     *         available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
-     *         have an optional <code>Args</code> parameter named
-     *         <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-     *         migrate the database. The default setting is
-     *         {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
-     *         back to the previous version. When you update an app, AWS OpsWorks
-     *         stores the previous version, up to a maximum of five versions. You can
-     *         use this command to roll an app back as many as four versions.</li>
-     *         <li><code>start</code>: Start the app's web or application
-     *         server.</li> <li><code>stop</code>: Stop the app's web or application
-     *         server.</li> <li><code>restart</code>: Restart the app's web or
-     *         application server.</li> <li><code>undeploy</code>: Undeploy the
-     *         app.</li> </ul>
+     *         dependencies.</li> </ul> <note>The update_dependencies and
+     *         install_dependencies commands are supported only for Linux instances.
+     *         You can run the commands successfully on Windows instances, but they
+     *         do nothing.</note> <p>For apps, the following commands are available:
+     *         <ul> <li><code>deploy</code>: Deploy an app. Ruby on Rails apps have
+     *         an optional <code>Args</code> parameter named <code>migrate</code>.
+     *         Set <code>Args</code> to {"migrate":["true"]} to migrate the database.
+     *         The default setting is {"migrate":["false"]}.</li>
+     *         <li><code>rollback</code> Roll the app back to the previous version.
+     *         When you update an app, AWS OpsWorks stores the previous version, up
+     *         to a maximum of five versions. You can use this command to roll an app
+     *         back as many as four versions.</li> <li><code>start</code>: Start the
+     *         app's web or application server.</li> <li><code>stop</code>: Stop the
+     *         app's web or application server.</li> <li><code>restart</code>:
+     *         Restart the app's web or application server.</li>
+     *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -287,20 +301,22 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the following commands are
-     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
-     * have an optional <code>Args</code> parameter named
-     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-     * migrate the database. The default setting is
-     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
-     * back to the previous version. When you update an app, AWS OpsWorks
-     * stores the previous version, up to a maximum of five versions. You can
-     * use this command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <note>The update_dependencies and
+     * install_dependencies commands are supported only for Linux instances.
+     * You can run the commands successfully on Windows instances, but they
+     * do nothing.</note> <p>For apps, the following commands are available:
+     * <ul> <li><code>deploy</code>: Deploy an app. Ruby on Rails apps have
+     * an optional <code>Args</code> parameter named <code>migrate</code>.
+     * Set <code>Args</code> to {"migrate":["true"]} to migrate the database.
+     * The default setting is {"migrate":["false"]}.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, AWS OpsWorks stores the previous version, up
+     * to a maximum of five versions. You can use this command to roll an app
+     * back as many as four versions.</li> <li><code>start</code>: Start the
+     * app's web or application server.</li> <li><code>stop</code>: Stop the
+     * app's web or application server.</li> <li><code>restart</code>:
+     * Restart the app's web or application server.</li>
+     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
@@ -317,20 +333,22 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code>update_dependencies</code>: Update the stack's
-     *         dependencies.</li> </ul> <p>For apps, the following commands are
-     *         available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
-     *         have an optional <code>Args</code> parameter named
-     *         <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-     *         migrate the database. The default setting is
-     *         {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
-     *         back to the previous version. When you update an app, AWS OpsWorks
-     *         stores the previous version, up to a maximum of five versions. You can
-     *         use this command to roll an app back as many as four versions.</li>
-     *         <li><code>start</code>: Start the app's web or application
-     *         server.</li> <li><code>stop</code>: Stop the app's web or application
-     *         server.</li> <li><code>restart</code>: Restart the app's web or
-     *         application server.</li> <li><code>undeploy</code>: Undeploy the
-     *         app.</li> </ul>
+     *         dependencies.</li> </ul> <note>The update_dependencies and
+     *         install_dependencies commands are supported only for Linux instances.
+     *         You can run the commands successfully on Windows instances, but they
+     *         do nothing.</note> <p>For apps, the following commands are available:
+     *         <ul> <li><code>deploy</code>: Deploy an app. Ruby on Rails apps have
+     *         an optional <code>Args</code> parameter named <code>migrate</code>.
+     *         Set <code>Args</code> to {"migrate":["true"]} to migrate the database.
+     *         The default setting is {"migrate":["false"]}.</li>
+     *         <li><code>rollback</code> Roll the app back to the previous version.
+     *         When you update an app, AWS OpsWorks stores the previous version, up
+     *         to a maximum of five versions. You can use this command to roll an app
+     *         back as many as four versions.</li> <li><code>start</code>: Start the
+     *         app's web or application server.</li> <li><code>stop</code>: Stop the
+     *         app's web or application server.</li> <li><code>restart</code>:
+     *         Restart the app's web or application server.</li>
+     *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      *
      * @see DeploymentCommandName
      */
@@ -351,20 +369,22 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the following commands are
-     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
-     * have an optional <code>Args</code> parameter named
-     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-     * migrate the database. The default setting is
-     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
-     * back to the previous version. When you update an app, AWS OpsWorks
-     * stores the previous version, up to a maximum of five versions. You can
-     * use this command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <note>The update_dependencies and
+     * install_dependencies commands are supported only for Linux instances.
+     * You can run the commands successfully on Windows instances, but they
+     * do nothing.</note> <p>For apps, the following commands are available:
+     * <ul> <li><code>deploy</code>: Deploy an app. Ruby on Rails apps have
+     * an optional <code>Args</code> parameter named <code>migrate</code>.
+     * Set <code>Args</code> to {"migrate":["true"]} to migrate the database.
+     * The default setting is {"migrate":["false"]}.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, AWS OpsWorks stores the previous version, up
+     * to a maximum of five versions. You can use this command to roll an app
+     * back as many as four versions.</li> <li><code>start</code>: Start the
+     * app's web or application server.</li> <li><code>stop</code>: Stop the
+     * app's web or application server.</li> <li><code>restart</code>:
+     * Restart the app's web or application server.</li>
+     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -383,20 +403,22 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code>update_dependencies</code>: Update the stack's
-     *         dependencies.</li> </ul> <p>For apps, the following commands are
-     *         available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
-     *         have an optional <code>Args</code> parameter named
-     *         <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-     *         migrate the database. The default setting is
-     *         {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
-     *         back to the previous version. When you update an app, AWS OpsWorks
-     *         stores the previous version, up to a maximum of five versions. You can
-     *         use this command to roll an app back as many as four versions.</li>
-     *         <li><code>start</code>: Start the app's web or application
-     *         server.</li> <li><code>stop</code>: Stop the app's web or application
-     *         server.</li> <li><code>restart</code>: Restart the app's web or
-     *         application server.</li> <li><code>undeploy</code>: Undeploy the
-     *         app.</li> </ul>
+     *         dependencies.</li> </ul> <note>The update_dependencies and
+     *         install_dependencies commands are supported only for Linux instances.
+     *         You can run the commands successfully on Windows instances, but they
+     *         do nothing.</note> <p>For apps, the following commands are available:
+     *         <ul> <li><code>deploy</code>: Deploy an app. Ruby on Rails apps have
+     *         an optional <code>Args</code> parameter named <code>migrate</code>.
+     *         Set <code>Args</code> to {"migrate":["true"]} to migrate the database.
+     *         The default setting is {"migrate":["false"]}.</li>
+     *         <li><code>rollback</code> Roll the app back to the previous version.
+     *         When you update an app, AWS OpsWorks stores the previous version, up
+     *         to a maximum of five versions. You can use this command to roll an app
+     *         back as many as four versions.</li> <li><code>start</code>: Start the
+     *         app's web or application server.</li> <li><code>stop</code>: Stop the
+     *         app's web or application server.</li> <li><code>restart</code>:
+     *         Restart the app's web or application server.</li>
+     *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -410,7 +432,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
 
     /**
      * The arguments of those commands that take arguments. It should be set
-     * to a JSON object with the following format: <p><code>{"arg_name1" :
+     * to a JSON object with the following format: <p> <code>{"arg_name1" :
      * ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
      * ...}</code> <p>The <code>update_dependencies</code> command takes two
      * arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
@@ -427,7 +449,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * </code>
      *
      * @return The arguments of those commands that take arguments. It should be set
-     *         to a JSON object with the following format: <p><code>{"arg_name1" :
+     *         to a JSON object with the following format: <p> <code>{"arg_name1" :
      *         ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
      *         ...}</code> <p>The <code>update_dependencies</code> command takes two
      *         arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
@@ -453,7 +475,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
     
     /**
      * The arguments of those commands that take arguments. It should be set
-     * to a JSON object with the following format: <p><code>{"arg_name1" :
+     * to a JSON object with the following format: <p> <code>{"arg_name1" :
      * ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
      * ...}</code> <p>The <code>update_dependencies</code> command takes two
      * arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
@@ -470,7 +492,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * </code>
      *
      * @param args The arguments of those commands that take arguments. It should be set
-     *         to a JSON object with the following format: <p><code>{"arg_name1" :
+     *         to a JSON object with the following format: <p> <code>{"arg_name1" :
      *         ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
      *         ...}</code> <p>The <code>update_dependencies</code> command takes two
      *         arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
@@ -492,7 +514,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
     
     /**
      * The arguments of those commands that take arguments. It should be set
-     * to a JSON object with the following format: <p><code>{"arg_name1" :
+     * to a JSON object with the following format: <p> <code>{"arg_name1" :
      * ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
      * ...}</code> <p>The <code>update_dependencies</code> command takes two
      * arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
@@ -511,7 +533,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param args The arguments of those commands that take arguments. It should be set
-     *         to a JSON object with the following format: <p><code>{"arg_name1" :
+     *         to a JSON object with the following format: <p> <code>{"arg_name1" :
      *         ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
      *         ...}</code> <p>The <code>update_dependencies</code> command takes two
      *         arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired
@@ -537,7 +559,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
 
     /**
      * The arguments of those commands that take arguments. It should be set
-     * to a JSON object with the following format: <p><code>{"arg_name1" :
+     * to a JSON object with the following format: <p> <code>{"arg_name1" :
      * ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
      * ...}</code> <p>The <code>update_dependencies</code> command takes two
      * arguments: <ul> <li><code>upgrade_os_to</code> - Specifies the desired

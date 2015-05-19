@@ -102,12 +102,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * The stack's operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * following. <ul> <li>Standard Linux operating systems: an Amazon Linux
      * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     * <code>Custom</code>. You specify the custom AMI you want to use when
-     * you create instances.</li> </ul> <p> The default option is the current
-     * Amazon Linux version.
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux
+     * AMIs: <code>Custom</code>. You specify the custom AMI you want to use
+     * when you create instances.</li> <li>Microsoft Windows Server 2012
+     * R2.</li> </ul> <p> The default option is the current Amazon Linux
+     * version.
      */
     private String defaultOs;
 
@@ -116,17 +117,17 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * The theme is used to generate host names for the stack's instances. By
      * default, <code>HostnameTheme</code> is set to
      * <code>Layer_Dependent</code>, which creates host names by appending
-     * integers to the layer's short name. The other themes are: <ul>
-     * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     * <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
-     * <li><code>Greek_Deities</code></li>
-     * <li><code>Legendary_creatures_from_Japan</code></li>
-     * <li><code>Planets_and_Moons</code></li>
-     * <li><code>Roman_Deities</code></li>
-     * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
-     * <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
-     * name, call <code>GetHostNameSuggestion</code>, which returns a host
-     * name based on the current theme.
+     * integers to the layer's short name. The other themes are: <ul> <li>
+     * <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
+     * <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
+     * <code>Greek_Deities</code> </li> <li>
+     * <code>Legendary_creatures_from_Japan</code> </li> <li>
+     * <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
+     * </li> <li> <code>Scottish_Islands</code> </li> <li>
+     * <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
+     * <p>To obtain a generated host name, call
+     * <code>GetHostNameSuggestion</code>, which returns a host name based on
+     * the current theme.
      */
     private String hostnameTheme;
 
@@ -152,13 +153,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     private String defaultSubnetId;
 
     /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * A string that contains user-defined, custom JSON. It can be used to
+     * override the corresponding default stack configuration attribute
+     * values, or to pass data to recipes. The string should be in the
+     * following format and must escape characters such as '"'.: <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     * more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration JSON</a>.
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
     private String customJson;
 
@@ -676,20 +678,22 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * The stack's operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * following. <ul> <li>Standard Linux operating systems: an Amazon Linux
      * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     * <code>Custom</code>. You specify the custom AMI you want to use when
-     * you create instances.</li> </ul> <p> The default option is the current
-     * Amazon Linux version.
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux
+     * AMIs: <code>Custom</code>. You specify the custom AMI you want to use
+     * when you create instances.</li> <li>Microsoft Windows Server 2012
+     * R2.</li> </ul> <p> The default option is the current Amazon Linux
+     * version.
      *
      * @return The stack's operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: an Amazon Linux
+     *         following. <ul> <li>Standard Linux operating systems: an Amazon Linux
      *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     *         <code>Custom</code>. You specify the custom AMI you want to use when
-     *         you create instances.</li> </ul> <p> The default option is the current
-     *         Amazon Linux version.
+     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux
+     *         AMIs: <code>Custom</code>. You specify the custom AMI you want to use
+     *         when you create instances.</li> <li>Microsoft Windows Server 2012
+     *         R2.</li> </ul> <p> The default option is the current Amazon Linux
+     *         version.
      */
     public String getDefaultOs() {
         return defaultOs;
@@ -697,20 +701,22 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * The stack's operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * following. <ul> <li>Standard Linux operating systems: an Amazon Linux
      * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     * <code>Custom</code>. You specify the custom AMI you want to use when
-     * you create instances.</li> </ul> <p> The default option is the current
-     * Amazon Linux version.
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux
+     * AMIs: <code>Custom</code>. You specify the custom AMI you want to use
+     * when you create instances.</li> <li>Microsoft Windows Server 2012
+     * R2.</li> </ul> <p> The default option is the current Amazon Linux
+     * version.
      *
      * @param defaultOs The stack's operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: an Amazon Linux
+     *         following. <ul> <li>Standard Linux operating systems: an Amazon Linux
      *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     *         <code>Custom</code>. You specify the custom AMI you want to use when
-     *         you create instances.</li> </ul> <p> The default option is the current
-     *         Amazon Linux version.
+     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux
+     *         AMIs: <code>Custom</code>. You specify the custom AMI you want to use
+     *         when you create instances.</li> <li>Microsoft Windows Server 2012
+     *         R2.</li> </ul> <p> The default option is the current Amazon Linux
+     *         version.
      */
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
@@ -718,22 +724,24 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * The stack's operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: an Amazon Linux
+     * following. <ul> <li>Standard Linux operating systems: an Amazon Linux
      * version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     * <code>Custom</code>. You specify the custom AMI you want to use when
-     * you create instances.</li> </ul> <p> The default option is the current
-     * Amazon Linux version.
+     * LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux
+     * AMIs: <code>Custom</code>. You specify the custom AMI you want to use
+     * when you create instances.</li> <li>Microsoft Windows Server 2012
+     * R2.</li> </ul> <p> The default option is the current Amazon Linux
+     * version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultOs The stack's operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: an Amazon Linux
+     *         following. <ul> <li>Standard Linux operating systems: an Amazon Linux
      *         version such as <code>Amazon Linux 2014.09</code>, <code>Ubuntu 12.04
-     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs:
-     *         <code>Custom</code>. You specify the custom AMI you want to use when
-     *         you create instances.</li> </ul> <p> The default option is the current
-     *         Amazon Linux version.
+     *         LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom Linux
+     *         AMIs: <code>Custom</code>. You specify the custom AMI you want to use
+     *         when you create instances.</li> <li>Microsoft Windows Server 2012
+     *         R2.</li> </ul> <p> The default option is the current Amazon Linux
+     *         version.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -748,33 +756,33 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * The theme is used to generate host names for the stack's instances. By
      * default, <code>HostnameTheme</code> is set to
      * <code>Layer_Dependent</code>, which creates host names by appending
-     * integers to the layer's short name. The other themes are: <ul>
-     * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     * <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
-     * <li><code>Greek_Deities</code></li>
-     * <li><code>Legendary_creatures_from_Japan</code></li>
-     * <li><code>Planets_and_Moons</code></li>
-     * <li><code>Roman_Deities</code></li>
-     * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
-     * <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
-     * name, call <code>GetHostNameSuggestion</code>, which returns a host
-     * name based on the current theme.
+     * integers to the layer's short name. The other themes are: <ul> <li>
+     * <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
+     * <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
+     * <code>Greek_Deities</code> </li> <li>
+     * <code>Legendary_creatures_from_Japan</code> </li> <li>
+     * <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
+     * </li> <li> <code>Scottish_Islands</code> </li> <li>
+     * <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
+     * <p>To obtain a generated host name, call
+     * <code>GetHostNameSuggestion</code>, which returns a host name based on
+     * the current theme.
      *
      * @return The stack's host name theme, with spaces are replaced by underscores.
      *         The theme is used to generate host names for the stack's instances. By
      *         default, <code>HostnameTheme</code> is set to
      *         <code>Layer_Dependent</code>, which creates host names by appending
-     *         integers to the layer's short name. The other themes are: <ul>
-     *         <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     *         <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
-     *         <li><code>Greek_Deities</code></li>
-     *         <li><code>Legendary_creatures_from_Japan</code></li>
-     *         <li><code>Planets_and_Moons</code></li>
-     *         <li><code>Roman_Deities</code></li>
-     *         <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
-     *         <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
-     *         name, call <code>GetHostNameSuggestion</code>, which returns a host
-     *         name based on the current theme.
+     *         integers to the layer's short name. The other themes are: <ul> <li>
+     *         <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
+     *         <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
+     *         <code>Greek_Deities</code> </li> <li>
+     *         <code>Legendary_creatures_from_Japan</code> </li> <li>
+     *         <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
+     *         </li> <li> <code>Scottish_Islands</code> </li> <li>
+     *         <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
+     *         <p>To obtain a generated host name, call
+     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
+     *         the current theme.
      */
     public String getHostnameTheme() {
         return hostnameTheme;
@@ -785,33 +793,33 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * The theme is used to generate host names for the stack's instances. By
      * default, <code>HostnameTheme</code> is set to
      * <code>Layer_Dependent</code>, which creates host names by appending
-     * integers to the layer's short name. The other themes are: <ul>
-     * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     * <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
-     * <li><code>Greek_Deities</code></li>
-     * <li><code>Legendary_creatures_from_Japan</code></li>
-     * <li><code>Planets_and_Moons</code></li>
-     * <li><code>Roman_Deities</code></li>
-     * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
-     * <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
-     * name, call <code>GetHostNameSuggestion</code>, which returns a host
-     * name based on the current theme.
+     * integers to the layer's short name. The other themes are: <ul> <li>
+     * <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
+     * <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
+     * <code>Greek_Deities</code> </li> <li>
+     * <code>Legendary_creatures_from_Japan</code> </li> <li>
+     * <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
+     * </li> <li> <code>Scottish_Islands</code> </li> <li>
+     * <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
+     * <p>To obtain a generated host name, call
+     * <code>GetHostNameSuggestion</code>, which returns a host name based on
+     * the current theme.
      *
      * @param hostnameTheme The stack's host name theme, with spaces are replaced by underscores.
      *         The theme is used to generate host names for the stack's instances. By
      *         default, <code>HostnameTheme</code> is set to
      *         <code>Layer_Dependent</code>, which creates host names by appending
-     *         integers to the layer's short name. The other themes are: <ul>
-     *         <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     *         <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
-     *         <li><code>Greek_Deities</code></li>
-     *         <li><code>Legendary_creatures_from_Japan</code></li>
-     *         <li><code>Planets_and_Moons</code></li>
-     *         <li><code>Roman_Deities</code></li>
-     *         <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
-     *         <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
-     *         name, call <code>GetHostNameSuggestion</code>, which returns a host
-     *         name based on the current theme.
+     *         integers to the layer's short name. The other themes are: <ul> <li>
+     *         <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
+     *         <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
+     *         <code>Greek_Deities</code> </li> <li>
+     *         <code>Legendary_creatures_from_Japan</code> </li> <li>
+     *         <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
+     *         </li> <li> <code>Scottish_Islands</code> </li> <li>
+     *         <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
+     *         <p>To obtain a generated host name, call
+     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
+     *         the current theme.
      */
     public void setHostnameTheme(String hostnameTheme) {
         this.hostnameTheme = hostnameTheme;
@@ -822,17 +830,17 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * The theme is used to generate host names for the stack's instances. By
      * default, <code>HostnameTheme</code> is set to
      * <code>Layer_Dependent</code>, which creates host names by appending
-     * integers to the layer's short name. The other themes are: <ul>
-     * <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     * <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
-     * <li><code>Greek_Deities</code></li>
-     * <li><code>Legendary_creatures_from_Japan</code></li>
-     * <li><code>Planets_and_Moons</code></li>
-     * <li><code>Roman_Deities</code></li>
-     * <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
-     * <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
-     * name, call <code>GetHostNameSuggestion</code>, which returns a host
-     * name based on the current theme.
+     * integers to the layer's short name. The other themes are: <ul> <li>
+     * <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
+     * <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
+     * <code>Greek_Deities</code> </li> <li>
+     * <code>Legendary_creatures_from_Japan</code> </li> <li>
+     * <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
+     * </li> <li> <code>Scottish_Islands</code> </li> <li>
+     * <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
+     * <p>To obtain a generated host name, call
+     * <code>GetHostNameSuggestion</code>, which returns a host name based on
+     * the current theme.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -840,17 +848,17 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         The theme is used to generate host names for the stack's instances. By
      *         default, <code>HostnameTheme</code> is set to
      *         <code>Layer_Dependent</code>, which creates host names by appending
-     *         integers to the layer's short name. The other themes are: <ul>
-     *         <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li>
-     *         <li><code>Europe_Cities</code></li> <li><code>Fruits</code></li>
-     *         <li><code>Greek_Deities</code></li>
-     *         <li><code>Legendary_creatures_from_Japan</code></li>
-     *         <li><code>Planets_and_Moons</code></li>
-     *         <li><code>Roman_Deities</code></li>
-     *         <li><code>Scottish_Islands</code></li> <li><code>US_Cities</code></li>
-     *         <li><code>Wild_Cats</code></li> </ul> <p>To obtain a generated host
-     *         name, call <code>GetHostNameSuggestion</code>, which returns a host
-     *         name based on the current theme.
+     *         integers to the layer's short name. The other themes are: <ul> <li>
+     *         <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li>
+     *         <code>Europe_Cities</code> </li> <li> <code>Fruits</code> </li> <li>
+     *         <code>Greek_Deities</code> </li> <li>
+     *         <code>Legendary_creatures_from_Japan</code> </li> <li>
+     *         <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code>
+     *         </li> <li> <code>Scottish_Islands</code> </li> <li>
+     *         <code>US_Cities</code> </li> <li> <code>Wild_Cats</code> </li> </ul>
+     *         <p>To obtain a generated host name, call
+     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
+     *         the current theme.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -993,65 +1001,71 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * A string that contains user-defined, custom JSON. It can be used to
+     * override the corresponding default stack configuration attribute
+     * values, or to pass data to recipes. The string should be in the
+     * following format and must escape characters such as '"'.: <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     * more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration JSON</a>.
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.
      *
-     * @return A string that contains user-defined, custom JSON. It is used to
-     *         override the corresponding default stack configuration JSON values.
-     *         The string should be in the following format and must escape
-     *         characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * @return A string that contains user-defined, custom JSON. It can be used to
+     *         override the corresponding default stack configuration attribute
+     *         values, or to pass data to recipes. The string should be in the
+     *         following format and must escape characters such as '"'.: <p>
+     *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     *         more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
     public String getCustomJson() {
         return customJson;
     }
     
     /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * A string that contains user-defined, custom JSON. It can be used to
+     * override the corresponding default stack configuration attribute
+     * values, or to pass data to recipes. The string should be in the
+     * following format and must escape characters such as '"'.: <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     * more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration JSON</a>.
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.
      *
-     * @param customJson A string that contains user-defined, custom JSON. It is used to
-     *         override the corresponding default stack configuration JSON values.
-     *         The string should be in the following format and must escape
-     *         characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * @param customJson A string that contains user-defined, custom JSON. It can be used to
+     *         override the corresponding default stack configuration attribute
+     *         values, or to pass data to recipes. The string should be in the
+     *         following format and must escape characters such as '"'.: <p>
+     *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     *         more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
     }
     
     /**
-     * A string that contains user-defined, custom JSON. It is used to
-     * override the corresponding default stack configuration JSON values.
-     * The string should be in the following format and must escape
-     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * A string that contains user-defined, custom JSON. It can be used to
+     * override the corresponding default stack configuration attribute
+     * values, or to pass data to recipes. The string should be in the
+     * following format and must escape characters such as '"'.: <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     * more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     * Custom JSON to Modify the Stack Configuration JSON</a>.
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customJson A string that contains user-defined, custom JSON. It is used to
-     *         override the corresponding default stack configuration JSON values.
-     *         The string should be in the following format and must escape
-     *         characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * @param customJson A string that contains user-defined, custom JSON. It can be used to
+     *         override the corresponding default stack configuration attribute
+     *         values, or to pass data to recipes. The string should be in the
+     *         following format and must escape characters such as '"'.: <p>
+     *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     *         more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
-     *         Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         Custom JSON to Modify the Stack Configuration Attributes</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

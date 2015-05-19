@@ -88,12 +88,21 @@ public class DateUtils {
     }
 
     static Date doParseISO8601Date(final String dateStringOrig) {
+        String dateString = dateStringOrig;
+
+        // For EC2 Spot Fleet.
+        if (dateString.endsWith("+0000")) {
+            dateString = dateString
+                    .substring(0, dateString.length() - 5)
+                    .concat("Z");
+        }
+
         // https://github.com/aws/aws-sdk-java/issues/233
-        final String temp = tempDateStringForJodaTime(dateStringOrig);
+        String temp = tempDateStringForJodaTime(dateString);
         try {
-            if (temp.equals(dateStringOrig)) {
+            if (temp.equals(dateString)) {
                 // Normal case: nothing special here
-                return new Date(iso8601DateFormat.parseMillis(dateStringOrig));
+                return new Date(iso8601DateFormat.parseMillis(dateString));
             }
             // Handling edge case:
             // Joda-time can only handle up to year 292278993 but we are given
@@ -104,12 +113,12 @@ public class DateUtils {
             if (milli < 0) { // overflow!
                 // re-parse the original date string using JodaTime so as to
                 // throw  an exception with a consistent message
-                return new Date(iso8601DateFormat.parseMillis(dateStringOrig));
+                return new Date(iso8601DateFormat.parseMillis(dateString));
             }
             return new Date(milli);
         } catch (IllegalArgumentException e) {
             try {
-                return new Date(alternateIso8601DateFormat.parseMillis(dateStringOrig));
+                return new Date(alternateIso8601DateFormat.parseMillis(dateString));
                 // If the first ISO 8601 parser didn't work, try the alternate
                 // version which doesn't include fractional seconds
             } catch(Exception oops) {
