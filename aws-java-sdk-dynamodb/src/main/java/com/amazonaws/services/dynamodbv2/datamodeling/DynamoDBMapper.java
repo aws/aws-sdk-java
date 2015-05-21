@@ -2145,6 +2145,9 @@ public class DynamoDBMapper {
 
         result.setResults(marshallIntoObjects(parameters));
         result.setLastEvaluatedKey(scanResult.getLastEvaluatedKey());
+        result.setCount(scanResult.getCount());
+        result.setScannedCount(scanResult.getScannedCount());
+        result.setConsumedCapacity(scanResult.getConsumedCapacity());
 
         return result;
     }
@@ -2253,13 +2256,16 @@ public class DynamoDBMapper {
 
         QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression, config);
 
-        QueryResult scanResult = db.query(applyUserAgent(queryRequest));
+        QueryResult queryResult = db.query(applyUserAgent(queryRequest));
         QueryResultPage<T> result = new QueryResultPage<T>();
         List<AttributeTransformer.Parameters<T>> parameters =
-            toParameters(scanResult.getItems(), clazz, queryRequest.getTableName(), config);
+            toParameters(queryResult.getItems(), clazz, queryRequest.getTableName(), config);
 
         result.setResults(marshallIntoObjects(parameters));
-        result.setLastEvaluatedKey(scanResult.getLastEvaluatedKey());
+        result.setLastEvaluatedKey(queryResult.getLastEvaluatedKey());
+        result.setCount(queryResult.getCount());
+        result.setScannedCount(queryResult.getScannedCount());
+        result.setConsumedCapacity(queryResult.getConsumedCapacity());
 
         return result;
     }
@@ -2381,6 +2387,9 @@ public class DynamoDBMapper {
         scanRequest.setExpressionAttributeValues(scanExpression
                 .getExpressionAttributeValues());
         scanRequest.setRequestMetricCollector(config.getRequestMetricCollector());
+        scanRequest.setSelect(scanExpression.getSelect());
+        scanRequest.setProjectionExpression(scanExpression.getProjectionExpression());
+        scanRequest.setReturnConsumedCapacity(scanExpression.getReturnConsumedCapacity());
 
         return applyUserAgent(scanRequest);
     }
@@ -2433,9 +2442,12 @@ public class DynamoDBMapper {
            .withExclusiveStartKey(xpress.getExclusiveStartKey())
            .withQueryFilter(xpress.getQueryFilter())
            .withConditionalOperator(xpress.getConditionalOperator())
+           .withSelect(xpress.getSelect())
+           .withProjectionExpression(xpress.getProjectionExpression())
            .withFilterExpression(xpress.getFilterExpression())
            .withExpressionAttributeNames(xpress.getExpressionAttributeNames())
            .withExpressionAttributeValues(xpress.getExpressionAttributeValues())
+           .withReturnConsumedCapacity(xpress.getReturnConsumedCapacity())
            .withRequestMetricCollector(config.getRequestMetricCollector())
            ;
         return applyUserAgent(req);
