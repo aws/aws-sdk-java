@@ -135,7 +135,7 @@ public class StringUtils {
     }
 
     public static String replace( String originalString, String partToMatch, String replacement ) {
-        StringBuffer buffer = new StringBuffer( originalString.length() );
+        StringBuilder buffer = new StringBuilder( originalString.length() );
         buffer.append( originalString );
 
         int indexOf = buffer.indexOf( partToMatch );

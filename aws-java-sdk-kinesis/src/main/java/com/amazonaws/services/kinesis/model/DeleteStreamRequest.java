@@ -47,8 +47,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * stream, which is returned in <code>StreamStatus</code> .
  * </p>
  * <p>
- * <code>DeleteStream</code> has a limit of 5 transactions per second
- * per account.
+ * DeleteStream has a limit of 5 transactions per second per account.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#deleteStream(DeleteStreamRequest)

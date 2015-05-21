@@ -45,35 +45,32 @@ import com.amazonaws.AmazonWebServiceRequest;
  * untrimmed record in the shard in the system, which is the oldest data
  * record in the shard. Or you can point to just after the most recent
  * record in the shard, by using the shard iterator type
- * <code>LATEST</code> ,
- * so that you always read the most recent data in the shard.
+ * <code>LATEST</code> , so that you always read the most recent data in
+ * the shard.
  * </p>
  * <p>
  * When you repeatedly read from an Amazon Kinesis stream use a
- * GetShardIterator request to get the first shard iterator to to use in
- * your first <code>GetRecords</code> request and then use the shard
- * iterator returned by the <code>GetRecords</code> request in
- * <code>NextShardIterator</code> for subsequent reads. A new shard
- * iterator is returned by every <code>GetRecords</code> request in
- * <code>NextShardIterator</code> ,
- * which you use in the <code>ShardIterator</code> parameter
- * of the next <code>GetRecords</code> request.
+ * GetShardIterator request to get the first shard iterator for use in
+ * your first GetRecords request and then use the shard iterator returned
+ * by the GetRecords request in <code>NextShardIterator</code> for
+ * subsequent reads. A new shard iterator is returned by every GetRecords
+ * request in <code>NextShardIterator</code> , which you use in the
+ * <code>ShardIterator</code> parameter of the next GetRecords request.
  * </p>
  * <p>
- * If a <code>GetShardIterator</code> request is made too often, you
- * receive a <code>ProvisionedThroughputExceededException</code> .
- * For more information about throughput limits, see
- * GetRecords.
+ * If a GetShardIterator request is made too often, you receive a
+ * <code>ProvisionedThroughputExceededException</code> . For more
+ * information about throughput limits, see GetRecords.
  * </p>
  * <p>
  * If the shard is closed, the iterator can't return more data, and
- * <code>GetShardIterator</code> returns <code>null</code> for its
+ * GetShardIterator returns <code>null</code> for its
  * <code>ShardIterator</code> . A shard can be closed using SplitShard or
  * MergeShards.
  * </p>
  * <p>
- * <code>GetShardIterator</code> has a limit of 5 transactions per
- * second per account per open shard.
+ * GetShardIterator has a limit of 5 transactions per second per account
+ * per open shard.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#getShardIterator(GetShardIteratorRequest)

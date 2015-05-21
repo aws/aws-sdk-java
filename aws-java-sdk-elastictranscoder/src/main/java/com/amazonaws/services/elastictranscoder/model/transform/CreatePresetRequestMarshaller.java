@@ -231,6 +231,9 @@ public class CreatePresetRequestMarshaller implements Marshaller<Request<CreateP
                 if (audio.getChannels() != null) {
                     jsonWriter.key("Channels").value(audio.getChannels());
                 }
+                if (audio.getAudioPackingMode() != null) {
+                    jsonWriter.key("AudioPackingMode").value(audio.getAudioPackingMode());
+                }
                 AudioCodecOptions codecOptions = audio.getCodecOptions();
                 if (codecOptions != null) {
 
@@ -239,6 +242,15 @@ public class CreatePresetRequestMarshaller implements Marshaller<Request<CreateP
 
                     if (codecOptions.getProfile() != null) {
                         jsonWriter.key("Profile").value(codecOptions.getProfile());
+                    }
+                    if (codecOptions.getBitDepth() != null) {
+                        jsonWriter.key("BitDepth").value(codecOptions.getBitDepth());
+                    }
+                    if (codecOptions.getBitOrder() != null) {
+                        jsonWriter.key("BitOrder").value(codecOptions.getBitOrder());
+                    }
+                    if (codecOptions.getSigned() != null) {
+                        jsonWriter.key("Signed").value(codecOptions.getSigned());
                     }
                     jsonWriter.endObject();
                 }

@@ -29,9 +29,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DisableKeyRotationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Unique identifier of the customer master key for which rotation is to
-     * be disabled. This can be an ARN, an alias, or a globally unique
-     * identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -39,50 +42,68 @@ public class DisableKeyRotationRequest extends AmazonWebServiceRequest implement
     private String keyId;
 
     /**
-     * Unique identifier of the customer master key for which rotation is to
-     * be disabled. This can be an ARN, an alias, or a globally unique
-     * identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Unique identifier of the customer master key for which rotation is to
-     *         be disabled. This can be an ARN, an alias, or a globally unique
-     *         identifier.
+     * @return A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier or the fully specified ARN to a key. <ul>
+     *         <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      */
     public String getKeyId() {
         return keyId;
     }
     
     /**
-     * Unique identifier of the customer master key for which rotation is to
-     * be disabled. This can be an ARN, an alias, or a globally unique
-     * identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier of the customer master key for which rotation is to
-     *         be disabled. This can be an ARN, an alias, or a globally unique
-     *         identifier.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier or the fully specified ARN to a key. <ul>
+     *         <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      */
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
     
     /**
-     * Unique identifier of the customer master key for which rotation is to
-     * be disabled. This can be an ARN, an alias, or a globally unique
-     * identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier of the customer master key for which rotation is to
-     *         be disabled. This can be an ARN, an alias, or a globally unique
-     *         identifier.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier or the fully specified ARN to a key. <ul>
+     *         <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -27,16 +27,16 @@ public class CaptionFormat implements Serializable, Cloneable {
     /**
      * The format you specify determines whether Elastic Transcoder generates
      * an embedded or sidecar caption for this output. <ul> <li><p><b>Valid
-     * Embedded Caption Formats:</b> <ul> <li><p><b>For MP3</b>: None</li>
-     * <li><p><b>For MP4</b>: mov-text</li> <li><p><b>For MPEG-TS</b>:
-     * None</li> <li><p><b>For ogg</b>: None</li> <li><p><b>For webm</b>:
-     * None</li> </ul> </li> <li><p><b>Valid Sidecar Caption Formats:</b>
-     * Elastic Transcoder supports dfxp (first div element only), scc, srt,
-     * and webvtt. If you want ttml or smpte-tt compatible captions, specify
-     * dfxp as your output format. <ul> <li><p><b>For FMP4</b>: dfxp</li>
-     * <li><p><b>Non-FMP4 outputs</b>: All sidecar types</li> </ul>
-     * <p><code>fmp4</code> captions have an extension of <code>.ismt</code>
-     * </li> </ul>
+     * Embedded Caption Formats:</b> <ul> <li><p><b>for FLAC</b>: None</li>
+     * <li><p><b>For MP3</b>: None</li> <li><p><b>For MP4</b>: mov-text</li>
+     * <li><p><b>For MPEG-TS</b>: None</li> <li><p><b>For ogg</b>: None</li>
+     * <li><p><b>For webm</b>: None</li> </ul> </li> <li><p><b>Valid Sidecar
+     * Caption Formats:</b> Elastic Transcoder supports dfxp (first div
+     * element only), scc, srt, and webvtt. If you want ttml or smpte-tt
+     * compatible captions, specify dfxp as your output format. <ul>
+     * <li><p><b>For FMP4</b>: dfxp</li> <li><p><b>Non-FMP4 outputs</b>: All
+     * sidecar types</li> </ul> <p><code>fmp4</code> captions have an
+     * extension of <code>.ismt</code> </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^mov-text$)|(^srt$)|(^scc$)|(^webvtt$)|(^dfxp$)<br/>
@@ -73,32 +73,32 @@ public class CaptionFormat implements Serializable, Cloneable {
     /**
      * The format you specify determines whether Elastic Transcoder generates
      * an embedded or sidecar caption for this output. <ul> <li><p><b>Valid
-     * Embedded Caption Formats:</b> <ul> <li><p><b>For MP3</b>: None</li>
-     * <li><p><b>For MP4</b>: mov-text</li> <li><p><b>For MPEG-TS</b>:
-     * None</li> <li><p><b>For ogg</b>: None</li> <li><p><b>For webm</b>:
-     * None</li> </ul> </li> <li><p><b>Valid Sidecar Caption Formats:</b>
-     * Elastic Transcoder supports dfxp (first div element only), scc, srt,
-     * and webvtt. If you want ttml or smpte-tt compatible captions, specify
-     * dfxp as your output format. <ul> <li><p><b>For FMP4</b>: dfxp</li>
-     * <li><p><b>Non-FMP4 outputs</b>: All sidecar types</li> </ul>
-     * <p><code>fmp4</code> captions have an extension of <code>.ismt</code>
-     * </li> </ul>
+     * Embedded Caption Formats:</b> <ul> <li><p><b>for FLAC</b>: None</li>
+     * <li><p><b>For MP3</b>: None</li> <li><p><b>For MP4</b>: mov-text</li>
+     * <li><p><b>For MPEG-TS</b>: None</li> <li><p><b>For ogg</b>: None</li>
+     * <li><p><b>For webm</b>: None</li> </ul> </li> <li><p><b>Valid Sidecar
+     * Caption Formats:</b> Elastic Transcoder supports dfxp (first div
+     * element only), scc, srt, and webvtt. If you want ttml or smpte-tt
+     * compatible captions, specify dfxp as your output format. <ul>
+     * <li><p><b>For FMP4</b>: dfxp</li> <li><p><b>Non-FMP4 outputs</b>: All
+     * sidecar types</li> </ul> <p><code>fmp4</code> captions have an
+     * extension of <code>.ismt</code> </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^mov-text$)|(^srt$)|(^scc$)|(^webvtt$)|(^dfxp$)<br/>
      *
      * @return The format you specify determines whether Elastic Transcoder generates
      *         an embedded or sidecar caption for this output. <ul> <li><p><b>Valid
-     *         Embedded Caption Formats:</b> <ul> <li><p><b>For MP3</b>: None</li>
-     *         <li><p><b>For MP4</b>: mov-text</li> <li><p><b>For MPEG-TS</b>:
-     *         None</li> <li><p><b>For ogg</b>: None</li> <li><p><b>For webm</b>:
-     *         None</li> </ul> </li> <li><p><b>Valid Sidecar Caption Formats:</b>
-     *         Elastic Transcoder supports dfxp (first div element only), scc, srt,
-     *         and webvtt. If you want ttml or smpte-tt compatible captions, specify
-     *         dfxp as your output format. <ul> <li><p><b>For FMP4</b>: dfxp</li>
-     *         <li><p><b>Non-FMP4 outputs</b>: All sidecar types</li> </ul>
-     *         <p><code>fmp4</code> captions have an extension of <code>.ismt</code>
-     *         </li> </ul>
+     *         Embedded Caption Formats:</b> <ul> <li><p><b>for FLAC</b>: None</li>
+     *         <li><p><b>For MP3</b>: None</li> <li><p><b>For MP4</b>: mov-text</li>
+     *         <li><p><b>For MPEG-TS</b>: None</li> <li><p><b>For ogg</b>: None</li>
+     *         <li><p><b>For webm</b>: None</li> </ul> </li> <li><p><b>Valid Sidecar
+     *         Caption Formats:</b> Elastic Transcoder supports dfxp (first div
+     *         element only), scc, srt, and webvtt. If you want ttml or smpte-tt
+     *         compatible captions, specify dfxp as your output format. <ul>
+     *         <li><p><b>For FMP4</b>: dfxp</li> <li><p><b>Non-FMP4 outputs</b>: All
+     *         sidecar types</li> </ul> <p><code>fmp4</code> captions have an
+     *         extension of <code>.ismt</code> </li> </ul>
      */
     public String getFormat() {
         return format;
@@ -107,32 +107,32 @@ public class CaptionFormat implements Serializable, Cloneable {
     /**
      * The format you specify determines whether Elastic Transcoder generates
      * an embedded or sidecar caption for this output. <ul> <li><p><b>Valid
-     * Embedded Caption Formats:</b> <ul> <li><p><b>For MP3</b>: None</li>
-     * <li><p><b>For MP4</b>: mov-text</li> <li><p><b>For MPEG-TS</b>:
-     * None</li> <li><p><b>For ogg</b>: None</li> <li><p><b>For webm</b>:
-     * None</li> </ul> </li> <li><p><b>Valid Sidecar Caption Formats:</b>
-     * Elastic Transcoder supports dfxp (first div element only), scc, srt,
-     * and webvtt. If you want ttml or smpte-tt compatible captions, specify
-     * dfxp as your output format. <ul> <li><p><b>For FMP4</b>: dfxp</li>
-     * <li><p><b>Non-FMP4 outputs</b>: All sidecar types</li> </ul>
-     * <p><code>fmp4</code> captions have an extension of <code>.ismt</code>
-     * </li> </ul>
+     * Embedded Caption Formats:</b> <ul> <li><p><b>for FLAC</b>: None</li>
+     * <li><p><b>For MP3</b>: None</li> <li><p><b>For MP4</b>: mov-text</li>
+     * <li><p><b>For MPEG-TS</b>: None</li> <li><p><b>For ogg</b>: None</li>
+     * <li><p><b>For webm</b>: None</li> </ul> </li> <li><p><b>Valid Sidecar
+     * Caption Formats:</b> Elastic Transcoder supports dfxp (first div
+     * element only), scc, srt, and webvtt. If you want ttml or smpte-tt
+     * compatible captions, specify dfxp as your output format. <ul>
+     * <li><p><b>For FMP4</b>: dfxp</li> <li><p><b>Non-FMP4 outputs</b>: All
+     * sidecar types</li> </ul> <p><code>fmp4</code> captions have an
+     * extension of <code>.ismt</code> </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^mov-text$)|(^srt$)|(^scc$)|(^webvtt$)|(^dfxp$)<br/>
      *
      * @param format The format you specify determines whether Elastic Transcoder generates
      *         an embedded or sidecar caption for this output. <ul> <li><p><b>Valid
-     *         Embedded Caption Formats:</b> <ul> <li><p><b>For MP3</b>: None</li>
-     *         <li><p><b>For MP4</b>: mov-text</li> <li><p><b>For MPEG-TS</b>:
-     *         None</li> <li><p><b>For ogg</b>: None</li> <li><p><b>For webm</b>:
-     *         None</li> </ul> </li> <li><p><b>Valid Sidecar Caption Formats:</b>
-     *         Elastic Transcoder supports dfxp (first div element only), scc, srt,
-     *         and webvtt. If you want ttml or smpte-tt compatible captions, specify
-     *         dfxp as your output format. <ul> <li><p><b>For FMP4</b>: dfxp</li>
-     *         <li><p><b>Non-FMP4 outputs</b>: All sidecar types</li> </ul>
-     *         <p><code>fmp4</code> captions have an extension of <code>.ismt</code>
-     *         </li> </ul>
+     *         Embedded Caption Formats:</b> <ul> <li><p><b>for FLAC</b>: None</li>
+     *         <li><p><b>For MP3</b>: None</li> <li><p><b>For MP4</b>: mov-text</li>
+     *         <li><p><b>For MPEG-TS</b>: None</li> <li><p><b>For ogg</b>: None</li>
+     *         <li><p><b>For webm</b>: None</li> </ul> </li> <li><p><b>Valid Sidecar
+     *         Caption Formats:</b> Elastic Transcoder supports dfxp (first div
+     *         element only), scc, srt, and webvtt. If you want ttml or smpte-tt
+     *         compatible captions, specify dfxp as your output format. <ul>
+     *         <li><p><b>For FMP4</b>: dfxp</li> <li><p><b>Non-FMP4 outputs</b>: All
+     *         sidecar types</li> </ul> <p><code>fmp4</code> captions have an
+     *         extension of <code>.ismt</code> </li> </ul>
      */
     public void setFormat(String format) {
         this.format = format;
@@ -141,16 +141,16 @@ public class CaptionFormat implements Serializable, Cloneable {
     /**
      * The format you specify determines whether Elastic Transcoder generates
      * an embedded or sidecar caption for this output. <ul> <li><p><b>Valid
-     * Embedded Caption Formats:</b> <ul> <li><p><b>For MP3</b>: None</li>
-     * <li><p><b>For MP4</b>: mov-text</li> <li><p><b>For MPEG-TS</b>:
-     * None</li> <li><p><b>For ogg</b>: None</li> <li><p><b>For webm</b>:
-     * None</li> </ul> </li> <li><p><b>Valid Sidecar Caption Formats:</b>
-     * Elastic Transcoder supports dfxp (first div element only), scc, srt,
-     * and webvtt. If you want ttml or smpte-tt compatible captions, specify
-     * dfxp as your output format. <ul> <li><p><b>For FMP4</b>: dfxp</li>
-     * <li><p><b>Non-FMP4 outputs</b>: All sidecar types</li> </ul>
-     * <p><code>fmp4</code> captions have an extension of <code>.ismt</code>
-     * </li> </ul>
+     * Embedded Caption Formats:</b> <ul> <li><p><b>for FLAC</b>: None</li>
+     * <li><p><b>For MP3</b>: None</li> <li><p><b>For MP4</b>: mov-text</li>
+     * <li><p><b>For MPEG-TS</b>: None</li> <li><p><b>For ogg</b>: None</li>
+     * <li><p><b>For webm</b>: None</li> </ul> </li> <li><p><b>Valid Sidecar
+     * Caption Formats:</b> Elastic Transcoder supports dfxp (first div
+     * element only), scc, srt, and webvtt. If you want ttml or smpte-tt
+     * compatible captions, specify dfxp as your output format. <ul>
+     * <li><p><b>For FMP4</b>: dfxp</li> <li><p><b>Non-FMP4 outputs</b>: All
+     * sidecar types</li> </ul> <p><code>fmp4</code> captions have an
+     * extension of <code>.ismt</code> </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -159,16 +159,16 @@ public class CaptionFormat implements Serializable, Cloneable {
      *
      * @param format The format you specify determines whether Elastic Transcoder generates
      *         an embedded or sidecar caption for this output. <ul> <li><p><b>Valid
-     *         Embedded Caption Formats:</b> <ul> <li><p><b>For MP3</b>: None</li>
-     *         <li><p><b>For MP4</b>: mov-text</li> <li><p><b>For MPEG-TS</b>:
-     *         None</li> <li><p><b>For ogg</b>: None</li> <li><p><b>For webm</b>:
-     *         None</li> </ul> </li> <li><p><b>Valid Sidecar Caption Formats:</b>
-     *         Elastic Transcoder supports dfxp (first div element only), scc, srt,
-     *         and webvtt. If you want ttml or smpte-tt compatible captions, specify
-     *         dfxp as your output format. <ul> <li><p><b>For FMP4</b>: dfxp</li>
-     *         <li><p><b>Non-FMP4 outputs</b>: All sidecar types</li> </ul>
-     *         <p><code>fmp4</code> captions have an extension of <code>.ismt</code>
-     *         </li> </ul>
+     *         Embedded Caption Formats:</b> <ul> <li><p><b>for FLAC</b>: None</li>
+     *         <li><p><b>For MP3</b>: None</li> <li><p><b>For MP4</b>: mov-text</li>
+     *         <li><p><b>For MPEG-TS</b>: None</li> <li><p><b>For ogg</b>: None</li>
+     *         <li><p><b>For webm</b>: None</li> </ul> </li> <li><p><b>Valid Sidecar
+     *         Caption Formats:</b> Elastic Transcoder supports dfxp (first div
+     *         element only), scc, srt, and webvtt. If you want ttml or smpte-tt
+     *         compatible captions, specify dfxp as your output format. <ul>
+     *         <li><p><b>For FMP4</b>: dfxp</li> <li><p><b>Non-FMP4 outputs</b>: All
+     *         sidecar types</li> </ul> <p><code>fmp4</code> captions have an
+     *         extension of <code>.ismt</code> </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

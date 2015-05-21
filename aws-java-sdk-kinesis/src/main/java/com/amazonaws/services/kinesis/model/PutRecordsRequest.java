@@ -31,8 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * You must specify the name of the stream that captures, stores, and
  * transports the data; and an array of request <code>Records</code> ,
- * with each record in the array requiring a partition key
- * and data blob.
+ * with each record in the array requiring a partition key and data blob.
  * </p>
  * <p>
  * The data blob can be any type of data; for example, a segment from a
@@ -47,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * result of this hashing mechanism, all data records with the same
  * partition key map to the same shard within the stream. For more
  * information, see
- * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-partition-key"> Partition Key </a>
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html"> Adding Data to a Stream </a>
  * in the <i>Amazon Kinesis Developer Guide</i> .
  * </p>
  * <p>
@@ -56,14 +55,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * partition key to shard mapping. This parameter allows a data producer
  * to determine explicitly the shard where the record is stored. For more
  * information, see
- * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-putrecords"> Adding Multiple Records with PutRecords </a>
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords"> Adding Multiple Records with PutRecords </a>
  * in the <i>Amazon Kinesis Developer Guide</i> .
  * </p>
  * <p>
  * The <code>PutRecords</code> response includes an array of response
- * <code>Records</code> . Each record in the response array directly
- * correlates with a record in the request array using natural ordering,
- * from the top to the bottom of the request and response. The response
+ * <code>Records</code> .
+ * Each record in the response array directly correlates with
+ * a record in the request array using natural ordering, from the top to
+ * the bottom of the request and response. The response
  * <code>Records</code> array always includes the same number of records
  * as the request array.
  * </p>
@@ -91,7 +91,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * information about the
  * <code>ProvisionedThroughputExceededException</code> exception
  * including the account ID, stream name, and shard ID of the record that
- * was throttled.
+ * was throttled. For more information about partially successful
+ * responses, see
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords"> Adding Multiple Records with PutRecords </a>
+ * in the <i>Amazon Kinesis Developer Guide</i> .
  * </p>
  * <p>
  * Data records are accessible for only 24 hours from the time that they

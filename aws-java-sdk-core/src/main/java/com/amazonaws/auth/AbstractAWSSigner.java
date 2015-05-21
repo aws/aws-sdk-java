@@ -37,6 +37,7 @@ import com.amazonaws.SDKGlobalTime;
 import com.amazonaws.SignableRequest;
 import com.amazonaws.internal.SdkDigestInputStream;
 import com.amazonaws.util.Base64;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.SdkHttpUtils;
 
 /**
@@ -47,6 +48,11 @@ import com.amazonaws.util.SdkHttpUtils;
  * Not intended to be sub-classed by developers.
  */
 public abstract class AbstractAWSSigner implements Signer {
+    public static final String EMPTY_STRING_SHA256_HEX;
+
+    static {
+        EMPTY_STRING_SHA256_HEX = BinaryUtils.toHex(doHash(""));
+    }
 
     /**
      * Computes an RFC 2104-compliant HMAC signature and returns the result as a
@@ -85,6 +91,16 @@ public abstract class AbstractAWSSigner implements Signer {
         }
     }
 
+    public byte[] signWithMac(String stringData, Mac mac) {
+        try {
+            return mac.doFinal(stringData.getBytes(UTF8));
+        } catch (Exception e) {
+            throw new AmazonClientException(
+                    "Unable to calculate a request signature: "
+                            + e.getMessage(), e);
+        }
+    }
+
     protected byte[] sign(byte[] data, byte[] key,
             SigningAlgorithm algorithm) throws AmazonClientException {
         try {
@@ -111,6 +127,10 @@ public abstract class AbstractAWSSigner implements Signer {
      *             If the hash cannot be computed.
      */
     public byte[] hash(String text) throws AmazonClientException {
+        return AbstractAWSSigner.doHash(text);
+    }
+
+    private static byte[] doHash(String text) throws AmazonClientException {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.update(text.getBytes(UTF8));

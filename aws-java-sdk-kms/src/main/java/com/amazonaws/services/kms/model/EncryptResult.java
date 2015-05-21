@@ -22,7 +22,8 @@ import java.io.Serializable;
 public class EncryptResult implements Serializable, Cloneable {
 
     /**
-     * The encrypted plaintext.
+     * The encrypted plaintext. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
@@ -38,38 +39,44 @@ public class EncryptResult implements Serializable, Cloneable {
     private String keyId;
 
     /**
-     * The encrypted plaintext.
+     * The encrypted plaintext. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
      *
-     * @return The encrypted plaintext.
+     * @return The encrypted plaintext. If you are using the CLI, the value is Base64
+     *         encoded. Otherwise, it is not encoded.
      */
     public java.nio.ByteBuffer getCiphertextBlob() {
         return ciphertextBlob;
     }
     
     /**
-     * The encrypted plaintext.
+     * The encrypted plaintext. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
      *
-     * @param ciphertextBlob The encrypted plaintext.
+     * @param ciphertextBlob The encrypted plaintext. If you are using the CLI, the value is Base64
+     *         encoded. Otherwise, it is not encoded.
      */
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         this.ciphertextBlob = ciphertextBlob;
     }
     
     /**
-     * The encrypted plaintext.
+     * The encrypted plaintext. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
      *
-     * @param ciphertextBlob The encrypted plaintext.
+     * @param ciphertextBlob The encrypted plaintext. If you are using the CLI, the value is Base64
+     *         encoded. Otherwise, it is not encoded.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

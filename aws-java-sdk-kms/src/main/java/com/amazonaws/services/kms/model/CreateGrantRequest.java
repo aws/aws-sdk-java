@@ -23,14 +23,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Adds a grant to a key to specify who can access the key and under what
  * conditions. Grants are alternate permission mechanisms to key
- * policies. If absent, access to the key is evaluated based on IAM
- * policies attached to the user. By default, grants do not expire.
- * Grants can be listed, retired, or revoked as indicated by the
- * following APIs. Typically, when you are finished using a grant, you
- * retire it. When you want to end a grant immediately, revoke it. For
- * more information about grants, see
+ * policies. For more information about grants, see
  * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html"> Grants </a>
- * . <ol> <li> ListGrants </li>
+ * in the developer guide. If a grant is absent, access to the key is
+ * evaluated based on IAM policies attached to the user. <ol> <li>
+ * ListGrants </li>
  * <li> RetireGrant </li>
  * <li> RevokeGrant </li>
  * </ol>
@@ -41,8 +38,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateGrantRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * A unique key identifier for a customer master key. This value can be a
-     * globally unique identifier, an ARN, or an alias.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -72,7 +73,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
      * of one or more of the following values: <ol> <li>Decrypt</li>
      * <li>Encrypt</li> <li>GenerateDataKey</li>
      * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> operations;
 
@@ -83,7 +84,9 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
     private GrantConstraints constraints;
 
     /**
-     * List of grant tokens.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
@@ -91,44 +94,68 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> grantTokens;
 
     /**
-     * A unique key identifier for a customer master key. This value can be a
-     * globally unique identifier, an ARN, or an alias.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return A unique key identifier for a customer master key. This value can be a
-     *         globally unique identifier, an ARN, or an alias.
+     * @return A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier or the fully specified ARN to a key. <ul>
+     *         <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      */
     public String getKeyId() {
         return keyId;
     }
     
     /**
-     * A unique key identifier for a customer master key. This value can be a
-     * globally unique identifier, an ARN, or an alias.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId A unique key identifier for a customer master key. This value can be a
-     *         globally unique identifier, an ARN, or an alias.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier or the fully specified ARN to a key. <ul>
+     *         <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      */
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
     
     /**
-     * A unique key identifier for a customer master key. This value can be a
-     * globally unique identifier, an ARN, or an alias.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId A unique key identifier for a customer master key. This value can be a
-     *         globally unique identifier, an ARN, or an alias.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier or the fully specified ARN to a key. <ul>
+     *         <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -239,13 +266,13 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
      * of one or more of the following values: <ol> <li>Decrypt</li>
      * <li>Encrypt</li> <li>GenerateDataKey</li>
      * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol>
      *
      * @return List of operations permitted by the grant. This can be any combination
      *         of one or more of the following values: <ol> <li>Decrypt</li>
      *         <li>Encrypt</li> <li>GenerateDataKey</li>
      *         <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     *         <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     *         <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol>
      */
     public java.util.List<String> getOperations() {
         if (operations == null) {
@@ -260,13 +287,13 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
      * of one or more of the following values: <ol> <li>Decrypt</li>
      * <li>Encrypt</li> <li>GenerateDataKey</li>
      * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol>
      *
      * @param operations List of operations permitted by the grant. This can be any combination
      *         of one or more of the following values: <ol> <li>Decrypt</li>
      *         <li>Encrypt</li> <li>GenerateDataKey</li>
      *         <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     *         <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     *         <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol>
      */
     public void setOperations(java.util.Collection<String> operations) {
         if (operations == null) {
@@ -283,7 +310,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
      * of one or more of the following values: <ol> <li>Decrypt</li>
      * <li>Encrypt</li> <li>GenerateDataKey</li>
      * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setOperations(java.util.Collection)} or {@link
@@ -296,7 +323,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
      *         of one or more of the following values: <ol> <li>Decrypt</li>
      *         <li>Encrypt</li> <li>GenerateDataKey</li>
      *         <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     *         <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     *         <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -314,7 +341,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
      * of one or more of the following values: <ol> <li>Decrypt</li>
      * <li>Encrypt</li> <li>GenerateDataKey</li>
      * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -322,7 +349,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
      *         of one or more of the following values: <ol> <li>Decrypt</li>
      *         <li>Encrypt</li> <li>GenerateDataKey</li>
      *         <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     *         <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     *         <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -344,7 +371,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
      * of one or more of the following values: <ol> <li>Decrypt</li>
      * <li>Encrypt</li> <li>GenerateDataKey</li>
      * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -352,7 +379,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
      *         of one or more of the following values: <ol> <li>Decrypt</li>
      *         <li>Encrypt</li> <li>GenerateDataKey</li>
      *         <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     *         <li>ReEncryptTo</li> <li>CreateGrant</li> </ol>
+     *         <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ol>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -410,12 +437,16 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * List of grant tokens.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @return List of grant tokens.
+     * @return For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      */
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
@@ -426,12 +457,16 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * List of grant tokens.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens List of grant tokens.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      */
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
@@ -444,7 +479,9 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * List of grant tokens.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setGrantTokens(java.util.Collection)} or {@link
@@ -456,7 +493,9 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens List of grant tokens.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -470,14 +509,18 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * List of grant tokens.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens List of grant tokens.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

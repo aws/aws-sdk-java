@@ -18,6 +18,7 @@
  */
 package com.amazonaws.util;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -28,6 +29,22 @@ import java.util.Arrays;
 import org.junit.Test;
 
 public class BinaryUtilsTest {
+
+    @Test
+    public void testHex() {
+        {
+            String hex = BinaryUtils.toHex(new byte[] {0});
+            System.out.println(hex);
+            String hex2 = Base16Lower.encodeAsString(new byte[] {0});
+            assertEquals(hex, hex2);
+        }
+        {
+            String hex = BinaryUtils.toHex(new byte[] {-1});
+            System.out.println(hex);
+            String hex2 = Base16Lower.encodeAsString(new byte[] {-1});
+            assertEquals(hex, hex2);
+        }
+    }
 
     @Test
     public void testCopyBytes_Nulls() {
@@ -105,7 +122,7 @@ public class BinaryUtilsTest {
         assertFalse(allData1 == allData2);
         assertTrue(allData1.length == 4);
         assertTrue(Arrays.equals(new byte[]{1,2,3,4}, allData1));
-        
+
         // copy partial bytes should be idempotent
         byte[] partial1 = BinaryUtils.copyBytesFrom(b);
         assertTrue(b.position() == 1);
@@ -135,7 +152,7 @@ public class BinaryUtilsTest {
         assertFalse(allData1 == allData2);
         assertTrue(allData1.length == 4);
         assertTrue(Arrays.equals(new byte[]{1,2,3,4}, allData1));
-        
+
         // copy partial bytes should be idempotent
         byte[] partial1 = BinaryUtils.copyBytesFrom(b);
         assertTrue(b.position() == 1);

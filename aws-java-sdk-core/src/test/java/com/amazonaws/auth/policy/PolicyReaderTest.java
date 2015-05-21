@@ -132,6 +132,31 @@ public class PolicyReaderTest {
         assertEquals("bar", statements.get(0).getConditions().get(0).getValues().get(1));
     }
 
+    /**
+     * Test policy parsing when the "Effect" is not mentioned in a Statement.
+     * The Effect must be default to "Deny" when it is not mentioned.
+     */
+    @Test
+    public void testPolicyParsingWithNoEffect() {
+        String jsonString =
+               "{" +
+                   "\"Statement\": [{" +
+                        "\"Action\": [" +
+                            "\"elasticmapreduce:*\"," +
+                            "\"iam:PassRole\"" +
+                        "]," +
+                        "\"Resource\": [\"*\"]" +
+                   "}]" +
+               "}";
+
+        Policy policy = Policy.fromJson(jsonString);
+        assertEquals(1, policy.getStatements().size());
+        List<Statement> statements = new LinkedList<Statement>(policy.getStatements());
+
+        assertEquals(Effect.Deny, statements.get(0).getEffect());
+        assertEquals(1, statements.size());
+    }
+
     @Test
     public void testMultipleStatements() throws Exception {
          Policy policy = new Policy("S3PolicyId1");

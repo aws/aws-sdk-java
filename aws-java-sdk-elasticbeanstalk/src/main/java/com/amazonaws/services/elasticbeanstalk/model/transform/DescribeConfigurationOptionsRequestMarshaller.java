@@ -60,6 +60,9 @@ public class DescribeConfigurationOptionsRequestMarshaller implements Marshaller
         for (OptionSpecification optionsListValue : optionsList) {
             OptionSpecification optionSpecificationMember = optionsListValue;
             if (optionSpecificationMember != null) {
+                if (optionSpecificationMember.getResourceName() != null) {
+                    request.addParameter("Options.member." + optionsListIndex + ".ResourceName", StringUtils.fromString(optionSpecificationMember.getResourceName()));
+                }
                 if (optionSpecificationMember.getNamespace() != null) {
                     request.addParameter("Options.member." + optionsListIndex + ".Namespace", StringUtils.fromString(optionSpecificationMember.getNamespace()));
                 }

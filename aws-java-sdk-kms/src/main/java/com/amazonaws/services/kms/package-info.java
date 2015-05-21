@@ -5,8 +5,9 @@
  * AWS Key Management Service <p>
  * AWS Key Management Service (KMS) is an encryption and key management
  * web service. This guide describes the KMS actions that you can call
- * programmatically. For general information about KMS, see (need an
- * address here). For the KMS developer guide, see (need address here).
+ * programmatically. For general information about KMS, see the
+ * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/overview.html"> AWS Key Management Service Developer Guide </a>
+ * 
  * </p>
  * <p>
  * <b>NOTE:</b> AWS provides SDKs that consist of libraries and sample
@@ -20,8 +21,14 @@
  * </p>
  * <p>
  * We recommend that you use the AWS SDKs to make programmatic API calls
- * to KMS. However, you can also use the KMS Query API to make to make
- * direct calls to the KMS web service.
+ * to KMS.
+ * </p>
+ * <p>
+ * Clients must support TLS (Transport Layer Security) 1.0. We recommend
+ * TLS 1.2. Clients must also support cipher suites with Perfect Forward
+ * Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic Curve
+ * Ephemeral Diffie-Hellman (ECDHE). Most modern systems such as Java 7
+ * and later support these modes.
  * </p>
  * <p>
  * <b>Signing Requests</b>
@@ -76,6 +83,23 @@
  * request using an access key ID and a secret access key. </li>
  * 
  * </ul>
+ * <p>
+ * <b>Commonly Used APIs</b>
+ * </p>
+ * <p>
+ * Of the APIs discussed in this guide, the following will prove the
+ * most useful for most applications. You will likely perform actions
+ * other than these, such as creating keys and assigning policies, by
+ * using the console.
+ * <ul>
+ * <li> Encrypt </li>
+ * <li> Decrypt </li>
+ * <li> GenerateDataKey </li>
+ * <li> GenerateDataKeyWithoutPlaintext </li>
+ * 
+ * </ul>
+ * 
+ * </p>
  */
  package com.amazonaws.services.kms;
         

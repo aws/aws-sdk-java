@@ -29,8 +29,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateKeyDescriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Unique value that identifies the key for which the description is to
-     * be changed.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -46,44 +50,68 @@ public class UpdateKeyDescriptionRequest extends AmazonWebServiceRequest impleme
     private String description;
 
     /**
-     * Unique value that identifies the key for which the description is to
-     * be changed.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Unique value that identifies the key for which the description is to
-     *         be changed.
+     * @return A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier or the fully specified ARN to a key. <ul>
+     *         <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      */
     public String getKeyId() {
         return keyId;
     }
     
     /**
-     * Unique value that identifies the key for which the description is to
-     * be changed.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique value that identifies the key for which the description is to
-     *         be changed.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier or the fully specified ARN to a key. <ul>
+     *         <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      */
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
     
     /**
-     * Unique value that identifies the key for which the description is to
-     * be changed.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier or the fully specified ARN to a key. <ul>
+     * <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique value that identifies the key for which the description is to
-     *         be changed.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier or the fully specified ARN to a key. <ul>
+     *         <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

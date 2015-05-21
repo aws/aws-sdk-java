@@ -20,14 +20,13 @@ package com.amazonaws.util;
 import java.io.ByteArrayInputStream;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-import java.util.Locale;
 
 /**
  * Utilities for encoding and decoding binary data to and from different forms.
  */
 public class BinaryUtils {
     /**
-     * Converts byte data to a Hex-encoded string.
+     * Converts byte data to a Hex-encoded string in lower case.
      *
      * @param data
      *            data to hex encode.
@@ -35,19 +34,7 @@ public class BinaryUtils {
      * @return hex-encoded string.
      */
     public static String toHex(byte[] data) {
-        StringBuilder sb = new StringBuilder(data.length * 2);
-        for (int i = 0; i < data.length; i++) {
-            String hex = Integer.toHexString(data[i]);
-            if (hex.length() == 1) {
-                // Append leading zero.
-                sb.append("0");
-            } else if (hex.length() == 8) {
-                // Remove ff prefix from negative numbers.
-                hex = hex.substring(6);
-            }
-            sb.append(hex);
-        }
-        return sb.toString().toLowerCase(Locale.getDefault());
+        return Base16Lower.encodeAsString(data);
     }
 
     /**
@@ -58,16 +45,7 @@ public class BinaryUtils {
      * @return decoded data from the hex string.
      */
     public static byte[] fromHex(String hexData) {
-        byte[] result = new byte[(hexData.length() + 1) / 2];
-        String hexNumber = null;
-        int stringOffset = 0;
-        int byteOffset = 0;
-        while (stringOffset < hexData.length()) {
-            hexNumber = hexData.substring(stringOffset, stringOffset + 2);
-            stringOffset += 2;
-            result[byteOffset++] = (byte) Integer.parseInt(hexNumber, 16);
-        }
-        return result;
+        return Base16Lower.decode(hexData);
     }
 
     /**

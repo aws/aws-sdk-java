@@ -116,11 +116,13 @@ public class JsonPolicyReader {
      */
     private Statement statementOf(JsonNode jStatement) {
 
-        JsonNode effect = jStatement.get(JsonDocumentFields.STATEMENT_EFFECT);
-        if (!isNotNull(effect))
-            return null;
+        JsonNode effectNode = jStatement.get(JsonDocumentFields.STATEMENT_EFFECT);
 
-        Statement statement = new Statement(Effect.valueOf(effect.asText()));
+        final Effect effect = isNotNull(effectNode)
+                                   ? Effect.valueOf(effectNode.asText())
+                                   : Effect.Deny ;
+
+        Statement statement = new Statement(effect);
 
         JsonNode id = jStatement.get(JsonDocumentFields.STATEMENT_ID);
         if (isNotNull(id)) {

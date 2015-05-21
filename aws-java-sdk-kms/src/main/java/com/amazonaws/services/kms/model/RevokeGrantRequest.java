@@ -30,7 +30,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RevokeGrantRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Unique identifier of the key associated with the grant.
+     * A unique identifier for the customer master key associated with the
+     * grant. This value can be a globally unique identifier or the fully
+     * specified ARN to a key. <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -46,38 +51,68 @@ public class RevokeGrantRequest extends AmazonWebServiceRequest implements Seria
     private String grantId;
 
     /**
-     * Unique identifier of the key associated with the grant.
+     * A unique identifier for the customer master key associated with the
+     * grant. This value can be a globally unique identifier or the fully
+     * specified ARN to a key. <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Unique identifier of the key associated with the grant.
+     * @return A unique identifier for the customer master key associated with the
+     *         grant. This value can be a globally unique identifier or the fully
+     *         specified ARN to a key. <ul> <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      */
     public String getKeyId() {
         return keyId;
     }
     
     /**
-     * Unique identifier of the key associated with the grant.
+     * A unique identifier for the customer master key associated with the
+     * grant. This value can be a globally unique identifier or the fully
+     * specified ARN to a key. <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier of the key associated with the grant.
+     * @param keyId A unique identifier for the customer master key associated with the
+     *         grant. This value can be a globally unique identifier or the fully
+     *         specified ARN to a key. <ul> <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      */
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
     
     /**
-     * Unique identifier of the key associated with the grant.
+     * A unique identifier for the customer master key associated with the
+     * grant. This value can be a globally unique identifier or the fully
+     * specified ARN to a key. <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier of the key associated with the grant.
+     * @param keyId A unique identifier for the customer master key associated with the
+     *         grant. This value can be a globally unique identifier or the fully
+     *         specified ARN to a key. <ul> <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

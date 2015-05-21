@@ -26,6 +26,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * data is first decrypted and then encrypted. This operation can also be
  * used to change the encryption context of a ciphertext.
  * </p>
+ * <p>
+ * Unlike other actions, <code>ReEncrypt</code> is authorized twice -
+ * once as <code>ReEncryptFrom</code> on the source key and once as
+ * <code>ReEncryptTo</code> on the destination key. We therefore
+ * recommend that you include the <code>"action":"kms:ReEncrypt*"</code>
+ * statement in your key policies to permit re-encryption from or to the
+ * key. The statement is included automatically when you authorize use of
+ * the key through the console but must be included manually when you set
+ * a policy by using the PutKeyPolicy function.
+ * </p>
  *
  * @see com.amazonaws.services.kms.AWSKMS#reEncrypt(ReEncryptRequest)
  */
@@ -46,7 +56,15 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
     private java.util.Map<String,String> sourceEncryptionContext;
 
     /**
-     * Key identifier of the key used to re-encrypt the data.
+     * A unique identifier for the customer master key used to re-encrypt the
+     * data. This value can be a globally unique identifier, a fully
+     * specified ARN to either an alias or a key, or an alias name prefixed
+     * by "alias/". <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -59,8 +77,9 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
     private java.util.Map<String,String> destinationEncryptionContext;
 
     /**
-     * Grant tokens that identify the grants that have permissions for the
-     * encryption and decryption process.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
@@ -184,38 +203,86 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
   }
   
     /**
-     * Key identifier of the key used to re-encrypt the data.
+     * A unique identifier for the customer master key used to re-encrypt the
+     * data. This value can be a globally unique identifier, a fully
+     * specified ARN to either an alias or a key, or an alias name prefixed
+     * by "alias/". <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Key identifier of the key used to re-encrypt the data.
+     * @return A unique identifier for the customer master key used to re-encrypt the
+     *         data. This value can be a globally unique identifier, a fully
+     *         specified ARN to either an alias or a key, or an alias name prefixed
+     *         by "alias/". <ul> <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      */
     public String getDestinationKeyId() {
         return destinationKeyId;
     }
     
     /**
-     * Key identifier of the key used to re-encrypt the data.
+     * A unique identifier for the customer master key used to re-encrypt the
+     * data. This value can be a globally unique identifier, a fully
+     * specified ARN to either an alias or a key, or an alias name prefixed
+     * by "alias/". <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param destinationKeyId Key identifier of the key used to re-encrypt the data.
+     * @param destinationKeyId A unique identifier for the customer master key used to re-encrypt the
+     *         data. This value can be a globally unique identifier, a fully
+     *         specified ARN to either an alias or a key, or an alias name prefixed
+     *         by "alias/". <ul> <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      */
     public void setDestinationKeyId(String destinationKeyId) {
         this.destinationKeyId = destinationKeyId;
     }
     
     /**
-     * Key identifier of the key used to re-encrypt the data.
+     * A unique identifier for the customer master key used to re-encrypt the
+     * data. This value can be a globally unique identifier, a fully
+     * specified ARN to either an alias or a key, or an alias name prefixed
+     * by "alias/". <ul> <li>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param destinationKeyId Key identifier of the key used to re-encrypt the data.
+     * @param destinationKeyId A unique identifier for the customer master key used to re-encrypt the
+     *         data. This value can be a globally unique identifier, a fully
+     *         specified ARN to either an alias or a key, or an alias name prefixed
+     *         by "alias/". <ul> <li>Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -293,14 +360,16 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
   }
   
     /**
-     * Grant tokens that identify the grants that have permissions for the
-     * encryption and decryption process.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @return Grant tokens that identify the grants that have permissions for the
-     *         encryption and decryption process.
+     * @return For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      */
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
@@ -311,14 +380,16 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * Grant tokens that identify the grants that have permissions for the
-     * encryption and decryption process.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens Grant tokens that identify the grants that have permissions for the
-     *         encryption and decryption process.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      */
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
@@ -331,8 +402,9 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * Grant tokens that identify the grants that have permissions for the
-     * encryption and decryption process.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setGrantTokens(java.util.Collection)} or {@link
@@ -344,8 +416,9 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens Grant tokens that identify the grants that have permissions for the
-     *         encryption and decryption process.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -359,16 +432,18 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * Grant tokens that identify the grants that have permissions for the
-     * encryption and decryption process.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens Grant tokens that identify the grants that have permissions for the
-     *         encryption and decryption process.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

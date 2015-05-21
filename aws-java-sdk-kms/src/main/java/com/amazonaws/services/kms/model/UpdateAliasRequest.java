@@ -19,33 +19,35 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.kms.AWSKMS#createAlias(CreateAliasRequest) CreateAlias operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.kms.AWSKMS#updateAlias(UpdateAliasRequest) UpdateAlias operation}.
  * <p>
- * Creates a display name for a customer master key. An alias can be
- * used to identify a key and should be unique. The console enforces a
- * one-to-one mapping between the alias and a key. An alias name can
- * contain only alphanumeric characters, forward slashes (/), underscores
- * (_), and dashes (-). An alias must start with the word "alias"
- * followed by a forward slash (alias/). An alias that begins with "aws"
- * after the forward slash (alias/aws...) is reserved by Amazon Web
- * Services (AWS).
+ * Updates an alias to associate it with a different key.
  * </p>
  * <p>
- * To associate an alias with a different key, call UpdateAlias.
+ * An alias name can contain only alphanumeric characters, forward
+ * slashes (/), underscores (_), and dashes (-). An alias must start with
+ * the word "alias" followed by a forward slash (alias/). An alias that
+ * begins with "aws" after the forward slash (alias/aws...) is reserved
+ * by Amazon Web Services (AWS).
+ * </p>
+ * <p>
+ * An alias is not a property of a key. Therefore, an alias can be
+ * associated with and disassociated from an existing key without
+ * changing the properties of the key.
  * </p>
  * <p>
  * Note that you cannot create or update an alias that represents a key
  * in another account.
  * </p>
  *
- * @see com.amazonaws.services.kms.AWSKMS#createAlias(CreateAliasRequest)
+ * @see com.amazonaws.services.kms.AWSKMS#updateAlias(UpdateAliasRequest)
  */
-public class CreateAliasRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class UpdateAliasRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * String that contains the display name. The name must start with the
-     * word "alias" followed by a forward slash (alias/). Aliases that begin
-     * with "alias/AWS" are reserved.
+     * String that contains the name of the alias to be modifed. The name
+     * must start with the word "alias" followed by a forward slash (alias/).
+     * Aliases that begin with "alias/AWS" are reserved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -54,9 +56,9 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
     private String aliasName;
 
     /**
-     * An identifier of the key for which you are creating the alias. This
-     * value cannot be another alias but can be a globally unique identifier
-     * or a fully specified ARN to a key. <ul> <li>Key ARN Example -
+     * Unique identifier of the customer master key to be associated with the
+     * alias. This value can be a globally unique identifier or the fully
+     * specified ARN of a key. <ul> <li>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      * <li>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</li> </ul>
@@ -67,43 +69,43 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
     private String targetKeyId;
 
     /**
-     * String that contains the display name. The name must start with the
-     * word "alias" followed by a forward slash (alias/). Aliases that begin
-     * with "alias/AWS" are reserved.
+     * String that contains the name of the alias to be modifed. The name
+     * must start with the word "alias" followed by a forward slash (alias/).
+     * Aliases that begin with "alias/AWS" are reserved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
      *
-     * @return String that contains the display name. The name must start with the
-     *         word "alias" followed by a forward slash (alias/). Aliases that begin
-     *         with "alias/AWS" are reserved.
+     * @return String that contains the name of the alias to be modifed. The name
+     *         must start with the word "alias" followed by a forward slash (alias/).
+     *         Aliases that begin with "alias/AWS" are reserved.
      */
     public String getAliasName() {
         return aliasName;
     }
     
     /**
-     * String that contains the display name. The name must start with the
-     * word "alias" followed by a forward slash (alias/). Aliases that begin
-     * with "alias/AWS" are reserved.
+     * String that contains the name of the alias to be modifed. The name
+     * must start with the word "alias" followed by a forward slash (alias/).
+     * Aliases that begin with "alias/AWS" are reserved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
      *
-     * @param aliasName String that contains the display name. The name must start with the
-     *         word "alias" followed by a forward slash (alias/). Aliases that begin
-     *         with "alias/AWS" are reserved.
+     * @param aliasName String that contains the name of the alias to be modifed. The name
+     *         must start with the word "alias" followed by a forward slash (alias/).
+     *         Aliases that begin with "alias/AWS" are reserved.
      */
     public void setAliasName(String aliasName) {
         this.aliasName = aliasName;
     }
     
     /**
-     * String that contains the display name. The name must start with the
-     * word "alias" followed by a forward slash (alias/). Aliases that begin
-     * with "alias/AWS" are reserved.
+     * String that contains the name of the alias to be modifed. The name
+     * must start with the word "alias" followed by a forward slash (alias/).
+     * Aliases that begin with "alias/AWS" are reserved.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -111,22 +113,22 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
      *
-     * @param aliasName String that contains the display name. The name must start with the
-     *         word "alias" followed by a forward slash (alias/). Aliases that begin
-     *         with "alias/AWS" are reserved.
+     * @param aliasName String that contains the name of the alias to be modifed. The name
+     *         must start with the word "alias" followed by a forward slash (alias/).
+     *         Aliases that begin with "alias/AWS" are reserved.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public CreateAliasRequest withAliasName(String aliasName) {
+    public UpdateAliasRequest withAliasName(String aliasName) {
         this.aliasName = aliasName;
         return this;
     }
 
     /**
-     * An identifier of the key for which you are creating the alias. This
-     * value cannot be another alias but can be a globally unique identifier
-     * or a fully specified ARN to a key. <ul> <li>Key ARN Example -
+     * Unique identifier of the customer master key to be associated with the
+     * alias. This value can be a globally unique identifier or the fully
+     * specified ARN of a key. <ul> <li>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      * <li>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</li> </ul>
@@ -134,9 +136,9 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return An identifier of the key for which you are creating the alias. This
-     *         value cannot be another alias but can be a globally unique identifier
-     *         or a fully specified ARN to a key. <ul> <li>Key ARN Example -
+     * @return Unique identifier of the customer master key to be associated with the
+     *         alias. This value can be a globally unique identifier or the fully
+     *         specified ARN of a key. <ul> <li>Key ARN Example -
      *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      *         <li>Globally Unique Key ID Example -
      *         12345678-1234-1234-1234-123456789012</li> </ul>
@@ -146,9 +148,9 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * An identifier of the key for which you are creating the alias. This
-     * value cannot be another alias but can be a globally unique identifier
-     * or a fully specified ARN to a key. <ul> <li>Key ARN Example -
+     * Unique identifier of the customer master key to be associated with the
+     * alias. This value can be a globally unique identifier or the fully
+     * specified ARN of a key. <ul> <li>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      * <li>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</li> </ul>
@@ -156,9 +158,9 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param targetKeyId An identifier of the key for which you are creating the alias. This
-     *         value cannot be another alias but can be a globally unique identifier
-     *         or a fully specified ARN to a key. <ul> <li>Key ARN Example -
+     * @param targetKeyId Unique identifier of the customer master key to be associated with the
+     *         alias. This value can be a globally unique identifier or the fully
+     *         specified ARN of a key. <ul> <li>Key ARN Example -
      *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      *         <li>Globally Unique Key ID Example -
      *         12345678-1234-1234-1234-123456789012</li> </ul>
@@ -168,9 +170,9 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * An identifier of the key for which you are creating the alias. This
-     * value cannot be another alias but can be a globally unique identifier
-     * or a fully specified ARN to a key. <ul> <li>Key ARN Example -
+     * Unique identifier of the customer master key to be associated with the
+     * alias. This value can be a globally unique identifier or the fully
+     * specified ARN of a key. <ul> <li>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      * <li>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</li> </ul>
@@ -180,9 +182,9 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param targetKeyId An identifier of the key for which you are creating the alias. This
-     *         value cannot be another alias but can be a globally unique identifier
-     *         or a fully specified ARN to a key. <ul> <li>Key ARN Example -
+     * @param targetKeyId Unique identifier of the customer master key to be associated with the
+     *         alias. This value can be a globally unique identifier or the fully
+     *         specified ARN of a key. <ul> <li>Key ARN Example -
      *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
      *         <li>Globally Unique Key ID Example -
      *         12345678-1234-1234-1234-123456789012</li> </ul>
@@ -190,7 +192,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public CreateAliasRequest withTargetKeyId(String targetKeyId) {
+    public UpdateAliasRequest withTargetKeyId(String targetKeyId) {
         this.targetKeyId = targetKeyId;
         return this;
     }
@@ -228,8 +230,8 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
         if (this == obj) return true;
         if (obj == null) return false;
 
-        if (obj instanceof CreateAliasRequest == false) return false;
-        CreateAliasRequest other = (CreateAliasRequest)obj;
+        if (obj instanceof UpdateAliasRequest == false) return false;
+        UpdateAliasRequest other = (UpdateAliasRequest)obj;
         
         if (other.getAliasName() == null ^ this.getAliasName() == null) return false;
         if (other.getAliasName() != null && other.getAliasName().equals(this.getAliasName()) == false) return false; 
@@ -239,9 +241,9 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
     }
     
     @Override
-    public CreateAliasRequest clone() {
+    public UpdateAliasRequest clone() {
         
-            return (CreateAliasRequest) super.clone();
+            return (UpdateAliasRequest) super.clone();
     }
 
 }

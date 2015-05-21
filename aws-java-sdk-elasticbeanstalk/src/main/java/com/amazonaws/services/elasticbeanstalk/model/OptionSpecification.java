@@ -24,6 +24,14 @@ import java.io.Serializable;
 public class OptionSpecification implements Serializable, Cloneable {
 
     /**
+     * A unique resource name for a time-based scaling configuration option.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     */
+    private String resourceName;
+
+    /**
      * A unique namespace identifying the option's associated AWS resource.
      */
     private String namespace;
@@ -39,6 +47,48 @@ public class OptionSpecification implements Serializable, Cloneable {
      */
     public OptionSpecification() {}
     
+    /**
+     * A unique resource name for a time-based scaling configuration option.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     *
+     * @return A unique resource name for a time-based scaling configuration option.
+     */
+    public String getResourceName() {
+        return resourceName;
+    }
+    
+    /**
+     * A unique resource name for a time-based scaling configuration option.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     *
+     * @param resourceName A unique resource name for a time-based scaling configuration option.
+     */
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+    
+    /**
+     * A unique resource name for a time-based scaling configuration option.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     *
+     * @param resourceName A unique resource name for a time-based scaling configuration option.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public OptionSpecification withResourceName(String resourceName) {
+        this.resourceName = resourceName;
+        return this;
+    }
+
     /**
      * A unique namespace identifying the option's associated AWS resource.
      *
@@ -117,6 +167,7 @@ public class OptionSpecification implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getResourceName() != null) sb.append("ResourceName: " + getResourceName() + ",");
         if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");
         if (getOptionName() != null) sb.append("OptionName: " + getOptionName() );
         sb.append("}");
@@ -128,6 +179,7 @@ public class OptionSpecification implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
         
+        hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode()); 
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode()); 
         hashCode = prime * hashCode + ((getOptionName() == null) ? 0 : getOptionName().hashCode()); 
         return hashCode;
@@ -141,6 +193,8 @@ public class OptionSpecification implements Serializable, Cloneable {
         if (obj instanceof OptionSpecification == false) return false;
         OptionSpecification other = (OptionSpecification)obj;
         
+        if (other.getResourceName() == null ^ this.getResourceName() == null) return false;
+        if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false) return false; 
         if (other.getNamespace() == null ^ this.getNamespace() == null) return false;
         if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false) return false; 
         if (other.getOptionName() == null ^ this.getOptionName() == null) return false;

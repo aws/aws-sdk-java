@@ -37,9 +37,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * You can limit the number of returned shards using the
  * <code>Limit</code> parameter. The number of shards in a stream may be
  * too large to return from a single call to <code>DescribeStream</code>
- * .
- * You can detect this by using the <code>HasMoreShards</code>
- * flag in the returned output. <code>HasMoreShards</code> is set to
+ * . You can detect this by using the <code>HasMoreShards</code> flag in
+ * the returned output. <code>HasMoreShards</code> is set to
  * <code>true</code> when there is more data available.
  * </p>
  * <p>
@@ -48,11 +47,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * last shard returned. Specify this ID in the
  * <code>ExclusiveStartShardId</code> parameter in a subsequent request
  * to <code>DescribeStream</code> .
- * 
  * </p>
  * <p>
- * <code>DescribeStream</code> has a limit of 10 transactions per second
- * per account.
+ * DescribeStream has a limit of 10 transactions per second per account.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#describeStream(DescribeStreamRequest)

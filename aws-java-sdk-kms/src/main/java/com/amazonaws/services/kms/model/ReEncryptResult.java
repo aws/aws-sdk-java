@@ -22,7 +22,8 @@ import java.io.Serializable;
 public class ReEncryptResult implements Serializable, Cloneable {
 
     /**
-     * The re-encrypted data.
+     * The re-encrypted data. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
@@ -46,38 +47,44 @@ public class ReEncryptResult implements Serializable, Cloneable {
     private String keyId;
 
     /**
-     * The re-encrypted data.
+     * The re-encrypted data. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
      *
-     * @return The re-encrypted data.
+     * @return The re-encrypted data. If you are using the CLI, the value is Base64
+     *         encoded. Otherwise, it is not encoded.
      */
     public java.nio.ByteBuffer getCiphertextBlob() {
         return ciphertextBlob;
     }
     
     /**
-     * The re-encrypted data.
+     * The re-encrypted data. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
      *
-     * @param ciphertextBlob The re-encrypted data.
+     * @param ciphertextBlob The re-encrypted data. If you are using the CLI, the value is Base64
+     *         encoded. Otherwise, it is not encoded.
      */
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         this.ciphertextBlob = ciphertextBlob;
     }
     
     /**
-     * The re-encrypted data.
+     * The re-encrypted data. If you are using the CLI, the value is Base64
+     * encoded. Otherwise, it is not encoded.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
      *
-     * @param ciphertextBlob The re-encrypted data.
+     * @param ciphertextBlob The re-encrypted data. If you are using the CLI, the value is Base64
+     *         encoded. Otherwise, it is not encoded.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

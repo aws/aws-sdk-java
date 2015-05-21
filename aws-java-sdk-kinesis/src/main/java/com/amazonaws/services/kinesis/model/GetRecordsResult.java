@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output for <code>GetRecords</code> .
+ * Represents the output for GetRecords.
  * </p>
  */
 public class GetRecordsResult implements Serializable, Cloneable {
@@ -37,6 +37,17 @@ public class GetRecordsResult implements Serializable, Cloneable {
      * <b>Length: </b>1 - 512<br/>
      */
     private String nextShardIterator;
+
+    /**
+     * The number of milliseconds the <a>GetRecords</a> response is from the
+     * tip of the stream, indicating how far behind current time the consumer
+     * is. A value of zero indicates record processing is caught up, and
+     * there are no new records to process at this moment.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - <br/>
+     */
+    private Long millisBehindLatest;
 
     /**
      * <P>The data records retrieved from the shard.</P>
@@ -166,6 +177,66 @@ public class GetRecordsResult implements Serializable, Cloneable {
     }
 
     /**
+     * The number of milliseconds the <a>GetRecords</a> response is from the
+     * tip of the stream, indicating how far behind current time the consumer
+     * is. A value of zero indicates record processing is caught up, and
+     * there are no new records to process at this moment.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - <br/>
+     *
+     * @return The number of milliseconds the <a>GetRecords</a> response is from the
+     *         tip of the stream, indicating how far behind current time the consumer
+     *         is. A value of zero indicates record processing is caught up, and
+     *         there are no new records to process at this moment.
+     */
+    public Long getMillisBehindLatest() {
+        return millisBehindLatest;
+    }
+    
+    /**
+     * The number of milliseconds the <a>GetRecords</a> response is from the
+     * tip of the stream, indicating how far behind current time the consumer
+     * is. A value of zero indicates record processing is caught up, and
+     * there are no new records to process at this moment.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - <br/>
+     *
+     * @param millisBehindLatest The number of milliseconds the <a>GetRecords</a> response is from the
+     *         tip of the stream, indicating how far behind current time the consumer
+     *         is. A value of zero indicates record processing is caught up, and
+     *         there are no new records to process at this moment.
+     */
+    public void setMillisBehindLatest(Long millisBehindLatest) {
+        this.millisBehindLatest = millisBehindLatest;
+    }
+    
+    /**
+     * The number of milliseconds the <a>GetRecords</a> response is from the
+     * tip of the stream, indicating how far behind current time the consumer
+     * is. A value of zero indicates record processing is caught up, and
+     * there are no new records to process at this moment.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - <br/>
+     *
+     * @param millisBehindLatest The number of milliseconds the <a>GetRecords</a> response is from the
+     *         tip of the stream, indicating how far behind current time the consumer
+     *         is. A value of zero indicates record processing is caught up, and
+     *         there are no new records to process at this moment.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetRecordsResult withMillisBehindLatest(Long millisBehindLatest) {
+        this.millisBehindLatest = millisBehindLatest;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -178,7 +249,8 @@ public class GetRecordsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecords() != null) sb.append("Records: " + getRecords() + ",");
-        if (getNextShardIterator() != null) sb.append("NextShardIterator: " + getNextShardIterator() );
+        if (getNextShardIterator() != null) sb.append("NextShardIterator: " + getNextShardIterator() + ",");
+        if (getMillisBehindLatest() != null) sb.append("MillisBehindLatest: " + getMillisBehindLatest() );
         sb.append("}");
         return sb.toString();
     }
@@ -190,6 +262,7 @@ public class GetRecordsResult implements Serializable, Cloneable {
         
         hashCode = prime * hashCode + ((getRecords() == null) ? 0 : getRecords().hashCode()); 
         hashCode = prime * hashCode + ((getNextShardIterator() == null) ? 0 : getNextShardIterator().hashCode()); 
+        hashCode = prime * hashCode + ((getMillisBehindLatest() == null) ? 0 : getMillisBehindLatest().hashCode()); 
         return hashCode;
     }
     
@@ -205,6 +278,8 @@ public class GetRecordsResult implements Serializable, Cloneable {
         if (other.getRecords() != null && other.getRecords().equals(this.getRecords()) == false) return false; 
         if (other.getNextShardIterator() == null ^ this.getNextShardIterator() == null) return false;
         if (other.getNextShardIterator() != null && other.getNextShardIterator().equals(this.getNextShardIterator()) == false) return false; 
+        if (other.getMillisBehindLatest() == null ^ this.getMillisBehindLatest() == null) return false;
+        if (other.getMillisBehindLatest() != null && other.getMillisBehindLatest().equals(this.getMillisBehindLatest()) == false) return false; 
         return true;
     }
     

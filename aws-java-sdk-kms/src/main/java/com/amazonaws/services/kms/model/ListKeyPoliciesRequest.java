@@ -29,8 +29,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListKeyPoliciesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Unique identifier of the key. This can be an ARN, an alias, or a
-     * globally unique identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -62,44 +69,86 @@ public class ListKeyPoliciesRequest extends AmazonWebServiceRequest implements S
     private String marker;
 
     /**
-     * Unique identifier of the key. This can be an ARN, an alias, or a
-     * globally unique identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Unique identifier of the key. This can be an ARN, an alias, or a
-     *         globally unique identifier.
+     * @return A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier, a fully specified ARN to either an alias
+     *         or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     *         Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      */
     public String getKeyId() {
         return keyId;
     }
     
     /**
-     * Unique identifier of the key. This can be an ARN, an alias, or a
-     * globally unique identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier of the key. This can be an ARN, an alias, or a
-     *         globally unique identifier.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier, a fully specified ARN to either an alias
+     *         or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     *         Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      */
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
     
     /**
-     * Unique identifier of the key. This can be an ARN, an alias, or a
-     * globally unique identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier of the key. This can be an ARN, an alias, or a
-     *         globally unique identifier.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier, a fully specified ARN to either an alias
+     *         or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     *         Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

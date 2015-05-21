@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,18 +15,18 @@
 package com.amazonaws.util;
 
 /**
- * A Base 16 codec API, which encodes into hex string in upper case.
+ * A Base 16 codec API, which encodes into hex string in lower case.
  *
  * See http://www.ietf.org/rfc/rfc4648.txt
  *
  * @author Hanson Char
  */
-public enum Base16 {
+public enum Base16Lower {
     ;
-    private static final Base16Codec codec = new Base16Codec();
+    private static final Base16Codec codec = new Base16Codec(false);
 
     /**
-     * Returns a base 16 encoded string (in upper case) of the given bytes.
+     * Returns a base 16 encoded string (in lower case) of the given bytes.
      */
     public static String encodeAsString(byte ... bytes) {
         if (bytes == null)

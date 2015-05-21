@@ -53,6 +53,10 @@ public class GetRecordsResultJsonUnmarshaller implements Unmarshaller<GetRecords
                     context.nextToken();
                     getRecordsResult.setNextShardIterator(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MillisBehindLatest", targetDepth)) {
+                    context.nextToken();
+                    getRecordsResult.setMillisBehindLatest(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;
