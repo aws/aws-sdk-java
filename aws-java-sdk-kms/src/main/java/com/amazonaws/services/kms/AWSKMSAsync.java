@@ -28,8 +28,9 @@ import com.amazonaws.services.kms.model.*;
  * AWS Key Management Service <p>
  * AWS Key Management Service (KMS) is an encryption and key management
  * web service. This guide describes the KMS actions that you can call
- * programmatically. For general information about KMS, see (need an
- * address here). For the KMS developer guide, see (need address here).
+ * programmatically. For general information about KMS, see the
+ * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/overview.html"> AWS Key Management Service Developer Guide </a>
+ * 
  * </p>
  * <p>
  * <b>NOTE:</b> AWS provides SDKs that consist of libraries and sample
@@ -43,8 +44,14 @@ import com.amazonaws.services.kms.model.*;
  * </p>
  * <p>
  * We recommend that you use the AWS SDKs to make programmatic API calls
- * to KMS. However, you can also use the KMS Query API to make to make
- * direct calls to the KMS web service.
+ * to KMS.
+ * </p>
+ * <p>
+ * Clients must support TLS (Transport Layer Security) 1.0. We recommend
+ * TLS 1.2. Clients must also support cipher suites with Perfect Forward
+ * Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic Curve
+ * Ephemeral Diffie-Hellman (ECDHE). Most modern systems such as Java 7
+ * and later support these modes.
  * </p>
  * <p>
  * <b>Signing Requests</b>
@@ -99,6 +106,23 @@ import com.amazonaws.services.kms.model.*;
  * request using an access key ID and a secret access key. </li>
  * 
  * </ul>
+ * <p>
+ * <b>Commonly Used APIs</b>
+ * </p>
+ * <p>
+ * Of the APIs discussed in this guide, the following will prove the
+ * most useful for most applications. You will likely perform actions
+ * other than these, such as creating keys and assigning policies, by
+ * using the console.
+ * <ul>
+ * <li> Encrypt </li>
+ * <li> Decrypt </li>
+ * <li> GenerateDataKey </li>
+ * <li> GenerateDataKeyWithoutPlaintext </li>
+ * 
+ * </ul>
+ * 
+ * </p>
  */
 public interface AWSKMSAsync extends AWSKMS {
     /**
@@ -163,6 +187,32 @@ public interface AWSKMSAsync extends AWSKMS {
     /**
      * <p>
      * Encrypts plaintext into ciphertext by using a customer master key.
+     * The <code>Encrypt</code> function has two primary use cases:
+     * <ul>
+     * <li>You can encrypt up to 4 KB of arbitrary data such as an RSA key,
+     * a database password, or other sensitive customer information.</li>
+     * <li>If you are moving encrypted data from one region to another, you
+     * can use this API to encrypt in the new region the plaintext data key
+     * that was used to encrypt the data in the original region. This
+     * provides you with an encrypted copy of the data key that can be
+     * decrypted in the new region and used there to decrypt the encrypted
+     * data. </li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     * <p>
+     * Unless you are moving encrypted data from one region to another, you
+     * don't use this function to encrypt a generated data key within a
+     * region. You retrieve data keys already encrypted by calling the
+     * GenerateDataKey or GenerateDataKeyWithoutPlaintext function. Data keys
+     * don't need to be encrypted again by calling <code>Encrypt</code> .
+     * </p>
+     * <p>
+     * If you want to encrypt data locally in your application, you can use
+     * the <code>GenerateDataKey</code> function to return a plaintext data
+     * encryption key and a copy of the key encrypted under the customer
+     * master key (CMK) of your choosing.
      * </p>
      *
      * @param encryptRequest Container for the necessary parameters to
@@ -186,6 +236,32 @@ public interface AWSKMSAsync extends AWSKMS {
     /**
      * <p>
      * Encrypts plaintext into ciphertext by using a customer master key.
+     * The <code>Encrypt</code> function has two primary use cases:
+     * <ul>
+     * <li>You can encrypt up to 4 KB of arbitrary data such as an RSA key,
+     * a database password, or other sensitive customer information.</li>
+     * <li>If you are moving encrypted data from one region to another, you
+     * can use this API to encrypt in the new region the plaintext data key
+     * that was used to encrypt the data in the original region. This
+     * provides you with an encrypted copy of the data key that can be
+     * decrypted in the new region and used there to decrypt the encrypted
+     * data. </li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     * <p>
+     * Unless you are moving encrypted data from one region to another, you
+     * don't use this function to encrypt a generated data key within a
+     * region. You retrieve data keys already encrypted by calling the
+     * GenerateDataKey or GenerateDataKeyWithoutPlaintext function. Data keys
+     * don't need to be encrypted again by calling <code>Encrypt</code> .
+     * </p>
+     * <p>
+     * If you want to encrypt data locally in your application, you can use
+     * the <code>GenerateDataKey</code> function to return a plaintext data
+     * encryption key and a copy of the key encrypted under the customer
+     * master key (CMK) of your choosing.
      * </p>
      *
      * @param encryptRequest Container for the necessary parameters to
@@ -366,8 +442,48 @@ public interface AWSKMSAsync extends AWSKMS {
 
     /**
      * <p>
-     * Generates a secure data key. Data keys are used to encrypt and
-     * decrypt data. They are wrapped by customer master keys.
+     * Generates a data key that you can use in your application to locally
+     * encrypt data. This call returns a plaintext version of the key in the
+     * <code>Plaintext</code> field of the response object and an encrypted
+     * copy of the key in the <code>CiphertextBlob</code> field. The key is
+     * encrypted by using the master key specified by the <code>KeyId</code>
+     * field. To decrypt the encrypted key, pass it to the
+     * <code>Decrypt</code> API.
+     * </p>
+     * <p>
+     * We recommend that you use the following pattern to locally encrypt
+     * data: call the <code>GenerateDataKey</code> API, use the key returned
+     * in the <code>Plaintext</code> response field to locally encrypt data,
+     * and then erase the plaintext data key from memory. Store the encrypted
+     * data key (contained in the <code>CiphertextBlob</code> field)
+     * alongside of the locally encrypted data.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You should not call the Encrypt function to re-encrypt
+     * your data keys within a region. GenerateDataKey always returns the
+     * data key encrypted and tied to the customer master key that will be
+     * used to decrypt it. There is no need to decrypt it twice.
+     * </p>
+     * <p>
+     * If you decide to use the optional <code>EncryptionContext</code>
+     * parameter, you must also store the context in full or at least store
+     * enough information along with the encrypted data to be able to
+     * reconstruct the context when submitting the ciphertext to the
+     * <code>Decrypt</code> API. It is a good practice to choose a context
+     * that you can reconstruct on the fly to better secure the ciphertext.
+     * For more information about how this parameter is used, see
+     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html"> Encryption Context </a>
+     * .
+     * </p>
+     * <p>
+     * To decrypt data, pass the encrypted data key to the
+     * <code>Decrypt</code> API. <code>Decrypt</code> uses the associated
+     * master key to decrypt the encrypted data key and returns it as
+     * plaintext. Use the plaintext data key to locally decrypt your data and
+     * then erase the key from memory. You must specify the encryption
+     * context, if any, that you specified when you generated the key. The
+     * encryption context is logged by CloudTrail, and you can use this log
+     * to help track the use of particular data.
      * </p>
      *
      * @param generateDataKeyRequest Container for the necessary parameters
@@ -390,8 +506,48 @@ public interface AWSKMSAsync extends AWSKMS {
 
     /**
      * <p>
-     * Generates a secure data key. Data keys are used to encrypt and
-     * decrypt data. They are wrapped by customer master keys.
+     * Generates a data key that you can use in your application to locally
+     * encrypt data. This call returns a plaintext version of the key in the
+     * <code>Plaintext</code> field of the response object and an encrypted
+     * copy of the key in the <code>CiphertextBlob</code> field. The key is
+     * encrypted by using the master key specified by the <code>KeyId</code>
+     * field. To decrypt the encrypted key, pass it to the
+     * <code>Decrypt</code> API.
+     * </p>
+     * <p>
+     * We recommend that you use the following pattern to locally encrypt
+     * data: call the <code>GenerateDataKey</code> API, use the key returned
+     * in the <code>Plaintext</code> response field to locally encrypt data,
+     * and then erase the plaintext data key from memory. Store the encrypted
+     * data key (contained in the <code>CiphertextBlob</code> field)
+     * alongside of the locally encrypted data.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You should not call the Encrypt function to re-encrypt
+     * your data keys within a region. GenerateDataKey always returns the
+     * data key encrypted and tied to the customer master key that will be
+     * used to decrypt it. There is no need to decrypt it twice.
+     * </p>
+     * <p>
+     * If you decide to use the optional <code>EncryptionContext</code>
+     * parameter, you must also store the context in full or at least store
+     * enough information along with the encrypted data to be able to
+     * reconstruct the context when submitting the ciphertext to the
+     * <code>Decrypt</code> API. It is a good practice to choose a context
+     * that you can reconstruct on the fly to better secure the ciphertext.
+     * For more information about how this parameter is used, see
+     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html"> Encryption Context </a>
+     * .
+     * </p>
+     * <p>
+     * To decrypt data, pass the encrypted data key to the
+     * <code>Decrypt</code> API. <code>Decrypt</code> uses the associated
+     * master key to decrypt the encrypted data key and returns it as
+     * plaintext. Use the plaintext data key to locally decrypt your data and
+     * then erase the key from memory. You must specify the encryption
+     * context, if any, that you specified when you generated the key. The
+     * encryption context is logged by CloudTrail, and you can use this log
+     * to help track the use of particular data.
      * </p>
      *
      * @param generateDataKeyRequest Container for the necessary parameters
@@ -421,14 +577,11 @@ public interface AWSKMSAsync extends AWSKMS {
      * <p>
      * Adds a grant to a key to specify who can access the key and under
      * what conditions. Grants are alternate permission mechanisms to key
-     * policies. If absent, access to the key is evaluated based on IAM
-     * policies attached to the user. By default, grants do not expire.
-     * Grants can be listed, retired, or revoked as indicated by the
-     * following APIs. Typically, when you are finished using a grant, you
-     * retire it. When you want to end a grant immediately, revoke it. For
-     * more information about grants, see
+     * policies. For more information about grants, see
      * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html"> Grants </a>
-     * . <ol> <li> ListGrants </li>
+     * in the developer guide. If a grant is absent, access to the key is
+     * evaluated based on IAM policies attached to the user. <ol> <li>
+     * ListGrants </li>
      * <li> RetireGrant </li>
      * <li> RevokeGrant </li>
      * </ol>
@@ -456,14 +609,11 @@ public interface AWSKMSAsync extends AWSKMS {
      * <p>
      * Adds a grant to a key to specify who can access the key and under
      * what conditions. Grants are alternate permission mechanisms to key
-     * policies. If absent, access to the key is evaluated based on IAM
-     * policies attached to the user. By default, grants do not expire.
-     * Grants can be listed, retired, or revoked as indicated by the
-     * following APIs. Typically, when you are finished using a grant, you
-     * retire it. When you want to end a grant immediately, revoke it. For
-     * more information about grants, see
+     * policies. For more information about grants, see
      * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html"> Grants </a>
-     * . <ol> <li> ListGrants </li>
+     * in the developer guide. If a grant is absent, access to the key is
+     * evaluated based on IAM policies attached to the user. <ol> <li>
+     * ListGrants </li>
      * <li> RetireGrant </li>
      * <li> RevokeGrant </li>
      * </ol>
@@ -545,8 +695,11 @@ public interface AWSKMSAsync extends AWSKMS {
 
     /**
      * <p>
-     * Returns a key wrapped by a customer master key without the plaintext
-     * copy of that key. To retrieve the plaintext, see GenerateDataKey.
+     * Returns a data key encrypted by a customer master key without the
+     * plaintext copy of that key. Otherwise, this API functions exactly like
+     * GenerateDataKey. You can use this API to, for example, satisfy an
+     * audit requirement that an encrypted key be made available without
+     * exposing the plaintext copy of that key.
      * </p>
      *
      * @param generateDataKeyWithoutPlaintextRequest Container for the
@@ -570,8 +723,11 @@ public interface AWSKMSAsync extends AWSKMS {
 
     /**
      * <p>
-     * Returns a key wrapped by a customer master key without the plaintext
-     * copy of that key. To retrieve the plaintext, see GenerateDataKey.
+     * Returns a data key encrypted by a customer master key without the
+     * plaintext copy of that key. Otherwise, this API functions exactly like
+     * GenerateDataKey. You can use this API to, for example, satisfy an
+     * audit requirement that an encrypted key be made available without
+     * exposing the plaintext copy of that key.
      * </p>
      *
      * @param generateDataKeyWithoutPlaintextRequest Container for the
@@ -600,7 +756,8 @@ public interface AWSKMSAsync extends AWSKMS {
 
     /**
      * <p>
-     * Deletes the specified alias.
+     * Deletes the specified alias. To associate an alias with a different
+     * key, call UpdateAlias.
      * </p>
      *
      * @param deleteAliasRequest Container for the necessary parameters to
@@ -623,7 +780,8 @@ public interface AWSKMSAsync extends AWSKMS {
 
     /**
      * <p>
-     * Deletes the specified alias.
+     * Deletes the specified alias. To associate an alias with a different
+     * key, call UpdateAlias.
      * </p>
      *
      * @param deleteAliasRequest Container for the necessary parameters to
@@ -647,6 +805,89 @@ public interface AWSKMSAsync extends AWSKMS {
      */
     public Future<Void> deleteAliasAsync(DeleteAliasRequest deleteAliasRequest,
             AsyncHandler<DeleteAliasRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Updates an alias to associate it with a different key.
+     * </p>
+     * <p>
+     * An alias name can contain only alphanumeric characters, forward
+     * slashes (/), underscores (_), and dashes (-). An alias must start with
+     * the word "alias" followed by a forward slash (alias/). An alias that
+     * begins with "aws" after the forward slash (alias/aws...) is reserved
+     * by Amazon Web Services (AWS).
+     * </p>
+     * <p>
+     * An alias is not a property of a key. Therefore, an alias can be
+     * associated with and disassociated from an existing key without
+     * changing the properties of the key.
+     * </p>
+     * <p>
+     * Note that you cannot create or update an alias that represents a key
+     * in another account.
+     * </p>
+     *
+     * @param updateAliasRequest Container for the necessary parameters to
+     *           execute the UpdateAlias operation on AWSKMS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateAlias service method, as returned by AWSKMS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSKMS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateAliasAsync(UpdateAliasRequest updateAliasRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Updates an alias to associate it with a different key.
+     * </p>
+     * <p>
+     * An alias name can contain only alphanumeric characters, forward
+     * slashes (/), underscores (_), and dashes (-). An alias must start with
+     * the word "alias" followed by a forward slash (alias/). An alias that
+     * begins with "aws" after the forward slash (alias/aws...) is reserved
+     * by Amazon Web Services (AWS).
+     * </p>
+     * <p>
+     * An alias is not a property of a key. Therefore, an alias can be
+     * associated with and disassociated from an existing key without
+     * changing the properties of the key.
+     * </p>
+     * <p>
+     * Note that you cannot create or update an alias that represents a key
+     * in another account.
+     * </p>
+     *
+     * @param updateAliasRequest Container for the necessary parameters to
+     *           execute the UpdateAlias operation on AWSKMS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateAlias service method, as returned by AWSKMS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSKMS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateAliasAsync(UpdateAliasRequest updateAliasRequest,
+            AsyncHandler<UpdateAliasRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -704,7 +945,20 @@ public interface AWSKMSAsync extends AWSKMS {
      * <p>
      * Retires a grant. You can retire a grant when you're done using it to
      * clean up. You should revoke a grant when you intend to actively deny
-     * operations that depend on it.
+     * operations that depend on it. The following are permitted to call this
+     * API:
+     * <ul>
+     * <li>The account that created the grant</li>
+     * <li>The <code>RetiringPrincipal</code> , if present</li>
+     * <li>The <code>GranteePrincipal</code> , if <code>RetireGrant</code>
+     * is a grantee operation</li>
+     * 
+     * </ul>
+     * The grant to retire must be identified by its grant token or by a
+     * combination of the key ARN and the grant ID. A grant token is a unique
+     * variable-length base64-encoded string. A grant ID is a 64 character
+     * unique identifier of a grant. Both are returned by the
+     * <code>CreateGrant</code> function.
      * </p>
      *
      * @param retireGrantRequest Container for the necessary parameters to
@@ -729,7 +983,20 @@ public interface AWSKMSAsync extends AWSKMS {
      * <p>
      * Retires a grant. You can retire a grant when you're done using it to
      * clean up. You should revoke a grant when you intend to actively deny
-     * operations that depend on it.
+     * operations that depend on it. The following are permitted to call this
+     * API:
+     * <ul>
+     * <li>The account that created the grant</li>
+     * <li>The <code>RetiringPrincipal</code> , if present</li>
+     * <li>The <code>GranteePrincipal</code> , if <code>RetireGrant</code>
+     * is a grantee operation</li>
+     * 
+     * </ul>
+     * The grant to retire must be identified by its grant token or by a
+     * combination of the key ARN and the grant ID. A grant token is a unique
+     * variable-length base64-encoded string. A grant ID is a 64 character
+     * unique identifier of a grant. Both are returned by the
+     * <code>CreateGrant</code> function.
      * </p>
      *
      * @param retireGrantRequest Container for the necessary parameters to
@@ -862,7 +1129,26 @@ public interface AWSKMSAsync extends AWSKMS {
     /**
      * <p>
      * Decrypts ciphertext. Ciphertext is plaintext that has been previously
-     * encrypted by using the Encrypt function.
+     * encrypted by using any of the following functions:
+     * <ul>
+     * <li> GenerateDataKey </li>
+     * <li> GenerateDataKeyWithoutPlaintext </li>
+     * <li> Encrypt </li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     * <p>
+     * Note that if a caller has been granted access permissions to all keys
+     * (through, for example, IAM user policies that grant
+     * <code>Decrypt</code> permission on all resources), then ciphertext
+     * encrypted by using keys in other accounts where the key grants access
+     * to the caller can be decrypted. To remedy this, we recommend that you
+     * do not grant <code>Decrypt</code> access in an IAM user policy.
+     * Instead grant <code>Decrypt</code> access only in key policies. If you
+     * must grant <code>Decrypt</code> access in an IAM user policy, you
+     * should scope the resource to specific keys or to specific trusted
+     * accounts.
      * </p>
      *
      * @param decryptRequest Container for the necessary parameters to
@@ -886,7 +1172,26 @@ public interface AWSKMSAsync extends AWSKMS {
     /**
      * <p>
      * Decrypts ciphertext. Ciphertext is plaintext that has been previously
-     * encrypted by using the Encrypt function.
+     * encrypted by using any of the following functions:
+     * <ul>
+     * <li> GenerateDataKey </li>
+     * <li> GenerateDataKeyWithoutPlaintext </li>
+     * <li> Encrypt </li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     * <p>
+     * Note that if a caller has been granted access permissions to all keys
+     * (through, for example, IAM user policies that grant
+     * <code>Decrypt</code> permission on all resources), then ciphertext
+     * encrypted by using keys in other accounts where the key grants access
+     * to the caller can be decrypted. To remedy this, we recommend that you
+     * do not grant <code>Decrypt</code> access in an IAM user policy.
+     * Instead grant <code>Decrypt</code> access only in key policies. If you
+     * must grant <code>Decrypt</code> access in an IAM user policy, you
+     * should scope the resource to specific keys or to specific trusted
+     * accounts.
      * </p>
      *
      * @param decryptRequest Container for the necessary parameters to
@@ -1129,6 +1434,13 @@ public interface AWSKMSAsync extends AWSKMS {
      * after the forward slash (alias/aws...) is reserved by Amazon Web
      * Services (AWS).
      * </p>
+     * <p>
+     * To associate an alias with a different key, call UpdateAlias.
+     * </p>
+     * <p>
+     * Note that you cannot create or update an alias that represents a key
+     * in another account.
+     * </p>
      *
      * @param createAliasRequest Container for the necessary parameters to
      *           execute the CreateAlias operation on AWSKMS.
@@ -1158,6 +1470,13 @@ public interface AWSKMSAsync extends AWSKMS {
      * followed by a forward slash (alias/). An alias that begins with "aws"
      * after the forward slash (alias/aws...) is reserved by Amazon Web
      * Services (AWS).
+     * </p>
+     * <p>
+     * To associate an alias with a different key, call UpdateAlias.
+     * </p>
+     * <p>
+     * Note that you cannot create or update an alias that represents a key
+     * in another account.
      * </p>
      *
      * @param createAliasRequest Container for the necessary parameters to
@@ -1236,10 +1555,71 @@ public interface AWSKMSAsync extends AWSKMS {
 
     /**
      * <p>
+     * Marks a key as disabled, thereby preventing its use.
+     * </p>
+     *
+     * @param disableKeyRequest Container for the necessary parameters to
+     *           execute the DisableKey operation on AWSKMS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DisableKey service method, as returned by AWSKMS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSKMS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> disableKeyAsync(DisableKeyRequest disableKeyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Marks a key as disabled, thereby preventing its use.
+     * </p>
+     *
+     * @param disableKeyRequest Container for the necessary parameters to
+     *           execute the DisableKey operation on AWSKMS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DisableKey service method, as returned by AWSKMS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSKMS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> disableKeyAsync(DisableKeyRequest disableKeyRequest,
+            AsyncHandler<DisableKeyRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Encrypts data on the server side with a new customer master key
      * without exposing the plaintext of the data on the client side. The
      * data is first decrypted and then encrypted. This operation can also be
      * used to change the encryption context of a ciphertext.
+     * </p>
+     * <p>
+     * Unlike other actions, <code>ReEncrypt</code> is authorized twice -
+     * once as <code>ReEncryptFrom</code> on the source key and once as
+     * <code>ReEncryptTo</code> on the destination key. We therefore
+     * recommend that you include the <code>"action":"kms:ReEncrypt*"</code>
+     * statement in your key policies to permit re-encryption from or to the
+     * key. The statement is included automatically when you authorize use of
+     * the key through the console but must be included manually when you set
+     * a policy by using the PutKeyPolicy function.
      * </p>
      *
      * @param reEncryptRequest Container for the necessary parameters to
@@ -1266,6 +1646,16 @@ public interface AWSKMSAsync extends AWSKMS {
      * without exposing the plaintext of the data on the client side. The
      * data is first decrypted and then encrypted. This operation can also be
      * used to change the encryption context of a ciphertext.
+     * </p>
+     * <p>
+     * Unlike other actions, <code>ReEncrypt</code> is authorized twice -
+     * once as <code>ReEncryptFrom</code> on the source key and once as
+     * <code>ReEncryptTo</code> on the destination key. We therefore
+     * recommend that you include the <code>"action":"kms:ReEncrypt*"</code>
+     * statement in your key policies to permit re-encryption from or to the
+     * key. The statement is included automatically when you authorize use of
+     * the key through the console but must be included manually when you set
+     * a policy by using the PutKeyPolicy function.
      * </p>
      *
      * @param reEncryptRequest Container for the necessary parameters to
@@ -1395,57 +1785,6 @@ public interface AWSKMSAsync extends AWSKMS {
      */
     public Future<Void> enableKeyAsync(EnableKeyRequest enableKeyRequest,
             AsyncHandler<EnableKeyRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Marks a key as disabled, thereby preventing its use.
-     * </p>
-     *
-     * @param disableKeyRequest Container for the necessary parameters to
-     *           execute the DisableKey operation on AWSKMS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DisableKey service method, as returned by AWSKMS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSKMS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> disableKeyAsync(DisableKeyRequest disableKeyRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Marks a key as disabled, thereby preventing its use.
-     * </p>
-     *
-     * @param disableKeyRequest Container for the necessary parameters to
-     *           execute the DisableKey operation on AWSKMS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DisableKey service method, as returned by AWSKMS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSKMS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> disableKeyAsync(DisableKeyRequest disableKeyRequest,
-            AsyncHandler<DisableKeyRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 }
         

@@ -61,6 +61,10 @@ public class AudioParametersJsonUnmarshaller implements Unmarshaller<AudioParame
                     context.nextToken();
                     audioParameters.setChannels(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AudioPackingMode", targetDepth)) {
+                    context.nextToken();
+                    audioParameters.setAudioPackingMode(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CodecOptions", targetDepth)) {
                     context.nextToken();
                     audioParameters.setCodecOptions(AudioCodecOptionsJsonUnmarshaller.getInstance().unmarshall(context));

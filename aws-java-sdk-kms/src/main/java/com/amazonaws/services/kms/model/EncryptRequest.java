@@ -21,7 +21,34 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kms.AWSKMS#encrypt(EncryptRequest) Encrypt operation}.
  * <p>
- * Encrypts plaintext into ciphertext by using a customer master key.
+ * Encrypts plaintext into ciphertext by using a customer master key. The
+ * <code>Encrypt</code> function has two primary use cases:
+ * <ul>
+ * <li>You can encrypt up to 4 KB of arbitrary data such as an RSA key,
+ * a database password, or other sensitive customer information.</li>
+ * <li>If you are moving encrypted data from one region to another, you
+ * can use this API to encrypt in the new region the plaintext data key
+ * that was used to encrypt the data in the original region. This
+ * provides you with an encrypted copy of the data key that can be
+ * decrypted in the new region and used there to decrypt the encrypted
+ * data. </li>
+ * 
+ * </ul>
+ * 
+ * </p>
+ * <p>
+ * Unless you are moving encrypted data from one region to another, you
+ * don't use this function to encrypt a generated data key within a
+ * region. You retrieve data keys already encrypted by calling the
+ * GenerateDataKey or GenerateDataKeyWithoutPlaintext function. Data keys
+ * don't need to be encrypted again by calling <code>Encrypt</code> .
+ * 
+ * </p>
+ * <p>
+ * If you want to encrypt data locally in your application, you can use
+ * the <code>GenerateDataKey</code> function to return a plaintext data
+ * encryption key and a copy of the key encrypted under the customer
+ * master key (CMK) of your choosing.
  * </p>
  *
  * @see com.amazonaws.services.kms.AWSKMS#encrypt(EncryptRequest)
@@ -29,8 +56,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class EncryptRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Unique identifier of the customer master. This can be an ARN, an
-     * alias, or the Key ID.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -46,16 +80,19 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     private java.nio.ByteBuffer plaintext;
 
     /**
-     * Name:value pair that specifies the encryption context to be used for
-     * authenticated encryption. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/crypto_authen.html">Authenticated
-     * Encryption</a>.
+     * Name/value pair that specifies the encryption context to be used for
+     * authenticated encryption. If used here, the same value must be
+     * supplied to the <code>Decrypt</code> API or decryption will fail. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * Context</a>.
      */
     private java.util.Map<String,String> encryptionContext;
 
     /**
-     * A list of grant tokens that represent grants which can be used to
-     * provide long term permissions to perform encryption.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
@@ -63,44 +100,86 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> grantTokens;
 
     /**
-     * Unique identifier of the customer master. This can be an ARN, an
-     * alias, or the Key ID.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Unique identifier of the customer master. This can be an ARN, an
-     *         alias, or the Key ID.
+     * @return A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier, a fully specified ARN to either an alias
+     *         or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     *         Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      */
     public String getKeyId() {
         return keyId;
     }
     
     /**
-     * Unique identifier of the customer master. This can be an ARN, an
-     * alias, or the Key ID.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier of the customer master. This can be an ARN, an
-     *         alias, or the Key ID.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier, a fully specified ARN to either an alias
+     *         or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     *         Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      */
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
     
     /**
-     * Unique identifier of the customer master. This can be an ARN, an
-     * alias, or the Key ID.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier of the customer master. This can be an ARN, an
-     *         alias, or the Key ID.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier, a fully specified ARN to either an alias
+     *         or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     *         Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -153,15 +232,19 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
-     * Name:value pair that specifies the encryption context to be used for
-     * authenticated encryption. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/crypto_authen.html">Authenticated
-     * Encryption</a>.
+     * Name/value pair that specifies the encryption context to be used for
+     * authenticated encryption. If used here, the same value must be
+     * supplied to the <code>Decrypt</code> API or decryption will fail. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * Context</a>.
      *
-     * @return Name:value pair that specifies the encryption context to be used for
-     *         authenticated encryption. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/crypto_authen.html">Authenticated
-     *         Encryption</a>.
+     * @return Name/value pair that specifies the encryption context to be used for
+     *         authenticated encryption. If used here, the same value must be
+     *         supplied to the <code>Decrypt</code> API or decryption will fail. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     *         Context</a>.
      */
     public java.util.Map<String,String> getEncryptionContext() {
         
@@ -172,32 +255,40 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * Name:value pair that specifies the encryption context to be used for
-     * authenticated encryption. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/crypto_authen.html">Authenticated
-     * Encryption</a>.
+     * Name/value pair that specifies the encryption context to be used for
+     * authenticated encryption. If used here, the same value must be
+     * supplied to the <code>Decrypt</code> API or decryption will fail. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * Context</a>.
      *
-     * @param encryptionContext Name:value pair that specifies the encryption context to be used for
-     *         authenticated encryption. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/crypto_authen.html">Authenticated
-     *         Encryption</a>.
+     * @param encryptionContext Name/value pair that specifies the encryption context to be used for
+     *         authenticated encryption. If used here, the same value must be
+     *         supplied to the <code>Decrypt</code> API or decryption will fail. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     *         Context</a>.
      */
     public void setEncryptionContext(java.util.Map<String,String> encryptionContext) {
         this.encryptionContext = encryptionContext;
     }
     
     /**
-     * Name:value pair that specifies the encryption context to be used for
-     * authenticated encryption. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/crypto_authen.html">Authenticated
-     * Encryption</a>.
+     * Name/value pair that specifies the encryption context to be used for
+     * authenticated encryption. If used here, the same value must be
+     * supplied to the <code>Decrypt</code> API or decryption will fail. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * Context</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param encryptionContext Name:value pair that specifies the encryption context to be used for
-     *         authenticated encryption. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/crypto_authen.html">Authenticated
-     *         Encryption</a>.
+     * @param encryptionContext Name/value pair that specifies the encryption context to be used for
+     *         authenticated encryption. If used here, the same value must be
+     *         supplied to the <code>Decrypt</code> API or decryption will fail. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     *         Context</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -208,10 +299,12 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     }
 
     /**
-     * Name:value pair that specifies the encryption context to be used for
-     * authenticated encryption. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/crypto_authen.html">Authenticated
-     * Encryption</a>.
+     * Name/value pair that specifies the encryption context to be used for
+     * authenticated encryption. If used here, the same value must be
+     * supplied to the <code>Decrypt</code> API or decryption will fail. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * Context</a>.
      * <p>
      * The method adds a new key-value pair into EncryptionContext parameter,
      * and returns a reference to this object so that method calls can be
@@ -241,14 +334,16 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
   }
   
     /**
-     * A list of grant tokens that represent grants which can be used to
-     * provide long term permissions to perform encryption.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @return A list of grant tokens that represent grants which can be used to
-     *         provide long term permissions to perform encryption.
+     * @return For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      */
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
@@ -259,14 +354,16 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * A list of grant tokens that represent grants which can be used to
-     * provide long term permissions to perform encryption.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens A list of grant tokens that represent grants which can be used to
-     *         provide long term permissions to perform encryption.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      */
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
@@ -279,8 +376,9 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * A list of grant tokens that represent grants which can be used to
-     * provide long term permissions to perform encryption.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setGrantTokens(java.util.Collection)} or {@link
@@ -292,8 +390,9 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens A list of grant tokens that represent grants which can be used to
-     *         provide long term permissions to perform encryption.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -307,16 +406,18 @@ public class EncryptRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * A list of grant tokens that represent grants which can be used to
-     * provide long term permissions to perform encryption.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens A list of grant tokens that represent grants which can be used to
-     *         provide long term permissions to perform encryption.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

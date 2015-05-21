@@ -98,6 +98,9 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
         for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
             ConfigurationOptionSetting configurationOptionSettingMember = optionSettingsListValue;
             if (configurationOptionSettingMember != null) {
+                if (configurationOptionSettingMember.getResourceName() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".ResourceName", StringUtils.fromString(configurationOptionSettingMember.getResourceName()));
+                }
                 if (configurationOptionSettingMember.getNamespace() != null) {
                     request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.fromString(configurationOptionSettingMember.getNamespace()));
                 }
@@ -118,6 +121,9 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
         for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {
             OptionSpecification optionSpecificationMember = optionsToRemoveListValue;
             if (optionSpecificationMember != null) {
+                if (optionSpecificationMember.getResourceName() != null) {
+                    request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".ResourceName", StringUtils.fromString(optionSpecificationMember.getResourceName()));
+                }
                 if (optionSpecificationMember.getNamespace() != null) {
                     request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace", StringUtils.fromString(optionSpecificationMember.getNamespace()));
                 }

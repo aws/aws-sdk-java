@@ -43,6 +43,10 @@ public class ConfigurationOptionSettingStaxUnmarshaller implements Unmarshaller<
             if (xmlEvent.isEndDocument()) return configurationOptionSetting;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+                if (context.testExpression("ResourceName", targetDepth)) {
+                    configurationOptionSetting.setResourceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Namespace", targetDepth)) {
                     configurationOptionSetting.setNamespace(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

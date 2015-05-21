@@ -39,17 +39,17 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Retire Grant Request Marshaller
+ * Update Alias Request Marshaller
  */
-public class RetireGrantRequestMarshaller implements Marshaller<Request<RetireGrantRequest>, RetireGrantRequest> {
+public class UpdateAliasRequestMarshaller implements Marshaller<Request<UpdateAliasRequest>, UpdateAliasRequest> {
 
-    public Request<RetireGrantRequest> marshall(RetireGrantRequest retireGrantRequest) {
-        if (retireGrantRequest == null) {
+    public Request<UpdateAliasRequest> marshall(UpdateAliasRequest updateAliasRequest) {
+        if (updateAliasRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RetireGrantRequest> request = new DefaultRequest<RetireGrantRequest>(retireGrantRequest, "AWSKMS");
-        String target = "TrentService.RetireGrant";
+        Request<UpdateAliasRequest> request = new DefaultRequest<UpdateAliasRequest>(updateAliasRequest, "AWSKMS");
+        String target = "TrentService.UpdateAlias";
         request.addHeader("X-Amz-Target", target);
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,14 +61,11 @@ public class RetireGrantRequestMarshaller implements Marshaller<Request<RetireGr
 
           jsonWriter.object();
           
-            if (retireGrantRequest.getGrantToken() != null) {
-                jsonWriter.key("GrantToken").value(retireGrantRequest.getGrantToken());
+            if (updateAliasRequest.getAliasName() != null) {
+                jsonWriter.key("AliasName").value(updateAliasRequest.getAliasName());
             }
-            if (retireGrantRequest.getKeyId() != null) {
-                jsonWriter.key("KeyId").value(retireGrantRequest.getKeyId());
-            }
-            if (retireGrantRequest.getGrantId() != null) {
-                jsonWriter.key("GrantId").value(retireGrantRequest.getGrantId());
+            if (updateAliasRequest.getTargetKeyId() != null) {
+                jsonWriter.key("TargetKeyId").value(updateAliasRequest.getTargetKeyId());
             }
 
           jsonWriter.endObject();

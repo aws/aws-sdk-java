@@ -36,18 +36,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * overall capacity of a stream because of excess capacity that is not
  * being used. You must specify the shard to be merged and the adjacent
  * shard for a stream. For more information about merging shards, see
- * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-java-resharding-merge"> Merge Two Shards </a>
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html"> Merge Two Shards </a>
  * in the <i>Amazon Kinesis Developer Guide</i> .
  * </p>
  * <p>
  * If the stream is in the <code>ACTIVE</code> state, you can call
- * <code>MergeShards</code> . If a stream is in the <code>CREATING</code>
- * ,
+ * <code>MergeShards</code> .
+ * If a stream is in the <code>CREATING</code> ,
  * <code>UPDATING</code> , or <code>DELETING</code>
  * state, <code>MergeShards</code> returns a
- * <code>ResourceInUseException</code> .
- * If the specified stream does not exist,
- * <code>MergeShards</code> returns a
+ * <code>ResourceInUseException</code> . If the specified stream does not
+ * exist, <code>MergeShards</code> returns a
  * <code>ResourceNotFoundException</code> .
  * </p>
  * <p>
@@ -58,11 +57,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <code>MergeShards</code> is an asynchronous operation. Upon receiving
  * a <code>MergeShards</code> request, Amazon Kinesis immediately returns
  * a response and sets the <code>StreamStatus</code> to
- * <code>UPDATING</code> .
- * After the operation is completed, Amazon Kinesis sets the
- * <code>StreamStatus</code> to <code>ACTIVE</code> .
- * Read and write operations continue to work while the
- * stream is in the <code>UPDATING</code> state.
+ * <code>UPDATING</code> . After the operation is completed, Amazon
+ * Kinesis sets the <code>StreamStatus</code> to <code>ACTIVE</code> .
+ * Read and write operations continue to work while the stream is in the
+ * <code>UPDATING</code> state.
  * </p>
  * <p>
  * You use DescribeStream to determine the shard IDs that are specified
@@ -71,7 +69,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If you try to operate on too many streams in parallel using
  * CreateStream, DeleteStream, <code>MergeShards</code> or SplitShard,
- * you will receive a <code>LimitExceededException</code> .
+ * you will receive a
+ * <code>LimitExceededException</code> .
  * </p>
  * <p>
  * <code>MergeShards</code> has limit of 5 transactions per second per

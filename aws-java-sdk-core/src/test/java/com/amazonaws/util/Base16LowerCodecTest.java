@@ -30,7 +30,7 @@ import org.junit.Test;
 /**
  * @author hchar
  */
-public class Base16CodecTest
+public class Base16LowerCodecTest
 {
     @Test
     public void testVectorsPerRfc4648()
@@ -48,16 +48,16 @@ public class Base16CodecTest
         String[] expected = {
                 "",
                 "66",
-                "666F",
-                "666F6F",
-                "666F6F62",
-                "666F6F6261",
-                "666F6F626172",
+                "666f",
+                "666f6f",
+                "666f6f62",
+                "666f6f6261",
+                "666f6f626172",
         };
         for (int i=0; i < testVectors.length; i++) {
             String data = testVectors[i];
             byte[] source = data.getBytes("UTF-8");
-            String b16encoded = Base16.encodeAsString(data.getBytes("UTF-8"));
+            String b16encoded = Base16Lower.encodeAsString(data.getBytes("UTF-8"));
             Assert.assertEquals(expected[i], b16encoded);
             byte[] b16 = b16encoded.getBytes("UTF-8");
 
@@ -78,7 +78,7 @@ public class Base16CodecTest
             byte[] digest = MessageDigest.getInstance("SHA-1").digest(
                 UUID.randomUUID().toString().getBytes("UTF-8")
             );
-            String b16Encoded = Base16.encodeAsString(digest);
+            String b16Encoded = Base16Lower.encodeAsString(digest);
             {
                 decoded = Base16.decode(b16Encoded);
                 Assert.assertTrue(Arrays.equals(decoded, digest));

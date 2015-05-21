@@ -76,9 +76,9 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
 
     /**
      * This specifies the tier to use to update the environment. <p>
-     * Condition: You can only update the tier version for an environment. If
-     * you change the name of the type, AWS Elastic Beanstalk returns
-     * <code>InvalidParameterValue</code> error.
+     * Condition: At this time, if you change the tier version, name, or
+     * type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
+     * error.
      */
     private EnvironmentTier tier;
 
@@ -316,14 +316,14 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
 
     /**
      * This specifies the tier to use to update the environment. <p>
-     * Condition: You can only update the tier version for an environment. If
-     * you change the name of the type, AWS Elastic Beanstalk returns
-     * <code>InvalidParameterValue</code> error.
+     * Condition: At this time, if you change the tier version, name, or
+     * type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
+     * error.
      *
      * @return This specifies the tier to use to update the environment. <p>
-     *         Condition: You can only update the tier version for an environment. If
-     *         you change the name of the type, AWS Elastic Beanstalk returns
-     *         <code>InvalidParameterValue</code> error.
+     *         Condition: At this time, if you change the tier version, name, or
+     *         type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
+     *         error.
      */
     public EnvironmentTier getTier() {
         return tier;
@@ -331,14 +331,14 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
     
     /**
      * This specifies the tier to use to update the environment. <p>
-     * Condition: You can only update the tier version for an environment. If
-     * you change the name of the type, AWS Elastic Beanstalk returns
-     * <code>InvalidParameterValue</code> error.
+     * Condition: At this time, if you change the tier version, name, or
+     * type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
+     * error.
      *
      * @param tier This specifies the tier to use to update the environment. <p>
-     *         Condition: You can only update the tier version for an environment. If
-     *         you change the name of the type, AWS Elastic Beanstalk returns
-     *         <code>InvalidParameterValue</code> error.
+     *         Condition: At this time, if you change the tier version, name, or
+     *         type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
+     *         error.
      */
     public void setTier(EnvironmentTier tier) {
         this.tier = tier;
@@ -346,16 +346,16 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
     
     /**
      * This specifies the tier to use to update the environment. <p>
-     * Condition: You can only update the tier version for an environment. If
-     * you change the name of the type, AWS Elastic Beanstalk returns
-     * <code>InvalidParameterValue</code> error.
+     * Condition: At this time, if you change the tier version, name, or
+     * type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
+     * error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tier This specifies the tier to use to update the environment. <p>
-     *         Condition: You can only update the tier version for an environment. If
-     *         you change the name of the type, AWS Elastic Beanstalk returns
-     *         <code>InvalidParameterValue</code> error.
+     *         Condition: At this time, if you change the tier version, name, or
+     *         type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
+     *         error.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

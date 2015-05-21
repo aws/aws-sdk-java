@@ -46,6 +46,43 @@ public class AudioCodecOptions implements Serializable, Cloneable {
     private String profile;
 
     /**
+     * You can only choose an audio bit depth when you specify
+     * <code>flac</code> or <code>pcm</code> for the value of Audio:Codec.
+     * <p>The bit depth of a sample is how many bits of information are
+     * included in the audio samples. The higher the bit depth, the better
+     * the audio, but the larger the file. <p>Valid values are
+     * <code>16</code> and <code>24</code>. <p>The most common bit depth is
+     * <code>24</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^16$)|(^24$)<br/>
+     */
+    private String bitDepth;
+
+    /**
+     * You can only choose an audio bit order when you specify
+     * <code>pcm</code> for the value of Audio:Codec. <p>The order the bits
+     * of a PCM sample are stored in. <p>The supported value is
+     * <code>LittleEndian</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^LittleEndian$)<br/>
+     */
+    private String bitOrder;
+
+    /**
+     * You can only choose whether an audio sample is signed when you specify
+     * <code>pcm</code> for the value of Audio:Codec. <p>Whether audio
+     * samples are represented with negative and positive numbers (signed) or
+     * only positive numbers (unsigned). <p>The supported value is
+     * <code>Signed</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^Signed$)<br/>
+     */
+    private String signed;
+
+    /**
      * You can only choose an audio profile when you specify AAC for the
      * value of Audio:Codec. <p>Specify the AAC profile for the output file.
      * Elastic Transcoder supports the following profiles: <ul>
@@ -172,6 +209,210 @@ public class AudioCodecOptions implements Serializable, Cloneable {
     }
 
     /**
+     * You can only choose an audio bit depth when you specify
+     * <code>flac</code> or <code>pcm</code> for the value of Audio:Codec.
+     * <p>The bit depth of a sample is how many bits of information are
+     * included in the audio samples. The higher the bit depth, the better
+     * the audio, but the larger the file. <p>Valid values are
+     * <code>16</code> and <code>24</code>. <p>The most common bit depth is
+     * <code>24</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^16$)|(^24$)<br/>
+     *
+     * @return You can only choose an audio bit depth when you specify
+     *         <code>flac</code> or <code>pcm</code> for the value of Audio:Codec.
+     *         <p>The bit depth of a sample is how many bits of information are
+     *         included in the audio samples. The higher the bit depth, the better
+     *         the audio, but the larger the file. <p>Valid values are
+     *         <code>16</code> and <code>24</code>. <p>The most common bit depth is
+     *         <code>24</code>.
+     */
+    public String getBitDepth() {
+        return bitDepth;
+    }
+    
+    /**
+     * You can only choose an audio bit depth when you specify
+     * <code>flac</code> or <code>pcm</code> for the value of Audio:Codec.
+     * <p>The bit depth of a sample is how many bits of information are
+     * included in the audio samples. The higher the bit depth, the better
+     * the audio, but the larger the file. <p>Valid values are
+     * <code>16</code> and <code>24</code>. <p>The most common bit depth is
+     * <code>24</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^16$)|(^24$)<br/>
+     *
+     * @param bitDepth You can only choose an audio bit depth when you specify
+     *         <code>flac</code> or <code>pcm</code> for the value of Audio:Codec.
+     *         <p>The bit depth of a sample is how many bits of information are
+     *         included in the audio samples. The higher the bit depth, the better
+     *         the audio, but the larger the file. <p>Valid values are
+     *         <code>16</code> and <code>24</code>. <p>The most common bit depth is
+     *         <code>24</code>.
+     */
+    public void setBitDepth(String bitDepth) {
+        this.bitDepth = bitDepth;
+    }
+    
+    /**
+     * You can only choose an audio bit depth when you specify
+     * <code>flac</code> or <code>pcm</code> for the value of Audio:Codec.
+     * <p>The bit depth of a sample is how many bits of information are
+     * included in the audio samples. The higher the bit depth, the better
+     * the audio, but the larger the file. <p>Valid values are
+     * <code>16</code> and <code>24</code>. <p>The most common bit depth is
+     * <code>24</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^16$)|(^24$)<br/>
+     *
+     * @param bitDepth You can only choose an audio bit depth when you specify
+     *         <code>flac</code> or <code>pcm</code> for the value of Audio:Codec.
+     *         <p>The bit depth of a sample is how many bits of information are
+     *         included in the audio samples. The higher the bit depth, the better
+     *         the audio, but the larger the file. <p>Valid values are
+     *         <code>16</code> and <code>24</code>. <p>The most common bit depth is
+     *         <code>24</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public AudioCodecOptions withBitDepth(String bitDepth) {
+        this.bitDepth = bitDepth;
+        return this;
+    }
+
+    /**
+     * You can only choose an audio bit order when you specify
+     * <code>pcm</code> for the value of Audio:Codec. <p>The order the bits
+     * of a PCM sample are stored in. <p>The supported value is
+     * <code>LittleEndian</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^LittleEndian$)<br/>
+     *
+     * @return You can only choose an audio bit order when you specify
+     *         <code>pcm</code> for the value of Audio:Codec. <p>The order the bits
+     *         of a PCM sample are stored in. <p>The supported value is
+     *         <code>LittleEndian</code>.
+     */
+    public String getBitOrder() {
+        return bitOrder;
+    }
+    
+    /**
+     * You can only choose an audio bit order when you specify
+     * <code>pcm</code> for the value of Audio:Codec. <p>The order the bits
+     * of a PCM sample are stored in. <p>The supported value is
+     * <code>LittleEndian</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^LittleEndian$)<br/>
+     *
+     * @param bitOrder You can only choose an audio bit order when you specify
+     *         <code>pcm</code> for the value of Audio:Codec. <p>The order the bits
+     *         of a PCM sample are stored in. <p>The supported value is
+     *         <code>LittleEndian</code>.
+     */
+    public void setBitOrder(String bitOrder) {
+        this.bitOrder = bitOrder;
+    }
+    
+    /**
+     * You can only choose an audio bit order when you specify
+     * <code>pcm</code> for the value of Audio:Codec. <p>The order the bits
+     * of a PCM sample are stored in. <p>The supported value is
+     * <code>LittleEndian</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^LittleEndian$)<br/>
+     *
+     * @param bitOrder You can only choose an audio bit order when you specify
+     *         <code>pcm</code> for the value of Audio:Codec. <p>The order the bits
+     *         of a PCM sample are stored in. <p>The supported value is
+     *         <code>LittleEndian</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public AudioCodecOptions withBitOrder(String bitOrder) {
+        this.bitOrder = bitOrder;
+        return this;
+    }
+
+    /**
+     * You can only choose whether an audio sample is signed when you specify
+     * <code>pcm</code> for the value of Audio:Codec. <p>Whether audio
+     * samples are represented with negative and positive numbers (signed) or
+     * only positive numbers (unsigned). <p>The supported value is
+     * <code>Signed</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^Signed$)<br/>
+     *
+     * @return You can only choose whether an audio sample is signed when you specify
+     *         <code>pcm</code> for the value of Audio:Codec. <p>Whether audio
+     *         samples are represented with negative and positive numbers (signed) or
+     *         only positive numbers (unsigned). <p>The supported value is
+     *         <code>Signed</code>.
+     */
+    public String getSigned() {
+        return signed;
+    }
+    
+    /**
+     * You can only choose whether an audio sample is signed when you specify
+     * <code>pcm</code> for the value of Audio:Codec. <p>Whether audio
+     * samples are represented with negative and positive numbers (signed) or
+     * only positive numbers (unsigned). <p>The supported value is
+     * <code>Signed</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^Signed$)<br/>
+     *
+     * @param signed You can only choose whether an audio sample is signed when you specify
+     *         <code>pcm</code> for the value of Audio:Codec. <p>Whether audio
+     *         samples are represented with negative and positive numbers (signed) or
+     *         only positive numbers (unsigned). <p>The supported value is
+     *         <code>Signed</code>.
+     */
+    public void setSigned(String signed) {
+        this.signed = signed;
+    }
+    
+    /**
+     * You can only choose whether an audio sample is signed when you specify
+     * <code>pcm</code> for the value of Audio:Codec. <p>Whether audio
+     * samples are represented with negative and positive numbers (signed) or
+     * only positive numbers (unsigned). <p>The supported value is
+     * <code>Signed</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^Signed$)<br/>
+     *
+     * @param signed You can only choose whether an audio sample is signed when you specify
+     *         <code>pcm</code> for the value of Audio:Codec. <p>Whether audio
+     *         samples are represented with negative and positive numbers (signed) or
+     *         only positive numbers (unsigned). <p>The supported value is
+     *         <code>Signed</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public AudioCodecOptions withSigned(String signed) {
+        this.signed = signed;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -183,7 +424,10 @@ public class AudioCodecOptions implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getProfile() != null) sb.append("Profile: " + getProfile() );
+        if (getProfile() != null) sb.append("Profile: " + getProfile() + ",");
+        if (getBitDepth() != null) sb.append("BitDepth: " + getBitDepth() + ",");
+        if (getBitOrder() != null) sb.append("BitOrder: " + getBitOrder() + ",");
+        if (getSigned() != null) sb.append("Signed: " + getSigned() );
         sb.append("}");
         return sb.toString();
     }
@@ -194,6 +438,9 @@ public class AudioCodecOptions implements Serializable, Cloneable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getProfile() == null) ? 0 : getProfile().hashCode()); 
+        hashCode = prime * hashCode + ((getBitDepth() == null) ? 0 : getBitDepth().hashCode()); 
+        hashCode = prime * hashCode + ((getBitOrder() == null) ? 0 : getBitOrder().hashCode()); 
+        hashCode = prime * hashCode + ((getSigned() == null) ? 0 : getSigned().hashCode()); 
         return hashCode;
     }
     
@@ -207,6 +454,12 @@ public class AudioCodecOptions implements Serializable, Cloneable {
         
         if (other.getProfile() == null ^ this.getProfile() == null) return false;
         if (other.getProfile() != null && other.getProfile().equals(this.getProfile()) == false) return false; 
+        if (other.getBitDepth() == null ^ this.getBitDepth() == null) return false;
+        if (other.getBitDepth() != null && other.getBitDepth().equals(this.getBitDepth()) == false) return false; 
+        if (other.getBitOrder() == null ^ this.getBitOrder() == null) return false;
+        if (other.getBitOrder() != null && other.getBitOrder().equals(this.getBitOrder()) == false) return false; 
+        if (other.getSigned() == null ^ this.getSigned() == null) return false;
+        if (other.getSigned() != null && other.getSigned().equals(this.getSigned()) == false) return false; 
         return true;
     }
     

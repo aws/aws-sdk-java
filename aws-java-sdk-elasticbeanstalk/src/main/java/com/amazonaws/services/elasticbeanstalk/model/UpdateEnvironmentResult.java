@@ -120,8 +120,10 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
     private String status;
 
     /**
-     * Lists in-progress environment updates and application version
-     * deployments that you can cancel.
+     * Indicates if there is an in-progress environment configuration update
+     * or application version deployment that you can cancel. <p>
+     * <code>true:</code> There is an update in progress. <p>
+     * <code>false:</code> There are no updates currently in progress.
      */
     private Boolean abortableOperationInProgress;
 
@@ -773,35 +775,47 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
     }
 
     /**
-     * Lists in-progress environment updates and application version
-     * deployments that you can cancel.
+     * Indicates if there is an in-progress environment configuration update
+     * or application version deployment that you can cancel. <p>
+     * <code>true:</code> There is an update in progress. <p>
+     * <code>false:</code> There are no updates currently in progress.
      *
-     * @return Lists in-progress environment updates and application version
-     *         deployments that you can cancel.
+     * @return Indicates if there is an in-progress environment configuration update
+     *         or application version deployment that you can cancel. <p>
+     *         <code>true:</code> There is an update in progress. <p>
+     *         <code>false:</code> There are no updates currently in progress.
      */
     public Boolean isAbortableOperationInProgress() {
         return abortableOperationInProgress;
     }
     
     /**
-     * Lists in-progress environment updates and application version
-     * deployments that you can cancel.
+     * Indicates if there is an in-progress environment configuration update
+     * or application version deployment that you can cancel. <p>
+     * <code>true:</code> There is an update in progress. <p>
+     * <code>false:</code> There are no updates currently in progress.
      *
-     * @param abortableOperationInProgress Lists in-progress environment updates and application version
-     *         deployments that you can cancel.
+     * @param abortableOperationInProgress Indicates if there is an in-progress environment configuration update
+     *         or application version deployment that you can cancel. <p>
+     *         <code>true:</code> There is an update in progress. <p>
+     *         <code>false:</code> There are no updates currently in progress.
      */
     public void setAbortableOperationInProgress(Boolean abortableOperationInProgress) {
         this.abortableOperationInProgress = abortableOperationInProgress;
     }
     
     /**
-     * Lists in-progress environment updates and application version
-     * deployments that you can cancel.
+     * Indicates if there is an in-progress environment configuration update
+     * or application version deployment that you can cancel. <p>
+     * <code>true:</code> There is an update in progress. <p>
+     * <code>false:</code> There are no updates currently in progress.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param abortableOperationInProgress Lists in-progress environment updates and application version
-     *         deployments that you can cancel.
+     * @param abortableOperationInProgress Indicates if there is an in-progress environment configuration update
+     *         or application version deployment that you can cancel. <p>
+     *         <code>true:</code> There is an update in progress. <p>
+     *         <code>false:</code> There are no updates currently in progress.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -812,11 +826,15 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
     }
 
     /**
-     * Lists in-progress environment updates and application version
-     * deployments that you can cancel.
+     * Indicates if there is an in-progress environment configuration update
+     * or application version deployment that you can cancel. <p>
+     * <code>true:</code> There is an update in progress. <p>
+     * <code>false:</code> There are no updates currently in progress.
      *
-     * @return Lists in-progress environment updates and application version
-     *         deployments that you can cancel.
+     * @return Indicates if there is an in-progress environment configuration update
+     *         or application version deployment that you can cancel. <p>
+     *         <code>true:</code> There is an update in progress. <p>
+     *         <code>false:</code> There are no updates currently in progress.
      */
     public Boolean getAbortableOperationInProgress() {
         return abortableOperationInProgress;
