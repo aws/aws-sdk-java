@@ -54,11 +54,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is
-     * the event source. Any record added to this stream could cause AWS
-     * Lambda to invoke your Lambda function, it depends on the
-     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
-     * containing records, to your Lambda function as JSON.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
+     * DynamoDB stream that is the event source. Any record added to this
+     * stream could cause AWS Lambda to invoke your Lambda function, it
+     * depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
+     * Kinesis event, containing records, to your Lambda function as JSON.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:([a-zA-Z0-9\-])+:([a-z]{2}-[a-z]+-\d{1})?:(\d{12})?:(.*)<br/>
@@ -110,62 +110,62 @@ public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest imp
     private String startingPosition;
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is
-     * the event source. Any record added to this stream could cause AWS
-     * Lambda to invoke your Lambda function, it depends on the
-     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
-     * containing records, to your Lambda function as JSON.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
+     * DynamoDB stream that is the event source. Any record added to this
+     * stream could cause AWS Lambda to invoke your Lambda function, it
+     * depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
+     * Kinesis event, containing records, to your Lambda function as JSON.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:([a-zA-Z0-9\-])+:([a-z]{2}-[a-z]+-\d{1})?:(\d{12})?:(.*)<br/>
      *
-     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is
-     *         the event source. Any record added to this stream could cause AWS
-     *         Lambda to invoke your Lambda function, it depends on the
-     *         <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
-     *         containing records, to your Lambda function as JSON.
+     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
+     *         DynamoDB stream that is the event source. Any record added to this
+     *         stream could cause AWS Lambda to invoke your Lambda function, it
+     *         depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
+     *         Kinesis event, containing records, to your Lambda function as JSON.
      */
     public String getEventSourceArn() {
         return eventSourceArn;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is
-     * the event source. Any record added to this stream could cause AWS
-     * Lambda to invoke your Lambda function, it depends on the
-     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
-     * containing records, to your Lambda function as JSON.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
+     * DynamoDB stream that is the event source. Any record added to this
+     * stream could cause AWS Lambda to invoke your Lambda function, it
+     * depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
+     * Kinesis event, containing records, to your Lambda function as JSON.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:([a-zA-Z0-9\-])+:([a-z]{2}-[a-z]+-\d{1})?:(\d{12})?:(.*)<br/>
      *
-     * @param eventSourceArn The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is
-     *         the event source. Any record added to this stream could cause AWS
-     *         Lambda to invoke your Lambda function, it depends on the
-     *         <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
-     *         containing records, to your Lambda function as JSON.
+     * @param eventSourceArn The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
+     *         DynamoDB stream that is the event source. Any record added to this
+     *         stream could cause AWS Lambda to invoke your Lambda function, it
+     *         depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
+     *         Kinesis event, containing records, to your Lambda function as JSON.
      */
     public void setEventSourceArn(String eventSourceArn) {
         this.eventSourceArn = eventSourceArn;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is
-     * the event source. Any record added to this stream could cause AWS
-     * Lambda to invoke your Lambda function, it depends on the
-     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
-     * containing records, to your Lambda function as JSON.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
+     * DynamoDB stream that is the event source. Any record added to this
+     * stream could cause AWS Lambda to invoke your Lambda function, it
+     * depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
+     * Kinesis event, containing records, to your Lambda function as JSON.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:([a-zA-Z0-9\-])+:([a-z]{2}-[a-z]+-\d{1})?:(\d{12})?:(.*)<br/>
      *
-     * @param eventSourceArn The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is
-     *         the event source. Any record added to this stream could cause AWS
-     *         Lambda to invoke your Lambda function, it depends on the
-     *         <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
-     *         containing records, to your Lambda function as JSON.
+     * @param eventSourceArn The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
+     *         DynamoDB stream that is the event source. Any record added to this
+     *         stream could cause AWS Lambda to invoke your Lambda function, it
+     *         depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
+     *         Kinesis event, containing records, to your Lambda function as JSON.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

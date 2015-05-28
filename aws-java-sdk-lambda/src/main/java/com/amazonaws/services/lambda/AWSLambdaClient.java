@@ -43,16 +43,13 @@ import com.amazonaws.services.lambda.model.transform.*;
  * completes.
  * <p>
  * AWS Lambda <p>
- * S
- * </p>
- * <p>
  * <b>Overview</b>
  * </p>
  * <p>
  * This is the <i>AWS Lambda API Reference</i> .
  * The AWS Lambda Developer Guide provides additional information.
  * For the service overview, go to
- * <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html"> What is AWS Lambda </a> , and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS LambdaL How it Works </a>
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html"> What is AWS Lambda </a> , and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
  * in the <i>AWS Lambda Developer Guide</i> .
  * </p>
  */
@@ -218,6 +215,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
         jsonErrorUnmarshallers.add(new ServiceExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new RequestTooLargeExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new UnsupportedMediaTypeExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new CodeStorageExceededExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new TooManyRequestsExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidRequestContentExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidParameterValueExceptionUnmarshaller());
@@ -503,6 +501,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      * @throws ServiceException
      * @throws ResourceNotFoundException
+     * @throws CodeStorageExceededException
      * @throws ResourceConflictException
      * @throws TooManyRequestsException
      *
@@ -1219,6 +1218,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      * @throws ServiceException
      * @throws ResourceNotFoundException
+     * @throws CodeStorageExceededException
      * @throws TooManyRequestsException
      *
      * @throws AmazonClientException

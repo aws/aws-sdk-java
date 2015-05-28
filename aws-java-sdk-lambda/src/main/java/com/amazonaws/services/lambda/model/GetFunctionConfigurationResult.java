@@ -44,7 +44,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs
      */
     private String runtime;
 
@@ -63,7 +63,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      */
     private String handler;
 
@@ -96,7 +96,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      */
     private Integer memorySize;
 
@@ -196,7 +196,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs
      *
      * @return The runtime environment for the Lambda function.
      *
@@ -210,7 +210,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -226,7 +226,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -244,7 +244,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -260,7 +260,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -333,7 +333,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      *
      * @return The function Lambda calls to begin executing your function.
      */
@@ -346,7 +346,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      *
      * @param handler The function Lambda calls to begin executing your function.
      */
@@ -361,7 +361,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      *
      * @param handler The function Lambda calls to begin executing your function.
      *
@@ -513,7 +513,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      *
      * @return The memory size, in MB, you configured for the function. Must be a
      *         multiple of 64 MB.
@@ -527,7 +527,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      *
      * @param memorySize The memory size, in MB, you configured for the function. Must be a
      *         multiple of 64 MB.
@@ -543,7 +543,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      *
      * @param memorySize The memory size, in MB, you configured for the function. Must be a
      *         multiple of 64 MB.

@@ -114,6 +114,15 @@ public class UpdateFunctionCodeRequestMarshaller implements Marshaller<Request<U
             if (updateFunctionCodeRequest.getZipFile() != null) {
                 jsonWriter.key("ZipFile").value(updateFunctionCodeRequest.getZipFile());
             }
+            if (updateFunctionCodeRequest.getS3Bucket() != null) {
+                jsonWriter.key("S3Bucket").value(updateFunctionCodeRequest.getS3Bucket());
+            }
+            if (updateFunctionCodeRequest.getS3Key() != null) {
+                jsonWriter.key("S3Key").value(updateFunctionCodeRequest.getS3Key());
+            }
+            if (updateFunctionCodeRequest.getS3ObjectVersion() != null) {
+                jsonWriter.key("S3ObjectVersion").value(updateFunctionCodeRequest.getS3ObjectVersion());
+            }
 
           jsonWriter.endObject();
 

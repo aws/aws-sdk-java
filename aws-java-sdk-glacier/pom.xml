@@ -12,7 +12,7 @@
   <parent>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-pom</artifactId>
-        <version>1.9.38</version>
+        <version>1.9.39</version>
   </parent>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
@@ -21,25 +21,25 @@
         <artifactId>aws-java-sdk-sqs</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.9.38</version>
+        <version>1.9.39</version>
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-sns</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.9.38</version>
+        <version>1.9.39</version>
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-s3</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.9.38</version>
+        <version>1.9.39</version>
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-core</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.9.38</version>
+        <version>1.9.39</version>
     </dependency>
 </dependencies>
 
