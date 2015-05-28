@@ -86,7 +86,7 @@ public enum Region {
      * The US GovCloud Region. This region uses Amazon S3 servers located in the Northwestern
      * region of the United States.
      */
-    US_GovCloud("s3-us-gov-west-1"),
+    US_GovCloud("us-gov-west-1"),
 
     /**
      * The EU (Ireland) Amazon S3 Region. This region uses Amazon S3 servers located
@@ -185,8 +185,14 @@ public enum Region {
    /**
     * Used to extract the S3 regional id from an S3 end point.
     * Note this pattern will not match the S3 US standard endpoint by intent.
+    * Exampless:
+    * <pre>
+    * s3-eu-west-1.amazonaws.com
+    * s3.cn-north-1.amazonaws.com.cn
+    * </pre>
     */
-    public static final Pattern S3_REGIONAL_ENDPOINT_PATTERN = Pattern.compile("s3-([^.]+)\\.amazonaws\\.com");
+    public static final Pattern S3_REGIONAL_ENDPOINT_PATTERN =
+            Pattern.compile("s3[-.]([^.]+)\\.amazonaws\\.com(\\.[^.]*)?");
 
     /** The list of ID's representing each region. */
     private final List<String> regionIds;

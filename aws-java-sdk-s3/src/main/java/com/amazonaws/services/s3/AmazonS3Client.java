@@ -3556,12 +3556,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         String authority = super.endpoint.getAuthority();
         if (Constants.S3_HOSTNAME.equals(authority)) {
             return Region.US_Standard;
-        }
-        Matcher m = Region.S3_REGIONAL_ENDPOINT_PATTERN.matcher(authority);
-        if (m.matches()) {
-            return Region.fromValue(m.group(1));
         } else {
-            throw new IllegalStateException("S3 client with invalid S3 endpoint configured");
+            Matcher m = Region.S3_REGIONAL_ENDPOINT_PATTERN.matcher(authority);
+            if (m.matches()) {
+                return Region.fromValue(m.group(1));
+            } else {
+                throw new IllegalStateException(
+                    "S3 client with invalid S3 endpoint configured: " + authority);
+            }
         }
     }
 

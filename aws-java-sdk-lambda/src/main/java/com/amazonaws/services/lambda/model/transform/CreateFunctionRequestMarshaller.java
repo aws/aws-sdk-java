@@ -130,6 +130,15 @@ public class CreateFunctionRequestMarshaller implements Marshaller<Request<Creat
                 if (code.getZipFile() != null) {
                     jsonWriter.key("ZipFile").value(code.getZipFile());
                 }
+                if (code.getS3Bucket() != null) {
+                    jsonWriter.key("S3Bucket").value(code.getS3Bucket());
+                }
+                if (code.getS3Key() != null) {
+                    jsonWriter.key("S3Key").value(code.getS3Key());
+                }
+                if (code.getS3ObjectVersion() != null) {
+                    jsonWriter.key("S3ObjectVersion").value(code.getS3ObjectVersion());
+                }
                 jsonWriter.endObject();
             }
 

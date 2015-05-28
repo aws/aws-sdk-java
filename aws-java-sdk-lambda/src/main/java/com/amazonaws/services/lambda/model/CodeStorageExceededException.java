@@ -19,18 +19,18 @@ import com.amazonaws.AmazonServiceException;
 /**
  * AWSLambda exception
  */        
-public class UnsupportedMediaTypeException extends AmazonServiceException {
+public class CodeStorageExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
     private String type;
     
     /**
-     * Constructs a new UnsupportedMediaTypeException with the specified error
+     * Constructs a new CodeStorageExceededException with the specified error
      * message.
      * 
      * @param message Describes the error encountered.
      */
-    public UnsupportedMediaTypeException(String message) {
+    public CodeStorageExceededException(String message) {
         super(message);
     }
     

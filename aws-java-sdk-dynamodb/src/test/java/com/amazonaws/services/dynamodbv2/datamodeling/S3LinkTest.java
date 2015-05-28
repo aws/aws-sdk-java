@@ -33,7 +33,7 @@ public class S3LinkTest
     @Before
     public void setUp() {
         AWSCredentials credentials = new BasicAWSCredentials("mock", "mock");
-        AmazonDynamoDB db = new AmazonDynamoDBClient(credentials); 
+        AmazonDynamoDB db = new AmazonDynamoDBClient(credentials);
         mapper = new DynamoDBMapper(db, new StaticCredentialsProvider(credentials));
     }
 
@@ -112,7 +112,7 @@ public class S3LinkTest
         testLink1 = mapper.createS3Link(Region.US_GovCloud, "bucket", "key");
         json = testLink1.toJson();
         assertEquals(json,
-            "{\"s3\":{\"bucket\":\"bucket\",\"key\":\"key\",\"region\":\"s3-us-gov-west-1\"}}",
+            "{\"s3\":{\"bucket\":\"bucket\",\"key\":\"key\",\"region\":\"us-gov-west-1\"}}",
             json);
     }
 }
