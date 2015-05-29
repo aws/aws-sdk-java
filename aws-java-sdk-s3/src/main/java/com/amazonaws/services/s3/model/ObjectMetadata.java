@@ -182,7 +182,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      *            The value for the header.
      */
     public void setHeader(String key, Object value) {
-        metadata.put(key, value);
+        metadata.put(key.toLowerCase(), value);
     }
 
     /**
