@@ -5,5 +5,5 @@ jdk:
   - openjdk6
   - oraclejdk8
 install: /bin/true
-script: mvn install --quiet -Dgpg.skip=true -DskipTests=true -pl \!aws-java-sdk-osgi
+script: mvn install -DskipTests=true -pl \!aws-java-sdk-osgi
 
