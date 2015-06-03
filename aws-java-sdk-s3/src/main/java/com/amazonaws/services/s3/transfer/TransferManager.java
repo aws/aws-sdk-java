@@ -855,6 +855,37 @@ public class TransferManager {
      *            be created as necessary.
      */
     public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory) {
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, false);
+    }
+
+    /**
+     * Downloads all objects in the virtual directory designated by the
+     * keyPrefix given to the destination directory given. All virtual
+     * subdirectories will be downloaded recursively.
+     * <p>
+     * If you are downloading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     *
+     * @param bucketName
+     *            The bucket containing the virtual directory
+     * @param keyPrefix
+     *            The key prefix for the virtual directory, or null for the
+     *            entire bucket. All subdirectories will be downloaded
+     *            recursively.
+     * @param destinationDirectory
+     *            The directory to place downloaded files. Subdirectories will
+     *            be created as necessary.
+     * @param resumeExistingDownload
+     *            Whether the download request should reuse existing completed and
+     *            partially downloaded files
+     *
+     */
+    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory, final boolean resumeExistingDownload) {
         if ( keyPrefix == null )
             keyPrefix = "";
         List<S3ObjectSummary> objectSummaries = new LinkedList<S3ObjectSummary>();
@@ -935,7 +966,7 @@ public class TransferManager {
                                     .<GetObjectRequest>withGeneralProgressListener(
                                             listener),
                             f,
-                            transferListener, null, true));
+                            transferListener, null, resumeExistingDownload));
         }
 
         if ( downloads.isEmpty() ) {
