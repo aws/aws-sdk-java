@@ -273,7 +273,7 @@ public class ObjectListing {
      * listing. An object listing will never contain more objects plus common
      * prefixes than indicated by the <code>maxKeys</code>, but can of course contain less.
      * 
-     * @return The <code>maxKeys</code parameter originally used to request this object
+     * @return The <code>maxKeys</code> parameter originally used to request this object
      *         listing. Returns the default <code>maxKeys</code> value applied by Amazon S3 if
      *         no value was specified.
      */
