@@ -935,7 +935,7 @@ public class TransferManager {
                                     .<GetObjectRequest>withGeneralProgressListener(
                                             listener),
                             f,
-                            transferListener, null, false));
+                            transferListener, null, true));
         }
 
         if ( downloads.isEmpty() ) {
