@@ -356,6 +356,119 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     
     /**
      * <p>
+     * Returns all the subscription filters associated with the specified
+     * log group. The list returned in the response is ASCII-sorted by filter
+     * name.
+     * </p>
+     * <p>
+     * By default, this operation returns up to 50 subscription filters. If
+     * there are more subscription filters to list, the response would
+     * contain a <code>nextToken</code> value in the response body. You can
+     * also limit the number of subscription filters returned in the response
+     * by specifying the <code>limit</code> parameter in the request.
+     * </p>
+     *
+     * @param describeSubscriptionFiltersRequest Container for the necessary
+     *           parameters to execute the DescribeSubscriptionFilters service method
+     *           on AWSLogs.
+     * 
+     * @return The response from the DescribeSubscriptionFilters service
+     *         method, as returned by AWSLogs.
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeSubscriptionFiltersResult describeSubscriptionFilters(DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeSubscriptionFiltersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSubscriptionFiltersRequest> request = null;
+        Response<DescribeSubscriptionFiltersResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSubscriptionFiltersRequestMarshaller().marshall(super.beforeMarshalling(describeSubscriptionFiltersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<DescribeSubscriptionFiltersResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeSubscriptionFiltersResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeSubscriptionFiltersResult> responseHandler =
+                new JsonResponseHandler<DescribeSubscriptionFiltersResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a subscription filter associated with the specified log
+     * group.
+     * </p>
+     *
+     * @param deleteSubscriptionFilterRequest Container for the necessary
+     *           parameters to execute the DeleteSubscriptionFilter service method on
+     *           AWSLogs.
+     * 
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     * @throws OperationAbortedException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteSubscriptionFilter(DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteSubscriptionFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSubscriptionFilterRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSubscriptionFilterRequestMarshaller().marshall(super.beforeMarshalling(deleteSubscriptionFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
      * Returns all the metrics filters associated with the specified log
      * group. The list returned in the response is ASCII-sorted by filter
      * name.
@@ -594,6 +707,65 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     
     /**
      * <p>
+     * Creates or updates a subscription filter and associates it with the
+     * specified log group. Subscription filters allow you to subscribe to a
+     * real-time stream of log events ingested through
+     * <code>PutLogEvents</code> requests and have them delivered to a
+     * specific destination. Currently the only supported destination is an
+     * Amazon Kinesis stream belonging to the same account as the
+     * subscription filter.
+     * </p>
+     * <p>
+     * Currently there can only be one subscription filter associated with a
+     * log group.
+     * </p>
+     *
+     * @param putSubscriptionFilterRequest Container for the necessary
+     *           parameters to execute the PutSubscriptionFilter service method on
+     *           AWSLogs.
+     * 
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     * @throws OperationAbortedException
+     * @throws ResourceNotFoundException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void putSubscriptionFilter(PutSubscriptionFilterRequest putSubscriptionFilterRequest) {
+        ExecutionContext executionContext = createExecutionContext(putSubscriptionFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutSubscriptionFilterRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutSubscriptionFilterRequestMarshaller().marshall(super.beforeMarshalling(putSubscriptionFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
      * Tests the filter pattern of a metric filter against a sample of log
      * event messages. You can use this operation to validate the correctness
      * of a metric filter pattern.
@@ -653,6 +825,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * specified log group. Metric filters allow you to configure rules to
      * extract metric data from log events ingested through
      * <code>PutLogEvents</code> requests.
+     * </p>
+     * <p>
+     * The maximum number of metric filters that can be associated with a
+     * log group is 100.
      * </p>
      *
      * @param putMetricFilterRequest Container for the necessary parameters
@@ -748,6 +924,77 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     
     /**
      * <p>
+     * Retrieves log events, optionally filtered by a filter pattern from
+     * the specified log group. You can provide an optional time range to
+     * filter the results on the event <code>timestamp</code> . You can limit
+     * the streams searched to an explicit list of
+     * <code>logStreamNames</code> .
+     * </p>
+     * <p>
+     * By default, this operation returns as much matching log events as can
+     * fit in a response size of 1MB, up to 10,000 log events, or all the
+     * events found within a time-bounded scan window. If the response
+     * includes a <code>nextToken</code> , then there is more data to search,
+     * and the search can be resumed with a new request providing the
+     * nextToken. The response will contain a list of
+     * <code>searchedLogStreams</code> that contains information about which
+     * streams were searched in the request and whether they have been
+     * searched completely or require further pagination. The
+     * <code>limit</code> parameter in the request. can be used to specify
+     * the maximum number of events to return in a page.
+     * </p>
+     *
+     * @param filterLogEventsRequest Container for the necessary parameters
+     *           to execute the FilterLogEvents service method on AWSLogs.
+     * 
+     * @return The response from the FilterLogEvents service method, as
+     *         returned by AWSLogs.
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public FilterLogEventsResult filterLogEvents(FilterLogEventsRequest filterLogEventsRequest) {
+        ExecutionContext executionContext = createExecutionContext(filterLogEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<FilterLogEventsRequest> request = null;
+        Response<FilterLogEventsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new FilterLogEventsRequestMarshaller().marshall(super.beforeMarshalling(filterLogEventsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<FilterLogEventsResult, JsonUnmarshallerContext> unmarshaller =
+                new FilterLogEventsResultJsonUnmarshaller();
+            JsonResponseHandler<FilterLogEventsResult> responseHandler =
+                new JsonResponseHandler<FilterLogEventsResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Uploads a batch of log events to the specified log stream.
      * </p>
      * <p>
@@ -816,77 +1063,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 new PutLogEventsResultJsonUnmarshaller();
             JsonResponseHandler<PutLogEventsResult> responseHandler =
                 new JsonResponseHandler<PutLogEventsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Retrieves log events, optionally filtered by a filter pattern from
-     * the specified log group. You can provide an optional time range to
-     * filter the results on the event <code>timestamp</code> . You can limit
-     * the streams searched to an explicit list of
-     * <code>logStreamNames</code> .
-     * </p>
-     * <p>
-     * By default, this operation returns as much matching log events as can
-     * fit in a response size of 1MB, up to 10,000 log events, or all the
-     * events found within a time-bounded scan window. If the response
-     * includes a <code>nextToken</code> , then there is more data to search,
-     * and the search can be resumed with a new request providing the
-     * nextToken. The response will contain a list of
-     * <code>searchedLogStreams</code> that contains information about which
-     * streams were searched in the request and whether they have been
-     * searched completely or require further pagination. The
-     * <code>limit</code> parameter in the request. can be used to specify
-     * the maximum number of events to return in a page.
-     * </p>
-     *
-     * @param filterLogEventsRequest Container for the necessary parameters
-     *           to execute the FilterLogEvents service method on AWSLogs.
-     * 
-     * @return The response from the FilterLogEvents service method, as
-     *         returned by AWSLogs.
-     * 
-     * @throws ServiceUnavailableException
-     * @throws InvalidParameterException
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public FilterLogEventsResult filterLogEvents(FilterLogEventsRequest filterLogEventsRequest) {
-        ExecutionContext executionContext = createExecutionContext(filterLogEventsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<FilterLogEventsRequest> request = null;
-        Response<FilterLogEventsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new FilterLogEventsRequestMarshaller().marshall(super.beforeMarshalling(filterLogEventsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<FilterLogEventsResult, JsonUnmarshallerContext> unmarshaller =
-                new FilterLogEventsResultJsonUnmarshaller();
-            JsonResponseHandler<FilterLogEventsResult> responseHandler =
-                new JsonResponseHandler<FilterLogEventsResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
 

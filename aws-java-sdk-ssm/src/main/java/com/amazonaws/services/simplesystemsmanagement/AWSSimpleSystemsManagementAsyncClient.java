@@ -35,9 +35,9 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * <p>
- * AWS Simple Systems Management enables you to configure and manage your
- * EC2 instances. You can create a configuration document and then
- * associate it with one or more running instances.
+ * Amazon EC2 Simple Systems Manager (SSM) enables you to configure and
+ * manage your EC2 instances. You can create a configuration document and
+ * then associate it with one or more running instances.
  * </p>
  * <p>
  * You can use a configuration document to automate the following tasks
@@ -46,15 +46,15 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * 
  * <ul>
  * <li> <p>
+ * Join an AWS Directory
+ * </p>
+ * </li>
+ * <li> <p>
  * Install, repair, or uninstall software using an MSI package
  * </p>
  * </li>
  * <li> <p>
  * Run PowerShell scripts
- * </p>
- * </li>
- * <li> <p>
- * Join an AWS Directory
  * </p>
  * </li>
  * <li> <p>

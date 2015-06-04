@@ -47,7 +47,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class FilterLogEventsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of the log group to query
+     * The name of the log group to query.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -122,33 +122,33 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements S
     private Boolean interleaved;
 
     /**
-     * The name of the log group to query
+     * The name of the log group to query.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The name of the log group to query
+     * @return The name of the log group to query.
      */
     public String getLogGroupName() {
         return logGroupName;
     }
     
     /**
-     * The name of the log group to query
+     * The name of the log group to query.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The name of the log group to query
+     * @param logGroupName The name of the log group to query.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
     
     /**
-     * The name of the log group to query
+     * The name of the log group to query.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -156,7 +156,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements S
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The name of the log group to query
+     * @param logGroupName The name of the log group to query.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -37,10 +37,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The log group name for which metric filters are to be listed.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     */
     private String logGroupName;
 
     /**
-     * The name of the metric filter.
+     * Will only return metric filters that match the provided
+     * filterNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -78,40 +87,41 @@ public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest implem
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param logGroupName
+     * @param logGroupName The log group name for which metric filters are to
+     * be listed.
      */
     public DescribeMetricFiltersRequest(String logGroupName) {
         setLogGroupName(logGroupName);
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
+     * The log group name for which metric filters are to be listed.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The value of the LogGroupName property for this object.
+     * @return The log group name for which metric filters are to be listed.
      */
     public String getLogGroupName() {
         return logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The log group name for which metric filters are to be listed.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The log group name for which metric filters are to be listed.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The log group name for which metric filters are to be listed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -119,7 +129,7 @@ public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest implem
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The log group name for which metric filters are to be listed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -130,33 +140,43 @@ public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The name of the metric filter.
+     * Will only return metric filters that match the provided
+     * filterNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @return The name of the metric filter.
+     * @return Will only return metric filters that match the provided
+     *         filterNamePrefix. If you don't specify a value, no prefix filter is
+     *         applied.
      */
     public String getFilterNamePrefix() {
         return filterNamePrefix;
     }
     
     /**
-     * The name of the metric filter.
+     * Will only return metric filters that match the provided
+     * filterNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param filterNamePrefix The name of the metric filter.
+     * @param filterNamePrefix Will only return metric filters that match the provided
+     *         filterNamePrefix. If you don't specify a value, no prefix filter is
+     *         applied.
      */
     public void setFilterNamePrefix(String filterNamePrefix) {
         this.filterNamePrefix = filterNamePrefix;
     }
     
     /**
-     * The name of the metric filter.
+     * Will only return metric filters that match the provided
+     * filterNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -164,7 +184,9 @@ public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest implem
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param filterNamePrefix The name of the metric filter.
+     * @param filterNamePrefix Will only return metric filters that match the provided
+     *         filterNamePrefix. If you don't specify a value, no prefix filter is
+     *         applied.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

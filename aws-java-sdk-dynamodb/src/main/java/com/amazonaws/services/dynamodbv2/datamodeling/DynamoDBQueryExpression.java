@@ -38,6 +38,7 @@ public class DynamoDBQueryExpression <T> {
     private String indexName;
     private Map<String, Condition> queryFilter;
     private String conditionalOperator;
+
     /**
      * Evaluates the query results and returns only the desired values.
      * <p>
@@ -125,6 +126,12 @@ public class DynamoDBQueryExpression <T> {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the query. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.queryPage}, not {@code DynamoDBMapper.query}.
      */
     private String returnConsumedCapacity;
 
@@ -1171,6 +1178,12 @@ public class DynamoDBQueryExpression <T> {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the query. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.queryPage}, not {@code DynamoDBMapper.query}.
      *
      * @return A value that if set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
@@ -1193,6 +1206,12 @@ public class DynamoDBQueryExpression <T> {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the query. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.queryPage}, not {@code DynamoDBMapper.query}.
      *
      * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
@@ -1217,6 +1236,12 @@ public class DynamoDBQueryExpression <T> {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the query. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.queryPage}, not {@code DynamoDBMapper.query}.
      *
      * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
@@ -1243,6 +1268,12 @@ public class DynamoDBQueryExpression <T> {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the query. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.queryPage}, not {@code DynamoDBMapper.query}.
      *
      * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
@@ -1267,6 +1298,12 @@ public class DynamoDBQueryExpression <T> {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the query. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.queryPage}, not {@code DynamoDBMapper.query}.
      *
      * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to

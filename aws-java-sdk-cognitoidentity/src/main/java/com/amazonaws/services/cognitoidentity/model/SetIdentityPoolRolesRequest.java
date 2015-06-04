@@ -24,6 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Sets the roles for an identity pool. These roles are used when making
  * calls to <code>GetCredentialsForIdentity</code> action.
  * </p>
+ * <p>
+ * You must use AWS Developer credentials to call this API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#setIdentityPoolRoles(SetIdentityPoolRolesRequest)
  */
@@ -39,8 +42,9 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest impleme
     private String identityPoolId;
 
     /**
-     * The map of roles associated with this pool. Currently only
-     * authenticated and unauthenticated roles are supported.
+     * The map of roles associated with this pool. For a given role, the key
+     * will be either "authenticated" or "unauthenticated" and the value will
+     * be the Role ARN.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2<br/>
@@ -93,14 +97,16 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The map of roles associated with this pool. Currently only
-     * authenticated and unauthenticated roles are supported.
+     * The map of roles associated with this pool. For a given role, the key
+     * will be either "authenticated" or "unauthenticated" and the value will
+     * be the Role ARN.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2<br/>
      *
-     * @return The map of roles associated with this pool. Currently only
-     *         authenticated and unauthenticated roles are supported.
+     * @return The map of roles associated with this pool. For a given role, the key
+     *         will be either "authenticated" or "unauthenticated" and the value will
+     *         be the Role ARN.
      */
     public java.util.Map<String,String> getRoles() {
         
@@ -108,30 +114,34 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The map of roles associated with this pool. Currently only
-     * authenticated and unauthenticated roles are supported.
+     * The map of roles associated with this pool. For a given role, the key
+     * will be either "authenticated" or "unauthenticated" and the value will
+     * be the Role ARN.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2<br/>
      *
-     * @param roles The map of roles associated with this pool. Currently only
-     *         authenticated and unauthenticated roles are supported.
+     * @param roles The map of roles associated with this pool. For a given role, the key
+     *         will be either "authenticated" or "unauthenticated" and the value will
+     *         be the Role ARN.
      */
     public void setRoles(java.util.Map<String,String> roles) {
         this.roles = roles;
     }
     
     /**
-     * The map of roles associated with this pool. Currently only
-     * authenticated and unauthenticated roles are supported.
+     * The map of roles associated with this pool. For a given role, the key
+     * will be either "authenticated" or "unauthenticated" and the value will
+     * be the Role ARN.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 2<br/>
      *
-     * @param roles The map of roles associated with this pool. Currently only
-     *         authenticated and unauthenticated roles are supported.
+     * @param roles The map of roles associated with this pool. For a given role, the key
+     *         will be either "authenticated" or "unauthenticated" and the value will
+     *         be the Role ARN.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -142,8 +152,9 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The map of roles associated with this pool. Currently only
-     * authenticated and unauthenticated roles are supported.
+     * The map of roles associated with this pool. For a given role, the key
+     * will be either "authenticated" or "unauthenticated" and the value will
+     * be the Role ARN.
      * <p>
      * The method adds a new key-value pair into Roles parameter, and returns
      * a reference to this object so that method calls can be chained

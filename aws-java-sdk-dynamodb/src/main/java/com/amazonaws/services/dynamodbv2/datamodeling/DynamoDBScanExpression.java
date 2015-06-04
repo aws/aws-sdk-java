@@ -165,6 +165,12 @@ public class DynamoDBScanExpression {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the scan. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.scanPage}, not {@code DynamoDBMapper.scan}.
      */
     private String returnConsumedCapacity;
 
@@ -837,6 +843,12 @@ public class DynamoDBScanExpression {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the scan. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.scanPage}, not {@code DynamoDBMapper.scan}.
      *
      * @return A value that if set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
@@ -859,6 +871,12 @@ public class DynamoDBScanExpression {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the scan. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.scanPage}, not {@code DynamoDBMapper.scan}.
      *
      * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
@@ -883,6 +901,12 @@ public class DynamoDBScanExpression {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the scan. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.scanPage}, not {@code DynamoDBMapper.scan}.
      *
      * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
@@ -909,6 +933,12 @@ public class DynamoDBScanExpression {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the scan. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.scanPage}, not {@code DynamoDBMapper.scan}.
      *
      * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
@@ -933,6 +963,12 @@ public class DynamoDBScanExpression {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
+     * <p>
+     * If enabled, the underlying request to DynamoDB will include the
+     * configured parameter value and the low-level response from DynamoDB will
+     * include the amount of capacity consumed by the scan. Currently, the
+     * consumed capacity is only exposed through the DynamoDBMapper when you
+     * call {@code DynamoDBMapper.scanPage}, not {@code DynamoDBMapper.scan}.
      *
      * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
      *         <i>ConsumedCapacity</i> data for tables and indexes. If set to

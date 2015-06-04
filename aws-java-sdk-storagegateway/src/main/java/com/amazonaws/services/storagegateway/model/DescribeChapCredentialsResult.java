@@ -31,12 +31,12 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      * with the following fields: <ul> <li> <p><b>InitiatorName</b>: The
      * iSCSI initiator that connects to the target. </li> <li>
      * <p><b>SecretToAuthenticateInitiator</b>: The secret key that the
-     * initiator (e.g. Windows client) must provide to participate in mutual
-     * CHAP with the target. </li> <li> <p><b>SecretToAuthenticateTarget</b>:
-     * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). </li> <li>
-     * <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     * volume. </li> </ul>
+     * initiator (for example, the Windows client) must provide to
+     * participate in mutual CHAP with the target. </li> <li>
+     * <p><b>SecretToAuthenticateTarget</b>: The secret key that the target
+     * must provide to participate in mutual CHAP with the initiator (e.g.
+     * Windows client). </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     * Name (ARN) of the storage volume. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ChapInfo> chapCredentials;
 
@@ -48,12 +48,12 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      * with the following fields: <ul> <li> <p><b>InitiatorName</b>: The
      * iSCSI initiator that connects to the target. </li> <li>
      * <p><b>SecretToAuthenticateInitiator</b>: The secret key that the
-     * initiator (e.g. Windows client) must provide to participate in mutual
-     * CHAP with the target. </li> <li> <p><b>SecretToAuthenticateTarget</b>:
-     * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). </li> <li>
-     * <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     * volume. </li> </ul>
+     * initiator (for example, the Windows client) must provide to
+     * participate in mutual CHAP with the target. </li> <li>
+     * <p><b>SecretToAuthenticateTarget</b>: The secret key that the target
+     * must provide to participate in mutual CHAP with the initiator (e.g.
+     * Windows client). </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     * Name (ARN) of the storage volume. </li> </ul>
      *
      * @return An array of <a>ChapInfo</a> objects that represent CHAP credentials.
      *         Each object in the array contains CHAP credential information for one
@@ -62,12 +62,12 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      *         with the following fields: <ul> <li> <p><b>InitiatorName</b>: The
      *         iSCSI initiator that connects to the target. </li> <li>
      *         <p><b>SecretToAuthenticateInitiator</b>: The secret key that the
-     *         initiator (e.g. Windows client) must provide to participate in mutual
-     *         CHAP with the target. </li> <li> <p><b>SecretToAuthenticateTarget</b>:
-     *         The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client). </li> <li>
-     *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     *         volume. </li> </ul>
+     *         initiator (for example, the Windows client) must provide to
+     *         participate in mutual CHAP with the target. </li> <li>
+     *         <p><b>SecretToAuthenticateTarget</b>: The secret key that the target
+     *         must provide to participate in mutual CHAP with the initiator (e.g.
+     *         Windows client). </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     *         Name (ARN) of the storage volume. </li> </ul>
      */
     public java.util.List<ChapInfo> getChapCredentials() {
         if (chapCredentials == null) {
@@ -85,12 +85,12 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      * with the following fields: <ul> <li> <p><b>InitiatorName</b>: The
      * iSCSI initiator that connects to the target. </li> <li>
      * <p><b>SecretToAuthenticateInitiator</b>: The secret key that the
-     * initiator (e.g. Windows client) must provide to participate in mutual
-     * CHAP with the target. </li> <li> <p><b>SecretToAuthenticateTarget</b>:
-     * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). </li> <li>
-     * <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     * volume. </li> </ul>
+     * initiator (for example, the Windows client) must provide to
+     * participate in mutual CHAP with the target. </li> <li>
+     * <p><b>SecretToAuthenticateTarget</b>: The secret key that the target
+     * must provide to participate in mutual CHAP with the initiator (e.g.
+     * Windows client). </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     * Name (ARN) of the storage volume. </li> </ul>
      *
      * @param chapCredentials An array of <a>ChapInfo</a> objects that represent CHAP credentials.
      *         Each object in the array contains CHAP credential information for one
@@ -99,12 +99,12 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      *         with the following fields: <ul> <li> <p><b>InitiatorName</b>: The
      *         iSCSI initiator that connects to the target. </li> <li>
      *         <p><b>SecretToAuthenticateInitiator</b>: The secret key that the
-     *         initiator (e.g. Windows client) must provide to participate in mutual
-     *         CHAP with the target. </li> <li> <p><b>SecretToAuthenticateTarget</b>:
-     *         The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client). </li> <li>
-     *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     *         volume. </li> </ul>
+     *         initiator (for example, the Windows client) must provide to
+     *         participate in mutual CHAP with the target. </li> <li>
+     *         <p><b>SecretToAuthenticateTarget</b>: The secret key that the target
+     *         must provide to participate in mutual CHAP with the initiator (e.g.
+     *         Windows client). </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     *         Name (ARN) of the storage volume. </li> </ul>
      */
     public void setChapCredentials(java.util.Collection<ChapInfo> chapCredentials) {
         if (chapCredentials == null) {
@@ -124,12 +124,12 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      * with the following fields: <ul> <li> <p><b>InitiatorName</b>: The
      * iSCSI initiator that connects to the target. </li> <li>
      * <p><b>SecretToAuthenticateInitiator</b>: The secret key that the
-     * initiator (e.g. Windows client) must provide to participate in mutual
-     * CHAP with the target. </li> <li> <p><b>SecretToAuthenticateTarget</b>:
-     * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). </li> <li>
-     * <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     * volume. </li> </ul>
+     * initiator (for example, the Windows client) must provide to
+     * participate in mutual CHAP with the target. </li> <li>
+     * <p><b>SecretToAuthenticateTarget</b>: The secret key that the target
+     * must provide to participate in mutual CHAP with the initiator (e.g.
+     * Windows client). </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     * Name (ARN) of the storage volume. </li> </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setChapCredentials(java.util.Collection)} or {@link
@@ -145,12 +145,12 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      *         with the following fields: <ul> <li> <p><b>InitiatorName</b>: The
      *         iSCSI initiator that connects to the target. </li> <li>
      *         <p><b>SecretToAuthenticateInitiator</b>: The secret key that the
-     *         initiator (e.g. Windows client) must provide to participate in mutual
-     *         CHAP with the target. </li> <li> <p><b>SecretToAuthenticateTarget</b>:
-     *         The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client). </li> <li>
-     *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     *         volume. </li> </ul>
+     *         initiator (for example, the Windows client) must provide to
+     *         participate in mutual CHAP with the target. </li> <li>
+     *         <p><b>SecretToAuthenticateTarget</b>: The secret key that the target
+     *         must provide to participate in mutual CHAP with the initiator (e.g.
+     *         Windows client). </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     *         Name (ARN) of the storage volume. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -171,12 +171,12 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      * with the following fields: <ul> <li> <p><b>InitiatorName</b>: The
      * iSCSI initiator that connects to the target. </li> <li>
      * <p><b>SecretToAuthenticateInitiator</b>: The secret key that the
-     * initiator (e.g. Windows client) must provide to participate in mutual
-     * CHAP with the target. </li> <li> <p><b>SecretToAuthenticateTarget</b>:
-     * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). </li> <li>
-     * <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     * volume. </li> </ul>
+     * initiator (for example, the Windows client) must provide to
+     * participate in mutual CHAP with the target. </li> <li>
+     * <p><b>SecretToAuthenticateTarget</b>: The secret key that the target
+     * must provide to participate in mutual CHAP with the initiator (e.g.
+     * Windows client). </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     * Name (ARN) of the storage volume. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -187,12 +187,12 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      *         with the following fields: <ul> <li> <p><b>InitiatorName</b>: The
      *         iSCSI initiator that connects to the target. </li> <li>
      *         <p><b>SecretToAuthenticateInitiator</b>: The secret key that the
-     *         initiator (e.g. Windows client) must provide to participate in mutual
-     *         CHAP with the target. </li> <li> <p><b>SecretToAuthenticateTarget</b>:
-     *         The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client). </li> <li>
-     *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
-     *         volume. </li> </ul>
+     *         initiator (for example, the Windows client) must provide to
+     *         participate in mutual CHAP with the target. </li> <li>
+     *         <p><b>SecretToAuthenticateTarget</b>: The secret key that the target
+     *         must provide to participate in mutual CHAP with the initiator (e.g.
+     *         Windows client). </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     *         Name (ARN) of the storage volume. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

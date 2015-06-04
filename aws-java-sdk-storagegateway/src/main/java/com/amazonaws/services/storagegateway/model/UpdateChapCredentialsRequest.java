@@ -38,8 +38,8 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
 
     /**
      * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
-     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
-     * TargetARN for specified VolumeARN.
+     * <a>DescribeStorediSCSIVolumes</a> operation to return the TargetARN
+     * for specified VolumeARN.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 800<br/>
@@ -47,11 +47,13 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
     private String targetARN;
 
     /**
-     * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target.
+     * The secret key that the initiator (for example, the Windows client)
+     * must provide to participate in mutual CHAP with the target. <note>The
+     * secret key must be between 12 and 16 bytes when encoded in
+     * UTF-8.</note>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      */
     private String secretToAuthenticateInitiator;
 
@@ -66,24 +68,26 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
 
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client).
+     * CHAP with the initiator (e.g. Windows client). <p>Byte constraints:
+     * Minimum bytes of 12. Maximum bytes of 16. <note>The secret key must be
+     * between 12 and 16 bytes when encoded in UTF-8.</note>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      */
     private String secretToAuthenticateTarget;
 
     /**
      * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
-     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
-     * TargetARN for specified VolumeARN.
+     * <a>DescribeStorediSCSIVolumes</a> operation to return the TargetARN
+     * for specified VolumeARN.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 800<br/>
      *
      * @return The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
-     *         <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
-     *         TargetARN for specified VolumeARN.
+     *         <a>DescribeStorediSCSIVolumes</a> operation to return the TargetARN
+     *         for specified VolumeARN.
      */
     public String getTargetARN() {
         return targetARN;
@@ -91,15 +95,15 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
     
     /**
      * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
-     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
-     * TargetARN for specified VolumeARN.
+     * <a>DescribeStorediSCSIVolumes</a> operation to return the TargetARN
+     * for specified VolumeARN.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 800<br/>
      *
      * @param targetARN The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
-     *         <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
-     *         TargetARN for specified VolumeARN.
+     *         <a>DescribeStorediSCSIVolumes</a> operation to return the TargetARN
+     *         for specified VolumeARN.
      */
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
@@ -107,8 +111,8 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
     
     /**
      * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
-     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
-     * TargetARN for specified VolumeARN.
+     * <a>DescribeStorediSCSIVolumes</a> operation to return the TargetARN
+     * for specified VolumeARN.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -116,8 +120,8 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
      * <b>Length: </b>50 - 800<br/>
      *
      * @param targetARN The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
-     *         <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
-     *         TargetARN for specified VolumeARN.
+     *         <a>DescribeStorediSCSIVolumes</a> operation to return the TargetARN
+     *         for specified VolumeARN.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -128,44 +132,56 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target.
+     * The secret key that the initiator (for example, the Windows client)
+     * must provide to participate in mutual CHAP with the target. <note>The
+     * secret key must be between 12 and 16 bytes when encoded in
+     * UTF-8.</note>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
-     * @return The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target.
+     * @return The secret key that the initiator (for example, the Windows client)
+     *         must provide to participate in mutual CHAP with the target. <note>The
+     *         secret key must be between 12 and 16 bytes when encoded in
+     *         UTF-8.</note>
      */
     public String getSecretToAuthenticateInitiator() {
         return secretToAuthenticateInitiator;
     }
     
     /**
-     * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target.
+     * The secret key that the initiator (for example, the Windows client)
+     * must provide to participate in mutual CHAP with the target. <note>The
+     * secret key must be between 12 and 16 bytes when encoded in
+     * UTF-8.</note>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
-     * @param secretToAuthenticateInitiator The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target.
+     * @param secretToAuthenticateInitiator The secret key that the initiator (for example, the Windows client)
+     *         must provide to participate in mutual CHAP with the target. <note>The
+     *         secret key must be between 12 and 16 bytes when encoded in
+     *         UTF-8.</note>
      */
     public void setSecretToAuthenticateInitiator(String secretToAuthenticateInitiator) {
         this.secretToAuthenticateInitiator = secretToAuthenticateInitiator;
     }
     
     /**
-     * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target.
+     * The secret key that the initiator (for example, the Windows client)
+     * must provide to participate in mutual CHAP with the target. <note>The
+     * secret key must be between 12 and 16 bytes when encoded in
+     * UTF-8.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
-     * @param secretToAuthenticateInitiator The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target.
+     * @param secretToAuthenticateInitiator The secret key that the initiator (for example, the Windows client)
+     *         must provide to participate in mutual CHAP with the target. <note>The
+     *         secret key must be between 12 and 16 bytes when encoded in
+     *         UTF-8.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -222,13 +238,17 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
 
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client).
+     * CHAP with the initiator (e.g. Windows client). <p>Byte constraints:
+     * Minimum bytes of 12. Maximum bytes of 16. <note>The secret key must be
+     * between 12 and 16 bytes when encoded in UTF-8.</note>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
      * @return The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client).
+     *         CHAP with the initiator (e.g. Windows client). <p>Byte constraints:
+     *         Minimum bytes of 12. Maximum bytes of 16. <note>The secret key must be
+     *         between 12 and 16 bytes when encoded in UTF-8.</note>
      */
     public String getSecretToAuthenticateTarget() {
         return secretToAuthenticateTarget;
@@ -236,13 +256,17 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
     
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client).
+     * CHAP with the initiator (e.g. Windows client). <p>Byte constraints:
+     * Minimum bytes of 12. Maximum bytes of 16. <note>The secret key must be
+     * between 12 and 16 bytes when encoded in UTF-8.</note>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
      * @param secretToAuthenticateTarget The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client).
+     *         CHAP with the initiator (e.g. Windows client). <p>Byte constraints:
+     *         Minimum bytes of 12. Maximum bytes of 16. <note>The secret key must be
+     *         between 12 and 16 bytes when encoded in UTF-8.</note>
      */
     public void setSecretToAuthenticateTarget(String secretToAuthenticateTarget) {
         this.secretToAuthenticateTarget = secretToAuthenticateTarget;
@@ -250,15 +274,19 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
     
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client).
+     * CHAP with the initiator (e.g. Windows client). <p>Byte constraints:
+     * Minimum bytes of 12. Maximum bytes of 16. <note>The secret key must be
+     * between 12 and 16 bytes when encoded in UTF-8.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
      * @param secretToAuthenticateTarget The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client).
+     *         CHAP with the initiator (e.g. Windows client). <p>Byte constraints:
+     *         Minimum bytes of 12. Maximum bytes of 16. <note>The secret key must be
+     *         between 12 and 16 bytes when encoded in UTF-8.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -28,10 +28,18 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class DeleteMetricFilterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The name of the log group that is associated with the metric filter to
+     * delete.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     */
     private String logGroupName;
 
     /**
-     * The name of the metric filter.
+     * The name of the metric filter to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -50,8 +58,9 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param logGroupName
-     * @param filterName The name of the metric filter.
+     * @param logGroupName The name of the log group that is associated with
+     * the metric filter to delete.
+     * @param filterName The name of the metric filter to delete.
      */
     public DeleteMetricFilterRequest(String logGroupName, String filterName) {
         setLogGroupName(logGroupName);
@@ -59,33 +68,38 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
+     * The name of the log group that is associated with the metric filter to
+     * delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The value of the LogGroupName property for this object.
+     * @return The name of the log group that is associated with the metric filter to
+     *         delete.
      */
     public String getLogGroupName() {
         return logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group that is associated with the metric filter to
+     * delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group that is associated with the metric filter to
+     *         delete.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group that is associated with the metric filter to
+     * delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -93,7 +107,8 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group that is associated with the metric filter to
+     *         delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -104,33 +119,33 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The name of the metric filter.
+     * The name of the metric filter to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @return The name of the metric filter.
+     * @return The name of the metric filter to delete.
      */
     public String getFilterName() {
         return filterName;
     }
     
     /**
-     * The name of the metric filter.
+     * The name of the metric filter to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param filterName The name of the metric filter.
+     * @param filterName The name of the metric filter to delete.
      */
     public void setFilterName(String filterName) {
         this.filterName = filterName;
     }
     
     /**
-     * The name of the metric filter.
+     * The name of the metric filter to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -138,7 +153,7 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param filterName The name of the metric filter.
+     * @param filterName The name of the metric filter to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

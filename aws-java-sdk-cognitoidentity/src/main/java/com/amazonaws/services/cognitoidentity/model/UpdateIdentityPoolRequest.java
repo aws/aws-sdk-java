@@ -23,6 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Updates a user pool.
  * </p>
+ * <p>
+ * You must use AWS Developer credentials to call this API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#updateIdentityPool(UpdateIdentityPoolRequest)
  */

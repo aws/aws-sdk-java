@@ -46,7 +46,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * <b>NOTE:</b>To list or delete a snapshot, you must use the Amazon EC2
- * API. For more information, .
+ * API. For more information, see DescribeSnapshots or DeleteSnapshot in
+ * the EC2 API reference.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createSnapshot(CreateSnapshotRequest)

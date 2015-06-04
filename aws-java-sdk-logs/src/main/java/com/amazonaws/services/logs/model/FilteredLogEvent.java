@@ -18,9 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a matched event from a
- * </p>
- * <code>FilterLogEvents</code> <p>
+ * Represents a matched event from a <code>FilterLogEvents</code>
  * request.
  * </p>
  */
@@ -36,19 +34,25 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     private String logStreamName;
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      */
     private Long timestamp;
 
+    /**
+     * The data contained in the log event.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     */
     private String message;
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
@@ -106,44 +110,44 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @return A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @return A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public Long getTimestamp() {
         return timestamp;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param timestamp A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param timestamp A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param timestamp A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param timestamp A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -154,38 +158,38 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * Returns the value of the Message property for this object.
+     * The data contained in the log event.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return The value of the Message property for this object.
+     * @return The data contained in the log event.
      */
     public String getMessage() {
         return message;
     }
     
     /**
-     * Sets the value of the Message property for this object.
+     * The data contained in the log event.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param message The new value for the Message property for this object.
+     * @param message The data contained in the log event.
      */
     public void setMessage(String message) {
         this.message = message;
     }
     
     /**
-     * Sets the value of the Message property for this object.
+     * The data contained in the log event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param message The new value for the Message property for this object.
+     * @param message The data contained in the log event.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -196,44 +200,44 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @return A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @return A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public Long getIngestionTime() {
         return ingestionTime;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param ingestionTime A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param ingestionTime A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public void setIngestionTime(Long ingestionTime) {
         this.ingestionTime = ingestionTime;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param ingestionTime A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param ingestionTime A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

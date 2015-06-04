@@ -29,8 +29,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request returns a list of all disks, specifying which are
  * configured as working storage, cache storage, or stored volume or not
  * configured at all. The response includes a <code>DiskStatus</code>
- * field. This field can have a value of present (the disk is availble to
- * use), missing (the disk is no longer connected to the gateway), or
+ * field. This field can have a value of present (the disk is available
+ * to use), missing (the disk is no longer connected to the gateway), or
  * mismatch (the disk node is occupied by a disk that has incorrect
  * metadata or the disk content is corrupted).
  * </p>

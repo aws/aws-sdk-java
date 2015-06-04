@@ -24,6 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Returns metadata related to the given identity, including when the
  * identity was created and any associated linked logins.
  * </p>
+ * <p>
+ * You must use AWS Developer credentials to call this API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#describeIdentity(DescribeIdentityRequest)
  */

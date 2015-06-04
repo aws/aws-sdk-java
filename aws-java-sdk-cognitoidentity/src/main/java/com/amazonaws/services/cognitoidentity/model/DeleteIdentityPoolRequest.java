@@ -24,6 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a user pool. Once a pool is deleted, users will not be able to
  * authenticate with the pool.
  * </p>
+ * <p>
+ * You must use AWS Developer credentials to call this API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#deleteIdentityPool(DeleteIdentityPoolRequest)
  */

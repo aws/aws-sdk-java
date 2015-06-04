@@ -30,6 +30,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class DeleteRetentionPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The name of the log group that is associated with the retention policy
+     * to delete.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     */
     private String logGroupName;
 
     /**
@@ -43,40 +51,46 @@ public class DeleteRetentionPolicyRequest extends AmazonWebServiceRequest implem
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param logGroupName
+     * @param logGroupName The name of the log group that is associated with
+     * the retention policy to delete.
      */
     public DeleteRetentionPolicyRequest(String logGroupName) {
         setLogGroupName(logGroupName);
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
+     * The name of the log group that is associated with the retention policy
+     * to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The value of the LogGroupName property for this object.
+     * @return The name of the log group that is associated with the retention policy
+     *         to delete.
      */
     public String getLogGroupName() {
         return logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group that is associated with the retention policy
+     * to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group that is associated with the retention policy
+     *         to delete.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group that is associated with the retention policy
+     * to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -84,7 +98,8 @@ public class DeleteRetentionPolicyRequest extends AmazonWebServiceRequest implem
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group that is associated with the retention policy
+     *         to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

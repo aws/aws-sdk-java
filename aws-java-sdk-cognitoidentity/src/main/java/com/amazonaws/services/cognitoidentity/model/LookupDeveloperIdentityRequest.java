@@ -34,6 +34,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the same as the request. Otherwise a
  * <code>ResourceConflictException</code> is thrown.
  * </p>
+ * <p>
+ * You must use AWS Developer credentials to call this API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#lookupDeveloperIdentity(LookupDeveloperIdentityRequest)
  */

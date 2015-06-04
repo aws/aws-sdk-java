@@ -80,6 +80,10 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * all federated identities as well as the developer user identifier, the
      * Cognito identity becomes inaccessible.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param unlinkDeveloperIdentityRequest Container for the necessary
      *           parameters to execute the UnlinkDeveloperIdentity operation on
@@ -109,6 +113,10 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * all federated identities as well as the developer user identifier, the
      * Cognito identity becomes inaccessible.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param unlinkDeveloperIdentityRequest Container for the necessary
      *           parameters to execute the UnlinkDeveloperIdentity operation on
@@ -137,8 +145,70 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
 
     /**
      * <p>
+     * Deletes identities from an identity pool. You can specify a list of
+     * 1-60 identities that you want to delete.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
+     *
+     * @param deleteIdentitiesRequest Container for the necessary parameters
+     *           to execute the DeleteIdentities operation on AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteIdentities service method, as returned by AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteIdentitiesResult> deleteIdentitiesAsync(DeleteIdentitiesRequest deleteIdentitiesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes identities from an identity pool. You can specify a list of
+     * 1-60 identities that you want to delete.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
+     *
+     * @param deleteIdentitiesRequest Container for the necessary parameters
+     *           to execute the DeleteIdentities operation on AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteIdentities service method, as returned by AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteIdentitiesResult> deleteIdentitiesAsync(DeleteIdentitiesRequest deleteIdentitiesRequest,
+            AsyncHandler<DeleteIdentitiesRequest, DeleteIdentitiesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Gets details about a particular identity pool, including the pool
      * name, ID description, creation date, and current number of users.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param describeIdentityPoolRequest Container for the necessary
@@ -165,6 +235,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Gets details about a particular identity pool, including the pool
      * name, ID description, creation date, and current number of users.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param describeIdentityPoolRequest Container for the necessary
@@ -197,6 +270,13 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
      * create an implicit linked account.
      * </p>
+     * <p>
+     * token+";"+tokenSecret.
+     * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param getIdRequest Container for the necessary parameters to execute
      *           the GetId operation on AmazonCognitoIdentity.
@@ -220,6 +300,13 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
      * create an implicit linked account.
+     * </p>
+     * <p>
+     * token+";"+tokenSecret.
+     * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
      * </p>
      *
      * @param getIdRequest Container for the necessary parameters to execute
@@ -250,6 +337,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * Deletes a user pool. Once a pool is deleted, users will not be able
      * to authenticate with the pool.
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param deleteIdentityPoolRequest Container for the necessary
      *           parameters to execute the DeleteIdentityPool operation on
@@ -275,6 +365,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Deletes a user pool. Once a pool is deleted, users will not be able
      * to authenticate with the pool.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param deleteIdentityPoolRequest Container for the necessary
@@ -306,6 +399,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Updates a user pool.
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param updateIdentityPoolRequest Container for the necessary
      *           parameters to execute the UpdateIdentityPool operation on
@@ -330,6 +426,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
     /**
      * <p>
      * Updates a user pool.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param updateIdentityPoolRequest Container for the necessary
@@ -364,6 +463,10 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * token is for cognito-identity.amazonaws.com, it will be passed through
      * to AWS Security Token Service with the appropriate role for the token.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param getCredentialsForIdentityRequest Container for the necessary
      *           parameters to execute the GetCredentialsForIdentity operation on
@@ -391,6 +494,10 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * logins will be validated against supported login providers. If the
      * token is for cognito-identity.amazonaws.com, it will be passed through
      * to AWS Security Token Service with the appropriate role for the token.
+     * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
      * </p>
      *
      * @param getCredentialsForIdentityRequest Container for the necessary
@@ -431,6 +538,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * are associated with the same public provider, but as two different
      * users, an exception will be thrown.
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param mergeDeveloperIdentitiesRequest Container for the necessary
      *           parameters to execute the MergeDeveloperIdentities operation on
@@ -465,6 +575,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * are associated with the same public provider, but as two different
      * users, an exception will be thrown.
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param mergeDeveloperIdentitiesRequest Container for the necessary
      *           parameters to execute the MergeDeveloperIdentities operation on
@@ -495,6 +608,10 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Lists all of the Cognito identity pools registered for your account.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param listIdentityPoolsRequest Container for the necessary parameters
      *           to execute the ListIdentityPools operation on AmazonCognitoIdentity.
@@ -518,6 +635,10 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
     /**
      * <p>
      * Lists all of the Cognito identity pools registered for your account.
+     * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
      * </p>
      *
      * @param listIdentityPoolsRequest Container for the necessary parameters
@@ -553,6 +674,10 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * The OpenId token is valid for 15 minutes.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param getOpenIdTokenRequest Container for the necessary parameters to
      *           execute the GetOpenIdToken operation on AmazonCognitoIdentity.
@@ -581,6 +706,10 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * The OpenId token is valid for 15 minutes.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param getOpenIdTokenRequest Container for the necessary parameters to
      *           execute the GetOpenIdToken operation on AmazonCognitoIdentity.
@@ -607,59 +736,6 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
 
     /**
      * <p>
-     * Returns metadata related to the given identity, including when the
-     * identity was created and any associated linked logins.
-     * </p>
-     *
-     * @param describeIdentityRequest Container for the necessary parameters
-     *           to execute the DescribeIdentity operation on AmazonCognitoIdentity.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeIdentity service method, as returned by AmazonCognitoIdentity.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCognitoIdentity indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeIdentityResult> describeIdentityAsync(DescribeIdentityRequest describeIdentityRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns metadata related to the given identity, including when the
-     * identity was created and any associated linked logins.
-     * </p>
-     *
-     * @param describeIdentityRequest Container for the necessary parameters
-     *           to execute the DescribeIdentity operation on AmazonCognitoIdentity.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeIdentity service method, as returned by AmazonCognitoIdentity.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCognitoIdentity indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeIdentityResult> describeIdentityAsync(DescribeIdentityRequest describeIdentityRequest,
-            AsyncHandler<DescribeIdentityRequest, DescribeIdentityResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Retrieves the <code>IdentityID</code> associated with a
      * <code>DeveloperUserIdentifier</code> or the list of
      * <code>DeveloperUserIdentifier</code> s associated with an
@@ -672,6 +748,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * verified against the database, the response returns both values and is
      * the same as the request. Otherwise a
      * <code>ResourceConflictException</code> is thrown.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param lookupDeveloperIdentityRequest Container for the necessary
@@ -709,6 +788,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * the same as the request. Otherwise a
      * <code>ResourceConflictException</code> is thrown.
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param lookupDeveloperIdentityRequest Container for the necessary
      *           parameters to execute the LookupDeveloperIdentity operation on
@@ -737,8 +819,70 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
 
     /**
      * <p>
+     * Returns metadata related to the given identity, including when the
+     * identity was created and any associated linked logins.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
+     *
+     * @param describeIdentityRequest Container for the necessary parameters
+     *           to execute the DescribeIdentity operation on AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeIdentity service method, as returned by AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeIdentityResult> describeIdentityAsync(DescribeIdentityRequest describeIdentityRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns metadata related to the given identity, including when the
+     * identity was created and any associated linked logins.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
+     *
+     * @param describeIdentityRequest Container for the necessary parameters
+     *           to execute the DescribeIdentity operation on AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeIdentity service method, as returned by AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeIdentityResult> describeIdentityAsync(DescribeIdentityRequest describeIdentityRequest,
+            AsyncHandler<DescribeIdentityRequest, DescribeIdentityResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Sets the roles for an identity pool. These roles are used when making
      * calls to <code>GetCredentialsForIdentity</code> action.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param setIdentityPoolRolesRequest Container for the necessary
@@ -765,6 +909,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Sets the roles for an identity pool. These roles are used when making
      * calls to <code>GetCredentialsForIdentity</code> action.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param setIdentityPoolRolesRequest Container for the necessary
@@ -798,6 +945,10 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * logins will be considered new identities next time they are seen.
      * Removing the last linked login will make this identity inaccessible.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param unlinkIdentityRequest Container for the necessary parameters to
      *           execute the UnlinkIdentity operation on AmazonCognitoIdentity.
@@ -822,6 +973,10 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * Unlinks a federated identity from an existing account. Unlinked
      * logins will be considered new identities next time they are seen.
      * Removing the last linked login will make this identity inaccessible.
+     * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
      * </p>
      *
      * @param unlinkIdentityRequest Container for the necessary parameters to
@@ -851,6 +1006,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Lists the identities in a pool.
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param listIdentitiesRequest Container for the necessary parameters to
      *           execute the ListIdentities operation on AmazonCognitoIdentity.
@@ -873,6 +1031,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
     /**
      * <p>
      * Lists the identities in a pool.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param listIdentitiesRequest Container for the necessary parameters to
@@ -902,6 +1063,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Gets the roles for an identity pool.
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param getIdentityPoolRolesRequest Container for the necessary
      *           parameters to execute the GetIdentityPoolRoles operation on
@@ -926,6 +1090,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
     /**
      * <p>
      * Gets the roles for an identity pool.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param getIdentityPoolRolesRequest Container for the necessary
@@ -974,6 +1141,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * will create the identity in the specified <code>IdentityPoolId</code>
      * .
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param getOpenIdTokenForDeveloperIdentityRequest Container for the
      *           necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity
@@ -1016,6 +1186,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * will create the identity in the specified <code>IdentityPoolId</code>
      * .
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param getOpenIdTokenForDeveloperIdentityRequest Container for the
      *           necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity
@@ -1046,7 +1219,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Creates a new identity pool. The identity pool is a store of user
      * identity information that is specific to your AWS account. The limit
-     * on identity pools is 60 per account.
+     * on identity pools is 60 per account. You must use AWS Developer
+     * credentials to call this API.
      * </p>
      *
      * @param createIdentityPoolRequest Container for the necessary
@@ -1073,7 +1247,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Creates a new identity pool. The identity pool is a store of user
      * identity information that is specific to your AWS account. The limit
-     * on identity pools is 60 per account.
+     * on identity pools is 60 per account. You must use AWS Developer
+     * credentials to call this API.
      * </p>
      *
      * @param createIdentityPoolRequest Container for the necessary

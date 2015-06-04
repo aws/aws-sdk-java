@@ -104,6 +104,7 @@ public class QueryResultPage<T> {
     public Integer getScannedCount() {
         return scannedCount;
     }
+
     public void setScannedCount(Integer scannedCount) {
         this.scannedCount = scannedCount;
     }
