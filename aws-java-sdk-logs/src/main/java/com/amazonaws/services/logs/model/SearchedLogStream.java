@@ -19,9 +19,7 @@ import java.io.Serializable;
 /**
  * <p>
  * An object indicating the search status of a log stream in a
- * </p>
- * <code>FilterLogEvents</code> <p>
- * request.
+ * <code>FilterLogEvents</code> request.
  * </p>
  */
 public class SearchedLogStream implements Serializable, Cloneable {

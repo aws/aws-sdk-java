@@ -246,7 +246,7 @@ public class ReceiveQueueBuffer {
             }
         });
         // If we pruned any tasks because they are expired we also want to prune any empty tasks
-        // afterwards so we have a chance to receive those expired messages again. 
+        // afterwards so we have a chance to receive those expired messages again.
         if (numberExpiredTasksPruned > 0) {
             pruneHeadTasks(new Predicate<ReceiveQueueBuffer.ReceiveMessageBatchTask>() {
                 @Override
@@ -259,8 +259,8 @@ public class ReceiveQueueBuffer {
 
     /**
      * Prune all tasks at the beginning of the finishedTasks list that meet the given condition.
-     * Once a task is found that does not meet the given condition the pruning stops. This method assumes
-     * that you are holding the finishedTasks lock when invoking it.
+     * Once a task is found that does not meet the given condition the pruning stops. This method
+     * assumes that you are holding the finishedTasks lock when invoking it.
      * 
      * @param pruneCondition
      *            Condition on whether a task is eligible to be pruned

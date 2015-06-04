@@ -477,7 +477,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * <b>NOTE:</b>To list or delete a snapshot, you must use the Amazon EC2
-     * API. For more information, .
+     * API. For more information, see DescribeSnapshots or DeleteSnapshot in
+     * the EC2 API reference.
      * </p>
      *
      * @param createSnapshotRequest Container for the necessary parameters to
@@ -1130,6 +1131,62 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * This operation lists iSCSI initiators that are connected to a volume.
+     * You can use this operation to determine whether a volume is being used
+     * or not.
+     * </p>
+     *
+     * @param listVolumeInitiatorsRequest Container for the necessary
+     *           parameters to execute the ListVolumeInitiators service method on
+     *           AWSStorageGateway.
+     * 
+     * @return The response from the ListVolumeInitiators service method, as
+     *         returned by AWSStorageGateway.
+     * 
+     * @throws InternalServerErrorException
+     * @throws InvalidGatewayRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSStorageGateway indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListVolumeInitiatorsResult listVolumeInitiators(ListVolumeInitiatorsRequest listVolumeInitiatorsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listVolumeInitiatorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVolumeInitiatorsRequest> request = null;
+        Response<ListVolumeInitiatorsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVolumeInitiatorsRequestMarshaller().marshall(super.beforeMarshalling(listVolumeInitiatorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<ListVolumeInitiatorsResult, JsonUnmarshallerContext> unmarshaller =
+                new ListVolumeInitiatorsResultJsonUnmarshaller();
+            JsonResponseHandler<ListVolumeInitiatorsResult> responseHandler =
+                new JsonResponseHandler<ListVolumeInitiatorsResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * This operation returns a list of the gateway's local disks. To
      * specify which gateway to describe, you use the Amazon Resource Name
      * (ARN) of the gateway in the body of the request.
@@ -1138,8 +1195,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * The request returns a list of all disks, specifying which are
      * configured as working storage, cache storage, or stored volume or not
      * configured at all. The response includes a <code>DiskStatus</code>
-     * field. This field can have a value of present (the disk is availble to
-     * use), missing (the disk is no longer connected to the gateway), or
+     * field. This field can have a value of present (the disk is available
+     * to use), missing (the disk is no longer connected to the gateway), or
      * mismatch (the disk node is occupied by a disk that has incorrect
      * metadata or the disk content is corrupted).
      * </p>
@@ -1791,10 +1848,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * This operation returns description of the gateway volumes specified
-     * in the request. The list of gateway volumes in the request must be
-     * from one gateway. In the response Amazon Storage Gateway returns
-     * volume information sorted by volume ARNs.
+     * This operation returns the description of the gateway volumes
+     * specified in the request. The list of gateway volumes in the request
+     * must be from one gateway. In the response Amazon Storage Gateway
+     * returns volume information sorted by volume ARNs.
      * </p>
      *
      * @param describeStorediSCSIVolumesRequest Container for the necessary
@@ -2093,10 +2150,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * This operation resets all cache disks and makes the disks available
-     * for reconfiguration as cache storage. When a cache is reset, the
-     * gateway loses its cache storage. At this point you can reconfigure the
-     * disks as cache disks.
+     * This operation resets all cache disks that have encountered a error
+     * and makes the disks available for reconfiguration as cache storage. If
+     * your cache disk encounters a error, the gateway prevents read and
+     * write operations on virtual tapes in the gateway. For example, an
+     * error can occur when a disk is corrupted or removed from the gateway.
+     * When a cache is reset, the gateway loses its cache storage. At this
+     * point you can reconfigure the disks as cache disks.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> If the cache disk you are resetting contains data
+     * that has not been uploaded to Amazon S3 yet, that data can be lost.
+     * After you reset cache disks, there will be no configured cache disks
+     * left in the gateway, so you must configure at least one new cache disk
+     * for your gateway to function properly.
      * </p>
      *
      * @param resetCacheRequest Container for the necessary parameters to

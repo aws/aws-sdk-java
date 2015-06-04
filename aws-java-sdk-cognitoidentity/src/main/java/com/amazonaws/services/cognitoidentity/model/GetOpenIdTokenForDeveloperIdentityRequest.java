@@ -40,6 +40,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * will create the identity in the specified <code>IdentityPoolId</code>
  * .
  * </p>
+ * <p>
+ * You must use AWS Developer credentials to call this API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#getOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest)
  */

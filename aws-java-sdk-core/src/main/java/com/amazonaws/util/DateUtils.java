@@ -22,6 +22,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -176,6 +177,20 @@ public class DateUtils {
         try {
             return iso8601DateFormat.print(date.getTime());
         } catch(RuntimeException ex) {
+            throw handleException(ex);
+        }
+    }
+
+    /**
+     * Formats the specified date as an ISO 8601 string.
+     *
+     * @param date the date to format
+     * @return the ISO-8601 string representing the specified date
+     */
+    public static String formatISO8601Date(DateTime date) {
+        try {
+            return iso8601DateFormat.print(date);
+        } catch (RuntimeException ex) {
             throw handleException(ex);
         }
     }

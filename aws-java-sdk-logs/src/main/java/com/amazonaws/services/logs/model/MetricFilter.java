@@ -18,15 +18,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Metric filters can be used to express how Amazon CloudWatch Logs
- * would extract metric observations from ingested log events and
- * transform them to metric data in a CloudWatch metric.
+ * Metric filters can be used to express how Amazon CloudWatch Logs would
+ * extract metric observations from ingested log events and transform
+ * them to metric data in a CloudWatch metric.
  * </p>
  */
 public class MetricFilter implements Serializable, Cloneable {
 
     /**
-     * The name of the metric filter.
+     * A name for a metric or subscription filter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -36,9 +36,9 @@ public class MetricFilter implements Serializable, Cloneable {
 
     /**
      * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * the data in each log event. For example, a log event may contain
+     * timestamps, IP addresses, strings, and so on. You use the filter
+     * pattern to specify what to look for in the log event message.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 512<br/>
@@ -48,8 +48,8 @@ public class MetricFilter implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<MetricTransformation> metricTransformations;
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
@@ -57,33 +57,33 @@ public class MetricFilter implements Serializable, Cloneable {
     private Long creationTime;
 
     /**
-     * The name of the metric filter.
+     * A name for a metric or subscription filter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @return The name of the metric filter.
+     * @return A name for a metric or subscription filter.
      */
     public String getFilterName() {
         return filterName;
     }
     
     /**
-     * The name of the metric filter.
+     * A name for a metric or subscription filter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param filterName The name of the metric filter.
+     * @param filterName A name for a metric or subscription filter.
      */
     public void setFilterName(String filterName) {
         this.filterName = filterName;
     }
     
     /**
-     * The name of the metric filter.
+     * A name for a metric or subscription filter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -91,7 +91,7 @@ public class MetricFilter implements Serializable, Cloneable {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param filterName The name of the metric filter.
+     * @param filterName A name for a metric or subscription filter.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -103,17 +103,17 @@ public class MetricFilter implements Serializable, Cloneable {
 
     /**
      * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * the data in each log event. For example, a log event may contain
+     * timestamps, IP addresses, strings, and so on. You use the filter
+     * pattern to specify what to look for in the log event message.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 512<br/>
      *
      * @return A symbolic description of how Amazon CloudWatch Logs should interpret
-     *         the data in each log entry. For example, a log entry may contain
-     *         timestamps, IP addresses, strings, and so on. You use the pattern to
-     *         specify what to look for in the log stream.
+     *         the data in each log event. For example, a log event may contain
+     *         timestamps, IP addresses, strings, and so on. You use the filter
+     *         pattern to specify what to look for in the log event message.
      */
     public String getFilterPattern() {
         return filterPattern;
@@ -121,17 +121,17 @@ public class MetricFilter implements Serializable, Cloneable {
     
     /**
      * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * the data in each log event. For example, a log event may contain
+     * timestamps, IP addresses, strings, and so on. You use the filter
+     * pattern to specify what to look for in the log event message.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 512<br/>
      *
      * @param filterPattern A symbolic description of how Amazon CloudWatch Logs should interpret
-     *         the data in each log entry. For example, a log entry may contain
-     *         timestamps, IP addresses, strings, and so on. You use the pattern to
-     *         specify what to look for in the log stream.
+     *         the data in each log event. For example, a log event may contain
+     *         timestamps, IP addresses, strings, and so on. You use the filter
+     *         pattern to specify what to look for in the log event message.
      */
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
@@ -139,9 +139,9 @@ public class MetricFilter implements Serializable, Cloneable {
     
     /**
      * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * the data in each log event. For example, a log event may contain
+     * timestamps, IP addresses, strings, and so on. You use the filter
+     * pattern to specify what to look for in the log event message.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -149,9 +149,9 @@ public class MetricFilter implements Serializable, Cloneable {
      * <b>Length: </b>0 - 512<br/>
      *
      * @param filterPattern A symbolic description of how Amazon CloudWatch Logs should interpret
-     *         the data in each log entry. For example, a log entry may contain
-     *         timestamps, IP addresses, strings, and so on. You use the pattern to
-     *         specify what to look for in the log stream.
+     *         the data in each log event. For example, a log event may contain
+     *         timestamps, IP addresses, strings, and so on. You use the filter
+     *         pattern to specify what to look for in the log event message.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -248,44 +248,44 @@ public class MetricFilter implements Serializable, Cloneable {
     }
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @return A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @return A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public Long getCreationTime() {
         return creationTime;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param creationTime A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param creationTime A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public void setCreationTime(Long creationTime) {
         this.creationTime = creationTime;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param creationTime A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param creationTime A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

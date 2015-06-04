@@ -24,6 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Gets details about a particular identity pool, including the pool
  * name, ID description, creation date, and current number of users.
  * </p>
+ * <p>
+ * You must use AWS Developer credentials to call this API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#describeIdentityPool(DescribeIdentityPoolRequest)
  */

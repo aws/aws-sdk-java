@@ -26,6 +26,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * token is for cognito-identity.amazonaws.com, it will be passed through
  * to AWS Security Token Service with the appropriate role for the token.
  * </p>
+ * <p>
+ * This is a public API. You do not need any credentials to call this
+ * API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#getCredentialsForIdentity(GetCredentialsForIdentityRequest)
  */

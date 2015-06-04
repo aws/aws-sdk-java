@@ -32,30 +32,36 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements 
 
     /**
      * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * the data in each log event. For example, a log event may contain
+     * timestamps, IP addresses, strings, and so on. You use the filter
+     * pattern to specify what to look for in the log event message.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 512<br/>
      */
     private String filterPattern;
 
+    /**
+     * A list of log event messages to test.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 50<br/>
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> logEventMessages;
 
     /**
      * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * the data in each log event. For example, a log event may contain
+     * timestamps, IP addresses, strings, and so on. You use the filter
+     * pattern to specify what to look for in the log event message.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 512<br/>
      *
      * @return A symbolic description of how Amazon CloudWatch Logs should interpret
-     *         the data in each log entry. For example, a log entry may contain
-     *         timestamps, IP addresses, strings, and so on. You use the pattern to
-     *         specify what to look for in the log stream.
+     *         the data in each log event. For example, a log event may contain
+     *         timestamps, IP addresses, strings, and so on. You use the filter
+     *         pattern to specify what to look for in the log event message.
      */
     public String getFilterPattern() {
         return filterPattern;
@@ -63,17 +69,17 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements 
     
     /**
      * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * the data in each log event. For example, a log event may contain
+     * timestamps, IP addresses, strings, and so on. You use the filter
+     * pattern to specify what to look for in the log event message.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 512<br/>
      *
      * @param filterPattern A symbolic description of how Amazon CloudWatch Logs should interpret
-     *         the data in each log entry. For example, a log entry may contain
-     *         timestamps, IP addresses, strings, and so on. You use the pattern to
-     *         specify what to look for in the log stream.
+     *         the data in each log event. For example, a log event may contain
+     *         timestamps, IP addresses, strings, and so on. You use the filter
+     *         pattern to specify what to look for in the log event message.
      */
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
@@ -81,9 +87,9 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements 
     
     /**
      * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * the data in each log event. For example, a log event may contain
+     * timestamps, IP addresses, strings, and so on. You use the filter
+     * pattern to specify what to look for in the log event message.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -91,9 +97,9 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>0 - 512<br/>
      *
      * @param filterPattern A symbolic description of how Amazon CloudWatch Logs should interpret
-     *         the data in each log entry. For example, a log entry may contain
-     *         timestamps, IP addresses, strings, and so on. You use the pattern to
-     *         specify what to look for in the log stream.
+     *         the data in each log event. For example, a log event may contain
+     *         timestamps, IP addresses, strings, and so on. You use the filter
+     *         pattern to specify what to look for in the log event message.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -104,12 +110,12 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Returns the value of the LogEventMessages property for this object.
+     * A list of log event messages to test.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 50<br/>
      *
-     * @return The value of the LogEventMessages property for this object.
+     * @return A list of log event messages to test.
      */
     public java.util.List<String> getLogEventMessages() {
         if (logEventMessages == null) {
@@ -120,12 +126,12 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Sets the value of the LogEventMessages property for this object.
+     * A list of log event messages to test.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 50<br/>
      *
-     * @param logEventMessages The new value for the LogEventMessages property for this object.
+     * @param logEventMessages A list of log event messages to test.
      */
     public void setLogEventMessages(java.util.Collection<String> logEventMessages) {
         if (logEventMessages == null) {
@@ -138,7 +144,7 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Sets the value of the LogEventMessages property for this object.
+     * A list of log event messages to test.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLogEventMessages(java.util.Collection)} or {@link
@@ -150,7 +156,7 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements 
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 50<br/>
      *
-     * @param logEventMessages The new value for the LogEventMessages property for this object.
+     * @param logEventMessages A list of log event messages to test.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -164,14 +170,14 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Sets the value of the LogEventMessages property for this object.
+     * A list of log event messages to test.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 50<br/>
      *
-     * @param logEventMessages The new value for the LogEventMessages property for this object.
+     * @param logEventMessages A list of log event messages to test.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -24,6 +24,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
  * create an implicit linked account.
  * </p>
+ * <p>
+ * token+";"+tokenSecret.
+ * </p>
+ * <p>
+ * This is a public API. You do not need any credentials to call this
+ * API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#getId(GetIdRequest)
  */
@@ -52,7 +59,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
      * tokens. <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
      * <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
-     * <code>www.amazon.com</code></li> </ul>
+     * <code>www.amazon.com</code></li> <li>Twitter:
+     * <code>www.twitter.com</code></li> <li>Digits:
+     * <code>www.digits.com</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
@@ -154,7 +163,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
      * tokens. <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
      * <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
-     * <code>www.amazon.com</code></li> </ul>
+     * <code>www.amazon.com</code></li> <li>Twitter:
+     * <code>www.twitter.com</code></li> <li>Digits:
+     * <code>www.digits.com</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
@@ -163,7 +174,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
      *         tokens. <p>The available provider names for <code>Logins</code> are as
      *         follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
      *         <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
-     *         <code>www.amazon.com</code></li> </ul>
+     *         <code>www.amazon.com</code></li> <li>Twitter:
+     *         <code>www.twitter.com</code></li> <li>Digits:
+     *         <code>www.digits.com</code></li> </ul>
      */
     public java.util.Map<String,String> getLogins() {
         
@@ -175,7 +188,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
      * tokens. <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
      * <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
-     * <code>www.amazon.com</code></li> </ul>
+     * <code>www.amazon.com</code></li> <li>Twitter:
+     * <code>www.twitter.com</code></li> <li>Digits:
+     * <code>www.digits.com</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
@@ -184,7 +199,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
      *         tokens. <p>The available provider names for <code>Logins</code> are as
      *         follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
      *         <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
-     *         <code>www.amazon.com</code></li> </ul>
+     *         <code>www.amazon.com</code></li> <li>Twitter:
+     *         <code>www.twitter.com</code></li> <li>Digits:
+     *         <code>www.digits.com</code></li> </ul>
      */
     public void setLogins(java.util.Map<String,String> logins) {
         this.logins = logins;
@@ -195,7 +212,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
      * tokens. <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
      * <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
-     * <code>www.amazon.com</code></li> </ul>
+     * <code>www.amazon.com</code></li> <li>Twitter:
+     * <code>www.twitter.com</code></li> <li>Digits:
+     * <code>www.digits.com</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -206,7 +225,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
      *         tokens. <p>The available provider names for <code>Logins</code> are as
      *         follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
      *         <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
-     *         <code>www.amazon.com</code></li> </ul>
+     *         <code>www.amazon.com</code></li> <li>Twitter:
+     *         <code>www.twitter.com</code></li> <li>Digits:
+     *         <code>www.digits.com</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -221,7 +242,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
      * tokens. <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
      * <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
-     * <code>www.amazon.com</code></li> </ul>
+     * <code>www.amazon.com</code></li> <li>Twitter:
+     * <code>www.twitter.com</code></li> <li>Digits:
+     * <code>www.digits.com</code></li> </ul>
      * <p>
      * The method adds a new key-value pair into Logins parameter, and
      * returns a reference to this object so that method calls can be chained

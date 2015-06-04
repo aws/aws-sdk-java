@@ -28,6 +28,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The OpenId token is valid for 15 minutes.
  * </p>
+ * <p>
+ * This is a public API. You do not need any credentials to call this
+ * API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#getOpenIdToken(GetOpenIdTokenRequest)
  */
@@ -44,7 +48,10 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * A set of optional name-value pairs that map provider names to provider
-     * tokens.
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For
+     * accounts.google.com or any other OpenId Connect provider, always
+     * include the id_token.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
@@ -98,13 +105,19 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * A set of optional name-value pairs that map provider names to provider
-     * tokens.
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For
+     * accounts.google.com or any other OpenId Connect provider, always
+     * include the id_token.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
      * @return A set of optional name-value pairs that map provider names to provider
-     *         tokens.
+     *         tokens. When using graph.facebook.com and www.amazon.com, supply the
+     *         access_token returned from the provider's authflow. For
+     *         accounts.google.com or any other OpenId Connect provider, always
+     *         include the id_token.
      */
     public java.util.Map<String,String> getLogins() {
         
@@ -113,13 +126,19 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * A set of optional name-value pairs that map provider names to provider
-     * tokens.
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For
+     * accounts.google.com or any other OpenId Connect provider, always
+     * include the id_token.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
      * @param logins A set of optional name-value pairs that map provider names to provider
-     *         tokens.
+     *         tokens. When using graph.facebook.com and www.amazon.com, supply the
+     *         access_token returned from the provider's authflow. For
+     *         accounts.google.com or any other OpenId Connect provider, always
+     *         include the id_token.
      */
     public void setLogins(java.util.Map<String,String> logins) {
         this.logins = logins;
@@ -127,7 +146,10 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * A set of optional name-value pairs that map provider names to provider
-     * tokens.
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For
+     * accounts.google.com or any other OpenId Connect provider, always
+     * include the id_token.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -135,7 +157,10 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>0 - 10<br/>
      *
      * @param logins A set of optional name-value pairs that map provider names to provider
-     *         tokens.
+     *         tokens. When using graph.facebook.com and www.amazon.com, supply the
+     *         access_token returned from the provider's authflow. For
+     *         accounts.google.com or any other OpenId Connect provider, always
+     *         include the id_token.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -147,7 +172,10 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * A set of optional name-value pairs that map provider names to provider
-     * tokens.
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For
+     * accounts.google.com or any other OpenId Connect provider, always
+     * include the id_token.
      * <p>
      * The method adds a new key-value pair into Logins parameter, and
      * returns a reference to this object so that method calls can be chained

@@ -35,7 +35,7 @@ public class Tape implements Serializable, Cloneable {
      * The barcode that identifies a specific virtual tape.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>8 - 16<br/>
+     * <b>Length: </b>7 - 16<br/>
      * <b>Pattern: </b>^[A-Z0-9]*$<br/>
      */
     private String tapeBarcode;
@@ -112,7 +112,7 @@ public class Tape implements Serializable, Cloneable {
      * The barcode that identifies a specific virtual tape.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>8 - 16<br/>
+     * <b>Length: </b>7 - 16<br/>
      * <b>Pattern: </b>^[A-Z0-9]*$<br/>
      *
      * @return The barcode that identifies a specific virtual tape.
@@ -125,7 +125,7 @@ public class Tape implements Serializable, Cloneable {
      * The barcode that identifies a specific virtual tape.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>8 - 16<br/>
+     * <b>Length: </b>7 - 16<br/>
      * <b>Pattern: </b>^[A-Z0-9]*$<br/>
      *
      * @param tapeBarcode The barcode that identifies a specific virtual tape.
@@ -140,7 +140,7 @@ public class Tape implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>8 - 16<br/>
+     * <b>Length: </b>7 - 16<br/>
      * <b>Pattern: </b>^[A-Z0-9]*$<br/>
      *
      * @param tapeBarcode The barcode that identifies a specific virtual tape.

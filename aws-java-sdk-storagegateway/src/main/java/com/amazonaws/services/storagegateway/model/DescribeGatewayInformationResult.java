@@ -65,7 +65,7 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
     private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface> gatewayNetworkInterfaces;
 
     /**
-     * TBD
+     * The type of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 20<br/>
@@ -73,7 +73,7 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
     private String gatewayType;
 
     /**
-     * The date at which an update to the gateway is available. This date is
+     * The date on which an update to the gateway is available. This date is
      * in the time zone of the gateway. If the gateway is not available for
      * an update this field is not returned in the response.
      * <p>
@@ -81,6 +81,16 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
      * <b>Length: </b>1 - 25<br/>
      */
     private String nextUpdateAvailabilityDate;
+
+    /**
+     * The date on which the last software update was applied to the gateway.
+     * If the gateway has never been updated, this field does not return a
+     * value in the response.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 25<br/>
+     */
+    private String lastSoftwareUpdate;
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -350,38 +360,38 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
     }
 
     /**
-     * TBD
+     * The type of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 20<br/>
      *
-     * @return TBD
+     * @return The type of the gateway.
      */
     public String getGatewayType() {
         return gatewayType;
     }
     
     /**
-     * TBD
+     * The type of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 20<br/>
      *
-     * @param gatewayType TBD
+     * @param gatewayType The type of the gateway.
      */
     public void setGatewayType(String gatewayType) {
         this.gatewayType = gatewayType;
     }
     
     /**
-     * TBD
+     * The type of the gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 20<br/>
      *
-     * @param gatewayType TBD
+     * @param gatewayType The type of the gateway.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -392,14 +402,14 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
     }
 
     /**
-     * The date at which an update to the gateway is available. This date is
+     * The date on which an update to the gateway is available. This date is
      * in the time zone of the gateway. If the gateway is not available for
      * an update this field is not returned in the response.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
      *
-     * @return The date at which an update to the gateway is available. This date is
+     * @return The date on which an update to the gateway is available. This date is
      *         in the time zone of the gateway. If the gateway is not available for
      *         an update this field is not returned in the response.
      */
@@ -408,14 +418,14 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
     }
     
     /**
-     * The date at which an update to the gateway is available. This date is
+     * The date on which an update to the gateway is available. This date is
      * in the time zone of the gateway. If the gateway is not available for
      * an update this field is not returned in the response.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
      *
-     * @param nextUpdateAvailabilityDate The date at which an update to the gateway is available. This date is
+     * @param nextUpdateAvailabilityDate The date on which an update to the gateway is available. This date is
      *         in the time zone of the gateway. If the gateway is not available for
      *         an update this field is not returned in the response.
      */
@@ -424,7 +434,7 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
     }
     
     /**
-     * The date at which an update to the gateway is available. This date is
+     * The date on which an update to the gateway is available. This date is
      * in the time zone of the gateway. If the gateway is not available for
      * an update this field is not returned in the response.
      * <p>
@@ -433,7 +443,7 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
      *
-     * @param nextUpdateAvailabilityDate The date at which an update to the gateway is available. This date is
+     * @param nextUpdateAvailabilityDate The date on which an update to the gateway is available. This date is
      *         in the time zone of the gateway. If the gateway is not available for
      *         an update this field is not returned in the response.
      *
@@ -442,6 +452,60 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
      */
     public DescribeGatewayInformationResult withNextUpdateAvailabilityDate(String nextUpdateAvailabilityDate) {
         this.nextUpdateAvailabilityDate = nextUpdateAvailabilityDate;
+        return this;
+    }
+
+    /**
+     * The date on which the last software update was applied to the gateway.
+     * If the gateway has never been updated, this field does not return a
+     * value in the response.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 25<br/>
+     *
+     * @return The date on which the last software update was applied to the gateway.
+     *         If the gateway has never been updated, this field does not return a
+     *         value in the response.
+     */
+    public String getLastSoftwareUpdate() {
+        return lastSoftwareUpdate;
+    }
+    
+    /**
+     * The date on which the last software update was applied to the gateway.
+     * If the gateway has never been updated, this field does not return a
+     * value in the response.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 25<br/>
+     *
+     * @param lastSoftwareUpdate The date on which the last software update was applied to the gateway.
+     *         If the gateway has never been updated, this field does not return a
+     *         value in the response.
+     */
+    public void setLastSoftwareUpdate(String lastSoftwareUpdate) {
+        this.lastSoftwareUpdate = lastSoftwareUpdate;
+    }
+    
+    /**
+     * The date on which the last software update was applied to the gateway.
+     * If the gateway has never been updated, this field does not return a
+     * value in the response.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 25<br/>
+     *
+     * @param lastSoftwareUpdate The date on which the last software update was applied to the gateway.
+     *         If the gateway has never been updated, this field does not return a
+     *         value in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeGatewayInformationResult withLastSoftwareUpdate(String lastSoftwareUpdate) {
+        this.lastSoftwareUpdate = lastSoftwareUpdate;
         return this;
     }
 
@@ -463,7 +527,8 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
         if (getGatewayState() != null) sb.append("GatewayState: " + getGatewayState() + ",");
         if (getGatewayNetworkInterfaces() != null) sb.append("GatewayNetworkInterfaces: " + getGatewayNetworkInterfaces() + ",");
         if (getGatewayType() != null) sb.append("GatewayType: " + getGatewayType() + ",");
-        if (getNextUpdateAvailabilityDate() != null) sb.append("NextUpdateAvailabilityDate: " + getNextUpdateAvailabilityDate() );
+        if (getNextUpdateAvailabilityDate() != null) sb.append("NextUpdateAvailabilityDate: " + getNextUpdateAvailabilityDate() + ",");
+        if (getLastSoftwareUpdate() != null) sb.append("LastSoftwareUpdate: " + getLastSoftwareUpdate() );
         sb.append("}");
         return sb.toString();
     }
@@ -480,6 +545,7 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
         hashCode = prime * hashCode + ((getGatewayNetworkInterfaces() == null) ? 0 : getGatewayNetworkInterfaces().hashCode()); 
         hashCode = prime * hashCode + ((getGatewayType() == null) ? 0 : getGatewayType().hashCode()); 
         hashCode = prime * hashCode + ((getNextUpdateAvailabilityDate() == null) ? 0 : getNextUpdateAvailabilityDate().hashCode()); 
+        hashCode = prime * hashCode + ((getLastSoftwareUpdate() == null) ? 0 : getLastSoftwareUpdate().hashCode()); 
         return hashCode;
     }
     
@@ -505,6 +571,8 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
         if (other.getGatewayType() != null && other.getGatewayType().equals(this.getGatewayType()) == false) return false; 
         if (other.getNextUpdateAvailabilityDate() == null ^ this.getNextUpdateAvailabilityDate() == null) return false;
         if (other.getNextUpdateAvailabilityDate() != null && other.getNextUpdateAvailabilityDate().equals(this.getNextUpdateAvailabilityDate()) == false) return false; 
+        if (other.getLastSoftwareUpdate() == null ^ this.getLastSoftwareUpdate() == null) return false;
+        if (other.getLastSoftwareUpdate() != null && other.getLastSoftwareUpdate().equals(this.getLastSoftwareUpdate()) == false) return false; 
         return true;
     }
     
