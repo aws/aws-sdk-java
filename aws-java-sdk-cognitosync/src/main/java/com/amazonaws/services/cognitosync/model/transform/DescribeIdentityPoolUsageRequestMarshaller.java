@@ -90,14 +90,16 @@ public class DescribeIdentityPoolUsageRequestMarshaller implements Marshaller<Re
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityPoolId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityPoolId");
+
             String value = (describeIdentityPoolUsageRequest.getIdentityPoolId() == null) ? null : StringUtils.fromString(describeIdentityPoolUsageRequest.getIdentityPoolId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityPoolId}", (describeIdentityPoolUsageRequest.getIdentityPoolId() == null) ? "" : StringUtils.fromString(describeIdentityPoolUsageRequest.getIdentityPoolId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

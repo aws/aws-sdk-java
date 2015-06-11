@@ -90,14 +90,16 @@ public class GetIdentityPoolConfigurationRequestMarshaller implements Marshaller
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityPoolId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityPoolId");
+
             String value = (getIdentityPoolConfigurationRequest.getIdentityPoolId() == null) ? null : StringUtils.fromString(getIdentityPoolConfigurationRequest.getIdentityPoolId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityPoolId}", (getIdentityPoolConfigurationRequest.getIdentityPoolId() == null) ? "" : StringUtils.fromString(getIdentityPoolConfigurationRequest.getIdentityPoolId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

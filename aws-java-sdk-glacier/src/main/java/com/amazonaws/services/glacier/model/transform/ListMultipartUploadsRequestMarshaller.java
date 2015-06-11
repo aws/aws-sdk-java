@@ -90,47 +90,52 @@ public class ListMultipartUploadsRequestMarshaller implements Marshaller<Request
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (listMultipartUploadsRequest.getAccountId() == null) ? null : StringUtils.fromString(listMultipartUploadsRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (listMultipartUploadsRequest.getAccountId() == null) ? "" : StringUtils.fromString(listMultipartUploadsRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (listMultipartUploadsRequest.getVaultName() == null) ? null : StringUtils.fromString(listMultipartUploadsRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (listMultipartUploadsRequest.getVaultName() == null) ? "" : StringUtils.fromString(listMultipartUploadsRequest.getVaultName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("marker")) {
             String name = DYNAMIC_QUERY_PARAMS.get("marker");
+
             String value = (listMultipartUploadsRequest.getUploadIdMarker() == null) ? null : StringUtils.fromString(listMultipartUploadsRequest.getUploadIdMarker());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{marker}", (listMultipartUploadsRequest.getUploadIdMarker() == null) ? "" : StringUtils.fromString(listMultipartUploadsRequest.getUploadIdMarker())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("limit")) {
             String name = DYNAMIC_QUERY_PARAMS.get("limit");
+
             String value = (listMultipartUploadsRequest.getLimit() == null) ? null : StringUtils.fromString(listMultipartUploadsRequest.getLimit());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{limit}", (listMultipartUploadsRequest.getLimit() == null) ? "" : StringUtils.fromString(listMultipartUploadsRequest.getLimit())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

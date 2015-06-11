@@ -90,47 +90,52 @@ public class ListDatasetsRequestMarshaller implements Marshaller<Request<ListDat
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityPoolId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityPoolId");
+
             String value = (listDatasetsRequest.getIdentityPoolId() == null) ? null : StringUtils.fromString(listDatasetsRequest.getIdentityPoolId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityPoolId}", (listDatasetsRequest.getIdentityPoolId() == null) ? "" : StringUtils.fromString(listDatasetsRequest.getIdentityPoolId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityId");
+
             String value = (listDatasetsRequest.getIdentityId() == null) ? null : StringUtils.fromString(listDatasetsRequest.getIdentityId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityId}", (listDatasetsRequest.getIdentityId() == null) ? "" : StringUtils.fromString(listDatasetsRequest.getIdentityId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("NextToken")) {
             String name = DYNAMIC_QUERY_PARAMS.get("NextToken");
+
             String value = (listDatasetsRequest.getNextToken() == null) ? null : StringUtils.fromString(listDatasetsRequest.getNextToken());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{NextToken}", (listDatasetsRequest.getNextToken() == null) ? "" : StringUtils.fromString(listDatasetsRequest.getNextToken())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("MaxResults")) {
             String name = DYNAMIC_QUERY_PARAMS.get("MaxResults");
+
             String value = (listDatasetsRequest.getMaxResults() == null) ? null : StringUtils.fromInteger(listDatasetsRequest.getMaxResults());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{MaxResults}", (listDatasetsRequest.getMaxResults() == null) ? "" : StringUtils.fromInteger(listDatasetsRequest.getMaxResults())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

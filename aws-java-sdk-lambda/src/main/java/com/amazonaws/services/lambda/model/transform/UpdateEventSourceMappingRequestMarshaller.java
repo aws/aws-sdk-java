@@ -90,14 +90,16 @@ public class UpdateEventSourceMappingRequestMarshaller implements Marshaller<Req
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("UUID")) {
             String name = DYNAMIC_QUERY_PARAMS.get("UUID");
+
             String value = (updateEventSourceMappingRequest.getUUID() == null) ? null : StringUtils.fromString(updateEventSourceMappingRequest.getUUID());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{UUID}", (updateEventSourceMappingRequest.getUUID() == null) ? "" : StringUtils.fromString(updateEventSourceMappingRequest.getUUID())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

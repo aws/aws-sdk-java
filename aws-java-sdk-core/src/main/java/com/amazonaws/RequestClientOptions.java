@@ -33,9 +33,9 @@ public final class RequestClientOptions {
      */
     public static final int DEFAULT_STREAM_BUFFER_SIZE = (1 << 17)+1;
     public static enum Marker {
-        /** 
+        /**
          * Used to specify the http user_agent value.
-         * This marker is intended only for internal use by the AWS SDK. 
+         * This marker is intended only for internal use by the AWS SDK.
          */
         USER_AGENT,
         ;
@@ -46,17 +46,6 @@ public final class RequestClientOptions {
      * Used for mark-and-reset purposes during retry.
      */
     private int readLimit = DEFAULT_STREAM_BUFFER_SIZE;
-    
-    /**
-     * @deprecated by {@link #getClientMarker(Marker)}.
-     * This method is intended only for internal use by the AWS SDK. 
-     * 
-     * Returns the "USER_AGENT" marker as a space-delimited string.
-     */
-    @Deprecated
-    public String getClientMarker() {
-        return getClientMarker(Marker.USER_AGENT);
-    }
 
     /**
      * Returns the value of the specified marker; or null if there is no such
@@ -76,19 +65,8 @@ public final class RequestClientOptions {
     }
 
     /**
-     * @deprecated by {@link #appendUserAgent(String)}.
-     * This method is intended only for internal use by the AWS SDK. 
-     * 
-     * Adds a "USER_AGENT" client marker, if it wasn't already present.
-     */
-    @Deprecated
-    public void addClientMarker(String clientMarker) {
-        appendUserAgent(clientMarker);
-    }
-
-    /**
      * Appends a user agent to the USER_AGENT client marker.
-     * This method is intended only for internal use by the AWS SDK. 
+     * This method is intended only for internal use by the AWS SDK.
      */
     public void appendUserAgent(String userAgent) {
         String marker = markers.get(Marker.USER_AGENT);
@@ -108,7 +86,7 @@ public final class RequestClientOptions {
     /**
      * Returns the mark-and-reset read limit; defaults to
      * {@value #DEFAULT_STREAM_BUFFER_SIZE}.
-     * 
+     *
      * @see InputStream#mark(int)
      */
     public final int getReadLimit() {
@@ -118,7 +96,7 @@ public final class RequestClientOptions {
     /**
      * Sets the optional mark-and-reset read limit used for signing and retry
      * purposes.
-     * 
+     *
      * @see InputStream#mark(int)
      */
     public final void setReadLimit(int readLimit) {

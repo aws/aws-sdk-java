@@ -90,25 +90,28 @@ public class GetVaultAccessPolicyRequestMarshaller implements Marshaller<Request
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (getVaultAccessPolicyRequest.getAccountId() == null) ? null : StringUtils.fromString(getVaultAccessPolicyRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (getVaultAccessPolicyRequest.getAccountId() == null) ? "" : StringUtils.fromString(getVaultAccessPolicyRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (getVaultAccessPolicyRequest.getVaultName() == null) ? null : StringUtils.fromString(getVaultAccessPolicyRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (getVaultAccessPolicyRequest.getVaultName() == null) ? "" : StringUtils.fromString(getVaultAccessPolicyRequest.getVaultName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

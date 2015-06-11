@@ -690,6 +690,12 @@
     <Region>
       <Name>ap-northeast-1</Name>
       <Endpoint>
+        <ServiceName>cloudhsm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudhsm.ap-northeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>ecs</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -893,6 +899,12 @@
     </Region>
     <Region>
       <Name>ap-southeast-1</Name>
+      <Endpoint>
+        <ServiceName>cloudhsm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudhsm.ap-southeast-1.amazonaws.com</Hostname>
+      </Endpoint>
       <Endpoint>
         <ServiceName>kms</ServiceName>
         <Http>false</Http>
@@ -1881,6 +1893,12 @@
         <Hostname>cloudformation.cn-north-1.amazonaws.com.cn</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>cloudtrail</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudtrail.cn-north-1.amazonaws.com.cn</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>monitoring</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -2105,6 +2123,8 @@
       <FullName>AWS CloudHSM</FullName>
       <RegionName>us-east-1</RegionName>
       <RegionName>us-west-2</RegionName>
+      <RegionName>ap-northeast-1</RegionName>
+      <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
@@ -2215,6 +2235,7 @@
       <RegionName>sa-east-1</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
+      <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>

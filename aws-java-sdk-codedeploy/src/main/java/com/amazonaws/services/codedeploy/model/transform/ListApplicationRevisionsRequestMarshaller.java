@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.codedeploy.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,61 +40,84 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * List Application Revisions Request Marshaller
+ * ListApplicationRevisionsRequest Marshaller
  */
-public class ListApplicationRevisionsRequestMarshaller implements Marshaller<Request<ListApplicationRevisionsRequest>, ListApplicationRevisionsRequest> {
+public class ListApplicationRevisionsRequestMarshaller
+        implements
+        Marshaller<Request<ListApplicationRevisionsRequest>, ListApplicationRevisionsRequest> {
 
-    public Request<ListApplicationRevisionsRequest> marshall(ListApplicationRevisionsRequest listApplicationRevisionsRequest) {
+    public Request<ListApplicationRevisionsRequest> marshall(
+            ListApplicationRevisionsRequest listApplicationRevisionsRequest) {
+
         if (listApplicationRevisionsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<ListApplicationRevisionsRequest> request = new DefaultRequest<ListApplicationRevisionsRequest>(listApplicationRevisionsRequest, "AmazonCodeDeploy");
-        String target = "CodeDeploy_20141006.ListApplicationRevisions";
-        request.addHeader("X-Amz-Target", target);
+        Request<ListApplicationRevisionsRequest> request = new DefaultRequest<ListApplicationRevisionsRequest>(
+                listApplicationRevisionsRequest, "AmazonCodeDeploy");
+        request.addHeader("X-Amz-Target",
+                "CodeDeploy_20141006.ListApplicationRevisions");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (listApplicationRevisionsRequest.getApplicationName() != null) {
-                jsonWriter.key("applicationName").value(listApplicationRevisionsRequest.getApplicationName());
+                jsonWriter.key("applicationName").value(
+                        listApplicationRevisionsRequest.getApplicationName());
             }
+
             if (listApplicationRevisionsRequest.getSortBy() != null) {
-                jsonWriter.key("sortBy").value(listApplicationRevisionsRequest.getSortBy());
+                jsonWriter.key("sortBy").value(
+                        listApplicationRevisionsRequest.getSortBy());
             }
+
             if (listApplicationRevisionsRequest.getSortOrder() != null) {
-                jsonWriter.key("sortOrder").value(listApplicationRevisionsRequest.getSortOrder());
+                jsonWriter.key("sortOrder").value(
+                        listApplicationRevisionsRequest.getSortOrder());
             }
+
             if (listApplicationRevisionsRequest.getS3Bucket() != null) {
-                jsonWriter.key("s3Bucket").value(listApplicationRevisionsRequest.getS3Bucket());
+                jsonWriter.key("s3Bucket").value(
+                        listApplicationRevisionsRequest.getS3Bucket());
             }
+
             if (listApplicationRevisionsRequest.getS3KeyPrefix() != null) {
-                jsonWriter.key("s3KeyPrefix").value(listApplicationRevisionsRequest.getS3KeyPrefix());
+                jsonWriter.key("s3KeyPrefix").value(
+                        listApplicationRevisionsRequest.getS3KeyPrefix());
             }
+
             if (listApplicationRevisionsRequest.getDeployed() != null) {
-                jsonWriter.key("deployed").value(listApplicationRevisionsRequest.getDeployed());
+                jsonWriter.key("deployed").value(
+                        listApplicationRevisionsRequest.getDeployed());
             }
+
             if (listApplicationRevisionsRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(listApplicationRevisionsRequest.getNextToken());
+                jsonWriter.key("nextToken").value(
+                        listApplicationRevisionsRequest.getNextToken());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

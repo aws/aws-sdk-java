@@ -22,8 +22,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.ecs.AmazonECS#listTasks(ListTasksRequest) ListTasks operation}.
  * <p>
  * Returns a list of tasks for a specified cluster. You can filter the
- * results by family name or by a particular container instance with the
- * <code>family</code> and <code>containerInstance</code> parameters.
+ * results by family name, by a particular container instance, or by the
+ * desired status of the task with the <code>family</code> ,
+ * <code>containerInstance</code> , and
+ * <code>desiredStatus</code> parameters.
  * </p>
  *
  * @see com.amazonaws.services.ecs.AmazonECS#listTasks(ListTasksRequest)
@@ -76,7 +78,9 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     private Integer maxResults;
 
     /**
-     * 
+     * The <code>startedBy</code> value that you want to filter the task
+     * results with. Specifying a <code>startedBy</code> value will limit the
+     * results to tasks that were started with that value.
      */
     private String startedBy;
 
@@ -87,6 +91,19 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
      * to that service.
      */
     private String serviceName;
+
+    /**
+     * The task status that you want to filter the <code>ListTasks</code>
+     * results with. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * <code>STOPPED</code> status, which can be useful for debugging tasks
+     * that are not starting properly or have died or finished. The default
+     * status filter is <code>RUNNING</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>RUNNING, PENDING, STOPPED
+     */
+    private String desiredStatus;
 
     /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -374,29 +391,41 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * 
+     * The <code>startedBy</code> value that you want to filter the task
+     * results with. Specifying a <code>startedBy</code> value will limit the
+     * results to tasks that were started with that value.
      *
-     * @return 
+     * @return The <code>startedBy</code> value that you want to filter the task
+     *         results with. Specifying a <code>startedBy</code> value will limit the
+     *         results to tasks that were started with that value.
      */
     public String getStartedBy() {
         return startedBy;
     }
     
     /**
-     * 
+     * The <code>startedBy</code> value that you want to filter the task
+     * results with. Specifying a <code>startedBy</code> value will limit the
+     * results to tasks that were started with that value.
      *
-     * @param startedBy 
+     * @param startedBy The <code>startedBy</code> value that you want to filter the task
+     *         results with. Specifying a <code>startedBy</code> value will limit the
+     *         results to tasks that were started with that value.
      */
     public void setStartedBy(String startedBy) {
         this.startedBy = startedBy;
     }
     
     /**
-     * 
+     * The <code>startedBy</code> value that you want to filter the task
+     * results with. Specifying a <code>startedBy</code> value will limit the
+     * results to tasks that were started with that value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startedBy 
+     * @param startedBy The <code>startedBy</code> value that you want to filter the task
+     *         results with. Specifying a <code>startedBy</code> value will limit the
+     *         results to tasks that were started with that value.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -458,6 +487,138 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
+     * The task status that you want to filter the <code>ListTasks</code>
+     * results with. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * <code>STOPPED</code> status, which can be useful for debugging tasks
+     * that are not starting properly or have died or finished. The default
+     * status filter is <code>RUNNING</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>RUNNING, PENDING, STOPPED
+     *
+     * @return The task status that you want to filter the <code>ListTasks</code>
+     *         results with. Specifying a <code>desiredStatus</code> of
+     *         <code>STOPPED</code> will limit the results to tasks that are in the
+     *         <code>STOPPED</code> status, which can be useful for debugging tasks
+     *         that are not starting properly or have died or finished. The default
+     *         status filter is <code>RUNNING</code>.
+     *
+     * @see DesiredStatus
+     */
+    public String getDesiredStatus() {
+        return desiredStatus;
+    }
+    
+    /**
+     * The task status that you want to filter the <code>ListTasks</code>
+     * results with. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * <code>STOPPED</code> status, which can be useful for debugging tasks
+     * that are not starting properly or have died or finished. The default
+     * status filter is <code>RUNNING</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>RUNNING, PENDING, STOPPED
+     *
+     * @param desiredStatus The task status that you want to filter the <code>ListTasks</code>
+     *         results with. Specifying a <code>desiredStatus</code> of
+     *         <code>STOPPED</code> will limit the results to tasks that are in the
+     *         <code>STOPPED</code> status, which can be useful for debugging tasks
+     *         that are not starting properly or have died or finished. The default
+     *         status filter is <code>RUNNING</code>.
+     *
+     * @see DesiredStatus
+     */
+    public void setDesiredStatus(String desiredStatus) {
+        this.desiredStatus = desiredStatus;
+    }
+    
+    /**
+     * The task status that you want to filter the <code>ListTasks</code>
+     * results with. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * <code>STOPPED</code> status, which can be useful for debugging tasks
+     * that are not starting properly or have died or finished. The default
+     * status filter is <code>RUNNING</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>RUNNING, PENDING, STOPPED
+     *
+     * @param desiredStatus The task status that you want to filter the <code>ListTasks</code>
+     *         results with. Specifying a <code>desiredStatus</code> of
+     *         <code>STOPPED</code> will limit the results to tasks that are in the
+     *         <code>STOPPED</code> status, which can be useful for debugging tasks
+     *         that are not starting properly or have died or finished. The default
+     *         status filter is <code>RUNNING</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see DesiredStatus
+     */
+    public ListTasksRequest withDesiredStatus(String desiredStatus) {
+        this.desiredStatus = desiredStatus;
+        return this;
+    }
+
+    /**
+     * The task status that you want to filter the <code>ListTasks</code>
+     * results with. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * <code>STOPPED</code> status, which can be useful for debugging tasks
+     * that are not starting properly or have died or finished. The default
+     * status filter is <code>RUNNING</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>RUNNING, PENDING, STOPPED
+     *
+     * @param desiredStatus The task status that you want to filter the <code>ListTasks</code>
+     *         results with. Specifying a <code>desiredStatus</code> of
+     *         <code>STOPPED</code> will limit the results to tasks that are in the
+     *         <code>STOPPED</code> status, which can be useful for debugging tasks
+     *         that are not starting properly or have died or finished. The default
+     *         status filter is <code>RUNNING</code>.
+     *
+     * @see DesiredStatus
+     */
+    public void setDesiredStatus(DesiredStatus desiredStatus) {
+        this.desiredStatus = desiredStatus.toString();
+    }
+    
+    /**
+     * The task status that you want to filter the <code>ListTasks</code>
+     * results with. Specifying a <code>desiredStatus</code> of
+     * <code>STOPPED</code> will limit the results to tasks that are in the
+     * <code>STOPPED</code> status, which can be useful for debugging tasks
+     * that are not starting properly or have died or finished. The default
+     * status filter is <code>RUNNING</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>RUNNING, PENDING, STOPPED
+     *
+     * @param desiredStatus The task status that you want to filter the <code>ListTasks</code>
+     *         results with. Specifying a <code>desiredStatus</code> of
+     *         <code>STOPPED</code> will limit the results to tasks that are in the
+     *         <code>STOPPED</code> status, which can be useful for debugging tasks
+     *         that are not starting properly or have died or finished. The default
+     *         status filter is <code>RUNNING</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see DesiredStatus
+     */
+    public ListTasksRequest withDesiredStatus(DesiredStatus desiredStatus) {
+        this.desiredStatus = desiredStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -475,7 +636,8 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");
         if (getStartedBy() != null) sb.append("StartedBy: " + getStartedBy() + ",");
-        if (getServiceName() != null) sb.append("ServiceName: " + getServiceName() );
+        if (getServiceName() != null) sb.append("ServiceName: " + getServiceName() + ",");
+        if (getDesiredStatus() != null) sb.append("DesiredStatus: " + getDesiredStatus() );
         sb.append("}");
         return sb.toString();
     }
@@ -492,6 +654,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode()); 
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode()); 
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode()); 
+        hashCode = prime * hashCode + ((getDesiredStatus() == null) ? 0 : getDesiredStatus().hashCode()); 
         return hashCode;
     }
     
@@ -517,6 +680,8 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements Seriali
         if (other.getStartedBy() != null && other.getStartedBy().equals(this.getStartedBy()) == false) return false; 
         if (other.getServiceName() == null ^ this.getServiceName() == null) return false;
         if (other.getServiceName() != null && other.getServiceName().equals(this.getServiceName()) == false) return false; 
+        if (other.getDesiredStatus() == null ^ this.getDesiredStatus() == null) return false;
+        if (other.getDesiredStatus() != null && other.getDesiredStatus().equals(this.getDesiredStatus()) == false) return false; 
         return true;
     }
     

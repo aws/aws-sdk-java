@@ -22,44 +22,46 @@ import java.io.Serializable;
 public class VersionInfo implements Serializable, Cloneable {
 
     /**
-     * 
+     * The version number of the Amazon ECS container agent.
      */
     private String agentVersion;
 
     /**
-     * 
+     * The Git commit hash for the Amazon ECS container agent build on the <a
+     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+     * </a> GitHub repository.
      */
     private String agentHash;
 
     /**
-     * 
+     * The Docker version running on the container instance.
      */
     private String dockerVersion;
 
     /**
-     * 
+     * The version number of the Amazon ECS container agent.
      *
-     * @return 
+     * @return The version number of the Amazon ECS container agent.
      */
     public String getAgentVersion() {
         return agentVersion;
     }
     
     /**
-     * 
+     * The version number of the Amazon ECS container agent.
      *
-     * @param agentVersion 
+     * @param agentVersion The version number of the Amazon ECS container agent.
      */
     public void setAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
     }
     
     /**
-     * 
+     * The version number of the Amazon ECS container agent.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param agentVersion 
+     * @param agentVersion The version number of the Amazon ECS container agent.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -70,29 +72,41 @@ public class VersionInfo implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The Git commit hash for the Amazon ECS container agent build on the <a
+     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+     * </a> GitHub repository.
      *
-     * @return 
+     * @return The Git commit hash for the Amazon ECS container agent build on the <a
+     *         href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+     *         </a> GitHub repository.
      */
     public String getAgentHash() {
         return agentHash;
     }
     
     /**
-     * 
+     * The Git commit hash for the Amazon ECS container agent build on the <a
+     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+     * </a> GitHub repository.
      *
-     * @param agentHash 
+     * @param agentHash The Git commit hash for the Amazon ECS container agent build on the <a
+     *         href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+     *         </a> GitHub repository.
      */
     public void setAgentHash(String agentHash) {
         this.agentHash = agentHash;
     }
     
     /**
-     * 
+     * The Git commit hash for the Amazon ECS container agent build on the <a
+     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+     * </a> GitHub repository.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param agentHash 
+     * @param agentHash The Git commit hash for the Amazon ECS container agent build on the <a
+     *         href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+     *         </a> GitHub repository.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -103,29 +117,29 @@ public class VersionInfo implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The Docker version running on the container instance.
      *
-     * @return 
+     * @return The Docker version running on the container instance.
      */
     public String getDockerVersion() {
         return dockerVersion;
     }
     
     /**
-     * 
+     * The Docker version running on the container instance.
      *
-     * @param dockerVersion 
+     * @param dockerVersion The Docker version running on the container instance.
      */
     public void setDockerVersion(String dockerVersion) {
         this.dockerVersion = dockerVersion;
     }
     
     /**
-     * 
+     * The Docker version running on the container instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dockerVersion 
+     * @param dockerVersion The Docker version running on the container instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

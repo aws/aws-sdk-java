@@ -90,25 +90,28 @@ public class GetVaultNotificationsRequestMarshaller implements Marshaller<Reques
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (getVaultNotificationsRequest.getAccountId() == null) ? null : StringUtils.fromString(getVaultNotificationsRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (getVaultNotificationsRequest.getAccountId() == null) ? "" : StringUtils.fromString(getVaultNotificationsRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (getVaultNotificationsRequest.getVaultName() == null) ? null : StringUtils.fromString(getVaultNotificationsRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (getVaultNotificationsRequest.getVaultName() == null) ? "" : StringUtils.fromString(getVaultNotificationsRequest.getVaultName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

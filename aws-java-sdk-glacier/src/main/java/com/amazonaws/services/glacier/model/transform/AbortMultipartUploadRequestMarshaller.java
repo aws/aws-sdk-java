@@ -90,36 +90,40 @@ public class AbortMultipartUploadRequestMarshaller implements Marshaller<Request
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (abortMultipartUploadRequest.getAccountId() == null) ? null : StringUtils.fromString(abortMultipartUploadRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (abortMultipartUploadRequest.getAccountId() == null) ? "" : StringUtils.fromString(abortMultipartUploadRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (abortMultipartUploadRequest.getVaultName() == null) ? null : StringUtils.fromString(abortMultipartUploadRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (abortMultipartUploadRequest.getVaultName() == null) ? "" : StringUtils.fromString(abortMultipartUploadRequest.getVaultName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("uploadId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("uploadId");
+
             String value = (abortMultipartUploadRequest.getUploadId() == null) ? null : StringUtils.fromString(abortMultipartUploadRequest.getUploadId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{uploadId}", (abortMultipartUploadRequest.getUploadId() == null) ? "" : StringUtils.fromString(abortMultipartUploadRequest.getUploadId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

@@ -28,6 +28,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * default is 20 per region, the call fails. For information about
  * viewing and updating these limits, see DescribeAccountLimits.
  * </p>
+ * <p>
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html"> Auto Scaling Groups </a>
+ * in the <i>Auto Scaling Developer Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createAutoScalingGroup(CreateAutoScalingGroupRequest)
  */

@@ -66,7 +66,14 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> containerInstances;
 
     /**
-     * 
+     * An optional tag specified when a task is started. For example if you
+     * automatically trigger a task to run a batch process job, you could
+     * apply a unique identifier for that job to your task with the
+     * <code>startedBy</code> parameter. You can then identify which tasks
+     * belong to that job by filtering the results of a <a>ListTasks</a> call
+     * with the <code>startedBy</code> value. <p>If a task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      */
     private String startedBy;
 
@@ -315,29 +322,71 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * 
+     * An optional tag specified when a task is started. For example if you
+     * automatically trigger a task to run a batch process job, you could
+     * apply a unique identifier for that job to your task with the
+     * <code>startedBy</code> parameter. You can then identify which tasks
+     * belong to that job by filtering the results of a <a>ListTasks</a> call
+     * with the <code>startedBy</code> value. <p>If a task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      *
-     * @return 
+     * @return An optional tag specified when a task is started. For example if you
+     *         automatically trigger a task to run a batch process job, you could
+     *         apply a unique identifier for that job to your task with the
+     *         <code>startedBy</code> parameter. You can then identify which tasks
+     *         belong to that job by filtering the results of a <a>ListTasks</a> call
+     *         with the <code>startedBy</code> value. <p>If a task is started by an
+     *         Amazon ECS service, then the <code>startedBy</code> parameter contains
+     *         the deployment ID of the service that starts it.
      */
     public String getStartedBy() {
         return startedBy;
     }
     
     /**
-     * 
+     * An optional tag specified when a task is started. For example if you
+     * automatically trigger a task to run a batch process job, you could
+     * apply a unique identifier for that job to your task with the
+     * <code>startedBy</code> parameter. You can then identify which tasks
+     * belong to that job by filtering the results of a <a>ListTasks</a> call
+     * with the <code>startedBy</code> value. <p>If a task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      *
-     * @param startedBy 
+     * @param startedBy An optional tag specified when a task is started. For example if you
+     *         automatically trigger a task to run a batch process job, you could
+     *         apply a unique identifier for that job to your task with the
+     *         <code>startedBy</code> parameter. You can then identify which tasks
+     *         belong to that job by filtering the results of a <a>ListTasks</a> call
+     *         with the <code>startedBy</code> value. <p>If a task is started by an
+     *         Amazon ECS service, then the <code>startedBy</code> parameter contains
+     *         the deployment ID of the service that starts it.
      */
     public void setStartedBy(String startedBy) {
         this.startedBy = startedBy;
     }
     
     /**
-     * 
+     * An optional tag specified when a task is started. For example if you
+     * automatically trigger a task to run a batch process job, you could
+     * apply a unique identifier for that job to your task with the
+     * <code>startedBy</code> parameter. You can then identify which tasks
+     * belong to that job by filtering the results of a <a>ListTasks</a> call
+     * with the <code>startedBy</code> value. <p>If a task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startedBy 
+     * @param startedBy An optional tag specified when a task is started. For example if you
+     *         automatically trigger a task to run a batch process job, you could
+     *         apply a unique identifier for that job to your task with the
+     *         <code>startedBy</code> parameter. You can then identify which tasks
+     *         belong to that job by filtering the results of a <a>ListTasks</a> call
+     *         with the <code>startedBy</code> value. <p>If a task is started by an
+     *         Amazon ECS service, then the <code>startedBy</code> parameter contains
+     *         the deployment ID of the service that starts it.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

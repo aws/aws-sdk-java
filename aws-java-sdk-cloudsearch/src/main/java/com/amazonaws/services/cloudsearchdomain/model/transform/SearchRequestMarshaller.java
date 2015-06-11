@@ -90,146 +90,160 @@ public class SearchRequestMarshaller implements Marshaller<Request<SearchRequest
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Cursor")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Cursor");
+
             String value = (searchRequest.getCursor() == null) ? null : StringUtils.fromString(searchRequest.getCursor());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Cursor}", (searchRequest.getCursor() == null) ? "" : StringUtils.fromString(searchRequest.getCursor())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Expr")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Expr");
+
             String value = (searchRequest.getExpr() == null) ? null : StringUtils.fromString(searchRequest.getExpr());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Expr}", (searchRequest.getExpr() == null) ? "" : StringUtils.fromString(searchRequest.getExpr())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Facet")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Facet");
+
             String value = (searchRequest.getFacet() == null) ? null : StringUtils.fromString(searchRequest.getFacet());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Facet}", (searchRequest.getFacet() == null) ? "" : StringUtils.fromString(searchRequest.getFacet())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FilterQuery")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FilterQuery");
+
             String value = (searchRequest.getFilterQuery() == null) ? null : StringUtils.fromString(searchRequest.getFilterQuery());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FilterQuery}", (searchRequest.getFilterQuery() == null) ? "" : StringUtils.fromString(searchRequest.getFilterQuery())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Highlight")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Highlight");
+
             String value = (searchRequest.getHighlight() == null) ? null : StringUtils.fromString(searchRequest.getHighlight());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Highlight}", (searchRequest.getHighlight() == null) ? "" : StringUtils.fromString(searchRequest.getHighlight())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Partial")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Partial");
+
             String value = (searchRequest.isPartial() == null) ? null : StringUtils.fromBoolean(searchRequest.isPartial());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Partial}", (searchRequest.isPartial() == null) ? "" : StringUtils.fromBoolean(searchRequest.isPartial())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Query")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Query");
+
             String value = (searchRequest.getQuery() == null) ? null : StringUtils.fromString(searchRequest.getQuery());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Query}", (searchRequest.getQuery() == null) ? "" : StringUtils.fromString(searchRequest.getQuery())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("QueryOptions")) {
             String name = DYNAMIC_QUERY_PARAMS.get("QueryOptions");
+
             String value = (searchRequest.getQueryOptions() == null) ? null : StringUtils.fromString(searchRequest.getQueryOptions());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{QueryOptions}", (searchRequest.getQueryOptions() == null) ? "" : StringUtils.fromString(searchRequest.getQueryOptions())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("QueryParser")) {
             String name = DYNAMIC_QUERY_PARAMS.get("QueryParser");
+
             String value = (searchRequest.getQueryParser() == null) ? null : StringUtils.fromString(searchRequest.getQueryParser());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{QueryParser}", (searchRequest.getQueryParser() == null) ? "" : StringUtils.fromString(searchRequest.getQueryParser())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Return")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Return");
+
             String value = (searchRequest.getReturn() == null) ? null : StringUtils.fromString(searchRequest.getReturn());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Return}", (searchRequest.getReturn() == null) ? "" : StringUtils.fromString(searchRequest.getReturn())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Size")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Size");
+
             String value = (searchRequest.getSize() == null) ? null : StringUtils.fromLong(searchRequest.getSize());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Size}", (searchRequest.getSize() == null) ? "" : StringUtils.fromLong(searchRequest.getSize())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Sort")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Sort");
+
             String value = (searchRequest.getSort() == null) ? null : StringUtils.fromString(searchRequest.getSort());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Sort}", (searchRequest.getSort() == null) ? "" : StringUtils.fromString(searchRequest.getSort())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Start")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Start");
+
             String value = (searchRequest.getStart() == null) ? null : StringUtils.fromLong(searchRequest.getStart());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Start}", (searchRequest.getStart() == null) ? "" : StringUtils.fromLong(searchRequest.getStart())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

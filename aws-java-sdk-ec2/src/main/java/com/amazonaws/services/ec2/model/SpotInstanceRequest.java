@@ -47,8 +47,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * can help you track your Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     * Linux</i>.
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
@@ -295,8 +294,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * can help you track your Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     * Linux</i>.
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
@@ -305,8 +303,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         can help you track your Spot Instance requests. For more information,
      *         see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     *         Linux</i>.
+     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @see SpotInstanceState
      */
@@ -319,8 +316,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * can help you track your Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     * Linux</i>.
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
@@ -329,8 +325,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         can help you track your Spot Instance requests. For more information,
      *         see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     *         Linux</i>.
+     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @see SpotInstanceState
      */
@@ -343,8 +338,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * can help you track your Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     * Linux</i>.
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -355,8 +349,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         can help you track your Spot Instance requests. For more information,
      *         see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     *         Linux</i>.
+     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -373,8 +366,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * can help you track your Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     * Linux</i>.
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
@@ -383,8 +375,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         can help you track your Spot Instance requests. For more information,
      *         see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     *         Linux</i>.
+     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @see SpotInstanceState
      */
@@ -397,8 +388,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * can help you track your Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     * Linux</i>.
+     * Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -409,8 +399,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         can help you track your Spot Instance requests. For more information,
      *         see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide for
-     *         Linux</i>.
+     *         Bid Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

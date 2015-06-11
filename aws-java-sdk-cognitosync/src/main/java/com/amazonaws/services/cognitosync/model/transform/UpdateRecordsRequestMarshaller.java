@@ -93,36 +93,40 @@ public class UpdateRecordsRequestMarshaller implements Marshaller<Request<Update
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityPoolId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityPoolId");
+
             String value = (updateRecordsRequest.getIdentityPoolId() == null) ? null : StringUtils.fromString(updateRecordsRequest.getIdentityPoolId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityPoolId}", (updateRecordsRequest.getIdentityPoolId() == null) ? "" : StringUtils.fromString(updateRecordsRequest.getIdentityPoolId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityId");
+
             String value = (updateRecordsRequest.getIdentityId() == null) ? null : StringUtils.fromString(updateRecordsRequest.getIdentityId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityId}", (updateRecordsRequest.getIdentityId() == null) ? "" : StringUtils.fromString(updateRecordsRequest.getIdentityId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("DatasetName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("DatasetName");
+
             String value = (updateRecordsRequest.getDatasetName() == null) ? null : StringUtils.fromString(updateRecordsRequest.getDatasetName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{DatasetName}", (updateRecordsRequest.getDatasetName() == null) ? "" : StringUtils.fromString(updateRecordsRequest.getDatasetName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

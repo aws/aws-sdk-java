@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
@@ -43,25 +45,28 @@ public final class TimestampFormatRequestHandler extends RequestHandler2 {
         AmazonWebServiceRequest original = request.getOriginalRequest();
         if (original instanceof DescribeSpotFleetRequestHistoryRequest) {
 
-            Map<String, String> params = request.getParameters();
-            String startTime = params.get(START_TIME);
+            Map<String, List<String>> params = request.getParameters();
+            List<String> startTime = params.get(START_TIME);
 
-            if (startTime != null) {
-                params.put(START_TIME, sanitize(startTime));
+            if (startTime != null && !startTime.isEmpty()) {
+                params.put(START_TIME,
+                        Arrays.asList(sanitize(startTime.get(0))));
             }
 
         } else if (original instanceof RequestSpotFleetRequest) {
 
-            Map<String, String> params = request.getParameters();
+            Map<String, List<String>> params = request.getParameters();
 
-            String validFrom = params.get(VALID_FROM);
-            String validUntil = params.get(VALID_UNTIL);
+            List<String> validFrom = params.get(VALID_FROM);
+            List<String> validUntil = params.get(VALID_UNTIL);
 
-            if (validFrom != null) {
-                params.put(VALID_FROM, sanitize(validFrom));
+            if (validFrom != null && !validFrom.isEmpty()) {
+                params.put(VALID_FROM,
+                        Arrays.asList(sanitize(validFrom.get(0))));
             }
-            if (validUntil != null) {
-                params.put(VALID_UNTIL, sanitize(validUntil));
+            if (validUntil != null && !validUntil.isEmpty()) {
+                params.put(VALID_UNTIL,
+                        Arrays.asList(sanitize(validUntil.get(0))));
             }
 
         }

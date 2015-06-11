@@ -695,7 +695,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Configures the availability options for a domain. Enabling the
@@ -710,10 +710,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param updateAvailabilityOptionsRequest Container for the necessary
      *           parameters to execute the UpdateAvailabilityOptions service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the UpdateAvailabilityOptions service
      *         method, as returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws LimitExceededException
@@ -745,7 +745,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Gets the default search field configured for the search domain.
@@ -1047,7 +1047,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Gets the availability options configured for a domain. By default,
@@ -1061,10 +1061,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param describeAvailabilityOptionsRequest Container for the necessary
      *           parameters to execute the DescribeAvailabilityOptions service method
      *           on AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DescribeAvailabilityOptions service
      *         method, as returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws LimitExceededException
@@ -1096,7 +1096,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Gets information about the index fields configured for the search
@@ -1232,9 +1232,6 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        for (Entry<String, String> entry : originalRequest.copyPrivateRequestParameters().entrySet()) {
-            request.addParameter(entry.getKey(), entry.getValue());
-        }
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         if (originalRequest.getRequestCredentials() != null) {

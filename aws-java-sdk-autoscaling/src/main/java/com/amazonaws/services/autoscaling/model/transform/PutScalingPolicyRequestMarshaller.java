@@ -47,17 +47,17 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
         if (putScalingPolicyRequest.getPolicyName() != null) {
             request.addParameter("PolicyName", StringUtils.fromString(putScalingPolicyRequest.getPolicyName()));
         }
-        if (putScalingPolicyRequest.getScalingAdjustment() != null) {
-            request.addParameter("ScalingAdjustment", StringUtils.fromInteger(putScalingPolicyRequest.getScalingAdjustment()));
-        }
         if (putScalingPolicyRequest.getAdjustmentType() != null) {
             request.addParameter("AdjustmentType", StringUtils.fromString(putScalingPolicyRequest.getAdjustmentType()));
         }
-        if (putScalingPolicyRequest.getCooldown() != null) {
-            request.addParameter("Cooldown", StringUtils.fromInteger(putScalingPolicyRequest.getCooldown()));
-        }
         if (putScalingPolicyRequest.getMinAdjustmentStep() != null) {
             request.addParameter("MinAdjustmentStep", StringUtils.fromInteger(putScalingPolicyRequest.getMinAdjustmentStep()));
+        }
+        if (putScalingPolicyRequest.getScalingAdjustment() != null) {
+            request.addParameter("ScalingAdjustment", StringUtils.fromInteger(putScalingPolicyRequest.getScalingAdjustment()));
+        }
+        if (putScalingPolicyRequest.getCooldown() != null) {
+            request.addParameter("Cooldown", StringUtils.fromInteger(putScalingPolicyRequest.getCooldown()));
         }
 
         return request;

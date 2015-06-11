@@ -16,6 +16,8 @@ package com.amazonaws.services.sqs;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Map;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -32,8 +34,12 @@ public class QueueUrlHandler extends AbstractRequestHandler {
     private static final String QUEUE_URL_PARAMETER = "QueueUrl";
 
     public void beforeRequest(Request<?> request) {
-        if (request.getParameters().get(QUEUE_URL_PARAMETER) != null) {
-            String queueUrl = (String) request.getParameters().remove(QUEUE_URL_PARAMETER);
+
+        final Map<String, List<String>> requestParams = request.getParameters();
+        final List<String> queueURLParam = requestParams.get(QUEUE_URL_PARAMETER);
+        if (queueURLParam != null && !queueURLParam.isEmpty() ) {
+            List<String> queueURLParameter = requestParams.remove(QUEUE_URL_PARAMETER);
+            String queueUrl = queueURLParameter.iterator().next();
 
             try {
                 URI uri = new URI(queueUrl);

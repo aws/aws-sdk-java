@@ -82,6 +82,9 @@ public class ListTasksRequestMarshaller implements Marshaller<Request<ListTasksR
             if (listTasksRequest.getServiceName() != null) {
                 jsonWriter.key("serviceName").value(listTasksRequest.getServiceName());
             }
+            if (listTasksRequest.getDesiredStatus() != null) {
+                jsonWriter.key("desiredStatus").value(listTasksRequest.getDesiredStatus());
+            }
 
           jsonWriter.endObject();
 

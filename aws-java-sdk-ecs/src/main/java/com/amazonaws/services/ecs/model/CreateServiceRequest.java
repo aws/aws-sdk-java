@@ -66,7 +66,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. Up to 64 ASCII characters are allowed.
+     * idempotency of the request. Up to 32 ASCII characters are allowed.
      */
     private String clientToken;
 
@@ -337,10 +337,10 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. Up to 64 ASCII characters are allowed.
+     * idempotency of the request. Up to 32 ASCII characters are allowed.
      *
      * @return Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request. Up to 64 ASCII characters are allowed.
+     *         idempotency of the request. Up to 32 ASCII characters are allowed.
      */
     public String getClientToken() {
         return clientToken;
@@ -348,10 +348,10 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. Up to 64 ASCII characters are allowed.
+     * idempotency of the request. Up to 32 ASCII characters are allowed.
      *
      * @param clientToken Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request. Up to 64 ASCII characters are allowed.
+     *         idempotency of the request. Up to 32 ASCII characters are allowed.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
@@ -359,12 +359,12 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. Up to 64 ASCII characters are allowed.
+     * idempotency of the request. Up to 32 ASCII characters are allowed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clientToken Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request. Up to 64 ASCII characters are allowed.
+     *         idempotency of the request. Up to 32 ASCII characters are allowed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -20,10 +20,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -34,7 +31,6 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.IOUtils;
-import com.amazonaws.util.VersionInfoUtils;
 
 /**
  * Utilities for working with regions.
@@ -161,7 +157,7 @@ public class RegionUtils {
     public static RegionMetadata loadMetadataFromURI(
             final URI uri,
             final ClientConfiguration config) throws IOException {
-    
+
         InputStream stream = HttpUtils.fetchFile(uri, config);
 
         try {

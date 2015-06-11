@@ -90,14 +90,16 @@ public class ReadPresetRequestMarshaller implements Marshaller<Request<ReadPrese
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Id")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Id");
+
             String value = (readPresetRequest.getId() == null) ? null : StringUtils.fromString(readPresetRequest.getId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Id}", (readPresetRequest.getId() == null) ? "" : StringUtils.fromString(readPresetRequest.getId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

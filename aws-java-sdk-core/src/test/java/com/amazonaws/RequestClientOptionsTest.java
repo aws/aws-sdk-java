@@ -37,12 +37,12 @@ public class RequestClientOptionsTest {
         for (Marker m : Marker.values()) {
             assertEquals(m.name(), opts.getClientMarker(m));
         }
-        assertEquals(Marker.USER_AGENT.name(), opts.getClientMarker());
-        opts.addClientMarker("2nd-agent");
-        String ua = opts.getClientMarker();
+        assertEquals(Marker.USER_AGENT.name(), opts.getClientMarker(Marker.USER_AGENT));
+        opts.appendUserAgent("2nd-agent");
+        String ua = opts.getClientMarker(Marker.USER_AGENT);
         assertEquals(ua, Marker.USER_AGENT.name() + " 2nd-agent", ua);
         opts.appendUserAgent("3rd-agent");
-        ua = opts.getClientMarker();
+        ua = opts.getClientMarker(Marker.USER_AGENT);
         assertEquals(ua, Marker.USER_AGENT.name() + " 2nd-agent 3rd-agent", ua);
         assertEquals(ua, opts.getClientMarker(Marker.USER_AGENT));
     }

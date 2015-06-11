@@ -113,8 +113,12 @@ public interface AmazonECS {
      * @return The response from the DeleteCluster service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterContainsContainerInstancesException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
+     * @throws ClusterContainsServicesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -125,31 +129,6 @@ public interface AmazonECS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DeleteClusterResult deleteCluster(DeleteClusterRequest deleteClusterRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a specified service within a cluster.
-     * </p>
-     *
-     * @param deleteServiceRequest Container for the necessary parameters to
-     *           execute the DeleteService service method on AmazonECS.
-     * 
-     * @return The response from the DeleteService service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -184,6 +163,34 @@ public interface AmazonECS {
 
     /**
      * <p>
+     * Deletes a specified service within a cluster.
+     * </p>
+     *
+     * @param deleteServiceRequest Container for the necessary parameters to
+     *           execute the DeleteService service method on AmazonECS.
+     * 
+     * @return The response from the DeleteService service method, as
+     *         returned by AmazonECS.
+     * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
+     * @throws ServerException
+     * @throws ClientException
+     * @throws ServiceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns a list of task definitions that are registered to your
      * account. You can filter the results by family name with the
      * <code>familyPrefix</code> parameter.
@@ -196,6 +203,7 @@ public interface AmazonECS {
      * @return The response from the ListTaskDefinitions service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -227,6 +235,8 @@ public interface AmazonECS {
      * @return The response from the RunTask service method, as returned by
      *         AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -252,6 +262,7 @@ public interface AmazonECS {
      * @return The response from the ListClusters service method, as returned
      *         by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -280,6 +291,7 @@ public interface AmazonECS {
      * @return The response from the CreateCluster service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -305,6 +317,7 @@ public interface AmazonECS {
      * @return The response from the DescribeClusters service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -332,6 +345,8 @@ public interface AmazonECS {
      * @return The response from the DeregisterContainerInstance service
      *         method, as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -358,6 +373,8 @@ public interface AmazonECS {
      * @return The response from the ListContainerInstances service method,
      *         as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -388,6 +405,7 @@ public interface AmazonECS {
      * @return The response from the DeregisterTaskDefinition service method,
      *         as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -400,6 +418,38 @@ public interface AmazonECS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DeregisterTaskDefinitionResult deregisterTaskDefinition(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Updates the Amazon ECS container agent on a specified container
+     * instance.
+     * </p>
+     *
+     * @param updateContainerAgentRequest Container for the necessary
+     *           parameters to execute the UpdateContainerAgent service method on
+     *           AmazonECS.
+     * 
+     * @return The response from the UpdateContainerAgent service method, as
+     *         returned by AmazonECS.
+     * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
+     * @throws ServerException
+     * @throws NoUpdateAvailableException
+     * @throws ClientException
+     * @throws MissingVersionException
+     * @throws UpdateInProgressException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateContainerAgentResult updateContainerAgent(UpdateContainerAgentRequest updateContainerAgentRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -417,6 +467,7 @@ public interface AmazonECS {
      * @return The response from the DescribeTaskDefinition service method,
      *         as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -448,6 +499,7 @@ public interface AmazonECS {
      * @return The response from the RegisterTaskDefinition service method,
      *         as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -506,6 +558,8 @@ public interface AmazonECS {
      * @return The response from the DescribeContainerInstances service
      *         method, as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -562,6 +616,8 @@ public interface AmazonECS {
      * @return The response from the DescribeServices service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -590,6 +646,8 @@ public interface AmazonECS {
      * @return The response from the CreateService service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -615,6 +673,8 @@ public interface AmazonECS {
      * @return The response from the ListServices service method, as returned
      *         by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -658,8 +718,12 @@ public interface AmazonECS {
      * @return The response from the UpdateService service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ServiceNotActiveException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
+     * @throws ServiceNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -686,6 +750,7 @@ public interface AmazonECS {
      * @return The response from the ListTaskDefinitionFamilies service
      *         method, as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -711,6 +776,8 @@ public interface AmazonECS {
      * @return The response from the DescribeTasks service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -773,6 +840,8 @@ public interface AmazonECS {
      * @return The response from the StartTask service method, as returned by
      *         AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -790,8 +859,10 @@ public interface AmazonECS {
     /**
      * <p>
      * Returns a list of tasks for a specified cluster. You can filter the
-     * results by family name or by a particular container instance with the
-     * <code>family</code> and <code>containerInstance</code> parameters.
+     * results by family name, by a particular container instance, or by the
+     * desired status of the task with the <code>family</code> ,
+     * <code>containerInstance</code> , and <code>desiredStatus</code>
+     * parameters.
      * </p>
      *
      * @param listTasksRequest Container for the necessary parameters to
@@ -800,6 +871,8 @@ public interface AmazonECS {
      * @return The response from the ListTasks service method, as returned by
      *         AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -825,6 +898,8 @@ public interface AmazonECS {
      * @return The response from the StopTask service method, as returned by
      *         AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -874,6 +949,7 @@ public interface AmazonECS {
      * @return The response from the ListTaskDefinitions service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -895,6 +971,7 @@ public interface AmazonECS {
      * @return The response from the ListClusters service method, as returned
      *         by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -919,6 +996,7 @@ public interface AmazonECS {
      * @return The response from the CreateCluster service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -940,6 +1018,7 @@ public interface AmazonECS {
      * @return The response from the DescribeClusters service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -961,6 +1040,8 @@ public interface AmazonECS {
      * @return The response from the ListContainerInstances service method,
      *         as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -982,6 +1063,8 @@ public interface AmazonECS {
      * @return The response from the ListServices service method, as returned
      *         by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1005,6 +1088,7 @@ public interface AmazonECS {
      * @return The response from the ListTaskDefinitionFamilies service
      *         method, as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1047,13 +1131,17 @@ public interface AmazonECS {
     /**
      * <p>
      * Returns a list of tasks for a specified cluster. You can filter the
-     * results by family name or by a particular container instance with the
-     * <code>family</code> and <code>containerInstance</code> parameters.
+     * results by family name, by a particular container instance, or by the
+     * desired status of the task with the <code>family</code> ,
+     * <code>containerInstance</code> , and <code>desiredStatus</code>
+     * parameters.
      * </p>
      * 
      * @return The response from the ListTasks service method, as returned by
      *         AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *

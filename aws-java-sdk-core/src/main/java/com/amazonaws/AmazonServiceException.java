@@ -84,7 +84,7 @@ public class AmazonServiceException extends AmazonClientException {
     /**
      * The error message as returned by the service.
      */
-    private String errorMessage;
+    private final String errorMessage;
 
     /** The HTTP status code that was returned with this error */
     private int statusCode;
@@ -95,8 +95,13 @@ public class AmazonServiceException extends AmazonClientException {
     private String serviceName;
 
     /**
+     * The raw response content as a string
+     */
+    private String rawResponseContent;
+
+    /**
      * Constructs a new AmazonServiceException with the specified message.
-     *
+     * 
      * @param errorMessage
      *            An error message describing what went wrong.
      */
@@ -239,4 +244,23 @@ public class AmazonServiceException extends AmazonClientException {
             + "; Error Code: " + getErrorCode()
             + "; Request ID: " + getRequestId() + ")";
     }
+
+    /**
+     * Typically only useful for debugging purpose if for some reason the SDK cannot parse the HTTP
+     * response from a service
+     * 
+     * @return The raw content of the HTTP response
+     */
+    public String getRawResponseContent() {
+        return rawResponseContent;
+    }
+
+    /**
+     * @param rawResponseContent
+     *            The raw content of the HTTP response
+     */
+    public void setRawResponseContent(String rawResponseContent) {
+        this.rawResponseContent = rawResponseContent;
+    }
+
 }

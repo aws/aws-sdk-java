@@ -366,78 +366,6 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     
     /**
      * <p>
-     * Deletes a specified service within a cluster.
-     * </p>
-     *
-     * @param deleteServiceRequest Container for the necessary parameters to
-     *           execute the DeleteService operation on AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteServiceResult> deleteServiceAsync(final DeleteServiceRequest deleteServiceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeleteServiceResult>() {
-            public DeleteServiceResult call() throws Exception {
-                return deleteService(deleteServiceRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes a specified service within a cluster.
-     * </p>
-     *
-     * @param deleteServiceRequest Container for the necessary parameters to
-     *           execute the DeleteService operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteServiceResult> deleteServiceAsync(
-            final DeleteServiceRequest deleteServiceRequest,
-            final AsyncHandler<DeleteServiceRequest, DeleteServiceResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeleteServiceResult>() {
-            public DeleteServiceResult call() throws Exception {
-              DeleteServiceResult result;
-                try {
-                result = deleteService(deleteServiceRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteServiceRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
      * Service agent, and it is not intended for use outside of the agent.
      * </p>
@@ -513,6 +441,78 @@ public class AmazonECSAsyncClient extends AmazonECSClient
             throw ex;
               }
               asyncHandler.onSuccess(submitContainerStateChangeRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes a specified service within a cluster.
+     * </p>
+     *
+     * @param deleteServiceRequest Container for the necessary parameters to
+     *           execute the DeleteService operation on AmazonECS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteService service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteServiceResult> deleteServiceAsync(final DeleteServiceRequest deleteServiceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteServiceResult>() {
+            public DeleteServiceResult call() throws Exception {
+                return deleteService(deleteServiceRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a specified service within a cluster.
+     * </p>
+     *
+     * @param deleteServiceRequest Container for the necessary parameters to
+     *           execute the DeleteService operation on AmazonECS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteService service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteServiceResult> deleteServiceAsync(
+            final DeleteServiceRequest deleteServiceRequest,
+            final AsyncHandler<DeleteServiceRequest, DeleteServiceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteServiceResult>() {
+            public DeleteServiceResult call() throws Exception {
+              DeleteServiceResult result;
+                try {
+                result = deleteService(deleteServiceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteServiceRequest, result);
                  return result;
         }
     });
@@ -1127,6 +1127,80 @@ public class AmazonECSAsyncClient extends AmazonECSClient
             throw ex;
               }
               asyncHandler.onSuccess(deregisterTaskDefinitionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Updates the Amazon ECS container agent on a specified container
+     * instance.
+     * </p>
+     *
+     * @param updateContainerAgentRequest Container for the necessary
+     *           parameters to execute the UpdateContainerAgent operation on AmazonECS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateContainerAgent service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateContainerAgentResult> updateContainerAgentAsync(final UpdateContainerAgentRequest updateContainerAgentRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateContainerAgentResult>() {
+            public UpdateContainerAgentResult call() throws Exception {
+                return updateContainerAgent(updateContainerAgentRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Updates the Amazon ECS container agent on a specified container
+     * instance.
+     * </p>
+     *
+     * @param updateContainerAgentRequest Container for the necessary
+     *           parameters to execute the UpdateContainerAgent operation on AmazonECS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateContainerAgent service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateContainerAgentResult> updateContainerAgentAsync(
+            final UpdateContainerAgentRequest updateContainerAgentRequest,
+            final AsyncHandler<UpdateContainerAgentRequest, UpdateContainerAgentResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateContainerAgentResult>() {
+            public UpdateContainerAgentResult call() throws Exception {
+              UpdateContainerAgentResult result;
+                try {
+                result = updateContainerAgent(updateContainerAgentRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateContainerAgentRequest, result);
                  return result;
         }
     });
@@ -2189,8 +2263,10 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Returns a list of tasks for a specified cluster. You can filter the
-     * results by family name or by a particular container instance with the
-     * <code>family</code> and <code>containerInstance</code> parameters.
+     * results by family name, by a particular container instance, or by the
+     * desired status of the task with the <code>family</code> ,
+     * <code>containerInstance</code> , and <code>desiredStatus</code>
+     * parameters.
      * </p>
      *
      * @param listTasksRequest Container for the necessary parameters to
@@ -2220,8 +2296,10 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Returns a list of tasks for a specified cluster. You can filter the
-     * results by family name or by a particular container instance with the
-     * <code>family</code> and <code>containerInstance</code> parameters.
+     * results by family name, by a particular container instance, or by the
+     * desired status of the task with the <code>family</code> ,
+     * <code>containerInstance</code> , and <code>desiredStatus</code>
+     * parameters.
      * </p>
      *
      * @param listTasksRequest Container for the necessary parameters to

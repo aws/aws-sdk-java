@@ -219,8 +219,17 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     private void init() {
         jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
-        jsonErrorUnmarshallers.add(new ClientExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ClusterContainsContainerInstancesExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new ServerExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new MissingVersionExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ClusterContainsServicesExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ServiceNotActiveExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ClientExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new UpdateInProgressExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ClusterNotFoundExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidParameterExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new NoUpdateAvailableExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ServiceNotFoundExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
         
@@ -254,8 +263,12 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the DeleteCluster service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterContainsContainerInstancesException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
+     * @throws ClusterContainsServicesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -286,59 +299,6 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 new DeleteClusterResultJsonUnmarshaller();
             JsonResponseHandler<DeleteClusterResult> responseHandler =
                 new JsonResponseHandler<DeleteClusterResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Deletes a specified service within a cluster.
-     * </p>
-     *
-     * @param deleteServiceRequest Container for the necessary parameters to
-     *           execute the DeleteService service method on AmazonECS.
-     * 
-     * @return The response from the DeleteService service method, as
-     *         returned by AmazonECS.
-     * 
-     * @throws ServerException
-     * @throws ClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteServiceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteServiceRequest> request = null;
-        Response<DeleteServiceResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteServiceRequestMarshaller().marshall(super.beforeMarshalling(deleteServiceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DeleteServiceResult, JsonUnmarshallerContext> unmarshaller =
-                new DeleteServiceResultJsonUnmarshaller();
-            JsonResponseHandler<DeleteServiceResult> responseHandler =
-                new JsonResponseHandler<DeleteServiceResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -409,6 +369,62 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
+     * Deletes a specified service within a cluster.
+     * </p>
+     *
+     * @param deleteServiceRequest Container for the necessary parameters to
+     *           execute the DeleteService service method on AmazonECS.
+     * 
+     * @return The response from the DeleteService service method, as
+     *         returned by AmazonECS.
+     * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
+     * @throws ServerException
+     * @throws ClientException
+     * @throws ServiceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteServiceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteServiceRequest> request = null;
+        Response<DeleteServiceResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteServiceRequestMarshaller().marshall(super.beforeMarshalling(deleteServiceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<DeleteServiceResult, JsonUnmarshallerContext> unmarshaller =
+                new DeleteServiceResultJsonUnmarshaller();
+            JsonResponseHandler<DeleteServiceResult> responseHandler =
+                new JsonResponseHandler<DeleteServiceResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of task definitions that are registered to your
      * account. You can filter the results by family name with the
      * <code>familyPrefix</code> parameter.
@@ -421,6 +437,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the ListTaskDefinitions service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -480,6 +497,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the RunTask service method, as returned by
      *         AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -533,6 +552,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the ListClusters service method, as returned
      *         by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -589,6 +609,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the CreateCluster service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -642,6 +663,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the DescribeClusters service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -697,6 +719,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the DeregisterContainerInstance service
      *         method, as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -751,6 +775,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the ListContainerInstances service method,
      *         as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -809,6 +835,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the DeregisterTaskDefinition service method,
      *         as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -853,6 +880,66 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
+     * Updates the Amazon ECS container agent on a specified container
+     * instance.
+     * </p>
+     *
+     * @param updateContainerAgentRequest Container for the necessary
+     *           parameters to execute the UpdateContainerAgent service method on
+     *           AmazonECS.
+     * 
+     * @return The response from the UpdateContainerAgent service method, as
+     *         returned by AmazonECS.
+     * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
+     * @throws ServerException
+     * @throws NoUpdateAvailableException
+     * @throws ClientException
+     * @throws MissingVersionException
+     * @throws UpdateInProgressException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateContainerAgentResult updateContainerAgent(UpdateContainerAgentRequest updateContainerAgentRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateContainerAgentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateContainerAgentRequest> request = null;
+        Response<UpdateContainerAgentResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateContainerAgentRequestMarshaller().marshall(super.beforeMarshalling(updateContainerAgentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<UpdateContainerAgentResult, JsonUnmarshallerContext> unmarshaller =
+                new UpdateContainerAgentResultJsonUnmarshaller();
+            JsonResponseHandler<UpdateContainerAgentResult> responseHandler =
+                new JsonResponseHandler<UpdateContainerAgentResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Describes a task definition. You can specify a <code>family</code>
      * and <code>revision</code> to find information on a specific task
      * definition, or you can simply specify the family to find the latest
@@ -866,6 +953,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the DescribeTaskDefinition service method,
      *         as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -925,6 +1013,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the RegisterTaskDefinition service method,
      *         as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1039,6 +1128,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the DescribeContainerInstances service
      *         method, as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1151,6 +1242,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the DescribeServices service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1207,6 +1300,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the CreateService service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1260,6 +1355,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the ListServices service method, as returned
      *         by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1331,8 +1428,12 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the UpdateService service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ServiceNotActiveException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
+     * @throws ServiceNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1387,6 +1488,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the ListTaskDefinitionFamilies service
      *         method, as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1440,6 +1542,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the DescribeTasks service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1558,6 +1662,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the StartTask service method, as returned by
      *         AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1603,8 +1709,10 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
     /**
      * <p>
      * Returns a list of tasks for a specified cluster. You can filter the
-     * results by family name or by a particular container instance with the
-     * <code>family</code> and <code>containerInstance</code> parameters.
+     * results by family name, by a particular container instance, or by the
+     * desired status of the task with the <code>family</code> ,
+     * <code>containerInstance</code> , and <code>desiredStatus</code>
+     * parameters.
      * </p>
      *
      * @param listTasksRequest Container for the necessary parameters to
@@ -1613,6 +1721,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the ListTasks service method, as returned by
      *         AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1666,6 +1776,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the StopTask service method, as returned by
      *         AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1745,6 +1857,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the ListTaskDefinitions service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1768,6 +1881,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the ListClusters service method, as returned
      *         by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1794,6 +1908,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the CreateCluster service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1817,6 +1932,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the DescribeClusters service method, as
      *         returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1840,6 +1956,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the ListContainerInstances service method,
      *         as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1863,6 +1981,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the ListServices service method, as returned
      *         by AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1888,6 +2008,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return The response from the ListTaskDefinitionFamilies service
      *         method, as returned by AmazonECS.
      * 
+     * @throws InvalidParameterException
      * @throws ServerException
      * @throws ClientException
      *
@@ -1934,13 +2055,17 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
     /**
      * <p>
      * Returns a list of tasks for a specified cluster. You can filter the
-     * results by family name or by a particular container instance with the
-     * <code>family</code> and <code>containerInstance</code> parameters.
+     * results by family name, by a particular container instance, or by the
+     * desired status of the task with the <code>family</code> ,
+     * <code>containerInstance</code> , and <code>desiredStatus</code>
+     * parameters.
      * </p>
      * 
      * @return The response from the ListTasks service method, as returned by
      *         AmazonECS.
      * 
+     * @throws InvalidParameterException
+     * @throws ClusterNotFoundException
      * @throws ServerException
      * @throws ClientException
      *

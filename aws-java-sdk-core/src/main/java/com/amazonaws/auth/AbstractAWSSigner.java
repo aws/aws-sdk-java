@@ -22,8 +22,11 @@ import java.io.InputStream;
 import java.net.URI;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -194,31 +197,41 @@ public abstract class AbstractAWSSigner implements Signer {
      *
      * @return A canonicalized form for the specified query string parameters.
      */
-    protected String getCanonicalizedQueryString(Map<String, String> parameters) {
+    protected String getCanonicalizedQueryString(Map<String, List<String>> parameters) {
 
-        SortedMap<String, String> sorted = new TreeMap<String, String>();
+        final SortedMap<String, List<String>> sorted = new TreeMap<String, List<String>>();
 
-        Iterator<Map.Entry<String, String>> pairs = parameters.entrySet().iterator();
-        while (pairs.hasNext()) {
-            Map.Entry<String, String> pair = pairs.next();
-            String key = pair.getKey();
-            String value = pair.getValue();
-            sorted.put(SdkHttpUtils.urlEncode(key, false), SdkHttpUtils.urlEncode(value, false));
+        /**
+         * Signing protocol expects the param values also to be sorted after url
+         * encoding in addition to sorted parameter names.
+         */
+        for (Map.Entry<String, List<String>> entry : parameters.entrySet()) {
+            final String encodedParamName = SdkHttpUtils.urlEncode(
+                    entry.getKey(), false);
+            final List<String> paramValues = entry.getValue();
+            final List<String> encodedValues = new ArrayList<String>(
+                    paramValues.size());
+            for (String value : paramValues) {
+                encodedValues.add(SdkHttpUtils.urlEncode(value, false));
+            }
+            Collections.sort(encodedValues);
+            sorted.put(encodedParamName, encodedValues);
+
         }
 
-        StringBuilder builder = new StringBuilder();
-        pairs = sorted.entrySet().iterator();
-        while (pairs.hasNext()) {
-            Map.Entry<String, String> pair = pairs.next();
-            builder.append(pair.getKey());
-            builder.append("=");
-            builder.append(pair.getValue());
-            if (pairs.hasNext()) {
-                builder.append("&");
+        final StringBuilder result = new StringBuilder();
+        for(Map.Entry<String, List<String>> entry : sorted.entrySet()) {
+            for(String value : entry.getValue()) {
+                if (result.length() > 0) {
+                    result.append("&");
+                }
+                result.append(entry.getKey())
+                      .append("=")
+                      .append(value);
             }
         }
 
-        return builder.toString();
+        return result.toString();
     }
 
     protected String getCanonicalizedQueryString(SignableRequest<?> request) {

@@ -104,6 +104,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeAccountLimits service method, as
      *         returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -130,6 +131,7 @@ public interface AmazonAutoScaling {
      *         method, as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -140,6 +142,34 @@ public interface AmazonAutoScaling {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeAutoScalingGroupsResult describeAutoScalingGroups(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Resumes the specified suspended Auto Scaling processes for the
+     * specified Auto Scaling group. To resume specific processes, use the
+     * <code>ScalingProcesses</code> parameter. To resume all processes, omit
+     * the <code>ScalingProcesses</code> parameter. For more information, see
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"> Suspend and Resume Auto Scaling Processes </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
+     * </p>
+     *
+     * @param resumeProcessesRequest Container for the necessary parameters
+     *           to execute the ResumeProcesses service method on AmazonAutoScaling.
+     * 
+     * 
+     * @throws ResourceInUseException
+     * @throws ResourceContentionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void resumeProcesses(ResumeProcessesRequest resumeProcessesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -158,6 +188,7 @@ public interface AmazonAutoScaling {
      *           AmazonAutoScaling.
      * 
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -172,32 +203,6 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Resumes the specified suspended Auto Scaling processes for the
-     * specified Auto Scaling group. To resume specific processes, use the
-     * <code>ScalingProcesses</code> parameter. To resume all processes, omit
-     * the <code>ScalingProcesses</code> parameter. For more information, see
-     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"> Suspend and Resume Auto Scaling Processes </a>
-     * in the <i>Auto Scaling Developer Guide</i> .
-     * </p>
-     *
-     * @param resumeProcessesRequest Container for the necessary parameters
-     *           to execute the ResumeProcesses service method on AmazonAutoScaling.
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonAutoScaling indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void resumeProcesses(ResumeProcessesRequest resumeProcessesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Describes the lifecycle hooks for the specified Auto Scaling group.
      * </p>
      *
@@ -208,6 +213,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeLifecycleHooks service method,
      *         as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -232,6 +238,7 @@ public interface AmazonAutoScaling {
      *         returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -257,6 +264,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeScalingProcessTypes service
      *         method, as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -285,6 +293,7 @@ public interface AmazonAutoScaling {
      * 
      * 
      * @throws ResourceInUseException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -306,6 +315,11 @@ public interface AmazonAutoScaling {
      * default is 20 per region, the call fails. For information about
      * viewing and updating these limits, see DescribeAccountLimits.
      * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html"> Auto Scaling Groups </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
+     * </p>
      *
      * @param createAutoScalingGroupRequest Container for the necessary
      *           parameters to execute the CreateAutoScalingGroup service method on
@@ -313,6 +327,7 @@ public interface AmazonAutoScaling {
      * 
      * 
      * @throws LimitExceededException
+     * @throws ResourceContentionException
      * @throws AlreadyExistsException
      *
      * @throws AmazonClientException
@@ -341,6 +356,7 @@ public interface AmazonAutoScaling {
      *           to execute the AttachInstances service method on AmazonAutoScaling.
      * 
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -370,6 +386,7 @@ public interface AmazonAutoScaling {
      *         method, as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -396,6 +413,7 @@ public interface AmazonAutoScaling {
      *         service method, as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -425,6 +443,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DeleteLifecycleHook service method, as
      *         returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -473,6 +492,7 @@ public interface AmazonAutoScaling {
      *         returned by AmazonAutoScaling.
      * 
      * @throws LimitExceededException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -497,6 +517,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeTerminationPolicyTypes service
      *         method, as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -532,6 +553,7 @@ public interface AmazonAutoScaling {
      *         by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -553,6 +575,7 @@ public interface AmazonAutoScaling {
      *           execute the DeleteTags service method on AmazonAutoScaling.
      * 
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -575,6 +598,7 @@ public interface AmazonAutoScaling {
      * 
      * 
      * @throws ScalingActivityInProgressException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -585,6 +609,39 @@ public interface AmazonAutoScaling {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void executePolicy(ExecutePolicyRequest executePolicyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Removes one or more load balancers from the specified Auto Scaling
+     * group.
+     * </p>
+     * <p>
+     * When you detach a load balancer, it enters the <code>Removing</code>
+     * state while deregistering the instances in the group. When all
+     * instances are deregistered, then you can no longer describe the load
+     * balancer using DescribeLoadBalancers. Note that the instances remain
+     * running.
+     * </p>
+     *
+     * @param detachLoadBalancersRequest Container for the necessary
+     *           parameters to execute the DetachLoadBalancers service method on
+     *           AmazonAutoScaling.
+     * 
+     * @return The response from the DetachLoadBalancers service method, as
+     *         returned by AmazonAutoScaling.
+     * 
+     * @throws ResourceContentionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DetachLoadBalancersResult detachLoadBalancers(DetachLoadBalancersRequest detachLoadBalancersRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -602,6 +659,7 @@ public interface AmazonAutoScaling {
      *         returned by AmazonAutoScaling.
      * 
      * @throws LimitExceededException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -635,6 +693,7 @@ public interface AmazonAutoScaling {
      * 
      * 
      * @throws LimitExceededException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -663,6 +722,7 @@ public interface AmazonAutoScaling {
      * @return The response from the ExitStandby service method, as returned
      *         by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -684,6 +744,7 @@ public interface AmazonAutoScaling {
      *           execute the DeletePolicy service method on AmazonAutoScaling.
      * 
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -694,6 +755,29 @@ public interface AmazonAutoScaling {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void deletePolicy(DeletePolicyRequest deletePolicyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes the specified scheduled action.
+     * </p>
+     *
+     * @param deleteScheduledActionRequest Container for the necessary
+     *           parameters to execute the DeleteScheduledAction service method on
+     *           AmazonAutoScaling.
+     * 
+     * 
+     * @throws ResourceContentionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -727,6 +811,7 @@ public interface AmazonAutoScaling {
      * @return The response from the CompleteLifecycleAction service method,
      *         as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -749,6 +834,7 @@ public interface AmazonAutoScaling {
      *           service method on AmazonAutoScaling.
      * 
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -759,28 +845,6 @@ public interface AmazonAutoScaling {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void deleteNotificationConfiguration(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified scheduled action.
-     * </p>
-     *
-     * @param deleteScheduledActionRequest Container for the necessary
-     *           parameters to execute the DeleteScheduledAction service method on
-     *           AmazonAutoScaling.
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonAutoScaling indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -797,6 +861,7 @@ public interface AmazonAutoScaling {
      *           to execute the SetInstanceHealth service method on AmazonAutoScaling.
      * 
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -822,6 +887,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeAutoScalingNotificationTypes
      *         service method, as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -859,6 +925,8 @@ public interface AmazonAutoScaling {
      *           to execute the SuspendProcesses service method on AmazonAutoScaling.
      * 
      * 
+     * @throws ResourceInUseException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -901,6 +969,7 @@ public interface AmazonAutoScaling {
      * 
      * 
      * @throws LimitExceededException
+     * @throws ResourceContentionException
      * @throws AlreadyExistsException
      *
      * @throws AmazonClientException
@@ -912,6 +981,67 @@ public interface AmazonAutoScaling {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void createOrUpdateTags(CreateOrUpdateTagsRequest createOrUpdateTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes the load balancers for the specified Auto Scaling group.
+     * </p>
+     *
+     * @param describeLoadBalancersRequest Container for the necessary
+     *           parameters to execute the DescribeLoadBalancers service method on
+     *           AmazonAutoScaling.
+     * 
+     * @return The response from the DescribeLoadBalancers service method, as
+     *         returned by AmazonAutoScaling.
+     * 
+     * @throws ResourceContentionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Attaches one or more load balancers to the specified Auto Scaling
+     * group.
+     * </p>
+     * <p>
+     * To describe the load balancers for an Auto Scaling group, use
+     * DescribeLoadBalancers. To detach the load balancer from the Auto
+     * Scaling group, use DetachLoadBalancers.
+     * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html"> Attach a Load Balancer to Your Auto Scaling Group </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
+     * </p>
+     *
+     * @param attachLoadBalancersRequest Container for the necessary
+     *           parameters to execute the AttachLoadBalancers service method on
+     *           AmazonAutoScaling.
+     * 
+     * @return The response from the AttachLoadBalancers service method, as
+     *         returned by AmazonAutoScaling.
+     * 
+     * @throws ResourceContentionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AttachLoadBalancersResult attachLoadBalancers(AttachLoadBalancersRequest attachLoadBalancersRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -932,6 +1062,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DetachInstances service method, as
      *         returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -958,6 +1089,7 @@ public interface AmazonAutoScaling {
      *         method, as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -979,6 +1111,11 @@ public interface AmazonAutoScaling {
      * default is 100 per region, the call fails. For information about
      * viewing and updating these limits, see DescribeAccountLimits.
      * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html"> Launch Configurations </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
+     * </p>
      *
      * @param createLaunchConfigurationRequest Container for the necessary
      *           parameters to execute the CreateLaunchConfiguration service method on
@@ -986,6 +1123,7 @@ public interface AmazonAutoScaling {
      * 
      * 
      * @throws LimitExceededException
+     * @throws ResourceContentionException
      * @throws AlreadyExistsException
      *
      * @throws AmazonClientException
@@ -1015,6 +1153,7 @@ public interface AmazonAutoScaling {
      * @return The response from the EnterStandby service method, as returned
      *         by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1039,6 +1178,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeLifecycleHookTypes service
      *         method, as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1072,6 +1212,7 @@ public interface AmazonAutoScaling {
      * 
      * @throws ResourceInUseException
      * @throws ScalingActivityInProgressException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1095,6 +1236,7 @@ public interface AmazonAutoScaling {
      *           AmazonAutoScaling.
      * 
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1158,6 +1300,7 @@ public interface AmazonAutoScaling {
      * 
      * 
      * @throws ScalingActivityInProgressException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1184,6 +1327,7 @@ public interface AmazonAutoScaling {
      *         method, as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1208,6 +1352,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeAdjustmentTypes service method,
      *         as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1235,6 +1380,7 @@ public interface AmazonAutoScaling {
      *         as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1279,6 +1425,7 @@ public interface AmazonAutoScaling {
      * @return The response from the RecordLifecycleActionHeartbeat service
      *         method, as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1310,6 +1457,7 @@ public interface AmazonAutoScaling {
      * 
      * 
      * @throws LimitExceededException
+     * @throws ResourceContentionException
      * @throws AlreadyExistsException
      *
      * @throws AmazonClientException
@@ -1340,6 +1488,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeMetricCollectionTypes service
      *         method, as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1356,6 +1505,11 @@ public interface AmazonAutoScaling {
      * <p>
      * Sets the size of the specified Auto Scaling group.
      * </p>
+     * <p>
+     * For more information about desired capacity, see
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html"> What Is Auto Scaling? </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
+     * </p>
      *
      * @param setDesiredCapacityRequest Container for the necessary
      *           parameters to execute the SetDesiredCapacity service method on
@@ -1363,6 +1517,7 @@ public interface AmazonAutoScaling {
      * 
      * 
      * @throws ScalingActivityInProgressException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1394,6 +1549,7 @@ public interface AmazonAutoScaling {
      *         service method, as returned by AmazonAutoScaling.
      * 
      * @throws ScalingActivityInProgressException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1420,6 +1576,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeAccountLimits service method, as
      *         returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1441,6 +1598,7 @@ public interface AmazonAutoScaling {
      *         method, as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1461,6 +1619,7 @@ public interface AmazonAutoScaling {
      *         returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1481,6 +1640,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeScalingProcessTypes service
      *         method, as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1505,6 +1665,7 @@ public interface AmazonAutoScaling {
      *         method, as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1526,6 +1687,7 @@ public interface AmazonAutoScaling {
      *         service method, as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1545,6 +1707,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeTerminationPolicyTypes service
      *         method, as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1576,6 +1739,7 @@ public interface AmazonAutoScaling {
      *         by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1589,12 +1753,41 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
+     * Removes one or more load balancers from the specified Auto Scaling
+     * group.
+     * </p>
+     * <p>
+     * When you detach a load balancer, it enters the <code>Removing</code>
+     * state while deregistering the instances in the group. When all
+     * instances are deregistered, then you can no longer describe the load
+     * balancer using DescribeLoadBalancers. Note that the instances remain
+     * running.
+     * </p>
+     * 
+     * @return The response from the DetachLoadBalancers service method, as
+     *         returned by AmazonAutoScaling.
+     * 
+     * @throws ResourceContentionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DetachLoadBalancersResult detachLoadBalancers() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
      * Describes the notification types that are supported by Auto Scaling.
      * </p>
      * 
      * @return The response from the DescribeAutoScalingNotificationTypes
      *         service method, as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1608,6 +1801,37 @@ public interface AmazonAutoScaling {
     
     /**
      * <p>
+     * Attaches one or more load balancers to the specified Auto Scaling
+     * group.
+     * </p>
+     * <p>
+     * To describe the load balancers for an Auto Scaling group, use
+     * DescribeLoadBalancers. To detach the load balancer from the Auto
+     * Scaling group, use DetachLoadBalancers.
+     * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html"> Attach a Load Balancer to Your Auto Scaling Group </a>
+     * in the <i>Auto Scaling Developer Guide</i> .
+     * </p>
+     * 
+     * @return The response from the AttachLoadBalancers service method, as
+     *         returned by AmazonAutoScaling.
+     * 
+     * @throws ResourceContentionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AttachLoadBalancersResult attachLoadBalancers() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
      * Describes one or more Auto Scaling instances. If a list is not
      * provided, the call describes all instances.
      * </p>
@@ -1616,6 +1840,7 @@ public interface AmazonAutoScaling {
      *         method, as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1635,6 +1860,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeLifecycleHookTypes service
      *         method, as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1656,6 +1882,7 @@ public interface AmazonAutoScaling {
      *         method, as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1675,6 +1902,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeAdjustmentTypes service method,
      *         as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1697,6 +1925,7 @@ public interface AmazonAutoScaling {
      *         as returned by AmazonAutoScaling.
      * 
      * @throws InvalidNextTokenException
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1721,6 +1950,7 @@ public interface AmazonAutoScaling {
      * @return The response from the DescribeMetricCollectionTypes service
      *         method, as returned by AmazonAutoScaling.
      * 
+     * @throws ResourceContentionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

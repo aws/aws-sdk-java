@@ -90,47 +90,52 @@ public class DescribeFileSystemsRequestMarshaller implements Marshaller<Request<
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("MaxItems")) {
             String name = DYNAMIC_QUERY_PARAMS.get("MaxItems");
+
             String value = (describeFileSystemsRequest.getMaxItems() == null) ? null : StringUtils.fromInteger(describeFileSystemsRequest.getMaxItems());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{MaxItems}", (describeFileSystemsRequest.getMaxItems() == null) ? "" : StringUtils.fromInteger(describeFileSystemsRequest.getMaxItems())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Marker")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Marker");
+
             String value = (describeFileSystemsRequest.getMarker() == null) ? null : StringUtils.fromString(describeFileSystemsRequest.getMarker());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Marker}", (describeFileSystemsRequest.getMarker() == null) ? "" : StringUtils.fromString(describeFileSystemsRequest.getMarker())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("CreationToken")) {
             String name = DYNAMIC_QUERY_PARAMS.get("CreationToken");
+
             String value = (describeFileSystemsRequest.getCreationToken() == null) ? null : StringUtils.fromString(describeFileSystemsRequest.getCreationToken());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{CreationToken}", (describeFileSystemsRequest.getCreationToken() == null) ? "" : StringUtils.fromString(describeFileSystemsRequest.getCreationToken())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FileSystemId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FileSystemId");
+
             String value = (describeFileSystemsRequest.getFileSystemId() == null) ? null : StringUtils.fromString(describeFileSystemsRequest.getFileSystemId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FileSystemId}", (describeFileSystemsRequest.getFileSystemId() == null) ? "" : StringUtils.fromString(describeFileSystemsRequest.getFileSystemId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

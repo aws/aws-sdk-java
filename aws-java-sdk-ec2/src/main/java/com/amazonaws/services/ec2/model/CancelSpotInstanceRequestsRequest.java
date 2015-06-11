@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.CancelSpotInstanceRequestsRequ
  * periodically sets the Spot Price based on available Spot Instance
  * capacity and current Spot Instance requests. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
  * <b>IMPORTANT:</b> Canceling a Spot Instance request does not terminate

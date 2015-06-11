@@ -32,7 +32,10 @@ public class LoadBalancer implements Serializable, Cloneable {
     private String containerName;
 
     /**
-     * The port on the container to associate with the load balancer.
+     * The port on the container to associate with the load balancer. This
+     * port must correspond to a <code>containerPort</code> in the service's
+     * task definition. Your container instances must allow ingress traffic
+     * on the <code>hostPort</code> of the port mapping.
      */
     private Integer containerPort;
 
@@ -103,29 +106,47 @@ public class LoadBalancer implements Serializable, Cloneable {
     }
 
     /**
-     * The port on the container to associate with the load balancer.
+     * The port on the container to associate with the load balancer. This
+     * port must correspond to a <code>containerPort</code> in the service's
+     * task definition. Your container instances must allow ingress traffic
+     * on the <code>hostPort</code> of the port mapping.
      *
-     * @return The port on the container to associate with the load balancer.
+     * @return The port on the container to associate with the load balancer. This
+     *         port must correspond to a <code>containerPort</code> in the service's
+     *         task definition. Your container instances must allow ingress traffic
+     *         on the <code>hostPort</code> of the port mapping.
      */
     public Integer getContainerPort() {
         return containerPort;
     }
     
     /**
-     * The port on the container to associate with the load balancer.
+     * The port on the container to associate with the load balancer. This
+     * port must correspond to a <code>containerPort</code> in the service's
+     * task definition. Your container instances must allow ingress traffic
+     * on the <code>hostPort</code> of the port mapping.
      *
-     * @param containerPort The port on the container to associate with the load balancer.
+     * @param containerPort The port on the container to associate with the load balancer. This
+     *         port must correspond to a <code>containerPort</code> in the service's
+     *         task definition. Your container instances must allow ingress traffic
+     *         on the <code>hostPort</code> of the port mapping.
      */
     public void setContainerPort(Integer containerPort) {
         this.containerPort = containerPort;
     }
     
     /**
-     * The port on the container to associate with the load balancer.
+     * The port on the container to associate with the load balancer. This
+     * port must correspond to a <code>containerPort</code> in the service's
+     * task definition. Your container instances must allow ingress traffic
+     * on the <code>hostPort</code> of the port mapping.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param containerPort The port on the container to associate with the load balancer.
+     * @param containerPort The port on the container to associate with the load balancer. This
+     *         port must correspond to a <code>containerPort</code> in the service's
+     *         task definition. Your container instances must allow ingress traffic
+     *         on the <code>hostPort</code> of the port mapping.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

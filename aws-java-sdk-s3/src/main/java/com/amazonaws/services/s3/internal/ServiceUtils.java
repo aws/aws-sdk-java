@@ -183,22 +183,18 @@ public class ServiceUtils {
         StringBuilder url = new StringBuilder(request.getEndpoint().toString());
         url.append(urlPath);
 
-        boolean firstParam = true;
-        Map<String, String> requestParams = request.getParameters();
-        for (Map.Entry<String, String> entry : requestParams.entrySet()) {
-            String param = entry.getKey();
-            String value = entry.getValue();
-
-            if (firstParam) {
-                url.append("?");
-                firstParam = false;
-            } else {
-                url.append("&");
+        StringBuilder queryParams = new StringBuilder();
+        Map<String, List<String>> requestParams = request.getParameters();
+        for (Map.Entry<String, List<String>> entry : requestParams.entrySet()) {
+            for (String value : entry.getValue()) {
+                queryParams = queryParams.length() > 0 ? queryParams
+                        .append("&") : queryParams.append("?");
+                queryParams.append(entry.getKey())
+                           .append("=")
+                           .append(HttpUtils.urlEncode(value, false));
             }
-
-            url.append(param).append("=")
-                    .append(HttpUtils.urlEncode(value, false));
         }
+        url.append(queryParams.toString());
 
         try {
             return new URL(url.toString());

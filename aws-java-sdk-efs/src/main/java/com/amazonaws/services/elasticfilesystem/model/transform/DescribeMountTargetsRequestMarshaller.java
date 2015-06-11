@@ -90,36 +90,40 @@ public class DescribeMountTargetsRequestMarshaller implements Marshaller<Request
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("MaxItems")) {
             String name = DYNAMIC_QUERY_PARAMS.get("MaxItems");
+
             String value = (describeMountTargetsRequest.getMaxItems() == null) ? null : StringUtils.fromInteger(describeMountTargetsRequest.getMaxItems());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{MaxItems}", (describeMountTargetsRequest.getMaxItems() == null) ? "" : StringUtils.fromInteger(describeMountTargetsRequest.getMaxItems())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Marker")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Marker");
+
             String value = (describeMountTargetsRequest.getMarker() == null) ? null : StringUtils.fromString(describeMountTargetsRequest.getMarker());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Marker}", (describeMountTargetsRequest.getMarker() == null) ? "" : StringUtils.fromString(describeMountTargetsRequest.getMarker())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FileSystemId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FileSystemId");
+
             String value = (describeMountTargetsRequest.getFileSystemId() == null) ? null : StringUtils.fromString(describeMountTargetsRequest.getFileSystemId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FileSystemId}", (describeMountTargetsRequest.getFileSystemId() == null) ? "" : StringUtils.fromString(describeMountTargetsRequest.getFileSystemId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

@@ -90,14 +90,16 @@ public class ReadPipelineRequestMarshaller implements Marshaller<Request<ReadPip
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Id")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Id");
+
             String value = (readPipelineRequest.getId() == null) ? null : StringUtils.fromString(readPipelineRequest.getId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Id}", (readPipelineRequest.getId() == null) ? "" : StringUtils.fromString(readPipelineRequest.getId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

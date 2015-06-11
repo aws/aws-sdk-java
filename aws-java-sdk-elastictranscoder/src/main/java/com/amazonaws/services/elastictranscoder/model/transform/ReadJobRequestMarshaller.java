@@ -90,14 +90,16 @@ public class ReadJobRequestMarshaller implements Marshaller<Request<ReadJobReque
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Id")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Id");
+
             String value = (readJobRequest.getId() == null) ? null : StringUtils.fromString(readJobRequest.getId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Id}", (readJobRequest.getId() == null) ? "" : StringUtils.fromString(readJobRequest.getId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

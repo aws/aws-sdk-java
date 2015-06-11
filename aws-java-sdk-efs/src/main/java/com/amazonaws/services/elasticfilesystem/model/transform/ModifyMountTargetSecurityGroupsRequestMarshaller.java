@@ -90,14 +90,16 @@ public class ModifyMountTargetSecurityGroupsRequestMarshaller implements Marshal
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("MountTargetId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("MountTargetId");
+
             String value = (modifyMountTargetSecurityGroupsRequest.getMountTargetId() == null) ? null : StringUtils.fromString(modifyMountTargetSecurityGroupsRequest.getMountTargetId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{MountTargetId}", (modifyMountTargetSecurityGroupsRequest.getMountTargetId() == null) ? "" : StringUtils.fromString(modifyMountTargetSecurityGroupsRequest.getMountTargetId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

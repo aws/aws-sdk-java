@@ -90,14 +90,16 @@ public class DescribeMountTargetSecurityGroupsRequestMarshaller implements Marsh
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("MountTargetId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("MountTargetId");
+
             String value = (describeMountTargetSecurityGroupsRequest.getMountTargetId() == null) ? null : StringUtils.fromString(describeMountTargetSecurityGroupsRequest.getMountTargetId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{MountTargetId}", (describeMountTargetSecurityGroupsRequest.getMountTargetId() == null) ? "" : StringUtils.fromString(describeMountTargetSecurityGroupsRequest.getMountTargetId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

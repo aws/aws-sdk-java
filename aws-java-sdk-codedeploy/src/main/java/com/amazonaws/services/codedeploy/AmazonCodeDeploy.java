@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,62 +16,67 @@ package com.amazonaws.services.codedeploy;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
+
 import com.amazonaws.services.codedeploy.model.*;
 
 /**
- * Interface for accessing AmazonCodeDeploy.
- * AWS CodeDeploy <b>Overview</b> <p>
- * This is the AWS CodeDeploy API Reference. This guide provides
- * descriptions of the AWS CodeDeploy APIs. For additional information,
- * see the
- * <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide"> AWS CodeDeploy User Guide </a>
- * .
+ * Interface for accessing CodeDeploy.
+ * <p>
+ * <fullname>AWS CodeDeploy</fullname> <b>Overview</b>
+ * <p>
+ * This is the AWS CodeDeploy API Reference. This guide provides descriptions of
+ * the AWS CodeDeploy APIs. For additional information, see the <a
+ * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+ * User Guide</a>.
  * </p>
- * <b>Using the APIs</b> <p>
+ * <b>Using the APIs</b>
+ * <p>
  * You can use the AWS CodeDeploy APIs to work with the following items:
  * </p>
- * 
  * <ul>
- * <li> <p>
- * Applications are unique identifiers that AWS CodeDeploy uses to ensure
- * that the correct combinations of revisions, deployment configurations,
- * and deployment groups are being referenced during deployments.
+ * <li>
+ * <p>
+ * Applications are unique identifiers that AWS CodeDeploy uses to ensure that
+ * the correct combinations of revisions, deployment configurations, and
+ * deployment groups are being referenced during deployments.
  * </p>
  * <p>
- * You can use the AWS CodeDeploy APIs to create, delete, get, list, and
- * update applications.
+ * You can use the AWS CodeDeploy APIs to create, delete, get, list, and update
+ * applications.
  * </p>
  * </li>
- * <li> <p>
- * Deployment configurations are sets of deployment rules and deployment
- * success and failure conditions that AWS CodeDeploy uses during
- * deployments.
+ * <li>
+ * <p>
+ * Deployment configurations are sets of deployment rules and deployment success
+ * and failure conditions that AWS CodeDeploy uses during deployments.
  * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to create, delete, get, and list
  * deployment configurations.
  * </p>
  * </li>
- * <li> <p>
- * Deployment groups are groups of instances to which application
- * revisions can be deployed.
+ * <li>
+ * <p>
+ * Deployment groups are groups of instances to which application revisions can
+ * be deployed.
  * </p>
  * <p>
- * You can use the AWS CodeDeploy APIs to create, delete, get, list, and
- * update deployment groups.
+ * You can use the AWS CodeDeploy APIs to create, delete, get, list, and update
+ * deployment groups.
  * </p>
  * </li>
- * <li> <p>
- * Instances represent Amazon EC2 instances to which application
- * revisions are deployed. Instances are identified by their Amazon EC2
- * tags or Auto Scaling group names. Instances belong to deployment
- * groups.
+ * <li>
+ * <p>
+ * Instances represent Amazon EC2 instances to which application revisions are
+ * deployed. Instances are identified by their Amazon EC2 tags or Auto Scaling
+ * group names. Instances belong to deployment groups.
  * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to get and list instances.
  * </p>
  * </li>
- * <li> <p>
+ * <li>
+ * <p>
  * Deployments represent the process of deploying revisions to instances.
  * </p>
  * <p>
@@ -79,59 +84,59 @@ import com.amazonaws.services.codedeploy.model.*;
  * deployments.
  * </p>
  * </li>
- * <li> <p>
- * Application revisions are archive files that are stored in Amazon S3
- * buckets or GitHub repositories. These revisions contain source content
- * (such as source code, web pages, executable files, any deployment
- * scripts, and similar) along with an Application Specification file
- * (AppSpec file). (The AppSpec file is unique to AWS CodeDeploy; it
- * defines a series of deployment actions that you want AWS CodeDeploy to
- * execute.) An application revision is uniquely identified by its Amazon
- * S3 object key and its ETag, version, or both (for application
- * revisions that are stored in Amazon S3 buckets) or by its repository
- * name and commit ID (for applications revisions that are stored in
- * GitHub repositories). Application revisions are deployed through
+ * <li>
+ * <p>
+ * Application revisions are archive files that are stored in Amazon S3 buckets
+ * or GitHub repositories. These revisions contain source content (such as
+ * source code, web pages, executable files, any deployment scripts, and
+ * similar) along with an Application Specification file (AppSpec file). (The
+ * AppSpec file is unique to AWS CodeDeploy; it defines a series of deployment
+ * actions that you want AWS CodeDeploy to execute.) An application revision is
+ * uniquely identified by its Amazon S3 object key and its ETag, version, or
+ * both (for application revisions that are stored in Amazon S3 buckets) or by
+ * its repository name and commit ID (for applications revisions that are stored
+ * in GitHub repositories). Application revisions are deployed through
  * deployment groups.
  * </p>
  * <p>
- * You can use the AWS CodeDeploy APIs to get, list, and register
- * application revisions.
+ * You can use the AWS CodeDeploy APIs to get, list, and register application
+ * revisions.
  * </p>
  * </li>
- * 
  * </ul>
  */
 public interface AmazonCodeDeploy {
 
     /**
-     * Overrides the default endpoint for this client ("https://codedeploy.us-east-1.amazonaws.com/").
-     * Callers can use this method to control which AWS region they want to work with.
+     * Overrides the default endpoint for this client
+     * ("https://codedeploy.us-east-1.amazonaws.com"). Callers can use this
+     * method to control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "codedeploy.us-east-1.amazonaws.com/") or a full
-     * URL, including the protocol (ex: "https://codedeploy.us-east-1.amazonaws.com/"). If the
+     * Callers can pass in just the endpoint (ex:
+     * "codedeploy.us-east-1.amazonaws.com") or a full URL, including the
+     * protocol (ex: "https://codedeploy.us-east-1.amazonaws.com"). If the
      * protocol is not specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * a complete list of all available endpoints for all AWS services, see: <a
+     * href=
+     * "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912"
+     * > http://developer.amazonwebservices.com/connect/entry.jspa?externalID=
+     * 3912</a>
      * <p>
-     * <b>This method is not threadsafe. An endpoint should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit or retrying.</b>
+     * <b>This method is not threadsafe. An endpoint should be configured when
+     * the client is created and before any service requests are made. Changing
+     * it afterwards creates inevitable race conditions for any service requests
+     * in transit or retrying.</b>
      *
      * @param endpoint
-     *            The endpoint (ex: "codedeploy.us-east-1.amazonaws.com/") or a full URL,
-     *            including the protocol (ex: "https://codedeploy.us-east-1.amazonaws.com/") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
+     *        The endpoint (ex: "codedeploy.us-east-1.amazonaws.com") or a full
+     *        URL, including the protocol (ex:
+     *        "https://codedeploy.us-east-1.amazonaws.com") of the region
+     *        specific AWS endpoint this client will communicate with.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
+    void setEndpoint(String endpoint);
 
     /**
      * An alternative to {@link AmazonCodeDeploy#setEndpoint(String)}, sets the
@@ -148,1126 +153,887 @@ public interface AmazonCodeDeploy {
      * transit or retrying.</b>
      *
      * @param region
-     *            The region this client will communicate with. See
-     *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
-     *            accessing a given region.
-     * @throws java.lang.IllegalArgumentException
-     *             If the given region is null, or if this service isn't
-     *             available in the given region. See
-     *             {@link Region#isServiceSupported(String)}
+     *        The region this client will communicate with. See
+     *        {@link Region#getRegion(com.amazonaws.regions.Regions)} for
+     *        accessing a given region. Must not be null and must be a region
+     *        where the service is available.
+     *
      * @see Region#getRegion(com.amazonaws.regions.Regions)
-     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#createClient(Class,
+     *      com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#isServiceSupported(String)
      */
-    public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-    
+    void setRegion(Region region);
+
+    /**
+     * <p>
+     * Adds a tag to an on-premises instance.
+     * </p>
+     * 
+     * @param addTagsToOnPremisesInstancesRequest
+     *        Represents the input of an adds tags to on-premises instance
+     *        operation.
+     * @throws InstanceNameRequiredException
+     *         An on-premises instance name was not specified.
+     * @throws TagRequiredException
+     *         A tag was not specified.
+     * @throws InvalidTagException
+     *         The specified tag was specified in an invalid format.
+     * @throws TagLimitExceededException
+     *         The maximum allowed number of tags was exceeded.
+     * @throws InstanceLimitExceededException
+     *         The maximum number of allowed on-premises instances was exceeded.
+     * @throws InstanceNotRegisteredException
+     *         The specified on-premises instance is not registered.
+     */
+    void addTagsToOnPremisesInstances(
+            AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest);
+
+    /**
+     * <p>
+     * Gets information about one or more applications.
+     * </p>
+     * 
+     * @param batchGetApplicationsRequest
+     *        Represents the input of a batch get applications operation.
+     * @return Result of the BatchGetApplications operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     */
+    BatchGetApplicationsResult batchGetApplications(
+            BatchGetApplicationsRequest batchGetApplicationsRequest);
+
+    /**
+     * Simplified method form for invoking the BatchGetApplications operation.
+     *
+     * @see #batchGetApplications(BatchGetApplicationsRequest)
+     */
+    BatchGetApplicationsResult batchGetApplications();
+
+    /**
+     * <p>
+     * Gets information about one or more deployments.
+     * </p>
+     * 
+     * @param batchGetDeploymentsRequest
+     *        Represents the input of a batch get deployments operation.
+     * @return Result of the BatchGetDeployments operation returned by the
+     *         service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
+     */
+    BatchGetDeploymentsResult batchGetDeployments(
+            BatchGetDeploymentsRequest batchGetDeploymentsRequest);
+
+    /**
+     * Simplified method form for invoking the BatchGetDeployments operation.
+     *
+     * @see #batchGetDeployments(BatchGetDeploymentsRequest)
+     */
+    BatchGetDeploymentsResult batchGetDeployments();
+
+    /**
+     * <p>
+     * Gets information about one or more on-premises instances.
+     * </p>
+     * 
+     * @param batchGetOnPremisesInstancesRequest
+     *        Represents the input of a batch get on-premises instances
+     *        operation.
+     * @return Result of the BatchGetOnPremisesInstances operation returned by
+     *         the service.
+     * @throws InstanceNameRequiredException
+     *         An on-premises instance name was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
+     */
+    BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(
+            BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest);
+
+    /**
+     * Simplified method form for invoking the BatchGetOnPremisesInstances
+     * operation.
+     *
+     * @see #batchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest)
+     */
+    BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances();
+
+    /**
+     * <p>
+     * Creates a new application.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     *        Represents the input of a create application operation.
+     * @return Result of the CreateApplication operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationAlreadyExistsException
+     *         An application with the specified name already exists with the
+     *         applicable IAM user or AWS account.
+     * @throws ApplicationLimitExceededException
+     *         More applications were attempted to be created than were allowed.
+     */
+    CreateApplicationResult createApplication(
+            CreateApplicationRequest createApplicationRequest);
+
+    /**
+     * <p>
+     * Deploys an application revision through the specified deployment group.
+     * </p>
+     * 
+     * @param createDeploymentRequest
+     *        Represents the input of a create deployment operation.
+     * @return Result of the CreateDeployment operation returned by the service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws DeploymentGroupNameRequiredException
+     *         The deployment group name was not specified.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
+     * @throws DeploymentGroupDoesNotExistException
+     *         The named deployment group does not exist with the applicable IAM
+     *         user or AWS account.
+     * @throws RevisionRequiredException
+     *         The revision ID was not specified.
+     * @throws InvalidRevisionException
+     *         The revision was specified in an invalid format.
+     * @throws InvalidDeploymentConfigNameException
+     *         The deployment configuration name was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the applicable
+     *         IAM user or AWS account.
+     * @throws DescriptionTooLongException
+     *         The description that was provided is too long.
+     * @throws DeploymentLimitExceededException
+     *         The number of allowed deployments was exceeded.
+     */
+    CreateDeploymentResult createDeployment(
+            CreateDeploymentRequest createDeploymentRequest);
+
+    /**
+     * <p>
+     * Creates a new deployment configuration.
+     * </p>
+     * 
+     * @param createDeploymentConfigRequest
+     *        Represents the input of a create deployment configuration
+     *        operation.
+     * @return Result of the CreateDeploymentConfig operation returned by the
+     *         service.
+     * @throws InvalidDeploymentConfigNameException
+     *         The deployment configuration name was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigNameRequiredException
+     *         The deployment configuration name was not specified.
+     * @throws DeploymentConfigAlreadyExistsException
+     *         A deployment configuration with the specified name already exists
+     *         with the applicable IAM user or AWS account.
+     * @throws InvalidMinimumHealthyHostValueException
+     *         The minimum healthy instances value was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigLimitExceededException
+     *         The deployment configurations limit was exceeded.
+     */
+    CreateDeploymentConfigResult createDeploymentConfig(
+            CreateDeploymentConfigRequest createDeploymentConfigRequest);
+
+    /**
+     * <p>
+     * Creates a new deployment group for application revisions to be deployed
+     * to.
+     * </p>
+     * 
+     * @param createDeploymentGroupRequest
+     *        Represents the input of a create deployment group operation.
+     * @return Result of the CreateDeploymentGroup operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws DeploymentGroupNameRequiredException
+     *         The deployment group name was not specified.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
+     * @throws DeploymentGroupAlreadyExistsException
+     *         A deployment group with the specified name already exists with
+     *         the applicable IAM user or AWS account.
+     * @throws InvalidEC2TagException
+     *         The tag was specified in an invalid format.
+     * @throws InvalidTagException
+     *         The specified tag was specified in an invalid format.
+     * @throws InvalidAutoScalingGroupException
+     *         The Auto Scaling group was specified in an invalid format or does
+     *         not exist.
+     * @throws InvalidDeploymentConfigNameException
+     *         The deployment configuration name was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the applicable
+     *         IAM user or AWS account.
+     * @throws RoleRequiredException
+     *         The role ID was not specified.
+     * @throws InvalidRoleException
+     *         The service role ARN was specified in an invalid format. Or, if
+     *         an Auto Scaling group was specified, the specified service role
+     *         does not grant the appropriate permissions to Auto Scaling.
+     * @throws DeploymentGroupLimitExceededException
+     *         The deployment groups limit was exceeded.
+     */
+    CreateDeploymentGroupResult createDeploymentGroup(
+            CreateDeploymentGroupRequest createDeploymentGroupRequest);
+
+    /**
+     * <p>
+     * Deletes an application.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     *        Represents the input of a delete application operation.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     */
+    void deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
+
+    /**
+     * <p>
+     * Deletes a deployment configuration.
+     * </p>
+     * <note>A deployment configuration cannot be deleted if it is currently in
+     * use. Also, predefined configurations cannot be deleted.</note>
+     * 
+     * @param deleteDeploymentConfigRequest
+     *        Represents the input of a delete deployment configuration
+     *        operation.
+     * @throws InvalidDeploymentConfigNameException
+     *         The deployment configuration name was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigNameRequiredException
+     *         The deployment configuration name was not specified.
+     * @throws DeploymentConfigInUseException
+     *         The deployment configuration is still in use.
+     * @throws InvalidOperationException
+     *         An invalid operation was detected.
+     */
+    void deleteDeploymentConfig(
+            DeleteDeploymentConfigRequest deleteDeploymentConfigRequest);
+
+    /**
+     * <p>
+     * Deletes a deployment group.
+     * </p>
+     * 
+     * @param deleteDeploymentGroupRequest
+     *        Represents the input of a delete deployment group operation.
+     * @return Result of the DeleteDeploymentGroup operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws DeploymentGroupNameRequiredException
+     *         The deployment group name was not specified.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
+     * @throws InvalidRoleException
+     *         The service role ARN was specified in an invalid format. Or, if
+     *         an Auto Scaling group was specified, the specified service role
+     *         does not grant the appropriate permissions to Auto Scaling.
+     */
+    DeleteDeploymentGroupResult deleteDeploymentGroup(
+            DeleteDeploymentGroupRequest deleteDeploymentGroupRequest);
+
     /**
      * <p>
      * Deregisters an on-premises instance.
      * </p>
-     *
-     * @param deregisterOnPremisesInstanceRequest Container for the necessary
-     *           parameters to execute the DeregisterOnPremisesInstance service method
-     *           on AmazonCodeDeploy.
      * 
-     * 
-     * @throws InvalidInstanceNameException
+     * @param deregisterOnPremisesInstanceRequest
+     *        Represents the input of a deregister on-premises instance
+     *        operation.
      * @throws InstanceNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         An on-premises instance name was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
      */
-    public void deregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void deregisterOnPremisesInstance(
+            DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest);
 
     /**
      * <p>
-     * Changes an existing application's name.
+     * Gets information about an application.
      * </p>
-     *
-     * @param updateApplicationRequest Container for the necessary parameters
-     *           to execute the UpdateApplication service method on AmazonCodeDeploy.
      * 
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationAlreadyExistsException
-     * @throws ApplicationDoesNotExistException
+     * @param getApplicationRequest
+     *        Represents the input of a get application operation.
+     * @return Result of the GetApplication operation returned by the service.
      * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
      */
-    public void updateApplication(UpdateApplicationRequest updateApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    GetApplicationResult getApplication(
+            GetApplicationRequest getApplicationRequest);
+
+    /**
+     * <p>
+     * Gets information about an application revision.
+     * </p>
+     * 
+     * @param getApplicationRevisionRequest
+     *        Represents the input of a get application revision operation.
+     * @return Result of the GetApplicationRevision operation returned by the
+     *         service.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws RevisionDoesNotExistException
+     *         The named revision does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws RevisionRequiredException
+     *         The revision ID was not specified.
+     * @throws InvalidRevisionException
+     *         The revision was specified in an invalid format.
+     */
+    GetApplicationRevisionResult getApplicationRevision(
+            GetApplicationRevisionRequest getApplicationRevisionRequest);
+
+    /**
+     * <p>
+     * Gets information about a deployment.
+     * </p>
+     * 
+     * @param getDeploymentRequest
+     *        Represents the input of a get deployment operation.
+     * @return Result of the GetDeployment operation returned by the service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS
+     *         account.
+     */
+    GetDeploymentResult getDeployment(GetDeploymentRequest getDeploymentRequest);
+
+    /**
+     * <p>
+     * Gets information about a deployment configuration.
+     * </p>
+     * 
+     * @param getDeploymentConfigRequest
+     *        Represents the input of a get deployment configuration operation.
+     * @return Result of the GetDeploymentConfig operation returned by the
+     *         service.
+     * @throws InvalidDeploymentConfigNameException
+     *         The deployment configuration name was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigNameRequiredException
+     *         The deployment configuration name was not specified.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the applicable
+     *         IAM user or AWS account.
+     */
+    GetDeploymentConfigResult getDeploymentConfig(
+            GetDeploymentConfigRequest getDeploymentConfigRequest);
+
+    /**
+     * <p>
+     * Gets information about a deployment group.
+     * </p>
+     * 
+     * @param getDeploymentGroupRequest
+     *        Represents the input of a get deployment group operation.
+     * @return Result of the GetDeploymentGroup operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws DeploymentGroupNameRequiredException
+     *         The deployment group name was not specified.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
+     * @throws DeploymentGroupDoesNotExistException
+     *         The named deployment group does not exist with the applicable IAM
+     *         user or AWS account.
+     */
+    GetDeploymentGroupResult getDeploymentGroup(
+            GetDeploymentGroupRequest getDeploymentGroupRequest);
+
+    /**
+     * <p>
+     * Gets information about an instance as part of a deployment.
+     * </p>
+     * 
+     * @param getDeploymentInstanceRequest
+     *        Represents the input of a get deployment instance operation.
+     * @return Result of the GetDeploymentInstance operation returned by the
+     *         service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS
+     *         account.
+     * @throws InstanceIdRequiredException
+     *         The instance ID was not specified.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
+     * @throws InstanceDoesNotExistException
+     *         The specified instance does not exist in the deployment group.
+     */
+    GetDeploymentInstanceResult getDeploymentInstance(
+            GetDeploymentInstanceRequest getDeploymentInstanceRequest);
+
+    /**
+     * <p>
+     * Gets information about an on-premises instance.
+     * </p>
+     * 
+     * @param getOnPremisesInstanceRequest
+     *        Represents the input of a get on-premises instance operation.
+     * @return Result of the GetOnPremisesInstance operation returned by the
+     *         service.
+     * @throws InstanceNameRequiredException
+     *         An on-premises instance name was not specified.
+     * @throws InstanceNotRegisteredException
+     *         The specified on-premises instance is not registered.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
+     */
+    GetOnPremisesInstanceResult getOnPremisesInstance(
+            GetOnPremisesInstanceRequest getOnPremisesInstanceRequest);
+
+    /**
+     * <p>
+     * Lists information about revisions for an application.
+     * </p>
+     * 
+     * @param listApplicationRevisionsRequest
+     *        Represents the input of a list application revisions operation.
+     * @return Result of the ListApplicationRevisions operation returned by the
+     *         service.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws InvalidSortByException
+     *         The column name to sort by is either not present or was specified
+     *         in an invalid format.
+     * @throws InvalidSortOrderException
+     *         The sort order was specified in an invalid format.
+     * @throws InvalidBucketNameFilterException
+     *         The bucket name either doesn't exist or was specified in an
+     *         invalid format.
+     * @throws InvalidKeyPrefixFilterException
+     *         The specified key prefix filter was specified in an invalid
+     *         format.
+     * @throws BucketNameFilterRequiredException
+     *         A bucket name is required but was not provided.
+     * @throws InvalidDeployedStateFilterException
+     *         The deployed state filter was specified in an invalid format.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format.
+     */
+    ListApplicationRevisionsResult listApplicationRevisions(
+            ListApplicationRevisionsRequest listApplicationRevisionsRequest);
 
     /**
      * <p>
      * Lists the applications registered with the applicable IAM user or AWS
      * account.
      * </p>
-     *
-     * @param listApplicationsRequest Container for the necessary parameters
-     *           to execute the ListApplications service method on AmazonCodeDeploy.
      * 
-     * @return The response from the ListApplications service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
+     * @param listApplicationsRequest
+     *        Represents the input of a list applications operation.
+     * @return Result of the ListApplications operation returned by the service.
      * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The next token was specified in an invalid format.
      */
-    public ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListApplicationsResult listApplications(
+            ListApplicationsRequest listApplicationsRequest);
+
+    /**
+     * Simplified method form for invoking the ListApplications operation.
+     *
+     * @see #listApplications(ListApplicationsRequest)
+     */
+    ListApplicationsResult listApplications();
 
     /**
      * <p>
-     * Deletes a deployment group.
+     * Lists the deployment configurations with the applicable IAM user or AWS
+     * account.
      * </p>
-     *
-     * @param deleteDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the DeleteDeploymentGroup service method on
-     *           AmazonCodeDeploy.
      * 
-     * @return The response from the DeleteDeploymentGroup service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidRoleException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws InvalidApplicationNameException
-     * @throws DeploymentGroupNameRequiredException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteDeploymentGroupResult deleteDeploymentGroup(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Adds a tag to an on-premises instance.
-     * </p>
-     *
-     * @param addTagsToOnPremisesInstancesRequest Container for the necessary
-     *           parameters to execute the AddTagsToOnPremisesInstances service method
-     *           on AmazonCodeDeploy.
-     * 
-     * 
-     * @throws InstanceNotRegisteredException
-     * @throws TagLimitExceededException
-     * @throws InstanceLimitExceededException
-     * @throws InvalidTagException
-     * @throws InstanceNameRequiredException
-     * @throws TagRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void addTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Lists the deployments within a deployment group for an application
-     * registered with the applicable IAM user or AWS account.
-     * </p>
-     *
-     * @param listDeploymentsRequest Container for the necessary parameters
-     *           to execute the ListDeployments service method on AmazonCodeDeploy.
-     * 
-     * @return The response from the ListDeployments service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws DeploymentGroupDoesNotExistException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws InvalidApplicationNameException
-     * @throws InvalidTimeRangeException
-     * @throws DeploymentGroupNameRequiredException
+     * @param listDeploymentConfigsRequest
+     *        Represents the input of a list deployment configurations
+     *        operation.
+     * @return Result of the ListDeploymentConfigs operation returned by the
+     *         service.
      * @throws InvalidNextTokenException
-     * @throws ApplicationDoesNotExistException
-     * @throws InvalidDeploymentStatusException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The next token was specified in an invalid format.
      */
-    public ListDeploymentsResult listDeployments(ListDeploymentsRequest listDeploymentsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListDeploymentConfigsResult listDeploymentConfigs(
+            ListDeploymentConfigsRequest listDeploymentConfigsRequest);
 
     /**
-     * <p>
-     * Attempts to stop an ongoing deployment.
-     * </p>
+     * Simplified method form for invoking the ListDeploymentConfigs operation.
      *
-     * @param stopDeploymentRequest Container for the necessary parameters to
-     *           execute the StopDeployment service method on AmazonCodeDeploy.
-     * 
-     * @return The response from the StopDeployment service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
-     * @throws DeploymentAlreadyCompletedException
-     * @throws DeploymentIdRequiredException
-     * @throws DeploymentDoesNotExistException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @see #listDeploymentConfigs(ListDeploymentConfigsRequest)
      */
-    public StopDeploymentResult stopDeployment(StopDeploymentRequest stopDeploymentRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new application.
-     * </p>
-     *
-     * @param createApplicationRequest Container for the necessary parameters
-     *           to execute the CreateApplication service method on AmazonCodeDeploy.
-     * 
-     * @return The response from the CreateApplication service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationAlreadyExistsException
-     * @throws ApplicationLimitExceededException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets information about an application.
-     * </p>
-     *
-     * @param getApplicationRequest Container for the necessary parameters to
-     *           execute the GetApplication service method on AmazonCodeDeploy.
-     * 
-     * @return The response from the GetApplication service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetApplicationResult getApplication(GetApplicationRequest getApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new deployment group for application revisions to be
-     * deployed to.
-     * </p>
-     *
-     * @param createDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the CreateDeploymentGroup service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the CreateDeploymentGroup service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws RoleRequiredException
-     * @throws InvalidRoleException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws DeploymentConfigDoesNotExistException
-     * @throws InvalidAutoScalingGroupException
-     * @throws InvalidApplicationNameException
-     * @throws DeploymentGroupNameRequiredException
-     * @throws InvalidDeploymentConfigNameException
-     * @throws DeploymentGroupAlreadyExistsException
-     * @throws InvalidTagException
-     * @throws DeploymentGroupLimitExceededException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     * @throws InvalidEC2TagException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateDeploymentGroupResult createDeploymentGroup(CreateDeploymentGroupRequest createDeploymentGroupRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets information about one or more on-premises instances.
-     * </p>
-     *
-     * @param batchGetOnPremisesInstancesRequest Container for the necessary
-     *           parameters to execute the BatchGetOnPremisesInstances service method
-     *           on AmazonCodeDeploy.
-     * 
-     * @return The response from the BatchGetOnPremisesInstances service
-     *         method, as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidInstanceNameException
-     * @throws InstanceNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets information about one or more deployments.
-     * </p>
-     *
-     * @param batchGetDeploymentsRequest Container for the necessary
-     *           parameters to execute the BatchGetDeployments service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the BatchGetDeployments service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
-     * @throws DeploymentIdRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public BatchGetDeploymentsResult batchGetDeployments(BatchGetDeploymentsRequest batchGetDeploymentsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets information about an instance as part of a deployment.
-     * </p>
-     *
-     * @param getDeploymentInstanceRequest Container for the necessary
-     *           parameters to execute the GetDeploymentInstance service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the GetDeploymentInstance service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
-     * @throws InstanceIdRequiredException
-     * @throws DeploymentIdRequiredException
-     * @throws DeploymentDoesNotExistException
-     * @throws InstanceDoesNotExistException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetDeploymentInstanceResult getDeploymentInstance(GetDeploymentInstanceRequest getDeploymentInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets information about an application revision.
-     * </p>
-     *
-     * @param getApplicationRevisionRequest Container for the necessary
-     *           parameters to execute the GetApplicationRevision service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the GetApplicationRevision service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidRevisionException
-     * @throws RevisionRequiredException
-     * @throws InvalidApplicationNameException
-     * @throws RevisionDoesNotExistException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetApplicationRevisionResult getApplicationRevision(GetApplicationRevisionRequest getApplicationRevisionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Registers an on-premises instance.
-     * </p>
-     *
-     * @param registerOnPremisesInstanceRequest Container for the necessary
-     *           parameters to execute the RegisterOnPremisesInstance service method on
-     *           AmazonCodeDeploy.
-     * 
-     * 
-     * @throws InvalidIamUserArnException
-     * @throws InvalidInstanceNameException
-     * @throws InstanceNameRequiredException
-     * @throws InstanceNameAlreadyRegisteredException
-     * @throws IamUserArnAlreadyRegisteredException
-     * @throws IamUserArnRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void registerOnPremisesInstance(RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets information about a deployment group.
-     * </p>
-     *
-     * @param getDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the GetDeploymentGroup service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the GetDeploymentGroup service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws DeploymentGroupDoesNotExistException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws InvalidApplicationNameException
-     * @throws DeploymentGroupNameRequiredException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetDeploymentGroupResult getDeploymentGroup(GetDeploymentGroupRequest getDeploymentGroupRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new deployment configuration.
-     * </p>
-     *
-     * @param createDeploymentConfigRequest Container for the necessary
-     *           parameters to execute the CreateDeploymentConfig service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the CreateDeploymentConfig service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws DeploymentConfigLimitExceededException
-     * @throws InvalidMinimumHealthyHostValueException
-     * @throws InvalidDeploymentConfigNameException
-     * @throws DeploymentConfigAlreadyExistsException
-     * @throws DeploymentConfigNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateDeploymentConfigResult createDeploymentConfig(CreateDeploymentConfigRequest createDeploymentConfigRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Lists the instances for a deployment associated with the applicable
-     * IAM user or AWS account.
-     * </p>
-     *
-     * @param listDeploymentInstancesRequest Container for the necessary
-     *           parameters to execute the ListDeploymentInstances service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the ListDeploymentInstances service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
-     * @throws InvalidInstanceStatusException
-     * @throws DeploymentIdRequiredException
-     * @throws DeploymentDoesNotExistException
-     * @throws DeploymentNotStartedException
-     * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListDeploymentInstancesResult listDeploymentInstances(ListDeploymentInstancesRequest listDeploymentInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets a list of one or more on-premises instance names.
-     * </p>
-     * <p>
-     * Unless otherwise specified, both registered and deregistered
-     * on-premises instance names will be listed. To list only registered or
-     * deregistered on-premises instance names, use the registration status
-     * parameter.
-     * </p>
-     *
-     * @param listOnPremisesInstancesRequest Container for the necessary
-     *           parameters to execute the ListOnPremisesInstances service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the ListOnPremisesInstances service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidTagFilterException
-     * @throws InvalidRegistrationStatusException
-     * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListOnPremisesInstancesResult listOnPremisesInstances(ListOnPremisesInstancesRequest listOnPremisesInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListDeploymentConfigsResult listDeploymentConfigs();
 
     /**
      * <p>
      * Lists the deployment groups for an application registered with the
      * applicable IAM user or AWS account.
      * </p>
-     *
-     * @param listDeploymentGroupsRequest Container for the necessary
-     *           parameters to execute the ListDeploymentGroups service method on
-     *           AmazonCodeDeploy.
      * 
-     * @return The response from the ListDeploymentGroups service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
+     * @param listDeploymentGroupsRequest
+     *        Represents the input of a list deployment groups operation.
+     * @return Result of the ListDeploymentGroups operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
      * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
      * @throws InvalidNextTokenException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The next token was specified in an invalid format.
      */
-    public ListDeploymentGroupsResult listDeploymentGroups(ListDeploymentGroupsRequest listDeploymentGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListDeploymentGroupsResult listDeploymentGroups(
+            ListDeploymentGroupsRequest listDeploymentGroupsRequest);
 
     /**
      * <p>
-     * Gets information about a deployment configuration.
+     * Lists the instances for a deployment associated with the applicable IAM
+     * user or AWS account.
      * </p>
-     *
-     * @param getDeploymentConfigRequest Container for the necessary
-     *           parameters to execute the GetDeploymentConfig service method on
-     *           AmazonCodeDeploy.
      * 
-     * @return The response from the GetDeploymentConfig service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws DeploymentConfigDoesNotExistException
-     * @throws InvalidDeploymentConfigNameException
-     * @throws DeploymentConfigNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetDeploymentConfigResult getDeploymentConfig(GetDeploymentConfigRequest getDeploymentConfigRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Registers with AWS CodeDeploy a revision for the specified
-     * application.
-     * </p>
-     *
-     * @param registerApplicationRevisionRequest Container for the necessary
-     *           parameters to execute the RegisterApplicationRevision service method
-     *           on AmazonCodeDeploy.
-     * 
-     * 
-     * @throws InvalidRevisionException
-     * @throws RevisionRequiredException
-     * @throws InvalidApplicationNameException
-     * @throws DescriptionTooLongException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void registerApplicationRevision(RegisterApplicationRevisionRequest registerApplicationRevisionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets information about one or more applications.
-     * </p>
-     *
-     * @param batchGetApplicationsRequest Container for the necessary
-     *           parameters to execute the BatchGetApplications service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the BatchGetApplications service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public BatchGetApplicationsResult batchGetApplications(BatchGetApplicationsRequest batchGetApplicationsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets information about an on-premises instance.
-     * </p>
-     *
-     * @param getOnPremisesInstanceRequest Container for the necessary
-     *           parameters to execute the GetOnPremisesInstance service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the GetOnPremisesInstance service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InstanceNotRegisteredException
-     * @throws InvalidInstanceNameException
-     * @throws InstanceNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetOnPremisesInstanceResult getOnPremisesInstance(GetOnPremisesInstanceRequest getOnPremisesInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Lists information about revisions for an application.
-     * </p>
-     *
-     * @param listApplicationRevisionsRequest Container for the necessary
-     *           parameters to execute the ListApplicationRevisions service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the ListApplicationRevisions service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidSortByException
-     * @throws InvalidApplicationNameException
-     * @throws InvalidKeyPrefixFilterException
-     * @throws InvalidNextTokenException
-     * @throws BucketNameFilterRequiredException
-     * @throws InvalidSortOrderException
-     * @throws InvalidDeployedStateFilterException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     * @throws InvalidBucketNameFilterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListApplicationRevisionsResult listApplicationRevisions(ListApplicationRevisionsRequest listApplicationRevisionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Changes information about an existing deployment group.
-     * </p>
-     *
-     * @param updateDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the UpdateDeploymentGroup service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the UpdateDeploymentGroup service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidRoleException
-     * @throws DeploymentGroupDoesNotExistException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws DeploymentConfigDoesNotExistException
-     * @throws InvalidApplicationNameException
-     * @throws InvalidAutoScalingGroupException
-     * @throws DeploymentGroupNameRequiredException
-     * @throws InvalidDeploymentConfigNameException
-     * @throws DeploymentGroupAlreadyExistsException
-     * @throws InvalidTagException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     * @throws InvalidEC2TagException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateDeploymentGroupResult updateDeploymentGroup(UpdateDeploymentGroupRequest updateDeploymentGroupRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a deployment configuration.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>A deployment configuration cannot be deleted if it is
-     * currently in use. Also, predefined configurations cannot be deleted.
-     * </p>
-     *
-     * @param deleteDeploymentConfigRequest Container for the necessary
-     *           parameters to execute the DeleteDeploymentConfig service method on
-     *           AmazonCodeDeploy.
-     * 
-     * 
-     * @throws InvalidOperationException
-     * @throws InvalidDeploymentConfigNameException
-     * @throws DeploymentConfigInUseException
-     * @throws DeploymentConfigNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteDeploymentConfig(DeleteDeploymentConfigRequest deleteDeploymentConfigRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes an application.
-     * </p>
-     *
-     * @param deleteApplicationRequest Container for the necessary parameters
-     *           to execute the DeleteApplication service method on AmazonCodeDeploy.
-     * 
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteApplication(DeleteApplicationRequest deleteApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets information about a deployment.
-     * </p>
-     *
-     * @param getDeploymentRequest Container for the necessary parameters to
-     *           execute the GetDeployment service method on AmazonCodeDeploy.
-     * 
-     * @return The response from the GetDeployment service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
+     * @param listDeploymentInstancesRequest
+     *        Represents the input of a list deployment instances operation.
+     * @return Result of the ListDeploymentInstances operation returned by the
+     *         service.
      * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetDeploymentResult getDeployment(GetDeploymentRequest getDeploymentRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deploys an application revision through the specified deployment
-     * group.
-     * </p>
-     *
-     * @param createDeploymentRequest Container for the necessary parameters
-     *           to execute the CreateDeployment service method on AmazonCodeDeploy.
-     * 
-     * @return The response from the CreateDeployment service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidRevisionException
-     * @throws DeploymentGroupDoesNotExistException
-     * @throws RevisionRequiredException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws DeploymentConfigDoesNotExistException
-     * @throws InvalidApplicationNameException
-     * @throws DeploymentGroupNameRequiredException
-     * @throws DescriptionTooLongException
-     * @throws InvalidDeploymentConfigNameException
-     * @throws DeploymentLimitExceededException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Removes one or more tags from one or more on-premises instances.
-     * </p>
-     *
-     * @param removeTagsFromOnPremisesInstancesRequest Container for the
-     *           necessary parameters to execute the RemoveTagsFromOnPremisesInstances
-     *           service method on AmazonCodeDeploy.
-     * 
-     * 
-     * @throws InstanceNotRegisteredException
-     * @throws TagLimitExceededException
-     * @throws InstanceLimitExceededException
-     * @throws InvalidTagException
-     * @throws InstanceNameRequiredException
-     * @throws TagRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void removeTagsFromOnPremisesInstances(RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Lists the deployment configurations with the applicable IAM user or
-     * AWS account.
-     * </p>
-     *
-     * @param listDeploymentConfigsRequest Container for the necessary
-     *           parameters to execute the ListDeploymentConfigs service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the ListDeploymentConfigs service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
+     *         The deployment does not exist with the applicable IAM user or AWS
+     *         account.
+     * @throws DeploymentNotStartedException
+     *         The specified deployment has not started.
      * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The next token was specified in an invalid format.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
+     * @throws InvalidInstanceStatusException
+     *         The specified instance status does not exist.
      */
-    public ListDeploymentConfigsResult listDeploymentConfigs(ListDeploymentConfigsRequest listDeploymentConfigsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListDeploymentInstancesResult listDeploymentInstances(
+            ListDeploymentInstancesRequest listDeploymentInstancesRequest);
 
-    /**
-     * <p>
-     * Changes an existing application's name.
-     * </p>
-     * 
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationAlreadyExistsException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateApplication() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Lists the applications registered with the applicable IAM user or AWS
-     * account.
-     * </p>
-     * 
-     * @return The response from the ListApplications service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListApplicationsResult listApplications() throws AmazonServiceException, AmazonClientException;
-    
     /**
      * <p>
      * Lists the deployments within a deployment group for an application
      * registered with the applicable IAM user or AWS account.
      * </p>
      * 
-     * @return The response from the ListDeployments service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws DeploymentGroupDoesNotExistException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws InvalidApplicationNameException
-     * @throws InvalidTimeRangeException
-     * @throws DeploymentGroupNameRequiredException
-     * @throws InvalidNextTokenException
-     * @throws ApplicationDoesNotExistException
-     * @throws InvalidDeploymentStatusException
+     * @param listDeploymentsRequest
+     *        Represents the input of a list deployments operation.
+     * @return Result of the ListDeployments operation returned by the service.
      * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
+     * @throws DeploymentGroupDoesNotExistException
+     *         The named deployment group does not exist with the applicable IAM
+     *         user or AWS account.
+     * @throws DeploymentGroupNameRequiredException
+     *         The deployment group name was not specified.
+     * @throws InvalidTimeRangeException
+     *         The specified time range was specified in an invalid format.
+     * @throws InvalidDeploymentStatusException
+     *         The specified deployment status doesn't exist or cannot be
+     *         determined.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format.
      */
-    public ListDeploymentsResult listDeployments() throws AmazonServiceException, AmazonClientException;
-    
+    ListDeploymentsResult listDeployments(
+            ListDeploymentsRequest listDeploymentsRequest);
+
     /**
-     * <p>
-     * Gets information about one or more on-premises instances.
-     * </p>
-     * 
-     * @return The response from the BatchGetOnPremisesInstances service
-     *         method, as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidInstanceNameException
-     * @throws InstanceNameRequiredException
+     * Simplified method form for invoking the ListDeployments operation.
      *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @see #listDeployments(ListDeploymentsRequest)
      */
-    public BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Gets information about one or more deployments.
-     * </p>
-     * 
-     * @return The response from the BatchGetDeployments service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
-     * @throws DeploymentIdRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public BatchGetDeploymentsResult batchGetDeployments() throws AmazonServiceException, AmazonClientException;
-    
+    ListDeploymentsResult listDeployments();
+
     /**
      * <p>
      * Gets a list of one or more on-premises instance names.
      * </p>
      * <p>
-     * Unless otherwise specified, both registered and deregistered
-     * on-premises instance names will be listed. To list only registered or
-     * deregistered on-premises instance names, use the registration status
-     * parameter.
+     * Unless otherwise specified, both registered and deregistered on-premises
+     * instance names will be listed. To list only registered or deregistered
+     * on-premises instance names, use the registration status parameter.
      * </p>
      * 
-     * @return The response from the ListOnPremisesInstances service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidTagFilterException
+     * @param listOnPremisesInstancesRequest
+     *        Represents the input of a list on-premises instances operation.
+     * @return Result of the ListOnPremisesInstances operation returned by the
+     *         service.
      * @throws InvalidRegistrationStatusException
+     *         The registration status was specified in an invalid format.
+     * @throws InvalidTagFilterException
+     *         The specified tag filter was specified in an invalid format.
      * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The next token was specified in an invalid format.
      */
-    public ListOnPremisesInstancesResult listOnPremisesInstances() throws AmazonServiceException, AmazonClientException;
-    
+    ListOnPremisesInstancesResult listOnPremisesInstances(
+            ListOnPremisesInstancesRequest listOnPremisesInstancesRequest);
+
+    /**
+     * Simplified method form for invoking the ListOnPremisesInstances
+     * operation.
+     *
+     * @see #listOnPremisesInstances(ListOnPremisesInstancesRequest)
+     */
+    ListOnPremisesInstancesResult listOnPremisesInstances();
+
     /**
      * <p>
-     * Gets information about one or more applications.
+     * Registers with AWS CodeDeploy a revision for the specified application.
      * </p>
      * 
-     * @return The response from the BatchGetApplications service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidApplicationNameException
+     * @param registerApplicationRevisionRequest
+     *        Represents the input of a register application revision operation.
      * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
      * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws DescriptionTooLongException
+     *         The description that was provided is too long.
+     * @throws RevisionRequiredException
+     *         The revision ID was not specified.
+     * @throws InvalidRevisionException
+     *         The revision was specified in an invalid format.
      */
-    public BatchGetApplicationsResult batchGetApplications() throws AmazonServiceException, AmazonClientException;
-    
+    void registerApplicationRevision(
+            RegisterApplicationRevisionRequest registerApplicationRevisionRequest);
+
     /**
      * <p>
-     * Lists the deployment configurations with the applicable IAM user or
-     * AWS account.
+     * Registers an on-premises instance.
      * </p>
      * 
-     * @return The response from the ListDeploymentConfigs service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param registerOnPremisesInstanceRequest
+     *        Represents the input of register on-premises instance operation.
+     * @throws InstanceNameAlreadyRegisteredException
+     *         The specified on-premises instance name is already registered.
+     * @throws IamUserArnAlreadyRegisteredException
+     *         The specified IAM user ARN is already registered with an
+     *         on-premises instance.
+     * @throws InstanceNameRequiredException
+     *         An on-premises instance name was not specified.
+     * @throws IamUserArnRequiredException
+     *         An IAM user ARN was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
+     * @throws InvalidIamUserArnException
+     *         The IAM user ARN was specified in an invalid format.
      */
-    public ListDeploymentConfigsResult listDeploymentConfigs() throws AmazonServiceException, AmazonClientException;
-    
+    void registerOnPremisesInstance(
+            RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from one or more on-premises instances.
+     * </p>
+     * 
+     * @param removeTagsFromOnPremisesInstancesRequest
+     *        Represents the input of a remove tags from on-premises instances
+     *        operation.
+     * @throws InstanceNameRequiredException
+     *         An on-premises instance name was not specified.
+     * @throws TagRequiredException
+     *         A tag was not specified.
+     * @throws InvalidTagException
+     *         The specified tag was specified in an invalid format.
+     * @throws TagLimitExceededException
+     *         The maximum allowed number of tags was exceeded.
+     * @throws InstanceLimitExceededException
+     *         The maximum number of allowed on-premises instances was exceeded.
+     * @throws InstanceNotRegisteredException
+     *         The specified on-premises instance is not registered.
+     */
+    void removeTagsFromOnPremisesInstances(
+            RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest);
+
+    /**
+     * <p>
+     * Attempts to stop an ongoing deployment.
+     * </p>
+     * 
+     * @param stopDeploymentRequest
+     *        Represents the input of a stop deployment operation.
+     * @return Result of the StopDeployment operation returned by the service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS
+     *         account.
+     * @throws DeploymentAlreadyCompletedException
+     *         The deployment is already completed.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
+     */
+    StopDeploymentResult stopDeployment(
+            StopDeploymentRequest stopDeploymentRequest);
+
+    /**
+     * <p>
+     * Changes an existing application's name.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     *        Represents the input of an update application operation.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationAlreadyExistsException
+     *         An application with the specified name already exists with the
+     *         applicable IAM user or AWS account.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     */
+    void updateApplication(UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * Simplified method form for invoking the UpdateApplication operation.
+     *
+     * @see #updateApplication(UpdateApplicationRequest)
+     */
+    void updateApplication();
+
+    /**
+     * <p>
+     * Changes information about an existing deployment group.
+     * </p>
+     * 
+     * @param updateDeploymentGroupRequest
+     *        Represents the input of an update deployment group operation.
+     * @return Result of the UpdateDeploymentGroup operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
+     * @throws DeploymentGroupAlreadyExistsException
+     *         A deployment group with the specified name already exists with
+     *         the applicable IAM user or AWS account.
+     * @throws DeploymentGroupNameRequiredException
+     *         The deployment group name was not specified.
+     * @throws DeploymentGroupDoesNotExistException
+     *         The named deployment group does not exist with the applicable IAM
+     *         user or AWS account.
+     * @throws InvalidEC2TagException
+     *         The tag was specified in an invalid format.
+     * @throws InvalidTagException
+     *         The specified tag was specified in an invalid format.
+     * @throws InvalidAutoScalingGroupException
+     *         The Auto Scaling group was specified in an invalid format or does
+     *         not exist.
+     * @throws InvalidDeploymentConfigNameException
+     *         The deployment configuration name was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the applicable
+     *         IAM user or AWS account.
+     * @throws InvalidRoleException
+     *         The service role ARN was specified in an invalid format. Or, if
+     *         an Auto Scaling group was specified, the specified service role
+     *         does not grant the appropriate permissions to Auto Scaling.
+     */
+    UpdateDeploymentGroupResult updateDeploymentGroup(
+            UpdateDeploymentGroupRequest updateDeploymentGroupRequest);
+
     /**
      * Shuts down this client object, releasing any resources that might be held
      * open. This is an optional method, and callers are not expected to call
@@ -1275,24 +1041,25 @@ public interface AmazonCodeDeploy {
      * client has been shutdown, it should not be used to make any more
      * requests.
      */
-    public void shutdown();
-    
+    void shutdown();
+
     /**
-     * Returns additional metadata for a previously executed successful request, typically used for
-     * debugging issues where a service isn't acting as expected.  This data isn't considered part
-     * of the result data returned by an operation, so it's available through this separate,
-     * diagnostic interface.
+     * Returns additional metadata for a previously executed successful request,
+     * typically used for debugging issues where a service isn't acting as
+     * expected. This data isn't considered part of the result data returned by
+     * an operation, so it's available through this separate, diagnostic
+     * interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you need to access
-     * this extra diagnostic information for an executed request, you should use this method
-     * to retrieve it as soon as possible after executing a request.
+     * Response metadata is only cached for a limited period of time, so if you
+     * need to access this extra diagnostic information for an executed request,
+     * you should use this method to retrieve it as soon as possible after
+     * executing a request.
      *
      * @param request
-     *            The originally executed request.
+     *        The originally executed request.
      *
      * @return The response metadata for the specified request, or null if none
      *         is available.
      */
-    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+    ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 }
-        

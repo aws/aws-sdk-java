@@ -90,14 +90,16 @@ public class UpdateFunctionCodeRequestMarshaller implements Marshaller<Request<U
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FunctionName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FunctionName");
+
             String value = (updateFunctionCodeRequest.getFunctionName() == null) ? null : StringUtils.fromString(updateFunctionCodeRequest.getFunctionName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (updateFunctionCodeRequest.getFunctionName() == null) ? "" : StringUtils.fromString(updateFunctionCodeRequest.getFunctionName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

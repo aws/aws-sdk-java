@@ -90,36 +90,40 @@ public class ListVaultsRequestMarshaller implements Marshaller<Request<ListVault
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (listVaultsRequest.getAccountId() == null) ? null : StringUtils.fromString(listVaultsRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (listVaultsRequest.getAccountId() == null) ? "" : StringUtils.fromString(listVaultsRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("marker")) {
             String name = DYNAMIC_QUERY_PARAMS.get("marker");
+
             String value = (listVaultsRequest.getMarker() == null) ? null : StringUtils.fromString(listVaultsRequest.getMarker());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{marker}", (listVaultsRequest.getMarker() == null) ? "" : StringUtils.fromString(listVaultsRequest.getMarker())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("limit")) {
             String name = DYNAMIC_QUERY_PARAMS.get("limit");
+
             String value = (listVaultsRequest.getLimit() == null) ? null : StringUtils.fromString(listVaultsRequest.getLimit());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{limit}", (listVaultsRequest.getLimit() == null) ? "" : StringUtils.fromString(listVaultsRequest.getLimit())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

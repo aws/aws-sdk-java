@@ -90,14 +90,16 @@ public class CreateTagsRequestMarshaller implements Marshaller<Request<CreateTag
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FileSystemId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FileSystemId");
+
             String value = (createTagsRequest.getFileSystemId() == null) ? null : StringUtils.fromString(createTagsRequest.getFileSystemId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FileSystemId}", (createTagsRequest.getFileSystemId() == null) ? "" : StringUtils.fromString(createTagsRequest.getFileSystemId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

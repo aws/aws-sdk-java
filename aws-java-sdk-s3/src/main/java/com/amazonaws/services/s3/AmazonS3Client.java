@@ -339,6 +339,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 new ProfileCredentialsProvider(),
                 new InstanceProfileCredentialsProvider()) {
 
+            @Override
             public AWSCredentials getCredentials() {
                 try {
                     return super.getCredentials();
@@ -529,6 +530,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @param clientOptions
      *            The S3 client options to use.
      */
+    @Override
     public void setS3ClientOptions(S3ClientOptions clientOptions) {
         this.clientOptions = new S3ClientOptions(clientOptions);
     }
@@ -536,6 +538,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listNextBatchOfVersions(com.amazonaws.services.s3.model.S3VersionListing)
      */
+    @Override
     public VersionListing listNextBatchOfVersions(VersionListing previousVersionListing)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(previousVersionListing,
@@ -568,6 +571,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listVersions(java.lang.String, java.lang.String)
      */
+    @Override
     public VersionListing listVersions(String bucketName, String prefix)
             throws AmazonClientException, AmazonServiceException {
         return listVersions(new ListVersionsRequest(bucketName, prefix, null, null, null, null));
@@ -576,6 +580,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listVersions(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Integer)
      */
+    @Override
     public VersionListing listVersions(String bucketName, String prefix, String keyMarker, String versionIdMarker, String delimiter, Integer maxKeys)
             throws AmazonClientException, AmazonServiceException {
 
@@ -592,6 +597,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listVersions(com.amazonaws.services.s3.model.ListVersionsRequest)
      */
+    @Override
     public VersionListing listVersions(ListVersionsRequest listVersionsRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(listVersionsRequest.getBucketName(), "The bucket name parameter must be specified when listing versions in a bucket");
@@ -612,6 +618,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listObjects(java.lang.String)
      */
+    @Override
     public ObjectListing listObjects(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         return listObjects(new ListObjectsRequest(bucketName, null, null, null, null));
@@ -620,6 +627,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listObjects(java.lang.String, java.lang.String)
      */
+    @Override
     public ObjectListing listObjects(String bucketName, String prefix)
             throws AmazonClientException, AmazonServiceException {
         return listObjects(new ListObjectsRequest(bucketName, prefix, null, null, null));
@@ -628,6 +636,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listObjects(com.amazonaws.services.s3.model.ListObjectsRequest)
      */
+    @Override
     public ObjectListing listObjects(ListObjectsRequest listObjectsRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(listObjectsRequest.getBucketName(), "The bucket name parameter must be specified when listing objects in a bucket");
@@ -645,6 +654,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listNextBatchOfObjects(com.amazonaws.services.s3.model.S3ObjectListing)
      */
+    @Override
     public ObjectListing listNextBatchOfObjects(ObjectListing previousObjectListing)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(previousObjectListing,
@@ -675,6 +685,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getS3AccountOwner()
      */
+    @Override
     public Owner getS3AccountOwner()
             throws AmazonClientException, AmazonServiceException {
         Request<ListBucketsRequest> request = createRequest(null, null, new ListBucketsRequest(), HttpMethodName.GET);
@@ -684,6 +695,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listBuckets()
      */
+    @Override
     public List<Bucket> listBuckets(ListBucketsRequest listBucketsRequest)
             throws AmazonClientException, AmazonServiceException {
         Request<ListBucketsRequest> request = createRequest(null, null, listBucketsRequest, HttpMethodName.GET);
@@ -693,6 +705,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listBuckets()
      */
+    @Override
     public List<Bucket> listBuckets()
             throws AmazonClientException, AmazonServiceException {
         return listBuckets(new ListBucketsRequest());
@@ -701,6 +714,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketLocation(com.amazonaws.services.s3.AmazonS3Client.GetBucketLocationRequest)
      */
+    @Override
     public String getBucketLocation(GetBucketLocationRequest getBucketLocationRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(getBucketLocationRequest, "The request parameter must be specified when requesting a bucket's location");
@@ -716,6 +730,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketLocation(java.lang.String)
      */
+    @Override
     public String getBucketLocation(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         return getBucketLocation(new GetBucketLocationRequest(bucketName));
@@ -724,6 +739,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#createBucketjava.lang.String)
      */
+    @Override
     public Bucket createBucket(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         return createBucket(new CreateBucketRequest(bucketName));
@@ -732,6 +748,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#createBucket(java.lang.String, com.amazonaws.services.s3.model.Region)
      */
+    @Override
     public Bucket createBucket(String bucketName, Region region)
             throws AmazonClientException, AmazonServiceException {
         return createBucket(new CreateBucketRequest(bucketName, region));
@@ -740,6 +757,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#createBucket(java.lang.String, java.lang.String)
      */
+    @Override
     public Bucket createBucket(String bucketName, String region)
             throws AmazonClientException, AmazonServiceException {
         return createBucket(new CreateBucketRequest(bucketName, region));
@@ -748,6 +766,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#createBucket(com.amazonaws.services.s3.model.CreateBucketRequest)
      */
+    @Override
     public Bucket createBucket(CreateBucketRequest createBucketRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(createBucketRequest,
@@ -804,6 +823,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getObjectAcl(java.lang.String, java.lang.String)
      */
+    @Override
     public AccessControlList getObjectAcl(String bucketName, String key)
             throws AmazonClientException, AmazonServiceException {
         return getObjectAcl(bucketName, key, null);
@@ -812,6 +832,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getObjectAcl(java.lang.String, java.lang.String, java.lang.String)
      */
+    @Override
     public AccessControlList getObjectAcl(String bucketName, String key, String versionId)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(bucketName, "The bucket name parameter must be specified when requesting an object's ACL");
@@ -917,6 +938,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketAcl(com.amazonaws.services.s3.GetBucketAclRequest)
      */
+    @Override
     public AccessControlList getBucketAcl(GetBucketAclRequest getBucketAclRequest)
         throws AmazonClientException, AmazonServiceException {
         String bucketName = getBucketAclRequest.getBucketName();
@@ -997,6 +1019,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getObjectMetadata(java.lang.String, java.lang.String)
      */
+    @Override
     public ObjectMetadata getObjectMetadata(String bucketName, String key)
             throws AmazonClientException, AmazonServiceException {
         return getObjectMetadata(new GetObjectMetadataRequest(bucketName, key));
@@ -1005,6 +1028,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getObjectMetadata(com.amazonaws.services.s3.model.GetObjectMetadataRequest)
      */
+    @Override
     public ObjectMetadata getObjectMetadata(GetObjectMetadataRequest getObjectMetadataRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(getObjectMetadataRequest, "The GetObjectMetadataRequest parameter must be specified when requesting an object's metadata");
@@ -1027,6 +1051,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getObject(java.lang.String, java.lang.String)
      */
+    @Override
     public S3Object getObject(String bucketName, String key)
             throws AmazonClientException, AmazonServiceException {
         return getObject(new GetObjectRequest(bucketName, key));
@@ -1035,6 +1060,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#doesBucketExist(java.lang.String)
      */
+    @Override
     public boolean doesBucketExist(String bucketName)
             throws AmazonClientException, AmazonServiceException {
 
@@ -1082,6 +1108,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#changeStorageClass(java.lang.String, java.lang.String, java.lang.String)
      */
+    @Override
     public void changeObjectStorageClass(String bucketName, String key, StorageClass newStorageClass)
         throws AmazonClientException, AmazonServiceException {
         rejectNull(bucketName,
@@ -1098,6 +1125,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setObjectRedirectLocation(java.lang.String, java.lang.String, java.lang.String)
      */
+    @Override
     public void setObjectRedirectLocation(String bucketName, String key, String newRedirectLocation)
         throws AmazonClientException, AmazonServiceException {
         rejectNull(bucketName,
@@ -1114,6 +1142,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getObject(com.amazonaws.services.s3.model.GetObjectRequest)
      */
+    @Override
     public S3Object getObject(GetObjectRequest getObjectRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(getObjectRequest,
@@ -1236,6 +1265,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getObject(com.amazonaws.services.s3.model.GetObjectRequest, java.io.File)
      */
+    @Override
     public ObjectMetadata getObject(final GetObjectRequest getObjectRequest, File destinationFile)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(destinationFile,
@@ -1264,6 +1294,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucket(java.lang.String)
      */
+    @Override
     public void deleteBucket(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         deleteBucket(new DeleteBucketRequest(bucketName));
@@ -1272,6 +1303,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucket(com.amazonaws.services.s3.model.DeleteBucketRequest)
      */
+    @Override
     public void deleteBucket(DeleteBucketRequest deleteBucketRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(deleteBucketRequest,
@@ -1288,6 +1320,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#putObject(java.lang.String, java.lang.String, java.io.File)
      */
+    @Override
     public PutObjectResult putObject(String bucketName, String key, File file)
             throws AmazonClientException, AmazonServiceException {
         return putObject(new PutObjectRequest(bucketName, key, file)
@@ -1297,6 +1330,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#putObject(java.lang.String, java.lang.String, java.io.InputStream, com.amazonaws.services.s3.model.S3ObjectMetadata)
      */
+    @Override
     public PutObjectResult putObject(String bucketName, String key, InputStream input, ObjectMetadata metadata)
             throws AmazonClientException, AmazonServiceException {
         return putObject(new PutObjectRequest(bucketName, key, input, metadata));
@@ -1651,6 +1685,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @see AmazonS3#copyObject(CopyObjectRequest)
      * @see AmazonS3#initiateMultipartUpload(InitiateMultipartUploadRequest)
      */
+    @Override
     public CopyPartResult copyPart(CopyPartRequest copyPartRequest) {
         rejectNull(copyPartRequest.getSourceBucketName(),
                 "The source bucket name must be specified when copying a part");
@@ -1751,6 +1786,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteObject(java.lang.String, java.lang.String)
      */
+    @Override
     public void deleteObject(String bucketName, String key)
             throws AmazonClientException, AmazonServiceException {
         deleteObject(new DeleteObjectRequest(bucketName, key));
@@ -1759,6 +1795,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteObject(com.amazonaws.services.s3.DeleteObjectRequest)
      */
+    @Override
     public void deleteObject(DeleteObjectRequest deleteObjectRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(deleteObjectRequest,
@@ -1774,6 +1811,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteObjects(com.amazonaws.services.s3.model.DeleteObjectsRequest)
      */
+    @Override
     public DeleteObjectsResult deleteObjects(DeleteObjectsRequest deleteObjectsRequest) {
         Request<DeleteObjectsRequest> request = createRequest(deleteObjectsRequest.getBucketName(), null, deleteObjectsRequest, HttpMethodName.POST);
         request.addParameter("delete", null);
@@ -1794,13 +1832,29 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             throw new AmazonClientException("Couldn't compute md5 sum", e);
         }
 
-        DeleteObjectsResponse response = invoke(request, new Unmarshallers.DeleteObjectsResultUnmarshaller(), deleteObjectsRequest.getBucketName(), null);
+        Unmarshaller<DeleteObjectsResponse, InputStream> unmarshaller =
+                new Unmarshallers.DeleteObjectsResultUnmarshaller();
+
+        S3XmlResponseHandler<DeleteObjectsResponse> handler =
+                new S3XmlResponseHandler<DeleteObjectsResponse>(unmarshaller);
+
+        DeleteObjectsResponse response = invoke(request, handler, deleteObjectsRequest.getBucketName(), null);
 
         /*
          * If the result was only partially successful, throw an exception
          */
         if ( !response.getErrors().isEmpty() ) {
-            throw new MultiObjectDeleteException(response.getErrors(), response.getDeletedObjects());
+            Map<String, String> headers = handler.getResponseHeaders();
+
+            MultiObjectDeleteException ex = new MultiObjectDeleteException(
+                    response.getErrors(),
+                    response.getDeletedObjects());
+
+            ex.setStatusCode(200);
+            ex.setRequestId(headers.get(Headers.REQUEST_ID));
+            ex.setExtendedRequestId(headers.get(Headers.EXTENDED_REQUEST_ID));
+
+            throw ex;
         }
 
         return new DeleteObjectsResult(response.getDeletedObjects());
@@ -1809,6 +1863,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteObjectVersion(java.lang.String, java.lang.String, java.lang.String)
      */
+    @Override
     public void deleteVersion(String bucketName, String key, String versionId)
             throws AmazonClientException, AmazonServiceException {
         deleteVersion(new DeleteVersionRequest(bucketName, key, versionId));
@@ -1817,6 +1872,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteVersion(com.amazonaws.services.s3.model.DeleteVersionRequest)
      */
+    @Override
     public void deleteVersion(DeleteVersionRequest deleteVersionRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(deleteVersionRequest,
@@ -1843,6 +1899,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketVersioningConfiguration(com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest)
      */
+    @Override
     public void setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest setBucketVersioningConfigurationRequest)
         throws AmazonClientException, AmazonServiceException {
         rejectNull(setBucketVersioningConfigurationRequest,
@@ -1878,6 +1935,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketVersioningConfiguration(java.lang.String)
      */
+    @Override
     public BucketVersioningConfiguration getBucketVersioningConfiguration(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(bucketName,
@@ -1892,6 +1950,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketWebsiteConfiguration(java.lang.String)
      */
+    @Override
     public BucketWebsiteConfiguration getBucketWebsiteConfiguration(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         return getBucketWebsiteConfiguration(new GetBucketWebsiteConfigurationRequest(bucketName));
@@ -1900,6 +1959,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketWebsiteConfiguration(com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest)
      */
+    @Override
     public BucketWebsiteConfiguration getBucketWebsiteConfiguration(GetBucketWebsiteConfigurationRequest getBucketWebsiteConfigurationRequest)
             throws AmazonClientException, AmazonServiceException {
         String bucketName = getBucketWebsiteConfigurationRequest.getBucketName();
@@ -1922,6 +1982,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketLifecycleConfiguration(java.lang.String)
      */
+    @Override
     public BucketLifecycleConfiguration getBucketLifecycleConfiguration(String bucketName) {
         Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.GET);
         request.addParameter("lifecycle", null);
@@ -1941,6 +2002,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketLifecycleConfiguration(java.lang.String, com.amazonaws.services.s3.model.BucketLifecycleConfiguration)
      */
+    @Override
     public void setBucketLifecycleConfiguration(String bucketName, BucketLifecycleConfiguration bucketLifecycleConfiguration) {
         setBucketLifecycleConfiguration(new SetBucketLifecycleConfigurationRequest(bucketName, bucketLifecycleConfiguration));
     }
@@ -1948,6 +2010,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketLifecycleConfiguration(com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest)
      */
+    @Override
     public void setBucketLifecycleConfiguration(
             SetBucketLifecycleConfigurationRequest setBucketLifecycleConfigurationRequest) {
         rejectNull(setBucketLifecycleConfigurationRequest,
@@ -1982,6 +2045,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucketLifecycleConfiguration(java.lang.String)
      */
+    @Override
     public void deleteBucketLifecycleConfiguration(String bucketName) {
         deleteBucketLifecycleConfiguration(new DeleteBucketLifecycleConfigurationRequest(bucketName));
     }
@@ -1989,6 +2053,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucketLifecycleConfiguration(com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest)
      */
+    @Override
     public void deleteBucketLifecycleConfiguration(
             DeleteBucketLifecycleConfigurationRequest deleteBucketLifecycleConfigurationRequest) {
         rejectNull(deleteBucketLifecycleConfigurationRequest,
@@ -2007,6 +2072,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketCrossOriginConfiguration(java.lang.String)
      */
+    @Override
     public BucketCrossOriginConfiguration getBucketCrossOriginConfiguration(String bucketName) {
         Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.GET);
         request.addParameter("cors", null);
@@ -2026,6 +2092,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketCrossOriginConfiguration(java.lang.String, com.amazonaws.services.s3.model.BucketCrossOriginConfiguration)
      */
+    @Override
     public void setBucketCrossOriginConfiguration(String bucketName, BucketCrossOriginConfiguration bucketCrossOriginConfiguration) {
         setBucketCrossOriginConfiguration(new SetBucketCrossOriginConfigurationRequest(bucketName, bucketCrossOriginConfiguration));
     }
@@ -2033,6 +2100,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketCrossOriginConfiguration(com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest)
      */
+    @Override
     public void setBucketCrossOriginConfiguration(
             SetBucketCrossOriginConfigurationRequest setBucketCrossOriginConfigurationRequest) {
         rejectNull(setBucketCrossOriginConfigurationRequest,
@@ -2067,6 +2135,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucketCrossOriginConfiguration(java.lang.String)
      */
+    @Override
     public void deleteBucketCrossOriginConfiguration(String bucketName) {
         deleteBucketCrossOriginConfiguration(new DeleteBucketCrossOriginConfigurationRequest(bucketName));
       }
@@ -2074,6 +2143,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucketCrossOriginConfiguration(com.amazonaws.services.s3.model.DeleteBucketCrossOriginConfigurationRequest)
      */
+    @Override
     public void deleteBucketCrossOriginConfiguration(
             DeleteBucketCrossOriginConfigurationRequest deleteBucketCrossOriginConfigurationRequest) {
         rejectNull(deleteBucketCrossOriginConfigurationRequest,
@@ -2091,6 +2161,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketTaggingConfiguration(java.lang.String)
      */
+    @Override
     public BucketTaggingConfiguration getBucketTaggingConfiguration(String bucketName) {
         Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.GET);
         request.addParameter("tagging", null);
@@ -2110,6 +2181,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketTaggingConfiguration(java.lang.String, com.amazonaws.services.s3.model.BucketLifecycleConfiguration)
      */
+    @Override
     public void setBucketTaggingConfiguration(String bucketName, BucketTaggingConfiguration bucketTaggingConfiguration) {
         setBucketTaggingConfiguration(new SetBucketTaggingConfigurationRequest(bucketName, bucketTaggingConfiguration));
     }
@@ -2117,6 +2189,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketTaggingConfiguration(com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest)
      */
+    @Override
     public void setBucketTaggingConfiguration(
             SetBucketTaggingConfigurationRequest setBucketTaggingConfigurationRequest) {
         rejectNull(setBucketTaggingConfigurationRequest,
@@ -2151,6 +2224,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucketTaggingConfiguration(java.lang.String)
      */
+    @Override
     public void deleteBucketTaggingConfiguration(String bucketName) {
         deleteBucketTaggingConfiguration(new DeleteBucketTaggingConfigurationRequest(bucketName));
     }
@@ -2159,6 +2233,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucketTaggingConfiguration(com.amazonaws.services.s3.model.DeleteBucketTaggingConfigurationRequest)
      */
+    @Override
     public void deleteBucketTaggingConfiguration(
             DeleteBucketTaggingConfigurationRequest deleteBucketTaggingConfigurationRequest) {
         rejectNull(deleteBucketTaggingConfigurationRequest,
@@ -2177,6 +2252,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketWebsiteConfiguration(java.lang.String, com.amazonaws.services.s3.model.BucketWebsiteConfiguration)
      */
+    @Override
     public void setBucketWebsiteConfiguration(String bucketName, BucketWebsiteConfiguration configuration)
             throws AmazonClientException, AmazonServiceException {
         setBucketWebsiteConfiguration(new SetBucketWebsiteConfigurationRequest(bucketName, configuration));
@@ -2185,6 +2261,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketWebsiteConfiguration(com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest)
      */
+    @Override
     public void setBucketWebsiteConfiguration(SetBucketWebsiteConfigurationRequest setBucketWebsiteConfigurationRequest)
            throws AmazonClientException, AmazonServiceException {
         String bucketName = setBucketWebsiteConfigurationRequest.getBucketName();
@@ -2212,6 +2289,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucketWebsiteConfiguration(java.lang.String)
      */
+    @Override
     public void deleteBucketWebsiteConfiguration(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         deleteBucketWebsiteConfiguration(new DeleteBucketWebsiteConfigurationRequest(bucketName));
@@ -2220,6 +2298,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucketWebsiteConfiguration(com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest)
      */
+    @Override
     public void deleteBucketWebsiteConfiguration(DeleteBucketWebsiteConfigurationRequest deleteBucketWebsiteConfigurationRequest)
         throws AmazonClientException, AmazonServiceException {
         String bucketName = deleteBucketWebsiteConfigurationRequest.getBucketName();
@@ -2237,6 +2316,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketNotificationConfiguration(java.lang.String,com.amazonaws.services.s3.model.BucketNotificationConfiguration)
      */
+    @Override
     public void setBucketNotificationConfiguration(String bucketName, BucketNotificationConfiguration bucketNotificationConfiguration)
         throws AmazonClientException, AmazonServiceException {
         setBucketNotificationConfiguration(new SetBucketNotificationConfigurationRequest(bucketName, bucketNotificationConfiguration));
@@ -2245,6 +2325,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketNotificationConfiguration(com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest)
      */
+    @Override
     public void setBucketNotificationConfiguration(
             SetBucketNotificationConfigurationRequest setBucketNotificationConfigurationRequest)
             throws AmazonClientException, AmazonServiceException {
@@ -2271,6 +2352,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketNotificationConfiguration(java.lang.String)
      */
+    @Override
     public BucketNotificationConfiguration getBucketNotificationConfiguration(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(bucketName,
@@ -2285,6 +2367,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketLoggingConfiguration(java.lang.String)
      */
+    @Override
     public BucketLoggingConfiguration getBucketLoggingConfiguration(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(bucketName,
@@ -2299,6 +2382,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketLoggingConfiguration(com.amazonaws.services.s3.SetBucketLoggingConfigurationRequest)
      */
+    @Override
     public void setBucketLoggingConfiguration(SetBucketLoggingConfigurationRequest setBucketLoggingConfigurationRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(setBucketLoggingConfigurationRequest,
@@ -2324,6 +2408,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketPolicy(java.lang.String)
      */
+    @Override
     public BucketPolicy getBucketPolicy(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         return getBucketPolicy(new GetBucketPolicyRequest(bucketName));
@@ -2332,6 +2417,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketPolicy(java.lang.String, java.lang.String)
      */
+    @Override
     public void setBucketPolicy(String bucketName, String policyText)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(bucketName,
@@ -2349,6 +2435,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucketPolicy(java.lang.String)
      */
+    @Override
     public void deleteBucketPolicy(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         deleteBucketPolicy(new DeleteBucketPolicyRequest(bucketName));
@@ -2357,6 +2444,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketPolicy(com.amazonaws.services.s3.model.GetBucketPolicyRequest)
      */
+    @Override
     public BucketPolicy getBucketPolicy(
             GetBucketPolicyRequest getBucketPolicyRequest)
             throws AmazonClientException, AmazonServiceException {
@@ -2390,6 +2478,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketPolicy(com.amazonaws.services.s3.model.SetBucketPolicyRequest)
      */
+    @Override
     public void setBucketPolicy(SetBucketPolicyRequest setBucketPolicyRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(setBucketPolicyRequest,
@@ -2413,6 +2502,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucketPolicy(com.amazonaws.services.s3.model.DeleteBucketPolicyRequest)
      */
+    @Override
     public void deleteBucketPolicy(
             DeleteBucketPolicyRequest deleteBucketPolicyRequest)
             throws AmazonClientException, AmazonServiceException {
@@ -2434,6 +2524,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#generatePresignedUrl(java.lang.String, java.lang.String, java.util.Date)
      */
+    @Override
     public URL generatePresignedUrl(String bucketName, String key, Date expiration)
             throws AmazonClientException {
         return generatePresignedUrl(bucketName, key, expiration, HttpMethod.GET);
@@ -2442,6 +2533,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#generatePresignedUrl(java.lang.String, java.lang.String, java.util.Date, com.amazonaws.HttpMethod)
      */
+    @Override
     public URL generatePresignedUrl(String bucketName, String key, Date expiration, HttpMethod method)
             throws AmazonClientException {
         GeneratePresignedUrlRequest request = new GeneratePresignedUrlRequest(bucketName, key, method);
@@ -2535,6 +2627,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#abortMultipartUpload(com.amazonaws.services.s3.model.AbortMultipartUploadRequest)
      */
+    @Override
     public void abortMultipartUpload(AbortMultipartUploadRequest abortMultipartUploadRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(abortMultipartUploadRequest,
@@ -2558,6 +2651,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#completeMultipartUpload(com.amazonaws.services.s3.model.CompleteMultipartUploadRequest)
      */
+    @Override
     public CompleteMultipartUploadResult completeMultipartUpload(
             CompleteMultipartUploadRequest completeMultipartUploadRequest)
             throws AmazonClientException, AmazonServiceException {
@@ -2605,6 +2699,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#initiateMultipartUpload(com.amazonaws.services.s3.model.InitiateMultipartUploadRequest)
      */
+    @Override
     public InitiateMultipartUploadResult initiateMultipartUpload(
             InitiateMultipartUploadRequest initiateMultipartUploadRequest)
             throws AmazonClientException, AmazonServiceException {
@@ -2663,6 +2758,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listMultipartUploads(com.amazonaws.services.s3.model.ListMultipartUploadsRequest)
      */
+    @Override
     public MultipartUploadListing listMultipartUploads(ListMultipartUploadsRequest listMultipartUploadsRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(listMultipartUploadsRequest,
@@ -2687,6 +2783,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listParts(com.amazonaws.services.s3.model.ListPartsRequest)
      */
+    @Override
     public PartListing listParts(ListPartsRequest listPartsRequest)
             throws AmazonClientException, AmazonServiceException {
         rejectNull(listPartsRequest,
@@ -2850,6 +2947,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getResponseMetadataForRequest(com.amazonaws.AmazonWebServiceRequest)
      */
+    @Override
     public S3ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request) {
         return (S3ResponseMetadata)client.getResponseMetadataForRequest(request);
     }
@@ -2857,6 +2955,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#restoreObject(com.amazonaws.services.s3.model.RestoreObjectRequest)
      */
+    @Override
     public void restoreObject(RestoreObjectRequest restoreObjectRequest)
             throws AmazonServiceException {
         String bucketName = restoreObjectRequest.getBucketName();
@@ -3650,10 +3749,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Response<X> response = null;
         try {
-            for (Entry<String, String> entry : request.getOriginalRequest()
-                    .copyPrivateRequestParameters().entrySet()) {
-                request.addParameter(entry.getKey(), entry.getValue());
-            }
             request.setTimeOffset(timeOffset);
             /*
              * The string we sign needs to include the exact headers that we

@@ -15,6 +15,7 @@
 package com.amazonaws;
 
 import java.net.URI;
+import java.util.List;
 import java.util.Map;
 
 import com.amazonaws.http.HttpMethodName;
@@ -62,7 +63,7 @@ public interface Request<T> extends SignableRequest<T> {
     /**
      * Sets all parameters, clearing any existing values.
      */
-    public void setParameters(Map<String, String> parameters);
+    public void setParameters(Map<String, List<String>> parameters);
 
     /**
      * Sets the service endpoint (ex: "https://ec2.amazonaws.com") to which this
@@ -75,7 +76,7 @@ public interface Request<T> extends SignableRequest<T> {
 
     /**
      * Sets the HTTP method (GET, POST, etc) to use when sending this request.
-     * 
+     *
      * @param httpMethod
      *            The HTTP method to use when sending this request.
      */
@@ -96,7 +97,7 @@ public interface Request<T> extends SignableRequest<T> {
 
     /**
      * Sets the optional value for time offset for this request.  This
-     * will be used by the signer to adjust for potential clock skew.  
+     * will be used by the signer to adjust for potential clock skew.
      * Value is in seconds, positive values imply the current clock is "fast",
      * negative values imply clock is slow.
      *
@@ -107,7 +108,7 @@ public interface Request<T> extends SignableRequest<T> {
 
     /**
      * Sets the optional value for time offset for this request.  This
-     * will be used by the signer to adjust for potential clock skew.  
+     * will be used by the signer to adjust for potential clock skew.
      * Value is in seconds, positive values imply the current clock is "fast",
      * negative values imply clock is slow.
      *
@@ -123,7 +124,7 @@ public interface Request<T> extends SignableRequest<T> {
     /**
      * Bind the request metrics to the request. Note metrics can be captured
      * before the request is created.
-     * 
+     *
      * @throws IllegalStateException if the binding has already occurred
      */
     public void setAWSRequestMetrics(AWSRequestMetrics metrics);
