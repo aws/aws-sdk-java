@@ -25,7 +25,6 @@ import com.amazonaws.auth.policy.Action;
 import com.amazonaws.auth.policy.Condition;
 import com.amazonaws.auth.policy.Policy;
 import com.amazonaws.auth.policy.Principal;
-import com.amazonaws.auth.policy.Principal.Services;
 import com.amazonaws.auth.policy.Principal.WebIdentityProviders;
 import com.amazonaws.auth.policy.Resource;
 import com.amazonaws.auth.policy.Statement;

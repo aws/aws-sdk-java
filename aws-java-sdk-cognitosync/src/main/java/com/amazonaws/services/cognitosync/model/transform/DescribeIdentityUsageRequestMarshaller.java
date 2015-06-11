@@ -90,25 +90,28 @@ public class DescribeIdentityUsageRequestMarshaller implements Marshaller<Reques
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityPoolId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityPoolId");
+
             String value = (describeIdentityUsageRequest.getIdentityPoolId() == null) ? null : StringUtils.fromString(describeIdentityUsageRequest.getIdentityPoolId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityPoolId}", (describeIdentityUsageRequest.getIdentityPoolId() == null) ? "" : StringUtils.fromString(describeIdentityUsageRequest.getIdentityPoolId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityId");
+
             String value = (describeIdentityUsageRequest.getIdentityId() == null) ? null : StringUtils.fromString(describeIdentityUsageRequest.getIdentityId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityId}", (describeIdentityUsageRequest.getIdentityId() == null) ? "" : StringUtils.fromString(describeIdentityUsageRequest.getIdentityId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotInstancesRequestMar
  * on available Spot Instance capacity and current Spot Instance
  * requests. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest)
@@ -47,7 +47,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide for Linux</i>.
+     * Guide</i>.
      */
     private String clientToken;
 
@@ -178,13 +178,13 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide for Linux</i>.
+     * Guide</i>.
      *
      * @return Unique, case-sensitive identifier that you provide to ensure the
      *         idempotency of the request. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide for Linux</i>.
+     *         Guide</i>.
      */
     public String getClientToken() {
         return clientToken;
@@ -195,13 +195,13 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide for Linux</i>.
+     * Guide</i>.
      *
      * @param clientToken Unique, case-sensitive identifier that you provide to ensure the
      *         idempotency of the request. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide for Linux</i>.
+     *         Guide</i>.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
@@ -212,7 +212,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide for Linux</i>.
+     * Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -220,7 +220,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *         idempotency of the request. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide for Linux</i>.
+     *         Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

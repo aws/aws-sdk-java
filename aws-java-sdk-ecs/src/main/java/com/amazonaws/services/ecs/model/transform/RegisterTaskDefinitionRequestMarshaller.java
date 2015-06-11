@@ -116,6 +116,9 @@ public class RegisterTaskDefinitionRequestMarshaller implements Marshaller<Reque
                                     if (portMappingsListValue.getHostPort() != null) {
                                         jsonWriter.key("hostPort").value(portMappingsListValue.getHostPort());
                                     }
+                                    if (portMappingsListValue.getProtocol() != null) {
+                                        jsonWriter.key("protocol").value(portMappingsListValue.getProtocol());
+                                    }
                                     jsonWriter.endObject();
                                 }
                             }

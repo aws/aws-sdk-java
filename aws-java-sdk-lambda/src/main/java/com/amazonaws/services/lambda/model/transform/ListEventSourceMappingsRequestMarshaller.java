@@ -90,47 +90,52 @@ public class ListEventSourceMappingsRequestMarshaller implements Marshaller<Requ
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("EventSourceArn")) {
             String name = DYNAMIC_QUERY_PARAMS.get("EventSourceArn");
+
             String value = (listEventSourceMappingsRequest.getEventSourceArn() == null) ? null : StringUtils.fromString(listEventSourceMappingsRequest.getEventSourceArn());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{EventSourceArn}", (listEventSourceMappingsRequest.getEventSourceArn() == null) ? "" : StringUtils.fromString(listEventSourceMappingsRequest.getEventSourceArn())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FunctionName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FunctionName");
+
             String value = (listEventSourceMappingsRequest.getFunctionName() == null) ? null : StringUtils.fromString(listEventSourceMappingsRequest.getFunctionName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (listEventSourceMappingsRequest.getFunctionName() == null) ? "" : StringUtils.fromString(listEventSourceMappingsRequest.getFunctionName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Marker")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Marker");
+
             String value = (listEventSourceMappingsRequest.getMarker() == null) ? null : StringUtils.fromString(listEventSourceMappingsRequest.getMarker());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Marker}", (listEventSourceMappingsRequest.getMarker() == null) ? "" : StringUtils.fromString(listEventSourceMappingsRequest.getMarker())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("MaxItems")) {
             String name = DYNAMIC_QUERY_PARAMS.get("MaxItems");
+
             String value = (listEventSourceMappingsRequest.getMaxItems() == null) ? null : StringUtils.fromInteger(listEventSourceMappingsRequest.getMaxItems());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{MaxItems}", (listEventSourceMappingsRequest.getMaxItems() == null) ? "" : StringUtils.fromInteger(listEventSourceMappingsRequest.getMaxItems())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

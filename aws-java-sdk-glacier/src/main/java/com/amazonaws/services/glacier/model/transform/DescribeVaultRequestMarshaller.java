@@ -90,25 +90,28 @@ public class DescribeVaultRequestMarshaller implements Marshaller<Request<Descri
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (describeVaultRequest.getAccountId() == null) ? null : StringUtils.fromString(describeVaultRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (describeVaultRequest.getAccountId() == null) ? "" : StringUtils.fromString(describeVaultRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (describeVaultRequest.getVaultName() == null) ? null : StringUtils.fromString(describeVaultRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (describeVaultRequest.getVaultName() == null) ? "" : StringUtils.fromString(describeVaultRequest.getVaultName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

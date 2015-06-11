@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,7 +62,6 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
      */
     private Map<String, String> customRequestHeaders;
 
-
     /**
      * Sets the optional credentials to use for this request, overriding the
      * default credentials set at the client level.
@@ -84,16 +83,6 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
      */
     public AWSCredentials getRequestCredentials() {
         return credentials;
-    }
-
-    /**
-     * Internal only method for accessing private, internal request parameters.
-     * Not intended for direct use by callers.
-     *
-     * @return private, internal request parameter information.
-     */
-    public Map<String, String> copyPrivateRequestParameters() {
-        return new HashMap<String, String>();
     }
 
     /**
@@ -211,7 +200,7 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
     /**
      * Copies the internal state of this base class to that of the target
      * request.
-     * 
+     *
      * @return the target request
      */
     protected final <T extends AmazonWebServiceRequest> T copyBaseTo(T target) {

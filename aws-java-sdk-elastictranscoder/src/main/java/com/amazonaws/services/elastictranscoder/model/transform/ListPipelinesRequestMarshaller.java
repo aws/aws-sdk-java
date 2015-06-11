@@ -90,25 +90,28 @@ public class ListPipelinesRequestMarshaller implements Marshaller<Request<ListPi
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Ascending")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Ascending");
+
             String value = (listPipelinesRequest.getAscending() == null) ? null : StringUtils.fromString(listPipelinesRequest.getAscending());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Ascending}", (listPipelinesRequest.getAscending() == null) ? "" : StringUtils.fromString(listPipelinesRequest.getAscending())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("PageToken")) {
             String name = DYNAMIC_QUERY_PARAMS.get("PageToken");
+
             String value = (listPipelinesRequest.getPageToken() == null) ? null : StringUtils.fromString(listPipelinesRequest.getPageToken());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{PageToken}", (listPipelinesRequest.getPageToken() == null) ? "" : StringUtils.fromString(listPipelinesRequest.getPageToken())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

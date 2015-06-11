@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.codedeploy.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,34 +40,41 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Batch Get Deployments Request Marshaller
+ * BatchGetDeploymentsRequest Marshaller
  */
-public class BatchGetDeploymentsRequestMarshaller implements Marshaller<Request<BatchGetDeploymentsRequest>, BatchGetDeploymentsRequest> {
+public class BatchGetDeploymentsRequestMarshaller
+        implements
+        Marshaller<Request<BatchGetDeploymentsRequest>, BatchGetDeploymentsRequest> {
 
-    public Request<BatchGetDeploymentsRequest> marshall(BatchGetDeploymentsRequest batchGetDeploymentsRequest) {
+    public Request<BatchGetDeploymentsRequest> marshall(
+            BatchGetDeploymentsRequest batchGetDeploymentsRequest) {
+
         if (batchGetDeploymentsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<BatchGetDeploymentsRequest> request = new DefaultRequest<BatchGetDeploymentsRequest>(batchGetDeploymentsRequest, "AmazonCodeDeploy");
-        String target = "CodeDeploy_20141006.BatchGetDeployments";
-        request.addHeader("X-Amz-Target", target);
+        Request<BatchGetDeploymentsRequest> request = new DefaultRequest<BatchGetDeploymentsRequest>(
+                batchGetDeploymentsRequest, "AmazonCodeDeploy");
+        request.addHeader("X-Amz-Target",
+                "CodeDeploy_20141006.BatchGetDeployments");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
+            jsonWriter.object();
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> deploymentIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(batchGetDeploymentsRequest.getDeploymentIds());
-            if (deploymentIdsList != null && !(deploymentIdsList.isAutoConstruct() && deploymentIdsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> deploymentIdsList = (com.amazonaws.internal.SdkInternalList<String>) batchGetDeploymentsRequest
+                    .getDeploymentIds();
+            if (!deploymentIdsList.isEmpty()
+                    || !deploymentIdsList.isAutoConstruct()) {
                 jsonWriter.key("deploymentIds");
                 jsonWriter.array();
-
                 for (String deploymentIdsListValue : deploymentIdsList) {
                     if (deploymentIdsListValue != null) {
                         jsonWriter.value(deploymentIdsListValue);
@@ -75,17 +83,20 @@ public class BatchGetDeploymentsRequestMarshaller implements Marshaller<Request<
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

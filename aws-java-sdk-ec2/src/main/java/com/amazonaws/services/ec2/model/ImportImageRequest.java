@@ -48,8 +48,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * AWS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
-     * <code>BYOL</code>
+     * User Guide</i>. <p>Valid values: <code>AWS</code> | <code>BYOL</code>
      */
     private String licenseType;
 
@@ -199,8 +198,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * AWS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
-     * <code>BYOL</code>
+     * User Guide</i>. <p>Valid values: <code>AWS</code> | <code>BYOL</code>
      *
      * @return The license type to be used for the Amazon Machine Image (AMI) after
      *         importing. <p><b>Note:</b> You may only use BYOL if you have existing
@@ -208,8 +206,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *         AWS. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      *         Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     *         User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
-     *         <code>BYOL</code>
+     *         User Guide</i>. <p>Valid values: <code>AWS</code> | <code>BYOL</code>
      */
     public String getLicenseType() {
         return licenseType;
@@ -222,8 +219,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * AWS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
-     * <code>BYOL</code>
+     * User Guide</i>. <p>Valid values: <code>AWS</code> | <code>BYOL</code>
      *
      * @param licenseType The license type to be used for the Amazon Machine Image (AMI) after
      *         importing. <p><b>Note:</b> You may only use BYOL if you have existing
@@ -231,8 +227,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *         AWS. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      *         Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     *         User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
-     *         <code>BYOL</code>
+     *         User Guide</i>. <p>Valid values: <code>AWS</code> | <code>BYOL</code>
      */
     public void setLicenseType(String licenseType) {
         this.licenseType = licenseType;
@@ -245,8 +240,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * AWS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     * User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
-     * <code>BYOL</code>
+     * User Guide</i>. <p>Valid values: <code>AWS</code> | <code>BYOL</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -256,8 +250,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *         AWS. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
      *         Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud
-     *         User Guide for Linux</i>. <p>Valid values: <code>AWS</code> |
-     *         <code>BYOL</code>
+     *         User Guide</i>. <p>Valid values: <code>AWS</code> | <code>BYOL</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

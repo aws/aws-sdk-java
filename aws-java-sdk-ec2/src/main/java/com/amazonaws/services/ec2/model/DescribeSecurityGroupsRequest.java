@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSecurityGroupsRequestM
  * <p>
  * A security group is for use with instances either in the EC2-Classic
  * platform or in a specific VPC. For more information, see
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
  * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>
  *

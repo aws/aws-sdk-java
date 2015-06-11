@@ -90,14 +90,16 @@ public class DeleteMountTargetRequestMarshaller implements Marshaller<Request<De
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("MountTargetId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("MountTargetId");
+
             String value = (deleteMountTargetRequest.getMountTargetId() == null) ? null : StringUtils.fromString(deleteMountTargetRequest.getMountTargetId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{MountTargetId}", (deleteMountTargetRequest.getMountTargetId() == null) ? "" : StringUtils.fromString(deleteMountTargetRequest.getMountTargetId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

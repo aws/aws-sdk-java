@@ -90,25 +90,28 @@ public class ListFunctionsRequestMarshaller implements Marshaller<Request<ListFu
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Marker")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Marker");
+
             String value = (listFunctionsRequest.getMarker() == null) ? null : StringUtils.fromString(listFunctionsRequest.getMarker());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Marker}", (listFunctionsRequest.getMarker() == null) ? "" : StringUtils.fromString(listFunctionsRequest.getMarker())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("MaxItems")) {
             String name = DYNAMIC_QUERY_PARAMS.get("MaxItems");
+
             String value = (listFunctionsRequest.getMaxItems() == null) ? null : StringUtils.fromInteger(listFunctionsRequest.getMaxItems());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{MaxItems}", (listFunctionsRequest.getMaxItems() == null) ? "" : StringUtils.fromInteger(listFunctionsRequest.getMaxItems())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

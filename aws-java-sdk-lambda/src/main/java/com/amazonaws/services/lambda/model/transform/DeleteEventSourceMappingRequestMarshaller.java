@@ -90,14 +90,16 @@ public class DeleteEventSourceMappingRequestMarshaller implements Marshaller<Req
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("UUID")) {
             String name = DYNAMIC_QUERY_PARAMS.get("UUID");
+
             String value = (deleteEventSourceMappingRequest.getUUID() == null) ? null : StringUtils.fromString(deleteEventSourceMappingRequest.getUUID());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{UUID}", (deleteEventSourceMappingRequest.getUUID() == null) ? "" : StringUtils.fromString(deleteEventSourceMappingRequest.getUUID())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
@@ -24,80 +25,80 @@ import java.io.Serializable;
 public class BatchGetDeploymentsResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * Information about the deployments.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<DeploymentInfo> deploymentsInfo;
+    private com.amazonaws.internal.SdkInternalList<DeploymentInfo> deploymentsInfo;
 
     /**
+     * <p>
      * Information about the deployments.
-     *
+     * </p>
+     * 
      * @return Information about the deployments.
      */
     public java.util.List<DeploymentInfo> getDeploymentsInfo() {
         if (deploymentsInfo == null) {
-              deploymentsInfo = new com.amazonaws.internal.ListWithAutoConstructFlag<DeploymentInfo>();
-              deploymentsInfo.setAutoConstruct(true);
+            deploymentsInfo = new com.amazonaws.internal.SdkInternalList<DeploymentInfo>();
         }
         return deploymentsInfo;
     }
-    
+
     /**
+     * <p>
      * Information about the deployments.
-     *
-     * @param deploymentsInfo Information about the deployments.
+     * </p>
+     * 
+     * @param deploymentsInfo
+     *        Information about the deployments.
      */
-    public void setDeploymentsInfo(java.util.Collection<DeploymentInfo> deploymentsInfo) {
+    public void setDeploymentsInfo(
+            java.util.Collection<DeploymentInfo> deploymentsInfo) {
         if (deploymentsInfo == null) {
             this.deploymentsInfo = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<DeploymentInfo> deploymentsInfoCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DeploymentInfo>(deploymentsInfo.size());
-        deploymentsInfoCopy.addAll(deploymentsInfo);
-        this.deploymentsInfo = deploymentsInfoCopy;
+
+        this.deploymentsInfo = new com.amazonaws.internal.SdkInternalList<DeploymentInfo>(
+                deploymentsInfo);
     }
-    
+
     /**
+     * <p>
      * Information about the deployments.
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDeploymentsInfo(java.util.Collection)} or {@link
-     * #withDeploymentsInfo(java.util.Collection)} if you want to override
-     * the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param deploymentsInfo Information about the deployments.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param deploymentsInfo
+     *        Information about the deployments.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public BatchGetDeploymentsResult withDeploymentsInfo(DeploymentInfo... deploymentsInfo) {
-        if (getDeploymentsInfo() == null) setDeploymentsInfo(new java.util.ArrayList<DeploymentInfo>(deploymentsInfo.length));
-        for (DeploymentInfo value : deploymentsInfo) {
-            getDeploymentsInfo().add(value);
+    public BatchGetDeploymentsResult withDeploymentsInfo(
+            DeploymentInfo... deploymentsInfo) {
+        if (this.deploymentsInfo == null) {
+            setDeploymentsInfo(new com.amazonaws.internal.SdkInternalList<DeploymentInfo>(
+                    deploymentsInfo.length));
+        }
+        for (DeploymentInfo ele : deploymentsInfo) {
+            this.deploymentsInfo.add(ele);
         }
         return this;
     }
-    
-    /**
-     * Information about the deployments.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param deploymentsInfo Information about the deployments.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public BatchGetDeploymentsResult withDeploymentsInfo(java.util.Collection<DeploymentInfo> deploymentsInfo) {
-        if (deploymentsInfo == null) {
-            this.deploymentsInfo = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<DeploymentInfo> deploymentsInfoCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DeploymentInfo>(deploymentsInfo.size());
-            deploymentsInfoCopy.addAll(deploymentsInfo);
-            this.deploymentsInfo = deploymentsInfoCopy;
-        }
 
+    /**
+     * <p>
+     * Information about the deployments.
+     * </p>
+     * 
+     * @param deploymentsInfo
+     *        Information about the deployments.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public BatchGetDeploymentsResult withDeploymentsInfo(
+            java.util.Collection<DeploymentInfo> deploymentsInfo) {
+        setDeploymentsInfo(deploymentsInfo);
         return this;
     }
 
@@ -113,46 +114,51 @@ public class BatchGetDeploymentsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDeploymentsInfo() != null) sb.append("DeploymentsInfo: " + getDeploymentsInfo() );
+        if (getDeploymentsInfo() != null)
+            sb.append("DeploymentsInfo: " + getDeploymentsInfo());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof BatchGetDeploymentsResult == false)
+            return false;
+        BatchGetDeploymentsResult other = (BatchGetDeploymentsResult) obj;
+        if (other.getDeploymentsInfo() == null
+                ^ this.getDeploymentsInfo() == null)
+            return false;
+        if (other.getDeploymentsInfo() != null
+                && other.getDeploymentsInfo().equals(this.getDeploymentsInfo()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDeploymentsInfo() == null) ? 0 : getDeploymentsInfo().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDeploymentsInfo() == null) ? 0 : getDeploymentsInfo()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof BatchGetDeploymentsResult == false) return false;
-        BatchGetDeploymentsResult other = (BatchGetDeploymentsResult)obj;
-        
-        if (other.getDeploymentsInfo() == null ^ this.getDeploymentsInfo() == null) return false;
-        if (other.getDeploymentsInfo() != null && other.getDeploymentsInfo().equals(this.getDeploymentsInfo()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public BatchGetDeploymentsResult clone() {
         try {
             return (BatchGetDeploymentsResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

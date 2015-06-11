@@ -90,14 +90,16 @@ public class DeletePresetRequestMarshaller implements Marshaller<Request<DeleteP
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Id")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Id");
+
             String value = (deletePresetRequest.getId() == null) ? null : StringUtils.fromString(deletePresetRequest.getId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Id}", (deletePresetRequest.getId() == null) ? "" : StringUtils.fromString(deletePresetRequest.getId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

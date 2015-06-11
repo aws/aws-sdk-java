@@ -28,7 +28,7 @@ import com.amazonaws.services.ec2.model.transform.ImportVolumeRequestMarshaller;
  * <code>ec2-import-volume</code> command in the Amazon EC2 command-line
  * interface (CLI) tools. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importVolume(ImportVolumeRequest)

@@ -93,36 +93,40 @@ public class GetJobOutputRequestMarshaller implements Marshaller<Request<GetJobO
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (getJobOutputRequest.getAccountId() == null) ? null : StringUtils.fromString(getJobOutputRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (getJobOutputRequest.getAccountId() == null) ? "" : StringUtils.fromString(getJobOutputRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (getJobOutputRequest.getVaultName() == null) ? null : StringUtils.fromString(getJobOutputRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (getJobOutputRequest.getVaultName() == null) ? "" : StringUtils.fromString(getJobOutputRequest.getVaultName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("jobId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("jobId");
+
             String value = (getJobOutputRequest.getJobId() == null) ? null : StringUtils.fromString(getJobOutputRequest.getJobId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{jobId}", (getJobOutputRequest.getJobId() == null) ? "" : StringUtils.fromString(getJobOutputRequest.getJobId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

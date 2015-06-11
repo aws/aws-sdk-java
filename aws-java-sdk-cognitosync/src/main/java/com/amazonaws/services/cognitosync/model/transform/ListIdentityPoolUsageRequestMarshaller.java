@@ -90,25 +90,28 @@ public class ListIdentityPoolUsageRequestMarshaller implements Marshaller<Reques
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("NextToken")) {
             String name = DYNAMIC_QUERY_PARAMS.get("NextToken");
+
             String value = (listIdentityPoolUsageRequest.getNextToken() == null) ? null : StringUtils.fromString(listIdentityPoolUsageRequest.getNextToken());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{NextToken}", (listIdentityPoolUsageRequest.getNextToken() == null) ? "" : StringUtils.fromString(listIdentityPoolUsageRequest.getNextToken())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("MaxResults")) {
             String name = DYNAMIC_QUERY_PARAMS.get("MaxResults");
+
             String value = (listIdentityPoolUsageRequest.getMaxResults() == null) ? null : StringUtils.fromInteger(listIdentityPoolUsageRequest.getMaxResults());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{MaxResults}", (listIdentityPoolUsageRequest.getMaxResults() == null) ? "" : StringUtils.fromInteger(listIdentityPoolUsageRequest.getMaxResults())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

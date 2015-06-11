@@ -53,6 +53,10 @@ public class PortMappingJsonUnmarshaller implements Unmarshaller<PortMapping, Js
                     context.nextToken();
                     portMapping.setHostPort(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("protocol", targetDepth)) {
+                    context.nextToken();
+                    portMapping.setProtocol(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

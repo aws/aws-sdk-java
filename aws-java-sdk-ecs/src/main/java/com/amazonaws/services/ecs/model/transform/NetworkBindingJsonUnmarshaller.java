@@ -57,6 +57,10 @@ public class NetworkBindingJsonUnmarshaller implements Unmarshaller<NetworkBindi
                     context.nextToken();
                     networkBinding.setHostPort(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("protocol", targetDepth)) {
+                    context.nextToken();
+                    networkBinding.setProtocol(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

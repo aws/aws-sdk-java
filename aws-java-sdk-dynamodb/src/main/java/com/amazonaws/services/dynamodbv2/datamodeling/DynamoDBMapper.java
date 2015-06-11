@@ -839,7 +839,7 @@ public class DynamoDBMapper {
                     tableName, finalConfig, converter, saveExpression) {
 
                 @Override
-                protected void onKeyAttributeValue(String attributeName,
+                protected void onPrimaryKeyAttributeValue(String attributeName,
                         AttributeValue keyAttributeValue) {
                     /* Treat key values as common attribute value updates. */
                     getAttributeValueUpdates().put(attributeName,
@@ -866,10 +866,10 @@ public class DynamoDBMapper {
                     tableName, finalConfig, converter, saveExpression) {
 
                 @Override
-                protected void onKeyAttributeValue(String attributeName,
+                protected void onPrimaryKeyAttributeValue(String attributeName,
                         AttributeValue keyAttributeValue) {
                     /* Put it in the key collection which is later used in the updateItem request. */
-                    getKeyAttributeValues().put(attributeName, keyAttributeValue);
+                    getPrimaryKeyAttributeValues().put(attributeName, keyAttributeValue);
                 }
 
 
@@ -932,10 +932,10 @@ public class DynamoDBMapper {
                         // the key attributes (prepared for the
                         // UpdateItemRequest) into the AttributeValueUpdates
                         // collection.
-                        for (String keyAttributeName : getKeyAttributeValues().keySet()) {
+                        for (String keyAttributeName : getPrimaryKeyAttributeValues().keySet()) {
                             getAttributeValueUpdates().put(keyAttributeName,
                                     new AttributeValueUpdate()
-                                            .withValue(getKeyAttributeValues().get(keyAttributeName))
+                                            .withValue(getPrimaryKeyAttributeValues().get(keyAttributeName))
                                             .withAction("PUT"));
                         }
 
@@ -962,7 +962,7 @@ public class DynamoDBMapper {
         private final DynamoDBMapperConfig saveConfig;
         private final ItemConverter converter;
 
-        private final Map<String, AttributeValue> key;
+        private final Map<String, AttributeValue> primaryKeys;
         private final Map<String, AttributeValueUpdate> updateValues;
 
         /**
@@ -1020,31 +1020,30 @@ public class DynamoDBMapper {
             updateValues = new HashMap<String, AttributeValueUpdate>();
             internalExpectedValueAssertions = new HashMap<String, ExpectedAttributeValue>();
             inMemoryUpdates = new LinkedList<ValueUpdate>();
-            key = new HashMap<String, AttributeValue>();
+            primaryKeys = new HashMap<String, AttributeValue>();
         }
 
         /**
          * The general workflow of a save operation.
          */
         public void execute() {
-            Collection<Method> keyGetters = reflector.getPrimaryKeyGetters(clazz);
+            Collection<Method> primaryKeyGetters = reflector.getPrimaryKeyGetters(clazz);
 
             /*
-             * First handle keys
+             * First handle primary keys
              */
-            for ( Method method : keyGetters ) {
+            for ( Method method : primaryKeyGetters ) {
                 Object getterResult = ReflectionUtils.safeInvoke(method, object);
                 String attributeName = reflector.getAttributeName(method);
 
                 if ( getterResult == null && reflector.isAssignableKey(method) ) {
                     onAutoGenerateAssignableKey(method, attributeName);
-                }
 
-                else {
+                } else {
                     AttributeValue newAttributeValue = converter.convert(method, getterResult);
                     if ( newAttributeValue == null ) {
                         throw new DynamoDBMappingException(
-                                "Null or empty value for key: " + method);
+                                "Null or empty value for primary key: " + method);
                     }
 
                     if ( newAttributeValue.getS() == null
@@ -1057,7 +1056,7 @@ public class DynamoDBMapper {
                                 + " for key " + method);
                     }
 
-                    onKeyAttributeValue(attributeName, newAttributeValue);
+                    onPrimaryKeyAttributeValue(attributeName, newAttributeValue);
                 }
             }
 
@@ -1067,23 +1066,27 @@ public class DynamoDBMapper {
             for ( Method method : reflector.getRelevantGetters(clazz) ) {
 
                 // Skip any key methods, since they are handled separately
-                if ( keyGetters.contains(method) )
+                if ( primaryKeyGetters.contains(method) ) {
                     continue;
+                }
 
                 Object getterResult = ReflectionUtils.safeInvoke(method, object);
                 String attributeName = reflector.getAttributeName(method);
 
-                /*
-                 * If this is a versioned field, update it
-                 */
-                if ( reflector.isVersionAttributeGetter(method) ) {
+                if ( getterResult == null && reflector.isAssignableKey(method) ) {
+                    /*
+                     * There still might be index keys that need to be auto-generated
+                     */
+                    onAutoGenerateAssignableKey(method, attributeName);
+                } else if ( reflector.isVersionAttributeGetter(method) ) {
+                    /*
+                     * If this is a versioned field, update it
+                     */
                     onVersionAttribute(method, getterResult, attributeName);
-                }
-
-                /*
-                 * Otherwise apply the update value for this attribute.
-                 */
-                else  {
+                } else {
+                    /*
+                     * Otherwise apply the update value for this attribute.
+                     */
                     AttributeValue currentValue = converter.convert(method, getterResult);
                     if ( currentValue != null ) {
                         onNonKeyAttribute(attributeName, currentValue);
@@ -1110,16 +1113,16 @@ public class DynamoDBMapper {
         }
 
         /**
-         * Implement this method to do the necessary operations when a key
+         * Implement this method to do the necessary operations when a primary key
          * attribute is set with some value.
          *
          * @param attributeName
-         *            The name of the key attribute.
+         *            The name of the primary key attribute.
          * @param keyAttributeValue
-         *            The AttributeValue of the key attribute as specified in
+         *            The AttributeValue of the primary key attribute as specified in
          *            the object.
          */
-        protected abstract void onKeyAttributeValue(String attributeName, AttributeValue keyAttributeValue);
+        protected abstract void onPrimaryKeyAttributeValue(String attributeName, AttributeValue keyAttributeValue);
 
         /**
          * Implement this method for necessary operations when a non-key
@@ -1161,9 +1164,9 @@ public class DynamoDBMapper {
             return tableName;
         }
 
-        /** Get the map of all the specified key of the saved object. **/
-        protected Map<String, AttributeValue> getKeyAttributeValues() {
-            return key;
+        /** Get the map of all the specified primamry keys of the saved object. **/
+        protected Map<String, AttributeValue> getPrimaryKeyAttributeValues() {
+            return primaryKeys;
         }
 
         /** Get the map of AttributeValueUpdate on each modeled attribute. **/
@@ -1204,12 +1207,12 @@ public class DynamoDBMapper {
         protected UpdateItemResult doUpdateItem() {
             UpdateItemRequest req = new UpdateItemRequest()
                     .withTableName(getTableName())
-                    .withKey(getKeyAttributeValues())
+                    .withKey(getPrimaryKeyAttributeValues())
                     .withAttributeUpdates(
                             transformAttributeUpdates(
                                     this.clazz,
                                     getTableName(),
-                                    getKeyAttributeValues(),
+                                    getPrimaryKeyAttributeValues(),
                                     getAttributeValueUpdates(),
                                     saveConfig))
                     .withExpected(mergeExpectedAttributeValueConditions())

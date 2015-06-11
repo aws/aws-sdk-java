@@ -27,7 +27,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotPriceHistoryReques
  * chronological order, from the oldest to the most recent, for up to the
  * past 90 days. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html"> Spot Instance Pricing History </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
  * When you specify a start and end time, this operation returns the

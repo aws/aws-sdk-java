@@ -40,12 +40,12 @@ import com.amazonaws.services.ec2.model.transform.CreateVolumeRequestMarshaller;
  * support Amazon EBS encryption. Volumes that are created from encrypted
  * snapshots are also automatically encrypted. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
  * For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html"> Creating or Restoring an Amazon EBS Volume </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVolume(CreateVolumeRequest)
@@ -103,8 +103,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * volumes, you can only launch it on supported instance types. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     * for Linux</i>.
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      */
     private Boolean encrypted;
 
@@ -481,8 +481,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * volumes, you can only launch it on supported instance types. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     * for Linux</i>.
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      *
      * @return Specifies whether the volume should be encrypted. Encrypted Amazon EBS
      *         volumes may only be attached to instances that support Amazon EBS
@@ -492,8 +492,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         volumes, you can only launch it on supported instance types. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     *         for Linux</i>.
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
      */
     public Boolean isEncrypted() {
         return encrypted;
@@ -508,8 +508,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * volumes, you can only launch it on supported instance types. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     * for Linux</i>.
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      *
      * @param encrypted Specifies whether the volume should be encrypted. Encrypted Amazon EBS
      *         volumes may only be attached to instances that support Amazon EBS
@@ -519,8 +519,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         volumes, you can only launch it on supported instance types. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     *         for Linux</i>.
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
      */
     public void setEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
@@ -535,8 +535,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * volumes, you can only launch it on supported instance types. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     * for Linux</i>.
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -548,8 +548,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         volumes, you can only launch it on supported instance types. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     *         for Linux</i>.
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -568,8 +568,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * volumes, you can only launch it on supported instance types. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     * for Linux</i>.
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      *
      * @return Specifies whether the volume should be encrypted. Encrypted Amazon EBS
      *         volumes may only be attached to instances that support Amazon EBS
@@ -579,8 +579,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         volumes, you can only launch it on supported instance types. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide
-     *         for Linux</i>.
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
      */
     public Boolean getEncrypted() {
         return encrypted;

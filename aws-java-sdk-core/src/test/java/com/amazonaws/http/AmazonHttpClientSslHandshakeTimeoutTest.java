@@ -25,6 +25,7 @@ import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.net.URI;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 import junit.framework.Assert;
@@ -230,12 +231,12 @@ public class AmazonHttpClientSslHandshakeTimeoutTest {
         }
 
         @Override
-        public Map<String, String> getParameters() {
+        public Map<String, List<String>> getParameters() {
             return Collections.emptyMap();
         }
 
         @Override
-        public void setParameters(Map<String, String> parameters) {
+        public void setParameters(Map<String, List<String>> parameters) {
         }
 
         @Override

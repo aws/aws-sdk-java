@@ -18,12 +18,9 @@
  */
 package com.amazonaws.util;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.nio.ByteBuffer;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Random;
 import java.util.UUID;
 
@@ -47,88 +44,88 @@ public class JSONUtilsTest {
     public void testFromJSONToObject() throws JSONException {
         Foo expectedObject = getRandomFoo();
         String json;
-		json = fooToString(expectedObject);
-		Foo parsedObject = JSONUtils.toObject(Foo.class, json);
-        
+        json = fooToString(expectedObject);
+        Foo parsedObject = JSONUtils.toObject(Foo.class, json);
+
         assertTrue(expectedObject.equals(parsedObject));
     }
 
     public class Foo {
-    	public boolean booleanField;
-    	public double doubleField;
-    	public int intField;
-    	public long longField;
-    	public String stringField;
-    	public char charField;
-    	public int[] arrayField;
-    	public Bar nestedObjectField;
-    	
-    	public class Bar {
-    		public int intField;
-    		public boolean equals(Bar other) {
-    			return intField == other.intField;
-    		}
-    	}
-    	
-    	public boolean equals(Foo other) {
-    		if (booleanField != other.booleanField)
-    			return false;
-    		if (doubleField != other.doubleField)
-    			return false;
-    		if (intField != other.intField)
-    			return false;
-    		if (longField != other.longField)
-    			return false;
-    		if (!stringField.equals(other.stringField))
-    			return false;
-    		if (charField != other.charField)
-    			return false;
-    		if (!Arrays.equals(arrayField, other.arrayField))
-    			return false;
-    		if (!nestedObjectField.equals(other.nestedObjectField))
-    			return false;
-    		return true;
-    	}
-    }  	
-    
-	private Foo getRandomFoo() {
-		Random random = new Random();
-		Foo foo = new Foo();
-		foo.booleanField = random.nextBoolean();
-		foo.doubleField = random.nextDouble();
-		foo.intField = random.nextInt();
-		foo.longField = random.nextLong();
-		foo.stringField = UUID.randomUUID().toString();
-		int MIN_CHAR = 32;
-		int MAX_CHAR = 126;
-		foo.charField = (char) (MIN_CHAR + random.nextInt(MAX_CHAR - MIN_CHAR));
-		int arrayLength = random.nextInt(20);
-		foo.arrayField = new int[arrayLength];
-		foo.nestedObjectField = foo.new Bar();
-		foo.nestedObjectField.intField = random.nextInt();
-		return foo;
-	}
-	
-    private static String fooToString(Foo foo) throws JSONException {
-    	JSONObject jsonObject = new JSONObject();
-    	jsonObject.put("booleanField", foo.booleanField);
-    	jsonObject.put("doubleField", foo.doubleField);
-    	jsonObject.put("intField", foo.intField);
-    	jsonObject.put("longField", foo.longField);
-    	jsonObject.put("stringField", foo.stringField);
-    	jsonObject.put("charField", "" + foo.charField);
-    	
-    	JSONArray arrayObject = new JSONArray();
-    	for (int i = 0; i < foo.arrayField.length; i++)
-    		arrayObject.put(i, foo.arrayField[i]);
-    	jsonObject.put("arrayField", arrayObject);
-    	
-    	JSONObject nestedJSONObject = new JSONObject();
-    	nestedJSONObject.put("intField", foo.nestedObjectField.intField);
-    	jsonObject.put("nestedObjectField", nestedJSONObject);
-    	
-    	return jsonObject.toString();
-    	
+        public boolean booleanField;
+        public double doubleField;
+        public int intField;
+        public long longField;
+        public String stringField;
+        public char charField;
+        public int[] arrayField;
+        public Bar nestedObjectField;
+
+        public class Bar {
+            public int intField;
+            public boolean equals(Bar other) {
+                return intField == other.intField;
+            }
+        }
+
+        public boolean equals(Foo other) {
+            if (booleanField != other.booleanField)
+                return false;
+            if (doubleField != other.doubleField)
+                return false;
+            if (intField != other.intField)
+                return false;
+            if (longField != other.longField)
+                return false;
+            if (!stringField.equals(other.stringField))
+                return false;
+            if (charField != other.charField)
+                return false;
+            if (!Arrays.equals(arrayField, other.arrayField))
+                return false;
+            if (!nestedObjectField.equals(other.nestedObjectField))
+                return false;
+            return true;
+        }
     }
-    
+
+    private Foo getRandomFoo() {
+        Random random = new Random();
+        Foo foo = new Foo();
+        foo.booleanField = random.nextBoolean();
+        foo.doubleField = random.nextDouble();
+        foo.intField = random.nextInt();
+        foo.longField = random.nextLong();
+        foo.stringField = UUID.randomUUID().toString();
+        int MIN_CHAR = 32;
+        int MAX_CHAR = 126;
+        foo.charField = (char) (MIN_CHAR + random.nextInt(MAX_CHAR - MIN_CHAR));
+        int arrayLength = random.nextInt(20);
+        foo.arrayField = new int[arrayLength];
+        foo.nestedObjectField = foo.new Bar();
+        foo.nestedObjectField.intField = random.nextInt();
+        return foo;
+    }
+
+    private static String fooToString(Foo foo) throws JSONException {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("booleanField", foo.booleanField);
+        jsonObject.put("doubleField", foo.doubleField);
+        jsonObject.put("intField", foo.intField);
+        jsonObject.put("longField", foo.longField);
+        jsonObject.put("stringField", foo.stringField);
+        jsonObject.put("charField", "" + foo.charField);
+
+        JSONArray arrayObject = new JSONArray();
+        for (int i = 0; i < foo.arrayField.length; i++)
+            arrayObject.put(i, foo.arrayField[i]);
+        jsonObject.put("arrayField", arrayObject);
+
+        JSONObject nestedJSONObject = new JSONObject();
+        nestedJSONObject.put("intField", foo.nestedObjectField.intField);
+        jsonObject.put("nestedObjectField", nestedJSONObject);
+
+        return jsonObject.toString();
+
+    }
+
 }

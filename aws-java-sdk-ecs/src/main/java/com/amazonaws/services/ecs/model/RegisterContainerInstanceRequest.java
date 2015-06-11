@@ -41,22 +41,29 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     private String cluster;
 
     /**
-     * 
+     * The instance identity document for the Amazon EC2 instance to
+     * register. This document can be found by running the following command
+     * from the instance: <code>curl
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      */
     private String instanceIdentityDocument;
 
     /**
-     * 
+     * The instance identity document signature for the Amazon EC2 instance
+     * to register. This signature can be found by running the following
+     * command from the instance: <code>curl
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      */
     private String instanceIdentityDocumentSignature;
 
     /**
-     * 
+     * The resources available on the instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Resource> totalResources;
 
     /**
-     * 
+     * The version information for the Amazon ECS container agent and Docker
+     * daemon running on the container instance.
      */
     private VersionInfo versionInfo;
 
@@ -106,29 +113,47 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * 
+     * The instance identity document for the Amazon EC2 instance to
+     * register. This document can be found by running the following command
+     * from the instance: <code>curl
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      *
-     * @return 
+     * @return The instance identity document for the Amazon EC2 instance to
+     *         register. This document can be found by running the following command
+     *         from the instance: <code>curl
+     *         http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      */
     public String getInstanceIdentityDocument() {
         return instanceIdentityDocument;
     }
     
     /**
-     * 
+     * The instance identity document for the Amazon EC2 instance to
+     * register. This document can be found by running the following command
+     * from the instance: <code>curl
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      *
-     * @param instanceIdentityDocument 
+     * @param instanceIdentityDocument The instance identity document for the Amazon EC2 instance to
+     *         register. This document can be found by running the following command
+     *         from the instance: <code>curl
+     *         http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      */
     public void setInstanceIdentityDocument(String instanceIdentityDocument) {
         this.instanceIdentityDocument = instanceIdentityDocument;
     }
     
     /**
-     * 
+     * The instance identity document for the Amazon EC2 instance to
+     * register. This document can be found by running the following command
+     * from the instance: <code>curl
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIdentityDocument 
+     * @param instanceIdentityDocument The instance identity document for the Amazon EC2 instance to
+     *         register. This document can be found by running the following command
+     *         from the instance: <code>curl
+     *         http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -139,29 +164,47 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * 
+     * The instance identity document signature for the Amazon EC2 instance
+     * to register. This signature can be found by running the following
+     * command from the instance: <code>curl
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      *
-     * @return 
+     * @return The instance identity document signature for the Amazon EC2 instance
+     *         to register. This signature can be found by running the following
+     *         command from the instance: <code>curl
+     *         http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      */
     public String getInstanceIdentityDocumentSignature() {
         return instanceIdentityDocumentSignature;
     }
     
     /**
-     * 
+     * The instance identity document signature for the Amazon EC2 instance
+     * to register. This signature can be found by running the following
+     * command from the instance: <code>curl
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      *
-     * @param instanceIdentityDocumentSignature 
+     * @param instanceIdentityDocumentSignature The instance identity document signature for the Amazon EC2 instance
+     *         to register. This signature can be found by running the following
+     *         command from the instance: <code>curl
+     *         http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      */
     public void setInstanceIdentityDocumentSignature(String instanceIdentityDocumentSignature) {
         this.instanceIdentityDocumentSignature = instanceIdentityDocumentSignature;
     }
     
     /**
-     * 
+     * The instance identity document signature for the Amazon EC2 instance
+     * to register. This signature can be found by running the following
+     * command from the instance: <code>curl
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIdentityDocumentSignature 
+     * @param instanceIdentityDocumentSignature The instance identity document signature for the Amazon EC2 instance
+     *         to register. This signature can be found by running the following
+     *         command from the instance: <code>curl
+     *         http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -172,9 +215,9 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * 
+     * The resources available on the instance.
      *
-     * @return 
+     * @return The resources available on the instance.
      */
     public java.util.List<Resource> getTotalResources() {
         if (totalResources == null) {
@@ -185,9 +228,9 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * 
+     * The resources available on the instance.
      *
-     * @param totalResources 
+     * @param totalResources The resources available on the instance.
      */
     public void setTotalResources(java.util.Collection<Resource> totalResources) {
         if (totalResources == null) {
@@ -200,7 +243,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * 
+     * The resources available on the instance.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTotalResources(java.util.Collection)} or {@link
@@ -209,7 +252,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param totalResources 
+     * @param totalResources The resources available on the instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -223,11 +266,11 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * 
+     * The resources available on the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param totalResources 
+     * @param totalResources The resources available on the instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -245,29 +288,35 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * 
+     * The version information for the Amazon ECS container agent and Docker
+     * daemon running on the container instance.
      *
-     * @return 
+     * @return The version information for the Amazon ECS container agent and Docker
+     *         daemon running on the container instance.
      */
     public VersionInfo getVersionInfo() {
         return versionInfo;
     }
     
     /**
-     * 
+     * The version information for the Amazon ECS container agent and Docker
+     * daemon running on the container instance.
      *
-     * @param versionInfo 
+     * @param versionInfo The version information for the Amazon ECS container agent and Docker
+     *         daemon running on the container instance.
      */
     public void setVersionInfo(VersionInfo versionInfo) {
         this.versionInfo = versionInfo;
     }
     
     /**
-     * 
+     * The version information for the Amazon ECS container agent and Docker
+     * daemon running on the container instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param versionInfo 
+     * @param versionInfo The version information for the Amazon ECS container agent and Docker
+     *         daemon running on the container instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

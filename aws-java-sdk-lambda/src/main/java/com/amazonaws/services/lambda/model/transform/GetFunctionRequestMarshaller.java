@@ -90,14 +90,16 @@ public class GetFunctionRequestMarshaller implements Marshaller<Request<GetFunct
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FunctionName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FunctionName");
+
             String value = (getFunctionRequest.getFunctionName() == null) ? null : StringUtils.fromString(getFunctionRequest.getFunctionName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (getFunctionRequest.getFunctionName() == null) ? "" : StringUtils.fromString(getFunctionRequest.getFunctionName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

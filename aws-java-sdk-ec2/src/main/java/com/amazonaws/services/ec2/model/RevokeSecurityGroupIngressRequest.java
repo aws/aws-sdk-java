@@ -54,13 +54,16 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * [EC2-Classic, default VPC] The name of the source security group. You
-     * can't specify a source security group and a CIDR IP address range.
+     * can't specify this parameter in combination with the following
+     * parameters: the CIDR IP address range, the start of the port range,
+     * and the end of the port range.
      */
     private String sourceSecurityGroupName;
 
     /**
-     * The ID of the source security group. You can't specify a source
-     * security group and a CIDR IP address range.
+     * The ID of the source security group. You can't specify this parameter
+     * in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, and the end of the port range.
      */
     private String sourceSecurityGroupOwnerId;
 
@@ -187,10 +190,14 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * [EC2-Classic, default VPC] The name of the source security group. You
-     * can't specify a source security group and a CIDR IP address range.
+     * can't specify this parameter in combination with the following
+     * parameters: the CIDR IP address range, the start of the port range,
+     * and the end of the port range.
      *
      * @return [EC2-Classic, default VPC] The name of the source security group. You
-     *         can't specify a source security group and a CIDR IP address range.
+     *         can't specify this parameter in combination with the following
+     *         parameters: the CIDR IP address range, the start of the port range,
+     *         and the end of the port range.
      */
     public String getSourceSecurityGroupName() {
         return sourceSecurityGroupName;
@@ -198,10 +205,14 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     
     /**
      * [EC2-Classic, default VPC] The name of the source security group. You
-     * can't specify a source security group and a CIDR IP address range.
+     * can't specify this parameter in combination with the following
+     * parameters: the CIDR IP address range, the start of the port range,
+     * and the end of the port range.
      *
      * @param sourceSecurityGroupName [EC2-Classic, default VPC] The name of the source security group. You
-     *         can't specify a source security group and a CIDR IP address range.
+     *         can't specify this parameter in combination with the following
+     *         parameters: the CIDR IP address range, the start of the port range,
+     *         and the end of the port range.
      */
     public void setSourceSecurityGroupName(String sourceSecurityGroupName) {
         this.sourceSecurityGroupName = sourceSecurityGroupName;
@@ -209,12 +220,16 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     
     /**
      * [EC2-Classic, default VPC] The name of the source security group. You
-     * can't specify a source security group and a CIDR IP address range.
+     * can't specify this parameter in combination with the following
+     * parameters: the CIDR IP address range, the start of the port range,
+     * and the end of the port range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceSecurityGroupName [EC2-Classic, default VPC] The name of the source security group. You
-     *         can't specify a source security group and a CIDR IP address range.
+     *         can't specify this parameter in combination with the following
+     *         parameters: the CIDR IP address range, the start of the port range,
+     *         and the end of the port range.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -225,35 +240,41 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * The ID of the source security group. You can't specify a source
-     * security group and a CIDR IP address range.
+     * The ID of the source security group. You can't specify this parameter
+     * in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, and the end of the port range.
      *
-     * @return The ID of the source security group. You can't specify a source
-     *         security group and a CIDR IP address range.
+     * @return The ID of the source security group. You can't specify this parameter
+     *         in combination with the following parameters: the CIDR IP address
+     *         range, the start of the port range, and the end of the port range.
      */
     public String getSourceSecurityGroupOwnerId() {
         return sourceSecurityGroupOwnerId;
     }
     
     /**
-     * The ID of the source security group. You can't specify a source
-     * security group and a CIDR IP address range.
+     * The ID of the source security group. You can't specify this parameter
+     * in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, and the end of the port range.
      *
-     * @param sourceSecurityGroupOwnerId The ID of the source security group. You can't specify a source
-     *         security group and a CIDR IP address range.
+     * @param sourceSecurityGroupOwnerId The ID of the source security group. You can't specify this parameter
+     *         in combination with the following parameters: the CIDR IP address
+     *         range, the start of the port range, and the end of the port range.
      */
     public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
         this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
     }
     
     /**
-     * The ID of the source security group. You can't specify a source
-     * security group and a CIDR IP address range.
+     * The ID of the source security group. You can't specify this parameter
+     * in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, and the end of the port range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceSecurityGroupOwnerId The ID of the source security group. You can't specify a source
-     *         security group and a CIDR IP address range.
+     * @param sourceSecurityGroupOwnerId The ID of the source security group. You can't specify this parameter
+     *         in combination with the following parameters: the CIDR IP address
+     *         range, the start of the port range, and the end of the port range.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

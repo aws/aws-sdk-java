@@ -318,10 +318,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services.cloudfront_2012_03_15request.handlers"));
     }
-    
+
     /* (non-Javadoc)
      * @see com.amazonaws.AmazonWebServiceClient#getServiceAbbreviation()
      */
@@ -1014,14 +1014,11 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
-        for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
-            request.addParameter(entry.getKey(), entry.getValue());
-        }
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-        	credentials = originalRequest.getRequestCredentials();
+            credentials = originalRequest.getRequestCredentials();
         }
 
         ExecutionContext executionContext = createExecutionContext();

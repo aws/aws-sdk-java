@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.codedeploy.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,57 +40,62 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Create Deployment Config Request Marshaller
+ * CreateDeploymentConfigRequest Marshaller
  */
-public class CreateDeploymentConfigRequestMarshaller implements Marshaller<Request<CreateDeploymentConfigRequest>, CreateDeploymentConfigRequest> {
+public class CreateDeploymentConfigRequestMarshaller
+        implements
+        Marshaller<Request<CreateDeploymentConfigRequest>, CreateDeploymentConfigRequest> {
 
-    public Request<CreateDeploymentConfigRequest> marshall(CreateDeploymentConfigRequest createDeploymentConfigRequest) {
+    public Request<CreateDeploymentConfigRequest> marshall(
+            CreateDeploymentConfigRequest createDeploymentConfigRequest) {
+
         if (createDeploymentConfigRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDeploymentConfigRequest> request = new DefaultRequest<CreateDeploymentConfigRequest>(createDeploymentConfigRequest, "AmazonCodeDeploy");
-        String target = "CodeDeploy_20141006.CreateDeploymentConfig";
-        request.addHeader("X-Amz-Target", target);
+        Request<CreateDeploymentConfigRequest> request = new DefaultRequest<CreateDeploymentConfigRequest>(
+                createDeploymentConfigRequest, "AmazonCodeDeploy");
+        request.addHeader("X-Amz-Target",
+                "CodeDeploy_20141006.CreateDeploymentConfig");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (createDeploymentConfigRequest.getDeploymentConfigName() != null) {
-                jsonWriter.key("deploymentConfigName").value(createDeploymentConfigRequest.getDeploymentConfigName());
+                jsonWriter.key("deploymentConfigName")
+                        .value(createDeploymentConfigRequest
+                                .getDeploymentConfigName());
             }
-            MinimumHealthyHosts minimumHealthyHosts = createDeploymentConfigRequest.getMinimumHealthyHosts();
-            if (minimumHealthyHosts != null) {
 
+            if (createDeploymentConfigRequest.getMinimumHealthyHosts() != null) {
                 jsonWriter.key("minimumHealthyHosts");
-                jsonWriter.object();
-
-                if (minimumHealthyHosts.getValue() != null) {
-                    jsonWriter.key("value").value(minimumHealthyHosts.getValue());
-                }
-                if (minimumHealthyHosts.getType() != null) {
-                    jsonWriter.key("type").value(minimumHealthyHosts.getType());
-                }
-                jsonWriter.endObject();
+                MinimumHealthyHostsJsonMarshaller.getInstance().marshall(
+                        createDeploymentConfigRequest.getMinimumHealthyHosts(),
+                        jsonWriter);
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,84 +14,87 @@
  */
 package com.amazonaws.services.codedeploy;
 
+import org.w3c.dom.*;
+
 import java.net.*;
 import java.util.*;
+import java.util.Map.Entry;
 
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
-import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
 import com.amazonaws.metrics.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.services.codedeploy.model.transform.*;
 
 /**
- * Client for accessing AmazonCodeDeploy.  All service calls made
- * using this client are blocking, and will not return until the service call
- * completes.
+ * Client for accessing CodeDeploy. All service calls made using this client are
+ * blocking, and will not return until the service call completes.
  * <p>
- * AWS CodeDeploy <b>Overview</b> <p>
- * This is the AWS CodeDeploy API Reference. This guide provides
- * descriptions of the AWS CodeDeploy APIs. For additional information,
- * see the
- * <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide"> AWS CodeDeploy User Guide </a>
- * .
+ * <fullname>AWS CodeDeploy</fullname> <b>Overview</b>
+ * <p>
+ * This is the AWS CodeDeploy API Reference. This guide provides descriptions of
+ * the AWS CodeDeploy APIs. For additional information, see the <a
+ * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+ * User Guide</a>.
  * </p>
- * <b>Using the APIs</b> <p>
+ * <b>Using the APIs</b>
+ * <p>
  * You can use the AWS CodeDeploy APIs to work with the following items:
  * </p>
- * 
  * <ul>
- * <li> <p>
- * Applications are unique identifiers that AWS CodeDeploy uses to ensure
- * that the correct combinations of revisions, deployment configurations,
- * and deployment groups are being referenced during deployments.
+ * <li>
+ * <p>
+ * Applications are unique identifiers that AWS CodeDeploy uses to ensure that
+ * the correct combinations of revisions, deployment configurations, and
+ * deployment groups are being referenced during deployments.
  * </p>
  * <p>
- * You can use the AWS CodeDeploy APIs to create, delete, get, list, and
- * update applications.
+ * You can use the AWS CodeDeploy APIs to create, delete, get, list, and update
+ * applications.
  * </p>
  * </li>
- * <li> <p>
- * Deployment configurations are sets of deployment rules and deployment
- * success and failure conditions that AWS CodeDeploy uses during
- * deployments.
+ * <li>
+ * <p>
+ * Deployment configurations are sets of deployment rules and deployment success
+ * and failure conditions that AWS CodeDeploy uses during deployments.
  * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to create, delete, get, and list
  * deployment configurations.
  * </p>
  * </li>
- * <li> <p>
- * Deployment groups are groups of instances to which application
- * revisions can be deployed.
+ * <li>
+ * <p>
+ * Deployment groups are groups of instances to which application revisions can
+ * be deployed.
  * </p>
  * <p>
- * You can use the AWS CodeDeploy APIs to create, delete, get, list, and
- * update deployment groups.
+ * You can use the AWS CodeDeploy APIs to create, delete, get, list, and update
+ * deployment groups.
  * </p>
  * </li>
- * <li> <p>
- * Instances represent Amazon EC2 instances to which application
- * revisions are deployed. Instances are identified by their Amazon EC2
- * tags or Auto Scaling group names. Instances belong to deployment
- * groups.
+ * <li>
+ * <p>
+ * Instances represent Amazon EC2 instances to which application revisions are
+ * deployed. Instances are identified by their Amazon EC2 tags or Auto Scaling
+ * group names. Instances belong to deployment groups.
  * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to get and list instances.
  * </p>
  * </li>
- * <li> <p>
+ * <li>
+ * <p>
  * Deployments represent the process of deploying revisions to instances.
  * </p>
  * <p>
@@ -99,77 +102,79 @@ import com.amazonaws.services.codedeploy.model.transform.*;
  * deployments.
  * </p>
  * </li>
- * <li> <p>
- * Application revisions are archive files that are stored in Amazon S3
- * buckets or GitHub repositories. These revisions contain source content
- * (such as source code, web pages, executable files, any deployment
- * scripts, and similar) along with an Application Specification file
- * (AppSpec file). (The AppSpec file is unique to AWS CodeDeploy; it
- * defines a series of deployment actions that you want AWS CodeDeploy to
- * execute.) An application revision is uniquely identified by its Amazon
- * S3 object key and its ETag, version, or both (for application
- * revisions that are stored in Amazon S3 buckets) or by its repository
- * name and commit ID (for applications revisions that are stored in
- * GitHub repositories). Application revisions are deployed through
+ * <li>
+ * <p>
+ * Application revisions are archive files that are stored in Amazon S3 buckets
+ * or GitHub repositories. These revisions contain source content (such as
+ * source code, web pages, executable files, any deployment scripts, and
+ * similar) along with an Application Specification file (AppSpec file). (The
+ * AppSpec file is unique to AWS CodeDeploy; it defines a series of deployment
+ * actions that you want AWS CodeDeploy to execute.) An application revision is
+ * uniquely identified by its Amazon S3 object key and its ETag, version, or
+ * both (for application revisions that are stored in Amazon S3 buckets) or by
+ * its repository name and commit ID (for applications revisions that are stored
+ * in GitHub repositories). Application revisions are deployed through
  * deployment groups.
  * </p>
  * <p>
- * You can use the AWS CodeDeploy APIs to get, list, and register
- * application revisions.
+ * You can use the AWS CodeDeploy APIs to get, list, and register application
+ * revisions.
  * </p>
  * </li>
- * 
  * </ul>
  */
-public class AmazonCodeDeployClient extends AmazonWebServiceClient implements AmazonCodeDeploy {
-
+public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
+        AmazonCodeDeploy {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonCodeDeploy.class);
 
     /**
-     * List of exception unmarshallers for all AmazonCodeDeploy exceptions.
+     * List of exception unmarshallers for all CodeDeploy exceptions.
      */
-    protected List<JsonErrorUnmarshaller> jsonErrorUnmarshallers;
+    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonCodeDeploy.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Constructs a new client to invoke service methods on CodeDeploy. A
+     * credentials provider chain will be used that searches for credentials in
+     * this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
      *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCodeDeployClient() {
-        this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
+        this(new DefaultAWSCredentialsProviderChain(),
+                new ClientConfiguration());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonCodeDeploy.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Constructs a new client to invoke service methods on CodeDeploy. A
+     * credentials provider chain will be used that searches for credentials in
+     * this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
      *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AmazonCodeDeploy
-     *                       (ex: proxy settings, retry counts, etc.).
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to CodeDeploy (ex: proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
      */
@@ -178,1057 +183,692 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonCodeDeploy using the specified AWS account credentials.
-     * 
-     * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Constructs a new client to invoke service methods on CodeDeploy using the
+     * specified AWS account credentials.
      *
-     * @param awsCredentials The AWS credentials (access key ID and secret key) to use
-     *                       when authenticating with AWS services.
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
      */
     public AmazonCodeDeployClient(AWSCredentials awsCredentials) {
         this(awsCredentials, new ClientConfiguration());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonCodeDeploy using the specified AWS account credentials
-     * and client configuration options.
-     * 
-     * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Constructs a new client to invoke service methods on CodeDeploy using the
+     * specified AWS account credentials and client configuration options.
      *
-     * @param awsCredentials The AWS credentials (access key ID and secret key) to use
-     *                       when authenticating with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AmazonCodeDeploy
-     *                       (ex: proxy settings, retry counts, etc.).
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to CodeDeploy (ex: proxy settings, retry counts, etc.).
      */
-    public AmazonCodeDeployClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
-        super(adjustClientConfiguration(clientConfiguration));
-        
-        this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
-        
+    public AmazonCodeDeployClient(AWSCredentials awsCredentials,
+            ClientConfiguration clientConfiguration) {
+        super(clientConfiguration);
+        this.awsCredentialsProvider = new StaticCredentialsProvider(
+                awsCredentials);
         init();
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonCodeDeploy using the specified AWS account credentials provider.
-     * 
+     * Constructs a new client to invoke service methods on CodeDeploy using the
+     * specified AWS account credentials provider.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
      */
     public AmazonCodeDeployClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, new ClientConfiguration());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonCodeDeploy using the specified AWS account credentials
-     * provider and client configuration options.
-     * 
+     * Constructs a new client to invoke service methods on CodeDeploy using the
+     * specified AWS account credentials provider and client configuration
+     * options.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AmazonCodeDeploy
-     *                       (ex: proxy settings, retry counts, etc.).
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to CodeDeploy (ex: proxy settings, retry counts, etc.).
      */
-    public AmazonCodeDeployClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+    public AmazonCodeDeployClient(
+            AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonCodeDeploy using the specified AWS account credentials
-     * provider, client configuration options and request metric collector.
-     * 
+     * Constructs a new client to invoke service methods on CodeDeploy using the
+     * specified AWS account credentials provider, client configuration options,
+     * and request metric collector.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AmazonCodeDeploy
-     *                       (ex: proxy settings, retry counts, etc.).
-     * @param requestMetricCollector optional request metric collector
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to CodeDeploy (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector
+     *        optional request metric collector
      */
-    public AmazonCodeDeployClient(AWSCredentialsProvider awsCredentialsProvider,
+    public AmazonCodeDeployClient(
+            AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(adjustClientConfiguration(clientConfiguration), requestMetricCollector);
-        
+        super(adjustClientConfiguration(clientConfiguration),
+                requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
-        
         init();
     }
 
     private void init() {
-        jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
-        jsonErrorUnmarshallers.add(new InvalidKeyPrefixFilterExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InstanceLimitExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new RevisionDoesNotExistExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidSortOrderExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new ApplicationAlreadyExistsExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentGroupDoesNotExistExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new ApplicationLimitExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InstanceNameAlreadyRegisteredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentConfigLimitExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidOperationExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidApplicationNameExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentGroupLimitExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InstanceNameRequiredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidSortByExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidDeploymentIdExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidDeploymentGroupNameExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidMinimumHealthyHostValueExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentLimitExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidRoleExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new TagRequiredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidBucketNameFilterExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentNotStartedExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidRegistrationStatusExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentGroupNameRequiredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentIdRequiredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidDeployedStateFilterExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new ApplicationDoesNotExistExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new ApplicationNameRequiredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentConfigDoesNotExistExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidTimeRangeExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DescriptionTooLongExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidTagExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidInstanceNameExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentConfigNameRequiredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new IamUserArnAlreadyRegisteredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidRevisionExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InstanceIdRequiredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new IamUserArnRequiredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidAutoScalingGroupExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentConfigInUseExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new BucketNameFilterRequiredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InstanceDoesNotExistExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidEC2TagExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidIamUserArnExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentDoesNotExistExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new RoleRequiredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidTagFilterExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentAlreadyCompletedExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InstanceNotRegisteredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new TagLimitExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidDeploymentConfigNameExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentGroupAlreadyExistsExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new RevisionRequiredExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidInstanceStatusExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DeploymentConfigAlreadyExistsExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidDeploymentStatusExceptionUnmarshaller());
-        
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
-        
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentGroupLimitExceededException.class,
+                        "DeploymentGroupLimitExceededException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.RoleRequiredException.class,
+                        "RoleRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InstanceIdRequiredException.class,
+                        "InstanceIdRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidRegistrationStatusException.class,
+                        "InvalidRegistrationStatusException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidOperationException.class,
+                        "InvalidOperationException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InstanceLimitExceededException.class,
+                        "InstanceLimitExceededException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentConfigInUseException.class,
+                        "DeploymentConfigInUseException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InstanceNotRegisteredException.class,
+                        "InstanceNotRegisteredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InstanceNameRequiredException.class,
+                        "InstanceNameRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentConfigLimitExceededException.class,
+                        "DeploymentConfigLimitExceededException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentConfigNameRequiredException.class,
+                        "DeploymentConfigNameRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.RevisionRequiredException.class,
+                        "RevisionRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.ApplicationNameRequiredException.class,
+                        "ApplicationNameRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.ApplicationDoesNotExistException.class,
+                        "ApplicationDoesNotExistException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentGroupDoesNotExistException.class,
+                        "DeploymentGroupDoesNotExistException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DescriptionTooLongException.class,
+                        "DescriptionTooLongException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.ApplicationLimitExceededException.class,
+                        "ApplicationLimitExceededException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.RevisionDoesNotExistException.class,
+                        "RevisionDoesNotExistException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidDeploymentConfigNameException.class,
+                        "InvalidDeploymentConfigNameException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidNextTokenException.class,
+                        "InvalidNextTokenException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidSortByException.class,
+                        "InvalidSortByException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.TagLimitExceededException.class,
+                        "TagLimitExceededException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentGroupNameRequiredException.class,
+                        "DeploymentGroupNameRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentConfigDoesNotExistException.class,
+                        "DeploymentConfigDoesNotExistException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.BucketNameFilterRequiredException.class,
+                        "BucketNameFilterRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidKeyPrefixFilterException.class,
+                        "InvalidKeyPrefixFilterException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidDeploymentGroupNameException.class,
+                        "InvalidDeploymentGroupNameException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentAlreadyCompletedException.class,
+                        "DeploymentAlreadyCompletedException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidSortOrderException.class,
+                        "InvalidSortOrderException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidTagFilterException.class,
+                        "InvalidTagFilterException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.IamUserArnRequiredException.class,
+                        "IamUserArnRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidTimeRangeException.class,
+                        "InvalidTimeRangeException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidInstanceNameException.class,
+                        "InvalidInstanceNameException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException.class,
+                        "InvalidBucketNameFilterException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidDeploymentStatusException.class,
+                        "InvalidDeploymentStatusException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentGroupAlreadyExistsException.class,
+                        "DeploymentGroupAlreadyExistsException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidIamUserArnException.class,
+                        "InvalidIamUserArnException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.TagRequiredException.class,
+                        "TagRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidRoleException.class,
+                        "InvalidRoleException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidDeployedStateFilterException.class,
+                        "InvalidDeployedStateFilterException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidEC2TagException.class,
+                        "InvalidEC2TagException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.ApplicationAlreadyExistsException.class,
+                        "ApplicationAlreadyExistsException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidMinimumHealthyHostValueException.class,
+                        "InvalidMinimumHealthyHostValueException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InstanceDoesNotExistException.class,
+                        "InstanceDoesNotExistException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidTagException.class,
+                        "InvalidTagException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.IamUserArnAlreadyRegisteredException.class,
+                        "IamUserArnAlreadyRegisteredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InstanceNameAlreadyRegisteredException.class,
+                        "InstanceNameAlreadyRegisteredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentIdRequiredException.class,
+                        "DeploymentIdRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidDeploymentIdException.class,
+                        "InvalidDeploymentIdException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidInstanceStatusException.class,
+                        "InvalidInstanceStatusException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidRevisionException.class,
+                        "InvalidRevisionException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentConfigAlreadyExistsException.class,
+                        "DeploymentConfigAlreadyExistsException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidAutoScalingGroupException.class,
+                        "InvalidAutoScalingGroupException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentDoesNotExistException.class,
+                        "DeploymentDoesNotExistException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidApplicationNameException.class,
+                        "InvalidApplicationNameException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentNotStartedException.class,
+                        "DeploymentNotStartedException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.DeploymentLimitExceededException.class,
+                        "DeploymentLimitExceededException"));
+        jsonErrorUnmarshallers
+                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("codedeploy.us-east-1.amazonaws.com/");
-        
+        this.setEndpoint("https://codedeploy.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
-                "/com/amazonaws/services/codedeploy/request.handlers"));
-        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
-                "/com/amazonaws/services/codedeploy/request.handler2s"));
+        requestHandler2s
+                .addAll(chainFactory
+                        .newRequestHandlerChain("/com/amazonaws/services/codedeploy/request.handlers"));
+        requestHandler2s
+                .addAll(chainFactory
+                        .newRequestHandler2Chain("/com/amazonaws/services/codedeploy/request.handler2s"));
     }
 
-    private static ClientConfiguration adjustClientConfiguration(ClientConfiguration orig) {
+    private static ClientConfiguration adjustClientConfiguration(
+            ClientConfiguration orig) {
         ClientConfiguration config = orig;
-        
         return config;
-    }
-
-    /**
-     * <p>
-     * Deregisters an on-premises instance.
-     * </p>
-     *
-     * @param deregisterOnPremisesInstanceRequest Container for the necessary
-     *           parameters to execute the DeregisterOnPremisesInstance service method
-     *           on AmazonCodeDeploy.
-     * 
-     * 
-     * @throws InvalidInstanceNameException
-     * @throws InstanceNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(deregisterOnPremisesInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeregisterOnPremisesInstanceRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeregisterOnPremisesInstanceRequestMarshaller().marshall(super.beforeMarshalling(deregisterOnPremisesInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Changes an existing application's name.
-     * </p>
-     *
-     * @param updateApplicationRequest Container for the necessary parameters
-     *           to execute the UpdateApplication service method on AmazonCodeDeploy.
-     * 
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationAlreadyExistsException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateApplication(UpdateApplicationRequest updateApplicationRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateApplicationRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateApplicationRequestMarshaller().marshall(super.beforeMarshalling(updateApplicationRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Lists the applications registered with the applicable IAM user or AWS
-     * account.
-     * </p>
-     *
-     * @param listApplicationsRequest Container for the necessary parameters
-     *           to execute the ListApplications service method on AmazonCodeDeploy.
-     * 
-     * @return The response from the ListApplications service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listApplicationsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListApplicationsRequest> request = null;
-        Response<ListApplicationsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListApplicationsRequestMarshaller().marshall(super.beforeMarshalling(listApplicationsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<ListApplicationsResult, JsonUnmarshallerContext> unmarshaller =
-                new ListApplicationsResultJsonUnmarshaller();
-            JsonResponseHandler<ListApplicationsResult> responseHandler =
-                new JsonResponseHandler<ListApplicationsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Deletes a deployment group.
-     * </p>
-     *
-     * @param deleteDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the DeleteDeploymentGroup service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the DeleteDeploymentGroup service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidRoleException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws InvalidApplicationNameException
-     * @throws DeploymentGroupNameRequiredException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteDeploymentGroupResult deleteDeploymentGroup(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteDeploymentGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteDeploymentGroupRequest> request = null;
-        Response<DeleteDeploymentGroupResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteDeploymentGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteDeploymentGroupRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DeleteDeploymentGroupResult, JsonUnmarshallerContext> unmarshaller =
-                new DeleteDeploymentGroupResultJsonUnmarshaller();
-            JsonResponseHandler<DeleteDeploymentGroupResult> responseHandler =
-                new JsonResponseHandler<DeleteDeploymentGroupResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
     }
 
     /**
      * <p>
      * Adds a tag to an on-premises instance.
      * </p>
-     *
-     * @param addTagsToOnPremisesInstancesRequest Container for the necessary
-     *           parameters to execute the AddTagsToOnPremisesInstances service method
-     *           on AmazonCodeDeploy.
      * 
-     * 
-     * @throws InstanceNotRegisteredException
-     * @throws TagLimitExceededException
-     * @throws InstanceLimitExceededException
-     * @throws InvalidTagException
+     * @param addTagsToOnPremisesInstancesRequest
+     *        Represents the input of an adds tags to on-premises instance
+     *        operation.
      * @throws InstanceNameRequiredException
+     *         An on-premises instance name was not specified.
      * @throws TagRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         A tag was not specified.
+     * @throws InvalidTagException
+     *         The specified tag was specified in an invalid format.
+     * @throws TagLimitExceededException
+     *         The maximum allowed number of tags was exceeded.
+     * @throws InstanceLimitExceededException
+     *         The maximum number of allowed on-premises instances was exceeded.
+     * @throws InstanceNotRegisteredException
+     *         The specified on-premises instance is not registered.
      */
-    public void addTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest) {
+    @Override
+    public void addTagsToOnPremisesInstances(
+            AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest) {
         ExecutionContext executionContext = createExecutionContext(addTagsToOnPremisesInstancesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddTagsToOnPremisesInstancesRequest> request = null;
-        
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsToOnPremisesInstancesRequestMarshaller().marshall(super.beforeMarshalling(addTagsToOnPremisesInstancesRequest));
+                request = new AddTagsToOnPremisesInstancesRequestMarshaller()
+                        .marshall(addTagsToOnPremisesInstancesRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
+            invoke(request, null, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Lists the deployments within a deployment group for an application
-     * registered with the applicable IAM user or AWS account.
+     * Gets information about one or more applications.
      * </p>
-     *
-     * @param listDeploymentsRequest Container for the necessary parameters
-     *           to execute the ListDeployments service method on AmazonCodeDeploy.
      * 
-     * @return The response from the ListDeployments service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws DeploymentGroupDoesNotExistException
-     * @throws InvalidDeploymentGroupNameException
+     * @param batchGetApplicationsRequest
+     *        Represents the input of a batch get applications operation.
+     * @return Result of the BatchGetApplications operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
      * @throws InvalidApplicationNameException
-     * @throws InvalidTimeRangeException
-     * @throws DeploymentGroupNameRequiredException
-     * @throws InvalidNextTokenException
+     *         The application name was specified in an invalid format.
      * @throws ApplicationDoesNotExistException
-     * @throws InvalidDeploymentStatusException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
      */
-    public ListDeploymentsResult listDeployments(ListDeploymentsRequest listDeploymentsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listDeploymentsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public BatchGetApplicationsResult batchGetApplications(
+            BatchGetApplicationsRequest batchGetApplicationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(batchGetApplicationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListDeploymentsRequest> request = null;
-        Response<ListDeploymentsResult> response = null;
-        
+        Request<BatchGetApplicationsRequest> request = null;
+        Response<BatchGetApplicationsResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDeploymentsRequestMarshaller().marshall(super.beforeMarshalling(listDeploymentsRequest));
+                request = new BatchGetApplicationsRequestMarshaller()
+                        .marshall(batchGetApplicationsRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<ListDeploymentsResult, JsonUnmarshallerContext> unmarshaller =
-                new ListDeploymentsResultJsonUnmarshaller();
-            JsonResponseHandler<ListDeploymentsResult> responseHandler =
-                new JsonResponseHandler<ListDeploymentsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request,
+                    new BatchGetApplicationsResultJsonUnmarshaller(),
+                    executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
-    /**
-     * <p>
-     * Attempts to stop an ongoing deployment.
-     * </p>
-     *
-     * @param stopDeploymentRequest Container for the necessary parameters to
-     *           execute the StopDeployment service method on AmazonCodeDeploy.
-     * 
-     * @return The response from the StopDeployment service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
-     * @throws DeploymentAlreadyCompletedException
-     * @throws DeploymentIdRequiredException
-     * @throws DeploymentDoesNotExistException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public StopDeploymentResult stopDeployment(StopDeploymentRequest stopDeploymentRequest) {
-        ExecutionContext executionContext = createExecutionContext(stopDeploymentRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<StopDeploymentRequest> request = null;
-        Response<StopDeploymentResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new StopDeploymentRequestMarshaller().marshall(super.beforeMarshalling(stopDeploymentRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<StopDeploymentResult, JsonUnmarshallerContext> unmarshaller =
-                new StopDeploymentResultJsonUnmarshaller();
-            JsonResponseHandler<StopDeploymentResult> responseHandler =
-                new JsonResponseHandler<StopDeploymentResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Creates a new application.
-     * </p>
-     *
-     * @param createApplicationRequest Container for the necessary parameters
-     *           to execute the CreateApplication service method on AmazonCodeDeploy.
-     * 
-     * @return The response from the CreateApplication service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationAlreadyExistsException
-     * @throws ApplicationLimitExceededException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
-        ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateApplicationRequest> request = null;
-        Response<CreateApplicationResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateApplicationRequestMarshaller().marshall(super.beforeMarshalling(createApplicationRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<CreateApplicationResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateApplicationResultJsonUnmarshaller();
-            JsonResponseHandler<CreateApplicationResult> responseHandler =
-                new JsonResponseHandler<CreateApplicationResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Gets information about an application.
-     * </p>
-     *
-     * @param getApplicationRequest Container for the necessary parameters to
-     *           execute the GetApplication service method on AmazonCodeDeploy.
-     * 
-     * @return The response from the GetApplication service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetApplicationResult getApplication(GetApplicationRequest getApplicationRequest) {
-        ExecutionContext executionContext = createExecutionContext(getApplicationRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetApplicationRequest> request = null;
-        Response<GetApplicationResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetApplicationRequestMarshaller().marshall(super.beforeMarshalling(getApplicationRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<GetApplicationResult, JsonUnmarshallerContext> unmarshaller =
-                new GetApplicationResultJsonUnmarshaller();
-            JsonResponseHandler<GetApplicationResult> responseHandler =
-                new JsonResponseHandler<GetApplicationResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Creates a new deployment group for application revisions to be
-     * deployed to.
-     * </p>
-     *
-     * @param createDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the CreateDeploymentGroup service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the CreateDeploymentGroup service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws RoleRequiredException
-     * @throws InvalidRoleException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws DeploymentConfigDoesNotExistException
-     * @throws InvalidAutoScalingGroupException
-     * @throws InvalidApplicationNameException
-     * @throws DeploymentGroupNameRequiredException
-     * @throws InvalidDeploymentConfigNameException
-     * @throws DeploymentGroupAlreadyExistsException
-     * @throws InvalidTagException
-     * @throws DeploymentGroupLimitExceededException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     * @throws InvalidEC2TagException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateDeploymentGroupResult createDeploymentGroup(CreateDeploymentGroupRequest createDeploymentGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(createDeploymentGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateDeploymentGroupRequest> request = null;
-        Response<CreateDeploymentGroupResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateDeploymentGroupRequestMarshaller().marshall(super.beforeMarshalling(createDeploymentGroupRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<CreateDeploymentGroupResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateDeploymentGroupResultJsonUnmarshaller();
-            JsonResponseHandler<CreateDeploymentGroupResult> responseHandler =
-                new JsonResponseHandler<CreateDeploymentGroupResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Gets information about one or more on-premises instances.
-     * </p>
-     *
-     * @param batchGetOnPremisesInstancesRequest Container for the necessary
-     *           parameters to execute the BatchGetOnPremisesInstances service method
-     *           on AmazonCodeDeploy.
-     * 
-     * @return The response from the BatchGetOnPremisesInstances service
-     *         method, as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidInstanceNameException
-     * @throws InstanceNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest) {
-        ExecutionContext executionContext = createExecutionContext(batchGetOnPremisesInstancesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<BatchGetOnPremisesInstancesRequest> request = null;
-        Response<BatchGetOnPremisesInstancesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new BatchGetOnPremisesInstancesRequestMarshaller().marshall(super.beforeMarshalling(batchGetOnPremisesInstancesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<BatchGetOnPremisesInstancesResult, JsonUnmarshallerContext> unmarshaller =
-                new BatchGetOnPremisesInstancesResultJsonUnmarshaller();
-            JsonResponseHandler<BatchGetOnPremisesInstancesResult> responseHandler =
-                new JsonResponseHandler<BatchGetOnPremisesInstancesResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
+    @Override
+    public BatchGetApplicationsResult batchGetApplications() {
+        return batchGetApplications(new BatchGetApplicationsRequest());
     }
 
     /**
      * <p>
      * Gets information about one or more deployments.
      * </p>
-     *
-     * @param batchGetDeploymentsRequest Container for the necessary
-     *           parameters to execute the BatchGetDeployments service method on
-     *           AmazonCodeDeploy.
      * 
-     * @return The response from the BatchGetDeployments service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
+     * @param batchGetDeploymentsRequest
+     *        Represents the input of a batch get deployments operation.
+     * @return Result of the BatchGetDeployments operation returned by the
+     *         service.
      * @throws DeploymentIdRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         At least one deployment ID must be specified.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
      */
-    public BatchGetDeploymentsResult batchGetDeployments(BatchGetDeploymentsRequest batchGetDeploymentsRequest) {
+    @Override
+    public BatchGetDeploymentsResult batchGetDeployments(
+            BatchGetDeploymentsRequest batchGetDeploymentsRequest) {
         ExecutionContext executionContext = createExecutionContext(batchGetDeploymentsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<BatchGetDeploymentsRequest> request = null;
         Response<BatchGetDeploymentsResult> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchGetDeploymentsRequestMarshaller().marshall(super.beforeMarshalling(batchGetDeploymentsRequest));
+                request = new BatchGetDeploymentsRequestMarshaller()
+                        .marshall(batchGetDeploymentsRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<BatchGetDeploymentsResult, JsonUnmarshallerContext> unmarshaller =
-                new BatchGetDeploymentsResultJsonUnmarshaller();
-            JsonResponseHandler<BatchGetDeploymentsResult> responseHandler =
-                new JsonResponseHandler<BatchGetDeploymentsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request,
+                    new BatchGetDeploymentsResultJsonUnmarshaller(),
+                    executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
+    }
+
+    @Override
+    public BatchGetDeploymentsResult batchGetDeployments() {
+        return batchGetDeployments(new BatchGetDeploymentsRequest());
     }
 
     /**
      * <p>
-     * Gets information about an instance as part of a deployment.
+     * Gets information about one or more on-premises instances.
      * </p>
-     *
-     * @param getDeploymentInstanceRequest Container for the necessary
-     *           parameters to execute the GetDeploymentInstance service method on
-     *           AmazonCodeDeploy.
      * 
-     * @return The response from the GetDeploymentInstance service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
-     * @throws InstanceIdRequiredException
-     * @throws DeploymentIdRequiredException
-     * @throws DeploymentDoesNotExistException
-     * @throws InstanceDoesNotExistException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetDeploymentInstanceResult getDeploymentInstance(GetDeploymentInstanceRequest getDeploymentInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(getDeploymentInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetDeploymentInstanceRequest> request = null;
-        Response<GetDeploymentInstanceResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetDeploymentInstanceRequestMarshaller().marshall(super.beforeMarshalling(getDeploymentInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<GetDeploymentInstanceResult, JsonUnmarshallerContext> unmarshaller =
-                new GetDeploymentInstanceResultJsonUnmarshaller();
-            JsonResponseHandler<GetDeploymentInstanceResult> responseHandler =
-                new JsonResponseHandler<GetDeploymentInstanceResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Gets information about an application revision.
-     * </p>
-     *
-     * @param getApplicationRevisionRequest Container for the necessary
-     *           parameters to execute the GetApplicationRevision service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the GetApplicationRevision service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidRevisionException
-     * @throws RevisionRequiredException
-     * @throws InvalidApplicationNameException
-     * @throws RevisionDoesNotExistException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetApplicationRevisionResult getApplicationRevision(GetApplicationRevisionRequest getApplicationRevisionRequest) {
-        ExecutionContext executionContext = createExecutionContext(getApplicationRevisionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetApplicationRevisionRequest> request = null;
-        Response<GetApplicationRevisionResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetApplicationRevisionRequestMarshaller().marshall(super.beforeMarshalling(getApplicationRevisionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<GetApplicationRevisionResult, JsonUnmarshallerContext> unmarshaller =
-                new GetApplicationRevisionResultJsonUnmarshaller();
-            JsonResponseHandler<GetApplicationRevisionResult> responseHandler =
-                new JsonResponseHandler<GetApplicationRevisionResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Registers an on-premises instance.
-     * </p>
-     *
-     * @param registerOnPremisesInstanceRequest Container for the necessary
-     *           parameters to execute the RegisterOnPremisesInstance service method on
-     *           AmazonCodeDeploy.
-     * 
-     * 
-     * @throws InvalidIamUserArnException
-     * @throws InvalidInstanceNameException
+     * @param batchGetOnPremisesInstancesRequest
+     *        Represents the input of a batch get on-premises instances
+     *        operation.
+     * @return Result of the BatchGetOnPremisesInstances operation returned by
+     *         the service.
      * @throws InstanceNameRequiredException
-     * @throws InstanceNameAlreadyRegisteredException
-     * @throws IamUserArnAlreadyRegisteredException
-     * @throws IamUserArnRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         An on-premises instance name was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
      */
-    public void registerOnPremisesInstance(RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(registerOnPremisesInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(
+            BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest) {
+        ExecutionContext executionContext = createExecutionContext(batchGetOnPremisesInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RegisterOnPremisesInstanceRequest> request = null;
-        
+        Request<BatchGetOnPremisesInstancesRequest> request = null;
+        Response<BatchGetOnPremisesInstancesResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterOnPremisesInstanceRequestMarshaller().marshall(super.beforeMarshalling(registerOnPremisesInstanceRequest));
+                request = new BatchGetOnPremisesInstancesRequestMarshaller()
+                        .marshall(batchGetOnPremisesInstancesRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Gets information about a deployment group.
-     * </p>
-     *
-     * @param getDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the GetDeploymentGroup service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the GetDeploymentGroup service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws DeploymentGroupDoesNotExistException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws InvalidApplicationNameException
-     * @throws DeploymentGroupNameRequiredException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetDeploymentGroupResult getDeploymentGroup(GetDeploymentGroupRequest getDeploymentGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(getDeploymentGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetDeploymentGroupRequest> request = null;
-        Response<GetDeploymentGroupResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetDeploymentGroupRequestMarshaller().marshall(super.beforeMarshalling(getDeploymentGroupRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<GetDeploymentGroupResult, JsonUnmarshallerContext> unmarshaller =
-                new GetDeploymentGroupResultJsonUnmarshaller();
-            JsonResponseHandler<GetDeploymentGroupResult> responseHandler =
-                new JsonResponseHandler<GetDeploymentGroupResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request,
+                    new BatchGetOnPremisesInstancesResultJsonUnmarshaller(),
+                    executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    @Override
+    public BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances() {
+        return batchGetOnPremisesInstances(new BatchGetOnPremisesInstancesRequest());
+    }
+
+    /**
+     * <p>
+     * Creates a new application.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     *        Represents the input of a create application operation.
+     * @return Result of the CreateApplication operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationAlreadyExistsException
+     *         An application with the specified name already exists with the
+     *         applicable IAM user or AWS account.
+     * @throws ApplicationLimitExceededException
+     *         More applications were attempted to be created than were allowed.
+     */
+    @Override
+    public CreateApplicationResult createApplication(
+            CreateApplicationRequest createApplicationRequest) {
+        ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateApplicationRequest> request = null;
+        Response<CreateApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateApplicationRequestMarshaller()
+                        .marshall(createApplicationRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new CreateApplicationResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deploys an application revision through the specified deployment group.
+     * </p>
+     * 
+     * @param createDeploymentRequest
+     *        Represents the input of a create deployment operation.
+     * @return Result of the CreateDeployment operation returned by the service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws DeploymentGroupNameRequiredException
+     *         The deployment group name was not specified.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
+     * @throws DeploymentGroupDoesNotExistException
+     *         The named deployment group does not exist with the applicable IAM
+     *         user or AWS account.
+     * @throws RevisionRequiredException
+     *         The revision ID was not specified.
+     * @throws InvalidRevisionException
+     *         The revision was specified in an invalid format.
+     * @throws InvalidDeploymentConfigNameException
+     *         The deployment configuration name was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the applicable
+     *         IAM user or AWS account.
+     * @throws DescriptionTooLongException
+     *         The description that was provided is too long.
+     * @throws DeploymentLimitExceededException
+     *         The number of allowed deployments was exceeded.
+     */
+    @Override
+    public CreateDeploymentResult createDeployment(
+            CreateDeploymentRequest createDeploymentRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDeploymentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDeploymentRequest> request = null;
+        Response<CreateDeploymentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDeploymentRequestMarshaller()
+                        .marshall(createDeploymentRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new CreateDeploymentResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
@@ -1236,576 +876,178 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * <p>
      * Creates a new deployment configuration.
      * </p>
-     *
-     * @param createDeploymentConfigRequest Container for the necessary
-     *           parameters to execute the CreateDeploymentConfig service method on
-     *           AmazonCodeDeploy.
      * 
-     * @return The response from the CreateDeploymentConfig service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws DeploymentConfigLimitExceededException
-     * @throws InvalidMinimumHealthyHostValueException
+     * @param createDeploymentConfigRequest
+     *        Represents the input of a create deployment configuration
+     *        operation.
+     * @return Result of the CreateDeploymentConfig operation returned by the
+     *         service.
      * @throws InvalidDeploymentConfigNameException
-     * @throws DeploymentConfigAlreadyExistsException
+     *         The deployment configuration name was specified in an invalid
+     *         format.
      * @throws DeploymentConfigNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The deployment configuration name was not specified.
+     * @throws DeploymentConfigAlreadyExistsException
+     *         A deployment configuration with the specified name already exists
+     *         with the applicable IAM user or AWS account.
+     * @throws InvalidMinimumHealthyHostValueException
+     *         The minimum healthy instances value was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigLimitExceededException
+     *         The deployment configurations limit was exceeded.
      */
-    public CreateDeploymentConfigResult createDeploymentConfig(CreateDeploymentConfigRequest createDeploymentConfigRequest) {
+    @Override
+    public CreateDeploymentConfigResult createDeploymentConfig(
+            CreateDeploymentConfigRequest createDeploymentConfigRequest) {
         ExecutionContext executionContext = createExecutionContext(createDeploymentConfigRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateDeploymentConfigRequest> request = null;
         Response<CreateDeploymentConfigResult> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeploymentConfigRequestMarshaller().marshall(super.beforeMarshalling(createDeploymentConfigRequest));
+                request = new CreateDeploymentConfigRequestMarshaller()
+                        .marshall(createDeploymentConfigRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<CreateDeploymentConfigResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateDeploymentConfigResultJsonUnmarshaller();
-            JsonResponseHandler<CreateDeploymentConfigResult> responseHandler =
-                new JsonResponseHandler<CreateDeploymentConfigResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request,
+                    new CreateDeploymentConfigResultJsonUnmarshaller(),
+                    executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Lists the instances for a deployment associated with the applicable
-     * IAM user or AWS account.
+     * Creates a new deployment group for application revisions to be deployed
+     * to.
      * </p>
-     *
-     * @param listDeploymentInstancesRequest Container for the necessary
-     *           parameters to execute the ListDeploymentInstances service method on
-     *           AmazonCodeDeploy.
      * 
-     * @return The response from the ListDeploymentInstances service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
-     * @throws InvalidInstanceStatusException
-     * @throws DeploymentIdRequiredException
-     * @throws DeploymentDoesNotExistException
-     * @throws DeploymentNotStartedException
-     * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListDeploymentInstancesResult listDeploymentInstances(ListDeploymentInstancesRequest listDeploymentInstancesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listDeploymentInstancesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListDeploymentInstancesRequest> request = null;
-        Response<ListDeploymentInstancesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListDeploymentInstancesRequestMarshaller().marshall(super.beforeMarshalling(listDeploymentInstancesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<ListDeploymentInstancesResult, JsonUnmarshallerContext> unmarshaller =
-                new ListDeploymentInstancesResultJsonUnmarshaller();
-            JsonResponseHandler<ListDeploymentInstancesResult> responseHandler =
-                new JsonResponseHandler<ListDeploymentInstancesResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Gets a list of one or more on-premises instance names.
-     * </p>
-     * <p>
-     * Unless otherwise specified, both registered and deregistered
-     * on-premises instance names will be listed. To list only registered or
-     * deregistered on-premises instance names, use the registration status
-     * parameter.
-     * </p>
-     *
-     * @param listOnPremisesInstancesRequest Container for the necessary
-     *           parameters to execute the ListOnPremisesInstances service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the ListOnPremisesInstances service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidTagFilterException
-     * @throws InvalidRegistrationStatusException
-     * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListOnPremisesInstancesResult listOnPremisesInstances(ListOnPremisesInstancesRequest listOnPremisesInstancesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listOnPremisesInstancesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListOnPremisesInstancesRequest> request = null;
-        Response<ListOnPremisesInstancesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListOnPremisesInstancesRequestMarshaller().marshall(super.beforeMarshalling(listOnPremisesInstancesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<ListOnPremisesInstancesResult, JsonUnmarshallerContext> unmarshaller =
-                new ListOnPremisesInstancesResultJsonUnmarshaller();
-            JsonResponseHandler<ListOnPremisesInstancesResult> responseHandler =
-                new JsonResponseHandler<ListOnPremisesInstancesResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Lists the deployment groups for an application registered with the
-     * applicable IAM user or AWS account.
-     * </p>
-     *
-     * @param listDeploymentGroupsRequest Container for the necessary
-     *           parameters to execute the ListDeploymentGroups service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the ListDeploymentGroups service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws InvalidNextTokenException
-     * @throws ApplicationDoesNotExistException
+     * @param createDeploymentGroupRequest
+     *        Represents the input of a create deployment group operation.
+     * @return Result of the CreateDeploymentGroup operation returned by the
+     *         service.
      * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListDeploymentGroupsResult listDeploymentGroups(ListDeploymentGroupsRequest listDeploymentGroupsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listDeploymentGroupsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListDeploymentGroupsRequest> request = null;
-        Response<ListDeploymentGroupsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListDeploymentGroupsRequestMarshaller().marshall(super.beforeMarshalling(listDeploymentGroupsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<ListDeploymentGroupsResult, JsonUnmarshallerContext> unmarshaller =
-                new ListDeploymentGroupsResultJsonUnmarshaller();
-            JsonResponseHandler<ListDeploymentGroupsResult> responseHandler =
-                new JsonResponseHandler<ListDeploymentGroupsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Gets information about a deployment configuration.
-     * </p>
-     *
-     * @param getDeploymentConfigRequest Container for the necessary
-     *           parameters to execute the GetDeploymentConfig service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the GetDeploymentConfig service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws DeploymentConfigDoesNotExistException
-     * @throws InvalidDeploymentConfigNameException
-     * @throws DeploymentConfigNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetDeploymentConfigResult getDeploymentConfig(GetDeploymentConfigRequest getDeploymentConfigRequest) {
-        ExecutionContext executionContext = createExecutionContext(getDeploymentConfigRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetDeploymentConfigRequest> request = null;
-        Response<GetDeploymentConfigResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetDeploymentConfigRequestMarshaller().marshall(super.beforeMarshalling(getDeploymentConfigRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<GetDeploymentConfigResult, JsonUnmarshallerContext> unmarshaller =
-                new GetDeploymentConfigResultJsonUnmarshaller();
-            JsonResponseHandler<GetDeploymentConfigResult> responseHandler =
-                new JsonResponseHandler<GetDeploymentConfigResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Registers with AWS CodeDeploy a revision for the specified
-     * application.
-     * </p>
-     *
-     * @param registerApplicationRevisionRequest Container for the necessary
-     *           parameters to execute the RegisterApplicationRevision service method
-     *           on AmazonCodeDeploy.
-     * 
-     * 
-     * @throws InvalidRevisionException
-     * @throws RevisionRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
      * @throws InvalidApplicationNameException
-     * @throws DescriptionTooLongException
+     *         The application name was specified in an invalid format.
      * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void registerApplicationRevision(RegisterApplicationRevisionRequest registerApplicationRevisionRequest) {
-        ExecutionContext executionContext = createExecutionContext(registerApplicationRevisionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RegisterApplicationRevisionRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RegisterApplicationRevisionRequestMarshaller().marshall(super.beforeMarshalling(registerApplicationRevisionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Gets information about one or more applications.
-     * </p>
-     *
-     * @param batchGetApplicationsRequest Container for the necessary
-     *           parameters to execute the BatchGetApplications service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the BatchGetApplications service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public BatchGetApplicationsResult batchGetApplications(BatchGetApplicationsRequest batchGetApplicationsRequest) {
-        ExecutionContext executionContext = createExecutionContext(batchGetApplicationsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<BatchGetApplicationsRequest> request = null;
-        Response<BatchGetApplicationsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new BatchGetApplicationsRequestMarshaller().marshall(super.beforeMarshalling(batchGetApplicationsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<BatchGetApplicationsResult, JsonUnmarshallerContext> unmarshaller =
-                new BatchGetApplicationsResultJsonUnmarshaller();
-            JsonResponseHandler<BatchGetApplicationsResult> responseHandler =
-                new JsonResponseHandler<BatchGetApplicationsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Gets information about an on-premises instance.
-     * </p>
-     *
-     * @param getOnPremisesInstanceRequest Container for the necessary
-     *           parameters to execute the GetOnPremisesInstance service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the GetOnPremisesInstance service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InstanceNotRegisteredException
-     * @throws InvalidInstanceNameException
-     * @throws InstanceNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetOnPremisesInstanceResult getOnPremisesInstance(GetOnPremisesInstanceRequest getOnPremisesInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(getOnPremisesInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetOnPremisesInstanceRequest> request = null;
-        Response<GetOnPremisesInstanceResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetOnPremisesInstanceRequestMarshaller().marshall(super.beforeMarshalling(getOnPremisesInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<GetOnPremisesInstanceResult, JsonUnmarshallerContext> unmarshaller =
-                new GetOnPremisesInstanceResultJsonUnmarshaller();
-            JsonResponseHandler<GetOnPremisesInstanceResult> responseHandler =
-                new JsonResponseHandler<GetOnPremisesInstanceResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Lists information about revisions for an application.
-     * </p>
-     *
-     * @param listApplicationRevisionsRequest Container for the necessary
-     *           parameters to execute the ListApplicationRevisions service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the ListApplicationRevisions service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidSortByException
-     * @throws InvalidApplicationNameException
-     * @throws InvalidKeyPrefixFilterException
-     * @throws InvalidNextTokenException
-     * @throws BucketNameFilterRequiredException
-     * @throws InvalidSortOrderException
-     * @throws InvalidDeployedStateFilterException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     * @throws InvalidBucketNameFilterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListApplicationRevisionsResult listApplicationRevisions(ListApplicationRevisionsRequest listApplicationRevisionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listApplicationRevisionsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListApplicationRevisionsRequest> request = null;
-        Response<ListApplicationRevisionsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListApplicationRevisionsRequestMarshaller().marshall(super.beforeMarshalling(listApplicationRevisionsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<ListApplicationRevisionsResult, JsonUnmarshallerContext> unmarshaller =
-                new ListApplicationRevisionsResultJsonUnmarshaller();
-            JsonResponseHandler<ListApplicationRevisionsResult> responseHandler =
-                new JsonResponseHandler<ListApplicationRevisionsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Changes information about an existing deployment group.
-     * </p>
-     *
-     * @param updateDeploymentGroupRequest Container for the necessary
-     *           parameters to execute the UpdateDeploymentGroup service method on
-     *           AmazonCodeDeploy.
-     * 
-     * @return The response from the UpdateDeploymentGroup service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidRoleException
-     * @throws DeploymentGroupDoesNotExistException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws DeploymentConfigDoesNotExistException
-     * @throws InvalidApplicationNameException
-     * @throws InvalidAutoScalingGroupException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
      * @throws DeploymentGroupNameRequiredException
-     * @throws InvalidDeploymentConfigNameException
+     *         The deployment group name was not specified.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
      * @throws DeploymentGroupAlreadyExistsException
-     * @throws InvalidTagException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
+     *         A deployment group with the specified name already exists with
+     *         the applicable IAM user or AWS account.
      * @throws InvalidEC2TagException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The tag was specified in an invalid format.
+     * @throws InvalidTagException
+     *         The specified tag was specified in an invalid format.
+     * @throws InvalidAutoScalingGroupException
+     *         The Auto Scaling group was specified in an invalid format or does
+     *         not exist.
+     * @throws InvalidDeploymentConfigNameException
+     *         The deployment configuration name was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the applicable
+     *         IAM user or AWS account.
+     * @throws RoleRequiredException
+     *         The role ID was not specified.
+     * @throws InvalidRoleException
+     *         The service role ARN was specified in an invalid format. Or, if
+     *         an Auto Scaling group was specified, the specified service role
+     *         does not grant the appropriate permissions to Auto Scaling.
+     * @throws DeploymentGroupLimitExceededException
+     *         The deployment groups limit was exceeded.
      */
-    public UpdateDeploymentGroupResult updateDeploymentGroup(UpdateDeploymentGroupRequest updateDeploymentGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateDeploymentGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public CreateDeploymentGroupResult createDeploymentGroup(
+            CreateDeploymentGroupRequest createDeploymentGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDeploymentGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateDeploymentGroupRequest> request = null;
-        Response<UpdateDeploymentGroupResult> response = null;
-        
+        Request<CreateDeploymentGroupRequest> request = null;
+        Response<CreateDeploymentGroupResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDeploymentGroupRequestMarshaller().marshall(super.beforeMarshalling(updateDeploymentGroupRequest));
+                request = new CreateDeploymentGroupRequestMarshaller()
+                        .marshall(createDeploymentGroupRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<UpdateDeploymentGroupResult, JsonUnmarshallerContext> unmarshaller =
-                new UpdateDeploymentGroupResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateDeploymentGroupResult> responseHandler =
-                new JsonResponseHandler<UpdateDeploymentGroupResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request,
+                    new CreateDeploymentGroupResultJsonUnmarshaller(),
+                    executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an application.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     *        Represents the input of a delete application operation.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     */
+    @Override
+    public void deleteApplication(
+            DeleteApplicationRequest deleteApplicationRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApplicationRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApplicationRequestMarshaller()
+                        .marshall(deleteApplicationRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
@@ -1813,214 +1055,1031 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * <p>
      * Deletes a deployment configuration.
      * </p>
-     * <p>
-     * <b>NOTE:</b>A deployment configuration cannot be deleted if it is
-     * currently in use. Also, predefined configurations cannot be deleted.
-     * </p>
-     *
-     * @param deleteDeploymentConfigRequest Container for the necessary
-     *           parameters to execute the DeleteDeploymentConfig service method on
-     *           AmazonCodeDeploy.
+     * <note>A deployment configuration cannot be deleted if it is currently in
+     * use. Also, predefined configurations cannot be deleted.</note>
      * 
-     * 
-     * @throws InvalidOperationException
+     * @param deleteDeploymentConfigRequest
+     *        Represents the input of a delete deployment configuration
+     *        operation.
      * @throws InvalidDeploymentConfigNameException
-     * @throws DeploymentConfigInUseException
+     *         The deployment configuration name was specified in an invalid
+     *         format.
      * @throws DeploymentConfigNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The deployment configuration name was not specified.
+     * @throws DeploymentConfigInUseException
+     *         The deployment configuration is still in use.
+     * @throws InvalidOperationException
+     *         An invalid operation was detected.
      */
-    public void deleteDeploymentConfig(DeleteDeploymentConfigRequest deleteDeploymentConfigRequest) {
+    @Override
+    public void deleteDeploymentConfig(
+            DeleteDeploymentConfigRequest deleteDeploymentConfigRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteDeploymentConfigRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteDeploymentConfigRequest> request = null;
-        
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDeploymentConfigRequestMarshaller().marshall(super.beforeMarshalling(deleteDeploymentConfigRequest));
+                request = new DeleteDeploymentConfigRequestMarshaller()
+                        .marshall(deleteDeploymentConfigRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
+            invoke(request, null, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Deletes an application.
+     * Deletes a deployment group.
      * </p>
-     *
-     * @param deleteApplicationRequest Container for the necessary parameters
-     *           to execute the DeleteApplication service method on AmazonCodeDeploy.
      * 
-     * 
-     * @throws InvalidApplicationNameException
+     * @param deleteDeploymentGroupRequest
+     *        Represents the input of a delete deployment group operation.
+     * @return Result of the DeleteDeploymentGroup operation returned by the
+     *         service.
      * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws DeploymentGroupNameRequiredException
+     *         The deployment group name was not specified.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
+     * @throws InvalidRoleException
+     *         The service role ARN was specified in an invalid format. Or, if
+     *         an Auto Scaling group was specified, the specified service role
+     *         does not grant the appropriate permissions to Auto Scaling.
      */
-    public void deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public DeleteDeploymentGroupResult deleteDeploymentGroup(
+            DeleteDeploymentGroupRequest deleteDeploymentGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDeploymentGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteApplicationRequest> request = null;
-        
+        Request<DeleteDeploymentGroupRequest> request = null;
+        Response<DeleteDeploymentGroupResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApplicationRequestMarshaller().marshall(super.beforeMarshalling(deleteApplicationRequest));
+                request = new DeleteDeploymentGroupRequestMarshaller()
+                        .marshall(deleteDeploymentGroupRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
+            response = invoke(request,
+                    new DeleteDeploymentGroupResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
+    /**
+     * <p>
+     * Deregisters an on-premises instance.
+     * </p>
+     * 
+     * @param deregisterOnPremisesInstanceRequest
+     *        Represents the input of a deregister on-premises instance
+     *        operation.
+     * @throws InstanceNameRequiredException
+     *         An on-premises instance name was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
+     */
+    @Override
+    public void deregisterOnPremisesInstance(
+            DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterOnPremisesInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterOnPremisesInstanceRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterOnPremisesInstanceRequestMarshaller()
+                        .marshall(deregisterOnPremisesInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about an application.
+     * </p>
+     * 
+     * @param getApplicationRequest
+     *        Represents the input of a get application operation.
+     * @return Result of the GetApplication operation returned by the service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     */
+    @Override
+    public GetApplicationResult getApplication(
+            GetApplicationRequest getApplicationRequest) {
+        ExecutionContext executionContext = createExecutionContext(getApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetApplicationRequest> request = null;
+        Response<GetApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetApplicationRequestMarshaller()
+                        .marshall(getApplicationRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new GetApplicationResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about an application revision.
+     * </p>
+     * 
+     * @param getApplicationRevisionRequest
+     *        Represents the input of a get application revision operation.
+     * @return Result of the GetApplicationRevision operation returned by the
+     *         service.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws RevisionDoesNotExistException
+     *         The named revision does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws RevisionRequiredException
+     *         The revision ID was not specified.
+     * @throws InvalidRevisionException
+     *         The revision was specified in an invalid format.
+     */
+    @Override
+    public GetApplicationRevisionResult getApplicationRevision(
+            GetApplicationRevisionRequest getApplicationRevisionRequest) {
+        ExecutionContext executionContext = createExecutionContext(getApplicationRevisionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetApplicationRevisionRequest> request = null;
+        Response<GetApplicationRevisionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetApplicationRevisionRequestMarshaller()
+                        .marshall(getApplicationRevisionRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new GetApplicationRevisionResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
     /**
      * <p>
      * Gets information about a deployment.
      * </p>
-     *
-     * @param getDeploymentRequest Container for the necessary parameters to
-     *           execute the GetDeployment service method on AmazonCodeDeploy.
      * 
-     * @return The response from the GetDeployment service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
+     * @param getDeploymentRequest
+     *        Represents the input of a get deployment operation.
+     * @return Result of the GetDeployment operation returned by the service.
      * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
      * @throws DeploymentDoesNotExistException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The deployment does not exist with the applicable IAM user or AWS
+     *         account.
      */
-    public GetDeploymentResult getDeployment(GetDeploymentRequest getDeploymentRequest) {
+    @Override
+    public GetDeploymentResult getDeployment(
+            GetDeploymentRequest getDeploymentRequest) {
         ExecutionContext executionContext = createExecutionContext(getDeploymentRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetDeploymentRequest> request = null;
         Response<GetDeploymentResult> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeploymentRequestMarshaller().marshall(super.beforeMarshalling(getDeploymentRequest));
+                request = new GetDeploymentRequestMarshaller()
+                        .marshall(getDeploymentRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<GetDeploymentResult, JsonUnmarshallerContext> unmarshaller =
-                new GetDeploymentResultJsonUnmarshaller();
-            JsonResponseHandler<GetDeploymentResult> responseHandler =
-                new JsonResponseHandler<GetDeploymentResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request,
+                    new GetDeploymentResultJsonUnmarshaller(), executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Deploys an application revision through the specified deployment
-     * group.
+     * Gets information about a deployment configuration.
      * </p>
-     *
-     * @param createDeploymentRequest Container for the necessary parameters
-     *           to execute the CreateDeployment service method on AmazonCodeDeploy.
      * 
-     * @return The response from the CreateDeployment service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidRevisionException
-     * @throws DeploymentGroupDoesNotExistException
-     * @throws RevisionRequiredException
-     * @throws InvalidDeploymentGroupNameException
-     * @throws DeploymentConfigDoesNotExistException
-     * @throws InvalidApplicationNameException
-     * @throws DeploymentGroupNameRequiredException
-     * @throws DescriptionTooLongException
+     * @param getDeploymentConfigRequest
+     *        Represents the input of a get deployment configuration operation.
+     * @return Result of the GetDeploymentConfig operation returned by the
+     *         service.
      * @throws InvalidDeploymentConfigNameException
-     * @throws DeploymentLimitExceededException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The deployment configuration name was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigNameRequiredException
+     *         The deployment configuration name was not specified.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the applicable
+     *         IAM user or AWS account.
      */
-    public CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest) {
-        ExecutionContext executionContext = createExecutionContext(createDeploymentRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public GetDeploymentConfigResult getDeploymentConfig(
+            GetDeploymentConfigRequest getDeploymentConfigRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDeploymentConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateDeploymentRequest> request = null;
-        Response<CreateDeploymentResult> response = null;
-        
+        Request<GetDeploymentConfigRequest> request = null;
+        Response<GetDeploymentConfigResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeploymentRequestMarshaller().marshall(super.beforeMarshalling(createDeploymentRequest));
+                request = new GetDeploymentConfigRequestMarshaller()
+                        .marshall(getDeploymentConfigRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<CreateDeploymentResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateDeploymentResultJsonUnmarshaller();
-            JsonResponseHandler<CreateDeploymentResult> responseHandler =
-                new JsonResponseHandler<CreateDeploymentResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request,
+                    new GetDeploymentConfigResultJsonUnmarshaller(),
+                    executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about a deployment group.
+     * </p>
+     * 
+     * @param getDeploymentGroupRequest
+     *        Represents the input of a get deployment group operation.
+     * @return Result of the GetDeploymentGroup operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws DeploymentGroupNameRequiredException
+     *         The deployment group name was not specified.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
+     * @throws DeploymentGroupDoesNotExistException
+     *         The named deployment group does not exist with the applicable IAM
+     *         user or AWS account.
+     */
+    @Override
+    public GetDeploymentGroupResult getDeploymentGroup(
+            GetDeploymentGroupRequest getDeploymentGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDeploymentGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDeploymentGroupRequest> request = null;
+        Response<GetDeploymentGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDeploymentGroupRequestMarshaller()
+                        .marshall(getDeploymentGroupRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new GetDeploymentGroupResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about an instance as part of a deployment.
+     * </p>
+     * 
+     * @param getDeploymentInstanceRequest
+     *        Represents the input of a get deployment instance operation.
+     * @return Result of the GetDeploymentInstance operation returned by the
+     *         service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS
+     *         account.
+     * @throws InstanceIdRequiredException
+     *         The instance ID was not specified.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
+     * @throws InstanceDoesNotExistException
+     *         The specified instance does not exist in the deployment group.
+     */
+    @Override
+    public GetDeploymentInstanceResult getDeploymentInstance(
+            GetDeploymentInstanceRequest getDeploymentInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDeploymentInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDeploymentInstanceRequest> request = null;
+        Response<GetDeploymentInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDeploymentInstanceRequestMarshaller()
+                        .marshall(getDeploymentInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new GetDeploymentInstanceResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about an on-premises instance.
+     * </p>
+     * 
+     * @param getOnPremisesInstanceRequest
+     *        Represents the input of a get on-premises instance operation.
+     * @return Result of the GetOnPremisesInstance operation returned by the
+     *         service.
+     * @throws InstanceNameRequiredException
+     *         An on-premises instance name was not specified.
+     * @throws InstanceNotRegisteredException
+     *         The specified on-premises instance is not registered.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
+     */
+    @Override
+    public GetOnPremisesInstanceResult getOnPremisesInstance(
+            GetOnPremisesInstanceRequest getOnPremisesInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(getOnPremisesInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOnPremisesInstanceRequest> request = null;
+        Response<GetOnPremisesInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOnPremisesInstanceRequestMarshaller()
+                        .marshall(getOnPremisesInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new GetOnPremisesInstanceResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists information about revisions for an application.
+     * </p>
+     * 
+     * @param listApplicationRevisionsRequest
+     *        Represents the input of a list application revisions operation.
+     * @return Result of the ListApplicationRevisions operation returned by the
+     *         service.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws InvalidSortByException
+     *         The column name to sort by is either not present or was specified
+     *         in an invalid format.
+     * @throws InvalidSortOrderException
+     *         The sort order was specified in an invalid format.
+     * @throws InvalidBucketNameFilterException
+     *         The bucket name either doesn't exist or was specified in an
+     *         invalid format.
+     * @throws InvalidKeyPrefixFilterException
+     *         The specified key prefix filter was specified in an invalid
+     *         format.
+     * @throws BucketNameFilterRequiredException
+     *         A bucket name is required but was not provided.
+     * @throws InvalidDeployedStateFilterException
+     *         The deployed state filter was specified in an invalid format.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format.
+     */
+    @Override
+    public ListApplicationRevisionsResult listApplicationRevisions(
+            ListApplicationRevisionsRequest listApplicationRevisionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listApplicationRevisionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationRevisionsRequest> request = null;
+        Response<ListApplicationRevisionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationRevisionsRequestMarshaller()
+                        .marshall(listApplicationRevisionsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new ListApplicationRevisionsResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the applications registered with the applicable IAM user or AWS
+     * account.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     *        Represents the input of a list applications operation.
+     * @return Result of the ListApplications operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format.
+     */
+    @Override
+    public ListApplicationsResult listApplications(
+            ListApplicationsRequest listApplicationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listApplicationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationsRequest> request = null;
+        Response<ListApplicationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationsRequestMarshaller()
+                        .marshall(listApplicationsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new ListApplicationsResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    @Override
+    public ListApplicationsResult listApplications() {
+        return listApplications(new ListApplicationsRequest());
+    }
+
+    /**
+     * <p>
+     * Lists the deployment configurations with the applicable IAM user or AWS
+     * account.
+     * </p>
+     * 
+     * @param listDeploymentConfigsRequest
+     *        Represents the input of a list deployment configurations
+     *        operation.
+     * @return Result of the ListDeploymentConfigs operation returned by the
+     *         service.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format.
+     */
+    @Override
+    public ListDeploymentConfigsResult listDeploymentConfigs(
+            ListDeploymentConfigsRequest listDeploymentConfigsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listDeploymentConfigsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDeploymentConfigsRequest> request = null;
+        Response<ListDeploymentConfigsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDeploymentConfigsRequestMarshaller()
+                        .marshall(listDeploymentConfigsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new ListDeploymentConfigsResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    @Override
+    public ListDeploymentConfigsResult listDeploymentConfigs() {
+        return listDeploymentConfigs(new ListDeploymentConfigsRequest());
+    }
+
+    /**
+     * <p>
+     * Lists the deployment groups for an application registered with the
+     * applicable IAM user or AWS account.
+     * </p>
+     * 
+     * @param listDeploymentGroupsRequest
+     *        Represents the input of a list deployment groups operation.
+     * @return Result of the ListDeploymentGroups operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format.
+     */
+    @Override
+    public ListDeploymentGroupsResult listDeploymentGroups(
+            ListDeploymentGroupsRequest listDeploymentGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listDeploymentGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDeploymentGroupsRequest> request = null;
+        Response<ListDeploymentGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDeploymentGroupsRequestMarshaller()
+                        .marshall(listDeploymentGroupsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new ListDeploymentGroupsResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the instances for a deployment associated with the applicable IAM
+     * user or AWS account.
+     * </p>
+     * 
+     * @param listDeploymentInstancesRequest
+     *        Represents the input of a list deployment instances operation.
+     * @return Result of the ListDeploymentInstances operation returned by the
+     *         service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS
+     *         account.
+     * @throws DeploymentNotStartedException
+     *         The specified deployment has not started.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
+     * @throws InvalidInstanceStatusException
+     *         The specified instance status does not exist.
+     */
+    @Override
+    public ListDeploymentInstancesResult listDeploymentInstances(
+            ListDeploymentInstancesRequest listDeploymentInstancesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listDeploymentInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDeploymentInstancesRequest> request = null;
+        Response<ListDeploymentInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDeploymentInstancesRequestMarshaller()
+                        .marshall(listDeploymentInstancesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new ListDeploymentInstancesResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the deployments within a deployment group for an application
+     * registered with the applicable IAM user or AWS account.
+     * </p>
+     * 
+     * @param listDeploymentsRequest
+     *        Represents the input of a list deployments operation.
+     * @return Result of the ListDeployments operation returned by the service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
+     * @throws DeploymentGroupDoesNotExistException
+     *         The named deployment group does not exist with the applicable IAM
+     *         user or AWS account.
+     * @throws DeploymentGroupNameRequiredException
+     *         The deployment group name was not specified.
+     * @throws InvalidTimeRangeException
+     *         The specified time range was specified in an invalid format.
+     * @throws InvalidDeploymentStatusException
+     *         The specified deployment status doesn't exist or cannot be
+     *         determined.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format.
+     */
+    @Override
+    public ListDeploymentsResult listDeployments(
+            ListDeploymentsRequest listDeploymentsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listDeploymentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDeploymentsRequest> request = null;
+        Response<ListDeploymentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDeploymentsRequestMarshaller()
+                        .marshall(listDeploymentsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new ListDeploymentsResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    @Override
+    public ListDeploymentsResult listDeployments() {
+        return listDeployments(new ListDeploymentsRequest());
+    }
+
+    /**
+     * <p>
+     * Gets a list of one or more on-premises instance names.
+     * </p>
+     * <p>
+     * Unless otherwise specified, both registered and deregistered on-premises
+     * instance names will be listed. To list only registered or deregistered
+     * on-premises instance names, use the registration status parameter.
+     * </p>
+     * 
+     * @param listOnPremisesInstancesRequest
+     *        Represents the input of a list on-premises instances operation.
+     * @return Result of the ListOnPremisesInstances operation returned by the
+     *         service.
+     * @throws InvalidRegistrationStatusException
+     *         The registration status was specified in an invalid format.
+     * @throws InvalidTagFilterException
+     *         The specified tag filter was specified in an invalid format.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format.
+     */
+    @Override
+    public ListOnPremisesInstancesResult listOnPremisesInstances(
+            ListOnPremisesInstancesRequest listOnPremisesInstancesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listOnPremisesInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOnPremisesInstancesRequest> request = null;
+        Response<ListOnPremisesInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOnPremisesInstancesRequestMarshaller()
+                        .marshall(listOnPremisesInstancesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new ListOnPremisesInstancesResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    @Override
+    public ListOnPremisesInstancesResult listOnPremisesInstances() {
+        return listOnPremisesInstances(new ListOnPremisesInstancesRequest());
+    }
+
+    /**
+     * <p>
+     * Registers with AWS CodeDeploy a revision for the specified application.
+     * </p>
+     * 
+     * @param registerApplicationRevisionRequest
+     *        Represents the input of a register application revision operation.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws DescriptionTooLongException
+     *         The description that was provided is too long.
+     * @throws RevisionRequiredException
+     *         The revision ID was not specified.
+     * @throws InvalidRevisionException
+     *         The revision was specified in an invalid format.
+     */
+    @Override
+    public void registerApplicationRevision(
+            RegisterApplicationRevisionRequest registerApplicationRevisionRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerApplicationRevisionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterApplicationRevisionRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterApplicationRevisionRequestMarshaller()
+                        .marshall(registerApplicationRevisionRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers an on-premises instance.
+     * </p>
+     * 
+     * @param registerOnPremisesInstanceRequest
+     *        Represents the input of register on-premises instance operation.
+     * @throws InstanceNameAlreadyRegisteredException
+     *         The specified on-premises instance name is already registered.
+     * @throws IamUserArnAlreadyRegisteredException
+     *         The specified IAM user ARN is already registered with an
+     *         on-premises instance.
+     * @throws InstanceNameRequiredException
+     *         An on-premises instance name was not specified.
+     * @throws IamUserArnRequiredException
+     *         An IAM user ARN was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
+     * @throws InvalidIamUserArnException
+     *         The IAM user ARN was specified in an invalid format.
+     */
+    @Override
+    public void registerOnPremisesInstance(
+            RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerOnPremisesInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterOnPremisesInstanceRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterOnPremisesInstanceRequestMarshaller()
+                        .marshall(registerOnPremisesInstanceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
@@ -2028,103 +2087,101 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * <p>
      * Removes one or more tags from one or more on-premises instances.
      * </p>
-     *
-     * @param removeTagsFromOnPremisesInstancesRequest Container for the
-     *           necessary parameters to execute the RemoveTagsFromOnPremisesInstances
-     *           service method on AmazonCodeDeploy.
      * 
-     * 
-     * @throws InstanceNotRegisteredException
-     * @throws TagLimitExceededException
-     * @throws InstanceLimitExceededException
-     * @throws InvalidTagException
+     * @param removeTagsFromOnPremisesInstancesRequest
+     *        Represents the input of a remove tags from on-premises instances
+     *        operation.
      * @throws InstanceNameRequiredException
+     *         An on-premises instance name was not specified.
      * @throws TagRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         A tag was not specified.
+     * @throws InvalidTagException
+     *         The specified tag was specified in an invalid format.
+     * @throws TagLimitExceededException
+     *         The maximum allowed number of tags was exceeded.
+     * @throws InstanceLimitExceededException
+     *         The maximum number of allowed on-premises instances was exceeded.
+     * @throws InstanceNotRegisteredException
+     *         The specified on-premises instance is not registered.
      */
-    public void removeTagsFromOnPremisesInstances(RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest) {
+    @Override
+    public void removeTagsFromOnPremisesInstances(
+            RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest) {
         ExecutionContext executionContext = createExecutionContext(removeTagsFromOnPremisesInstancesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RemoveTagsFromOnPremisesInstancesRequest> request = null;
-        
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsFromOnPremisesInstancesRequestMarshaller().marshall(super.beforeMarshalling(removeTagsFromOnPremisesInstancesRequest));
+                request = new RemoveTagsFromOnPremisesInstancesRequestMarshaller()
+                        .marshall(removeTagsFromOnPremisesInstancesRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
+            invoke(request, null, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Lists the deployment configurations with the applicable IAM user or
-     * AWS account.
+     * Attempts to stop an ongoing deployment.
      * </p>
-     *
-     * @param listDeploymentConfigsRequest Container for the necessary
-     *           parameters to execute the ListDeploymentConfigs service method on
-     *           AmazonCodeDeploy.
      * 
-     * @return The response from the ListDeploymentConfigs service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param stopDeploymentRequest
+     *        Represents the input of a stop deployment operation.
+     * @return Result of the StopDeployment operation returned by the service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS
+     *         account.
+     * @throws DeploymentAlreadyCompletedException
+     *         The deployment is already completed.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
      */
-    public ListDeploymentConfigsResult listDeploymentConfigs(ListDeploymentConfigsRequest listDeploymentConfigsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listDeploymentConfigsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public StopDeploymentResult stopDeployment(
+            StopDeploymentRequest stopDeploymentRequest) {
+        ExecutionContext executionContext = createExecutionContext(stopDeploymentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListDeploymentConfigsRequest> request = null;
-        Response<ListDeploymentConfigsResult> response = null;
-        
+        Request<StopDeploymentRequest> request = null;
+        Response<StopDeploymentResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDeploymentConfigsRequestMarshaller().marshall(super.beforeMarshalling(listDeploymentConfigsRequest));
+                request = new StopDeploymentRequestMarshaller()
+                        .marshall(stopDeploymentRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<ListDeploymentConfigsResult, JsonUnmarshallerContext> unmarshaller =
-                new ListDeploymentConfigsResultJsonUnmarshaller();
-            JsonResponseHandler<ListDeploymentConfigsResult> responseHandler =
-                new JsonResponseHandler<ListDeploymentConfigsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request,
+                    new StopDeploymentResultJsonUnmarshaller(),
+                    executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
@@ -2133,238 +2190,164 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * Changes an existing application's name.
      * </p>
      * 
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationAlreadyExistsException
-     * @throws ApplicationDoesNotExistException
+     * @param updateApplicationRequest
+     *        Represents the input of an update application operation.
      * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationAlreadyExistsException
+     *         An application with the specified name already exists with the
+     *         applicable IAM user or AWS account.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
      */
-    public void updateApplication() throws AmazonServiceException, AmazonClientException {
+    @Override
+    public void updateApplication(
+            UpdateApplicationRequest updateApplicationRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateApplicationRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateApplicationRequestMarshaller()
+                        .marshall(updateApplicationRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    @Override
+    public void updateApplication() {
         updateApplication(new UpdateApplicationRequest());
     }
-    
+
     /**
      * <p>
-     * Lists the applications registered with the applicable IAM user or AWS
-     * account.
+     * Changes information about an existing deployment group.
      * </p>
      * 
-     * @return The response from the ListApplications service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListApplicationsResult listApplications() throws AmazonServiceException, AmazonClientException {
-        return listApplications(new ListApplicationsRequest());
-    }
-    
-    /**
-     * <p>
-     * Lists the deployments within a deployment group for an application
-     * registered with the applicable IAM user or AWS account.
-     * </p>
-     * 
-     * @return The response from the ListDeployments service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws DeploymentGroupDoesNotExistException
+     * @param updateDeploymentGroupRequest
+     *        Represents the input of an update deployment group operation.
+     * @return Result of the UpdateDeploymentGroup operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
      * @throws InvalidDeploymentGroupNameException
-     * @throws InvalidApplicationNameException
-     * @throws InvalidTimeRangeException
+     *         The deployment group name was specified in an invalid format.
+     * @throws DeploymentGroupAlreadyExistsException
+     *         A deployment group with the specified name already exists with
+     *         the applicable IAM user or AWS account.
      * @throws DeploymentGroupNameRequiredException
-     * @throws InvalidNextTokenException
-     * @throws ApplicationDoesNotExistException
-     * @throws InvalidDeploymentStatusException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The deployment group name was not specified.
+     * @throws DeploymentGroupDoesNotExistException
+     *         The named deployment group does not exist with the applicable IAM
+     *         user or AWS account.
+     * @throws InvalidEC2TagException
+     *         The tag was specified in an invalid format.
+     * @throws InvalidTagException
+     *         The specified tag was specified in an invalid format.
+     * @throws InvalidAutoScalingGroupException
+     *         The Auto Scaling group was specified in an invalid format or does
+     *         not exist.
+     * @throws InvalidDeploymentConfigNameException
+     *         The deployment configuration name was specified in an invalid
+     *         format.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the applicable
+     *         IAM user or AWS account.
+     * @throws InvalidRoleException
+     *         The service role ARN was specified in an invalid format. Or, if
+     *         an Auto Scaling group was specified, the specified service role
+     *         does not grant the appropriate permissions to Auto Scaling.
      */
-    public ListDeploymentsResult listDeployments() throws AmazonServiceException, AmazonClientException {
-        return listDeployments(new ListDeploymentsRequest());
-    }
-    
-    /**
-     * <p>
-     * Gets information about one or more on-premises instances.
-     * </p>
-     * 
-     * @return The response from the BatchGetOnPremisesInstances service
-     *         method, as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidInstanceNameException
-     * @throws InstanceNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances() throws AmazonServiceException, AmazonClientException {
-        return batchGetOnPremisesInstances(new BatchGetOnPremisesInstancesRequest());
-    }
-    
-    /**
-     * <p>
-     * Gets information about one or more deployments.
-     * </p>
-     * 
-     * @return The response from the BatchGetDeployments service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidDeploymentIdException
-     * @throws DeploymentIdRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public BatchGetDeploymentsResult batchGetDeployments() throws AmazonServiceException, AmazonClientException {
-        return batchGetDeployments(new BatchGetDeploymentsRequest());
-    }
-    
-    /**
-     * <p>
-     * Gets a list of one or more on-premises instance names.
-     * </p>
-     * <p>
-     * Unless otherwise specified, both registered and deregistered
-     * on-premises instance names will be listed. To list only registered or
-     * deregistered on-premises instance names, use the registration status
-     * parameter.
-     * </p>
-     * 
-     * @return The response from the ListOnPremisesInstances service method,
-     *         as returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidTagFilterException
-     * @throws InvalidRegistrationStatusException
-     * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListOnPremisesInstancesResult listOnPremisesInstances() throws AmazonServiceException, AmazonClientException {
-        return listOnPremisesInstances(new ListOnPremisesInstancesRequest());
-    }
-    
-    /**
-     * <p>
-     * Gets information about one or more applications.
-     * </p>
-     * 
-     * @return The response from the BatchGetApplications service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidApplicationNameException
-     * @throws ApplicationDoesNotExistException
-     * @throws ApplicationNameRequiredException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public BatchGetApplicationsResult batchGetApplications() throws AmazonServiceException, AmazonClientException {
-        return batchGetApplications(new BatchGetApplicationsRequest());
-    }
-    
-    /**
-     * <p>
-     * Lists the deployment configurations with the applicable IAM user or
-     * AWS account.
-     * </p>
-     * 
-     * @return The response from the ListDeploymentConfigs service method, as
-     *         returned by AmazonCodeDeploy.
-     * 
-     * @throws InvalidNextTokenException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCodeDeploy indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListDeploymentConfigsResult listDeploymentConfigs() throws AmazonServiceException, AmazonClientException {
-        return listDeploymentConfigs(new ListDeploymentConfigsRequest());
-    }
-
     @Override
-    public void setEndpoint(String endpoint) {
-        super.setEndpoint(endpoint);
-    }
+    public UpdateDeploymentGroupResult updateDeploymentGroup(
+            UpdateDeploymentGroupRequest updateDeploymentGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateDeploymentGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDeploymentGroupRequest> request = null;
+        Response<UpdateDeploymentGroupResult> response = null;
 
-    @Override
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        super.setEndpoint(endpoint, serviceName, regionId);
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDeploymentGroupRequestMarshaller()
+                        .marshall(updateDeploymentGroupRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new UpdateDeploymentGroupResultJsonUnmarshaller(),
+                    executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
-     * Returns additional metadata for a previously executed successful, request, typically used for
-     * debugging issues where a service isn't acting as expected.  This data isn't considered part
-     * of the result data returned by an operation, so it's available through this separate,
-     * diagnostic interface.
+     * Returns additional metadata for a previously executed successful,
+     * request, typically used for debugging issues where a service isn't acting
+     * as expected. This data isn't considered part of the result data returned
+     * by an operation, so it's available through this separate, diagnostic
+     * interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you need to access
-     * this extra diagnostic information for an executed request, you should use this method
-     * to retrieve it as soon as possible after executing the request.
+     * Response metadata is only cached for a limited period of time, so if you
+     * need to access this extra diagnostic information for an executed request,
+     * you should use this method to retrieve it as soon as possible after
+     * executing the request.
      *
      * @param request
-     *            The originally executed request
+     *        The originally executed request
      *
      * @return The response metadata for the specified request, or null if none
      *         is available.
      */
-    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request) {
+    public ResponseMetadata getCachedResponseMetadata(
+            AmazonWebServiceRequest request) {
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
-            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            Unmarshaller<X, JsonUnmarshallerContext> unmarshaller,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         AWSCredentials credentials;
         awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
         try {
@@ -2374,15 +2357,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
         }
 
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
+        if (originalRequest != null
+                && originalRequest.getRequestCredentials() != null) {
             credentials = originalRequest.getRequestCredentials();
         }
 
         executionContext.setCredentials(credentials);
-        JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(jsonErrorUnmarshallers);
-        Response<X> result = client.execute(request, responseHandler,
-                errorResponseHandler, executionContext);
-        return result;
+
+        JsonResponseHandler<X> responseHandler = new JsonResponseHandler<X>(
+                unmarshaller);
+        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
+                jsonErrorUnmarshallers);
+
+        return client.execute(request, responseHandler, errorResponseHandler,
+                executionContext);
     }
+
 }
-        

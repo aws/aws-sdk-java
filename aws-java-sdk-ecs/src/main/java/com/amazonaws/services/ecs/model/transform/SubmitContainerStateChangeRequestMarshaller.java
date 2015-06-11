@@ -98,6 +98,9 @@ public class SubmitContainerStateChangeRequestMarshaller implements Marshaller<R
                         if (networkBindingsListValue.getHostPort() != null) {
                             jsonWriter.key("hostPort").value(networkBindingsListValue.getHostPort());
                         }
+                        if (networkBindingsListValue.getProtocol() != null) {
+                            jsonWriter.key("protocol").value(networkBindingsListValue.getProtocol());
+                        }
                         jsonWriter.endObject();
                     }
                 }

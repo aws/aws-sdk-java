@@ -90,47 +90,52 @@ public class SubscribeToDatasetRequestMarshaller implements Marshaller<Request<S
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityPoolId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityPoolId");
+
             String value = (subscribeToDatasetRequest.getIdentityPoolId() == null) ? null : StringUtils.fromString(subscribeToDatasetRequest.getIdentityPoolId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityPoolId}", (subscribeToDatasetRequest.getIdentityPoolId() == null) ? "" : StringUtils.fromString(subscribeToDatasetRequest.getIdentityPoolId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityId");
+
             String value = (subscribeToDatasetRequest.getIdentityId() == null) ? null : StringUtils.fromString(subscribeToDatasetRequest.getIdentityId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityId}", (subscribeToDatasetRequest.getIdentityId() == null) ? "" : StringUtils.fromString(subscribeToDatasetRequest.getIdentityId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("DatasetName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("DatasetName");
+
             String value = (subscribeToDatasetRequest.getDatasetName() == null) ? null : StringUtils.fromString(subscribeToDatasetRequest.getDatasetName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{DatasetName}", (subscribeToDatasetRequest.getDatasetName() == null) ? "" : StringUtils.fromString(subscribeToDatasetRequest.getDatasetName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("DeviceId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("DeviceId");
+
             String value = (subscribeToDatasetRequest.getDeviceId() == null) ? null : StringUtils.fromString(subscribeToDatasetRequest.getDeviceId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{DeviceId}", (subscribeToDatasetRequest.getDeviceId() == null) ? "" : StringUtils.fromString(subscribeToDatasetRequest.getDeviceId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

@@ -64,14 +64,6 @@ public class DateUtils {
             .withZone(GMT);
 
     /**
-     * @deprecated by the more efficient static method {@link #parseISO8601Date(String)}
-     */
-    @Deprecated
-    public Date parseIso8601Date(String dateString) {
-        return parseISO8601Date(dateString);
-    }
-
-    /**
      * Parses the specified date string as an ISO 8601 date and returns the Date
      * object.
      *
@@ -158,14 +150,6 @@ public class DateUtils {
     }
 
     /**
-     * @deprecated by the more efficient static method {@link #formatISO8601Date(Date)}
-     */
-    @Deprecated
-    public String formatIso8601Date(Date date) {
-        return formatISO8601Date(date);
-    }
-
-    /**
      * Formats the specified date as an ISO 8601 string.
      *
      * @param date
@@ -196,14 +180,6 @@ public class DateUtils {
     }
 
     /**
-     * @deprecated by the more efficient static method {@link #parseRFC822Date(String)}
-     */
-    @Deprecated
-    public Date parseRfc822Date(String dateString) {
-        return parseRFC822Date(dateString);
-    }
-
-    /**
      * Parses the specified date string as an RFC 822 date and returns the Date
      * object.
      *
@@ -221,14 +197,6 @@ public class DateUtils {
     }
 
     /**
-     * @deprecated by the more efficient static method {@link #formatRFC822Date(Date)}
-     */
-    @Deprecated
-    public String formatRfc822Date(Date date) {
-        return formatRFC822Date(date);
-    }
-
-    /**
      * Formats the specified date as an RFC 822 string.
      *
      * @param date
@@ -242,14 +210,6 @@ public class DateUtils {
         } catch(RuntimeException ex) {
             throw handleException(ex);
         }
-    }
-
-    /**
-     * @deprecated by the more efficient static method {@link #parseCompressedISO8601Date(String)}
-     */
-    @Deprecated
-    public Date parseCompressedIso8601Date(String dateString) {
-        return parseCompressedISO8601Date(dateString);
     }
 
     /**

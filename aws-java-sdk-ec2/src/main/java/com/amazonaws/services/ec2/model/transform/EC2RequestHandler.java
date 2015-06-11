@@ -81,12 +81,12 @@ public class EC2RequestHandler extends AbstractRequestHandler {
             }
         }
 
-        // If a RunInstancesRequest doesn't specify a ClientToken, fill one in, otherwise 
+        // If a RunInstancesRequest doesn't specify a ClientToken, fill one in, otherwise
         // retries could result in unwanted instances being launched in the customer's account.
         else if (originalRequest instanceof RunInstancesRequest) {
             RunInstancesRequest runInstancesRequest = (RunInstancesRequest)originalRequest;
             if (runInstancesRequest.getClientToken() == null) {
-                request.getParameters().put("ClientToken", UUID.randomUUID().toString());
+                request.addParameter("ClientToken", UUID.randomUUID().toString());
             }
         }
 
@@ -95,7 +95,7 @@ public class EC2RequestHandler extends AbstractRequestHandler {
         else if (originalRequest instanceof ModifyReservedInstancesRequest) {
             ModifyReservedInstancesRequest modifyReservedInstancesRequest = (ModifyReservedInstancesRequest) originalRequest;
             if (modifyReservedInstancesRequest.getClientToken() == null) {
-                request.getParameters().put("ClientToken", UUID.randomUUID().toString());
+                request.addParameter("ClientToken", UUID.randomUUID().toString());
             }
         }
     }

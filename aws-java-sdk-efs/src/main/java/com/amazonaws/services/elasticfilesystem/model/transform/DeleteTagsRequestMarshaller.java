@@ -90,14 +90,16 @@ public class DeleteTagsRequestMarshaller implements Marshaller<Request<DeleteTag
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FileSystemId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FileSystemId");
+
             String value = (deleteTagsRequest.getFileSystemId() == null) ? null : StringUtils.fromString(deleteTagsRequest.getFileSystemId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FileSystemId}", (deleteTagsRequest.getFileSystemId() == null) ? "" : StringUtils.fromString(deleteTagsRequest.getFileSystemId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

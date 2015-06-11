@@ -68,7 +68,7 @@ public class Ebs implements Serializable, Cloneable {
      * is 100 to 4000. <p>Default: None
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>100 - 30000<br/>
+     * <b>Range: </b>100 - 20000<br/>
      */
     private Integer iops;
 
@@ -305,7 +305,7 @@ public class Ebs implements Serializable, Cloneable {
      * is 100 to 4000. <p>Default: None
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>100 - 30000<br/>
+     * <b>Range: </b>100 - 20000<br/>
      *
      * @return For Provisioned IOPS (SSD) volumes only. The number of I/O operations
      *         per second (IOPS) to provision for the volume. <p>Valid values: Range
@@ -321,7 +321,7 @@ public class Ebs implements Serializable, Cloneable {
      * is 100 to 4000. <p>Default: None
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>100 - 30000<br/>
+     * <b>Range: </b>100 - 20000<br/>
      *
      * @param iops For Provisioned IOPS (SSD) volumes only. The number of I/O operations
      *         per second (IOPS) to provision for the volume. <p>Valid values: Range
@@ -339,7 +339,7 @@ public class Ebs implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>100 - 30000<br/>
+     * <b>Range: </b>100 - 20000<br/>
      *
      * @param iops For Provisioned IOPS (SSD) volumes only. The number of I/O operations
      *         per second (IOPS) to provision for the volume. <p>Valid values: Range

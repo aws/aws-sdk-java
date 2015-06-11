@@ -52,16 +52,12 @@ public class DateUtilsTest {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         sdf.setTimeZone(new SimpleTimeZone(0, "GMT"));
         String expected = sdf.format(date);
-        String actual = new DateUtils().formatIso8601Date(date);
-        String actual2 = DateUtils.formatISO8601Date(date);
+        String actual = DateUtils.formatISO8601Date(date);
         assertEquals(expected, actual);
-        assertEquals(expected, actual2);
 
         Date expectedDate = sdf.parse(expected);
-        Date actualDate = new DateUtils().parseIso8601Date(actual);
-        Date actualDate2 = DateUtils.parseISO8601Date(actual);
+        Date actualDate = DateUtils.parseISO8601Date(actual);
         assertEquals(expectedDate, actualDate);
-        assertEquals(expectedDate, actualDate2);
     }
 
     @Test
@@ -70,16 +66,12 @@ public class DateUtilsTest {
         SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
         sdf.setTimeZone(new SimpleTimeZone(0, "GMT"));
         String expected = sdf.format(date);
-        String actual = new DateUtils().formatRfc822Date(date);
-        String actual2 = DateUtils.formatRFC822Date(date);
+        String actual = DateUtils.formatRFC822Date(date);
         assertEquals(expected, actual);
-        assertEquals(expected, actual2);
 
         Date expectedDate = sdf.parse(expected);
-        Date actualDate = new DateUtils().parseRfc822Date(actual);
-        Date actualDate2 = DateUtils.parseRFC822Date(actual);
+        Date actualDate = DateUtils.parseRFC822Date(actual);
         assertEquals(expectedDate, actualDate);
-        assertEquals(expectedDate, actualDate2);
     }
 
     @Test
@@ -89,10 +81,8 @@ public class DateUtilsTest {
         sdf.setTimeZone(new SimpleTimeZone(0, "GMT"));
         String formatted = sdf.format(date);
         Date expected = sdf.parse(formatted);
-        Date actual = new DateUtils().parseCompressedIso8601Date(formatted);
-        Date actual2 = DateUtils.parseCompressedISO8601Date(formatted);
+        Date actual = DateUtils.parseCompressedISO8601Date(formatted);
         assertEquals(expected, actual);
-        assertEquals(expected, actual2);
     }
 
     @Test
@@ -102,10 +92,8 @@ public class DateUtilsTest {
         sdf.setTimeZone(new SimpleTimeZone(0, "GMT"));
         String formatted = sdf.format(date);
         Date expected = sdf.parse(formatted);
-        Date actual = new DateUtils().parseRfc822Date(formatted);
-        Date actual2 = DateUtils.parseRFC822Date(formatted);
+        Date actual = DateUtils.parseRFC822Date(formatted);
         assertEquals(expected, actual);
-        assertEquals(expected, actual2);
     }
 
     @Test
@@ -118,10 +106,8 @@ public class DateUtilsTest {
         assertEquals(formatted, alternative);
 
         Date expectedDate = sdf.parse(formatted);
-        Date actualDate = new DateUtils().parseIso8601Date(formatted);
-        Date actualDate2 = DateUtils.parseISO8601Date(formatted);
+        Date actualDate = DateUtils.parseISO8601Date(formatted);
         assertEquals(expectedDate, actualDate);
-        assertEquals(expectedDate, actualDate2);
     }
 
     @Test
@@ -134,10 +120,8 @@ public class DateUtilsTest {
         assertEquals(formatted, alternative);
 
         Date expectedDate = sdf.parse(formatted);
-        Date actualDate = new DateUtils().parseIso8601Date(formatted);
-        Date actualDate2 = DateUtils.parseISO8601Date(formatted);
+        Date actualDate = DateUtils.parseISO8601Date(formatted);
         assertEquals(expectedDate, actualDate);
-        assertEquals(expectedDate, actualDate2);
     }
 
     @Test
@@ -275,7 +259,7 @@ public class DateUtilsTest {
         jw.endObject();
         String s = w.toString();
         // Something like: {"foo":1408378076.135}.
-        // Note prior to the changes, it was {"foo":1408414571} 
+        // Note prior to the changes, it was {"foo":1408414571}
         // (with no decimal point nor places.)
         System.out.println(w);
         final String prefix = "{\"foo\":";
@@ -303,7 +287,7 @@ public class DateUtilsTest {
         // verify decimal precision of exactly 3
         assertTrue(j == 3);
     }
-    
+
     @Test
     public void numberOfDaysSinceEpoch() {
         final long now = System.currentTimeMillis();

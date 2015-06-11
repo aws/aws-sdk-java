@@ -428,8 +428,8 @@ public class AmazonHttpClient {
         setUserAgent(request);
         // Make a copy of the original request params and headers so that we can
         // permute it in this loop and start over with the original every time.
-        final Map<String, String> originalParameters =
-            new LinkedHashMap<String, String>(request.getParameters());
+        final Map<String, List<String>> originalParameters =
+            new LinkedHashMap<String, List<String>>(request.getParameters());
         final Map<String, String> originalHeaders =
             new HashMap<String, String>(request.getHeaders());
         // Always mark the input stream before execution.

@@ -96,36 +96,40 @@ public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Requ
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (completeMultipartUploadRequest.getAccountId() == null) ? null : StringUtils.fromString(completeMultipartUploadRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (completeMultipartUploadRequest.getAccountId() == null) ? "" : StringUtils.fromString(completeMultipartUploadRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (completeMultipartUploadRequest.getVaultName() == null) ? null : StringUtils.fromString(completeMultipartUploadRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (completeMultipartUploadRequest.getVaultName() == null) ? "" : StringUtils.fromString(completeMultipartUploadRequest.getVaultName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("uploadId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("uploadId");
+
             String value = (completeMultipartUploadRequest.getUploadId() == null) ? null : StringUtils.fromString(completeMultipartUploadRequest.getUploadId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{uploadId}", (completeMultipartUploadRequest.getUploadId() == null) ? "" : StringUtils.fromString(completeMultipartUploadRequest.getUploadId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

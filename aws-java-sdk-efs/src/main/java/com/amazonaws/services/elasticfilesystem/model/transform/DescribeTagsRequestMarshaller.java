@@ -90,36 +90,40 @@ public class DescribeTagsRequestMarshaller implements Marshaller<Request<Describ
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("MaxItems")) {
             String name = DYNAMIC_QUERY_PARAMS.get("MaxItems");
+
             String value = (describeTagsRequest.getMaxItems() == null) ? null : StringUtils.fromInteger(describeTagsRequest.getMaxItems());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{MaxItems}", (describeTagsRequest.getMaxItems() == null) ? "" : StringUtils.fromInteger(describeTagsRequest.getMaxItems())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Marker")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Marker");
+
             String value = (describeTagsRequest.getMarker() == null) ? null : StringUtils.fromString(describeTagsRequest.getMarker());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Marker}", (describeTagsRequest.getMarker() == null) ? "" : StringUtils.fromString(describeTagsRequest.getMarker())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FileSystemId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FileSystemId");
+
             String value = (describeTagsRequest.getFileSystemId() == null) ? null : StringUtils.fromString(describeTagsRequest.getFileSystemId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FileSystemId}", (describeTagsRequest.getFileSystemId() == null) ? "" : StringUtils.fromString(describeTagsRequest.getFileSystemId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

@@ -90,14 +90,16 @@ public class InvokeAsyncRequestMarshaller implements Marshaller<Request<InvokeAs
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FunctionName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FunctionName");
+
             String value = (invokeAsyncRequest.getFunctionName() == null) ? null : StringUtils.fromString(invokeAsyncRequest.getFunctionName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (invokeAsyncRequest.getFunctionName() == null) ? "" : StringUtils.fromString(invokeAsyncRequest.getFunctionName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

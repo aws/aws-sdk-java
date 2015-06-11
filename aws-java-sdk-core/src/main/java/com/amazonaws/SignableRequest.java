@@ -16,6 +16,7 @@ package com.amazonaws;
 
 import java.io.InputStream;
 import java.net.URI;
+import java.util.List;
 import java.util.Map;
 
 import com.amazonaws.http.HttpMethodName;
@@ -50,7 +51,7 @@ public interface SignableRequest<T> {
      * @return A map of all the headers included in this request.
      */
     public Map<String, String> getHeaders();
-    
+
 
     /**
      * Returns the path to the resource being requested.
@@ -74,7 +75,7 @@ public interface SignableRequest<T> {
      *
      * @return A map of all parameters in this request.
      */
-    public Map<String, String> getParameters();
+    public Map<String, List<String>> getParameters();
 
     /**
      * Returns the service endpoint (ex: "https://ec2.amazonaws.com") to which
@@ -87,17 +88,17 @@ public interface SignableRequest<T> {
     /**
      * Returns the HTTP method (GET, POST, etc) to use when sending this
      * request.
-     * 
+     *
      * @return The HTTP method to use when sending this request.
      */
     public HttpMethodName getHttpMethod();
 
     /**
      * Returns the optional value for time offset for this request.  This
-     * will be used by the signer to adjust for potential clock skew.  
+     * will be used by the signer to adjust for potential clock skew.
      * Value is in seconds, positive values imply the current clock is "fast",
      * negative values imply clock is slow.
-     * 
+     *
      * @return The optional value for time offset (in seconds) for this request.
      */
     public int getTimeOffset();
@@ -105,7 +106,7 @@ public interface SignableRequest<T> {
     /**
      * Returns the optional stream containing the payload data to include for
      * this request. Not all requests will contain payload data.
-     * 
+     *
      * @return The optional stream containing the payload data to include for
      *         this request.
      */
@@ -115,7 +116,7 @@ public interface SignableRequest<T> {
      * Returns the optional raw stream containing the payload data to include
      * for this request, with all progress stream wrappers. Not all requests
      * contain payload data.
-     * 
+     *
      * @return The optional raw stream containing the payload data to include
      *         for this request, with all progress stream wrappers removed.
      */
@@ -137,7 +138,7 @@ public interface SignableRequest<T> {
     /**
      * Sets the optional stream containing the payload data to include for this
      * request. This is used, for example, for S3 chunk encoding.
-     * 
+     *
      * @param content
      *            The optional stream containing the payload data to include for
      *            this request.
