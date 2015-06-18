@@ -64,6 +64,12 @@ public class ListTaskDefinitionsRequestMarshaller implements Marshaller<Request<
             if (listTaskDefinitionsRequest.getFamilyPrefix() != null) {
                 jsonWriter.key("familyPrefix").value(listTaskDefinitionsRequest.getFamilyPrefix());
             }
+            if (listTaskDefinitionsRequest.getStatus() != null) {
+                jsonWriter.key("status").value(listTaskDefinitionsRequest.getStatus());
+            }
+            if (listTaskDefinitionsRequest.getSort() != null) {
+                jsonWriter.key("sort").value(listTaskDefinitionsRequest.getSort());
+            }
             if (listTaskDefinitionsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(listTaskDefinitionsRequest.getNextToken());
             }

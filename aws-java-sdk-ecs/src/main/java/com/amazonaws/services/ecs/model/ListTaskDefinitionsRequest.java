@@ -23,7 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Returns a list of task definitions that are registered to your
  * account. You can filter the results by family name with the
- * <code>familyPrefix</code> parameter.
+ * <code>familyPrefix</code> parameter or by status with the
+ * <code>status</code> parameter.
  * </p>
  *
  * @see com.amazonaws.services.ecs.AmazonECS#listTaskDefinitions(ListTaskDefinitionsRequest)
@@ -37,6 +38,34 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
      * task definition revisions that belong to that family.
      */
     private String familyPrefix;
+
+    /**
+     * The task definition status that you want to filter the
+     * <code>ListTaskDefinitions</code> results with. By default, only
+     * <code>ACTIVE</code> task definitions are listed. By setting this
+     * parameter to <code>INACTIVE</code>, you can view task definitions that
+     * are <code>INACTIVE</code> as long as an active task or service still
+     * references them. If you paginate the resulting output, be sure to keep
+     * the <code>status</code> value constant in each subsequent request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ACTIVE, INACTIVE
+     */
+    private String status;
+
+    /**
+     * The order in which to sort the results. Valid values are
+     * <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>),
+     * task definitions are listed lexicographically by family name and in
+     * ascending numerical order by revision so that the newest task
+     * definitions in a family are listed last. Setting this parameter to
+     * <code>DESC</code> reverses the sort order on family name and revision
+     * so that the newest task definitions in a family are listed first.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ASC, DESC
+     */
+    private String sort;
 
     /**
      * The <code>nextToken</code> value returned from a previous paginated
@@ -111,6 +140,290 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
      */
     public ListTaskDefinitionsRequest withFamilyPrefix(String familyPrefix) {
         this.familyPrefix = familyPrefix;
+        return this;
+    }
+
+    /**
+     * The task definition status that you want to filter the
+     * <code>ListTaskDefinitions</code> results with. By default, only
+     * <code>ACTIVE</code> task definitions are listed. By setting this
+     * parameter to <code>INACTIVE</code>, you can view task definitions that
+     * are <code>INACTIVE</code> as long as an active task or service still
+     * references them. If you paginate the resulting output, be sure to keep
+     * the <code>status</code> value constant in each subsequent request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ACTIVE, INACTIVE
+     *
+     * @return The task definition status that you want to filter the
+     *         <code>ListTaskDefinitions</code> results with. By default, only
+     *         <code>ACTIVE</code> task definitions are listed. By setting this
+     *         parameter to <code>INACTIVE</code>, you can view task definitions that
+     *         are <code>INACTIVE</code> as long as an active task or service still
+     *         references them. If you paginate the resulting output, be sure to keep
+     *         the <code>status</code> value constant in each subsequent request.
+     *
+     * @see TaskDefinitionStatus
+     */
+    public String getStatus() {
+        return status;
+    }
+    
+    /**
+     * The task definition status that you want to filter the
+     * <code>ListTaskDefinitions</code> results with. By default, only
+     * <code>ACTIVE</code> task definitions are listed. By setting this
+     * parameter to <code>INACTIVE</code>, you can view task definitions that
+     * are <code>INACTIVE</code> as long as an active task or service still
+     * references them. If you paginate the resulting output, be sure to keep
+     * the <code>status</code> value constant in each subsequent request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ACTIVE, INACTIVE
+     *
+     * @param status The task definition status that you want to filter the
+     *         <code>ListTaskDefinitions</code> results with. By default, only
+     *         <code>ACTIVE</code> task definitions are listed. By setting this
+     *         parameter to <code>INACTIVE</code>, you can view task definitions that
+     *         are <code>INACTIVE</code> as long as an active task or service still
+     *         references them. If you paginate the resulting output, be sure to keep
+     *         the <code>status</code> value constant in each subsequent request.
+     *
+     * @see TaskDefinitionStatus
+     */
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    /**
+     * The task definition status that you want to filter the
+     * <code>ListTaskDefinitions</code> results with. By default, only
+     * <code>ACTIVE</code> task definitions are listed. By setting this
+     * parameter to <code>INACTIVE</code>, you can view task definitions that
+     * are <code>INACTIVE</code> as long as an active task or service still
+     * references them. If you paginate the resulting output, be sure to keep
+     * the <code>status</code> value constant in each subsequent request.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ACTIVE, INACTIVE
+     *
+     * @param status The task definition status that you want to filter the
+     *         <code>ListTaskDefinitions</code> results with. By default, only
+     *         <code>ACTIVE</code> task definitions are listed. By setting this
+     *         parameter to <code>INACTIVE</code>, you can view task definitions that
+     *         are <code>INACTIVE</code> as long as an active task or service still
+     *         references them. If you paginate the resulting output, be sure to keep
+     *         the <code>status</code> value constant in each subsequent request.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see TaskDefinitionStatus
+     */
+    public ListTaskDefinitionsRequest withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * The task definition status that you want to filter the
+     * <code>ListTaskDefinitions</code> results with. By default, only
+     * <code>ACTIVE</code> task definitions are listed. By setting this
+     * parameter to <code>INACTIVE</code>, you can view task definitions that
+     * are <code>INACTIVE</code> as long as an active task or service still
+     * references them. If you paginate the resulting output, be sure to keep
+     * the <code>status</code> value constant in each subsequent request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ACTIVE, INACTIVE
+     *
+     * @param status The task definition status that you want to filter the
+     *         <code>ListTaskDefinitions</code> results with. By default, only
+     *         <code>ACTIVE</code> task definitions are listed. By setting this
+     *         parameter to <code>INACTIVE</code>, you can view task definitions that
+     *         are <code>INACTIVE</code> as long as an active task or service still
+     *         references them. If you paginate the resulting output, be sure to keep
+     *         the <code>status</code> value constant in each subsequent request.
+     *
+     * @see TaskDefinitionStatus
+     */
+    public void setStatus(TaskDefinitionStatus status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * The task definition status that you want to filter the
+     * <code>ListTaskDefinitions</code> results with. By default, only
+     * <code>ACTIVE</code> task definitions are listed. By setting this
+     * parameter to <code>INACTIVE</code>, you can view task definitions that
+     * are <code>INACTIVE</code> as long as an active task or service still
+     * references them. If you paginate the resulting output, be sure to keep
+     * the <code>status</code> value constant in each subsequent request.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ACTIVE, INACTIVE
+     *
+     * @param status The task definition status that you want to filter the
+     *         <code>ListTaskDefinitions</code> results with. By default, only
+     *         <code>ACTIVE</code> task definitions are listed. By setting this
+     *         parameter to <code>INACTIVE</code>, you can view task definitions that
+     *         are <code>INACTIVE</code> as long as an active task or service still
+     *         references them. If you paginate the resulting output, be sure to keep
+     *         the <code>status</code> value constant in each subsequent request.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see TaskDefinitionStatus
+     */
+    public ListTaskDefinitionsRequest withStatus(TaskDefinitionStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * The order in which to sort the results. Valid values are
+     * <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>),
+     * task definitions are listed lexicographically by family name and in
+     * ascending numerical order by revision so that the newest task
+     * definitions in a family are listed last. Setting this parameter to
+     * <code>DESC</code> reverses the sort order on family name and revision
+     * so that the newest task definitions in a family are listed first.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ASC, DESC
+     *
+     * @return The order in which to sort the results. Valid values are
+     *         <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>),
+     *         task definitions are listed lexicographically by family name and in
+     *         ascending numerical order by revision so that the newest task
+     *         definitions in a family are listed last. Setting this parameter to
+     *         <code>DESC</code> reverses the sort order on family name and revision
+     *         so that the newest task definitions in a family are listed first.
+     *
+     * @see SortOrder
+     */
+    public String getSort() {
+        return sort;
+    }
+    
+    /**
+     * The order in which to sort the results. Valid values are
+     * <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>),
+     * task definitions are listed lexicographically by family name and in
+     * ascending numerical order by revision so that the newest task
+     * definitions in a family are listed last. Setting this parameter to
+     * <code>DESC</code> reverses the sort order on family name and revision
+     * so that the newest task definitions in a family are listed first.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ASC, DESC
+     *
+     * @param sort The order in which to sort the results. Valid values are
+     *         <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>),
+     *         task definitions are listed lexicographically by family name and in
+     *         ascending numerical order by revision so that the newest task
+     *         definitions in a family are listed last. Setting this parameter to
+     *         <code>DESC</code> reverses the sort order on family name and revision
+     *         so that the newest task definitions in a family are listed first.
+     *
+     * @see SortOrder
+     */
+    public void setSort(String sort) {
+        this.sort = sort;
+    }
+    
+    /**
+     * The order in which to sort the results. Valid values are
+     * <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>),
+     * task definitions are listed lexicographically by family name and in
+     * ascending numerical order by revision so that the newest task
+     * definitions in a family are listed last. Setting this parameter to
+     * <code>DESC</code> reverses the sort order on family name and revision
+     * so that the newest task definitions in a family are listed first.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ASC, DESC
+     *
+     * @param sort The order in which to sort the results. Valid values are
+     *         <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>),
+     *         task definitions are listed lexicographically by family name and in
+     *         ascending numerical order by revision so that the newest task
+     *         definitions in a family are listed last. Setting this parameter to
+     *         <code>DESC</code> reverses the sort order on family name and revision
+     *         so that the newest task definitions in a family are listed first.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see SortOrder
+     */
+    public ListTaskDefinitionsRequest withSort(String sort) {
+        this.sort = sort;
+        return this;
+    }
+
+    /**
+     * The order in which to sort the results. Valid values are
+     * <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>),
+     * task definitions are listed lexicographically by family name and in
+     * ascending numerical order by revision so that the newest task
+     * definitions in a family are listed last. Setting this parameter to
+     * <code>DESC</code> reverses the sort order on family name and revision
+     * so that the newest task definitions in a family are listed first.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ASC, DESC
+     *
+     * @param sort The order in which to sort the results. Valid values are
+     *         <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>),
+     *         task definitions are listed lexicographically by family name and in
+     *         ascending numerical order by revision so that the newest task
+     *         definitions in a family are listed last. Setting this parameter to
+     *         <code>DESC</code> reverses the sort order on family name and revision
+     *         so that the newest task definitions in a family are listed first.
+     *
+     * @see SortOrder
+     */
+    public void setSort(SortOrder sort) {
+        this.sort = sort.toString();
+    }
+    
+    /**
+     * The order in which to sort the results. Valid values are
+     * <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>),
+     * task definitions are listed lexicographically by family name and in
+     * ascending numerical order by revision so that the newest task
+     * definitions in a family are listed last. Setting this parameter to
+     * <code>DESC</code> reverses the sort order on family name and revision
+     * so that the newest task definitions in a family are listed first.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ASC, DESC
+     *
+     * @param sort The order in which to sort the results. Valid values are
+     *         <code>ASC</code> and <code>DESC</code>. By default (<code>ASC</code>),
+     *         task definitions are listed lexicographically by family name and in
+     *         ascending numerical order by revision so that the newest task
+     *         definitions in a family are listed last. Setting this parameter to
+     *         <code>DESC</code> reverses the sort order on family name and revision
+     *         so that the newest task definitions in a family are listed first.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see SortOrder
+     */
+    public ListTaskDefinitionsRequest withSort(SortOrder sort) {
+        this.sort = sort.toString();
         return this;
     }
 
@@ -283,6 +596,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFamilyPrefix() != null) sb.append("FamilyPrefix: " + getFamilyPrefix() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getSort() != null) sb.append("Sort: " + getSort() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() );
         sb.append("}");
@@ -295,6 +610,8 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getFamilyPrefix() == null) ? 0 : getFamilyPrefix().hashCode()); 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getSort() == null) ? 0 : getSort().hashCode()); 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode()); 
         return hashCode;
@@ -310,6 +627,10 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest implemen
         
         if (other.getFamilyPrefix() == null ^ this.getFamilyPrefix() == null) return false;
         if (other.getFamilyPrefix() != null && other.getFamilyPrefix().equals(this.getFamilyPrefix()) == false) return false; 
+        if (other.getStatus() == null ^ this.getStatus() == null) return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getSort() == null ^ this.getSort() == null) return false;
+        if (other.getSort() != null && other.getSort().equals(this.getSort()) == false) return false; 
         if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
         if (other.getMaxResults() == null ^ this.getMaxResults() == null) return false;

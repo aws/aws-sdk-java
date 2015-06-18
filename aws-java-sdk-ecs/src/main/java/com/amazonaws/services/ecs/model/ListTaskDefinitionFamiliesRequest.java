@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.ecs.AmazonECS#listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest) ListTaskDefinitionFamilies operation}.
  * <p>
  * Returns a list of task definition families that are registered to your
- * account. You can filter the results with the <code>familyPrefix</code>
- * parameter.
+ * account (which may include task definition families that no longer
+ * have any <code>ACTIVE</code> task definitions). You can filter the
+ * results with the <code>familyPrefix</code> parameter.
  * </p>
  *
  * @see com.amazonaws.services.ecs.AmazonECS#listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest)

@@ -219,7 +219,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * Returns a list of task definitions that are registered to your
      * account. You can filter the results by family name with the
-     * <code>familyPrefix</code> parameter.
+     * <code>familyPrefix</code> parameter or by status with the
+     * <code>status</code> parameter.
      * </p>
      *
      * @param listTaskDefinitionsRequest Container for the necessary
@@ -244,7 +245,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * Returns a list of task definitions that are registered to your
      * account. You can filter the results by family name with the
-     * <code>familyPrefix</code> parameter.
+     * <code>familyPrefix</code> parameter or by status with the
+     * <code>status</code> parameter.
      * </p>
      *
      * @param listTaskDefinitionsRequest Container for the necessary
@@ -602,11 +604,20 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * NOT YET IMPLEMENTED.
+     * Deregisters the specified task definition by family and revision.
+     * Upon deregistration, the task definition is marked as
+     * <code>INACTIVE</code> . Existing tasks and services that reference an
+     * <code>INACTIVE</code> task definition continue to run without
+     * disruption. Existing services that reference an <code>INACTIVE</code>
+     * task definition can still scale up or down by modifying the service's
+     * desired count.
      * </p>
      * <p>
-     * Deregisters the specified task definition. You will no longer be able
-     * to run tasks from this definition after deregistration.
+     * You cannot use an <code>INACTIVE</code> task definition to run new
+     * tasks or create new services, and you cannot update an existing
+     * service to reference an <code>INACTIVE</code> task definition
+     * (although there may be up to a 10 minute window following
+     * deregistration where these restrictions have not yet taken effect).
      * </p>
      *
      * @param deregisterTaskDefinitionRequest Container for the necessary
@@ -630,11 +641,20 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * NOT YET IMPLEMENTED.
+     * Deregisters the specified task definition by family and revision.
+     * Upon deregistration, the task definition is marked as
+     * <code>INACTIVE</code> . Existing tasks and services that reference an
+     * <code>INACTIVE</code> task definition continue to run without
+     * disruption. Existing services that reference an <code>INACTIVE</code>
+     * task definition can still scale up or down by modifying the service's
+     * desired count.
      * </p>
      * <p>
-     * Deregisters the specified task definition. You will no longer be able
-     * to run tasks from this definition after deregistration.
+     * You cannot use an <code>INACTIVE</code> task definition to run new
+     * tasks or create new services, and you cannot update an existing
+     * service to reference an <code>INACTIVE</code> task definition
+     * (although there may be up to a 10 minute window following
+     * deregistration where these restrictions have not yet taken effect).
      * </p>
      *
      * @param deregisterTaskDefinitionRequest Container for the necessary
@@ -719,7 +739,11 @@ public interface AmazonECSAsync extends AmazonECS {
      * Describes a task definition. You can specify a <code>family</code>
      * and <code>revision</code> to find information on a specific task
      * definition, or you can simply specify the family to find the latest
-     * revision in that family.
+     * <code>ACTIVE</code> revision in that family.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> You can only describe INACTIVE task definitions while an
+     * active task or service references them.
      * </p>
      *
      * @param describeTaskDefinitionRequest Container for the necessary
@@ -746,7 +770,11 @@ public interface AmazonECSAsync extends AmazonECS {
      * Describes a task definition. You can specify a <code>family</code>
      * and <code>revision</code> to find information on a specific task
      * definition, or you can simply specify the family to find the latest
-     * revision in that family.
+     * <code>ACTIVE</code> revision in that family.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> You can only describe INACTIVE task definitions while an
+     * active task or service references them.
      * </p>
      *
      * @param describeTaskDefinitionRequest Container for the necessary
@@ -1266,8 +1294,9 @@ public interface AmazonECSAsync extends AmazonECS {
     /**
      * <p>
      * Returns a list of task definition families that are registered to
-     * your account. You can filter the results with the
-     * <code>familyPrefix</code> parameter.
+     * your account (which may include task definition families that no
+     * longer have any <code>ACTIVE</code> task definitions). You can filter
+     * the results with the <code>familyPrefix</code> parameter.
      * </p>
      *
      * @param listTaskDefinitionFamiliesRequest Container for the necessary
@@ -1292,8 +1321,9 @@ public interface AmazonECSAsync extends AmazonECS {
     /**
      * <p>
      * Returns a list of task definition families that are registered to
-     * your account. You can filter the results with the
-     * <code>familyPrefix</code> parameter.
+     * your account (which may include task definition families that no
+     * longer have any <code>ACTIVE</code> task definitions). You can filter
+     * the results with the <code>familyPrefix</code> parameter.
      * </p>
      *
      * @param listTaskDefinitionFamiliesRequest Container for the necessary

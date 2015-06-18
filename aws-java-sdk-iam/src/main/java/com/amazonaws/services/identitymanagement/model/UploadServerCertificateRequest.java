@@ -65,7 +65,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
 
     /**
      * The name for the server certificate. Do not include the path in this
-     * value.
+     * value. The name of the certificate cannot contain any spaces.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -113,7 +113,8 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * initialize any additional object members.
      * 
      * @param serverCertificateName The name for the server certificate. Do
-     * not include the path in this value.
+     * not include the path in this value. The name of the certificate cannot
+     * contain any spaces.
      * @param certificateBody The contents of the public key certificate in
      * PEM-encoded format.
      * @param privateKey The contents of the private key in PEM-encoded
@@ -226,14 +227,14 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
 
     /**
      * The name for the server certificate. Do not include the path in this
-     * value.
+     * value. The name of the certificate cannot contain any spaces.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @return The name for the server certificate. Do not include the path in this
-     *         value.
+     *         value. The name of the certificate cannot contain any spaces.
      */
     public String getServerCertificateName() {
         return serverCertificateName;
@@ -241,14 +242,14 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
     
     /**
      * The name for the server certificate. Do not include the path in this
-     * value.
+     * value. The name of the certificate cannot contain any spaces.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param serverCertificateName The name for the server certificate. Do not include the path in this
-     *         value.
+     *         value. The name of the certificate cannot contain any spaces.
      */
     public void setServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
@@ -256,7 +257,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
     
     /**
      * The name for the server certificate. Do not include the path in this
-     * value.
+     * value. The name of the certificate cannot contain any spaces.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -265,7 +266,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param serverCertificateName The name for the server certificate. Do not include the path in this
-     *         value.
+     *         value. The name of the certificate cannot contain any spaces.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -100,11 +100,12 @@ public class User implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
      * more than once in a five-minute span, only the first use is returned
-     * in this field. When the user does not have a password, this field is
-     * null (not present). When a user's password exists but has never been
-     * used, or when there is no sign-in data associated with the user, this
-     * field is null (not present). <p>This value is returned only in the
-     * <a>GetUser</a> and <a>ListUsers</a> actions.
+     * in this field. This field is null (not present) when: <ul> <li> <p>The
+     * user does not have a password </li> <li> <p>The password exists but
+     * has never been used (at least not since IAM started tracking this
+     * information on October 20th, 2014 </li> <li> <p>there is no sign-in
+     * data associated with the user </li> </ul> <p>This value is returned
+     * only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      */
     private java.util.Date passwordLastUsed;
 
@@ -417,11 +418,12 @@ public class User implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
      * more than once in a five-minute span, only the first use is returned
-     * in this field. When the user does not have a password, this field is
-     * null (not present). When a user's password exists but has never been
-     * used, or when there is no sign-in data associated with the user, this
-     * field is null (not present). <p>This value is returned only in the
-     * <a>GetUser</a> and <a>ListUsers</a> actions.
+     * in this field. This field is null (not present) when: <ul> <li> <p>The
+     * user does not have a password </li> <li> <p>The password exists but
+     * has never been used (at least not since IAM started tracking this
+     * information on October 20th, 2014 </li> <li> <p>there is no sign-in
+     * data associated with the user </li> </ul> <p>This value is returned
+     * only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      *
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *         8601 date-time format</a>, when the user's password was last used to
@@ -430,11 +432,12 @@ public class User implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      *         Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
      *         more than once in a five-minute span, only the first use is returned
-     *         in this field. When the user does not have a password, this field is
-     *         null (not present). When a user's password exists but has never been
-     *         used, or when there is no sign-in data associated with the user, this
-     *         field is null (not present). <p>This value is returned only in the
-     *         <a>GetUser</a> and <a>ListUsers</a> actions.
+     *         in this field. This field is null (not present) when: <ul> <li> <p>The
+     *         user does not have a password </li> <li> <p>The password exists but
+     *         has never been used (at least not since IAM started tracking this
+     *         information on October 20th, 2014 </li> <li> <p>there is no sign-in
+     *         data associated with the user </li> </ul> <p>This value is returned
+     *         only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      */
     public java.util.Date getPasswordLastUsed() {
         return passwordLastUsed;
@@ -448,11 +451,12 @@ public class User implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
      * more than once in a five-minute span, only the first use is returned
-     * in this field. When the user does not have a password, this field is
-     * null (not present). When a user's password exists but has never been
-     * used, or when there is no sign-in data associated with the user, this
-     * field is null (not present). <p>This value is returned only in the
-     * <a>GetUser</a> and <a>ListUsers</a> actions.
+     * in this field. This field is null (not present) when: <ul> <li> <p>The
+     * user does not have a password </li> <li> <p>The password exists but
+     * has never been used (at least not since IAM started tracking this
+     * information on October 20th, 2014 </li> <li> <p>there is no sign-in
+     * data associated with the user </li> </ul> <p>This value is returned
+     * only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      *
      * @param passwordLastUsed The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *         8601 date-time format</a>, when the user's password was last used to
@@ -461,11 +465,12 @@ public class User implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      *         Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
      *         more than once in a five-minute span, only the first use is returned
-     *         in this field. When the user does not have a password, this field is
-     *         null (not present). When a user's password exists but has never been
-     *         used, or when there is no sign-in data associated with the user, this
-     *         field is null (not present). <p>This value is returned only in the
-     *         <a>GetUser</a> and <a>ListUsers</a> actions.
+     *         in this field. This field is null (not present) when: <ul> <li> <p>The
+     *         user does not have a password </li> <li> <p>The password exists but
+     *         has never been used (at least not since IAM started tracking this
+     *         information on October 20th, 2014 </li> <li> <p>there is no sign-in
+     *         data associated with the user </li> </ul> <p>This value is returned
+     *         only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      */
     public void setPasswordLastUsed(java.util.Date passwordLastUsed) {
         this.passwordLastUsed = passwordLastUsed;
@@ -479,11 +484,12 @@ public class User implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
      * more than once in a five-minute span, only the first use is returned
-     * in this field. When the user does not have a password, this field is
-     * null (not present). When a user's password exists but has never been
-     * used, or when there is no sign-in data associated with the user, this
-     * field is null (not present). <p>This value is returned only in the
-     * <a>GetUser</a> and <a>ListUsers</a> actions.
+     * in this field. This field is null (not present) when: <ul> <li> <p>The
+     * user does not have a password </li> <li> <p>The password exists but
+     * has never been used (at least not since IAM started tracking this
+     * information on October 20th, 2014 </li> <li> <p>there is no sign-in
+     * data associated with the user </li> </ul> <p>This value is returned
+     * only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -494,11 +500,12 @@ public class User implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      *         Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
      *         more than once in a five-minute span, only the first use is returned
-     *         in this field. When the user does not have a password, this field is
-     *         null (not present). When a user's password exists but has never been
-     *         used, or when there is no sign-in data associated with the user, this
-     *         field is null (not present). <p>This value is returned only in the
-     *         <a>GetUser</a> and <a>ListUsers</a> actions.
+     *         in this field. This field is null (not present) when: <ul> <li> <p>The
+     *         user does not have a password </li> <li> <p>The password exists but
+     *         has never been used (at least not since IAM started tracking this
+     *         information on October 20th, 2014 </li> <li> <p>there is no sign-in
+     *         data associated with the user </li> </ul> <p>This value is returned
+     *         only in the <a>GetUser</a> and <a>ListUsers</a> actions.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

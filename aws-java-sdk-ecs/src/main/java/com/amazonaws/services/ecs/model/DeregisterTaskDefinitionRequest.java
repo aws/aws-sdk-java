@@ -21,11 +21,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ecs.AmazonECS#deregisterTaskDefinition(DeregisterTaskDefinitionRequest) DeregisterTaskDefinition operation}.
  * <p>
- * NOT YET IMPLEMENTED.
+ * Deregisters the specified task definition by family and revision. Upon
+ * deregistration, the task definition is marked as <code>INACTIVE</code>
+ * . Existing tasks and services that reference an <code>INACTIVE</code>
+ * task definition continue to run without disruption. Existing services
+ * that reference an <code>INACTIVE</code> task definition can still
+ * scale up or down by modifying the service's desired count.
  * </p>
  * <p>
- * Deregisters the specified task definition. You will no longer be able
- * to run tasks from this definition after deregistration.
+ * You cannot use an <code>INACTIVE</code> task definition to run new
+ * tasks or create new services, and you cannot update an existing
+ * service to reference an <code>INACTIVE</code> task definition
+ * (although there may be up to a 10 minute window following
+ * deregistration where these restrictions have not yet taken effect).
  * </p>
  *
  * @see com.amazonaws.services.ecs.AmazonECS#deregisterTaskDefinition(DeregisterTaskDefinitionRequest)
@@ -35,18 +43,21 @@ public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest imp
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to deregister.
+     * the task definition that you want to deregister. You must specify a
+     * <code>revision</code>.
      */
     private String taskDefinition;
 
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to deregister.
+     * the task definition that you want to deregister. You must specify a
+     * <code>revision</code>.
      *
      * @return The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to deregister.
+     *         the task definition that you want to deregister. You must specify a
+     *         <code>revision</code>.
      */
     public String getTaskDefinition() {
         return taskDefinition;
@@ -55,11 +66,13 @@ public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest imp
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to deregister.
+     * the task definition that you want to deregister. You must specify a
+     * <code>revision</code>.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to deregister.
+     *         the task definition that you want to deregister. You must specify a
+     *         <code>revision</code>.
      */
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
@@ -68,13 +81,15 @@ public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest imp
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to deregister.
+     * the task definition that you want to deregister. You must specify a
+     * <code>revision</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to deregister.
+     *         the task definition that you want to deregister. You must specify a
+     *         <code>revision</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
