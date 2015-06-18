@@ -67,10 +67,12 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service. If you
-     * modify the task definition with <code>UpdateService</code>, Amazon ECS
-     * spawns a task with the new version of the task definition and then
-     * stops an old task after the new version is running.
+     * the task definition that you want to run in your service. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used. If you modify the task definition with
+     * <code>UpdateService</code>, Amazon ECS spawns a task with the new
+     * version of the task definition and then stops an old task after the
+     * new version is running.
      */
     private String taskDefinition;
 
@@ -194,17 +196,21 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service. If you
-     * modify the task definition with <code>UpdateService</code>, Amazon ECS
-     * spawns a task with the new version of the task definition and then
-     * stops an old task after the new version is running.
+     * the task definition that you want to run in your service. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used. If you modify the task definition with
+     * <code>UpdateService</code>, Amazon ECS spawns a task with the new
+     * version of the task definition and then stops an old task after the
+     * new version is running.
      *
      * @return The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run in your service. If you
-     *         modify the task definition with <code>UpdateService</code>, Amazon ECS
-     *         spawns a task with the new version of the task definition and then
-     *         stops an old task after the new version is running.
+     *         the task definition that you want to run in your service. If a
+     *         <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     *         revision is used. If you modify the task definition with
+     *         <code>UpdateService</code>, Amazon ECS spawns a task with the new
+     *         version of the task definition and then stops an old task after the
+     *         new version is running.
      */
     public String getTaskDefinition() {
         return taskDefinition;
@@ -213,17 +219,21 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service. If you
-     * modify the task definition with <code>UpdateService</code>, Amazon ECS
-     * spawns a task with the new version of the task definition and then
-     * stops an old task after the new version is running.
+     * the task definition that you want to run in your service. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used. If you modify the task definition with
+     * <code>UpdateService</code>, Amazon ECS spawns a task with the new
+     * version of the task definition and then stops an old task after the
+     * new version is running.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run in your service. If you
-     *         modify the task definition with <code>UpdateService</code>, Amazon ECS
-     *         spawns a task with the new version of the task definition and then
-     *         stops an old task after the new version is running.
+     *         the task definition that you want to run in your service. If a
+     *         <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     *         revision is used. If you modify the task definition with
+     *         <code>UpdateService</code>, Amazon ECS spawns a task with the new
+     *         version of the task definition and then stops an old task after the
+     *         new version is running.
      */
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
@@ -232,19 +242,23 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service. If you
-     * modify the task definition with <code>UpdateService</code>, Amazon ECS
-     * spawns a task with the new version of the task definition and then
-     * stops an old task after the new version is running.
+     * the task definition that you want to run in your service. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used. If you modify the task definition with
+     * <code>UpdateService</code>, Amazon ECS spawns a task with the new
+     * version of the task definition and then stops an old task after the
+     * new version is running.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run in your service. If you
-     *         modify the task definition with <code>UpdateService</code>, Amazon ECS
-     *         spawns a task with the new version of the task definition and then
-     *         stops an old task after the new version is running.
+     *         the task definition that you want to run in your service. If a
+     *         <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     *         revision is used. If you modify the task definition with
+     *         <code>UpdateService</code>, Amazon ECS spawns a task with the new
+     *         version of the task definition and then stops an old task after the
+     *         new version is running.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

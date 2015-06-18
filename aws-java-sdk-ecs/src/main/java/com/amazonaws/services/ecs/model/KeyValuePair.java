@@ -17,44 +17,54 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A key and value pair object.
+ * </p>
  */
 public class KeyValuePair implements Serializable, Cloneable {
 
     /**
-     * The name of the key value pair.
+     * The name of the key value pair. For environment variables, this is the
+     * name of the environment variable.
      */
     private String name;
 
     /**
-     * The value of the key value pair.
+     * The value of the key value pair. For environment variables, this is
+     * the value of the environment variable.
      */
     private String value;
 
     /**
-     * The name of the key value pair.
+     * The name of the key value pair. For environment variables, this is the
+     * name of the environment variable.
      *
-     * @return The name of the key value pair.
+     * @return The name of the key value pair. For environment variables, this is the
+     *         name of the environment variable.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The name of the key value pair.
+     * The name of the key value pair. For environment variables, this is the
+     * name of the environment variable.
      *
-     * @param name The name of the key value pair.
+     * @param name The name of the key value pair. For environment variables, this is the
+     *         name of the environment variable.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The name of the key value pair.
+     * The name of the key value pair. For environment variables, this is the
+     * name of the environment variable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The name of the key value pair.
+     * @param name The name of the key value pair. For environment variables, this is the
+     *         name of the environment variable.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -65,29 +75,35 @@ public class KeyValuePair implements Serializable, Cloneable {
     }
 
     /**
-     * The value of the key value pair.
+     * The value of the key value pair. For environment variables, this is
+     * the value of the environment variable.
      *
-     * @return The value of the key value pair.
+     * @return The value of the key value pair. For environment variables, this is
+     *         the value of the environment variable.
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * The value of the key value pair.
+     * The value of the key value pair. For environment variables, this is
+     * the value of the environment variable.
      *
-     * @param value The value of the key value pair.
+     * @param value The value of the key value pair. For environment variables, this is
+     *         the value of the environment variable.
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * The value of the key value pair.
+     * The value of the key value pair. For environment variables, this is
+     * the value of the environment variable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value The value of the key value pair.
+     * @param value The value of the key value pair. For environment variables, this is
+     *         the value of the environment variable.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

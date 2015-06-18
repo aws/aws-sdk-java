@@ -55,9 +55,21 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * 512 CPU units when needed, and each container could float to higher
      * CPU usage if the other container was not using it, but if both tasks
      * were 100% active all of the time, they would be limited to 512 CPU
-     * units. <p>If this parameter is omitted, 0 CPU units are reserved for
-     * the container, and it will only receive CPU time when other containers
-     * are not using it.
+     * units. <p>The Docker daemon on the container instance uses the CPU
+     * value to calculate the relative CPU share ratios for running
+     * containers. For more information, see <a
+     * href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     * share constraint</a> in the Docker documentation. The minimum valid
+     * CPU share value that the Linux kernel will allow is 2; however, the
+     * CPU parameter is not required, and you can use CPU values below 2 in
+     * your container definitions. For CPU values below 2 (including null),
+     * the behavior varies based on your Amazon ECS container agent version:
+     * <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     * zero CPU values are passed to Docker as 0, which Docker then converts
+     * to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     * the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     * are passed to Docker as 2.</li></ul>
      */
     private Integer cpu;
 
@@ -250,9 +262,21 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * 512 CPU units when needed, and each container could float to higher
      * CPU usage if the other container was not using it, but if both tasks
      * were 100% active all of the time, they would be limited to 512 CPU
-     * units. <p>If this parameter is omitted, 0 CPU units are reserved for
-     * the container, and it will only receive CPU time when other containers
-     * are not using it.
+     * units. <p>The Docker daemon on the container instance uses the CPU
+     * value to calculate the relative CPU share ratios for running
+     * containers. For more information, see <a
+     * href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     * share constraint</a> in the Docker documentation. The minimum valid
+     * CPU share value that the Linux kernel will allow is 2; however, the
+     * CPU parameter is not required, and you can use CPU values below 2 in
+     * your container definitions. For CPU values below 2 (including null),
+     * the behavior varies based on your Amazon ECS container agent version:
+     * <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     * zero CPU values are passed to Docker as 0, which Docker then converts
+     * to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     * the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     * are passed to Docker as 2.</li></ul>
      *
      * @return The number of <code>cpu</code> units reserved for the container. A
      *         container instance has 1,024 <code>cpu</code> units for every CPU
@@ -268,9 +292,21 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         512 CPU units when needed, and each container could float to higher
      *         CPU usage if the other container was not using it, but if both tasks
      *         were 100% active all of the time, they would be limited to 512 CPU
-     *         units. <p>If this parameter is omitted, 0 CPU units are reserved for
-     *         the container, and it will only receive CPU time when other containers
-     *         are not using it.
+     *         units. <p>The Docker daemon on the container instance uses the CPU
+     *         value to calculate the relative CPU share ratios for running
+     *         containers. For more information, see <a
+     *         href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     *         share constraint</a> in the Docker documentation. The minimum valid
+     *         CPU share value that the Linux kernel will allow is 2; however, the
+     *         CPU parameter is not required, and you can use CPU values below 2 in
+     *         your container definitions. For CPU values below 2 (including null),
+     *         the behavior varies based on your Amazon ECS container agent version:
+     *         <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     *         zero CPU values are passed to Docker as 0, which Docker then converts
+     *         to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     *         the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     *         greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     *         are passed to Docker as 2.</li></ul>
      */
     public Integer getCpu() {
         return cpu;
@@ -291,9 +327,21 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * 512 CPU units when needed, and each container could float to higher
      * CPU usage if the other container was not using it, but if both tasks
      * were 100% active all of the time, they would be limited to 512 CPU
-     * units. <p>If this parameter is omitted, 0 CPU units are reserved for
-     * the container, and it will only receive CPU time when other containers
-     * are not using it.
+     * units. <p>The Docker daemon on the container instance uses the CPU
+     * value to calculate the relative CPU share ratios for running
+     * containers. For more information, see <a
+     * href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     * share constraint</a> in the Docker documentation. The minimum valid
+     * CPU share value that the Linux kernel will allow is 2; however, the
+     * CPU parameter is not required, and you can use CPU values below 2 in
+     * your container definitions. For CPU values below 2 (including null),
+     * the behavior varies based on your Amazon ECS container agent version:
+     * <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     * zero CPU values are passed to Docker as 0, which Docker then converts
+     * to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     * the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     * are passed to Docker as 2.</li></ul>
      *
      * @param cpu The number of <code>cpu</code> units reserved for the container. A
      *         container instance has 1,024 <code>cpu</code> units for every CPU
@@ -309,9 +357,21 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         512 CPU units when needed, and each container could float to higher
      *         CPU usage if the other container was not using it, but if both tasks
      *         were 100% active all of the time, they would be limited to 512 CPU
-     *         units. <p>If this parameter is omitted, 0 CPU units are reserved for
-     *         the container, and it will only receive CPU time when other containers
-     *         are not using it.
+     *         units. <p>The Docker daemon on the container instance uses the CPU
+     *         value to calculate the relative CPU share ratios for running
+     *         containers. For more information, see <a
+     *         href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     *         share constraint</a> in the Docker documentation. The minimum valid
+     *         CPU share value that the Linux kernel will allow is 2; however, the
+     *         CPU parameter is not required, and you can use CPU values below 2 in
+     *         your container definitions. For CPU values below 2 (including null),
+     *         the behavior varies based on your Amazon ECS container agent version:
+     *         <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     *         zero CPU values are passed to Docker as 0, which Docker then converts
+     *         to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     *         the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     *         greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     *         are passed to Docker as 2.</li></ul>
      */
     public void setCpu(Integer cpu) {
         this.cpu = cpu;
@@ -332,9 +392,21 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * 512 CPU units when needed, and each container could float to higher
      * CPU usage if the other container was not using it, but if both tasks
      * were 100% active all of the time, they would be limited to 512 CPU
-     * units. <p>If this parameter is omitted, 0 CPU units are reserved for
-     * the container, and it will only receive CPU time when other containers
-     * are not using it.
+     * units. <p>The Docker daemon on the container instance uses the CPU
+     * value to calculate the relative CPU share ratios for running
+     * containers. For more information, see <a
+     * href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     * share constraint</a> in the Docker documentation. The minimum valid
+     * CPU share value that the Linux kernel will allow is 2; however, the
+     * CPU parameter is not required, and you can use CPU values below 2 in
+     * your container definitions. For CPU values below 2 (including null),
+     * the behavior varies based on your Amazon ECS container agent version:
+     * <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     * zero CPU values are passed to Docker as 0, which Docker then converts
+     * to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     * the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     * are passed to Docker as 2.</li></ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -352,9 +424,21 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         512 CPU units when needed, and each container could float to higher
      *         CPU usage if the other container was not using it, but if both tasks
      *         were 100% active all of the time, they would be limited to 512 CPU
-     *         units. <p>If this parameter is omitted, 0 CPU units are reserved for
-     *         the container, and it will only receive CPU time when other containers
-     *         are not using it.
+     *         units. <p>The Docker daemon on the container instance uses the CPU
+     *         value to calculate the relative CPU share ratios for running
+     *         containers. For more information, see <a
+     *         href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     *         share constraint</a> in the Docker documentation. The minimum valid
+     *         CPU share value that the Linux kernel will allow is 2; however, the
+     *         CPU parameter is not required, and you can use CPU values below 2 in
+     *         your container definitions. For CPU values below 2 (including null),
+     *         the behavior varies based on your Amazon ECS container agent version:
+     *         <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     *         zero CPU values are passed to Docker as 0, which Docker then converts
+     *         to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     *         the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     *         greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     *         are passed to Docker as 2.</li></ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

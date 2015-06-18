@@ -24,7 +24,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes a task definition. You can specify a <code>family</code> and
  * <code>revision</code> to find information on a specific task
  * definition, or you can simply specify the family to find the latest
- * revision in that family.
+ * <code>ACTIVE</code> revision in that family.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> You can only describe INACTIVE task definitions while an
+ * active task or service references them.
  * </p>
  *
  * @see com.amazonaws.services.ecs.AmazonECS#describeTaskDefinition(DescribeTaskDefinitionRequest)
@@ -32,55 +36,62 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The <code>family</code> for the latest revision, <code>family</code>
-     * and <code>revision</code> (<code>family:revision</code>) for a
-     * specific revision in the family, or full Amazon Resource Name (ARN) of
-     * the task definition that you want to describe.
+     * The <code>family</code> for the latest <code>ACTIVE</code> revision,
+     * <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) for a specific revision in the family,
+     * or full Amazon Resource Name (ARN) of the task definition that you
+     * want to describe.
      */
     private String taskDefinition;
 
     /**
-     * The <code>family</code> for the latest revision, <code>family</code>
-     * and <code>revision</code> (<code>family:revision</code>) for a
-     * specific revision in the family, or full Amazon Resource Name (ARN) of
-     * the task definition that you want to describe.
+     * The <code>family</code> for the latest <code>ACTIVE</code> revision,
+     * <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) for a specific revision in the family,
+     * or full Amazon Resource Name (ARN) of the task definition that you
+     * want to describe.
      *
-     * @return The <code>family</code> for the latest revision, <code>family</code>
-     *         and <code>revision</code> (<code>family:revision</code>) for a
-     *         specific revision in the family, or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to describe.
+     * @return The <code>family</code> for the latest <code>ACTIVE</code> revision,
+     *         <code>family</code> and <code>revision</code>
+     *         (<code>family:revision</code>) for a specific revision in the family,
+     *         or full Amazon Resource Name (ARN) of the task definition that you
+     *         want to describe.
      */
     public String getTaskDefinition() {
         return taskDefinition;
     }
     
     /**
-     * The <code>family</code> for the latest revision, <code>family</code>
-     * and <code>revision</code> (<code>family:revision</code>) for a
-     * specific revision in the family, or full Amazon Resource Name (ARN) of
-     * the task definition that you want to describe.
+     * The <code>family</code> for the latest <code>ACTIVE</code> revision,
+     * <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) for a specific revision in the family,
+     * or full Amazon Resource Name (ARN) of the task definition that you
+     * want to describe.
      *
-     * @param taskDefinition The <code>family</code> for the latest revision, <code>family</code>
-     *         and <code>revision</code> (<code>family:revision</code>) for a
-     *         specific revision in the family, or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to describe.
+     * @param taskDefinition The <code>family</code> for the latest <code>ACTIVE</code> revision,
+     *         <code>family</code> and <code>revision</code>
+     *         (<code>family:revision</code>) for a specific revision in the family,
+     *         or full Amazon Resource Name (ARN) of the task definition that you
+     *         want to describe.
      */
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
     
     /**
-     * The <code>family</code> for the latest revision, <code>family</code>
-     * and <code>revision</code> (<code>family:revision</code>) for a
-     * specific revision in the family, or full Amazon Resource Name (ARN) of
-     * the task definition that you want to describe.
+     * The <code>family</code> for the latest <code>ACTIVE</code> revision,
+     * <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) for a specific revision in the family,
+     * or full Amazon Resource Name (ARN) of the task definition that you
+     * want to describe.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param taskDefinition The <code>family</code> for the latest revision, <code>family</code>
-     *         and <code>revision</code> (<code>family:revision</code>) for a
-     *         specific revision in the family, or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to describe.
+     * @param taskDefinition The <code>family</code> for the latest <code>ACTIVE</code> revision,
+     *         <code>family</code> and <code>revision</code>
+     *         (<code>family:revision</code>) for a specific revision in the family,
+     *         or full Amazon Resource Name (ARN) of the task definition that you
+     *         want to describe.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

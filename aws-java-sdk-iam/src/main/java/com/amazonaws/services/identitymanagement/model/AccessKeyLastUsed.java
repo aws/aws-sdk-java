@@ -30,18 +30,31 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     /**
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      * 8601 date-time format</a>, when the access key was most recently used.
+     * This field is null when: <ul> <li> <p>The user does not have an access
+     * key. </li> <li> <p>An access key exists but has never been used, at
+     * least not since IAM started tracking this information on April 22nd,
+     * 2015. </li> <li> <p>There is no sign-in data associated with the user
+     * </li> </ul>
      */
     private java.util.Date lastUsedDate;
 
     /**
      * The name of the AWS service with which this access key was most
-     * recently used.
+     * recently used. This field is null when: <ul> <li> <p>The user does not
+     * have an access key. </li> <li> <p>An access key exists but has never
+     * been used, at least not since IAM started tracking this information on
+     * April 22nd, 2015. </li> <li> <p>There is no sign-in data associated
+     * with the user </li> </ul>
      */
     private String serviceName;
 
     /**
-     * The AWS region where this access key was most recently used. <p>For
-     * more information about AWS regions, see <a
+     * The AWS region where this access key was most recently used. This
+     * field is null when: <ul> <li> <p>The user does not have an access key.
+     * </li> <li> <p>An access key exists but has never been used, at least
+     * not since IAM started tracking this information on April 22nd, 2015.
+     * </li> <li> <p>There is no sign-in data associated with the user </li>
+     * </ul> <p>For more information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference.
      */
@@ -50,9 +63,19 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     /**
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      * 8601 date-time format</a>, when the access key was most recently used.
+     * This field is null when: <ul> <li> <p>The user does not have an access
+     * key. </li> <li> <p>An access key exists but has never been used, at
+     * least not since IAM started tracking this information on April 22nd,
+     * 2015. </li> <li> <p>There is no sign-in data associated with the user
+     * </li> </ul>
      *
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *         8601 date-time format</a>, when the access key was most recently used.
+     *         This field is null when: <ul> <li> <p>The user does not have an access
+     *         key. </li> <li> <p>An access key exists but has never been used, at
+     *         least not since IAM started tracking this information on April 22nd,
+     *         2015. </li> <li> <p>There is no sign-in data associated with the user
+     *         </li> </ul>
      */
     public java.util.Date getLastUsedDate() {
         return lastUsedDate;
@@ -61,9 +84,19 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     /**
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      * 8601 date-time format</a>, when the access key was most recently used.
+     * This field is null when: <ul> <li> <p>The user does not have an access
+     * key. </li> <li> <p>An access key exists but has never been used, at
+     * least not since IAM started tracking this information on April 22nd,
+     * 2015. </li> <li> <p>There is no sign-in data associated with the user
+     * </li> </ul>
      *
      * @param lastUsedDate The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *         8601 date-time format</a>, when the access key was most recently used.
+     *         This field is null when: <ul> <li> <p>The user does not have an access
+     *         key. </li> <li> <p>An access key exists but has never been used, at
+     *         least not since IAM started tracking this information on April 22nd,
+     *         2015. </li> <li> <p>There is no sign-in data associated with the user
+     *         </li> </ul>
      */
     public void setLastUsedDate(java.util.Date lastUsedDate) {
         this.lastUsedDate = lastUsedDate;
@@ -72,11 +105,21 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     /**
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      * 8601 date-time format</a>, when the access key was most recently used.
+     * This field is null when: <ul> <li> <p>The user does not have an access
+     * key. </li> <li> <p>An access key exists but has never been used, at
+     * least not since IAM started tracking this information on April 22nd,
+     * 2015. </li> <li> <p>There is no sign-in data associated with the user
+     * </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lastUsedDate The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *         8601 date-time format</a>, when the access key was most recently used.
+     *         This field is null when: <ul> <li> <p>The user does not have an access
+     *         key. </li> <li> <p>An access key exists but has never been used, at
+     *         least not since IAM started tracking this information on April 22nd,
+     *         2015. </li> <li> <p>There is no sign-in data associated with the user
+     *         </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -88,10 +131,18 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * The name of the AWS service with which this access key was most
-     * recently used.
+     * recently used. This field is null when: <ul> <li> <p>The user does not
+     * have an access key. </li> <li> <p>An access key exists but has never
+     * been used, at least not since IAM started tracking this information on
+     * April 22nd, 2015. </li> <li> <p>There is no sign-in data associated
+     * with the user </li> </ul>
      *
      * @return The name of the AWS service with which this access key was most
-     *         recently used.
+     *         recently used. This field is null when: <ul> <li> <p>The user does not
+     *         have an access key. </li> <li> <p>An access key exists but has never
+     *         been used, at least not since IAM started tracking this information on
+     *         April 22nd, 2015. </li> <li> <p>There is no sign-in data associated
+     *         with the user </li> </ul>
      */
     public String getServiceName() {
         return serviceName;
@@ -99,10 +150,18 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     
     /**
      * The name of the AWS service with which this access key was most
-     * recently used.
+     * recently used. This field is null when: <ul> <li> <p>The user does not
+     * have an access key. </li> <li> <p>An access key exists but has never
+     * been used, at least not since IAM started tracking this information on
+     * April 22nd, 2015. </li> <li> <p>There is no sign-in data associated
+     * with the user </li> </ul>
      *
      * @param serviceName The name of the AWS service with which this access key was most
-     *         recently used.
+     *         recently used. This field is null when: <ul> <li> <p>The user does not
+     *         have an access key. </li> <li> <p>An access key exists but has never
+     *         been used, at least not since IAM started tracking this information on
+     *         April 22nd, 2015. </li> <li> <p>There is no sign-in data associated
+     *         with the user </li> </ul>
      */
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
@@ -110,12 +169,20 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     
     /**
      * The name of the AWS service with which this access key was most
-     * recently used.
+     * recently used. This field is null when: <ul> <li> <p>The user does not
+     * have an access key. </li> <li> <p>An access key exists but has never
+     * been used, at least not since IAM started tracking this information on
+     * April 22nd, 2015. </li> <li> <p>There is no sign-in data associated
+     * with the user </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param serviceName The name of the AWS service with which this access key was most
-     *         recently used.
+     *         recently used. This field is null when: <ul> <li> <p>The user does not
+     *         have an access key. </li> <li> <p>An access key exists but has never
+     *         been used, at least not since IAM started tracking this information on
+     *         April 22nd, 2015. </li> <li> <p>There is no sign-in data associated
+     *         with the user </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -126,13 +193,21 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     }
 
     /**
-     * The AWS region where this access key was most recently used. <p>For
-     * more information about AWS regions, see <a
+     * The AWS region where this access key was most recently used. This
+     * field is null when: <ul> <li> <p>The user does not have an access key.
+     * </li> <li> <p>An access key exists but has never been used, at least
+     * not since IAM started tracking this information on April 22nd, 2015.
+     * </li> <li> <p>There is no sign-in data associated with the user </li>
+     * </ul> <p>For more information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference.
      *
-     * @return The AWS region where this access key was most recently used. <p>For
-     *         more information about AWS regions, see <a
+     * @return The AWS region where this access key was most recently used. This
+     *         field is null when: <ul> <li> <p>The user does not have an access key.
+     *         </li> <li> <p>An access key exists but has never been used, at least
+     *         not since IAM started tracking this information on April 22nd, 2015.
+     *         </li> <li> <p>There is no sign-in data associated with the user </li>
+     *         </ul> <p>For more information about AWS regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a> in the Amazon Web Services General Reference.
      */
@@ -141,13 +216,21 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     }
     
     /**
-     * The AWS region where this access key was most recently used. <p>For
-     * more information about AWS regions, see <a
+     * The AWS region where this access key was most recently used. This
+     * field is null when: <ul> <li> <p>The user does not have an access key.
+     * </li> <li> <p>An access key exists but has never been used, at least
+     * not since IAM started tracking this information on April 22nd, 2015.
+     * </li> <li> <p>There is no sign-in data associated with the user </li>
+     * </ul> <p>For more information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference.
      *
-     * @param region The AWS region where this access key was most recently used. <p>For
-     *         more information about AWS regions, see <a
+     * @param region The AWS region where this access key was most recently used. This
+     *         field is null when: <ul> <li> <p>The user does not have an access key.
+     *         </li> <li> <p>An access key exists but has never been used, at least
+     *         not since IAM started tracking this information on April 22nd, 2015.
+     *         </li> <li> <p>There is no sign-in data associated with the user </li>
+     *         </ul> <p>For more information about AWS regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a> in the Amazon Web Services General Reference.
      */
@@ -156,15 +239,23 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     }
     
     /**
-     * The AWS region where this access key was most recently used. <p>For
-     * more information about AWS regions, see <a
+     * The AWS region where this access key was most recently used. This
+     * field is null when: <ul> <li> <p>The user does not have an access key.
+     * </li> <li> <p>An access key exists but has never been used, at least
+     * not since IAM started tracking this information on April 22nd, 2015.
+     * </li> <li> <p>There is no sign-in data associated with the user </li>
+     * </ul> <p>For more information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param region The AWS region where this access key was most recently used. <p>For
-     *         more information about AWS regions, see <a
+     * @param region The AWS region where this access key was most recently used. This
+     *         field is null when: <ul> <li> <p>The user does not have an access key.
+     *         </li> <li> <p>An access key exists but has never been used, at least
+     *         not since IAM started tracking this information on April 22nd, 2015.
+     *         </li> <li> <p>There is no sign-in data associated with the user </li>
+     *         </ul> <p>For more information about AWS regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a> in the Amazon Web Services General Reference.
      *

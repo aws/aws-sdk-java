@@ -99,6 +99,27 @@ public class StartTaskRequestMarshaller implements Marshaller<Request<StartTaskR
                                 }
                                 jsonWriter.endArray();
                             }
+
+                            com.amazonaws.internal.ListWithAutoConstructFlag<KeyValuePair> environmentList = (com.amazonaws.internal.ListWithAutoConstructFlag<KeyValuePair>)(containerOverridesListValue.getEnvironment());
+                            if (environmentList != null && !(environmentList.isAutoConstruct() && environmentList.isEmpty())) {
+
+                                jsonWriter.key("environment");
+                                jsonWriter.array();
+
+                                for (KeyValuePair environmentListValue : environmentList) {
+                                    if (environmentListValue != null) {
+                                        jsonWriter.object();
+                                        if (environmentListValue.getName() != null) {
+                                            jsonWriter.key("name").value(environmentListValue.getName());
+                                        }
+                                        if (environmentListValue.getValue() != null) {
+                                            jsonWriter.key("value").value(environmentListValue.getValue());
+                                        }
+                                        jsonWriter.endObject();
+                                    }
+                                }
+                                jsonWriter.endArray();
+                            }
                             jsonWriter.endObject();
                         }
                     }

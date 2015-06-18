@@ -29,7 +29,8 @@ public class PortMapping implements Serializable, Cloneable {
      * The port number on the container that is bound to the user-specified
      * or automatically assigned host port. If you specify a container port
      * and not a host port, your container will automatically receive a host
-     * port in the 49153 to 65535 port range.
+     * port in the ephemeral port range (for more information, see
+     * <code>hostPort</code>).
      */
     private Integer containerPort;
 
@@ -38,9 +39,16 @@ public class PortMapping implements Serializable, Cloneable {
      * container. You can specify a non-reserved host port for your container
      * port mapping, or you can omit the <code>hostPort</code> (or set it to
      * <code>0</code>) while specifying a <code>containerPort</code> and your
-     * container will automatically receive a port in the 49153 to 65535 port
-     * range. You should not attempt to specify a host port in the 49153 to
-     * 65535 port range, since these are reserved for automatic assignment.
+     * container will automatically receive a port in the ephemeral port
+     * range for your container instance operating system and Docker version.
+     * <p>The default ephemeral port range is 49153 to 65535, and this range
+     * is used for Docker versions prior to 1.6.0. For Docker version 1.6.0
+     * and later, the Docker daemon tries to read the ephemeral port range
+     * from <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this
+     * kernel parameter is unavailable, the default ephemeral port range is
+     * used. You should not attempt to specify a host port in the ephemeral
+     * port range, since these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.
      * <p>The default reserved ports are 22 for SSH, the Docker ports 2375
      * and 2376, and the Amazon ECS Container Agent port 51678. Any host port
      * that was previously specified in a running task is also reserved while
@@ -54,7 +62,8 @@ public class PortMapping implements Serializable, Cloneable {
     private Integer hostPort;
 
     /**
-     * The protocol used for the port mapping. The default is
+     * The protocol used for the port mapping. Valid values are
+     * <code>tcp</code> and <code>udp</code>. The default is
      * <code>tcp</code>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -66,12 +75,14 @@ public class PortMapping implements Serializable, Cloneable {
      * The port number on the container that is bound to the user-specified
      * or automatically assigned host port. If you specify a container port
      * and not a host port, your container will automatically receive a host
-     * port in the 49153 to 65535 port range.
+     * port in the ephemeral port range (for more information, see
+     * <code>hostPort</code>).
      *
      * @return The port number on the container that is bound to the user-specified
      *         or automatically assigned host port. If you specify a container port
      *         and not a host port, your container will automatically receive a host
-     *         port in the 49153 to 65535 port range.
+     *         port in the ephemeral port range (for more information, see
+     *         <code>hostPort</code>).
      */
     public Integer getContainerPort() {
         return containerPort;
@@ -81,12 +92,14 @@ public class PortMapping implements Serializable, Cloneable {
      * The port number on the container that is bound to the user-specified
      * or automatically assigned host port. If you specify a container port
      * and not a host port, your container will automatically receive a host
-     * port in the 49153 to 65535 port range.
+     * port in the ephemeral port range (for more information, see
+     * <code>hostPort</code>).
      *
      * @param containerPort The port number on the container that is bound to the user-specified
      *         or automatically assigned host port. If you specify a container port
      *         and not a host port, your container will automatically receive a host
-     *         port in the 49153 to 65535 port range.
+     *         port in the ephemeral port range (for more information, see
+     *         <code>hostPort</code>).
      */
     public void setContainerPort(Integer containerPort) {
         this.containerPort = containerPort;
@@ -96,14 +109,16 @@ public class PortMapping implements Serializable, Cloneable {
      * The port number on the container that is bound to the user-specified
      * or automatically assigned host port. If you specify a container port
      * and not a host port, your container will automatically receive a host
-     * port in the 49153 to 65535 port range.
+     * port in the ephemeral port range (for more information, see
+     * <code>hostPort</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param containerPort The port number on the container that is bound to the user-specified
      *         or automatically assigned host port. If you specify a container port
      *         and not a host port, your container will automatically receive a host
-     *         port in the 49153 to 65535 port range.
+     *         port in the ephemeral port range (for more information, see
+     *         <code>hostPort</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -118,9 +133,16 @@ public class PortMapping implements Serializable, Cloneable {
      * container. You can specify a non-reserved host port for your container
      * port mapping, or you can omit the <code>hostPort</code> (or set it to
      * <code>0</code>) while specifying a <code>containerPort</code> and your
-     * container will automatically receive a port in the 49153 to 65535 port
-     * range. You should not attempt to specify a host port in the 49153 to
-     * 65535 port range, since these are reserved for automatic assignment.
+     * container will automatically receive a port in the ephemeral port
+     * range for your container instance operating system and Docker version.
+     * <p>The default ephemeral port range is 49153 to 65535, and this range
+     * is used for Docker versions prior to 1.6.0. For Docker version 1.6.0
+     * and later, the Docker daemon tries to read the ephemeral port range
+     * from <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this
+     * kernel parameter is unavailable, the default ephemeral port range is
+     * used. You should not attempt to specify a host port in the ephemeral
+     * port range, since these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.
      * <p>The default reserved ports are 22 for SSH, the Docker ports 2375
      * and 2376, and the Amazon ECS Container Agent port 51678. Any host port
      * that was previously specified in a running task is also reserved while
@@ -135,9 +157,16 @@ public class PortMapping implements Serializable, Cloneable {
      *         container. You can specify a non-reserved host port for your container
      *         port mapping, or you can omit the <code>hostPort</code> (or set it to
      *         <code>0</code>) while specifying a <code>containerPort</code> and your
-     *         container will automatically receive a port in the 49153 to 65535 port
-     *         range. You should not attempt to specify a host port in the 49153 to
-     *         65535 port range, since these are reserved for automatic assignment.
+     *         container will automatically receive a port in the ephemeral port
+     *         range for your container instance operating system and Docker version.
+     *         <p>The default ephemeral port range is 49153 to 65535, and this range
+     *         is used for Docker versions prior to 1.6.0. For Docker version 1.6.0
+     *         and later, the Docker daemon tries to read the ephemeral port range
+     *         from <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this
+     *         kernel parameter is unavailable, the default ephemeral port range is
+     *         used. You should not attempt to specify a host port in the ephemeral
+     *         port range, since these are reserved for automatic assignment. In
+     *         general, ports below 32768 are outside of the ephemeral port range.
      *         <p>The default reserved ports are 22 for SSH, the Docker ports 2375
      *         and 2376, and the Amazon ECS Container Agent port 51678. Any host port
      *         that was previously specified in a running task is also reserved while
@@ -157,9 +186,16 @@ public class PortMapping implements Serializable, Cloneable {
      * container. You can specify a non-reserved host port for your container
      * port mapping, or you can omit the <code>hostPort</code> (or set it to
      * <code>0</code>) while specifying a <code>containerPort</code> and your
-     * container will automatically receive a port in the 49153 to 65535 port
-     * range. You should not attempt to specify a host port in the 49153 to
-     * 65535 port range, since these are reserved for automatic assignment.
+     * container will automatically receive a port in the ephemeral port
+     * range for your container instance operating system and Docker version.
+     * <p>The default ephemeral port range is 49153 to 65535, and this range
+     * is used for Docker versions prior to 1.6.0. For Docker version 1.6.0
+     * and later, the Docker daemon tries to read the ephemeral port range
+     * from <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this
+     * kernel parameter is unavailable, the default ephemeral port range is
+     * used. You should not attempt to specify a host port in the ephemeral
+     * port range, since these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.
      * <p>The default reserved ports are 22 for SSH, the Docker ports 2375
      * and 2376, and the Amazon ECS Container Agent port 51678. Any host port
      * that was previously specified in a running task is also reserved while
@@ -174,9 +210,16 @@ public class PortMapping implements Serializable, Cloneable {
      *         container. You can specify a non-reserved host port for your container
      *         port mapping, or you can omit the <code>hostPort</code> (or set it to
      *         <code>0</code>) while specifying a <code>containerPort</code> and your
-     *         container will automatically receive a port in the 49153 to 65535 port
-     *         range. You should not attempt to specify a host port in the 49153 to
-     *         65535 port range, since these are reserved for automatic assignment.
+     *         container will automatically receive a port in the ephemeral port
+     *         range for your container instance operating system and Docker version.
+     *         <p>The default ephemeral port range is 49153 to 65535, and this range
+     *         is used for Docker versions prior to 1.6.0. For Docker version 1.6.0
+     *         and later, the Docker daemon tries to read the ephemeral port range
+     *         from <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this
+     *         kernel parameter is unavailable, the default ephemeral port range is
+     *         used. You should not attempt to specify a host port in the ephemeral
+     *         port range, since these are reserved for automatic assignment. In
+     *         general, ports below 32768 are outside of the ephemeral port range.
      *         <p>The default reserved ports are 22 for SSH, the Docker ports 2375
      *         and 2376, and the Amazon ECS Container Agent port 51678. Any host port
      *         that was previously specified in a running task is also reserved while
@@ -196,9 +239,16 @@ public class PortMapping implements Serializable, Cloneable {
      * container. You can specify a non-reserved host port for your container
      * port mapping, or you can omit the <code>hostPort</code> (or set it to
      * <code>0</code>) while specifying a <code>containerPort</code> and your
-     * container will automatically receive a port in the 49153 to 65535 port
-     * range. You should not attempt to specify a host port in the 49153 to
-     * 65535 port range, since these are reserved for automatic assignment.
+     * container will automatically receive a port in the ephemeral port
+     * range for your container instance operating system and Docker version.
+     * <p>The default ephemeral port range is 49153 to 65535, and this range
+     * is used for Docker versions prior to 1.6.0. For Docker version 1.6.0
+     * and later, the Docker daemon tries to read the ephemeral port range
+     * from <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this
+     * kernel parameter is unavailable, the default ephemeral port range is
+     * used. You should not attempt to specify a host port in the ephemeral
+     * port range, since these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.
      * <p>The default reserved ports are 22 for SSH, the Docker ports 2375
      * and 2376, and the Amazon ECS Container Agent port 51678. Any host port
      * that was previously specified in a running task is also reserved while
@@ -215,9 +265,16 @@ public class PortMapping implements Serializable, Cloneable {
      *         container. You can specify a non-reserved host port for your container
      *         port mapping, or you can omit the <code>hostPort</code> (or set it to
      *         <code>0</code>) while specifying a <code>containerPort</code> and your
-     *         container will automatically receive a port in the 49153 to 65535 port
-     *         range. You should not attempt to specify a host port in the 49153 to
-     *         65535 port range, since these are reserved for automatic assignment.
+     *         container will automatically receive a port in the ephemeral port
+     *         range for your container instance operating system and Docker version.
+     *         <p>The default ephemeral port range is 49153 to 65535, and this range
+     *         is used for Docker versions prior to 1.6.0. For Docker version 1.6.0
+     *         and later, the Docker daemon tries to read the ephemeral port range
+     *         from <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this
+     *         kernel parameter is unavailable, the default ephemeral port range is
+     *         used. You should not attempt to specify a host port in the ephemeral
+     *         port range, since these are reserved for automatic assignment. In
+     *         general, ports below 32768 are outside of the ephemeral port range.
      *         <p>The default reserved ports are 22 for SSH, the Docker ports 2375
      *         and 2376, and the Amazon ECS Container Agent port 51678. Any host port
      *         that was previously specified in a running task is also reserved while
@@ -237,13 +294,15 @@ public class PortMapping implements Serializable, Cloneable {
     }
 
     /**
-     * The protocol used for the port mapping. The default is
+     * The protocol used for the port mapping. Valid values are
+     * <code>tcp</code> and <code>udp</code>. The default is
      * <code>tcp</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>tcp, udp
      *
-     * @return The protocol used for the port mapping. The default is
+     * @return The protocol used for the port mapping. Valid values are
+     *         <code>tcp</code> and <code>udp</code>. The default is
      *         <code>tcp</code>.
      *
      * @see TransportProtocol
@@ -253,13 +312,15 @@ public class PortMapping implements Serializable, Cloneable {
     }
     
     /**
-     * The protocol used for the port mapping. The default is
+     * The protocol used for the port mapping. Valid values are
+     * <code>tcp</code> and <code>udp</code>. The default is
      * <code>tcp</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>tcp, udp
      *
-     * @param protocol The protocol used for the port mapping. The default is
+     * @param protocol The protocol used for the port mapping. Valid values are
+     *         <code>tcp</code> and <code>udp</code>. The default is
      *         <code>tcp</code>.
      *
      * @see TransportProtocol
@@ -269,7 +330,8 @@ public class PortMapping implements Serializable, Cloneable {
     }
     
     /**
-     * The protocol used for the port mapping. The default is
+     * The protocol used for the port mapping. Valid values are
+     * <code>tcp</code> and <code>udp</code>. The default is
      * <code>tcp</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -277,7 +339,8 @@ public class PortMapping implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>tcp, udp
      *
-     * @param protocol The protocol used for the port mapping. The default is
+     * @param protocol The protocol used for the port mapping. Valid values are
+     *         <code>tcp</code> and <code>udp</code>. The default is
      *         <code>tcp</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -291,13 +354,15 @@ public class PortMapping implements Serializable, Cloneable {
     }
 
     /**
-     * The protocol used for the port mapping. The default is
+     * The protocol used for the port mapping. Valid values are
+     * <code>tcp</code> and <code>udp</code>. The default is
      * <code>tcp</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>tcp, udp
      *
-     * @param protocol The protocol used for the port mapping. The default is
+     * @param protocol The protocol used for the port mapping. Valid values are
+     *         <code>tcp</code> and <code>udp</code>. The default is
      *         <code>tcp</code>.
      *
      * @see TransportProtocol
@@ -307,7 +372,8 @@ public class PortMapping implements Serializable, Cloneable {
     }
     
     /**
-     * The protocol used for the port mapping. The default is
+     * The protocol used for the port mapping. Valid values are
+     * <code>tcp</code> and <code>udp</code>. The default is
      * <code>tcp</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -315,7 +381,8 @@ public class PortMapping implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>tcp, udp
      *
-     * @param protocol The protocol used for the port mapping. The default is
+     * @param protocol The protocol used for the port mapping. Valid values are
+     *         <code>tcp</code> and <code>udp</code>. The default is
      *         <code>tcp</code>.
      *
      * @return A reference to this updated object so that method calls can be chained

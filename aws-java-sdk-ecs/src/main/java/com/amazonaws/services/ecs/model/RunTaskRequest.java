@@ -43,16 +43,22 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run.
+     * the task definition that you want to run. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      */
     private String taskDefinition;
 
     /**
      * A list of container overrides in JSON format that specify the name of
-     * a container in the specified task definition and the command it should
-     * run instead of its default. A total of 8192 characters are allowed for
-     * overrides. This limit includes the JSON formatting characters of the
-     * override structure.
+     * a container in the specified task definition and the overrides it
+     * should receive. You can override the default command for a container
+     * (that is specified in the task definition or Docker image) with a
+     * <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or
+     * Docker image) on a container or add new environment variables to it
+     * with an <code>environment</code> override. <note> <p>A total of 8192
+     * characters are allowed for overrides. This limit includes the JSON
+     * formatting characters of the override structure. </note>
      */
     private TaskOverride overrides;
 
@@ -123,11 +129,13 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run.
+     * the task definition that you want to run. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @return The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run.
+     *         the task definition that you want to run. If a <code>revision</code>
+     *         is not specified, the latest <code>ACTIVE</code> revision is used.
      */
     public String getTaskDefinition() {
         return taskDefinition;
@@ -136,11 +144,13 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run.
+     * the task definition that you want to run. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run.
+     *         the task definition that you want to run. If a <code>revision</code>
+     *         is not specified, the latest <code>ACTIVE</code> revision is used.
      */
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
@@ -149,13 +159,15 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run.
+     * the task definition that you want to run. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run.
+     *         the task definition that you want to run. If a <code>revision</code>
+     *         is not specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -167,16 +179,26 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
 
     /**
      * A list of container overrides in JSON format that specify the name of
-     * a container in the specified task definition and the command it should
-     * run instead of its default. A total of 8192 characters are allowed for
-     * overrides. This limit includes the JSON formatting characters of the
-     * override structure.
+     * a container in the specified task definition and the overrides it
+     * should receive. You can override the default command for a container
+     * (that is specified in the task definition or Docker image) with a
+     * <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or
+     * Docker image) on a container or add new environment variables to it
+     * with an <code>environment</code> override. <note> <p>A total of 8192
+     * characters are allowed for overrides. This limit includes the JSON
+     * formatting characters of the override structure. </note>
      *
      * @return A list of container overrides in JSON format that specify the name of
-     *         a container in the specified task definition and the command it should
-     *         run instead of its default. A total of 8192 characters are allowed for
-     *         overrides. This limit includes the JSON formatting characters of the
-     *         override structure.
+     *         a container in the specified task definition and the overrides it
+     *         should receive. You can override the default command for a container
+     *         (that is specified in the task definition or Docker image) with a
+     *         <code>command</code> override. You can also override existing
+     *         environment variables (that are specified in the task definition or
+     *         Docker image) on a container or add new environment variables to it
+     *         with an <code>environment</code> override. <note> <p>A total of 8192
+     *         characters are allowed for overrides. This limit includes the JSON
+     *         formatting characters of the override structure. </note>
      */
     public TaskOverride getOverrides() {
         return overrides;
@@ -184,16 +206,26 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     
     /**
      * A list of container overrides in JSON format that specify the name of
-     * a container in the specified task definition and the command it should
-     * run instead of its default. A total of 8192 characters are allowed for
-     * overrides. This limit includes the JSON formatting characters of the
-     * override structure.
+     * a container in the specified task definition and the overrides it
+     * should receive. You can override the default command for a container
+     * (that is specified in the task definition or Docker image) with a
+     * <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or
+     * Docker image) on a container or add new environment variables to it
+     * with an <code>environment</code> override. <note> <p>A total of 8192
+     * characters are allowed for overrides. This limit includes the JSON
+     * formatting characters of the override structure. </note>
      *
      * @param overrides A list of container overrides in JSON format that specify the name of
-     *         a container in the specified task definition and the command it should
-     *         run instead of its default. A total of 8192 characters are allowed for
-     *         overrides. This limit includes the JSON formatting characters of the
-     *         override structure.
+     *         a container in the specified task definition and the overrides it
+     *         should receive. You can override the default command for a container
+     *         (that is specified in the task definition or Docker image) with a
+     *         <code>command</code> override. You can also override existing
+     *         environment variables (that are specified in the task definition or
+     *         Docker image) on a container or add new environment variables to it
+     *         with an <code>environment</code> override. <note> <p>A total of 8192
+     *         characters are allowed for overrides. This limit includes the JSON
+     *         formatting characters of the override structure. </note>
      */
     public void setOverrides(TaskOverride overrides) {
         this.overrides = overrides;
@@ -201,18 +233,28 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements Serializa
     
     /**
      * A list of container overrides in JSON format that specify the name of
-     * a container in the specified task definition and the command it should
-     * run instead of its default. A total of 8192 characters are allowed for
-     * overrides. This limit includes the JSON formatting characters of the
-     * override structure.
+     * a container in the specified task definition and the overrides it
+     * should receive. You can override the default command for a container
+     * (that is specified in the task definition or Docker image) with a
+     * <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or
+     * Docker image) on a container or add new environment variables to it
+     * with an <code>environment</code> override. <note> <p>A total of 8192
+     * characters are allowed for overrides. This limit includes the JSON
+     * formatting characters of the override structure. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param overrides A list of container overrides in JSON format that specify the name of
-     *         a container in the specified task definition and the command it should
-     *         run instead of its default. A total of 8192 characters are allowed for
-     *         overrides. This limit includes the JSON formatting characters of the
-     *         override structure.
+     *         a container in the specified task definition and the overrides it
+     *         should receive. You can override the default command for a container
+     *         (that is specified in the task definition or Docker image) with a
+     *         <code>command</code> override. You can also override existing
+     *         environment variables (that are specified in the task definition or
+     *         Docker image) on a container or add new environment variables to it
+     *         with an <code>environment</code> override. <note> <p>A total of 8192
+     *         characters are allowed for overrides. This limit includes the JSON
+     *         formatting characters of the override structure. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
