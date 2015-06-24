@@ -51,6 +51,10 @@ public class ClusterParameterGroupStatusStaxUnmarshaller implements Unmarshaller
                     clusterParameterGroupStatus.setParameterApplyStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ClusterParameterStatusList/member", targetDepth)) {
+                    clusterParameterGroupStatus.getClusterParameterStatusList().add(ClusterParameterStatusStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return clusterParameterGroupStatus;

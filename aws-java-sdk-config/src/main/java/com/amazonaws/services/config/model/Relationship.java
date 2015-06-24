@@ -33,7 +33,7 @@ public class Relationship implements Serializable, Cloneable {
 
     /**
      * The resource ID of the related resource (for example,
-     * <code>sg-xxxxxx</code>.
+     * <code>sg-xxxxxx</code>).
      */
     private String resourceId;
 
@@ -126,10 +126,10 @@ public class Relationship implements Serializable, Cloneable {
 
     /**
      * The resource ID of the related resource (for example,
-     * <code>sg-xxxxxx</code>.
+     * <code>sg-xxxxxx</code>).
      *
      * @return The resource ID of the related resource (for example,
-     *         <code>sg-xxxxxx</code>.
+     *         <code>sg-xxxxxx</code>).
      */
     public String getResourceId() {
         return resourceId;
@@ -137,10 +137,10 @@ public class Relationship implements Serializable, Cloneable {
     
     /**
      * The resource ID of the related resource (for example,
-     * <code>sg-xxxxxx</code>.
+     * <code>sg-xxxxxx</code>).
      *
      * @param resourceId The resource ID of the related resource (for example,
-     *         <code>sg-xxxxxx</code>.
+     *         <code>sg-xxxxxx</code>).
      */
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -148,12 +148,12 @@ public class Relationship implements Serializable, Cloneable {
     
     /**
      * The resource ID of the related resource (for example,
-     * <code>sg-xxxxxx</code>.
+     * <code>sg-xxxxxx</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourceId The resource ID of the related resource (for example,
-     *         <code>sg-xxxxxx</code>.
+     *         <code>sg-xxxxxx</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

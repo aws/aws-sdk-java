@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * AWS OpsWorks supports five lifecycle events, <b>setup</b> ,
+ * AWS OpsWorks supports five lifecycle events: <b>setup</b> ,
  * <b>configuration</b> ,
  * <b>deploy</b> ,
  * <b>undeploy</b> , and <b>shutdown</b> . For each

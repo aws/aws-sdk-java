@@ -27,9 +27,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * to the identity data.
  * </p>
  * <p>
- * DescribeDataset can be called with temporary user credentials provided
- * by Cognito Identity or with developer credentials. You should use
- * Cognito Identity credentials to make this API call.
+ * This API can be called with temporary user credentials provided by
+ * Cognito Identity or with developer credentials. You should use Cognito
+ * Identity credentials to make this API call.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#describeDataset(DescribeDatasetRequest)

@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.config.AmazonConfig#startConfigurationRecorder(StartConfigurationRecorderRequest) StartConfigurationRecorder operation}.
  * <p>
- * Starts recording configurations of all the resources associated with
- * the account.
+ * Starts recording configurations of the AWS resources you have selected
+ * to record in your AWS account.
  * </p>
  * <p>
  * You must have created at least one delivery channel to successfully

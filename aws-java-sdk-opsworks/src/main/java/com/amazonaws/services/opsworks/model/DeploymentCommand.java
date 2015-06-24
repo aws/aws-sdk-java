@@ -54,7 +54,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
+     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, configure, setup, deploy, rollback, start, stop, restart, undeploy
      */
     private String name;
 
@@ -109,7 +109,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
+     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, configure, setup, deploy, rollback, start, stop, restart, undeploy
      *
      * @return Specifies the operation. You can specify only one command. <p>For
      *         stacks, the following commands are available: <ul>
@@ -177,7 +177,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
+     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, configure, setup, deploy, rollback, start, stop, restart, undeploy
      *
      * @param name Specifies the operation. You can specify only one command. <p>For
      *         stacks, the following commands are available: <ul>
@@ -247,7 +247,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
+     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, configure, setup, deploy, rollback, start, stop, restart, undeploy
      *
      * @param name Specifies the operation. You can specify only one command. <p>For
      *         stacks, the following commands are available: <ul>
@@ -319,7 +319,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
+     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, configure, setup, deploy, rollback, start, stop, restart, undeploy
      *
      * @param name Specifies the operation. You can specify only one command. <p>For
      *         stacks, the following commands are available: <ul>
@@ -389,7 +389,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
+     * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, configure, setup, deploy, rollback, start, stop, restart, undeploy
      *
      * @param name Specifies the operation. You can specify only one command. <p>For
      *         stacks, the following commands are available: <ul>

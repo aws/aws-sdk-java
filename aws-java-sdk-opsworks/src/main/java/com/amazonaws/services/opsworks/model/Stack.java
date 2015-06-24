@@ -47,7 +47,7 @@ public class Stack implements Serializable, Cloneable {
     private String region;
 
     /**
-     * The VPC ID, if the stack is running in a VPC.
+     * The VPC ID; applicable only if the stack is running in a VPC.
      */
     private String vpcId;
 
@@ -87,17 +87,19 @@ public class Stack implements Serializable, Cloneable {
     private String defaultAvailabilityZone;
 
     /**
-     * The default subnet ID, if the stack is running in a VPC.
+     * The default subnet ID; applicable only if the stack is running in a
+     * VPC.
      */
     private String defaultSubnetId;
 
     /**
-     * A string that contains user-defined, custom JSON. It can be used to
-     * override the corresponding default stack configuration JSON values or
-     * to pass data to recipes. The string should be in the following format
-     * and must escape characters such as '"'.: <p> <code>"{\"key1\":
-     * \"value1\", \"key2\": \"value2\",...}"</code> <p>For more information
-     * on custom JSON, see <a
+     * A JSON object that contains user-defined attributes to be added to the
+     * stack configuration and deployment attributes. You can use custom JSON
+     * to override the corresponding default stack configuration attribute
+     * values or to pass data to recipes. The string should be in the
+     * following format and must escape characters such as '"': <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     * more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
@@ -145,7 +147,7 @@ public class Stack implements Serializable, Cloneable {
     private String defaultSshKeyName;
 
     /**
-     * Date when the stack was created.
+     * The date when the stack was created.
      */
     private String createdAt;
 
@@ -160,6 +162,12 @@ public class Stack implements Serializable, Cloneable {
      * <b>Allowed Values: </b>ebs, instance-store
      */
     private String defaultRootDeviceType;
+
+    /**
+     * The agent version. This parameter is set to <code>LATEST</code> for
+     * auto-update. or a version number for a fixed agent version.
+     */
+    private String agentVersion;
 
     /**
      * The stack ID.
@@ -312,29 +320,29 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
-     * The VPC ID, if the stack is running in a VPC.
+     * The VPC ID; applicable only if the stack is running in a VPC.
      *
-     * @return The VPC ID, if the stack is running in a VPC.
+     * @return The VPC ID; applicable only if the stack is running in a VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * The VPC ID, if the stack is running in a VPC.
+     * The VPC ID; applicable only if the stack is running in a VPC.
      *
-     * @param vpcId The VPC ID, if the stack is running in a VPC.
+     * @param vpcId The VPC ID; applicable only if the stack is running in a VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * The VPC ID, if the stack is running in a VPC.
+     * The VPC ID; applicable only if the stack is running in a VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The VPC ID, if the stack is running in a VPC.
+     * @param vpcId The VPC ID; applicable only if the stack is running in a VPC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -607,29 +615,35 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
-     * The default subnet ID, if the stack is running in a VPC.
+     * The default subnet ID; applicable only if the stack is running in a
+     * VPC.
      *
-     * @return The default subnet ID, if the stack is running in a VPC.
+     * @return The default subnet ID; applicable only if the stack is running in a
+     *         VPC.
      */
     public String getDefaultSubnetId() {
         return defaultSubnetId;
     }
     
     /**
-     * The default subnet ID, if the stack is running in a VPC.
+     * The default subnet ID; applicable only if the stack is running in a
+     * VPC.
      *
-     * @param defaultSubnetId The default subnet ID, if the stack is running in a VPC.
+     * @param defaultSubnetId The default subnet ID; applicable only if the stack is running in a
+     *         VPC.
      */
     public void setDefaultSubnetId(String defaultSubnetId) {
         this.defaultSubnetId = defaultSubnetId;
     }
     
     /**
-     * The default subnet ID, if the stack is running in a VPC.
+     * The default subnet ID; applicable only if the stack is running in a
+     * VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultSubnetId The default subnet ID, if the stack is running in a VPC.
+     * @param defaultSubnetId The default subnet ID; applicable only if the stack is running in a
+     *         VPC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -640,21 +654,23 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
-     * A string that contains user-defined, custom JSON. It can be used to
-     * override the corresponding default stack configuration JSON values or
-     * to pass data to recipes. The string should be in the following format
-     * and must escape characters such as '"'.: <p> <code>"{\"key1\":
-     * \"value1\", \"key2\": \"value2\",...}"</code> <p>For more information
-     * on custom JSON, see <a
+     * A JSON object that contains user-defined attributes to be added to the
+     * stack configuration and deployment attributes. You can use custom JSON
+     * to override the corresponding default stack configuration attribute
+     * values or to pass data to recipes. The string should be in the
+     * following format and must escape characters such as '"': <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     * more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.
      *
-     * @return A string that contains user-defined, custom JSON. It can be used to
-     *         override the corresponding default stack configuration JSON values or
-     *         to pass data to recipes. The string should be in the following format
-     *         and must escape characters such as '"'.: <p> <code>"{\"key1\":
-     *         \"value1\", \"key2\": \"value2\",...}"</code> <p>For more information
-     *         on custom JSON, see <a
+     * @return A JSON object that contains user-defined attributes to be added to the
+     *         stack configuration and deployment attributes. You can use custom JSON
+     *         to override the corresponding default stack configuration attribute
+     *         values or to pass data to recipes. The string should be in the
+     *         following format and must escape characters such as '"': <p>
+     *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     *         more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
@@ -663,21 +679,23 @@ public class Stack implements Serializable, Cloneable {
     }
     
     /**
-     * A string that contains user-defined, custom JSON. It can be used to
-     * override the corresponding default stack configuration JSON values or
-     * to pass data to recipes. The string should be in the following format
-     * and must escape characters such as '"'.: <p> <code>"{\"key1\":
-     * \"value1\", \"key2\": \"value2\",...}"</code> <p>For more information
-     * on custom JSON, see <a
+     * A JSON object that contains user-defined attributes to be added to the
+     * stack configuration and deployment attributes. You can use custom JSON
+     * to override the corresponding default stack configuration attribute
+     * values or to pass data to recipes. The string should be in the
+     * following format and must escape characters such as '"': <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     * more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.
      *
-     * @param customJson A string that contains user-defined, custom JSON. It can be used to
-     *         override the corresponding default stack configuration JSON values or
-     *         to pass data to recipes. The string should be in the following format
-     *         and must escape characters such as '"'.: <p> <code>"{\"key1\":
-     *         \"value1\", \"key2\": \"value2\",...}"</code> <p>For more information
-     *         on custom JSON, see <a
+     * @param customJson A JSON object that contains user-defined attributes to be added to the
+     *         stack configuration and deployment attributes. You can use custom JSON
+     *         to override the corresponding default stack configuration attribute
+     *         values or to pass data to recipes. The string should be in the
+     *         following format and must escape characters such as '"': <p>
+     *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     *         more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
@@ -686,23 +704,25 @@ public class Stack implements Serializable, Cloneable {
     }
     
     /**
-     * A string that contains user-defined, custom JSON. It can be used to
-     * override the corresponding default stack configuration JSON values or
-     * to pass data to recipes. The string should be in the following format
-     * and must escape characters such as '"'.: <p> <code>"{\"key1\":
-     * \"value1\", \"key2\": \"value2\",...}"</code> <p>For more information
-     * on custom JSON, see <a
+     * A JSON object that contains user-defined attributes to be added to the
+     * stack configuration and deployment attributes. You can use custom JSON
+     * to override the corresponding default stack configuration attribute
+     * values or to pass data to recipes. The string should be in the
+     * following format and must escape characters such as '"': <p>
+     * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     * more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customJson A string that contains user-defined, custom JSON. It can be used to
-     *         override the corresponding default stack configuration JSON values or
-     *         to pass data to recipes. The string should be in the following format
-     *         and must escape characters such as '"'.: <p> <code>"{\"key1\":
-     *         \"value1\", \"key2\": \"value2\",...}"</code> <p>For more information
-     *         on custom JSON, see <a
+     * @param customJson A JSON object that contains user-defined attributes to be added to the
+     *         stack configuration and deployment attributes. You can use custom JSON
+     *         to override the corresponding default stack configuration attribute
+     *         values or to pass data to recipes. The string should be in the
+     *         following format and must escape characters such as '"': <p>
+     *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> <p>For
+     *         more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration Attributes</a>.
      *
@@ -999,29 +1019,29 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
-     * Date when the stack was created.
+     * The date when the stack was created.
      *
-     * @return Date when the stack was created.
+     * @return The date when the stack was created.
      */
     public String getCreatedAt() {
         return createdAt;
     }
     
     /**
-     * Date when the stack was created.
+     * The date when the stack was created.
      *
-     * @param createdAt Date when the stack was created.
+     * @param createdAt The date when the stack was created.
      */
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
     
     /**
-     * Date when the stack was created.
+     * The date when the stack was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createdAt Date when the stack was created.
+     * @param createdAt The date when the stack was created.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1154,6 +1174,45 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
+     * The agent version. This parameter is set to <code>LATEST</code> for
+     * auto-update. or a version number for a fixed agent version.
+     *
+     * @return The agent version. This parameter is set to <code>LATEST</code> for
+     *         auto-update. or a version number for a fixed agent version.
+     */
+    public String getAgentVersion() {
+        return agentVersion;
+    }
+    
+    /**
+     * The agent version. This parameter is set to <code>LATEST</code> for
+     * auto-update. or a version number for a fixed agent version.
+     *
+     * @param agentVersion The agent version. This parameter is set to <code>LATEST</code> for
+     *         auto-update. or a version number for a fixed agent version.
+     */
+    public void setAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
+    }
+    
+    /**
+     * The agent version. This parameter is set to <code>LATEST</code> for
+     * auto-update. or a version number for a fixed agent version.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param agentVersion The agent version. This parameter is set to <code>LATEST</code> for
+     *         auto-update. or a version number for a fixed agent version.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Stack withAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1185,7 +1244,8 @@ public class Stack implements Serializable, Cloneable {
         if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");
         if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");
         if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");
-        if (getDefaultRootDeviceType() != null) sb.append("DefaultRootDeviceType: " + getDefaultRootDeviceType() );
+        if (getDefaultRootDeviceType() != null) sb.append("DefaultRootDeviceType: " + getDefaultRootDeviceType() + ",");
+        if (getAgentVersion() != null) sb.append("AgentVersion: " + getAgentVersion() );
         sb.append("}");
         return sb.toString();
     }
@@ -1216,6 +1276,7 @@ public class Stack implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDefaultSshKeyName() == null) ? 0 : getDefaultSshKeyName().hashCode()); 
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultRootDeviceType() == null) ? 0 : getDefaultRootDeviceType().hashCode()); 
+        hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode()); 
         return hashCode;
     }
     
@@ -1269,6 +1330,8 @@ public class Stack implements Serializable, Cloneable {
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false) return false; 
         if (other.getDefaultRootDeviceType() == null ^ this.getDefaultRootDeviceType() == null) return false;
         if (other.getDefaultRootDeviceType() != null && other.getDefaultRootDeviceType().equals(this.getDefaultRootDeviceType()) == false) return false; 
+        if (other.getAgentVersion() == null ^ this.getAgentVersion() == null) return false;
+        if (other.getAgentVersion() != null && other.getAgentVersion().equals(this.getAgentVersion()) == false) return false; 
         return true;
     }
     

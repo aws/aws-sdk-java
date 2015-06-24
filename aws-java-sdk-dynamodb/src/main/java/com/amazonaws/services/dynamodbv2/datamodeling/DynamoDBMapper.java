@@ -39,6 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.retry.RetryUtils;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.BatchWriteRetryStrategy;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.ConsistentReads;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
@@ -179,7 +180,10 @@ public class DynamoDBMapper {
 
     private final AttributeTransformer transformer;
 
-    /** The max back off time for batch write */
+    /**
+     * The max back off time for batch get. The configuration for batch write
+     * has been moved to DynamoDBMapperConfig
+     */
     static final long MAX_BACKOFF_IN_MILLISECONDS = 1000 * 3;
 
     /** The max number of items allowed in a BatchWrite request */
@@ -1486,7 +1490,9 @@ public class DynamoDBMapper {
 
     /**
      * Saves and deletes the objects given using one or more calls to the
-     * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
+     * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. Use
+     * mapper config to control the retry strategy when UnprocessedItems are
+     * returned by the BatchWriteItem API
      * <p>
      * This method fails to save the batch if the size of an individual object
      * in the batch exceeds 400 KB. For more information on batch restrictions
@@ -1505,14 +1511,18 @@ public class DynamoDBMapper {
      *            {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)}
      *            API.
      * @param config
-     *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} is
-     *            considered; if specified, all objects in the two parameter
-     *            lists will be considered to belong to the given table
-     *            override. In particular, this method <b>always acts as if
-     *            SaveBehavior.CLOBBER was specified</b> regardless of the value
-     *            of the config parameter.
+     *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} and
+     *            {@link DynamoDBMapperConfig#getBatchWriteRetryStrategy()} are
+     *            considered. If TableNameOverride is specified, all objects in
+     *            the two parameter lists will be considered to belong to the
+     *            given table override. In particular, this method <b>always
+     *            acts as if SaveBehavior.CLOBBER was specified</b> regardless
+     *            of the value of the config parameter.
      * @return A list of failed batches which includes the unprocessed items and
      *         the exceptions causing the failure.
+     *
+     * @see DynamoDBMapperConfig#getTableNameOverride()
+     * @see DynamoDBMapperConfig#getBatchWriteRetryStrategy()
      */
     public List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite, List<? extends Object> objectsToDelete, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
@@ -1607,7 +1617,7 @@ public class DynamoDBMapper {
                 }
             }
 
-            List<FailedBatch> failedBatches = writeOneBatch(batch);
+            List<FailedBatch> failedBatches = writeOneBatch(batch, config.getBatchWriteRetryStrategy());
             if (failedBatches != null) {
                 totalFailedBatches.addAll(failedBatches);
 
@@ -1637,12 +1647,14 @@ public class DynamoDBMapper {
      * Process one batch of requests(max 25). It will divide the batch if
      * receives request too large exception(the total size of the request is beyond 1M).
      */
-    private List<FailedBatch> writeOneBatch(Map<String, List<WriteRequest>> batch) {
+    private List<FailedBatch> writeOneBatch(
+            Map<String, List<WriteRequest>> batch,
+            BatchWriteRetryStrategy batchWriteRetryStrategy) {
 
         List<FailedBatch> failedBatches = new LinkedList<FailedBatch>();
         Map<String, List<WriteRequest>> firstHalfBatch = new HashMap<String, List<WriteRequest>>();
         Map<String, List<WriteRequest>> secondHalfBatch = new HashMap<String, List<WriteRequest>>();
-        FailedBatch failedBatch = callUntilCompletion(batch);
+        FailedBatch failedBatch = doBatchWriteItemWithRetry(batch, batchWriteRetryStrategy);
 
         if (failedBatch != null) {
             // If the exception is request entity too large, we divide the batch
@@ -1658,8 +1670,8 @@ public class DynamoDBMapper {
                     failedBatches.add(failedBatch);
                 } else {
                     divideBatch(batch, firstHalfBatch, secondHalfBatch);
-                    failedBatches.addAll(writeOneBatch(firstHalfBatch));
-                    failedBatches.addAll(writeOneBatch(secondHalfBatch));
+                    failedBatches.addAll(writeOneBatch(firstHalfBatch, batchWriteRetryStrategy));
+                    failedBatches.addAll(writeOneBatch(secondHalfBatch, batchWriteRetryStrategy));
                 }
 
             } else {
@@ -1719,28 +1731,47 @@ public class DynamoDBMapper {
     }
 
     /**
-     * Continue trying to process the batch until it finishes or an exception
-     * occurs.
+     * Continue trying to process the batch and retry on UnproccessedItems as
+     * according to the specified BatchWriteRetryStrategy
      */
+    private FailedBatch doBatchWriteItemWithRetry(
+            Map<String, List<WriteRequest>> batch,
+            BatchWriteRetryStrategy batchWriteRetryStrategy) {
 
-    private FailedBatch callUntilCompletion(Map<String, List<WriteRequest>> batch) {
         BatchWriteItemResult result = null;
         int retries = 0;
+        int maxRetries = batchWriteRetryStrategy
+                .getMaxRetryOnUnprocessedItems(Collections
+                        .unmodifiableMap(batch));
+
         FailedBatch failedBatch = null;
+        Map<String, List<WriteRequest>> pendingItems = batch;
+
         while (true) {
             try {
                 result = db.batchWriteItem(applyBatchOperationUserAgent(
-                        new BatchWriteItemRequest().withRequestItems(batch)));
+                        new BatchWriteItemRequest().withRequestItems(pendingItems)));
             } catch (Exception e) {
                 failedBatch = new FailedBatch();
-                failedBatch.setUnprocessedItems(batch);
+                failedBatch.setUnprocessedItems(pendingItems);
                 failedBatch.setException(e);
                 return failedBatch;
             }
-            retries++;
-            batch = result.getUnprocessedItems();
-            if (batch.size() > 0) {
-                pauseExponentially(retries);
+            pendingItems = result.getUnprocessedItems();
+
+            if (pendingItems.size() > 0) {
+
+                // return pendingItems as a FailedBatch if we have exceeded max retry
+                if (maxRetries >= 0 && retries >= maxRetries) {
+                    failedBatch = new FailedBatch();
+                    failedBatch.setUnprocessedItems(pendingItems);
+                    failedBatch.setException(null);
+                    return failedBatch;
+                }
+
+                pause(batchWriteRetryStrategy.getDelayBeforeRetryUnprocessedItems(
+                        Collections.unmodifiableMap(pendingItems), retries));
+                retries++;
             } else {
                 break;
             }
@@ -2957,6 +2988,13 @@ public class DynamoDBMapper {
         delay = (long) (Math.pow(2, retries) * scaleFactor);
         delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
 
+        pause(delay);
+    }
+
+    private void pause(long delay) {
+        if (delay <= 0) {
+            return;
+        }
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {

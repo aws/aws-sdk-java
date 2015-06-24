@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#deleteVaultNotifications(DeleteVaultNotificationsRequest) DeleteVaultNotifications operation}.
  * <p>
  * This operation deletes the notification configuration set for a vault.
- * The operation is eventually consistent;that is, it might take some
+ * The operation is eventually consistent; that is, it might take some
  * time for Amazon Glacier to completely disable the notifications and
  * you might still receive some notifications for a short time after you
  * send the delete request.

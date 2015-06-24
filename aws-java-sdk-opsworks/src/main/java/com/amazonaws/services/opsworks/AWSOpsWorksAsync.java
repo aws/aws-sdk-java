@@ -674,7 +674,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * <p>
      * Creates a clone of a specified stack. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html"> Clone a Stack </a>
-     * .
+     * . By default, all parameters are set to the values used by the parent
+     * stack.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -706,7 +707,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * <p>
      * Creates a clone of a specified stack. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html"> Clone a Stack </a>
-     * .
+     * . By default, all parameters are set to the values used by the parent
+     * stack.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -1700,7 +1702,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * <b>NOTE:</b>This API can be used only with Windows stacks.
+     * <b>NOTE:</b>This action can be used only with Windows stacks.
      * </p>
      * <p>
      * Grants RDP access to a Windows instance for a specified time period.
@@ -1726,7 +1728,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * <b>NOTE:</b>This API can be used only with Windows stacks.
+     * <b>NOTE:</b>This action can be used only with Windows stacks.
      * </p>
      * <p>
      * Grants RDP access to a Windows instance for a specified time period.
@@ -2276,6 +2278,65 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
+     * Describes the available AWS OpsWorks agent versions. You must specify
+     * a stack ID or a configuration manager.
+     * <code>DescribeAgentVersions</code> returns a list of available agent
+     * versions for the specified stack or configuration manager.
+     * </p>
+     *
+     * @param describeAgentVersionsRequest Container for the necessary
+     *           parameters to execute the DescribeAgentVersions operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAgentVersions service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAgentVersionsResult> describeAgentVersionsAsync(DescribeAgentVersionsRequest describeAgentVersionsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes the available AWS OpsWorks agent versions. You must specify
+     * a stack ID or a configuration manager.
+     * <code>DescribeAgentVersions</code> returns a list of available agent
+     * versions for the specified stack or configuration manager.
+     * </p>
+     *
+     * @param describeAgentVersionsRequest Container for the necessary
+     *           parameters to execute the DescribeAgentVersions operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAgentVersions service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAgentVersionsResult> describeAgentVersionsAsync(DescribeAgentVersionsRequest describeAgentVersionsRequest,
+            AsyncHandler<DescribeAgentVersionsRequest, DescribeAgentVersionsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Starts a stack's instances.
      * </p>
      * <p>
@@ -2498,7 +2559,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * installing the AWS OpsWorks agent on the instance and registering the
      * instance with the stack. RegisterInstance handles only the second
      * step. You should instead use the AWS CLI register command, which
-     * performs the entire registration operation.
+     * performs the entire registration operation. For more information, see
+     * Registering an Instance with an AWS OpsWorks Stack.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -2538,7 +2600,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * installing the AWS OpsWorks agent on the instance and registering the
      * instance with the stack. RegisterInstance handles only the second
      * step. You should instead use the AWS CLI register command, which
-     * performs the entire registration operation.
+     * performs the entire registration operation. For more information, see
+     * Registering an Instance with an AWS OpsWorks Stack.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must

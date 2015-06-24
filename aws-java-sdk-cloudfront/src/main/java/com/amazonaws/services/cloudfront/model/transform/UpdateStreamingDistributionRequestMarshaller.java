@@ -42,7 +42,7 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "2014-11-06/streaming-distribution/{Id}/config";
+        String path = "2015-04-17/streaming-distribution/{Id}/config";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -102,7 +102,7 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
         }
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-11-06/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2015-04-17/");
 
                     if (updateStreamingDistributionRequest != null) {
             StreamingDistributionConfig streamingDistributionConfigStreamingDistributionConfig = updateStreamingDistributionRequest.getStreamingDistributionConfig();

@@ -227,6 +227,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     private void init() {
         jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
         jsonErrorUnmarshallers.add(new ResourceConflictExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ConcurrentModificationExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new TooManyRequestsExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new LambdaThrottledExceptionUnmarshaller());
@@ -263,9 +264,23 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * and user.
      * </p>
      * <p>
-     * UpdateRecords can only be called with temporary user credentials
-     * provided by Cognito Identity. You cannot make this API call with
-     * developer credentials.
+     * The sync count in the record patch is your last known sync count for
+     * that record. The server will reject an UpdateRecords request with a
+     * ResourceConflictException if you try to patch a record with a new
+     * value but a stale sync count.
+     * </p>
+     * <p>
+     * For example, if the sync count on the server is 5 for a key called
+     * highScore and you try and submit a new highScore with sync count of 4,
+     * the request will be rejected. To obtain the current sync count for a
+     * record, call ListRecords. On a successful update of the record, the
+     * response returns the new sync count for that record. You should
+     * present that sync count the next time you try to update that same
+     * record. When the record does not exist, specify the sync count as 0.
+     * </p>
+     * <p>
+     * This API can be called with temporary user credentials provided by
+     * Cognito Identity or with developer credentials.
      * </p>
      *
      * @param updateRecordsRequest Container for the necessary parameters to
@@ -330,6 +345,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * key/values pairs are not updated. To remove a key value pair, pass a
      * empty value for the particular key.
      * </p>
+     * <p>
+     * This API can only be called with developer credentials. You cannot
+     * call this API with the temporary user credentials provided by Cognito
+     * Identity.
+     * </p>
      *
      * @param setCognitoEventsRequest Container for the necessary parameters
      *           to execute the SetCognitoEvents service method on AmazonCognitoSync.
@@ -377,7 +397,12 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Gets the events and the corresponding Lambda functions associated
-     * with an identity pool
+     * with an identity pool.
+     * </p>
+     * <p>
+     * This API can only be called with developer credentials. You cannot
+     * call this API with the temporary user credentials provided by Cognito
+     * Identity.
      * </p>
      *
      * @param getCognitoEventsRequest Container for the necessary parameters
@@ -437,8 +462,8 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * and data usage.
      * </p>
      * <p>
-     * DescribeIdentityUsage can be called with temporary user credentials
-     * provided by Cognito Identity or with developer credentials.
+     * This API can be called with temporary user credentials provided by
+     * Cognito Identity or with developer credentials.
      * </p>
      *
      * @param describeIdentityUsageRequest Container for the necessary
@@ -498,6 +523,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * Unsubscribes from receiving notifications when a dataset is modified
      * by another device.
      * </p>
+     * <p>
+     * This API can only be called with temporary credentials provided by
+     * Cognito Identity. You cannot call this API with developer credentials.
+     * </p>
      *
      * @param unsubscribeFromDatasetRequest Container for the necessary
      *           parameters to execute the UnsubscribeFromDataset service method on
@@ -556,6 +585,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * <p>
      * Sets the necessary configuration for push sync.
      * </p>
+     * <p>
+     * This API can only be called with developer credentials. You cannot
+     * call this API with the temporary user credentials provided by Cognito
+     * Identity.
+     * </p>
      *
      * @param setIdentityPoolConfigurationRequest Container for the necessary
      *           parameters to execute the SetIdentityPoolConfiguration service method
@@ -569,6 +603,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      * @throws NotAuthorizedException
      * @throws InternalErrorException
+     * @throws ConcurrentModificationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -612,6 +647,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Gets the configuration settings of an identity pool.
+     * </p>
+     * <p>
+     * This API can only be called with developer credentials. You cannot
+     * call this API with the temporary user credentials provided by Cognito
+     * Identity.
      * </p>
      *
      * @param getIdentityPoolConfigurationRequest Container for the necessary
@@ -670,6 +710,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * <p>
      * Subscribes to receive notifications when a dataset is modified by
      * another device.
+     * </p>
+     * <p>
+     * This API can only be called with temporary credentials provided by
+     * Cognito Identity. You cannot call this API with developer credentials.
      * </p>
      *
      * @param subscribeToDatasetRequest Container for the necessary
@@ -731,9 +775,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * identity pool.
      * </p>
      * <p>
-     * DescribeIdentityPoolUsage can only be called with developer
-     * credentials. You cannot make this API call with the temporary user
-     * credentials provided by Cognito Identity.
+     * This API can only be called with developer credentials. You cannot
+     * call this API with the temporary user credentials provided by Cognito
+     * Identity.
      * </p>
      *
      * @param describeIdentityPoolUsageRequest Container for the necessary
@@ -979,6 +1023,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * Get the status of the last BulkPublish operation for an identity
      * pool.
      * </p>
+     * <p>
+     * This API can only be called with developer credentials. You cannot
+     * call this API with the temporary user credentials provided by Cognito
+     * Identity.
+     * </p>
      *
      * @param getBulkPublishDetailsRequest Container for the necessary
      *           parameters to execute the GetBulkPublishDetails service method on
@@ -1038,6 +1087,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * bulk publish per 24 hours. Bulk publish is an asynchronous request,
      * customers can see the status of the request via the
      * GetBulkPublishDetails operation.
+     * </p>
+     * <p>
+     * This API can only be called with developer credentials. You cannot
+     * call this API with the temporary user credentials provided by Cognito
+     * Identity.
      * </p>
      *
      * @param bulkPublishRequest Container for the necessary parameters to
@@ -1100,9 +1154,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * to the identity data.
      * </p>
      * <p>
-     * DescribeDataset can be called with temporary user credentials
-     * provided by Cognito Identity or with developer credentials. You should
-     * use Cognito Identity credentials to make this API call.
+     * This API can be called with temporary user credentials provided by
+     * Cognito Identity or with developer credentials. You should use Cognito
+     * Identity credentials to make this API call.
      * </p>
      *
      * @param describeDatasetRequest Container for the necessary parameters
@@ -1165,8 +1219,8 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * ResourceNotFoundException.
      * </p>
      * <p>
-     * DeleteDataset can be called with temporary user credentials provided
-     * by Cognito Identity or with developer credentials.
+     * This API can be called with temporary user credentials provided by
+     * Cognito Identity or with developer credentials.
      * </p>
      *
      * @param deleteDatasetRequest Container for the necessary parameters to
@@ -1224,6 +1278,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Registers a device to receive push sync notifications.
+     * </p>
+     * <p>
+     * This API can only be called with temporary credentials provided by
+     * Cognito Identity. You cannot call this API with developer credentials.
      * </p>
      *
      * @param registerDeviceRequest Container for the necessary parameters to

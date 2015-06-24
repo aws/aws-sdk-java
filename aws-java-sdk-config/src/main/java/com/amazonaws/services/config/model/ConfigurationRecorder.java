@@ -41,6 +41,14 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
     private String roleARN;
 
     /**
+     * The recording group specifies either to record configurations for all
+     * supported resources or to provide a list of resource types to record.
+     * The list of resource types must be a subset of supported resource
+     * types.
+     */
+    private RecordingGroup recordingGroup;
+
+    /**
      * The name of the recorder. By default, AWS Config automatically assigns
      * the name "default" when creating the configuration recorder. You
      * cannot change the assigned name.
@@ -134,6 +142,57 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
     }
 
     /**
+     * The recording group specifies either to record configurations for all
+     * supported resources or to provide a list of resource types to record.
+     * The list of resource types must be a subset of supported resource
+     * types.
+     *
+     * @return The recording group specifies either to record configurations for all
+     *         supported resources or to provide a list of resource types to record.
+     *         The list of resource types must be a subset of supported resource
+     *         types.
+     */
+    public RecordingGroup getRecordingGroup() {
+        return recordingGroup;
+    }
+    
+    /**
+     * The recording group specifies either to record configurations for all
+     * supported resources or to provide a list of resource types to record.
+     * The list of resource types must be a subset of supported resource
+     * types.
+     *
+     * @param recordingGroup The recording group specifies either to record configurations for all
+     *         supported resources or to provide a list of resource types to record.
+     *         The list of resource types must be a subset of supported resource
+     *         types.
+     */
+    public void setRecordingGroup(RecordingGroup recordingGroup) {
+        this.recordingGroup = recordingGroup;
+    }
+    
+    /**
+     * The recording group specifies either to record configurations for all
+     * supported resources or to provide a list of resource types to record.
+     * The list of resource types must be a subset of supported resource
+     * types.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param recordingGroup The recording group specifies either to record configurations for all
+     *         supported resources or to provide a list of resource types to record.
+     *         The list of resource types must be a subset of supported resource
+     *         types.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ConfigurationRecorder withRecordingGroup(RecordingGroup recordingGroup) {
+        this.recordingGroup = recordingGroup;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -146,7 +205,8 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getRoleARN() != null) sb.append("RoleARN: " + getRoleARN() );
+        if (getRoleARN() != null) sb.append("RoleARN: " + getRoleARN() + ",");
+        if (getRecordingGroup() != null) sb.append("RecordingGroup: " + getRecordingGroup() );
         sb.append("}");
         return sb.toString();
     }
@@ -158,6 +218,7 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
         
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode()); 
+        hashCode = prime * hashCode + ((getRecordingGroup() == null) ? 0 : getRecordingGroup().hashCode()); 
         return hashCode;
     }
     
@@ -173,6 +234,8 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
         if (other.getRoleARN() == null ^ this.getRoleARN() == null) return false;
         if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false) return false; 
+        if (other.getRecordingGroup() == null ^ this.getRecordingGroup() == null) return false;
+        if (other.getRecordingGroup() != null && other.getRecordingGroup().equals(this.getRecordingGroup()) == false) return false; 
         return true;
     }
     

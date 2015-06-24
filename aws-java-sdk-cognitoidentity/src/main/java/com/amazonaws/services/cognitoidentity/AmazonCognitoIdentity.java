@@ -313,6 +313,7 @@ public interface AmazonCognitoIdentity {
      * @throws ResourceConflictException
      * @throws InternalErrorException
      * @throws NotAuthorizedException
+     * @throws ConcurrentModificationException
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
@@ -574,6 +575,7 @@ public interface AmazonCognitoIdentity {
      * @throws ResourceConflictException
      * @throws InternalErrorException
      * @throws NotAuthorizedException
+     * @throws ConcurrentModificationException
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException

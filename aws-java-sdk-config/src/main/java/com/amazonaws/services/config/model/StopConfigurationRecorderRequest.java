@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.config.AmazonConfig#stopConfigurationRecorder(StopConfigurationRecorderRequest) StopConfigurationRecorder operation}.
  * <p>
- * Stops recording configurations of all the resources associated with
- * the account.
+ * Stops recording configurations of the AWS resources you have selected
+ * to record in your AWS account.
  * </p>
  *
  * @see com.amazonaws.services.config.AmazonConfig#stopConfigurationRecorder(StopConfigurationRecorderRequest)

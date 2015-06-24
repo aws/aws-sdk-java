@@ -79,9 +79,10 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
-     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     * <code>dw2.8xlarge</code>.
+     * Guide</i>. <p> Valid Values: <code>ds1.xlarge</code> |
+     * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code>.
      */
     private String nodeType;
 
@@ -511,17 +512,19 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
-     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     * <code>dw2.8xlarge</code>.
+     * Guide</i>. <p> Valid Values: <code>ds1.xlarge</code> |
+     * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code>.
      *
      * @return The node type to be provisioned for the cluster. For information about
      *         node types, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     *         Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
-     *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     *         <code>dw2.8xlarge</code>.
+     *         Guide</i>. <p> Valid Values: <code>ds1.xlarge</code> |
+     *         <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> |
+     *         <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *         <code>dc1.8xlarge</code>.
      */
     public String getNodeType() {
         return nodeType;
@@ -532,17 +535,19 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
-     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     * <code>dw2.8xlarge</code>.
+     * Guide</i>. <p> Valid Values: <code>ds1.xlarge</code> |
+     * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code>.
      *
      * @param nodeType The node type to be provisioned for the cluster. For information about
      *         node types, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     *         Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
-     *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     *         <code>dw2.8xlarge</code>.
+     *         Guide</i>. <p> Valid Values: <code>ds1.xlarge</code> |
+     *         <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> |
+     *         <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *         <code>dc1.8xlarge</code>.
      */
     public void setNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -553,9 +558,10 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
-     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     * <code>dw2.8xlarge</code>.
+     * Guide</i>. <p> Valid Values: <code>ds1.xlarge</code> |
+     * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -563,9 +569,10 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         node types, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     *         Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
-     *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     *         <code>dw2.8xlarge</code>.
+     *         Guide</i>. <p> Valid Values: <code>ds1.xlarge</code> |
+     *         <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> |
+     *         <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *         <code>dc1.8xlarge</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

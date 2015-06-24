@@ -105,6 +105,9 @@ public class UpdateInstanceRequestMarshaller implements Marshaller<Request<Updat
             if (updateInstanceRequest.isEbsOptimized() != null) {
                 jsonWriter.key("EbsOptimized").value(updateInstanceRequest.isEbsOptimized());
             }
+            if (updateInstanceRequest.getAgentVersion() != null) {
+                jsonWriter.key("AgentVersion").value(updateInstanceRequest.getAgentVersion());
+            }
 
           jsonWriter.endObject();
 

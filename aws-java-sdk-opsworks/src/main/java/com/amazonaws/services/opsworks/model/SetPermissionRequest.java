@@ -66,7 +66,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     * User Permissions</a>
+     * User Permissions</a>.
      */
     private String level;
 
@@ -228,7 +228,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     * User Permissions</a>
+     * User Permissions</a>.
      *
      * @return The user's permission level, which must be set to one of the following
      *         strings. You cannot set your own permissions level. <ul> <li>
@@ -237,7 +237,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         <code>iam_only</code> </li> </ul> <p>For more information on the
      *         permissions associated with these levels, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     *         User Permissions</a>
+     *         User Permissions</a>.
      */
     public String getLevel() {
         return level;
@@ -251,7 +251,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     * User Permissions</a>
+     * User Permissions</a>.
      *
      * @param level The user's permission level, which must be set to one of the following
      *         strings. You cannot set your own permissions level. <ul> <li>
@@ -260,7 +260,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         <code>iam_only</code> </li> </ul> <p>For more information on the
      *         permissions associated with these levels, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     *         User Permissions</a>
+     *         User Permissions</a>.
      */
     public void setLevel(String level) {
         this.level = level;
@@ -274,7 +274,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     * User Permissions</a>
+     * User Permissions</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -285,7 +285,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         <code>iam_only</code> </li> </ul> <p>For more information on the
      *         permissions associated with these levels, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-     *         User Permissions</a>
+     *         User Permissions</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

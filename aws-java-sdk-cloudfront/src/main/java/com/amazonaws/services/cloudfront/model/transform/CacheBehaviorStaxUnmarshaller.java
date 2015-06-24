@@ -74,6 +74,14 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     cacheBehavior.setSmoothStreaming(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("DefaultTTL", targetDepth)) {
+                    cacheBehavior.setDefaultTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("MaxTTL", targetDepth)) {
+                    cacheBehavior.setMaxTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheBehavior;

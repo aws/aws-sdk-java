@@ -23,6 +23,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Get the status of the last BulkPublish operation for an identity pool.
  * </p>
+ * <p>
+ * This API can only be called with developer credentials. You cannot
+ * call this API with the temporary user credentials provided by Cognito
+ * Identity.
+ * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#getBulkPublishDetails(GetBulkPublishDetailsRequest)
  */

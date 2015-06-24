@@ -42,7 +42,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "2014-11-06/distribution/{Id}/config";
+        String path = "2015-04-17/distribution/{Id}/config";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -102,7 +102,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
         }
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-11-06/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2015-04-17/");
 
                     if (updateDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = updateDistributionRequest.getDistributionConfig();
@@ -376,6 +376,12 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                         if (defaultCacheBehaviorDefaultCacheBehavior.isSmoothStreaming() != null) {
                             xmlWriter.startElement("SmoothStreaming").value(defaultCacheBehaviorDefaultCacheBehavior.isSmoothStreaming()).endElement();
                         }
+                        if (defaultCacheBehaviorDefaultCacheBehavior.getDefaultTTL() != null) {
+                            xmlWriter.startElement("DefaultTTL").value(defaultCacheBehaviorDefaultCacheBehavior.getDefaultTTL()).endElement();
+                        }
+                        if (defaultCacheBehaviorDefaultCacheBehavior.getMaxTTL() != null) {
+                            xmlWriter.startElement("MaxTTL").value(defaultCacheBehaviorDefaultCacheBehavior.getMaxTTL()).endElement();
+                        }
                         xmlWriter.endElement();
                     }
                 }
@@ -567,6 +573,12 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                                     }
                                     if (cacheBehaviorsCacheBehaviorsitemsListValue.isSmoothStreaming() != null) {
                                         xmlWriter.startElement("SmoothStreaming").value(cacheBehaviorsCacheBehaviorsitemsListValue.isSmoothStreaming()).endElement();
+                                    }
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getDefaultTTL() != null) {
+                                        xmlWriter.startElement("DefaultTTL").value(cacheBehaviorsCacheBehaviorsitemsListValue.getDefaultTTL()).endElement();
+                                    }
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getMaxTTL() != null) {
+                                        xmlWriter.startElement("MaxTTL").value(cacheBehaviorsCacheBehaviorsitemsListValue.getMaxTTL()).endElement();
                                     }
                                 xmlWriter.endElement();
 

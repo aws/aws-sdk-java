@@ -44,7 +44,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      */
     private String runtime;
 
@@ -196,7 +196,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @return The runtime environment for the Lambda function.
      *
@@ -210,7 +210,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -226,7 +226,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -244,7 +244,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -260,7 +260,7 @@ public class GetFunctionConfigurationResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function.
      *

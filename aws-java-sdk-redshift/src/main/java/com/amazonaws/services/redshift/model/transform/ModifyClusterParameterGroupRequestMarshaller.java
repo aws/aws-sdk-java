@@ -69,6 +69,9 @@ public class ModifyClusterParameterGroupRequestMarshaller implements Marshaller<
                 if (parameterMember.getAllowedValues() != null) {
                     request.addParameter("Parameters.Parameter." + parametersListIndex + ".AllowedValues", StringUtils.fromString(parameterMember.getAllowedValues()));
                 }
+                if (parameterMember.getApplyType() != null) {
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ApplyType", StringUtils.fromString(parameterMember.getApplyType()));
+                }
                 if (parameterMember.isModifiable() != null) {
                     request.addParameter("Parameters.Parameter." + parametersListIndex + ".IsModifiable", StringUtils.fromBoolean(parameterMember.isModifiable()));
                 }
