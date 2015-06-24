@@ -187,6 +187,11 @@ public class PredefinedRetryPolicies {
                  * and then retry the request.
                  */
                 if (RetryUtils.isClockSkewError(ase)) return true;
+
+                /*
+                 * DNS fails to resolve, it may be caused by temporary network failure.
+                 */
+                if (RetryUtils.isDnsError(ase)) return true;
             }
 
             return false;
