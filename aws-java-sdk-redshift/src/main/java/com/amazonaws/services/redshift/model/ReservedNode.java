@@ -18,7 +18,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a reserved node.
+ * Describes a reserved node. You can call the
+ * DescribeReservedNodeOfferings API to obtain the available reserved
+ * node offerings.
  * </p>
  */
 public class ReservedNode implements Serializable, Cloneable {
@@ -50,12 +52,12 @@ public class ReservedNode implements Serializable, Cloneable {
     private Integer duration;
 
     /**
-     * The fixed cost Amazon Redshift charged you for this reserved node.
+     * The fixed cost Amazon Redshift charges you for this reserved node.
      */
     private Double fixedPrice;
 
     /**
-     * The hourly rate Amazon Redshift charge you for this reserved node.
+     * The hourly rate Amazon Redshift charges you for this reserved node.
      */
     private Double usagePrice;
 
@@ -262,29 +264,29 @@ public class ReservedNode implements Serializable, Cloneable {
     }
 
     /**
-     * The fixed cost Amazon Redshift charged you for this reserved node.
+     * The fixed cost Amazon Redshift charges you for this reserved node.
      *
-     * @return The fixed cost Amazon Redshift charged you for this reserved node.
+     * @return The fixed cost Amazon Redshift charges you for this reserved node.
      */
     public Double getFixedPrice() {
         return fixedPrice;
     }
     
     /**
-     * The fixed cost Amazon Redshift charged you for this reserved node.
+     * The fixed cost Amazon Redshift charges you for this reserved node.
      *
-     * @param fixedPrice The fixed cost Amazon Redshift charged you for this reserved node.
+     * @param fixedPrice The fixed cost Amazon Redshift charges you for this reserved node.
      */
     public void setFixedPrice(Double fixedPrice) {
         this.fixedPrice = fixedPrice;
     }
     
     /**
-     * The fixed cost Amazon Redshift charged you for this reserved node.
+     * The fixed cost Amazon Redshift charges you for this reserved node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param fixedPrice The fixed cost Amazon Redshift charged you for this reserved node.
+     * @param fixedPrice The fixed cost Amazon Redshift charges you for this reserved node.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -295,29 +297,29 @@ public class ReservedNode implements Serializable, Cloneable {
     }
 
     /**
-     * The hourly rate Amazon Redshift charge you for this reserved node.
+     * The hourly rate Amazon Redshift charges you for this reserved node.
      *
-     * @return The hourly rate Amazon Redshift charge you for this reserved node.
+     * @return The hourly rate Amazon Redshift charges you for this reserved node.
      */
     public Double getUsagePrice() {
         return usagePrice;
     }
     
     /**
-     * The hourly rate Amazon Redshift charge you for this reserved node.
+     * The hourly rate Amazon Redshift charges you for this reserved node.
      *
-     * @param usagePrice The hourly rate Amazon Redshift charge you for this reserved node.
+     * @param usagePrice The hourly rate Amazon Redshift charges you for this reserved node.
      */
     public void setUsagePrice(Double usagePrice) {
         this.usagePrice = usagePrice;
     }
     
     /**
-     * The hourly rate Amazon Redshift charge you for this reserved node.
+     * The hourly rate Amazon Redshift charges you for this reserved node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param usagePrice The hourly rate Amazon Redshift charge you for this reserved node.
+     * @param usagePrice The hourly rate Amazon Redshift charges you for this reserved node.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

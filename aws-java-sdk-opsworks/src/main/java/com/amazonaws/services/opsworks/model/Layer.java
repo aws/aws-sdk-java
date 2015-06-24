@@ -113,7 +113,7 @@ public class Layer implements Serializable, Cloneable {
     private Boolean autoAssignPublicIps;
 
     /**
-     * AWS OpsWorks supports five lifecycle events, <b>setup</b>,
+     * AWS OpsWorks supports five lifecycle events: <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      * <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
@@ -1015,7 +1015,7 @@ public class Layer implements Serializable, Cloneable {
     }
 
     /**
-     * AWS OpsWorks supports five lifecycle events, <b>setup</b>,
+     * AWS OpsWorks supports five lifecycle events: <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      * <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
@@ -1028,7 +1028,7 @@ public class Layer implements Serializable, Cloneable {
      * extension. For example: phpapp2::dbsetup specifies the dbsetup.rb
      * recipe in the repository's phpapp2 folder.
      *
-     * @return AWS OpsWorks supports five lifecycle events, <b>setup</b>,
+     * @return AWS OpsWorks supports five lifecycle events: <b>setup</b>,
      *         <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      *         <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      *         recipes for each event. In addition, you can provide custom recipes
@@ -1046,7 +1046,7 @@ public class Layer implements Serializable, Cloneable {
     }
     
     /**
-     * AWS OpsWorks supports five lifecycle events, <b>setup</b>,
+     * AWS OpsWorks supports five lifecycle events: <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      * <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
@@ -1059,7 +1059,7 @@ public class Layer implements Serializable, Cloneable {
      * extension. For example: phpapp2::dbsetup specifies the dbsetup.rb
      * recipe in the repository's phpapp2 folder.
      *
-     * @param defaultRecipes AWS OpsWorks supports five lifecycle events, <b>setup</b>,
+     * @param defaultRecipes AWS OpsWorks supports five lifecycle events: <b>setup</b>,
      *         <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      *         <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      *         recipes for each event. In addition, you can provide custom recipes
@@ -1077,7 +1077,7 @@ public class Layer implements Serializable, Cloneable {
     }
     
     /**
-     * AWS OpsWorks supports five lifecycle events, <b>setup</b>,
+     * AWS OpsWorks supports five lifecycle events: <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      * <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
@@ -1092,7 +1092,7 @@ public class Layer implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultRecipes AWS OpsWorks supports five lifecycle events, <b>setup</b>,
+     * @param defaultRecipes AWS OpsWorks supports five lifecycle events: <b>setup</b>,
      *         <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      *         <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      *         recipes for each event. In addition, you can provide custom recipes

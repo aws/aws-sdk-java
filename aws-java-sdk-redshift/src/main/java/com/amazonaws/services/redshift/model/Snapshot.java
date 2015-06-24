@@ -185,6 +185,12 @@ public class Snapshot implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
+     * The list of node types that this cluster snapshot is able to restore
+     * into.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> restorableNodeTypes;
+
+    /**
      * The snapshot identifier that is provided in the request.
      *
      * @return The snapshot identifier that is provided in the request.
@@ -1338,6 +1344,87 @@ public class Snapshot implements Serializable, Cloneable {
     }
 
     /**
+     * The list of node types that this cluster snapshot is able to restore
+     * into.
+     *
+     * @return The list of node types that this cluster snapshot is able to restore
+     *         into.
+     */
+    public java.util.List<String> getRestorableNodeTypes() {
+        if (restorableNodeTypes == null) {
+              restorableNodeTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              restorableNodeTypes.setAutoConstruct(true);
+        }
+        return restorableNodeTypes;
+    }
+    
+    /**
+     * The list of node types that this cluster snapshot is able to restore
+     * into.
+     *
+     * @param restorableNodeTypes The list of node types that this cluster snapshot is able to restore
+     *         into.
+     */
+    public void setRestorableNodeTypes(java.util.Collection<String> restorableNodeTypes) {
+        if (restorableNodeTypes == null) {
+            this.restorableNodeTypes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> restorableNodeTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(restorableNodeTypes.size());
+        restorableNodeTypesCopy.addAll(restorableNodeTypes);
+        this.restorableNodeTypes = restorableNodeTypesCopy;
+    }
+    
+    /**
+     * The list of node types that this cluster snapshot is able to restore
+     * into.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRestorableNodeTypes(java.util.Collection)} or
+     * {@link #withRestorableNodeTypes(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param restorableNodeTypes The list of node types that this cluster snapshot is able to restore
+     *         into.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Snapshot withRestorableNodeTypes(String... restorableNodeTypes) {
+        if (getRestorableNodeTypes() == null) setRestorableNodeTypes(new java.util.ArrayList<String>(restorableNodeTypes.length));
+        for (String value : restorableNodeTypes) {
+            getRestorableNodeTypes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The list of node types that this cluster snapshot is able to restore
+     * into.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param restorableNodeTypes The list of node types that this cluster snapshot is able to restore
+     *         into.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Snapshot withRestorableNodeTypes(java.util.Collection<String> restorableNodeTypes) {
+        if (restorableNodeTypes == null) {
+            this.restorableNodeTypes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> restorableNodeTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(restorableNodeTypes.size());
+            restorableNodeTypesCopy.addAll(restorableNodeTypes);
+            this.restorableNodeTypes = restorableNodeTypesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1375,7 +1462,8 @@ public class Snapshot implements Serializable, Cloneable {
         if (getEstimatedSecondsToCompletion() != null) sb.append("EstimatedSecondsToCompletion: " + getEstimatedSecondsToCompletion() + ",");
         if (getElapsedTimeInSeconds() != null) sb.append("ElapsedTimeInSeconds: " + getElapsedTimeInSeconds() + ",");
         if (getSourceRegion() != null) sb.append("SourceRegion: " + getSourceRegion() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (getRestorableNodeTypes() != null) sb.append("RestorableNodeTypes: " + getRestorableNodeTypes() );
         sb.append("}");
         return sb.toString();
     }
@@ -1412,6 +1500,7 @@ public class Snapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getElapsedTimeInSeconds() == null) ? 0 : getElapsedTimeInSeconds().hashCode()); 
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getRestorableNodeTypes() == null) ? 0 : getRestorableNodeTypes().hashCode()); 
         return hashCode;
     }
     
@@ -1477,6 +1566,8 @@ public class Snapshot implements Serializable, Cloneable {
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getRestorableNodeTypes() == null ^ this.getRestorableNodeTypes() == null) return false;
+        if (other.getRestorableNodeTypes() != null && other.getRestorableNodeTypes().equals(this.getRestorableNodeTypes()) == false) return false; 
         return true;
     }
     

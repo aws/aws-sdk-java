@@ -549,14 +549,14 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     /**
      * <p>
      * Allows you to purchase reserved nodes. Amazon Redshift offers a
-     * predefined set of reserved node offerings. You can purchase one of the
-     * offerings. You can call the DescribeReservedNodeOfferings API to
-     * obtain the available reserved node offerings. You can call this API by
-     * providing a specific reserved node offering and the number of nodes
-     * you want to reserve.
+     * predefined set of reserved node offerings. You can purchase one or
+     * more of the offerings. You can call the DescribeReservedNodeOfferings
+     * API to obtain the available reserved node offerings. You can call this
+     * API by providing a specific reserved node offering and the number of
+     * nodes you want to reserve.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about reserved node offerings, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -590,14 +590,14 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     /**
      * <p>
      * Allows you to purchase reserved nodes. Amazon Redshift offers a
-     * predefined set of reserved node offerings. You can purchase one of the
-     * offerings. You can call the DescribeReservedNodeOfferings API to
-     * obtain the available reserved node offerings. You can call this API by
-     * providing a specific reserved node offering and the number of nodes
-     * you want to reserve.
+     * predefined set of reserved node offerings. You can purchase one or
+     * more of the offerings. You can call the DescribeReservedNodeOfferings
+     * API to obtain the available reserved node offerings. You can call this
+     * API by providing a specific reserved node offering and the number of
+     * nodes you want to reserve.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about reserved node offerings, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -786,6 +786,80 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
               }
               asyncHandler.onSuccess(disableLoggingRequest, result);
                  return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified snapshot copy grant.
+     * </p>
+     *
+     * @param deleteSnapshotCopyGrantRequest Container for the necessary
+     *           parameters to execute the DeleteSnapshotCopyGrant operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteSnapshotCopyGrant service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteSnapshotCopyGrantAsync(final DeleteSnapshotCopyGrantRequest deleteSnapshotCopyGrantRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteSnapshotCopyGrant(deleteSnapshotCopyGrantRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes the specified snapshot copy grant.
+     * </p>
+     *
+     * @param deleteSnapshotCopyGrantRequest Container for the necessary
+     *           parameters to execute the DeleteSnapshotCopyGrant operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteSnapshotCopyGrant service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteSnapshotCopyGrantAsync(
+            final DeleteSnapshotCopyGrantRequest deleteSnapshotCopyGrantRequest,
+            final AsyncHandler<DeleteSnapshotCopyGrantRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteSnapshotCopyGrant(deleteSnapshotCopyGrantRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteSnapshotCopyGrantRequest, null);
+                 return null;
         }
     });
     }
@@ -1566,6 +1640,92 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     
     /**
      * <p>
+     * Creates a manual snapshot of the specified cluster. The cluster must
+     * be in the <code>available</code> state.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param createClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CreateClusterSnapshot operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateClusterSnapshot service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Snapshot> createClusterSnapshotAsync(final CreateClusterSnapshotRequest createClusterSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Snapshot>() {
+            public Snapshot call() throws Exception {
+                return createClusterSnapshot(createClusterSnapshotRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a manual snapshot of the specified cluster. The cluster must
+     * be in the <code>available</code> state.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param createClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CreateClusterSnapshot operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateClusterSnapshot service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Snapshot> createClusterSnapshotAsync(
+            final CreateClusterSnapshotRequest createClusterSnapshotRequest,
+            final AsyncHandler<CreateClusterSnapshotRequest, Snapshot> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Snapshot>() {
+            public Snapshot call() throws Exception {
+              Snapshot result;
+                try {
+                result = createClusterSnapshot(createClusterSnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createClusterSnapshotRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Deletes a previously provisioned cluster. A successful response from
      * the web service indicates that the request was received correctly. Use
      * DescribeClusters to monitor the status of the deletion. The delete
@@ -1671,92 +1831,6 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
             throw ex;
               }
               asyncHandler.onSuccess(deleteClusterRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates a manual snapshot of the specified cluster. The cluster must
-     * be in the <code>available</code> state.
-     * </p>
-     * <p>
-     * For more information about working with snapshots, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Cluster Management Guide</i> .
-     * </p>
-     *
-     * @param createClusterSnapshotRequest Container for the necessary
-     *           parameters to execute the CreateClusterSnapshot operation on
-     *           AmazonRedshift.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateClusterSnapshot service method, as returned by AmazonRedshift.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Snapshot> createClusterSnapshotAsync(final CreateClusterSnapshotRequest createClusterSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Snapshot>() {
-            public Snapshot call() throws Exception {
-                return createClusterSnapshot(createClusterSnapshotRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates a manual snapshot of the specified cluster. The cluster must
-     * be in the <code>available</code> state.
-     * </p>
-     * <p>
-     * For more information about working with snapshots, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Cluster Management Guide</i> .
-     * </p>
-     *
-     * @param createClusterSnapshotRequest Container for the necessary
-     *           parameters to execute the CreateClusterSnapshot operation on
-     *           AmazonRedshift.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateClusterSnapshot service method, as returned by AmazonRedshift.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Snapshot> createClusterSnapshotAsync(
-            final CreateClusterSnapshotRequest createClusterSnapshotRequest,
-            final AsyncHandler<CreateClusterSnapshotRequest, Snapshot> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Snapshot>() {
-            public Snapshot call() throws Exception {
-              Snapshot result;
-                try {
-                result = createClusterSnapshot(createClusterSnapshotRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createClusterSnapshotRequest, result);
                  return result;
         }
     });
@@ -2296,7 +2370,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * group family.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -2333,7 +2407,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * group family.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -2714,13 +2788,15 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     
     /**
      * <p>
-     * Creates a new cluster from a snapshot. Amazon Redshift creates the
-     * resulting cluster with the same configuration as the original cluster
-     * from which the snapshot was created, except that the new cluster is
-     * created with the default cluster security and parameter group. After
-     * Amazon Redshift creates the cluster you can use the ModifyCluster API
-     * to associate a different security group and different parameter group
-     * with the restored cluster.
+     * Creates a new cluster from a snapshot. By default, Amazon Redshift
+     * creates the resulting cluster with the same configuration as the
+     * original cluster from which the snapshot was created, except that the
+     * new cluster is created with the default cluster security and parameter
+     * groups. After Amazon Redshift creates the cluster, you can use the
+     * ModifyCluster API to associate a different security group and
+     * different parameter group with the restored cluster. If you are using
+     * a DS node type, you can also choose to change to another DS node type
+     * of the same size during restore.
      * </p>
      * <p>
      * If you restore a cluster into a VPC, you must provide a cluster
@@ -2760,13 +2836,15 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
 
     /**
      * <p>
-     * Creates a new cluster from a snapshot. Amazon Redshift creates the
-     * resulting cluster with the same configuration as the original cluster
-     * from which the snapshot was created, except that the new cluster is
-     * created with the default cluster security and parameter group. After
-     * Amazon Redshift creates the cluster you can use the ModifyCluster API
-     * to associate a different security group and different parameter group
-     * with the restored cluster.
+     * Creates a new cluster from a snapshot. By default, Amazon Redshift
+     * creates the resulting cluster with the same configuration as the
+     * original cluster from which the snapshot was created, except that the
+     * new cluster is created with the default cluster security and parameter
+     * groups. After Amazon Redshift creates the cluster, you can use the
+     * ModifyCluster API to associate a different security group and
+     * different parameter group with the restored cluster. If you are using
+     * a DS node type, you can also choose to change to another DS node type
+     * of the same size during restore.
      * </p>
      * <p>
      * If you restore a cluster into a VPC, you must provide a cluster
@@ -3041,7 +3119,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * Modifies the parameters of a parameter group.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -3077,7 +3155,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * Modifies the parameters of a parameter group.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -3719,6 +3797,12 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * Disables the automatic copying of snapshots from one region to
      * another region for a specified cluster.
      * </p>
+     * <p>
+     * If your cluster and its snapshots are encrypted using a customer
+     * master key (CMK) from AWS KMS, use DeleteSnapshotCopyGrant to delete
+     * the grant that grants Amazon Redshift permission to the CMK in the
+     * destination region.
+     * </p>
      *
      * @param disableSnapshotCopyRequest Container for the necessary
      *           parameters to execute the DisableSnapshotCopy operation on
@@ -3749,6 +3833,12 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * Disables the automatic copying of snapshots from one region to
      * another region for a specified cluster.
+     * </p>
+     * <p>
+     * If your cluster and its snapshots are encrypted using a customer
+     * master key (CMK) from AWS KMS, use DeleteSnapshotCopyGrant to delete
+     * the grant that grants Amazon Redshift permission to the CMK in the
+     * destination region.
      * </p>
      *
      * @param disableSnapshotCopyRequest Container for the necessary
@@ -4002,6 +4092,94 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     
     /**
      * <p>
+     * Returns a list of snapshot copy grants owned by the AWS account in
+     * the destination region.
+     * </p>
+     * <p>
+     * For more information about managing snapshot copy grants, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html"> Amazon Redshift Database Encryption </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param describeSnapshotCopyGrantsRequest Container for the necessary
+     *           parameters to execute the DescribeSnapshotCopyGrants operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSnapshotCopyGrants service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSnapshotCopyGrantsResult> describeSnapshotCopyGrantsAsync(final DescribeSnapshotCopyGrantsRequest describeSnapshotCopyGrantsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSnapshotCopyGrantsResult>() {
+            public DescribeSnapshotCopyGrantsResult call() throws Exception {
+                return describeSnapshotCopyGrants(describeSnapshotCopyGrantsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns a list of snapshot copy grants owned by the AWS account in
+     * the destination region.
+     * </p>
+     * <p>
+     * For more information about managing snapshot copy grants, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html"> Amazon Redshift Database Encryption </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param describeSnapshotCopyGrantsRequest Container for the necessary
+     *           parameters to execute the DescribeSnapshotCopyGrants operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSnapshotCopyGrants service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSnapshotCopyGrantsResult> describeSnapshotCopyGrantsAsync(
+            final DescribeSnapshotCopyGrantsRequest describeSnapshotCopyGrantsRequest,
+            final AsyncHandler<DescribeSnapshotCopyGrantsRequest, DescribeSnapshotCopyGrantsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSnapshotCopyGrantsResult>() {
+            public DescribeSnapshotCopyGrantsResult call() throws Exception {
+              DescribeSnapshotCopyGrantsResult result;
+                try {
+                result = describeSnapshotCopyGrants(describeSnapshotCopyGrantsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSnapshotCopyGrantsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Authorizes the specified AWS customer account to restore the
      * specified snapshot.
      * </p>
@@ -4173,7 +4351,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * or more nodes for your Amazon Redshift cluster.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about reserved node offerings, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -4215,7 +4393,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * or more nodes for your Amazon Redshift cluster.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about reserved node offerings, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -4710,7 +4888,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * specify <i>source</i> equal to <i>user</i> .
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -4755,7 +4933,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * specify <i>source</i> equal to <i>user</i> .
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -5217,7 +5395,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * Parameters in the parameter group define specific behavior that
      * applies to the databases you create on the cluster. For more
-     * information about managing parameter groups, go to
+     * information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -5261,7 +5439,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * <p>
      * Parameters in the parameter group define specific behavior that
      * applies to the databases you create on the cluster. For more
-     * information about managing parameter groups, go to
+     * information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -5316,7 +5494,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * group.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -5370,7 +5548,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * group.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -5423,6 +5601,94 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
             throw ex;
               }
               asyncHandler.onSuccess(describeClusterParameterGroupsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a snapshot copy grant that permits Amazon Redshift to use a
+     * customer master key (CMK) from AWS Key Management Service (AWS KMS) to
+     * encrypt copied snapshots in a destination region.
+     * </p>
+     * <p>
+     * For more information about managing snapshot copy grants, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html"> Amazon Redshift Database Encryption </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param createSnapshotCopyGrantRequest Container for the necessary
+     *           parameters to execute the CreateSnapshotCopyGrant operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateSnapshotCopyGrant service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<SnapshotCopyGrant> createSnapshotCopyGrantAsync(final CreateSnapshotCopyGrantRequest createSnapshotCopyGrantRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<SnapshotCopyGrant>() {
+            public SnapshotCopyGrant call() throws Exception {
+                return createSnapshotCopyGrant(createSnapshotCopyGrantRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a snapshot copy grant that permits Amazon Redshift to use a
+     * customer master key (CMK) from AWS Key Management Service (AWS KMS) to
+     * encrypt copied snapshots in a destination region.
+     * </p>
+     * <p>
+     * For more information about managing snapshot copy grants, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html"> Amazon Redshift Database Encryption </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param createSnapshotCopyGrantRequest Container for the necessary
+     *           parameters to execute the CreateSnapshotCopyGrant operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateSnapshotCopyGrant service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<SnapshotCopyGrant> createSnapshotCopyGrantAsync(
+            final CreateSnapshotCopyGrantRequest createSnapshotCopyGrantRequest,
+            final AsyncHandler<CreateSnapshotCopyGrantRequest, SnapshotCopyGrant> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<SnapshotCopyGrant>() {
+            public SnapshotCopyGrant call() throws Exception {
+              SnapshotCopyGrant result;
+                try {
+                result = createSnapshotCopyGrant(createSnapshotCopyGrantRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createSnapshotCopyGrantRequest, result);
                  return result;
         }
     });

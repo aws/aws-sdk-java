@@ -43,7 +43,7 @@ import com.amazonaws.services.config.model.*;
  * EC2) instance, an Elastic Block Store (EBS) volume, an Elastic network
  * Interface (ENI), or a security group. For a complete list of resources
  * currently supported by AWS Config, see
- * <a href="http://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html"> Supported AWS Resources </a>
+ * <a href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"> Supported AWS Resources </a>
  * .
  * </p>
  * <p>
@@ -480,8 +480,8 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
     
     /**
      * <p>
-     * Starts recording configurations of all the resources associated with
-     * the account.
+     * Starts recording configurations of the AWS resources you have
+     * selected to record in your AWS account.
      * </p>
      * <p>
      * You must have created at least one delivery channel to successfully
@@ -517,8 +517,8 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
 
     /**
      * <p>
-     * Starts recording configurations of all the resources associated with
-     * the account.
+     * Starts recording configurations of the AWS resources you have
+     * selected to record in your AWS account.
      * </p>
      * <p>
      * You must have created at least one delivery channel to successfully
@@ -752,8 +752,8 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
     
     /**
      * <p>
-     * Stops recording configurations of all the resources associated with
-     * the account.
+     * Stops recording configurations of the AWS resources you have selected
+     * to record in your AWS account.
      * </p>
      *
      * @param stopConfigurationRecorderRequest Container for the necessary
@@ -784,8 +784,8 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
 
     /**
      * <p>
-     * Stops recording configurations of all the resources associated with
-     * the account.
+     * Stops recording configurations of the AWS resources you have selected
+     * to record in your AWS account.
      * </p>
      *
      * @param stopConfigurationRecorderRequest Container for the necessary
@@ -926,17 +926,20 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
     
     /**
      * <p>
-     * Creates a new configuration recorder to record the resource
+     * Creates a new configuration recorder to record the selected resource
      * configurations.
      * </p>
      * <p>
-     * You can use this action to change the role ( <code>roleARN</code> )
-     * of an existing recorder. To change the role, call the action on the
-     * existing configuration recorder and specify a role.
+     * You can use this action to change the role <code>roleARN</code>
+     * and/or the <code>recordingGroup</code> of an existing recorder. To
+     * change the role, call the action on the existing configuration
+     * recorder and specify a role.
      * </p>
      * <p>
      * <b>NOTE:</b> Currently, you can specify only one configuration
-     * recorder per account.
+     * recorder per account. If ConfigurationRecorder does not have the
+     * recordingGroup parameter specified, the default is to record all
+     * supported resource types.
      * </p>
      *
      * @param putConfigurationRecorderRequest Container for the necessary
@@ -967,17 +970,20 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
 
     /**
      * <p>
-     * Creates a new configuration recorder to record the resource
+     * Creates a new configuration recorder to record the selected resource
      * configurations.
      * </p>
      * <p>
-     * You can use this action to change the role ( <code>roleARN</code> )
-     * of an existing recorder. To change the role, call the action on the
-     * existing configuration recorder and specify a role.
+     * You can use this action to change the role <code>roleARN</code>
+     * and/or the <code>recordingGroup</code> of an existing recorder. To
+     * change the role, call the action on the existing configuration
+     * recorder and specify a role.
      * </p>
      * <p>
      * <b>NOTE:</b> Currently, you can specify only one configuration
-     * recorder per account.
+     * recorder per account. If ConfigurationRecorder does not have the
+     * recordingGroup parameter specified, the default is to record all
+     * supported resource types.
      * </p>
      *
      * @param putConfigurationRecorderRequest Container for the necessary

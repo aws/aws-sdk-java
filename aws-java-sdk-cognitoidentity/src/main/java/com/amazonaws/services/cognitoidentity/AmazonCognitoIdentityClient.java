@@ -245,6 +245,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
     private void init() {
         jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
+        jsonErrorUnmarshallers.add(new ConcurrentModificationExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new DeveloperUserAlreadyRegisteredExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidParameterExceptionUnmarshaller());
@@ -590,6 +591,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws ResourceConflictException
      * @throws InternalErrorException
      * @throws NotAuthorizedException
+     * @throws ConcurrentModificationException
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
@@ -1047,6 +1049,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws ResourceConflictException
      * @throws InternalErrorException
      * @throws NotAuthorizedException
+     * @throws ConcurrentModificationException
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException

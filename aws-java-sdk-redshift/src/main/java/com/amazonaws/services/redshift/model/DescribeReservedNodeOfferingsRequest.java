@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * or more nodes for your Amazon Redshift cluster.
  * </p>
  * <p>
- * For more information about managing parameter groups, go to
+ * For more information about reserved node offerings, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
  * in the <i>Amazon Redshift Cluster Management Guide</i> .
  * 

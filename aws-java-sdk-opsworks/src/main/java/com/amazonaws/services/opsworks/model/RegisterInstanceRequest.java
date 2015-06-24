@@ -30,7 +30,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * installing the AWS OpsWorks agent on the instance and registering the
  * instance with the stack. RegisterInstance handles only the second
  * step. You should instead use the AWS CLI register command, which
- * performs the entire registration operation.
+ * performs the entire registration operation. For more information, see
+ * Registering an Instance with an AWS OpsWorks Stack.
  * </p>
  * <p>
  * <b>Required Permissions</b> : To use this action, an IAM user must

@@ -95,7 +95,7 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * The list of cluster parameter groups that are associated with this
-     * cluster.
+     * cluster. Each parameter group in the list is returned with its status.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ClusterParameterGroupStatus> clusterParameterGroups;
 
@@ -757,10 +757,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * The list of cluster parameter groups that are associated with this
-     * cluster.
+     * cluster. Each parameter group in the list is returned with its status.
      *
      * @return The list of cluster parameter groups that are associated with this
-     *         cluster.
+     *         cluster. Each parameter group in the list is returned with its status.
      */
     public java.util.List<ClusterParameterGroupStatus> getClusterParameterGroups() {
         if (clusterParameterGroups == null) {
@@ -772,10 +772,10 @@ public class Cluster implements Serializable, Cloneable {
     
     /**
      * The list of cluster parameter groups that are associated with this
-     * cluster.
+     * cluster. Each parameter group in the list is returned with its status.
      *
      * @param clusterParameterGroups The list of cluster parameter groups that are associated with this
-     *         cluster.
+     *         cluster. Each parameter group in the list is returned with its status.
      */
     public void setClusterParameterGroups(java.util.Collection<ClusterParameterGroupStatus> clusterParameterGroups) {
         if (clusterParameterGroups == null) {
@@ -789,7 +789,7 @@ public class Cluster implements Serializable, Cloneable {
     
     /**
      * The list of cluster parameter groups that are associated with this
-     * cluster.
+     * cluster. Each parameter group in the list is returned with its status.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setClusterParameterGroups(java.util.Collection)} or
@@ -799,7 +799,7 @@ public class Cluster implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterParameterGroups The list of cluster parameter groups that are associated with this
-     *         cluster.
+     *         cluster. Each parameter group in the list is returned with its status.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -814,12 +814,12 @@ public class Cluster implements Serializable, Cloneable {
     
     /**
      * The list of cluster parameter groups that are associated with this
-     * cluster.
+     * cluster. Each parameter group in the list is returned with its status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterParameterGroups The list of cluster parameter groups that are associated with this
-     *         cluster.
+     *         cluster. Each parameter group in the list is returned with its status.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

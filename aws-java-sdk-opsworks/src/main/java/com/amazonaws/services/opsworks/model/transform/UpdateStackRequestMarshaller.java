@@ -166,6 +166,9 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             if (updateStackRequest.isUseOpsworksSecurityGroups() != null) {
                 jsonWriter.key("UseOpsworksSecurityGroups").value(updateStackRequest.isUseOpsworksSecurityGroups());
             }
+            if (updateStackRequest.getAgentVersion() != null) {
+                jsonWriter.key("AgentVersion").value(updateStackRequest.getAgentVersion());
+            }
 
           jsonWriter.endObject();
 

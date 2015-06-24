@@ -22,7 +22,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cognitosync.AmazonCognitoSync#getCognitoEvents(GetCognitoEventsRequest) GetCognitoEvents operation}.
  * <p>
  * Gets the events and the corresponding Lambda functions associated with
- * an identity pool
+ * an identity pool.
+ * </p>
+ * <p>
+ * This API can only be called with developer credentials. You cannot
+ * call this API with the temporary user credentials provided by Cognito
+ * Identity.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#getCognitoEvents(GetCognitoEventsRequest)

@@ -69,9 +69,10 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * connection is switched to the new cluster. When the new connection is
      * complete, the original access permissions for the cluster are
      * restored. You can use <a>DescribeResize</a> to track the progress of
-     * the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
-     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     * <code>dw2.8xlarge</code>.
+     * the resize request. <p>Valid Values: <code> ds1.xlarge</code> |
+     * <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code>.
      */
     private String nodeType;
 
@@ -166,8 +167,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * group is currently in use, a new cluster parameter group in the
      * cluster parameter group family for the new version must be specified.
      * The new cluster parameter group can be the default for that cluster
-     * parameter group family. For more information about managing parameter
-     * groups, go to <a
+     * parameter group family. For more information about parameters and
+     * parameter groups, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
      * Management Guide</i>. <p>Example: <code>1.0</code>
@@ -322,9 +323,10 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * connection is switched to the new cluster. When the new connection is
      * complete, the original access permissions for the cluster are
      * restored. You can use <a>DescribeResize</a> to track the progress of
-     * the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
-     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     * <code>dw2.8xlarge</code>.
+     * the resize request. <p>Valid Values: <code> ds1.xlarge</code> |
+     * <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code>.
      *
      * @return The new node type of the cluster. If you specify a new node type, you
      *         must also specify the number of nodes parameter. <p> When you submit
@@ -335,9 +337,10 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         connection is switched to the new cluster. When the new connection is
      *         complete, the original access permissions for the cluster are
      *         restored. You can use <a>DescribeResize</a> to track the progress of
-     *         the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
-     *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     *         <code>dw2.8xlarge</code>.
+     *         the resize request. <p>Valid Values: <code> ds1.xlarge</code> |
+     *         <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
+     *         <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *         <code>dc1.8xlarge</code>.
      */
     public String getNodeType() {
         return nodeType;
@@ -353,9 +356,10 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * connection is switched to the new cluster. When the new connection is
      * complete, the original access permissions for the cluster are
      * restored. You can use <a>DescribeResize</a> to track the progress of
-     * the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
-     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     * <code>dw2.8xlarge</code>.
+     * the resize request. <p>Valid Values: <code> ds1.xlarge</code> |
+     * <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code>.
      *
      * @param nodeType The new node type of the cluster. If you specify a new node type, you
      *         must also specify the number of nodes parameter. <p> When you submit
@@ -366,9 +370,10 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         connection is switched to the new cluster. When the new connection is
      *         complete, the original access permissions for the cluster are
      *         restored. You can use <a>DescribeResize</a> to track the progress of
-     *         the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
-     *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     *         <code>dw2.8xlarge</code>.
+     *         the resize request. <p>Valid Values: <code> ds1.xlarge</code> |
+     *         <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
+     *         <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *         <code>dc1.8xlarge</code>.
      */
     public void setNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -384,9 +389,10 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * connection is switched to the new cluster. When the new connection is
      * complete, the original access permissions for the cluster are
      * restored. You can use <a>DescribeResize</a> to track the progress of
-     * the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
-     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     * <code>dw2.8xlarge</code>.
+     * the resize request. <p>Valid Values: <code> ds1.xlarge</code> |
+     * <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -399,9 +405,10 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         connection is switched to the new cluster. When the new connection is
      *         complete, the original access permissions for the cluster are
      *         restored. You can use <a>DescribeResize</a> to track the progress of
-     *         the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
-     *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
-     *         <code>dw2.8xlarge</code>.
+     *         the resize request. <p>Valid Values: <code> ds1.xlarge</code> |
+     *         <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
+     *         <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *         <code>dc1.8xlarge</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1042,8 +1049,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * group is currently in use, a new cluster parameter group in the
      * cluster parameter group family for the new version must be specified.
      * The new cluster parameter group can be the default for that cluster
-     * parameter group family. For more information about managing parameter
-     * groups, go to <a
+     * parameter group family. For more information about parameters and
+     * parameter groups, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
      * Management Guide</i>. <p>Example: <code>1.0</code>
@@ -1053,8 +1060,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         group is currently in use, a new cluster parameter group in the
      *         cluster parameter group family for the new version must be specified.
      *         The new cluster parameter group can be the default for that cluster
-     *         parameter group family. For more information about managing parameter
-     *         groups, go to <a
+     *         parameter group family. For more information about parameters and
+     *         parameter groups, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
      *         Management Guide</i>. <p>Example: <code>1.0</code>
@@ -1069,8 +1076,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * group is currently in use, a new cluster parameter group in the
      * cluster parameter group family for the new version must be specified.
      * The new cluster parameter group can be the default for that cluster
-     * parameter group family. For more information about managing parameter
-     * groups, go to <a
+     * parameter group family. For more information about parameters and
+     * parameter groups, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
      * Management Guide</i>. <p>Example: <code>1.0</code>
@@ -1080,8 +1087,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         group is currently in use, a new cluster parameter group in the
      *         cluster parameter group family for the new version must be specified.
      *         The new cluster parameter group can be the default for that cluster
-     *         parameter group family. For more information about managing parameter
-     *         groups, go to <a
+     *         parameter group family. For more information about parameters and
+     *         parameter groups, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
      *         Management Guide</i>. <p>Example: <code>1.0</code>
@@ -1096,8 +1103,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * group is currently in use, a new cluster parameter group in the
      * cluster parameter group family for the new version must be specified.
      * The new cluster parameter group can be the default for that cluster
-     * parameter group family. For more information about managing parameter
-     * groups, go to <a
+     * parameter group family. For more information about parameters and
+     * parameter groups, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
      * Management Guide</i>. <p>Example: <code>1.0</code>
@@ -1109,8 +1116,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         group is currently in use, a new cluster parameter group in the
      *         cluster parameter group family for the new version must be specified.
      *         The new cluster parameter group can be the default for that cluster
-     *         parameter group family. For more information about managing parameter
-     *         groups, go to <a
+     *         parameter group family. For more information about parameters and
+     *         parameter groups, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
      *         Management Guide</i>. <p>Example: <code>1.0</code>

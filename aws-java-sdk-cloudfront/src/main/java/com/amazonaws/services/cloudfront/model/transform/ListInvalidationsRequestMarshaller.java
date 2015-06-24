@@ -42,7 +42,7 @@ public class ListInvalidationsRequestMarshaller implements Marshaller<Request<Li
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "2014-11-06/distribution/{DistributionId}/invalidation?Marker={Marker}&MaxItems={MaxItems}";
+        String path = "2015-04-17/distribution/{DistributionId}/invalidation?Marker={Marker}&MaxItems={MaxItems}";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 

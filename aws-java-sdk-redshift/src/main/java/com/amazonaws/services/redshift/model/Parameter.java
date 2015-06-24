@@ -54,6 +54,15 @@ public class Parameter implements Serializable, Cloneable {
     private String allowedValues;
 
     /**
+     * Specifies how to apply the parameter. Supported value:
+     * <code>static</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>static, dynamic
+     */
+    private String applyType;
+
+    /**
      * If <code>true</code>, the parameter can be modified. Some parameters
      * have security or operational implications that prevent them from being
      * changed.
@@ -264,6 +273,98 @@ public class Parameter implements Serializable, Cloneable {
     }
 
     /**
+     * Specifies how to apply the parameter. Supported value:
+     * <code>static</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>static, dynamic
+     *
+     * @return Specifies how to apply the parameter. Supported value:
+     *         <code>static</code>.
+     *
+     * @see ParameterApplyType
+     */
+    public String getApplyType() {
+        return applyType;
+    }
+    
+    /**
+     * Specifies how to apply the parameter. Supported value:
+     * <code>static</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>static, dynamic
+     *
+     * @param applyType Specifies how to apply the parameter. Supported value:
+     *         <code>static</code>.
+     *
+     * @see ParameterApplyType
+     */
+    public void setApplyType(String applyType) {
+        this.applyType = applyType;
+    }
+    
+    /**
+     * Specifies how to apply the parameter. Supported value:
+     * <code>static</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>static, dynamic
+     *
+     * @param applyType Specifies how to apply the parameter. Supported value:
+     *         <code>static</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see ParameterApplyType
+     */
+    public Parameter withApplyType(String applyType) {
+        this.applyType = applyType;
+        return this;
+    }
+
+    /**
+     * Specifies how to apply the parameter. Supported value:
+     * <code>static</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>static, dynamic
+     *
+     * @param applyType Specifies how to apply the parameter. Supported value:
+     *         <code>static</code>.
+     *
+     * @see ParameterApplyType
+     */
+    public void setApplyType(ParameterApplyType applyType) {
+        this.applyType = applyType.toString();
+    }
+    
+    /**
+     * Specifies how to apply the parameter. Supported value:
+     * <code>static</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>static, dynamic
+     *
+     * @param applyType Specifies how to apply the parameter. Supported value:
+     *         <code>static</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see ParameterApplyType
+     */
+    public Parameter withApplyType(ParameterApplyType applyType) {
+        this.applyType = applyType.toString();
+        return this;
+    }
+
+    /**
      * If <code>true</code>, the parameter can be modified. Some parameters
      * have security or operational implications that prevent them from being
      * changed.
@@ -372,6 +473,7 @@ public class Parameter implements Serializable, Cloneable {
         if (getSource() != null) sb.append("Source: " + getSource() + ",");
         if (getDataType() != null) sb.append("DataType: " + getDataType() + ",");
         if (getAllowedValues() != null) sb.append("AllowedValues: " + getAllowedValues() + ",");
+        if (getApplyType() != null) sb.append("ApplyType: " + getApplyType() + ",");
         if (isModifiable() != null) sb.append("IsModifiable: " + isModifiable() + ",");
         if (getMinimumEngineVersion() != null) sb.append("MinimumEngineVersion: " + getMinimumEngineVersion() );
         sb.append("}");
@@ -389,6 +491,7 @@ public class Parameter implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode()); 
         hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode()); 
         hashCode = prime * hashCode + ((getAllowedValues() == null) ? 0 : getAllowedValues().hashCode()); 
+        hashCode = prime * hashCode + ((getApplyType() == null) ? 0 : getApplyType().hashCode()); 
         hashCode = prime * hashCode + ((isModifiable() == null) ? 0 : isModifiable().hashCode()); 
         hashCode = prime * hashCode + ((getMinimumEngineVersion() == null) ? 0 : getMinimumEngineVersion().hashCode()); 
         return hashCode;
@@ -414,6 +517,8 @@ public class Parameter implements Serializable, Cloneable {
         if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false) return false; 
         if (other.getAllowedValues() == null ^ this.getAllowedValues() == null) return false;
         if (other.getAllowedValues() != null && other.getAllowedValues().equals(this.getAllowedValues()) == false) return false; 
+        if (other.getApplyType() == null ^ this.getApplyType() == null) return false;
+        if (other.getApplyType() != null && other.getApplyType().equals(this.getApplyType()) == false) return false; 
         if (other.isModifiable() == null ^ this.isModifiable() == null) return false;
         if (other.isModifiable() != null && other.isModifiable().equals(this.isModifiable()) == false) return false; 
         if (other.getMinimumEngineVersion() == null ^ this.getMinimumEngineVersion() == null) return false;

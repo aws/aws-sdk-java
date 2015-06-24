@@ -129,6 +129,10 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                     context.nextToken();
                     stack.setDefaultRootDeviceType(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AgentVersion", targetDepth)) {
+                    context.nextToken();
+                    stack.setAgentVersion(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

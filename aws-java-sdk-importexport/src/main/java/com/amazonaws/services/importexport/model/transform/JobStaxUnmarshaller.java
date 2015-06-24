@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -29,34 +29,45 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Job StAX Unmarshaller
  */
-public class JobStaxUnmarshaller implements Unmarshaller<Job, StaxUnmarshallerContext> {
+public class JobStaxUnmarshaller implements
+        Unmarshaller<Job, StaxUnmarshallerContext> {
 
     public Job unmarshall(StaxUnmarshallerContext context) throws Exception {
         Job job = new Job();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return job;
+            if (xmlEvent.isEndDocument())
+                return job;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("JobId", targetDepth)) {
-                    job.setJobId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    job.setJobId(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("CreationDate", targetDepth)) {
-                    job.setCreationDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    job.setCreationDate(DateStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("IsCanceled", targetDepth)) {
-                    job.setIsCanceled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    job.setIsCanceled(BooleanStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("JobType", targetDepth)) {
-                    job.setJobType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    job.setJobType(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -68,9 +79,10 @@ public class JobStaxUnmarshaller implements Unmarshaller<Job, StaxUnmarshallerCo
     }
 
     private static JobStaxUnmarshaller instance;
+
     public static JobStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new JobStaxUnmarshaller();
+        if (instance == null)
+            instance = new JobStaxUnmarshaller();
         return instance;
     }
 }
-    

@@ -73,6 +73,31 @@ public class PutConfigurationRecorderRequestMarshaller implements Marshaller<Req
                 if (configurationRecorder.getRoleARN() != null) {
                     jsonWriter.key("roleARN").value(configurationRecorder.getRoleARN());
                 }
+                RecordingGroup recordingGroup = configurationRecorder.getRecordingGroup();
+                if (recordingGroup != null) {
+
+                    jsonWriter.key("recordingGroup");
+                    jsonWriter.object();
+
+                    if (recordingGroup.isAllSupported() != null) {
+                        jsonWriter.key("allSupported").value(recordingGroup.isAllSupported());
+                    }
+
+                    com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypesList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(recordingGroup.getResourceTypes());
+                    if (resourceTypesList != null && !(resourceTypesList.isAutoConstruct() && resourceTypesList.isEmpty())) {
+
+                        jsonWriter.key("resourceTypes");
+                        jsonWriter.array();
+
+                        for (String resourceTypesListValue : resourceTypesList) {
+                            if (resourceTypesListValue != null) {
+                                jsonWriter.value(resourceTypesListValue);
+                            }
+                        }
+                        jsonWriter.endArray();
+                    }
+                    jsonWriter.endObject();
+                }
                 jsonWriter.endObject();
             }
 

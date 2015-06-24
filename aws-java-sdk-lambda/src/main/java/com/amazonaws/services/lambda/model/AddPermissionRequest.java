@@ -109,14 +109,14 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
     private String sourceArn;
 
     /**
-     * The AWS account ID (without a hyphen) of the source owner. If the
-     * <code>SourceArn</code> identifies a bucket, then this is the bucket
-     * owner's account ID. You can use this additional condition to ensure
-     * the bucket you specify is owned by a specific account (it is possible
-     * the bucket owner deleted the bucket and some other AWS account created
-     * the bucket). You can also use this condition to specify all sources
-     * (that is, you don't specify the <code>SourceArn</code>) owned by a
-     * specific account.
+     * The AWS account ID (without a hyphen) of the source owner. For
+     * example, if the <code>SourceArn</code> identifies a bucket, then this
+     * is the bucket owner's account ID. You can use this additional
+     * condition to ensure the bucket you specify is owned by a specific
+     * account (it is possible the bucket owner deleted the bucket and some
+     * other AWS account created the bucket). You can also use this condition
+     * to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\d{12}<br/>
@@ -490,80 +490,80 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * The AWS account ID (without a hyphen) of the source owner. If the
-     * <code>SourceArn</code> identifies a bucket, then this is the bucket
-     * owner's account ID. You can use this additional condition to ensure
-     * the bucket you specify is owned by a specific account (it is possible
-     * the bucket owner deleted the bucket and some other AWS account created
-     * the bucket). You can also use this condition to specify all sources
-     * (that is, you don't specify the <code>SourceArn</code>) owned by a
-     * specific account.
+     * The AWS account ID (without a hyphen) of the source owner. For
+     * example, if the <code>SourceArn</code> identifies a bucket, then this
+     * is the bucket owner's account ID. You can use this additional
+     * condition to ensure the bucket you specify is owned by a specific
+     * account (it is possible the bucket owner deleted the bucket and some
+     * other AWS account created the bucket). You can also use this condition
+     * to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\d{12}<br/>
      *
-     * @return The AWS account ID (without a hyphen) of the source owner. If the
-     *         <code>SourceArn</code> identifies a bucket, then this is the bucket
-     *         owner's account ID. You can use this additional condition to ensure
-     *         the bucket you specify is owned by a specific account (it is possible
-     *         the bucket owner deleted the bucket and some other AWS account created
-     *         the bucket). You can also use this condition to specify all sources
-     *         (that is, you don't specify the <code>SourceArn</code>) owned by a
-     *         specific account.
+     * @return The AWS account ID (without a hyphen) of the source owner. For
+     *         example, if the <code>SourceArn</code> identifies a bucket, then this
+     *         is the bucket owner's account ID. You can use this additional
+     *         condition to ensure the bucket you specify is owned by a specific
+     *         account (it is possible the bucket owner deleted the bucket and some
+     *         other AWS account created the bucket). You can also use this condition
+     *         to specify all sources (that is, you don't specify the
+     *         <code>SourceArn</code>) owned by a specific account.
      */
     public String getSourceAccount() {
         return sourceAccount;
     }
     
     /**
-     * The AWS account ID (without a hyphen) of the source owner. If the
-     * <code>SourceArn</code> identifies a bucket, then this is the bucket
-     * owner's account ID. You can use this additional condition to ensure
-     * the bucket you specify is owned by a specific account (it is possible
-     * the bucket owner deleted the bucket and some other AWS account created
-     * the bucket). You can also use this condition to specify all sources
-     * (that is, you don't specify the <code>SourceArn</code>) owned by a
-     * specific account.
+     * The AWS account ID (without a hyphen) of the source owner. For
+     * example, if the <code>SourceArn</code> identifies a bucket, then this
+     * is the bucket owner's account ID. You can use this additional
+     * condition to ensure the bucket you specify is owned by a specific
+     * account (it is possible the bucket owner deleted the bucket and some
+     * other AWS account created the bucket). You can also use this condition
+     * to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\d{12}<br/>
      *
-     * @param sourceAccount The AWS account ID (without a hyphen) of the source owner. If the
-     *         <code>SourceArn</code> identifies a bucket, then this is the bucket
-     *         owner's account ID. You can use this additional condition to ensure
-     *         the bucket you specify is owned by a specific account (it is possible
-     *         the bucket owner deleted the bucket and some other AWS account created
-     *         the bucket). You can also use this condition to specify all sources
-     *         (that is, you don't specify the <code>SourceArn</code>) owned by a
-     *         specific account.
+     * @param sourceAccount The AWS account ID (without a hyphen) of the source owner. For
+     *         example, if the <code>SourceArn</code> identifies a bucket, then this
+     *         is the bucket owner's account ID. You can use this additional
+     *         condition to ensure the bucket you specify is owned by a specific
+     *         account (it is possible the bucket owner deleted the bucket and some
+     *         other AWS account created the bucket). You can also use this condition
+     *         to specify all sources (that is, you don't specify the
+     *         <code>SourceArn</code>) owned by a specific account.
      */
     public void setSourceAccount(String sourceAccount) {
         this.sourceAccount = sourceAccount;
     }
     
     /**
-     * The AWS account ID (without a hyphen) of the source owner. If the
-     * <code>SourceArn</code> identifies a bucket, then this is the bucket
-     * owner's account ID. You can use this additional condition to ensure
-     * the bucket you specify is owned by a specific account (it is possible
-     * the bucket owner deleted the bucket and some other AWS account created
-     * the bucket). You can also use this condition to specify all sources
-     * (that is, you don't specify the <code>SourceArn</code>) owned by a
-     * specific account.
+     * The AWS account ID (without a hyphen) of the source owner. For
+     * example, if the <code>SourceArn</code> identifies a bucket, then this
+     * is the bucket owner's account ID. You can use this additional
+     * condition to ensure the bucket you specify is owned by a specific
+     * account (it is possible the bucket owner deleted the bucket and some
+     * other AWS account created the bucket). You can also use this condition
+     * to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\d{12}<br/>
      *
-     * @param sourceAccount The AWS account ID (without a hyphen) of the source owner. If the
-     *         <code>SourceArn</code> identifies a bucket, then this is the bucket
-     *         owner's account ID. You can use this additional condition to ensure
-     *         the bucket you specify is owned by a specific account (it is possible
-     *         the bucket owner deleted the bucket and some other AWS account created
-     *         the bucket). You can also use this condition to specify all sources
-     *         (that is, you don't specify the <code>SourceArn</code>) owned by a
-     *         specific account.
+     * @param sourceAccount The AWS account ID (without a hyphen) of the source owner. For
+     *         example, if the <code>SourceArn</code> identifies a bucket, then this
+     *         is the bucket owner's account ID. You can use this additional
+     *         condition to ensure the bucket you specify is owned by a specific
+     *         account (it is possible the bucket owner deleted the bucket and some
+     *         other AWS account created the bucket). You can also use this condition
+     *         to specify all sources (that is, you don't specify the
+     *         <code>SourceArn</code>) owned by a specific account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

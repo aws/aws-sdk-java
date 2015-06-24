@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#grantAccess(GrantAccessRequest) GrantAccess operation}.
  * <p>
- * <b>NOTE:</b>This API can be used only with Windows stacks.
+ * <b>NOTE:</b>This action can be used only with Windows stacks.
  * </p>
  * <p>
  * Grants RDP access to a Windows instance for a specified time period.

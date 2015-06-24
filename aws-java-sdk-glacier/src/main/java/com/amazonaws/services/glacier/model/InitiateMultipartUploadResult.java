@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the Amazon Glacier response to your request.
+ * The Amazon Glacier response to your request.
  * </p>
  */
 public class InitiateMultipartUploadResult implements Serializable, Cloneable {

@@ -153,6 +153,10 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     snapshot.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("RestorableNodeTypes/NodeType", targetDepth)) {
+                    snapshot.getRestorableNodeTypes().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return snapshot;

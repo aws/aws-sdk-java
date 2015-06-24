@@ -83,7 +83,8 @@ public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest imp
     private String functionName;
 
     /**
-     * Indicates whether AWS Lambda should begin polling the event source.
+     * Indicates whether AWS Lambda should begin polling the event source,
+     * the default is not enabled.
      */
     private Boolean enabled;
 
@@ -269,29 +270,35 @@ public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Indicates whether AWS Lambda should begin polling the event source.
+     * Indicates whether AWS Lambda should begin polling the event source,
+     * the default is not enabled.
      *
-     * @return Indicates whether AWS Lambda should begin polling the event source.
+     * @return Indicates whether AWS Lambda should begin polling the event source,
+     *         the default is not enabled.
      */
     public Boolean isEnabled() {
         return enabled;
     }
     
     /**
-     * Indicates whether AWS Lambda should begin polling the event source.
+     * Indicates whether AWS Lambda should begin polling the event source,
+     * the default is not enabled.
      *
-     * @param enabled Indicates whether AWS Lambda should begin polling the event source.
+     * @param enabled Indicates whether AWS Lambda should begin polling the event source,
+     *         the default is not enabled.
      */
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
     
     /**
-     * Indicates whether AWS Lambda should begin polling the event source.
+     * Indicates whether AWS Lambda should begin polling the event source,
+     * the default is not enabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param enabled Indicates whether AWS Lambda should begin polling the event source.
+     * @param enabled Indicates whether AWS Lambda should begin polling the event source,
+     *         the default is not enabled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -302,9 +309,11 @@ public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Indicates whether AWS Lambda should begin polling the event source.
+     * Indicates whether AWS Lambda should begin polling the event source,
+     * the default is not enabled.
      *
-     * @return Indicates whether AWS Lambda should begin polling the event source.
+     * @return Indicates whether AWS Lambda should begin polling the event source,
+     *         the default is not enabled.
      */
     public Boolean getEnabled() {
         return enabled;

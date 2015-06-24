@@ -80,7 +80,7 @@ public enum Regions {
         try {
             final String region = EC2MetadataUtils.getEC2InstanceRegion();
             if (region != null)
-                return Region.getRegion(fromName(region));
+                return RegionUtils.getRegion(region);
         } catch (AmazonClientException e) {
             LogFactory.getLog(Regions.class).debug(
                 "Ignoring failure to retrieve the region: " + e.getMessage());
