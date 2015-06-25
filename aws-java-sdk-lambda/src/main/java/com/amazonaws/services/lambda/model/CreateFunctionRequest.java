@@ -56,10 +56,10 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports only "nodejs" or "java8" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      */
     private String runtime;
 
@@ -225,13 +225,13 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports only "nodejs" or "java8" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @return The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports only "nodejs" as the runtime.
+     *         Currently, Lambda supports only "nodejs" or "java8" as the runtime.
      *
      * @see Runtime
      */
@@ -241,13 +241,13 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports only "nodejs" or "java8" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports only "nodejs" as the runtime.
+     *         Currently, Lambda supports only "nodejs" or "java8" as the runtime.
      *
      * @see Runtime
      */
@@ -257,15 +257,15 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports only "nodejs" or "java8" as the runtime.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports only "nodejs" as the runtime.
+     *         Currently, Lambda supports only "nodejs" or "java8" as the runtime.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -279,13 +279,13 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports only "nodejs" or "java8" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports only "nodejs" as the runtime.
+     *         Currently, Lambda supports only "nodejs" or "java8" as the runtime.
      *
      * @see Runtime
      */
@@ -295,15 +295,15 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports only "nodejs" or "java8" as the runtime.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports only "nodejs" as the runtime.
+     *         Currently, Lambda supports only "nodejs" or "java8" as the runtime.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -384,7 +384,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     /**
      * The function within your code that Lambda calls to begin execution.
      * For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     * function.
+     * function. For Java, it is your <i>package-name</i>.<i>class-name</i>::<i>method-name</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
@@ -392,7 +392,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      *
      * @return The function within your code that Lambda calls to begin execution.
      *         For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     *         function.
+     *         function. For Java, it is your <i>package-name</i>.<i>class-name</i>::<i>method-name</i>.
      */
     public String getHandler() {
         return handler;
@@ -401,7 +401,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     /**
      * The function within your code that Lambda calls to begin execution.
      * For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     * function.
+     * function. For Java, it is your <i>package-name</i>.<i>class-name</i>::<i>method-name</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
@@ -409,7 +409,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      *
      * @param handler The function within your code that Lambda calls to begin execution.
      *         For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     *         function.
+     *         function. For Java, it is your <i>package-name</i>.<i>class-name</i>::<i>method-name</i>.
      */
     public void setHandler(String handler) {
         this.handler = handler;
@@ -418,7 +418,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     /**
      * The function within your code that Lambda calls to begin execution.
      * For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     * function.
+     * function. For Java, it is your <i>package-name</i>.<i>class-name</i>::<i>method-name</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -428,7 +428,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      *
      * @param handler The function within your code that Lambda calls to begin execution.
      *         For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     *         function.
+     *         function. For Java, it is your <i>package-name</i>.<i>class-name</i>::<i>method-name</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

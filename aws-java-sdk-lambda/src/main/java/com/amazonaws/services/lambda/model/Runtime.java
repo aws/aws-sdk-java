@@ -19,8 +19,9 @@ package com.amazonaws.services.lambda.model;
  */
 public enum Runtime {
     
-    Nodejs("nodejs");
-
+    Nodejs("nodejs"),
+    Java8("java8");
+    
     private String value;
 
     private Runtime(String value) {
@@ -45,6 +46,8 @@ public enum Runtime {
         
         } else if ("nodejs".equals(value)) {
             return Runtime.Nodejs;
+        } else if ("java8".equals(value)) {
+            return Runtime.Java8;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

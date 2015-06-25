@@ -64,6 +64,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     /**
      * The function that Lambda calls to begin executing your function. For
      * Node.js, it is the <i>module-name.export</i> value in your function.
+     * For Java, it is your <i>package-name</i>.<i>class-name</i>::<i>method-name</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
@@ -242,6 +243,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     /**
      * The function that Lambda calls to begin executing your function. For
      * Node.js, it is the <i>module-name.export</i> value in your function.
+     * For Java, it is your<i>package-name</i>.<i>class-name</i>::<i>method-name</i>>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
@@ -249,6 +251,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      *
      * @return The function that Lambda calls to begin executing your function. For
      *         Node.js, it is the <i>module-name.export</i> value in your function.
+     *         For Java, it is you<i>package-name</i>.<i>class-name</i>::<i>method-name</i>i>.
      */
     public String getHandler() {
         return handler;
@@ -257,6 +260,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     /**
      * The function that Lambda calls to begin executing your function. For
      * Node.js, it is the <i>module-name.export</i> value in your function.
+     * For Java, it is yo<i>package-name</i>.<i>class-name</i>::<i>method-name</i>/i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
@@ -264,6 +268,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      *
      * @param handler The function that Lambda calls to begin executing your function. For
      *         Node.js, it is the <i>module-name.export</i> value in your function.
+     *         For Java, it is y<i>package-name</i>.<i>class-name</i>::<i>method-name</i></i>.
      */
     public void setHandler(String handler) {
         this.handler = handler;
@@ -272,6 +277,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     /**
      * The function that Lambda calls to begin executing your function. For
      * Node.js, it is the <i>module-name.export</i> value in your function.
+     * For Java, it is <i>package-name</i>.<i>class-name</i>::<i>method-name</i>e</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -281,6 +287,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      *
      * @param handler The function that Lambda calls to begin executing your function. For
      *         Node.js, it is the <i>module-name.export</i> value in your function.
+     *         For Java, it is<i>package-name</i>.<i>class-name</i>::<i>method-name</i>me</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
