@@ -21,17 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.config.AmazonConfig#putConfigurationRecorder(PutConfigurationRecorderRequest) PutConfigurationRecorder operation}.
  * <p>
- * Creates a new configuration recorder to record the resource
+ * Creates a new configuration recorder to record the selected resource
  * configurations.
  * </p>
  * <p>
- * You can use this action to change the role ( <code>roleARN</code> ) of
- * an existing recorder. To change the role, call the action on the
- * existing configuration recorder and specify a role.
+ * You can use this action to change the role <code>roleARN</code> and/or
+ * the <code>recordingGroup</code> of an existing recorder. To change the
+ * role, call the action on the existing configuration recorder and
+ * specify a role.
  * </p>
  * <p>
  * <b>NOTE:</b> Currently, you can specify only one configuration
- * recorder per account.
+ * recorder per account. If ConfigurationRecorder does not have the
+ * recordingGroup parameter specified, the default is to record all
+ * supported resource types.
  * </p>
  *
  * @see com.amazonaws.services.config.AmazonConfig#putConfigurationRecorder(PutConfigurationRecorderRequest)

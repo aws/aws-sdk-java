@@ -50,6 +50,12 @@ public class ParameterDeclaration implements Serializable, Cloneable {
     private String description;
 
     /**
+     * The criteria that AWS CloudFormation uses to validate parameter
+     * values.
+     */
+    private ParameterConstraints parameterConstraints;
+
+    /**
      * The name that is associated with the parameter.
      *
      * @return The name that is associated with the parameter.
@@ -232,6 +238,45 @@ public class ParameterDeclaration implements Serializable, Cloneable {
     }
 
     /**
+     * The criteria that AWS CloudFormation uses to validate parameter
+     * values.
+     *
+     * @return The criteria that AWS CloudFormation uses to validate parameter
+     *         values.
+     */
+    public ParameterConstraints getParameterConstraints() {
+        return parameterConstraints;
+    }
+    
+    /**
+     * The criteria that AWS CloudFormation uses to validate parameter
+     * values.
+     *
+     * @param parameterConstraints The criteria that AWS CloudFormation uses to validate parameter
+     *         values.
+     */
+    public void setParameterConstraints(ParameterConstraints parameterConstraints) {
+        this.parameterConstraints = parameterConstraints;
+    }
+    
+    /**
+     * The criteria that AWS CloudFormation uses to validate parameter
+     * values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param parameterConstraints The criteria that AWS CloudFormation uses to validate parameter
+     *         values.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ParameterDeclaration withParameterConstraints(ParameterConstraints parameterConstraints) {
+        this.parameterConstraints = parameterConstraints;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -247,7 +292,8 @@ public class ParameterDeclaration implements Serializable, Cloneable {
         if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");
         if (getParameterType() != null) sb.append("ParameterType: " + getParameterType() + ",");
         if (isNoEcho() != null) sb.append("NoEcho: " + isNoEcho() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() );
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getParameterConstraints() != null) sb.append("ParameterConstraints: " + getParameterConstraints() );
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +308,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getParameterType() == null) ? 0 : getParameterType().hashCode()); 
         hashCode = prime * hashCode + ((isNoEcho() == null) ? 0 : isNoEcho().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getParameterConstraints() == null) ? 0 : getParameterConstraints().hashCode()); 
         return hashCode;
     }
     
@@ -283,6 +330,8 @@ public class ParameterDeclaration implements Serializable, Cloneable {
         if (other.isNoEcho() != null && other.isNoEcho().equals(this.isNoEcho()) == false) return false; 
         if (other.getDescription() == null ^ this.getDescription() == null) return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getParameterConstraints() == null ^ this.getParameterConstraints() == null) return false;
+        if (other.getParameterConstraints() != null && other.getParameterConstraints().equals(this.getParameterConstraints()) == false) return false; 
         return true;
     }
     

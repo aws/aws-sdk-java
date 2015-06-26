@@ -27,9 +27,9 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotAttributeReque
  * specify only one attribute at a time.
  * </p>
  * <p>
- * For more information about Amazon EBS snapshots, see
+ * For more information about EBS snapshots, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshotAttribute(DescribeSnapshotAttributeRequest)
@@ -37,7 +37,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotAttributeReque
 public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeSnapshotAttributeRequest> {
 
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      */
     private String snapshotId;
 
@@ -60,7 +60,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param snapshotId The ID of the Amazon EBS snapshot.
+     * @param snapshotId The ID of the EBS snapshot.
      * @param attribute The snapshot attribute you would like to view.
      */
     public DescribeSnapshotAttributeRequest(String snapshotId, String attribute) {
@@ -73,7 +73,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param snapshotId The ID of the Amazon EBS snapshot.
+     * @param snapshotId The ID of the EBS snapshot.
      * @param attribute The snapshot attribute you would like to view.
      */
     public DescribeSnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute) {
@@ -82,29 +82,29 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      *
-     * @return The ID of the Amazon EBS snapshot.
+     * @return The ID of the EBS snapshot.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      *
-     * @param snapshotId The ID of the Amazon EBS snapshot.
+     * @param snapshotId The ID of the EBS snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The ID of the Amazon EBS snapshot.
+     * The ID of the EBS snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotId The ID of the Amazon EBS snapshot.
+     * @param snapshotId The ID of the EBS snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

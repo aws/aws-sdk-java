@@ -90,14 +90,16 @@ public class UpdateFunctionCodeRequestMarshaller implements Marshaller<Request<U
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FunctionName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FunctionName");
+
             String value = (updateFunctionCodeRequest.getFunctionName() == null) ? null : StringUtils.fromString(updateFunctionCodeRequest.getFunctionName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (updateFunctionCodeRequest.getFunctionName() == null) ? "" : StringUtils.fromString(updateFunctionCodeRequest.getFunctionName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 
@@ -113,6 +115,15 @@ public class UpdateFunctionCodeRequestMarshaller implements Marshaller<Request<U
           
             if (updateFunctionCodeRequest.getZipFile() != null) {
                 jsonWriter.key("ZipFile").value(updateFunctionCodeRequest.getZipFile());
+            }
+            if (updateFunctionCodeRequest.getS3Bucket() != null) {
+                jsonWriter.key("S3Bucket").value(updateFunctionCodeRequest.getS3Bucket());
+            }
+            if (updateFunctionCodeRequest.getS3Key() != null) {
+                jsonWriter.key("S3Key").value(updateFunctionCodeRequest.getS3Key());
+            }
+            if (updateFunctionCodeRequest.getS3ObjectVersion() != null) {
+                jsonWriter.key("S3ObjectVersion").value(updateFunctionCodeRequest.getS3ObjectVersion());
             }
 
           jsonWriter.endObject();

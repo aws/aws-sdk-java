@@ -11,7 +11,7 @@
  * EC2) instance, an Elastic Block Store (EBS) volume, an Elastic network
  * Interface (ENI), or a security group. For a complete list of resources
  * currently supported by AWS Config, see
- * <a href="http://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html"> Supported AWS Resources </a>
+ * <a href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"> Supported AWS Resources </a>
  * .
  * </p>
  * <p>

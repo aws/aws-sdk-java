@@ -19,7 +19,6 @@ import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.apache.commons.logging.Log;
@@ -32,8 +31,6 @@ import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.http.HttpRequest;
 import com.amazonaws.internal.DefaultServiceEndpointBuilder;
 import com.amazonaws.log.CommonsLogFactory;
 import com.amazonaws.metrics.AwsSdkMetrics;
@@ -350,7 +347,7 @@ public abstract class AmazonWebServiceClient {
      * <p>
      * By default, all service endpoints in all regions use the https protocol. To use http instead,
      * specify it in the {@link ClientConfiguration} supplied at construction.
-     * 
+     *
      * @param region
      *            The region this client will communicate with. See
      *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for accessing a given
@@ -377,16 +374,6 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
-     * @deprecated to be removed from this class
-     */
-    @Deprecated
-    public final void setRegion(Regions region) {
-        if (region == null)
-            throw new IllegalArgumentException("No region provided");
-        this.setRegion(Region.getRegion(region));
-    }
-
-    /**
      * Convenient method for setting region.
      *
      * @param region region to set to; must not be null.
@@ -400,22 +387,6 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
-     * @deprecated by client configuration via the constructor.
-     * This method will be removed later on.
-     */
-    @Deprecated
-    public void setConfiguration(ClientConfiguration clientConfiguration) {
-        AmazonHttpClient existingClient = this.client;
-        RequestMetricCollector requestMetricCollector = null;
-        if (existingClient != null) {
-            requestMetricCollector = existingClient.getRequestMetricCollector();
-            existingClient.shutdown();
-        }
-        this.clientConfiguration = clientConfiguration;
-        this.client = new AmazonHttpClient(clientConfiguration, requestMetricCollector);
-    }
-
-    /**
      * Shuts down this client object, releasing any resources that might be held
      * open. This is an optional method, and callers are not expected to call
      * it, but can if they want to explicitly release any open resources. Once a
@@ -424,38 +395,6 @@ public abstract class AmazonWebServiceClient {
      */
     public void shutdown() {
         client.shutdown();
-    }
-
-    /**
-     * Converts a Request<T> object into an HttpRequest object. Copies all the
-     * headers, parameters, etc. from the Request into the new HttpRequest.
-     *
-     * @param request
-     *            The request to convert.
-     * @param methodName
-     *            The HTTP method (GET, PUT, DELETE, HEAD) to use in the
-     *            converted HttpRequest object.
-     *
-     * @return A new HttpRequest object created from the details of the
-     *         specified Request<T> object.
-     */
-    @Deprecated
-    protected <T> HttpRequest convertToHttpRequest(Request<T> request, HttpMethodName methodName) {
-        HttpRequest httpRequest = new HttpRequest(methodName);
-        for (Entry<String, String> parameter : request.getParameters().entrySet()) {
-            httpRequest.addParameter(parameter.getKey(), parameter.getValue());
-        }
-
-        for (Entry<String, String> parameter : request.getHeaders().entrySet()) {
-            httpRequest.addHeader(parameter.getKey(), parameter.getValue());
-        }
-
-        httpRequest.setServiceName(request.getServiceName());
-        httpRequest.setEndpoint(request.getEndpoint());
-        httpRequest.setResourcePath(request.getResourcePath());
-        httpRequest.setOriginalRequest(request.getOriginalRequest());
-
-        return httpRequest;
     }
 
     /**

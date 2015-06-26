@@ -226,6 +226,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     }
 
     private void init() {
+        exceptionUnmarshallers.add(new SnapshotCopyGrantAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotCopyGrantQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedNodeAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHsmConfigurationStateExceptionUnmarshaller());
@@ -250,6 +253,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new ReservedNodeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSnapshotAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyAlreadyEnabledExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotCopyGrantNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTagExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CopyToRegionDisabledExceptionUnmarshaller());
@@ -260,6 +264,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new ClusterParameterGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterParameterGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHsmClientCertificateStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UnsupportedOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSecurityGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResizeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TagLimitExceededExceptionUnmarshaller());
@@ -267,6 +272,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new ClusterParameterGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSubnetQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionSeverityNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidSnapshotCopyGrantStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionAlreadyExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSubnetStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
@@ -478,14 +484,14 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Allows you to purchase reserved nodes. Amazon Redshift offers a
-     * predefined set of reserved node offerings. You can purchase one of the
-     * offerings. You can call the DescribeReservedNodeOfferings API to
-     * obtain the available reserved node offerings. You can call this API by
-     * providing a specific reserved node offering and the number of nodes
-     * you want to reserve.
+     * predefined set of reserved node offerings. You can purchase one or
+     * more of the offerings. You can call the DescribeReservedNodeOfferings
+     * API to obtain the available reserved node offerings. You can call this
+     * API by providing a specific reserved node offering and the number of
+     * nodes you want to reserve.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about reserved node offerings, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -497,6 +503,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the PurchaseReservedNodeOffering service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws UnsupportedOperationException
      * @throws ReservedNodeAlreadyExistsException
      * @throws ReservedNodeOfferingNotFoundException
      * @throws ReservedNodeQuotaExceededException
@@ -630,6 +637,51 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
+     * Deletes the specified snapshot copy grant.
+     * </p>
+     *
+     * @param deleteSnapshotCopyGrantRequest Container for the necessary
+     *           parameters to execute the DeleteSnapshotCopyGrant service method on
+     *           AmazonRedshift.
+     * 
+     * 
+     * @throws InvalidSnapshotCopyGrantStateException
+     * @throws SnapshotCopyGrantNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteSnapshotCopyGrant(DeleteSnapshotCopyGrantRequest deleteSnapshotCopyGrantRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteSnapshotCopyGrantRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteSnapshotCopyGrantRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSnapshotCopyGrantRequestMarshaller().marshall(super.beforeMarshalling(deleteSnapshotCopyGrantRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
      * Modifies the settings for a cluster. For example, you can add another
      * security or parameter group, update the preferred maintenance window,
      * or change the master user password. Resetting a cluster password or
@@ -655,16 +707,17 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * 
      * @throws InvalidClusterSecurityGroupStateException
      * @throws HsmConfigurationNotFoundException
-     * @throws InsufficientClusterCapacityException
-     * @throws UnauthorizedOperationException
      * @throws InvalidClusterStateException
-     * @throws NumberOfNodesQuotaExceededException
-     * @throws ClusterNotFoundException
      * @throws UnsupportedOptionException
-     * @throws ClusterSecurityGroupNotFoundException
-     * @throws HsmClientCertificateNotFoundException
      * @throws ClusterAlreadyExistsException
      * @throws ClusterParameterGroupNotFoundException
+     * @throws InsufficientClusterCapacityException
+     * @throws UnauthorizedOperationException
+     * @throws NumberOfNodesQuotaExceededException
+     * @throws ClusterNotFoundException
+     * @throws LimitExceededException
+     * @throws ClusterSecurityGroupNotFoundException
+     * @throws HsmClientCertificateNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -711,6 +764,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * 
      * 
      * @throws ResourceNotFoundException
+     * @throws InvalidTagException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1127,6 +1181,65 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
+     * Creates a manual snapshot of the specified cluster. The cluster must
+     * be in the <code>available</code> state.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param createClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CreateClusterSnapshot service method on
+     *           AmazonRedshift.
+     * 
+     * @return The response from the CreateClusterSnapshot service method, as
+     *         returned by AmazonRedshift.
+     * 
+     * @throws TagLimitExceededException
+     * @throws ClusterSnapshotAlreadyExistsException
+     * @throws InvalidTagException
+     * @throws InvalidClusterStateException
+     * @throws ClusterNotFoundException
+     * @throws ClusterSnapshotQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Snapshot createClusterSnapshot(CreateClusterSnapshotRequest createClusterSnapshotRequest) {
+        ExecutionContext executionContext = createExecutionContext(createClusterSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateClusterSnapshotRequest> request = null;
+        Response<Snapshot> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(createClusterSnapshotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Deletes a previously provisioned cluster. A successful response from
      * the web service indicates that the request was received correctly. Use
      * DescribeClusters to monitor the status of the deletion. The delete
@@ -1197,65 +1310,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
-     * Creates a manual snapshot of the specified cluster. The cluster must
-     * be in the <code>available</code> state.
-     * </p>
-     * <p>
-     * For more information about working with snapshots, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"> Amazon Redshift Snapshots </a>
-     * in the <i>Amazon Redshift Cluster Management Guide</i> .
-     * </p>
-     *
-     * @param createClusterSnapshotRequest Container for the necessary
-     *           parameters to execute the CreateClusterSnapshot service method on
-     *           AmazonRedshift.
-     * 
-     * @return The response from the CreateClusterSnapshot service method, as
-     *         returned by AmazonRedshift.
-     * 
-     * @throws TagLimitExceededException
-     * @throws ClusterSnapshotAlreadyExistsException
-     * @throws InvalidTagException
-     * @throws InvalidClusterStateException
-     * @throws ClusterNotFoundException
-     * @throws ClusterSnapshotQuotaExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Snapshot createClusterSnapshot(CreateClusterSnapshotRequest createClusterSnapshotRequest) {
-        ExecutionContext executionContext = createExecutionContext(createClusterSnapshotRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateClusterSnapshotRequest> request = null;
-        Response<Snapshot> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(createClusterSnapshotRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * Creates a new cluster. To create the cluster in virtual private cloud
      * (VPC), you must provide cluster subnet group name. If you don't
      * provide a cluster subnet group name or the cluster security group
@@ -1286,6 +1340,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedOperationException
      * @throws NumberOfNodesQuotaExceededException
      * @throws NumberOfNodesPerClusterLimitExceededException
+     * @throws LimitExceededException
      * @throws HsmClientCertificateNotFoundException
      * @throws ClusterQuotaExceededException
      * @throws ClusterSecurityGroupNotFoundException
@@ -1604,7 +1659,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * group family.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -1874,13 +1929,15 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
-     * Creates a new cluster from a snapshot. Amazon Redshift creates the
-     * resulting cluster with the same configuration as the original cluster
-     * from which the snapshot was created, except that the new cluster is
-     * created with the default cluster security and parameter group. After
-     * Amazon Redshift creates the cluster you can use the ModifyCluster API
-     * to associate a different security group and different parameter group
-     * with the restored cluster.
+     * Creates a new cluster from a snapshot. By default, Amazon Redshift
+     * creates the resulting cluster with the same configuration as the
+     * original cluster from which the snapshot was created, except that the
+     * new cluster is created with the default cluster security and parameter
+     * groups. After Amazon Redshift creates the cluster, you can use the
+     * ModifyCluster API to associate a different security group and
+     * different parameter group with the restored cluster. If you are using
+     * a DS node type, you can also choose to change to another DS node type
+     * of the same size during restore.
      * </p>
      * <p>
      * If you restore a cluster into a VPC, you must provide a cluster
@@ -1914,6 +1971,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InsufficientClusterCapacityException
      * @throws NumberOfNodesQuotaExceededException
      * @throws NumberOfNodesPerClusterLimitExceededException
+     * @throws LimitExceededException
      * @throws ClusterSnapshotNotFoundException
      * @throws ClusterQuotaExceededException
      * @throws HsmClientCertificateNotFoundException
@@ -2047,6 +2105,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         by AmazonRedshift.
      * 
      * @throws ResourceNotFoundException
+     * @throws InvalidTagException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2087,7 +2146,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * Modifies the parameters of a parameter group.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -2219,6 +2278,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeClusterSecurityGroups service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws ClusterSecurityGroupNotFoundException
      *
      * @throws AmazonClientException
@@ -2283,6 +2343,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeClusterSubnetGroups service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws ClusterSubnetGroupNotFoundException
      *
      * @throws AmazonClientException
@@ -2348,6 +2409,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         method, as returned by AmazonRedshift.
      * 
      * @throws HsmConfigurationNotFoundException
+     * @throws InvalidTagException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2495,6 +2557,12 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Disables the automatic copying of snapshots from one region to
      * another region for a specified cluster.
+     * </p>
+     * <p>
+     * If your cluster and its snapshots are encrypted using a customer
+     * master key (CMK) from AWS KMS, use DeleteSnapshotCopyGrant to delete
+     * the grant that grants Amazon Redshift permission to the CMK in the
+     * destination region.
      * </p>
      *
      * @param disableSnapshotCopyRequest Container for the necessary
@@ -2682,6 +2750,61 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
+     * Returns a list of snapshot copy grants owned by the AWS account in
+     * the destination region.
+     * </p>
+     * <p>
+     * For more information about managing snapshot copy grants, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html"> Amazon Redshift Database Encryption </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param describeSnapshotCopyGrantsRequest Container for the necessary
+     *           parameters to execute the DescribeSnapshotCopyGrants service method on
+     *           AmazonRedshift.
+     * 
+     * @return The response from the DescribeSnapshotCopyGrants service
+     *         method, as returned by AmazonRedshift.
+     * 
+     * @throws InvalidTagException
+     * @throws SnapshotCopyGrantNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeSnapshotCopyGrantsResult describeSnapshotCopyGrants(DescribeSnapshotCopyGrantsRequest describeSnapshotCopyGrantsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeSnapshotCopyGrantsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSnapshotCopyGrantsRequest> request = null;
+        Response<DescribeSnapshotCopyGrantsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSnapshotCopyGrantsRequestMarshaller().marshall(super.beforeMarshalling(describeSnapshotCopyGrantsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeSnapshotCopyGrantsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Authorizes the specified AWS customer account to restore the
      * specified snapshot.
      * </p>
@@ -2753,9 +2876,11 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedOperationException
      * @throws InvalidClusterStateException
      * @throws ClusterNotFoundException
+     * @throws LimitExceededException
      * @throws IncompatibleOrderableOptionsException
      * @throws SnapshotCopyAlreadyEnabledException
      * @throws UnknownSnapshotCopyRegionException
+     * @throws SnapshotCopyGrantNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2802,7 +2927,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * or more nodes for your Amazon Redshift cluster.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about reserved node offerings, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -2814,6 +2939,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeReservedNodeOfferings service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws UnsupportedOperationException
      * @throws ReservedNodeOfferingNotFoundException
      *
      * @throws AmazonClientException
@@ -3084,6 +3210,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeHsmClientCertificates service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws HsmClientCertificateNotFoundException
      *
      * @throws AmazonClientException
@@ -3134,7 +3261,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * specify <i>source</i> equal to <i>user</i> .
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -3328,6 +3455,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeClusters service method, as
      *         returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws ClusterNotFoundException
      *
      * @throws AmazonClientException
@@ -3395,6 +3523,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeClusterSnapshots service method,
      *         as returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws ClusterSnapshotNotFoundException
      *
      * @throws AmazonClientException
@@ -3444,7 +3573,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Parameters in the parameter group define specific behavior that
      * applies to the databases you create on the cluster. For more
-     * information about managing parameter groups, go to
+     * information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -3505,7 +3634,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * group.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -3530,6 +3659,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeClusterParameterGroups service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws ClusterParameterGroupNotFoundException
      *
      * @throws AmazonClientException
@@ -3558,6 +3688,65 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             }
 
             response = invoke(request, new DescribeClusterParameterGroupsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Creates a snapshot copy grant that permits Amazon Redshift to use a
+     * customer master key (CMK) from AWS Key Management Service (AWS KMS) to
+     * encrypt copied snapshots in a destination region.
+     * </p>
+     * <p>
+     * For more information about managing snapshot copy grants, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html"> Amazon Redshift Database Encryption </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     *
+     * @param createSnapshotCopyGrantRequest Container for the necessary
+     *           parameters to execute the CreateSnapshotCopyGrant service method on
+     *           AmazonRedshift.
+     * 
+     * @return The response from the CreateSnapshotCopyGrant service method,
+     *         as returned by AmazonRedshift.
+     * 
+     * @throws TagLimitExceededException
+     * @throws InvalidTagException
+     * @throws LimitExceededException
+     * @throws SnapshotCopyGrantAlreadyExistsException
+     * @throws SnapshotCopyGrantQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public SnapshotCopyGrant createSnapshotCopyGrant(CreateSnapshotCopyGrantRequest createSnapshotCopyGrantRequest) {
+        ExecutionContext executionContext = createExecutionContext(createSnapshotCopyGrantRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSnapshotCopyGrantRequest> request = null;
+        Response<SnapshotCopyGrant> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSnapshotCopyGrantRequestMarshaller().marshall(super.beforeMarshalling(createSnapshotCopyGrantRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new SnapshotCopyGrantStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -3706,6 +3895,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         by AmazonRedshift.
      * 
      * @throws ResourceNotFoundException
+     * @throws InvalidTagException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3772,6 +3962,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeClusterSecurityGroups service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws ClusterSecurityGroupNotFoundException
      *
      * @throws AmazonClientException
@@ -3810,6 +4001,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeClusterSubnetGroups service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws ClusterSubnetGroupNotFoundException
      *
      * @throws AmazonClientException
@@ -3849,6 +4041,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         method, as returned by AmazonRedshift.
      * 
      * @throws HsmConfigurationNotFoundException
+     * @throws InvalidTagException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3864,6 +4057,35 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
+     * Returns a list of snapshot copy grants owned by the AWS account in
+     * the destination region.
+     * </p>
+     * <p>
+     * For more information about managing snapshot copy grants, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html"> Amazon Redshift Database Encryption </a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i> .
+     * </p>
+     * 
+     * @return The response from the DescribeSnapshotCopyGrants service
+     *         method, as returned by AmazonRedshift.
+     * 
+     * @throws InvalidTagException
+     * @throws SnapshotCopyGrantNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeSnapshotCopyGrantsResult describeSnapshotCopyGrants() throws AmazonServiceException, AmazonClientException {
+        return describeSnapshotCopyGrants(new DescribeSnapshotCopyGrantsRequest());
+    }
+    
+    /**
+     * <p>
      * Returns a list of the available reserved node offerings by Amazon
      * Redshift with their descriptions including the node type, the fixed
      * and recurring costs of reserving the node and duration the node will
@@ -3873,7 +4095,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * or more nodes for your Amazon Redshift cluster.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about reserved node offerings, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -3881,6 +4103,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeReservedNodeOfferings service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws UnsupportedOperationException
      * @throws ReservedNodeOfferingNotFoundException
      *
      * @throws AmazonClientException
@@ -3943,6 +4166,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeHsmClientCertificates service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws HsmClientCertificateNotFoundException
      *
      * @throws AmazonClientException
@@ -3984,6 +4208,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeClusters service method, as
      *         returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws ClusterNotFoundException
      *
      * @throws AmazonClientException
@@ -4025,6 +4250,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeClusterSnapshots service method,
      *         as returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws ClusterSnapshotNotFoundException
      *
      * @throws AmazonClientException
@@ -4049,7 +4275,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * group.
      * </p>
      * <p>
-     * For more information about managing parameter groups, go to
+     * For more information about parameters and parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Cluster Management Guide</i> .
      * </p>
@@ -4070,6 +4296,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DescribeClusterParameterGroups service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws InvalidTagException
      * @throws ClusterParameterGroupNotFoundException
      *
      * @throws AmazonClientException
@@ -4111,9 +4338,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        for (Entry<String, String> entry : originalRequest.copyPrivateRequestParameters().entrySet()) {
-            request.addParameter(entry.getKey(), entry.getValue());
-        }
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         if (originalRequest.getRequestCredentials() != null) {

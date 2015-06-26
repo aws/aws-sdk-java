@@ -39,6 +39,14 @@ public class NetworkBinding implements Serializable, Cloneable {
     private Integer hostPort;
 
     /**
+     * The protocol used for the network binding.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>tcp, udp
+     */
+    private String protocol;
+
+    /**
      * The IP address that the container is bound to on the container
      * instance.
      *
@@ -150,6 +158,88 @@ public class NetworkBinding implements Serializable, Cloneable {
     }
 
     /**
+     * The protocol used for the network binding.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>tcp, udp
+     *
+     * @return The protocol used for the network binding.
+     *
+     * @see TransportProtocol
+     */
+    public String getProtocol() {
+        return protocol;
+    }
+    
+    /**
+     * The protocol used for the network binding.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>tcp, udp
+     *
+     * @param protocol The protocol used for the network binding.
+     *
+     * @see TransportProtocol
+     */
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+    
+    /**
+     * The protocol used for the network binding.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>tcp, udp
+     *
+     * @param protocol The protocol used for the network binding.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see TransportProtocol
+     */
+    public NetworkBinding withProtocol(String protocol) {
+        this.protocol = protocol;
+        return this;
+    }
+
+    /**
+     * The protocol used for the network binding.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>tcp, udp
+     *
+     * @param protocol The protocol used for the network binding.
+     *
+     * @see TransportProtocol
+     */
+    public void setProtocol(TransportProtocol protocol) {
+        this.protocol = protocol.toString();
+    }
+    
+    /**
+     * The protocol used for the network binding.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>tcp, udp
+     *
+     * @param protocol The protocol used for the network binding.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see TransportProtocol
+     */
+    public NetworkBinding withProtocol(TransportProtocol protocol) {
+        this.protocol = protocol.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -163,7 +253,8 @@ public class NetworkBinding implements Serializable, Cloneable {
         sb.append("{");
         if (getBindIP() != null) sb.append("BindIP: " + getBindIP() + ",");
         if (getContainerPort() != null) sb.append("ContainerPort: " + getContainerPort() + ",");
-        if (getHostPort() != null) sb.append("HostPort: " + getHostPort() );
+        if (getHostPort() != null) sb.append("HostPort: " + getHostPort() + ",");
+        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() );
         sb.append("}");
         return sb.toString();
     }
@@ -176,6 +267,7 @@ public class NetworkBinding implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getBindIP() == null) ? 0 : getBindIP().hashCode()); 
         hashCode = prime * hashCode + ((getContainerPort() == null) ? 0 : getContainerPort().hashCode()); 
         hashCode = prime * hashCode + ((getHostPort() == null) ? 0 : getHostPort().hashCode()); 
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode()); 
         return hashCode;
     }
     
@@ -193,6 +285,8 @@ public class NetworkBinding implements Serializable, Cloneable {
         if (other.getContainerPort() != null && other.getContainerPort().equals(this.getContainerPort()) == false) return false; 
         if (other.getHostPort() == null ^ this.getHostPort() == null) return false;
         if (other.getHostPort() != null && other.getHostPort().equals(this.getHostPort()) == false) return false; 
+        if (other.getProtocol() == null ^ this.getProtocol() == null) return false;
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false) return false; 
         return true;
     }
     

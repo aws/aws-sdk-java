@@ -22,9 +22,9 @@ import java.io.Serializable;
 public class CreateGrantResult implements Serializable, Cloneable {
 
     /**
-     * The grant token. A grant token is a string that identifies a grant and
-     * which can be used to make a grant take effect immediately. A token
-     * contains all of the information necessary to create a grant.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8192<br/>
@@ -41,50 +41,50 @@ public class CreateGrantResult implements Serializable, Cloneable {
     private String grantId;
 
     /**
-     * The grant token. A grant token is a string that identifies a grant and
-     * which can be used to make a grant take effect immediately. A token
-     * contains all of the information necessary to create a grant.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8192<br/>
      *
-     * @return The grant token. A grant token is a string that identifies a grant and
-     *         which can be used to make a grant take effect immediately. A token
-     *         contains all of the information necessary to create a grant.
+     * @return For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      */
     public String getGrantToken() {
         return grantToken;
     }
     
     /**
-     * The grant token. A grant token is a string that identifies a grant and
-     * which can be used to make a grant take effect immediately. A token
-     * contains all of the information necessary to create a grant.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8192<br/>
      *
-     * @param grantToken The grant token. A grant token is a string that identifies a grant and
-     *         which can be used to make a grant take effect immediately. A token
-     *         contains all of the information necessary to create a grant.
+     * @param grantToken For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      */
     public void setGrantToken(String grantToken) {
         this.grantToken = grantToken;
     }
     
     /**
-     * The grant token. A grant token is a string that identifies a grant and
-     * which can be used to make a grant take effect immediately. A token
-     * contains all of the information necessary to create a grant.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8192<br/>
      *
-     * @param grantToken The grant token. A grant token is a string that identifies a grant and
-     *         which can be used to make a grant take effect immediately. A token
-     *         contains all of the information necessary to create a grant.
+     * @param grantToken For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

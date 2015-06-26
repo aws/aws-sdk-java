@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -29,26 +29,34 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Artifact StAX Unmarshaller
  */
-public class ArtifactStaxUnmarshaller implements Unmarshaller<Artifact, StaxUnmarshallerContext> {
+public class ArtifactStaxUnmarshaller implements
+        Unmarshaller<Artifact, StaxUnmarshallerContext> {
 
-    public Artifact unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public Artifact unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         Artifact artifact = new Artifact();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return artifact;
+            if (xmlEvent.isEndDocument())
+                return artifact;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("Description", targetDepth)) {
-                    artifact.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    artifact.setDescription(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("URL", targetDepth)) {
-                    artifact.setURL(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    artifact.setURL(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -60,9 +68,10 @@ public class ArtifactStaxUnmarshaller implements Unmarshaller<Artifact, StaxUnma
     }
 
     private static ArtifactStaxUnmarshaller instance;
+
     public static ArtifactStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ArtifactStaxUnmarshaller();
+        if (instance == null)
+            instance = new ArtifactStaxUnmarshaller();
         return instance;
     }
 }
-    

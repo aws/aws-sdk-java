@@ -90,14 +90,16 @@ public class GetPolicyRequestMarshaller implements Marshaller<Request<GetPolicyR
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FunctionName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FunctionName");
+
             String value = (getPolicyRequest.getFunctionName() == null) ? null : StringUtils.fromString(getPolicyRequest.getFunctionName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (getPolicyRequest.getFunctionName() == null) ? "" : StringUtils.fromString(getPolicyRequest.getFunctionName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

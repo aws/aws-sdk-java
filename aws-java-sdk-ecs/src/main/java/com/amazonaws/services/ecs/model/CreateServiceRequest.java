@@ -47,7 +47,9 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service.
+     * the task definition that you want to run in your service. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used.
      */
     private String taskDefinition;
 
@@ -66,7 +68,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. Up to 64 ASCII characters are allowed.
+     * idempotency of the request. Up to 32 ASCII characters are allowed.
      */
     private String clientToken;
 
@@ -165,11 +167,15 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service.
+     * the task definition that you want to run in your service. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used.
      *
      * @return The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run in your service.
+     *         the task definition that you want to run in your service. If a
+     *         <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     *         revision is used.
      */
     public String getTaskDefinition() {
         return taskDefinition;
@@ -178,11 +184,15 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service.
+     * the task definition that you want to run in your service. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run in your service.
+     *         the task definition that you want to run in your service. If a
+     *         <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     *         revision is used.
      */
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
@@ -191,13 +201,17 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to run in your service.
+     * the task definition that you want to run in your service. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to run in your service.
+     *         the task definition that you want to run in your service. If a
+     *         <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     *         revision is used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -337,10 +351,10 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. Up to 64 ASCII characters are allowed.
+     * idempotency of the request. Up to 32 ASCII characters are allowed.
      *
      * @return Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request. Up to 64 ASCII characters are allowed.
+     *         idempotency of the request. Up to 32 ASCII characters are allowed.
      */
     public String getClientToken() {
         return clientToken;
@@ -348,10 +362,10 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. Up to 64 ASCII characters are allowed.
+     * idempotency of the request. Up to 32 ASCII characters are allowed.
      *
      * @param clientToken Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request. Up to 64 ASCII characters are allowed.
+     *         idempotency of the request. Up to 32 ASCII characters are allowed.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
@@ -359,12 +373,12 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. Up to 64 ASCII characters are allowed.
+     * idempotency of the request. Up to 32 ASCII characters are allowed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clientToken Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request. Up to 64 ASCII characters are allowed.
+     *         idempotency of the request. Up to 32 ASCII characters are allowed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

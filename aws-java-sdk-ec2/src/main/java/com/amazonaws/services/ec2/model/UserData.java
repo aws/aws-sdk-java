@@ -17,36 +17,41 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * User Data
+ * <p>
+ * Describes the user data to be made available to an instance.
+ * </p>
  */
 public class UserData implements Serializable, Cloneable {
 
+    /**
+     * The Base64-encoded MIME user data for the instance.
+     */
     private String data;
 
     /**
-     * Returns the value of the Data property for this object.
+     * The Base64-encoded MIME user data for the instance.
      *
-     * @return The value of the Data property for this object.
+     * @return The Base64-encoded MIME user data for the instance.
      */
     public String getData() {
         return data;
     }
     
     /**
-     * Sets the value of the Data property for this object.
+     * The Base64-encoded MIME user data for the instance.
      *
-     * @param data The new value for the Data property for this object.
+     * @param data The Base64-encoded MIME user data for the instance.
      */
     public void setData(String data) {
         this.data = data;
     }
     
     /**
-     * Sets the value of the Data property for this object.
+     * The Base64-encoded MIME user data for the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param data The new value for the Data property for this object.
+     * @param data The Base64-encoded MIME user data for the instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class DetachVolumeResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * Information about the volume attachment.
      */
     private VolumeAttachment attachment;
 
     /**
-     * 
+     * Information about the volume attachment.
      *
-     * @return 
+     * @return Information about the volume attachment.
      */
     public VolumeAttachment getAttachment() {
         return attachment;
     }
     
     /**
-     * 
+     * Information about the volume attachment.
      *
-     * @param attachment 
+     * @param attachment Information about the volume attachment.
      */
     public void setAttachment(VolumeAttachment attachment) {
         this.attachment = attachment;
     }
     
     /**
-     * 
+     * Information about the volume attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachment 
+     * @param attachment Information about the volume attachment.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

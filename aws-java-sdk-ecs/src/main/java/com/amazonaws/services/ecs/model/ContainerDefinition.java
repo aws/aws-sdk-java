@@ -43,22 +43,55 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * The number of <code>cpu</code> units reserved for the container. A
      * container instance has 1,024 <code>cpu</code> units for every CPU
-     * core.
+     * core. This parameter specifies the minimum amount of CPU to reserve
+     * for a container, and containers share unallocated CPU units with other
+     * containers on the instance with the same ratio as their allocated
+     * amount. <p>For example, if you run a single-container task on a
+     * single-core instance type with 512 CPU units specified for that
+     * container, and that is the only task running on the container
+     * instance, that container could use the full 1,024 CPU unit share at
+     * any given time. However, if you launched another copy of the same task
+     * on that container instance, each task would be guaranteed a minimum of
+     * 512 CPU units when needed, and each container could float to higher
+     * CPU usage if the other container was not using it, but if both tasks
+     * were 100% active all of the time, they would be limited to 512 CPU
+     * units. <p>The Docker daemon on the container instance uses the CPU
+     * value to calculate the relative CPU share ratios for running
+     * containers. For more information, see <a
+     * href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     * share constraint</a> in the Docker documentation. The minimum valid
+     * CPU share value that the Linux kernel will allow is 2; however, the
+     * CPU parameter is not required, and you can use CPU values below 2 in
+     * your container definitions. For CPU values below 2 (including null),
+     * the behavior varies based on your Amazon ECS container agent version:
+     * <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     * zero CPU values are passed to Docker as 0, which Docker then converts
+     * to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     * the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     * are passed to Docker as 2.</li></ul>
      */
     private Integer cpu;
 
     /**
-     * The number of MiB of memory reserved for the container. Docker will
-     * allocate a minimum of 4 MiB of memory to a container.
+     * The number of MiB of memory reserved for the container. If your
+     * container attempts to exceed the memory allocated here, the container
+     * is killed.
      */
     private Integer memory;
 
     /**
      * The <code>link</code> parameter allows containers to communicate with
      * each other without the need for port mappings, using the
-     * <code>name</code> parameter. For more information on linking Docker
-     * containers, see <a
+     * <code>name</code> parameter. The <code>name:internalName</code>
+     * construct is analogous to <code>name:alias</code> in Docker links. For
+     * more information on linking Docker containers, see <a
      * href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
+     * <important> <p>Containers that are collocated on a single container
+     * instance may be able to communicate with each other without requiring
+     * links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.
+     * </important>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> links;
 
@@ -72,7 +105,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>true</code>, the failure of that container will stop the task.
      * If the <code>essential</code> parameter of a container is marked as
      * <code>false</code>, then its failure will not affect the rest of the
-     * containers in a task.
+     * containers in a task. If this parameter is omitted, a container is
+     * assumed to be essential. <note> <p>All tasks must have at least one
+     * essential container. </note>
      */
     private Boolean essential;
 
@@ -215,11 +250,63 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * The number of <code>cpu</code> units reserved for the container. A
      * container instance has 1,024 <code>cpu</code> units for every CPU
-     * core.
+     * core. This parameter specifies the minimum amount of CPU to reserve
+     * for a container, and containers share unallocated CPU units with other
+     * containers on the instance with the same ratio as their allocated
+     * amount. <p>For example, if you run a single-container task on a
+     * single-core instance type with 512 CPU units specified for that
+     * container, and that is the only task running on the container
+     * instance, that container could use the full 1,024 CPU unit share at
+     * any given time. However, if you launched another copy of the same task
+     * on that container instance, each task would be guaranteed a minimum of
+     * 512 CPU units when needed, and each container could float to higher
+     * CPU usage if the other container was not using it, but if both tasks
+     * were 100% active all of the time, they would be limited to 512 CPU
+     * units. <p>The Docker daemon on the container instance uses the CPU
+     * value to calculate the relative CPU share ratios for running
+     * containers. For more information, see <a
+     * href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     * share constraint</a> in the Docker documentation. The minimum valid
+     * CPU share value that the Linux kernel will allow is 2; however, the
+     * CPU parameter is not required, and you can use CPU values below 2 in
+     * your container definitions. For CPU values below 2 (including null),
+     * the behavior varies based on your Amazon ECS container agent version:
+     * <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     * zero CPU values are passed to Docker as 0, which Docker then converts
+     * to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     * the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     * are passed to Docker as 2.</li></ul>
      *
      * @return The number of <code>cpu</code> units reserved for the container. A
      *         container instance has 1,024 <code>cpu</code> units for every CPU
-     *         core.
+     *         core. This parameter specifies the minimum amount of CPU to reserve
+     *         for a container, and containers share unallocated CPU units with other
+     *         containers on the instance with the same ratio as their allocated
+     *         amount. <p>For example, if you run a single-container task on a
+     *         single-core instance type with 512 CPU units specified for that
+     *         container, and that is the only task running on the container
+     *         instance, that container could use the full 1,024 CPU unit share at
+     *         any given time. However, if you launched another copy of the same task
+     *         on that container instance, each task would be guaranteed a minimum of
+     *         512 CPU units when needed, and each container could float to higher
+     *         CPU usage if the other container was not using it, but if both tasks
+     *         were 100% active all of the time, they would be limited to 512 CPU
+     *         units. <p>The Docker daemon on the container instance uses the CPU
+     *         value to calculate the relative CPU share ratios for running
+     *         containers. For more information, see <a
+     *         href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     *         share constraint</a> in the Docker documentation. The minimum valid
+     *         CPU share value that the Linux kernel will allow is 2; however, the
+     *         CPU parameter is not required, and you can use CPU values below 2 in
+     *         your container definitions. For CPU values below 2 (including null),
+     *         the behavior varies based on your Amazon ECS container agent version:
+     *         <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     *         zero CPU values are passed to Docker as 0, which Docker then converts
+     *         to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     *         the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     *         greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     *         are passed to Docker as 2.</li></ul>
      */
     public Integer getCpu() {
         return cpu;
@@ -228,11 +315,63 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * The number of <code>cpu</code> units reserved for the container. A
      * container instance has 1,024 <code>cpu</code> units for every CPU
-     * core.
+     * core. This parameter specifies the minimum amount of CPU to reserve
+     * for a container, and containers share unallocated CPU units with other
+     * containers on the instance with the same ratio as their allocated
+     * amount. <p>For example, if you run a single-container task on a
+     * single-core instance type with 512 CPU units specified for that
+     * container, and that is the only task running on the container
+     * instance, that container could use the full 1,024 CPU unit share at
+     * any given time. However, if you launched another copy of the same task
+     * on that container instance, each task would be guaranteed a minimum of
+     * 512 CPU units when needed, and each container could float to higher
+     * CPU usage if the other container was not using it, but if both tasks
+     * were 100% active all of the time, they would be limited to 512 CPU
+     * units. <p>The Docker daemon on the container instance uses the CPU
+     * value to calculate the relative CPU share ratios for running
+     * containers. For more information, see <a
+     * href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     * share constraint</a> in the Docker documentation. The minimum valid
+     * CPU share value that the Linux kernel will allow is 2; however, the
+     * CPU parameter is not required, and you can use CPU values below 2 in
+     * your container definitions. For CPU values below 2 (including null),
+     * the behavior varies based on your Amazon ECS container agent version:
+     * <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     * zero CPU values are passed to Docker as 0, which Docker then converts
+     * to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     * the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     * are passed to Docker as 2.</li></ul>
      *
      * @param cpu The number of <code>cpu</code> units reserved for the container. A
      *         container instance has 1,024 <code>cpu</code> units for every CPU
-     *         core.
+     *         core. This parameter specifies the minimum amount of CPU to reserve
+     *         for a container, and containers share unallocated CPU units with other
+     *         containers on the instance with the same ratio as their allocated
+     *         amount. <p>For example, if you run a single-container task on a
+     *         single-core instance type with 512 CPU units specified for that
+     *         container, and that is the only task running on the container
+     *         instance, that container could use the full 1,024 CPU unit share at
+     *         any given time. However, if you launched another copy of the same task
+     *         on that container instance, each task would be guaranteed a minimum of
+     *         512 CPU units when needed, and each container could float to higher
+     *         CPU usage if the other container was not using it, but if both tasks
+     *         were 100% active all of the time, they would be limited to 512 CPU
+     *         units. <p>The Docker daemon on the container instance uses the CPU
+     *         value to calculate the relative CPU share ratios for running
+     *         containers. For more information, see <a
+     *         href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     *         share constraint</a> in the Docker documentation. The minimum valid
+     *         CPU share value that the Linux kernel will allow is 2; however, the
+     *         CPU parameter is not required, and you can use CPU values below 2 in
+     *         your container definitions. For CPU values below 2 (including null),
+     *         the behavior varies based on your Amazon ECS container agent version:
+     *         <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     *         zero CPU values are passed to Docker as 0, which Docker then converts
+     *         to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     *         the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     *         greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     *         are passed to Docker as 2.</li></ul>
      */
     public void setCpu(Integer cpu) {
         this.cpu = cpu;
@@ -241,13 +380,65 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * The number of <code>cpu</code> units reserved for the container. A
      * container instance has 1,024 <code>cpu</code> units for every CPU
-     * core.
+     * core. This parameter specifies the minimum amount of CPU to reserve
+     * for a container, and containers share unallocated CPU units with other
+     * containers on the instance with the same ratio as their allocated
+     * amount. <p>For example, if you run a single-container task on a
+     * single-core instance type with 512 CPU units specified for that
+     * container, and that is the only task running on the container
+     * instance, that container could use the full 1,024 CPU unit share at
+     * any given time. However, if you launched another copy of the same task
+     * on that container instance, each task would be guaranteed a minimum of
+     * 512 CPU units when needed, and each container could float to higher
+     * CPU usage if the other container was not using it, but if both tasks
+     * were 100% active all of the time, they would be limited to 512 CPU
+     * units. <p>The Docker daemon on the container instance uses the CPU
+     * value to calculate the relative CPU share ratios for running
+     * containers. For more information, see <a
+     * href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     * share constraint</a> in the Docker documentation. The minimum valid
+     * CPU share value that the Linux kernel will allow is 2; however, the
+     * CPU parameter is not required, and you can use CPU values below 2 in
+     * your container definitions. For CPU values below 2 (including null),
+     * the behavior varies based on your Amazon ECS container agent version:
+     * <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     * zero CPU values are passed to Docker as 0, which Docker then converts
+     * to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     * the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     * are passed to Docker as 2.</li></ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cpu The number of <code>cpu</code> units reserved for the container. A
      *         container instance has 1,024 <code>cpu</code> units for every CPU
-     *         core.
+     *         core. This parameter specifies the minimum amount of CPU to reserve
+     *         for a container, and containers share unallocated CPU units with other
+     *         containers on the instance with the same ratio as their allocated
+     *         amount. <p>For example, if you run a single-container task on a
+     *         single-core instance type with 512 CPU units specified for that
+     *         container, and that is the only task running on the container
+     *         instance, that container could use the full 1,024 CPU unit share at
+     *         any given time. However, if you launched another copy of the same task
+     *         on that container instance, each task would be guaranteed a minimum of
+     *         512 CPU units when needed, and each container could float to higher
+     *         CPU usage if the other container was not using it, but if both tasks
+     *         were 100% active all of the time, they would be limited to 512 CPU
+     *         units. <p>The Docker daemon on the container instance uses the CPU
+     *         value to calculate the relative CPU share ratios for running
+     *         containers. For more information, see <a
+     *         href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+     *         share constraint</a> in the Docker documentation. The minimum valid
+     *         CPU share value that the Linux kernel will allow is 2; however, the
+     *         CPU parameter is not required, and you can use CPU values below 2 in
+     *         your container definitions. For CPU values below 2 (including null),
+     *         the behavior varies based on your Amazon ECS container agent version:
+     *         <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
+     *         zero CPU values are passed to Docker as 0, which Docker then converts
+     *         to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     *         the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions
+     *         greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1
+     *         are passed to Docker as 2.</li></ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -258,35 +449,41 @@ public class ContainerDefinition implements Serializable, Cloneable {
     }
 
     /**
-     * The number of MiB of memory reserved for the container. Docker will
-     * allocate a minimum of 4 MiB of memory to a container.
+     * The number of MiB of memory reserved for the container. If your
+     * container attempts to exceed the memory allocated here, the container
+     * is killed.
      *
-     * @return The number of MiB of memory reserved for the container. Docker will
-     *         allocate a minimum of 4 MiB of memory to a container.
+     * @return The number of MiB of memory reserved for the container. If your
+     *         container attempts to exceed the memory allocated here, the container
+     *         is killed.
      */
     public Integer getMemory() {
         return memory;
     }
     
     /**
-     * The number of MiB of memory reserved for the container. Docker will
-     * allocate a minimum of 4 MiB of memory to a container.
+     * The number of MiB of memory reserved for the container. If your
+     * container attempts to exceed the memory allocated here, the container
+     * is killed.
      *
-     * @param memory The number of MiB of memory reserved for the container. Docker will
-     *         allocate a minimum of 4 MiB of memory to a container.
+     * @param memory The number of MiB of memory reserved for the container. If your
+     *         container attempts to exceed the memory allocated here, the container
+     *         is killed.
      */
     public void setMemory(Integer memory) {
         this.memory = memory;
     }
     
     /**
-     * The number of MiB of memory reserved for the container. Docker will
-     * allocate a minimum of 4 MiB of memory to a container.
+     * The number of MiB of memory reserved for the container. If your
+     * container attempts to exceed the memory allocated here, the container
+     * is killed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param memory The number of MiB of memory reserved for the container. Docker will
-     *         allocate a minimum of 4 MiB of memory to a container.
+     * @param memory The number of MiB of memory reserved for the container. If your
+     *         container attempts to exceed the memory allocated here, the container
+     *         is killed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -299,15 +496,27 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * The <code>link</code> parameter allows containers to communicate with
      * each other without the need for port mappings, using the
-     * <code>name</code> parameter. For more information on linking Docker
-     * containers, see <a
+     * <code>name</code> parameter. The <code>name:internalName</code>
+     * construct is analogous to <code>name:alias</code> in Docker links. For
+     * more information on linking Docker containers, see <a
      * href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
+     * <important> <p>Containers that are collocated on a single container
+     * instance may be able to communicate with each other without requiring
+     * links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.
+     * </important>
      *
      * @return The <code>link</code> parameter allows containers to communicate with
      *         each other without the need for port mappings, using the
-     *         <code>name</code> parameter. For more information on linking Docker
-     *         containers, see <a
+     *         <code>name</code> parameter. The <code>name:internalName</code>
+     *         construct is analogous to <code>name:alias</code> in Docker links. For
+     *         more information on linking Docker containers, see <a
      *         href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
+     *         <important> <p>Containers that are collocated on a single container
+     *         instance may be able to communicate with each other without requiring
+     *         links or host port mappings. Network isolation is achieved on the
+     *         container instance using security groups and VPC settings.
+     *         </important>
      */
     public java.util.List<String> getLinks() {
         if (links == null) {
@@ -320,15 +529,27 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * The <code>link</code> parameter allows containers to communicate with
      * each other without the need for port mappings, using the
-     * <code>name</code> parameter. For more information on linking Docker
-     * containers, see <a
+     * <code>name</code> parameter. The <code>name:internalName</code>
+     * construct is analogous to <code>name:alias</code> in Docker links. For
+     * more information on linking Docker containers, see <a
      * href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
+     * <important> <p>Containers that are collocated on a single container
+     * instance may be able to communicate with each other without requiring
+     * links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.
+     * </important>
      *
      * @param links The <code>link</code> parameter allows containers to communicate with
      *         each other without the need for port mappings, using the
-     *         <code>name</code> parameter. For more information on linking Docker
-     *         containers, see <a
+     *         <code>name</code> parameter. The <code>name:internalName</code>
+     *         construct is analogous to <code>name:alias</code> in Docker links. For
+     *         more information on linking Docker containers, see <a
      *         href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
+     *         <important> <p>Containers that are collocated on a single container
+     *         instance may be able to communicate with each other without requiring
+     *         links or host port mappings. Network isolation is achieved on the
+     *         container instance using security groups and VPC settings.
+     *         </important>
      */
     public void setLinks(java.util.Collection<String> links) {
         if (links == null) {
@@ -343,9 +564,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * The <code>link</code> parameter allows containers to communicate with
      * each other without the need for port mappings, using the
-     * <code>name</code> parameter. For more information on linking Docker
-     * containers, see <a
+     * <code>name</code> parameter. The <code>name:internalName</code>
+     * construct is analogous to <code>name:alias</code> in Docker links. For
+     * more information on linking Docker containers, see <a
      * href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
+     * <important> <p>Containers that are collocated on a single container
+     * instance may be able to communicate with each other without requiring
+     * links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLinks(java.util.Collection)} or {@link
@@ -356,9 +583,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *
      * @param links The <code>link</code> parameter allows containers to communicate with
      *         each other without the need for port mappings, using the
-     *         <code>name</code> parameter. For more information on linking Docker
-     *         containers, see <a
+     *         <code>name</code> parameter. The <code>name:internalName</code>
+     *         construct is analogous to <code>name:alias</code> in Docker links. For
+     *         more information on linking Docker containers, see <a
      *         href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
+     *         <important> <p>Containers that are collocated on a single container
+     *         instance may be able to communicate with each other without requiring
+     *         links or host port mappings. Network isolation is achieved on the
+     *         container instance using security groups and VPC settings.
+     *         </important>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -374,17 +607,29 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * The <code>link</code> parameter allows containers to communicate with
      * each other without the need for port mappings, using the
-     * <code>name</code> parameter. For more information on linking Docker
-     * containers, see <a
+     * <code>name</code> parameter. The <code>name:internalName</code>
+     * construct is analogous to <code>name:alias</code> in Docker links. For
+     * more information on linking Docker containers, see <a
      * href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
+     * <important> <p>Containers that are collocated on a single container
+     * instance may be able to communicate with each other without requiring
+     * links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.
+     * </important>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param links The <code>link</code> parameter allows containers to communicate with
      *         each other without the need for port mappings, using the
-     *         <code>name</code> parameter. For more information on linking Docker
-     *         containers, see <a
+     *         <code>name</code> parameter. The <code>name:internalName</code>
+     *         construct is analogous to <code>name:alias</code> in Docker links. For
+     *         more information on linking Docker containers, see <a
      *         href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
+     *         <important> <p>Containers that are collocated on a single container
+     *         instance may be able to communicate with each other without requiring
+     *         links or host port mappings. Network isolation is achieved on the
+     *         container instance using security groups and VPC settings.
+     *         </important>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -479,13 +724,17 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>true</code>, the failure of that container will stop the task.
      * If the <code>essential</code> parameter of a container is marked as
      * <code>false</code>, then its failure will not affect the rest of the
-     * containers in a task.
+     * containers in a task. If this parameter is omitted, a container is
+     * assumed to be essential. <note> <p>All tasks must have at least one
+     * essential container. </note>
      *
      * @return If the <code>essential</code> parameter of a container is marked as
      *         <code>true</code>, the failure of that container will stop the task.
      *         If the <code>essential</code> parameter of a container is marked as
      *         <code>false</code>, then its failure will not affect the rest of the
-     *         containers in a task.
+     *         containers in a task. If this parameter is omitted, a container is
+     *         assumed to be essential. <note> <p>All tasks must have at least one
+     *         essential container. </note>
      */
     public Boolean isEssential() {
         return essential;
@@ -496,13 +745,17 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>true</code>, the failure of that container will stop the task.
      * If the <code>essential</code> parameter of a container is marked as
      * <code>false</code>, then its failure will not affect the rest of the
-     * containers in a task.
+     * containers in a task. If this parameter is omitted, a container is
+     * assumed to be essential. <note> <p>All tasks must have at least one
+     * essential container. </note>
      *
      * @param essential If the <code>essential</code> parameter of a container is marked as
      *         <code>true</code>, the failure of that container will stop the task.
      *         If the <code>essential</code> parameter of a container is marked as
      *         <code>false</code>, then its failure will not affect the rest of the
-     *         containers in a task.
+     *         containers in a task. If this parameter is omitted, a container is
+     *         assumed to be essential. <note> <p>All tasks must have at least one
+     *         essential container. </note>
      */
     public void setEssential(Boolean essential) {
         this.essential = essential;
@@ -513,7 +766,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>true</code>, the failure of that container will stop the task.
      * If the <code>essential</code> parameter of a container is marked as
      * <code>false</code>, then its failure will not affect the rest of the
-     * containers in a task.
+     * containers in a task. If this parameter is omitted, a container is
+     * assumed to be essential. <note> <p>All tasks must have at least one
+     * essential container. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -521,7 +776,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         <code>true</code>, the failure of that container will stop the task.
      *         If the <code>essential</code> parameter of a container is marked as
      *         <code>false</code>, then its failure will not affect the rest of the
-     *         containers in a task.
+     *         containers in a task. If this parameter is omitted, a container is
+     *         assumed to be essential. <note> <p>All tasks must have at least one
+     *         essential container. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -536,13 +793,17 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>true</code>, the failure of that container will stop the task.
      * If the <code>essential</code> parameter of a container is marked as
      * <code>false</code>, then its failure will not affect the rest of the
-     * containers in a task.
+     * containers in a task. If this parameter is omitted, a container is
+     * assumed to be essential. <note> <p>All tasks must have at least one
+     * essential container. </note>
      *
      * @return If the <code>essential</code> parameter of a container is marked as
      *         <code>true</code>, the failure of that container will stop the task.
      *         If the <code>essential</code> parameter of a container is marked as
      *         <code>false</code>, then its failure will not affect the rest of the
-     *         containers in a task.
+     *         containers in a task. If this parameter is omitted, a container is
+     *         assumed to be essential. <note> <p>All tasks must have at least one
+     *         essential container. </note>
      */
     public Boolean getEssential() {
         return essential;

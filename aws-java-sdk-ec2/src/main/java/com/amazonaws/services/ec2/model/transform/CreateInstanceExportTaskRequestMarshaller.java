@@ -39,7 +39,7 @@ public class CreateInstanceExportTaskRequestMarshaller implements Marshaller<Req
 
         Request<CreateInstanceExportTaskRequest> request = new DefaultRequest<CreateInstanceExportTaskRequest>(createInstanceExportTaskRequest, "AmazonEC2");
         request.addParameter("Action", "CreateInstanceExportTask");
-        request.addParameter("Version", "2015-03-01");
+        request.addParameter("Version", "2015-04-15");
 
         if (createInstanceExportTaskRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(createInstanceExportTaskRequest.getDescription()));

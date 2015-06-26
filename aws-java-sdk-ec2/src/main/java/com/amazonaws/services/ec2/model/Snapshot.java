@@ -52,7 +52,7 @@ public class Snapshot implements Serializable, Cloneable {
     private String progress;
 
     /**
-     * The AWS account ID of the Amazon EBS snapshot owner.
+     * The AWS account ID of the EBS snapshot owner.
      */
     private String ownerId;
 
@@ -303,29 +303,29 @@ public class Snapshot implements Serializable, Cloneable {
     }
 
     /**
-     * The AWS account ID of the Amazon EBS snapshot owner.
+     * The AWS account ID of the EBS snapshot owner.
      *
-     * @return The AWS account ID of the Amazon EBS snapshot owner.
+     * @return The AWS account ID of the EBS snapshot owner.
      */
     public String getOwnerId() {
         return ownerId;
     }
     
     /**
-     * The AWS account ID of the Amazon EBS snapshot owner.
+     * The AWS account ID of the EBS snapshot owner.
      *
-     * @param ownerId The AWS account ID of the Amazon EBS snapshot owner.
+     * @param ownerId The AWS account ID of the EBS snapshot owner.
      */
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
     
     /**
-     * The AWS account ID of the Amazon EBS snapshot owner.
+     * The AWS account ID of the EBS snapshot owner.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ownerId The AWS account ID of the Amazon EBS snapshot owner.
+     * @param ownerId The AWS account ID of the EBS snapshot owner.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

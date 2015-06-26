@@ -46,6 +46,17 @@ public final class S extends PathOperand {
 
     /**
      * Returns a <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html#ConditionExpressionReference.Functions"
+     * >function condition</a> (that evaluates to true if the value of the
+     * current attribute contains the specified substring) for building
+     * condition expression.
+     */
+    public FunctionCondition contains(String substring) {
+        return new FunctionCondition("contains", this, new LiteralOperand(substring));
+    }
+
+    /**
+     * Returns a <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html#ConditionExpressionReference.Comparators"
      * >comparator condition</a> (that evaluates to true if the value of the current
      * attribute is equal to that of the specified attribute) for building
@@ -71,14 +82,14 @@ public final class S extends PathOperand {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call where path refers to that
      * of the current attribute; used for building expressions.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param defaultValue
      *            the default value that will be used as the operand to the
      *            if_not_exists function call.
@@ -93,7 +104,7 @@ public final class S extends PathOperand {
      * >InCondition</a> (that evaluates to true if the value of the current
      * attribute is equal to any of the specified values) for building condition
      * expression.
-     * 
+     *
      * @param values
      *            specified values. The number of values must be at least one
      *            and at most 100.
@@ -111,7 +122,7 @@ public final class S extends PathOperand {
      * >InCondition</a> (that evaluates to true if the value of the current
      * attribute is equal to any of the values in the specified list) for
      * building condition expression.
-     * 
+     *
      * @param values
      *            specified list of values. The number of values must be at
      *            least one and at most 100.
@@ -189,14 +200,14 @@ public final class S extends PathOperand {
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call where path refers to that
      * of the current path operand; used for building expressions.
-     * 
+     *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
-     * at the specified path, then if_not_exists evaluates to operand; otherwise, 
-     * it evaluates to path. You can use this function to avoid overwriting an 
+     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * at the specified path, then if_not_exists evaluates to operand; otherwise,
+     * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
      * </pre>
-     * 
+     *
      * @param defaultValue
      *            the default value that will be used as the operand to the
      *            if_not_exists function call.

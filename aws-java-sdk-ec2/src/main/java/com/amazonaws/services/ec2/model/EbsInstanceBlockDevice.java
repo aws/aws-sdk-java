@@ -18,14 +18,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a parameter used to set up an Amazon EBS volume in a block
- * device mapping.
+ * Describes a parameter used to set up an EBS volume in a block device
+ * mapping.
  * </p>
  */
 public class EbsInstanceBlockDevice implements Serializable, Cloneable {
 
     /**
-     * The ID of the Amazon EBS volume.
+     * The ID of the EBS volume.
      */
     private String volumeId;
 
@@ -48,29 +48,29 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
     private Boolean deleteOnTermination;
 
     /**
-     * The ID of the Amazon EBS volume.
+     * The ID of the EBS volume.
      *
-     * @return The ID of the Amazon EBS volume.
+     * @return The ID of the EBS volume.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * The ID of the Amazon EBS volume.
+     * The ID of the EBS volume.
      *
-     * @param volumeId The ID of the Amazon EBS volume.
+     * @param volumeId The ID of the EBS volume.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * The ID of the Amazon EBS volume.
+     * The ID of the EBS volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The ID of the Amazon EBS volume.
+     * @param volumeId The ID of the EBS volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

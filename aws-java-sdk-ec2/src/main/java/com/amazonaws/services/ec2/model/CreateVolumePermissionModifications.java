@@ -17,7 +17,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes modifications to the permissions for a volume.
+ * </p>
  */
 public class CreateVolumePermissionModifications implements Serializable, Cloneable {
 

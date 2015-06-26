@@ -39,7 +39,7 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
 
         Request<DescribeSpotPriceHistoryRequest> request = new DefaultRequest<DescribeSpotPriceHistoryRequest>(describeSpotPriceHistoryRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotPriceHistory");
-        request.addParameter("Version", "2015-03-01");
+        request.addParameter("Version", "2015-04-15");
 
         if (describeSpotPriceHistoryRequest.getStartTime() != null) {
             request.addParameter("StartTime", StringUtils.fromDate(describeSpotPriceHistoryRequest.getStartTime()));

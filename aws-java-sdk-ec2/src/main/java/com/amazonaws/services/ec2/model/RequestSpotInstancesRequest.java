@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotInstancesRequestMar
  * on available Spot Instance capacity and current Spot Instance
  * requests. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest)
@@ -41,6 +41,15 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * fulfill the request.
      */
     private String spotPrice;
+
+    /**
+     * Unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     */
+    private String clientToken;
 
     /**
      * The maximum number of Spot Instances to launch. <p>Default: 1
@@ -161,6 +170,63 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      */
     public RequestSpotInstancesRequest withSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
+        return this;
+    }
+
+    /**
+     * Unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     *
+     * @return Unique, case-sensitive identifier that you provide to ensure the
+     *         idempotency of the request. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     */
+    public String getClientToken() {
+        return clientToken;
+    }
+    
+    /**
+     * Unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     *
+     * @param clientToken Unique, case-sensitive identifier that you provide to ensure the
+     *         idempotency of the request. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     */
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+    
+    /**
+     * Unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param clientToken Unique, case-sensitive identifier that you provide to ensure the
+     *         idempotency of the request. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RequestSpotInstancesRequest withClientToken(String clientToken) {
+        this.clientToken = clientToken;
         return this;
     }
 
@@ -631,6 +697,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");
+        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ",");
         if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");
         if (getType() != null) sb.append("Type: " + getType() + ",");
         if (getValidFrom() != null) sb.append("ValidFrom: " + getValidFrom() + ",");
@@ -648,6 +715,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode()); 
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode()); 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
         hashCode = prime * hashCode + ((getValidFrom() == null) ? 0 : getValidFrom().hashCode()); 
@@ -668,6 +736,8 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         
         if (other.getSpotPrice() == null ^ this.getSpotPrice() == null) return false;
         if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false) return false; 
+        if (other.getClientToken() == null ^ this.getClientToken() == null) return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false) return false; 
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null) return false;
         if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false) return false; 
         if (other.getType() == null ^ this.getType() == null) return false;

@@ -90,14 +90,16 @@ public class SetDataRetrievalPolicyRequestMarshaller implements Marshaller<Reque
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (setDataRetrievalPolicyRequest.getAccountId() == null) ? null : StringUtils.fromString(setDataRetrievalPolicyRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (setDataRetrievalPolicyRequest.getAccountId() == null) ? "" : StringUtils.fromString(setDataRetrievalPolicyRequest.getAccountId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

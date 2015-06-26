@@ -70,6 +70,9 @@ public class ListIdentitiesRequestMarshaller implements Marshaller<Request<ListI
             if (listIdentitiesRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(listIdentitiesRequest.getNextToken());
             }
+            if (listIdentitiesRequest.isHideDisabled() != null) {
+                jsonWriter.key("HideDisabled").value(listIdentitiesRequest.isHideDisabled());
+            }
 
           jsonWriter.endObject();
 

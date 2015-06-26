@@ -28,6 +28,11 @@ public enum InstanceType {
     M3Large("m3.large"),
     M3Xlarge("m3.xlarge"),
     M32xlarge("m3.2xlarge"),
+    M4Large("m4.large"),
+    M4Xlarge("m4.xlarge"),
+    M42xlarge("m4.2xlarge"),
+    M44xlarge("m4.4xlarge"),
+    M410xlarge("m4.10xlarge"),
     T2Micro("t2.micro"),
     T2Small("t2.small"),
     T2Medium("t2.medium"),
@@ -107,6 +112,16 @@ public enum InstanceType {
             return InstanceType.M3Xlarge;
         } else if ("m3.2xlarge".equals(value)) {
             return InstanceType.M32xlarge;
+        } else if ("m4.large".equals(value)) {
+            return InstanceType.M4Large;
+        } else if ("m4.xlarge".equals(value)) {
+            return InstanceType.M4Xlarge;
+        } else if ("m4.2xlarge".equals(value)) {
+            return InstanceType.M42xlarge;
+        } else if ("m4.4xlarge".equals(value)) {
+            return InstanceType.M44xlarge;
+        } else if ("m4.10xlarge".equals(value)) {
+            return InstanceType.M410xlarge;
         } else if ("t2.micro".equals(value)) {
             return InstanceType.T2Micro;
         } else if ("t2.small".equals(value)) {

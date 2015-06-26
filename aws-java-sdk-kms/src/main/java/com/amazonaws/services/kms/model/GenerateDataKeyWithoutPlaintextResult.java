@@ -22,8 +22,10 @@ import java.io.Serializable;
 public class GenerateDataKeyWithoutPlaintextResult implements Serializable, Cloneable {
 
     /**
-     * Ciphertext that contains the wrapped key. You must store the blob and
-     * encryption context so that the key can be used in a future operation.
+     * Ciphertext that contains the wrapped data key. You must store the blob
+     * and encryption context so that the key can be used in a future decrypt
+     * operation. <p>If you are using the CLI, the value is Base64 encoded.
+     * Otherwise, it is not encoded.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
@@ -31,7 +33,8 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable, Clon
     private java.nio.ByteBuffer ciphertextBlob;
 
     /**
-     * System generated unique identifier for the key.
+     * System generated unique identifier of the key to be used to decrypt
+     * the encrypted copy of the data key.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -39,44 +42,56 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable, Clon
     private String keyId;
 
     /**
-     * Ciphertext that contains the wrapped key. You must store the blob and
-     * encryption context so that the key can be used in a future operation.
+     * Ciphertext that contains the wrapped data key. You must store the blob
+     * and encryption context so that the key can be used in a future decrypt
+     * operation. <p>If you are using the CLI, the value is Base64 encoded.
+     * Otherwise, it is not encoded.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
      *
-     * @return Ciphertext that contains the wrapped key. You must store the blob and
-     *         encryption context so that the key can be used in a future operation.
+     * @return Ciphertext that contains the wrapped data key. You must store the blob
+     *         and encryption context so that the key can be used in a future decrypt
+     *         operation. <p>If you are using the CLI, the value is Base64 encoded.
+     *         Otherwise, it is not encoded.
      */
     public java.nio.ByteBuffer getCiphertextBlob() {
         return ciphertextBlob;
     }
     
     /**
-     * Ciphertext that contains the wrapped key. You must store the blob and
-     * encryption context so that the key can be used in a future operation.
+     * Ciphertext that contains the wrapped data key. You must store the blob
+     * and encryption context so that the key can be used in a future decrypt
+     * operation. <p>If you are using the CLI, the value is Base64 encoded.
+     * Otherwise, it is not encoded.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
      *
-     * @param ciphertextBlob Ciphertext that contains the wrapped key. You must store the blob and
-     *         encryption context so that the key can be used in a future operation.
+     * @param ciphertextBlob Ciphertext that contains the wrapped data key. You must store the blob
+     *         and encryption context so that the key can be used in a future decrypt
+     *         operation. <p>If you are using the CLI, the value is Base64 encoded.
+     *         Otherwise, it is not encoded.
      */
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         this.ciphertextBlob = ciphertextBlob;
     }
     
     /**
-     * Ciphertext that contains the wrapped key. You must store the blob and
-     * encryption context so that the key can be used in a future operation.
+     * Ciphertext that contains the wrapped data key. You must store the blob
+     * and encryption context so that the key can be used in a future decrypt
+     * operation. <p>If you are using the CLI, the value is Base64 encoded.
+     * Otherwise, it is not encoded.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 6144<br/>
      *
-     * @param ciphertextBlob Ciphertext that contains the wrapped key. You must store the blob and
-     *         encryption context so that the key can be used in a future operation.
+     * @param ciphertextBlob Ciphertext that contains the wrapped data key. You must store the blob
+     *         and encryption context so that the key can be used in a future decrypt
+     *         operation. <p>If you are using the CLI, the value is Base64 encoded.
+     *         Otherwise, it is not encoded.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -87,38 +102,44 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable, Clon
     }
 
     /**
-     * System generated unique identifier for the key.
+     * System generated unique identifier of the key to be used to decrypt
+     * the encrypted copy of the data key.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return System generated unique identifier for the key.
+     * @return System generated unique identifier of the key to be used to decrypt
+     *         the encrypted copy of the data key.
      */
     public String getKeyId() {
         return keyId;
     }
     
     /**
-     * System generated unique identifier for the key.
+     * System generated unique identifier of the key to be used to decrypt
+     * the encrypted copy of the data key.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId System generated unique identifier for the key.
+     * @param keyId System generated unique identifier of the key to be used to decrypt
+     *         the encrypted copy of the data key.
      */
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
     
     /**
-     * System generated unique identifier for the key.
+     * System generated unique identifier of the key to be used to decrypt
+     * the encrypted copy of the data key.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId System generated unique identifier for the key.
+     * @param keyId System generated unique identifier of the key to be used to decrypt
+     *         the encrypted copy of the data key.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

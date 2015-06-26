@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,86 +27,126 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Get Status Result StAX Unmarshaller
+ * GetStatusResult StAX Unmarshaller
  */
-public class GetStatusResultStaxUnmarshaller implements Unmarshaller<GetStatusResult, StaxUnmarshallerContext> {
+public class GetStatusResultStaxUnmarshaller implements
+        Unmarshaller<GetStatusResult, StaxUnmarshallerContext> {
 
-    public GetStatusResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public GetStatusResult unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         GetStatusResult getStatusResult = new GetStatusResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return getStatusResult;
+            if (xmlEvent.isEndDocument())
+                return getStatusResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("JobId", targetDepth)) {
-                    getStatusResult.setJobId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setJobId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("JobType", targetDepth)) {
-                    getStatusResult.setJobType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setJobType(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("LocationCode", targetDepth)) {
-                    getStatusResult.setLocationCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setLocationCode(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("LocationMessage", targetDepth)) {
-                    getStatusResult.setLocationMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setLocationMessage(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ProgressCode", targetDepth)) {
-                    getStatusResult.setProgressCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setProgressCode(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ProgressMessage", targetDepth)) {
-                    getStatusResult.setProgressMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setProgressMessage(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Carrier", targetDepth)) {
-                    getStatusResult.setCarrier(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setCarrier(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("TrackingNumber", targetDepth)) {
-                    getStatusResult.setTrackingNumber(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setTrackingNumber(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("LogBucket", targetDepth)) {
-                    getStatusResult.setLogBucket(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setLogBucket(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("LogKey", targetDepth)) {
-                    getStatusResult.setLogKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setLogKey(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ErrorCount", targetDepth)) {
-                    getStatusResult.setErrorCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setErrorCount(IntegerStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Signature", targetDepth)) {
-                    getStatusResult.setSignature(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setSignature(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("SignatureFileContents", targetDepth)) {
-                    getStatusResult.setSignatureFileContents(StringStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context
+                        .testExpression("SignatureFileContents", targetDepth)) {
+                    getStatusResult
+                            .setSignatureFileContents(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("CurrentManifest", targetDepth)) {
-                    getStatusResult.setCurrentManifest(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setCurrentManifest(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("CreationDate", targetDepth)) {
-                    getStatusResult.setCreationDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setCreationDate(DateStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ArtifactList/member", targetDepth)) {
-                    getStatusResult.getArtifactList().add(ArtifactStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.getArtifactList().add(
+                            ArtifactStaxUnmarshaller.getInstance().unmarshall(
+                                    context));
                     continue;
                 }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return getStatusResult;
@@ -116,9 +156,10 @@ public class GetStatusResultStaxUnmarshaller implements Unmarshaller<GetStatusRe
     }
 
     private static GetStatusResultStaxUnmarshaller instance;
+
     public static GetStatusResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new GetStatusResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new GetStatusResultStaxUnmarshaller();
         return instance;
     }
 }
-    

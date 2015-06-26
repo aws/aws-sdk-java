@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class CreateVolumeResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * Information about the volume.
      */
     private Volume volume;
 
     /**
-     * 
+     * Information about the volume.
      *
-     * @return 
+     * @return Information about the volume.
      */
     public Volume getVolume() {
         return volume;
     }
     
     /**
-     * 
+     * Information about the volume.
      *
-     * @param volume 
+     * @param volume Information about the volume.
      */
     public void setVolume(Volume volume) {
         this.volume = volume;
     }
     
     /**
-     * 
+     * Information about the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volume 
+     * @param volume Information about the volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

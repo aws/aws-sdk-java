@@ -21,13 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#restoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest) RestoreFromClusterSnapshot operation}.
  * <p>
- * Creates a new cluster from a snapshot. Amazon Redshift creates the
- * resulting cluster with the same configuration as the original cluster
- * from which the snapshot was created, except that the new cluster is
- * created with the default cluster security and parameter group. After
- * Amazon Redshift creates the cluster you can use the ModifyCluster API
- * to associate a different security group and different parameter group
- * with the restored cluster.
+ * Creates a new cluster from a snapshot. By default, Amazon Redshift
+ * creates the resulting cluster with the same configuration as the
+ * original cluster from which the snapshot was created, except that the
+ * new cluster is created with the default cluster security and parameter
+ * groups. After Amazon Redshift creates the cluster, you can use the
+ * ModifyCluster API to associate a different security group and
+ * different parameter group with the restored cluster. If you are using
+ * a DS node type, you can also choose to change to another DS node type
+ * of the same size during restore.
  * </p>
  * <p>
  * If you restore a cluster into a VPC, you must provide a cluster
@@ -183,6 +185,22 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      * shared snapshot.
      */
     private String kmsKeyId;
+
+    /**
+     * The node type that the restored cluster will be provisioned with. <p>
+     * Default: The node type of the cluster from which the snapshot was
+     * taken. You can modify this if you are using any DS node type. In that
+     * case, you can choose to restore into another DS node type of the same
+     * size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or
+     * ds2.xlarge into ds1.xlarge. If you have a DC instance type, you must
+     * restore into that same instance type and size. In other words, you can
+     * only restore a dc1.large instance type into another dc1.large instance
+     * type. For more information about node types, see <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>
+     */
+    private String nodeType;
 
     /**
      * The identifier of the cluster that will be created from restoring the
@@ -1199,6 +1217,105 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     }
 
     /**
+     * The node type that the restored cluster will be provisioned with. <p>
+     * Default: The node type of the cluster from which the snapshot was
+     * taken. You can modify this if you are using any DS node type. In that
+     * case, you can choose to restore into another DS node type of the same
+     * size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or
+     * ds2.xlarge into ds1.xlarge. If you have a DC instance type, you must
+     * restore into that same instance type and size. In other words, you can
+     * only restore a dc1.large instance type into another dc1.large instance
+     * type. For more information about node types, see <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>
+     *
+     * @return The node type that the restored cluster will be provisioned with. <p>
+     *         Default: The node type of the cluster from which the snapshot was
+     *         taken. You can modify this if you are using any DS node type. In that
+     *         case, you can choose to restore into another DS node type of the same
+     *         size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or
+     *         ds2.xlarge into ds1.xlarge. If you have a DC instance type, you must
+     *         restore into that same instance type and size. In other words, you can
+     *         only restore a dc1.large instance type into another dc1.large instance
+     *         type. For more information about node types, see <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     *         About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster
+     *         Management Guide</i>
+     */
+    public String getNodeType() {
+        return nodeType;
+    }
+    
+    /**
+     * The node type that the restored cluster will be provisioned with. <p>
+     * Default: The node type of the cluster from which the snapshot was
+     * taken. You can modify this if you are using any DS node type. In that
+     * case, you can choose to restore into another DS node type of the same
+     * size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or
+     * ds2.xlarge into ds1.xlarge. If you have a DC instance type, you must
+     * restore into that same instance type and size. In other words, you can
+     * only restore a dc1.large instance type into another dc1.large instance
+     * type. For more information about node types, see <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>
+     *
+     * @param nodeType The node type that the restored cluster will be provisioned with. <p>
+     *         Default: The node type of the cluster from which the snapshot was
+     *         taken. You can modify this if you are using any DS node type. In that
+     *         case, you can choose to restore into another DS node type of the same
+     *         size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or
+     *         ds2.xlarge into ds1.xlarge. If you have a DC instance type, you must
+     *         restore into that same instance type and size. In other words, you can
+     *         only restore a dc1.large instance type into another dc1.large instance
+     *         type. For more information about node types, see <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     *         About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster
+     *         Management Guide</i>
+     */
+    public void setNodeType(String nodeType) {
+        this.nodeType = nodeType;
+    }
+    
+    /**
+     * The node type that the restored cluster will be provisioned with. <p>
+     * Default: The node type of the cluster from which the snapshot was
+     * taken. You can modify this if you are using any DS node type. In that
+     * case, you can choose to restore into another DS node type of the same
+     * size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or
+     * ds2.xlarge into ds1.xlarge. If you have a DC instance type, you must
+     * restore into that same instance type and size. In other words, you can
+     * only restore a dc1.large instance type into another dc1.large instance
+     * type. For more information about node types, see <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param nodeType The node type that the restored cluster will be provisioned with. <p>
+     *         Default: The node type of the cluster from which the snapshot was
+     *         taken. You can modify this if you are using any DS node type. In that
+     *         case, you can choose to restore into another DS node type of the same
+     *         size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or
+     *         ds2.xlarge into ds1.xlarge. If you have a DC instance type, you must
+     *         restore into that same instance type and size. In other words, you can
+     *         only restore a dc1.large instance type into another dc1.large instance
+     *         type. For more information about node types, see <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     *         About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster
+     *         Management Guide</i>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withNodeType(String nodeType) {
+        this.nodeType = nodeType;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1227,7 +1344,8 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
         if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
         if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
-        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() );
         sb.append("}");
         return sb.toString();
     }
@@ -1255,6 +1373,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
         hashCode = prime * hashCode + ((getAutomatedSnapshotRetentionPeriod() == null) ? 0 : getAutomatedSnapshotRetentionPeriod().hashCode()); 
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
+        hashCode = prime * hashCode + ((getNodeType() == null) ? 0 : getNodeType().hashCode()); 
         return hashCode;
     }
     
@@ -1302,6 +1421,8 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (other.getAutomatedSnapshotRetentionPeriod() != null && other.getAutomatedSnapshotRetentionPeriod().equals(this.getAutomatedSnapshotRetentionPeriod()) == false) return false; 
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
+        if (other.getNodeType() == null ^ this.getNodeType() == null) return false;
+        if (other.getNodeType() != null && other.getNodeType().equals(this.getNodeType()) == false) return false; 
         return true;
     }
     

@@ -51,7 +51,7 @@ public class ClassicLinkInstanceStaxUnmarshaller implements Unmarshaller<Classic
                     classicLinkInstance.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("groupSet/item/groupId", targetDepth)) {
+                if (context.testExpression("groupSet/item", targetDepth)) {
                     classicLinkInstance.getGroups().add(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }

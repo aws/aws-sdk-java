@@ -23,6 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Lists the identities in a pool.
  * </p>
+ * <p>
+ * You must use AWS Developer credentials to call this API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#listIdentities(ListIdentitiesRequest)
  */
@@ -53,6 +56,13 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Se
      * <b>Pattern: </b>[\S]+<br/>
      */
     private String nextToken;
+
+    /**
+     * An optional boolean parameter that allows you to hide disabled
+     * identities. If omitted, the ListIdentities API will include disabled
+     * identities in the response.
+     */
+    private Boolean hideDisabled;
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -187,6 +197,64 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * An optional boolean parameter that allows you to hide disabled
+     * identities. If omitted, the ListIdentities API will include disabled
+     * identities in the response.
+     *
+     * @return An optional boolean parameter that allows you to hide disabled
+     *         identities. If omitted, the ListIdentities API will include disabled
+     *         identities in the response.
+     */
+    public Boolean isHideDisabled() {
+        return hideDisabled;
+    }
+    
+    /**
+     * An optional boolean parameter that allows you to hide disabled
+     * identities. If omitted, the ListIdentities API will include disabled
+     * identities in the response.
+     *
+     * @param hideDisabled An optional boolean parameter that allows you to hide disabled
+     *         identities. If omitted, the ListIdentities API will include disabled
+     *         identities in the response.
+     */
+    public void setHideDisabled(Boolean hideDisabled) {
+        this.hideDisabled = hideDisabled;
+    }
+    
+    /**
+     * An optional boolean parameter that allows you to hide disabled
+     * identities. If omitted, the ListIdentities API will include disabled
+     * identities in the response.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hideDisabled An optional boolean parameter that allows you to hide disabled
+     *         identities. If omitted, the ListIdentities API will include disabled
+     *         identities in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ListIdentitiesRequest withHideDisabled(Boolean hideDisabled) {
+        this.hideDisabled = hideDisabled;
+        return this;
+    }
+
+    /**
+     * An optional boolean parameter that allows you to hide disabled
+     * identities. If omitted, the ListIdentities API will include disabled
+     * identities in the response.
+     *
+     * @return An optional boolean parameter that allows you to hide disabled
+     *         identities. If omitted, the ListIdentities API will include disabled
+     *         identities in the response.
+     */
+    public Boolean getHideDisabled() {
+        return hideDisabled;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -200,7 +268,8 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Se
         sb.append("{");
         if (getIdentityPoolId() != null) sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
         if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
+        if (isHideDisabled() != null) sb.append("HideDisabled: " + isHideDisabled() );
         sb.append("}");
         return sb.toString();
     }
@@ -213,6 +282,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode()); 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode()); 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        hashCode = prime * hashCode + ((isHideDisabled() == null) ? 0 : isHideDisabled().hashCode()); 
         return hashCode;
     }
     
@@ -230,6 +300,8 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Se
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false) return false; 
         if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        if (other.isHideDisabled() == null ^ this.isHideDisabled() == null) return false;
+        if (other.isHideDisabled() != null && other.isHideDisabled().equals(this.isHideDisabled()) == false) return false; 
         return true;
     }
     

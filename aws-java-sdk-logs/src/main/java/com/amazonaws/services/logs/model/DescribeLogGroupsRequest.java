@@ -37,6 +37,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * Will only return log groups that match the provided
+     * logGroupNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     */
     private String logGroupNamePrefix;
 
     /**
@@ -59,33 +68,43 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
     private Integer limit;
 
     /**
-     * Returns the value of the LogGroupNamePrefix property for this object.
+     * Will only return log groups that match the provided
+     * logGroupNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The value of the LogGroupNamePrefix property for this object.
+     * @return Will only return log groups that match the provided
+     *         logGroupNamePrefix. If you don't specify a value, no prefix filter is
+     *         applied.
      */
     public String getLogGroupNamePrefix() {
         return logGroupNamePrefix;
     }
     
     /**
-     * Sets the value of the LogGroupNamePrefix property for this object.
+     * Will only return log groups that match the provided
+     * logGroupNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupNamePrefix The new value for the LogGroupNamePrefix property for this object.
+     * @param logGroupNamePrefix Will only return log groups that match the provided
+     *         logGroupNamePrefix. If you don't specify a value, no prefix filter is
+     *         applied.
      */
     public void setLogGroupNamePrefix(String logGroupNamePrefix) {
         this.logGroupNamePrefix = logGroupNamePrefix;
     }
     
     /**
-     * Sets the value of the LogGroupNamePrefix property for this object.
+     * Will only return log groups that match the provided
+     * logGroupNamePrefix. If you don't specify a value, no prefix filter is
+     * applied.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -93,7 +112,9 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupNamePrefix The new value for the LogGroupNamePrefix property for this object.
+     * @param logGroupNamePrefix Will only return log groups that match the provided
+     *         logGroupNamePrefix. If you don't specify a value, no prefix filter is
+     *         applied.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

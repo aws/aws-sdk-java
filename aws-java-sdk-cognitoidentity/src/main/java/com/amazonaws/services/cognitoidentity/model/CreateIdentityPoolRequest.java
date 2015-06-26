@@ -23,7 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Creates a new identity pool. The identity pool is a store of user
  * identity information that is specific to your AWS account. The limit
- * on identity pools is 60 per account.
+ * on identity pools is 60 per account. You must use AWS Developer
+ * credentials to call this API.
  * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#createIdentityPool(CreateIdentityPoolRequest)

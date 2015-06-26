@@ -164,6 +164,9 @@ public class CreateInstanceRequestMarshaller implements Marshaller<Request<Creat
             if (createInstanceRequest.isEbsOptimized() != null) {
                 jsonWriter.key("EbsOptimized").value(createInstanceRequest.isEbsOptimized());
             }
+            if (createInstanceRequest.getAgentVersion() != null) {
+                jsonWriter.key("AgentVersion").value(createInstanceRequest.getAgentVersion());
+            }
 
           jsonWriter.endObject();
 

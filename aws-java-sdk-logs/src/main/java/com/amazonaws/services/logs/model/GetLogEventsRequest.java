@@ -41,13 +41,27 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class GetLogEventsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The name of the log group to query.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     */
     private String logGroupName;
 
+    /**
+     * The name of the log stream to query.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[^:*]*<br/>
+     */
     private String logStreamName;
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
@@ -55,8 +69,8 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
     private Long startTime;
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
@@ -77,7 +91,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as much log events as
+     * don't specify a value, the request would return as many log events as
      * can fit in a response size of 1MB, up to 10,000 log events.
      * <p>
      * <b>Constraints:</b><br/>
@@ -102,8 +116,8 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param logGroupName
-     * @param logStreamName
+     * @param logGroupName The name of the log group to query.
+     * @param logStreamName The name of the log stream to query.
      */
     public GetLogEventsRequest(String logGroupName, String logStreamName) {
         setLogGroupName(logGroupName);
@@ -111,33 +125,33 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
+     * The name of the log group to query.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The value of the LogGroupName property for this object.
+     * @return The name of the log group to query.
      */
     public String getLogGroupName() {
         return logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group to query.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group to query.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group to query.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -145,7 +159,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group to query.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -156,33 +170,33 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Returns the value of the LogStreamName property for this object.
+     * The name of the log stream to query.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @return The value of the LogStreamName property for this object.
+     * @return The name of the log stream to query.
      */
     public String getLogStreamName() {
         return logStreamName;
     }
     
     /**
-     * Sets the value of the LogStreamName property for this object.
+     * The name of the log stream to query.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param logStreamName The new value for the LogStreamName property for this object.
+     * @param logStreamName The name of the log stream to query.
      */
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
     
     /**
-     * Sets the value of the LogStreamName property for this object.
+     * The name of the log stream to query.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -190,7 +204,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param logStreamName The new value for the LogStreamName property for this object.
+     * @param logStreamName The name of the log stream to query.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -201,44 +215,44 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @return A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @return A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public Long getStartTime() {
         return startTime;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param startTime A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param startTime A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param startTime A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param startTime A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -249,44 +263,44 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @return A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @return A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public Long getEndTime() {
         return endTime;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param endTime A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param endTime A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param endTime A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param endTime A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -364,14 +378,14 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as much log events as
+     * don't specify a value, the request would return as many log events as
      * can fit in a response size of 1MB, up to 10,000 log events.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 10000<br/>
      *
      * @return The maximum number of log events returned in the response. If you
-     *         don't specify a value, the request would return as much log events as
+     *         don't specify a value, the request would return as many log events as
      *         can fit in a response size of 1MB, up to 10,000 log events.
      */
     public Integer getLimit() {
@@ -380,14 +394,14 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as much log events as
+     * don't specify a value, the request would return as many log events as
      * can fit in a response size of 1MB, up to 10,000 log events.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 10000<br/>
      *
      * @param limit The maximum number of log events returned in the response. If you
-     *         don't specify a value, the request would return as much log events as
+     *         don't specify a value, the request would return as many log events as
      *         can fit in a response size of 1MB, up to 10,000 log events.
      */
     public void setLimit(Integer limit) {
@@ -396,7 +410,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as much log events as
+     * don't specify a value, the request would return as many log events as
      * can fit in a response size of 1MB, up to 10,000 log events.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -405,7 +419,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * <b>Range: </b>1 - 10000<br/>
      *
      * @param limit The maximum number of log events returned in the response. If you
-     *         don't specify a value, the request would return as much log events as
+     *         don't specify a value, the request would return as many log events as
      *         can fit in a response size of 1MB, up to 10,000 log events.
      *
      * @return A reference to this updated object so that method calls can be chained

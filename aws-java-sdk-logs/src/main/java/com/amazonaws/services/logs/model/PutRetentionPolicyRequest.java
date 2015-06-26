@@ -30,6 +30,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class PutRetentionPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The name of the log group to associate the retention policy with.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     */
     private String logGroupName;
 
     /**
@@ -50,7 +57,8 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param logGroupName
+     * @param logGroupName The name of the log group to associate the
+     * retention policy with.
      * @param retentionInDays Specifies the number of days you want to retain
      * log events in the specified log group. Possible values are: 1, 3, 5,
      * 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 3653.
@@ -61,33 +69,33 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
+     * The name of the log group to associate the retention policy with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The value of the LogGroupName property for this object.
+     * @return The name of the log group to associate the retention policy with.
      */
     public String getLogGroupName() {
         return logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group to associate the retention policy with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group to associate the retention policy with.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group to associate the retention policy with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -95,7 +103,7 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group to associate the retention policy with.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

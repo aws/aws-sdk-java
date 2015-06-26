@@ -90,25 +90,28 @@ public class CreateVaultRequestMarshaller implements Marshaller<Request<CreateVa
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (createVaultRequest.getAccountId() == null) ? null : StringUtils.fromString(createVaultRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (createVaultRequest.getAccountId() == null) ? "" : StringUtils.fromString(createVaultRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (createVaultRequest.getVaultName() == null) ? null : StringUtils.fromString(createVaultRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (createVaultRequest.getVaultName() == null) ? "" : StringUtils.fromString(createVaultRequest.getVaultName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

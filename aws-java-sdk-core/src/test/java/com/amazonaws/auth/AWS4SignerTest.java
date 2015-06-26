@@ -22,8 +22,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FilenameFilter;
 import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

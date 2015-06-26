@@ -17,7 +17,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes the format and location for an instance export task.
+ * </p>
  */
 public class ExportToS3Task implements Serializable, Cloneable {
 
@@ -39,14 +41,14 @@ public class ExportToS3Task implements Serializable, Cloneable {
     private String containerFormat;
 
     /**
-     * The Amazon S3 bucket for the destination image. The destination bucket
-     * must exist and grant WRITE and READ_ACP permissions to the AWS account
+     * The S3 bucket for the destination image. The destination bucket must
+     * exist and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.
      */
     private String s3Bucket;
 
     /**
-     * 
+     * The encryption key for your S3 bucket.
      */
     private String s3Key;
 
@@ -225,12 +227,12 @@ public class ExportToS3Task implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon S3 bucket for the destination image. The destination bucket
-     * must exist and grant WRITE and READ_ACP permissions to the AWS account
+     * The S3 bucket for the destination image. The destination bucket must
+     * exist and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.
      *
-     * @return The Amazon S3 bucket for the destination image. The destination bucket
-     *         must exist and grant WRITE and READ_ACP permissions to the AWS account
+     * @return The S3 bucket for the destination image. The destination bucket must
+     *         exist and grant WRITE and READ_ACP permissions to the AWS account
      *         <code>vm-import-export@amazon.com</code>.
      */
     public String getS3Bucket() {
@@ -238,12 +240,12 @@ public class ExportToS3Task implements Serializable, Cloneable {
     }
     
     /**
-     * The Amazon S3 bucket for the destination image. The destination bucket
-     * must exist and grant WRITE and READ_ACP permissions to the AWS account
+     * The S3 bucket for the destination image. The destination bucket must
+     * exist and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.
      *
-     * @param s3Bucket The Amazon S3 bucket for the destination image. The destination bucket
-     *         must exist and grant WRITE and READ_ACP permissions to the AWS account
+     * @param s3Bucket The S3 bucket for the destination image. The destination bucket must
+     *         exist and grant WRITE and READ_ACP permissions to the AWS account
      *         <code>vm-import-export@amazon.com</code>.
      */
     public void setS3Bucket(String s3Bucket) {
@@ -251,14 +253,14 @@ public class ExportToS3Task implements Serializable, Cloneable {
     }
     
     /**
-     * The Amazon S3 bucket for the destination image. The destination bucket
-     * must exist and grant WRITE and READ_ACP permissions to the AWS account
+     * The S3 bucket for the destination image. The destination bucket must
+     * exist and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3Bucket The Amazon S3 bucket for the destination image. The destination bucket
-     *         must exist and grant WRITE and READ_ACP permissions to the AWS account
+     * @param s3Bucket The S3 bucket for the destination image. The destination bucket must
+     *         exist and grant WRITE and READ_ACP permissions to the AWS account
      *         <code>vm-import-export@amazon.com</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -270,29 +272,29 @@ public class ExportToS3Task implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The encryption key for your S3 bucket.
      *
-     * @return 
+     * @return The encryption key for your S3 bucket.
      */
     public String getS3Key() {
         return s3Key;
     }
     
     /**
-     * 
+     * The encryption key for your S3 bucket.
      *
-     * @param s3Key 
+     * @param s3Key The encryption key for your S3 bucket.
      */
     public void setS3Key(String s3Key) {
         this.s3Key = s3Key;
     }
     
     /**
-     * 
+     * The encryption key for your S3 bucket.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3Key 
+     * @param s3Key The encryption key for your S3 bucket.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

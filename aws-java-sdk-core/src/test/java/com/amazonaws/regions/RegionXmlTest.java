@@ -24,7 +24,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class RegionXmlTest {
-    
+
     @Test
     public void kms() {
         RegionUtils.initialize();
@@ -39,7 +39,7 @@ public class RegionXmlTest {
                 "ap-southeast-2",
                 "sa-east-1",
                 "eu-west-1",
-                "eu-central-1"                
+                "eu-central-1"
         };
         for (String region : regions) {
             assertEquals(
@@ -50,7 +50,7 @@ public class RegionXmlTest {
                     region,
                     RegionUtils.getRegionByEndpoint(
                             "https://kms." + region + ".amazonaws.com").getName());
-            assertEquals("kms." + region + ".amazonaws.com", 
+            assertEquals("kms." + region + ".amazonaws.com",
                     RegionUtils.getRegion(region).getServiceEndpoint("kms"));
         }
     }

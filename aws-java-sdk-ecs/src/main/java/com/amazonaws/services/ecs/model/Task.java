@@ -65,7 +65,9 @@ public class Task implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Container> containers;
 
     /**
-     * 
+     * The tag specified when a task is started. If the task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      */
     private String startedBy;
 
@@ -392,29 +394,41 @@ public class Task implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The tag specified when a task is started. If the task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      *
-     * @return 
+     * @return The tag specified when a task is started. If the task is started by an
+     *         Amazon ECS service, then the <code>startedBy</code> parameter contains
+     *         the deployment ID of the service that starts it.
      */
     public String getStartedBy() {
         return startedBy;
     }
     
     /**
-     * 
+     * The tag specified when a task is started. If the task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      *
-     * @param startedBy 
+     * @param startedBy The tag specified when a task is started. If the task is started by an
+     *         Amazon ECS service, then the <code>startedBy</code> parameter contains
+     *         the deployment ID of the service that starts it.
      */
     public void setStartedBy(String startedBy) {
         this.startedBy = startedBy;
     }
     
     /**
-     * 
+     * The tag specified when a task is started. If the task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startedBy 
+     * @param startedBy The tag specified when a task is started. If the task is started by an
+     *         Amazon ECS service, then the <code>startedBy</code> parameter contains
+     *         the deployment ID of the service that starts it.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

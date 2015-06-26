@@ -60,6 +60,16 @@ public class IpPermission implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> ipRanges;
 
     /**
+     * (Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a>
+     * only) One or more prefix list IDs for an AWS service. In an
+     * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service
+     * that you want to access through a VPC endpoint from instances
+     * associated with the security group.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PrefixListId> prefixListIds;
+
+    /**
      * The protocol. <p>When you call <a>DescribeSecurityGroups</a>, the
      * protocol value returned is the number. Exception: For TCP, UDP, and
      * ICMP, the value returned is the name (for example, <code>tcp</code>,
@@ -371,6 +381,119 @@ public class IpPermission implements Serializable, Cloneable {
     }
 
     /**
+     * (Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a>
+     * only) One or more prefix list IDs for an AWS service. In an
+     * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service
+     * that you want to access through a VPC endpoint from instances
+     * associated with the security group.
+     *
+     * @return (Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     *         <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a>
+     *         only) One or more prefix list IDs for an AWS service. In an
+     *         <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service
+     *         that you want to access through a VPC endpoint from instances
+     *         associated with the security group.
+     */
+    public java.util.List<PrefixListId> getPrefixListIds() {
+        if (prefixListIds == null) {
+              prefixListIds = new com.amazonaws.internal.ListWithAutoConstructFlag<PrefixListId>();
+              prefixListIds.setAutoConstruct(true);
+        }
+        return prefixListIds;
+    }
+    
+    /**
+     * (Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a>
+     * only) One or more prefix list IDs for an AWS service. In an
+     * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service
+     * that you want to access through a VPC endpoint from instances
+     * associated with the security group.
+     *
+     * @param prefixListIds (Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     *         <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a>
+     *         only) One or more prefix list IDs for an AWS service. In an
+     *         <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service
+     *         that you want to access through a VPC endpoint from instances
+     *         associated with the security group.
+     */
+    public void setPrefixListIds(java.util.Collection<PrefixListId> prefixListIds) {
+        if (prefixListIds == null) {
+            this.prefixListIds = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<PrefixListId> prefixListIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PrefixListId>(prefixListIds.size());
+        prefixListIdsCopy.addAll(prefixListIds);
+        this.prefixListIds = prefixListIdsCopy;
+    }
+    
+    /**
+     * (Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a>
+     * only) One or more prefix list IDs for an AWS service. In an
+     * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service
+     * that you want to access through a VPC endpoint from instances
+     * associated with the security group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPrefixListIds(java.util.Collection)} or {@link
+     * #withPrefixListIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param prefixListIds (Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     *         <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a>
+     *         only) One or more prefix list IDs for an AWS service. In an
+     *         <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service
+     *         that you want to access through a VPC endpoint from instances
+     *         associated with the security group.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public IpPermission withPrefixListIds(PrefixListId... prefixListIds) {
+        if (getPrefixListIds() == null) setPrefixListIds(new java.util.ArrayList<PrefixListId>(prefixListIds.length));
+        for (PrefixListId value : prefixListIds) {
+            getPrefixListIds().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * (Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     * <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a>
+     * only) One or more prefix list IDs for an AWS service. In an
+     * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service
+     * that you want to access through a VPC endpoint from instances
+     * associated with the security group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param prefixListIds (Valid for <a>AuthorizeSecurityGroupEgress</a>,
+     *         <a>RevokeSecurityGroupEgress</a> and <a>DescribeSecurityGroups</a>
+     *         only) One or more prefix list IDs for an AWS service. In an
+     *         <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service
+     *         that you want to access through a VPC endpoint from instances
+     *         associated with the security group.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public IpPermission withPrefixListIds(java.util.Collection<PrefixListId> prefixListIds) {
+        if (prefixListIds == null) {
+            this.prefixListIds = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<PrefixListId> prefixListIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PrefixListId>(prefixListIds.size());
+            prefixListIdsCopy.addAll(prefixListIds);
+            this.prefixListIds = prefixListIdsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -386,7 +509,8 @@ public class IpPermission implements Serializable, Cloneable {
         if (getFromPort() != null) sb.append("FromPort: " + getFromPort() + ",");
         if (getToPort() != null) sb.append("ToPort: " + getToPort() + ",");
         if (getUserIdGroupPairs() != null) sb.append("UserIdGroupPairs: " + getUserIdGroupPairs() + ",");
-        if (getIpRanges() != null) sb.append("IpRanges: " + getIpRanges() );
+        if (getIpRanges() != null) sb.append("IpRanges: " + getIpRanges() + ",");
+        if (getPrefixListIds() != null) sb.append("PrefixListIds: " + getPrefixListIds() );
         sb.append("}");
         return sb.toString();
     }
@@ -401,6 +525,7 @@ public class IpPermission implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getToPort() == null) ? 0 : getToPort().hashCode()); 
         hashCode = prime * hashCode + ((getUserIdGroupPairs() == null) ? 0 : getUserIdGroupPairs().hashCode()); 
         hashCode = prime * hashCode + ((getIpRanges() == null) ? 0 : getIpRanges().hashCode()); 
+        hashCode = prime * hashCode + ((getPrefixListIds() == null) ? 0 : getPrefixListIds().hashCode()); 
         return hashCode;
     }
     
@@ -422,6 +547,8 @@ public class IpPermission implements Serializable, Cloneable {
         if (other.getUserIdGroupPairs() != null && other.getUserIdGroupPairs().equals(this.getUserIdGroupPairs()) == false) return false; 
         if (other.getIpRanges() == null ^ this.getIpRanges() == null) return false;
         if (other.getIpRanges() != null && other.getIpRanges().equals(this.getIpRanges()) == false) return false; 
+        if (other.getPrefixListIds() == null ^ this.getPrefixListIds() == null) return false;
+        if (other.getPrefixListIds() != null && other.getPrefixListIds().equals(this.getPrefixListIds()) == false) return false; 
         return true;
     }
     

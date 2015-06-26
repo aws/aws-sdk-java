@@ -99,25 +99,28 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (uploadArchiveRequest.getVaultName() == null) ? null : StringUtils.fromString(uploadArchiveRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (uploadArchiveRequest.getVaultName() == null) ? "" : StringUtils.fromString(uploadArchiveRequest.getVaultName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (uploadArchiveRequest.getAccountId() == null) ? null : StringUtils.fromString(uploadArchiveRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (uploadArchiveRequest.getAccountId() == null) ? "" : StringUtils.fromString(uploadArchiveRequest.getAccountId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

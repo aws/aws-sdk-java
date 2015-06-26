@@ -24,44 +24,44 @@ import java.io.Serializable;
 public class DiskImage implements Serializable, Cloneable {
 
     /**
-     * 
+     * Information about the disk image.
      */
     private DiskImageDetail image;
 
     /**
-     * 
+     * A description of the disk image.
      */
     private String description;
 
     /**
-     * 
+     * Information about the volume.
      */
     private VolumeDetail volume;
 
     /**
-     * 
+     * Information about the disk image.
      *
-     * @return 
+     * @return Information about the disk image.
      */
     public DiskImageDetail getImage() {
         return image;
     }
     
     /**
-     * 
+     * Information about the disk image.
      *
-     * @param image 
+     * @param image Information about the disk image.
      */
     public void setImage(DiskImageDetail image) {
         this.image = image;
     }
     
     /**
-     * 
+     * Information about the disk image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param image 
+     * @param image Information about the disk image.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -72,29 +72,29 @@ public class DiskImage implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * A description of the disk image.
      *
-     * @return 
+     * @return A description of the disk image.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * 
+     * A description of the disk image.
      *
-     * @param description 
+     * @param description A description of the disk image.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * 
+     * A description of the disk image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description 
+     * @param description A description of the disk image.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -105,29 +105,29 @@ public class DiskImage implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * Information about the volume.
      *
-     * @return 
+     * @return Information about the volume.
      */
     public VolumeDetail getVolume() {
         return volume;
     }
     
     /**
-     * 
+     * Information about the volume.
      *
-     * @param volume 
+     * @param volume Information about the volume.
      */
     public void setVolume(VolumeDetail volume) {
         this.volume = volume;
     }
     
     /**
-     * 
+     * Information about the volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volume 
+     * @param volume Information about the volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

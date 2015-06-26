@@ -31,7 +31,7 @@ import com.amazonaws.services.ec2.model.transform.CancelImportTaskRequestMarshal
 public class CancelImportTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CancelImportTaskRequest> {
 
     /**
-     * The ID of the ImportImage or ImportSnapshot task to be cancelled.
+     * The ID of the import image or import snapshot task to be canceled.
      */
     private String importTaskId;
 
@@ -41,29 +41,29 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements 
     private String cancelReason;
 
     /**
-     * The ID of the ImportImage or ImportSnapshot task to be cancelled.
+     * The ID of the import image or import snapshot task to be canceled.
      *
-     * @return The ID of the ImportImage or ImportSnapshot task to be cancelled.
+     * @return The ID of the import image or import snapshot task to be canceled.
      */
     public String getImportTaskId() {
         return importTaskId;
     }
     
     /**
-     * The ID of the ImportImage or ImportSnapshot task to be cancelled.
+     * The ID of the import image or import snapshot task to be canceled.
      *
-     * @param importTaskId The ID of the ImportImage or ImportSnapshot task to be cancelled.
+     * @param importTaskId The ID of the import image or import snapshot task to be canceled.
      */
     public void setImportTaskId(String importTaskId) {
         this.importTaskId = importTaskId;
     }
     
     /**
-     * The ID of the ImportImage or ImportSnapshot task to be cancelled.
+     * The ID of the import image or import snapshot task to be canceled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importTaskId The ID of the ImportImage or ImportSnapshot task to be cancelled.
+     * @param importTaskId The ID of the import image or import snapshot task to be canceled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

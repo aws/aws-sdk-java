@@ -39,7 +39,7 @@ public class ModifyVolumeAttributeRequestMarshaller implements Marshaller<Reques
 
         Request<ModifyVolumeAttributeRequest> request = new DefaultRequest<ModifyVolumeAttributeRequest>(modifyVolumeAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyVolumeAttribute");
-        request.addParameter("Version", "2015-03-01");
+        request.addParameter("Version", "2015-04-15");
 
         if (modifyVolumeAttributeRequest.getVolumeId() != null) {
             request.addParameter("VolumeId", StringUtils.fromString(modifyVolumeAttributeRequest.getVolumeId()));

@@ -90,14 +90,16 @@ public class DeleteFunctionRequestMarshaller implements Marshaller<Request<Delet
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FunctionName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FunctionName");
+
             String value = (deleteFunctionRequest.getFunctionName() == null) ? null : StringUtils.fromString(deleteFunctionRequest.getFunctionName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (deleteFunctionRequest.getFunctionName() == null) ? "" : StringUtils.fromString(deleteFunctionRequest.getFunctionName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

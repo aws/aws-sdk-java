@@ -17,7 +17,10 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes the user or group to be added or removed from the
+ * permissions for a volume.
+ * </p>
  */
 public class CreateVolumePermission implements Serializable, Cloneable {
 

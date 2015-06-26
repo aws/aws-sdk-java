@@ -133,6 +133,10 @@ public interface AmazonCognitoIdentity {
      * all federated identities as well as the developer user identifier, the
      * Cognito identity becomes inaccessible.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param unlinkDeveloperIdentityRequest Container for the necessary
      *           parameters to execute the UnlinkDeveloperIdentity service method on
@@ -159,8 +163,42 @@ public interface AmazonCognitoIdentity {
 
     /**
      * <p>
+     * Deletes identities from an identity pool. You can specify a list of
+     * 1-60 identities that you want to delete.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
+     *
+     * @param deleteIdentitiesRequest Container for the necessary parameters
+     *           to execute the DeleteIdentities service method on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return The response from the DeleteIdentities service method, as
+     *         returned by AmazonCognitoIdentity.
+     * 
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     * @throws TooManyRequestsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteIdentitiesResult deleteIdentities(DeleteIdentitiesRequest deleteIdentitiesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Gets details about a particular identity pool, including the pool
      * name, ID description, creation date, and current number of users.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param describeIdentityPoolRequest Container for the necessary
@@ -192,6 +230,13 @@ public interface AmazonCognitoIdentity {
      * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
      * create an implicit linked account.
      * </p>
+     * <p>
+     * token+";"+tokenSecret.
+     * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param getIdRequest Container for the necessary parameters to execute
      *           the GetId service method on AmazonCognitoIdentity.
@@ -206,6 +251,7 @@ public interface AmazonCognitoIdentity {
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
+     * @throws ExternalServiceException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -222,6 +268,9 @@ public interface AmazonCognitoIdentity {
      * <p>
      * Deletes a user pool. Once a pool is deleted, users will not be able
      * to authenticate with the pool.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param deleteIdentityPoolRequest Container for the necessary
@@ -250,6 +299,9 @@ public interface AmazonCognitoIdentity {
      * <p>
      * Updates a user pool.
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param updateIdentityPoolRequest Container for the necessary
      *           parameters to execute the UpdateIdentityPool service method on
@@ -261,6 +313,7 @@ public interface AmazonCognitoIdentity {
      * @throws ResourceConflictException
      * @throws InternalErrorException
      * @throws NotAuthorizedException
+     * @throws ConcurrentModificationException
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
@@ -283,6 +336,10 @@ public interface AmazonCognitoIdentity {
      * token is for cognito-identity.amazonaws.com, it will be passed through
      * to AWS Security Token Service with the appropriate role for the token.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param getCredentialsForIdentityRequest Container for the necessary
      *           parameters to execute the GetCredentialsForIdentity service method on
@@ -298,6 +355,7 @@ public interface AmazonCognitoIdentity {
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
+     * @throws ExternalServiceException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -322,6 +380,9 @@ public interface AmazonCognitoIdentity {
      * developer-authenticated users can be merged. If the users to be merged
      * are associated with the same public provider, but as two different
      * users, an exception will be thrown.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param mergeDeveloperIdentitiesRequest Container for the necessary
@@ -352,6 +413,10 @@ public interface AmazonCognitoIdentity {
     /**
      * <p>
      * Lists all of the Cognito identity pools registered for your account.
+     * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
      * </p>
      *
      * @param listIdentityPoolsRequest Container for the necessary parameters
@@ -386,6 +451,10 @@ public interface AmazonCognitoIdentity {
      * <p>
      * The OpenId token is valid for 15 minutes.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param getOpenIdTokenRequest Container for the necessary parameters to
      *           execute the GetOpenIdToken service method on AmazonCognitoIdentity.
@@ -399,6 +468,7 @@ public interface AmazonCognitoIdentity {
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
+     * @throws ExternalServiceException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -409,36 +479,6 @@ public interface AmazonCognitoIdentity {
      *             either a problem with the data in the request, or a server side issue.
      */
     public GetOpenIdTokenResult getOpenIdToken(GetOpenIdTokenRequest getOpenIdTokenRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns metadata related to the given identity, including when the
-     * identity was created and any associated linked logins.
-     * </p>
-     *
-     * @param describeIdentityRequest Container for the necessary parameters
-     *           to execute the DescribeIdentity service method on
-     *           AmazonCognitoIdentity.
-     * 
-     * @return The response from the DescribeIdentity service method, as
-     *         returned by AmazonCognitoIdentity.
-     * 
-     * @throws InternalErrorException
-     * @throws NotAuthorizedException
-     * @throws InvalidParameterException
-     * @throws TooManyRequestsException
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCognitoIdentity indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeIdentityResult describeIdentity(DescribeIdentityRequest describeIdentityRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -455,6 +495,9 @@ public interface AmazonCognitoIdentity {
      * verified against the database, the response returns both values and is
      * the same as the request. Otherwise a
      * <code>ResourceConflictException</code> is thrown.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param lookupDeveloperIdentityRequest Container for the necessary
@@ -484,8 +527,44 @@ public interface AmazonCognitoIdentity {
 
     /**
      * <p>
+     * Returns metadata related to the given identity, including when the
+     * identity was created and any associated linked logins.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
+     *
+     * @param describeIdentityRequest Container for the necessary parameters
+     *           to execute the DescribeIdentity service method on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return The response from the DescribeIdentity service method, as
+     *         returned by AmazonCognitoIdentity.
+     * 
+     * @throws InternalErrorException
+     * @throws NotAuthorizedException
+     * @throws InvalidParameterException
+     * @throws TooManyRequestsException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeIdentityResult describeIdentity(DescribeIdentityRequest describeIdentityRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Sets the roles for an identity pool. These roles are used when making
      * calls to <code>GetCredentialsForIdentity</code> action.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param setIdentityPoolRolesRequest Container for the necessary
@@ -496,6 +575,7 @@ public interface AmazonCognitoIdentity {
      * @throws ResourceConflictException
      * @throws InternalErrorException
      * @throws NotAuthorizedException
+     * @throws ConcurrentModificationException
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
@@ -517,6 +597,10 @@ public interface AmazonCognitoIdentity {
      * logins will be considered new identities next time they are seen.
      * Removing the last linked login will make this identity inaccessible.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param unlinkIdentityRequest Container for the necessary parameters to
      *           execute the UnlinkIdentity service method on AmazonCognitoIdentity.
@@ -528,6 +612,7 @@ public interface AmazonCognitoIdentity {
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
+     * @throws ExternalServiceException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -543,6 +628,9 @@ public interface AmazonCognitoIdentity {
     /**
      * <p>
      * Lists the identities in a pool.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param listIdentitiesRequest Container for the necessary parameters to
@@ -571,6 +659,9 @@ public interface AmazonCognitoIdentity {
     /**
      * <p>
      * Gets the roles for an identity pool.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param getIdentityPoolRolesRequest Container for the necessary
@@ -619,6 +710,9 @@ public interface AmazonCognitoIdentity {
      * will create the identity in the specified <code>IdentityPoolId</code>
      * .
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param getOpenIdTokenForDeveloperIdentityRequest Container for the
      *           necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity
@@ -650,7 +744,8 @@ public interface AmazonCognitoIdentity {
      * <p>
      * Creates a new identity pool. The identity pool is a store of user
      * identity information that is specific to your AWS account. The limit
-     * on identity pools is 60 per account.
+     * on identity pools is 60 per account. You must use AWS Developer
+     * credentials to call this API.
      * </p>
      *
      * @param createIdentityPoolRequest Container for the necessary

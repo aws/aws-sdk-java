@@ -27,6 +27,11 @@ public class DiscoverPollEndpointResult implements Serializable, Cloneable {
     private String endpoint;
 
     /**
+     * The telemetry endpoint for the Amazon ECS agent.
+     */
+    private String telemetryEndpoint;
+
+    /**
      * The endpoint for the Amazon ECS agent to poll.
      *
      * @return The endpoint for the Amazon ECS agent to poll.
@@ -60,6 +65,39 @@ public class DiscoverPollEndpointResult implements Serializable, Cloneable {
     }
 
     /**
+     * The telemetry endpoint for the Amazon ECS agent.
+     *
+     * @return The telemetry endpoint for the Amazon ECS agent.
+     */
+    public String getTelemetryEndpoint() {
+        return telemetryEndpoint;
+    }
+    
+    /**
+     * The telemetry endpoint for the Amazon ECS agent.
+     *
+     * @param telemetryEndpoint The telemetry endpoint for the Amazon ECS agent.
+     */
+    public void setTelemetryEndpoint(String telemetryEndpoint) {
+        this.telemetryEndpoint = telemetryEndpoint;
+    }
+    
+    /**
+     * The telemetry endpoint for the Amazon ECS agent.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param telemetryEndpoint The telemetry endpoint for the Amazon ECS agent.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DiscoverPollEndpointResult withTelemetryEndpoint(String telemetryEndpoint) {
+        this.telemetryEndpoint = telemetryEndpoint;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -71,7 +109,8 @@ public class DiscoverPollEndpointResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() );
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");
+        if (getTelemetryEndpoint() != null) sb.append("TelemetryEndpoint: " + getTelemetryEndpoint() );
         sb.append("}");
         return sb.toString();
     }
@@ -82,6 +121,7 @@ public class DiscoverPollEndpointResult implements Serializable, Cloneable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode()); 
+        hashCode = prime * hashCode + ((getTelemetryEndpoint() == null) ? 0 : getTelemetryEndpoint().hashCode()); 
         return hashCode;
     }
     
@@ -95,6 +135,8 @@ public class DiscoverPollEndpointResult implements Serializable, Cloneable {
         
         if (other.getEndpoint() == null ^ this.getEndpoint() == null) return false;
         if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false) return false; 
+        if (other.getTelemetryEndpoint() == null ^ this.getTelemetryEndpoint() == null) return false;
+        if (other.getTelemetryEndpoint() != null && other.getTelemetryEndpoint().equals(this.getTelemetryEndpoint()) == false) return false; 
         return true;
     }
     

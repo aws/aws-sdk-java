@@ -32,29 +32,29 @@ import com.amazonaws.services.ec2.model.transform.DescribeImportImageTasksReques
 public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeImportImageTasksRequest> {
 
     /**
-     * A list of ImportImage task IDs to describe.
+     * A list of import image task IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> importTaskIds;
 
     /**
-     * The token to get the next page of paginated describe requests.
+     * A token that indicates the next page of results.
      */
     private String nextToken;
 
     /**
-     * The maximum number of results in a page.
+     * The maximum number of results to return in a single request.
      */
     private Integer maxResults;
 
     /**
-     * Filters to be applied on a describe request.
+     * One or more filters.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * A list of ImportImage task IDs to describe.
+     * A list of import image task IDs.
      *
-     * @return A list of ImportImage task IDs to describe.
+     * @return A list of import image task IDs.
      */
     public java.util.List<String> getImportTaskIds() {
         if (importTaskIds == null) {
@@ -65,9 +65,9 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A list of ImportImage task IDs to describe.
+     * A list of import image task IDs.
      *
-     * @param importTaskIds A list of ImportImage task IDs to describe.
+     * @param importTaskIds A list of import image task IDs.
      */
     public void setImportTaskIds(java.util.Collection<String> importTaskIds) {
         if (importTaskIds == null) {
@@ -80,7 +80,7 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A list of ImportImage task IDs to describe.
+     * A list of import image task IDs.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setImportTaskIds(java.util.Collection)} or {@link
@@ -89,7 +89,7 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importTaskIds A list of ImportImage task IDs to describe.
+     * @param importTaskIds A list of import image task IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -103,11 +103,11 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * A list of ImportImage task IDs to describe.
+     * A list of import image task IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importTaskIds A list of ImportImage task IDs to describe.
+     * @param importTaskIds A list of import image task IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -125,29 +125,29 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * The token to get the next page of paginated describe requests.
+     * A token that indicates the next page of results.
      *
-     * @return The token to get the next page of paginated describe requests.
+     * @return A token that indicates the next page of results.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The token to get the next page of paginated describe requests.
+     * A token that indicates the next page of results.
      *
-     * @param nextToken The token to get the next page of paginated describe requests.
+     * @param nextToken A token that indicates the next page of results.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The token to get the next page of paginated describe requests.
+     * A token that indicates the next page of results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The token to get the next page of paginated describe requests.
+     * @param nextToken A token that indicates the next page of results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -158,29 +158,29 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * The maximum number of results in a page.
+     * The maximum number of results to return in a single request.
      *
-     * @return The maximum number of results in a page.
+     * @return The maximum number of results to return in a single request.
      */
     public Integer getMaxResults() {
         return maxResults;
     }
     
     /**
-     * The maximum number of results in a page.
+     * The maximum number of results to return in a single request.
      *
-     * @param maxResults The maximum number of results in a page.
+     * @param maxResults The maximum number of results to return in a single request.
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
     
     /**
-     * The maximum number of results in a page.
+     * The maximum number of results to return in a single request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxResults The maximum number of results in a page.
+     * @param maxResults The maximum number of results to return in a single request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -191,9 +191,9 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Filters to be applied on a describe request.
+     * One or more filters.
      *
-     * @return Filters to be applied on a describe request.
+     * @return One or more filters.
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -204,9 +204,9 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * Filters to be applied on a describe request.
+     * One or more filters.
      *
-     * @param filters Filters to be applied on a describe request.
+     * @param filters One or more filters.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -219,7 +219,7 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * Filters to be applied on a describe request.
+     * One or more filters.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setFilters(java.util.Collection)} or {@link
@@ -228,7 +228,7 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters Filters to be applied on a describe request.
+     * @param filters One or more filters.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -242,11 +242,11 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
     }
     
     /**
-     * Filters to be applied on a describe request.
+     * One or more filters.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters Filters to be applied on a describe request.
+     * @param filters One or more filters.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

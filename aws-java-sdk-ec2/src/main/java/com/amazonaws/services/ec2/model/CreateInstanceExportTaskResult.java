@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class CreateInstanceExportTaskResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * Information about the instance export task.
      */
     private ExportTask exportTask;
 
     /**
-     * 
+     * Information about the instance export task.
      *
-     * @return 
+     * @return Information about the instance export task.
      */
     public ExportTask getExportTask() {
         return exportTask;
     }
     
     /**
-     * 
+     * Information about the instance export task.
      *
-     * @param exportTask 
+     * @param exportTask Information about the instance export task.
      */
     public void setExportTask(ExportTask exportTask) {
         this.exportTask = exportTask;
     }
     
     /**
-     * 
+     * Information about the instance export task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportTask 
+     * @param exportTask Information about the instance export task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

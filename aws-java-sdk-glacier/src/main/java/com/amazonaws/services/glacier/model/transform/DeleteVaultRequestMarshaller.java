@@ -90,25 +90,28 @@ public class DeleteVaultRequestMarshaller implements Marshaller<Request<DeleteVa
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (deleteVaultRequest.getAccountId() == null) ? null : StringUtils.fromString(deleteVaultRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (deleteVaultRequest.getAccountId() == null) ? "" : StringUtils.fromString(deleteVaultRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (deleteVaultRequest.getVaultName() == null) ? null : StringUtils.fromString(deleteVaultRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (deleteVaultRequest.getVaultName() == null) ? "" : StringUtils.fromString(deleteVaultRequest.getVaultName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

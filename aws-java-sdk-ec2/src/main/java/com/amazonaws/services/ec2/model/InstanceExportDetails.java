@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an instance export task.
+ * Describes an instance to export.
  * </p>
  */
 public class InstanceExportDetails implements Serializable, Cloneable {

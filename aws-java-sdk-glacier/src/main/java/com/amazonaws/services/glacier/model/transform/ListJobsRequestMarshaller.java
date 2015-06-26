@@ -90,69 +90,76 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (listJobsRequest.getAccountId() == null) ? null : StringUtils.fromString(listJobsRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (listJobsRequest.getAccountId() == null) ? "" : StringUtils.fromString(listJobsRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (listJobsRequest.getVaultName() == null) ? null : StringUtils.fromString(listJobsRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (listJobsRequest.getVaultName() == null) ? "" : StringUtils.fromString(listJobsRequest.getVaultName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("limit")) {
             String name = DYNAMIC_QUERY_PARAMS.get("limit");
+
             String value = (listJobsRequest.getLimit() == null) ? null : StringUtils.fromString(listJobsRequest.getLimit());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{limit}", (listJobsRequest.getLimit() == null) ? "" : StringUtils.fromString(listJobsRequest.getLimit())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("marker")) {
             String name = DYNAMIC_QUERY_PARAMS.get("marker");
+
             String value = (listJobsRequest.getMarker() == null) ? null : StringUtils.fromString(listJobsRequest.getMarker());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{marker}", (listJobsRequest.getMarker() == null) ? "" : StringUtils.fromString(listJobsRequest.getMarker())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("statuscode")) {
             String name = DYNAMIC_QUERY_PARAMS.get("statuscode");
+
             String value = (listJobsRequest.getStatuscode() == null) ? null : StringUtils.fromString(listJobsRequest.getStatuscode());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{statuscode}", (listJobsRequest.getStatuscode() == null) ? "" : StringUtils.fromString(listJobsRequest.getStatuscode())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("completed")) {
             String name = DYNAMIC_QUERY_PARAMS.get("completed");
+
             String value = (listJobsRequest.getCompleted() == null) ? null : StringUtils.fromString(listJobsRequest.getCompleted());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{completed}", (listJobsRequest.getCompleted() == null) ? "" : StringUtils.fromString(listJobsRequest.getCompleted())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

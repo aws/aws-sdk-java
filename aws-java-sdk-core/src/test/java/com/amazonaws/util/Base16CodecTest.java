@@ -30,7 +30,7 @@ import org.junit.Test;
 /**
  * @author hchar
  */
-public class Base16CodecTest 
+public class Base16CodecTest
 {
     @Test
     public void testVectorsPerRfc4648()
@@ -60,18 +60,20 @@ public class Base16CodecTest
             String b16encoded = Base16.encodeAsString(data.getBytes("UTF-8"));
             Assert.assertEquals(expected[i], b16encoded);
             byte[] b16 = b16encoded.getBytes("UTF-8");
-            
+
             byte[] decoded = Base16.decode(b16);
+            Assert.assertTrue(Arrays.equals(source, decoded));
+            decoded = Base16Lower.decode(b16);
             Assert.assertTrue(Arrays.equals(source, decoded));
         }
     }
-    
+
     @Test
     public void testCodecConsistency()
         throws NoSuchAlgorithmException, UnsupportedEncodingException
     {
         byte[] decoded = null;
-        
+
         for (int h=0; h < 1000; h++) {
             byte[] digest = MessageDigest.getInstance("SHA-1").digest(
                 UUID.randomUUID().toString().getBytes("UTF-8")
@@ -80,9 +82,13 @@ public class Base16CodecTest
             {
                 decoded = Base16.decode(b16Encoded);
                 Assert.assertTrue(Arrays.equals(decoded, digest));
+                decoded = Base16Lower.decode(b16Encoded);
+                Assert.assertTrue(Arrays.equals(decoded, digest));
             }
             {   // test decoding case insensitivity
                 decoded = Base16.decode(b16Encoded.toLowerCase());
+                Assert.assertTrue(Arrays.equals(decoded, digest));
+                decoded = Base16Lower.decode(b16Encoded.toLowerCase());
                 Assert.assertTrue(Arrays.equals(decoded, digest));
             }
         }

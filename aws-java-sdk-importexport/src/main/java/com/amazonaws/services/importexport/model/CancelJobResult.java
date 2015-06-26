@@ -1,82 +1,68 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
 
 /**
- * <p>
  * Output structure for the CancelJob operation.
- * </p>
  */
 public class CancelJobResult implements Serializable, Cloneable {
 
-    /**
-     * Specifies whether (true) or not (false) AWS Import/Export updated your
-     * job.
-     */
     private Boolean success;
 
     /**
-     * Specifies whether (true) or not (false) AWS Import/Export updated your
-     * job.
-     *
-     * @return Specifies whether (true) or not (false) AWS Import/Export updated your
-     *         job.
-     */
-    public Boolean isSuccess() {
-        return success;
-    }
-    
-    /**
-     * Specifies whether (true) or not (false) AWS Import/Export updated your
-     * job.
-     *
-     * @param success Specifies whether (true) or not (false) AWS Import/Export updated your
-     *         job.
+     * Sets the value of the Success property for this object.
+     * 
+     * @param success
+     *        The new value for the Success property for this object.
      */
     public void setSuccess(Boolean success) {
         this.success = success;
     }
-    
+
     /**
-     * Specifies whether (true) or not (false) AWS Import/Export updated your
-     * job.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param success Specifies whether (true) or not (false) AWS Import/Export updated your
-     *         job.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Returns the value of the Success property for this object.
+     * 
+     * @return The value of the Success property for this object.
+     */
+    public Boolean getSuccess() {
+        return this.success;
+    }
+
+    /**
+     * Sets the value of the Success property for this object.
+     * 
+     * @param success
+     *        The new value for the Success property for this object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CancelJobResult withSuccess(Boolean success) {
-        this.success = success;
+        setSuccess(success);
         return this;
     }
 
     /**
-     * Specifies whether (true) or not (false) AWS Import/Export updated your
-     * job.
-     *
-     * @return Specifies whether (true) or not (false) AWS Import/Export updated your
-     *         job.
+     * Returns the value of the Success property for this object.
+     * 
+     * @return The value of the Success property for this object.
      */
-    public Boolean getSuccess() {
-        return success;
+    public Boolean isSuccess() {
+        return this.success;
     }
 
     /**
@@ -91,46 +77,48 @@ public class CancelJobResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (isSuccess() != null) sb.append("Success: " + isSuccess() );
+        if (getSuccess() != null)
+            sb.append("Success: " + getSuccess());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CancelJobResult == false)
+            return false;
+        CancelJobResult other = (CancelJobResult) obj;
+        if (other.getSuccess() == null ^ this.getSuccess() == null)
+            return false;
+        if (other.getSuccess() != null
+                && other.getSuccess().equals(this.getSuccess()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((isSuccess() == null) ? 0 : isSuccess().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getSuccess() == null) ? 0 : getSuccess().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CancelJobResult == false) return false;
-        CancelJobResult other = (CancelJobResult)obj;
-        
-        if (other.isSuccess() == null ^ this.isSuccess() == null) return false;
-        if (other.isSuccess() != null && other.isSuccess().equals(this.isSuccess()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CancelJobResult clone() {
         try {
             return (CancelJobResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

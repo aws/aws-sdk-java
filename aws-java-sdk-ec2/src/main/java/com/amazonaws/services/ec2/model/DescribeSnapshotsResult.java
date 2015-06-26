@@ -22,7 +22,7 @@ import java.io.Serializable;
 public class DescribeSnapshotsResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * Information about the snapshots.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot> snapshots;
 
@@ -36,9 +36,9 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
     private String nextToken;
 
     /**
-     * 
+     * Information about the snapshots.
      *
-     * @return 
+     * @return Information about the snapshots.
      */
     public java.util.List<Snapshot> getSnapshots() {
         if (snapshots == null) {
@@ -49,9 +49,9 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the snapshots.
      *
-     * @param snapshots 
+     * @param snapshots Information about the snapshots.
      */
     public void setSnapshots(java.util.Collection<Snapshot> snapshots) {
         if (snapshots == null) {
@@ -64,7 +64,7 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the snapshots.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setSnapshots(java.util.Collection)} or {@link
@@ -73,7 +73,7 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshots 
+     * @param snapshots Information about the snapshots.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -87,11 +87,11 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * Information about the snapshots.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshots 
+     * @param snapshots Information about the snapshots.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

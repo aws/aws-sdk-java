@@ -90,36 +90,40 @@ public class ListJobsByPipelineRequestMarshaller implements Marshaller<Request<L
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("PipelineId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("PipelineId");
+
             String value = (listJobsByPipelineRequest.getPipelineId() == null) ? null : StringUtils.fromString(listJobsByPipelineRequest.getPipelineId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{PipelineId}", (listJobsByPipelineRequest.getPipelineId() == null) ? "" : StringUtils.fromString(listJobsByPipelineRequest.getPipelineId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Ascending")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Ascending");
+
             String value = (listJobsByPipelineRequest.getAscending() == null) ? null : StringUtils.fromString(listJobsByPipelineRequest.getAscending());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Ascending}", (listJobsByPipelineRequest.getAscending() == null) ? "" : StringUtils.fromString(listJobsByPipelineRequest.getAscending())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("PageToken")) {
             String name = DYNAMIC_QUERY_PARAMS.get("PageToken");
+
             String value = (listJobsByPipelineRequest.getPageToken() == null) ? null : StringUtils.fromString(listJobsByPipelineRequest.getPageToken());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{PageToken}", (listJobsByPipelineRequest.getPageToken() == null) ? "" : StringUtils.fromString(listJobsByPipelineRequest.getPageToken())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

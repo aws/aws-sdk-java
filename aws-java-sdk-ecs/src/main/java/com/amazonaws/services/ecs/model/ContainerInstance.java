@@ -40,6 +40,12 @@ public class ContainerInstance implements Serializable, Cloneable {
     private String ec2InstanceId;
 
     /**
+     * The version information for the Amazon ECS container agent and Docker
+     * daemon running on the container instance.
+     */
+    private VersionInfo versionInfo;
+
+    /**
      * The remaining resources of the container instance that are available
      * for new tasks.
      */
@@ -77,6 +83,15 @@ public class ContainerInstance implements Serializable, Cloneable {
      * <code>PENDING</code> status.
      */
     private Integer pendingTasksCount;
+
+    /**
+     * The status of the most recent agent update. If an update has never
+     * been requested, this value is <code>NULL</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
+     */
+    private String agentUpdateStatus;
 
     /**
      * The Amazon Resource Name (ARN) of the container instance. The ARN
@@ -171,6 +186,45 @@ public class ContainerInstance implements Serializable, Cloneable {
      */
     public ContainerInstance withEc2InstanceId(String ec2InstanceId) {
         this.ec2InstanceId = ec2InstanceId;
+        return this;
+    }
+
+    /**
+     * The version information for the Amazon ECS container agent and Docker
+     * daemon running on the container instance.
+     *
+     * @return The version information for the Amazon ECS container agent and Docker
+     *         daemon running on the container instance.
+     */
+    public VersionInfo getVersionInfo() {
+        return versionInfo;
+    }
+    
+    /**
+     * The version information for the Amazon ECS container agent and Docker
+     * daemon running on the container instance.
+     *
+     * @param versionInfo The version information for the Amazon ECS container agent and Docker
+     *         daemon running on the container instance.
+     */
+    public void setVersionInfo(VersionInfo versionInfo) {
+        this.versionInfo = versionInfo;
+    }
+    
+    /**
+     * The version information for the Amazon ECS container agent and Docker
+     * daemon running on the container instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param versionInfo The version information for the Amazon ECS container agent and Docker
+     *         daemon running on the container instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ContainerInstance withVersionInfo(VersionInfo versionInfo) {
+        this.versionInfo = versionInfo;
         return this;
     }
 
@@ -526,6 +580,98 @@ public class ContainerInstance implements Serializable, Cloneable {
     }
 
     /**
+     * The status of the most recent agent update. If an update has never
+     * been requested, this value is <code>NULL</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
+     *
+     * @return The status of the most recent agent update. If an update has never
+     *         been requested, this value is <code>NULL</code>.
+     *
+     * @see AgentUpdateStatus
+     */
+    public String getAgentUpdateStatus() {
+        return agentUpdateStatus;
+    }
+    
+    /**
+     * The status of the most recent agent update. If an update has never
+     * been requested, this value is <code>NULL</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
+     *
+     * @param agentUpdateStatus The status of the most recent agent update. If an update has never
+     *         been requested, this value is <code>NULL</code>.
+     *
+     * @see AgentUpdateStatus
+     */
+    public void setAgentUpdateStatus(String agentUpdateStatus) {
+        this.agentUpdateStatus = agentUpdateStatus;
+    }
+    
+    /**
+     * The status of the most recent agent update. If an update has never
+     * been requested, this value is <code>NULL</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
+     *
+     * @param agentUpdateStatus The status of the most recent agent update. If an update has never
+     *         been requested, this value is <code>NULL</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see AgentUpdateStatus
+     */
+    public ContainerInstance withAgentUpdateStatus(String agentUpdateStatus) {
+        this.agentUpdateStatus = agentUpdateStatus;
+        return this;
+    }
+
+    /**
+     * The status of the most recent agent update. If an update has never
+     * been requested, this value is <code>NULL</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
+     *
+     * @param agentUpdateStatus The status of the most recent agent update. If an update has never
+     *         been requested, this value is <code>NULL</code>.
+     *
+     * @see AgentUpdateStatus
+     */
+    public void setAgentUpdateStatus(AgentUpdateStatus agentUpdateStatus) {
+        this.agentUpdateStatus = agentUpdateStatus.toString();
+    }
+    
+    /**
+     * The status of the most recent agent update. If an update has never
+     * been requested, this value is <code>NULL</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED
+     *
+     * @param agentUpdateStatus The status of the most recent agent update. If an update has never
+     *         been requested, this value is <code>NULL</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see AgentUpdateStatus
+     */
+    public ContainerInstance withAgentUpdateStatus(AgentUpdateStatus agentUpdateStatus) {
+        this.agentUpdateStatus = agentUpdateStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -539,12 +685,14 @@ public class ContainerInstance implements Serializable, Cloneable {
         sb.append("{");
         if (getContainerInstanceArn() != null) sb.append("ContainerInstanceArn: " + getContainerInstanceArn() + ",");
         if (getEc2InstanceId() != null) sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+        if (getVersionInfo() != null) sb.append("VersionInfo: " + getVersionInfo() + ",");
         if (getRemainingResources() != null) sb.append("RemainingResources: " + getRemainingResources() + ",");
         if (getRegisteredResources() != null) sb.append("RegisteredResources: " + getRegisteredResources() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (isAgentConnected() != null) sb.append("AgentConnected: " + isAgentConnected() + ",");
         if (getRunningTasksCount() != null) sb.append("RunningTasksCount: " + getRunningTasksCount() + ",");
-        if (getPendingTasksCount() != null) sb.append("PendingTasksCount: " + getPendingTasksCount() );
+        if (getPendingTasksCount() != null) sb.append("PendingTasksCount: " + getPendingTasksCount() + ",");
+        if (getAgentUpdateStatus() != null) sb.append("AgentUpdateStatus: " + getAgentUpdateStatus() );
         sb.append("}");
         return sb.toString();
     }
@@ -556,12 +704,14 @@ public class ContainerInstance implements Serializable, Cloneable {
         
         hashCode = prime * hashCode + ((getContainerInstanceArn() == null) ? 0 : getContainerInstanceArn().hashCode()); 
         hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getVersionInfo() == null) ? 0 : getVersionInfo().hashCode()); 
         hashCode = prime * hashCode + ((getRemainingResources() == null) ? 0 : getRemainingResources().hashCode()); 
         hashCode = prime * hashCode + ((getRegisteredResources() == null) ? 0 : getRegisteredResources().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((isAgentConnected() == null) ? 0 : isAgentConnected().hashCode()); 
         hashCode = prime * hashCode + ((getRunningTasksCount() == null) ? 0 : getRunningTasksCount().hashCode()); 
         hashCode = prime * hashCode + ((getPendingTasksCount() == null) ? 0 : getPendingTasksCount().hashCode()); 
+        hashCode = prime * hashCode + ((getAgentUpdateStatus() == null) ? 0 : getAgentUpdateStatus().hashCode()); 
         return hashCode;
     }
     
@@ -577,6 +727,8 @@ public class ContainerInstance implements Serializable, Cloneable {
         if (other.getContainerInstanceArn() != null && other.getContainerInstanceArn().equals(this.getContainerInstanceArn()) == false) return false; 
         if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null) return false;
         if (other.getEc2InstanceId() != null && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false) return false; 
+        if (other.getVersionInfo() == null ^ this.getVersionInfo() == null) return false;
+        if (other.getVersionInfo() != null && other.getVersionInfo().equals(this.getVersionInfo()) == false) return false; 
         if (other.getRemainingResources() == null ^ this.getRemainingResources() == null) return false;
         if (other.getRemainingResources() != null && other.getRemainingResources().equals(this.getRemainingResources()) == false) return false; 
         if (other.getRegisteredResources() == null ^ this.getRegisteredResources() == null) return false;
@@ -589,6 +741,8 @@ public class ContainerInstance implements Serializable, Cloneable {
         if (other.getRunningTasksCount() != null && other.getRunningTasksCount().equals(this.getRunningTasksCount()) == false) return false; 
         if (other.getPendingTasksCount() == null ^ this.getPendingTasksCount() == null) return false;
         if (other.getPendingTasksCount() != null && other.getPendingTasksCount().equals(this.getPendingTasksCount()) == false) return false; 
+        if (other.getAgentUpdateStatus() == null ^ this.getAgentUpdateStatus() == null) return false;
+        if (other.getAgentUpdateStatus() != null && other.getAgentUpdateStatus().equals(this.getAgentUpdateStatus()) == false) return false; 
         return true;
     }
     

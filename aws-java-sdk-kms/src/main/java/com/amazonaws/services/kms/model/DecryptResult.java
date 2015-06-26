@@ -22,9 +22,8 @@ import java.io.Serializable;
 public class DecryptResult implements Serializable, Cloneable {
 
     /**
-     * Unique identifier created by the system for the key. This value is
-     * always returned as long as no errors are encountered during the
-     * operation.
+     * ARN of the key used to perform the decryption. This value is returned
+     * if no errors are encountered during the operation.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -42,50 +41,44 @@ public class DecryptResult implements Serializable, Cloneable {
     private java.nio.ByteBuffer plaintext;
 
     /**
-     * Unique identifier created by the system for the key. This value is
-     * always returned as long as no errors are encountered during the
-     * operation.
+     * ARN of the key used to perform the decryption. This value is returned
+     * if no errors are encountered during the operation.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Unique identifier created by the system for the key. This value is
-     *         always returned as long as no errors are encountered during the
-     *         operation.
+     * @return ARN of the key used to perform the decryption. This value is returned
+     *         if no errors are encountered during the operation.
      */
     public String getKeyId() {
         return keyId;
     }
     
     /**
-     * Unique identifier created by the system for the key. This value is
-     * always returned as long as no errors are encountered during the
-     * operation.
+     * ARN of the key used to perform the decryption. This value is returned
+     * if no errors are encountered during the operation.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier created by the system for the key. This value is
-     *         always returned as long as no errors are encountered during the
-     *         operation.
+     * @param keyId ARN of the key used to perform the decryption. This value is returned
+     *         if no errors are encountered during the operation.
      */
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
     
     /**
-     * Unique identifier created by the system for the key. This value is
-     * always returned as long as no errors are encountered during the
-     * operation.
+     * ARN of the key used to perform the decryption. This value is returned
+     * if no errors are encountered during the operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier created by the system for the key. This value is
-     *         always returned as long as no errors are encountered during the
-     *         operation.
+     * @param keyId ARN of the key used to perform the decryption. This value is returned
+     *         if no errors are encountered during the operation.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

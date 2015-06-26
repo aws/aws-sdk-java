@@ -32,7 +32,7 @@ import com.amazonaws.services.ec2.model.transform.CancelConversionTaskRequestMar
  * <p>
  * For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelConversionTask(CancelConversionTaskRequest)
@@ -45,7 +45,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest impleme
     private String conversionTaskId;
 
     /**
-     * 
+     * The reason for canceling the conversion task.
      */
     private String reasonMessage;
 
@@ -83,29 +83,29 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * 
+     * The reason for canceling the conversion task.
      *
-     * @return 
+     * @return The reason for canceling the conversion task.
      */
     public String getReasonMessage() {
         return reasonMessage;
     }
     
     /**
-     * 
+     * The reason for canceling the conversion task.
      *
-     * @param reasonMessage 
+     * @param reasonMessage The reason for canceling the conversion task.
      */
     public void setReasonMessage(String reasonMessage) {
         this.reasonMessage = reasonMessage;
     }
     
     /**
-     * 
+     * The reason for canceling the conversion task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reasonMessage 
+     * @param reasonMessage The reason for canceling the conversion task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

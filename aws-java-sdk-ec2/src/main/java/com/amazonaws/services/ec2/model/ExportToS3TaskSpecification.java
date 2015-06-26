@@ -17,12 +17,14 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes an instance export task.
+ * </p>
  */
 public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
-     * 
+     * The format for the exported image.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
@@ -30,7 +32,8 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     private String diskImageFormat;
 
     /**
-     * 
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ova
@@ -38,23 +41,25 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     private String containerFormat;
 
     /**
-     * 
+     * The S3 bucket for the destination image. The destination bucket must
+     * exist and grant WRITE and READ_ACP permissions to the AWS account
+     * <code>vm-import-export@amazon.com</code>.
      */
     private String s3Bucket;
 
     /**
-     * The image is written to a single object in the Amazon S3 bucket at the
-     * S3 key s3prefix + exportTaskId + '.' + diskImageFormat.
+     * The image is written to a single object in the S3 bucket at the S3 key
+     * s3prefix + exportTaskId + '.' + diskImageFormat.
      */
     private String s3Prefix;
 
     /**
-     * 
+     * The format for the exported image.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @return 
+     * @return The format for the exported image.
      *
      * @see DiskImageFormat
      */
@@ -63,12 +68,12 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * The format for the exported image.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param diskImageFormat 
+     * @param diskImageFormat The format for the exported image.
      *
      * @see DiskImageFormat
      */
@@ -77,14 +82,14 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * The format for the exported image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param diskImageFormat 
+     * @param diskImageFormat The format for the exported image.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -97,12 +102,12 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The format for the exported image.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param diskImageFormat 
+     * @param diskImageFormat The format for the exported image.
      *
      * @see DiskImageFormat
      */
@@ -111,14 +116,14 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * The format for the exported image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
-     * @param diskImageFormat 
+     * @param diskImageFormat The format for the exported image.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -131,12 +136,14 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ova
      *
-     * @return 
+     * @return The container format used to combine disk images with metadata (such
+     *         as OVF). If absent, only the disk image is exported.
      *
      * @see ContainerFormat
      */
@@ -145,12 +152,14 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ova
      *
-     * @param containerFormat 
+     * @param containerFormat The container format used to combine disk images with metadata (such
+     *         as OVF). If absent, only the disk image is exported.
      *
      * @see ContainerFormat
      */
@@ -159,14 +168,16 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ova
      *
-     * @param containerFormat 
+     * @param containerFormat The container format used to combine disk images with metadata (such
+     *         as OVF). If absent, only the disk image is exported.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -179,12 +190,14 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ova
      *
-     * @param containerFormat 
+     * @param containerFormat The container format used to combine disk images with metadata (such
+     *         as OVF). If absent, only the disk image is exported.
      *
      * @see ContainerFormat
      */
@@ -193,14 +206,16 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * The container format used to combine disk images with metadata (such
+     * as OVF). If absent, only the disk image is exported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ova
      *
-     * @param containerFormat 
+     * @param containerFormat The container format used to combine disk images with metadata (such
+     *         as OVF). If absent, only the disk image is exported.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -213,29 +228,41 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The S3 bucket for the destination image. The destination bucket must
+     * exist and grant WRITE and READ_ACP permissions to the AWS account
+     * <code>vm-import-export@amazon.com</code>.
      *
-     * @return 
+     * @return The S3 bucket for the destination image. The destination bucket must
+     *         exist and grant WRITE and READ_ACP permissions to the AWS account
+     *         <code>vm-import-export@amazon.com</code>.
      */
     public String getS3Bucket() {
         return s3Bucket;
     }
     
     /**
-     * 
+     * The S3 bucket for the destination image. The destination bucket must
+     * exist and grant WRITE and READ_ACP permissions to the AWS account
+     * <code>vm-import-export@amazon.com</code>.
      *
-     * @param s3Bucket 
+     * @param s3Bucket The S3 bucket for the destination image. The destination bucket must
+     *         exist and grant WRITE and READ_ACP permissions to the AWS account
+     *         <code>vm-import-export@amazon.com</code>.
      */
     public void setS3Bucket(String s3Bucket) {
         this.s3Bucket = s3Bucket;
     }
     
     /**
-     * 
+     * The S3 bucket for the destination image. The destination bucket must
+     * exist and grant WRITE and READ_ACP permissions to the AWS account
+     * <code>vm-import-export@amazon.com</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3Bucket 
+     * @param s3Bucket The S3 bucket for the destination image. The destination bucket must
+     *         exist and grant WRITE and READ_ACP permissions to the AWS account
+     *         <code>vm-import-export@amazon.com</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -246,35 +273,35 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * The image is written to a single object in the Amazon S3 bucket at the
-     * S3 key s3prefix + exportTaskId + '.' + diskImageFormat.
+     * The image is written to a single object in the S3 bucket at the S3 key
+     * s3prefix + exportTaskId + '.' + diskImageFormat.
      *
-     * @return The image is written to a single object in the Amazon S3 bucket at the
-     *         S3 key s3prefix + exportTaskId + '.' + diskImageFormat.
+     * @return The image is written to a single object in the S3 bucket at the S3 key
+     *         s3prefix + exportTaskId + '.' + diskImageFormat.
      */
     public String getS3Prefix() {
         return s3Prefix;
     }
     
     /**
-     * The image is written to a single object in the Amazon S3 bucket at the
-     * S3 key s3prefix + exportTaskId + '.' + diskImageFormat.
+     * The image is written to a single object in the S3 bucket at the S3 key
+     * s3prefix + exportTaskId + '.' + diskImageFormat.
      *
-     * @param s3Prefix The image is written to a single object in the Amazon S3 bucket at the
-     *         S3 key s3prefix + exportTaskId + '.' + diskImageFormat.
+     * @param s3Prefix The image is written to a single object in the S3 bucket at the S3 key
+     *         s3prefix + exportTaskId + '.' + diskImageFormat.
      */
     public void setS3Prefix(String s3Prefix) {
         this.s3Prefix = s3Prefix;
     }
     
     /**
-     * The image is written to a single object in the Amazon S3 bucket at the
-     * S3 key s3prefix + exportTaskId + '.' + diskImageFormat.
+     * The image is written to a single object in the S3 bucket at the S3 key
+     * s3prefix + exportTaskId + '.' + diskImageFormat.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3Prefix The image is written to a single object in the Amazon S3 bucket at the
-     *         S3 key s3prefix + exportTaskId + '.' + diskImageFormat.
+     * @param s3Prefix The image is written to a single object in the S3 bucket at the S3 key
+     *         s3prefix + exportTaskId + '.' + diskImageFormat.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

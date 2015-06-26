@@ -44,7 +44,8 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
 
     /**
-     * The capabilities reason found within the template.
+     * The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.
      */
     private String capabilitiesReason;
 
@@ -301,29 +302,35 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
     }
 
     /**
-     * The capabilities reason found within the template.
+     * The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.
      *
-     * @return The capabilities reason found within the template.
+     * @return The list of resources that generated the values in the
+     *         <code>Capabilities</code> response element.
      */
     public String getCapabilitiesReason() {
         return capabilitiesReason;
     }
     
     /**
-     * The capabilities reason found within the template.
+     * The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.
      *
-     * @param capabilitiesReason The capabilities reason found within the template.
+     * @param capabilitiesReason The list of resources that generated the values in the
+     *         <code>Capabilities</code> response element.
      */
     public void setCapabilitiesReason(String capabilitiesReason) {
         this.capabilitiesReason = capabilitiesReason;
     }
     
     /**
-     * The capabilities reason found within the template.
+     * The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param capabilitiesReason The capabilities reason found within the template.
+     * @param capabilitiesReason The list of resources that generated the values in the
+     *         <code>Capabilities</code> response element.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

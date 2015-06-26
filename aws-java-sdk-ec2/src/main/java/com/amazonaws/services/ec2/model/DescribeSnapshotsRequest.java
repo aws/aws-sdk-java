@@ -23,11 +23,11 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotsRequestMarsha
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest) DescribeSnapshots operation}.
  * <p>
- * Describes one or more of the Amazon EBS snapshots available to you.
- * Available snapshots include public snapshots available for any AWS
- * account to launch, private snapshots that you own, and private
- * snapshots owned by another AWS account but for which you've been given
- * explicit create volume permissions.
+ * Describes one or more of the EBS snapshots available to you. Available
+ * snapshots include public snapshots available for any AWS account to
+ * launch, private snapshots that you own, and private snapshots owned by
+ * another AWS account but for which you've been given explicit create
+ * volume permissions.
  * </p>
  * <p>
  * The create volume permissions fall into the following categories:
@@ -80,9 +80,9 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotsRequestMarsha
  * results.
  * </p>
  * <p>
- * For more information about Amazon EBS snapshots, see
+ * For more information about EBS snapshots, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"> Amazon EBS Snapshots </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest)

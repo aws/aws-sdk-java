@@ -73,6 +73,10 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     describeGatewayInformationResult.setNextUpdateAvailabilityDate(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LastSoftwareUpdate", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setLastSoftwareUpdate(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

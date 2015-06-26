@@ -69,6 +69,10 @@ public class AutoScalingThresholdsJsonUnmarshaller implements Unmarshaller<AutoS
                     context.nextToken();
                     autoScalingThresholds.setLoadThreshold(DoubleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Alarms", targetDepth)) {
+                    context.nextToken();
+                    autoScalingThresholds.setAlarms(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

@@ -46,7 +46,8 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
 
     /**
-     * The capabilities reason found within the template.
+     * The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.
      */
     private String capabilitiesReason;
 
@@ -55,6 +56,12 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * the template.
      */
     private String version;
+
+    /**
+     * The value that is defined for the <code>Metadata</code> property of
+     * the template.
+     */
+    private String metadata;
 
     /**
      * A list of parameter declarations that describe various properties for
@@ -323,29 +330,35 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
     }
 
     /**
-     * The capabilities reason found within the template.
+     * The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.
      *
-     * @return The capabilities reason found within the template.
+     * @return The list of resources that generated the values in the
+     *         <code>Capabilities</code> response element.
      */
     public String getCapabilitiesReason() {
         return capabilitiesReason;
     }
     
     /**
-     * The capabilities reason found within the template.
+     * The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.
      *
-     * @param capabilitiesReason The capabilities reason found within the template.
+     * @param capabilitiesReason The list of resources that generated the values in the
+     *         <code>Capabilities</code> response element.
      */
     public void setCapabilitiesReason(String capabilitiesReason) {
         this.capabilitiesReason = capabilitiesReason;
     }
     
     /**
-     * The capabilities reason found within the template.
+     * The list of resources that generated the values in the
+     * <code>Capabilities</code> response element.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param capabilitiesReason The capabilities reason found within the template.
+     * @param capabilitiesReason The list of resources that generated the values in the
+     *         <code>Capabilities</code> response element.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -395,6 +408,45 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
     }
 
     /**
+     * The value that is defined for the <code>Metadata</code> property of
+     * the template.
+     *
+     * @return The value that is defined for the <code>Metadata</code> property of
+     *         the template.
+     */
+    public String getMetadata() {
+        return metadata;
+    }
+    
+    /**
+     * The value that is defined for the <code>Metadata</code> property of
+     * the template.
+     *
+     * @param metadata The value that is defined for the <code>Metadata</code> property of
+     *         the template.
+     */
+    public void setMetadata(String metadata) {
+        this.metadata = metadata;
+    }
+    
+    /**
+     * The value that is defined for the <code>Metadata</code> property of
+     * the template.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param metadata The value that is defined for the <code>Metadata</code> property of
+     *         the template.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetTemplateSummaryResult withMetadata(String metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -410,7 +462,8 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");
         if (getCapabilitiesReason() != null) sb.append("CapabilitiesReason: " + getCapabilitiesReason() + ",");
-        if (getVersion() != null) sb.append("Version: " + getVersion() );
+        if (getVersion() != null) sb.append("Version: " + getVersion() + ",");
+        if (getMetadata() != null) sb.append("Metadata: " + getMetadata() );
         sb.append("}");
         return sb.toString();
     }
@@ -425,6 +478,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode()); 
         hashCode = prime * hashCode + ((getCapabilitiesReason() == null) ? 0 : getCapabilitiesReason().hashCode()); 
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode()); 
         return hashCode;
     }
     
@@ -446,6 +500,8 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
         if (other.getCapabilitiesReason() != null && other.getCapabilitiesReason().equals(this.getCapabilitiesReason()) == false) return false; 
         if (other.getVersion() == null ^ this.getVersion() == null) return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false) return false; 
+        if (other.getMetadata() == null ^ this.getMetadata() == null) return false;
+        if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false) return false; 
         return true;
     }
     

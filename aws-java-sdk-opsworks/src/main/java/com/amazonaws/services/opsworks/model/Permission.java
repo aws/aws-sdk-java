@@ -47,10 +47,10 @@ public class Permission implements Serializable, Cloneable {
     private Boolean allowSudo;
 
     /**
-     * The user's permission level, which must be the following: <ul>
-     * <li><code>deny</code></li> <li><code>show</code></li>
-     * <li><code>deploy</code></li> <li><code>manage</code></li>
-     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * The user's permission level, which must be the following: <ul> <li>
+     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>
@@ -226,18 +226,18 @@ public class Permission implements Serializable, Cloneable {
     }
 
     /**
-     * The user's permission level, which must be the following: <ul>
-     * <li><code>deny</code></li> <li><code>show</code></li>
-     * <li><code>deploy</code></li> <li><code>manage</code></li>
-     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * The user's permission level, which must be the following: <ul> <li>
+     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>
      *
-     * @return The user's permission level, which must be the following: <ul>
-     *         <li><code>deny</code></li> <li><code>show</code></li>
-     *         <li><code>deploy</code></li> <li><code>manage</code></li>
-     *         <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * @return The user's permission level, which must be the following: <ul> <li>
+     *         <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     *         <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     *         <code>iam_only</code> </li> </ul> <p>For more information on the
      *         permissions associated with these levels, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      *         User Permissions</a>
@@ -247,18 +247,18 @@ public class Permission implements Serializable, Cloneable {
     }
     
     /**
-     * The user's permission level, which must be the following: <ul>
-     * <li><code>deny</code></li> <li><code>show</code></li>
-     * <li><code>deploy</code></li> <li><code>manage</code></li>
-     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * The user's permission level, which must be the following: <ul> <li>
+     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>
      *
-     * @param level The user's permission level, which must be the following: <ul>
-     *         <li><code>deny</code></li> <li><code>show</code></li>
-     *         <li><code>deploy</code></li> <li><code>manage</code></li>
-     *         <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * @param level The user's permission level, which must be the following: <ul> <li>
+     *         <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     *         <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     *         <code>iam_only</code> </li> </ul> <p>For more information on the
      *         permissions associated with these levels, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      *         User Permissions</a>
@@ -268,20 +268,20 @@ public class Permission implements Serializable, Cloneable {
     }
     
     /**
-     * The user's permission level, which must be the following: <ul>
-     * <li><code>deny</code></li> <li><code>show</code></li>
-     * <li><code>deploy</code></li> <li><code>manage</code></li>
-     * <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * The user's permission level, which must be the following: <ul> <li>
+     * <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     * <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     * <code>iam_only</code> </li> </ul> <p>For more information on the
      * permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param level The user's permission level, which must be the following: <ul>
-     *         <li><code>deny</code></li> <li><code>show</code></li>
-     *         <li><code>deploy</code></li> <li><code>manage</code></li>
-     *         <li><code>iam_only</code></li> </ul> <p>For more information on the
+     * @param level The user's permission level, which must be the following: <ul> <li>
+     *         <code>deny</code> </li> <li> <code>show</code> </li> <li>
+     *         <code>deploy</code> </li> <li> <code>manage</code> </li> <li>
+     *         <code>iam_only</code> </li> </ul> <p>For more information on the
      *         permissions associated with these levels, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      *         User Permissions</a>

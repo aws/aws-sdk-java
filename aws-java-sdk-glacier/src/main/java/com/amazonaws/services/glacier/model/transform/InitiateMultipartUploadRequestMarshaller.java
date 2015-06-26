@@ -96,25 +96,28 @@ public class InitiateMultipartUploadRequestMarshaller implements Marshaller<Requ
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (initiateMultipartUploadRequest.getAccountId() == null) ? null : StringUtils.fromString(initiateMultipartUploadRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (initiateMultipartUploadRequest.getAccountId() == null) ? "" : StringUtils.fromString(initiateMultipartUploadRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (initiateMultipartUploadRequest.getVaultName() == null) ? null : StringUtils.fromString(initiateMultipartUploadRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (initiateMultipartUploadRequest.getVaultName() == null) ? "" : StringUtils.fromString(initiateMultipartUploadRequest.getVaultName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

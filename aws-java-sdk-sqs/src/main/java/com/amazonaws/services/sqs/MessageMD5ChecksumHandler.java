@@ -238,12 +238,12 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
                 } else if (attrValue.getBinaryValue() != null) {
                     md5Digest.update(BINARY_TYPE_FIELD_INDEX);
                     updateLengthAndBytes(md5Digest, attrValue.getBinaryValue());
-                } else if (attrValue.getStringListValues() != null) {
+                } else if (attrValue.getStringListValues().size() > 0) {
                     md5Digest.update(STRING_LIST_TYPE_FIELD_INDEX);
                     for (String strListMember : attrValue.getStringListValues()) {
                         updateLengthAndBytes(md5Digest, strListMember);
                     }
-                } else if (attrValue.getBinaryListValues() != null) {
+                } else if (attrValue.getBinaryListValues().size() > 0) {
                     md5Digest.update(BINARY_LIST_TYPE_FIELD_INDEX);
                     for (ByteBuffer byteListMember : attrValue.getBinaryListValues()) {
                         updateLengthAndBytes(md5Digest, byteListMember);

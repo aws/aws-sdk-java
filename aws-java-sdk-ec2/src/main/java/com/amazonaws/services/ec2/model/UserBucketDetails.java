@@ -18,45 +18,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * User's Amazon S3 bucket details used to access the image.
+ * Describes the S3 bucket for the disk image.
  * </p>
  */
 public class UserBucketDetails implements Serializable, Cloneable {
 
     /**
-     * The Amazon S3 bucket from which the disk image was created.
+     * The S3 bucket from which the disk image was created.
      */
     private String s3Bucket;
 
     /**
-     * The Amazon S3 key from which the disk image was created.
+     * The key from which the disk image was created.
      */
     private String s3Key;
 
     /**
-     * The Amazon S3 bucket from which the disk image was created.
+     * The S3 bucket from which the disk image was created.
      *
-     * @return The Amazon S3 bucket from which the disk image was created.
+     * @return The S3 bucket from which the disk image was created.
      */
     public String getS3Bucket() {
         return s3Bucket;
     }
     
     /**
-     * The Amazon S3 bucket from which the disk image was created.
+     * The S3 bucket from which the disk image was created.
      *
-     * @param s3Bucket The Amazon S3 bucket from which the disk image was created.
+     * @param s3Bucket The S3 bucket from which the disk image was created.
      */
     public void setS3Bucket(String s3Bucket) {
         this.s3Bucket = s3Bucket;
     }
     
     /**
-     * The Amazon S3 bucket from which the disk image was created.
+     * The S3 bucket from which the disk image was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3Bucket The Amazon S3 bucket from which the disk image was created.
+     * @param s3Bucket The S3 bucket from which the disk image was created.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -67,29 +67,29 @@ public class UserBucketDetails implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon S3 key from which the disk image was created.
+     * The key from which the disk image was created.
      *
-     * @return The Amazon S3 key from which the disk image was created.
+     * @return The key from which the disk image was created.
      */
     public String getS3Key() {
         return s3Key;
     }
     
     /**
-     * The Amazon S3 key from which the disk image was created.
+     * The key from which the disk image was created.
      *
-     * @param s3Key The Amazon S3 key from which the disk image was created.
+     * @param s3Key The key from which the disk image was created.
      */
     public void setS3Key(String s3Key) {
         this.s3Key = s3Key;
     }
     
     /**
-     * The Amazon S3 key from which the disk image was created.
+     * The key from which the disk image was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3Key The Amazon S3 key from which the disk image was created.
+     * @param s3Key The key from which the disk image was created.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

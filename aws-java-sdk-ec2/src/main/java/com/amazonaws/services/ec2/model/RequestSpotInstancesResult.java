@@ -17,7 +17,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of RequestSpotInstances.
+ * </p>
  */
 public class RequestSpotInstancesResult implements Serializable, Cloneable {
 

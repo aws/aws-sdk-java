@@ -90,25 +90,28 @@ public class DeleteVaultNotificationsRequestMarshaller implements Marshaller<Req
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (deleteVaultNotificationsRequest.getAccountId() == null) ? null : StringUtils.fromString(deleteVaultNotificationsRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (deleteVaultNotificationsRequest.getAccountId() == null) ? "" : StringUtils.fromString(deleteVaultNotificationsRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (deleteVaultNotificationsRequest.getVaultName() == null) ? null : StringUtils.fromString(deleteVaultNotificationsRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (deleteVaultNotificationsRequest.getVaultName() == null) ? "" : StringUtils.fromString(deleteVaultNotificationsRequest.getVaultName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

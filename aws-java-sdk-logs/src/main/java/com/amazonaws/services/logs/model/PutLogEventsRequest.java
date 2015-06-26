@@ -52,12 +52,26 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class PutLogEventsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The name of the log group to put log events to.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     */
     private String logGroupName;
 
+    /**
+     * The name of the log stream to put log events to.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[^:*]*<br/>
+     */
     private String logStreamName;
 
     /**
-     * A list of events belonging to a log stream.
+     * A list of log events belonging to a log stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 10000<br/>
@@ -84,9 +98,9 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param logGroupName
-     * @param logStreamName
-     * @param logEvents A list of events belonging to a log stream.
+     * @param logGroupName The name of the log group to put log events to.
+     * @param logStreamName The name of the log stream to put log events to.
+     * @param logEvents A list of log events belonging to a log stream.
      */
     public PutLogEventsRequest(String logGroupName, String logStreamName, java.util.List<InputLogEvent> logEvents) {
         setLogGroupName(logGroupName);
@@ -95,33 +109,33 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
+     * The name of the log group to put log events to.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The value of the LogGroupName property for this object.
+     * @return The name of the log group to put log events to.
      */
     public String getLogGroupName() {
         return logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group to put log events to.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group to put log events to.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group to put log events to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -129,7 +143,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group to put log events to.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -140,33 +154,33 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Returns the value of the LogStreamName property for this object.
+     * The name of the log stream to put log events to.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @return The value of the LogStreamName property for this object.
+     * @return The name of the log stream to put log events to.
      */
     public String getLogStreamName() {
         return logStreamName;
     }
     
     /**
-     * Sets the value of the LogStreamName property for this object.
+     * The name of the log stream to put log events to.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param logStreamName The new value for the LogStreamName property for this object.
+     * @param logStreamName The name of the log stream to put log events to.
      */
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
     
     /**
-     * Sets the value of the LogStreamName property for this object.
+     * The name of the log stream to put log events to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -174,7 +188,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param logStreamName The new value for the LogStreamName property for this object.
+     * @param logStreamName The name of the log stream to put log events to.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -185,12 +199,12 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * A list of events belonging to a log stream.
+     * A list of log events belonging to a log stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 10000<br/>
      *
-     * @return A list of events belonging to a log stream.
+     * @return A list of log events belonging to a log stream.
      */
     public java.util.List<InputLogEvent> getLogEvents() {
         if (logEvents == null) {
@@ -201,12 +215,12 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of events belonging to a log stream.
+     * A list of log events belonging to a log stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 10000<br/>
      *
-     * @param logEvents A list of events belonging to a log stream.
+     * @param logEvents A list of log events belonging to a log stream.
      */
     public void setLogEvents(java.util.Collection<InputLogEvent> logEvents) {
         if (logEvents == null) {
@@ -219,7 +233,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of events belonging to a log stream.
+     * A list of log events belonging to a log stream.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLogEvents(java.util.Collection)} or {@link
@@ -231,7 +245,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 10000<br/>
      *
-     * @param logEvents A list of events belonging to a log stream.
+     * @param logEvents A list of log events belonging to a log stream.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -245,14 +259,14 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of events belonging to a log stream.
+     * A list of log events belonging to a log stream.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 10000<br/>
      *
-     * @param logEvents A list of events belonging to a log stream.
+     * @param logEvents A list of log events belonging to a log stream.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

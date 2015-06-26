@@ -24,6 +24,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Disables the automatic copying of snapshots from one region to another
  * region for a specified cluster.
  * </p>
+ * <p>
+ * If your cluster and its snapshots are encrypted using a customer
+ * master key (CMK) from AWS KMS, use DeleteSnapshotCopyGrant to delete
+ * the grant that grants Amazon Redshift permission to the CMK in the
+ * destination region.
+ * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#disableSnapshotCopy(DisableSnapshotCopyRequest)
  */

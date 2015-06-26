@@ -12,16 +12,15 @@ This is a sample that demonstrates how to track transfer progress for uploads to
 
 The basic steps for running the Amazon S3 sample are:
 
-1.  Open the `AwsCredentials.properties` in the sample folder.
+1.  Create a credentials file in the location ~/.aws with name "credentials".
 
-2.  Locate the following section and fill in your Access Key ID and Secret Access Key:  
+2.  Under the `default` profile fill in your Access Key ID and Secret Access Key:
 
-    ```
-    # Fill in your AWS Access Key ID and Secret Access Key  
-    # http://aws.amazon.com/security-credentials
-    accessKey =  
-    secretKey =
-    ```  
+  ```
+  [default]
+  aws_access_key_id =
+  aws_secret_access_key =
+  ```
 
 3.  Save the file.
 

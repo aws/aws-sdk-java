@@ -25,9 +25,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * identity pool.
  * </p>
  * <p>
- * DescribeIdentityPoolUsage can only be called with developer
- * credentials. You cannot make this API call with the temporary user
- * credentials provided by Cognito Identity.
+ * This API can only be called with developer credentials. You cannot
+ * call this API with the temporary user credentials provided by Cognito
+ * Identity.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#describeIdentityPoolUsage(DescribeIdentityPoolUsageRequest)

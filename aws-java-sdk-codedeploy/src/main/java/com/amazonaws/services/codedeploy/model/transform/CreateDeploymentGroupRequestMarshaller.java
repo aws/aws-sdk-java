@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.codedeploy.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,92 +40,89 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Create Deployment Group Request Marshaller
+ * CreateDeploymentGroupRequest Marshaller
  */
-public class CreateDeploymentGroupRequestMarshaller implements Marshaller<Request<CreateDeploymentGroupRequest>, CreateDeploymentGroupRequest> {
+public class CreateDeploymentGroupRequestMarshaller
+        implements
+        Marshaller<Request<CreateDeploymentGroupRequest>, CreateDeploymentGroupRequest> {
 
-    public Request<CreateDeploymentGroupRequest> marshall(CreateDeploymentGroupRequest createDeploymentGroupRequest) {
+    public Request<CreateDeploymentGroupRequest> marshall(
+            CreateDeploymentGroupRequest createDeploymentGroupRequest) {
+
         if (createDeploymentGroupRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDeploymentGroupRequest> request = new DefaultRequest<CreateDeploymentGroupRequest>(createDeploymentGroupRequest, "AmazonCodeDeploy");
-        String target = "CodeDeploy_20141006.CreateDeploymentGroup";
-        request.addHeader("X-Amz-Target", target);
+        Request<CreateDeploymentGroupRequest> request = new DefaultRequest<CreateDeploymentGroupRequest>(
+                createDeploymentGroupRequest, "AmazonCodeDeploy");
+        request.addHeader("X-Amz-Target",
+                "CodeDeploy_20141006.CreateDeploymentGroup");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (createDeploymentGroupRequest.getApplicationName() != null) {
-                jsonWriter.key("applicationName").value(createDeploymentGroupRequest.getApplicationName());
+                jsonWriter.key("applicationName").value(
+                        createDeploymentGroupRequest.getApplicationName());
             }
+
             if (createDeploymentGroupRequest.getDeploymentGroupName() != null) {
-                jsonWriter.key("deploymentGroupName").value(createDeploymentGroupRequest.getDeploymentGroupName());
+                jsonWriter.key("deploymentGroupName").value(
+                        createDeploymentGroupRequest.getDeploymentGroupName());
             }
+
             if (createDeploymentGroupRequest.getDeploymentConfigName() != null) {
-                jsonWriter.key("deploymentConfigName").value(createDeploymentGroupRequest.getDeploymentConfigName());
+                jsonWriter.key("deploymentConfigName").value(
+                        createDeploymentGroupRequest.getDeploymentConfigName());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<EC2TagFilter> ec2TagFiltersList = (com.amazonaws.internal.ListWithAutoConstructFlag<EC2TagFilter>)(createDeploymentGroupRequest.getEc2TagFilters());
-            if (ec2TagFiltersList != null && !(ec2TagFiltersList.isAutoConstruct() && ec2TagFiltersList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFiltersList = (com.amazonaws.internal.SdkInternalList<EC2TagFilter>) createDeploymentGroupRequest
+                    .getEc2TagFilters();
+            if (!ec2TagFiltersList.isEmpty()
+                    || !ec2TagFiltersList.isAutoConstruct()) {
                 jsonWriter.key("ec2TagFilters");
                 jsonWriter.array();
-
                 for (EC2TagFilter ec2TagFiltersListValue : ec2TagFiltersList) {
                     if (ec2TagFiltersListValue != null) {
-                        jsonWriter.object();
-                        if (ec2TagFiltersListValue.getKey() != null) {
-                            jsonWriter.key("Key").value(ec2TagFiltersListValue.getKey());
-                        }
-                        if (ec2TagFiltersListValue.getValue() != null) {
-                            jsonWriter.key("Value").value(ec2TagFiltersListValue.getValue());
-                        }
-                        if (ec2TagFiltersListValue.getType() != null) {
-                            jsonWriter.key("Type").value(ec2TagFiltersListValue.getType());
-                        }
-                        jsonWriter.endObject();
+
+                        EC2TagFilterJsonMarshaller.getInstance().marshall(
+                                ec2TagFiltersListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter> onPremisesInstanceTagFiltersList = (com.amazonaws.internal.ListWithAutoConstructFlag<TagFilter>)(createDeploymentGroupRequest.getOnPremisesInstanceTagFilters());
-            if (onPremisesInstanceTagFiltersList != null && !(onPremisesInstanceTagFiltersList.isAutoConstruct() && onPremisesInstanceTagFiltersList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<TagFilter> onPremisesInstanceTagFiltersList = (com.amazonaws.internal.SdkInternalList<TagFilter>) createDeploymentGroupRequest
+                    .getOnPremisesInstanceTagFilters();
+            if (!onPremisesInstanceTagFiltersList.isEmpty()
+                    || !onPremisesInstanceTagFiltersList.isAutoConstruct()) {
                 jsonWriter.key("onPremisesInstanceTagFilters");
                 jsonWriter.array();
-
                 for (TagFilter onPremisesInstanceTagFiltersListValue : onPremisesInstanceTagFiltersList) {
                     if (onPremisesInstanceTagFiltersListValue != null) {
-                        jsonWriter.object();
-                        if (onPremisesInstanceTagFiltersListValue.getKey() != null) {
-                            jsonWriter.key("Key").value(onPremisesInstanceTagFiltersListValue.getKey());
-                        }
-                        if (onPremisesInstanceTagFiltersListValue.getValue() != null) {
-                            jsonWriter.key("Value").value(onPremisesInstanceTagFiltersListValue.getValue());
-                        }
-                        if (onPremisesInstanceTagFiltersListValue.getType() != null) {
-                            jsonWriter.key("Type").value(onPremisesInstanceTagFiltersListValue.getType());
-                        }
-                        jsonWriter.endObject();
+
+                        TagFilterJsonMarshaller.getInstance().marshall(
+                                onPremisesInstanceTagFiltersListValue,
+                                jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingGroupsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(createDeploymentGroupRequest.getAutoScalingGroups());
-            if (autoScalingGroupsList != null && !(autoScalingGroupsList.isAutoConstruct() && autoScalingGroupsList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> autoScalingGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createDeploymentGroupRequest
+                    .getAutoScalingGroups();
+            if (!autoScalingGroupsList.isEmpty()
+                    || !autoScalingGroupsList.isAutoConstruct()) {
                 jsonWriter.key("autoScalingGroups");
                 jsonWriter.array();
-
                 for (String autoScalingGroupsListValue : autoScalingGroupsList) {
                     if (autoScalingGroupsListValue != null) {
                         jsonWriter.value(autoScalingGroupsListValue);
@@ -132,21 +130,26 @@ public class CreateDeploymentGroupRequestMarshaller implements Marshaller<Reques
                 }
                 jsonWriter.endArray();
             }
+
             if (createDeploymentGroupRequest.getServiceRoleArn() != null) {
-                jsonWriter.key("serviceRoleArn").value(createDeploymentGroupRequest.getServiceRoleArn());
+                jsonWriter.key("serviceRoleArn").value(
+                        createDeploymentGroupRequest.getServiceRoleArn());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

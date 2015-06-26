@@ -23,9 +23,9 @@ import com.amazonaws.services.ec2.model.transform.CreateSnapshotRequestMarshalle
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSnapshot(CreateSnapshotRequest) CreateSnapshot operation}.
  * <p>
- * Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3.
- * You can use snapshots for backups, to make copies of Amazon EBS
- * volumes, and to save data before shutting down an instance.
+ * Creates a snapshot of an EBS volume and stores it in Amazon S3. You
+ * can use snapshots for backups, to make copies of EBS volumes, and to
+ * save data before shutting down an instance.
  * </p>
  * <p>
  * When a snapshot is created, any AWS Marketplace product codes that are
@@ -33,20 +33,20 @@ import com.amazonaws.services.ec2.model.transform.CreateSnapshotRequestMarshalle
  * </p>
  * <p>
  * You can take a snapshot of an attached volume that is in use. However,
- * snapshots only capture data that has been written to your Amazon EBS
- * volume at the time the snapshot command is issued; this may exclude
- * any data that has been cached by any applications or the operating
- * system. If you can pause any file systems on the volume long enough to
- * take a snapshot, your snapshot should be complete. However, if you
- * cannot pause all file writes to the volume, you should unmount the
- * volume from within the instance, issue the snapshot command, and then
- * remount the volume to ensure a consistent and complete snapshot. You
- * may remount and use your volume while the snapshot status is
+ * snapshots only capture data that has been written to your EBS volume
+ * at the time the snapshot command is issued; this may exclude any data
+ * that has been cached by any applications or the operating system. If
+ * you can pause any file systems on the volume long enough to take a
+ * snapshot, your snapshot should be complete. However, if you cannot
+ * pause all file writes to the volume, you should unmount the volume
+ * from within the instance, issue the snapshot command, and then remount
+ * the volume to ensure a consistent and complete snapshot. You may
+ * remount and use your volume while the snapshot status is
  * <code>pending</code> .
  * </p>
  * <p>
- * To create a snapshot for Amazon EBS volumes that serve as root
- * devices, you should stop the instance before taking the snapshot.
+ * To create a snapshot for EBS volumes that serve as root devices, you
+ * should stop the instance before taking the snapshot.
  * </p>
  * <p>
  * Snapshots that are taken from encrypted volumes are automatically
@@ -57,7 +57,7 @@ import com.amazonaws.services.ec2.model.transform.CreateSnapshotRequestMarshalle
  * <p>
  * For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html"> Amazon Elastic Block Store </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSnapshot(CreateSnapshotRequest)
@@ -65,7 +65,7 @@ import com.amazonaws.services.ec2.model.transform.CreateSnapshotRequestMarshalle
 public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateSnapshotRequest> {
 
     /**
-     * The ID of the Amazon EBS volume.
+     * The ID of the EBS volume.
      */
     private String volumeId;
 
@@ -85,7 +85,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param volumeId The ID of the Amazon EBS volume.
+     * @param volumeId The ID of the EBS volume.
      * @param description A description for the snapshot.
      */
     public CreateSnapshotRequest(String volumeId, String description) {
@@ -94,29 +94,29 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The ID of the Amazon EBS volume.
+     * The ID of the EBS volume.
      *
-     * @return The ID of the Amazon EBS volume.
+     * @return The ID of the EBS volume.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * The ID of the Amazon EBS volume.
+     * The ID of the EBS volume.
      *
-     * @param volumeId The ID of the Amazon EBS volume.
+     * @param volumeId The ID of the EBS volume.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * The ID of the Amazon EBS volume.
+     * The ID of the EBS volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The ID of the Amazon EBS volume.
+     * @param volumeId The ID of the EBS volume.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

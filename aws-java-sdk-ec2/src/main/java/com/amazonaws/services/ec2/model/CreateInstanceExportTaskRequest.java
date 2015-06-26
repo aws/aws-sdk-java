@@ -21,13 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createInstanceExportTask(CreateInstanceExportTaskRequest) CreateInstanceExportTask operation}.
  * <p>
- * Exports a running or stopped instance to an Amazon S3 bucket.
+ * Exports a running or stopped instance to an S3 bucket.
  * </p>
  * <p>
  * For information about the supported operating systems, image formats,
  * and known limitations for the types of instances you can export, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"> Exporting EC2 Instances </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createInstanceExportTask(CreateInstanceExportTaskRequest)
@@ -54,7 +54,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     private String targetEnvironment;
 
     /**
-     * 
+     * The format and location for an instance export task.
      */
     private ExportToS3TaskSpecification exportToS3Task;
 
@@ -213,29 +213,29 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * 
+     * The format and location for an instance export task.
      *
-     * @return 
+     * @return The format and location for an instance export task.
      */
     public ExportToS3TaskSpecification getExportToS3Task() {
         return exportToS3Task;
     }
     
     /**
-     * 
+     * The format and location for an instance export task.
      *
-     * @param exportToS3Task 
+     * @param exportToS3Task The format and location for an instance export task.
      */
     public void setExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {
         this.exportToS3Task = exportToS3Task;
     }
     
     /**
-     * 
+     * The format and location for an instance export task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exportToS3Task 
+     * @param exportToS3Task The format and location for an instance export task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

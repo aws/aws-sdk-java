@@ -53,6 +53,12 @@ public class EnableSnapshotCopyRequest extends AmazonWebServiceRequest implement
     private Integer retentionPeriod;
 
     /**
+     * The name of the snapshot copy grant to use when snapshots of an AWS
+     * KMS-encrypted cluster are copied to the destination region.
+     */
+    private String snapshotCopyGrantName;
+
+    /**
      * The unique identifier of the source cluster to copy snapshots from.
      * <p> Constraints: Must be the valid name of an existing cluster that
      * does not already have cross-region snapshot copy enabled.
@@ -200,6 +206,45 @@ public class EnableSnapshotCopyRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * The name of the snapshot copy grant to use when snapshots of an AWS
+     * KMS-encrypted cluster are copied to the destination region.
+     *
+     * @return The name of the snapshot copy grant to use when snapshots of an AWS
+     *         KMS-encrypted cluster are copied to the destination region.
+     */
+    public String getSnapshotCopyGrantName() {
+        return snapshotCopyGrantName;
+    }
+    
+    /**
+     * The name of the snapshot copy grant to use when snapshots of an AWS
+     * KMS-encrypted cluster are copied to the destination region.
+     *
+     * @param snapshotCopyGrantName The name of the snapshot copy grant to use when snapshots of an AWS
+     *         KMS-encrypted cluster are copied to the destination region.
+     */
+    public void setSnapshotCopyGrantName(String snapshotCopyGrantName) {
+        this.snapshotCopyGrantName = snapshotCopyGrantName;
+    }
+    
+    /**
+     * The name of the snapshot copy grant to use when snapshots of an AWS
+     * KMS-encrypted cluster are copied to the destination region.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotCopyGrantName The name of the snapshot copy grant to use when snapshots of an AWS
+     *         KMS-encrypted cluster are copied to the destination region.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public EnableSnapshotCopyRequest withSnapshotCopyGrantName(String snapshotCopyGrantName) {
+        this.snapshotCopyGrantName = snapshotCopyGrantName;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -213,7 +258,8 @@ public class EnableSnapshotCopyRequest extends AmazonWebServiceRequest implement
         sb.append("{");
         if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
         if (getDestinationRegion() != null) sb.append("DestinationRegion: " + getDestinationRegion() + ",");
-        if (getRetentionPeriod() != null) sb.append("RetentionPeriod: " + getRetentionPeriod() );
+        if (getRetentionPeriod() != null) sb.append("RetentionPeriod: " + getRetentionPeriod() + ",");
+        if (getSnapshotCopyGrantName() != null) sb.append("SnapshotCopyGrantName: " + getSnapshotCopyGrantName() );
         sb.append("}");
         return sb.toString();
     }
@@ -226,6 +272,7 @@ public class EnableSnapshotCopyRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getDestinationRegion() == null) ? 0 : getDestinationRegion().hashCode()); 
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotCopyGrantName() == null) ? 0 : getSnapshotCopyGrantName().hashCode()); 
         return hashCode;
     }
     
@@ -243,6 +290,8 @@ public class EnableSnapshotCopyRequest extends AmazonWebServiceRequest implement
         if (other.getDestinationRegion() != null && other.getDestinationRegion().equals(this.getDestinationRegion()) == false) return false; 
         if (other.getRetentionPeriod() == null ^ this.getRetentionPeriod() == null) return false;
         if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false) return false; 
+        if (other.getSnapshotCopyGrantName() == null ^ this.getSnapshotCopyGrantName() == null) return false;
+        if (other.getSnapshotCopyGrantName() != null && other.getSnapshotCopyGrantName().equals(this.getSnapshotCopyGrantName()) == false) return false; 
         return true;
     }
     

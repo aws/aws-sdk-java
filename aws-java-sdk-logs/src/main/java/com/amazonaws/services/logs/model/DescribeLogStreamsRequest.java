@@ -39,6 +39,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The log group name for which log streams are to be listed.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     */
     private String logGroupName;
 
     /**
@@ -100,40 +107,41 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param logGroupName
+     * @param logGroupName The log group name for which log streams are to be
+     * listed.
      */
     public DescribeLogStreamsRequest(String logGroupName) {
         setLogGroupName(logGroupName);
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
+     * The log group name for which log streams are to be listed.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The value of the LogGroupName property for this object.
+     * @return The log group name for which log streams are to be listed.
      */
     public String getLogGroupName() {
         return logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The log group name for which log streams are to be listed.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The log group name for which log streams are to be listed.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The log group name for which log streams are to be listed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -141,7 +149,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The log group name for which log streams are to be listed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

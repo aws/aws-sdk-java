@@ -23,6 +23,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Registers a device to receive push sync notifications.
  * </p>
+ * <p>
+ * This API can only be called with temporary credentials provided by
+ * Cognito Identity. You cannot call this API with developer credentials.
+ * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#registerDevice(RegisterDeviceRequest)
  */

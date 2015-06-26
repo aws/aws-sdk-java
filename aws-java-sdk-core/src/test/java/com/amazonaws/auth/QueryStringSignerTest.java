@@ -25,6 +25,8 @@ import static org.junit.Assert.assertNull;
 import java.net.URI;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Map;
 import java.util.TimeZone;
 
 import org.junit.Test;
@@ -56,8 +58,7 @@ public class QueryStringSignerTest {
         request.setResourcePath("foo/bar");
 
         signer.sign(request, credentials);
-        assertNotNull(request.getParameters().get("Signature"));
-        assertEquals(EXPECTED_SIGNATURE, request.getParameters().get("Signature"));
+        assertSignature(EXPECTED_SIGNATURE, request.getParameters());
     }
 
     @Test
@@ -68,8 +69,7 @@ public class QueryStringSignerTest {
         request.setResourcePath("/bar");
 
         signer.sign(request, credentials);
-        assertNotNull(request.getParameters().get("Signature"));
-        assertEquals(EXPECTED_SIGNATURE, request.getParameters().get("Signature"));
+        assertSignature(EXPECTED_SIGNATURE, request.getParameters());
     }
 
     @Test
@@ -80,9 +80,20 @@ public class QueryStringSignerTest {
         request.setResourcePath("bar");
 
         signer.sign(request, credentials);
+        assertSignature(EXPECTED_SIGNATURE, request.getParameters());
+    }
 
-        assertNotNull(request.getParameters().get("Signature"));
-        assertEquals(EXPECTED_SIGNATURE, request.getParameters().get("Signature"));
+    /**
+     * Asserts the given signature to the signature generated as part of the
+     * signing the request.
+     */
+
+    private void assertSignature(String expected,
+            Map<String, List<String>> requestParams) {
+        List<String> signature = requestParams.get("Signature");
+        assertNotNull(signature);
+        assertEquals(1, signature.size());
+        assertEquals(EXPECTED_SIGNATURE, signature.iterator().next());
     }
 
     @Test

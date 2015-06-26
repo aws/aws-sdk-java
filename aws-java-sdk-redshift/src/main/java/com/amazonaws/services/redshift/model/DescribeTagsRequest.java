@@ -69,8 +69,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security
      * group</li> <li>Snapshot</li> <li>Cluster security group</li>
      * <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li>
-     * <li>Parameter group</li> </ul> <p> For more information about Amazon
-     * Redshift resource types and constructing ARNs, go to <a
+     * <li>Parameter group</li> <li>Snapshot copy grant</li> </ul> <p> For
+     * more information about Amazon Redshift resource types and constructing
+     * ARNs, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon
      * Redshift Cluster Management Guide.
@@ -169,8 +170,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security
      * group</li> <li>Snapshot</li> <li>Cluster security group</li>
      * <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li>
-     * <li>Parameter group</li> </ul> <p> For more information about Amazon
-     * Redshift resource types and constructing ARNs, go to <a
+     * <li>Parameter group</li> <li>Snapshot copy grant</li> </ul> <p> For
+     * more information about Amazon Redshift resource types and constructing
+     * ARNs, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon
      * Redshift Cluster Management Guide.
@@ -179,8 +181,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security
      *         group</li> <li>Snapshot</li> <li>Cluster security group</li>
      *         <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li>
-     *         <li>Parameter group</li> </ul> <p> For more information about Amazon
-     *         Redshift resource types and constructing ARNs, go to <a
+     *         <li>Parameter group</li> <li>Snapshot copy grant</li> </ul> <p> For
+     *         more information about Amazon Redshift resource types and constructing
+     *         ARNs, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      *         an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon
      *         Redshift Cluster Management Guide.
@@ -194,8 +197,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security
      * group</li> <li>Snapshot</li> <li>Cluster security group</li>
      * <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li>
-     * <li>Parameter group</li> </ul> <p> For more information about Amazon
-     * Redshift resource types and constructing ARNs, go to <a
+     * <li>Parameter group</li> <li>Snapshot copy grant</li> </ul> <p> For
+     * more information about Amazon Redshift resource types and constructing
+     * ARNs, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon
      * Redshift Cluster Management Guide.
@@ -204,8 +208,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security
      *         group</li> <li>Snapshot</li> <li>Cluster security group</li>
      *         <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li>
-     *         <li>Parameter group</li> </ul> <p> For more information about Amazon
-     *         Redshift resource types and constructing ARNs, go to <a
+     *         <li>Parameter group</li> <li>Snapshot copy grant</li> </ul> <p> For
+     *         more information about Amazon Redshift resource types and constructing
+     *         ARNs, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      *         an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon
      *         Redshift Cluster Management Guide.
@@ -219,8 +224,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security
      * group</li> <li>Snapshot</li> <li>Cluster security group</li>
      * <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li>
-     * <li>Parameter group</li> </ul> <p> For more information about Amazon
-     * Redshift resource types and constructing ARNs, go to <a
+     * <li>Parameter group</li> <li>Snapshot copy grant</li> </ul> <p> For
+     * more information about Amazon Redshift resource types and constructing
+     * ARNs, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon
      * Redshift Cluster Management Guide.
@@ -231,8 +237,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         types are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security
      *         group</li> <li>Snapshot</li> <li>Cluster security group</li>
      *         <li>Subnet group</li> <li>HSM connection</li> <li>HSM certificate</li>
-     *         <li>Parameter group</li> </ul> <p> For more information about Amazon
-     *         Redshift resource types and constructing ARNs, go to <a
+     *         <li>Parameter group</li> <li>Snapshot copy grant</li> </ul> <p> For
+     *         more information about Amazon Redshift resource types and constructing
+     *         ARNs, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      *         an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon
      *         Redshift Cluster Management Guide.

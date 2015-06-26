@@ -90,14 +90,16 @@ public class GetCognitoEventsRequestMarshaller implements Marshaller<Request<Get
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityPoolId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityPoolId");
+
             String value = (getCognitoEventsRequest.getIdentityPoolId() == null) ? null : StringUtils.fromString(getCognitoEventsRequest.getIdentityPoolId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityPoolId}", (getCognitoEventsRequest.getIdentityPoolId() == null) ? "" : StringUtils.fromString(getCognitoEventsRequest.getIdentityPoolId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2013 Amazon Technologies, Inc.
+ * Copyright 2011-2015 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public class S3LinkTest
     @Before
     public void setUp() {
         AWSCredentials credentials = new BasicAWSCredentials("mock", "mock");
-        AmazonDynamoDB db = new AmazonDynamoDBClient(credentials); 
+        AmazonDynamoDB db = new AmazonDynamoDBClient(credentials);
         mapper = new DynamoDBMapper(db, new StaticCredentialsProvider(credentials));
     }
 
@@ -112,7 +112,7 @@ public class S3LinkTest
         testLink1 = mapper.createS3Link(Region.US_GovCloud, "bucket", "key");
         json = testLink1.toJson();
         assertEquals(json,
-            "{\"s3\":{\"bucket\":\"bucket\",\"key\":\"key\",\"region\":\"s3-us-gov-west-1\"}}",
+            "{\"s3\":{\"bucket\":\"bucket\",\"key\":\"key\",\"region\":\"us-gov-west-1\"}}",
             json);
     }
 }

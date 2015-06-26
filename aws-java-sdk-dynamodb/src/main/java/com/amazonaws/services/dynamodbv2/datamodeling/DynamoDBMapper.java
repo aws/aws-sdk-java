@@ -39,6 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.retry.RetryUtils;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.BatchWriteRetryStrategy;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.ConsistentReads;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
@@ -179,7 +180,10 @@ public class DynamoDBMapper {
 
     private final AttributeTransformer transformer;
 
-    /** The max back off time for batch write */
+    /**
+     * The max back off time for batch get. The configuration for batch write
+     * has been moved to DynamoDBMapperConfig
+     */
     static final long MAX_BACKOFF_IN_MILLISECONDS = 1000 * 3;
 
     /** The max number of items allowed in a BatchWrite request */
@@ -839,7 +843,7 @@ public class DynamoDBMapper {
                     tableName, finalConfig, converter, saveExpression) {
 
                 @Override
-                protected void onKeyAttributeValue(String attributeName,
+                protected void onPrimaryKeyAttributeValue(String attributeName,
                         AttributeValue keyAttributeValue) {
                     /* Treat key values as common attribute value updates. */
                     getAttributeValueUpdates().put(attributeName,
@@ -866,10 +870,10 @@ public class DynamoDBMapper {
                     tableName, finalConfig, converter, saveExpression) {
 
                 @Override
-                protected void onKeyAttributeValue(String attributeName,
+                protected void onPrimaryKeyAttributeValue(String attributeName,
                         AttributeValue keyAttributeValue) {
                     /* Put it in the key collection which is later used in the updateItem request. */
-                    getKeyAttributeValues().put(attributeName, keyAttributeValue);
+                    getPrimaryKeyAttributeValues().put(attributeName, keyAttributeValue);
                 }
 
 
@@ -932,10 +936,10 @@ public class DynamoDBMapper {
                         // the key attributes (prepared for the
                         // UpdateItemRequest) into the AttributeValueUpdates
                         // collection.
-                        for (String keyAttributeName : getKeyAttributeValues().keySet()) {
+                        for (String keyAttributeName : getPrimaryKeyAttributeValues().keySet()) {
                             getAttributeValueUpdates().put(keyAttributeName,
                                     new AttributeValueUpdate()
-                                            .withValue(getKeyAttributeValues().get(keyAttributeName))
+                                            .withValue(getPrimaryKeyAttributeValues().get(keyAttributeName))
                                             .withAction("PUT"));
                         }
 
@@ -962,7 +966,7 @@ public class DynamoDBMapper {
         private final DynamoDBMapperConfig saveConfig;
         private final ItemConverter converter;
 
-        private final Map<String, AttributeValue> key;
+        private final Map<String, AttributeValue> primaryKeys;
         private final Map<String, AttributeValueUpdate> updateValues;
 
         /**
@@ -1020,31 +1024,30 @@ public class DynamoDBMapper {
             updateValues = new HashMap<String, AttributeValueUpdate>();
             internalExpectedValueAssertions = new HashMap<String, ExpectedAttributeValue>();
             inMemoryUpdates = new LinkedList<ValueUpdate>();
-            key = new HashMap<String, AttributeValue>();
+            primaryKeys = new HashMap<String, AttributeValue>();
         }
 
         /**
          * The general workflow of a save operation.
          */
         public void execute() {
-            Collection<Method> keyGetters = reflector.getPrimaryKeyGetters(clazz);
+            Collection<Method> primaryKeyGetters = reflector.getPrimaryKeyGetters(clazz);
 
             /*
-             * First handle keys
+             * First handle primary keys
              */
-            for ( Method method : keyGetters ) {
+            for ( Method method : primaryKeyGetters ) {
                 Object getterResult = ReflectionUtils.safeInvoke(method, object);
                 String attributeName = reflector.getAttributeName(method);
 
                 if ( getterResult == null && reflector.isAssignableKey(method) ) {
                     onAutoGenerateAssignableKey(method, attributeName);
-                }
 
-                else {
+                } else {
                     AttributeValue newAttributeValue = converter.convert(method, getterResult);
                     if ( newAttributeValue == null ) {
                         throw new DynamoDBMappingException(
-                                "Null or empty value for key: " + method);
+                                "Null or empty value for primary key: " + method);
                     }
 
                     if ( newAttributeValue.getS() == null
@@ -1057,7 +1060,7 @@ public class DynamoDBMapper {
                                 + " for key " + method);
                     }
 
-                    onKeyAttributeValue(attributeName, newAttributeValue);
+                    onPrimaryKeyAttributeValue(attributeName, newAttributeValue);
                 }
             }
 
@@ -1067,23 +1070,27 @@ public class DynamoDBMapper {
             for ( Method method : reflector.getRelevantGetters(clazz) ) {
 
                 // Skip any key methods, since they are handled separately
-                if ( keyGetters.contains(method) )
+                if ( primaryKeyGetters.contains(method) ) {
                     continue;
+                }
 
                 Object getterResult = ReflectionUtils.safeInvoke(method, object);
                 String attributeName = reflector.getAttributeName(method);
 
-                /*
-                 * If this is a versioned field, update it
-                 */
-                if ( reflector.isVersionAttributeGetter(method) ) {
+                if ( getterResult == null && reflector.isAssignableKey(method) ) {
+                    /*
+                     * There still might be index keys that need to be auto-generated
+                     */
+                    onAutoGenerateAssignableKey(method, attributeName);
+                } else if ( reflector.isVersionAttributeGetter(method) ) {
+                    /*
+                     * If this is a versioned field, update it
+                     */
                     onVersionAttribute(method, getterResult, attributeName);
-                }
-
-                /*
-                 * Otherwise apply the update value for this attribute.
-                 */
-                else  {
+                } else {
+                    /*
+                     * Otherwise apply the update value for this attribute.
+                     */
                     AttributeValue currentValue = converter.convert(method, getterResult);
                     if ( currentValue != null ) {
                         onNonKeyAttribute(attributeName, currentValue);
@@ -1110,16 +1117,16 @@ public class DynamoDBMapper {
         }
 
         /**
-         * Implement this method to do the necessary operations when a key
+         * Implement this method to do the necessary operations when a primary key
          * attribute is set with some value.
          *
          * @param attributeName
-         *            The name of the key attribute.
+         *            The name of the primary key attribute.
          * @param keyAttributeValue
-         *            The AttributeValue of the key attribute as specified in
+         *            The AttributeValue of the primary key attribute as specified in
          *            the object.
          */
-        protected abstract void onKeyAttributeValue(String attributeName, AttributeValue keyAttributeValue);
+        protected abstract void onPrimaryKeyAttributeValue(String attributeName, AttributeValue keyAttributeValue);
 
         /**
          * Implement this method for necessary operations when a non-key
@@ -1161,9 +1168,9 @@ public class DynamoDBMapper {
             return tableName;
         }
 
-        /** Get the map of all the specified key of the saved object. **/
-        protected Map<String, AttributeValue> getKeyAttributeValues() {
-            return key;
+        /** Get the map of all the specified primamry keys of the saved object. **/
+        protected Map<String, AttributeValue> getPrimaryKeyAttributeValues() {
+            return primaryKeys;
         }
 
         /** Get the map of AttributeValueUpdate on each modeled attribute. **/
@@ -1204,12 +1211,12 @@ public class DynamoDBMapper {
         protected UpdateItemResult doUpdateItem() {
             UpdateItemRequest req = new UpdateItemRequest()
                     .withTableName(getTableName())
-                    .withKey(getKeyAttributeValues())
+                    .withKey(getPrimaryKeyAttributeValues())
                     .withAttributeUpdates(
                             transformAttributeUpdates(
                                     this.clazz,
                                     getTableName(),
-                                    getKeyAttributeValues(),
+                                    getPrimaryKeyAttributeValues(),
                                     getAttributeValueUpdates(),
                                     saveConfig))
                     .withExpected(mergeExpectedAttributeValueConditions())
@@ -1483,7 +1490,9 @@ public class DynamoDBMapper {
 
     /**
      * Saves and deletes the objects given using one or more calls to the
-     * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
+     * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. Use
+     * mapper config to control the retry strategy when UnprocessedItems are
+     * returned by the BatchWriteItem API
      * <p>
      * This method fails to save the batch if the size of an individual object
      * in the batch exceeds 400 KB. For more information on batch restrictions
@@ -1502,14 +1511,18 @@ public class DynamoDBMapper {
      *            {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)}
      *            API.
      * @param config
-     *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} is
-     *            considered; if specified, all objects in the two parameter
-     *            lists will be considered to belong to the given table
-     *            override. In particular, this method <b>always acts as if
-     *            SaveBehavior.CLOBBER was specified</b> regardless of the value
-     *            of the config parameter.
+     *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} and
+     *            {@link DynamoDBMapperConfig#getBatchWriteRetryStrategy()} are
+     *            considered. If TableNameOverride is specified, all objects in
+     *            the two parameter lists will be considered to belong to the
+     *            given table override. In particular, this method <b>always
+     *            acts as if SaveBehavior.CLOBBER was specified</b> regardless
+     *            of the value of the config parameter.
      * @return A list of failed batches which includes the unprocessed items and
      *         the exceptions causing the failure.
+     *
+     * @see DynamoDBMapperConfig#getTableNameOverride()
+     * @see DynamoDBMapperConfig#getBatchWriteRetryStrategy()
      */
     public List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite, List<? extends Object> objectsToDelete, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
@@ -1604,7 +1617,7 @@ public class DynamoDBMapper {
                 }
             }
 
-            List<FailedBatch> failedBatches = writeOneBatch(batch);
+            List<FailedBatch> failedBatches = writeOneBatch(batch, config.getBatchWriteRetryStrategy());
             if (failedBatches != null) {
                 totalFailedBatches.addAll(failedBatches);
 
@@ -1634,12 +1647,14 @@ public class DynamoDBMapper {
      * Process one batch of requests(max 25). It will divide the batch if
      * receives request too large exception(the total size of the request is beyond 1M).
      */
-    private List<FailedBatch> writeOneBatch(Map<String, List<WriteRequest>> batch) {
+    private List<FailedBatch> writeOneBatch(
+            Map<String, List<WriteRequest>> batch,
+            BatchWriteRetryStrategy batchWriteRetryStrategy) {
 
         List<FailedBatch> failedBatches = new LinkedList<FailedBatch>();
         Map<String, List<WriteRequest>> firstHalfBatch = new HashMap<String, List<WriteRequest>>();
         Map<String, List<WriteRequest>> secondHalfBatch = new HashMap<String, List<WriteRequest>>();
-        FailedBatch failedBatch = callUntilCompletion(batch);
+        FailedBatch failedBatch = doBatchWriteItemWithRetry(batch, batchWriteRetryStrategy);
 
         if (failedBatch != null) {
             // If the exception is request entity too large, we divide the batch
@@ -1655,8 +1670,8 @@ public class DynamoDBMapper {
                     failedBatches.add(failedBatch);
                 } else {
                     divideBatch(batch, firstHalfBatch, secondHalfBatch);
-                    failedBatches.addAll(writeOneBatch(firstHalfBatch));
-                    failedBatches.addAll(writeOneBatch(secondHalfBatch));
+                    failedBatches.addAll(writeOneBatch(firstHalfBatch, batchWriteRetryStrategy));
+                    failedBatches.addAll(writeOneBatch(secondHalfBatch, batchWriteRetryStrategy));
                 }
 
             } else {
@@ -1716,28 +1731,47 @@ public class DynamoDBMapper {
     }
 
     /**
-     * Continue trying to process the batch until it finishes or an exception
-     * occurs.
+     * Continue trying to process the batch and retry on UnproccessedItems as
+     * according to the specified BatchWriteRetryStrategy
      */
+    private FailedBatch doBatchWriteItemWithRetry(
+            Map<String, List<WriteRequest>> batch,
+            BatchWriteRetryStrategy batchWriteRetryStrategy) {
 
-    private FailedBatch callUntilCompletion(Map<String, List<WriteRequest>> batch) {
         BatchWriteItemResult result = null;
         int retries = 0;
+        int maxRetries = batchWriteRetryStrategy
+                .getMaxRetryOnUnprocessedItems(Collections
+                        .unmodifiableMap(batch));
+
         FailedBatch failedBatch = null;
+        Map<String, List<WriteRequest>> pendingItems = batch;
+
         while (true) {
             try {
                 result = db.batchWriteItem(applyBatchOperationUserAgent(
-                        new BatchWriteItemRequest().withRequestItems(batch)));
+                        new BatchWriteItemRequest().withRequestItems(pendingItems)));
             } catch (Exception e) {
                 failedBatch = new FailedBatch();
-                failedBatch.setUnprocessedItems(batch);
+                failedBatch.setUnprocessedItems(pendingItems);
                 failedBatch.setException(e);
                 return failedBatch;
             }
-            retries++;
-            batch = result.getUnprocessedItems();
-            if (batch.size() > 0) {
-                pauseExponentially(retries);
+            pendingItems = result.getUnprocessedItems();
+
+            if (pendingItems.size() > 0) {
+
+                // return pendingItems as a FailedBatch if we have exceeded max retry
+                if (maxRetries >= 0 && retries >= maxRetries) {
+                    failedBatch = new FailedBatch();
+                    failedBatch.setUnprocessedItems(pendingItems);
+                    failedBatch.setException(null);
+                    return failedBatch;
+                }
+
+                pause(batchWriteRetryStrategy.getDelayBeforeRetryUnprocessedItems(
+                        Collections.unmodifiableMap(pendingItems), retries));
+                retries++;
             } else {
                 break;
             }
@@ -2145,6 +2179,9 @@ public class DynamoDBMapper {
 
         result.setResults(marshallIntoObjects(parameters));
         result.setLastEvaluatedKey(scanResult.getLastEvaluatedKey());
+        result.setCount(scanResult.getCount());
+        result.setScannedCount(scanResult.getScannedCount());
+        result.setConsumedCapacity(scanResult.getConsumedCapacity());
 
         return result;
     }
@@ -2253,13 +2290,16 @@ public class DynamoDBMapper {
 
         QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression, config);
 
-        QueryResult scanResult = db.query(applyUserAgent(queryRequest));
+        QueryResult queryResult = db.query(applyUserAgent(queryRequest));
         QueryResultPage<T> result = new QueryResultPage<T>();
         List<AttributeTransformer.Parameters<T>> parameters =
-            toParameters(scanResult.getItems(), clazz, queryRequest.getTableName(), config);
+            toParameters(queryResult.getItems(), clazz, queryRequest.getTableName(), config);
 
         result.setResults(marshallIntoObjects(parameters));
-        result.setLastEvaluatedKey(scanResult.getLastEvaluatedKey());
+        result.setLastEvaluatedKey(queryResult.getLastEvaluatedKey());
+        result.setCount(queryResult.getCount());
+        result.setScannedCount(queryResult.getScannedCount());
+        result.setConsumedCapacity(queryResult.getConsumedCapacity());
 
         return result;
     }
@@ -2381,6 +2421,9 @@ public class DynamoDBMapper {
         scanRequest.setExpressionAttributeValues(scanExpression
                 .getExpressionAttributeValues());
         scanRequest.setRequestMetricCollector(config.getRequestMetricCollector());
+        scanRequest.setSelect(scanExpression.getSelect());
+        scanRequest.setProjectionExpression(scanExpression.getProjectionExpression());
+        scanRequest.setReturnConsumedCapacity(scanExpression.getReturnConsumedCapacity());
 
         return applyUserAgent(scanRequest);
     }
@@ -2433,9 +2476,12 @@ public class DynamoDBMapper {
            .withExclusiveStartKey(xpress.getExclusiveStartKey())
            .withQueryFilter(xpress.getQueryFilter())
            .withConditionalOperator(xpress.getConditionalOperator())
+           .withSelect(xpress.getSelect())
+           .withProjectionExpression(xpress.getProjectionExpression())
            .withFilterExpression(xpress.getFilterExpression())
            .withExpressionAttributeNames(xpress.getExpressionAttributeNames())
            .withExpressionAttributeValues(xpress.getExpressionAttributeValues())
+           .withReturnConsumedCapacity(xpress.getReturnConsumedCapacity())
            .withRequestMetricCollector(config.getRequestMetricCollector())
            ;
         return applyUserAgent(req);
@@ -2942,6 +2988,13 @@ public class DynamoDBMapper {
         delay = (long) (Math.pow(2, retries) * scaleFactor);
         delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
 
+        pause(delay);
+    }
+
+    private void pause(long delay) {
+        if (delay <= 0) {
+            return;
+        }
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {

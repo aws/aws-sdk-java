@@ -245,10 +245,12 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
     private void init() {
         jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
+        jsonErrorUnmarshallers.add(new ConcurrentModificationExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new DeveloperUserAlreadyRegisteredExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidParameterExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new ResourceConflictExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ExternalServiceExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidIdentityPoolConfigurationExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new NotAuthorizedExceptionUnmarshaller());
@@ -280,6 +282,10 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * next time they are seen. If, for a given Cognito identity, you remove
      * all federated identities as well as the developer user identifier, the
      * Cognito identity becomes inaccessible.
+     * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
      * </p>
      *
      * @param unlinkDeveloperIdentityRequest Container for the necessary
@@ -329,8 +335,70 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
     
     /**
      * <p>
+     * Deletes identities from an identity pool. You can specify a list of
+     * 1-60 identities that you want to delete.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
+     *
+     * @param deleteIdentitiesRequest Container for the necessary parameters
+     *           to execute the DeleteIdentities service method on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return The response from the DeleteIdentities service method, as
+     *         returned by AmazonCognitoIdentity.
+     * 
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     * @throws TooManyRequestsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteIdentitiesResult deleteIdentities(DeleteIdentitiesRequest deleteIdentitiesRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteIdentitiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteIdentitiesRequest> request = null;
+        Response<DeleteIdentitiesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteIdentitiesRequestMarshaller().marshall(super.beforeMarshalling(deleteIdentitiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<DeleteIdentitiesResult, JsonUnmarshallerContext> unmarshaller =
+                new DeleteIdentitiesResultJsonUnmarshaller();
+            JsonResponseHandler<DeleteIdentitiesResult> responseHandler =
+                new JsonResponseHandler<DeleteIdentitiesResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Gets details about a particular identity pool, including the pool
      * name, ID description, creation date, and current number of users.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param describeIdentityPoolRequest Container for the necessary
@@ -390,6 +458,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
      * create an implicit linked account.
      * </p>
+     * <p>
+     * token+";"+tokenSecret.
+     * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param getIdRequest Container for the necessary parameters to execute
      *           the GetId service method on AmazonCognitoIdentity.
@@ -404,6 +479,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
+     * @throws ExternalServiceException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -448,6 +524,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * <p>
      * Deletes a user pool. Once a pool is deleted, users will not be able
      * to authenticate with the pool.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param deleteIdentityPoolRequest Container for the necessary
@@ -498,6 +577,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * <p>
      * Updates a user pool.
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param updateIdentityPoolRequest Container for the necessary
      *           parameters to execute the UpdateIdentityPool service method on
@@ -509,6 +591,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws ResourceConflictException
      * @throws InternalErrorException
      * @throws NotAuthorizedException
+     * @throws ConcurrentModificationException
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
@@ -559,6 +642,10 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * token is for cognito-identity.amazonaws.com, it will be passed through
      * to AWS Security Token Service with the appropriate role for the token.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param getCredentialsForIdentityRequest Container for the necessary
      *           parameters to execute the GetCredentialsForIdentity service method on
@@ -574,6 +661,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
+     * @throws ExternalServiceException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -626,6 +714,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * developer-authenticated users can be merged. If the users to be merged
      * are associated with the same public provider, but as two different
      * users, an exception will be thrown.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param mergeDeveloperIdentitiesRequest Container for the necessary
@@ -684,6 +775,10 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
     /**
      * <p>
      * Lists all of the Cognito identity pools registered for your account.
+     * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
      * </p>
      *
      * @param listIdentityPoolsRequest Container for the necessary parameters
@@ -746,6 +841,10 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * <p>
      * The OpenId token is valid for 15 minutes.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param getOpenIdTokenRequest Container for the necessary parameters to
      *           execute the GetOpenIdToken service method on AmazonCognitoIdentity.
@@ -759,6 +858,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
+     * @throws ExternalServiceException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -801,64 +901,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Returns metadata related to the given identity, including when the
-     * identity was created and any associated linked logins.
-     * </p>
-     *
-     * @param describeIdentityRequest Container for the necessary parameters
-     *           to execute the DescribeIdentity service method on
-     *           AmazonCognitoIdentity.
-     * 
-     * @return The response from the DescribeIdentity service method, as
-     *         returned by AmazonCognitoIdentity.
-     * 
-     * @throws InternalErrorException
-     * @throws NotAuthorizedException
-     * @throws InvalidParameterException
-     * @throws TooManyRequestsException
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCognitoIdentity indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeIdentityResult describeIdentity(DescribeIdentityRequest describeIdentityRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeIdentityRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeIdentityRequest> request = null;
-        Response<DescribeIdentityResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeIdentityRequestMarshaller().marshall(super.beforeMarshalling(describeIdentityRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeIdentityResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeIdentityResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeIdentityResult> responseHandler =
-                new JsonResponseHandler<DescribeIdentityResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
      * Retrieves the <code>IdentityID</code> associated with a
      * <code>DeveloperUserIdentifier</code> or the list of
      * <code>DeveloperUserIdentifier</code> s associated with an
@@ -871,6 +913,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * verified against the database, the response returns both values and is
      * the same as the request. Otherwise a
      * <code>ResourceConflictException</code> is thrown.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param lookupDeveloperIdentityRequest Container for the necessary
@@ -928,8 +973,72 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
+     * Returns metadata related to the given identity, including when the
+     * identity was created and any associated linked logins.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
+     *
+     * @param describeIdentityRequest Container for the necessary parameters
+     *           to execute the DescribeIdentity service method on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return The response from the DescribeIdentity service method, as
+     *         returned by AmazonCognitoIdentity.
+     * 
+     * @throws InternalErrorException
+     * @throws NotAuthorizedException
+     * @throws InvalidParameterException
+     * @throws TooManyRequestsException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeIdentityResult describeIdentity(DescribeIdentityRequest describeIdentityRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeIdentityRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeIdentityRequest> request = null;
+        Response<DescribeIdentityResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeIdentityRequestMarshaller().marshall(super.beforeMarshalling(describeIdentityRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<DescribeIdentityResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeIdentityResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeIdentityResult> responseHandler =
+                new JsonResponseHandler<DescribeIdentityResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Sets the roles for an identity pool. These roles are used when making
      * calls to <code>GetCredentialsForIdentity</code> action.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param setIdentityPoolRolesRequest Container for the necessary
@@ -940,6 +1049,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws ResourceConflictException
      * @throws InternalErrorException
      * @throws NotAuthorizedException
+     * @throws ConcurrentModificationException
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
@@ -983,6 +1093,10 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * logins will be considered new identities next time they are seen.
      * Removing the last linked login will make this identity inaccessible.
      * </p>
+     * <p>
+     * This is a public API. You do not need any credentials to call this
+     * API.
+     * </p>
      *
      * @param unlinkIdentityRequest Container for the necessary parameters to
      *           execute the UnlinkIdentity service method on AmazonCognitoIdentity.
@@ -994,6 +1108,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * @throws InvalidParameterException
      * @throws TooManyRequestsException
      * @throws ResourceNotFoundException
+     * @throws ExternalServiceException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1031,6 +1146,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
     /**
      * <p>
      * Lists the identities in a pool.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param listIdentitiesRequest Container for the necessary parameters to
@@ -1087,6 +1205,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
     /**
      * <p>
      * Gets the roles for an identity pool.
+     * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      *
      * @param getIdentityPoolRolesRequest Container for the necessary
@@ -1163,6 +1284,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * will create the identity in the specified <code>IdentityPoolId</code>
      * .
      * </p>
+     * <p>
+     * You must use AWS Developer credentials to call this API.
+     * </p>
      *
      * @param getOpenIdTokenForDeveloperIdentityRequest Container for the
      *           necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity
@@ -1222,7 +1346,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * <p>
      * Creates a new identity pool. The identity pool is a store of user
      * identity information that is specific to your AWS account. The limit
-     * on identity pools is 60 per account.
+     * on identity pools is 60 per account. You must use AWS Developer
+     * credentials to call this API.
      * </p>
      *
      * @param createIdentityPoolRequest Container for the necessary

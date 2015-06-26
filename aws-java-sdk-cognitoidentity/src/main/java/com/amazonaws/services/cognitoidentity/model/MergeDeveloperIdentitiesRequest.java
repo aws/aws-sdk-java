@@ -32,6 +32,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * are associated with the same public provider, but as two different
  * users, an exception will be thrown.
  * </p>
+ * <p>
+ * You must use AWS Developer credentials to call this API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#mergeDeveloperIdentities(MergeDeveloperIdentitiesRequest)
  */

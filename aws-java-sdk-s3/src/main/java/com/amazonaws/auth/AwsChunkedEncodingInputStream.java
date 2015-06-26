@@ -17,7 +17,13 @@ import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.InvalidKeyException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -30,13 +36,12 @@ import com.amazonaws.util.BinaryUtils;
  * A wrapper class of InputStream that implements chunked-encoding.
  */
 public final class AwsChunkedEncodingInputStream extends SdkInputStream {
-
     protected static final String DEFAULT_ENCODING = "UTF-8";
 
     private static final int DEFAULT_CHUNK_SIZE = 128 * 1024;
     private static final int DEFAULT_BUFFER_SIZE = 256 * 1024;
 
-    private static final String CLRF = "\r\n";
+    private static final String CRLF = "\r\n";
     private static final String CHUNK_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-PAYLOAD";
     private static final String CHUNK_SIGNATURE_HEADER = ";chunk-signature=";
     private static final int SIGNATURE_LENGTH = 64;
@@ -44,12 +49,14 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
 
     private InputStream is = null;
     private final int maxBufferSize;
-    private final byte[] kSigning;
     private final String dateTime;
     private final String keyPath;
     private final String headerSignature;
     private String priorChunkSignature;
     private final AWS4Signer aws4Signer;
+
+    private final MessageDigest sha256;
+    private final Mac hmacSha256;
 
     /** Iterator on the current chunk that has been signed */
     private ChunkContentIterator currentChunkIterator;
@@ -82,20 +89,20 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
      * are supported, otherwise it will create a buffer for bytes read from
      * the wrapped stream.
      * @param in
-     * 			The original InputStream.
+     *             The original InputStream.
      * @param maxBufferSize
-     * 			Maximum number of bytes buffered by this class.
+     *             Maximum number of bytes buffered by this class.
      * @param kSigning
-     * 			Signing key.
+     *             Signing key.
      * @param datetime
-     * 			Datetime, as used in SigV4.
+     *             Datetime, as used in SigV4.
      * @param keyPath
-     * 			Keypath/Scope, as used in SigV4.
+     *             Keypath/Scope, as used in SigV4.
      * @param headerSignature
-     * 			The signature of the signed headers. This will be used for
-     * 			calculating the signature of the first chunk.
+     *             The signature of the signed headers. This will be used for
+     *             calculating the signature of the first chunk.
      * @param aws4Signer
-     * 			The AWS4Signer used for hashing and signing.
+     *             The AWS4Signer used for hashing and signing.
      */
     public AwsChunkedEncodingInputStream(InputStream in, int maxBufferSize,
             byte[] kSigning, String datetime, String keyPath,
@@ -114,8 +121,17 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
 
         if (maxBufferSize < DEFAULT_CHUNK_SIZE)
             throw new IllegalArgumentException("Max buffer size should not be less than chunk size");
+        try {
+            this.sha256 = MessageDigest.getInstance("SHA-256");
+            final String signingAlgo = SigningAlgorithm.HmacSHA256.toString();
+            this.hmacSha256 = Mac.getInstance(signingAlgo);
+            hmacSha256.init(new SecretKeySpec(kSigning, signingAlgo));
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalStateException(e);
+        } catch (InvalidKeyException e) {
+            throw new IllegalArgumentException(e);
+        }
         this.maxBufferSize = maxBufferSize;
-        this.kSigning = kSigning;
         this.dateTime = datetime;
         this.keyPath = keyPath;
         this.headerSignature = headerSignature;
@@ -265,15 +281,15 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
         return Long.toHexString(chunkDataSize).length()
                 + CHUNK_SIGNATURE_HEADER.length()
                 + SIGNATURE_LENGTH
-                + CLRF.length()
+                + CRLF.length()
                 + chunkDataSize
-                + CLRF.length();
+                + CRLF.length();
     }
 
     /**
      * Read in the next chunk of data, and create the necessary chunk extensions.
      * @return
-     * 		Returns true if next chunk is the last empty chunk.
+     *         Returns true if next chunk is the last empty chunk.
      */
     private boolean setUpNextChunk() throws IOException {
         byte[] chunkData = new byte[DEFAULT_CHUNK_SIZE];
@@ -316,25 +332,24 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
         StringBuilder chunkHeader = new StringBuilder();
         // chunk-size
         chunkHeader.append(Integer.toHexString(chunkData.length));
-        // nonsig-extension
-        String nonsigExtension = "";
         // sig-extension
-        String chunkStringToSign =
+        final String chunkStringToSign =
                 CHUNK_STRING_TO_SIGN_PREFIX + "\n" +
                 dateTime + "\n" +
                 keyPath + "\n" +
                 priorChunkSignature + "\n" +
-                BinaryUtils.toHex(aws4Signer.hash(nonsigExtension)) + "\n" +
-                BinaryUtils.toHex(aws4Signer.hash(chunkData));
-        final String chunkSignature = BinaryUtils.toHex(aws4Signer.sign(
-                chunkStringToSign, kSigning, SigningAlgorithm.HmacSHA256));
+                AbstractAWSSigner.EMPTY_STRING_SHA256_HEX + "\n" +
+                BinaryUtils.toHex(sha256.digest(chunkData));
+        final String chunkSignature =
+            BinaryUtils.toHex(aws4Signer.signWithMac(chunkStringToSign, hmacSha256));
         priorChunkSignature = chunkSignature;
-        chunkHeader.append(nonsigExtension + CHUNK_SIGNATURE_HEADER + chunkSignature);
-        chunkHeader.append(CLRF);
-
+        chunkHeader.append(CHUNK_SIGNATURE_HEADER)
+                   .append(chunkSignature)
+                   .append(CRLF)
+                   ;
         try {
             byte[] header = chunkHeader.toString().getBytes(UTF8);
-            byte[] trailer = CLRF.getBytes(UTF8);
+            byte[] trailer = CRLF.getBytes(UTF8);
             byte[] signedChunk = new byte[header.length + chunkData.length + trailer.length];
             System.arraycopy(header, 0, signedChunk, 0, header.length);
             System.arraycopy(chunkData, 0, signedChunk, header.length, chunkData.length);

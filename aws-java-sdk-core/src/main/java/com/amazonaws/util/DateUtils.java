@@ -22,6 +22,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -63,14 +64,6 @@ public class DateUtils {
             .withZone(GMT);
 
     /**
-     * @deprecated by the more efficient static method {@link #parseISO8601Date(String)}
-     */
-    @Deprecated
-    public Date parseIso8601Date(String dateString) {
-        return parseISO8601Date(dateString);
-    }
-
-    /**
      * Parses the specified date string as an ISO 8601 date and returns the Date
      * object.
      *
@@ -88,12 +81,21 @@ public class DateUtils {
     }
 
     static Date doParseISO8601Date(final String dateStringOrig) {
+        String dateString = dateStringOrig;
+
+        // For EC2 Spot Fleet.
+        if (dateString.endsWith("+0000")) {
+            dateString = dateString
+                    .substring(0, dateString.length() - 5)
+                    .concat("Z");
+        }
+
         // https://github.com/aws/aws-sdk-java/issues/233
-        final String temp = tempDateStringForJodaTime(dateStringOrig);
+        String temp = tempDateStringForJodaTime(dateString);
         try {
-            if (temp.equals(dateStringOrig)) {
+            if (temp.equals(dateString)) {
                 // Normal case: nothing special here
-                return new Date(iso8601DateFormat.parseMillis(dateStringOrig));
+                return new Date(iso8601DateFormat.parseMillis(dateString));
             }
             // Handling edge case:
             // Joda-time can only handle up to year 292278993 but we are given
@@ -104,12 +106,12 @@ public class DateUtils {
             if (milli < 0) { // overflow!
                 // re-parse the original date string using JodaTime so as to
                 // throw  an exception with a consistent message
-                return new Date(iso8601DateFormat.parseMillis(dateStringOrig));
+                return new Date(iso8601DateFormat.parseMillis(dateString));
             }
             return new Date(milli);
         } catch (IllegalArgumentException e) {
             try {
-                return new Date(alternateIso8601DateFormat.parseMillis(dateStringOrig));
+                return new Date(alternateIso8601DateFormat.parseMillis(dateString));
                 // If the first ISO 8601 parser didn't work, try the alternate
                 // version which doesn't include fractional seconds
             } catch(Exception oops) {
@@ -148,14 +150,6 @@ public class DateUtils {
     }
 
     /**
-     * @deprecated by the more efficient static method {@link #formatISO8601Date(Date)}
-     */
-    @Deprecated
-    public String formatIso8601Date(Date date) {
-        return formatISO8601Date(date);
-    }
-
-    /**
      * Formats the specified date as an ISO 8601 string.
      *
      * @param date
@@ -172,11 +166,17 @@ public class DateUtils {
     }
 
     /**
-     * @deprecated by the more efficient static method {@link #parseRFC822Date(String)}
+     * Formats the specified date as an ISO 8601 string.
+     *
+     * @param date the date to format
+     * @return the ISO-8601 string representing the specified date
      */
-    @Deprecated
-    public Date parseRfc822Date(String dateString) {
-        return parseRFC822Date(dateString);
+    public static String formatISO8601Date(DateTime date) {
+        try {
+            return iso8601DateFormat.print(date);
+        } catch (RuntimeException ex) {
+            throw handleException(ex);
+        }
     }
 
     /**
@@ -197,14 +197,6 @@ public class DateUtils {
     }
 
     /**
-     * @deprecated by the more efficient static method {@link #formatRFC822Date(Date)}
-     */
-    @Deprecated
-    public String formatRfc822Date(Date date) {
-        return formatRFC822Date(date);
-    }
-
-    /**
      * Formats the specified date as an RFC 822 string.
      *
      * @param date
@@ -218,14 +210,6 @@ public class DateUtils {
         } catch(RuntimeException ex) {
             throw handleException(ex);
         }
-    }
-
-    /**
-     * @deprecated by the more efficient static method {@link #parseCompressedISO8601Date(String)}
-     */
-    @Deprecated
-    public Date parseCompressedIso8601Date(String dateString) {
-        return parseCompressedISO8601Date(dateString);
     }
 
     /**

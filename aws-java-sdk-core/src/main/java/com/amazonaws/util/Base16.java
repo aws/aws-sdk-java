@@ -15,31 +15,31 @@
 package com.amazonaws.util;
 
 /**
- * A Base 16 codec API.
- * 
+ * A Base 16 codec API, which encodes into hex string in upper case.
+ *
  * See http://www.ietf.org/rfc/rfc4648.txt
- * 
+ *
  * @author Hanson Char
  */
 public enum Base16 {
     ;
     private static final Base16Codec codec = new Base16Codec();
-    
+
     /**
-     * Returns a base 16 encoded string of the given bytes.
+     * Returns a base 16 encoded string (in upper case) of the given bytes.
      */
     public static String encodeAsString(byte ... bytes) {
         if (bytes == null)
             return null;
-        return bytes.length == 0 ? "" : CodecUtils.toStringDirect(codec.encode(bytes)); 
+        return bytes.length == 0 ? "" : CodecUtils.toStringDirect(codec.encode(bytes));
     }
-    
+
     /**
-     * Returns a 16 encoded byte array of the given bytes.
+     * Returns a base 16 encoded byte array of the given bytes.
      */
     public static byte[] encode(byte[] bytes) { return bytes == null || bytes.length == 0 ? bytes : codec.encode(bytes); }
-    
-    /** 
+
+    /**
      * Decodes the given base 16 encoded string,
      * skipping carriage returns, line feeds and spaces as needed.
      */
@@ -52,8 +52,8 @@ public enum Base16 {
         int len = CodecUtils.sanitize(b16, buf);
         return codec.decode(buf, len);
     }
-    
-    /** 
+
+    /**
      * Decodes the given base 16 encoded bytes.
      */
     public static byte[] decode(byte[] b16) { return b16 == null || b16.length == 0 ? b16 :  codec.decode(b16, b16.length); }

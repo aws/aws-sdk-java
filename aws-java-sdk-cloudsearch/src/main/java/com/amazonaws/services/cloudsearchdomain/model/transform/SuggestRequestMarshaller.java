@@ -90,36 +90,40 @@ public class SuggestRequestMarshaller implements Marshaller<Request<SuggestReque
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Query")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Query");
+
             String value = (suggestRequest.getQuery() == null) ? null : StringUtils.fromString(suggestRequest.getQuery());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Query}", (suggestRequest.getQuery() == null) ? "" : StringUtils.fromString(suggestRequest.getQuery())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Suggester")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Suggester");
+
             String value = (suggestRequest.getSuggester() == null) ? null : StringUtils.fromString(suggestRequest.getSuggester());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Suggester}", (suggestRequest.getSuggester() == null) ? "" : StringUtils.fromString(suggestRequest.getSuggester())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Size")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Size");
+
             String value = (suggestRequest.getSize() == null) ? null : StringUtils.fromLong(suggestRequest.getSize());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Size}", (suggestRequest.getSize() == null) ? "" : StringUtils.fromLong(suggestRequest.getSize())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

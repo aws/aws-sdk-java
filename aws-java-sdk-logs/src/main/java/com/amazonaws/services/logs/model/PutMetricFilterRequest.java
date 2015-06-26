@@ -26,15 +26,26 @@ import com.amazonaws.AmazonWebServiceRequest;
  * extract metric data from log events ingested through
  * <code>PutLogEvents</code> requests.
  * </p>
+ * <p>
+ * The maximum number of metric filters that can be associated with a
+ * log group is 100.
+ * </p>
  *
  * @see com.amazonaws.services.logs.AWSLogs#putMetricFilter(PutMetricFilterRequest)
  */
 public class PutMetricFilterRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The name of the log group to associate the metric filter with.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     */
     private String logGroupName;
 
     /**
-     * The name of the metric filter.
+     * A name for the metric filter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -43,16 +54,21 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
     private String filterName;
 
     /**
-     * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * A valid CloudWatch Logs filter pattern for extracting metric data out
+     * of ingested log events.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 512<br/>
      */
     private String filterPattern;
 
+    /**
+     * A collection of information needed to define how metric data gets
+     * emitted.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1<br/>
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<MetricTransformation> metricTransformations;
 
     /**
@@ -66,13 +82,13 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param logGroupName
-     * @param filterName The name of the metric filter.
-     * @param filterPattern A symbolic description of how Amazon CloudWatch
-     * Logs should interpret the data in each log entry. For example, a log
-     * entry may contain timestamps, IP addresses, strings, and so on. You
-     * use the pattern to specify what to look for in the log stream.
-     * @param metricTransformations
+     * @param logGroupName The name of the log group to associate the metric
+     * filter with.
+     * @param filterName A name for the metric filter.
+     * @param filterPattern A valid CloudWatch Logs filter pattern for
+     * extracting metric data out of ingested log events.
+     * @param metricTransformations A collection of information needed to
+     * define how metric data gets emitted.
      */
     public PutMetricFilterRequest(String logGroupName, String filterName, String filterPattern, java.util.List<MetricTransformation> metricTransformations) {
         setLogGroupName(logGroupName);
@@ -82,33 +98,33 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
+     * The name of the log group to associate the metric filter with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The value of the LogGroupName property for this object.
+     * @return The name of the log group to associate the metric filter with.
      */
     public String getLogGroupName() {
         return logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group to associate the metric filter with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group to associate the metric filter with.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group to associate the metric filter with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -116,7 +132,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group to associate the metric filter with.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -127,33 +143,33 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * The name of the metric filter.
+     * A name for the metric filter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @return The name of the metric filter.
+     * @return A name for the metric filter.
      */
     public String getFilterName() {
         return filterName;
     }
     
     /**
-     * The name of the metric filter.
+     * A name for the metric filter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param filterName The name of the metric filter.
+     * @param filterName A name for the metric filter.
      */
     public void setFilterName(String filterName) {
         this.filterName = filterName;
     }
     
     /**
-     * The name of the metric filter.
+     * A name for the metric filter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -161,7 +177,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param filterName The name of the metric filter.
+     * @param filterName A name for the metric filter.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -172,56 +188,44 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * A valid CloudWatch Logs filter pattern for extracting metric data out
+     * of ingested log events.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 512<br/>
      *
-     * @return A symbolic description of how Amazon CloudWatch Logs should interpret
-     *         the data in each log entry. For example, a log entry may contain
-     *         timestamps, IP addresses, strings, and so on. You use the pattern to
-     *         specify what to look for in the log stream.
+     * @return A valid CloudWatch Logs filter pattern for extracting metric data out
+     *         of ingested log events.
      */
     public String getFilterPattern() {
         return filterPattern;
     }
     
     /**
-     * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * A valid CloudWatch Logs filter pattern for extracting metric data out
+     * of ingested log events.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 512<br/>
      *
-     * @param filterPattern A symbolic description of how Amazon CloudWatch Logs should interpret
-     *         the data in each log entry. For example, a log entry may contain
-     *         timestamps, IP addresses, strings, and so on. You use the pattern to
-     *         specify what to look for in the log stream.
+     * @param filterPattern A valid CloudWatch Logs filter pattern for extracting metric data out
+     *         of ingested log events.
      */
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
     }
     
     /**
-     * A symbolic description of how Amazon CloudWatch Logs should interpret
-     * the data in each log entry. For example, a log entry may contain
-     * timestamps, IP addresses, strings, and so on. You use the pattern to
-     * specify what to look for in the log stream.
+     * A valid CloudWatch Logs filter pattern for extracting metric data out
+     * of ingested log events.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 512<br/>
      *
-     * @param filterPattern A symbolic description of how Amazon CloudWatch Logs should interpret
-     *         the data in each log entry. For example, a log entry may contain
-     *         timestamps, IP addresses, strings, and so on. You use the pattern to
-     *         specify what to look for in the log stream.
+     * @param filterPattern A valid CloudWatch Logs filter pattern for extracting metric data out
+     *         of ingested log events.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -232,13 +236,14 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Returns the value of the MetricTransformations property for this
-     * object.
+     * A collection of information needed to define how metric data gets
+     * emitted.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1<br/>
      *
-     * @return The value of the MetricTransformations property for this object.
+     * @return A collection of information needed to define how metric data gets
+     *         emitted.
      */
     public java.util.List<MetricTransformation> getMetricTransformations() {
         if (metricTransformations == null) {
@@ -249,12 +254,14 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * Sets the value of the MetricTransformations property for this object.
+     * A collection of information needed to define how metric data gets
+     * emitted.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1<br/>
      *
-     * @param metricTransformations The new value for the MetricTransformations property for this object.
+     * @param metricTransformations A collection of information needed to define how metric data gets
+     *         emitted.
      */
     public void setMetricTransformations(java.util.Collection<MetricTransformation> metricTransformations) {
         if (metricTransformations == null) {
@@ -267,7 +274,8 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * Sets the value of the MetricTransformations property for this object.
+     * A collection of information needed to define how metric data gets
+     * emitted.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setMetricTransformations(java.util.Collection)} or
@@ -279,7 +287,8 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1<br/>
      *
-     * @param metricTransformations The new value for the MetricTransformations property for this object.
+     * @param metricTransformations A collection of information needed to define how metric data gets
+     *         emitted.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -293,14 +302,16 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * Sets the value of the MetricTransformations property for this object.
+     * A collection of information needed to define how metric data gets
+     * emitted.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1<br/>
      *
-     * @param metricTransformations The new value for the MetricTransformations property for this object.
+     * @param metricTransformations A collection of information needed to define how metric data gets
+     *         emitted.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

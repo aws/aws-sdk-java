@@ -12,24 +12,21 @@ This is a sample that demonstrates persistent vs. one-time spot requests, launch
 
 The basic steps for running the Amazon EC2 Spot Instance sample are:
 
-1.  Open the `AwsCredentials.properties` in the sample folder.
+1.  Create a credentials file in the location ~/.aws with name "credentials".
 
-2.  Locate the following section and fill in your Access Key ID and Secret Access Key:  
+2.  Under the `default` profile fill in your Access Key ID and Secret Access Key:
 
-    ```
-    # Fill in your AWS Access Key ID and Secret Access Key  
-    # http://aws.amazon.com/security-credentials  
-    accessKey =  
-    secretKey =
-    ```
+  ```
+  [default]
+  aws_access_key_id =
+  aws_secret_access_key =
+  ```
 
 3.  Save the file.
 
-4.  Copy the file to the advanced subdirectory, the output directory for build.
+4.  Run the `CreateSecurityGroupApp.java` file, located in the same directory as the properties file. To use ant to run the file, type "ant CreateSecurityGroupApp"
 
-5.  Run the `CreateSecurityGroupApp.java` file, located in the same directory as the properties file. To use ant to run the file, type "ant CreateSecurityGroupApp"
-
-6.  Run the `GettingStartedApp.java` file, located in the same directory as the properties file. The sample prints information to the standard output. To use ant to run the file, type "ant GettingStartedApp"
+5.  Run the `GettingStartedApp.java` file, located in the same directory as the properties file. The sample prints information to the standard output. To use ant to run the file, type "ant GettingStartedApp"
 
 **NOTE:** The sample also includes an Ant build.xml file to run the sample.
 

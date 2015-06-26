@@ -39,10 +39,13 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
 
         Request<RequestSpotInstancesRequest> request = new DefaultRequest<RequestSpotInstancesRequest>(requestSpotInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RequestSpotInstances");
-        request.addParameter("Version", "2015-03-01");
+        request.addParameter("Version", "2015-04-15");
 
         if (requestSpotInstancesRequest.getSpotPrice() != null) {
             request.addParameter("SpotPrice", StringUtils.fromString(requestSpotInstancesRequest.getSpotPrice()));
+        }
+        if (requestSpotInstancesRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(requestSpotInstancesRequest.getClientToken()));
         }
         if (requestSpotInstancesRequest.getInstanceCount() != null) {
             request.addParameter("InstanceCount", StringUtils.fromInteger(requestSpotInstancesRequest.getInstanceCount()));

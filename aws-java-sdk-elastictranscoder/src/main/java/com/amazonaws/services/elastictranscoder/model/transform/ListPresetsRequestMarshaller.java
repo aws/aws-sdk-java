@@ -90,25 +90,28 @@ public class ListPresetsRequestMarshaller implements Marshaller<Request<ListPres
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Ascending")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Ascending");
+
             String value = (listPresetsRequest.getAscending() == null) ? null : StringUtils.fromString(listPresetsRequest.getAscending());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Ascending}", (listPresetsRequest.getAscending() == null) ? "" : StringUtils.fromString(listPresetsRequest.getAscending())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("PageToken")) {
             String name = DYNAMIC_QUERY_PARAMS.get("PageToken");
+
             String value = (listPresetsRequest.getPageToken() == null) ? null : StringUtils.fromString(listPresetsRequest.getPageToken());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{PageToken}", (listPresetsRequest.getPageToken() == null) ? "" : StringUtils.fromString(listPresetsRequest.getPageToken())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

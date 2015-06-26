@@ -90,25 +90,28 @@ public class RemovePermissionRequestMarshaller implements Marshaller<Request<Rem
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FunctionName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FunctionName");
+
             String value = (removePermissionRequest.getFunctionName() == null) ? null : StringUtils.fromString(removePermissionRequest.getFunctionName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (removePermissionRequest.getFunctionName() == null) ? "" : StringUtils.fromString(removePermissionRequest.getFunctionName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("StatementId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("StatementId");
+
             String value = (removePermissionRequest.getStatementId() == null) ? null : StringUtils.fromString(removePermissionRequest.getStatementId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{StatementId}", (removePermissionRequest.getStatementId() == null) ? "" : StringUtils.fromString(removePermissionRequest.getStatementId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

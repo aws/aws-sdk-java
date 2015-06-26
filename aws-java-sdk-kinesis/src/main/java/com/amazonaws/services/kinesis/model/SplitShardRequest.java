@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * and ending hash key, but it can be any hash key value in the range
  * being mapped into the shard. For more information about splitting
  * shards, see
- * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-java-resharding-split"> Split a Shard </a>
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html"> Split a Shard </a>
  * in the <i>Amazon Kinesis Developer Guide</i> .
  * </p>
  * <p>
@@ -62,25 +62,23 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * You can use <code>DescribeStream</code> to check the status of the
- * stream, which is returned in <code>StreamStatus</code> .
- * If the stream is in the <code>ACTIVE</code> state, you can
- * call <code>SplitShard</code> .
- * If a stream is in <code>CREATING</code> or
+ * stream, which is returned in <code>StreamStatus</code> . If the stream
+ * is in the <code>ACTIVE</code> state, you can call
+ * <code>SplitShard</code> . If a stream is in <code>CREATING</code> or
  * <code>UPDATING</code> or <code>DELETING</code> states,
  * <code>DescribeStream</code> returns a
  * <code>ResourceInUseException</code> .
  * </p>
  * <p>
  * If the specified stream does not exist, <code>DescribeStream</code>
- * returns a <code>ResourceNotFoundException</code> .
- * If you try to create more shards than are authorized for
- * your account, you receive a <code>LimitExceededException</code> .
+ * returns a <code>ResourceNotFoundException</code> . If you try to
+ * create more shards than are authorized for your account, you receive a
+ * <code>LimitExceededException</code> .
  * </p>
  * <p>
- * The default limit for an AWS account is 10 shards per stream. If you
- * need to create a stream with more than 10 shards,
- * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
- * to increase the limit on your account.
+ * For the default shard limit for an AWS account, see
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html"> Amazon Kinesis Limits </a> . If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
+ * 
  * </p>
  * <p>
  * If you try to operate on too many streams in parallel using

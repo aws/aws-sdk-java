@@ -44,16 +44,22 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to start.
+     * the task definition that you want to start. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      */
     private String taskDefinition;
 
     /**
      * A list of container overrides in JSON format that specify the name of
-     * a container in the specified task definition and the command it should
-     * run instead of its default. A total of 8192 characters are allowed for
-     * overrides. This limit includes the JSON formatting characters of the
-     * override structure.
+     * a container in the specified task definition and the overrides it
+     * should receive. You can override the default command for a container
+     * (that is specified in the task definition or Docker image) with a
+     * <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or
+     * Docker image) on a container or add new environment variables to it
+     * with an <code>environment</code> override. <note> <p>A total of 8192
+     * characters are allowed for overrides. This limit includes the JSON
+     * formatting characters of the override structure. </note>
      */
     private TaskOverride overrides;
 
@@ -66,7 +72,14 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> containerInstances;
 
     /**
-     * 
+     * An optional tag specified when a task is started. For example if you
+     * automatically trigger a task to run a batch process job, you could
+     * apply a unique identifier for that job to your task with the
+     * <code>startedBy</code> parameter. You can then identify which tasks
+     * belong to that job by filtering the results of a <a>ListTasks</a> call
+     * with the <code>startedBy</code> value. <p>If a task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      */
     private String startedBy;
 
@@ -118,11 +131,13 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to start.
+     * the task definition that you want to start. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @return The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to start.
+     *         the task definition that you want to start. If a <code>revision</code>
+     *         is not specified, the latest <code>ACTIVE</code> revision is used.
      */
     public String getTaskDefinition() {
         return taskDefinition;
@@ -131,11 +146,13 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to start.
+     * the task definition that you want to start. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to start.
+     *         the task definition that you want to start. If a <code>revision</code>
+     *         is not specified, the latest <code>ACTIVE</code> revision is used.
      */
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
@@ -144,13 +161,15 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     * the task definition that you want to start.
+     * the task definition that you want to start. If a <code>revision</code>
+     * is not specified, the latest <code>ACTIVE</code> revision is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskDefinition The <code>family</code> and <code>revision</code>
      *         (<code>family:revision</code>) or full Amazon Resource Name (ARN) of
-     *         the task definition that you want to start.
+     *         the task definition that you want to start. If a <code>revision</code>
+     *         is not specified, the latest <code>ACTIVE</code> revision is used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -162,16 +181,26 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * A list of container overrides in JSON format that specify the name of
-     * a container in the specified task definition and the command it should
-     * run instead of its default. A total of 8192 characters are allowed for
-     * overrides. This limit includes the JSON formatting characters of the
-     * override structure.
+     * a container in the specified task definition and the overrides it
+     * should receive. You can override the default command for a container
+     * (that is specified in the task definition or Docker image) with a
+     * <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or
+     * Docker image) on a container or add new environment variables to it
+     * with an <code>environment</code> override. <note> <p>A total of 8192
+     * characters are allowed for overrides. This limit includes the JSON
+     * formatting characters of the override structure. </note>
      *
      * @return A list of container overrides in JSON format that specify the name of
-     *         a container in the specified task definition and the command it should
-     *         run instead of its default. A total of 8192 characters are allowed for
-     *         overrides. This limit includes the JSON formatting characters of the
-     *         override structure.
+     *         a container in the specified task definition and the overrides it
+     *         should receive. You can override the default command for a container
+     *         (that is specified in the task definition or Docker image) with a
+     *         <code>command</code> override. You can also override existing
+     *         environment variables (that are specified in the task definition or
+     *         Docker image) on a container or add new environment variables to it
+     *         with an <code>environment</code> override. <note> <p>A total of 8192
+     *         characters are allowed for overrides. This limit includes the JSON
+     *         formatting characters of the override structure. </note>
      */
     public TaskOverride getOverrides() {
         return overrides;
@@ -179,16 +208,26 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * A list of container overrides in JSON format that specify the name of
-     * a container in the specified task definition and the command it should
-     * run instead of its default. A total of 8192 characters are allowed for
-     * overrides. This limit includes the JSON formatting characters of the
-     * override structure.
+     * a container in the specified task definition and the overrides it
+     * should receive. You can override the default command for a container
+     * (that is specified in the task definition or Docker image) with a
+     * <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or
+     * Docker image) on a container or add new environment variables to it
+     * with an <code>environment</code> override. <note> <p>A total of 8192
+     * characters are allowed for overrides. This limit includes the JSON
+     * formatting characters of the override structure. </note>
      *
      * @param overrides A list of container overrides in JSON format that specify the name of
-     *         a container in the specified task definition and the command it should
-     *         run instead of its default. A total of 8192 characters are allowed for
-     *         overrides. This limit includes the JSON formatting characters of the
-     *         override structure.
+     *         a container in the specified task definition and the overrides it
+     *         should receive. You can override the default command for a container
+     *         (that is specified in the task definition or Docker image) with a
+     *         <code>command</code> override. You can also override existing
+     *         environment variables (that are specified in the task definition or
+     *         Docker image) on a container or add new environment variables to it
+     *         with an <code>environment</code> override. <note> <p>A total of 8192
+     *         characters are allowed for overrides. This limit includes the JSON
+     *         formatting characters of the override structure. </note>
      */
     public void setOverrides(TaskOverride overrides) {
         this.overrides = overrides;
@@ -196,18 +235,28 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * A list of container overrides in JSON format that specify the name of
-     * a container in the specified task definition and the command it should
-     * run instead of its default. A total of 8192 characters are allowed for
-     * overrides. This limit includes the JSON formatting characters of the
-     * override structure.
+     * a container in the specified task definition and the overrides it
+     * should receive. You can override the default command for a container
+     * (that is specified in the task definition or Docker image) with a
+     * <code>command</code> override. You can also override existing
+     * environment variables (that are specified in the task definition or
+     * Docker image) on a container or add new environment variables to it
+     * with an <code>environment</code> override. <note> <p>A total of 8192
+     * characters are allowed for overrides. This limit includes the JSON
+     * formatting characters of the override structure. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param overrides A list of container overrides in JSON format that specify the name of
-     *         a container in the specified task definition and the command it should
-     *         run instead of its default. A total of 8192 characters are allowed for
-     *         overrides. This limit includes the JSON formatting characters of the
-     *         override structure.
+     *         a container in the specified task definition and the overrides it
+     *         should receive. You can override the default command for a container
+     *         (that is specified in the task definition or Docker image) with a
+     *         <code>command</code> override. You can also override existing
+     *         environment variables (that are specified in the task definition or
+     *         Docker image) on a container or add new environment variables to it
+     *         with an <code>environment</code> override. <note> <p>A total of 8192
+     *         characters are allowed for overrides. This limit includes the JSON
+     *         formatting characters of the override structure. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -315,29 +364,71 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * 
+     * An optional tag specified when a task is started. For example if you
+     * automatically trigger a task to run a batch process job, you could
+     * apply a unique identifier for that job to your task with the
+     * <code>startedBy</code> parameter. You can then identify which tasks
+     * belong to that job by filtering the results of a <a>ListTasks</a> call
+     * with the <code>startedBy</code> value. <p>If a task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      *
-     * @return 
+     * @return An optional tag specified when a task is started. For example if you
+     *         automatically trigger a task to run a batch process job, you could
+     *         apply a unique identifier for that job to your task with the
+     *         <code>startedBy</code> parameter. You can then identify which tasks
+     *         belong to that job by filtering the results of a <a>ListTasks</a> call
+     *         with the <code>startedBy</code> value. <p>If a task is started by an
+     *         Amazon ECS service, then the <code>startedBy</code> parameter contains
+     *         the deployment ID of the service that starts it.
      */
     public String getStartedBy() {
         return startedBy;
     }
     
     /**
-     * 
+     * An optional tag specified when a task is started. For example if you
+     * automatically trigger a task to run a batch process job, you could
+     * apply a unique identifier for that job to your task with the
+     * <code>startedBy</code> parameter. You can then identify which tasks
+     * belong to that job by filtering the results of a <a>ListTasks</a> call
+     * with the <code>startedBy</code> value. <p>If a task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      *
-     * @param startedBy 
+     * @param startedBy An optional tag specified when a task is started. For example if you
+     *         automatically trigger a task to run a batch process job, you could
+     *         apply a unique identifier for that job to your task with the
+     *         <code>startedBy</code> parameter. You can then identify which tasks
+     *         belong to that job by filtering the results of a <a>ListTasks</a> call
+     *         with the <code>startedBy</code> value. <p>If a task is started by an
+     *         Amazon ECS service, then the <code>startedBy</code> parameter contains
+     *         the deployment ID of the service that starts it.
      */
     public void setStartedBy(String startedBy) {
         this.startedBy = startedBy;
     }
     
     /**
-     * 
+     * An optional tag specified when a task is started. For example if you
+     * automatically trigger a task to run a batch process job, you could
+     * apply a unique identifier for that job to your task with the
+     * <code>startedBy</code> parameter. You can then identify which tasks
+     * belong to that job by filtering the results of a <a>ListTasks</a> call
+     * with the <code>startedBy</code> value. <p>If a task is started by an
+     * Amazon ECS service, then the <code>startedBy</code> parameter contains
+     * the deployment ID of the service that starts it.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startedBy 
+     * @param startedBy An optional tag specified when a task is started. For example if you
+     *         automatically trigger a task to run a batch process job, you could
+     *         apply a unique identifier for that job to your task with the
+     *         <code>startedBy</code> parameter. You can then identify which tasks
+     *         belong to that job by filtering the results of a <a>ListTasks</a> call
+     *         with the <code>startedBy</code> value. <p>If a task is started by an
+     *         Amazon ECS service, then the <code>startedBy</code> parameter contains
+     *         the deployment ID of the service that starts it.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

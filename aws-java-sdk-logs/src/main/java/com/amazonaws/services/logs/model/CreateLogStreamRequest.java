@@ -39,8 +39,22 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class CreateLogStreamRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The name of the log group under which the log stream is to be created.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     */
     private String logGroupName;
 
+    /**
+     * The name of the log stream to create.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[^:*]*<br/>
+     */
     private String logStreamName;
 
     /**
@@ -54,8 +68,9 @@ public class CreateLogStreamRequest extends AmazonWebServiceRequest implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param logGroupName
-     * @param logStreamName
+     * @param logGroupName The name of the log group under which the log
+     * stream is to be created.
+     * @param logStreamName The name of the log stream to create.
      */
     public CreateLogStreamRequest(String logGroupName, String logStreamName) {
         setLogGroupName(logGroupName);
@@ -63,33 +78,33 @@ public class CreateLogStreamRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
+     * The name of the log group under which the log stream is to be created.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The value of the LogGroupName property for this object.
+     * @return The name of the log group under which the log stream is to be created.
      */
     public String getLogGroupName() {
         return logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group under which the log stream is to be created.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group under which the log stream is to be created.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group under which the log stream is to be created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -97,7 +112,7 @@ public class CreateLogStreamRequest extends AmazonWebServiceRequest implements S
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group under which the log stream is to be created.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -108,33 +123,33 @@ public class CreateLogStreamRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Returns the value of the LogStreamName property for this object.
+     * The name of the log stream to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @return The value of the LogStreamName property for this object.
+     * @return The name of the log stream to create.
      */
     public String getLogStreamName() {
         return logStreamName;
     }
     
     /**
-     * Sets the value of the LogStreamName property for this object.
+     * The name of the log stream to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param logStreamName The new value for the LogStreamName property for this object.
+     * @param logStreamName The name of the log stream to create.
      */
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
     
     /**
-     * Sets the value of the LogStreamName property for this object.
+     * The name of the log stream to create.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -142,7 +157,7 @@ public class CreateLogStreamRequest extends AmazonWebServiceRequest implements S
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[^:*]*<br/>
      *
-     * @param logStreamName The new value for the LogStreamName property for this object.
+     * @param logStreamName The name of the log stream to create.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

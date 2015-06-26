@@ -23,6 +23,8 @@ public enum DeploymentCommandName {
     Update_dependencies("update_dependencies"),
     Update_custom_cookbooks("update_custom_cookbooks"),
     Execute_recipes("execute_recipes"),
+    Configure("configure"),
+    Setup("setup"),
     Deploy("deploy"),
     Rollback("rollback"),
     Start("start"),
@@ -60,6 +62,10 @@ public enum DeploymentCommandName {
             return DeploymentCommandName.Update_custom_cookbooks;
         } else if ("execute_recipes".equals(value)) {
             return DeploymentCommandName.Execute_recipes;
+        } else if ("configure".equals(value)) {
+            return DeploymentCommandName.Configure;
+        } else if ("setup".equals(value)) {
+            return DeploymentCommandName.Setup;
         } else if ("deploy".equals(value)) {
             return DeploymentCommandName.Deploy;
         } else if ("rollback".equals(value)) {

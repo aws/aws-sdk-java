@@ -303,6 +303,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the UpdateDomainContact service method, as
      *         returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      * @throws DuplicateRequestException
      * @throws TLDRulesViolationException
@@ -369,6 +370,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the EnableDomainAutoRenew service method, as
      *         returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -588,6 +590,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the DisableDomainTransferLock service
      *         method, as returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      * @throws DuplicateRequestException
      * @throws TLDRulesViolationException
@@ -649,6 +652,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the EnableDomainTransferLock service method,
      *         as returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      * @throws DuplicateRequestException
      * @throws TLDRulesViolationException
@@ -714,6 +718,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the UpdateDomainNameservers service method,
      *         as returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      * @throws DuplicateRequestException
      * @throws TLDRulesViolationException
@@ -777,6 +782,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the DisableDomainAutoRenew service method,
      *         as returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -914,6 +920,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the GetDomainDetail service method, as
      *         returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -971,6 +978,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the UpdateTagsForDomain service method, as
      *         returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      * @throws OperationLimitExceededException
      *
@@ -1027,6 +1035,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the RetrieveDomainAuthCode service method,
      *         as returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      *
      * @throws AmazonClientException
@@ -1179,6 +1188,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the UpdateDomainContactPrivacy service
      *         method, as returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      * @throws DuplicateRequestException
      * @throws TLDRulesViolationException
@@ -1240,6 +1250,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the ListTagsForDomain service method, as
      *         returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      * @throws OperationLimitExceededException
      *
@@ -1298,6 +1309,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @return The response from the DeleteTagsForDomain service method, as
      *         returned by AmazonRoute53Domains.
      * 
+     * @throws UnsupportedTLDException
      * @throws InvalidInputException
      * @throws OperationLimitExceededException
      *

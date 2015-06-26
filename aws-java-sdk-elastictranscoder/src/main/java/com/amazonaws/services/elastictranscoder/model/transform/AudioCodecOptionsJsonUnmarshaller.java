@@ -49,6 +49,18 @@ public class AudioCodecOptionsJsonUnmarshaller implements Unmarshaller<AudioCode
                     context.nextToken();
                     audioCodecOptions.setProfile(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BitDepth", targetDepth)) {
+                    context.nextToken();
+                    audioCodecOptions.setBitDepth(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("BitOrder", targetDepth)) {
+                    context.nextToken();
+                    audioCodecOptions.setBitOrder(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Signed", targetDepth)) {
+                    context.nextToken();
+                    audioCodecOptions.setSigned(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

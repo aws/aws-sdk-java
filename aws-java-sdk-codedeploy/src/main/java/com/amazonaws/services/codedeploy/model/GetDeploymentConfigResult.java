@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
@@ -24,40 +25,49 @@ import java.io.Serializable;
 public class GetDeploymentConfigResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * Information about the deployment configuration.
+     * </p>
      */
     private DeploymentConfigInfo deploymentConfigInfo;
 
     /**
+     * <p>
      * Information about the deployment configuration.
-     *
+     * </p>
+     * 
+     * @param deploymentConfigInfo
+     *        Information about the deployment configuration.
+     */
+    public void setDeploymentConfigInfo(
+            DeploymentConfigInfo deploymentConfigInfo) {
+        this.deploymentConfigInfo = deploymentConfigInfo;
+    }
+
+    /**
+     * <p>
+     * Information about the deployment configuration.
+     * </p>
+     * 
      * @return Information about the deployment configuration.
      */
     public DeploymentConfigInfo getDeploymentConfigInfo() {
-        return deploymentConfigInfo;
+        return this.deploymentConfigInfo;
     }
-    
+
     /**
-     * Information about the deployment configuration.
-     *
-     * @param deploymentConfigInfo Information about the deployment configuration.
-     */
-    public void setDeploymentConfigInfo(DeploymentConfigInfo deploymentConfigInfo) {
-        this.deploymentConfigInfo = deploymentConfigInfo;
-    }
-    
-    /**
-     * Information about the deployment configuration.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param deploymentConfigInfo Information about the deployment configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Information about the deployment configuration.
+     * </p>
+     * 
+     * @param deploymentConfigInfo
+     *        Information about the deployment configuration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public GetDeploymentConfigResult withDeploymentConfigInfo(DeploymentConfigInfo deploymentConfigInfo) {
-        this.deploymentConfigInfo = deploymentConfigInfo;
+    public GetDeploymentConfigResult withDeploymentConfigInfo(
+            DeploymentConfigInfo deploymentConfigInfo) {
+        setDeploymentConfigInfo(deploymentConfigInfo);
         return this;
     }
 
@@ -73,46 +83,52 @@ public class GetDeploymentConfigResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDeploymentConfigInfo() != null) sb.append("DeploymentConfigInfo: " + getDeploymentConfigInfo() );
+        if (getDeploymentConfigInfo() != null)
+            sb.append("DeploymentConfigInfo: " + getDeploymentConfigInfo());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetDeploymentConfigResult == false)
+            return false;
+        GetDeploymentConfigResult other = (GetDeploymentConfigResult) obj;
+        if (other.getDeploymentConfigInfo() == null
+                ^ this.getDeploymentConfigInfo() == null)
+            return false;
+        if (other.getDeploymentConfigInfo() != null
+                && other.getDeploymentConfigInfo().equals(
+                        this.getDeploymentConfigInfo()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDeploymentConfigInfo() == null) ? 0 : getDeploymentConfigInfo().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDeploymentConfigInfo() == null) ? 0
+                        : getDeploymentConfigInfo().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof GetDeploymentConfigResult == false) return false;
-        GetDeploymentConfigResult other = (GetDeploymentConfigResult)obj;
-        
-        if (other.getDeploymentConfigInfo() == null ^ this.getDeploymentConfigInfo() == null) return false;
-        if (other.getDeploymentConfigInfo() != null && other.getDeploymentConfigInfo().equals(this.getDeploymentConfigInfo()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public GetDeploymentConfigResult clone() {
         try {
             return (GetDeploymentConfigResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

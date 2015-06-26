@@ -64,6 +64,12 @@ public class RetireGrantRequestMarshaller implements Marshaller<Request<RetireGr
             if (retireGrantRequest.getGrantToken() != null) {
                 jsonWriter.key("GrantToken").value(retireGrantRequest.getGrantToken());
             }
+            if (retireGrantRequest.getKeyId() != null) {
+                jsonWriter.key("KeyId").value(retireGrantRequest.getKeyId());
+            }
+            if (retireGrantRequest.getGrantId() != null) {
+                jsonWriter.key("GrantId").value(retireGrantRequest.getGrantId());
+            }
 
           jsonWriter.endObject();
 

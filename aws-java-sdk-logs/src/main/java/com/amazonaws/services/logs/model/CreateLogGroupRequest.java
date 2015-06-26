@@ -40,6 +40,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class CreateLogGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The name of the log group to create.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     */
     private String logGroupName;
 
     /**
@@ -53,40 +60,40 @@ public class CreateLogGroupRequest extends AmazonWebServiceRequest implements Se
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param logGroupName
+     * @param logGroupName The name of the log group to create.
      */
     public CreateLogGroupRequest(String logGroupName) {
         setLogGroupName(logGroupName);
     }
 
     /**
-     * Returns the value of the LogGroupName property for this object.
+     * The name of the log group to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @return The value of the LogGroupName property for this object.
+     * @return The name of the log group to create.
      */
     public String getLogGroupName() {
         return logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group to create.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
     
     /**
-     * Sets the value of the LogGroupName property for this object.
+     * The name of the log group to create.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -94,7 +101,7 @@ public class CreateLogGroupRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
      *
-     * @param logGroupName The new value for the LogGroupName property for this object.
+     * @param logGroupName The name of the log group to create.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

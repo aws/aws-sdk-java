@@ -111,6 +111,9 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
         if (restoreFromClusterSnapshotRequest.getKmsKeyId() != null) {
             request.addParameter("KmsKeyId", StringUtils.fromString(restoreFromClusterSnapshotRequest.getKmsKeyId()));
         }
+        if (restoreFromClusterSnapshotRequest.getNodeType() != null) {
+            request.addParameter("NodeType", StringUtils.fromString(restoreFromClusterSnapshotRequest.getNodeType()));
+        }
 
         return request;
     }

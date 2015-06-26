@@ -422,6 +422,174 @@ public class AWSLogsAsyncClient extends AWSLogsClient
     
     /**
      * <p>
+     * Returns all the subscription filters associated with the specified
+     * log group. The list returned in the response is ASCII-sorted by filter
+     * name.
+     * </p>
+     * <p>
+     * By default, this operation returns up to 50 subscription filters. If
+     * there are more subscription filters to list, the response would
+     * contain a <code>nextToken</code> value in the response body. You can
+     * also limit the number of subscription filters returned in the response
+     * by specifying the <code>limit</code> parameter in the request.
+     * </p>
+     *
+     * @param describeSubscriptionFiltersRequest Container for the necessary
+     *           parameters to execute the DescribeSubscriptionFilters operation on
+     *           AWSLogs.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSubscriptionFilters service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSubscriptionFiltersResult> describeSubscriptionFiltersAsync(final DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSubscriptionFiltersResult>() {
+            public DescribeSubscriptionFiltersResult call() throws Exception {
+                return describeSubscriptionFilters(describeSubscriptionFiltersRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns all the subscription filters associated with the specified
+     * log group. The list returned in the response is ASCII-sorted by filter
+     * name.
+     * </p>
+     * <p>
+     * By default, this operation returns up to 50 subscription filters. If
+     * there are more subscription filters to list, the response would
+     * contain a <code>nextToken</code> value in the response body. You can
+     * also limit the number of subscription filters returned in the response
+     * by specifying the <code>limit</code> parameter in the request.
+     * </p>
+     *
+     * @param describeSubscriptionFiltersRequest Container for the necessary
+     *           parameters to execute the DescribeSubscriptionFilters operation on
+     *           AWSLogs.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSubscriptionFilters service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSubscriptionFiltersResult> describeSubscriptionFiltersAsync(
+            final DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest,
+            final AsyncHandler<DescribeSubscriptionFiltersRequest, DescribeSubscriptionFiltersResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSubscriptionFiltersResult>() {
+            public DescribeSubscriptionFiltersResult call() throws Exception {
+              DescribeSubscriptionFiltersResult result;
+                try {
+                result = describeSubscriptionFilters(describeSubscriptionFiltersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeSubscriptionFiltersRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes a subscription filter associated with the specified log
+     * group.
+     * </p>
+     *
+     * @param deleteSubscriptionFilterRequest Container for the necessary
+     *           parameters to execute the DeleteSubscriptionFilter operation on
+     *           AWSLogs.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteSubscriptionFilter service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteSubscriptionFilterAsync(final DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteSubscriptionFilter(deleteSubscriptionFilterRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a subscription filter associated with the specified log
+     * group.
+     * </p>
+     *
+     * @param deleteSubscriptionFilterRequest Container for the necessary
+     *           parameters to execute the DeleteSubscriptionFilter operation on
+     *           AWSLogs.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteSubscriptionFilter service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteSubscriptionFilterAsync(
+            final DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest,
+            final AsyncHandler<DeleteSubscriptionFilterRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteSubscriptionFilter(deleteSubscriptionFilterRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteSubscriptionFilterRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns all the metrics filters associated with the specified log
      * group. The list returned in the response is ASCII-sorted by filter
      * name.
@@ -776,10 +944,182 @@ public class AWSLogsAsyncClient extends AWSLogsClient
     
     /**
      * <p>
+     * Creates or updates a subscription filter and associates it with the
+     * specified log group. Subscription filters allow you to subscribe to a
+     * real-time stream of log events ingested through
+     * <code>PutLogEvents</code> requests and have them delivered to a
+     * specific destination. Currently the only supported destination is an
+     * Amazon Kinesis stream belonging to the same account as the
+     * subscription filter.
+     * </p>
+     * <p>
+     * Currently there can only be one subscription filter associated with a
+     * log group.
+     * </p>
+     *
+     * @param putSubscriptionFilterRequest Container for the necessary
+     *           parameters to execute the PutSubscriptionFilter operation on AWSLogs.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutSubscriptionFilter service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> putSubscriptionFilterAsync(final PutSubscriptionFilterRequest putSubscriptionFilterRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                putSubscriptionFilter(putSubscriptionFilterRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates or updates a subscription filter and associates it with the
+     * specified log group. Subscription filters allow you to subscribe to a
+     * real-time stream of log events ingested through
+     * <code>PutLogEvents</code> requests and have them delivered to a
+     * specific destination. Currently the only supported destination is an
+     * Amazon Kinesis stream belonging to the same account as the
+     * subscription filter.
+     * </p>
+     * <p>
+     * Currently there can only be one subscription filter associated with a
+     * log group.
+     * </p>
+     *
+     * @param putSubscriptionFilterRequest Container for the necessary
+     *           parameters to execute the PutSubscriptionFilter operation on AWSLogs.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutSubscriptionFilter service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> putSubscriptionFilterAsync(
+            final PutSubscriptionFilterRequest putSubscriptionFilterRequest,
+            final AsyncHandler<PutSubscriptionFilterRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                putSubscriptionFilter(putSubscriptionFilterRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(putSubscriptionFilterRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Tests the filter pattern of a metric filter against a sample of log
+     * event messages. You can use this operation to validate the correctness
+     * of a metric filter pattern.
+     * </p>
+     *
+     * @param testMetricFilterRequest Container for the necessary parameters
+     *           to execute the TestMetricFilter operation on AWSLogs.
+     * 
+     * @return A Java Future object containing the response from the
+     *         TestMetricFilter service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<TestMetricFilterResult> testMetricFilterAsync(final TestMetricFilterRequest testMetricFilterRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<TestMetricFilterResult>() {
+            public TestMetricFilterResult call() throws Exception {
+                return testMetricFilter(testMetricFilterRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Tests the filter pattern of a metric filter against a sample of log
+     * event messages. You can use this operation to validate the correctness
+     * of a metric filter pattern.
+     * </p>
+     *
+     * @param testMetricFilterRequest Container for the necessary parameters
+     *           to execute the TestMetricFilter operation on AWSLogs.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         TestMetricFilter service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<TestMetricFilterResult> testMetricFilterAsync(
+            final TestMetricFilterRequest testMetricFilterRequest,
+            final AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<TestMetricFilterResult>() {
+            public TestMetricFilterResult call() throws Exception {
+              TestMetricFilterResult result;
+                try {
+                result = testMetricFilter(testMetricFilterRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(testMetricFilterRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Creates or updates a metric filter and associates it with the
      * specified log group. Metric filters allow you to configure rules to
      * extract metric data from log events ingested through
      * <code>PutLogEvents</code> requests.
+     * </p>
+     * <p>
+     * The maximum number of metric filters that can be associated with a
+     * log group is 100.
      * </p>
      *
      * @param putMetricFilterRequest Container for the necessary parameters
@@ -813,6 +1153,10 @@ public class AWSLogsAsyncClient extends AWSLogsClient
      * specified log group. Metric filters allow you to configure rules to
      * extract metric data from log events ingested through
      * <code>PutLogEvents</code> requests.
+     * </p>
+     * <p>
+     * The maximum number of metric filters that can be associated with a
+     * log group is 100.
      * </p>
      *
      * @param putMetricFilterRequest Container for the necessary parameters
@@ -926,16 +1270,31 @@ public class AWSLogsAsyncClient extends AWSLogsClient
     
     /**
      * <p>
-     * Tests the filter pattern of a metric filter against a sample of log
-     * event messages. You can use this operation to validate the correctness
-     * of a metric filter pattern.
+     * Retrieves log events, optionally filtered by a filter pattern from
+     * the specified log group. You can provide an optional time range to
+     * filter the results on the event <code>timestamp</code> . You can limit
+     * the streams searched to an explicit list of
+     * <code>logStreamNames</code> .
+     * </p>
+     * <p>
+     * By default, this operation returns as much matching log events as can
+     * fit in a response size of 1MB, up to 10,000 log events, or all the
+     * events found within a time-bounded scan window. If the response
+     * includes a <code>nextToken</code> , then there is more data to search,
+     * and the search can be resumed with a new request providing the
+     * nextToken. The response will contain a list of
+     * <code>searchedLogStreams</code> that contains information about which
+     * streams were searched in the request and whether they have been
+     * searched completely or require further pagination. The
+     * <code>limit</code> parameter in the request. can be used to specify
+     * the maximum number of events to return in a page.
      * </p>
      *
-     * @param testMetricFilterRequest Container for the necessary parameters
-     *           to execute the TestMetricFilter operation on AWSLogs.
+     * @param filterLogEventsRequest Container for the necessary parameters
+     *           to execute the FilterLogEvents operation on AWSLogs.
      * 
      * @return A Java Future object containing the response from the
-     *         TestMetricFilter service method, as returned by AWSLogs.
+     *         FilterLogEvents service method, as returned by AWSLogs.
      * 
      *
      * @throws AmazonClientException
@@ -946,31 +1305,46 @@ public class AWSLogsAsyncClient extends AWSLogsClient
      *             If an error response is returned by AWSLogs indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<TestMetricFilterResult> testMetricFilterAsync(final TestMetricFilterRequest testMetricFilterRequest) 
+    public Future<FilterLogEventsResult> filterLogEventsAsync(final FilterLogEventsRequest filterLogEventsRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<TestMetricFilterResult>() {
-            public TestMetricFilterResult call() throws Exception {
-                return testMetricFilter(testMetricFilterRequest);
+        return executorService.submit(new Callable<FilterLogEventsResult>() {
+            public FilterLogEventsResult call() throws Exception {
+                return filterLogEvents(filterLogEventsRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Tests the filter pattern of a metric filter against a sample of log
-     * event messages. You can use this operation to validate the correctness
-     * of a metric filter pattern.
+     * Retrieves log events, optionally filtered by a filter pattern from
+     * the specified log group. You can provide an optional time range to
+     * filter the results on the event <code>timestamp</code> . You can limit
+     * the streams searched to an explicit list of
+     * <code>logStreamNames</code> .
+     * </p>
+     * <p>
+     * By default, this operation returns as much matching log events as can
+     * fit in a response size of 1MB, up to 10,000 log events, or all the
+     * events found within a time-bounded scan window. If the response
+     * includes a <code>nextToken</code> , then there is more data to search,
+     * and the search can be resumed with a new request providing the
+     * nextToken. The response will contain a list of
+     * <code>searchedLogStreams</code> that contains information about which
+     * streams were searched in the request and whether they have been
+     * searched completely or require further pagination. The
+     * <code>limit</code> parameter in the request. can be used to specify
+     * the maximum number of events to return in a page.
      * </p>
      *
-     * @param testMetricFilterRequest Container for the necessary parameters
-     *           to execute the TestMetricFilter operation on AWSLogs.
+     * @param filterLogEventsRequest Container for the necessary parameters
+     *           to execute the FilterLogEvents operation on AWSLogs.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         TestMetricFilter service method, as returned by AWSLogs.
+     *         FilterLogEvents service method, as returned by AWSLogs.
      * 
      *
      * @throws AmazonClientException
@@ -981,20 +1355,20 @@ public class AWSLogsAsyncClient extends AWSLogsClient
      *             If an error response is returned by AWSLogs indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<TestMetricFilterResult> testMetricFilterAsync(
-            final TestMetricFilterRequest testMetricFilterRequest,
-            final AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult> asyncHandler)
+    public Future<FilterLogEventsResult> filterLogEventsAsync(
+            final FilterLogEventsRequest filterLogEventsRequest,
+            final AsyncHandler<FilterLogEventsRequest, FilterLogEventsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<TestMetricFilterResult>() {
-            public TestMetricFilterResult call() throws Exception {
-              TestMetricFilterResult result;
+        return executorService.submit(new Callable<FilterLogEventsResult>() {
+            public FilterLogEventsResult call() throws Exception {
+              FilterLogEventsResult result;
                 try {
-                result = testMetricFilter(testMetricFilterRequest);
+                result = filterLogEvents(filterLogEventsRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(testMetricFilterRequest, result);
+              asyncHandler.onSuccess(filterLogEventsRequest, result);
                  return result;
         }
     });

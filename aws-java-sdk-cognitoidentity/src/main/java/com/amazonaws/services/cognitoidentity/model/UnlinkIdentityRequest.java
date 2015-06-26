@@ -25,6 +25,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * will be considered new identities next time they are seen. Removing
  * the last linked login will make this identity inaccessible.
  * </p>
+ * <p>
+ * This is a public API. You do not need any credentials to call this
+ * API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#unlinkIdentity(UnlinkIdentityRequest)
  */

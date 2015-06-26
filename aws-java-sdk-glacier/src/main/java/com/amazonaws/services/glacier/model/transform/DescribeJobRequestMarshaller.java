@@ -90,36 +90,40 @@ public class DescribeJobRequestMarshaller implements Marshaller<Request<Describe
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (describeJobRequest.getAccountId() == null) ? null : StringUtils.fromString(describeJobRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (describeJobRequest.getAccountId() == null) ? "" : StringUtils.fromString(describeJobRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (describeJobRequest.getVaultName() == null) ? null : StringUtils.fromString(describeJobRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (describeJobRequest.getVaultName() == null) ? "" : StringUtils.fromString(describeJobRequest.getVaultName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("jobId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("jobId");
+
             String value = (describeJobRequest.getJobId() == null) ? null : StringUtils.fromString(describeJobRequest.getJobId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{jobId}", (describeJobRequest.getJobId() == null) ? "" : StringUtils.fromString(describeJobRequest.getJobId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

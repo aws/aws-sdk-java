@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kms.AWSKMS#deleteAlias(DeleteAliasRequest) DeleteAlias operation}.
  * <p>
- * Deletes the specified alias.
+ * Deletes the specified alias. To associate an alias with a different
+ * key, call UpdateAlias.
  * </p>
  *
  * @see com.amazonaws.services.kms.AWSKMS#deleteAlias(DeleteAliasRequest)
@@ -29,7 +30,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteAliasRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The alias to be deleted.
+     * The alias to be deleted. The name must start with the word "alias"
+     * followed by a forward slash (alias/). Aliases that begin with
+     * "alias/AWS" are reserved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -38,33 +41,43 @@ public class DeleteAliasRequest extends AmazonWebServiceRequest implements Seria
     private String aliasName;
 
     /**
-     * The alias to be deleted.
+     * The alias to be deleted. The name must start with the word "alias"
+     * followed by a forward slash (alias/). Aliases that begin with
+     * "alias/AWS" are reserved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
      *
-     * @return The alias to be deleted.
+     * @return The alias to be deleted. The name must start with the word "alias"
+     *         followed by a forward slash (alias/). Aliases that begin with
+     *         "alias/AWS" are reserved.
      */
     public String getAliasName() {
         return aliasName;
     }
     
     /**
-     * The alias to be deleted.
+     * The alias to be deleted. The name must start with the word "alias"
+     * followed by a forward slash (alias/). Aliases that begin with
+     * "alias/AWS" are reserved.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
      *
-     * @param aliasName The alias to be deleted.
+     * @param aliasName The alias to be deleted. The name must start with the word "alias"
+     *         followed by a forward slash (alias/). Aliases that begin with
+     *         "alias/AWS" are reserved.
      */
     public void setAliasName(String aliasName) {
         this.aliasName = aliasName;
     }
     
     /**
-     * The alias to be deleted.
+     * The alias to be deleted. The name must start with the word "alias"
+     * followed by a forward slash (alias/). Aliases that begin with
+     * "alias/AWS" are reserved.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -72,7 +85,9 @@ public class DeleteAliasRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 256<br/>
      * <b>Pattern: </b>^[a-zA-Z0-9:/_-]+$<br/>
      *
-     * @param aliasName The alias to be deleted.
+     * @param aliasName The alias to be deleted. The name must start with the word "alias"
+     *         followed by a forward slash (alias/). Aliases that begin with
+     *         "alias/AWS" are reserved.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

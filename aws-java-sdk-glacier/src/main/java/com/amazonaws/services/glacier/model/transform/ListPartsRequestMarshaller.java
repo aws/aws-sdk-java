@@ -90,58 +90,64 @@ public class ListPartsRequestMarshaller implements Marshaller<Request<ListPartsR
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (listPartsRequest.getAccountId() == null) ? null : StringUtils.fromString(listPartsRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (listPartsRequest.getAccountId() == null) ? "" : StringUtils.fromString(listPartsRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (listPartsRequest.getVaultName() == null) ? null : StringUtils.fromString(listPartsRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (listPartsRequest.getVaultName() == null) ? "" : StringUtils.fromString(listPartsRequest.getVaultName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("uploadId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("uploadId");
+
             String value = (listPartsRequest.getUploadId() == null) ? null : StringUtils.fromString(listPartsRequest.getUploadId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{uploadId}", (listPartsRequest.getUploadId() == null) ? "" : StringUtils.fromString(listPartsRequest.getUploadId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("marker")) {
             String name = DYNAMIC_QUERY_PARAMS.get("marker");
+
             String value = (listPartsRequest.getMarker() == null) ? null : StringUtils.fromString(listPartsRequest.getMarker());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{marker}", (listPartsRequest.getMarker() == null) ? "" : StringUtils.fromString(listPartsRequest.getMarker())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("limit")) {
             String name = DYNAMIC_QUERY_PARAMS.get("limit");
+
             String value = (listPartsRequest.getLimit() == null) ? null : StringUtils.fromString(listPartsRequest.getLimit());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{limit}", (listPartsRequest.getLimit() == null) ? "" : StringUtils.fromString(listPartsRequest.getLimit())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

@@ -169,6 +169,9 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             if (createStackRequest.getDefaultRootDeviceType() != null) {
                 jsonWriter.key("DefaultRootDeviceType").value(createStackRequest.getDefaultRootDeviceType());
             }
+            if (createStackRequest.getAgentVersion() != null) {
+                jsonWriter.key("AgentVersion").value(createStackRequest.getAgentVersion());
+            }
 
           jsonWriter.endObject();
 

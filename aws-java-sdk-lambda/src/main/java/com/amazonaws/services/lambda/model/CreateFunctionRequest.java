@@ -56,10 +56,10 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs, java8
      */
     private String runtime;
 
@@ -78,11 +78,14 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     /**
      * The function within your code that Lambda calls to begin execution.
      * For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     * function.
+     * function. For Java, it can be <code>package.class-name::handler</code>
+     * or <code>package.class-name</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda
+     * Function Handler (Java)</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      */
     private String handler;
 
@@ -115,12 +118,12 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * 128 MB. The value must be a multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      */
     private Integer memorySize;
 
     /**
-     * A structure that includes ZipFile.
+     * The code for the Lambda function.
      */
     private FunctionCode code;
 
@@ -225,13 +228,13 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @return The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports only "nodejs" as the runtime.
+     *         Currently, Lambda supports "java" and "nodejs" as the runtime.
      *
      * @see Runtime
      */
@@ -241,13 +244,13 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports only "nodejs" as the runtime.
+     *         Currently, Lambda supports "java" and "nodejs" as the runtime.
      *
      * @see Runtime
      */
@@ -257,15 +260,15 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports only "nodejs" as the runtime.
+     *         Currently, Lambda supports "java" and "nodejs" as the runtime.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -279,13 +282,13 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports only "nodejs" as the runtime.
+     *         Currently, Lambda supports "java" and "nodejs" as the runtime.
      *
      * @see Runtime
      */
@@ -295,15 +298,15 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports only "nodejs" as the runtime.
+     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, jvm, python
+     * <b>Allowed Values: </b>nodejs, java8
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports only "nodejs" as the runtime.
+     *         Currently, Lambda supports "java" and "nodejs" as the runtime.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -384,15 +387,21 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     /**
      * The function within your code that Lambda calls to begin execution.
      * For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     * function.
+     * function. For Java, it can be <code>package.class-name::handler</code>
+     * or <code>package.class-name</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda
+     * Function Handler (Java)</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      *
      * @return The function within your code that Lambda calls to begin execution.
      *         For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     *         function.
+     *         function. For Java, it can be <code>package.class-name::handler</code>
+     *         or <code>package.class-name</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda
+     *         Function Handler (Java)</a>.
      */
     public String getHandler() {
         return handler;
@@ -401,15 +410,21 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     /**
      * The function within your code that Lambda calls to begin execution.
      * For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     * function.
+     * function. For Java, it can be <code>package.class-name::handler</code>
+     * or <code>package.class-name</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda
+     * Function Handler (Java)</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      *
      * @param handler The function within your code that Lambda calls to begin execution.
      *         For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     *         function.
+     *         function. For Java, it can be <code>package.class-name::handler</code>
+     *         or <code>package.class-name</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda
+     *         Function Handler (Java)</a>.
      */
     public void setHandler(String handler) {
         this.handler = handler;
@@ -418,17 +433,23 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     /**
      * The function within your code that Lambda calls to begin execution.
      * For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     * function.
+     * function. For Java, it can be <code>package.class-name::handler</code>
+     * or <code>package.class-name</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda
+     * Function Handler (Java)</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      *
      * @param handler The function within your code that Lambda calls to begin execution.
      *         For Node.js, it is the <i>module-name</i>.<i>export</i> value in your
-     *         function.
+     *         function. For Java, it can be <code>package.class-name::handler</code>
+     *         or <code>package.class-name</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda
+     *         Function Handler (Java)</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -555,7 +576,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * 128 MB. The value must be a multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      *
      * @return The amount of memory, in MB, your Lambda function is given. Lambda
      *         uses this memory size to infer the amount of CPU and memory allocated
@@ -577,7 +598,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * 128 MB. The value must be a multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      *
      * @param memorySize The amount of memory, in MB, your Lambda function is given. Lambda
      *         uses this memory size to infer the amount of CPU and memory allocated
@@ -601,7 +622,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      *
      * @param memorySize The amount of memory, in MB, your Lambda function is given. Lambda
      *         uses this memory size to infer the amount of CPU and memory allocated
@@ -619,29 +640,29 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * A structure that includes ZipFile.
+     * The code for the Lambda function.
      *
-     * @return A structure that includes ZipFile.
+     * @return The code for the Lambda function.
      */
     public FunctionCode getCode() {
         return code;
     }
     
     /**
-     * A structure that includes ZipFile.
+     * The code for the Lambda function.
      *
-     * @param code A structure that includes ZipFile.
+     * @param code The code for the Lambda function.
      */
     public void setCode(FunctionCode code) {
         this.code = code;
     }
     
     /**
-     * A structure that includes ZipFile.
+     * The code for the Lambda function.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code A structure that includes ZipFile.
+     * @param code The code for the Lambda function.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -19,15 +19,15 @@ import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.security.AccessController;
-import java.security.PrivilegedActionException;
-import java.security.PrivilegedExceptionAction;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSessionContext;
 import javax.net.ssl.SSLSocket;
 
 import org.apache.commons.logging.Log;
@@ -47,10 +47,16 @@ import com.amazonaws.internal.SdkSocket;
 @ThreadSafe
 public class SdkTLSSocketFactory extends SSLSocketFactory {
     private static final Log log = LogFactory.getLog(SdkTLSSocketFactory.class);
+	private final SSLContext sslContext;
     
     public SdkTLSSocketFactory(final SSLContext sslContext,
             final X509HostnameVerifier hostnameVerifier) {
         super(sslContext, hostnameVerifier);
+        if (sslContext == null) {
+            throw new NullPointerException("sslContext must not be null. "
+                    + "Use SSLContext.getDefault() if you are unsure.");
+        }
+        this.sslContext = sslContext;
     }
 
     /**
@@ -118,11 +124,48 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
         if (log.isDebugEnabled())
             log.debug("connecting to " + remoteAddress.getAddress() + ":"
                     + remoteAddress.getPort());
-        verifyMasterSecret(
-            super.connectSocket(socket, remoteAddress, localAddress, params));
+        try {
+            verifyMasterSecret(
+                    super.connectSocket(socket, remoteAddress, localAddress, params));
+        } catch (final SSLException sslEx) {
+            // clear any related sessions from our cache
+            if (log.isDebugEnabled()) {
+                log.debug("connection failed due to SSL error, clearing TLS session cache", sslEx);
+            }
+            clearSessionCache(sslContext.getClientSessionContext(), remoteAddress);
+            throw sslEx;
+        }
         if (socket instanceof SSLSocket)
             return new SdkSSLSocket((SSLSocket)socket);
         return new SdkSocket(socket);
+    }
+
+    /**
+     * Invalidates all SSL/TLS sessions in {@code sessionContext} associated with {@code remoteAddress}.
+     * @param sessionContext collection of SSL/TLS sessions to be (potentially) invalidated
+     * @param remoteAddress associated with sessions to invalidate
+     */
+    private void clearSessionCache(final SSLSessionContext sessionContext,
+            final InetSocketAddress remoteAddress) {
+        final String hostName = remoteAddress.getHostName();
+        final int port = remoteAddress.getPort();
+        final Enumeration<byte[]> ids = sessionContext.getIds();
+
+        if (ids == null) {
+            return;
+        }
+
+        while (ids.hasMoreElements()) {
+            final byte[] id = ids.nextElement();
+            final SSLSession session = sessionContext.getSession(id);
+            if (session != null && session.getPeerHost() != null &&
+                  session.getPeerHost().equalsIgnoreCase(hostName) && session.getPeerPort() == port) {
+                session.invalidate();
+                if (log.isDebugEnabled()) {
+                    log.debug("Invalidated session " + session);
+                }
+            }
+        }
     }
 
     /**
@@ -133,36 +176,31 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
     private void verifyMasterSecret(final Socket sock) {
         if (sock instanceof SSLSocket) {
             SSLSocket ssl = (SSLSocket)sock;
-            final SSLSession session = ssl.getSession();
+            SSLSession session = ssl.getSession();
             if (session != null) {
-                final String className = session.getClass().getName();
+                String className = session.getClass().getName();
                 if ("sun.security.ssl.SSLSessionImpl".equals(className)) {
-                    boolean success = false;
-                    Object masterSecret = null;
                     try {
-                        masterSecret = AccessController.doPrivileged(new PrivilegedExceptionAction<Object>() {
-                          @Override
-                          public Object run() throws Exception {
-                            Class<?> clazz = Class.forName(className);
-                            Method method = clazz.getDeclaredMethod("getMasterSecret");
-                            method.setAccessible(true);
-                            return method.invoke(session);
-                          }
-                        });
-                        success = true;
-                    } catch (SecurityException e) {
-                        failedToVerifyMasterSecret(e);
-                    } catch (PrivilegedActionException e) {
-                        // unwrap checked exception
-                        Throwable cause = e.getCause();
-                        if (cause instanceof InvocationTargetException) {
-                          // unwrap checked exception
-                          cause = cause.getCause();
+                        Class<?> clazz = Class.forName(className);
+                        Method method = clazz.getDeclaredMethod("getMasterSecret");
+                        method.setAccessible(true);
+                        Object masterSecret = method.invoke(session);
+                        if (masterSecret == null) {
+                            session.invalidate();
+                            if (log.isDebugEnabled()) {
+                                log.debug("Invalidated session " + session);
+                            }
+                            throw log(new SecurityException("Invalid SSL master secret"));
                         }
-                        failedToVerifyMasterSecret(cause);
+                    } catch (ClassNotFoundException e) {
+                        failedToVerifyMasterSecret(e);
+                    } catch (NoSuchMethodException e) {
+                        failedToVerifyMasterSecret(e);
+                    } catch (IllegalAccessException e) {
+                        failedToVerifyMasterSecret(e);
+                    } catch (InvocationTargetException e) {
+                        failedToVerifyMasterSecret(e.getCause());
                     }
-                    if (success && masterSecret == null)
-                      throw log(new SecurityException("Invalid SSL master secret"));
                 }
             }
         }

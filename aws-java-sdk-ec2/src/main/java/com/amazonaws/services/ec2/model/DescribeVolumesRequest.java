@@ -23,7 +23,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumesRequestMarshall
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest) DescribeVolumes operation}.
  * <p>
- * Describes the specified Amazon EBS volumes.
+ * Describes the specified EBS volumes.
  * </p>
  * <p>
  * If you are describing a long list of volumes, you can paginate the
@@ -36,9 +36,9 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumesRequestMarshall
  * results.
  * </p>
  * <p>
- * For more information about Amazon EBS volumes, see
+ * For more information about EBS volumes, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest)

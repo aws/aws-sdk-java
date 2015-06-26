@@ -67,7 +67,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      */
     private String handler;
 
@@ -100,7 +100,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * The value must be a multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      */
     private Integer memorySize;
 
@@ -245,7 +245,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      *
      * @return The function that Lambda calls to begin executing your function. For
      *         Node.js, it is the <i>module-name.export</i> value in your function.
@@ -260,7 +260,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      *
      * @param handler The function that Lambda calls to begin executing your function. For
      *         Node.js, it is the <i>module-name.export</i> value in your function.
@@ -277,7 +277,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9./\-_]+<br/>
+     * <b>Pattern: </b>[^\s]+<br/>
      *
      * @param handler The function that Lambda calls to begin executing your function. For
      *         Node.js, it is the <i>module-name.export</i> value in your function.
@@ -407,7 +407,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * The value must be a multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      *
      * @return The amount of memory, in MB, your Lambda function is given. AWS Lambda
      *         uses this memory size to infer the amount of CPU allocated to your
@@ -429,7 +429,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * The value must be a multiple of 64 MB.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      *
      * @param memorySize The amount of memory, in MB, your Lambda function is given. AWS Lambda
      *         uses this memory size to infer the amount of CPU allocated to your
@@ -453,7 +453,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>128 - 1024<br/>
+     * <b>Range: </b>128 - 1536<br/>
      *
      * @param memorySize The amount of memory, in MB, your Lambda function is given. AWS Lambda
      *         uses this memory size to infer the amount of CPU allocated to your

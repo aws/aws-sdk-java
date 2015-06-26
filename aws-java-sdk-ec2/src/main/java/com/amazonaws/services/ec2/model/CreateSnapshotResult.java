@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class CreateSnapshotResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * Information about the snapshot.
      */
     private Snapshot snapshot;
 
     /**
-     * 
+     * Information about the snapshot.
      *
-     * @return 
+     * @return Information about the snapshot.
      */
     public Snapshot getSnapshot() {
         return snapshot;
     }
     
     /**
-     * 
+     * Information about the snapshot.
      *
-     * @param snapshot 
+     * @param snapshot Information about the snapshot.
      */
     public void setSnapshot(Snapshot snapshot) {
         this.snapshot = snapshot;
     }
     
     /**
-     * 
+     * Information about the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshot 
+     * @param snapshot Information about the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

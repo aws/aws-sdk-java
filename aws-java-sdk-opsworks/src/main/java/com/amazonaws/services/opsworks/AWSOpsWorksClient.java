@@ -754,7 +754,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * <p>
      * Creates a clone of a specified stack. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html"> Clone a Stack </a>
-     * .
+     * . By default, all parameters are set to the values used by the parent
+     * stack.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -1588,6 +1589,62 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
+     * <b>NOTE:</b>This action can be used only with Windows stacks.
+     * </p>
+     * <p>
+     * Grants RDP access to a Windows instance for a specified time period.
+     * </p>
+     *
+     * @param grantAccessRequest Container for the necessary parameters to
+     *           execute the GrantAccess service method on AWSOpsWorks.
+     * 
+     * @return The response from the GrantAccess service method, as returned
+     *         by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GrantAccessResult grantAccess(GrantAccessRequest grantAccessRequest) {
+        ExecutionContext executionContext = createExecutionContext(grantAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GrantAccessRequest> request = null;
+        Response<GrantAccessResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GrantAccessRequestMarshaller().marshall(super.beforeMarshalling(grantAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<GrantAccessResult, JsonUnmarshallerContext> unmarshaller =
+                new GrantAccessResultJsonUnmarshaller();
+            JsonResponseHandler<GrantAccessResult> responseHandler =
+                new JsonResponseHandler<GrantAccessResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Describes AWS OpsWorks service errors.
      * </p>
      * <p>
@@ -1650,59 +1707,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
     /**
      * <p>
-     * Updates a specified layer.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateLayerRequest Container for the necessary parameters to
-     *           execute the UpdateLayer service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateLayer(UpdateLayerRequest updateLayerRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateLayerRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateLayerRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateLayerRequestMarshaller().marshall(super.beforeMarshalling(updateLayerRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
      * Updates a registered Elastic IP address's name. For more information,
      * see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
@@ -1742,6 +1746,59 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateElasticIpRequestMarshaller().marshall(super.beforeMarshalling(updateElasticIpRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
+     * Updates a specified layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param updateLayerRequest Container for the necessary parameters to
+     *           execute the UpdateLayer service method on AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateLayer(UpdateLayerRequest updateLayerRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateLayerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLayerRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLayerRequestMarshaller().marshall(super.beforeMarshalling(updateLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2000,6 +2057,63 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
+     * Describes the available AWS OpsWorks agent versions. You must specify
+     * a stack ID or a configuration manager.
+     * <code>DescribeAgentVersions</code> returns a list of available agent
+     * versions for the specified stack or configuration manager.
+     * </p>
+     *
+     * @param describeAgentVersionsRequest Container for the necessary
+     *           parameters to execute the DescribeAgentVersions service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the DescribeAgentVersions service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAgentVersionsResult describeAgentVersions(DescribeAgentVersionsRequest describeAgentVersionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeAgentVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAgentVersionsRequest> request = null;
+        Response<DescribeAgentVersionsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAgentVersionsRequestMarshaller().marshall(super.beforeMarshalling(describeAgentVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<DescribeAgentVersionsResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeAgentVersionsResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeAgentVersionsResult> responseHandler =
+                new JsonResponseHandler<DescribeAgentVersionsResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Starts a stack's instances.
      * </p>
      * <p>
@@ -2182,7 +2296,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * installing the AWS OpsWorks agent on the instance and registering the
      * instance with the stack. RegisterInstance handles only the second
      * step. You should instead use the AWS CLI register command, which
-     * performs the entire registration operation.
+     * performs the entire registration operation. For more information, see
+     * Registering an Instance with an AWS OpsWorks Stack.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must

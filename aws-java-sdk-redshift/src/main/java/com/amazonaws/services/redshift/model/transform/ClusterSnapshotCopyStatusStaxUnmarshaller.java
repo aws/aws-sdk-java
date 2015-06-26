@@ -51,6 +51,10 @@ public class ClusterSnapshotCopyStatusStaxUnmarshaller implements Unmarshaller<C
                     clusterSnapshotCopyStatus.setRetentionPeriod(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("SnapshotCopyGrantName", targetDepth)) {
+                    clusterSnapshotCopyStatus.setSnapshotCopyGrantName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return clusterSnapshotCopyStatus;

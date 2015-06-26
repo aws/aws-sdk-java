@@ -26,7 +26,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeConversionTasksRequest
  * Describes one or more of your conversion tasks. For more information,
  * see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeConversionTasks(DescribeConversionTasksRequest)
@@ -34,7 +34,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeConversionTasksRequest
 public class DescribeConversionTasksRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeConversionTasksRequest> {
 
     /**
-     * 
+     * One or more filters.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
@@ -44,9 +44,9 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> conversionTaskIds;
 
     /**
-     * 
+     * One or more filters.
      *
-     * @return 
+     * @return One or more filters.
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -57,9 +57,9 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * One or more filters.
      *
-     * @param filters 
+     * @param filters One or more filters.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -72,7 +72,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * One or more filters.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setFilters(java.util.Collection)} or {@link
@@ -81,7 +81,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters 
+     * @param filters One or more filters.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -95,11 +95,11 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * One or more filters.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters 
+     * @param filters One or more filters.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

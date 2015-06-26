@@ -90,14 +90,16 @@ public class UpdatePipelineRequestMarshaller implements Marshaller<Request<Updat
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Id")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Id");
+
             String value = (updatePipelineRequest.getId() == null) ? null : StringUtils.fromString(updatePipelineRequest.getId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Id}", (updatePipelineRequest.getId() == null) ? "" : StringUtils.fromString(updatePipelineRequest.getId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

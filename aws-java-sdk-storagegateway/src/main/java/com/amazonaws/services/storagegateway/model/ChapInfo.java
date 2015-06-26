@@ -35,11 +35,11 @@ public class ChapInfo implements Serializable, Cloneable {
     private String targetARN;
 
     /**
-     * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target.
+     * The secret key that the initiator (for example, the Windows client)
+     * must provide to participate in mutual CHAP with the target.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      */
     private String secretToAuthenticateInitiator;
 
@@ -57,7 +57,7 @@ public class ChapInfo implements Serializable, Cloneable {
      * CHAP with the initiator (e.g. Windows client).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      */
     private String secretToAuthenticateTarget;
 
@@ -110,44 +110,44 @@ public class ChapInfo implements Serializable, Cloneable {
     }
 
     /**
-     * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target.
+     * The secret key that the initiator (for example, the Windows client)
+     * must provide to participate in mutual CHAP with the target.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
-     * @return The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target.
+     * @return The secret key that the initiator (for example, the Windows client)
+     *         must provide to participate in mutual CHAP with the target.
      */
     public String getSecretToAuthenticateInitiator() {
         return secretToAuthenticateInitiator;
     }
     
     /**
-     * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target.
+     * The secret key that the initiator (for example, the Windows client)
+     * must provide to participate in mutual CHAP with the target.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
-     * @param secretToAuthenticateInitiator The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target.
+     * @param secretToAuthenticateInitiator The secret key that the initiator (for example, the Windows client)
+     *         must provide to participate in mutual CHAP with the target.
      */
     public void setSecretToAuthenticateInitiator(String secretToAuthenticateInitiator) {
         this.secretToAuthenticateInitiator = secretToAuthenticateInitiator;
     }
     
     /**
-     * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target.
+     * The secret key that the initiator (for example, the Windows client)
+     * must provide to participate in mutual CHAP with the target.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
-     * @param secretToAuthenticateInitiator The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target.
+     * @param secretToAuthenticateInitiator The secret key that the initiator (for example, the Windows client)
+     *         must provide to participate in mutual CHAP with the target.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -207,7 +207,7 @@ public class ChapInfo implements Serializable, Cloneable {
      * CHAP with the initiator (e.g. Windows client).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
      * @return The secret key that the target must provide to participate in mutual
      *         CHAP with the initiator (e.g. Windows client).
@@ -221,7 +221,7 @@ public class ChapInfo implements Serializable, Cloneable {
      * CHAP with the initiator (e.g. Windows client).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
      * @param secretToAuthenticateTarget The secret key that the target must provide to participate in mutual
      *         CHAP with the initiator (e.g. Windows client).
@@ -237,7 +237,7 @@ public class ChapInfo implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 16<br/>
+     * <b>Length: </b>1 - 100<br/>
      *
      * @param secretToAuthenticateTarget The secret key that the target must provide to participate in mutual
      *         CHAP with the initiator (e.g. Windows client).

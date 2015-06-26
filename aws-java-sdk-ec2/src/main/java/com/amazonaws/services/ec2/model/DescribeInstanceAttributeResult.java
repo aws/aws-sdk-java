@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class DescribeInstanceAttributeResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * Information about the instance attribute.
      */
     private InstanceAttribute instanceAttribute;
 
     /**
-     * 
+     * Information about the instance attribute.
      *
-     * @return 
+     * @return Information about the instance attribute.
      */
     public InstanceAttribute getInstanceAttribute() {
         return instanceAttribute;
     }
     
     /**
-     * 
+     * Information about the instance attribute.
      *
-     * @param instanceAttribute 
+     * @param instanceAttribute Information about the instance attribute.
      */
     public void setInstanceAttribute(InstanceAttribute instanceAttribute) {
         this.instanceAttribute = instanceAttribute;
     }
     
     /**
-     * 
+     * Information about the instance attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceAttribute 
+     * @param instanceAttribute Information about the instance attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

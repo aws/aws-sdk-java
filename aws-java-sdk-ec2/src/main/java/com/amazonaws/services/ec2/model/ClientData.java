@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Client-specific data.
+ * Describes the client-specific data.
  * </p>
  */
 public class ClientData implements Serializable, Cloneable {
@@ -34,12 +34,12 @@ public class ClientData implements Serializable, Cloneable {
     private java.util.Date uploadEnd;
 
     /**
-     * The size of the uploaded disk image.
+     * The size of the uploaded disk image, in GiB.
      */
     private Double uploadSize;
 
     /**
-     * User-defined comment about the upload.
+     * A user-defined comment about the disk upload.
      */
     private String comment;
 
@@ -110,29 +110,29 @@ public class ClientData implements Serializable, Cloneable {
     }
 
     /**
-     * The size of the uploaded disk image.
+     * The size of the uploaded disk image, in GiB.
      *
-     * @return The size of the uploaded disk image.
+     * @return The size of the uploaded disk image, in GiB.
      */
     public Double getUploadSize() {
         return uploadSize;
     }
     
     /**
-     * The size of the uploaded disk image.
+     * The size of the uploaded disk image, in GiB.
      *
-     * @param uploadSize The size of the uploaded disk image.
+     * @param uploadSize The size of the uploaded disk image, in GiB.
      */
     public void setUploadSize(Double uploadSize) {
         this.uploadSize = uploadSize;
     }
     
     /**
-     * The size of the uploaded disk image.
+     * The size of the uploaded disk image, in GiB.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param uploadSize The size of the uploaded disk image.
+     * @param uploadSize The size of the uploaded disk image, in GiB.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -143,29 +143,29 @@ public class ClientData implements Serializable, Cloneable {
     }
 
     /**
-     * User-defined comment about the upload.
+     * A user-defined comment about the disk upload.
      *
-     * @return User-defined comment about the upload.
+     * @return A user-defined comment about the disk upload.
      */
     public String getComment() {
         return comment;
     }
     
     /**
-     * User-defined comment about the upload.
+     * A user-defined comment about the disk upload.
      *
-     * @param comment User-defined comment about the upload.
+     * @param comment A user-defined comment about the disk upload.
      */
     public void setComment(String comment) {
         this.comment = comment;
     }
     
     /**
-     * User-defined comment about the upload.
+     * A user-defined comment about the disk upload.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param comment User-defined comment about the upload.
+     * @param comment A user-defined comment about the disk upload.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

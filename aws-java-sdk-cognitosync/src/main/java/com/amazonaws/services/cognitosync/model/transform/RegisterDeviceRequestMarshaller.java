@@ -90,25 +90,28 @@ public class RegisterDeviceRequestMarshaller implements Marshaller<Request<Regis
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityPoolId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityPoolId");
+
             String value = (registerDeviceRequest.getIdentityPoolId() == null) ? null : StringUtils.fromString(registerDeviceRequest.getIdentityPoolId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityPoolId}", (registerDeviceRequest.getIdentityPoolId() == null) ? "" : StringUtils.fromString(registerDeviceRequest.getIdentityPoolId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityId");
+
             String value = (registerDeviceRequest.getIdentityId() == null) ? null : StringUtils.fromString(registerDeviceRequest.getIdentityId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityId}", (registerDeviceRequest.getIdentityId() == null) ? "" : StringUtils.fromString(registerDeviceRequest.getIdentityId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

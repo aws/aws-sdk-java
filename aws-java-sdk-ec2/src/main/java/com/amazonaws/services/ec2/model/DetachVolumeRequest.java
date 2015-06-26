@@ -23,10 +23,10 @@ import com.amazonaws.services.ec2.model.transform.DetachVolumeRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#detachVolume(DetachVolumeRequest) DetachVolume operation}.
  * <p>
- * Detaches an Amazon EBS volume from an instance. Make sure to unmount
- * any file systems on the device within your operating system before
- * detaching the volume. Failure to do so results in the volume being
- * stuck in a busy state while detaching.
+ * Detaches an EBS volume from an instance. Make sure to unmount any file
+ * systems on the device within your operating system before detaching
+ * the volume. Failure to do so results in the volume being stuck in a
+ * busy state while detaching.
  * </p>
  * <p>
  * If an Amazon EBS volume is the root device of an instance, it can't be
@@ -40,7 +40,7 @@ import com.amazonaws.services.ec2.model.transform.DetachVolumeRequestMarshaller;
  * <p>
  * For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html"> Detaching an Amazon EBS Volume </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachVolume(DetachVolumeRequest)

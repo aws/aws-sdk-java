@@ -46,14 +46,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * One or more name/value pairs to add as tags to the specified resource.
-     * Each tag name is passed in with the parameter <code>tag-key</code> and
-     * the corresponding value is passed in with the parameter
-     * <code>tag-value</code>. The <code>tag-key</code> and
-     * <code>tag-value</code> parameters are separated by a colon (:).
-     * Separate multiple tags with a space. For example, <code>--tags
-     * "tag-key"="owner":"tag-value"="admin"
-     * "tag-key"="environment":"tag-value"="test"
-     * "tag-key"="version":"tag-value"="1.0"</code>.
+     * Each tag name is passed in with the parameter <code>Key</code> and the
+     * corresponding value is passed in with the parameter
+     * <code>Value</code>. The <code>Key</code> and <code>Value</code>
+     * parameters are separated by a comma (,). Separate multiple tags with a
+     * space. For example, <code>--tags "Key"="owner","Value"="admin"
+     * "Key"="environment","Value"="test"
+     * "Key"="version","Value"="1.0"</code>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
@@ -104,24 +103,22 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * One or more name/value pairs to add as tags to the specified resource.
-     * Each tag name is passed in with the parameter <code>tag-key</code> and
-     * the corresponding value is passed in with the parameter
-     * <code>tag-value</code>. The <code>tag-key</code> and
-     * <code>tag-value</code> parameters are separated by a colon (:).
-     * Separate multiple tags with a space. For example, <code>--tags
-     * "tag-key"="owner":"tag-value"="admin"
-     * "tag-key"="environment":"tag-value"="test"
-     * "tag-key"="version":"tag-value"="1.0"</code>.
+     * Each tag name is passed in with the parameter <code>Key</code> and the
+     * corresponding value is passed in with the parameter
+     * <code>Value</code>. The <code>Key</code> and <code>Value</code>
+     * parameters are separated by a comma (,). Separate multiple tags with a
+     * space. For example, <code>--tags "Key"="owner","Value"="admin"
+     * "Key"="environment","Value"="test"
+     * "Key"="version","Value"="1.0"</code>.
      *
      * @return One or more name/value pairs to add as tags to the specified resource.
-     *         Each tag name is passed in with the parameter <code>tag-key</code> and
-     *         the corresponding value is passed in with the parameter
-     *         <code>tag-value</code>. The <code>tag-key</code> and
-     *         <code>tag-value</code> parameters are separated by a colon (:).
-     *         Separate multiple tags with a space. For example, <code>--tags
-     *         "tag-key"="owner":"tag-value"="admin"
-     *         "tag-key"="environment":"tag-value"="test"
-     *         "tag-key"="version":"tag-value"="1.0"</code>.
+     *         Each tag name is passed in with the parameter <code>Key</code> and the
+     *         corresponding value is passed in with the parameter
+     *         <code>Value</code>. The <code>Key</code> and <code>Value</code>
+     *         parameters are separated by a comma (,). Separate multiple tags with a
+     *         space. For example, <code>--tags "Key"="owner","Value"="admin"
+     *         "Key"="environment","Value"="test"
+     *         "Key"="version","Value"="1.0"</code>.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -133,24 +130,22 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     
     /**
      * One or more name/value pairs to add as tags to the specified resource.
-     * Each tag name is passed in with the parameter <code>tag-key</code> and
-     * the corresponding value is passed in with the parameter
-     * <code>tag-value</code>. The <code>tag-key</code> and
-     * <code>tag-value</code> parameters are separated by a colon (:).
-     * Separate multiple tags with a space. For example, <code>--tags
-     * "tag-key"="owner":"tag-value"="admin"
-     * "tag-key"="environment":"tag-value"="test"
-     * "tag-key"="version":"tag-value"="1.0"</code>.
+     * Each tag name is passed in with the parameter <code>Key</code> and the
+     * corresponding value is passed in with the parameter
+     * <code>Value</code>. The <code>Key</code> and <code>Value</code>
+     * parameters are separated by a comma (,). Separate multiple tags with a
+     * space. For example, <code>--tags "Key"="owner","Value"="admin"
+     * "Key"="environment","Value"="test"
+     * "Key"="version","Value"="1.0"</code>.
      *
      * @param tags One or more name/value pairs to add as tags to the specified resource.
-     *         Each tag name is passed in with the parameter <code>tag-key</code> and
-     *         the corresponding value is passed in with the parameter
-     *         <code>tag-value</code>. The <code>tag-key</code> and
-     *         <code>tag-value</code> parameters are separated by a colon (:).
-     *         Separate multiple tags with a space. For example, <code>--tags
-     *         "tag-key"="owner":"tag-value"="admin"
-     *         "tag-key"="environment":"tag-value"="test"
-     *         "tag-key"="version":"tag-value"="1.0"</code>.
+     *         Each tag name is passed in with the parameter <code>Key</code> and the
+     *         corresponding value is passed in with the parameter
+     *         <code>Value</code>. The <code>Key</code> and <code>Value</code>
+     *         parameters are separated by a comma (,). Separate multiple tags with a
+     *         space. For example, <code>--tags "Key"="owner","Value"="admin"
+     *         "Key"="environment","Value"="test"
+     *         "Key"="version","Value"="1.0"</code>.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -164,14 +159,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     
     /**
      * One or more name/value pairs to add as tags to the specified resource.
-     * Each tag name is passed in with the parameter <code>tag-key</code> and
-     * the corresponding value is passed in with the parameter
-     * <code>tag-value</code>. The <code>tag-key</code> and
-     * <code>tag-value</code> parameters are separated by a colon (:).
-     * Separate multiple tags with a space. For example, <code>--tags
-     * "tag-key"="owner":"tag-value"="admin"
-     * "tag-key"="environment":"tag-value"="test"
-     * "tag-key"="version":"tag-value"="1.0"</code>.
+     * Each tag name is passed in with the parameter <code>Key</code> and the
+     * corresponding value is passed in with the parameter
+     * <code>Value</code>. The <code>Key</code> and <code>Value</code>
+     * parameters are separated by a comma (,). Separate multiple tags with a
+     * space. For example, <code>--tags "Key"="owner","Value"="admin"
+     * "Key"="environment","Value"="test"
+     * "Key"="version","Value"="1.0"</code>.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTags(java.util.Collection)} or {@link
@@ -181,14 +175,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags One or more name/value pairs to add as tags to the specified resource.
-     *         Each tag name is passed in with the parameter <code>tag-key</code> and
-     *         the corresponding value is passed in with the parameter
-     *         <code>tag-value</code>. The <code>tag-key</code> and
-     *         <code>tag-value</code> parameters are separated by a colon (:).
-     *         Separate multiple tags with a space. For example, <code>--tags
-     *         "tag-key"="owner":"tag-value"="admin"
-     *         "tag-key"="environment":"tag-value"="test"
-     *         "tag-key"="version":"tag-value"="1.0"</code>.
+     *         Each tag name is passed in with the parameter <code>Key</code> and the
+     *         corresponding value is passed in with the parameter
+     *         <code>Value</code>. The <code>Key</code> and <code>Value</code>
+     *         parameters are separated by a comma (,). Separate multiple tags with a
+     *         space. For example, <code>--tags "Key"="owner","Value"="admin"
+     *         "Key"="environment","Value"="test"
+     *         "Key"="version","Value"="1.0"</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -203,26 +196,24 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
     
     /**
      * One or more name/value pairs to add as tags to the specified resource.
-     * Each tag name is passed in with the parameter <code>tag-key</code> and
-     * the corresponding value is passed in with the parameter
-     * <code>tag-value</code>. The <code>tag-key</code> and
-     * <code>tag-value</code> parameters are separated by a colon (:).
-     * Separate multiple tags with a space. For example, <code>--tags
-     * "tag-key"="owner":"tag-value"="admin"
-     * "tag-key"="environment":"tag-value"="test"
-     * "tag-key"="version":"tag-value"="1.0"</code>.
+     * Each tag name is passed in with the parameter <code>Key</code> and the
+     * corresponding value is passed in with the parameter
+     * <code>Value</code>. The <code>Key</code> and <code>Value</code>
+     * parameters are separated by a comma (,). Separate multiple tags with a
+     * space. For example, <code>--tags "Key"="owner","Value"="admin"
+     * "Key"="environment","Value"="test"
+     * "Key"="version","Value"="1.0"</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags One or more name/value pairs to add as tags to the specified resource.
-     *         Each tag name is passed in with the parameter <code>tag-key</code> and
-     *         the corresponding value is passed in with the parameter
-     *         <code>tag-value</code>. The <code>tag-key</code> and
-     *         <code>tag-value</code> parameters are separated by a colon (:).
-     *         Separate multiple tags with a space. For example, <code>--tags
-     *         "tag-key"="owner":"tag-value"="admin"
-     *         "tag-key"="environment":"tag-value"="test"
-     *         "tag-key"="version":"tag-value"="1.0"</code>.
+     *         Each tag name is passed in with the parameter <code>Key</code> and the
+     *         corresponding value is passed in with the parameter
+     *         <code>Value</code>. The <code>Key</code> and <code>Value</code>
+     *         parameters are separated by a comma (,). Separate multiple tags with a
+     *         space. For example, <code>--tags "Key"="owner","Value"="admin"
+     *         "Key"="environment","Value"="test"
+     *         "Key"="version","Value"="1.0"</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

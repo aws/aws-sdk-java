@@ -366,78 +366,6 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     
     /**
      * <p>
-     * Deletes a specified service within a cluster.
-     * </p>
-     *
-     * @param deleteServiceRequest Container for the necessary parameters to
-     *           execute the DeleteService operation on AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteServiceResult> deleteServiceAsync(final DeleteServiceRequest deleteServiceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeleteServiceResult>() {
-            public DeleteServiceResult call() throws Exception {
-                return deleteService(deleteServiceRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes a specified service within a cluster.
-     * </p>
-     *
-     * @param deleteServiceRequest Container for the necessary parameters to
-     *           execute the DeleteService operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteServiceResult> deleteServiceAsync(
-            final DeleteServiceRequest deleteServiceRequest,
-            final AsyncHandler<DeleteServiceRequest, DeleteServiceResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeleteServiceResult>() {
-            public DeleteServiceResult call() throws Exception {
-              DeleteServiceResult result;
-                try {
-                result = deleteService(deleteServiceRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteServiceRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * <b>NOTE:</b> This action is only used by the Amazon EC2 Container
      * Service agent, and it is not intended for use outside of the agent.
      * </p>
@@ -520,9 +448,82 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     
     /**
      * <p>
+     * Deletes a specified service within a cluster.
+     * </p>
+     *
+     * @param deleteServiceRequest Container for the necessary parameters to
+     *           execute the DeleteService operation on AmazonECS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteService service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteServiceResult> deleteServiceAsync(final DeleteServiceRequest deleteServiceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteServiceResult>() {
+            public DeleteServiceResult call() throws Exception {
+                return deleteService(deleteServiceRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a specified service within a cluster.
+     * </p>
+     *
+     * @param deleteServiceRequest Container for the necessary parameters to
+     *           execute the DeleteService operation on AmazonECS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteService service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteServiceResult> deleteServiceAsync(
+            final DeleteServiceRequest deleteServiceRequest,
+            final AsyncHandler<DeleteServiceRequest, DeleteServiceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteServiceResult>() {
+            public DeleteServiceResult call() throws Exception {
+              DeleteServiceResult result;
+                try {
+                result = deleteService(deleteServiceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteServiceRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns a list of task definitions that are registered to your
      * account. You can filter the results by family name with the
-     * <code>familyPrefix</code> parameter.
+     * <code>familyPrefix</code> parameter or by status with the
+     * <code>status</code> parameter.
      * </p>
      *
      * @param listTaskDefinitionsRequest Container for the necessary
@@ -553,7 +554,8 @@ public class AmazonECSAsyncClient extends AmazonECSClient
      * <p>
      * Returns a list of task definitions that are registered to your
      * account. You can filter the results by family name with the
-     * <code>familyPrefix</code> parameter.
+     * <code>familyPrefix</code> parameter or by status with the
+     * <code>status</code> parameter.
      * </p>
      *
      * @param listTaskDefinitionsRequest Container for the necessary
@@ -1052,11 +1054,20 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     
     /**
      * <p>
-     * NOT YET IMPLEMENTED.
+     * Deregisters the specified task definition by family and revision.
+     * Upon deregistration, the task definition is marked as
+     * <code>INACTIVE</code> . Existing tasks and services that reference an
+     * <code>INACTIVE</code> task definition continue to run without
+     * disruption. Existing services that reference an <code>INACTIVE</code>
+     * task definition can still scale up or down by modifying the service's
+     * desired count.
      * </p>
      * <p>
-     * Deregisters the specified task definition. You will no longer be able
-     * to run tasks from this definition after deregistration.
+     * You cannot use an <code>INACTIVE</code> task definition to run new
+     * tasks or create new services, and you cannot update an existing
+     * service to reference an <code>INACTIVE</code> task definition
+     * (although there may be up to a 10 minute window following
+     * deregistration where these restrictions have not yet taken effect).
      * </p>
      *
      * @param deregisterTaskDefinitionRequest Container for the necessary
@@ -1086,11 +1097,20 @@ public class AmazonECSAsyncClient extends AmazonECSClient
 
     /**
      * <p>
-     * NOT YET IMPLEMENTED.
+     * Deregisters the specified task definition by family and revision.
+     * Upon deregistration, the task definition is marked as
+     * <code>INACTIVE</code> . Existing tasks and services that reference an
+     * <code>INACTIVE</code> task definition continue to run without
+     * disruption. Existing services that reference an <code>INACTIVE</code>
+     * task definition can still scale up or down by modifying the service's
+     * desired count.
      * </p>
      * <p>
-     * Deregisters the specified task definition. You will no longer be able
-     * to run tasks from this definition after deregistration.
+     * You cannot use an <code>INACTIVE</code> task definition to run new
+     * tasks or create new services, and you cannot update an existing
+     * service to reference an <code>INACTIVE</code> task definition
+     * (although there may be up to a 10 minute window following
+     * deregistration where these restrictions have not yet taken effect).
      * </p>
      *
      * @param deregisterTaskDefinitionRequest Container for the necessary
@@ -1134,10 +1154,88 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     
     /**
      * <p>
+     * Updates the Amazon ECS container agent on a specified container
+     * instance.
+     * </p>
+     *
+     * @param updateContainerAgentRequest Container for the necessary
+     *           parameters to execute the UpdateContainerAgent operation on AmazonECS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateContainerAgent service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateContainerAgentResult> updateContainerAgentAsync(final UpdateContainerAgentRequest updateContainerAgentRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateContainerAgentResult>() {
+            public UpdateContainerAgentResult call() throws Exception {
+                return updateContainerAgent(updateContainerAgentRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Updates the Amazon ECS container agent on a specified container
+     * instance.
+     * </p>
+     *
+     * @param updateContainerAgentRequest Container for the necessary
+     *           parameters to execute the UpdateContainerAgent operation on AmazonECS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateContainerAgent service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateContainerAgentResult> updateContainerAgentAsync(
+            final UpdateContainerAgentRequest updateContainerAgentRequest,
+            final AsyncHandler<UpdateContainerAgentRequest, UpdateContainerAgentResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateContainerAgentResult>() {
+            public UpdateContainerAgentResult call() throws Exception {
+              UpdateContainerAgentResult result;
+                try {
+                result = updateContainerAgent(updateContainerAgentRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateContainerAgentRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Describes a task definition. You can specify a <code>family</code>
      * and <code>revision</code> to find information on a specific task
      * definition, or you can simply specify the family to find the latest
-     * revision in that family.
+     * <code>ACTIVE</code> revision in that family.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> You can only describe INACTIVE task definitions while an
+     * active task or service references them.
      * </p>
      *
      * @param describeTaskDefinitionRequest Container for the necessary
@@ -1170,7 +1268,11 @@ public class AmazonECSAsyncClient extends AmazonECSClient
      * Describes a task definition. You can specify a <code>family</code>
      * and <code>revision</code> to find information on a specific task
      * definition, or you can simply specify the family to find the latest
-     * revision in that family.
+     * <code>ACTIVE</code> revision in that family.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> You can only describe INACTIVE task definitions while an
+     * active task or service references them.
      * </p>
      *
      * @param describeTaskDefinitionRequest Container for the necessary
@@ -1873,8 +1975,9 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Returns a list of task definition families that are registered to
-     * your account. You can filter the results with the
-     * <code>familyPrefix</code> parameter.
+     * your account (which may include task definition families that no
+     * longer have any <code>ACTIVE</code> task definitions). You can filter
+     * the results with the <code>familyPrefix</code> parameter.
      * </p>
      *
      * @param listTaskDefinitionFamiliesRequest Container for the necessary
@@ -1905,8 +2008,9 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Returns a list of task definition families that are registered to
-     * your account. You can filter the results with the
-     * <code>familyPrefix</code> parameter.
+     * your account (which may include task definition families that no
+     * longer have any <code>ACTIVE</code> task definitions). You can filter
+     * the results with the <code>familyPrefix</code> parameter.
      * </p>
      *
      * @param listTaskDefinitionFamiliesRequest Container for the necessary
@@ -2189,8 +2293,10 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Returns a list of tasks for a specified cluster. You can filter the
-     * results by family name or by a particular container instance with the
-     * <code>family</code> and <code>containerInstance</code> parameters.
+     * results by family name, by a particular container instance, or by the
+     * desired status of the task with the <code>family</code> ,
+     * <code>containerInstance</code> , and <code>desiredStatus</code>
+     * parameters.
      * </p>
      *
      * @param listTasksRequest Container for the necessary parameters to
@@ -2220,8 +2326,10 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     /**
      * <p>
      * Returns a list of tasks for a specified cluster. You can filter the
-     * results by family name or by a particular container instance with the
-     * <code>family</code> and <code>containerInstance</code> parameters.
+     * results by family name, by a particular container instance, or by the
+     * desired status of the task with the <code>family</code> ,
+     * <code>containerInstance</code> , and <code>desiredStatus</code>
+     * parameters.
      * </p>
      *
      * @param listTasksRequest Container for the necessary parameters to

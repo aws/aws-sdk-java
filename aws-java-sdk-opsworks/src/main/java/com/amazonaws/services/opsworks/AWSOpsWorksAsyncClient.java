@@ -1082,7 +1082,8 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * <p>
      * Creates a clone of a specified stack. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html"> Clone a Stack </a>
-     * .
+     * . By default, all parameters are set to the values used by the parent
+     * stack.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -1120,7 +1121,8 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * <p>
      * Creates a clone of a specified stack. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html"> Clone a Stack </a>
-     * .
+     * . By default, all parameters are set to the values used by the parent
+     * stack.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -2402,6 +2404,84 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     
     /**
      * <p>
+     * <b>NOTE:</b>This action can be used only with Windows stacks.
+     * </p>
+     * <p>
+     * Grants RDP access to a Windows instance for a specified time period.
+     * </p>
+     *
+     * @param grantAccessRequest Container for the necessary parameters to
+     *           execute the GrantAccess operation on AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GrantAccess service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GrantAccessResult> grantAccessAsync(final GrantAccessRequest grantAccessRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GrantAccessResult>() {
+            public GrantAccessResult call() throws Exception {
+                return grantAccess(grantAccessRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b>This action can be used only with Windows stacks.
+     * </p>
+     * <p>
+     * Grants RDP access to a Windows instance for a specified time period.
+     * </p>
+     *
+     * @param grantAccessRequest Container for the necessary parameters to
+     *           execute the GrantAccess operation on AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GrantAccess service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GrantAccessResult> grantAccessAsync(
+            final GrantAccessRequest grantAccessRequest,
+            final AsyncHandler<GrantAccessRequest, GrantAccessResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GrantAccessResult>() {
+            public GrantAccessResult call() throws Exception {
+              GrantAccessResult result;
+                try {
+                result = grantAccess(grantAccessRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(grantAccessRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Describes AWS OpsWorks service errors.
      * </p>
      * <p>
@@ -2486,94 +2566,6 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
               }
               asyncHandler.onSuccess(describeServiceErrorsRequest, result);
                  return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Updates a specified layer.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateLayerRequest Container for the necessary parameters to
-     *           execute the UpdateLayer operation on AWSOpsWorks.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateLayer service method, as returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> updateLayerAsync(final UpdateLayerRequest updateLayerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                updateLayer(updateLayerRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Updates a specified layer.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateLayerRequest Container for the necessary parameters to
-     *           execute the UpdateLayer operation on AWSOpsWorks.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateLayer service method, as returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> updateLayerAsync(
-            final UpdateLayerRequest updateLayerRequest,
-            final AsyncHandler<UpdateLayerRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                updateLayer(updateLayerRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(updateLayerRequest, null);
-                 return null;
         }
     });
     }
@@ -2667,6 +2659,94 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             throw ex;
               }
               asyncHandler.onSuccess(updateElasticIpRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Updates a specified layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param updateLayerRequest Container for the necessary parameters to
+     *           execute the UpdateLayer operation on AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateLayer service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateLayerAsync(final UpdateLayerRequest updateLayerRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                updateLayer(updateLayerRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Updates a specified layer.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param updateLayerRequest Container for the necessary parameters to
+     *           execute the UpdateLayer operation on AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateLayer service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateLayerAsync(
+            final UpdateLayerRequest updateLayerRequest,
+            final AsyncHandler<UpdateLayerRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                updateLayer(updateLayerRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateLayerRequest, null);
                  return null;
         }
     });
@@ -3068,6 +3148,86 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     
     /**
      * <p>
+     * Describes the available AWS OpsWorks agent versions. You must specify
+     * a stack ID or a configuration manager.
+     * <code>DescribeAgentVersions</code> returns a list of available agent
+     * versions for the specified stack or configuration manager.
+     * </p>
+     *
+     * @param describeAgentVersionsRequest Container for the necessary
+     *           parameters to execute the DescribeAgentVersions operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAgentVersions service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAgentVersionsResult> describeAgentVersionsAsync(final DescribeAgentVersionsRequest describeAgentVersionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeAgentVersionsResult>() {
+            public DescribeAgentVersionsResult call() throws Exception {
+                return describeAgentVersions(describeAgentVersionsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes the available AWS OpsWorks agent versions. You must specify
+     * a stack ID or a configuration manager.
+     * <code>DescribeAgentVersions</code> returns a list of available agent
+     * versions for the specified stack or configuration manager.
+     * </p>
+     *
+     * @param describeAgentVersionsRequest Container for the necessary
+     *           parameters to execute the DescribeAgentVersions operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAgentVersions service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAgentVersionsResult> describeAgentVersionsAsync(
+            final DescribeAgentVersionsRequest describeAgentVersionsRequest,
+            final AsyncHandler<DescribeAgentVersionsRequest, DescribeAgentVersionsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeAgentVersionsResult>() {
+            public DescribeAgentVersionsResult call() throws Exception {
+              DescribeAgentVersionsResult result;
+                try {
+                result = describeAgentVersions(describeAgentVersionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeAgentVersionsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Starts a stack's instances.
      * </p>
      * <p>
@@ -3353,7 +3513,8 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * installing the AWS OpsWorks agent on the instance and registering the
      * instance with the stack. RegisterInstance handles only the second
      * step. You should instead use the AWS CLI register command, which
-     * performs the entire registration operation.
+     * performs the entire registration operation. For more information, see
+     * Registering an Instance with an AWS OpsWorks Stack.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -3399,7 +3560,8 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * installing the AWS OpsWorks agent on the instance and registering the
      * instance with the stack. RegisterInstance handles only the second
      * step. You should instead use the AWS CLI register command, which
-     * performs the entire registration operation.
+     * performs the entire registration operation. For more information, see
+     * Registering an Instance with an AWS OpsWorks Stack.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must

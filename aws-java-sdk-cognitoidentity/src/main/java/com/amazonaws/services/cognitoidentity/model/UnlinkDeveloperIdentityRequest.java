@@ -27,6 +27,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * all federated identities as well as the developer user identifier, the
  * Cognito identity becomes inaccessible.
  * </p>
+ * <p>
+ * This is a public API. You do not need any credentials to call this
+ * API.
+ * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#unlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest)
  */

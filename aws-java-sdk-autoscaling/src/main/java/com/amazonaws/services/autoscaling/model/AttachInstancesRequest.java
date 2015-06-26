@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class AttachInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * One or more EC2 instance IDs. You must specify at least one ID.
+     * One or more EC2 instance IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
@@ -49,9 +49,9 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
     private String autoScalingGroupName;
 
     /**
-     * One or more EC2 instance IDs. You must specify at least one ID.
+     * One or more EC2 instance IDs.
      *
-     * @return One or more EC2 instance IDs. You must specify at least one ID.
+     * @return One or more EC2 instance IDs.
      */
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
@@ -62,9 +62,9 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more EC2 instance IDs. You must specify at least one ID.
+     * One or more EC2 instance IDs.
      *
-     * @param instanceIds One or more EC2 instance IDs. You must specify at least one ID.
+     * @param instanceIds One or more EC2 instance IDs.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -77,7 +77,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more EC2 instance IDs. You must specify at least one ID.
+     * One or more EC2 instance IDs.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInstanceIds(java.util.Collection)} or {@link
@@ -86,7 +86,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds One or more EC2 instance IDs. You must specify at least one ID.
+     * @param instanceIds One or more EC2 instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -100,11 +100,11 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more EC2 instance IDs. You must specify at least one ID.
+     * One or more EC2 instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds One or more EC2 instance IDs. You must specify at least one ID.
+     * @param instanceIds One or more EC2 instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

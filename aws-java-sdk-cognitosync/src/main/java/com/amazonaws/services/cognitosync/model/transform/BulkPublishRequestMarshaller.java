@@ -90,14 +90,16 @@ public class BulkPublishRequestMarshaller implements Marshaller<Request<BulkPubl
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("IdentityPoolId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("IdentityPoolId");
+
             String value = (bulkPublishRequest.getIdentityPoolId() == null) ? null : StringUtils.fromString(bulkPublishRequest.getIdentityPoolId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{IdentityPoolId}", (bulkPublishRequest.getIdentityPoolId() == null) ? "" : StringUtils.fromString(bulkPublishRequest.getIdentityPoolId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

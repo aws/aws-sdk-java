@@ -90,14 +90,16 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("FunctionName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("FunctionName");
+
             String value = (addPermissionRequest.getFunctionName() == null) ? null : StringUtils.fromString(addPermissionRequest.getFunctionName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{FunctionName}", (addPermissionRequest.getFunctionName() == null) ? "" : StringUtils.fromString(addPermissionRequest.getFunctionName())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

@@ -59,7 +59,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an Amazon S3 bucket. For
+     * template (max size: 460,800 bytes) located in an Amazon S3 bucket. For
      * more information about templates, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -73,7 +73,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
     private String templateURL;
 
     /**
-     * The name or the unique identifier associated with the stack, which are
+     * The name or the stack ID that is associated with the stack, which are
      * not always interchangeable. For running stacks, you can specify either
      * the stack's name or its unique stack ID. For deleted stack, you must
      * specify the unique stack ID. <p>Conditional: You must specify only one
@@ -172,7 +172,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an Amazon S3 bucket. For
+     * template (max size: 460,800 bytes) located in an Amazon S3 bucket. For
      * more information about templates, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -184,7 +184,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 1024<br/>
      *
      * @return Location of file containing the template body. The URL must point to a
-     *         template (max size: 307,200 bytes) located in an Amazon S3 bucket. For
+     *         template (max size: 460,800 bytes) located in an Amazon S3 bucket. For
      *         more information about templates, see <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -198,7 +198,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an Amazon S3 bucket. For
+     * template (max size: 460,800 bytes) located in an Amazon S3 bucket. For
      * more information about templates, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -210,7 +210,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template (max size: 307,200 bytes) located in an Amazon S3 bucket. For
+     *         template (max size: 460,800 bytes) located in an Amazon S3 bucket. For
      *         more information about templates, see <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -224,7 +224,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 307,200 bytes) located in an Amazon S3 bucket. For
+     * template (max size: 460,800 bytes) located in an Amazon S3 bucket. For
      * more information about templates, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -238,7 +238,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template (max size: 307,200 bytes) located in an Amazon S3 bucket. For
+     *         template (max size: 460,800 bytes) located in an Amazon S3 bucket. For
      *         more information about templates, see <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
@@ -255,7 +255,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The name or the unique identifier associated with the stack, which are
+     * The name or the stack ID that is associated with the stack, which are
      * not always interchangeable. For running stacks, you can specify either
      * the stack's name or its unique stack ID. For deleted stack, you must
      * specify the unique stack ID. <p>Conditional: You must specify only one
@@ -266,7 +266,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - <br/>
      * <b>Pattern: </b>([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)<br/>
      *
-     * @return The name or the unique identifier associated with the stack, which are
+     * @return The name or the stack ID that is associated with the stack, which are
      *         not always interchangeable. For running stacks, you can specify either
      *         the stack's name or its unique stack ID. For deleted stack, you must
      *         specify the unique stack ID. <p>Conditional: You must specify only one
@@ -278,7 +278,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The name or the unique identifier associated with the stack, which are
+     * The name or the stack ID that is associated with the stack, which are
      * not always interchangeable. For running stacks, you can specify either
      * the stack's name or its unique stack ID. For deleted stack, you must
      * specify the unique stack ID. <p>Conditional: You must specify only one
@@ -289,7 +289,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - <br/>
      * <b>Pattern: </b>([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)<br/>
      *
-     * @param stackName The name or the unique identifier associated with the stack, which are
+     * @param stackName The name or the stack ID that is associated with the stack, which are
      *         not always interchangeable. For running stacks, you can specify either
      *         the stack's name or its unique stack ID. For deleted stack, you must
      *         specify the unique stack ID. <p>Conditional: You must specify only one
@@ -301,7 +301,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The name or the unique identifier associated with the stack, which are
+     * The name or the stack ID that is associated with the stack, which are
      * not always interchangeable. For running stacks, you can specify either
      * the stack's name or its unique stack ID. For deleted stack, you must
      * specify the unique stack ID. <p>Conditional: You must specify only one
@@ -314,7 +314,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - <br/>
      * <b>Pattern: </b>([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)<br/>
      *
-     * @param stackName The name or the unique identifier associated with the stack, which are
+     * @param stackName The name or the stack ID that is associated with the stack, which are
      *         not always interchangeable. For running stacks, you can specify either
      *         the stack's name or its unique stack ID. For deleted stack, you must
      *         specify the unique stack ID. <p>Conditional: You must specify only one

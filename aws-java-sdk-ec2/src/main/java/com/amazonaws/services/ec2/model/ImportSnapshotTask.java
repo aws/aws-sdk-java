@@ -17,49 +17,51 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes an import snapshot task.
+ * </p>
  */
 public class ImportSnapshotTask implements Serializable, Cloneable {
 
     /**
-     * The task ID of the ImportSnapshot task.
+     * The ID of the import snapshot task.
      */
     private String importTaskId;
 
     /**
-     * 
+     * Describes an import snapshot task.
      */
     private SnapshotTaskDetail snapshotTaskDetail;
 
     /**
-     * Description for the import snapshot task.
+     * A description of the import snapshot task.
      */
     private String description;
 
     /**
-     * The task ID of the ImportSnapshot task.
+     * The ID of the import snapshot task.
      *
-     * @return The task ID of the ImportSnapshot task.
+     * @return The ID of the import snapshot task.
      */
     public String getImportTaskId() {
         return importTaskId;
     }
     
     /**
-     * The task ID of the ImportSnapshot task.
+     * The ID of the import snapshot task.
      *
-     * @param importTaskId The task ID of the ImportSnapshot task.
+     * @param importTaskId The ID of the import snapshot task.
      */
     public void setImportTaskId(String importTaskId) {
         this.importTaskId = importTaskId;
     }
     
     /**
-     * The task ID of the ImportSnapshot task.
+     * The ID of the import snapshot task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param importTaskId The task ID of the ImportSnapshot task.
+     * @param importTaskId The ID of the import snapshot task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -70,29 +72,29 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * Describes an import snapshot task.
      *
-     * @return 
+     * @return Describes an import snapshot task.
      */
     public SnapshotTaskDetail getSnapshotTaskDetail() {
         return snapshotTaskDetail;
     }
     
     /**
-     * 
+     * Describes an import snapshot task.
      *
-     * @param snapshotTaskDetail 
+     * @param snapshotTaskDetail Describes an import snapshot task.
      */
     public void setSnapshotTaskDetail(SnapshotTaskDetail snapshotTaskDetail) {
         this.snapshotTaskDetail = snapshotTaskDetail;
     }
     
     /**
-     * 
+     * Describes an import snapshot task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotTaskDetail 
+     * @param snapshotTaskDetail Describes an import snapshot task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -103,29 +105,29 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
     }
 
     /**
-     * Description for the import snapshot task.
+     * A description of the import snapshot task.
      *
-     * @return Description for the import snapshot task.
+     * @return A description of the import snapshot task.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Description for the import snapshot task.
+     * A description of the import snapshot task.
      *
-     * @param description Description for the import snapshot task.
+     * @param description A description of the import snapshot task.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Description for the import snapshot task.
+     * A description of the import snapshot task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description Description for the import snapshot task.
+     * @param description A description of the import snapshot task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

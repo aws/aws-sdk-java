@@ -90,36 +90,40 @@ public class ListJobsByStatusRequestMarshaller implements Marshaller<Request<Lis
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Status")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Status");
+
             String value = (listJobsByStatusRequest.getStatus() == null) ? null : StringUtils.fromString(listJobsByStatusRequest.getStatus());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Status}", (listJobsByStatusRequest.getStatus() == null) ? "" : StringUtils.fromString(listJobsByStatusRequest.getStatus())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("Ascending")) {
             String name = DYNAMIC_QUERY_PARAMS.get("Ascending");
+
             String value = (listJobsByStatusRequest.getAscending() == null) ? null : StringUtils.fromString(listJobsByStatusRequest.getAscending());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{Ascending}", (listJobsByStatusRequest.getAscending() == null) ? "" : StringUtils.fromString(listJobsByStatusRequest.getAscending())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("PageToken")) {
             String name = DYNAMIC_QUERY_PARAMS.get("PageToken");
+
             String value = (listJobsByStatusRequest.getPageToken() == null) ? null : StringUtils.fromString(listJobsByStatusRequest.getPageToken());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{PageToken}", (listJobsByStatusRequest.getPageToken() == null) ? "" : StringUtils.fromString(listJobsByStatusRequest.getPageToken())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

@@ -100,6 +100,29 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     private Boolean smoothStreaming;
 
     /**
+     * If you don't configure your origin to add a Cache-Control max-age
+     * directive or an Expires header, DefaultTTL is the default amount of
+     * time (in seconds) that an object is in a CloudFront cache before
+     * CloudFront forwards another request to your origin to determine
+     * whether the object has been updated. The value that you specify
+     * applies only when your origin does not add HTTP headers such as
+     * Cache-Control max-age, Cache-Control s-maxage, and Expires to objects.
+     * You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+     */
+    private Long defaultTTL;
+
+    /**
+     * The maximum amount of time (in seconds) that an object is in a
+     * CloudFront cache before CloudFront forwards another request to your
+     * origin to determine whether the object has been updated. The value
+     * that you specify applies only when your origin adds HTTP headers such
+     * as Cache-Control max-age, Cache-Control s-maxage, and Expires to
+     * objects. You can specify a value from 0 to 3,153,600,000 seconds (100
+     * years).
+     */
+    private Long maxTTL;
+
+    /**
      * The value of ID for the origin that you want CloudFront to route
      * requests to when a request matches the path pattern either for a cache
      * behavior or for the default cache behavior.
@@ -631,6 +654,150 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * If you don't configure your origin to add a Cache-Control max-age
+     * directive or an Expires header, DefaultTTL is the default amount of
+     * time (in seconds) that an object is in a CloudFront cache before
+     * CloudFront forwards another request to your origin to determine
+     * whether the object has been updated. The value that you specify
+     * applies only when your origin does not add HTTP headers such as
+     * Cache-Control max-age, Cache-Control s-maxage, and Expires to objects.
+     * You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+     *
+     * @return If you don't configure your origin to add a Cache-Control max-age
+     *         directive or an Expires header, DefaultTTL is the default amount of
+     *         time (in seconds) that an object is in a CloudFront cache before
+     *         CloudFront forwards another request to your origin to determine
+     *         whether the object has been updated. The value that you specify
+     *         applies only when your origin does not add HTTP headers such as
+     *         Cache-Control max-age, Cache-Control s-maxage, and Expires to objects.
+     *         You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+     */
+    public Long getDefaultTTL() {
+        return defaultTTL;
+    }
+    
+    /**
+     * If you don't configure your origin to add a Cache-Control max-age
+     * directive or an Expires header, DefaultTTL is the default amount of
+     * time (in seconds) that an object is in a CloudFront cache before
+     * CloudFront forwards another request to your origin to determine
+     * whether the object has been updated. The value that you specify
+     * applies only when your origin does not add HTTP headers such as
+     * Cache-Control max-age, Cache-Control s-maxage, and Expires to objects.
+     * You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+     *
+     * @param defaultTTL If you don't configure your origin to add a Cache-Control max-age
+     *         directive or an Expires header, DefaultTTL is the default amount of
+     *         time (in seconds) that an object is in a CloudFront cache before
+     *         CloudFront forwards another request to your origin to determine
+     *         whether the object has been updated. The value that you specify
+     *         applies only when your origin does not add HTTP headers such as
+     *         Cache-Control max-age, Cache-Control s-maxage, and Expires to objects.
+     *         You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+     */
+    public void setDefaultTTL(Long defaultTTL) {
+        this.defaultTTL = defaultTTL;
+    }
+    
+    /**
+     * If you don't configure your origin to add a Cache-Control max-age
+     * directive or an Expires header, DefaultTTL is the default amount of
+     * time (in seconds) that an object is in a CloudFront cache before
+     * CloudFront forwards another request to your origin to determine
+     * whether the object has been updated. The value that you specify
+     * applies only when your origin does not add HTTP headers such as
+     * Cache-Control max-age, Cache-Control s-maxage, and Expires to objects.
+     * You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param defaultTTL If you don't configure your origin to add a Cache-Control max-age
+     *         directive or an Expires header, DefaultTTL is the default amount of
+     *         time (in seconds) that an object is in a CloudFront cache before
+     *         CloudFront forwards another request to your origin to determine
+     *         whether the object has been updated. The value that you specify
+     *         applies only when your origin does not add HTTP headers such as
+     *         Cache-Control max-age, Cache-Control s-maxage, and Expires to objects.
+     *         You can specify a value from 0 to 3,153,600,000 seconds (100 years).
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DefaultCacheBehavior withDefaultTTL(Long defaultTTL) {
+        this.defaultTTL = defaultTTL;
+        return this;
+    }
+
+    /**
+     * The maximum amount of time (in seconds) that an object is in a
+     * CloudFront cache before CloudFront forwards another request to your
+     * origin to determine whether the object has been updated. The value
+     * that you specify applies only when your origin adds HTTP headers such
+     * as Cache-Control max-age, Cache-Control s-maxage, and Expires to
+     * objects. You can specify a value from 0 to 3,153,600,000 seconds (100
+     * years).
+     *
+     * @return The maximum amount of time (in seconds) that an object is in a
+     *         CloudFront cache before CloudFront forwards another request to your
+     *         origin to determine whether the object has been updated. The value
+     *         that you specify applies only when your origin adds HTTP headers such
+     *         as Cache-Control max-age, Cache-Control s-maxage, and Expires to
+     *         objects. You can specify a value from 0 to 3,153,600,000 seconds (100
+     *         years).
+     */
+    public Long getMaxTTL() {
+        return maxTTL;
+    }
+    
+    /**
+     * The maximum amount of time (in seconds) that an object is in a
+     * CloudFront cache before CloudFront forwards another request to your
+     * origin to determine whether the object has been updated. The value
+     * that you specify applies only when your origin adds HTTP headers such
+     * as Cache-Control max-age, Cache-Control s-maxage, and Expires to
+     * objects. You can specify a value from 0 to 3,153,600,000 seconds (100
+     * years).
+     *
+     * @param maxTTL The maximum amount of time (in seconds) that an object is in a
+     *         CloudFront cache before CloudFront forwards another request to your
+     *         origin to determine whether the object has been updated. The value
+     *         that you specify applies only when your origin adds HTTP headers such
+     *         as Cache-Control max-age, Cache-Control s-maxage, and Expires to
+     *         objects. You can specify a value from 0 to 3,153,600,000 seconds (100
+     *         years).
+     */
+    public void setMaxTTL(Long maxTTL) {
+        this.maxTTL = maxTTL;
+    }
+    
+    /**
+     * The maximum amount of time (in seconds) that an object is in a
+     * CloudFront cache before CloudFront forwards another request to your
+     * origin to determine whether the object has been updated. The value
+     * that you specify applies only when your origin adds HTTP headers such
+     * as Cache-Control max-age, Cache-Control s-maxage, and Expires to
+     * objects. You can specify a value from 0 to 3,153,600,000 seconds (100
+     * years).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param maxTTL The maximum amount of time (in seconds) that an object is in a
+     *         CloudFront cache before CloudFront forwards another request to your
+     *         origin to determine whether the object has been updated. The value
+     *         that you specify applies only when your origin adds HTTP headers such
+     *         as Cache-Control max-age, Cache-Control s-maxage, and Expires to
+     *         objects. You can specify a value from 0 to 3,153,600,000 seconds (100
+     *         years).
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DefaultCacheBehavior withMaxTTL(Long maxTTL) {
+        this.maxTTL = maxTTL;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -648,7 +815,9 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
         if (getViewerProtocolPolicy() != null) sb.append("ViewerProtocolPolicy: " + getViewerProtocolPolicy() + ",");
         if (getMinTTL() != null) sb.append("MinTTL: " + getMinTTL() + ",");
         if (getAllowedMethods() != null) sb.append("AllowedMethods: " + getAllowedMethods() + ",");
-        if (isSmoothStreaming() != null) sb.append("SmoothStreaming: " + isSmoothStreaming() );
+        if (isSmoothStreaming() != null) sb.append("SmoothStreaming: " + isSmoothStreaming() + ",");
+        if (getDefaultTTL() != null) sb.append("DefaultTTL: " + getDefaultTTL() + ",");
+        if (getMaxTTL() != null) sb.append("MaxTTL: " + getMaxTTL() );
         sb.append("}");
         return sb.toString();
     }
@@ -665,6 +834,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMinTTL() == null) ? 0 : getMinTTL().hashCode()); 
         hashCode = prime * hashCode + ((getAllowedMethods() == null) ? 0 : getAllowedMethods().hashCode()); 
         hashCode = prime * hashCode + ((isSmoothStreaming() == null) ? 0 : isSmoothStreaming().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultTTL() == null) ? 0 : getDefaultTTL().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxTTL() == null) ? 0 : getMaxTTL().hashCode()); 
         return hashCode;
     }
     
@@ -690,6 +861,10 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
         if (other.getAllowedMethods() != null && other.getAllowedMethods().equals(this.getAllowedMethods()) == false) return false; 
         if (other.isSmoothStreaming() == null ^ this.isSmoothStreaming() == null) return false;
         if (other.isSmoothStreaming() != null && other.isSmoothStreaming().equals(this.isSmoothStreaming()) == false) return false; 
+        if (other.getDefaultTTL() == null ^ this.getDefaultTTL() == null) return false;
+        if (other.getDefaultTTL() != null && other.getDefaultTTL().equals(this.getDefaultTTL()) == false) return false; 
+        if (other.getMaxTTL() == null ^ this.getMaxTTL() == null) return false;
+        if (other.getMaxTTL() != null && other.getMaxTTL().equals(this.getMaxTTL()) == false) return false; 
         return true;
     }
     

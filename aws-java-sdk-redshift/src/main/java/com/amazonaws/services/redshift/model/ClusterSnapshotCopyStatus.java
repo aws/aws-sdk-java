@@ -37,6 +37,11 @@ public class ClusterSnapshotCopyStatus implements Serializable, Cloneable {
     private Long retentionPeriod;
 
     /**
+     * The name of the snapshot copy grant.
+     */
+    private String snapshotCopyGrantName;
+
+    /**
      * The destination region that snapshots are automatically copied to when
      * cross-region snapshot copy is enabled.
      *
@@ -115,6 +120,39 @@ public class ClusterSnapshotCopyStatus implements Serializable, Cloneable {
     }
 
     /**
+     * The name of the snapshot copy grant.
+     *
+     * @return The name of the snapshot copy grant.
+     */
+    public String getSnapshotCopyGrantName() {
+        return snapshotCopyGrantName;
+    }
+    
+    /**
+     * The name of the snapshot copy grant.
+     *
+     * @param snapshotCopyGrantName The name of the snapshot copy grant.
+     */
+    public void setSnapshotCopyGrantName(String snapshotCopyGrantName) {
+        this.snapshotCopyGrantName = snapshotCopyGrantName;
+    }
+    
+    /**
+     * The name of the snapshot copy grant.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotCopyGrantName The name of the snapshot copy grant.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ClusterSnapshotCopyStatus withSnapshotCopyGrantName(String snapshotCopyGrantName) {
+        this.snapshotCopyGrantName = snapshotCopyGrantName;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -127,7 +165,8 @@ public class ClusterSnapshotCopyStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationRegion() != null) sb.append("DestinationRegion: " + getDestinationRegion() + ",");
-        if (getRetentionPeriod() != null) sb.append("RetentionPeriod: " + getRetentionPeriod() );
+        if (getRetentionPeriod() != null) sb.append("RetentionPeriod: " + getRetentionPeriod() + ",");
+        if (getSnapshotCopyGrantName() != null) sb.append("SnapshotCopyGrantName: " + getSnapshotCopyGrantName() );
         sb.append("}");
         return sb.toString();
     }
@@ -139,6 +178,7 @@ public class ClusterSnapshotCopyStatus implements Serializable, Cloneable {
         
         hashCode = prime * hashCode + ((getDestinationRegion() == null) ? 0 : getDestinationRegion().hashCode()); 
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotCopyGrantName() == null) ? 0 : getSnapshotCopyGrantName().hashCode()); 
         return hashCode;
     }
     
@@ -154,6 +194,8 @@ public class ClusterSnapshotCopyStatus implements Serializable, Cloneable {
         if (other.getDestinationRegion() != null && other.getDestinationRegion().equals(this.getDestinationRegion()) == false) return false; 
         if (other.getRetentionPeriod() == null ^ this.getRetentionPeriod() == null) return false;
         if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false) return false; 
+        if (other.getSnapshotCopyGrantName() == null ^ this.getSnapshotCopyGrantName() == null) return false;
+        if (other.getSnapshotCopyGrantName() != null && other.getSnapshotCopyGrantName().equals(this.getSnapshotCopyGrantName()) == false) return false; 
         return true;
     }
     

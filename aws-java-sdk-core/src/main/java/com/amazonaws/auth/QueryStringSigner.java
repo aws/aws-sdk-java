@@ -17,6 +17,7 @@ package com.amazonaws.auth;
 import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TimeZone;
@@ -105,15 +106,17 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
      *
      * @return String to sign
      */
-    private String calculateStringToSignV1(Map<String, String> parameters) {
+    private String calculateStringToSignV1(Map<String, List<String>> parameters) {
         StringBuilder data = new StringBuilder();
-        SortedMap<String, String> sorted =
-            new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
+        SortedMap<String, List<String>> sorted =
+            new TreeMap<String, List<String>>(String.CASE_INSENSITIVE_ORDER);
         sorted.putAll(parameters);
 
-        for (Map.Entry<String, String> entry : sorted.entrySet()) {
-            data.append(entry.getKey());
-            data.append(entry.getValue());
+        for (Map.Entry<String, List<String>> entry : sorted.entrySet()) {
+            for (String value : entry.getValue()) {
+                data.append(entry.getKey())
+                    .append(value);
+            }
         }
 
         return data.toString();
@@ -132,13 +135,15 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
      */
     private String calculateStringToSignV2(SignableRequest<?> request) throws AmazonClientException {
         URI endpoint = request.getEndpoint();
-        Map<String, String> parameters = request.getParameters();
 
         StringBuilder data = new StringBuilder();
-        data.append("POST").append("\n");
-        data.append(getCanonicalizedEndpoint(endpoint)).append("\n");
-        data.append(getCanonicalizedResourcePath(request)).append("\n");
-        data.append(getCanonicalizedQueryString(parameters));
+        data.append("POST")
+            .append("\n")
+            .append(getCanonicalizedEndpoint(endpoint))
+            .append("\n")
+            .append(getCanonicalizedResourcePath(request))
+            .append("\n")
+            .append(getCanonicalizedQueryString(request.getParameters()));
         return data.toString();
     }
 

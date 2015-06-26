@@ -50,15 +50,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     private String policyName;
 
     /**
-     * The number of instances by which to scale. <code>AdjustmentType</code>
-     * determines the interpretation of this number (for example, as an
-     * absolute number or as a percentage of the existing Auto Scaling group
-     * size). A positive increment adds to the current capacity and a
-     * negative value removes from the current capacity.
-     */
-    private Integer scalingAdjustment;
-
-    /**
      * The adjustment type. Valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * <p>For more information, see <a
@@ -72,15 +63,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     private String adjustmentType;
 
     /**
-     * The amount of time, in seconds, after a scaling activity completes and
-     * before the next scaling activity can start. <p>For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
-     */
-    private Integer cooldown;
-
-    /**
      * Used with <code>AdjustmentType</code> with the value
      * <code>PercentChangeInCapacity</code>, the scaling policy changes the
      * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
@@ -90,6 +72,24 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      * <code>PercentChangeInCapacity</code>.
      */
     private Integer minAdjustmentStep;
+
+    /**
+     * The number of instances by which to scale. <code>AdjustmentType</code>
+     * determines the interpretation of this number (for example, as an
+     * absolute number or as a percentage of the existing Auto Scaling group
+     * size). A positive increment adds to the current capacity and a
+     * negative value removes from the current capacity.
+     */
+    private Integer scalingAdjustment;
+
+    /**
+     * The amount of time, in seconds, after a scaling activity completes and
+     * before the next scaling activity can start. <p>For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     */
+    private Integer cooldown;
 
     /**
      * The name or ARN of the group.
@@ -182,63 +182,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * The number of instances by which to scale. <code>AdjustmentType</code>
-     * determines the interpretation of this number (for example, as an
-     * absolute number or as a percentage of the existing Auto Scaling group
-     * size). A positive increment adds to the current capacity and a
-     * negative value removes from the current capacity.
-     *
-     * @return The number of instances by which to scale. <code>AdjustmentType</code>
-     *         determines the interpretation of this number (for example, as an
-     *         absolute number or as a percentage of the existing Auto Scaling group
-     *         size). A positive increment adds to the current capacity and a
-     *         negative value removes from the current capacity.
-     */
-    public Integer getScalingAdjustment() {
-        return scalingAdjustment;
-    }
-    
-    /**
-     * The number of instances by which to scale. <code>AdjustmentType</code>
-     * determines the interpretation of this number (for example, as an
-     * absolute number or as a percentage of the existing Auto Scaling group
-     * size). A positive increment adds to the current capacity and a
-     * negative value removes from the current capacity.
-     *
-     * @param scalingAdjustment The number of instances by which to scale. <code>AdjustmentType</code>
-     *         determines the interpretation of this number (for example, as an
-     *         absolute number or as a percentage of the existing Auto Scaling group
-     *         size). A positive increment adds to the current capacity and a
-     *         negative value removes from the current capacity.
-     */
-    public void setScalingAdjustment(Integer scalingAdjustment) {
-        this.scalingAdjustment = scalingAdjustment;
-    }
-    
-    /**
-     * The number of instances by which to scale. <code>AdjustmentType</code>
-     * determines the interpretation of this number (for example, as an
-     * absolute number or as a percentage of the existing Auto Scaling group
-     * size). A positive increment adds to the current capacity and a
-     * negative value removes from the current capacity.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param scalingAdjustment The number of instances by which to scale. <code>AdjustmentType</code>
-     *         determines the interpretation of this number (for example, as an
-     *         absolute number or as a percentage of the existing Auto Scaling group
-     *         size). A positive increment adds to the current capacity and a
-     *         negative value removes from the current capacity.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public PutScalingPolicyRequest withScalingAdjustment(Integer scalingAdjustment) {
-        this.scalingAdjustment = scalingAdjustment;
-        return this;
-    }
-
-    /**
      * The adjustment type. Valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * <p>For more information, see <a
@@ -304,63 +247,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      */
     public PutScalingPolicyRequest withAdjustmentType(String adjustmentType) {
         this.adjustmentType = adjustmentType;
-        return this;
-    }
-
-    /**
-     * The amount of time, in seconds, after a scaling activity completes and
-     * before the next scaling activity can start. <p>For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
-     *
-     * @return The amount of time, in seconds, after a scaling activity completes and
-     *         before the next scaling activity can start. <p>For more information,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
-     */
-    public Integer getCooldown() {
-        return cooldown;
-    }
-    
-    /**
-     * The amount of time, in seconds, after a scaling activity completes and
-     * before the next scaling activity can start. <p>For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
-     *
-     * @param cooldown The amount of time, in seconds, after a scaling activity completes and
-     *         before the next scaling activity can start. <p>For more information,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
-     */
-    public void setCooldown(Integer cooldown) {
-        this.cooldown = cooldown;
-    }
-    
-    /**
-     * The amount of time, in seconds, after a scaling activity completes and
-     * before the next scaling activity can start. <p>For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cooldown The amount of time, in seconds, after a scaling activity completes and
-     *         before the next scaling activity can start. <p>For more information,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public PutScalingPolicyRequest withCooldown(Integer cooldown) {
-        this.cooldown = cooldown;
         return this;
     }
 
@@ -434,6 +320,120 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * The number of instances by which to scale. <code>AdjustmentType</code>
+     * determines the interpretation of this number (for example, as an
+     * absolute number or as a percentage of the existing Auto Scaling group
+     * size). A positive increment adds to the current capacity and a
+     * negative value removes from the current capacity.
+     *
+     * @return The number of instances by which to scale. <code>AdjustmentType</code>
+     *         determines the interpretation of this number (for example, as an
+     *         absolute number or as a percentage of the existing Auto Scaling group
+     *         size). A positive increment adds to the current capacity and a
+     *         negative value removes from the current capacity.
+     */
+    public Integer getScalingAdjustment() {
+        return scalingAdjustment;
+    }
+    
+    /**
+     * The number of instances by which to scale. <code>AdjustmentType</code>
+     * determines the interpretation of this number (for example, as an
+     * absolute number or as a percentage of the existing Auto Scaling group
+     * size). A positive increment adds to the current capacity and a
+     * negative value removes from the current capacity.
+     *
+     * @param scalingAdjustment The number of instances by which to scale. <code>AdjustmentType</code>
+     *         determines the interpretation of this number (for example, as an
+     *         absolute number or as a percentage of the existing Auto Scaling group
+     *         size). A positive increment adds to the current capacity and a
+     *         negative value removes from the current capacity.
+     */
+    public void setScalingAdjustment(Integer scalingAdjustment) {
+        this.scalingAdjustment = scalingAdjustment;
+    }
+    
+    /**
+     * The number of instances by which to scale. <code>AdjustmentType</code>
+     * determines the interpretation of this number (for example, as an
+     * absolute number or as a percentage of the existing Auto Scaling group
+     * size). A positive increment adds to the current capacity and a
+     * negative value removes from the current capacity.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param scalingAdjustment The number of instances by which to scale. <code>AdjustmentType</code>
+     *         determines the interpretation of this number (for example, as an
+     *         absolute number or as a percentage of the existing Auto Scaling group
+     *         size). A positive increment adds to the current capacity and a
+     *         negative value removes from the current capacity.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PutScalingPolicyRequest withScalingAdjustment(Integer scalingAdjustment) {
+        this.scalingAdjustment = scalingAdjustment;
+        return this;
+    }
+
+    /**
+     * The amount of time, in seconds, after a scaling activity completes and
+     * before the next scaling activity can start. <p>For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     *
+     * @return The amount of time, in seconds, after a scaling activity completes and
+     *         before the next scaling activity can start. <p>For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     */
+    public Integer getCooldown() {
+        return cooldown;
+    }
+    
+    /**
+     * The amount of time, in seconds, after a scaling activity completes and
+     * before the next scaling activity can start. <p>For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     *
+     * @param cooldown The amount of time, in seconds, after a scaling activity completes and
+     *         before the next scaling activity can start. <p>For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     */
+    public void setCooldown(Integer cooldown) {
+        this.cooldown = cooldown;
+    }
+    
+    /**
+     * The amount of time, in seconds, after a scaling activity completes and
+     * before the next scaling activity can start. <p>For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cooldown The amount of time, in seconds, after a scaling activity completes and
+     *         before the next scaling activity can start. <p>For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+     *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PutScalingPolicyRequest withCooldown(Integer cooldown) {
+        this.cooldown = cooldown;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -447,10 +447,10 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
         sb.append("{");
         if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");
-        if (getScalingAdjustment() != null) sb.append("ScalingAdjustment: " + getScalingAdjustment() + ",");
         if (getAdjustmentType() != null) sb.append("AdjustmentType: " + getAdjustmentType() + ",");
-        if (getCooldown() != null) sb.append("Cooldown: " + getCooldown() + ",");
-        if (getMinAdjustmentStep() != null) sb.append("MinAdjustmentStep: " + getMinAdjustmentStep() );
+        if (getMinAdjustmentStep() != null) sb.append("MinAdjustmentStep: " + getMinAdjustmentStep() + ",");
+        if (getScalingAdjustment() != null) sb.append("ScalingAdjustment: " + getScalingAdjustment() + ",");
+        if (getCooldown() != null) sb.append("Cooldown: " + getCooldown() );
         sb.append("}");
         return sb.toString();
     }
@@ -462,10 +462,10 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
         
         hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode()); 
-        hashCode = prime * hashCode + ((getScalingAdjustment() == null) ? 0 : getScalingAdjustment().hashCode()); 
         hashCode = prime * hashCode + ((getAdjustmentType() == null) ? 0 : getAdjustmentType().hashCode()); 
-        hashCode = prime * hashCode + ((getCooldown() == null) ? 0 : getCooldown().hashCode()); 
         hashCode = prime * hashCode + ((getMinAdjustmentStep() == null) ? 0 : getMinAdjustmentStep().hashCode()); 
+        hashCode = prime * hashCode + ((getScalingAdjustment() == null) ? 0 : getScalingAdjustment().hashCode()); 
+        hashCode = prime * hashCode + ((getCooldown() == null) ? 0 : getCooldown().hashCode()); 
         return hashCode;
     }
     
@@ -481,14 +481,14 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
         if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
         if (other.getPolicyName() == null ^ this.getPolicyName() == null) return false;
         if (other.getPolicyName() != null && other.getPolicyName().equals(this.getPolicyName()) == false) return false; 
-        if (other.getScalingAdjustment() == null ^ this.getScalingAdjustment() == null) return false;
-        if (other.getScalingAdjustment() != null && other.getScalingAdjustment().equals(this.getScalingAdjustment()) == false) return false; 
         if (other.getAdjustmentType() == null ^ this.getAdjustmentType() == null) return false;
         if (other.getAdjustmentType() != null && other.getAdjustmentType().equals(this.getAdjustmentType()) == false) return false; 
-        if (other.getCooldown() == null ^ this.getCooldown() == null) return false;
-        if (other.getCooldown() != null && other.getCooldown().equals(this.getCooldown()) == false) return false; 
         if (other.getMinAdjustmentStep() == null ^ this.getMinAdjustmentStep() == null) return false;
         if (other.getMinAdjustmentStep() != null && other.getMinAdjustmentStep().equals(this.getMinAdjustmentStep()) == false) return false; 
+        if (other.getScalingAdjustment() == null ^ this.getScalingAdjustment() == null) return false;
+        if (other.getScalingAdjustment() != null && other.getScalingAdjustment().equals(this.getScalingAdjustment()) == false) return false; 
+        if (other.getCooldown() == null ^ this.getCooldown() == null) return false;
+        if (other.getCooldown() != null && other.getCooldown().equals(this.getCooldown()) == false) return false; 
         return true;
     }
     

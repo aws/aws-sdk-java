@@ -33,88 +33,88 @@ The steps for running the AWS Flow Framework samples are:
 
 2.  Open the access.properties in the samples folder.
 
-3.  Locate the following sections and fill in your Access Key ID and Secret Access Key. You can use the same values for SWF and S3:  
+3.  Locate the following sections and fill in your Access Key ID and Secret Access Key. You can use the same values for SWF and S3:
 
     ```
     # Fill in your AWS Access Key ID and Secret Access Key for SWF
-    # http://aws.amazon.com/security-credentials  
-    AWS.Access.ID=<Your AWS Access Key>  
-    AWS.Secret.Key=<Your AWS Secret Key>  
-    AWS.Account.ID=<Your AWS Account ID>  
+    # http://aws.amazon.com/security-credentials
+    AWS.Access.ID=<Your AWS Access Key>
+    AWS.Secret.Key=<Your AWS Secret Key>
+    AWS.Account.ID=<Your AWS Account ID>
 
-    # Fill in your AWS Access Key ID and Secret Access Key for S3  
-    # http://aws.amazon.com/security-credentials  
-    S3.Access.ID=<Your AWS Access Key>  
-    S3.Secret.Key=<Your AWS Secret Key>  
-    S3.Account.ID=<Your AWS Account ID>  
-    ```  
+    # Fill in your AWS Access Key ID and Secret Access Key for S3
+    # http://aws.amazon.com/security-credentials
+    S3.Access.ID=<Your AWS Access Key>
+    S3.Secret.Key=<Your AWS Secret Key>
+    S3.Account.ID=<Your AWS Account ID>
+    ```
 
-4.  Some samples upload files to S3. Locate the following section and fill in the name of S3 bucket that you want the samples to use:  
+4.  Some samples upload files to S3. Locate the following section and fill in the name of S3 bucket that you want the samples to use:
 
      ```
-     ####### FileProcessing Sample Config Values ##########  
+     ####### FileProcessing Sample Config Values ##########
      Workflow.Input.TargetBucketName=<Your S3 bucket name>
-     ```  
+     ```
 
 5.  Save the file.
 
-6.  Set the environment variable AWS_SWF_SAMPLES_CONFIG to the full path of the directory containing the access.properties file. For example on windows run this command:  
+6.  Set the environment variable AWS_SWF_SAMPLES_CONFIG to the full path of the directory containing the access.properties file. For example on windows run this command:
 
      ```
-     set AWS_SWF_SAMPLES_CONFIG=<Your SDK Directrory>/samples/AwsFlowFramework
-     ```  
+     set AWS_SWF_SAMPLES_CONFIG=<Your SDK Directrory>/src/samples/AwsFlowFramework
+     ```
 
-     and on linux use this command to set the environment variable:  
+     and on linux use this command to set the environment variable:
 
      ```
-     export AWS_SWF_SAMPLES_CONFIG=<Your SDK Directrory>/samples/AwsFlowFramework
+     export AWS_SWF_SAMPLES_CONFIG=<Your SDK Directrory>/src/samples/AwsFlowFramework
      ```
 
 7.  Compile the samples by using the Ant build.xml file. This will create binaries in bin directory under the samples directory.
 
-8.  To run the samples follow these instructions:  
+8.  To run the samples follow these instructions:
 
    *Hello World Sample:*
-   
-     The sample has three executables. You should run each in a separate terminal/console.  
+
+     The sample has three executables. You should run each in a separate terminal/console.
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.helloworld.ActivityHost" run`
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.helloworld.WorkflowHost" run`
-     - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.helloworld.WorkflowExecutionStarter" run`  
-     
+     - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.helloworld.WorkflowExecutionStarter" run`
+
 
    *Booking Sample:*
-   
+
      The sample has three executables. You should run each in a separate terminal/console. From the samples folder,
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.booking.ActivityHost" run`
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.booking.WorkflowHost" run`
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.booking.WorkflowExecutionStarter" run`
-     
+
 
    *Split Merge Sample:*
-   
+
      The sample has three executables. You should run each in a separate terminal/console. From the samples folder,
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.splitmerge.ActivityHost" run`
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.splitmerge.WorkflowHost" run`
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.splitmerge.WorkflowExecutionStarter" run`
 
 
-   *Periodic Workflow Sample:* 
-   
+   *Periodic Workflow Sample:*
+
      The sample has three executables. You should run each in a separate terminal/console. From the samples folder,
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.periodicworkflow.ActivityHost" run`
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.periodicworkflow.WorkflowHost" run`
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.periodicworkflow.WorkflowExecutionStarter" run`
 
    *File Processing Sample:*
-   
+
      The sample has three executables. You should run each in a separate terminal/console. From the samples folder,
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.fileprocessing.ActivityHost" run`
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.fileprocessing.WorkflowHost" run`
-     - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.fileprocessing.WorkflowExecutionStarter" run`  
-     
+     - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.fileprocessing.WorkflowExecutionStarter" run`
+
 
    *Cron Sample:*
-   
+
      The sample has three executables. You should run each in a separate terminal/console. From the samples folder,
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cron.ActivityHost" run`
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cron.WorkflowHost" run`
@@ -123,13 +123,13 @@ The steps for running the AWS Flow Framework samples are:
    The workflow starter takes 3 command line arguments that must be specified:
      1. CRON_PATTERN: specifies the pattern used to determine the cron schedule for the periodic activity task. The above command specifies the pattern */10 * * * * * to run the task every 10 seconds.
      2. TIME_ZONE: specifies the time zone to use for time calculations. The above command specifies PST (Pacific Standard Time).
-     3. CONTINUE_AS_NEW_AFTER_SECONDS: specifies the duration, in seconds, after which the current execution should be closed and continued as a new execution. The above command specifies 60 seconds.  
+     3. CONTINUE_AS_NEW_AFTER_SECONDS: specifies the duration, in seconds, after which the current execution should be closed and continued as a new execution. The above command specifies 60 seconds.
 
 
-   *Cron With Retry Sample:* 
-   
+   *Cron With Retry Sample:*
+
      The sample has three executables. You should run each in a separate terminal/console. From the samples folder,
-     - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cronwithretry.ActivityHost" run`  
+     - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cronwithretry.ActivityHost" run`
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cronwithretry.WorkflowHost" run`
      - Run: `ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cronwithretry.CronWithRetryWorkflowExecutionStarter" -Dmain-args="\"*/10 * * * * *\" PST 60" run`
 

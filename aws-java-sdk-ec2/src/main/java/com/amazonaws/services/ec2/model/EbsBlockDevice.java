@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an Amazon EBS block device.
+ * Describes a block device for an EBS volume.
  * </p>
  */
 public class EbsBlockDevice implements Serializable, Cloneable {
@@ -40,8 +40,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     private Integer volumeSize;
 
     /**
-     * Indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the EBS volume is deleted on instance termination.
      */
     private Boolean deleteOnTermination;
 
@@ -75,8 +74,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     private Integer iops;
 
     /**
-     * Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
-     * EBS volumes may only be attached to instances that support Amazon EBS
+     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS
+     * volumes may only be attached to instances that support Amazon EBS
      * encryption.
      */
     private Boolean encrypted;
@@ -184,35 +183,29 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the EBS volume is deleted on instance termination.
      *
-     * @return Indicates whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @return Indicates whether the EBS volume is deleted on instance termination.
      */
     public Boolean isDeleteOnTermination() {
         return deleteOnTermination;
     }
     
     /**
-     * Indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the EBS volume is deleted on instance termination.
      *
-     * @param deleteOnTermination Indicates whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @param deleteOnTermination Indicates whether the EBS volume is deleted on instance termination.
      */
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
     
     /**
-     * Indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the EBS volume is deleted on instance termination.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deleteOnTermination Indicates whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @param deleteOnTermination Indicates whether the EBS volume is deleted on instance termination.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -223,11 +216,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether the Amazon EBS volume is deleted on instance
-     * termination.
+     * Indicates whether the EBS volume is deleted on instance termination.
      *
-     * @return Indicates whether the Amazon EBS volume is deleted on instance
-     *         termination.
+     * @return Indicates whether the EBS volume is deleted on instance termination.
      */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
@@ -457,12 +448,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
-     * EBS volumes may only be attached to instances that support Amazon EBS
+     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS
+     * volumes may only be attached to instances that support Amazon EBS
      * encryption.
      *
-     * @return Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
-     *         EBS volumes may only be attached to instances that support Amazon EBS
+     * @return Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS
+     *         volumes may only be attached to instances that support Amazon EBS
      *         encryption.
      */
     public Boolean isEncrypted() {
@@ -470,12 +461,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     }
     
     /**
-     * Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
-     * EBS volumes may only be attached to instances that support Amazon EBS
+     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS
+     * volumes may only be attached to instances that support Amazon EBS
      * encryption.
      *
-     * @param encrypted Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
-     *         EBS volumes may only be attached to instances that support Amazon EBS
+     * @param encrypted Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS
+     *         volumes may only be attached to instances that support Amazon EBS
      *         encryption.
      */
     public void setEncrypted(Boolean encrypted) {
@@ -483,14 +474,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     }
     
     /**
-     * Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
-     * EBS volumes may only be attached to instances that support Amazon EBS
+     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS
+     * volumes may only be attached to instances that support Amazon EBS
      * encryption.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param encrypted Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
-     *         EBS volumes may only be attached to instances that support Amazon EBS
+     * @param encrypted Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS
+     *         volumes may only be attached to instances that support Amazon EBS
      *         encryption.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -502,12 +493,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
-     * EBS volumes may only be attached to instances that support Amazon EBS
+     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS
+     * volumes may only be attached to instances that support Amazon EBS
      * encryption.
      *
-     * @return Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
-     *         EBS volumes may only be attached to instances that support Amazon EBS
+     * @return Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS
+     *         volumes may only be attached to instances that support Amazon EBS
      *         encryption.
      */
     public Boolean getEncrypted() {

@@ -21,8 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kms.AWSKMS#generateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest) GenerateDataKeyWithoutPlaintext operation}.
  * <p>
- * Returns a key wrapped by a customer master key without the plaintext
- * copy of that key. To retrieve the plaintext, see GenerateDataKey.
+ * Returns a data key encrypted by a customer master key without the
+ * plaintext copy of that key. Otherwise, this API functions exactly like
+ * GenerateDataKey. You can use this API to, for example, satisfy an
+ * audit requirement that an encrypted key be made available without
+ * exposing the plaintext copy of that key.
  * </p>
  *
  * @see com.amazonaws.services.kms.AWSKMS#generateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest)
@@ -30,8 +33,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Unique identifier of the key. This can be an ARN, an alias, or a
-     * globally unique identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -55,7 +65,8 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
 
     /**
      * Integer that contains the number of bytes to generate. Common values
-     * are 128, 256, 512, 1024 and so on.
+     * are 128, 256, 512, 1024 and so on. We recommend that you use the
+     * <code>KeySpec</code> parameter instead.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1024<br/>
@@ -63,8 +74,9 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
     private Integer numberOfBytes;
 
     /**
-     * A list of grant tokens that represent grants which can be used to
-     * provide long term permissions to generate a key.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
@@ -72,44 +84,86 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> grantTokens;
 
     /**
-     * Unique identifier of the key. This can be an ARN, an alias, or a
-     * globally unique identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return Unique identifier of the key. This can be an ARN, an alias, or a
-     *         globally unique identifier.
+     * @return A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier, a fully specified ARN to either an alias
+     *         or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     *         Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      */
     public String getKeyId() {
         return keyId;
     }
     
     /**
-     * Unique identifier of the key. This can be an ARN, an alias, or a
-     * globally unique identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier of the key. This can be an ARN, an alias, or a
-     *         globally unique identifier.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier, a fully specified ARN to either an alias
+     *         or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     *         Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      */
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
     
     /**
-     * Unique identifier of the key. This can be an ARN, an alias, or a
-     * globally unique identifier.
+     * A unique identifier for the customer master key. This value can be a
+     * globally unique identifier, a fully specified ARN to either an alias
+     * or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     * <li>Alias Name Example - alias/MyAliasName</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param keyId Unique identifier of the key. This can be an ARN, an alias, or a
-     *         globally unique identifier.
+     * @param keyId A unique identifier for the customer master key. This value can be a
+     *         globally unique identifier, a fully specified ARN to either an alias
+     *         or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN
+     *         Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally
+     *         Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
+     *         <li>Alias Name Example - alias/MyAliasName</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -287,13 +341,15 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
 
     /**
      * Integer that contains the number of bytes to generate. Common values
-     * are 128, 256, 512, 1024 and so on.
+     * are 128, 256, 512, 1024 and so on. We recommend that you use the
+     * <code>KeySpec</code> parameter instead.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1024<br/>
      *
      * @return Integer that contains the number of bytes to generate. Common values
-     *         are 128, 256, 512, 1024 and so on.
+     *         are 128, 256, 512, 1024 and so on. We recommend that you use the
+     *         <code>KeySpec</code> parameter instead.
      */
     public Integer getNumberOfBytes() {
         return numberOfBytes;
@@ -301,13 +357,15 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
     
     /**
      * Integer that contains the number of bytes to generate. Common values
-     * are 128, 256, 512, 1024 and so on.
+     * are 128, 256, 512, 1024 and so on. We recommend that you use the
+     * <code>KeySpec</code> parameter instead.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1024<br/>
      *
      * @param numberOfBytes Integer that contains the number of bytes to generate. Common values
-     *         are 128, 256, 512, 1024 and so on.
+     *         are 128, 256, 512, 1024 and so on. We recommend that you use the
+     *         <code>KeySpec</code> parameter instead.
      */
     public void setNumberOfBytes(Integer numberOfBytes) {
         this.numberOfBytes = numberOfBytes;
@@ -315,7 +373,8 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
     
     /**
      * Integer that contains the number of bytes to generate. Common values
-     * are 128, 256, 512, 1024 and so on.
+     * are 128, 256, 512, 1024 and so on. We recommend that you use the
+     * <code>KeySpec</code> parameter instead.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -323,7 +382,8 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
      * <b>Range: </b>1 - 1024<br/>
      *
      * @param numberOfBytes Integer that contains the number of bytes to generate. Common values
-     *         are 128, 256, 512, 1024 and so on.
+     *         are 128, 256, 512, 1024 and so on. We recommend that you use the
+     *         <code>KeySpec</code> parameter instead.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -334,14 +394,16 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * A list of grant tokens that represent grants which can be used to
-     * provide long term permissions to generate a key.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @return A list of grant tokens that represent grants which can be used to
-     *         provide long term permissions to generate a key.
+     * @return For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      */
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
@@ -352,14 +414,16 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * A list of grant tokens that represent grants which can be used to
-     * provide long term permissions to generate a key.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens A list of grant tokens that represent grants which can be used to
-     *         provide long term permissions to generate a key.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      */
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
@@ -372,8 +436,9 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * A list of grant tokens that represent grants which can be used to
-     * provide long term permissions to generate a key.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setGrantTokens(java.util.Collection)} or {@link
@@ -385,8 +450,9 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens A list of grant tokens that represent grants which can be used to
-     *         provide long term permissions to generate a key.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -400,16 +466,18 @@ public class GenerateDataKeyWithoutPlaintextRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * A list of grant tokens that represent grants which can be used to
-     * provide long term permissions to generate a key.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      *
-     * @param grantTokens A list of grant tokens that represent grants which can be used to
-     *         provide long term permissions to generate a key.
+     * @param grantTokens For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     *         Tokens</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

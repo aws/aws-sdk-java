@@ -90,36 +90,40 @@ public class DeleteArchiveRequestMarshaller implements Marshaller<Request<Delete
 
         if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+
             String value = (deleteArchiveRequest.getAccountId() == null) ? null : StringUtils.fromString(deleteArchiveRequest.getAccountId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{accountId}", (deleteArchiveRequest.getAccountId() == null) ? "" : StringUtils.fromString(deleteArchiveRequest.getAccountId())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
             String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+
             String value = (deleteArchiveRequest.getVaultName() == null) ? null : StringUtils.fromString(deleteArchiveRequest.getVaultName());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{vaultName}", (deleteArchiveRequest.getVaultName() == null) ? "" : StringUtils.fromString(deleteArchiveRequest.getVaultName())); 
-        }
-        
+        } 
         if (DYNAMIC_QUERY_PARAMS.containsKey("archiveId")) {
             String name = DYNAMIC_QUERY_PARAMS.get("archiveId");
+
             String value = (deleteArchiveRequest.getArchiveId() == null) ? null : StringUtils.fromString(deleteArchiveRequest.getArchiveId());
 
             if (!(value == null || value.isEmpty())) {
                 request.addParameter(name, value);
             }
+            
         } else {
             uriResourcePath = uriResourcePath.replace("{archiveId}", (deleteArchiveRequest.getArchiveId() == null) ? "" : StringUtils.fromString(deleteArchiveRequest.getArchiveId())); 
-        }
+        } 
 
         request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
 

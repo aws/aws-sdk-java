@@ -42,7 +42,7 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "2014-11-06/distribution/{DistributionId}/invalidation";
+        String path = "2015-04-17/distribution/{DistributionId}/invalidation";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -100,7 +100,7 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
         }
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-11-06/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2015-04-17/");
 
                     if (createInvalidationRequest != null) {
             InvalidationBatch invalidationBatchInvalidationBatch = createInvalidationRequest.getInvalidationBatch();

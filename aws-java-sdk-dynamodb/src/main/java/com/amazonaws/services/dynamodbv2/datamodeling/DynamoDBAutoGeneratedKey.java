@@ -26,8 +26,9 @@ import java.util.UUID;
  * given a random UUID. The annotation can be applied to either the getter
  * method or the class field for the auto-generated key property. If the
  * annotation is applied directly to the class field, the corresponding getter
- * and setter must be declared in the same class.
- * 
+ * and setter must be declared in the same class. This annotation can be applied
+ * to both primary and index keys.
+ *
  * @see UUID
  */
 @Retention(RetentionPolicy.RUNTIME)

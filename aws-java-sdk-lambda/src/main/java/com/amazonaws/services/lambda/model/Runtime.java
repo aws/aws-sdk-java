@@ -20,8 +20,7 @@ package com.amazonaws.services.lambda.model;
 public enum Runtime {
     
     Nodejs("nodejs"),
-    Jvm("jvm"),
-    Python("python");
+    Java8("java8");
 
     private String value;
 
@@ -47,10 +46,8 @@ public enum Runtime {
         
         } else if ("nodejs".equals(value)) {
             return Runtime.Nodejs;
-        } else if ("jvm".equals(value)) {
-            return Runtime.Jvm;
-        } else if ("python".equals(value)) {
-            return Runtime.Python;
+        } else if ("java8".equals(value)) {
+            return Runtime.Java8;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

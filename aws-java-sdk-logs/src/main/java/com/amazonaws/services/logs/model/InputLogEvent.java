@@ -27,8 +27,8 @@ import java.io.Serializable;
 public class InputLogEvent implements Serializable, Cloneable {
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
@@ -38,44 +38,44 @@ public class InputLogEvent implements Serializable, Cloneable {
     private String message;
 
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @return A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @return A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public Long getTimestamp() {
         return timestamp;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param timestamp A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param timestamp A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      */
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
     
     /**
-     * A point in time expressed as the number milliseconds since Jan 1, 1970
-     * 00:00:00 UTC.
+     * A point in time expressed as the number of milliseconds since Jan 1,
+     * 1970 00:00:00 UTC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param timestamp A point in time expressed as the number milliseconds since Jan 1, 1970
-     *         00:00:00 UTC.
+     * @param timestamp A point in time expressed as the number of milliseconds since Jan 1,
+     *         1970 00:00:00 UTC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
