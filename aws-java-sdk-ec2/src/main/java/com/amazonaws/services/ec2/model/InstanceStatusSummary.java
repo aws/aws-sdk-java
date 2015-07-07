@@ -27,7 +27,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * The status.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable, initializing
      */
     private String status;
 
@@ -40,7 +40,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * The status.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable, initializing
      *
      * @return The status.
      *
@@ -54,7 +54,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * The status.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable, initializing
      *
      * @param status The status.
      *
@@ -70,7 +70,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable, initializing
      *
      * @param status The status.
      *
@@ -88,7 +88,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * The status.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable, initializing
      *
      * @param status The status.
      *
@@ -104,7 +104,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable, initializing
      *
      * @param status The status.
      *

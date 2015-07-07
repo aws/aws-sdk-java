@@ -154,7 +154,9 @@ import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GenericBucketRequest;
 import com.amazonaws.services.s3.model.GetBucketAclRequest;
 import com.amazonaws.services.s3.model.GetBucketLocationRequest;
+import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
+import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
@@ -2358,10 +2360,24 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         rejectNull(bucketName,
                 "The bucket name parameter must be specified when querying notification configuration");
 
-        Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.GET);
+        return getBucketNotificationConfiguration(new GetBucketNotificationConfigurationRequest(bucketName)); 
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#getBucketNotificationConfiguration(java.lang.String)
+     */
+    @Override
+    public BucketNotificationConfiguration getBucketNotificationConfiguration(GetBucketNotificationConfigurationRequest getBucketNotificationConfigurationRequest)
+            throws AmazonClientException, AmazonServiceException {
+        rejectNull(getBucketNotificationConfigurationRequest, 
+                "The bucket request parameter must be specified when querying notification configuration");
+        rejectNull(getBucketNotificationConfigurationRequest.getBucketName(), 
+                "The bucket request must specify a bucket name when querying notification configuration");
+
+        Request<GetBucketNotificationConfigurationRequest> request = createRequest(getBucketNotificationConfigurationRequest.getBucketName(), null, getBucketNotificationConfigurationRequest, HttpMethodName.GET);
         request.addParameter("notification", null);
 
-        return invoke(request, new Unmarshallers.BucketNotificationConfigurationUnmarshaller(), bucketName, null);
+        return invoke(request, new Unmarshallers.BucketNotificationConfigurationUnmarshaller(), getBucketNotificationConfigurationRequest.getBucketName(), null);
     }
 
     /* (non-Javadoc)
@@ -4079,13 +4095,28 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 bucketName,
                 "The bucket name parameter must be specified when retrieving replication configuration");
 
-        Request<GenericBucketRequest> request = createRequest(bucketName, null,
-                new GenericBucketRequest(bucketName), HttpMethodName.GET);
+        return getBucketReplicationConfiguration(new GetBucketReplicationConfigurationRequest(bucketName));
+    }
+
+    @Override
+    public BucketReplicationConfiguration getBucketReplicationConfiguration(
+                GetBucketReplicationConfigurationRequest getBucketReplicationConfigurationRequest)
+    				throws AmazonServiceException,
+            AmazonClientException {
+        rejectNull(
+                getBucketReplicationConfigurationRequest,
+                "The bucket request parameter must be specified when retrieving replication configuration");
+        rejectNull(
+                getBucketReplicationConfigurationRequest.getBucketName(),
+                "The bucket request must specify a bucket name when retrieving replication configuration");
+
+        Request<GetBucketReplicationConfigurationRequest> request = createRequest(getBucketReplicationConfigurationRequest.getBucketName(), null,
+                          getBucketReplicationConfigurationRequest, HttpMethodName.GET);
         request.addParameter("replication", null);
 
         return invoke(request,
                 new Unmarshallers.BucketReplicationConfigurationUnmarshaller(),
-                bucketName, null);
+                getBucketReplicationConfigurationRequest.getBucketName(), null);
     }
 
     @Override

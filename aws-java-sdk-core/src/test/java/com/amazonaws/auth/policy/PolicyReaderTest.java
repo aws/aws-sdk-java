@@ -14,7 +14,9 @@
  */
 package com.amazonaws.auth.policy;
 
+import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -100,9 +102,8 @@ public class PolicyReaderTest {
         assertEquals(1, statements.get(0).getActions().size());
         assertEquals("action", statements.get(0).getActions().get(0).getActionName());
         assertEquals(3, statements.get(0).getPrincipals().size());
-        assertEquals(Principal.AllServices, statements.get(0).getPrincipals().get(0));
-        assertEquals(Principal.AllUsers, statements.get(0).getPrincipals().get(1));
-        assertEquals(Principal.AllWebProviders, statements.get(0).getPrincipals().get(2));
+        assertThat(statements.get(0).getPrincipals(),
+                contains(Principal.AllUsers, Principal.AllServices, Principal.AllWebProviders));
     }
 
     @Test
@@ -197,10 +198,10 @@ public class PolicyReaderTest {
         assertEquals(1, statements.get(0).getConditions().get(0).getValues().size());
         assertEquals("192.168.143.0/24", statements.get(0).getConditions().get(0).getValues().get(0));
         assertEquals("NotIpAddress", statements.get(0).getConditions().get(1).getType());
-        assertEquals(ConditionFactory.SOURCE_IP_CONDITION_KEY, statements.get(1).getConditions().get(0).getConditionKey());
         assertEquals(1, statements.get(0).getConditions().get(1).getValues().size());
         assertEquals("192.168.143.188/32", statements.get(0).getConditions().get(1).getValues().get(0));
 
+        assertEquals(ConditionFactory.SOURCE_IP_CONDITION_KEY, statements.get(1).getConditions().get(0).getConditionKey());
         assertEquals(Effect.Deny, statements.get(1).getEffect());
         assertEquals("1", statements.get(1).getId());
         assertEquals(1, statements.get(1).getPrincipals().size());

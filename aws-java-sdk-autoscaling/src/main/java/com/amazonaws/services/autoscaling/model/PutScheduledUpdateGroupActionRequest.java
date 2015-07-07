@@ -55,7 +55,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     private String scheduledActionName;
 
     /**
-     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated; use <code>StartTime</code> instead.
      * <p>The time for this action to start. If both <code>Time</code> and
      * <code>StartTime</code> are specified, their values must be identical.
      */
@@ -196,11 +196,11 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     }
 
     /**
-     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated; use <code>StartTime</code> instead.
      * <p>The time for this action to start. If both <code>Time</code> and
      * <code>StartTime</code> are specified, their values must be identical.
      *
-     * @return <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * @return This parameter is deprecated; use <code>StartTime</code> instead.
      *         <p>The time for this action to start. If both <code>Time</code> and
      *         <code>StartTime</code> are specified, their values must be identical.
      */
@@ -209,11 +209,11 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     }
     
     /**
-     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated; use <code>StartTime</code> instead.
      * <p>The time for this action to start. If both <code>Time</code> and
      * <code>StartTime</code> are specified, their values must be identical.
      *
-     * @param time <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * @param time This parameter is deprecated; use <code>StartTime</code> instead.
      *         <p>The time for this action to start. If both <code>Time</code> and
      *         <code>StartTime</code> are specified, their values must be identical.
      */
@@ -222,13 +222,13 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     }
     
     /**
-     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated; use <code>StartTime</code> instead.
      * <p>The time for this action to start. If both <code>Time</code> and
      * <code>StartTime</code> are specified, their values must be identical.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param time <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * @param time This parameter is deprecated; use <code>StartTime</code> instead.
      *         <p>The time for this action to start. If both <code>Time</code> and
      *         <code>StartTime</code> are specified, their values must be identical.
      *

@@ -47,17 +47,49 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
         if (putScalingPolicyRequest.getPolicyName() != null) {
             request.addParameter("PolicyName", StringUtils.fromString(putScalingPolicyRequest.getPolicyName()));
         }
+        if (putScalingPolicyRequest.getPolicyType() != null) {
+            request.addParameter("PolicyType", StringUtils.fromString(putScalingPolicyRequest.getPolicyType()));
+        }
         if (putScalingPolicyRequest.getAdjustmentType() != null) {
             request.addParameter("AdjustmentType", StringUtils.fromString(putScalingPolicyRequest.getAdjustmentType()));
         }
         if (putScalingPolicyRequest.getMinAdjustmentStep() != null) {
             request.addParameter("MinAdjustmentStep", StringUtils.fromInteger(putScalingPolicyRequest.getMinAdjustmentStep()));
         }
+        if (putScalingPolicyRequest.getMinAdjustmentMagnitude() != null) {
+            request.addParameter("MinAdjustmentMagnitude", StringUtils.fromInteger(putScalingPolicyRequest.getMinAdjustmentMagnitude()));
+        }
         if (putScalingPolicyRequest.getScalingAdjustment() != null) {
             request.addParameter("ScalingAdjustment", StringUtils.fromInteger(putScalingPolicyRequest.getScalingAdjustment()));
         }
         if (putScalingPolicyRequest.getCooldown() != null) {
             request.addParameter("Cooldown", StringUtils.fromInteger(putScalingPolicyRequest.getCooldown()));
+        }
+        if (putScalingPolicyRequest.getMetricAggregationType() != null) {
+            request.addParameter("MetricAggregationType", StringUtils.fromString(putScalingPolicyRequest.getMetricAggregationType()));
+        }
+
+        java.util.List<StepAdjustment> stepAdjustmentsList = putScalingPolicyRequest.getStepAdjustments();
+        int stepAdjustmentsListIndex = 1;
+
+        for (StepAdjustment stepAdjustmentsListValue : stepAdjustmentsList) {
+            StepAdjustment stepAdjustmentMember = stepAdjustmentsListValue;
+            if (stepAdjustmentMember != null) {
+                if (stepAdjustmentMember.getMetricIntervalLowerBound() != null) {
+                    request.addParameter("StepAdjustments.member." + stepAdjustmentsListIndex + ".MetricIntervalLowerBound", StringUtils.fromDouble(stepAdjustmentMember.getMetricIntervalLowerBound()));
+                }
+                if (stepAdjustmentMember.getMetricIntervalUpperBound() != null) {
+                    request.addParameter("StepAdjustments.member." + stepAdjustmentsListIndex + ".MetricIntervalUpperBound", StringUtils.fromDouble(stepAdjustmentMember.getMetricIntervalUpperBound()));
+                }
+                if (stepAdjustmentMember.getScalingAdjustment() != null) {
+                    request.addParameter("StepAdjustments.member." + stepAdjustmentsListIndex + ".ScalingAdjustment", StringUtils.fromInteger(stepAdjustmentMember.getScalingAdjustment()));
+                }
+            }
+
+            stepAdjustmentsListIndex++;
+        }
+        if (putScalingPolicyRequest.getEstimatedInstanceWarmup() != null) {
+            request.addParameter("EstimatedInstanceWarmup", StringUtils.fromInteger(putScalingPolicyRequest.getEstimatedInstanceWarmup()));
         }
 
         return request;

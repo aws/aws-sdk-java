@@ -21,7 +21,8 @@ public enum StatusType {
     
     Passed("passed"),
     Failed("failed"),
-    InsufficientData("insufficient-data");
+    InsufficientData("insufficient-data"),
+    Initializing("initializing");
 
     private String value;
 
@@ -51,6 +52,8 @@ public enum StatusType {
             return StatusType.Failed;
         } else if ("insufficient-data".equals(value)) {
             return StatusType.InsufficientData;
+        } else if ("initializing".equals(value)) {
+            return StatusType.Initializing;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

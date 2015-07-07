@@ -47,6 +47,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"> Auto Scaling Pending State </a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"> Auto Scaling Terminating State </a>
  * in the <i>Auto Scaling Developer Guide</i> .
  * </p>
+ * <p>
+ * If you exceed your maximum limit of lifecycle hooks, which by default
+ * is 50 per region, the call fails. For information about updating this
+ * limit, see
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> AWS Service Limits </a>
+ * in the <i>Amazon Web Services General Reference</i> .
+ * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putLifecycleHook(PutLifecycleHookRequest)
  */

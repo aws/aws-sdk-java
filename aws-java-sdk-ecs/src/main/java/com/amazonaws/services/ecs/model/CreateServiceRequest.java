@@ -40,7 +40,9 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed.
+     * numbers, hyphens, and underscores are allowed. Service names must be
+     * unique within a cluster, but you can have similarly named services in
+     * multiple clusters within a region or across multiple regions.
      */
     private String serviceName;
 
@@ -127,10 +129,14 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed.
+     * numbers, hyphens, and underscores are allowed. Service names must be
+     * unique within a cluster, but you can have similarly named services in
+     * multiple clusters within a region or across multiple regions.
      *
      * @return The name of your service. Up to 255 letters (uppercase and lowercase),
-     *         numbers, hyphens, and underscores are allowed.
+     *         numbers, hyphens, and underscores are allowed. Service names must be
+     *         unique within a cluster, but you can have similarly named services in
+     *         multiple clusters within a region or across multiple regions.
      */
     public String getServiceName() {
         return serviceName;
@@ -138,10 +144,14 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed.
+     * numbers, hyphens, and underscores are allowed. Service names must be
+     * unique within a cluster, but you can have similarly named services in
+     * multiple clusters within a region or across multiple regions.
      *
      * @param serviceName The name of your service. Up to 255 letters (uppercase and lowercase),
-     *         numbers, hyphens, and underscores are allowed.
+     *         numbers, hyphens, and underscores are allowed. Service names must be
+     *         unique within a cluster, but you can have similarly named services in
+     *         multiple clusters within a region or across multiple regions.
      */
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
@@ -149,12 +159,16 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed.
+     * numbers, hyphens, and underscores are allowed. Service names must be
+     * unique within a cluster, but you can have similarly named services in
+     * multiple clusters within a region or across multiple regions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param serviceName The name of your service. Up to 255 letters (uppercase and lowercase),
-     *         numbers, hyphens, and underscores are allowed.
+     *         numbers, hyphens, and underscores are allowed. Service names must be
+     *         unique within a cluster, but you can have similarly named services in
+     *         multiple clusters within a region or across multiple regions.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

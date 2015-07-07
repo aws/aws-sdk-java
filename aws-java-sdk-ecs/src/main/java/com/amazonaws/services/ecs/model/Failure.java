@@ -17,7 +17,9 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A failed resource.
+ * </p>
  */
 public class Failure implements Serializable, Cloneable {
 

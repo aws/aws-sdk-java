@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If you exceed your maximum limit of Auto Scaling groups, which by
  * default is 20 per region, the call fails. For information about
- * viewing and updating these limits, see DescribeAccountLimits.
+ * viewing and updating this limit, see DescribeAccountLimits.
  * </p>
  * <p>
  * For more information, see
@@ -90,16 +90,15 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
     /**
      * The number of EC2 instances that should be running in the group. This
-     * value must be greater than or equal to the minimum size of the group
+     * number must be greater than or equal to the minimum size of the group
      * and less than or equal to the maximum size of the group.
      */
     private Integer desiredCapacity;
 
     /**
      * The amount of time, in seconds, after a scaling activity completes
-     * before another scaling activity can start. <p>If
-     * <code>DefaultCooldown</code> is not specified, the default value is
-     * 300. For more information, see <a
+     * before another scaling activity can start. <p>If this parameter is not
+     * specified, the default value is 300. For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
      * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      */
@@ -482,11 +481,11 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
     /**
      * The number of EC2 instances that should be running in the group. This
-     * value must be greater than or equal to the minimum size of the group
+     * number must be greater than or equal to the minimum size of the group
      * and less than or equal to the maximum size of the group.
      *
      * @return The number of EC2 instances that should be running in the group. This
-     *         value must be greater than or equal to the minimum size of the group
+     *         number must be greater than or equal to the minimum size of the group
      *         and less than or equal to the maximum size of the group.
      */
     public Integer getDesiredCapacity() {
@@ -495,11 +494,11 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The number of EC2 instances that should be running in the group. This
-     * value must be greater than or equal to the minimum size of the group
+     * number must be greater than or equal to the minimum size of the group
      * and less than or equal to the maximum size of the group.
      *
      * @param desiredCapacity The number of EC2 instances that should be running in the group. This
-     *         value must be greater than or equal to the minimum size of the group
+     *         number must be greater than or equal to the minimum size of the group
      *         and less than or equal to the maximum size of the group.
      */
     public void setDesiredCapacity(Integer desiredCapacity) {
@@ -508,13 +507,13 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The number of EC2 instances that should be running in the group. This
-     * value must be greater than or equal to the minimum size of the group
+     * number must be greater than or equal to the minimum size of the group
      * and less than or equal to the maximum size of the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param desiredCapacity The number of EC2 instances that should be running in the group. This
-     *         value must be greater than or equal to the minimum size of the group
+     *         number must be greater than or equal to the minimum size of the group
      *         and less than or equal to the maximum size of the group.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -527,16 +526,14 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
     /**
      * The amount of time, in seconds, after a scaling activity completes
-     * before another scaling activity can start. <p>If
-     * <code>DefaultCooldown</code> is not specified, the default value is
-     * 300. For more information, see <a
+     * before another scaling activity can start. <p>If this parameter is not
+     * specified, the default value is 300. For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
      * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      *
      * @return The amount of time, in seconds, after a scaling activity completes
-     *         before another scaling activity can start. <p>If
-     *         <code>DefaultCooldown</code> is not specified, the default value is
-     *         300. For more information, see <a
+     *         before another scaling activity can start. <p>If this parameter is not
+     *         specified, the default value is 300. For more information, see <a
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
      *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      */
@@ -546,16 +543,14 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The amount of time, in seconds, after a scaling activity completes
-     * before another scaling activity can start. <p>If
-     * <code>DefaultCooldown</code> is not specified, the default value is
-     * 300. For more information, see <a
+     * before another scaling activity can start. <p>If this parameter is not
+     * specified, the default value is 300. For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
      * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      *
      * @param defaultCooldown The amount of time, in seconds, after a scaling activity completes
-     *         before another scaling activity can start. <p>If
-     *         <code>DefaultCooldown</code> is not specified, the default value is
-     *         300. For more information, see <a
+     *         before another scaling activity can start. <p>If this parameter is not
+     *         specified, the default value is 300. For more information, see <a
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
      *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      */
@@ -565,18 +560,16 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The amount of time, in seconds, after a scaling activity completes
-     * before another scaling activity can start. <p>If
-     * <code>DefaultCooldown</code> is not specified, the default value is
-     * 300. For more information, see <a
+     * before another scaling activity can start. <p>If this parameter is not
+     * specified, the default value is 300. For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
      * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultCooldown The amount of time, in seconds, after a scaling activity completes
-     *         before another scaling activity can start. <p>If
-     *         <code>DefaultCooldown</code> is not specified, the default value is
-     *         300. For more information, see <a
+     *         before another scaling activity can start. <p>If this parameter is not
+     *         specified, the default value is 300. For more information, see <a
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
      *         Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      *

@@ -13,55 +13,59 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.ec2.model.transform;
+package com.amazonaws.services.autoscaling.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
-import com.amazonaws.services.ec2.model.*;
+import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Confirm Product Instance Result StAX Unmarshaller
+ * Step Adjustment StAX Unmarshaller
  */
-public class ConfirmProductInstanceResultStaxUnmarshaller implements Unmarshaller<ConfirmProductInstanceResult, StaxUnmarshallerContext> {
+public class StepAdjustmentStaxUnmarshaller implements Unmarshaller<StepAdjustment, StaxUnmarshallerContext> {
 
-    public ConfirmProductInstanceResult unmarshall(StaxUnmarshallerContext context) throws Exception {
-        ConfirmProductInstanceResult confirmProductInstanceResult = new ConfirmProductInstanceResult();
+    public StepAdjustment unmarshall(StaxUnmarshallerContext context) throws Exception {
+        StepAdjustment stepAdjustment = new StepAdjustment();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument()) targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return confirmProductInstanceResult;
+            if (xmlEvent.isEndDocument()) return stepAdjustment;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("ownerId", targetDepth)) {
-                    confirmProductInstanceResult.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("MetricIntervalLowerBound", targetDepth)) {
+                    stepAdjustment.setMetricIntervalLowerBound(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("return", targetDepth)) {
-                    confirmProductInstanceResult.setReturn(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("MetricIntervalUpperBound", targetDepth)) {
+                    stepAdjustment.setMetricIntervalUpperBound(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ScalingAdjustment", targetDepth)) {
+                    stepAdjustment.setScalingAdjustment(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return confirmProductInstanceResult;
+                    return stepAdjustment;
                 }
             }
         }
     }
 
-    private static ConfirmProductInstanceResultStaxUnmarshaller instance;
-    public static ConfirmProductInstanceResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ConfirmProductInstanceResultStaxUnmarshaller();
+    private static StepAdjustmentStaxUnmarshaller instance;
+    public static StepAdjustmentStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new StepAdjustmentStaxUnmarshaller();
         return instance;
     }
 }

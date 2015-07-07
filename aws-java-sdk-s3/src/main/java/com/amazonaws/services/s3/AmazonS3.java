@@ -60,7 +60,9 @@ import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GetBucketAclRequest;
 import com.amazonaws.services.s3.model.GetBucketLocationRequest;
+import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
+import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
@@ -2977,6 +2979,39 @@ public interface AmazonS3 extends S3DirectSpi {
         throws AmazonClientException, AmazonServiceException;
 
     /**
+     * Gets the notification configuration for the specified bucket.
+     * <p>
+     * By default, new buckets have no notification configuration.
+     * <p>
+     * The notification configuration of a bucket provides near realtime notifications
+     * of events the user is interested in, using SNS as the delivery service.
+     * Notification is turned on by enabling configuration on a bucket, specifying
+     * the events and the SNS topic. This configuration can only be turned
+     * on by the bucket owner. If a notification configuration already exists for the
+     * specified bucket, the new notification configuration will replace the existing
+     * notification configuration.  To remove the notification configuration pass in
+     * an empty request.  Currently, buckets may only have a single event and topic
+     * configuration.
+     * <p>
+     * S3 is eventually consistent. It may take time for the notification status
+     * of a bucket to be propagated throughout the system.
+     *
+     * @param getBucketNotificationConfigurationRequest
+     *            A GetBucketNotificationConfigurationRequest object created for the bucket. 
+     *
+     * @return The bucket notification configuration for the specified bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    BucketNotificationConfiguration getBucketNotificationConfiguration(GetBucketNotificationConfigurationRequest getBucketNotificationConfigurationRequest)
+        throws AmazonClientException, AmazonServiceException;
+
+    /**
      * Sets the notification configuration for the specified bucket.
      * <p>
      * By default, new buckets have no notification configuration set.
@@ -4080,6 +4115,27 @@ public interface AmazonS3 extends S3DirectSpi {
     public BucketReplicationConfiguration getBucketReplicationConfiguration(
             String bucketName) throws AmazonServiceException,
             AmazonClientException;
+
+    /**
+     * Retrieves the replication configuration for the given Amazon S3 bucket.
+     *
+     * @param getBucketReplicationConfigurationRequest
+     *            A GetBucketReplicationConfigurationRequest object containing the bucket name for which
+     *            the configuration is to be retrieved. 
+     * @return the replication configuration of the bucket.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     *
+     * @see AmazonS3#setBucketReplicationConfiguration(String,
+     *      BucketReplicationConfiguration)
+     * @see AmazonS3#deleteBucketReplicationConfiguration(String)
+     */
+    BucketReplicationConfiguration getBucketReplicationConfiguration(GetBucketReplicationConfigurationRequest getBucketReplicationConfigurationRequest)
+            throws AmazonServiceException, AmazonClientException;
 
     /**
      * Deletes the replication configuration for the given Amazon S3 bucket.

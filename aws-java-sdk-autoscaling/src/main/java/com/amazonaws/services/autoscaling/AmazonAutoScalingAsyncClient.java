@@ -928,7 +928,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * If you exceed your maximum limit of Auto Scaling groups, which by
      * default is 20 per region, the call fails. For information about
-     * viewing and updating these limits, see DescribeAccountLimits.
+     * viewing and updating this limit, see DescribeAccountLimits.
      * </p>
      * <p>
      * For more information, see
@@ -970,7 +970,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * If you exceed your maximum limit of Auto Scaling groups, which by
      * default is 20 per region, the call fails. For information about
-     * viewing and updating these limits, see DescribeAccountLimits.
+     * viewing and updating this limit, see DescribeAccountLimits.
      * </p>
      * <p>
      * For more information, see
@@ -1375,6 +1375,13 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"> Auto Scaling Pending State </a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"> Auto Scaling Terminating State </a>
      * in the <i>Auto Scaling Developer Guide</i> .
      * </p>
+     * <p>
+     * If you exceed your maximum limit of lifecycle hooks, which by default
+     * is 50 per region, the call fails. For information about updating this
+     * limit, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> AWS Service Limits </a>
+     * in the <i>Amazon Web Services General Reference</i> .
+     * </p>
      *
      * @param putLifecycleHookRequest Container for the necessary parameters
      *           to execute the PutLifecycleHook operation on AmazonAutoScaling.
@@ -1427,6 +1434,13 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"> Auto Scaling Pending State </a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"> Auto Scaling Terminating State </a>
      * in the <i>Auto Scaling Developer Guide</i> .
+     * </p>
+     * <p>
+     * If you exceed your maximum limit of lifecycle hooks, which by default
+     * is 50 per region, the call fails. For information about updating this
+     * limit, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> AWS Service Limits </a>
+     * in the <i>Amazon Web Services General Reference</i> .
      * </p>
      *
      * @param putLifecycleHookRequest Container for the necessary parameters
@@ -1878,6 +1892,13 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * you want to change. Any existing parameter not changed in an update to
      * an existing policy is not changed in this update request.
      * </p>
+     * <p>
+     * If you exceed your maximum limit of step adjustments, which by
+     * default is 20 per region, the call fails. For information about
+     * updating this limit, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> AWS Service Limits </a>
+     * in the <i>Amazon Web Services General Reference</i> .
+     * </p>
      *
      * @param putScalingPolicyRequest Container for the necessary parameters
      *           to execute the PutScalingPolicy operation on AmazonAutoScaling.
@@ -1909,6 +1930,13 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * existing policy, use the existing policy name and set the parameters
      * you want to change. Any existing parameter not changed in an update to
      * an existing policy is not changed in this update request.
+     * </p>
+     * <p>
+     * If you exceed your maximum limit of step adjustments, which by
+     * default is 20 per region, the call fails. For information about
+     * updating this limit, see
+     * <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> AWS Service Limits </a>
+     * in the <i>Amazon Web Services General Reference</i> .
      * </p>
      *
      * @param putScalingPolicyRequest Container for the necessary parameters
@@ -3182,7 +3210,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * If you exceed your maximum limit of launch configurations, which by
      * default is 100 per region, the call fails. For information about
-     * viewing and updating these limits, see DescribeAccountLimits.
+     * viewing and updating this limit, see DescribeAccountLimits.
      * </p>
      * <p>
      * For more information, see
@@ -3224,7 +3252,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * If you exceed your maximum limit of launch configurations, which by
      * default is 100 per region, the call fails. For information about
-     * viewing and updating these limits, see DescribeAccountLimits.
+     * viewing and updating this limit, see DescribeAccountLimits.
      * </p>
      * <p>
      * For more information, see

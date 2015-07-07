@@ -51,21 +51,22 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     private String scheduledActionARN;
 
     /**
-     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated; use <code>StartTime</code> instead.
      */
     private java.util.Date time;
 
     /**
-     * The time that the action is scheduled to begin. This value can be up
-     * to one month in the future. <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     * form the boundaries of when the recurring action will start and stop.
+     * The date and time that the action is scheduled to begin. This date and
+     * time can be up to one month in the future. <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the
+     * recurring action will start and stop.
      */
     private java.util.Date startTime;
 
     /**
-     * The time that the action is scheduled to end. This value can be up to
-     * one month in the future.
+     * The date and time that the action is scheduled to end. This date and
+     * time can be up to one month in the future.
      */
     private java.util.Date endTime;
 
@@ -229,29 +230,29 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     }
 
     /**
-     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated; use <code>StartTime</code> instead.
      *
-     * @return <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * @return This parameter is deprecated; use <code>StartTime</code> instead.
      */
     public java.util.Date getTime() {
         return time;
     }
     
     /**
-     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated; use <code>StartTime</code> instead.
      *
-     * @param time <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * @param time This parameter is deprecated; use <code>StartTime</code> instead.
      */
     public void setTime(java.util.Date time) {
         this.time = time;
     }
     
     /**
-     * <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated; use <code>StartTime</code> instead.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param time <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+     * @param time This parameter is deprecated; use <code>StartTime</code> instead.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -262,47 +263,53 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     }
 
     /**
-     * The time that the action is scheduled to begin. This value can be up
-     * to one month in the future. <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     * form the boundaries of when the recurring action will start and stop.
+     * The date and time that the action is scheduled to begin. This date and
+     * time can be up to one month in the future. <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the
+     * recurring action will start and stop.
      *
-     * @return The time that the action is scheduled to begin. This value can be up
-     *         to one month in the future. <p>When <code>StartTime</code> and
-     *         <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     *         form the boundaries of when the recurring action will start and stop.
+     * @return The date and time that the action is scheduled to begin. This date and
+     *         time can be up to one month in the future. <p>When
+     *         <code>StartTime</code> and <code>EndTime</code> are specified with
+     *         <code>Recurrence</code>, they form the boundaries of when the
+     *         recurring action will start and stop.
      */
     public java.util.Date getStartTime() {
         return startTime;
     }
     
     /**
-     * The time that the action is scheduled to begin. This value can be up
-     * to one month in the future. <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     * form the boundaries of when the recurring action will start and stop.
+     * The date and time that the action is scheduled to begin. This date and
+     * time can be up to one month in the future. <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the
+     * recurring action will start and stop.
      *
-     * @param startTime The time that the action is scheduled to begin. This value can be up
-     *         to one month in the future. <p>When <code>StartTime</code> and
-     *         <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     *         form the boundaries of when the recurring action will start and stop.
+     * @param startTime The date and time that the action is scheduled to begin. This date and
+     *         time can be up to one month in the future. <p>When
+     *         <code>StartTime</code> and <code>EndTime</code> are specified with
+     *         <code>Recurrence</code>, they form the boundaries of when the
+     *         recurring action will start and stop.
      */
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
     
     /**
-     * The time that the action is scheduled to begin. This value can be up
-     * to one month in the future. <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     * form the boundaries of when the recurring action will start and stop.
+     * The date and time that the action is scheduled to begin. This date and
+     * time can be up to one month in the future. <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the
+     * recurring action will start and stop.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startTime The time that the action is scheduled to begin. This value can be up
-     *         to one month in the future. <p>When <code>StartTime</code> and
-     *         <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     *         form the boundaries of when the recurring action will start and stop.
+     * @param startTime The date and time that the action is scheduled to begin. This date and
+     *         time can be up to one month in the future. <p>When
+     *         <code>StartTime</code> and <code>EndTime</code> are specified with
+     *         <code>Recurrence</code>, they form the boundaries of when the
+     *         recurring action will start and stop.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -313,35 +320,35 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     }
 
     /**
-     * The time that the action is scheduled to end. This value can be up to
-     * one month in the future.
+     * The date and time that the action is scheduled to end. This date and
+     * time can be up to one month in the future.
      *
-     * @return The time that the action is scheduled to end. This value can be up to
-     *         one month in the future.
+     * @return The date and time that the action is scheduled to end. This date and
+     *         time can be up to one month in the future.
      */
     public java.util.Date getEndTime() {
         return endTime;
     }
     
     /**
-     * The time that the action is scheduled to end. This value can be up to
-     * one month in the future.
+     * The date and time that the action is scheduled to end. This date and
+     * time can be up to one month in the future.
      *
-     * @param endTime The time that the action is scheduled to end. This value can be up to
-     *         one month in the future.
+     * @param endTime The date and time that the action is scheduled to end. This date and
+     *         time can be up to one month in the future.
      */
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
     
     /**
-     * The time that the action is scheduled to end. This value can be up to
-     * one month in the future.
+     * The date and time that the action is scheduled to end. This date and
+     * time can be up to one month in the future.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endTime The time that the action is scheduled to end. This value can be up to
-     *         one month in the future.
+     * @param endTime The date and time that the action is scheduled to end. This date and
+     *         time can be up to one month in the future.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

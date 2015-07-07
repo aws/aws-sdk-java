@@ -41,8 +41,8 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     private String snapshotId;
 
     /**
-     * The attribute to reset (currently only the attribute for permission to
-     * create volumes can be reset).
+     * The attribute to reset. Currently, only the attribute for permission
+     * to create volumes can be reset.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
@@ -61,8 +61,8 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
      * initialize any additional object members.
      * 
      * @param snapshotId The ID of the snapshot.
-     * @param attribute The attribute to reset (currently only the attribute
-     * for permission to create volumes can be reset).
+     * @param attribute The attribute to reset. Currently, only the attribute
+     * for permission to create volumes can be reset.
      */
     public ResetSnapshotAttributeRequest(String snapshotId, String attribute) {
         setSnapshotId(snapshotId);
@@ -75,8 +75,8 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
      * initialize any additional object members.
      * 
      * @param snapshotId The ID of the snapshot.
-     * @param attribute The attribute to reset (currently only the attribute
-     * for permission to create volumes can be reset).
+     * @param attribute The attribute to reset. Currently, only the attribute
+     * for permission to create volumes can be reset.
      */
     public ResetSnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute) {
         this.snapshotId = snapshotId;
@@ -117,14 +117,14 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The attribute to reset (currently only the attribute for permission to
-     * create volumes can be reset).
+     * The attribute to reset. Currently, only the attribute for permission
+     * to create volumes can be reset.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @return The attribute to reset (currently only the attribute for permission to
-     *         create volumes can be reset).
+     * @return The attribute to reset. Currently, only the attribute for permission
+     *         to create volumes can be reset.
      *
      * @see SnapshotAttributeName
      */
@@ -133,14 +133,14 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The attribute to reset (currently only the attribute for permission to
-     * create volumes can be reset).
+     * The attribute to reset. Currently, only the attribute for permission
+     * to create volumes can be reset.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The attribute to reset (currently only the attribute for permission to
-     *         create volumes can be reset).
+     * @param attribute The attribute to reset. Currently, only the attribute for permission
+     *         to create volumes can be reset.
      *
      * @see SnapshotAttributeName
      */
@@ -149,16 +149,16 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The attribute to reset (currently only the attribute for permission to
-     * create volumes can be reset).
+     * The attribute to reset. Currently, only the attribute for permission
+     * to create volumes can be reset.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The attribute to reset (currently only the attribute for permission to
-     *         create volumes can be reset).
+     * @param attribute The attribute to reset. Currently, only the attribute for permission
+     *         to create volumes can be reset.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -171,14 +171,14 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The attribute to reset (currently only the attribute for permission to
-     * create volumes can be reset).
+     * The attribute to reset. Currently, only the attribute for permission
+     * to create volumes can be reset.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The attribute to reset (currently only the attribute for permission to
-     *         create volumes can be reset).
+     * @param attribute The attribute to reset. Currently, only the attribute for permission
+     *         to create volumes can be reset.
      *
      * @see SnapshotAttributeName
      */
@@ -187,16 +187,16 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The attribute to reset (currently only the attribute for permission to
-     * create volumes can be reset).
+     * The attribute to reset. Currently, only the attribute for permission
+     * to create volumes can be reset.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The attribute to reset (currently only the attribute for permission to
-     *         create volumes can be reset).
+     * @param attribute The attribute to reset. Currently, only the attribute for permission
+     *         to create volumes can be reset.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

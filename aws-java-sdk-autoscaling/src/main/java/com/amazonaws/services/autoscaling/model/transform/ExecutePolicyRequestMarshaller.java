@@ -50,6 +50,12 @@ public class ExecutePolicyRequestMarshaller implements Marshaller<Request<Execut
         if (executePolicyRequest.isHonorCooldown() != null) {
             request.addParameter("HonorCooldown", StringUtils.fromBoolean(executePolicyRequest.isHonorCooldown()));
         }
+        if (executePolicyRequest.getMetricValue() != null) {
+            request.addParameter("MetricValue", StringUtils.fromDouble(executePolicyRequest.getMetricValue()));
+        }
+        if (executePolicyRequest.getBreachThreshold() != null) {
+            request.addParameter("BreachThreshold", StringUtils.fromDouble(executePolicyRequest.getBreachThreshold()));
+        }
 
         return request;
     }

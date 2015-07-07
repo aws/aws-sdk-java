@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If you exceed your maximum limit of launch configurations, which by
  * default is 100 per region, the call fails. For information about
- * viewing and updating these limits, see DescribeAccountLimits.
+ * viewing and updating this limit, see DescribeAccountLimits.
  * </p>
  * <p>
  * For more information, see
@@ -89,7 +89,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
 
     /**
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
-     * to. This parameter can only be used if you are launching EC2-Classic
+     * to. This parameter is supported only if you are launching EC2-Classic
      * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -103,7 +103,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * The IDs of one or more security groups for the VPC specified in
      * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     * <code>ClassicLinkVPCId</code> is specified, and is not supported
      * otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -608,7 +608,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
 
     /**
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
-     * to. This parameter can only be used if you are launching EC2-Classic
+     * to. This parameter is supported only if you are launching EC2-Classic
      * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -618,7 +618,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
-     *         to. This parameter can only be used if you are launching EC2-Classic
+     *         to. This parameter is supported only if you are launching EC2-Classic
      *         instances. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -629,7 +629,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     
     /**
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
-     * to. This parameter can only be used if you are launching EC2-Classic
+     * to. This parameter is supported only if you are launching EC2-Classic
      * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -639,7 +639,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param classicLinkVPCId The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
-     *         to. This parameter can only be used if you are launching EC2-Classic
+     *         to. This parameter is supported only if you are launching EC2-Classic
      *         instances. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -650,7 +650,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     
     /**
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
-     * to. This parameter can only be used if you are launching EC2-Classic
+     * to. This parameter is supported only if you are launching EC2-Classic
      * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -662,7 +662,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param classicLinkVPCId The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
-     *         to. This parameter can only be used if you are launching EC2-Classic
+     *         to. This parameter is supported only if you are launching EC2-Classic
      *         instances. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -678,14 +678,14 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * The IDs of one or more security groups for the VPC specified in
      * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     * <code>ClassicLinkVPCId</code> is specified, and is not supported
      * otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @return The IDs of one or more security groups for the VPC specified in
      *         <code>ClassicLinkVPCId</code>. This parameter is required if
-     *         <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     *         <code>ClassicLinkVPCId</code> is specified, and is not supported
      *         otherwise. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -701,14 +701,14 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * The IDs of one or more security groups for the VPC specified in
      * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     * <code>ClassicLinkVPCId</code> is specified, and is not supported
      * otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
      * @param classicLinkVPCSecurityGroups The IDs of one or more security groups for the VPC specified in
      *         <code>ClassicLinkVPCId</code>. This parameter is required if
-     *         <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     *         <code>ClassicLinkVPCId</code> is specified, and is not supported
      *         otherwise. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -726,7 +726,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * The IDs of one or more security groups for the VPC specified in
      * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     * <code>ClassicLinkVPCId</code> is specified, and is not supported
      * otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -741,7 +741,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *
      * @param classicLinkVPCSecurityGroups The IDs of one or more security groups for the VPC specified in
      *         <code>ClassicLinkVPCId</code>. This parameter is required if
-     *         <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     *         <code>ClassicLinkVPCId</code> is specified, and is not supported
      *         otherwise. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -760,7 +760,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * The IDs of one or more security groups for the VPC specified in
      * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     * <code>ClassicLinkVPCId</code> is specified, and is not supported
      * otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -769,7 +769,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *
      * @param classicLinkVPCSecurityGroups The IDs of one or more security groups for the VPC specified in
      *         <code>ClassicLinkVPCId</code>. This parameter is required if
-     *         <code>ClassicLinkVPCId</code> is specified, and cannot be used
+     *         <code>ClassicLinkVPCId</code> is specified, and is not supported
      *         otherwise. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
