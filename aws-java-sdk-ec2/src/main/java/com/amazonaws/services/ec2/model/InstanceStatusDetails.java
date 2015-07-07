@@ -35,7 +35,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * The status.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>passed, failed, insufficient-data
+     * <b>Allowed Values: </b>passed, failed, insufficient-data, initializing
      */
     private String status;
 
@@ -131,7 +131,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * The status.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>passed, failed, insufficient-data
+     * <b>Allowed Values: </b>passed, failed, insufficient-data, initializing
      *
      * @return The status.
      *
@@ -145,7 +145,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * The status.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>passed, failed, insufficient-data
+     * <b>Allowed Values: </b>passed, failed, insufficient-data, initializing
      *
      * @param status The status.
      *
@@ -161,7 +161,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>passed, failed, insufficient-data
+     * <b>Allowed Values: </b>passed, failed, insufficient-data, initializing
      *
      * @param status The status.
      *
@@ -179,7 +179,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * The status.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>passed, failed, insufficient-data
+     * <b>Allowed Values: </b>passed, failed, insufficient-data, initializing
      *
      * @param status The status.
      *
@@ -195,7 +195,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>passed, failed, insufficient-data
+     * <b>Allowed Values: </b>passed, failed, insufficient-data, initializing
      *
      * @param status The status.
      *

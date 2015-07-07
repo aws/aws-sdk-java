@@ -28,6 +28,13 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
     private String ownerId;
 
     /**
+     * The return value of the request. Returns <code>true</code> if the
+     * specified product code is owned by the requester and associated with
+     * the specified instance.
+     */
+    private Boolean returnValue;
+
+    /**
      * The AWS account ID of the instance owner. This is only present if the
      * product code is attached to the instance.
      *
@@ -67,6 +74,64 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
     }
 
     /**
+     * The return value of the request. Returns <code>true</code> if the
+     * specified product code is owned by the requester and associated with
+     * the specified instance.
+     *
+     * @return The return value of the request. Returns <code>true</code> if the
+     *         specified product code is owned by the requester and associated with
+     *         the specified instance.
+     */
+    public Boolean isReturn() {
+        return returnValue;
+    }
+    
+    /**
+     * The return value of the request. Returns <code>true</code> if the
+     * specified product code is owned by the requester and associated with
+     * the specified instance.
+     *
+     * @param returnValue The return value of the request. Returns <code>true</code> if the
+     *         specified product code is owned by the requester and associated with
+     *         the specified instance.
+     */
+    public void setReturn(Boolean returnValue) {
+        this.returnValue = returnValue;
+    }
+    
+    /**
+     * The return value of the request. Returns <code>true</code> if the
+     * specified product code is owned by the requester and associated with
+     * the specified instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param returnValue The return value of the request. Returns <code>true</code> if the
+     *         specified product code is owned by the requester and associated with
+     *         the specified instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ConfirmProductInstanceResult withReturn(Boolean returnValue) {
+        this.returnValue = returnValue;
+        return this;
+    }
+
+    /**
+     * The return value of the request. Returns <code>true</code> if the
+     * specified product code is owned by the requester and associated with
+     * the specified instance.
+     *
+     * @return The return value of the request. Returns <code>true</code> if the
+     *         specified product code is owned by the requester and associated with
+     *         the specified instance.
+     */
+    public Boolean getReturn() {
+        return returnValue;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -78,7 +143,8 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() );
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");
+        if (isReturn() != null) sb.append("Return: " + isReturn() );
         sb.append("}");
         return sb.toString();
     }
@@ -89,6 +155,7 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode()); 
+        hashCode = prime * hashCode + ((isReturn() == null) ? 0 : isReturn().hashCode()); 
         return hashCode;
     }
     
@@ -102,6 +169,8 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
         
         if (other.getOwnerId() == null ^ this.getOwnerId() == null) return false;
         if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false) return false; 
+        if (other.isReturn() == null ^ this.isReturn() == null) return false;
+        if (other.isReturn() != null && other.isReturn().equals(this.isReturn()) == false) return false; 
         return true;
     }
     

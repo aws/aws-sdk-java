@@ -55,6 +55,17 @@ public class DescribePoliciesRequestMarshaller implements Marshaller<Request<Des
 
             policyNamesListIndex++;
         }
+
+        java.util.List<String> policyTypesList = describePoliciesRequest.getPolicyTypes();
+        int policyTypesListIndex = 1;
+
+        for (String policyTypesListValue : policyTypesList) {
+            if (policyTypesListValue != null) {
+                request.addParameter("PolicyTypes.member." + policyTypesListIndex, StringUtils.fromString(policyTypesListValue));
+            }
+
+            policyTypesListIndex++;
+        }
         if (describePoliciesRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describePoliciesRequest.getNextToken()));
         }

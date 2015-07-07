@@ -26,6 +26,7 @@ public enum ScalingActivityStatusCode {
     InProgress("InProgress"),
     WaitingForELBConnectionDraining("WaitingForELBConnectionDraining"),
     MidLifecycleAction("MidLifecycleAction"),
+    WaitingForInstanceWarmup("WaitingForInstanceWarmup"),
     Successful("Successful"),
     Failed("Failed"),
     Cancelled("Cancelled");
@@ -66,6 +67,8 @@ public enum ScalingActivityStatusCode {
             return ScalingActivityStatusCode.WaitingForELBConnectionDraining;
         } else if ("MidLifecycleAction".equals(value)) {
             return ScalingActivityStatusCode.MidLifecycleAction;
+        } else if ("WaitingForInstanceWarmup".equals(value)) {
+            return ScalingActivityStatusCode.WaitingForInstanceWarmup;
         } else if ("Successful".equals(value)) {
             return ScalingActivityStatusCode.Successful;
         } else if ("Failed".equals(value)) {

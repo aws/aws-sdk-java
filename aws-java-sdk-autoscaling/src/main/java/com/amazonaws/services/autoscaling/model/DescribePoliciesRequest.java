@@ -47,6 +47,12 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNames;
 
     /**
+     * One or more policy types. Valid values are <code>SimpleScaling</code>
+     * and <code>StepScaling</code>.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyTypes;
+
+    /**
      * The token for the next set of items to return. (You received this
      * token from a previous call.)
      * <p>
@@ -211,6 +217,87 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * One or more policy types. Valid values are <code>SimpleScaling</code>
+     * and <code>StepScaling</code>.
+     *
+     * @return One or more policy types. Valid values are <code>SimpleScaling</code>
+     *         and <code>StepScaling</code>.
+     */
+    public java.util.List<String> getPolicyTypes() {
+        if (policyTypes == null) {
+              policyTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              policyTypes.setAutoConstruct(true);
+        }
+        return policyTypes;
+    }
+    
+    /**
+     * One or more policy types. Valid values are <code>SimpleScaling</code>
+     * and <code>StepScaling</code>.
+     *
+     * @param policyTypes One or more policy types. Valid values are <code>SimpleScaling</code>
+     *         and <code>StepScaling</code>.
+     */
+    public void setPolicyTypes(java.util.Collection<String> policyTypes) {
+        if (policyTypes == null) {
+            this.policyTypes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> policyTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyTypes.size());
+        policyTypesCopy.addAll(policyTypes);
+        this.policyTypes = policyTypesCopy;
+    }
+    
+    /**
+     * One or more policy types. Valid values are <code>SimpleScaling</code>
+     * and <code>StepScaling</code>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPolicyTypes(java.util.Collection)} or {@link
+     * #withPolicyTypes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param policyTypes One or more policy types. Valid values are <code>SimpleScaling</code>
+     *         and <code>StepScaling</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribePoliciesRequest withPolicyTypes(String... policyTypes) {
+        if (getPolicyTypes() == null) setPolicyTypes(new java.util.ArrayList<String>(policyTypes.length));
+        for (String value : policyTypes) {
+            getPolicyTypes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * One or more policy types. Valid values are <code>SimpleScaling</code>
+     * and <code>StepScaling</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param policyTypes One or more policy types. Valid values are <code>SimpleScaling</code>
+     *         and <code>StepScaling</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribePoliciesRequest withPolicyTypes(java.util.Collection<String> policyTypes) {
+        if (policyTypes == null) {
+            this.policyTypes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> policyTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyTypes.size());
+            policyTypesCopy.addAll(policyTypes);
+            this.policyTypes = policyTypesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * The token for the next set of items to return. (You received this
      * token from a previous call.)
      * <p>
@@ -305,6 +392,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
         sb.append("{");
         if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
         if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() + ",");
+        if (getPolicyTypes() != null) sb.append("PolicyTypes: " + getPolicyTypes() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() );
         sb.append("}");
@@ -318,6 +406,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
         
         hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getPolicyNames() == null) ? 0 : getPolicyNames().hashCode()); 
+        hashCode = prime * hashCode + ((getPolicyTypes() == null) ? 0 : getPolicyTypes().hashCode()); 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
         return hashCode;
@@ -335,6 +424,8 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
         if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
         if (other.getPolicyNames() == null ^ this.getPolicyNames() == null) return false;
         if (other.getPolicyNames() != null && other.getPolicyNames().equals(this.getPolicyNames()) == false) return false; 
+        if (other.getPolicyTypes() == null ^ this.getPolicyTypes() == null) return false;
+        if (other.getPolicyTypes() != null && other.getPolicyTypes().equals(this.getPolicyTypes()) == false) return false; 
         if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;

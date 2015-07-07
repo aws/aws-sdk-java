@@ -117,6 +117,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * master key, the AWS account ID of the master key owner, the
      * <code>key</code> namespace, and then the master key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
      */
     private String kmsKeyId;
 
@@ -595,6 +597,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * master key, the AWS account ID of the master key owner, the
      * <code>key</code> namespace, and then the master key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
      *
      * @return The full ARN of the AWS Key Management Service (KMS) master key to use
      *         when creating the encrypted volume. This parameter is only required if
@@ -604,6 +608,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         master key, the AWS account ID of the master key owner, the
      *         <code>key</code> namespace, and then the master key ID. For example,
      *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     *         flag must also be set.
      */
     public String getKmsKeyId() {
         return kmsKeyId;
@@ -618,6 +624,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * master key, the AWS account ID of the master key owner, the
      * <code>key</code> namespace, and then the master key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
      *
      * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) master key to use
      *         when creating the encrypted volume. This parameter is only required if
@@ -627,6 +635,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         master key, the AWS account ID of the master key owner, the
      *         <code>key</code> namespace, and then the master key ID. For example,
      *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     *         flag must also be set.
      */
     public void setKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
@@ -641,6 +651,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * master key, the AWS account ID of the master key owner, the
      * <code>key</code> namespace, and then the master key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -652,6 +664,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         master key, the AWS account ID of the master key owner, the
      *         <code>key</code> namespace, and then the master key ID. For example,
      *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     *         flag must also be set.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

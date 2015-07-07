@@ -22,7 +22,8 @@ public enum SummaryStatus {
     Ok("ok"),
     Impaired("impaired"),
     InsufficientData("insufficient-data"),
-    NotApplicable("not-applicable");
+    NotApplicable("not-applicable"),
+    Initializing("initializing");
 
     private String value;
 
@@ -54,6 +55,8 @@ public enum SummaryStatus {
             return SummaryStatus.InsufficientData;
         } else if ("not-applicable".equals(value)) {
             return SummaryStatus.NotApplicable;
+        } else if ("initializing".equals(value)) {
+            return SummaryStatus.Initializing;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

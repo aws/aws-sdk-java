@@ -56,6 +56,12 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
         if (copySnapshotRequest.getPresignedUrl() != null) {
             request.addParameter("PresignedUrl", StringUtils.fromString(copySnapshotRequest.getPresignedUrl()));
         }
+        if (copySnapshotRequest.isEncrypted() != null) {
+            request.addParameter("Encrypted", StringUtils.fromBoolean(copySnapshotRequest.isEncrypted()));
+        }
+        if (copySnapshotRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(copySnapshotRequest.getKmsKeyId()));
+        }
 
         return request;
     }

@@ -36,6 +36,7 @@ public enum InstanceType {
     T2Micro("t2.micro"),
     T2Small("t2.small"),
     T2Medium("t2.medium"),
+    T2Large("t2.large"),
     M2Xlarge("m2.xlarge"),
     M22xlarge("m2.2xlarge"),
     M24xlarge("m2.4xlarge"),
@@ -128,6 +129,8 @@ public enum InstanceType {
             return InstanceType.T2Small;
         } else if ("t2.medium".equals(value)) {
             return InstanceType.T2Medium;
+        } else if ("t2.large".equals(value)) {
+            return InstanceType.T2Large;
         } else if ("m2.xlarge".equals(value)) {
             return InstanceType.M2Xlarge;
         } else if ("m2.2xlarge".equals(value)) {

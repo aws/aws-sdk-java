@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -249,7 +249,7 @@ public class JsonPolicyWriter {
      */
     private Map<String, List<String>> groupPrincipalByScheme(
             List<Principal> principals) {
-        Map<String, List<String>> principalsByScheme = new HashMap<String, List<String>>();
+        Map<String, List<String>> principalsByScheme = new LinkedHashMap<String, List<String>>();
 
         String provider;
         List<String> principalValues;
@@ -272,7 +272,7 @@ public class JsonPolicyWriter {
         private Map<String,List<String>> conditionsByKey;
 
         public ConditionsByKey(){
-            conditionsByKey = new HashMap<String,List<String>>();
+            conditionsByKey = new LinkedHashMap<String,List<String>>();
         }
 
         public Map<String,List<String>> getConditionsByKey() {
@@ -315,7 +315,7 @@ public class JsonPolicyWriter {
      */
     private Map<String, ConditionsByKey> groupConditionsByTypeAndKey(
             List<Condition> conditions) {
-        Map<String, ConditionsByKey> conditionsByType = new HashMap<String, ConditionsByKey>();
+        Map<String, ConditionsByKey> conditionsByType = new LinkedHashMap<String, ConditionsByKey>();
 
         String type;
         String key;

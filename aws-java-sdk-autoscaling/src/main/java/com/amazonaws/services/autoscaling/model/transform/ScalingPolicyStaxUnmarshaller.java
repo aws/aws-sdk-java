@@ -55,12 +55,20 @@ public class ScalingPolicyStaxUnmarshaller implements Unmarshaller<ScalingPolicy
                     scalingPolicy.setPolicyARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("MinAdjustmentStep", targetDepth)) {
-                    scalingPolicy.setMinAdjustmentStep(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("PolicyType", targetDepth)) {
+                    scalingPolicy.setPolicyType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("AdjustmentType", targetDepth)) {
                     scalingPolicy.setAdjustmentType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("MinAdjustmentStep", targetDepth)) {
+                    scalingPolicy.setMinAdjustmentStep(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("MinAdjustmentMagnitude", targetDepth)) {
+                    scalingPolicy.setMinAdjustmentMagnitude(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("ScalingAdjustment", targetDepth)) {
@@ -69,6 +77,18 @@ public class ScalingPolicyStaxUnmarshaller implements Unmarshaller<ScalingPolicy
                 }
                 if (context.testExpression("Cooldown", targetDepth)) {
                     scalingPolicy.setCooldown(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("StepAdjustments/member", targetDepth)) {
+                    scalingPolicy.getStepAdjustments().add(StepAdjustmentStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("MetricAggregationType", targetDepth)) {
+                    scalingPolicy.setMetricAggregationType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("EstimatedInstanceWarmup", targetDepth)) {
+                    scalingPolicy.setEstimatedInstanceWarmup(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("Alarms/member", targetDepth)) {

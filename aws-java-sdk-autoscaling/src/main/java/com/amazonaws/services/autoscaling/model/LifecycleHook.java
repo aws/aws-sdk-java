@@ -111,7 +111,7 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * The maximum length of time an instance can remain in a
      * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
-     * Currently, this value is set at 48 hours.
+     * Currently, the maximum is set to 48 hours.
      */
     private Integer globalTimeout;
 
@@ -507,11 +507,11 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * The maximum length of time an instance can remain in a
      * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
-     * Currently, this value is set at 48 hours.
+     * Currently, the maximum is set to 48 hours.
      *
      * @return The maximum length of time an instance can remain in a
      *         <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
-     *         Currently, this value is set at 48 hours.
+     *         Currently, the maximum is set to 48 hours.
      */
     public Integer getGlobalTimeout() {
         return globalTimeout;
@@ -520,11 +520,11 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * The maximum length of time an instance can remain in a
      * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
-     * Currently, this value is set at 48 hours.
+     * Currently, the maximum is set to 48 hours.
      *
      * @param globalTimeout The maximum length of time an instance can remain in a
      *         <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
-     *         Currently, this value is set at 48 hours.
+     *         Currently, the maximum is set to 48 hours.
      */
     public void setGlobalTimeout(Integer globalTimeout) {
         this.globalTimeout = globalTimeout;
@@ -533,13 +533,13 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * The maximum length of time an instance can remain in a
      * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
-     * Currently, this value is set at 48 hours.
+     * Currently, the maximum is set to 48 hours.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param globalTimeout The maximum length of time an instance can remain in a
      *         <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
-     *         Currently, this value is set at 48 hours.
+     *         Currently, the maximum is set to 48 hours.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

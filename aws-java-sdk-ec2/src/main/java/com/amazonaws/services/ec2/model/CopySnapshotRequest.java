@@ -31,12 +31,11 @@ import com.amazonaws.services.ec2.model.transform.CopySnapshotRequestMarshaller;
  * </p>
  * <p>
  * Copies of encrypted EBS snapshots remain encrypted. Copies of
- * unencrypted snapshots remain unencrypted.
- * </p>
- * <p>
- * <b>NOTE:</b> Copying snapshots that were encrypted with non-default
- * AWS Key Management Service (KMS) master keys is not supported at this
- * time.
+ * unencrypted snapshots remain unencrypted, unless the
+ * <code>Encrypted</code> flag is specified during the snapshot copy
+ * operation. By default, encrypted snapshot copies use the default AWS
+ * Key Management Service (KMS) master key; however, you can specify a
+ * non-default master key with the <code>KmsKeyId</code> parameter.
  * </p>
  * <p>
  * For more information, see
@@ -96,6 +95,34 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * <code>error</code> state.
      */
     private String presignedUrl;
+
+    /**
+     * Specifies whether the destination snapshot should be encrypted. There
+     * is no way to create an unencrypted snapshot copy from an encrypted
+     * snapshot; however, you can encrypt a copy of an unencrypted snapshot
+     * with this flag. The default master key is used unless a non-default
+     * AWS Key Management Service (KMS) master key is specified with
+     * <code>KmsKeyId</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     */
+    private Boolean encrypted;
+
+    /**
+     * The full ARN of the AWS Key Management Service (KMS) master key to use
+     * when creating the snapshot copy. This parameter is only required if
+     * you want to use a non-default master key; if this parameter is not
+     * specified, the default master key is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the
+     * master key, the AWS account ID of the master key owner, the
+     * <code>key</code> namespace, and then the master key ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * The specified key must exist in the region that the snapshot is being
+     * copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
+     */
+    private String kmsKeyId;
 
     /**
      * The ID of the region that contains the snapshot to be copied.
@@ -407,6 +434,205 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * Specifies whether the destination snapshot should be encrypted. There
+     * is no way to create an unencrypted snapshot copy from an encrypted
+     * snapshot; however, you can encrypt a copy of an unencrypted snapshot
+     * with this flag. The default master key is used unless a non-default
+     * AWS Key Management Service (KMS) master key is specified with
+     * <code>KmsKeyId</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     *
+     * @return Specifies whether the destination snapshot should be encrypted. There
+     *         is no way to create an unencrypted snapshot copy from an encrypted
+     *         snapshot; however, you can encrypt a copy of an unencrypted snapshot
+     *         with this flag. The default master key is used unless a non-default
+     *         AWS Key Management Service (KMS) master key is specified with
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     */
+    public Boolean isEncrypted() {
+        return encrypted;
+    }
+    
+    /**
+     * Specifies whether the destination snapshot should be encrypted. There
+     * is no way to create an unencrypted snapshot copy from an encrypted
+     * snapshot; however, you can encrypt a copy of an unencrypted snapshot
+     * with this flag. The default master key is used unless a non-default
+     * AWS Key Management Service (KMS) master key is specified with
+     * <code>KmsKeyId</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     *
+     * @param encrypted Specifies whether the destination snapshot should be encrypted. There
+     *         is no way to create an unencrypted snapshot copy from an encrypted
+     *         snapshot; however, you can encrypt a copy of an unencrypted snapshot
+     *         with this flag. The default master key is used unless a non-default
+     *         AWS Key Management Service (KMS) master key is specified with
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     */
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+    
+    /**
+     * Specifies whether the destination snapshot should be encrypted. There
+     * is no way to create an unencrypted snapshot copy from an encrypted
+     * snapshot; however, you can encrypt a copy of an unencrypted snapshot
+     * with this flag. The default master key is used unless a non-default
+     * AWS Key Management Service (KMS) master key is specified with
+     * <code>KmsKeyId</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encrypted Specifies whether the destination snapshot should be encrypted. There
+     *         is no way to create an unencrypted snapshot copy from an encrypted
+     *         snapshot; however, you can encrypt a copy of an unencrypted snapshot
+     *         with this flag. The default master key is used unless a non-default
+     *         AWS Key Management Service (KMS) master key is specified with
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CopySnapshotRequest withEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+        return this;
+    }
+
+    /**
+     * Specifies whether the destination snapshot should be encrypted. There
+     * is no way to create an unencrypted snapshot copy from an encrypted
+     * snapshot; however, you can encrypt a copy of an unencrypted snapshot
+     * with this flag. The default master key is used unless a non-default
+     * AWS Key Management Service (KMS) master key is specified with
+     * <code>KmsKeyId</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     *
+     * @return Specifies whether the destination snapshot should be encrypted. There
+     *         is no way to create an unencrypted snapshot copy from an encrypted
+     *         snapshot; however, you can encrypt a copy of an unencrypted snapshot
+     *         with this flag. The default master key is used unless a non-default
+     *         AWS Key Management Service (KMS) master key is specified with
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     */
+    public Boolean getEncrypted() {
+        return encrypted;
+    }
+
+    /**
+     * The full ARN of the AWS Key Management Service (KMS) master key to use
+     * when creating the snapshot copy. This parameter is only required if
+     * you want to use a non-default master key; if this parameter is not
+     * specified, the default master key is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the
+     * master key, the AWS account ID of the master key owner, the
+     * <code>key</code> namespace, and then the master key ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * The specified key must exist in the region that the snapshot is being
+     * copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
+     *
+     * @return The full ARN of the AWS Key Management Service (KMS) master key to use
+     *         when creating the snapshot copy. This parameter is only required if
+     *         you want to use a non-default master key; if this parameter is not
+     *         specified, the default master key is used. The ARN contains the
+     *         <code>arn:aws:kms</code> namespace, followed by the region of the
+     *         master key, the AWS account ID of the master key owner, the
+     *         <code>key</code> namespace, and then the master key ID. For example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         The specified key must exist in the region that the snapshot is being
+     *         copied to. If a <code>KmsKeyId</code> is specified, the
+     *         <code>Encrypted</code> flag must also be set.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The full ARN of the AWS Key Management Service (KMS) master key to use
+     * when creating the snapshot copy. This parameter is only required if
+     * you want to use a non-default master key; if this parameter is not
+     * specified, the default master key is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the
+     * master key, the AWS account ID of the master key owner, the
+     * <code>key</code> namespace, and then the master key ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * The specified key must exist in the region that the snapshot is being
+     * copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
+     *
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) master key to use
+     *         when creating the snapshot copy. This parameter is only required if
+     *         you want to use a non-default master key; if this parameter is not
+     *         specified, the default master key is used. The ARN contains the
+     *         <code>arn:aws:kms</code> namespace, followed by the region of the
+     *         master key, the AWS account ID of the master key owner, the
+     *         <code>key</code> namespace, and then the master key ID. For example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         The specified key must exist in the region that the snapshot is being
+     *         copied to. If a <code>KmsKeyId</code> is specified, the
+     *         <code>Encrypted</code> flag must also be set.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The full ARN of the AWS Key Management Service (KMS) master key to use
+     * when creating the snapshot copy. This parameter is only required if
+     * you want to use a non-default master key; if this parameter is not
+     * specified, the default master key is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the
+     * master key, the AWS account ID of the master key owner, the
+     * <code>key</code> namespace, and then the master key ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * The specified key must exist in the region that the snapshot is being
+     * copied to. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) master key to use
+     *         when creating the snapshot copy. This parameter is only required if
+     *         you want to use a non-default master key; if this parameter is not
+     *         specified, the default master key is used. The ARN contains the
+     *         <code>arn:aws:kms</code> namespace, followed by the region of the
+     *         master key, the AWS account ID of the master key owner, the
+     *         <code>key</code> namespace, and then the master key ID. For example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         The specified key must exist in the region that the snapshot is being
+     *         copied to. If a <code>KmsKeyId</code> is specified, the
+     *         <code>Encrypted</code> flag must also be set.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CopySnapshotRequest withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to
      * enable operation dry-run.
@@ -434,7 +660,9 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         if (getSourceSnapshotId() != null) sb.append("SourceSnapshotId: " + getSourceSnapshotId() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getDestinationRegion() != null) sb.append("DestinationRegion: " + getDestinationRegion() + ",");
-        if (getPresignedUrl() != null) sb.append("PresignedUrl: " + getPresignedUrl() );
+        if (getPresignedUrl() != null) sb.append("PresignedUrl: " + getPresignedUrl() + ",");
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -449,6 +677,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getDestinationRegion() == null) ? 0 : getDestinationRegion().hashCode()); 
         hashCode = prime * hashCode + ((getPresignedUrl() == null) ? 0 : getPresignedUrl().hashCode()); 
+        hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -470,6 +700,10 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         if (other.getDestinationRegion() != null && other.getDestinationRegion().equals(this.getDestinationRegion()) == false) return false; 
         if (other.getPresignedUrl() == null ^ this.getPresignedUrl() == null) return false;
         if (other.getPresignedUrl() != null && other.getPresignedUrl().equals(this.getPresignedUrl()) == false) return false; 
+        if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
+        if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         return true;
     }
     
