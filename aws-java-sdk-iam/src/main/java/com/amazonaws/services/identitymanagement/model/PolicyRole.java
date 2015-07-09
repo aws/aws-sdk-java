@@ -38,7 +38,7 @@ public class PolicyRole implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String roleName;
 
@@ -47,7 +47,7 @@ public class PolicyRole implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name (friendly name, not ARN) identifying the role.
      */
@@ -60,7 +60,7 @@ public class PolicyRole implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param roleName The name (friendly name, not ARN) identifying the role.
      */
@@ -75,7 +75,7 @@ public class PolicyRole implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param roleName The name (friendly name, not ARN) identifying the role.
      *

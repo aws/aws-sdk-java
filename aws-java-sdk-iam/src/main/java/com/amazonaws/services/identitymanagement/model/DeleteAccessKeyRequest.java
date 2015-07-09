@@ -40,7 +40,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String userName;
 
@@ -50,7 +50,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      */
     private String accessKeyId;
 
@@ -79,7 +79,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the user whose key you want to delete.
      */
@@ -92,7 +92,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user whose key you want to delete.
      */
@@ -107,7 +107,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user whose key you want to delete.
      *
@@ -125,7 +125,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @return The access key ID for the access key ID and secret access key you want
      *         to delete.
@@ -140,7 +140,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @param accessKeyId The access key ID for the access key ID and secret access key you want
      *         to delete.
@@ -157,7 +157,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @param accessKeyId The access key ID for the access key ID and secret access key you want
      *         to delete.

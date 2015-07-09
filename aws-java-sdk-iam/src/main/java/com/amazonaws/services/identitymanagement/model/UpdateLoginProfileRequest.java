@@ -39,7 +39,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String userName;
 
@@ -80,7 +80,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the user whose password you want to update.
      */
@@ -93,7 +93,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user whose password you want to update.
      */
@@ -108,7 +108,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user whose password you want to update.
      *

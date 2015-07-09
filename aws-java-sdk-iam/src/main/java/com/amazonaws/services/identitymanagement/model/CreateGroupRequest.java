@@ -51,7 +51,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String groupName;
 
@@ -142,7 +142,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the group to create. Do not include the path in this
      *         value.
@@ -157,7 +157,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param groupName The name of the group to create. Do not include the path in this
      *         value.
@@ -174,7 +174,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param groupName The name of the group to create. Do not include the path in this
      *         value.

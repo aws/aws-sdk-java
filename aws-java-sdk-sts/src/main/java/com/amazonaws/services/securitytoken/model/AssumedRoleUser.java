@@ -39,9 +39,8 @@ public class AssumedRoleUser implements Serializable, Cloneable {
      * The ARN of the temporary security credentials that are returned from
      * the <a>AssumeRole</a> action. For more information about ARNs and how
      * to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank"> Identifiers for IAM Entities </a> in <i>Using
-     * IAM</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
@@ -109,9 +108,8 @@ public class AssumedRoleUser implements Serializable, Cloneable {
      * The ARN of the temporary security credentials that are returned from
      * the <a>AssumeRole</a> action. For more information about ARNs and how
      * to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank"> Identifiers for IAM Entities </a> in <i>Using
-     * IAM</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
@@ -119,9 +117,8 @@ public class AssumedRoleUser implements Serializable, Cloneable {
      * @return The ARN of the temporary security credentials that are returned from
      *         the <a>AssumeRole</a> action. For more information about ARNs and how
      *         to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         target="_blank"> Identifiers for IAM Entities </a> in <i>Using
-     *         IAM</i>.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     *         Identifiers</a> in <i>Using IAM</i>.
      */
     public String getArn() {
         return arn;
@@ -131,9 +128,8 @@ public class AssumedRoleUser implements Serializable, Cloneable {
      * The ARN of the temporary security credentials that are returned from
      * the <a>AssumeRole</a> action. For more information about ARNs and how
      * to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank"> Identifiers for IAM Entities </a> in <i>Using
-     * IAM</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
@@ -141,9 +137,8 @@ public class AssumedRoleUser implements Serializable, Cloneable {
      * @param arn The ARN of the temporary security credentials that are returned from
      *         the <a>AssumeRole</a> action. For more information about ARNs and how
      *         to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         target="_blank"> Identifiers for IAM Entities </a> in <i>Using
-     *         IAM</i>.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     *         Identifiers</a> in <i>Using IAM</i>.
      */
     public void setArn(String arn) {
         this.arn = arn;
@@ -153,9 +148,8 @@ public class AssumedRoleUser implements Serializable, Cloneable {
      * The ARN of the temporary security credentials that are returned from
      * the <a>AssumeRole</a> action. For more information about ARNs and how
      * to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank"> Identifiers for IAM Entities </a> in <i>Using
-     * IAM</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in <i>Using IAM</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -165,9 +159,8 @@ public class AssumedRoleUser implements Serializable, Cloneable {
      * @param arn The ARN of the temporary security credentials that are returned from
      *         the <a>AssumeRole</a> action. For more information about ARNs and how
      *         to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         target="_blank"> Identifiers for IAM Entities </a> in <i>Using
-     *         IAM</i>.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     *         Identifiers</a> in <i>Using IAM</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

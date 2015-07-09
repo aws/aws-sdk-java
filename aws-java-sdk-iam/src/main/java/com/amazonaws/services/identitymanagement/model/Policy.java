@@ -37,7 +37,7 @@ public class Policy implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String policyName;
 
@@ -49,7 +49,7 @@ public class Policy implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      */
     private String policyId;
 
@@ -127,7 +127,7 @@ public class Policy implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The friendly name (not ARN) identifying the policy.
      */
@@ -140,7 +140,7 @@ public class Policy implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param policyName The friendly name (not ARN) identifying the policy.
      */
@@ -155,7 +155,7 @@ public class Policy implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param policyName The friendly name (not ARN) identifying the policy.
      *
@@ -175,7 +175,7 @@ public class Policy implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @return The stable and unique string identifying the policy. <p>For more
      *         information about IDs, see <a
@@ -194,7 +194,7 @@ public class Policy implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @param policyId The stable and unique string identifying the policy. <p>For more
      *         information about IDs, see <a
@@ -215,7 +215,7 @@ public class Policy implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @param policyId The stable and unique string identifying the policy. <p>For more
      *         information about IDs, see <a

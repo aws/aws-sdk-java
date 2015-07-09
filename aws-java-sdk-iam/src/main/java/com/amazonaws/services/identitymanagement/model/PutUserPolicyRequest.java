@@ -54,7 +54,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String userName;
 
@@ -63,7 +63,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String policyName;
 
@@ -102,7 +102,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the user to associate the policy with.
      */
@@ -115,7 +115,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user to associate the policy with.
      */
@@ -130,7 +130,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user to associate the policy with.
      *
@@ -147,7 +147,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the policy document.
      */
@@ -160,7 +160,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param policyName The name of the policy document.
      */
@@ -175,7 +175,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param policyName The name of the policy document.
      *

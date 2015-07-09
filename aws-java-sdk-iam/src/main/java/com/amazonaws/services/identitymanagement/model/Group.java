@@ -50,7 +50,7 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String groupName;
 
@@ -62,7 +62,7 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      */
     private String groupId;
 
@@ -181,7 +181,7 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The friendly name that identifies the group.
      */
@@ -194,7 +194,7 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param groupName The friendly name that identifies the group.
      */
@@ -209,7 +209,7 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param groupName The friendly name that identifies the group.
      *
@@ -229,7 +229,7 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @return The stable and unique string identifying the group. For more
      *         information about IDs, see <a
@@ -248,7 +248,7 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @param groupId The stable and unique string identifying the group. For more
      *         information about IDs, see <a
@@ -269,7 +269,7 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @param groupId The stable and unique string identifying the group. For more
      *         information about IDs, see <a

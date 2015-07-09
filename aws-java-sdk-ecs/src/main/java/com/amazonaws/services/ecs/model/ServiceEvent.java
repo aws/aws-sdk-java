@@ -17,7 +17,9 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Details on an event associated with a service.
+ * </p>
  */
 public class ServiceEvent implements Serializable, Cloneable {
 

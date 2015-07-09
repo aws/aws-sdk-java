@@ -42,7 +42,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String instanceProfileName;
 
@@ -64,7 +64,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the instance profile to create.
      */
@@ -77,7 +77,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param instanceProfileName The name of the instance profile to create.
      */
@@ -92,7 +92,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param instanceProfileName The name of the instance profile to create.
      *

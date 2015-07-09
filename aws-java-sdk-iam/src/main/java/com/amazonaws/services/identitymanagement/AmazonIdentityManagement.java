@@ -290,6 +290,46 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
+     * Returns information about the SSH public keys associated with the
+     * specified IAM user. If there are none, the action returns an empty
+     * list.
+     * </p>
+     * <p>
+     * The SSH public keys returned by this action are used only for
+     * authenticating the IAM user to an AWS CodeCommit repository. For more
+     * information about using SSH keys to authenticate to an AWS CodeCommit
+     * repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     * <p>
+     * Although each user is limited to a small number of keys, you can
+     * still paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listSSHPublicKeysRequest Container for the necessary parameters
+     *           to execute the ListSSHPublicKeys service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListSSHPublicKeys service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListSSHPublicKeysResult listSSHPublicKeys(ListSSHPublicKeysRequest listSSHPublicKeysRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Lists the SAML providers in the account.
      * </p>
      * <p>
@@ -960,38 +1000,6 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Lists the MFA devices. If the request includes the user name, then
-     * this action lists all the MFA devices associated with the specified
-     * user name. If you do not specify a user name, IAM determines the user
-     * name implicitly based on the AWS access key ID signing the request.
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param listMFADevicesRequest Container for the necessary parameters to
-     *           execute the ListMFADevices service method on AmazonIdentityManagement.
-     * 
-     * @return The response from the ListMFADevices service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     * @throws ServiceFailureException
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListMFADevicesResult listMFADevices(ListMFADevicesRequest listMFADevicesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Synchronizes the specified MFA device with AWS servers.
      * </p>
      * <p>
@@ -1020,6 +1028,38 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void resyncMFADevice(ResyncMFADeviceRequest resyncMFADeviceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Lists the MFA devices. If the request includes the user name, then
+     * this action lists all the MFA devices associated with the specified
+     * user name. If you do not specify a user name, IAM determines the user
+     * name implicitly based on the AWS access key ID signing the request.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listMFADevicesRequest Container for the necessary parameters to
+     *           execute the ListMFADevices service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the ListMFADevices service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListMFADevicesResult listMFADevices(ListMFADevicesRequest listMFADevicesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1608,6 +1648,41 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
+     * Retrieves the specified SSH public key, including metadata about the
+     * key.
+     * </p>
+     * <p>
+     * The SSH public key retrieved by this action is used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param getSSHPublicKeyRequest Container for the necessary parameters
+     *           to execute the GetSSHPublicKey service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the GetSSHPublicKey service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws UnrecognizedPublicKeyEncodingException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetSSHPublicKeyResult getSSHPublicKey(GetSSHPublicKeyRequest getSSHPublicKeyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Removes the specified managed policy from the specified role.
      * </p>
      * <p>
@@ -1824,6 +1899,35 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
+     * Updates the policy that grants an entity permission to assume a role.
+     * For more information about roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
+     * .
+     * </p>
+     *
+     * @param updateAssumeRolePolicyRequest Container for the necessary
+     *           parameters to execute the UpdateAssumeRolePolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws MalformedPolicyDocumentException
+     * @throws ServiceFailureException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Retrieves information about the specified instance profile, including
      * the instance profile's path, GUID, ARN, and role. For more information
      * about instance profiles, go to
@@ -1850,35 +1954,6 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public GetInstanceProfileResult getInstanceProfile(GetInstanceProfileRequest getInstanceProfileRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the policy that grants an entity permission to assume a role.
-     * For more information about roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
-     * .
-     * </p>
-     *
-     * @param updateAssumeRolePolicyRequest Container for the necessary
-     *           parameters to execute the UpdateAssumeRolePolicy service method on
-     *           AmazonIdentityManagement.
-     * 
-     * 
-     * @throws MalformedPolicyDocumentException
-     * @throws ServiceFailureException
-     * @throws NoSuchEntityException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -2215,6 +2290,37 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
+     * Deletes the specified SSH public key.
+     * </p>
+     * <p>
+     * The SSH public key deleted by this action is used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param deleteSSHPublicKeyRequest Container for the necessary
+     *           parameters to execute the DeleteSSHPublicKey service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteSSHPublicKey(DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Adds (or updates) an inline policy document that is embedded in the
      * specified role.
      * </p>
@@ -2337,6 +2443,40 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void updateGroup(UpdateGroupRequest updateGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Sets the status of the specified SSH public key to active or
+     * inactive. SSH public keys that are inactive cannot be used for
+     * authentication. This action can be used to disable a user's SSH public
+     * key as part of a key rotation work flow.
+     * </p>
+     * <p>
+     * The SSH public key affected by this action is used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param updateSSHPublicKeyRequest Container for the necessary
+     *           parameters to execute the UpdateSSHPublicKey service method on
+     *           AmazonIdentityManagement.
+     * 
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateSSHPublicKey(UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -3099,6 +3239,37 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
+     * Returns the SAML provider metadocument that was uploaded when the
+     * provider was created or updated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * </p>
+     *
+     * @param getSAMLProviderRequest Container for the necessary parameters
+     *           to execute the GetSAMLProvider service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the GetSAMLProvider service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws ServiceFailureException
+     * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetSAMLProviderResult getSAMLProvider(GetSAMLProviderRequest getSAMLProviderRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Creates a new role for your AWS account. For more information about
      * roles, go to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
@@ -3129,37 +3300,6 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CreateRoleResult createRole(CreateRoleRequest createRoleRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns the SAML provider metadocument that was uploaded when the
-     * provider was created or updated.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
-     * </p>
-     *
-     * @param getSAMLProviderRequest Container for the necessary parameters
-     *           to execute the GetSAMLProvider service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @return The response from the GetSAMLProvider service method, as
-     *         returned by AmazonIdentityManagement.
-     * 
-     * @throws ServiceFailureException
-     * @throws InvalidInputException
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetSAMLProviderResult getSAMLProvider(GetSAMLProviderRequest getSAMLProviderRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -3228,6 +3368,44 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void deleteLoginProfile(DeleteLoginProfileRequest deleteLoginProfileRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Uploads an SSH public key and associates it with the specified IAM
+     * user.
+     * </p>
+     * <p>
+     * The SSH public key uploaded by this action can be used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param uploadSSHPublicKeyRequest Container for the necessary
+     *           parameters to execute the UploadSSHPublicKey service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the UploadSSHPublicKey service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws UnrecognizedPublicKeyEncodingException
+     * @throws InvalidPublicKeyException
+     * @throws DuplicateSSHPublicKeyException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UploadSSHPublicKeyResult uploadSSHPublicKey(UploadSSHPublicKeyRequest uploadSSHPublicKeyRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -3836,6 +4014,41 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListGroupsResult listGroups() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns information about the SSH public keys associated with the
+     * specified IAM user. If there are none, the action returns an empty
+     * list.
+     * </p>
+     * <p>
+     * The SSH public keys returned by this action are used only for
+     * authenticating the IAM user to an AWS CodeCommit repository. For more
+     * information about using SSH keys to authenticate to an AWS CodeCommit
+     * repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     * <p>
+     * Although each user is limited to a small number of keys, you can
+     * still paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     * 
+     * @return The response from the ListSSHPublicKeys service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListSSHPublicKeysResult listSSHPublicKeys() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>

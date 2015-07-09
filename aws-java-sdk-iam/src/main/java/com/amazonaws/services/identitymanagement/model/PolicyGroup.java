@@ -38,7 +38,7 @@ public class PolicyGroup implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String groupName;
 
@@ -47,7 +47,7 @@ public class PolicyGroup implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name (friendly name, not ARN) identifying the group.
      */
@@ -60,7 +60,7 @@ public class PolicyGroup implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param groupName The name (friendly name, not ARN) identifying the group.
      */
@@ -75,7 +75,7 @@ public class PolicyGroup implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param groupName The name (friendly name, not ARN) identifying the group.
      *

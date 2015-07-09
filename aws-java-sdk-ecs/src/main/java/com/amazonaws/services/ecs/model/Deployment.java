@@ -17,7 +17,9 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The details of an Amazon ECS service deployment.
+ * </p>
  */
 public class Deployment implements Serializable, Cloneable {
 

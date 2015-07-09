@@ -38,7 +38,7 @@ public class AccessKey implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String userName;
 
@@ -47,7 +47,7 @@ public class AccessKey implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      */
     private String accessKeyId;
 
@@ -121,7 +121,7 @@ public class AccessKey implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the IAM user that the access key is associated with.
      */
@@ -134,7 +134,7 @@ public class AccessKey implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the IAM user that the access key is associated with.
      */
@@ -149,7 +149,7 @@ public class AccessKey implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the IAM user that the access key is associated with.
      *
@@ -166,7 +166,7 @@ public class AccessKey implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @return The ID for this access key.
      */
@@ -179,7 +179,7 @@ public class AccessKey implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @param accessKeyId The ID for this access key.
      */
@@ -194,7 +194,7 @@ public class AccessKey implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @param accessKeyId The ID for this access key.
      *

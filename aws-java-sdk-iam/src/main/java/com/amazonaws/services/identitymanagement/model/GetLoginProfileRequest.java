@@ -35,7 +35,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String userName;
 
@@ -62,7 +62,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the user whose login profile you want to retrieve.
      */
@@ -75,7 +75,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user whose login profile you want to retrieve.
      */
@@ -90,7 +90,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user whose login profile you want to retrieve.
      *

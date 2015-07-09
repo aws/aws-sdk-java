@@ -34,7 +34,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String groupName;
 
@@ -60,7 +60,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the group to delete.
      */
@@ -73,7 +73,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param groupName The name of the group to delete.
      */
@@ -88,7 +88,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param groupName The name of the group to delete.
      *

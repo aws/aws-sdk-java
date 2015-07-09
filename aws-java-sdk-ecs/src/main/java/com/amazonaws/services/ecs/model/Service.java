@@ -17,7 +17,9 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Details on a service within a cluster
+ * </p>
  */
 public class Service implements Serializable, Cloneable {
 

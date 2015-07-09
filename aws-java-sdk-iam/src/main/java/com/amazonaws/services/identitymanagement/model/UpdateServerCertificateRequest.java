@@ -46,7 +46,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String serverCertificateName;
 
@@ -67,7 +67,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String newServerCertificateName;
 
@@ -94,7 +94,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the server certificate that you want to update.
      */
@@ -107,7 +107,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param serverCertificateName The name of the server certificate that you want to update.
      */
@@ -122,7 +122,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param serverCertificateName The name of the server certificate that you want to update.
      *
@@ -192,7 +192,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The new name for the server certificate. Include this only if you are
      *         updating the server certificate's name. The name of the certificate
@@ -209,7 +209,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param newServerCertificateName The new name for the server certificate. Include this only if you are
      *         updating the server certificate's name. The name of the certificate
@@ -228,7 +228,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param newServerCertificateName The new name for the server certificate. Include this only if you are
      *         updating the server certificate's name. The name of the certificate

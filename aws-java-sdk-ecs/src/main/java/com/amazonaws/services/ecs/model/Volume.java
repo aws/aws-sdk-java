@@ -17,7 +17,9 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A data volume used in a task definition.
+ * </p>
  */
 public class Volume implements Serializable, Cloneable {
 

@@ -37,7 +37,7 @@ public class GetRoleRequest extends AmazonWebServiceRequest implements Serializa
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String roleName;
 
@@ -46,7 +46,7 @@ public class GetRoleRequest extends AmazonWebServiceRequest implements Serializa
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the role to get information about.
      */
@@ -59,7 +59,7 @@ public class GetRoleRequest extends AmazonWebServiceRequest implements Serializa
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param roleName The name of the role to get information about.
      */
@@ -74,7 +74,7 @@ public class GetRoleRequest extends AmazonWebServiceRequest implements Serializa
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param roleName The name of the role to get information about.
      *

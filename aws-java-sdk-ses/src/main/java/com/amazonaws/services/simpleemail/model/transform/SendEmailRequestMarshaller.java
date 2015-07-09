@@ -127,6 +127,12 @@ public class SendEmailRequestMarshaller implements Marshaller<Request<SendEmailR
         if (sendEmailRequest.getReturnPath() != null) {
             request.addParameter("ReturnPath", StringUtils.fromString(sendEmailRequest.getReturnPath()));
         }
+        if (sendEmailRequest.getSourceArn() != null) {
+            request.addParameter("SourceArn", StringUtils.fromString(sendEmailRequest.getSourceArn()));
+        }
+        if (sendEmailRequest.getReturnPathArn() != null) {
+            request.addParameter("ReturnPathArn", StringUtils.fromString(sendEmailRequest.getReturnPathArn()));
+        }
 
         return request;
     }

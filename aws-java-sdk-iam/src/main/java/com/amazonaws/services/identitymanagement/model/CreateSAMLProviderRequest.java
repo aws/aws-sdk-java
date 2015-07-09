@@ -74,7 +74,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w._-]*<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
      */
     private String name;
 
@@ -179,7 +179,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w._-]*<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
      *
      * @return The name of the provider to create.
      */
@@ -192,7 +192,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w._-]*<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
      *
      * @param name The name of the provider to create.
      */
@@ -207,7 +207,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w._-]*<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
      *
      * @param name The name of the provider to create.
      *

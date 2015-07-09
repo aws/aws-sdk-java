@@ -46,28 +46,28 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String userName;
 
     /**
-     * Use this only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>Marker</code> element in
-     * the response you just received.
+     * Use this parameter only when paginating results and only after you
+     * have received a response where the results are truncated. Set it to
+     * the value of the <code>Marker</code> element in the response you just
+     * received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      */
     private String marker;
 
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of certificate IDs you want in the response. If there are additional
-     * certificate IDs beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>. This
-     * parameter is optional. If you do not include it, it defaults to 100.
+     * of items you want in the response. If there are additional items
+     * beyond the maximum you specify, the <code>IsTruncated</code> response
+     * element is <code>true</code>. <p>This parameter is optional. If you do
+     * not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -85,7 +85,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the user.
      */
@@ -98,7 +98,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user.
      */
@@ -113,7 +113,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user.
      *
@@ -126,59 +126,59 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Use this only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>Marker</code> element in
-     * the response you just received.
+     * Use this parameter only when paginating results and only after you
+     * have received a response where the results are truncated. Set it to
+     * the value of the <code>Marker</code> element in the response you just
+     * received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return Use this only when paginating results, and only in a subsequent
-     *         request after you've received a response where the results are
-     *         truncated. Set it to the value of the <code>Marker</code> element in
-     *         the response you just received.
+     * @return Use this parameter only when paginating results and only after you
+     *         have received a response where the results are truncated. Set it to
+     *         the value of the <code>Marker</code> element in the response you just
+     *         received.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>Marker</code> element in
-     * the response you just received.
+     * Use this parameter only when paginating results and only after you
+     * have received a response where the results are truncated. Set it to
+     * the value of the <code>Marker</code> element in the response you just
+     * received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param marker Use this only when paginating results, and only in a subsequent
-     *         request after you've received a response where the results are
-     *         truncated. Set it to the value of the <code>Marker</code> element in
-     *         the response you just received.
+     * @param marker Use this parameter only when paginating results and only after you
+     *         have received a response where the results are truncated. Set it to
+     *         the value of the <code>Marker</code> element in the response you just
+     *         received.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>Marker</code> element in
-     * the response you just received.
+     * Use this parameter only when paginating results and only after you
+     * have received a response where the results are truncated. Set it to
+     * the value of the <code>Marker</code> element in the response you just
+     * received.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param marker Use this only when paginating results, and only in a subsequent
-     *         request after you've received a response where the results are
-     *         truncated. Set it to the value of the <code>Marker</code> element in
-     *         the response you just received.
+     * @param marker Use this parameter only when paginating results and only after you
+     *         have received a response where the results are truncated. Set it to
+     *         the value of the <code>Marker</code> element in the response you just
+     *         received.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -190,19 +190,19 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
 
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of certificate IDs you want in the response. If there are additional
-     * certificate IDs beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>. This
-     * parameter is optional. If you do not include it, it defaults to 100.
+     * of items you want in the response. If there are additional items
+     * beyond the maximum you specify, the <code>IsTruncated</code> response
+     * element is <code>true</code>. <p>This parameter is optional. If you do
+     * not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @return Use this only when paginating results to indicate the maximum number
-     *         of certificate IDs you want in the response. If there are additional
-     *         certificate IDs beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>. This
-     *         parameter is optional. If you do not include it, it defaults to 100.
+     *         of items you want in the response. If there are additional items
+     *         beyond the maximum you specify, the <code>IsTruncated</code> response
+     *         element is <code>true</code>. <p>This parameter is optional. If you do
+     *         not include it, it defaults to 100.
      */
     public Integer getMaxItems() {
         return maxItems;
@@ -210,19 +210,19 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of certificate IDs you want in the response. If there are additional
-     * certificate IDs beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>. This
-     * parameter is optional. If you do not include it, it defaults to 100.
+     * of items you want in the response. If there are additional items
+     * beyond the maximum you specify, the <code>IsTruncated</code> response
+     * element is <code>true</code>. <p>This parameter is optional. If you do
+     * not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of certificate IDs you want in the response. If there are additional
-     *         certificate IDs beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>. This
-     *         parameter is optional. If you do not include it, it defaults to 100.
+     *         of items you want in the response. If there are additional items
+     *         beyond the maximum you specify, the <code>IsTruncated</code> response
+     *         element is <code>true</code>. <p>This parameter is optional. If you do
+     *         not include it, it defaults to 100.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -230,10 +230,10 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of certificate IDs you want in the response. If there are additional
-     * certificate IDs beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>. This
-     * parameter is optional. If you do not include it, it defaults to 100.
+     * of items you want in the response. If there are additional items
+     * beyond the maximum you specify, the <code>IsTruncated</code> response
+     * element is <code>true</code>. <p>This parameter is optional. If you do
+     * not include it, it defaults to 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -241,10 +241,10 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of certificate IDs you want in the response. If there are additional
-     *         certificate IDs beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>. This
-     *         parameter is optional. If you do not include it, it defaults to 100.
+     *         of items you want in the response. If there are additional items
+     *         beyond the maximum you specify, the <code>IsTruncated</code> response
+     *         element is <code>true</code>. <p>This parameter is optional. If you do
+     *         not include it, it defaults to 100.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -35,7 +35,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String userName;
 
@@ -45,7 +45,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      */
     private String serialNumber;
 
@@ -54,7 +54,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>6 - 6<br/>
-     * <b>Pattern: </b>[\d]*<br/>
+     * <b>Pattern: </b>[\d]+<br/>
      */
     private String authenticationCode1;
 
@@ -63,7 +63,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>6 - 6<br/>
-     * <b>Pattern: </b>[\d]*<br/>
+     * <b>Pattern: </b>[\d]+<br/>
      */
     private String authenticationCode2;
 
@@ -99,7 +99,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the user for whom you want to enable the MFA device.
      */
@@ -112,7 +112,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user for whom you want to enable the MFA device.
      */
@@ -127,7 +127,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user for whom you want to enable the MFA device.
      *
@@ -145,7 +145,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @return The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.
@@ -160,7 +160,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.
@@ -177,7 +177,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.
@@ -195,7 +195,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>6 - 6<br/>
-     * <b>Pattern: </b>[\d]*<br/>
+     * <b>Pattern: </b>[\d]+<br/>
      *
      * @return An authentication code emitted by the device.
      */
@@ -208,7 +208,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>6 - 6<br/>
-     * <b>Pattern: </b>[\d]*<br/>
+     * <b>Pattern: </b>[\d]+<br/>
      *
      * @param authenticationCode1 An authentication code emitted by the device.
      */
@@ -223,7 +223,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>6 - 6<br/>
-     * <b>Pattern: </b>[\d]*<br/>
+     * <b>Pattern: </b>[\d]+<br/>
      *
      * @param authenticationCode1 An authentication code emitted by the device.
      *
@@ -240,7 +240,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>6 - 6<br/>
-     * <b>Pattern: </b>[\d]*<br/>
+     * <b>Pattern: </b>[\d]+<br/>
      *
      * @return A subsequent authentication code emitted by the device.
      */
@@ -253,7 +253,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>6 - 6<br/>
-     * <b>Pattern: </b>[\d]*<br/>
+     * <b>Pattern: </b>[\d]+<br/>
      *
      * @param authenticationCode2 A subsequent authentication code emitted by the device.
      */
@@ -268,7 +268,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>6 - 6<br/>
-     * <b>Pattern: </b>[\d]*<br/>
+     * <b>Pattern: </b>[\d]+<br/>
      *
      * @param authenticationCode2 A subsequent authentication code emitted by the device.
      *

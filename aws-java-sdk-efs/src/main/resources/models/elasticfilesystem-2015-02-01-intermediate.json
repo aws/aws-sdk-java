@@ -11156,6 +11156,7 @@
     "customSocketTimeout" : null,
     "customResponseMetadataClassName" : null,
     "skipInterfaceAdditions" : false,
+    "customServiceNameForRequest" : null,
     "requiredParamValidationEnabled" : false,
     "additionalShapeConstructors" : null,
     "simpleMethods" : {

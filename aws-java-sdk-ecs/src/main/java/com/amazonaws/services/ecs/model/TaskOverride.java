@@ -18,9 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A list of container overrides in JSON format that specify the name of
- * a container in a task definition and the command it should run instead
- * of its default.
+ * The overrides associated with a task.
  * </p>
  */
 public class TaskOverride implements Serializable, Cloneable {

@@ -17,7 +17,9 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A docker container that is part of a task.
+ * </p>
  */
 public class Container implements Serializable, Cloneable {
 
@@ -53,7 +55,7 @@ public class Container implements Serializable, Cloneable {
     private String reason;
 
     /**
-     * 
+     * The network bindings associated with the container.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkBinding> networkBindings;
 
@@ -262,9 +264,9 @@ public class Container implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The network bindings associated with the container.
      *
-     * @return 
+     * @return The network bindings associated with the container.
      */
     public java.util.List<NetworkBinding> getNetworkBindings() {
         if (networkBindings == null) {
@@ -275,9 +277,9 @@ public class Container implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * The network bindings associated with the container.
      *
-     * @param networkBindings 
+     * @param networkBindings The network bindings associated with the container.
      */
     public void setNetworkBindings(java.util.Collection<NetworkBinding> networkBindings) {
         if (networkBindings == null) {
@@ -290,7 +292,7 @@ public class Container implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * The network bindings associated with the container.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setNetworkBindings(java.util.Collection)} or {@link
@@ -299,7 +301,7 @@ public class Container implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkBindings 
+     * @param networkBindings The network bindings associated with the container.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -313,11 +315,11 @@ public class Container implements Serializable, Cloneable {
     }
     
     /**
-     * 
+     * The network bindings associated with the container.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkBindings 
+     * @param networkBindings The network bindings associated with the container.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -53,13 +53,13 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
     private Boolean isTruncated;
 
     /**
-     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * When <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
      * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      */
     private String marker;
 
@@ -422,15 +422,15 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
     }
 
     /**
-     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * When <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
      * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return If <code>IsTruncated</code> is <code>true</code>, this element is
+     * @return When <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      */
@@ -439,15 +439,15 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
     }
     
     /**
-     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * When <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
      * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
+     * @param marker When <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      */
@@ -456,7 +456,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
     }
     
     /**
-     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * When <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
      * parameter in a subsequent pagination request.
      * <p>
@@ -464,9 +464,9 @@ public class GetAccountAuthorizationDetailsResult implements Serializable, Clone
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
+     * @param marker When <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      *

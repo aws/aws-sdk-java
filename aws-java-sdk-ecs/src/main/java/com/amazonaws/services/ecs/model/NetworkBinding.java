@@ -17,7 +17,10 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Details on the network bindings between a container and its host
+ * container instance.
+ * </p>
  */
 public class NetworkBinding implements Serializable, Cloneable {
 

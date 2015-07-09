@@ -39,21 +39,21 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<PolicyRole> policyRoles;
 
     /**
-     * A flag that indicates whether there are more entities to list. If your
+     * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * entities in the list.
+     * items.
      */
     private Boolean isTruncated;
 
     /**
-     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * When <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
      * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      */
     private String marker;
 
@@ -277,47 +277,47 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
     }
 
     /**
-     * A flag that indicates whether there are more entities to list. If your
+     * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * entities in the list.
+     * items.
      *
-     * @return A flag that indicates whether there are more entities to list. If your
+     * @return A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         entities in the list.
+     *         items.
      */
     public Boolean isTruncated() {
         return isTruncated;
     }
     
     /**
-     * A flag that indicates whether there are more entities to list. If your
+     * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * entities in the list.
+     * items.
      *
-     * @param isTruncated A flag that indicates whether there are more entities to list. If your
+     * @param isTruncated A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         entities in the list.
+     *         items.
      */
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
     
     /**
-     * A flag that indicates whether there are more entities to list. If your
+     * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * entities in the list.
+     * items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param isTruncated A flag that indicates whether there are more entities to list. If your
+     * @param isTruncated A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         entities in the list.
+     *         items.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -328,30 +328,30 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
     }
 
     /**
-     * A flag that indicates whether there are more entities to list. If your
+     * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * entities in the list.
+     * items.
      *
-     * @return A flag that indicates whether there are more entities to list. If your
+     * @return A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         entities in the list.
+     *         items.
      */
     public Boolean getIsTruncated() {
         return isTruncated;
     }
 
     /**
-     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * When <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
      * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return If <code>IsTruncated</code> is <code>true</code>, this element is
+     * @return When <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      */
@@ -360,15 +360,15 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
     }
     
     /**
-     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * When <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
      * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
+     * @param marker When <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      */
@@ -377,7 +377,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
     }
     
     /**
-     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * When <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
      * parameter in a subsequent pagination request.
      * <p>
@@ -385,9 +385,9 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
+     * @param marker When <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      *

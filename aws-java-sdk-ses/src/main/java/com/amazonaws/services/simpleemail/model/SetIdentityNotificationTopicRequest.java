@@ -45,8 +45,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The identity for which the Amazon SNS topic will be set. Examples:
-     * <code>user@example.com</code>, <code>example.com</code>.
+     * The identity for which the Amazon SNS topic will be set. You can
+     * specify an identity by using its name or by using its Amazon Resource
+     * Name (ARN). Examples: <code>user@example.com</code>,
+     * <code>example.com</code>,
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      */
     private String identity;
 
@@ -67,35 +70,53 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
     private String snsTopic;
 
     /**
-     * The identity for which the Amazon SNS topic will be set. Examples:
-     * <code>user@example.com</code>, <code>example.com</code>.
+     * The identity for which the Amazon SNS topic will be set. You can
+     * specify an identity by using its name or by using its Amazon Resource
+     * Name (ARN). Examples: <code>user@example.com</code>,
+     * <code>example.com</code>,
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      *
-     * @return The identity for which the Amazon SNS topic will be set. Examples:
-     *         <code>user@example.com</code>, <code>example.com</code>.
+     * @return The identity for which the Amazon SNS topic will be set. You can
+     *         specify an identity by using its name or by using its Amazon Resource
+     *         Name (ARN). Examples: <code>user@example.com</code>,
+     *         <code>example.com</code>,
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      */
     public String getIdentity() {
         return identity;
     }
     
     /**
-     * The identity for which the Amazon SNS topic will be set. Examples:
-     * <code>user@example.com</code>, <code>example.com</code>.
+     * The identity for which the Amazon SNS topic will be set. You can
+     * specify an identity by using its name or by using its Amazon Resource
+     * Name (ARN). Examples: <code>user@example.com</code>,
+     * <code>example.com</code>,
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      *
-     * @param identity The identity for which the Amazon SNS topic will be set. Examples:
-     *         <code>user@example.com</code>, <code>example.com</code>.
+     * @param identity The identity for which the Amazon SNS topic will be set. You can
+     *         specify an identity by using its name or by using its Amazon Resource
+     *         Name (ARN). Examples: <code>user@example.com</code>,
+     *         <code>example.com</code>,
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      */
     public void setIdentity(String identity) {
         this.identity = identity;
     }
     
     /**
-     * The identity for which the Amazon SNS topic will be set. Examples:
-     * <code>user@example.com</code>, <code>example.com</code>.
+     * The identity for which the Amazon SNS topic will be set. You can
+     * specify an identity by using its name or by using its Amazon Resource
+     * Name (ARN). Examples: <code>user@example.com</code>,
+     * <code>example.com</code>,
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param identity The identity for which the Amazon SNS topic will be set. Examples:
-     *         <code>user@example.com</code>, <code>example.com</code>.
+     * @param identity The identity for which the Amazon SNS topic will be set. You can
+     *         specify an identity by using its name or by using its Amazon Resource
+     *         Name (ARN). Examples: <code>user@example.com</code>,
+     *         <code>example.com</code>,
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

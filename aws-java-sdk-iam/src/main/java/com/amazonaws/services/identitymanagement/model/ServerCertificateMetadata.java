@@ -45,7 +45,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String serverCertificateName;
 
@@ -57,7 +57,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      */
     private String serverCertificateId;
 
@@ -184,7 +184,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name that identifies the server certificate.
      */
@@ -197,7 +197,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param serverCertificateName The name that identifies the server certificate.
      */
@@ -212,7 +212,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param serverCertificateName The name that identifies the server certificate.
      *
@@ -232,7 +232,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @return The stable and unique string identifying the server certificate. For
      *         more information about IDs, see <a
@@ -251,7 +251,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @param serverCertificateId The stable and unique string identifying the server certificate. For
      *         more information about IDs, see <a
@@ -272,7 +272,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Pattern: </b>[\w]+<br/>
      *
      * @param serverCertificateId The stable and unique string identifying the server certificate. For
      *         more information about IDs, see <a

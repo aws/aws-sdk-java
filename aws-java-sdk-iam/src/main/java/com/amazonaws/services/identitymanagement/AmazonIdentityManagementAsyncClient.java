@@ -706,6 +706,112 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
+     * Returns information about the SSH public keys associated with the
+     * specified IAM user. If there are none, the action returns an empty
+     * list.
+     * </p>
+     * <p>
+     * The SSH public keys returned by this action are used only for
+     * authenticating the IAM user to an AWS CodeCommit repository. For more
+     * information about using SSH keys to authenticate to an AWS CodeCommit
+     * repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     * <p>
+     * Although each user is limited to a small number of keys, you can
+     * still paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listSSHPublicKeysRequest Container for the necessary parameters
+     *           to execute the ListSSHPublicKeys operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListSSHPublicKeys service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListSSHPublicKeysResult> listSSHPublicKeysAsync(final ListSSHPublicKeysRequest listSSHPublicKeysRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListSSHPublicKeysResult>() {
+            public ListSSHPublicKeysResult call() throws Exception {
+                return listSSHPublicKeys(listSSHPublicKeysRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns information about the SSH public keys associated with the
+     * specified IAM user. If there are none, the action returns an empty
+     * list.
+     * </p>
+     * <p>
+     * The SSH public keys returned by this action are used only for
+     * authenticating the IAM user to an AWS CodeCommit repository. For more
+     * information about using SSH keys to authenticate to an AWS CodeCommit
+     * repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     * <p>
+     * Although each user is limited to a small number of keys, you can
+     * still paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listSSHPublicKeysRequest Container for the necessary parameters
+     *           to execute the ListSSHPublicKeys operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListSSHPublicKeys service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListSSHPublicKeysResult> listSSHPublicKeysAsync(
+            final ListSSHPublicKeysRequest listSSHPublicKeysRequest,
+            final AsyncHandler<ListSSHPublicKeysRequest, ListSSHPublicKeysResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListSSHPublicKeysResult>() {
+            public ListSSHPublicKeysResult call() throws Exception {
+              ListSSHPublicKeysResult result;
+                try {
+                result = listSSHPublicKeys(listSSHPublicKeysRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listSSHPublicKeysRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Lists the SAML providers in the account.
      * </p>
      * <p>
@@ -2470,6 +2576,92 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
+     * Synchronizes the specified MFA device with AWS servers.
+     * </p>
+     * <p>
+     * For more information about creating and working with virtual MFA
+     * devices, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param resyncMFADeviceRequest Container for the necessary parameters
+     *           to execute the ResyncMFADevice operation on AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ResyncMFADevice service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> resyncMFADeviceAsync(final ResyncMFADeviceRequest resyncMFADeviceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                resyncMFADevice(resyncMFADeviceRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Synchronizes the specified MFA device with AWS servers.
+     * </p>
+     * <p>
+     * For more information about creating and working with virtual MFA
+     * devices, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param resyncMFADeviceRequest Container for the necessary parameters
+     *           to execute the ResyncMFADevice operation on AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ResyncMFADevice service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> resyncMFADeviceAsync(
+            final ResyncMFADeviceRequest resyncMFADeviceRequest,
+            final AsyncHandler<ResyncMFADeviceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                resyncMFADevice(resyncMFADeviceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(resyncMFADeviceRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Lists the MFA devices. If the request includes the user name, then
      * this action lists all the MFA devices associated with the specified
      * user name. If you do not specify a user name, IAM determines the user
@@ -2552,92 +2744,6 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
               }
               asyncHandler.onSuccess(listMFADevicesRequest, result);
                  return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Synchronizes the specified MFA device with AWS servers.
-     * </p>
-     * <p>
-     * For more information about creating and working with virtual MFA
-     * devices, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     *
-     * @param resyncMFADeviceRequest Container for the necessary parameters
-     *           to execute the ResyncMFADevice operation on AmazonIdentityManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ResyncMFADevice service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> resyncMFADeviceAsync(final ResyncMFADeviceRequest resyncMFADeviceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                resyncMFADevice(resyncMFADeviceRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Synchronizes the specified MFA device with AWS servers.
-     * </p>
-     * <p>
-     * For more information about creating and working with virtual MFA
-     * devices, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     *
-     * @param resyncMFADeviceRequest Container for the necessary parameters
-     *           to execute the ResyncMFADevice operation on AmazonIdentityManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ResyncMFADevice service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> resyncMFADeviceAsync(
-            final ResyncMFADeviceRequest resyncMFADeviceRequest,
-            final AsyncHandler<ResyncMFADeviceRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                resyncMFADevice(resyncMFADeviceRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(resyncMFADeviceRequest, null);
-                 return null;
         }
     });
     }
@@ -4156,6 +4262,98 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
+     * Retrieves the specified SSH public key, including metadata about the
+     * key.
+     * </p>
+     * <p>
+     * The SSH public key retrieved by this action is used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param getSSHPublicKeyRequest Container for the necessary parameters
+     *           to execute the GetSSHPublicKey operation on AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetSSHPublicKey service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetSSHPublicKeyResult> getSSHPublicKeyAsync(final GetSSHPublicKeyRequest getSSHPublicKeyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetSSHPublicKeyResult>() {
+            public GetSSHPublicKeyResult call() throws Exception {
+                return getSSHPublicKey(getSSHPublicKeyRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified SSH public key, including metadata about the
+     * key.
+     * </p>
+     * <p>
+     * The SSH public key retrieved by this action is used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param getSSHPublicKeyRequest Container for the necessary parameters
+     *           to execute the GetSSHPublicKey operation on AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetSSHPublicKey service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetSSHPublicKeyResult> getSSHPublicKeyAsync(
+            final GetSSHPublicKeyRequest getSSHPublicKeyRequest,
+            final AsyncHandler<GetSSHPublicKeyRequest, GetSSHPublicKeyResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetSSHPublicKeyResult>() {
+            public GetSSHPublicKeyResult call() throws Exception {
+              GetSSHPublicKeyResult result;
+                try {
+                result = getSSHPublicKey(getSSHPublicKeyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getSSHPublicKeyRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Removes the specified managed policy from the specified role.
      * </p>
      * <p>
@@ -4716,6 +4914,88 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
+     * Updates the policy that grants an entity permission to assume a role.
+     * For more information about roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
+     * .
+     * </p>
+     *
+     * @param updateAssumeRolePolicyRequest Container for the necessary
+     *           parameters to execute the UpdateAssumeRolePolicy operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateAssumeRolePolicy service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateAssumeRolePolicyAsync(final UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                updateAssumeRolePolicy(updateAssumeRolePolicyRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Updates the policy that grants an entity permission to assume a role.
+     * For more information about roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
+     * .
+     * </p>
+     *
+     * @param updateAssumeRolePolicyRequest Container for the necessary
+     *           parameters to execute the UpdateAssumeRolePolicy operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateAssumeRolePolicy service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateAssumeRolePolicyAsync(
+            final UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest,
+            final AsyncHandler<UpdateAssumeRolePolicyRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                updateAssumeRolePolicy(updateAssumeRolePolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateAssumeRolePolicyRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Retrieves information about the specified instance profile, including
      * the instance profile's path, GUID, ARN, and role. For more information
      * about instance profiles, go to
@@ -4794,88 +5074,6 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
               }
               asyncHandler.onSuccess(getInstanceProfileRequest, result);
                  return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Updates the policy that grants an entity permission to assume a role.
-     * For more information about roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
-     * .
-     * </p>
-     *
-     * @param updateAssumeRolePolicyRequest Container for the necessary
-     *           parameters to execute the UpdateAssumeRolePolicy operation on
-     *           AmazonIdentityManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateAssumeRolePolicy service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> updateAssumeRolePolicyAsync(final UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                updateAssumeRolePolicy(updateAssumeRolePolicyRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Updates the policy that grants an entity permission to assume a role.
-     * For more information about roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"> Using Roles to Delegate Permissions and Federate Identities </a>
-     * .
-     * </p>
-     *
-     * @param updateAssumeRolePolicyRequest Container for the necessary
-     *           parameters to execute the UpdateAssumeRolePolicy operation on
-     *           AmazonIdentityManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateAssumeRolePolicy service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> updateAssumeRolePolicyAsync(
-            final UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest,
-            final AsyncHandler<UpdateAssumeRolePolicyRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                updateAssumeRolePolicy(updateAssumeRolePolicyRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(updateAssumeRolePolicyRequest, null);
-                 return null;
         }
     });
     }
@@ -5752,6 +5950,98 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
+     * Deletes the specified SSH public key.
+     * </p>
+     * <p>
+     * The SSH public key deleted by this action is used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param deleteSSHPublicKeyRequest Container for the necessary
+     *           parameters to execute the DeleteSSHPublicKey operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteSSHPublicKey service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteSSHPublicKeyAsync(final DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteSSHPublicKey(deleteSSHPublicKeyRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes the specified SSH public key.
+     * </p>
+     * <p>
+     * The SSH public key deleted by this action is used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param deleteSSHPublicKeyRequest Container for the necessary
+     *           parameters to execute the DeleteSSHPublicKey operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteSSHPublicKey service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteSSHPublicKeyAsync(
+            final DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest,
+            final AsyncHandler<DeleteSSHPublicKeyRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteSSHPublicKey(deleteSSHPublicKeyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteSSHPublicKeyRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Adds (or updates) an inline policy document that is embedded in the
      * specified role.
      * </p>
@@ -6067,6 +6357,104 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             throw ex;
               }
               asyncHandler.onSuccess(updateGroupRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Sets the status of the specified SSH public key to active or
+     * inactive. SSH public keys that are inactive cannot be used for
+     * authentication. This action can be used to disable a user's SSH public
+     * key as part of a key rotation work flow.
+     * </p>
+     * <p>
+     * The SSH public key affected by this action is used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param updateSSHPublicKeyRequest Container for the necessary
+     *           parameters to execute the UpdateSSHPublicKey operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateSSHPublicKey service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateSSHPublicKeyAsync(final UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                updateSSHPublicKey(updateSSHPublicKeyRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Sets the status of the specified SSH public key to active or
+     * inactive. SSH public keys that are inactive cannot be used for
+     * authentication. This action can be used to disable a user's SSH public
+     * key as part of a key rotation work flow.
+     * </p>
+     * <p>
+     * The SSH public key affected by this action is used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param updateSSHPublicKeyRequest Container for the necessary
+     *           parameters to execute the UpdateSSHPublicKey operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateSSHPublicKey service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateSSHPublicKeyAsync(
+            final UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest,
+            final AsyncHandler<UpdateSSHPublicKeyRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                updateSSHPublicKey(updateSSHPublicKeyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateSSHPublicKeyRequest, null);
                  return null;
         }
     });
@@ -8120,6 +8508,88 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
+     * Returns the SAML provider metadocument that was uploaded when the
+     * provider was created or updated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * </p>
+     *
+     * @param getSAMLProviderRequest Container for the necessary parameters
+     *           to execute the GetSAMLProvider operation on AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetSAMLProvider service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetSAMLProviderResult> getSAMLProviderAsync(final GetSAMLProviderRequest getSAMLProviderRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetSAMLProviderResult>() {
+            public GetSAMLProviderResult call() throws Exception {
+                return getSAMLProvider(getSAMLProviderRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the SAML provider metadocument that was uploaded when the
+     * provider was created or updated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * </p>
+     *
+     * @param getSAMLProviderRequest Container for the necessary parameters
+     *           to execute the GetSAMLProvider operation on AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetSAMLProvider service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetSAMLProviderResult> getSAMLProviderAsync(
+            final GetSAMLProviderRequest getSAMLProviderRequest,
+            final AsyncHandler<GetSAMLProviderRequest, GetSAMLProviderResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetSAMLProviderResult>() {
+            public GetSAMLProviderResult call() throws Exception {
+              GetSAMLProviderResult result;
+                try {
+                result = getSAMLProvider(getSAMLProviderRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getSAMLProviderRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Creates a new role for your AWS account. For more information about
      * roles, go to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
@@ -8199,88 +8669,6 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             throw ex;
               }
               asyncHandler.onSuccess(createRoleRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns the SAML provider metadocument that was uploaded when the
-     * provider was created or updated.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
-     * </p>
-     *
-     * @param getSAMLProviderRequest Container for the necessary parameters
-     *           to execute the GetSAMLProvider operation on AmazonIdentityManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetSAMLProvider service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetSAMLProviderResult> getSAMLProviderAsync(final GetSAMLProviderRequest getSAMLProviderRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetSAMLProviderResult>() {
-            public GetSAMLProviderResult call() throws Exception {
-                return getSAMLProvider(getSAMLProviderRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns the SAML provider metadocument that was uploaded when the
-     * provider was created or updated.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
-     * </p>
-     *
-     * @param getSAMLProviderRequest Container for the necessary parameters
-     *           to execute the GetSAMLProvider operation on AmazonIdentityManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetSAMLProvider service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetSAMLProviderResult> getSAMLProviderAsync(
-            final GetSAMLProviderRequest getSAMLProviderRequest,
-            final AsyncHandler<GetSAMLProviderRequest, GetSAMLProviderResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetSAMLProviderResult>() {
-            public GetSAMLProviderResult call() throws Exception {
-              GetSAMLProviderResult result;
-                try {
-                result = getSAMLProvider(getSAMLProviderRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getSAMLProviderRequest, result);
                  return result;
         }
     });
@@ -8464,6 +8852,100 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
               }
               asyncHandler.onSuccess(deleteLoginProfileRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Uploads an SSH public key and associates it with the specified IAM
+     * user.
+     * </p>
+     * <p>
+     * The SSH public key uploaded by this action can be used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param uploadSSHPublicKeyRequest Container for the necessary
+     *           parameters to execute the UploadSSHPublicKey operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UploadSSHPublicKey service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UploadSSHPublicKeyResult> uploadSSHPublicKeyAsync(final UploadSSHPublicKeyRequest uploadSSHPublicKeyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UploadSSHPublicKeyResult>() {
+            public UploadSSHPublicKeyResult call() throws Exception {
+                return uploadSSHPublicKey(uploadSSHPublicKeyRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Uploads an SSH public key and associates it with the specified IAM
+     * user.
+     * </p>
+     * <p>
+     * The SSH public key uploaded by this action can be used only for
+     * authenticating the associated IAM user to an AWS CodeCommit
+     * repository. For more information about using SSH keys to authenticate
+     * to an AWS CodeCommit repository, see
+     * <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html"> Set up AWS CodeCommit for SSH Connections </a>
+     * in the <i>AWS CodeCommit User Guide</i> .
+     * </p>
+     *
+     * @param uploadSSHPublicKeyRequest Container for the necessary
+     *           parameters to execute the UploadSSHPublicKey operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UploadSSHPublicKey service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UploadSSHPublicKeyResult> uploadSSHPublicKeyAsync(
+            final UploadSSHPublicKeyRequest uploadSSHPublicKeyRequest,
+            final AsyncHandler<UploadSSHPublicKeyRequest, UploadSSHPublicKeyResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UploadSSHPublicKeyResult>() {
+            public UploadSSHPublicKeyResult call() throws Exception {
+              UploadSSHPublicKeyResult result;
+                try {
+                result = uploadSSHPublicKey(uploadSSHPublicKeyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(uploadSSHPublicKeyRequest, result);
+                 return result;
         }
     });
     }
