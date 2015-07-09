@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The name of a container in a task definition and the command it should
- * run instead of its default.
+ * The overrides that should be sent to a container.
  * </p>
  */
 public class ContainerOverride implements Serializable, Cloneable {

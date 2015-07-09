@@ -32,7 +32,7 @@ public class MFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String userName;
 
@@ -42,7 +42,7 @@ public class MFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      */
     private String serialNumber;
 
@@ -79,7 +79,7 @@ public class MFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The user with whom the MFA device is associated.
      */
@@ -92,7 +92,7 @@ public class MFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The user with whom the MFA device is associated.
      */
@@ -107,7 +107,7 @@ public class MFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The user with whom the MFA device is associated.
      *
@@ -125,7 +125,7 @@ public class MFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @return The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.
@@ -140,7 +140,7 @@ public class MFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.
@@ -157,7 +157,7 @@ public class MFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.

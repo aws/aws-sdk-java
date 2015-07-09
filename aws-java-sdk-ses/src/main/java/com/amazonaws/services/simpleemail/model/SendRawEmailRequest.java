@@ -27,36 +27,67 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Internet email standards; otherwise, the message cannot be sent.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> You can only send email from verified email
- * addresses and domains. If your account is still in the Amazon SES
- * sandbox, you must also verify every recipient email address except for
- * the recipients provided by the Amazon SES mailbox simulator. For more
- * information, go to the Amazon SES Developer Guide.
+ * There are several important points to know about
+ * <code>SendRawEmail</code> :
  * </p>
- * <p>
- * The total size of the message cannot exceed 10 MB. This includes any
- * attachments that are part of the message.
- * </p>
- * <p>
- * Amazon SES has a limit on the total number of recipients per message:
- * The combined number of To:, CC: and BCC: email addresses cannot exceed
- * 50. If you need to send an email message to a larger audience, you can
- * divide your recipient list into groups of 50 or fewer, and then call
- * Amazon SES repeatedly to send the message to each group.
- * </p>
- * <p>
- * The To:, CC:, and BCC: headers in the raw message can contain a group
- * list. Note that each recipient in a group list counts towards the
- * 50-recipient limit.
- * </p>
- * <p>
- * For every message that you send, the total number of recipients (To:,
- * CC: and BCC:) is counted against your <i>sending quota</i> - the
+ * 
+ * <ul>
+ * <li>You can only send email from verified email addresses and
+ * domains; otherwise, you will get an "Email address not verified"
+ * error. If your account is still in the Amazon SES sandbox, you must
+ * also verify every recipient email address except for the recipients
+ * provided by the Amazon SES mailbox simulator. For more information, go
+ * to the
+ * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html"> Amazon SES Developer Guide </a>
+ * .</li>
+ * <li>The total size of the message cannot exceed 10 MB. This includes
+ * any attachments that are part of the message.</li>
+ * <li>Amazon SES has a limit on the total number of recipients per
+ * message. The combined number of To:, CC: and BCC: email addresses
+ * cannot exceed 50. If you need to send an email message to a larger
+ * audience, you can divide your recipient list into groups of 50 or
+ * fewer, and then call Amazon SES repeatedly to send the message to each
+ * group.</li>
+ * <li>The To:, CC:, and BCC: headers in the raw message can contain a
+ * group list. Note that each recipient in a group list counts towards
+ * the 50-recipient limit.</li>
+ * <li>For every message that you send, the total number of recipients
+ * (To:, CC: and BCC:) is counted against your sending quota - the
  * maximum number of emails you can send in a 24-hour period. For
  * information about your sending quota, go to the
  * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"> Amazon SES Developer Guide </a>
- * .
+ * .</li>
+ * <li>If you are using sending authorization to send on behalf of
+ * another user, <code>SendRawEmail</code> enables you to specify the
+ * cross-account identity for the email's "Source," "From," and
+ * "Return-Path" parameters in one of two ways: you can pass optional
+ * parameters <code>SourceArn</code> ,
+ * <code>FromArn</code> , and/or
+ * <code>ReturnPathArn</code> to the API, or you can include the
+ * following X-headers in the header of your raw email:
+ * <ul>
+ * <li> <code>X-SES-SOURCE-ARN</code> </li>
+ * <li> <code>X-SES-FROM-ARN</code> </li>
+ * <li> <code>X-SES-RETURN-PATH-ARN</code> </li>
+ * 
+ * </ul>
+ * <p>
+ * <b>IMPORTANT:</b>Do not include these X-headers in the DKIM signature,
+ * because they are removed by Amazon SES before sending the email.
  * </p>
+ * For the most common sending authorization use case, we recommend that
+ * you specify the <code>SourceIdentityArn</code> and do not specify
+ * either the <code>FromIdentityArn</code> or
+ * <code>ReturnPathIdentityArn</code> . (The same note applies to the
+ * corresponding X-headers.) If you only specify the
+ * <code>SourceIdentityArn</code> , Amazon SES will simply set the "From"
+ * address and the "Return Path" address to the identity specified in
+ * <code>SourceIdentityArn</code> . For more information about sending
+ * authorization, see the
+ * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"> Amazon SES Developer Guide </a>
+ * .</li>
+ * 
+ * </ul>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#sendRawEmail(SendRawEmailRequest)
  */
@@ -97,6 +128,70 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      * MIME requires it.</li> </ul>
      */
     private RawMessage rawMessage;
+
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to specify a particular "From" address in the
+     * header of the raw email. <p>Instead of using this parameter, you can
+     * use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the
+     * email. If you use both the <code>FromArn</code> parameter and the
+     * corresponding X-header, Amazon SES uses the value of the
+     * <code>FromArn</code> parameter. <note>For information about when to
+     * use this parameter, see the description of <code>SendRawEmail</code>
+     * in this guide, or see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     */
+    private String fromArn;
+
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to send for the email address specified in the
+     * <code>Source</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to send from
+     * <code>user@example.com</code>, then you would specify the
+     * <code>SourceArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>Source</code> to be <code>user@example.com</code>.
+     * <p>Instead of using this parameter, you can use the X-header
+     * <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you
+     * use both the <code>SourceArn</code> parameter and the corresponding
+     * X-header, Amazon SES uses the value of the <code>SourceArn</code>
+     * parameter. <note>For information about when to use this parameter, see
+     * the description of <code>SendRawEmail</code> in this guide, or see the
+     * <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     */
+    private String sourceArn;
+
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to use the email address specified in the
+     * <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to use
+     * <code>feedback@example.com</code>, then you would specify the
+     * <code>ReturnPathArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>ReturnPath</code> to be
+     * <code>feedback@example.com</code>. <p>Instead of using this parameter,
+     * you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw
+     * message of the email. If you use both the <code>ReturnPathArn</code>
+     * parameter and the corresponding X-header, Amazon SES uses the value of
+     * the <code>ReturnPathArn</code> parameter. <note>For information about
+     * when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     */
+    private String returnPathArn;
 
     /**
      * Default constructor for a new SendRawEmailRequest object.  Callers should use the
@@ -392,6 +487,399 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to specify a particular "From" address in the
+     * header of the raw email. <p>Instead of using this parameter, you can
+     * use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the
+     * email. If you use both the <code>FromArn</code> parameter and the
+     * corresponding X-header, Amazon SES uses the value of the
+     * <code>FromArn</code> parameter. <note>For information about when to
+     * use this parameter, see the description of <code>SendRawEmail</code>
+     * in this guide, or see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     *
+     * @return This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to specify a particular "From" address in the
+     *         header of the raw email. <p>Instead of using this parameter, you can
+     *         use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the
+     *         email. If you use both the <code>FromArn</code> parameter and the
+     *         corresponding X-header, Amazon SES uses the value of the
+     *         <code>FromArn</code> parameter. <note>For information about when to
+     *         use this parameter, see the description of <code>SendRawEmail</code>
+     *         in this guide, or see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     *         SES Developer Guide</a>. </note>
+     */
+    public String getFromArn() {
+        return fromArn;
+    }
+    
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to specify a particular "From" address in the
+     * header of the raw email. <p>Instead of using this parameter, you can
+     * use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the
+     * email. If you use both the <code>FromArn</code> parameter and the
+     * corresponding X-header, Amazon SES uses the value of the
+     * <code>FromArn</code> parameter. <note>For information about when to
+     * use this parameter, see the description of <code>SendRawEmail</code>
+     * in this guide, or see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     *
+     * @param fromArn This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to specify a particular "From" address in the
+     *         header of the raw email. <p>Instead of using this parameter, you can
+     *         use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the
+     *         email. If you use both the <code>FromArn</code> parameter and the
+     *         corresponding X-header, Amazon SES uses the value of the
+     *         <code>FromArn</code> parameter. <note>For information about when to
+     *         use this parameter, see the description of <code>SendRawEmail</code>
+     *         in this guide, or see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     *         SES Developer Guide</a>. </note>
+     */
+    public void setFromArn(String fromArn) {
+        this.fromArn = fromArn;
+    }
+    
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to specify a particular "From" address in the
+     * header of the raw email. <p>Instead of using this parameter, you can
+     * use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the
+     * email. If you use both the <code>FromArn</code> parameter and the
+     * corresponding X-header, Amazon SES uses the value of the
+     * <code>FromArn</code> parameter. <note>For information about when to
+     * use this parameter, see the description of <code>SendRawEmail</code>
+     * in this guide, or see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param fromArn This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to specify a particular "From" address in the
+     *         header of the raw email. <p>Instead of using this parameter, you can
+     *         use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the
+     *         email. If you use both the <code>FromArn</code> parameter and the
+     *         corresponding X-header, Amazon SES uses the value of the
+     *         <code>FromArn</code> parameter. <note>For information about when to
+     *         use this parameter, see the description of <code>SendRawEmail</code>
+     *         in this guide, or see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     *         SES Developer Guide</a>. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public SendRawEmailRequest withFromArn(String fromArn) {
+        this.fromArn = fromArn;
+        return this;
+    }
+
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to send for the email address specified in the
+     * <code>Source</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to send from
+     * <code>user@example.com</code>, then you would specify the
+     * <code>SourceArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>Source</code> to be <code>user@example.com</code>.
+     * <p>Instead of using this parameter, you can use the X-header
+     * <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you
+     * use both the <code>SourceArn</code> parameter and the corresponding
+     * X-header, Amazon SES uses the value of the <code>SourceArn</code>
+     * parameter. <note>For information about when to use this parameter, see
+     * the description of <code>SendRawEmail</code> in this guide, or see the
+     * <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     *
+     * @return This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to send for the email address specified in the
+     *         <code>Source</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to send from
+     *         <code>user@example.com</code>, then you would specify the
+     *         <code>SourceArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>Source</code> to be <code>user@example.com</code>.
+     *         <p>Instead of using this parameter, you can use the X-header
+     *         <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you
+     *         use both the <code>SourceArn</code> parameter and the corresponding
+     *         X-header, Amazon SES uses the value of the <code>SourceArn</code>
+     *         parameter. <note>For information about when to use this parameter, see
+     *         the description of <code>SendRawEmail</code> in this guide, or see the
+     *         <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     *         SES Developer Guide</a>. </note>
+     */
+    public String getSourceArn() {
+        return sourceArn;
+    }
+    
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to send for the email address specified in the
+     * <code>Source</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to send from
+     * <code>user@example.com</code>, then you would specify the
+     * <code>SourceArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>Source</code> to be <code>user@example.com</code>.
+     * <p>Instead of using this parameter, you can use the X-header
+     * <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you
+     * use both the <code>SourceArn</code> parameter and the corresponding
+     * X-header, Amazon SES uses the value of the <code>SourceArn</code>
+     * parameter. <note>For information about when to use this parameter, see
+     * the description of <code>SendRawEmail</code> in this guide, or see the
+     * <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     *
+     * @param sourceArn This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to send for the email address specified in the
+     *         <code>Source</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to send from
+     *         <code>user@example.com</code>, then you would specify the
+     *         <code>SourceArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>Source</code> to be <code>user@example.com</code>.
+     *         <p>Instead of using this parameter, you can use the X-header
+     *         <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you
+     *         use both the <code>SourceArn</code> parameter and the corresponding
+     *         X-header, Amazon SES uses the value of the <code>SourceArn</code>
+     *         parameter. <note>For information about when to use this parameter, see
+     *         the description of <code>SendRawEmail</code> in this guide, or see the
+     *         <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     *         SES Developer Guide</a>. </note>
+     */
+    public void setSourceArn(String sourceArn) {
+        this.sourceArn = sourceArn;
+    }
+    
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to send for the email address specified in the
+     * <code>Source</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to send from
+     * <code>user@example.com</code>, then you would specify the
+     * <code>SourceArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>Source</code> to be <code>user@example.com</code>.
+     * <p>Instead of using this parameter, you can use the X-header
+     * <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you
+     * use both the <code>SourceArn</code> parameter and the corresponding
+     * X-header, Amazon SES uses the value of the <code>SourceArn</code>
+     * parameter. <note>For information about when to use this parameter, see
+     * the description of <code>SendRawEmail</code> in this guide, or see the
+     * <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sourceArn This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to send for the email address specified in the
+     *         <code>Source</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to send from
+     *         <code>user@example.com</code>, then you would specify the
+     *         <code>SourceArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>Source</code> to be <code>user@example.com</code>.
+     *         <p>Instead of using this parameter, you can use the X-header
+     *         <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you
+     *         use both the <code>SourceArn</code> parameter and the corresponding
+     *         X-header, Amazon SES uses the value of the <code>SourceArn</code>
+     *         parameter. <note>For information about when to use this parameter, see
+     *         the description of <code>SendRawEmail</code> in this guide, or see the
+     *         <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     *         SES Developer Guide</a>. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public SendRawEmailRequest withSourceArn(String sourceArn) {
+        this.sourceArn = sourceArn;
+        return this;
+    }
+
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to use the email address specified in the
+     * <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to use
+     * <code>feedback@example.com</code>, then you would specify the
+     * <code>ReturnPathArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>ReturnPath</code> to be
+     * <code>feedback@example.com</code>. <p>Instead of using this parameter,
+     * you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw
+     * message of the email. If you use both the <code>ReturnPathArn</code>
+     * parameter and the corresponding X-header, Amazon SES uses the value of
+     * the <code>ReturnPathArn</code> parameter. <note>For information about
+     * when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     *
+     * @return This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to use the email address specified in the
+     *         <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to use
+     *         <code>feedback@example.com</code>, then you would specify the
+     *         <code>ReturnPathArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>ReturnPath</code> to be
+     *         <code>feedback@example.com</code>. <p>Instead of using this parameter,
+     *         you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw
+     *         message of the email. If you use both the <code>ReturnPathArn</code>
+     *         parameter and the corresponding X-header, Amazon SES uses the value of
+     *         the <code>ReturnPathArn</code> parameter. <note>For information about
+     *         when to use this parameter, see the description of
+     *         <code>SendRawEmail</code> in this guide, or see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     *         SES Developer Guide</a>. </note>
+     */
+    public String getReturnPathArn() {
+        return returnPathArn;
+    }
+    
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to use the email address specified in the
+     * <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to use
+     * <code>feedback@example.com</code>, then you would specify the
+     * <code>ReturnPathArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>ReturnPath</code> to be
+     * <code>feedback@example.com</code>. <p>Instead of using this parameter,
+     * you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw
+     * message of the email. If you use both the <code>ReturnPathArn</code>
+     * parameter and the corresponding X-header, Amazon SES uses the value of
+     * the <code>ReturnPathArn</code> parameter. <note>For information about
+     * when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     *
+     * @param returnPathArn This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to use the email address specified in the
+     *         <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to use
+     *         <code>feedback@example.com</code>, then you would specify the
+     *         <code>ReturnPathArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>ReturnPath</code> to be
+     *         <code>feedback@example.com</code>. <p>Instead of using this parameter,
+     *         you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw
+     *         message of the email. If you use both the <code>ReturnPathArn</code>
+     *         parameter and the corresponding X-header, Amazon SES uses the value of
+     *         the <code>ReturnPathArn</code> parameter. <note>For information about
+     *         when to use this parameter, see the description of
+     *         <code>SendRawEmail</code> in this guide, or see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     *         SES Developer Guide</a>. </note>
+     */
+    public void setReturnPathArn(String returnPathArn) {
+        this.returnPathArn = returnPathArn;
+    }
+    
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to use the email address specified in the
+     * <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to use
+     * <code>feedback@example.com</code>, then you would specify the
+     * <code>ReturnPathArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>ReturnPath</code> to be
+     * <code>feedback@example.com</code>. <p>Instead of using this parameter,
+     * you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw
+     * message of the email. If you use both the <code>ReturnPathArn</code>
+     * parameter and the corresponding X-header, Amazon SES uses the value of
+     * the <code>ReturnPathArn</code> parameter. <note>For information about
+     * when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * SES Developer Guide</a>. </note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param returnPathArn This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to use the email address specified in the
+     *         <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to use
+     *         <code>feedback@example.com</code>, then you would specify the
+     *         <code>ReturnPathArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>ReturnPath</code> to be
+     *         <code>feedback@example.com</code>. <p>Instead of using this parameter,
+     *         you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw
+     *         message of the email. If you use both the <code>ReturnPathArn</code>
+     *         parameter and the corresponding X-header, Amazon SES uses the value of
+     *         the <code>ReturnPathArn</code> parameter. <note>For information about
+     *         when to use this parameter, see the description of
+     *         <code>SendRawEmail</code> in this guide, or see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     *         SES Developer Guide</a>. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public SendRawEmailRequest withReturnPathArn(String returnPathArn) {
+        this.returnPathArn = returnPathArn;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -405,7 +893,10 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
         sb.append("{");
         if (getSource() != null) sb.append("Source: " + getSource() + ",");
         if (getDestinations() != null) sb.append("Destinations: " + getDestinations() + ",");
-        if (getRawMessage() != null) sb.append("RawMessage: " + getRawMessage() );
+        if (getRawMessage() != null) sb.append("RawMessage: " + getRawMessage() + ",");
+        if (getFromArn() != null) sb.append("FromArn: " + getFromArn() + ",");
+        if (getSourceArn() != null) sb.append("SourceArn: " + getSourceArn() + ",");
+        if (getReturnPathArn() != null) sb.append("ReturnPathArn: " + getReturnPathArn() );
         sb.append("}");
         return sb.toString();
     }
@@ -418,6 +909,9 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode()); 
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode()); 
         hashCode = prime * hashCode + ((getRawMessage() == null) ? 0 : getRawMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getFromArn() == null) ? 0 : getFromArn().hashCode()); 
+        hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode()); 
+        hashCode = prime * hashCode + ((getReturnPathArn() == null) ? 0 : getReturnPathArn().hashCode()); 
         return hashCode;
     }
     
@@ -435,6 +929,12 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
         if (other.getDestinations() != null && other.getDestinations().equals(this.getDestinations()) == false) return false; 
         if (other.getRawMessage() == null ^ this.getRawMessage() == null) return false;
         if (other.getRawMessage() != null && other.getRawMessage().equals(this.getRawMessage()) == false) return false; 
+        if (other.getFromArn() == null ^ this.getFromArn() == null) return false;
+        if (other.getFromArn() != null && other.getFromArn().equals(this.getFromArn()) == false) return false; 
+        if (other.getSourceArn() == null ^ this.getSourceArn() == null) return false;
+        if (other.getSourceArn() != null && other.getSourceArn().equals(this.getSourceArn()) == false) return false; 
+        if (other.getReturnPathArn() == null ^ this.getReturnPathArn() == null) return false;
+        if (other.getReturnPathArn() != null && other.getReturnPathArn().equals(this.getReturnPathArn()) == false) return false; 
         return true;
     }
     

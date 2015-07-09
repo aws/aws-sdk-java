@@ -40,7 +40,7 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implemen
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String userName;
 
@@ -50,7 +50,7 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implemen
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      */
     private String serialNumber;
 
@@ -80,7 +80,7 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implemen
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the user whose MFA device you want to deactivate.
      */
@@ -93,7 +93,7 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implemen
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user whose MFA device you want to deactivate.
      */
@@ -108,7 +108,7 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implemen
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user whose MFA device you want to deactivate.
      *
@@ -126,7 +126,7 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implemen
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @return The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.
@@ -141,7 +141,7 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implemen
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.
@@ -158,7 +158,7 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implemen
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.

@@ -68,6 +68,12 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     private VersionInfo versionInfo;
 
     /**
+     * The Amazon Resource Name (ARN) of the container instance (if it was
+     * previously registered).
+     */
+    private String containerInstanceArn;
+
+    /**
      * The short name or full Amazon Resource Name (ARN) of the cluster that
      * you want to register your container instance with. If you do not
      * specify a cluster, the default cluster is assumed..
@@ -327,6 +333,45 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * The Amazon Resource Name (ARN) of the container instance (if it was
+     * previously registered).
+     *
+     * @return The Amazon Resource Name (ARN) of the container instance (if it was
+     *         previously registered).
+     */
+    public String getContainerInstanceArn() {
+        return containerInstanceArn;
+    }
+    
+    /**
+     * The Amazon Resource Name (ARN) of the container instance (if it was
+     * previously registered).
+     *
+     * @param containerInstanceArn The Amazon Resource Name (ARN) of the container instance (if it was
+     *         previously registered).
+     */
+    public void setContainerInstanceArn(String containerInstanceArn) {
+        this.containerInstanceArn = containerInstanceArn;
+    }
+    
+    /**
+     * The Amazon Resource Name (ARN) of the container instance (if it was
+     * previously registered).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param containerInstanceArn The Amazon Resource Name (ARN) of the container instance (if it was
+     *         previously registered).
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RegisterContainerInstanceRequest withContainerInstanceArn(String containerInstanceArn) {
+        this.containerInstanceArn = containerInstanceArn;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -342,7 +387,8 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
         if (getInstanceIdentityDocument() != null) sb.append("InstanceIdentityDocument: " + getInstanceIdentityDocument() + ",");
         if (getInstanceIdentityDocumentSignature() != null) sb.append("InstanceIdentityDocumentSignature: " + getInstanceIdentityDocumentSignature() + ",");
         if (getTotalResources() != null) sb.append("TotalResources: " + getTotalResources() + ",");
-        if (getVersionInfo() != null) sb.append("VersionInfo: " + getVersionInfo() );
+        if (getVersionInfo() != null) sb.append("VersionInfo: " + getVersionInfo() + ",");
+        if (getContainerInstanceArn() != null) sb.append("ContainerInstanceArn: " + getContainerInstanceArn() );
         sb.append("}");
         return sb.toString();
     }
@@ -357,6 +403,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getInstanceIdentityDocumentSignature() == null) ? 0 : getInstanceIdentityDocumentSignature().hashCode()); 
         hashCode = prime * hashCode + ((getTotalResources() == null) ? 0 : getTotalResources().hashCode()); 
         hashCode = prime * hashCode + ((getVersionInfo() == null) ? 0 : getVersionInfo().hashCode()); 
+        hashCode = prime * hashCode + ((getContainerInstanceArn() == null) ? 0 : getContainerInstanceArn().hashCode()); 
         return hashCode;
     }
     
@@ -378,6 +425,8 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest im
         if (other.getTotalResources() != null && other.getTotalResources().equals(this.getTotalResources()) == false) return false; 
         if (other.getVersionInfo() == null ^ this.getVersionInfo() == null) return false;
         if (other.getVersionInfo() != null && other.getVersionInfo().equals(this.getVersionInfo()) == false) return false; 
+        if (other.getContainerInstanceArn() == null ^ this.getContainerInstanceArn() == null) return false;
+        if (other.getContainerInstanceArn() != null && other.getContainerInstanceArn().equals(this.getContainerInstanceArn()) == false) return false; 
         return true;
     }
     

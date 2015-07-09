@@ -25,40 +25,56 @@ import com.amazonaws.AmazonWebServiceRequest;
  * queues the message for sending.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> You can only send email from verified email
- * addresses and domains. If your account is still in the Amazon SES
- * sandbox, you must also verify every recipient email address except for
- * the recipients provided by the Amazon SES mailbox simulator. For more
- * information, go to the Amazon SES Developer Guide.
+ * There are several important points to know about
+ * <code>SendEmail</code> :
  * </p>
- * <p>
- * The total size of the message cannot exceed 10 MB.
- * </p>
- * <p>
- * Amazon SES has a limit on the total number of recipients per message:
- * The combined number of To:, CC: and BCC: email addresses cannot exceed
- * 50. If you need to send an email message to a larger audience, you can
- * divide your recipient list into groups of 50 or fewer, and then call
- * Amazon SES repeatedly to send the message to each group.
- * </p>
- * <p>
- * For every message that you send, the total number of recipients (To:,
- * CC: and BCC:) is counted against your <i>sending quota</i> - the
+ * 
+ * <ul>
+ * <li>You can only send email from verified email addresses and
+ * domains; otherwise, you will get an "Email address not verified"
+ * error. If your account is still in the Amazon SES sandbox, you must
+ * also verify every recipient email address except for the recipients
+ * provided by the Amazon SES mailbox simulator. For more information, go
+ * to the
+ * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html"> Amazon SES Developer Guide </a>
+ * .</li>
+ * <li>The total size of the message cannot exceed 10 MB. This includes
+ * any attachments that are part of the message.</li>
+ * <li>Amazon SES has a limit on the total number of recipients per
+ * message. The combined number of To:, CC: and BCC: email addresses
+ * cannot exceed 50. If you need to send an email message to a larger
+ * audience, you can divide your recipient list into groups of 50 or
+ * fewer, and then call Amazon SES repeatedly to send the message to each
+ * group.</li>
+ * <li>For every message that you send, the total number of recipients
+ * (To:, CC: and BCC:) is counted against your sending quota - the
  * maximum number of emails you can send in a 24-hour period. For
  * information about your sending quota, go to the
  * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"> Amazon SES Developer Guide </a>
- * .
- * </p>
+ * .</li>
+ * 
+ * </ul>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#sendEmail(SendEmailRequest)
  */
 public class SendEmailRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The identity's email address. <p> By default, the string must be 7-bit
-     * ASCII. If the text must contain any other characters, then you must
-     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     * MIME encoded-word syntax uses the following form:
+     * The email address that is sending the email. This email address must
+     * be either individually verified with Amazon SES, or from a domain that
+     * has been verified with Amazon SES. For information about verifying
+     * identities, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * SES Developer Guide</a>. <p>If you are sending on behalf of another
+     * user and have been permitted to do so by a sending authorization
+     * policy, then you must also specify the <code>SourceArn</code>
+     * parameter. For more information about sending authorization, see the
+     * <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>. <p> In all cases, the email address must be
+     * 7-bit ASCII. If the text must contain any other characters, then you
+     * must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     * string. MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      */
@@ -93,6 +109,43 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
     private String returnPath;
 
     /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to send for the email address specified in the
+     * <code>Source</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to send from
+     * <code>user@example.com</code>, then you would specify the
+     * <code>SourceArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>Source</code> to be <code>user@example.com</code>.
+     * <p>For more information about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.
+     */
+    private String sourceArn;
+
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to use the email address specified in the
+     * <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to use
+     * <code>feedback@example.com</code>, then you would specify the
+     * <code>ReturnPathArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>ReturnPath</code> to be
+     * <code>feedback@example.com</code>. <p>For more information about
+     * sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.
+     */
+    private String returnPathArn;
+
+    /**
      * Default constructor for a new SendEmailRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -103,10 +156,21 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param source The identity's email address. <p> By default, the string
-     * must be 7-bit ASCII. If the text must contain any other characters,
-     * then you must use MIME encoded-word syntax (RFC 2047) instead of a
-     * literal string. MIME encoded-word syntax uses the following form:
+     * @param source The email address that is sending the email. This email
+     * address must be either individually verified with Amazon SES, or from
+     * a domain that has been verified with Amazon SES. For information about
+     * verifying identities, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * SES Developer Guide</a>. <p>If you are sending on behalf of another
+     * user and have been permitted to do so by a sending authorization
+     * policy, then you must also specify the <code>SourceArn</code>
+     * parameter. For more information about sending authorization, see the
+     * <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>. <p> In all cases, the email address must be
+     * 7-bit ASCII. If the text must contain any other characters, then you
+     * must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     * string. MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * @param destination The destination for this email, composed of To:,
@@ -120,17 +184,39 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The identity's email address. <p> By default, the string must be 7-bit
-     * ASCII. If the text must contain any other characters, then you must
-     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     * MIME encoded-word syntax uses the following form:
+     * The email address that is sending the email. This email address must
+     * be either individually verified with Amazon SES, or from a domain that
+     * has been verified with Amazon SES. For information about verifying
+     * identities, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * SES Developer Guide</a>. <p>If you are sending on behalf of another
+     * user and have been permitted to do so by a sending authorization
+     * policy, then you must also specify the <code>SourceArn</code>
+     * parameter. For more information about sending authorization, see the
+     * <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>. <p> In all cases, the email address must be
+     * 7-bit ASCII. If the text must contain any other characters, then you
+     * must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     * string. MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      *
-     * @return The identity's email address. <p> By default, the string must be 7-bit
-     *         ASCII. If the text must contain any other characters, then you must
-     *         use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     *         MIME encoded-word syntax uses the following form:
+     * @return The email address that is sending the email. This email address must
+     *         be either individually verified with Amazon SES, or from a domain that
+     *         has been verified with Amazon SES. For information about verifying
+     *         identities, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     *         SES Developer Guide</a>. <p>If you are sending on behalf of another
+     *         user and have been permitted to do so by a sending authorization
+     *         policy, then you must also specify the <code>SourceArn</code>
+     *         parameter. For more information about sending authorization, see the
+     *         <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     *         SES Developer Guide</a>. <p> In all cases, the email address must be
+     *         7-bit ASCII. If the text must contain any other characters, then you
+     *         must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     *         string. MIME encoded-word syntax uses the following form:
      *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
      *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      */
@@ -139,17 +225,39 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * The identity's email address. <p> By default, the string must be 7-bit
-     * ASCII. If the text must contain any other characters, then you must
-     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     * MIME encoded-word syntax uses the following form:
+     * The email address that is sending the email. This email address must
+     * be either individually verified with Amazon SES, or from a domain that
+     * has been verified with Amazon SES. For information about verifying
+     * identities, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * SES Developer Guide</a>. <p>If you are sending on behalf of another
+     * user and have been permitted to do so by a sending authorization
+     * policy, then you must also specify the <code>SourceArn</code>
+     * parameter. For more information about sending authorization, see the
+     * <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>. <p> In all cases, the email address must be
+     * 7-bit ASCII. If the text must contain any other characters, then you
+     * must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     * string. MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      *
-     * @param source The identity's email address. <p> By default, the string must be 7-bit
-     *         ASCII. If the text must contain any other characters, then you must
-     *         use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     *         MIME encoded-word syntax uses the following form:
+     * @param source The email address that is sending the email. This email address must
+     *         be either individually verified with Amazon SES, or from a domain that
+     *         has been verified with Amazon SES. For information about verifying
+     *         identities, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     *         SES Developer Guide</a>. <p>If you are sending on behalf of another
+     *         user and have been permitted to do so by a sending authorization
+     *         policy, then you must also specify the <code>SourceArn</code>
+     *         parameter. For more information about sending authorization, see the
+     *         <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     *         SES Developer Guide</a>. <p> In all cases, the email address must be
+     *         7-bit ASCII. If the text must contain any other characters, then you
+     *         must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     *         string. MIME encoded-word syntax uses the following form:
      *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
      *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      */
@@ -158,19 +266,41 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
     }
     
     /**
-     * The identity's email address. <p> By default, the string must be 7-bit
-     * ASCII. If the text must contain any other characters, then you must
-     * use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     * MIME encoded-word syntax uses the following form:
+     * The email address that is sending the email. This email address must
+     * be either individually verified with Amazon SES, or from a domain that
+     * has been verified with Amazon SES. For information about verifying
+     * identities, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * SES Developer Guide</a>. <p>If you are sending on behalf of another
+     * user and have been permitted to do so by a sending authorization
+     * policy, then you must also specify the <code>SourceArn</code>
+     * parameter. For more information about sending authorization, see the
+     * <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>. <p> In all cases, the email address must be
+     * 7-bit ASCII. If the text must contain any other characters, then you
+     * must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     * string. MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param source The identity's email address. <p> By default, the string must be 7-bit
-     *         ASCII. If the text must contain any other characters, then you must
-     *         use MIME encoded-word syntax (RFC 2047) instead of a literal string.
-     *         MIME encoded-word syntax uses the following form:
+     * @param source The email address that is sending the email. This email address must
+     *         be either individually verified with Amazon SES, or from a domain that
+     *         has been verified with Amazon SES. For information about verifying
+     *         identities, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     *         SES Developer Guide</a>. <p>If you are sending on behalf of another
+     *         user and have been permitted to do so by a sending authorization
+     *         policy, then you must also specify the <code>SourceArn</code>
+     *         parameter. For more information about sending authorization, see the
+     *         <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     *         SES Developer Guide</a>. <p> In all cases, the email address must be
+     *         7-bit ASCII. If the text must contain any other characters, then you
+     *         must use MIME encoded-word syntax (RFC 2047) instead of a literal
+     *         string. MIME encoded-word syntax uses the following form:
      *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
      *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      *
@@ -405,6 +535,234 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to send for the email address specified in the
+     * <code>Source</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to send from
+     * <code>user@example.com</code>, then you would specify the
+     * <code>SourceArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>Source</code> to be <code>user@example.com</code>.
+     * <p>For more information about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.
+     *
+     * @return This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to send for the email address specified in the
+     *         <code>Source</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to send from
+     *         <code>user@example.com</code>, then you would specify the
+     *         <code>SourceArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>Source</code> to be <code>user@example.com</code>.
+     *         <p>For more information about sending authorization, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     *         SES Developer Guide</a>.
+     */
+    public String getSourceArn() {
+        return sourceArn;
+    }
+    
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to send for the email address specified in the
+     * <code>Source</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to send from
+     * <code>user@example.com</code>, then you would specify the
+     * <code>SourceArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>Source</code> to be <code>user@example.com</code>.
+     * <p>For more information about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.
+     *
+     * @param sourceArn This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to send for the email address specified in the
+     *         <code>Source</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to send from
+     *         <code>user@example.com</code>, then you would specify the
+     *         <code>SourceArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>Source</code> to be <code>user@example.com</code>.
+     *         <p>For more information about sending authorization, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     *         SES Developer Guide</a>.
+     */
+    public void setSourceArn(String sourceArn) {
+        this.sourceArn = sourceArn;
+    }
+    
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to send for the email address specified in the
+     * <code>Source</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to send from
+     * <code>user@example.com</code>, then you would specify the
+     * <code>SourceArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>Source</code> to be <code>user@example.com</code>.
+     * <p>For more information about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sourceArn This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to send for the email address specified in the
+     *         <code>Source</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to send from
+     *         <code>user@example.com</code>, then you would specify the
+     *         <code>SourceArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>Source</code> to be <code>user@example.com</code>.
+     *         <p>For more information about sending authorization, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     *         SES Developer Guide</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public SendEmailRequest withSourceArn(String sourceArn) {
+        this.sourceArn = sourceArn;
+        return this;
+    }
+
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to use the email address specified in the
+     * <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to use
+     * <code>feedback@example.com</code>, then you would specify the
+     * <code>ReturnPathArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>ReturnPath</code> to be
+     * <code>feedback@example.com</code>. <p>For more information about
+     * sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.
+     *
+     * @return This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to use the email address specified in the
+     *         <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to use
+     *         <code>feedback@example.com</code>, then you would specify the
+     *         <code>ReturnPathArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>ReturnPath</code> to be
+     *         <code>feedback@example.com</code>. <p>For more information about
+     *         sending authorization, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     *         SES Developer Guide</a>.
+     */
+    public String getReturnPathArn() {
+        return returnPathArn;
+    }
+    
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to use the email address specified in the
+     * <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to use
+     * <code>feedback@example.com</code>, then you would specify the
+     * <code>ReturnPathArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>ReturnPath</code> to be
+     * <code>feedback@example.com</code>. <p>For more information about
+     * sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.
+     *
+     * @param returnPathArn This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to use the email address specified in the
+     *         <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to use
+     *         <code>feedback@example.com</code>, then you would specify the
+     *         <code>ReturnPathArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>ReturnPath</code> to be
+     *         <code>feedback@example.com</code>. <p>For more information about
+     *         sending authorization, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     *         SES Developer Guide</a>.
+     */
+    public void setReturnPathArn(String returnPathArn) {
+        this.returnPathArn = returnPathArn;
+    }
+    
+    /**
+     * This parameter is used only for sending authorization. It is the ARN
+     * of the identity that is associated with the sending authorization
+     * policy that permits you to use the email address specified in the
+     * <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     * <code>example.com</code> (which has ARN
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     * attaches a policy to it that authorizes you to use
+     * <code>feedback@example.com</code>, then you would specify the
+     * <code>ReturnPathArn</code> to be
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     * and the <code>ReturnPath</code> to be
+     * <code>feedback@example.com</code>. <p>For more information about
+     * sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param returnPathArn This parameter is used only for sending authorization. It is the ARN
+     *         of the identity that is associated with the sending authorization
+     *         policy that permits you to use the email address specified in the
+     *         <code>ReturnPath</code> parameter. <p>For example, if the owner of
+     *         <code>example.com</code> (which has ARN
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
+     *         attaches a policy to it that authorizes you to use
+     *         <code>feedback@example.com</code>, then you would specify the
+     *         <code>ReturnPathArn</code> to be
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
+     *         and the <code>ReturnPath</code> to be
+     *         <code>feedback@example.com</code>. <p>For more information about
+     *         sending authorization, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     *         SES Developer Guide</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public SendEmailRequest withReturnPathArn(String returnPathArn) {
+        this.returnPathArn = returnPathArn;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -420,7 +778,9 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
         if (getDestination() != null) sb.append("Destination: " + getDestination() + ",");
         if (getMessage() != null) sb.append("Message: " + getMessage() + ",");
         if (getReplyToAddresses() != null) sb.append("ReplyToAddresses: " + getReplyToAddresses() + ",");
-        if (getReturnPath() != null) sb.append("ReturnPath: " + getReturnPath() );
+        if (getReturnPath() != null) sb.append("ReturnPath: " + getReturnPath() + ",");
+        if (getSourceArn() != null) sb.append("SourceArn: " + getSourceArn() + ",");
+        if (getReturnPathArn() != null) sb.append("ReturnPathArn: " + getReturnPathArn() );
         sb.append("}");
         return sb.toString();
     }
@@ -435,6 +795,8 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
         hashCode = prime * hashCode + ((getReplyToAddresses() == null) ? 0 : getReplyToAddresses().hashCode()); 
         hashCode = prime * hashCode + ((getReturnPath() == null) ? 0 : getReturnPath().hashCode()); 
+        hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode()); 
+        hashCode = prime * hashCode + ((getReturnPathArn() == null) ? 0 : getReturnPathArn().hashCode()); 
         return hashCode;
     }
     
@@ -456,6 +818,10 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
         if (other.getReplyToAddresses() != null && other.getReplyToAddresses().equals(this.getReplyToAddresses()) == false) return false; 
         if (other.getReturnPath() == null ^ this.getReturnPath() == null) return false;
         if (other.getReturnPath() != null && other.getReturnPath().equals(this.getReturnPath()) == false) return false; 
+        if (other.getSourceArn() == null ^ this.getSourceArn() == null) return false;
+        if (other.getSourceArn() != null && other.getSourceArn().equals(this.getSourceArn()) == false) return false; 
+        if (other.getReturnPathArn() == null ^ this.getReturnPathArn() == null) return false;
+        if (other.getReturnPathArn() != null && other.getReturnPathArn().equals(this.getReturnPathArn()) == false) return false; 
         return true;
     }
     

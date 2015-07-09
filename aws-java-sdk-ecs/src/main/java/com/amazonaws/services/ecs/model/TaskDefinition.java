@@ -17,7 +17,9 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Details of a task definition.
+ * </p>
  */
 public class TaskDefinition implements Serializable, Cloneable {
 

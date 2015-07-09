@@ -17,7 +17,10 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Details on a volume mount point that is used in a container
+ * definition.
+ * </p>
  */
 public class MountPoint implements Serializable, Cloneable {
 

@@ -131,6 +131,9 @@ public class RegisterContainerInstanceRequestMarshaller implements Marshaller<Re
                 }
                 jsonWriter.endObject();
             }
+            if (registerContainerInstanceRequest.getContainerInstanceArn() != null) {
+                jsonWriter.key("containerInstanceArn").value(registerContainerInstanceRequest.getContainerInstanceArn());
+            }
 
           jsonWriter.endObject();
 

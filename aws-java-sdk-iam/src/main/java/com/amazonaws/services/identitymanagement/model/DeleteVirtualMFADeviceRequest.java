@@ -39,7 +39,7 @@ public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      */
     private String serialNumber;
 
@@ -49,7 +49,7 @@ public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @return The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the same as the ARN.
@@ -64,7 +64,7 @@ public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the same as the ARN.
@@ -81,7 +81,7 @@ public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the same as the ARN.

@@ -17,7 +17,9 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Details on a load balancer that is used with a service.
+ * </p>
  */
 public class LoadBalancer implements Serializable, Cloneable {
 

@@ -40,7 +40,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String userName;
 
@@ -57,7 +57,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the user to get information about. <p>This parameter is
      *         optional. If it is not included, it defaults to the user making the
@@ -74,7 +74,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user to get information about. <p>This parameter is
      *         optional. If it is not included, it defaults to the user making the
@@ -93,7 +93,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param userName The name of the user to get information about. <p>This parameter is
      *         optional. If it is not included, it defaults to the user making the

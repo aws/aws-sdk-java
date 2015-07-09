@@ -28,7 +28,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      */
     private String serialNumber;
 
@@ -68,7 +68,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @return The serial number associated with <code>VirtualMFADevice</code>.
      */
@@ -81,7 +81,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @param serialNumber The serial number associated with <code>VirtualMFADevice</code>.
      */
@@ -96,7 +96,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 256<br/>
-     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]+<br/>
      *
      * @param serialNumber The serial number associated with <code>VirtualMFADevice</code>.
      *

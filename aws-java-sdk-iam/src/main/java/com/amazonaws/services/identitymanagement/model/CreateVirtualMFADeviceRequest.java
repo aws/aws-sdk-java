@@ -65,7 +65,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      */
     private String virtualMFADeviceName;
 
@@ -144,7 +144,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @return The name of the virtual MFA device. Use with path to uniquely identify
      *         a virtual MFA device.
@@ -159,7 +159,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param virtualMFADeviceName The name of the virtual MFA device. Use with path to uniquely identify
      *         a virtual MFA device.
@@ -176,7 +176,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
-     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     * <b>Pattern: </b>[\w+=,.@-]+<br/>
      *
      * @param virtualMFADeviceName The name of the virtual MFA device. Use with path to uniquely identify
      *         a virtual MFA device.

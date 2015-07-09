@@ -22,34 +22,34 @@ import java.io.Serializable;
 public class StopTaskResult implements Serializable, Cloneable {
 
     /**
-     * 
+     * Details on a task in a cluster.
      */
     private Task task;
 
     /**
-     * 
+     * Details on a task in a cluster.
      *
-     * @return 
+     * @return Details on a task in a cluster.
      */
     public Task getTask() {
         return task;
     }
     
     /**
-     * 
+     * Details on a task in a cluster.
      *
-     * @param task 
+     * @param task Details on a task in a cluster.
      */
     public void setTask(Task task) {
         this.task = task;
     }
     
     /**
-     * 
+     * Details on a task in a cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param task 
+     * @param task Details on a task in a cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

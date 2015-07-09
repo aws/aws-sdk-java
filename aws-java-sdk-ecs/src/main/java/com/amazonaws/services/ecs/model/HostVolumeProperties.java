@@ -17,7 +17,9 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Details on a container instance host volume.
+ * </p>
  */
 public class HostVolumeProperties implements Serializable, Cloneable {
 

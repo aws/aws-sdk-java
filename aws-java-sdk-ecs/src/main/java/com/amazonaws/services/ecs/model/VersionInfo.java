@@ -17,7 +17,10 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The Docker and Amazon ECS container agent version information on a
+ * container instance.
+ * </p>
  */
 public class VersionInfo implements Serializable, Cloneable {
 

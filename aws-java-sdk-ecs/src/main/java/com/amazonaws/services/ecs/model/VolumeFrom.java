@@ -17,7 +17,9 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Details on a data volume from another container.
+ * </p>
  */
 public class VolumeFrom implements Serializable, Cloneable {
 
