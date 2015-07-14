@@ -179,6 +179,12 @@
     "config" : {
       "serviceName": "ds"
     }
+  }, {
+    "key": "AmazonDynamoDBStreamsClient",
+    "config" : {
+      "serviceName": "dynamodb", // for v4 signing
+      "regionMetadataServiceName": "streams.dynamodb" // for region metadata
+    }
   } ],
   "hostRegexToRegionMappings" : [ {
     "hostNameRegex" : "(.+\\.)?s3\\.amazonaws\\.com",

@@ -2407,6 +2407,7 @@ public class DynamoDBMapper {
      */
     private ScanRequest createScanRequestFromExpression(Class<?> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config) {
         ScanRequest scanRequest = new ScanRequest();
+
         scanRequest.setTableName(getTableName(clazz, config));
         scanRequest.setIndexName(scanExpression.getIndexName());
         scanRequest.setScanFilter(scanExpression.getScanFilter());
@@ -2424,6 +2425,7 @@ public class DynamoDBMapper {
         scanRequest.setSelect(scanExpression.getSelect());
         scanRequest.setProjectionExpression(scanExpression.getProjectionExpression());
         scanRequest.setReturnConsumedCapacity(scanExpression.getReturnConsumedCapacity());
+        scanRequest.setConsistentRead(scanExpression.isConsistentRead());
 
         return applyUserAgent(scanRequest);
     }

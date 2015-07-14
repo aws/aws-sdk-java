@@ -107,23 +107,25 @@ import com.amazonaws.services.s3.model.VersionListing;
  * Provides an interface for accessing the Amazon S3 web service.
  * </p>
  * <p>
- * Amazon S3 provides storage for the Internet,
- * and is designed to make web-scale computing easier for developers.
+ * Amazon S3 provides storage for the Internet, and is designed to make
+ * web-scale computing easier for developers.
  * </p>
  * <p>
- * The Amazon S3 Java SDK provides a simple interface that can be
- * used to store and retrieve any amount of data, at any time,
- * from anywhere on the web. It gives any developer access to the same
- * highly scalable, reliable, secure, fast, inexpensive infrastructure
- * that Amazon uses to run its own global network of web sites.
- * The service aims to maximize benefits of scale and to pass those
- * benefits on to developers.
+ * The Amazon S3 Java SDK provides a simple interface that can be used to store
+ * and retrieve any amount of data, at any time, from anywhere on the web. It
+ * gives any developer access to the same highly scalable, reliable, secure,
+ * fast, inexpensive infrastructure that Amazon uses to run its own global
+ * network of web sites. The service aims to maximize benefits of scale and to
+ * pass those benefits on to developers.
  * </p>
  * <p>
- * For more information about Amazon S3, please see
- * <a href="http://aws.amazon.com/s3">
- * http://aws.amazon.com/s3</a>
+ * For more information about Amazon S3, please see <a
+ * href="http://aws.amazon.com/s3"> http://aws.amazon.com/s3</a>
  * </p>
+ *
+ * Extend {@link AbstractAmazonS3} if you are implementing AmazonS3 interface.
+ * AbstractAmazonS3 provides a default implementation for all the methods in
+ * this interface.
  */
 public interface AmazonS3 extends S3DirectSpi {
 
@@ -2997,7 +2999,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * of a bucket to be propagated throughout the system.
      *
      * @param getBucketNotificationConfigurationRequest
-     *            A GetBucketNotificationConfigurationRequest object created for the bucket. 
+     *            A GetBucketNotificationConfigurationRequest object created for the bucket.
      *
      * @return The bucket notification configuration for the specified bucket.
      *
@@ -4121,7 +4123,7 @@ public interface AmazonS3 extends S3DirectSpi {
      *
      * @param getBucketReplicationConfigurationRequest
      *            A GetBucketReplicationConfigurationRequest object containing the bucket name for which
-     *            the configuration is to be retrieved. 
+     *            the configuration is to be retrieved.
      * @return the replication configuration of the bucket.
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the

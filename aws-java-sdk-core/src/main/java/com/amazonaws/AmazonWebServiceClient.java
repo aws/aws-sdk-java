@@ -363,10 +363,11 @@ public abstract class AmazonWebServiceClient {
         if (region == null) {
             throw new IllegalArgumentException("No region provided");
         }
-        final String serviceNameForEndpoint = getServiceNameIntern();
+        final String serviceNameForEndpoint = getServiceNameForRegionMetadata();
+        final String serviceNameForSigner = getServiceNameIntern();
         URI uri = new DefaultServiceEndpointBuilder(serviceNameForEndpoint, clientConfiguration.getProtocol()
                 .toString()).withRegion(region).getServiceEndpoint();
-        Signer signer = computeSignerByServiceRegion(serviceNameForEndpoint, region.getName(), signerRegionOverride, false);
+        Signer signer = computeSignerByServiceRegion(serviceNameForSigner, region.getName(), signerRegionOverride, false);
         synchronized (this) {
             this.endpoint = uri;
             this.signer = signer;
@@ -631,6 +632,27 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
+     * @return the service name that should be used when computing the region
+     *         endpoints. This method returns the value of the
+     *         regionMetadataServiceName configuration in the internal config
+     *         file if such configuration is specified for the current client,
+     *         otherwise it returns the same service name that is used for
+     *         request signing.
+     */
+    private String getServiceNameForRegionMetadata() {
+        String httpClientName = getHttpClientName();
+        String serviceNameInRegionMetadata = ServiceNameFactory
+                .getServiceNameInRegionMetadata(httpClientName);
+
+        if (serviceNameInRegionMetadata != null) {
+            return serviceNameInRegionMetadata;
+        } else {
+            return getServiceNameIntern();
+        }
+
+    }
+
+    /**
      * Internal method for implementing {@link #getServiceName()}. Method is
      * protected by intent so peculiar subclass that don't follow the class
      * naming convention can choose to return whatever service name as needed.
@@ -663,9 +685,7 @@ public abstract class AmazonWebServiceClient {
      * follows the convention of <code>(Amazon|AWS).*(JavaClient|Client)</code>.
      */
     private String computeServiceName() {
-        Class<?> httpClientClass = Classes.childClassOf(
-                AmazonWebServiceClient.class, this);
-        final String httpClientName = httpClientClass.getSimpleName();
+        final String httpClientName = getHttpClientName();
         String service = ServiceNameFactory.getServiceName(httpClientName);
         if (service != null) {
             return service; // only if it is so explicitly configured
@@ -699,6 +719,12 @@ public abstract class AmazonWebServiceClient {
         }
         String serviceName = httpClientName.substring(i + len, j);
         return serviceName.toLowerCase();
+    }
+
+    private String getHttpClientName() {
+        Class<?> httpClientClass = Classes.childClassOf(
+                AmazonWebServiceClient.class, this);
+        return httpClientClass.getSimpleName();
     }
 
     /**

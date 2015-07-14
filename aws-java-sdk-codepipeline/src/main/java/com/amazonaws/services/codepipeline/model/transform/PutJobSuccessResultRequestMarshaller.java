@@ -17,7 +17,6 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
 import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;

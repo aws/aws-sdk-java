@@ -1209,5 +1209,7 @@
       },
       "documentation":"<p>Represents the input of an update repository description operation.</p>"
     }
+  },
+  "examples":{
   }
 }

@@ -1127,5 +1127,7 @@
       "error":{"httpStatusCode":400},
       "exception":true
     }
+  },
+  "examples":{
   }
 }

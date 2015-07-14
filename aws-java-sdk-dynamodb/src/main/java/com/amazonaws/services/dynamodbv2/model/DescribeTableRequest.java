@@ -1,111 +1,93 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#describeTable(DescribeTableRequest) DescribeTable operation}.
  * <p>
- * Returns information about the table, including the current status of
- * the table, when it was created, the primary key schema, and any
- * indexes on the table.
+ * Represents the input of a <i>DescribeTable</i> operation.
  * </p>
- * <p>
- * <b>NOTE:</b> If you issue a DescribeTable request immediately after a
- * CreateTable request, DynamoDB might return a
- * ResourceNotFoundException. This is because DescribeTable uses an
- * eventually consistent query, and the metadata for your table might not
- * be available at that moment. Wait for a few seconds, and then try the
- * DescribeTable request again.
- * </p>
- *
- * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#describeTable(DescribeTableRequest)
  */
-public class DescribeTableRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeTableRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The name of the table to describe.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     * The name of the table to describe.
+     * </p>
      */
     private String tableName;
 
     /**
-     * Default constructor for a new DescribeTableRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for DescribeTableRequest object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize the object
+     * after creating it.
      */
-    public DescribeTableRequest() {}
-    
+    public DescribeTableRequest() {
+    }
+
     /**
-     * Constructs a new DescribeTableRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new DescribeTableRequest object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize any additional
+     * object members.
      * 
-     * @param tableName The name of the table to describe.
+     * @param tableName
+     *        The name of the table to describe.
      */
     public DescribeTableRequest(String tableName) {
         setTableName(tableName);
     }
 
     /**
-     * The name of the table to describe.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @return The name of the table to describe.
-     */
-    public String getTableName() {
-        return tableName;
-    }
-    
-    /**
      * The name of the table to describe.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param tableName The name of the table to describe.
+     * </p>
+     * 
+     * @param tableName
+     *        The name of the table to describe.
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
-    
+
     /**
+     * <p>
      * The name of the table to describe.
+     * </p>
+     * 
+     * @return The name of the table to describe.
+     */
+    public String getTableName() {
+        return this.tableName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param tableName The name of the table to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the table to describe.
+     * </p>
+     * 
+     * @param tableName
+     *        The name of the table to describe.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeTableRequest withTableName(String tableName) {
-        this.tableName = tableName;
+        setTableName(tableName);
         return this;
     }
 
@@ -121,38 +103,42 @@ public class DescribeTableRequest extends AmazonWebServiceRequest implements Ser
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTableName() != null) sb.append("TableName: " + getTableName() );
+        if (getTableName() != null)
+            sb.append("TableName: " + getTableName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeTableRequest == false)
+            return false;
+        DescribeTableRequest other = (DescribeTableRequest) obj;
+        if (other.getTableName() == null ^ this.getTableName() == null)
+            return false;
+        if (other.getTableName() != null
+                && other.getTableName().equals(this.getTableName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getTableName() == null) ? 0 : getTableName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeTableRequest == false) return false;
-        DescribeTableRequest other = (DescribeTableRequest)obj;
-        
-        if (other.getTableName() == null ^ this.getTableName() == null) return false;
-        if (other.getTableName() != null && other.getTableName().equals(this.getTableName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeTableRequest clone() {
-        
-            return (DescribeTableRequest) super.clone();
+        return (DescribeTableRequest) super.clone();
     }
-
 }
-    

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Query Result JSON Unmarshaller
+ * QueryResult JSON Unmarshaller
  */
-public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, JsonUnmarshallerContext> {
+public class QueryResultJsonUnmarshaller implements
+        Unmarshaller<QueryResult, JsonUnmarshallerContext> {
 
-    public QueryResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public QueryResult unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         QueryResult queryResult = new QueryResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,49 +40,70 @@ public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, Js
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Items", targetDepth)) {
                     context.nextToken();
-                    queryResult.setItems(new ListUnmarshaller<java.util.Map<String,AttributeValue>>(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance())).unmarshall(context));
+                    queryResult
+                            .setItems(new ListUnmarshaller<java.util.Map<String, AttributeValue>>(
+                                    new MapUnmarshaller<String, AttributeValue>(
+                                            StringJsonUnmarshaller
+                                                    .getInstance(),
+                                            AttributeValueJsonUnmarshaller
+                                                    .getInstance()))
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
                     context.nextToken();
-                    queryResult.setCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    queryResult.setCount(IntegerJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("ScannedCount", targetDepth)) {
                     context.nextToken();
-                    queryResult.setScannedCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    queryResult.setScannedCount(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedKey", targetDepth)) {
                     context.nextToken();
-                    queryResult.setLastEvaluatedKey(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
+                    queryResult
+                            .setLastEvaluatedKey(new MapUnmarshaller<String, AttributeValue>(
+                                    StringJsonUnmarshaller.getInstance(),
+                                    AttributeValueJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ConsumedCapacity", targetDepth)) {
                     context.nextToken();
-                    queryResult.setConsumedCapacity(ConsumedCapacityJsonUnmarshaller.getInstance().unmarshall(context));
+                    queryResult
+                            .setConsumedCapacity(ConsumedCapacityJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return queryResult;
     }
 
     private static QueryResultJsonUnmarshaller instance;
+
     public static QueryResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new QueryResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new QueryResultJsonUnmarshaller();
         return instance;
     }
 }
-    

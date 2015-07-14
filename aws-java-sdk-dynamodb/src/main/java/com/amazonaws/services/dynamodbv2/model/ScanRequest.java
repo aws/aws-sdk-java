@@ -1,2583 +1,4110 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#scan(ScanRequest) Scan operation}.
  * <p>
- * The <i>Scan</i> operation returns one or more items and item
- * attributes by accessing every item in a table or a secondary index. To
- * have DynamoDB return fewer items, you can provide a <i>ScanFilter</i>
- * operation.
+ * Represents the input of a <i>Scan</i> operation.
  * </p>
- * <p>
- * If the total number of scanned items exceeds the maximum data set size
- * limit of 1 MB, the scan stops and results are returned to the user as
- * a <i>LastEvaluatedKey</i> value to continue the scan in a subsequent
- * operation. The results also include the number of items exceeding the
- * limit. A scan can result in no table data meeting the filter criteria.
- * </p>
- * <p>
- * The result set is eventually consistent.
- * </p>
- * <p>
- * By default, <i>Scan</i> operations proceed sequentially; however, for
- * faster performance on a large table or secondary index, applications
- * can request a parallel <i>Scan</i> operation by providing the
- * <i>Segment</i> and <i>TotalSegments</i> parameters. For more
- * information, see
- * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a>
- * in the <i>Amazon DynamoDB Developer Guide</i> .
- * </p>
- *
- * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#scan(ScanRequest)
  */
-public class ScanRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class ScanRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The name of the table containing the requested items; or, if you
-     * provide <code>IndexName</code>, the name of the table to which that
-     * index belongs.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     * The name of the table containing the requested items; or, if you provide
+     * <code>IndexName</code>, the name of the table to which that index
+     * belongs.
+     * </p>
      */
     private String tableName;
-
     /**
+     * <p>
      * The name of a secondary index to scan. This index can be any local
      * secondary index or global secondary index. Note that if you use the
      * <code>IndexName</code> parameter, you must also provide
      * <code>TableName</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     * </p>
      */
     private String indexName;
-
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>ProjectionExpression</i> instead. Do
-     * not combine legacy parameters and expression parameters in a single
-     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. <p>This parameter allows you to retrieve attributes of type
-     * List or Map; however, it cannot retrieve individual elements within a
-     * List or a Map.</important> <p>The names of one or more attributes to
-     * retrieve. If no attribute names are provided, then all attributes will
-     * be returned. If any of the requested attributes are not found, they
-     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
-     * no effect on provisioned throughput consumption. DynamoDB determines
-     * capacity units consumed based on item size, not on the amount of data
-     * that is returned to an application.
+     * <important>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>ProjectionExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * <p>
+     * This parameter allows you to retrieve attributes of type List or Map;
+     * however, it cannot retrieve individual elements within a List or a Map.
+     * </p>
+     * </important>
+     * <p>
+     * The names of one or more attributes to retrieve. If no attribute names
+     * are provided, then all attributes will be returned. If any of the
+     * requested attributes are not found, they will not appear in the result.
+     * </p>
+     * <p>
+     * Note that <i>AttributesToGet</i> has no effect on provisioned throughput
+     * consumption. DynamoDB determines capacity units consumed based on item
+     * size, not on the amount of data that is returned to an application.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGet;
-
+    private java.util.List<String> attributesToGet;
     /**
+     * <p>
      * The maximum number of items to evaluate (not necessarily the number of
      * matching items). If DynamoDB processes the number of items up to the
      * limit while processing the results, it stops the operation and returns
      * the matching values up to that point, and a key in
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set
-     * size exceeds 1 MB before DynamoDB reaches this limit, it stops the
-     * operation and returns the matching values up to the limit, and a key
-     * in <i>LastEvaluatedKey</i> to apply in a subsequent operation to
-     * continue the operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
+     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that you
+     * can pick up where you left off. Also, if the processed data set size
+     * exceeds 1 MB before DynamoDB reaches this limit, it stops the operation
+     * and returns the matching values up to the limit, and a key in
+     * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
+     * the operation. For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
+     * >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
      */
     private Integer limit;
-
     /**
+     * <p>
      * The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, or the count of matching items.
-     * <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item
-     * attributes. </li> <li> <p><code>COUNT</code> - Returns the number of
-     * matching items, rather than the matching items themselves. </li> <li>
-     * <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
-     * listed in <i>AttributesToGet</i>. This return value is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. </li> </ul> <p>If neither <i>Select</i> nor
-     * <i>AttributesToGet</i> are specified, DynamoDB defaults to
-     * <code>ALL_ATTRIBUTES</code>. You cannot use both
-     * <i>AttributesToGet</i> and <i>Select</i> together in a single request,
-     * unless the value for <i>Select</i> is
-     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
-     * specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
+     * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code> - Returns the number of matching items, rather than
+     * the matching items themselves.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
+     * <i>AttributesToGet</i>. This return value is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
+     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use both
+     * <i>AttributesToGet</i> and <i>Select</i> together in a single request,
+     * unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>.
+     * (This usage is equivalent to specifying <i>AttributesToGet</i> without
+     * any value for <i>Select</i>.)
+     * </p>
      */
     private String select;
-
     /**
-     * <important> <p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>FilterExpression</i> instead. Do not
-     * combine legacy parameters and expression parameters in a single API
-     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. </important> <p>A condition that evaluates the scan results
-     * and returns only the desired values. <note><p>This parameter does not
-     * support attributes of type List or Map.</note> <p>If you specify more
-     * than one condition in the <i>ScanFilter</i> map, then by default all
-     * of the conditions must evaluate to true. In other words, the
-     * conditions are ANDed together. (You can use the
-     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
-     * you do this, then at least one of the conditions must evaluate to
-     * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
-     * consists of an attribute name to compare, along with the following:
-     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     * evaluate against the supplied attribute. The number of values in the
-     * list depends on the operator specified in <i>ComparisonOperator</i> .
-     * <p>For type Number, value comparisons are numeric. <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII
-     * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
-     * a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values. <p>For information on
-     * specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
-     * attributes. For example, equals, greater than, less than, etc. <p>The
-     * following comparison operators are available: <p><code>EQ | NE | LE |
-     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
-     * operators, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.
-     * </li> </ul>
-     */
-    private java.util.Map<String,Condition> scanFilter;
-
-    /**
-     * <important> <p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>FilterExpression</i> instead. Do not
-     * combine legacy parameters and expression parameters in a single API
-     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. </important> <p>A logical operator to apply to the
-     * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
-     * If all of the conditions evaluate to true, then the entire map
-     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
-     * the conditions evaluate to true, then the entire map evaluates to
-     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
-     * <code>AND</code> is the default. <p>The operation will succeed only if
-     * the entire map evaluates to true. <note><p>This parameter does not
-     * support attributes of type List or Map.</note>
+     * <important>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AND, OR
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>FilterExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * </important>
+     * <p>
+     * A condition that evaluates the scan results and returns only the desired
+     * values.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter does not support attributes of type List or Map.
+     * </p>
+     * </note>
+     * <p>
+     * If you specify more than one condition in the <i>ScanFilter</i> map, then
+     * by default all of the conditions must evaluate to true. In other words,
+     * the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you
+     * do this, then at least one of the conditions must evaluate to true,
+     * rather than all of them.)
+     * </p>
+     * <p>
+     * Each <i>ScanFilter</i> element consists of an attribute name to compare,
+     * along with the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the
+     * supplied attribute. The number of values in the list depends on the
+     * operator specified in <i>ComparisonOperator</i> .
+     * </p>
+     * <p>
+     * For type Number, value comparisons are numeric.
+     * </p>
+     * <p>
+     * String value comparisons for greater than, equals, or less than are based
+     * on ASCII character code values. For example, <code>a</code> is greater
+     * than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
+     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * </p>
+     * <p>
+     * For Binary, DynamoDB treats each byte of the binary data as unsigned when
+     * it compares binary values.
+     * </p>
+     * <p>
+     * For information on specifying data types in JSON, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html"
+     * >JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * example, equals, greater than, less than, etc.
+     * </p>
+     * <p>
+     * The following comparison operators are available:
+     * </p>
+     * <p>
+     * <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+     * </p>
+     * <p>
+     * For complete descriptions of all comparison operators, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html"
+     * >Condition</a>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.Map<String, Condition> scanFilter;
+    /**
+     * <important>
+     * <p>
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>FilterExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * </important>
+     * <p>
+     * A logical operator to apply to the conditions in a <i>ScanFilter</i> map:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - If all of the conditions evaluate to true, then the
+     * entire map evaluates to true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - If at least one of the conditions evaluate to true,
+     * then the entire map evaluates to true.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you omit <i>ConditionalOperator</i>, then <code>AND</code> is the
+     * default.
+     * </p>
+     * <p>
+     * The operation will succeed only if the entire map evaluates to true.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter does not support attributes of type List or Map.
+     * </p>
+     * </note>
      */
     private String conditionalOperator;
-
     /**
-     * The primary key of the first item that this operation will evaluate.
-     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
-     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
-     * be String, Number or Binary. No set data types are allowed. <p>In a
-     * parallel scan, a <i>Scan</i> request that includes
+     * <p>
+     * The primary key of the first item that this operation will evaluate. Use
+     * the value that was returned for <i>LastEvaluatedKey</i> in the previous
+     * operation.
+     * </p>
+     * <p>
+     * The data type for <i>ExclusiveStartKey</i> must be String, Number or
+     * Binary. No set data types are allowed.
+     * </p>
+     * <p>
+     * In a parallel scan, a <i>Scan</i> request that includes
      * <i>ExclusiveStartKey</i> must specify the same segment whose previous
-     * <i>Scan</i> returned the corresponding value of
-     * <i>LastEvaluatedKey</i>.
+     * <i>Scan</i> returned the corresponding value of <i>LastEvaluatedKey</i>.
+     * </p>
      */
-    private java.util.Map<String,AttributeValue> exclusiveStartKey;
+    private java.util.Map<String, AttributeValue> exclusiveStartKey;
 
-    /**
-     * A value that if set to <code>TOTAL</code>, the response includes
-     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
-     * for indexes. If set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included in the response.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
-     */
     private String returnConsumedCapacity;
-
     /**
-     * For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents
-     * the total number of segments into which the <i>Scan</i> operation will
-     * be divided. The value of <i>TotalSegments</i> corresponds to the
-     * number of application workers that will perform the parallel scan. For
-     * example, if you want to use four application threads to scan a table
-     * or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
-     * for <i>TotalSegments</i> must be greater than or equal to 1, and less
-     * than or equal to 1000000. If you specify a <i>TotalSegments</i> value
-     * of 1, the <i>Scan</i> operation will be sequential rather than
-     * parallel. <p>If you specify <i>TotalSegments</i>, you must also
-     * specify <i>Segment</i>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1000000<br/>
+     * For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents the
+     * total number of segments into which the <i>Scan</i> operation will be
+     * divided. The value of <i>TotalSegments</i> corresponds to the number of
+     * application workers that will perform the parallel scan. For example, if
+     * you want to use four application threads to scan a table or an index,
+     * specify a <i>TotalSegments</i> value of 4.
+     * </p>
+     * <p>
+     * The value for <i>TotalSegments</i> must be greater than or equal to 1,
+     * and less than or equal to 1000000. If you specify a <i>TotalSegments</i>
+     * value of 1, the <i>Scan</i> operation will be sequential rather than
+     * parallel.
+     * </p>
+     * <p>
+     * If you specify <i>TotalSegments</i>, you must also specify
+     * <i>Segment</i>.
+     * </p>
      */
     private Integer totalSegments;
-
     /**
-     * For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
-     * individual segment to be scanned by an application worker. <p>Segment
-     * IDs are zero-based, so the first segment is always 0. For example, if
-     * you want to use four application threads to scan a table or an index,
-     * then the first thread specifies a <i>Segment</i> value of 0, the
-     * second thread specifies 1, and so on. <p>The value of
-     * <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
-     * must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
-     * subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
-     * be greater than or equal to 0, and less than the value provided for
-     * <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
-     * provide <i>TotalSegments</i>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 999999<br/>
+     * For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
+     * individual segment to be scanned by an application worker.
+     * </p>
+     * <p>
+     * Segment IDs are zero-based, so the first segment is always 0. For
+     * example, if you want to use four application threads to scan a table or
+     * an index, then the first thread specifies a <i>Segment</i> value of 0,
+     * the second thread specifies 1, and so on.
+     * </p>
+     * <p>
+     * The value of <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i>
+     * request must be used as <i>ExclusiveStartKey</i> with the same segment ID
+     * in a subsequent <i>Scan</i> operation.
+     * </p>
+     * <p>
+     * The value for <i>Segment</i> must be greater than or equal to 0, and less
+     * than the value provided for <i>TotalSegments</i>.
+     * </p>
+     * <p>
+     * If you provide <i>Segment</i>, you must also provide
+     * <i>TotalSegments</i>.
+     * </p>
      */
     private Integer segment;
-
     /**
+     * <p>
      * A string that identifies one or more attributes to retrieve from the
-     * specified table or index. These attributes can include scalars, sets,
-     * or elements of a JSON document. The attributes in the expression must
-     * be separated by commas. <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes
-     * are not found, they will not appear in the result. <p>For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     * <note><p><i>ProjectionExpression</i> replaces the legacy
-     * <i>AttributesToGet</i> parameter.</note>
+     * specified table or index. These attributes can include scalars, sets, or
+     * elements of a JSON document. The attributes in the expression must be
+     * separated by commas.
+     * </p>
+     * <p>
+     * If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not
+     * appear in the result.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.
+     * </p>
+     * </note>
      */
     private String projectionExpression;
-
     /**
+     * <p>
      * A string that contains conditions that DynamoDB applies after the
-     * <i>Scan</i> operation, but before the data is returned to you. Items
-     * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
-     * items have already been read; the process of filtering does not
-     * consume any additional read capacity units.</note> <p>For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
-     * and <i>ConditionalOperator</i> parameters.</note>
+     * <i>Scan</i> operation, but before the data is returned to you. Items that
+     * do not satisfy the <i>FilterExpression</i> criteria are not returned.
+     * </p>
+     * <note>
+     * <p>
+     * A <i>FilterExpression</i> is applied after the items have already been
+     * read; the process of filtering does not consume any additional read
+     * capacity units.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     * <i>ConditionalOperator</i> parameters.
+     * </p>
+     * </note>
      */
     private String filterExpression;
-
     /**
-     * One or more substitution tokens for attribute names in an expression.
-     * The following are some use cases for using
-     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
-     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
-     * create a placeholder for repeating occurrences of an attribute name in
-     * an expression. </li> <li> <p>To prevent special characters in an
-     * attribute name from being misinterpreted in an expression. </li> </ul>
-     * <p>Use the <b>#</b> character in an expression to dereference an
-     * attribute name. For example, consider the following attribute name:
-     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
-     * attribute conflicts with a reserved word, so it cannot be used
-     * directly in an expression. (For the complete list of reserved words,
-     * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
-     * around this, you could specify the following for
+     * <p>
+     * One or more substitution tokens for attribute names in an expression. The
+     * following are some use cases for using <i>ExpressionAttributeNames</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To access an attribute whose name conflicts with a DynamoDB reserved
+     * word.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a placeholder for repeating occurrences of an attribute name in
+     * an expression.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To prevent special characters in an attribute name from being
+     * misinterpreted in an expression.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use the <b>#</b> character in an expression to dereference an attribute
+     * name. For example, consider the following attribute name:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Percentile</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The name of this attribute conflicts with a reserved word, so it cannot
+     * be used directly in an expression. (For the complete list of reserved
+     * words, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html"
+     * >Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To
+     * work around this, you could specify the following for
      * <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
-     * then use this substitution in an expression, as in this example:
-     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
-     * with the <b>:</b> character are <i>expression attribute values</i>,
-     * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>{"#P":"Percentile"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You could then use this substitution in an expression, as in this
+     * example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>#P = :val</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Tokens that begin with the <b>:</b> character are <i>expression attribute
+     * values</i>, which are placeholders for the actual value at runtime.
+     * </p>
+     * </note>
+     * <p>
+     * For more information on expression attribute names, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.
+     * </p>
      */
-    private java.util.Map<String,String> expressionAttributeNames;
-
+    private java.util.Map<String, String> expressionAttributeNames;
     /**
-     * One or more values that can be substituted in an expression. <p>Use
-     * the <b>:</b> (colon) character in an expression to dereference an
+     * <p>
+     * One or more values that can be substituted in an expression.
+     * </p>
+     * <p>
+     * Use the <b>:</b> (colon) character in an expression to dereference an
      * attribute value. For example, suppose that you wanted to check whether
-     * the value of the <i>ProductStatus</i> attribute was one of the
-     * following: <p><code>Available | Backordered | Discontinued</code>
-     * <p>You would first need to specify <i>ExpressionAttributeValues</i> as
-     * follows: <p><code>{ ":avail":{"S":"Available"},
-     * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
-     * <p>You could then use these values in an expression, such as this:
-     * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
-     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
+     * the value of the <i>ProductStatus</i> attribute was one of the following:
+     * </p>
+     * <p>
+     * <code>Available | Backordered | Discontinued</code>
+     * </p>
+     * <p>
+     * You would first need to specify <i>ExpressionAttributeValues</i> as
+     * follows:
+     * </p>
+     * <p>
+     * <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     * </p>
+     * <p>
+     * You could then use these values in an expression, such as this:
+     * </p>
+     * <p>
+     * <code>ProductStatus IN (:avail, :back, :disc)</code>
+     * </p>
+     * <p>
+     * For more information on expression attribute values, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
      */
-    private java.util.Map<String,AttributeValue> expressionAttributeValues;
+    private java.util.Map<String, AttributeValue> expressionAttributeValues;
+    /**
+     * <p>
+     * A Boolean value that determines the read consistency model during the
+     * scan:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use
+     * eventually consistent reads. The data returned from <i>Scan</i> might not
+     * contain the results of other recently completed write operations
+     * (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
+     * include some stale data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use
+     * strongly consistent reads. All of the write operations that completed
+     * before the <i>Scan</i> began are guaranteed to be contained in the
+     * <i>Scan</i> response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The default setting for <i>ConsistentRead</i> is <code>false</code>,
+     * meaning that eventually consistent reads will be used.
+     * </p>
+     * <p>
+     * Strongly consistent reads are not supported on global secondary indexes.
+     * If you scan a global secondary index with <i>ConsistentRead</i> set to
+     * true, you will receive a <i>ValidationException</i>.
+     * </p>
+     */
+    private Boolean consistentRead;
 
     /**
-     * Default constructor for a new ScanRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for ScanRequest object. Callers should use the setter
+     * or fluent setter (with...) methods to initialize the object after
+     * creating it.
      */
-    public ScanRequest() {}
-    
+    public ScanRequest() {
+    }
+
     /**
-     * Constructs a new ScanRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new ScanRequest object. Callers should use the setter or
+     * fluent setter (with...) methods to initialize any additional object
+     * members.
      * 
-     * @param tableName The name of the table containing the requested items;
-     * or, if you provide <code>IndexName</code>, the name of the table to
-     * which that index belongs.
+     * @param tableName
+     *        The name of the table containing the requested items; or, if you
+     *        provide <code>IndexName</code>, the name of the table to which
+     *        that index belongs.
      */
     public ScanRequest(String tableName) {
         setTableName(tableName);
     }
 
     /**
-     * The name of the table containing the requested items; or, if you
-     * provide <code>IndexName</code>, the name of the table to which that
-     * index belongs.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @return The name of the table containing the requested items; or, if you
-     *         provide <code>IndexName</code>, the name of the table to which that
-     *         index belongs.
-     */
-    public String getTableName() {
-        return tableName;
-    }
-    
-    /**
-     * The name of the table containing the requested items; or, if you
-     * provide <code>IndexName</code>, the name of the table to which that
-     * index belongs.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param tableName The name of the table containing the requested items; or, if you
-     *         provide <code>IndexName</code>, the name of the table to which that
-     *         index belongs.
+     * The name of the table containing the requested items; or, if you provide
+     * <code>IndexName</code>, the name of the table to which that index
+     * belongs.
+     * </p>
+     * 
+     * @param tableName
+     *        The name of the table containing the requested items; or, if you
+     *        provide <code>IndexName</code>, the name of the table to which
+     *        that index belongs.
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
-    
+
     /**
-     * The name of the table containing the requested items; or, if you
-     * provide <code>IndexName</code>, the name of the table to which that
-     * index belongs.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The name of the table containing the requested items; or, if you provide
+     * <code>IndexName</code>, the name of the table to which that index
+     * belongs.
+     * </p>
+     * 
+     * @return The name of the table containing the requested items; or, if you
+     *         provide <code>IndexName</code>, the name of the table to which
+     *         that index belongs.
+     */
+    public String getTableName() {
+        return this.tableName;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param tableName The name of the table containing the requested items; or, if you
-     *         provide <code>IndexName</code>, the name of the table to which that
-     *         index belongs.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the table containing the requested items; or, if you provide
+     * <code>IndexName</code>, the name of the table to which that index
+     * belongs.
+     * </p>
+     * 
+     * @param tableName
+     *        The name of the table containing the requested items; or, if you
+     *        provide <code>IndexName</code>, the name of the table to which
+     *        that index belongs.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ScanRequest withTableName(String tableName) {
-        this.tableName = tableName;
+        setTableName(tableName);
         return this;
     }
 
     /**
+     * <p>
      * The name of a secondary index to scan. This index can be any local
      * secondary index or global secondary index. Note that if you use the
      * <code>IndexName</code> parameter, you must also provide
      * <code>TableName</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @return The name of a secondary index to scan. This index can be any local
-     *         secondary index or global secondary index. Note that if you use the
-     *         <code>IndexName</code> parameter, you must also provide
-     *         <code>TableName</code>.
-     */
-    public String getIndexName() {
-        return indexName;
-    }
-    
-    /**
-     * The name of a secondary index to scan. This index can be any local
-     * secondary index or global secondary index. Note that if you use the
-     * <code>IndexName</code> parameter, you must also provide
-     * <code>TableName</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param indexName The name of a secondary index to scan. This index can be any local
-     *         secondary index or global secondary index. Note that if you use the
-     *         <code>IndexName</code> parameter, you must also provide
-     *         <code>TableName</code>.
+     * </p>
+     * 
+     * @param indexName
+     *        The name of a secondary index to scan. This index can be any local
+     *        secondary index or global secondary index. Note that if you use
+     *        the <code>IndexName</code> parameter, you must also provide
+     *        <code>TableName</code>.
      */
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
-    
+
     /**
+     * <p>
      * The name of a secondary index to scan. This index can be any local
      * secondary index or global secondary index. Note that if you use the
      * <code>IndexName</code> parameter, you must also provide
      * <code>TableName</code>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param indexName The name of a secondary index to scan. This index can be any local
-     *         secondary index or global secondary index. Note that if you use the
-     *         <code>IndexName</code> parameter, you must also provide
+     * </p>
+     * 
+     * @return The name of a secondary index to scan. This index can be any
+     *         local secondary index or global secondary index. Note that if you
+     *         use the <code>IndexName</code> parameter, you must also provide
      *         <code>TableName</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getIndexName() {
+        return this.indexName;
+    }
+
+    /**
+     * <p>
+     * The name of a secondary index to scan. This index can be any local
+     * secondary index or global secondary index. Note that if you use the
+     * <code>IndexName</code> parameter, you must also provide
+     * <code>TableName</code>.
+     * </p>
+     * 
+     * @param indexName
+     *        The name of a secondary index to scan. This index can be any local
+     *        secondary index or global secondary index. Note that if you use
+     *        the <code>IndexName</code> parameter, you must also provide
+     *        <code>TableName</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ScanRequest withIndexName(String indexName) {
-        this.indexName = indexName;
+        setIndexName(indexName);
         return this;
     }
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>ProjectionExpression</i> instead. Do
-     * not combine legacy parameters and expression parameters in a single
-     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. <p>This parameter allows you to retrieve attributes of type
-     * List or Map; however, it cannot retrieve individual elements within a
-     * List or a Map.</important> <p>The names of one or more attributes to
-     * retrieve. If no attribute names are provided, then all attributes will
-     * be returned. If any of the requested attributes are not found, they
-     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
-     * no effect on provisioned throughput consumption. DynamoDB determines
-     * capacity units consumed based on item size, not on the amount of data
-     * that is returned to an application.
+     * <important>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @return <important><p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>ProjectionExpression</i> instead. Do
-     *         not combine legacy parameters and expression parameters in a single
-     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. <p>This parameter allows you to retrieve attributes of type
-     *         List or Map; however, it cannot retrieve individual elements within a
-     *         List or a Map.</important> <p>The names of one or more attributes to
-     *         retrieve. If no attribute names are provided, then all attributes will
-     *         be returned. If any of the requested attributes are not found, they
-     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
-     *         no effect on provisioned throughput consumption. DynamoDB determines
-     *         capacity units consumed based on item size, not on the amount of data
-     *         that is returned to an application.
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>ProjectionExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * <p>
+     * This parameter allows you to retrieve attributes of type List or Map;
+     * however, it cannot retrieve individual elements within a List or a Map.
+     * </p>
+     * </important>
+     * <p>
+     * The names of one or more attributes to retrieve. If no attribute names
+     * are provided, then all attributes will be returned. If any of the
+     * requested attributes are not found, they will not appear in the result.
+     * </p>
+     * <p>
+     * Note that <i>AttributesToGet</i> has no effect on provisioned throughput
+     * consumption. DynamoDB determines capacity units consumed based on item
+     * size, not on the amount of data that is returned to an application.
+     * </p>
+     * 
+     * @return This is a legacy parameter, for backward compatibility. New
+     *         applications should use <i>ProjectionExpression</i> instead. Do
+     *         not combine legacy parameters and expression parameters in a
+     *         single API call; otherwise, DynamoDB will return a
+     *         <i>ValidationException</i> exception.</p>
+     *         <p>
+     *         This parameter allows you to retrieve attributes of type List or
+     *         Map; however, it cannot retrieve individual elements within a
+     *         List or a Map.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         The names of one or more attributes to retrieve. If no attribute
+     *         names are provided, then all attributes will be returned. If any
+     *         of the requested attributes are not found, they will not appear
+     *         in the result.
+     *         </p>
+     *         <p>
+     *         Note that <i>AttributesToGet
      */
     public java.util.List<String> getAttributesToGet() {
         return attributesToGet;
     }
-    
+
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>ProjectionExpression</i> instead. Do
-     * not combine legacy parameters and expression parameters in a single
-     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. <p>This parameter allows you to retrieve attributes of type
-     * List or Map; however, it cannot retrieve individual elements within a
-     * List or a Map.</important> <p>The names of one or more attributes to
-     * retrieve. If no attribute names are provided, then all attributes will
-     * be returned. If any of the requested attributes are not found, they
-     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
-     * no effect on provisioned throughput consumption. DynamoDB determines
-     * capacity units consumed based on item size, not on the amount of data
-     * that is returned to an application.
+     * <important>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>ProjectionExpression</i> instead. Do
-     *         not combine legacy parameters and expression parameters in a single
-     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. <p>This parameter allows you to retrieve attributes of type
-     *         List or Map; however, it cannot retrieve individual elements within a
-     *         List or a Map.</important> <p>The names of one or more attributes to
-     *         retrieve. If no attribute names are provided, then all attributes will
-     *         be returned. If any of the requested attributes are not found, they
-     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
-     *         no effect on provisioned throughput consumption. DynamoDB determines
-     *         capacity units consumed based on item size, not on the amount of data
-     *         that is returned to an application.
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>ProjectionExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * <p>
+     * This parameter allows you to retrieve attributes of type List or Map;
+     * however, it cannot retrieve individual elements within a List or a Map.
+     * </p>
+     * </important>
+     * <p>
+     * The names of one or more attributes to retrieve. If no attribute names
+     * are provided, then all attributes will be returned. If any of the
+     * requested attributes are not found, they will not appear in the result.
+     * </p>
+     * <p>
+     * Note that <i>AttributesToGet</i> has no effect on provisioned throughput
+     * consumption. DynamoDB determines capacity units consumed based on item
+     * size, not on the amount of data that is returned to an application.
+     * </p>
+     * 
+     * @param attributesToGet
+     *        This is a legacy parameter, for backward compatibility. New
+     *        applications should use <i>ProjectionExpression</i> instead. Do
+     *        not combine legacy parameters and expression parameters in a
+     *        single API call; otherwise, DynamoDB will return a
+     *        <i>ValidationException</i> exception.</p>
+     *        <p>
+     *        This parameter allows you to retrieve attributes of type List or
+     *        Map; however, it cannot retrieve individual elements within a List
+     *        or a Map.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        The names of one or more attributes to retrieve. If no attribute
+     *        names are provided, then all attributes will be returned. If any
+     *        of the requested attributes are not found, they will not appear in
+     *        the result.
+     *        </p>
+     *        <p>
+     *        Note that <i>AttributesToGet
      */
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
             this.attributesToGet = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributesToGet.size());
-        attributesToGetCopy.addAll(attributesToGet);
-        this.attributesToGet = attributesToGetCopy;
+
+        this.attributesToGet = new java.util.ArrayList<String>(attributesToGet);
     }
-    
+
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>ProjectionExpression</i> instead. Do
-     * not combine legacy parameters and expression parameters in a single
-     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. <p>This parameter allows you to retrieve attributes of type
-     * List or Map; however, it cannot retrieve individual elements within a
-     * List or a Map.</important> <p>The names of one or more attributes to
-     * retrieve. If no attribute names are provided, then all attributes will
-     * be returned. If any of the requested attributes are not found, they
-     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
-     * no effect on provisioned throughput consumption. DynamoDB determines
-     * capacity units consumed based on item size, not on the amount of data
-     * that is returned to an application.
+     * <important>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttributesToGet(java.util.Collection)} or {@link
-     * #withAttributesToGet(java.util.Collection)} if you want to override
-     * the existing values.
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>ProjectionExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * This parameter allows you to retrieve attributes of type List or Map;
+     * however, it cannot retrieve individual elements within a List or a Map.
+     * </p>
+     * </important>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>ProjectionExpression</i> instead. Do
-     *         not combine legacy parameters and expression parameters in a single
-     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. <p>This parameter allows you to retrieve attributes of type
-     *         List or Map; however, it cannot retrieve individual elements within a
-     *         List or a Map.</important> <p>The names of one or more attributes to
-     *         retrieve. If no attribute names are provided, then all attributes will
-     *         be returned. If any of the requested attributes are not found, they
-     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
-     *         no effect on provisioned throughput consumption. DynamoDB determines
-     *         capacity units consumed based on item size, not on the amount of data
-     *         that is returned to an application.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The names of one or more attributes to retrieve. If no attribute names
+     * are provided, then all attributes will be returned. If any of the
+     * requested attributes are not found, they will not appear in the result.
+     * </p>
+     * <p>
+     * Note that <i>AttributesToGet</i> has no effect on provisioned throughput
+     * consumption. DynamoDB determines capacity units consumed based on item
+     * size, not on the amount of data that is returned to an application.
+     * </p>
+     * 
+     * @param attributesToGet
+     *        This is a legacy parameter, for backward compatibility. New
+     *        applications should use <i>ProjectionExpression</i> instead. Do
+     *        not combine legacy parameters and expression parameters in a
+     *        single API call; otherwise, DynamoDB will return a
+     *        <i>ValidationException</i> exception.</p>
+     *        <p>
+     *        This parameter allows you to retrieve attributes of type List or
+     *        Map; however, it cannot retrieve individual elements within a List
+     *        or a Map.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        The names of one or more attributes to retrieve. If no attribute
+     *        names are provided, then all attributes will be returned. If any
+     *        of the requested attributes are not found, they will not appear in
+     *        the result.
+     *        </p>
+     *        <p>
+     *        Note that <i>AttributesToGet
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ScanRequest withAttributesToGet(String... attributesToGet) {
-        if (getAttributesToGet() == null) setAttributesToGet(new java.util.ArrayList<String>(attributesToGet.length));
-        for (String value : attributesToGet) {
-            getAttributesToGet().add(value);
+        if (this.attributesToGet == null) {
+            setAttributesToGet(new java.util.ArrayList<String>(
+                    attributesToGet.length));
         }
-        return this;
-    }
-    
-    /**
-     * <important><p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>ProjectionExpression</i> instead. Do
-     * not combine legacy parameters and expression parameters in a single
-     * API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. <p>This parameter allows you to retrieve attributes of type
-     * List or Map; however, it cannot retrieve individual elements within a
-     * List or a Map.</important> <p>The names of one or more attributes to
-     * retrieve. If no attribute names are provided, then all attributes will
-     * be returned. If any of the requested attributes are not found, they
-     * will not appear in the result. <p>Note that <i>AttributesToGet</i> has
-     * no effect on provisioned throughput consumption. DynamoDB determines
-     * capacity units consumed based on item size, not on the amount of data
-     * that is returned to an application.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @param attributesToGet <important><p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>ProjectionExpression</i> instead. Do
-     *         not combine legacy parameters and expression parameters in a single
-     *         API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. <p>This parameter allows you to retrieve attributes of type
-     *         List or Map; however, it cannot retrieve individual elements within a
-     *         List or a Map.</important> <p>The names of one or more attributes to
-     *         retrieve. If no attribute names are provided, then all attributes will
-     *         be returned. If any of the requested attributes are not found, they
-     *         will not appear in the result. <p>Note that <i>AttributesToGet</i> has
-     *         no effect on provisioned throughput consumption. DynamoDB determines
-     *         capacity units consumed based on item size, not on the amount of data
-     *         that is returned to an application.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ScanRequest withAttributesToGet(java.util.Collection<String> attributesToGet) {
-        if (attributesToGet == null) {
-            this.attributesToGet = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributesToGet.size());
-            attributesToGetCopy.addAll(attributesToGet);
-            this.attributesToGet = attributesToGetCopy;
+        for (String ele : attributesToGet) {
+            this.attributesToGet.add(ele);
         }
-
         return this;
     }
 
     /**
-     * The maximum number of items to evaluate (not necessarily the number of
-     * matching items). If DynamoDB processes the number of items up to the
-     * limit while processing the results, it stops the operation and returns
-     * the matching values up to that point, and a key in
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set
-     * size exceeds 1 MB before DynamoDB reaches this limit, it stops the
-     * operation and returns the matching values up to the limit, and a key
-     * in <i>LastEvaluatedKey</i> to apply in a subsequent operation to
-     * continue the operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <important>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @return The maximum number of items to evaluate (not necessarily the number of
-     *         matching items). If DynamoDB processes the number of items up to the
-     *         limit while processing the results, it stops the operation and returns
-     *         the matching values up to that point, and a key in
-     *         <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     *         you can pick up where you left off. Also, if the processed data set
-     *         size exceeds 1 MB before DynamoDB reaches this limit, it stops the
-     *         operation and returns the matching values up to the limit, and a key
-     *         in <i>LastEvaluatedKey</i> to apply in a subsequent operation to
-     *         continue the operation. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>ProjectionExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * <p>
+     * This parameter allows you to retrieve attributes of type List or Map;
+     * however, it cannot retrieve individual elements within a List or a Map.
+     * </p>
+     * </important>
+     * <p>
+     * The names of one or more attributes to retrieve. If no attribute names
+     * are provided, then all attributes will be returned. If any of the
+     * requested attributes are not found, they will not appear in the result.
+     * </p>
+     * <p>
+     * Note that <i>AttributesToGet</i> has no effect on provisioned throughput
+     * consumption. DynamoDB determines capacity units consumed based on item
+     * size, not on the amount of data that is returned to an application.
+     * </p>
+     * 
+     * @param attributesToGet
+     *        This is a legacy parameter, for backward compatibility. New
+     *        applications should use <i>ProjectionExpression</i> instead. Do
+     *        not combine legacy parameters and expression parameters in a
+     *        single API call; otherwise, DynamoDB will return a
+     *        <i>ValidationException</i> exception.</p>
+     *        <p>
+     *        This parameter allows you to retrieve attributes of type List or
+     *        Map; however, it cannot retrieve individual elements within a List
+     *        or a Map.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        The names of one or more attributes to retrieve. If no attribute
+     *        names are provided, then all attributes will be returned. If any
+     *        of the requested attributes are not found, they will not appear in
+     *        the result.
+     *        </p>
+     *        <p>
+     *        Note that <i>AttributesToGet
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public Integer getLimit() {
-        return limit;
+    public ScanRequest withAttributesToGet(
+            java.util.Collection<String> attributesToGet) {
+        setAttributesToGet(attributesToGet);
+        return this;
     }
-    
+
     /**
+     * <p>
      * The maximum number of items to evaluate (not necessarily the number of
      * matching items). If DynamoDB processes the number of items up to the
      * limit while processing the results, it stops the operation and returns
      * the matching values up to that point, and a key in
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set
-     * size exceeds 1 MB before DynamoDB reaches this limit, it stops the
-     * operation and returns the matching values up to the limit, and a key
-     * in <i>LastEvaluatedKey</i> to apply in a subsequent operation to
-     * continue the operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @param limit The maximum number of items to evaluate (not necessarily the number of
-     *         matching items). If DynamoDB processes the number of items up to the
-     *         limit while processing the results, it stops the operation and returns
-     *         the matching values up to that point, and a key in
-     *         <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     *         you can pick up where you left off. Also, if the processed data set
-     *         size exceeds 1 MB before DynamoDB reaches this limit, it stops the
-     *         operation and returns the matching values up to the limit, and a key
-     *         in <i>LastEvaluatedKey</i> to apply in a subsequent operation to
-     *         continue the operation. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that you
+     * can pick up where you left off. Also, if the processed data set size
+     * exceeds 1 MB before DynamoDB reaches this limit, it stops the operation
+     * and returns the matching values up to the limit, and a key in
+     * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
+     * the operation. For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
+     * >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param limit
+     *        The maximum number of items to evaluate (not necessarily the
+     *        number of matching items). If DynamoDB processes the number of
+     *        items up to the limit while processing the results, it stops the
+     *        operation and returns the matching values up to that point, and a
+     *        key in <i>LastEvaluatedKey</i> to apply in a subsequent operation,
+     *        so that you can pick up where you left off. Also, if the processed
+     *        data set size exceeds 1 MB before DynamoDB reaches this limit, it
+     *        stops the operation and returns the matching values up to the
+     *        limit, and a key in <i>LastEvaluatedKey</i> to apply in a
+     *        subsequent operation to continue the operation. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
+     *        >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-    
+
     /**
+     * <p>
      * The maximum number of items to evaluate (not necessarily the number of
      * matching items). If DynamoDB processes the number of items up to the
      * limit while processing the results, it stops the operation and returns
      * the matching values up to that point, and a key in
-     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set
-     * size exceeds 1 MB before DynamoDB reaches this limit, it stops the
-     * operation and returns the matching values up to the limit, and a key
-     * in <i>LastEvaluatedKey</i> to apply in a subsequent operation to
-     * continue the operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that you
+     * can pick up where you left off. Also, if the processed data set size
+     * exceeds 1 MB before DynamoDB reaches this limit, it stops the operation
+     * and returns the matching values up to the limit, and a key in
+     * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
+     * the operation. For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
+     * >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @return The maximum number of items to evaluate (not necessarily the
+     *         number of matching items). If DynamoDB processes the number of
+     *         items up to the limit while processing the results, it stops the
+     *         operation and returns the matching values up to that point, and a
+     *         key in <i>LastEvaluatedKey</i> to apply in a subsequent
+     *         operation, so that you can pick up where you left off. Also, if
+     *         the processed data set size exceeds 1 MB before DynamoDB reaches
+     *         this limit, it stops the operation and returns the matching
+     *         values up to the limit, and a key in <i>LastEvaluatedKey</i> to
+     *         apply in a subsequent operation to continue the operation. For
+     *         more information, see <a href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
+     *         >Query and Scan</a> in the <i>Amazon DynamoDB Developer
+     *         Guide</i>.
+     */
+    public Integer getLimit() {
+        return this.limit;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @param limit The maximum number of items to evaluate (not necessarily the number of
-     *         matching items). If DynamoDB processes the number of items up to the
-     *         limit while processing the results, it stops the operation and returns
-     *         the matching values up to that point, and a key in
-     *         <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that
-     *         you can pick up where you left off. Also, if the processed data set
-     *         size exceeds 1 MB before DynamoDB reaches this limit, it stops the
-     *         operation and returns the matching values up to the limit, and a key
-     *         in <i>LastEvaluatedKey</i> to apply in a subsequent operation to
-     *         continue the operation. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The maximum number of items to evaluate (not necessarily the number of
+     * matching items). If DynamoDB processes the number of items up to the
+     * limit while processing the results, it stops the operation and returns
+     * the matching values up to that point, and a key in
+     * <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that you
+     * can pick up where you left off. Also, if the processed data set size
+     * exceeds 1 MB before DynamoDB reaches this limit, it stops the operation
+     * and returns the matching values up to the limit, and a key in
+     * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
+     * the operation. For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
+     * >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param limit
+     *        The maximum number of items to evaluate (not necessarily the
+     *        number of matching items). If DynamoDB processes the number of
+     *        items up to the limit while processing the results, it stops the
+     *        operation and returns the matching values up to that point, and a
+     *        key in <i>LastEvaluatedKey</i> to apply in a subsequent operation,
+     *        so that you can pick up where you left off. Also, if the processed
+     *        data set size exceeds 1 MB before DynamoDB reaches this limit, it
+     *        stops the operation and returns the matching values up to the
+     *        limit, and a key in <i>LastEvaluatedKey</i> to apply in a
+     *        subsequent operation to continue the operation. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
+     *        >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ScanRequest withLimit(Integer limit) {
-        this.limit = limit;
+        setLimit(limit);
         return this;
     }
 
     /**
+     * <p>
      * The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, or the count of matching items.
-     * <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item
-     * attributes. </li> <li> <p><code>COUNT</code> - Returns the number of
-     * matching items, rather than the matching items themselves. </li> <li>
-     * <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
-     * listed in <i>AttributesToGet</i>. This return value is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. </li> </ul> <p>If neither <i>Select</i> nor
-     * <i>AttributesToGet</i> are specified, DynamoDB defaults to
-     * <code>ALL_ATTRIBUTES</code>. You cannot use both
-     * <i>AttributesToGet</i> and <i>Select</i> together in a single request,
-     * unless the value for <i>Select</i> is
-     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
-     * specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
-     *
-     * @return The attributes to be returned in the result. You can retrieve all item
-     *         attributes, specific item attributes, or the count of matching items.
-     *         <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item
-     *         attributes. </li> <li> <p><code>COUNT</code> - Returns the number of
-     *         matching items, rather than the matching items themselves. </li> <li>
-     *         <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
-     *         listed in <i>AttributesToGet</i>. This return value is equivalent to
-     *         specifying <i>AttributesToGet</i> without specifying any value for
-     *         <i>Select</i>. </li> </ul> <p>If neither <i>Select</i> nor
-     *         <i>AttributesToGet</i> are specified, DynamoDB defaults to
-     *         <code>ALL_ATTRIBUTES</code>. You cannot use both
-     *         <i>AttributesToGet</i> and <i>Select</i> together in a single request,
-     *         unless the value for <i>Select</i> is
-     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
-     *         specifying <i>AttributesToGet</i> without any value for
-     *         <i>Select</i>.)
-     *
-     * @see Select
-     */
-    public String getSelect() {
-        return select;
-    }
-    
-    /**
-     * The attributes to be returned in the result. You can retrieve all item
-     * attributes, specific item attributes, or the count of matching items.
-     * <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item
-     * attributes. </li> <li> <p><code>COUNT</code> - Returns the number of
-     * matching items, rather than the matching items themselves. </li> <li>
-     * <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
-     * listed in <i>AttributesToGet</i>. This return value is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. </li> </ul> <p>If neither <i>Select</i> nor
-     * <i>AttributesToGet</i> are specified, DynamoDB defaults to
-     * <code>ALL_ATTRIBUTES</code>. You cannot use both
-     * <i>AttributesToGet</i> and <i>Select</i> together in a single request,
-     * unless the value for <i>Select</i> is
-     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
-     * specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
+     * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     * </p>
+     * </li>
+     * <li>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
-     *
-     * @param select The attributes to be returned in the result. You can retrieve all item
-     *         attributes, specific item attributes, or the count of matching items.
-     *         <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item
-     *         attributes. </li> <li> <p><code>COUNT</code> - Returns the number of
-     *         matching items, rather than the matching items themselves. </li> <li>
-     *         <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
-     *         listed in <i>AttributesToGet</i>. This return value is equivalent to
-     *         specifying <i>AttributesToGet</i> without specifying any value for
-     *         <i>Select</i>. </li> </ul> <p>If neither <i>Select</i> nor
-     *         <i>AttributesToGet</i> are specified, DynamoDB defaults to
-     *         <code>ALL_ATTRIBUTES</code>. You cannot use both
-     *         <i>AttributesToGet</i> and <i>Select</i> together in a single request,
-     *         unless the value for <i>Select</i> is
-     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
-     *         specifying <i>AttributesToGet</i> without any value for
-     *         <i>Select</i>.)
-     *
+     * <code>COUNT</code> - Returns the number of matching items, rather than
+     * the matching items themselves.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
+     * <i>AttributesToGet</i>. This return value is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
+     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use both
+     * <i>AttributesToGet</i> and <i>Select</i> together in a single request,
+     * unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>.
+     * (This usage is equivalent to specifying <i>AttributesToGet</i> without
+     * any value for <i>Select</i>.)
+     * </p>
+     * 
+     * @param select
+     *        The attributes to be returned in the result. You can retrieve all
+     *        item attributes, specific item attributes, or the count of
+     *        matching items.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COUNT</code> - Returns the number of matching items, rather
+     *        than the matching items themselves.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
+     *        listed in <i>AttributesToGet</i>. This return value is equivalent
+     *        to specifying <i>AttributesToGet</i> without specifying any value
+     *        for <i>Select</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
+     *        DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use
+     *        both <i>AttributesToGet</i> and <i>Select</i> together in a single
+     *        request, unless the value for <i>Select</i> is
+     *        <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *        specifying <i>AttributesToGet</i> without any value for
+     *        <i>Select</i>.)
      * @see Select
      */
     public void setSelect(String select) {
         this.select = select;
     }
-    
+
     /**
+     * <p>
      * The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, or the count of matching items.
-     * <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item
-     * attributes. </li> <li> <p><code>COUNT</code> - Returns the number of
-     * matching items, rather than the matching items themselves. </li> <li>
-     * <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
-     * listed in <i>AttributesToGet</i>. This return value is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. </li> </ul> <p>If neither <i>Select</i> nor
-     * <i>AttributesToGet</i> are specified, DynamoDB defaults to
-     * <code>ALL_ATTRIBUTES</code>. You cannot use both
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code> - Returns the number of matching items, rather than
+     * the matching items themselves.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
+     * <i>AttributesToGet</i>. This return value is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
+     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use both
      * <i>AttributesToGet</i> and <i>Select</i> together in a single request,
-     * unless the value for <i>Select</i> is
-     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
-     * specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
-     *
-     * @param select The attributes to be returned in the result. You can retrieve all item
-     *         attributes, specific item attributes, or the count of matching items.
-     *         <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item
-     *         attributes. </li> <li> <p><code>COUNT</code> - Returns the number of
-     *         matching items, rather than the matching items themselves. </li> <li>
-     *         <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
-     *         listed in <i>AttributesToGet</i>. This return value is equivalent to
-     *         specifying <i>AttributesToGet</i> without specifying any value for
-     *         <i>Select</i>. </li> </ul> <p>If neither <i>Select</i> nor
-     *         <i>AttributesToGet</i> are specified, DynamoDB defaults to
-     *         <code>ALL_ATTRIBUTES</code>. You cannot use both
-     *         <i>AttributesToGet</i> and <i>Select</i> together in a single request,
-     *         unless the value for <i>Select</i> is
+     * unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>.
+     * (This usage is equivalent to specifying <i>AttributesToGet</i> without
+     * any value for <i>Select</i>.)
+     * </p>
+     * 
+     * @return The attributes to be returned in the result. You can retrieve all
+     *         item attributes, specific item attributes, or the count of
+     *         matching items.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>COUNT</code> - Returns the number of matching items, rather
+     *         than the matching items themselves.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
+     *         listed in <i>AttributesToGet</i>. This return value is equivalent
+     *         to specifying <i>AttributesToGet</i> without specifying any value
+     *         for <i>Select</i>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If neither <i>Select</i> nor <i>AttributesToGet</i> are
+     *         specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You
+     *         cannot use both <i>AttributesToGet</i> and <i>Select</i> together
+     *         in a single request, unless the value for <i>Select</i> is
      *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * @see Select
+     */
+    public String getSelect() {
+        return this.select;
+    }
+
+    /**
+     * <p>
+     * The attributes to be returned in the result. You can retrieve all item
+     * attributes, specific item attributes, or the count of matching items.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code> - Returns the number of matching items, rather than
+     * the matching items themselves.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
+     * <i>AttributesToGet</i>. This return value is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
+     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use both
+     * <i>AttributesToGet</i> and <i>Select</i> together in a single request,
+     * unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>.
+     * (This usage is equivalent to specifying <i>AttributesToGet</i> without
+     * any value for <i>Select</i>.)
+     * </p>
+     * 
+     * @param select
+     *        The attributes to be returned in the result. You can retrieve all
+     *        item attributes, specific item attributes, or the count of
+     *        matching items.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COUNT</code> - Returns the number of matching items, rather
+     *        than the matching items themselves.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
+     *        listed in <i>AttributesToGet</i>. This return value is equivalent
+     *        to specifying <i>AttributesToGet</i> without specifying any value
+     *        for <i>Select</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
+     *        DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use
+     *        both <i>AttributesToGet</i> and <i>Select</i> together in a single
+     *        request, unless the value for <i>Select</i> is
+     *        <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *        specifying <i>AttributesToGet</i> without any value for
+     *        <i>Select</i>.)
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see Select
      */
     public ScanRequest withSelect(String select) {
-        this.select = select;
+        setSelect(select);
         return this;
     }
 
     /**
+     * <p>
      * The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, or the count of matching items.
-     * <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item
-     * attributes. </li> <li> <p><code>COUNT</code> - Returns the number of
-     * matching items, rather than the matching items themselves. </li> <li>
-     * <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
-     * listed in <i>AttributesToGet</i>. This return value is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. </li> </ul> <p>If neither <i>Select</i> nor
-     * <i>AttributesToGet</i> are specified, DynamoDB defaults to
-     * <code>ALL_ATTRIBUTES</code>. You cannot use both
-     * <i>AttributesToGet</i> and <i>Select</i> together in a single request,
-     * unless the value for <i>Select</i> is
-     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
-     * specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
-     *
-     * @param select The attributes to be returned in the result. You can retrieve all item
-     *         attributes, specific item attributes, or the count of matching items.
-     *         <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item
-     *         attributes. </li> <li> <p><code>COUNT</code> - Returns the number of
-     *         matching items, rather than the matching items themselves. </li> <li>
-     *         <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
-     *         listed in <i>AttributesToGet</i>. This return value is equivalent to
-     *         specifying <i>AttributesToGet</i> without specifying any value for
-     *         <i>Select</i>. </li> </ul> <p>If neither <i>Select</i> nor
-     *         <i>AttributesToGet</i> are specified, DynamoDB defaults to
-     *         <code>ALL_ATTRIBUTES</code>. You cannot use both
-     *         <i>AttributesToGet</i> and <i>Select</i> together in a single request,
-     *         unless the value for <i>Select</i> is
-     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
-     *         specifying <i>AttributesToGet</i> without any value for
-     *         <i>Select</i>.)
-     *
+     * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code> - Returns the number of matching items, rather than
+     * the matching items themselves.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
+     * <i>AttributesToGet</i>. This return value is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
+     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use both
+     * <i>AttributesToGet</i> and <i>Select</i> together in a single request,
+     * unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>.
+     * (This usage is equivalent to specifying <i>AttributesToGet</i> without
+     * any value for <i>Select</i>.)
+     * </p>
+     * 
+     * @param select
+     *        The attributes to be returned in the result. You can retrieve all
+     *        item attributes, specific item attributes, or the count of
+     *        matching items.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COUNT</code> - Returns the number of matching items, rather
+     *        than the matching items themselves.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
+     *        listed in <i>AttributesToGet</i>. This return value is equivalent
+     *        to specifying <i>AttributesToGet</i> without specifying any value
+     *        for <i>Select</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
+     *        DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use
+     *        both <i>AttributesToGet</i> and <i>Select</i> together in a single
+     *        request, unless the value for <i>Select</i> is
+     *        <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *        specifying <i>AttributesToGet</i> without any value for
+     *        <i>Select</i>.)
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see Select
      */
     public void setSelect(Select select) {
         this.select = select.toString();
     }
-    
+
     /**
+     * <p>
      * The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, or the count of matching items.
-     * <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item
-     * attributes. </li> <li> <p><code>COUNT</code> - Returns the number of
-     * matching items, rather than the matching items themselves. </li> <li>
-     * <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
-     * listed in <i>AttributesToGet</i>. This return value is equivalent to
-     * specifying <i>AttributesToGet</i> without specifying any value for
-     * <i>Select</i>. </li> </ul> <p>If neither <i>Select</i> nor
-     * <i>AttributesToGet</i> are specified, DynamoDB defaults to
-     * <code>ALL_ATTRIBUTES</code>. You cannot use both
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code> - Returns the number of matching items, rather than
+     * the matching items themselves.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
+     * <i>AttributesToGet</i>. This return value is equivalent to specifying
+     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
+     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use both
      * <i>AttributesToGet</i> and <i>Select</i> together in a single request,
-     * unless the value for <i>Select</i> is
-     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
-     * specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT
-     *
-     * @param select The attributes to be returned in the result. You can retrieve all item
-     *         attributes, specific item attributes, or the count of matching items.
-     *         <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item
-     *         attributes. </li> <li> <p><code>COUNT</code> - Returns the number of
-     *         matching items, rather than the matching items themselves. </li> <li>
-     *         <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
-     *         listed in <i>AttributesToGet</i>. This return value is equivalent to
-     *         specifying <i>AttributesToGet</i> without specifying any value for
-     *         <i>Select</i>. </li> </ul> <p>If neither <i>Select</i> nor
-     *         <i>AttributesToGet</i> are specified, DynamoDB defaults to
-     *         <code>ALL_ATTRIBUTES</code>. You cannot use both
-     *         <i>AttributesToGet</i> and <i>Select</i> together in a single request,
-     *         unless the value for <i>Select</i> is
-     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
-     *         specifying <i>AttributesToGet</i> without any value for
-     *         <i>Select</i>.)
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>.
+     * (This usage is equivalent to specifying <i>AttributesToGet</i> without
+     * any value for <i>Select</i>.)
+     * </p>
+     * 
+     * @param select
+     *        The attributes to be returned in the result. You can retrieve all
+     *        item attributes, specific item attributes, or the count of
+     *        matching items.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COUNT</code> - Returns the number of matching items, rather
+     *        than the matching items themselves.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes
+     *        listed in <i>AttributesToGet</i>. This return value is equivalent
+     *        to specifying <i>AttributesToGet</i> without specifying any value
+     *        for <i>Select</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
+     *        DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use
+     *        both <i>AttributesToGet</i> and <i>Select</i> together in a single
+     *        request, unless the value for <i>Select</i> is
+     *        <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *        specifying <i>AttributesToGet</i> without any value for
+     *        <i>Select</i>.)
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see Select
      */
     public ScanRequest withSelect(Select select) {
-        this.select = select.toString();
+        setSelect(select);
         return this;
     }
 
     /**
-     * <important> <p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>FilterExpression</i> instead. Do not
-     * combine legacy parameters and expression parameters in a single API
-     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. </important> <p>A condition that evaluates the scan results
-     * and returns only the desired values. <note><p>This parameter does not
-     * support attributes of type List or Map.</note> <p>If you specify more
-     * than one condition in the <i>ScanFilter</i> map, then by default all
-     * of the conditions must evaluate to true. In other words, the
-     * conditions are ANDed together. (You can use the
-     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
-     * you do this, then at least one of the conditions must evaluate to
-     * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
-     * consists of an attribute name to compare, along with the following:
-     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     * evaluate against the supplied attribute. The number of values in the
-     * list depends on the operator specified in <i>ComparisonOperator</i> .
-     * <p>For type Number, value comparisons are numeric. <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII
-     * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
-     * a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values. <p>For information on
-     * specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
-     * attributes. For example, equals, greater than, less than, etc. <p>The
-     * following comparison operators are available: <p><code>EQ | NE | LE |
-     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
-     * operators, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.
-     * </li> </ul>
-     *
-     * @return <important> <p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>FilterExpression</i> instead. Do not
-     *         combine legacy parameters and expression parameters in a single API
-     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. </important> <p>A condition that evaluates the scan results
-     *         and returns only the desired values. <note><p>This parameter does not
-     *         support attributes of type List or Map.</note> <p>If you specify more
-     *         than one condition in the <i>ScanFilter</i> map, then by default all
-     *         of the conditions must evaluate to true. In other words, the
-     *         conditions are ANDed together. (You can use the
-     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
-     *         you do this, then at least one of the conditions must evaluate to
-     *         true, rather than all of them.) <p>Each <i>ScanFilter</i> element
-     *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     *         evaluate against the supplied attribute. The number of values in the
-     *         list depends on the operator specified in <i>ComparisonOperator</i> .
-     *         <p>For type Number, value comparisons are numeric. <p>String value
-     *         comparisons for greater than, equals, or less than are based on ASCII
-     *         character code values. For example, <code>a</code> is greater than
-     *         <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
-     *         a list of code values, see <a
-     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     *         <p>For Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values. <p>For information on
-     *         specifying data types in JSON, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li>
-     *         <li><p><i>ComparisonOperator</i> - A comparator for evaluating
-     *         attributes. For example, equals, greater than, less than, etc. <p>The
-     *         following comparison operators are available: <p><code>EQ | NE | LE |
-     *         LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-     *         | IN | BETWEEN</code> <p>For complete descriptions of all comparison
-     *         operators, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.
-     *         </li> </ul>
+     * <important>
+     * <p>
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>FilterExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * </important>
+     * <p>
+     * A condition that evaluates the scan results and returns only the desired
+     * values.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter does not support attributes of type List or Map.
+     * </p>
+     * </note>
+     * <p>
+     * If you specify more than one condition in the <i>ScanFilter</i> map, then
+     * by default all of the conditions must evaluate to true. In other words,
+     * the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you
+     * do this, then at least one of the conditions must evaluate to true,
+     * rather than all of them.)
+     * </p>
+     * <p>
+     * Each <i>ScanFilter</i> element consists of an attribute name to compare,
+     * along with the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the
+     * supplied attribute. The number of values in the list depends on the
+     * operator specified in <i>ComparisonOperator</i> .
+     * </p>
+     * <p>
+     * For type Number, value comparisons are numeric.
+     * </p>
+     * <p>
+     * String value comparisons for greater than, equals, or less than are based
+     * on ASCII character code values. For example, <code>a</code> is greater
+     * than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
+     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * </p>
+     * <p>
+     * For Binary, DynamoDB treats each byte of the binary data as unsigned when
+     * it compares binary values.
+     * </p>
+     * <p>
+     * For information on specifying data types in JSON, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html"
+     * >JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * example, equals, greater than, less than, etc.
+     * </p>
+     * <p>
+     * The following comparison operators are available:
+     * </p>
+     * <p>
+     * <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+     * </p>
+     * <p>
+     * For complete descriptions of all comparison operators, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html"
+     * >Condition</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return <p>
+     *         This is a legacy parameter, for backward compatibility. New
+     *         applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a
+     *         <i>ValidationException</i> exception.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         A condition that evaluates the scan results and returns only the
+     *         desired values.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This parameter does not support attributes of type List or Map.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         If you specify more than one condition in the <i>ScanFilter</i>
+     *         map, then by default all of the conditions must evaluate to true.
+     *         In other words, the conditions are ANDed together. (You can use
+     *         the <i>ConditionalOperator</i> parameter to OR the conditions
+     *         instead. If you do this, then at least one of the conditions must
+     *         evaluate to true, rather than all of them.)
+     *         </p>
+     *         <p>
+     *         Each <i>ScanFilter</i> element consists of an attribute name to
+     *         compare, along with the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <i>AttributeValueList</i> - One or more values to evaluate
+     *         against the supplied attribute. The number of values in the list
+     *         depends on the operator specified in <i>ComparisonOperator</i> .
+     *         </p>
+     *         <p>
+     *         For type Number, value comparisons are numeric.
+     *         </p>
+     *         <p>
+     *         String value comparisons for greater than, equals, or less than
+     *         are based on ASCII character code values. For example,
+     *         <code>a</code> is greater than <code>A</code>, and <code>a</code>
+     *         is greater than <code>B</code>. For a list of code values, see <a
+     *         href
+     *         ="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
+     *         >http
+     *         ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *         </p>
+     *         <p>
+     *         For Binary, DynamoDB treats each byte of the binary data as
+     *         unsigned when it compares binary values.
+     *         </p>
+     *         <p>
+     *         For information on specifying data types in JSON, see <a href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html"
+     *         >JSON Data Format</a> in the <i>Amazon DynamoDB Developer
+     *         Guide</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>ComparisonOperator</i> - A comparator for evaluating
+     *         attributes. For example, equals, greater than, less than, etc.
+     *         </p>
+     *         <p>
+     *         The following comparison operators are available:
+     *         </p>
+     *         <p>
+     *         <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+     *         </p>
+     *         <p>
+     *         For complete descriptions of all comparison operators, see <a
+     *         href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html"
+     *         >Condition</a>.
+     *         </p>
+     *         </li>
      */
-    public java.util.Map<String,Condition> getScanFilter() {
-        
+    public java.util.Map<String, Condition> getScanFilter() {
         return scanFilter;
     }
-    
+
     /**
-     * <important> <p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>FilterExpression</i> instead. Do not
-     * combine legacy parameters and expression parameters in a single API
-     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. </important> <p>A condition that evaluates the scan results
-     * and returns only the desired values. <note><p>This parameter does not
-     * support attributes of type List or Map.</note> <p>If you specify more
-     * than one condition in the <i>ScanFilter</i> map, then by default all
-     * of the conditions must evaluate to true. In other words, the
-     * conditions are ANDed together. (You can use the
-     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
-     * you do this, then at least one of the conditions must evaluate to
-     * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
-     * consists of an attribute name to compare, along with the following:
-     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     * evaluate against the supplied attribute. The number of values in the
-     * list depends on the operator specified in <i>ComparisonOperator</i> .
-     * <p>For type Number, value comparisons are numeric. <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII
-     * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
-     * a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values. <p>For information on
-     * specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
-     * attributes. For example, equals, greater than, less than, etc. <p>The
-     * following comparison operators are available: <p><code>EQ | NE | LE |
-     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
-     * operators, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.
-     * </li> </ul>
-     *
-     * @param scanFilter <important> <p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>FilterExpression</i> instead. Do not
-     *         combine legacy parameters and expression parameters in a single API
-     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. </important> <p>A condition that evaluates the scan results
-     *         and returns only the desired values. <note><p>This parameter does not
-     *         support attributes of type List or Map.</note> <p>If you specify more
-     *         than one condition in the <i>ScanFilter</i> map, then by default all
-     *         of the conditions must evaluate to true. In other words, the
-     *         conditions are ANDed together. (You can use the
-     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
-     *         you do this, then at least one of the conditions must evaluate to
-     *         true, rather than all of them.) <p>Each <i>ScanFilter</i> element
-     *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     *         evaluate against the supplied attribute. The number of values in the
-     *         list depends on the operator specified in <i>ComparisonOperator</i> .
-     *         <p>For type Number, value comparisons are numeric. <p>String value
-     *         comparisons for greater than, equals, or less than are based on ASCII
-     *         character code values. For example, <code>a</code> is greater than
-     *         <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
-     *         a list of code values, see <a
-     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     *         <p>For Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values. <p>For information on
-     *         specifying data types in JSON, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li>
-     *         <li><p><i>ComparisonOperator</i> - A comparator for evaluating
-     *         attributes. For example, equals, greater than, less than, etc. <p>The
-     *         following comparison operators are available: <p><code>EQ | NE | LE |
-     *         LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-     *         | IN | BETWEEN</code> <p>For complete descriptions of all comparison
-     *         operators, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.
-     *         </li> </ul>
+     * <important>
+     * <p>
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>FilterExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * </important>
+     * <p>
+     * A condition that evaluates the scan results and returns only the desired
+     * values.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter does not support attributes of type List or Map.
+     * </p>
+     * </note>
+     * <p>
+     * If you specify more than one condition in the <i>ScanFilter</i> map, then
+     * by default all of the conditions must evaluate to true. In other words,
+     * the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you
+     * do this, then at least one of the conditions must evaluate to true,
+     * rather than all of them.)
+     * </p>
+     * <p>
+     * Each <i>ScanFilter</i> element consists of an attribute name to compare,
+     * along with the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the
+     * supplied attribute. The number of values in the list depends on the
+     * operator specified in <i>ComparisonOperator</i> .
+     * </p>
+     * <p>
+     * For type Number, value comparisons are numeric.
+     * </p>
+     * <p>
+     * String value comparisons for greater than, equals, or less than are based
+     * on ASCII character code values. For example, <code>a</code> is greater
+     * than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
+     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * </p>
+     * <p>
+     * For Binary, DynamoDB treats each byte of the binary data as unsigned when
+     * it compares binary values.
+     * </p>
+     * <p>
+     * For information on specifying data types in JSON, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html"
+     * >JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * example, equals, greater than, less than, etc.
+     * </p>
+     * <p>
+     * The following comparison operators are available:
+     * </p>
+     * <p>
+     * <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+     * </p>
+     * <p>
+     * For complete descriptions of all comparison operators, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html"
+     * >Condition</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param scanFilter
+     *        <p>
+     *        This is a legacy parameter, for backward compatibility. New
+     *        applications should use <i>FilterExpression</i> instead. Do not
+     *        combine legacy parameters and expression parameters in a single
+     *        API call; otherwise, DynamoDB will return a
+     *        <i>ValidationException</i> exception.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        A condition that evaluates the scan results and returns only the
+     *        desired values.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter does not support attributes of type List or Map.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If you specify more than one condition in the <i>ScanFilter</i>
+     *        map, then by default all of the conditions must evaluate to true.
+     *        In other words, the conditions are ANDed together. (You can use
+     *        the <i>ConditionalOperator</i> parameter to OR the conditions
+     *        instead. If you do this, then at least one of the conditions must
+     *        evaluate to true, rather than all of them.)
+     *        </p>
+     *        <p>
+     *        Each <i>ScanFilter</i> element consists of an attribute name to
+     *        compare, along with the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <i>AttributeValueList</i> - One or more values to evaluate against
+     *        the supplied attribute. The number of values in the list depends
+     *        on the operator specified in <i>ComparisonOperator</i> .
+     *        </p>
+     *        <p>
+     *        For type Number, value comparisons are numeric.
+     *        </p>
+     *        <p>
+     *        String value comparisons for greater than, equals, or less than
+     *        are based on ASCII character code values. For example,
+     *        <code>a</code> is greater than <code>A</code>, and <code>a</code>
+     *        is greater than <code>B</code>. For a list of code values, see <a
+     *        href
+     *        ="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
+     *        >http
+     *        ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *        </p>
+     *        <p>
+     *        For Binary, DynamoDB treats each byte of the binary data as
+     *        unsigned when it compares binary values.
+     *        </p>
+     *        <p>
+     *        For information on specifying data types in JSON, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html"
+     *        >JSON Data Format</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>ComparisonOperator</i> - A comparator for evaluating
+     *        attributes. For example, equals, greater than, less than, etc.
+     *        </p>
+     *        <p>
+     *        The following comparison operators are available:
+     *        </p>
+     *        <p>
+     *        <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+     *        </p>
+     *        <p>
+     *        For complete descriptions of all comparison operators, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html"
+     *        >Condition</a>.
+     *        </p>
+     *        </li>
      */
-    public void setScanFilter(java.util.Map<String,Condition> scanFilter) {
+    public void setScanFilter(java.util.Map<String, Condition> scanFilter) {
         this.scanFilter = scanFilter;
     }
-    
+
     /**
-     * <important> <p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>FilterExpression</i> instead. Do not
-     * combine legacy parameters and expression parameters in a single API
-     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. </important> <p>A condition that evaluates the scan results
-     * and returns only the desired values. <note><p>This parameter does not
-     * support attributes of type List or Map.</note> <p>If you specify more
-     * than one condition in the <i>ScanFilter</i> map, then by default all
-     * of the conditions must evaluate to true. In other words, the
-     * conditions are ANDed together. (You can use the
-     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
-     * you do this, then at least one of the conditions must evaluate to
-     * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
-     * consists of an attribute name to compare, along with the following:
-     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     * evaluate against the supplied attribute. The number of values in the
-     * list depends on the operator specified in <i>ComparisonOperator</i> .
-     * <p>For type Number, value comparisons are numeric. <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII
-     * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
-     * a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values. <p>For information on
-     * specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
-     * attributes. For example, equals, greater than, less than, etc. <p>The
-     * following comparison operators are available: <p><code>EQ | NE | LE |
-     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
-     * operators, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.
-     * </li> </ul>
+     * <important>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param scanFilter <important> <p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>FilterExpression</i> instead. Do not
-     *         combine legacy parameters and expression parameters in a single API
-     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. </important> <p>A condition that evaluates the scan results
-     *         and returns only the desired values. <note><p>This parameter does not
-     *         support attributes of type List or Map.</note> <p>If you specify more
-     *         than one condition in the <i>ScanFilter</i> map, then by default all
-     *         of the conditions must evaluate to true. In other words, the
-     *         conditions are ANDed together. (You can use the
-     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
-     *         you do this, then at least one of the conditions must evaluate to
-     *         true, rather than all of them.) <p>Each <i>ScanFilter</i> element
-     *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     *         evaluate against the supplied attribute. The number of values in the
-     *         list depends on the operator specified in <i>ComparisonOperator</i> .
-     *         <p>For type Number, value comparisons are numeric. <p>String value
-     *         comparisons for greater than, equals, or less than are based on ASCII
-     *         character code values. For example, <code>a</code> is greater than
-     *         <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
-     *         a list of code values, see <a
-     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     *         <p>For Binary, DynamoDB treats each byte of the binary data as
-     *         unsigned when it compares binary values. <p>For information on
-     *         specifying data types in JSON, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li>
-     *         <li><p><i>ComparisonOperator</i> - A comparator for evaluating
-     *         attributes. For example, equals, greater than, less than, etc. <p>The
-     *         following comparison operators are available: <p><code>EQ | NE | LE |
-     *         LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-     *         | IN | BETWEEN</code> <p>For complete descriptions of all comparison
-     *         operators, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.
-     *         </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>FilterExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * </important>
+     * <p>
+     * A condition that evaluates the scan results and returns only the desired
+     * values.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter does not support attributes of type List or Map.
+     * </p>
+     * </note>
+     * <p>
+     * If you specify more than one condition in the <i>ScanFilter</i> map, then
+     * by default all of the conditions must evaluate to true. In other words,
+     * the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you
+     * do this, then at least one of the conditions must evaluate to true,
+     * rather than all of them.)
+     * </p>
+     * <p>
+     * Each <i>ScanFilter</i> element consists of an attribute name to compare,
+     * along with the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the
+     * supplied attribute. The number of values in the list depends on the
+     * operator specified in <i>ComparisonOperator</i> .
+     * </p>
+     * <p>
+     * For type Number, value comparisons are numeric.
+     * </p>
+     * <p>
+     * String value comparisons for greater than, equals, or less than are based
+     * on ASCII character code values. For example, <code>a</code> is greater
+     * than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
+     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * </p>
+     * <p>
+     * For Binary, DynamoDB treats each byte of the binary data as unsigned when
+     * it compares binary values.
+     * </p>
+     * <p>
+     * For information on specifying data types in JSON, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html"
+     * >JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * example, equals, greater than, less than, etc.
+     * </p>
+     * <p>
+     * The following comparison operators are available:
+     * </p>
+     * <p>
+     * <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+     * </p>
+     * <p>
+     * For complete descriptions of all comparison operators, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html"
+     * >Condition</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param scanFilter
+     *        <p>
+     *        This is a legacy parameter, for backward compatibility. New
+     *        applications should use <i>FilterExpression</i> instead. Do not
+     *        combine legacy parameters and expression parameters in a single
+     *        API call; otherwise, DynamoDB will return a
+     *        <i>ValidationException</i> exception.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        A condition that evaluates the scan results and returns only the
+     *        desired values.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter does not support attributes of type List or Map.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If you specify more than one condition in the <i>ScanFilter</i>
+     *        map, then by default all of the conditions must evaluate to true.
+     *        In other words, the conditions are ANDed together. (You can use
+     *        the <i>ConditionalOperator</i> parameter to OR the conditions
+     *        instead. If you do this, then at least one of the conditions must
+     *        evaluate to true, rather than all of them.)
+     *        </p>
+     *        <p>
+     *        Each <i>ScanFilter</i> element consists of an attribute name to
+     *        compare, along with the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <i>AttributeValueList</i> - One or more values to evaluate against
+     *        the supplied attribute. The number of values in the list depends
+     *        on the operator specified in <i>ComparisonOperator</i> .
+     *        </p>
+     *        <p>
+     *        For type Number, value comparisons are numeric.
+     *        </p>
+     *        <p>
+     *        String value comparisons for greater than, equals, or less than
+     *        are based on ASCII character code values. For example,
+     *        <code>a</code> is greater than <code>A</code>, and <code>a</code>
+     *        is greater than <code>B</code>. For a list of code values, see <a
+     *        href
+     *        ="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
+     *        >http
+     *        ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *        </p>
+     *        <p>
+     *        For Binary, DynamoDB treats each byte of the binary data as
+     *        unsigned when it compares binary values.
+     *        </p>
+     *        <p>
+     *        For information on specifying data types in JSON, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html"
+     *        >JSON Data Format</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>ComparisonOperator</i> - A comparator for evaluating
+     *        attributes. For example, equals, greater than, less than, etc.
+     *        </p>
+     *        <p>
+     *        The following comparison operators are available:
+     *        </p>
+     *        <p>
+     *        <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+     *        </p>
+     *        <p>
+     *        For complete descriptions of all comparison operators, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html"
+     *        >Condition</a>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ScanRequest withScanFilter(java.util.Map<String,Condition> scanFilter) {
+    public ScanRequest withScanFilter(
+            java.util.Map<String, Condition> scanFilter) {
         setScanFilter(scanFilter);
         return this;
     }
 
-    /**
-     * <important> <p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>FilterExpression</i> instead. Do not
-     * combine legacy parameters and expression parameters in a single API
-     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. </important> <p>A condition that evaluates the scan results
-     * and returns only the desired values. <note><p>This parameter does not
-     * support attributes of type List or Map.</note> <p>If you specify more
-     * than one condition in the <i>ScanFilter</i> map, then by default all
-     * of the conditions must evaluate to true. In other words, the
-     * conditions are ANDed together. (You can use the
-     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
-     * you do this, then at least one of the conditions must evaluate to
-     * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
-     * consists of an attribute name to compare, along with the following:
-     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
-     * evaluate against the supplied attribute. The number of values in the
-     * list depends on the operator specified in <i>ComparisonOperator</i> .
-     * <p>For type Number, value comparisons are numeric. <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII
-     * character code values. For example, <code>a</code> is greater than
-     * <code>A</code>, and <code>a</code> is greater than <code>B</code>. For
-     * a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-     * <p>For Binary, DynamoDB treats each byte of the binary data as
-     * unsigned when it compares binary values. <p>For information on
-     * specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
-     * attributes. For example, equals, greater than, less than, etc. <p>The
-     * following comparison operators are available: <p><code>EQ | NE | LE |
-     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
-     * operators, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.
-     * </li> </ul>
-     * <p>
-     * The method adds a new key-value pair into ScanFilter parameter, and
-     * returns a reference to this object so that method calls can be chained
-     * together.
-     *
-     * @param key The key of the entry to be added into ScanFilter.
-     * @param value The corresponding value of the entry to be added into ScanFilter.
-     */
-  public ScanRequest addScanFilterEntry(String key, Condition value) {
-    if (null == this.scanFilter) {
-      this.scanFilter = new java.util.HashMap<String,Condition>();
+    public ScanRequest addScanFilterEntry(String key, Condition value) {
+        if (null == this.scanFilter) {
+            this.scanFilter = new java.util.HashMap<String, Condition>();
+        }
+        if (this.scanFilter.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.scanFilter.put(key, value);
+        return this;
     }
-    if (this.scanFilter.containsKey(key))
-      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-    this.scanFilter.put(key, value);
-    return this;
-  }
 
-  /**
-   * Removes all the entries added into ScanFilter.
-   * <p>
-   * Returns a reference to this object so that method calls can be chained together.
-   */
-  public ScanRequest clearScanFilterEntries() {
-    this.scanFilter = null;
-    return this;
-  }
-  
     /**
-     * <important> <p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>FilterExpression</i> instead. Do not
-     * combine legacy parameters and expression parameters in a single API
-     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. </important> <p>A logical operator to apply to the
-     * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
-     * If all of the conditions evaluate to true, then the entire map
-     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
-     * the conditions evaluate to true, then the entire map evaluates to
-     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
-     * <code>AND</code> is the default. <p>The operation will succeed only if
-     * the entire map evaluates to true. <note><p>This parameter does not
-     * support attributes of type List or Map.</note>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AND, OR
-     *
-     * @return <important> <p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>FilterExpression</i> instead. Do not
-     *         combine legacy parameters and expression parameters in a single API
-     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. </important> <p>A logical operator to apply to the
-     *         conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
-     *         If all of the conditions evaluate to true, then the entire map
-     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
-     *         the conditions evaluate to true, then the entire map evaluates to
-     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
-     *         <code>AND</code> is the default. <p>The operation will succeed only if
-     *         the entire map evaluates to true. <note><p>This parameter does not
-     *         support attributes of type List or Map.</note>
-     *
-     * @see ConditionalOperator
+     * Removes all the entries added into ScanFilter. &lt;p> Returns a reference
+     * to this object so that method calls can be chained together.
      */
-    public String getConditionalOperator() {
-        return conditionalOperator;
+    public ScanRequest clearScanFilterEntries() {
+        this.scanFilter = null;
+        return this;
     }
-    
+
     /**
-     * <important> <p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>FilterExpression</i> instead. Do not
-     * combine legacy parameters and expression parameters in a single API
-     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. </important> <p>A logical operator to apply to the
-     * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
-     * If all of the conditions evaluate to true, then the entire map
-     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
-     * the conditions evaluate to true, then the entire map evaluates to
-     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
-     * <code>AND</code> is the default. <p>The operation will succeed only if
-     * the entire map evaluates to true. <note><p>This parameter does not
-     * support attributes of type List or Map.</note>
+     * <important>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AND, OR
-     *
-     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>FilterExpression</i> instead. Do not
-     *         combine legacy parameters and expression parameters in a single API
-     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. </important> <p>A logical operator to apply to the
-     *         conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
-     *         If all of the conditions evaluate to true, then the entire map
-     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
-     *         the conditions evaluate to true, then the entire map evaluates to
-     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
-     *         <code>AND</code> is the default. <p>The operation will succeed only if
-     *         the entire map evaluates to true. <note><p>This parameter does not
-     *         support attributes of type List or Map.</note>
-     *
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>FilterExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * </important>
+     * <p>
+     * A logical operator to apply to the conditions in a <i>ScanFilter</i> map:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - If all of the conditions evaluate to true, then the
+     * entire map evaluates to true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - If at least one of the conditions evaluate to true,
+     * then the entire map evaluates to true.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you omit <i>ConditionalOperator</i>, then <code>AND</code> is the
+     * default.
+     * </p>
+     * <p>
+     * The operation will succeed only if the entire map evaluates to true.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter does not support attributes of type List or Map.
+     * </p>
+     * </note>
+     * 
+     * @param conditionalOperator
+     *        <p>
+     *        This is a legacy parameter, for backward compatibility. New
+     *        applications should use <i>FilterExpression</i> instead. Do not
+     *        combine legacy parameters and expression parameters in a single
+     *        API call; otherwise, DynamoDB will return a
+     *        <i>ValidationException</i> exception.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        A logical operator to apply to the conditions in a
+     *        <i>ScanFilter</i> map:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> - If all of the conditions evaluate to true, then
+     *        the entire map evaluates to true.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> - If at least one of the conditions evaluate to
+     *        true, then the entire map evaluates to true.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *        the default.
+     *        </p>
+     *        <p>
+     *        The operation will succeed only if the entire map evaluates to
+     *        true.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter does not support attributes of type List or Map.
+     *        </p>
      * @see ConditionalOperator
      */
     public void setConditionalOperator(String conditionalOperator) {
         this.conditionalOperator = conditionalOperator;
     }
-    
+
     /**
-     * <important> <p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>FilterExpression</i> instead. Do not
-     * combine legacy parameters and expression parameters in a single API
-     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. </important> <p>A logical operator to apply to the
-     * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
-     * If all of the conditions evaluate to true, then the entire map
-     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
-     * the conditions evaluate to true, then the entire map evaluates to
-     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
-     * <code>AND</code> is the default. <p>The operation will succeed only if
-     * the entire map evaluates to true. <note><p>This parameter does not
-     * support attributes of type List or Map.</note>
+     * <important>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>FilterExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * </important>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AND, OR
-     *
-     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>FilterExpression</i> instead. Do not
-     *         combine legacy parameters and expression parameters in a single API
-     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. </important> <p>A logical operator to apply to the
-     *         conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
-     *         If all of the conditions evaluate to true, then the entire map
-     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
-     *         the conditions evaluate to true, then the entire map evaluates to
-     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
-     *         <code>AND</code> is the default. <p>The operation will succeed only if
-     *         the entire map evaluates to true. <note><p>This parameter does not
-     *         support attributes of type List or Map.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * A logical operator to apply to the conditions in a <i>ScanFilter</i> map:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - If all of the conditions evaluate to true, then the
+     * entire map evaluates to true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - If at least one of the conditions evaluate to true,
+     * then the entire map evaluates to true.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you omit <i>ConditionalOperator</i>, then <code>AND</code> is the
+     * default.
+     * </p>
+     * <p>
+     * The operation will succeed only if the entire map evaluates to true.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter does not support attributes of type List or Map.
+     * </p>
+     * </note>
+     * 
+     * @return <p>
+     *         This is a legacy parameter, for backward compatibility. New
+     *         applications should use <i>FilterExpression</i> instead. Do not
+     *         combine legacy parameters and expression parameters in a single
+     *         API call; otherwise, DynamoDB will return a
+     *         <i>ValidationException</i> exception.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         A logical operator to apply to the conditions in a
+     *         <i>ScanFilter</i> map:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AND</code> - If all of the conditions evaluate to true,
+     *         then the entire map evaluates to true.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OR</code> - If at least one of the conditions evaluate to
+     *         true, then the entire map evaluates to true.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *         the default.
+     *         </p>
+     *         <p>
+     *         The operation will succeed only if the entire map evaluates to
+     *         true.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This parameter does not support attributes of type List or Map.
+     *         </p>
+     * @see ConditionalOperator
+     */
+    public String getConditionalOperator() {
+        return this.conditionalOperator;
+    }
+
+    /**
+     * <important>
+     * <p>
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>FilterExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * </important>
+     * <p>
+     * A logical operator to apply to the conditions in a <i>ScanFilter</i> map:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - If all of the conditions evaluate to true, then the
+     * entire map evaluates to true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - If at least one of the conditions evaluate to true,
+     * then the entire map evaluates to true.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you omit <i>ConditionalOperator</i>, then <code>AND</code> is the
+     * default.
+     * </p>
+     * <p>
+     * The operation will succeed only if the entire map evaluates to true.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter does not support attributes of type List or Map.
+     * </p>
+     * </note>
+     * 
+     * @param conditionalOperator
+     *        <p>
+     *        This is a legacy parameter, for backward compatibility. New
+     *        applications should use <i>FilterExpression</i> instead. Do not
+     *        combine legacy parameters and expression parameters in a single
+     *        API call; otherwise, DynamoDB will return a
+     *        <i>ValidationException</i> exception.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        A logical operator to apply to the conditions in a
+     *        <i>ScanFilter</i> map:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> - If all of the conditions evaluate to true, then
+     *        the entire map evaluates to true.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> - If at least one of the conditions evaluate to
+     *        true, then the entire map evaluates to true.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *        the default.
+     *        </p>
+     *        <p>
+     *        The operation will succeed only if the entire map evaluates to
+     *        true.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter does not support attributes of type List or Map.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ConditionalOperator
      */
     public ScanRequest withConditionalOperator(String conditionalOperator) {
-        this.conditionalOperator = conditionalOperator;
+        setConditionalOperator(conditionalOperator);
         return this;
     }
 
     /**
-     * <important> <p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>FilterExpression</i> instead. Do not
-     * combine legacy parameters and expression parameters in a single API
-     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. </important> <p>A logical operator to apply to the
-     * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
-     * If all of the conditions evaluate to true, then the entire map
-     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
-     * the conditions evaluate to true, then the entire map evaluates to
-     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
-     * <code>AND</code> is the default. <p>The operation will succeed only if
-     * the entire map evaluates to true. <note><p>This parameter does not
-     * support attributes of type List or Map.</note>
+     * <important>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AND, OR
-     *
-     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>FilterExpression</i> instead. Do not
-     *         combine legacy parameters and expression parameters in a single API
-     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. </important> <p>A logical operator to apply to the
-     *         conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
-     *         If all of the conditions evaluate to true, then the entire map
-     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
-     *         the conditions evaluate to true, then the entire map evaluates to
-     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
-     *         <code>AND</code> is the default. <p>The operation will succeed only if
-     *         the entire map evaluates to true. <note><p>This parameter does not
-     *         support attributes of type List or Map.</note>
-     *
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>FilterExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * </important>
+     * <p>
+     * A logical operator to apply to the conditions in a <i>ScanFilter</i> map:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - If all of the conditions evaluate to true, then the
+     * entire map evaluates to true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - If at least one of the conditions evaluate to true,
+     * then the entire map evaluates to true.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you omit <i>ConditionalOperator</i>, then <code>AND</code> is the
+     * default.
+     * </p>
+     * <p>
+     * The operation will succeed only if the entire map evaluates to true.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter does not support attributes of type List or Map.
+     * </p>
+     * </note>
+     * 
+     * @param conditionalOperator
+     *        <p>
+     *        This is a legacy parameter, for backward compatibility. New
+     *        applications should use <i>FilterExpression</i> instead. Do not
+     *        combine legacy parameters and expression parameters in a single
+     *        API call; otherwise, DynamoDB will return a
+     *        <i>ValidationException</i> exception.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        A logical operator to apply to the conditions in a
+     *        <i>ScanFilter</i> map:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> - If all of the conditions evaluate to true, then
+     *        the entire map evaluates to true.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> - If at least one of the conditions evaluate to
+     *        true, then the entire map evaluates to true.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *        the default.
+     *        </p>
+     *        <p>
+     *        The operation will succeed only if the entire map evaluates to
+     *        true.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter does not support attributes of type List or Map.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ConditionalOperator
      */
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
         this.conditionalOperator = conditionalOperator.toString();
     }
-    
+
     /**
-     * <important> <p>This is a legacy parameter, for backward compatibility.
-     * New applications should use <i>FilterExpression</i> instead. Do not
-     * combine legacy parameters and expression parameters in a single API
-     * call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     * exception. </important> <p>A logical operator to apply to the
-     * conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
-     * If all of the conditions evaluate to true, then the entire map
-     * evaluates to true.</li> <li><p><code>OR</code> - If at least one of
-     * the conditions evaluate to true, then the entire map evaluates to
-     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
-     * <code>AND</code> is the default. <p>The operation will succeed only if
-     * the entire map evaluates to true. <note><p>This parameter does not
-     * support attributes of type List or Map.</note>
+     * <important>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * This is a legacy parameter, for backward compatibility. New applications
+     * should use <i>FilterExpression</i> instead. Do not combine legacy
+     * parameters and expression parameters in a single API call; otherwise,
+     * DynamoDB will return a <i>ValidationException</i> exception.
+     * </p>
+     * </important>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AND, OR
-     *
-     * @param conditionalOperator <important> <p>This is a legacy parameter, for backward compatibility.
-     *         New applications should use <i>FilterExpression</i> instead. Do not
-     *         combine legacy parameters and expression parameters in a single API
-     *         call; otherwise, DynamoDB will return a <i>ValidationException</i>
-     *         exception. </important> <p>A logical operator to apply to the
-     *         conditions in a <i>ScanFilter</i> map: <ul> <li><p><code>AND</code> -
-     *         If all of the conditions evaluate to true, then the entire map
-     *         evaluates to true.</li> <li><p><code>OR</code> - If at least one of
-     *         the conditions evaluate to true, then the entire map evaluates to
-     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
-     *         <code>AND</code> is the default. <p>The operation will succeed only if
-     *         the entire map evaluates to true. <note><p>This parameter does not
-     *         support attributes of type List or Map.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * A logical operator to apply to the conditions in a <i>ScanFilter</i> map:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - If all of the conditions evaluate to true, then the
+     * entire map evaluates to true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - If at least one of the conditions evaluate to true,
+     * then the entire map evaluates to true.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you omit <i>ConditionalOperator</i>, then <code>AND</code> is the
+     * default.
+     * </p>
+     * <p>
+     * The operation will succeed only if the entire map evaluates to true.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter does not support attributes of type List or Map.
+     * </p>
+     * </note>
+     * 
+     * @param conditionalOperator
+     *        <p>
+     *        This is a legacy parameter, for backward compatibility. New
+     *        applications should use <i>FilterExpression</i> instead. Do not
+     *        combine legacy parameters and expression parameters in a single
+     *        API call; otherwise, DynamoDB will return a
+     *        <i>ValidationException</i> exception.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        A logical operator to apply to the conditions in a
+     *        <i>ScanFilter</i> map:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> - If all of the conditions evaluate to true, then
+     *        the entire map evaluates to true.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> - If at least one of the conditions evaluate to
+     *        true, then the entire map evaluates to true.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *        the default.
+     *        </p>
+     *        <p>
+     *        The operation will succeed only if the entire map evaluates to
+     *        true.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter does not support attributes of type List or Map.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ConditionalOperator
      */
-    public ScanRequest withConditionalOperator(ConditionalOperator conditionalOperator) {
-        this.conditionalOperator = conditionalOperator.toString();
+    public ScanRequest withConditionalOperator(
+            ConditionalOperator conditionalOperator) {
+        setConditionalOperator(conditionalOperator);
         return this;
     }
 
     /**
-     * The primary key of the first item that this operation will evaluate.
-     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
-     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
-     * be String, Number or Binary. No set data types are allowed. <p>In a
-     * parallel scan, a <i>Scan</i> request that includes
+     * <p>
+     * The primary key of the first item that this operation will evaluate. Use
+     * the value that was returned for <i>LastEvaluatedKey</i> in the previous
+     * operation.
+     * </p>
+     * <p>
+     * The data type for <i>ExclusiveStartKey</i> must be String, Number or
+     * Binary. No set data types are allowed.
+     * </p>
+     * <p>
+     * In a parallel scan, a <i>Scan</i> request that includes
      * <i>ExclusiveStartKey</i> must specify the same segment whose previous
-     * <i>Scan</i> returned the corresponding value of
-     * <i>LastEvaluatedKey</i>.
-     *
-     * @return The primary key of the first item that this operation will evaluate.
-     *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
-     *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
-     *         be String, Number or Binary. No set data types are allowed. <p>In a
-     *         parallel scan, a <i>Scan</i> request that includes
-     *         <i>ExclusiveStartKey</i> must specify the same segment whose previous
-     *         <i>Scan</i> returned the corresponding value of
+     * <i>Scan</i> returned the corresponding value of <i>LastEvaluatedKey</i>.
+     * </p>
+     * 
+     * @return The primary key of the first item that this operation will
+     *         evaluate. Use the value that was returned for
+     *         <i>LastEvaluatedKey</i> in the previous operation.</p>
+     *         <p>
+     *         The data type for <i>ExclusiveStartKey</i> must be String, Number
+     *         or Binary. No set data types are allowed.
+     *         </p>
+     *         <p>
+     *         In a parallel scan, a <i>Scan</i> request that includes
+     *         <i>ExclusiveStartKey</i> must specify the same segment whose
+     *         previous <i>Scan</i> returned the corresponding value of
      *         <i>LastEvaluatedKey</i>.
      */
-    public java.util.Map<String,AttributeValue> getExclusiveStartKey() {
-        
+    public java.util.Map<String, AttributeValue> getExclusiveStartKey() {
         return exclusiveStartKey;
     }
-    
+
     /**
-     * The primary key of the first item that this operation will evaluate.
-     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
-     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
-     * be String, Number or Binary. No set data types are allowed. <p>In a
-     * parallel scan, a <i>Scan</i> request that includes
+     * <p>
+     * The primary key of the first item that this operation will evaluate. Use
+     * the value that was returned for <i>LastEvaluatedKey</i> in the previous
+     * operation.
+     * </p>
+     * <p>
+     * The data type for <i>ExclusiveStartKey</i> must be String, Number or
+     * Binary. No set data types are allowed.
+     * </p>
+     * <p>
+     * In a parallel scan, a <i>Scan</i> request that includes
      * <i>ExclusiveStartKey</i> must specify the same segment whose previous
-     * <i>Scan</i> returned the corresponding value of
-     * <i>LastEvaluatedKey</i>.
-     *
-     * @param exclusiveStartKey The primary key of the first item that this operation will evaluate.
-     *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
-     *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
-     *         be String, Number or Binary. No set data types are allowed. <p>In a
-     *         parallel scan, a <i>Scan</i> request that includes
-     *         <i>ExclusiveStartKey</i> must specify the same segment whose previous
-     *         <i>Scan</i> returned the corresponding value of
-     *         <i>LastEvaluatedKey</i>.
+     * <i>Scan</i> returned the corresponding value of <i>LastEvaluatedKey</i>.
+     * </p>
+     * 
+     * @param exclusiveStartKey
+     *        The primary key of the first item that this operation will
+     *        evaluate. Use the value that was returned for
+     *        <i>LastEvaluatedKey</i> in the previous operation.</p>
+     *        <p>
+     *        The data type for <i>ExclusiveStartKey</i> must be String, Number
+     *        or Binary. No set data types are allowed.
+     *        </p>
+     *        <p>
+     *        In a parallel scan, a <i>Scan</i> request that includes
+     *        <i>ExclusiveStartKey</i> must specify the same segment whose
+     *        previous <i>Scan</i> returned the corresponding value of
+     *        <i>LastEvaluatedKey</i>.
      */
-    public void setExclusiveStartKey(java.util.Map<String,AttributeValue> exclusiveStartKey) {
+    public void setExclusiveStartKey(
+            java.util.Map<String, AttributeValue> exclusiveStartKey) {
         this.exclusiveStartKey = exclusiveStartKey;
     }
-    
+
     /**
-     * The primary key of the first item that this operation will evaluate.
-     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
-     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
-     * be String, Number or Binary. No set data types are allowed. <p>In a
-     * parallel scan, a <i>Scan</i> request that includes
-     * <i>ExclusiveStartKey</i> must specify the same segment whose previous
-     * <i>Scan</i> returned the corresponding value of
-     * <i>LastEvaluatedKey</i>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param exclusiveStartKey The primary key of the first item that this operation will evaluate.
-     *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
-     *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
-     *         be String, Number or Binary. No set data types are allowed. <p>In a
-     *         parallel scan, a <i>Scan</i> request that includes
-     *         <i>ExclusiveStartKey</i> must specify the same segment whose previous
-     *         <i>Scan</i> returned the corresponding value of
-     *         <i>LastEvaluatedKey</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The primary key of the first item that this operation will evaluate. Use
+     * the value that was returned for <i>LastEvaluatedKey</i> in the previous
+     * operation.
+     * </p>
+     * <p>
+     * The data type for <i>ExclusiveStartKey</i> must be String, Number or
+     * Binary. No set data types are allowed.
+     * </p>
+     * <p>
+     * In a parallel scan, a <i>Scan</i> request that includes
+     * <i>ExclusiveStartKey</i> must specify the same segment whose previous
+     * <i>Scan</i> returned the corresponding value of <i>LastEvaluatedKey</i>.
+     * </p>
+     * 
+     * @param exclusiveStartKey
+     *        The primary key of the first item that this operation will
+     *        evaluate. Use the value that was returned for
+     *        <i>LastEvaluatedKey</i> in the previous operation.</p>
+     *        <p>
+     *        The data type for <i>ExclusiveStartKey</i> must be String, Number
+     *        or Binary. No set data types are allowed.
+     *        </p>
+     *        <p>
+     *        In a parallel scan, a <i>Scan</i> request that includes
+     *        <i>ExclusiveStartKey</i> must specify the same segment whose
+     *        previous <i>Scan</i> returned the corresponding value of
+     *        <i>LastEvaluatedKey</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ScanRequest withExclusiveStartKey(java.util.Map<String,AttributeValue> exclusiveStartKey) {
+    public ScanRequest withExclusiveStartKey(
+            java.util.Map<String, AttributeValue> exclusiveStartKey) {
         setExclusiveStartKey(exclusiveStartKey);
         return this;
     }
 
-    /**
-     * The primary key of the first item that this operation will evaluate.
-     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
-     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
-     * be String, Number or Binary. No set data types are allowed. <p>In a
-     * parallel scan, a <i>Scan</i> request that includes
-     * <i>ExclusiveStartKey</i> must specify the same segment whose previous
-     * <i>Scan</i> returned the corresponding value of
-     * <i>LastEvaluatedKey</i>.
-     * <p>
-     * This method accepts the hashKey, rangeKey of ExclusiveStartKey as
-     * java.util.Map.Entry<String, AttributeValue> objects.
-     *
-     * @param hashKey Primary hash key.
-     * @param rangeKey Primary range key. (null if it a hash-only table)
-     */
-    public void setExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
-        java.util.HashMap<String,AttributeValue> exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
-      
-      if (hashKey != null) {
-          exclusiveStartKey.put(hashKey.getKey(), hashKey.getValue());
-      } else
-            throw new IllegalArgumentException("hashKey must be non-null object.");
-      if (rangeKey != null) {
-          exclusiveStartKey.put(rangeKey.getKey(), rangeKey.getValue());
-      } 
-        setExclusiveStartKey(exclusiveStartKey);
-    }
-    
-    /**
-     * The primary key of the first item that this operation will evaluate.
-     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
-     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
-     * be String, Number or Binary. No set data types are allowed. <p>In a
-     * parallel scan, a <i>Scan</i> request that includes
-     * <i>ExclusiveStartKey</i> must specify the same segment whose previous
-     * <i>Scan</i> returned the corresponding value of
-     * <i>LastEvaluatedKey</i>.
-     * <p>
-     * This method accepts the hashKey, rangeKey of ExclusiveStartKey as
-     * java.util.Map.Entry<String, AttributeValue> objects.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param hashKey Primary hash key.
-     * @param rangeKey Primary range key. (null if it a hash-only table)
-     */
-    public ScanRequest withExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
-      setExclusiveStartKey(hashKey, rangeKey);
-      return this;
+    public ScanRequest addExclusiveStartKeyEntry(String key,
+            AttributeValue value) {
+        if (null == this.exclusiveStartKey) {
+            this.exclusiveStartKey = new java.util.HashMap<String, AttributeValue>();
+        }
+        if (this.exclusiveStartKey.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.exclusiveStartKey.put(key, value);
+        return this;
     }
 
     /**
-     * The primary key of the first item that this operation will evaluate.
-     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
-     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
-     * be String, Number or Binary. No set data types are allowed. <p>In a
-     * parallel scan, a <i>Scan</i> request that includes
-     * <i>ExclusiveStartKey</i> must specify the same segment whose previous
-     * <i>Scan</i> returned the corresponding value of
-     * <i>LastEvaluatedKey</i>.
-     * <p>
-     * The method adds a new key-value pair into ExclusiveStartKey parameter,
-     * and returns a reference to this object so that method calls can be
-     * chained together.
-     *
-     * @param key The key of the entry to be added into ExclusiveStartKey.
-     * @param value The corresponding value of the entry to be added into ExclusiveStartKey.
+     * Removes all the entries added into ExclusiveStartKey. &lt;p> Returns a
+     * reference to this object so that method calls can be chained together.
      */
-  public ScanRequest addExclusiveStartKeyEntry(String key, AttributeValue value) {
-    if (null == this.exclusiveStartKey) {
-      this.exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
+    public ScanRequest clearExclusiveStartKeyEntries() {
+        this.exclusiveStartKey = null;
+        return this;
     }
-    if (this.exclusiveStartKey.containsKey(key))
-      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-    this.exclusiveStartKey.put(key, value);
-    return this;
-  }
 
-  /**
-   * Removes all the entries added into ExclusiveStartKey.
-   * <p>
-   * Returns a reference to this object so that method calls can be chained together.
-   */
-  public ScanRequest clearExclusiveStartKeyEntries() {
-    this.exclusiveStartKey = null;
-    return this;
-  }
-  
     /**
-     * A value that if set to <code>TOTAL</code>, the response includes
-     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
-     * for indexes. If set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included in the response.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
-     *
-     * @return A value that if set to <code>TOTAL</code>, the response includes
-     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
-     *         for indexes. If set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included in the response.
-     *
-     * @see ReturnConsumedCapacity
-     */
-    public String getReturnConsumedCapacity() {
-        return returnConsumedCapacity;
-    }
-    
-    /**
-     * A value that if set to <code>TOTAL</code>, the response includes
-     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
-     * for indexes. If set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included in the response.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
-     *
-     * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
-     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
-     *         for indexes. If set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included in the response.
-     *
+     * Sets the value of the ReturnConsumedCapacity property for this object.
+     * 
+     * @param returnConsumedCapacity
+     *        The new value for the ReturnConsumedCapacity property for this
+     *        object.
      * @see ReturnConsumedCapacity
      */
     public void setReturnConsumedCapacity(String returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity;
     }
-    
+
     /**
-     * A value that if set to <code>TOTAL</code>, the response includes
-     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
-     * for indexes. If set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included in the response.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
-     *
-     * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
-     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
-     *         for indexes. If set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included in the response.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * Returns the value of the ReturnConsumedCapacity property for this object.
+     * 
+     * @return The value of the ReturnConsumedCapacity property for this object.
+     * @see ReturnConsumedCapacity
+     */
+    public String getReturnConsumedCapacity() {
+        return this.returnConsumedCapacity;
+    }
+
+    /**
+     * Sets the value of the ReturnConsumedCapacity property for this object.
+     * 
+     * @param returnConsumedCapacity
+     *        The new value for the ReturnConsumedCapacity property for this
+     *        object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ReturnConsumedCapacity
      */
     public ScanRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity;
+        setReturnConsumedCapacity(returnConsumedCapacity);
         return this;
     }
 
     /**
-     * A value that if set to <code>TOTAL</code>, the response includes
-     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
-     * for indexes. If set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included in the response.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
-     *
-     * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
-     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
-     *         for indexes. If set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included in the response.
-     *
+     * Sets the value of the ReturnConsumedCapacity property for this object.
+     * 
+     * @param returnConsumedCapacity
+     *        The new value for the ReturnConsumedCapacity property for this
+     *        object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ReturnConsumedCapacity
      */
-    public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
+    public void setReturnConsumedCapacity(
+            ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
     }
-    
+
     /**
-     * A value that if set to <code>TOTAL</code>, the response includes
-     * <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     * <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
-     * for indexes. If set to <code>NONE</code> (the default),
-     * <i>ConsumedCapacity</i> is not included in the response.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>INDEXES, TOTAL, NONE
-     *
-     * @param returnConsumedCapacity A value that if set to <code>TOTAL</code>, the response includes
-     *         <i>ConsumedCapacity</i> data for tables and indexes. If set to
-     *         <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i>
-     *         for indexes. If set to <code>NONE</code> (the default),
-     *         <i>ConsumedCapacity</i> is not included in the response.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * Sets the value of the ReturnConsumedCapacity property for this object.
+     * 
+     * @param returnConsumedCapacity
+     *        The new value for the ReturnConsumedCapacity property for this
+     *        object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ReturnConsumedCapacity
      */
-    public ScanRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+    public ScanRequest withReturnConsumedCapacity(
+            ReturnConsumedCapacity returnConsumedCapacity) {
+        setReturnConsumedCapacity(returnConsumedCapacity);
         return this;
     }
 
     /**
-     * For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents
-     * the total number of segments into which the <i>Scan</i> operation will
-     * be divided. The value of <i>TotalSegments</i> corresponds to the
-     * number of application workers that will perform the parallel scan. For
-     * example, if you want to use four application threads to scan a table
-     * or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
-     * for <i>TotalSegments</i> must be greater than or equal to 1, and less
-     * than or equal to 1000000. If you specify a <i>TotalSegments</i> value
-     * of 1, the <i>Scan</i> operation will be sequential rather than
-     * parallel. <p>If you specify <i>TotalSegments</i>, you must also
-     * specify <i>Segment</i>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1000000<br/>
-     *
-     * @return For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents
-     *         the total number of segments into which the <i>Scan</i> operation will
-     *         be divided. The value of <i>TotalSegments</i> corresponds to the
-     *         number of application workers that will perform the parallel scan. For
-     *         example, if you want to use four application threads to scan a table
-     *         or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
-     *         for <i>TotalSegments</i> must be greater than or equal to 1, and less
-     *         than or equal to 1000000. If you specify a <i>TotalSegments</i> value
-     *         of 1, the <i>Scan</i> operation will be sequential rather than
-     *         parallel. <p>If you specify <i>TotalSegments</i>, you must also
-     *         specify <i>Segment</i>.
-     */
-    public Integer getTotalSegments() {
-        return totalSegments;
-    }
-    
-    /**
-     * For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents
-     * the total number of segments into which the <i>Scan</i> operation will
-     * be divided. The value of <i>TotalSegments</i> corresponds to the
-     * number of application workers that will perform the parallel scan. For
-     * example, if you want to use four application threads to scan a table
-     * or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
-     * for <i>TotalSegments</i> must be greater than or equal to 1, and less
-     * than or equal to 1000000. If you specify a <i>TotalSegments</i> value
-     * of 1, the <i>Scan</i> operation will be sequential rather than
-     * parallel. <p>If you specify <i>TotalSegments</i>, you must also
-     * specify <i>Segment</i>.
+     * For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents the
+     * total number of segments into which the <i>Scan</i> operation will be
+     * divided. The value of <i>TotalSegments</i> corresponds to the number of
+     * application workers that will perform the parallel scan. For example, if
+     * you want to use four application threads to scan a table or an index,
+     * specify a <i>TotalSegments</i> value of 4.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1000000<br/>
-     *
-     * @param totalSegments For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents
-     *         the total number of segments into which the <i>Scan</i> operation will
-     *         be divided. The value of <i>TotalSegments</i> corresponds to the
-     *         number of application workers that will perform the parallel scan. For
-     *         example, if you want to use four application threads to scan a table
-     *         or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
-     *         for <i>TotalSegments</i> must be greater than or equal to 1, and less
-     *         than or equal to 1000000. If you specify a <i>TotalSegments</i> value
-     *         of 1, the <i>Scan</i> operation will be sequential rather than
-     *         parallel. <p>If you specify <i>TotalSegments</i>, you must also
-     *         specify <i>Segment</i>.
+     * The value for <i>TotalSegments</i> must be greater than or equal to 1,
+     * and less than or equal to 1000000. If you specify a <i>TotalSegments</i>
+     * value of 1, the <i>Scan</i> operation will be sequential rather than
+     * parallel.
+     * </p>
+     * <p>
+     * If you specify <i>TotalSegments</i>, you must also specify
+     * <i>Segment</i>.
+     * </p>
+     * 
+     * @param totalSegments
+     *        For a parallel <i>Scan</i> request, <i>TotalSegments</i>
+     *        represents the total number of segments into which the <i>Scan</i>
+     *        operation will be divided. The value of <i>TotalSegments</i>
+     *        corresponds to the number of application workers that will perform
+     *        the parallel scan. For example, if you want to use four
+     *        application threads to scan a table or an index, specify a
+     *        <i>TotalSegments</i> value of 4.</p>
+     *        <p>
+     *        The value for <i>TotalSegments</i> must be greater than or equal
+     *        to 1, and less than or equal to 1000000. If you specify a
+     *        <i>TotalSegments</i> value of 1, the <i>Scan</i> operation will be
+     *        sequential rather than parallel.
+     *        </p>
+     *        <p>
+     *        If you specify <i>TotalSegments</i>, you must also specify
+     *        <i>Segment</i>.
      */
     public void setTotalSegments(Integer totalSegments) {
         this.totalSegments = totalSegments;
     }
-    
+
     /**
-     * For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents
-     * the total number of segments into which the <i>Scan</i> operation will
-     * be divided. The value of <i>TotalSegments</i> corresponds to the
-     * number of application workers that will perform the parallel scan. For
-     * example, if you want to use four application threads to scan a table
-     * or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
-     * for <i>TotalSegments</i> must be greater than or equal to 1, and less
-     * than or equal to 1000000. If you specify a <i>TotalSegments</i> value
-     * of 1, the <i>Scan</i> operation will be sequential rather than
-     * parallel. <p>If you specify <i>TotalSegments</i>, you must also
-     * specify <i>Segment</i>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents the
+     * total number of segments into which the <i>Scan</i> operation will be
+     * divided. The value of <i>TotalSegments</i> corresponds to the number of
+     * application workers that will perform the parallel scan. For example, if
+     * you want to use four application threads to scan a table or an index,
+     * specify a <i>TotalSegments</i> value of 4.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1000000<br/>
-     *
-     * @param totalSegments For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents
-     *         the total number of segments into which the <i>Scan</i> operation will
-     *         be divided. The value of <i>TotalSegments</i> corresponds to the
-     *         number of application workers that will perform the parallel scan. For
-     *         example, if you want to use four application threads to scan a table
-     *         or an index, specify a <i>TotalSegments</i> value of 4. <p>The value
-     *         for <i>TotalSegments</i> must be greater than or equal to 1, and less
-     *         than or equal to 1000000. If you specify a <i>TotalSegments</i> value
-     *         of 1, the <i>Scan</i> operation will be sequential rather than
-     *         parallel. <p>If you specify <i>TotalSegments</i>, you must also
-     *         specify <i>Segment</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The value for <i>TotalSegments</i> must be greater than or equal to 1,
+     * and less than or equal to 1000000. If you specify a <i>TotalSegments</i>
+     * value of 1, the <i>Scan</i> operation will be sequential rather than
+     * parallel.
+     * </p>
+     * <p>
+     * If you specify <i>TotalSegments</i>, you must also specify
+     * <i>Segment</i>.
+     * </p>
+     * 
+     * @return For a parallel <i>Scan</i> request, <i>TotalSegments</i>
+     *         represents the total number of segments into which the
+     *         <i>Scan</i> operation will be divided. The value of
+     *         <i>TotalSegments</i> corresponds to the number of application
+     *         workers that will perform the parallel scan. For example, if you
+     *         want to use four application threads to scan a table or an index,
+     *         specify a <i>TotalSegments</i> value of 4.</p>
+     *         <p>
+     *         The value for <i>TotalSegments</i> must be greater than or equal
+     *         to 1, and less than or equal to 1000000. If you specify a
+     *         <i>TotalSegments</i> value of 1, the <i>Scan</i> operation will
+     *         be sequential rather than parallel.
+     *         </p>
+     *         <p>
+     *         If you specify <i>TotalSegments</i>, you must also specify
+     *         <i>Segment</i>.
+     */
+    public Integer getTotalSegments() {
+        return this.totalSegments;
+    }
+
+    /**
+     * <p>
+     * For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents the
+     * total number of segments into which the <i>Scan</i> operation will be
+     * divided. The value of <i>TotalSegments</i> corresponds to the number of
+     * application workers that will perform the parallel scan. For example, if
+     * you want to use four application threads to scan a table or an index,
+     * specify a <i>TotalSegments</i> value of 4.
+     * </p>
+     * <p>
+     * The value for <i>TotalSegments</i> must be greater than or equal to 1,
+     * and less than or equal to 1000000. If you specify a <i>TotalSegments</i>
+     * value of 1, the <i>Scan</i> operation will be sequential rather than
+     * parallel.
+     * </p>
+     * <p>
+     * If you specify <i>TotalSegments</i>, you must also specify
+     * <i>Segment</i>.
+     * </p>
+     * 
+     * @param totalSegments
+     *        For a parallel <i>Scan</i> request, <i>TotalSegments</i>
+     *        represents the total number of segments into which the <i>Scan</i>
+     *        operation will be divided. The value of <i>TotalSegments</i>
+     *        corresponds to the number of application workers that will perform
+     *        the parallel scan. For example, if you want to use four
+     *        application threads to scan a table or an index, specify a
+     *        <i>TotalSegments</i> value of 4.</p>
+     *        <p>
+     *        The value for <i>TotalSegments</i> must be greater than or equal
+     *        to 1, and less than or equal to 1000000. If you specify a
+     *        <i>TotalSegments</i> value of 1, the <i>Scan</i> operation will be
+     *        sequential rather than parallel.
+     *        </p>
+     *        <p>
+     *        If you specify <i>TotalSegments</i>, you must also specify
+     *        <i>Segment</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ScanRequest withTotalSegments(Integer totalSegments) {
-        this.totalSegments = totalSegments;
+        setTotalSegments(totalSegments);
         return this;
     }
 
     /**
-     * For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
-     * individual segment to be scanned by an application worker. <p>Segment
-     * IDs are zero-based, so the first segment is always 0. For example, if
-     * you want to use four application threads to scan a table or an index,
-     * then the first thread specifies a <i>Segment</i> value of 0, the
-     * second thread specifies 1, and so on. <p>The value of
-     * <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
-     * must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
-     * subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
-     * be greater than or equal to 0, and less than the value provided for
-     * <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
-     * provide <i>TotalSegments</i>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 999999<br/>
-     *
-     * @return For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
-     *         individual segment to be scanned by an application worker. <p>Segment
-     *         IDs are zero-based, so the first segment is always 0. For example, if
-     *         you want to use four application threads to scan a table or an index,
-     *         then the first thread specifies a <i>Segment</i> value of 0, the
-     *         second thread specifies 1, and so on. <p>The value of
-     *         <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
-     *         must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
-     *         subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
-     *         be greater than or equal to 0, and less than the value provided for
-     *         <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
-     *         provide <i>TotalSegments</i>.
-     */
-    public Integer getSegment() {
-        return segment;
-    }
-    
-    /**
      * For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
-     * individual segment to be scanned by an application worker. <p>Segment
-     * IDs are zero-based, so the first segment is always 0. For example, if
-     * you want to use four application threads to scan a table or an index,
-     * then the first thread specifies a <i>Segment</i> value of 0, the
-     * second thread specifies 1, and so on. <p>The value of
-     * <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
-     * must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
-     * subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
-     * be greater than or equal to 0, and less than the value provided for
-     * <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
-     * provide <i>TotalSegments</i>.
+     * individual segment to be scanned by an application worker.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 999999<br/>
-     *
-     * @param segment For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
-     *         individual segment to be scanned by an application worker. <p>Segment
-     *         IDs are zero-based, so the first segment is always 0. For example, if
-     *         you want to use four application threads to scan a table or an index,
-     *         then the first thread specifies a <i>Segment</i> value of 0, the
-     *         second thread specifies 1, and so on. <p>The value of
-     *         <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
-     *         must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
-     *         subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
-     *         be greater than or equal to 0, and less than the value provided for
-     *         <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
-     *         provide <i>TotalSegments</i>.
+     * Segment IDs are zero-based, so the first segment is always 0. For
+     * example, if you want to use four application threads to scan a table or
+     * an index, then the first thread specifies a <i>Segment</i> value of 0,
+     * the second thread specifies 1, and so on.
+     * </p>
+     * <p>
+     * The value of <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i>
+     * request must be used as <i>ExclusiveStartKey</i> with the same segment ID
+     * in a subsequent <i>Scan</i> operation.
+     * </p>
+     * <p>
+     * The value for <i>Segment</i> must be greater than or equal to 0, and less
+     * than the value provided for <i>TotalSegments</i>.
+     * </p>
+     * <p>
+     * If you provide <i>Segment</i>, you must also provide
+     * <i>TotalSegments</i>.
+     * </p>
+     * 
+     * @param segment
+     *        For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
+     *        individual segment to be scanned by an application worker.</p>
+     *        <p>
+     *        Segment IDs are zero-based, so the first segment is always 0. For
+     *        example, if you want to use four application threads to scan a
+     *        table or an index, then the first thread specifies a
+     *        <i>Segment</i> value of 0, the second thread specifies 1, and so
+     *        on.
+     *        </p>
+     *        <p>
+     *        The value of <i>LastEvaluatedKey</i> returned from a parallel
+     *        <i>Scan</i> request must be used as <i>ExclusiveStartKey</i> with
+     *        the same segment ID in a subsequent <i>Scan</i> operation.
+     *        </p>
+     *        <p>
+     *        The value for <i>Segment</i> must be greater than or equal to 0,
+     *        and less than the value provided for <i>TotalSegments</i>.
+     *        </p>
+     *        <p>
+     *        If you provide <i>Segment</i>, you must also provide
+     *        <i>TotalSegments</i>.
      */
     public void setSegment(Integer segment) {
         this.segment = segment;
     }
-    
+
     /**
+     * <p>
      * For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
-     * individual segment to be scanned by an application worker. <p>Segment
-     * IDs are zero-based, so the first segment is always 0. For example, if
-     * you want to use four application threads to scan a table or an index,
-     * then the first thread specifies a <i>Segment</i> value of 0, the
-     * second thread specifies 1, and so on. <p>The value of
-     * <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
-     * must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
-     * subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
-     * be greater than or equal to 0, and less than the value provided for
-     * <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
-     * provide <i>TotalSegments</i>.
+     * individual segment to be scanned by an application worker.
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * Segment IDs are zero-based, so the first segment is always 0. For
+     * example, if you want to use four application threads to scan a table or
+     * an index, then the first thread specifies a <i>Segment</i> value of 0,
+     * the second thread specifies 1, and so on.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 999999<br/>
-     *
-     * @param segment For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
-     *         individual segment to be scanned by an application worker. <p>Segment
-     *         IDs are zero-based, so the first segment is always 0. For example, if
-     *         you want to use four application threads to scan a table or an index,
-     *         then the first thread specifies a <i>Segment</i> value of 0, the
-     *         second thread specifies 1, and so on. <p>The value of
-     *         <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
-     *         must be used as <i>ExclusiveStartKey</i> with the same segment ID in a
-     *         subsequent <i>Scan</i> operation. <p>The value for <i>Segment</i> must
-     *         be greater than or equal to 0, and less than the value provided for
-     *         <i>TotalSegments</i>. <p>If you provide <i>Segment</i>, you must also
-     *         provide <i>TotalSegments</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The value of <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i>
+     * request must be used as <i>ExclusiveStartKey</i> with the same segment ID
+     * in a subsequent <i>Scan</i> operation.
+     * </p>
+     * <p>
+     * The value for <i>Segment</i> must be greater than or equal to 0, and less
+     * than the value provided for <i>TotalSegments</i>.
+     * </p>
+     * <p>
+     * If you provide <i>Segment</i>, you must also provide
+     * <i>TotalSegments</i>.
+     * </p>
+     * 
+     * @return For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
+     *         individual segment to be scanned by an application worker.</p>
+     *         <p>
+     *         Segment IDs are zero-based, so the first segment is always 0. For
+     *         example, if you want to use four application threads to scan a
+     *         table or an index, then the first thread specifies a
+     *         <i>Segment</i> value of 0, the second thread specifies 1, and so
+     *         on.
+     *         </p>
+     *         <p>
+     *         The value of <i>LastEvaluatedKey</i> returned from a parallel
+     *         <i>Scan</i> request must be used as <i>ExclusiveStartKey</i> with
+     *         the same segment ID in a subsequent <i>Scan</i> operation.
+     *         </p>
+     *         <p>
+     *         The value for <i>Segment</i> must be greater than or equal to 0,
+     *         and less than the value provided for <i>TotalSegments</i>.
+     *         </p>
+     *         <p>
+     *         If you provide <i>Segment</i>, you must also provide
+     *         <i>TotalSegments</i>.
+     */
+    public Integer getSegment() {
+        return this.segment;
+    }
+
+    /**
+     * <p>
+     * For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
+     * individual segment to be scanned by an application worker.
+     * </p>
+     * <p>
+     * Segment IDs are zero-based, so the first segment is always 0. For
+     * example, if you want to use four application threads to scan a table or
+     * an index, then the first thread specifies a <i>Segment</i> value of 0,
+     * the second thread specifies 1, and so on.
+     * </p>
+     * <p>
+     * The value of <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i>
+     * request must be used as <i>ExclusiveStartKey</i> with the same segment ID
+     * in a subsequent <i>Scan</i> operation.
+     * </p>
+     * <p>
+     * The value for <i>Segment</i> must be greater than or equal to 0, and less
+     * than the value provided for <i>TotalSegments</i>.
+     * </p>
+     * <p>
+     * If you provide <i>Segment</i>, you must also provide
+     * <i>TotalSegments</i>.
+     * </p>
+     * 
+     * @param segment
+     *        For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
+     *        individual segment to be scanned by an application worker.</p>
+     *        <p>
+     *        Segment IDs are zero-based, so the first segment is always 0. For
+     *        example, if you want to use four application threads to scan a
+     *        table or an index, then the first thread specifies a
+     *        <i>Segment</i> value of 0, the second thread specifies 1, and so
+     *        on.
+     *        </p>
+     *        <p>
+     *        The value of <i>LastEvaluatedKey</i> returned from a parallel
+     *        <i>Scan</i> request must be used as <i>ExclusiveStartKey</i> with
+     *        the same segment ID in a subsequent <i>Scan</i> operation.
+     *        </p>
+     *        <p>
+     *        The value for <i>Segment</i> must be greater than or equal to 0,
+     *        and less than the value provided for <i>TotalSegments</i>.
+     *        </p>
+     *        <p>
+     *        If you provide <i>Segment</i>, you must also provide
+     *        <i>TotalSegments</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ScanRequest withSegment(Integer segment) {
-        this.segment = segment;
+        setSegment(segment);
         return this;
     }
 
     /**
+     * <p>
      * A string that identifies one or more attributes to retrieve from the
-     * specified table or index. These attributes can include scalars, sets,
-     * or elements of a JSON document. The attributes in the expression must
-     * be separated by commas. <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes
-     * are not found, they will not appear in the result. <p>For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     * <note><p><i>ProjectionExpression</i> replaces the legacy
-     * <i>AttributesToGet</i> parameter.</note>
-     *
-     * @return A string that identifies one or more attributes to retrieve from the
-     *         specified table or index. These attributes can include scalars, sets,
-     *         or elements of a JSON document. The attributes in the expression must
-     *         be separated by commas. <p>If no attribute names are specified, then
-     *         all attributes will be returned. If any of the requested attributes
-     *         are not found, they will not appear in the result. <p>For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *         <note><p><i>ProjectionExpression</i> replaces the legacy
-     *         <i>AttributesToGet</i> parameter.</note>
-     */
-    public String getProjectionExpression() {
-        return projectionExpression;
-    }
-    
-    /**
-     * A string that identifies one or more attributes to retrieve from the
-     * specified table or index. These attributes can include scalars, sets,
-     * or elements of a JSON document. The attributes in the expression must
-     * be separated by commas. <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes
-     * are not found, they will not appear in the result. <p>For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     * <note><p><i>ProjectionExpression</i> replaces the legacy
-     * <i>AttributesToGet</i> parameter.</note>
-     *
-     * @param projectionExpression A string that identifies one or more attributes to retrieve from the
-     *         specified table or index. These attributes can include scalars, sets,
-     *         or elements of a JSON document. The attributes in the expression must
-     *         be separated by commas. <p>If no attribute names are specified, then
-     *         all attributes will be returned. If any of the requested attributes
-     *         are not found, they will not appear in the result. <p>For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *         <note><p><i>ProjectionExpression</i> replaces the legacy
-     *         <i>AttributesToGet</i> parameter.</note>
+     * specified table or index. These attributes can include scalars, sets, or
+     * elements of a JSON document. The attributes in the expression must be
+     * separated by commas.
+     * </p>
+     * <p>
+     * If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not
+     * appear in the result.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.
+     * </p>
+     * </note>
+     * 
+     * @param projectionExpression
+     *        A string that identifies one or more attributes to retrieve from
+     *        the specified table or index. These attributes can include
+     *        scalars, sets, or elements of a JSON document. The attributes in
+     *        the expression must be separated by commas.</p>
+     *        <p>
+     *        If no attribute names are specified, then all attributes will be
+     *        returned. If any of the requested attributes are not found, they
+     *        will not appear in the result.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <i>ProjectionExpression</i> replaces the legacy
+     *        <i>AttributesToGet</i> parameter.
+     *        </p>
      */
     public void setProjectionExpression(String projectionExpression) {
         this.projectionExpression = projectionExpression;
     }
-    
+
     /**
-     * A string that identifies one or more attributes to retrieve from the
-     * specified table or index. These attributes can include scalars, sets,
-     * or elements of a JSON document. The attributes in the expression must
-     * be separated by commas. <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes
-     * are not found, they will not appear in the result. <p>For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     * <note><p><i>ProjectionExpression</i> replaces the legacy
-     * <i>AttributesToGet</i> parameter.</note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param projectionExpression A string that identifies one or more attributes to retrieve from the
-     *         specified table or index. These attributes can include scalars, sets,
-     *         or elements of a JSON document. The attributes in the expression must
-     *         be separated by commas. <p>If no attribute names are specified, then
-     *         all attributes will be returned. If any of the requested attributes
-     *         are not found, they will not appear in the result. <p>For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     *         Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *         <note><p><i>ProjectionExpression</i> replaces the legacy
-     *         <i>AttributesToGet</i> parameter.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A string that identifies one or more attributes to retrieve from the
+     * specified table or index. These attributes can include scalars, sets, or
+     * elements of a JSON document. The attributes in the expression must be
+     * separated by commas.
+     * </p>
+     * <p>
+     * If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not
+     * appear in the result.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.
+     * </p>
+     * </note>
+     * 
+     * @return A string that identifies one or more attributes to retrieve from
+     *         the specified table or index. These attributes can include
+     *         scalars, sets, or elements of a JSON document. The attributes in
+     *         the expression must be separated by commas.</p>
+     *         <p>
+     *         If no attribute names are specified, then all attributes will be
+     *         returned. If any of the requested attributes are not found, they
+     *         will not appear in the result.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB
+     *         Developer Guide</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         <i>ProjectionExpression</i> replaces the legacy
+     *         <i>AttributesToGet</i> parameter.
+     *         </p>
+     */
+    public String getProjectionExpression() {
+        return this.projectionExpression;
+    }
+
+    /**
+     * <p>
+     * A string that identifies one or more attributes to retrieve from the
+     * specified table or index. These attributes can include scalars, sets, or
+     * elements of a JSON document. The attributes in the expression must be
+     * separated by commas.
+     * </p>
+     * <p>
+     * If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not
+     * appear in the result.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.
+     * </p>
+     * </note>
+     * 
+     * @param projectionExpression
+     *        A string that identifies one or more attributes to retrieve from
+     *        the specified table or index. These attributes can include
+     *        scalars, sets, or elements of a JSON document. The attributes in
+     *        the expression must be separated by commas.</p>
+     *        <p>
+     *        If no attribute names are specified, then all attributes will be
+     *        returned. If any of the requested attributes are not found, they
+     *        will not appear in the result.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <i>ProjectionExpression</i> replaces the legacy
+     *        <i>AttributesToGet</i> parameter.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ScanRequest withProjectionExpression(String projectionExpression) {
-        this.projectionExpression = projectionExpression;
+        setProjectionExpression(projectionExpression);
         return this;
     }
 
     /**
+     * <p>
      * A string that contains conditions that DynamoDB applies after the
-     * <i>Scan</i> operation, but before the data is returned to you. Items
-     * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
-     * items have already been read; the process of filtering does not
-     * consume any additional read capacity units.</note> <p>For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
-     * and <i>ConditionalOperator</i> parameters.</note>
-     *
-     * @return A string that contains conditions that DynamoDB applies after the
-     *         <i>Scan</i> operation, but before the data is returned to you. Items
-     *         that do not satisfy the <i>FilterExpression</i> criteria are not
-     *         returned. <note> <p>A <i>FilterExpression</i> is applied after the
-     *         items have already been read; the process of filtering does not
-     *         consume any additional read capacity units.</note> <p>For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     *         Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *         <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
-     *         and <i>ConditionalOperator</i> parameters.</note>
-     */
-    public String getFilterExpression() {
-        return filterExpression;
-    }
-    
-    /**
-     * A string that contains conditions that DynamoDB applies after the
-     * <i>Scan</i> operation, but before the data is returned to you. Items
-     * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
-     * items have already been read; the process of filtering does not
-     * consume any additional read capacity units.</note> <p>For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
-     * and <i>ConditionalOperator</i> parameters.</note>
-     *
-     * @param filterExpression A string that contains conditions that DynamoDB applies after the
-     *         <i>Scan</i> operation, but before the data is returned to you. Items
-     *         that do not satisfy the <i>FilterExpression</i> criteria are not
-     *         returned. <note> <p>A <i>FilterExpression</i> is applied after the
-     *         items have already been read; the process of filtering does not
-     *         consume any additional read capacity units.</note> <p>For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     *         Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *         <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
-     *         and <i>ConditionalOperator</i> parameters.</note>
+     * <i>Scan</i> operation, but before the data is returned to you. Items that
+     * do not satisfy the <i>FilterExpression</i> criteria are not returned.
+     * </p>
+     * <note>
+     * <p>
+     * A <i>FilterExpression</i> is applied after the items have already been
+     * read; the process of filtering does not consume any additional read
+     * capacity units.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     * <i>ConditionalOperator</i> parameters.
+     * </p>
+     * </note>
+     * 
+     * @param filterExpression
+     *        A string that contains conditions that DynamoDB applies after the
+     *        <i>Scan</i> operation, but before the data is returned to you.
+     *        Items that do not satisfy the <i>FilterExpression</i> criteria are
+     *        not returned.</p> <note>
+     *        <p>
+     *        A <i>FilterExpression</i> is applied after the items have already
+     *        been read; the process of filtering does not consume any
+     *        additional read capacity units.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     *        <i>ConditionalOperator</i> parameters.
+     *        </p>
      */
     public void setFilterExpression(String filterExpression) {
         this.filterExpression = filterExpression;
     }
-    
+
     /**
-     * A string that contains conditions that DynamoDB applies after the
-     * <i>Scan</i> operation, but before the data is returned to you. Items
-     * that do not satisfy the <i>FilterExpression</i> criteria are not
-     * returned. <note> <p>A <i>FilterExpression</i> is applied after the
-     * items have already been read; the process of filtering does not
-     * consume any additional read capacity units.</note> <p>For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
-     * and <i>ConditionalOperator</i> parameters.</note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param filterExpression A string that contains conditions that DynamoDB applies after the
-     *         <i>Scan</i> operation, but before the data is returned to you. Items
-     *         that do not satisfy the <i>FilterExpression</i> criteria are not
-     *         returned. <note> <p>A <i>FilterExpression</i> is applied after the
-     *         items have already been read; the process of filtering does not
-     *         consume any additional read capacity units.</note> <p>For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     *         Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *         <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i>
-     *         and <i>ConditionalOperator</i> parameters.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A string that contains conditions that DynamoDB applies after the
+     * <i>Scan</i> operation, but before the data is returned to you. Items that
+     * do not satisfy the <i>FilterExpression</i> criteria are not returned.
+     * </p>
+     * <note>
+     * <p>
+     * A <i>FilterExpression</i> is applied after the items have already been
+     * read; the process of filtering does not consume any additional read
+     * capacity units.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     * <i>ConditionalOperator</i> parameters.
+     * </p>
+     * </note>
+     * 
+     * @return A string that contains conditions that DynamoDB applies after the
+     *         <i>Scan</i> operation, but before the data is returned to you.
+     *         Items that do not satisfy the <i>FilterExpression</i> criteria
+     *         are not returned.</p> <note>
+     *         <p>
+     *         A <i>FilterExpression</i> is applied after the items have already
+     *         been read; the process of filtering does not consume any
+     *         additional read capacity units.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *         >Filter Expressions</a> in the <i>Amazon DynamoDB Developer
+     *         Guide</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     *         <i>ConditionalOperator</i> parameters.
+     *         </p>
+     */
+    public String getFilterExpression() {
+        return this.filterExpression;
+    }
+
+    /**
+     * <p>
+     * A string that contains conditions that DynamoDB applies after the
+     * <i>Scan</i> operation, but before the data is returned to you. Items that
+     * do not satisfy the <i>FilterExpression</i> criteria are not returned.
+     * </p>
+     * <note>
+     * <p>
+     * A <i>FilterExpression</i> is applied after the items have already been
+     * read; the process of filtering does not consume any additional read
+     * capacity units.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     * <i>ConditionalOperator</i> parameters.
+     * </p>
+     * </note>
+     * 
+     * @param filterExpression
+     *        A string that contains conditions that DynamoDB applies after the
+     *        <i>Scan</i> operation, but before the data is returned to you.
+     *        Items that do not satisfy the <i>FilterExpression</i> criteria are
+     *        not returned.</p> <note>
+     *        <p>
+     *        A <i>FilterExpression</i> is applied after the items have already
+     *        been read; the process of filtering does not consume any
+     *        additional read capacity units.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     *        <i>ConditionalOperator</i> parameters.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ScanRequest withFilterExpression(String filterExpression) {
-        this.filterExpression = filterExpression;
+        setFilterExpression(filterExpression);
         return this;
     }
 
     /**
-     * One or more substitution tokens for attribute names in an expression.
-     * The following are some use cases for using
-     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
-     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
-     * create a placeholder for repeating occurrences of an attribute name in
-     * an expression. </li> <li> <p>To prevent special characters in an
-     * attribute name from being misinterpreted in an expression. </li> </ul>
-     * <p>Use the <b>#</b> character in an expression to dereference an
-     * attribute name. For example, consider the following attribute name:
-     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
-     * attribute conflicts with a reserved word, so it cannot be used
-     * directly in an expression. (For the complete list of reserved words,
-     * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
-     * around this, you could specify the following for
+     * <p>
+     * One or more substitution tokens for attribute names in an expression. The
+     * following are some use cases for using <i>ExpressionAttributeNames</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To access an attribute whose name conflicts with a DynamoDB reserved
+     * word.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a placeholder for repeating occurrences of an attribute name in
+     * an expression.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To prevent special characters in an attribute name from being
+     * misinterpreted in an expression.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use the <b>#</b> character in an expression to dereference an attribute
+     * name. For example, consider the following attribute name:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Percentile</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The name of this attribute conflicts with a reserved word, so it cannot
+     * be used directly in an expression. (For the complete list of reserved
+     * words, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html"
+     * >Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To
+     * work around this, you could specify the following for
      * <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
-     * then use this substitution in an expression, as in this example:
-     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
-     * with the <b>:</b> character are <i>expression attribute values</i>,
-     * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
-     *
-     * @return One or more substitution tokens for attribute names in an expression.
-     *         The following are some use cases for using
-     *         <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
-     *         whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
-     *         create a placeholder for repeating occurrences of an attribute name in
-     *         an expression. </li> <li> <p>To prevent special characters in an
-     *         attribute name from being misinterpreted in an expression. </li> </ul>
-     *         <p>Use the <b>#</b> character in an expression to dereference an
-     *         attribute name. For example, consider the following attribute name:
-     *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
-     *         attribute conflicts with a reserved word, so it cannot be used
-     *         directly in an expression. (For the complete list of reserved words,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
-     *         around this, you could specify the following for
-     *         <i>ExpressionAttributeNames</i>:
-     *         <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
-     *         then use this substitution in an expression, as in this example:
-     *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
-     *         with the <b>:</b> character are <i>expression attribute values</i>,
-     *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     *         DynamoDB Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>{"#P":"Percentile"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You could then use this substitution in an expression, as in this
+     * example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>#P = :val</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Tokens that begin with the <b>:</b> character are <i>expression attribute
+     * values</i>, which are placeholders for the actual value at runtime.
+     * </p>
+     * </note>
+     * <p>
+     * For more information on expression attribute names, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @return One or more substitution tokens for attribute names in an
+     *         expression. The following are some use cases for using
+     *         <i>ExpressionAttributeNames</i>:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To access an attribute whose name conflicts with a DynamoDB
+     *         reserved word.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a placeholder for repeating occurrences of an attribute
+     *         name in an expression.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To prevent special characters in an attribute name from being
+     *         misinterpreted in an expression.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Use the <b>#</b> character in an expression to dereference an
+     *         attribute name. For example, consider the following attribute
+     *         name:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Percentile</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The name of this attribute conflicts with a reserved word, so it
+     *         cannot be used directly in an expression. (For the complete list
+     *         of reserved words, see <a href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html"
+     *         >Reserved Words</a> in the <i>Amazon DynamoDB Developer
+     *         Guide</i>). To work around this, you could specify the following
+     *         for <i>ExpressionAttributeNames</i>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>{"#P":"Percentile"}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You could then use this substitution in an expression, as in this
+     *         example:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>#P = :val</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         Tokens that begin with the <b>:</b> character are <i>expression
+     *         attribute values</i>, which are placeholders for the actual value
+     *         at runtime.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         For more information on expression attribute names, see <a href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB
+     *         Developer Guide</i>.
      */
-    public java.util.Map<String,String> getExpressionAttributeNames() {
-        
+    public java.util.Map<String, String> getExpressionAttributeNames() {
         return expressionAttributeNames;
     }
-    
+
     /**
-     * One or more substitution tokens for attribute names in an expression.
-     * The following are some use cases for using
-     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
-     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
-     * create a placeholder for repeating occurrences of an attribute name in
-     * an expression. </li> <li> <p>To prevent special characters in an
-     * attribute name from being misinterpreted in an expression. </li> </ul>
-     * <p>Use the <b>#</b> character in an expression to dereference an
-     * attribute name. For example, consider the following attribute name:
-     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
-     * attribute conflicts with a reserved word, so it cannot be used
-     * directly in an expression. (For the complete list of reserved words,
-     * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
-     * around this, you could specify the following for
+     * <p>
+     * One or more substitution tokens for attribute names in an expression. The
+     * following are some use cases for using <i>ExpressionAttributeNames</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To access an attribute whose name conflicts with a DynamoDB reserved
+     * word.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a placeholder for repeating occurrences of an attribute name in
+     * an expression.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To prevent special characters in an attribute name from being
+     * misinterpreted in an expression.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use the <b>#</b> character in an expression to dereference an attribute
+     * name. For example, consider the following attribute name:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Percentile</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The name of this attribute conflicts with a reserved word, so it cannot
+     * be used directly in an expression. (For the complete list of reserved
+     * words, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html"
+     * >Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To
+     * work around this, you could specify the following for
      * <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
-     * then use this substitution in an expression, as in this example:
-     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
-     * with the <b>:</b> character are <i>expression attribute values</i>,
-     * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
-     *
-     * @param expressionAttributeNames One or more substitution tokens for attribute names in an expression.
-     *         The following are some use cases for using
-     *         <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
-     *         whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
-     *         create a placeholder for repeating occurrences of an attribute name in
-     *         an expression. </li> <li> <p>To prevent special characters in an
-     *         attribute name from being misinterpreted in an expression. </li> </ul>
-     *         <p>Use the <b>#</b> character in an expression to dereference an
-     *         attribute name. For example, consider the following attribute name:
-     *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
-     *         attribute conflicts with a reserved word, so it cannot be used
-     *         directly in an expression. (For the complete list of reserved words,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
-     *         around this, you could specify the following for
-     *         <i>ExpressionAttributeNames</i>:
-     *         <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
-     *         then use this substitution in an expression, as in this example:
-     *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
-     *         with the <b>:</b> character are <i>expression attribute values</i>,
-     *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     *         DynamoDB Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>{"#P":"Percentile"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You could then use this substitution in an expression, as in this
+     * example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>#P = :val</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Tokens that begin with the <b>:</b> character are <i>expression attribute
+     * values</i>, which are placeholders for the actual value at runtime.
+     * </p>
+     * </note>
+     * <p>
+     * For more information on expression attribute names, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param expressionAttributeNames
+     *        One or more substitution tokens for attribute names in an
+     *        expression. The following are some use cases for using
+     *        <i>ExpressionAttributeNames</i>:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To access an attribute whose name conflicts with a DynamoDB
+     *        reserved word.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a placeholder for repeating occurrences of an attribute
+     *        name in an expression.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To prevent special characters in an attribute name from being
+     *        misinterpreted in an expression.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Use the <b>#</b> character in an expression to dereference an
+     *        attribute name. For example, consider the following attribute
+     *        name:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Percentile</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The name of this attribute conflicts with a reserved word, so it
+     *        cannot be used directly in an expression. (For the complete list
+     *        of reserved words, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html"
+     *        >Reserved Words</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>). To work around this, you could specify the following
+     *        for <i>ExpressionAttributeNames</i>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>{"#P":"Percentile"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You could then use this substitution in an expression, as in this
+     *        example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>#P = :val</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Tokens that begin with the <b>:</b> character are <i>expression
+     *        attribute values</i>, which are placeholders for the actual value
+     *        at runtime.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information on expression attribute names, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>.
      */
-    public void setExpressionAttributeNames(java.util.Map<String,String> expressionAttributeNames) {
+    public void setExpressionAttributeNames(
+            java.util.Map<String, String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
     }
-    
+
     /**
-     * One or more substitution tokens for attribute names in an expression.
-     * The following are some use cases for using
-     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
-     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
-     * create a placeholder for repeating occurrences of an attribute name in
-     * an expression. </li> <li> <p>To prevent special characters in an
-     * attribute name from being misinterpreted in an expression. </li> </ul>
-     * <p>Use the <b>#</b> character in an expression to dereference an
-     * attribute name. For example, consider the following attribute name:
-     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
-     * attribute conflicts with a reserved word, so it cannot be used
-     * directly in an expression. (For the complete list of reserved words,
-     * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
-     * around this, you could specify the following for
-     * <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
-     * then use this substitution in an expression, as in this example:
-     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
-     * with the <b>:</b> character are <i>expression attribute values</i>,
-     * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param expressionAttributeNames One or more substitution tokens for attribute names in an expression.
-     *         The following are some use cases for using
-     *         <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
-     *         whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
-     *         create a placeholder for repeating occurrences of an attribute name in
-     *         an expression. </li> <li> <p>To prevent special characters in an
-     *         attribute name from being misinterpreted in an expression. </li> </ul>
-     *         <p>Use the <b>#</b> character in an expression to dereference an
-     *         attribute name. For example, consider the following attribute name:
-     *         <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
-     *         attribute conflicts with a reserved word, so it cannot be used
-     *         directly in an expression. (For the complete list of reserved words,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
-     *         around this, you could specify the following for
-     *         <i>ExpressionAttributeNames</i>:
-     *         <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
-     *         then use this substitution in an expression, as in this example:
-     *         <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
-     *         with the <b>:</b> character are <i>expression attribute values</i>,
-     *         which are placeholders for the actual value at runtime.</note> <p>For
-     *         more information on expression attribute names, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     *         DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * One or more substitution tokens for attribute names in an expression. The
+     * following are some use cases for using <i>ExpressionAttributeNames</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To access an attribute whose name conflicts with a DynamoDB reserved
+     * word.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a placeholder for repeating occurrences of an attribute name in
+     * an expression.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To prevent special characters in an attribute name from being
+     * misinterpreted in an expression.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use the <b>#</b> character in an expression to dereference an attribute
+     * name. For example, consider the following attribute name:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Percentile</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The name of this attribute conflicts with a reserved word, so it cannot
+     * be used directly in an expression. (For the complete list of reserved
+     * words, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html"
+     * >Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To
+     * work around this, you could specify the following for
+     * <i>ExpressionAttributeNames</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>{"#P":"Percentile"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You could then use this substitution in an expression, as in this
+     * example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>#P = :val</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Tokens that begin with the <b>:</b> character are <i>expression attribute
+     * values</i>, which are placeholders for the actual value at runtime.
+     * </p>
+     * </note>
+     * <p>
+     * For more information on expression attribute names, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param expressionAttributeNames
+     *        One or more substitution tokens for attribute names in an
+     *        expression. The following are some use cases for using
+     *        <i>ExpressionAttributeNames</i>:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To access an attribute whose name conflicts with a DynamoDB
+     *        reserved word.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a placeholder for repeating occurrences of an attribute
+     *        name in an expression.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To prevent special characters in an attribute name from being
+     *        misinterpreted in an expression.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Use the <b>#</b> character in an expression to dereference an
+     *        attribute name. For example, consider the following attribute
+     *        name:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Percentile</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The name of this attribute conflicts with a reserved word, so it
+     *        cannot be used directly in an expression. (For the complete list
+     *        of reserved words, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html"
+     *        >Reserved Words</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>). To work around this, you could specify the following
+     *        for <i>ExpressionAttributeNames</i>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>{"#P":"Percentile"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You could then use this substitution in an expression, as in this
+     *        example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>#P = :val</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Tokens that begin with the <b>:</b> character are <i>expression
+     *        attribute values</i>, which are placeholders for the actual value
+     *        at runtime.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information on expression attribute names, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ScanRequest withExpressionAttributeNames(java.util.Map<String,String> expressionAttributeNames) {
+    public ScanRequest withExpressionAttributeNames(
+            java.util.Map<String, String> expressionAttributeNames) {
         setExpressionAttributeNames(expressionAttributeNames);
         return this;
     }
 
-    /**
-     * One or more substitution tokens for attribute names in an expression.
-     * The following are some use cases for using
-     * <i>ExpressionAttributeNames</i>: <ul> <li> <p>To access an attribute
-     * whose name conflicts with a DynamoDB reserved word. </li> <li> <p>To
-     * create a placeholder for repeating occurrences of an attribute name in
-     * an expression. </li> <li> <p>To prevent special characters in an
-     * attribute name from being misinterpreted in an expression. </li> </ul>
-     * <p>Use the <b>#</b> character in an expression to dereference an
-     * attribute name. For example, consider the following attribute name:
-     * <ul><li><p><code>Percentile</code></li></ul> <p>The name of this
-     * attribute conflicts with a reserved word, so it cannot be used
-     * directly in an expression. (For the complete list of reserved words,
-     * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work
-     * around this, you could specify the following for
-     * <i>ExpressionAttributeNames</i>:
-     * <ul><li><p><code>{"#P":"Percentile"}</code></li></ul> <p>You could
-     * then use this substitution in an expression, as in this example:
-     * <ul><li><p><code>#P = :val</code></li></ul> <note><p>Tokens that begin
-     * with the <b>:</b> character are <i>expression attribute values</i>,
-     * which are placeholders for the actual value at runtime.</note> <p>For
-     * more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
-     * <p>
-     * The method adds a new key-value pair into ExpressionAttributeNames
-     * parameter, and returns a reference to this object so that method calls
-     * can be chained together.
-     *
-     * @param key The key of the entry to be added into ExpressionAttributeNames.
-     * @param value The corresponding value of the entry to be added into ExpressionAttributeNames.
-     */
-  public ScanRequest addExpressionAttributeNamesEntry(String key, String value) {
-    if (null == this.expressionAttributeNames) {
-      this.expressionAttributeNames = new java.util.HashMap<String,String>();
-    }
-    if (this.expressionAttributeNames.containsKey(key))
-      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-    this.expressionAttributeNames.put(key, value);
-    return this;
-  }
-
-  /**
-   * Removes all the entries added into ExpressionAttributeNames.
-   * <p>
-   * Returns a reference to this object so that method calls can be chained together.
-   */
-  public ScanRequest clearExpressionAttributeNamesEntries() {
-    this.expressionAttributeNames = null;
-    return this;
-  }
-  
-    /**
-     * One or more values that can be substituted in an expression. <p>Use
-     * the <b>:</b> (colon) character in an expression to dereference an
-     * attribute value. For example, suppose that you wanted to check whether
-     * the value of the <i>ProductStatus</i> attribute was one of the
-     * following: <p><code>Available | Backordered | Discontinued</code>
-     * <p>You would first need to specify <i>ExpressionAttributeValues</i> as
-     * follows: <p><code>{ ":avail":{"S":"Available"},
-     * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
-     * <p>You could then use these values in an expression, such as this:
-     * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
-     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
-     *
-     * @return One or more values that can be substituted in an expression. <p>Use
-     *         the <b>:</b> (colon) character in an expression to dereference an
-     *         attribute value. For example, suppose that you wanted to check whether
-     *         the value of the <i>ProductStatus</i> attribute was one of the
-     *         following: <p><code>Available | Backordered | Discontinued</code>
-     *         <p>You would first need to specify <i>ExpressionAttributeValues</i> as
-     *         follows: <p><code>{ ":avail":{"S":"Available"},
-     *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
-     *         <p>You could then use these values in an expression, such as this:
-     *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
-     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     *         DynamoDB Developer Guide</i>.
-     */
-    public java.util.Map<String,AttributeValue> getExpressionAttributeValues() {
-        
-        return expressionAttributeValues;
-    }
-    
-    /**
-     * One or more values that can be substituted in an expression. <p>Use
-     * the <b>:</b> (colon) character in an expression to dereference an
-     * attribute value. For example, suppose that you wanted to check whether
-     * the value of the <i>ProductStatus</i> attribute was one of the
-     * following: <p><code>Available | Backordered | Discontinued</code>
-     * <p>You would first need to specify <i>ExpressionAttributeValues</i> as
-     * follows: <p><code>{ ":avail":{"S":"Available"},
-     * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
-     * <p>You could then use these values in an expression, such as this:
-     * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
-     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
-     *
-     * @param expressionAttributeValues One or more values that can be substituted in an expression. <p>Use
-     *         the <b>:</b> (colon) character in an expression to dereference an
-     *         attribute value. For example, suppose that you wanted to check whether
-     *         the value of the <i>ProductStatus</i> attribute was one of the
-     *         following: <p><code>Available | Backordered | Discontinued</code>
-     *         <p>You would first need to specify <i>ExpressionAttributeValues</i> as
-     *         follows: <p><code>{ ":avail":{"S":"Available"},
-     *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
-     *         <p>You could then use these values in an expression, such as this:
-     *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
-     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     *         DynamoDB Developer Guide</i>.
-     */
-    public void setExpressionAttributeValues(java.util.Map<String,AttributeValue> expressionAttributeValues) {
-        this.expressionAttributeValues = expressionAttributeValues;
-    }
-    
-    /**
-     * One or more values that can be substituted in an expression. <p>Use
-     * the <b>:</b> (colon) character in an expression to dereference an
-     * attribute value. For example, suppose that you wanted to check whether
-     * the value of the <i>ProductStatus</i> attribute was one of the
-     * following: <p><code>Available | Backordered | Discontinued</code>
-     * <p>You would first need to specify <i>ExpressionAttributeValues</i> as
-     * follows: <p><code>{ ":avail":{"S":"Available"},
-     * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
-     * <p>You could then use these values in an expression, such as this:
-     * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
-     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param expressionAttributeValues One or more values that can be substituted in an expression. <p>Use
-     *         the <b>:</b> (colon) character in an expression to dereference an
-     *         attribute value. For example, suppose that you wanted to check whether
-     *         the value of the <i>ProductStatus</i> attribute was one of the
-     *         following: <p><code>Available | Backordered | Discontinued</code>
-     *         <p>You would first need to specify <i>ExpressionAttributeValues</i> as
-     *         follows: <p><code>{ ":avail":{"S":"Available"},
-     *         ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
-     *         <p>You could then use these values in an expression, such as this:
-     *         <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     *         information on expression attribute values, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
-     *         Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     *         DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ScanRequest withExpressionAttributeValues(java.util.Map<String,AttributeValue> expressionAttributeValues) {
-        setExpressionAttributeValues(expressionAttributeValues);
+    public ScanRequest addExpressionAttributeNamesEntry(String key, String value) {
+        if (null == this.expressionAttributeNames) {
+            this.expressionAttributeNames = new java.util.HashMap<String, String>();
+        }
+        if (this.expressionAttributeNames.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.expressionAttributeNames.put(key, value);
         return this;
     }
 
     /**
-     * One or more values that can be substituted in an expression. <p>Use
-     * the <b>:</b> (colon) character in an expression to dereference an
-     * attribute value. For example, suppose that you wanted to check whether
-     * the value of the <i>ProductStatus</i> attribute was one of the
-     * following: <p><code>Available | Backordered | Discontinued</code>
-     * <p>You would first need to specify <i>ExpressionAttributeValues</i> as
-     * follows: <p><code>{ ":avail":{"S":"Available"},
-     * ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
-     * <p>You could then use these values in an expression, such as this:
-     * <p><code>ProductStatus IN (:avail, :back, :disc)</code> <p>For more
-     * information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
-     * Placeholders for Attribute Names and Values</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
-     * <p>
-     * The method adds a new key-value pair into ExpressionAttributeValues
-     * parameter, and returns a reference to this object so that method calls
-     * can be chained together.
-     *
-     * @param key The key of the entry to be added into ExpressionAttributeValues.
-     * @param value The corresponding value of the entry to be added into ExpressionAttributeValues.
+     * Removes all the entries added into ExpressionAttributeNames. &lt;p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
      */
-  public ScanRequest addExpressionAttributeValuesEntry(String key, AttributeValue value) {
-    if (null == this.expressionAttributeValues) {
-      this.expressionAttributeValues = new java.util.HashMap<String,AttributeValue>();
+    public ScanRequest clearExpressionAttributeNamesEntries() {
+        this.expressionAttributeNames = null;
+        return this;
     }
-    if (this.expressionAttributeValues.containsKey(key))
-      throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-    this.expressionAttributeValues.put(key, value);
-    return this;
-  }
 
-  /**
-   * Removes all the entries added into ExpressionAttributeValues.
-   * <p>
-   * Returns a reference to this object so that method calls can be chained together.
-   */
-  public ScanRequest clearExpressionAttributeValuesEntries() {
-    this.expressionAttributeValues = null;
-    return this;
-  }
-  
+    /**
+     * <p>
+     * One or more values that can be substituted in an expression.
+     * </p>
+     * <p>
+     * Use the <b>:</b> (colon) character in an expression to dereference an
+     * attribute value. For example, suppose that you wanted to check whether
+     * the value of the <i>ProductStatus</i> attribute was one of the following:
+     * </p>
+     * <p>
+     * <code>Available | Backordered | Discontinued</code>
+     * </p>
+     * <p>
+     * You would first need to specify <i>ExpressionAttributeValues</i> as
+     * follows:
+     * </p>
+     * <p>
+     * <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     * </p>
+     * <p>
+     * You could then use these values in an expression, such as this:
+     * </p>
+     * <p>
+     * <code>ProductStatus IN (:avail, :back, :disc)</code>
+     * </p>
+     * <p>
+     * For more information on expression attribute values, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @return One or more values that can be substituted in an expression.</p>
+     *         <p>
+     *         Use the <b>:</b> (colon) character in an expression to
+     *         dereference an attribute value. For example, suppose that you
+     *         wanted to check whether the value of the <i>ProductStatus</i>
+     *         attribute was one of the following:
+     *         </p>
+     *         <p>
+     *         <code>Available | Backordered | Discontinued</code>
+     *         </p>
+     *         <p>
+     *         You would first need to specify <i>ExpressionAttributeValues</i>
+     *         as follows:
+     *         </p>
+     *         <p>
+     *         <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     *         </p>
+     *         <p>
+     *         You could then use these values in an expression, such as this:
+     *         </p>
+     *         <p>
+     *         <code>ProductStatus IN (:avail, :back, :disc)</code>
+     *         </p>
+     *         <p>
+     *         For more information on expression attribute values, see <a href=
+     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
+     *         Guide</i>.
+     */
+    public java.util.Map<String, AttributeValue> getExpressionAttributeValues() {
+        return expressionAttributeValues;
+    }
+
+    /**
+     * <p>
+     * One or more values that can be substituted in an expression.
+     * </p>
+     * <p>
+     * Use the <b>:</b> (colon) character in an expression to dereference an
+     * attribute value. For example, suppose that you wanted to check whether
+     * the value of the <i>ProductStatus</i> attribute was one of the following:
+     * </p>
+     * <p>
+     * <code>Available | Backordered | Discontinued</code>
+     * </p>
+     * <p>
+     * You would first need to specify <i>ExpressionAttributeValues</i> as
+     * follows:
+     * </p>
+     * <p>
+     * <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     * </p>
+     * <p>
+     * You could then use these values in an expression, such as this:
+     * </p>
+     * <p>
+     * <code>ProductStatus IN (:avail, :back, :disc)</code>
+     * </p>
+     * <p>
+     * For more information on expression attribute values, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param expressionAttributeValues
+     *        One or more values that can be substituted in an expression.</p>
+     *        <p>
+     *        Use the <b>:</b> (colon) character in an expression to dereference
+     *        an attribute value. For example, suppose that you wanted to check
+     *        whether the value of the <i>ProductStatus</i> attribute was one of
+     *        the following:
+     *        </p>
+     *        <p>
+     *        <code>Available | Backordered | Discontinued</code>
+     *        </p>
+     *        <p>
+     *        You would first need to specify <i>ExpressionAttributeValues</i>
+     *        as follows:
+     *        </p>
+     *        <p>
+     *        <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     *        </p>
+     *        <p>
+     *        You could then use these values in an expression, such as this:
+     *        </p>
+     *        <p>
+     *        <code>ProductStatus IN (:avail, :back, :disc)</code>
+     *        </p>
+     *        <p>
+     *        For more information on expression attribute values, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>.
+     */
+    public void setExpressionAttributeValues(
+            java.util.Map<String, AttributeValue> expressionAttributeValues) {
+        this.expressionAttributeValues = expressionAttributeValues;
+    }
+
+    /**
+     * <p>
+     * One or more values that can be substituted in an expression.
+     * </p>
+     * <p>
+     * Use the <b>:</b> (colon) character in an expression to dereference an
+     * attribute value. For example, suppose that you wanted to check whether
+     * the value of the <i>ProductStatus</i> attribute was one of the following:
+     * </p>
+     * <p>
+     * <code>Available | Backordered | Discontinued</code>
+     * </p>
+     * <p>
+     * You would first need to specify <i>ExpressionAttributeValues</i> as
+     * follows:
+     * </p>
+     * <p>
+     * <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     * </p>
+     * <p>
+     * You could then use these values in an expression, such as this:
+     * </p>
+     * <p>
+     * <code>ProductStatus IN (:avail, :back, :disc)</code>
+     * </p>
+     * <p>
+     * For more information on expression attribute values, see <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param expressionAttributeValues
+     *        One or more values that can be substituted in an expression.</p>
+     *        <p>
+     *        Use the <b>:</b> (colon) character in an expression to dereference
+     *        an attribute value. For example, suppose that you wanted to check
+     *        whether the value of the <i>ProductStatus</i> attribute was one of
+     *        the following:
+     *        </p>
+     *        <p>
+     *        <code>Available | Backordered | Discontinued</code>
+     *        </p>
+     *        <p>
+     *        You would first need to specify <i>ExpressionAttributeValues</i>
+     *        as follows:
+     *        </p>
+     *        <p>
+     *        <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+     *        </p>
+     *        <p>
+     *        You could then use these values in an expression, such as this:
+     *        </p>
+     *        <p>
+     *        <code>ProductStatus IN (:avail, :back, :disc)</code>
+     *        </p>
+     *        <p>
+     *        For more information on expression attribute values, see <a href=
+     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
+     *        Guide</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ScanRequest withExpressionAttributeValues(
+            java.util.Map<String, AttributeValue> expressionAttributeValues) {
+        setExpressionAttributeValues(expressionAttributeValues);
+        return this;
+    }
+
+    public ScanRequest addExpressionAttributeValuesEntry(String key,
+            AttributeValue value) {
+        if (null == this.expressionAttributeValues) {
+            this.expressionAttributeValues = new java.util.HashMap<String, AttributeValue>();
+        }
+        if (this.expressionAttributeValues.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.expressionAttributeValues.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ExpressionAttributeValues. &lt;p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     */
+    public ScanRequest clearExpressionAttributeValuesEntries() {
+        this.expressionAttributeValues = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that determines the read consistency model during the
+     * scan:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use
+     * eventually consistent reads. The data returned from <i>Scan</i> might not
+     * contain the results of other recently completed write operations
+     * (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
+     * include some stale data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use
+     * strongly consistent reads. All of the write operations that completed
+     * before the <i>Scan</i> began are guaranteed to be contained in the
+     * <i>Scan</i> response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The default setting for <i>ConsistentRead</i> is <code>false</code>,
+     * meaning that eventually consistent reads will be used.
+     * </p>
+     * <p>
+     * Strongly consistent reads are not supported on global secondary indexes.
+     * If you scan a global secondary index with <i>ConsistentRead</i> set to
+     * true, you will receive a <i>ValidationException</i>.
+     * </p>
+     * 
+     * @param consistentRead
+     *        A Boolean value that determines the read consistency model during
+     *        the scan:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i>
+     *        will use eventually consistent reads. The data returned from
+     *        <i>Scan</i> might not contain the results of other recently
+     *        completed write operations (PutItem, UpdateItem or DeleteItem).
+     *        The <i>Scan</i> response might include some stale data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i>
+     *        will use strongly consistent reads. All of the write operations
+     *        that completed before the <i>Scan</i> began are guaranteed to be
+     *        contained in the <i>Scan</i> response.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The default setting for <i>ConsistentRead</i> is
+     *        <code>false</code>, meaning that eventually consistent reads will
+     *        be used.
+     *        </p>
+     *        <p>
+     *        Strongly consistent reads are not supported on global secondary
+     *        indexes. If you scan a global secondary index with
+     *        <i>ConsistentRead</i> set to true, you will receive a
+     *        <i>ValidationException</i>.
+     */
+    public void setConsistentRead(Boolean consistentRead) {
+        this.consistentRead = consistentRead;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that determines the read consistency model during the
+     * scan:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use
+     * eventually consistent reads. The data returned from <i>Scan</i> might not
+     * contain the results of other recently completed write operations
+     * (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
+     * include some stale data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use
+     * strongly consistent reads. All of the write operations that completed
+     * before the <i>Scan</i> began are guaranteed to be contained in the
+     * <i>Scan</i> response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The default setting for <i>ConsistentRead</i> is <code>false</code>,
+     * meaning that eventually consistent reads will be used.
+     * </p>
+     * <p>
+     * Strongly consistent reads are not supported on global secondary indexes.
+     * If you scan a global secondary index with <i>ConsistentRead</i> set to
+     * true, you will receive a <i>ValidationException</i>.
+     * </p>
+     * 
+     * @return A Boolean value that determines the read consistency model during
+     *         the scan:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i>
+     *         will use eventually consistent reads. The data returned from
+     *         <i>Scan</i> might not contain the results of other recently
+     *         completed write operations (PutItem, UpdateItem or DeleteItem).
+     *         The <i>Scan</i> response might include some stale data.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i>
+     *         will use strongly consistent reads. All of the write operations
+     *         that completed before the <i>Scan</i> began are guaranteed to be
+     *         contained in the <i>Scan</i> response.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The default setting for <i>ConsistentRead</i> is
+     *         <code>false</code>, meaning that eventually consistent reads will
+     *         be used.
+     *         </p>
+     *         <p>
+     *         Strongly consistent reads are not supported on global secondary
+     *         indexes. If you scan a global secondary index with
+     *         <i>ConsistentRead</i> set to true, you will receive a
+     *         <i>ValidationException</i>.
+     */
+    public Boolean getConsistentRead() {
+        return this.consistentRead;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that determines the read consistency model during the
+     * scan:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use
+     * eventually consistent reads. The data returned from <i>Scan</i> might not
+     * contain the results of other recently completed write operations
+     * (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
+     * include some stale data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use
+     * strongly consistent reads. All of the write operations that completed
+     * before the <i>Scan</i> began are guaranteed to be contained in the
+     * <i>Scan</i> response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The default setting for <i>ConsistentRead</i> is <code>false</code>,
+     * meaning that eventually consistent reads will be used.
+     * </p>
+     * <p>
+     * Strongly consistent reads are not supported on global secondary indexes.
+     * If you scan a global secondary index with <i>ConsistentRead</i> set to
+     * true, you will receive a <i>ValidationException</i>.
+     * </p>
+     * 
+     * @param consistentRead
+     *        A Boolean value that determines the read consistency model during
+     *        the scan:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i>
+     *        will use eventually consistent reads. The data returned from
+     *        <i>Scan</i> might not contain the results of other recently
+     *        completed write operations (PutItem, UpdateItem or DeleteItem).
+     *        The <i>Scan</i> response might include some stale data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i>
+     *        will use strongly consistent reads. All of the write operations
+     *        that completed before the <i>Scan</i> began are guaranteed to be
+     *        contained in the <i>Scan</i> response.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The default setting for <i>ConsistentRead</i> is
+     *        <code>false</code>, meaning that eventually consistent reads will
+     *        be used.
+     *        </p>
+     *        <p>
+     *        Strongly consistent reads are not supported on global secondary
+     *        indexes. If you scan a global secondary index with
+     *        <i>ConsistentRead</i> set to true, you will receive a
+     *        <i>ValidationException</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ScanRequest withConsistentRead(Boolean consistentRead) {
+        setConsistentRead(consistentRead);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that determines the read consistency model during the
+     * scan:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use
+     * eventually consistent reads. The data returned from <i>Scan</i> might not
+     * contain the results of other recently completed write operations
+     * (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
+     * include some stale data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use
+     * strongly consistent reads. All of the write operations that completed
+     * before the <i>Scan</i> began are guaranteed to be contained in the
+     * <i>Scan</i> response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The default setting for <i>ConsistentRead</i> is <code>false</code>,
+     * meaning that eventually consistent reads will be used.
+     * </p>
+     * <p>
+     * Strongly consistent reads are not supported on global secondary indexes.
+     * If you scan a global secondary index with <i>ConsistentRead</i> set to
+     * true, you will receive a <i>ValidationException</i>.
+     * </p>
+     * 
+     * @return A Boolean value that determines the read consistency model during
+     *         the scan:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i>
+     *         will use eventually consistent reads. The data returned from
+     *         <i>Scan</i> might not contain the results of other recently
+     *         completed write operations (PutItem, UpdateItem or DeleteItem).
+     *         The <i>Scan</i> response might include some stale data.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i>
+     *         will use strongly consistent reads. All of the write operations
+     *         that completed before the <i>Scan</i> began are guaranteed to be
+     *         contained in the <i>Scan</i> response.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The default setting for <i>ConsistentRead</i> is
+     *         <code>false</code>, meaning that eventually consistent reads will
+     *         be used.
+     *         </p>
+     *         <p>
+     *         Strongly consistent reads are not supported on global secondary
+     *         indexes. If you scan a global secondary index with
+     *         <i>ConsistentRead</i> set to true, you will receive a
+     *         <i>ValidationException</i>.
+     */
+    public Boolean isConsistentRead() {
+        return this.consistentRead;
+    }
+
+    /**
+     * The primary hash and range keys of the first item that this operation
+     * will evaluate. Use the value that was returned for
+     * <i>LastEvaluatedKey</i> in the previous operation.
+     * <p>
+     * The data type for <i>ExclusiveStartKey</i> must be String, Number or
+     * Binary. No set data types are allowed.
+     *
+     * @param hashKey
+     *        a map entry including the name and value of the primary hash key.
+     * @param rangeKey
+     *        a map entry including the name and value of the primary range key,
+     *        or null if it is a hash-only table.
+     */
+    public void setExclusiveStartKey(
+            java.util.Map.Entry<String, AttributeValue> hashKey,
+            java.util.Map.Entry<String, AttributeValue> rangeKey)
+            throws IllegalArgumentException {
+        java.util.HashMap<String, AttributeValue> exclusiveStartKey = new java.util.HashMap<String, AttributeValue>();
+        if (hashKey != null) {
+            exclusiveStartKey.put(hashKey.getKey(), hashKey.getValue());
+        } else {
+            throw new IllegalArgumentException(
+                    "hashKey must be non-null object.");
+        }
+        if (rangeKey != null) {
+            exclusiveStartKey.put(rangeKey.getKey(), rangeKey.getValue());
+        }
+        setExclusiveStartKey(exclusiveStartKey);
+    }
+
+    /**
+     * The primary hash and range keys of the first item that this operation
+     * will evaluate. Use the value that was returned for
+     * <i>LastEvaluatedKey</i> in the previous operation.
+     * <p>
+     * The data type for <i>ExclusiveStartKey</i> must be String, Number or
+     * Binary. No set data types are allowed.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param hashKey
+     *        a map entry including the name and value of the primary hash key.
+     * @param rangeKey
+     *        a map entry including the name and value of the primary range key,
+     *        or null if it is a hash-only table.
+     */
+    public ScanRequest withExclusiveStartKey(
+            java.util.Map.Entry<String, AttributeValue> hashKey,
+            java.util.Map.Entry<String, AttributeValue> rangeKey)
+            throws IllegalArgumentException {
+        setExclusiveStartKey(hashKey, rangeKey);
+        return this;
+    }
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -2590,94 +4117,217 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
-        if (getIndexName() != null) sb.append("IndexName: " + getIndexName() + ",");
-        if (getAttributesToGet() != null) sb.append("AttributesToGet: " + getAttributesToGet() + ",");
-        if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");
-        if (getSelect() != null) sb.append("Select: " + getSelect() + ",");
-        if (getScanFilter() != null) sb.append("ScanFilter: " + getScanFilter() + ",");
-        if (getConditionalOperator() != null) sb.append("ConditionalOperator: " + getConditionalOperator() + ",");
-        if (getExclusiveStartKey() != null) sb.append("ExclusiveStartKey: " + getExclusiveStartKey() + ",");
-        if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
-        if (getTotalSegments() != null) sb.append("TotalSegments: " + getTotalSegments() + ",");
-        if (getSegment() != null) sb.append("Segment: " + getSegment() + ",");
-        if (getProjectionExpression() != null) sb.append("ProjectionExpression: " + getProjectionExpression() + ",");
-        if (getFilterExpression() != null) sb.append("FilterExpression: " + getFilterExpression() + ",");
-        if (getExpressionAttributeNames() != null) sb.append("ExpressionAttributeNames: " + getExpressionAttributeNames() + ",");
-        if (getExpressionAttributeValues() != null) sb.append("ExpressionAttributeValues: " + getExpressionAttributeValues() );
+        if (getTableName() != null)
+            sb.append("TableName: " + getTableName() + ",");
+        if (getIndexName() != null)
+            sb.append("IndexName: " + getIndexName() + ",");
+        if (getAttributesToGet() != null)
+            sb.append("AttributesToGet: " + getAttributesToGet() + ",");
+        if (getLimit() != null)
+            sb.append("Limit: " + getLimit() + ",");
+        if (getSelect() != null)
+            sb.append("Select: " + getSelect() + ",");
+        if (getScanFilter() != null)
+            sb.append("ScanFilter: " + getScanFilter() + ",");
+        if (getConditionalOperator() != null)
+            sb.append("ConditionalOperator: " + getConditionalOperator() + ",");
+        if (getExclusiveStartKey() != null)
+            sb.append("ExclusiveStartKey: " + getExclusiveStartKey() + ",");
+        if (getReturnConsumedCapacity() != null)
+            sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity()
+                    + ",");
+        if (getTotalSegments() != null)
+            sb.append("TotalSegments: " + getTotalSegments() + ",");
+        if (getSegment() != null)
+            sb.append("Segment: " + getSegment() + ",");
+        if (getProjectionExpression() != null)
+            sb.append("ProjectionExpression: " + getProjectionExpression()
+                    + ",");
+        if (getFilterExpression() != null)
+            sb.append("FilterExpression: " + getFilterExpression() + ",");
+        if (getExpressionAttributeNames() != null)
+            sb.append("ExpressionAttributeNames: "
+                    + getExpressionAttributeNames() + ",");
+        if (getExpressionAttributeValues() != null)
+            sb.append("ExpressionAttributeValues: "
+                    + getExpressionAttributeValues() + ",");
+        if (getConsistentRead() != null)
+            sb.append("ConsistentRead: " + getConsistentRead());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ScanRequest == false)
+            return false;
+        ScanRequest other = (ScanRequest) obj;
+        if (other.getTableName() == null ^ this.getTableName() == null)
+            return false;
+        if (other.getTableName() != null
+                && other.getTableName().equals(this.getTableName()) == false)
+            return false;
+        if (other.getIndexName() == null ^ this.getIndexName() == null)
+            return false;
+        if (other.getIndexName() != null
+                && other.getIndexName().equals(this.getIndexName()) == false)
+            return false;
+        if (other.getAttributesToGet() == null
+                ^ this.getAttributesToGet() == null)
+            return false;
+        if (other.getAttributesToGet() != null
+                && other.getAttributesToGet().equals(this.getAttributesToGet()) == false)
+            return false;
+        if (other.getLimit() == null ^ this.getLimit() == null)
+            return false;
+        if (other.getLimit() != null
+                && other.getLimit().equals(this.getLimit()) == false)
+            return false;
+        if (other.getSelect() == null ^ this.getSelect() == null)
+            return false;
+        if (other.getSelect() != null
+                && other.getSelect().equals(this.getSelect()) == false)
+            return false;
+        if (other.getScanFilter() == null ^ this.getScanFilter() == null)
+            return false;
+        if (other.getScanFilter() != null
+                && other.getScanFilter().equals(this.getScanFilter()) == false)
+            return false;
+        if (other.getConditionalOperator() == null
+                ^ this.getConditionalOperator() == null)
+            return false;
+        if (other.getConditionalOperator() != null
+                && other.getConditionalOperator().equals(
+                        this.getConditionalOperator()) == false)
+            return false;
+        if (other.getExclusiveStartKey() == null
+                ^ this.getExclusiveStartKey() == null)
+            return false;
+        if (other.getExclusiveStartKey() != null
+                && other.getExclusiveStartKey().equals(
+                        this.getExclusiveStartKey()) == false)
+            return false;
+        if (other.getReturnConsumedCapacity() == null
+                ^ this.getReturnConsumedCapacity() == null)
+            return false;
+        if (other.getReturnConsumedCapacity() != null
+                && other.getReturnConsumedCapacity().equals(
+                        this.getReturnConsumedCapacity()) == false)
+            return false;
+        if (other.getTotalSegments() == null ^ this.getTotalSegments() == null)
+            return false;
+        if (other.getTotalSegments() != null
+                && other.getTotalSegments().equals(this.getTotalSegments()) == false)
+            return false;
+        if (other.getSegment() == null ^ this.getSegment() == null)
+            return false;
+        if (other.getSegment() != null
+                && other.getSegment().equals(this.getSegment()) == false)
+            return false;
+        if (other.getProjectionExpression() == null
+                ^ this.getProjectionExpression() == null)
+            return false;
+        if (other.getProjectionExpression() != null
+                && other.getProjectionExpression().equals(
+                        this.getProjectionExpression()) == false)
+            return false;
+        if (other.getFilterExpression() == null
+                ^ this.getFilterExpression() == null)
+            return false;
+        if (other.getFilterExpression() != null
+                && other.getFilterExpression().equals(
+                        this.getFilterExpression()) == false)
+            return false;
+        if (other.getExpressionAttributeNames() == null
+                ^ this.getExpressionAttributeNames() == null)
+            return false;
+        if (other.getExpressionAttributeNames() != null
+                && other.getExpressionAttributeNames().equals(
+                        this.getExpressionAttributeNames()) == false)
+            return false;
+        if (other.getExpressionAttributeValues() == null
+                ^ this.getExpressionAttributeValues() == null)
+            return false;
+        if (other.getExpressionAttributeValues() != null
+                && other.getExpressionAttributeValues().equals(
+                        this.getExpressionAttributeValues()) == false)
+            return false;
+        if (other.getConsistentRead() == null
+                ^ this.getConsistentRead() == null)
+            return false;
+        if (other.getConsistentRead() != null
+                && other.getConsistentRead().equals(this.getConsistentRead()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode()); 
-        hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode()); 
-        hashCode = prime * hashCode + ((getAttributesToGet() == null) ? 0 : getAttributesToGet().hashCode()); 
-        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode()); 
-        hashCode = prime * hashCode + ((getSelect() == null) ? 0 : getSelect().hashCode()); 
-        hashCode = prime * hashCode + ((getScanFilter() == null) ? 0 : getScanFilter().hashCode()); 
-        hashCode = prime * hashCode + ((getConditionalOperator() == null) ? 0 : getConditionalOperator().hashCode()); 
-        hashCode = prime * hashCode + ((getExclusiveStartKey() == null) ? 0 : getExclusiveStartKey().hashCode()); 
-        hashCode = prime * hashCode + ((getReturnConsumedCapacity() == null) ? 0 : getReturnConsumedCapacity().hashCode()); 
-        hashCode = prime * hashCode + ((getTotalSegments() == null) ? 0 : getTotalSegments().hashCode()); 
-        hashCode = prime * hashCode + ((getSegment() == null) ? 0 : getSegment().hashCode()); 
-        hashCode = prime * hashCode + ((getProjectionExpression() == null) ? 0 : getProjectionExpression().hashCode()); 
-        hashCode = prime * hashCode + ((getFilterExpression() == null) ? 0 : getFilterExpression().hashCode()); 
-        hashCode = prime * hashCode + ((getExpressionAttributeNames() == null) ? 0 : getExpressionAttributeNames().hashCode()); 
-        hashCode = prime * hashCode + ((getExpressionAttributeValues() == null) ? 0 : getExpressionAttributeValues().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getTableName() == null) ? 0 : getTableName().hashCode());
+        hashCode = prime * hashCode
+                + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAttributesToGet() == null) ? 0 : getAttributesToGet()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode
+                + ((getSelect() == null) ? 0 : getSelect().hashCode());
+        hashCode = prime * hashCode
+                + ((getScanFilter() == null) ? 0 : getScanFilter().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getConditionalOperator() == null) ? 0
+                        : getConditionalOperator().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getExclusiveStartKey() == null) ? 0
+                        : getExclusiveStartKey().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReturnConsumedCapacity() == null) ? 0
+                        : getReturnConsumedCapacity().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTotalSegments() == null) ? 0 : getTotalSegments()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getSegment() == null) ? 0 : getSegment().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getProjectionExpression() == null) ? 0
+                        : getProjectionExpression().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getFilterExpression() == null) ? 0 : getFilterExpression()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getExpressionAttributeNames() == null) ? 0
+                        : getExpressionAttributeNames().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getExpressionAttributeValues() == null) ? 0
+                        : getExpressionAttributeValues().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getConsistentRead() == null) ? 0 : getConsistentRead()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ScanRequest == false) return false;
-        ScanRequest other = (ScanRequest)obj;
-        
-        if (other.getTableName() == null ^ this.getTableName() == null) return false;
-        if (other.getTableName() != null && other.getTableName().equals(this.getTableName()) == false) return false; 
-        if (other.getIndexName() == null ^ this.getIndexName() == null) return false;
-        if (other.getIndexName() != null && other.getIndexName().equals(this.getIndexName()) == false) return false; 
-        if (other.getAttributesToGet() == null ^ this.getAttributesToGet() == null) return false;
-        if (other.getAttributesToGet() != null && other.getAttributesToGet().equals(this.getAttributesToGet()) == false) return false; 
-        if (other.getLimit() == null ^ this.getLimit() == null) return false;
-        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false) return false; 
-        if (other.getSelect() == null ^ this.getSelect() == null) return false;
-        if (other.getSelect() != null && other.getSelect().equals(this.getSelect()) == false) return false; 
-        if (other.getScanFilter() == null ^ this.getScanFilter() == null) return false;
-        if (other.getScanFilter() != null && other.getScanFilter().equals(this.getScanFilter()) == false) return false; 
-        if (other.getConditionalOperator() == null ^ this.getConditionalOperator() == null) return false;
-        if (other.getConditionalOperator() != null && other.getConditionalOperator().equals(this.getConditionalOperator()) == false) return false; 
-        if (other.getExclusiveStartKey() == null ^ this.getExclusiveStartKey() == null) return false;
-        if (other.getExclusiveStartKey() != null && other.getExclusiveStartKey().equals(this.getExclusiveStartKey()) == false) return false; 
-        if (other.getReturnConsumedCapacity() == null ^ this.getReturnConsumedCapacity() == null) return false;
-        if (other.getReturnConsumedCapacity() != null && other.getReturnConsumedCapacity().equals(this.getReturnConsumedCapacity()) == false) return false; 
-        if (other.getTotalSegments() == null ^ this.getTotalSegments() == null) return false;
-        if (other.getTotalSegments() != null && other.getTotalSegments().equals(this.getTotalSegments()) == false) return false; 
-        if (other.getSegment() == null ^ this.getSegment() == null) return false;
-        if (other.getSegment() != null && other.getSegment().equals(this.getSegment()) == false) return false; 
-        if (other.getProjectionExpression() == null ^ this.getProjectionExpression() == null) return false;
-        if (other.getProjectionExpression() != null && other.getProjectionExpression().equals(this.getProjectionExpression()) == false) return false; 
-        if (other.getFilterExpression() == null ^ this.getFilterExpression() == null) return false;
-        if (other.getFilterExpression() != null && other.getFilterExpression().equals(this.getFilterExpression()) == false) return false; 
-        if (other.getExpressionAttributeNames() == null ^ this.getExpressionAttributeNames() == null) return false;
-        if (other.getExpressionAttributeNames() != null && other.getExpressionAttributeNames().equals(this.getExpressionAttributeNames()) == false) return false; 
-        if (other.getExpressionAttributeValues() == null ^ this.getExpressionAttributeValues() == null) return false;
-        if (other.getExpressionAttributeValues() != null && other.getExpressionAttributeValues().equals(this.getExpressionAttributeValues()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ScanRequest clone() {
-        
-            return (ScanRequest) super.clone();
+        return (ScanRequest) super.clone();
     }
-
 }
-    

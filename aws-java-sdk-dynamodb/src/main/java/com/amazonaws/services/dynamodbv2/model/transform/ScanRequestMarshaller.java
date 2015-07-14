@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.dynamodbv2.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,41 +40,45 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Scan Request Marshaller
+ * ScanRequest Marshaller
  */
-public class ScanRequestMarshaller implements Marshaller<Request<ScanRequest>, ScanRequest> {
+public class ScanRequestMarshaller implements
+        Marshaller<Request<ScanRequest>, ScanRequest> {
 
     public Request<ScanRequest> marshall(ScanRequest scanRequest) {
+
         if (scanRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<ScanRequest> request = new DefaultRequest<ScanRequest>(scanRequest, "AmazonDynamoDBv2");
-        String target = "DynamoDB_20120810.Scan";
-        request.addHeader("X-Amz-Target", target);
+        Request<ScanRequest> request = new DefaultRequest<ScanRequest>(
+                scanRequest, "AmazonDynamoDBv2");
+        request.addHeader("X-Amz-Target", "DynamoDB_20120810.Scan");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (scanRequest.getTableName() != null) {
                 jsonWriter.key("TableName").value(scanRequest.getTableName());
             }
+
             if (scanRequest.getIndexName() != null) {
                 jsonWriter.key("IndexName").value(scanRequest.getIndexName());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGetList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(scanRequest.getAttributesToGet());
-            if (attributesToGetList != null && !(attributesToGetList.isAutoConstruct() && attributesToGetList.isEmpty())) {
-
+            java.util.List<String> attributesToGetList = scanRequest
+                    .getAttributesToGet();
+            if (attributesToGetList != null) {
                 jsonWriter.key("AttributesToGet");
                 jsonWriter.array();
-
                 for (String attributesToGetListValue : attributesToGetList) {
                     if (attributesToGetListValue != null) {
                         jsonWriter.value(attributesToGetListValue);
@@ -81,108 +86,139 @@ public class ScanRequestMarshaller implements Marshaller<Request<ScanRequest>, S
                 }
                 jsonWriter.endArray();
             }
+
             if (scanRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(scanRequest.getLimit());
             }
+
             if (scanRequest.getSelect() != null) {
                 jsonWriter.key("Select").value(scanRequest.getSelect());
             }
-            if (scanRequest.getScanFilter() != null) {
+
+            java.util.Map<String, Condition> scanFilterMap = scanRequest
+                    .getScanFilter();
+            if (scanFilterMap != null) {
                 jsonWriter.key("ScanFilter");
                 jsonWriter.object();
-                for (Map.Entry<String, Condition> scanFilterListValue : scanRequest.getScanFilter().entrySet()) {
-                    if (scanFilterListValue.getValue() != null) {
-                        jsonWriter.key(scanFilterListValue.getKey());
 
-                        jsonWriter.object();
+                for (Map.Entry<String, Condition> scanFilterMapValue : scanFilterMap
+                        .entrySet()) {
+                    if (scanFilterMapValue.getValue() != null) {
+                        jsonWriter.key(scanFilterMapValue.getKey());
 
-                        com.amazonaws.internal.ListWithAutoConstructFlag<AttributeValue> attributeValueListList = (com.amazonaws.internal.ListWithAutoConstructFlag<AttributeValue>)(scanFilterListValue.getValue().getAttributeValueList());
-                        if (attributeValueListList != null && !(attributeValueListList.isAutoConstruct() && attributeValueListList.isEmpty())) {
-
-                            jsonWriter.key("AttributeValueList");
-                            jsonWriter.array();
-
-                            for (AttributeValue attributeValueListListValue : attributeValueListList) {
-                                if (attributeValueListListValue != null) {
-                                    AttributeValueJsonMarshaller.getInstance().marshall(attributeValueListListValue, jsonWriter);
-                                }
-                            }
-                            jsonWriter.endArray();
-                        }
-                        if (scanFilterListValue.getValue().getComparisonOperator() != null) {
-                            jsonWriter.key("ComparisonOperator").value(scanFilterListValue.getValue().getComparisonOperator());
-                        }
-                        jsonWriter.endObject();
+                        ConditionJsonMarshaller.getInstance().marshall(
+                                scanFilterMapValue.getValue(), jsonWriter);
                     }
                 }
                 jsonWriter.endObject();
             }
+
             if (scanRequest.getConditionalOperator() != null) {
-                jsonWriter.key("ConditionalOperator").value(scanRequest.getConditionalOperator());
+                jsonWriter.key("ConditionalOperator").value(
+                        scanRequest.getConditionalOperator());
             }
-            if (scanRequest.getExclusiveStartKey() != null) {
+
+            java.util.Map<String, AttributeValue> exclusiveStartKeyMap = scanRequest
+                    .getExclusiveStartKey();
+            if (exclusiveStartKeyMap != null) {
                 jsonWriter.key("ExclusiveStartKey");
                 jsonWriter.object();
-                for (Map.Entry<String, AttributeValue> exclusiveStartKeyListValue : scanRequest.getExclusiveStartKey().entrySet()) {
-                    if (exclusiveStartKeyListValue.getValue() != null) {
-                        jsonWriter.key(exclusiveStartKeyListValue.getKey());
 
-                        AttributeValueJsonMarshaller.getInstance().marshall(exclusiveStartKeyListValue.getValue(), jsonWriter);
+                for (Map.Entry<String, AttributeValue> exclusiveStartKeyMapValue : exclusiveStartKeyMap
+                        .entrySet()) {
+                    if (exclusiveStartKeyMapValue.getValue() != null) {
+                        jsonWriter.key(exclusiveStartKeyMapValue.getKey());
+
+                        AttributeValueJsonMarshaller.getInstance().marshall(
+                                exclusiveStartKeyMapValue.getValue(),
+                                jsonWriter);
                     }
                 }
                 jsonWriter.endObject();
             }
+
             if (scanRequest.getReturnConsumedCapacity() != null) {
-                jsonWriter.key("ReturnConsumedCapacity").value(scanRequest.getReturnConsumedCapacity());
+                jsonWriter.key("ReturnConsumedCapacity").value(
+                        scanRequest.getReturnConsumedCapacity());
             }
+
             if (scanRequest.getTotalSegments() != null) {
-                jsonWriter.key("TotalSegments").value(scanRequest.getTotalSegments());
+                jsonWriter.key("TotalSegments").value(
+                        scanRequest.getTotalSegments());
             }
+
             if (scanRequest.getSegment() != null) {
                 jsonWriter.key("Segment").value(scanRequest.getSegment());
             }
+
             if (scanRequest.getProjectionExpression() != null) {
-                jsonWriter.key("ProjectionExpression").value(scanRequest.getProjectionExpression());
+                jsonWriter.key("ProjectionExpression").value(
+                        scanRequest.getProjectionExpression());
             }
+
             if (scanRequest.getFilterExpression() != null) {
-                jsonWriter.key("FilterExpression").value(scanRequest.getFilterExpression());
+                jsonWriter.key("FilterExpression").value(
+                        scanRequest.getFilterExpression());
             }
-            if (scanRequest.getExpressionAttributeNames() != null) {
+
+            java.util.Map<String, String> expressionAttributeNamesMap = scanRequest
+                    .getExpressionAttributeNames();
+            if (expressionAttributeNamesMap != null) {
                 jsonWriter.key("ExpressionAttributeNames");
                 jsonWriter.object();
-                for (Map.Entry<String, String> expressionAttributeNamesListValue : scanRequest.getExpressionAttributeNames().entrySet()) {
-                    if (expressionAttributeNamesListValue.getValue() != null) {
-                        jsonWriter.key(expressionAttributeNamesListValue.getKey());
 
-                        jsonWriter.value(expressionAttributeNamesListValue.getValue());
+                for (Map.Entry<String, String> expressionAttributeNamesMapValue : expressionAttributeNamesMap
+                        .entrySet()) {
+                    if (expressionAttributeNamesMapValue.getValue() != null) {
+                        jsonWriter.key(expressionAttributeNamesMapValue
+                                .getKey());
+
+                        jsonWriter.value(expressionAttributeNamesMapValue
+                                .getValue());
                     }
                 }
                 jsonWriter.endObject();
             }
-            if (scanRequest.getExpressionAttributeValues() != null) {
+
+            java.util.Map<String, AttributeValue> expressionAttributeValuesMap = scanRequest
+                    .getExpressionAttributeValues();
+            if (expressionAttributeValuesMap != null) {
                 jsonWriter.key("ExpressionAttributeValues");
                 jsonWriter.object();
-                for (Map.Entry<String, AttributeValue> expressionAttributeValuesListValue : scanRequest.getExpressionAttributeValues().entrySet()) {
-                    if (expressionAttributeValuesListValue.getValue() != null) {
-                        jsonWriter.key(expressionAttributeValuesListValue.getKey());
 
-                        AttributeValueJsonMarshaller.getInstance().marshall(expressionAttributeValuesListValue.getValue(), jsonWriter);
+                for (Map.Entry<String, AttributeValue> expressionAttributeValuesMapValue : expressionAttributeValuesMap
+                        .entrySet()) {
+                    if (expressionAttributeValuesMapValue.getValue() != null) {
+                        jsonWriter.key(expressionAttributeValuesMapValue
+                                .getKey());
+
+                        AttributeValueJsonMarshaller.getInstance().marshall(
+                                expressionAttributeValuesMapValue.getValue(),
+                                jsonWriter);
                     }
                 }
                 jsonWriter.endObject();
             }
 
-          jsonWriter.endObject();
+            if (scanRequest.getConsistentRead() != null) {
+                jsonWriter.key("ConsistentRead").value(
+                        scanRequest.getConsistentRead());
+            }
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.0");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            jsonWriter.endObject();
+
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.0");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

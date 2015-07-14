@@ -18,21 +18,29 @@ import com.amazonaws.internal.config.HttpClientConfig;
 import com.amazonaws.internal.config.InternalConfig;
 
 /**
- * An internal service name factory. 
+ * An internal service name factory.
  */
 enum ServiceNameFactory {
     ;
 
     /**
-     * Returns a non-null signer for the specified service and region.
-     * 
-     * @throws UnsupportedOperationException
-     *             if the internal signer type configured is not currently
-     *             supported.
+     * Returns the serviceName config for the specified service client, or null
+     * if no explicit config is found.
      */
     static String getServiceName(String httpClientName) {
         InternalConfig config = InternalConfig.Factory.getInternalConfig();
         HttpClientConfig clientConfig = config.getHttpClientConfig(httpClientName);
         return clientConfig == null ? null : clientConfig.getServiceName();
     }
+
+    /**
+     * Returns the regionMetadataServiceName config for the specified service
+     * client, or null if no explicit config is found.
+     */
+    static String getServiceNameInRegionMetadata(String httpClientName) {
+        InternalConfig config = InternalConfig.Factory.getInternalConfig();
+        HttpClientConfig clientConfig = config.getHttpClientConfig(httpClientName);
+        return clientConfig == null ? null : clientConfig.getRegionMetadataServiceName();
+    }
+
 }

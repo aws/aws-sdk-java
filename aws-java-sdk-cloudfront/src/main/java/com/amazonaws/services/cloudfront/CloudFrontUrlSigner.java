@@ -42,11 +42,11 @@ import com.amazonaws.util.StringUtils;
 // The source code originated from the .NET implementation at
 // https://github.com/aws/aws-sdk-net/blob/master/AWSSDK_DotNet35/Amazon.CloudFront/AmazonCloudFrontUrlSigner.cs
 /**
- * Utility class for generating pre-signed URLs for serving private cloudfront
+ * Utility class for generating pre-signed URLs for serving private CloudFront
  * content. All dates must be in UTC. Use {@link Calendar} to set the timezone
  * specifically before converting to a {@link Date} object, or else use
  * {@link DateUtils} to turn a UTC date String into a Date object.
- * 
+ *
  * <pre>
  * Protocol protocol = Protocol.http;
  * String distributionDomain = "d1b2c3a4g5h6.cloudfront.net";
@@ -56,14 +56,17 @@ import com.amazonaws.util.StringUtils;
  * Date dateLessThan = DateUtils.parseIso8601Date("2012-11-14T22:20:00.000Z");
  * Date dateGreaterThan = DateUtils.parseIso8601Date("2011-11-14T22:20:00.000Z")
  * String ipRange = "192.168.0.1/24";
- * 
- * String url1 = CloudFrontUrlSigner.getCannedSignedURL(protocol, distributionDomain, privateKeyFile,
+ *
+ * String url1 = CloudFrontUrlSigner.getSignedURLWithCannedPolicy(
+ *              protocol, distributionDomain, privateKeyFile,
  *              s3ObjectKey, keyPairId, dateLessThan);
- *      
- * String url2 = CloudFrontUrlSigner.getCustomSignedURL(protocol, distributionDomain, privateKeyFile,
- *              s3ObjectKey, keyPairId, dateLessThan, dateGreaterThan, ipRange);
+ *
+ * String url2 = CloudFrontUrlSigner.getSignedURLWithCustomPolicy(
+ *              protocol, distributionDomain, privateKeyFile,
+ *              s3ObjectKey, keyPairId, dateLessThan,
+ *              dateGreaterThan, ipRange);
  * </pre>
- * 
+ *
  * @see DateUtils
  */
 public enum CloudFrontUrlSigner {
@@ -82,7 +85,7 @@ public enum CloudFrontUrlSigner {
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-urls-overview.html"
      * >Overview of Signed URLs</a>.
-     * 
+     *
      * @param protocol
      *            The protocol of the URL
      * @param distributionDomain
@@ -103,7 +106,7 @@ public enum CloudFrontUrlSigner {
                                             final File privateKeyFile,
                                             final String s3ObjectKey,
                                             final String keyPairId,
-                                            final Date dateLessThan) 
+                                            final Date dateLessThan)
             throws InvalidKeySpecException, IOException {
         final String resourcePath = generateResourcePath(protocol, distributionDomain, s3ObjectKey);
         PrivateKey privateKey = loadPrivateKey(privateKeyFile);
@@ -116,7 +119,7 @@ public enum CloudFrontUrlSigner {
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-urls-overview.html"
      * >Overview of Signed URLs</a>.
-     * 
+     *
      * @param protocol
      *            The protocol of the URL
      * @param distributionDomain
@@ -136,8 +139,8 @@ public enum CloudFrontUrlSigner {
      *            The allowed IP address range of the client making the GET
      *            request, in CIDR form (e.g. 192.168.0.1/24).
      * @return The signed URL.
-     * @throws IOException 
-     * @throws InvalidKeySpecException 
+     * @throws IOException
+     * @throws InvalidKeySpecException
      */
     public static String getSignedURLWithCustomPolicy(final Protocol protocol,
                                             final String distributionDomain,
@@ -146,7 +149,7 @@ public enum CloudFrontUrlSigner {
                                             final String keyPairId,
                                             final Date dateLessThan,
                                             final Date dateGreaterThan,
-                                            final String ipRange) 
+                                            final String ipRange)
             throws InvalidKeySpecException, IOException {
         PrivateKey privateKey = loadPrivateKey(privateKeyFile);
         final String resourcePath = generateResourcePath(protocol, distributionDomain, s3ObjectKey);
@@ -160,7 +163,7 @@ public enum CloudFrontUrlSigner {
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-urls-overview.html"
      * >Overview of Signed URLs</a>.
-     * 
+     *
      * @param resourceUrlOrPath
      *            The URL or path that uniquely identifies a resource within a
      *            distribution. For standard distributions the resource URL will
@@ -192,8 +195,8 @@ public enum CloudFrontUrlSigner {
             String urlSafeSignature = makeBytesUrlSafe(signatureBytes);
             String signedUrl = resourceUrlOrPath
                     + (resourceUrlOrPath.indexOf('?') >= 0 ? "&" : "?")
-                    + "Policy=" + urlSafePolicy 
-                    + "&Signature=" + urlSafeSignature 
+                    + "Policy=" + urlSafePolicy
+                    + "&Signature=" + urlSafeSignature
                     + "&Key-Pair-Id=" + keyPairId
                     ;
             return signedUrl;
@@ -209,7 +212,7 @@ public enum CloudFrontUrlSigner {
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-urls-overview.html"
      * >Overview of Signed URLs</a>.
-     * 
+     *
      * @param resourceUrlOrPath
      *            The URL or path that uniquely identifies a resource within a
      *            distribution. For standard distributions the resource URL will
@@ -239,10 +242,10 @@ public enum CloudFrontUrlSigner {
             String cannedPolicy = buildCannedPolicy(resourceUrlOrPath, dateLessThan);
             byte[] signatureBytes = signWithSha1RSA(cannedPolicy.getBytes(UTF8), privateKey);
             String urlSafeSignature = makeBytesUrlSafe(signatureBytes);
-            String signedUrl = resourceUrlOrPath 
+            String signedUrl = resourceUrlOrPath
                              + (resourceUrlOrPath.indexOf('?') >= 0 ? "&" : "?") 
                              + "Expires=" + MILLISECONDS.toSeconds(dateLessThan.getTime()) 
-                             + "&Signature=" + urlSafeSignature 
+                             + "&Signature=" + urlSafeSignature
                              + "&Key-Pair-Id=" + keyPairId
                              ;
             return signedUrl;
@@ -254,7 +257,7 @@ public enum CloudFrontUrlSigner {
     /**
      * Generate a policy document that describes custom access permissions to
      * apply via a private distribution's signed URL.
-     * 
+     *
      * @param resourcePath
      *            An optional HTTP/S or RTMP resource path that restricts which
      *            distribution and S3 objects will be accessible in a signed
@@ -302,7 +305,7 @@ public enum CloudFrontUrlSigner {
         if ( resourcePath == null ) {
             resourcePath = "*";
         }
-        String ipAddress = (limitToIpAddressCIDR == null 
+        String ipAddress = (limitToIpAddressCIDR == null
                          ? "0.0.0.0/0" // No IP restriction
                          : limitToIpAddressCIDR)
                          ;
@@ -311,7 +314,7 @@ public enum CloudFrontUrlSigner {
     }
 
     /**
-     * Returns a custom policy for the given parameters. 
+     * Returns a custom policy for the given parameters.
      */
     static String buildCustomPolicy(String resourcePath,
             Date epochDateLessThan, Date epochDateGreaterThan, String ipAddress) {
@@ -326,9 +329,9 @@ public enum CloudFrontUrlSigner {
                 + ",\"IpAddress\":{\"AWS:SourceIp\":\""
                 + ipAddress
                 + "\"}"
-                + (epochDateGreaterThan == null 
-                   ? "" 
-                   : ",\"DateGreaterThan\":{\"AWS:EpochTime\":" 
+                + (epochDateGreaterThan == null
+                   ? ""
+                   : ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
                      + MILLISECONDS.toSeconds(epochDateGreaterThan.getTime()) + "}"
                   )
                 + "}}]}";

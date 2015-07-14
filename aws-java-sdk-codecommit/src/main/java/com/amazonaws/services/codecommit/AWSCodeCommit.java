@@ -16,6 +16,7 @@ package com.amazonaws.services.codecommit;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
+
 import com.amazonaws.services.codecommit.model.*;
 
 /**

@@ -2449,5 +2449,7 @@
       "max":9,
       "pattern":"[0-9A-Za-z_-]+"
     }
+  },
+  "examples":{
   }
 }

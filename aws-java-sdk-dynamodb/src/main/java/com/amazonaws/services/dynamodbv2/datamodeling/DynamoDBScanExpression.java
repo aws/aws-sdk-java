@@ -179,6 +179,8 @@ public class DynamoDBScanExpression {
      */
     private String indexName;
 
+    private Boolean consistentRead;
+
     /**
      * Returns the name of the index to be used by this scan; or null if there
      * is none.
@@ -983,6 +985,31 @@ public class DynamoDBScanExpression {
      */
     public DynamoDBScanExpression withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        return this;
+    }
+
+    /**
+     * Returns whether this scan uses consistent reads.
+     *
+     * @see ScanRequest#isConsistentRead()
+     */
+    public Boolean isConsistentRead() {
+        return consistentRead;
+    }
+
+    /**
+     * Sets whether this scan uses consistent reads.
+     */
+    public void setConsistentRead(Boolean consistentRead) {
+        this.consistentRead = consistentRead;
+    }
+
+    /**
+     * Sets whether this scan uses consistent reads and returns a reference
+     * to this object for method chaining.
+     */
+    public DynamoDBScanExpression withConsistentRead(Boolean consistentRead) {
+        this.consistentRead = consistentRead;
         return this;
     }
 }

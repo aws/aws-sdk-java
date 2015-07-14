@@ -3332,5 +3332,7 @@
     },
     "Value":{"type":"string"},
     "VersionId":{"type":"string"}
+  },
+  "examples":{
   }
 }

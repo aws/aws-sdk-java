@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
@@ -24,319 +25,327 @@ import java.io.Serializable;
 public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
 
     /**
-     * Represents the name of the local secondary index.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     * Represents the name of the local secondary index.
+     * </p>
      */
     private String indexName;
-
     /**
-     * The complete index key schema, which consists of one or more pairs of
-     * attribute names and key types (<code>HASH</code> or
-     * <code>RANGE</code>).
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 2<br/>
+     * The complete index key schema, which consists of one or more pairs of
+     * attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchema;
+    private java.util.List<KeySchemaElement> keySchema;
 
-    /**
-     * Represents attributes that are copied (projected) from the table into
-     * an index. These are in addition to the primary key attributes and
-     * index key attributes, which are automatically projected.
-     */
     private Projection projection;
-
     /**
+     * <p>
      * The total size of the specified index, in bytes. DynamoDB updates this
      * value approximately every six hours. Recent changes might not be
      * reflected in this value.
+     * </p>
      */
     private Long indexSizeBytes;
-
     /**
-     * The number of items in the specified index. DynamoDB updates this
-     * value approximately every six hours. Recent changes might not be
-     * reflected in this value.
+     * <p>
+     * The number of items in the specified index. DynamoDB updates this value
+     * approximately every six hours. Recent changes might not be reflected in
+     * this value.
+     * </p>
      */
     private Long itemCount;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that uniquely identifies the index.
+     * </p>
+     */
+    private String indexArn;
 
     /**
-     * Represents the name of the local secondary index.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @return Represents the name of the local secondary index.
-     */
-    public String getIndexName() {
-        return indexName;
-    }
-    
-    /**
      * Represents the name of the local secondary index.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param indexName Represents the name of the local secondary index.
+     * </p>
+     * 
+     * @param indexName
+     *        Represents the name of the local secondary index.
      */
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
-    
+
     /**
+     * <p>
      * Represents the name of the local secondary index.
+     * </p>
+     * 
+     * @return Represents the name of the local secondary index.
+     */
+    public String getIndexName() {
+        return this.indexName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 255<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param indexName Represents the name of the local secondary index.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Represents the name of the local secondary index.
+     * </p>
+     * 
+     * @param indexName
+     *        Represents the name of the local secondary index.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public LocalSecondaryIndexDescription withIndexName(String indexName) {
-        this.indexName = indexName;
+        setIndexName(indexName);
         return this;
     }
 
     /**
-     * The complete index key schema, which consists of one or more pairs of
-     * attribute names and key types (<code>HASH</code> or
-     * <code>RANGE</code>).
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 2<br/>
-     *
-     * @return The complete index key schema, which consists of one or more pairs of
-     *         attribute names and key types (<code>HASH</code> or
+     * The complete index key schema, which consists of one or more pairs of
+     * attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
+     * </p>
+     * 
+     * @return The complete index key schema, which consists of one or more
+     *         pairs of attribute names and key types (<code>HASH</code> or
      *         <code>RANGE</code>).
      */
     public java.util.List<KeySchemaElement> getKeySchema() {
         return keySchema;
     }
-    
+
     /**
-     * The complete index key schema, which consists of one or more pairs of
-     * attribute names and key types (<code>HASH</code> or
-     * <code>RANGE</code>).
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 2<br/>
-     *
-     * @param keySchema The complete index key schema, which consists of one or more pairs of
-     *         attribute names and key types (<code>HASH</code> or
-     *         <code>RANGE</code>).
+     * The complete index key schema, which consists of one or more pairs of
+     * attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
+     * </p>
+     * 
+     * @param keySchema
+     *        The complete index key schema, which consists of one or more pairs
+     *        of attribute names and key types (<code>HASH</code> or
+     *        <code>RANGE</code>).
      */
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
             this.keySchema = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchemaCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement>(keySchema.size());
-        keySchemaCopy.addAll(keySchema);
-        this.keySchema = keySchemaCopy;
-    }
-    
-    /**
-     * The complete index key schema, which consists of one or more pairs of
-     * attribute names and key types (<code>HASH</code> or
-     * <code>RANGE</code>).
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setKeySchema(java.util.Collection)} or {@link
-     * #withKeySchema(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 2<br/>
-     *
-     * @param keySchema The complete index key schema, which consists of one or more pairs of
-     *         attribute names and key types (<code>HASH</code> or
-     *         <code>RANGE</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public LocalSecondaryIndexDescription withKeySchema(KeySchemaElement... keySchema) {
-        if (getKeySchema() == null) setKeySchema(new java.util.ArrayList<KeySchemaElement>(keySchema.length));
-        for (KeySchemaElement value : keySchema) {
-            getKeySchema().add(value);
-        }
-        return this;
-    }
-    
-    /**
-     * The complete index key schema, which consists of one or more pairs of
-     * attribute names and key types (<code>HASH</code> or
-     * <code>RANGE</code>).
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 2<br/>
-     *
-     * @param keySchema The complete index key schema, which consists of one or more pairs of
-     *         attribute names and key types (<code>HASH</code> or
-     *         <code>RANGE</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public LocalSecondaryIndexDescription withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
-        if (keySchema == null) {
-            this.keySchema = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchemaCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement>(keySchema.size());
-            keySchemaCopy.addAll(keySchema);
-            this.keySchema = keySchemaCopy;
-        }
 
+        this.keySchema = new java.util.ArrayList<KeySchemaElement>(keySchema);
+    }
+
+    /**
+     * <p>
+     * The complete index key schema, which consists of one or more pairs of
+     * attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
+     * </p>
+     * 
+     * @param keySchema
+     *        The complete index key schema, which consists of one or more pairs
+     *        of attribute names and key types (<code>HASH</code> or
+     *        <code>RANGE</code>).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public LocalSecondaryIndexDescription withKeySchema(
+            KeySchemaElement... keySchema) {
+        if (this.keySchema == null) {
+            setKeySchema(new java.util.ArrayList<KeySchemaElement>(
+                    keySchema.length));
+        }
+        for (KeySchemaElement ele : keySchema) {
+            this.keySchema.add(ele);
+        }
         return this;
     }
 
     /**
-     * Represents attributes that are copied (projected) from the table into
-     * an index. These are in addition to the primary key attributes and
-     * index key attributes, which are automatically projected.
-     *
-     * @return Represents attributes that are copied (projected) from the table into
-     *         an index. These are in addition to the primary key attributes and
-     *         index key attributes, which are automatically projected.
+     * <p>
+     * The complete index key schema, which consists of one or more pairs of
+     * attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
+     * </p>
+     * 
+     * @param keySchema
+     *        The complete index key schema, which consists of one or more pairs
+     *        of attribute names and key types (<code>HASH</code> or
+     *        <code>RANGE</code>).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public Projection getProjection() {
-        return projection;
+    public LocalSecondaryIndexDescription withKeySchema(
+            java.util.Collection<KeySchemaElement> keySchema) {
+        setKeySchema(keySchema);
+        return this;
     }
-    
+
     /**
-     * Represents attributes that are copied (projected) from the table into
-     * an index. These are in addition to the primary key attributes and
-     * index key attributes, which are automatically projected.
-     *
-     * @param projection Represents attributes that are copied (projected) from the table into
-     *         an index. These are in addition to the primary key attributes and
-     *         index key attributes, which are automatically projected.
+     * Sets the value of the Projection property for this object.
+     * 
+     * @param projection
+     *        The new value for the Projection property for this object.
      */
     public void setProjection(Projection projection) {
         this.projection = projection;
     }
-    
+
     /**
-     * Represents attributes that are copied (projected) from the table into
-     * an index. These are in addition to the primary key attributes and
-     * index key attributes, which are automatically projected.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param projection Represents attributes that are copied (projected) from the table into
-     *         an index. These are in addition to the primary key attributes and
-     *         index key attributes, which are automatically projected.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Returns the value of the Projection property for this object.
+     * 
+     * @return The value of the Projection property for this object.
+     */
+    public Projection getProjection() {
+        return this.projection;
+    }
+
+    /**
+     * Sets the value of the Projection property for this object.
+     * 
+     * @param projection
+     *        The new value for the Projection property for this object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public LocalSecondaryIndexDescription withProjection(Projection projection) {
-        this.projection = projection;
+        setProjection(projection);
         return this;
     }
 
     /**
+     * <p>
      * The total size of the specified index, in bytes. DynamoDB updates this
      * value approximately every six hours. Recent changes might not be
      * reflected in this value.
-     *
-     * @return The total size of the specified index, in bytes. DynamoDB updates this
-     *         value approximately every six hours. Recent changes might not be
-     *         reflected in this value.
-     */
-    public Long getIndexSizeBytes() {
-        return indexSizeBytes;
-    }
-    
-    /**
-     * The total size of the specified index, in bytes. DynamoDB updates this
-     * value approximately every six hours. Recent changes might not be
-     * reflected in this value.
-     *
-     * @param indexSizeBytes The total size of the specified index, in bytes. DynamoDB updates this
-     *         value approximately every six hours. Recent changes might not be
-     *         reflected in this value.
+     * </p>
+     * 
+     * @param indexSizeBytes
+     *        The total size of the specified index, in bytes. DynamoDB updates
+     *        this value approximately every six hours. Recent changes might not
+     *        be reflected in this value.
      */
     public void setIndexSizeBytes(Long indexSizeBytes) {
         this.indexSizeBytes = indexSizeBytes;
     }
-    
+
     /**
+     * <p>
      * The total size of the specified index, in bytes. DynamoDB updates this
      * value approximately every six hours. Recent changes might not be
      * reflected in this value.
+     * </p>
+     * 
+     * @return The total size of the specified index, in bytes. DynamoDB updates
+     *         this value approximately every six hours. Recent changes might
+     *         not be reflected in this value.
+     */
+    public Long getIndexSizeBytes() {
+        return this.indexSizeBytes;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param indexSizeBytes The total size of the specified index, in bytes. DynamoDB updates this
-     *         value approximately every six hours. Recent changes might not be
-     *         reflected in this value.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The total size of the specified index, in bytes. DynamoDB updates this
+     * value approximately every six hours. Recent changes might not be
+     * reflected in this value.
+     * </p>
+     * 
+     * @param indexSizeBytes
+     *        The total size of the specified index, in bytes. DynamoDB updates
+     *        this value approximately every six hours. Recent changes might not
+     *        be reflected in this value.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public LocalSecondaryIndexDescription withIndexSizeBytes(Long indexSizeBytes) {
-        this.indexSizeBytes = indexSizeBytes;
+        setIndexSizeBytes(indexSizeBytes);
         return this;
     }
 
     /**
-     * The number of items in the specified index. DynamoDB updates this
-     * value approximately every six hours. Recent changes might not be
-     * reflected in this value.
-     *
+     * <p>
+     * The number of items in the specified index. DynamoDB updates this value
+     * approximately every six hours. Recent changes might not be reflected in
+     * this value.
+     * </p>
+     * 
+     * @param itemCount
+     *        The number of items in the specified index. DynamoDB updates this
+     *        value approximately every six hours. Recent changes might not be
+     *        reflected in this value.
+     */
+    public void setItemCount(Long itemCount) {
+        this.itemCount = itemCount;
+    }
+
+    /**
+     * <p>
+     * The number of items in the specified index. DynamoDB updates this value
+     * approximately every six hours. Recent changes might not be reflected in
+     * this value.
+     * </p>
+     * 
      * @return The number of items in the specified index. DynamoDB updates this
      *         value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      */
     public Long getItemCount() {
-        return itemCount;
+        return this.itemCount;
     }
-    
+
     /**
-     * The number of items in the specified index. DynamoDB updates this
-     * value approximately every six hours. Recent changes might not be
-     * reflected in this value.
-     *
-     * @param itemCount The number of items in the specified index. DynamoDB updates this
-     *         value approximately every six hours. Recent changes might not be
-     *         reflected in this value.
-     */
-    public void setItemCount(Long itemCount) {
-        this.itemCount = itemCount;
-    }
-    
-    /**
-     * The number of items in the specified index. DynamoDB updates this
-     * value approximately every six hours. Recent changes might not be
-     * reflected in this value.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param itemCount The number of items in the specified index. DynamoDB updates this
-     *         value approximately every six hours. Recent changes might not be
-     *         reflected in this value.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The number of items in the specified index. DynamoDB updates this value
+     * approximately every six hours. Recent changes might not be reflected in
+     * this value.
+     * </p>
+     * 
+     * @param itemCount
+     *        The number of items in the specified index. DynamoDB updates this
+     *        value approximately every six hours. Recent changes might not be
+     *        reflected in this value.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public LocalSecondaryIndexDescription withItemCount(Long itemCount) {
-        this.itemCount = itemCount;
+        setItemCount(itemCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that uniquely identifies the index.
+     * </p>
+     * 
+     * @param indexArn
+     *        The Amazon Resource Name (ARN) that uniquely identifies the index.
+     */
+    public void setIndexArn(String indexArn) {
+        this.indexArn = indexArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that uniquely identifies the index.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) that uniquely identifies the
+     *         index.
+     */
+    public String getIndexArn() {
+        return this.indexArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that uniquely identifies the index.
+     * </p>
+     * 
+     * @param indexArn
+     *        The Amazon Resource Name (ARN) that uniquely identifies the index.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public LocalSecondaryIndexDescription withIndexArn(String indexArn) {
+        setIndexArn(indexArn);
         return this;
     }
 
@@ -352,62 +361,96 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIndexName() != null) sb.append("IndexName: " + getIndexName() + ",");
-        if (getKeySchema() != null) sb.append("KeySchema: " + getKeySchema() + ",");
-        if (getProjection() != null) sb.append("Projection: " + getProjection() + ",");
-        if (getIndexSizeBytes() != null) sb.append("IndexSizeBytes: " + getIndexSizeBytes() + ",");
-        if (getItemCount() != null) sb.append("ItemCount: " + getItemCount() );
+        if (getIndexName() != null)
+            sb.append("IndexName: " + getIndexName() + ",");
+        if (getKeySchema() != null)
+            sb.append("KeySchema: " + getKeySchema() + ",");
+        if (getProjection() != null)
+            sb.append("Projection: " + getProjection() + ",");
+        if (getIndexSizeBytes() != null)
+            sb.append("IndexSizeBytes: " + getIndexSizeBytes() + ",");
+        if (getItemCount() != null)
+            sb.append("ItemCount: " + getItemCount() + ",");
+        if (getIndexArn() != null)
+            sb.append("IndexArn: " + getIndexArn());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof LocalSecondaryIndexDescription == false)
+            return false;
+        LocalSecondaryIndexDescription other = (LocalSecondaryIndexDescription) obj;
+        if (other.getIndexName() == null ^ this.getIndexName() == null)
+            return false;
+        if (other.getIndexName() != null
+                && other.getIndexName().equals(this.getIndexName()) == false)
+            return false;
+        if (other.getKeySchema() == null ^ this.getKeySchema() == null)
+            return false;
+        if (other.getKeySchema() != null
+                && other.getKeySchema().equals(this.getKeySchema()) == false)
+            return false;
+        if (other.getProjection() == null ^ this.getProjection() == null)
+            return false;
+        if (other.getProjection() != null
+                && other.getProjection().equals(this.getProjection()) == false)
+            return false;
+        if (other.getIndexSizeBytes() == null
+                ^ this.getIndexSizeBytes() == null)
+            return false;
+        if (other.getIndexSizeBytes() != null
+                && other.getIndexSizeBytes().equals(this.getIndexSizeBytes()) == false)
+            return false;
+        if (other.getItemCount() == null ^ this.getItemCount() == null)
+            return false;
+        if (other.getItemCount() != null
+                && other.getItemCount().equals(this.getItemCount()) == false)
+            return false;
+        if (other.getIndexArn() == null ^ this.getIndexArn() == null)
+            return false;
+        if (other.getIndexArn() != null
+                && other.getIndexArn().equals(this.getIndexArn()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode()); 
-        hashCode = prime * hashCode + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode()); 
-        hashCode = prime * hashCode + ((getProjection() == null) ? 0 : getProjection().hashCode()); 
-        hashCode = prime * hashCode + ((getIndexSizeBytes() == null) ? 0 : getIndexSizeBytes().hashCode()); 
-        hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
+        hashCode = prime * hashCode
+                + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode());
+        hashCode = prime * hashCode
+                + ((getProjection() == null) ? 0 : getProjection().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIndexSizeBytes() == null) ? 0 : getIndexSizeBytes()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
+        hashCode = prime * hashCode
+                + ((getIndexArn() == null) ? 0 : getIndexArn().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof LocalSecondaryIndexDescription == false) return false;
-        LocalSecondaryIndexDescription other = (LocalSecondaryIndexDescription)obj;
-        
-        if (other.getIndexName() == null ^ this.getIndexName() == null) return false;
-        if (other.getIndexName() != null && other.getIndexName().equals(this.getIndexName()) == false) return false; 
-        if (other.getKeySchema() == null ^ this.getKeySchema() == null) return false;
-        if (other.getKeySchema() != null && other.getKeySchema().equals(this.getKeySchema()) == false) return false; 
-        if (other.getProjection() == null ^ this.getProjection() == null) return false;
-        if (other.getProjection() != null && other.getProjection().equals(this.getProjection()) == false) return false; 
-        if (other.getIndexSizeBytes() == null ^ this.getIndexSizeBytes() == null) return false;
-        if (other.getIndexSizeBytes() != null && other.getIndexSizeBytes().equals(this.getIndexSizeBytes()) == false) return false; 
-        if (other.getItemCount() == null ^ this.getItemCount() == null) return false;
-        if (other.getItemCount() != null && other.getItemCount().equals(this.getItemCount()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public LocalSecondaryIndexDescription clone() {
         try {
             return (LocalSecondaryIndexDescription) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

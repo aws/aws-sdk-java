@@ -17,6 +17,7 @@ package com.amazonaws.services.ec2.model.transform;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Protocol;
 import com.amazonaws.Request;
@@ -24,6 +25,7 @@ import com.amazonaws.Response;
 import com.amazonaws.auth.AWS4Signer;
 import com.amazonaws.handlers.CredentialsRequestHandler;
 import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.regions.Region;
 import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.ec2.model.CopySnapshotRequest;
 import com.amazonaws.util.HttpUtils;
@@ -43,8 +45,8 @@ public class GeneratePreSignUrlRequestHandler extends CredentialsRequestHandler 
         if (originalRequest instanceof CopySnapshotRequest) {
 
             CopySnapshotRequest originalCopySnapshotRequest = (CopySnapshotRequest) originalRequest;
-           
-            // Return if presigned url is already specified by the user. 
+
+            // Return if presigned url is already specified by the user.
             if (originalCopySnapshotRequest.getPresignedUrl() != null) return;
 
             String serviceName = "ec2";
@@ -67,8 +69,7 @@ public class GeneratePreSignUrlRequestHandler extends CredentialsRequestHandler 
                     .getDestinationRegion() : RegionUtils.getRegionByEndpoint(
                     endPointDestination.getHost()).toString();
 
-            URI endPointSource = toURI(RegionUtils.getRegion(sourceRegion)
-                    .getServiceEndpoint(serviceName));
+            URI endPointSource = createEndpoint(sourceRegion, serviceName);
 
             Request<CopySnapshotRequest> requestForPresigning = generateRequestForPresigning(
                     sourceSnapshotId, sourceRegion, destinationRegion);
@@ -124,6 +125,18 @@ public class GeneratePreSignUrlRequestHandler extends CredentialsRequestHandler 
 
     }
 
+    private URI createEndpoint(String regionName, String serviceName) {
+
+        final Region region = RegionUtils.getRegion(regionName);
+
+        if (region == null || !region.isServiceSupported(serviceName)) {
+            throw new AmazonClientException("{" + serviceName + ", " + regionName + "} was not "
+                    + "found in region metadata. Update to latest version of SDK and try again.");
+        }
+
+        return toURI(region.getServiceEndpoint(serviceName));
+    }
+
     /** Returns the endpoint as a URI. */
     private URI toURI(String endpoint) throws IllegalArgumentException {
 
@@ -135,7 +148,6 @@ public class GeneratePreSignUrlRequestHandler extends CredentialsRequestHandler 
             return new URI(endpoint);
         } catch (URISyntaxException e) {
             throw new IllegalArgumentException(e);
-
         }
     }
 

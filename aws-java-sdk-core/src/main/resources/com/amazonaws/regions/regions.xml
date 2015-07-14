@@ -93,6 +93,12 @@
         <Hostname>dynamodb.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>ec2</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -272,6 +278,18 @@
         <Https>true</Https>
         <Hostname>workspaces.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>codecommit</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>codecommit.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>codepipeline</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>codepipeline.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
     </Region>
     <Region>
       <Name>us-west-1</Name>
@@ -317,6 +335,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>dynamodb.us-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.us-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>ec2</ServiceName>
@@ -523,6 +547,12 @@
         <Hostname>dynamodb.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>ec2</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -686,6 +716,12 @@
         <Https>true</Https>
         <Hostname>workspaces.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
+      <Endpoint>
+        <ServiceName>devicefarm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>devicefarm.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
     </Region>
     <Region>
       <Name>ap-northeast-1</Name>
@@ -749,6 +785,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>dynamodb.ap-northeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.ap-northeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>ec2</ServiceName>
@@ -955,6 +997,12 @@
         <Hostname>dynamodb.ap-southeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.ap-southeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>ec2</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1153,6 +1201,12 @@
         <Hostname>dynamodb.ap-southeast-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.ap-southeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>ec2</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1343,6 +1397,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>dynamodb.sa-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.sa-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>ec2</ServiceName>
@@ -1547,6 +1607,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>dynamodb.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>ec2</ServiceName>
@@ -1765,6 +1831,12 @@
         <Hostname>dynamodb.eu-central-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.eu-central-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>ec2</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1917,6 +1989,12 @@
         <Hostname>dynamodb.cn-north-1.amazonaws.com.cn</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.cn-north-1.amazonaws.com.cn</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>ec2</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -2042,6 +2120,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>dynamodb.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.us-gov-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>ec2</ServiceName>
@@ -2270,6 +2354,21 @@
     <Service>
       <Name>dynamodb</Name>
       <FullName>Amazon DynamoDB</FullName>
+      <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>ap-northeast-1</RegionName>
+      <RegionName>ap-southeast-1</RegionName>
+      <RegionName>ap-southeast-2</RegionName>
+      <RegionName>sa-east-1</RegionName>
+      <RegionName>eu-west-1</RegionName>
+      <RegionName>eu-central-1</RegionName>
+      <RegionName>cn-north-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
+    </Service>
+    <Service>
+      <Name>streams.dynamodb</Name>
+      <FullName>Amazon DynamoDB Streams</FullName>
       <RegionName>us-east-1</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
@@ -2646,6 +2745,21 @@
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>eu-west-1</RegionName>
+    </Service>
+    <Service>
+      <Name>codecommit</Name>
+      <FullName>AWS CodeCommit</FullName>
+      <RegionName>us-east-1</RegionName>
+    </Service>
+    <Service>
+      <Name>codepipeline</Name>
+      <FullName>AWS CodePipeline</FullName>
+      <RegionName>us-east-1</RegionName>
+    </Service>
+    <Service>
+      <Name>devicefarm</Name>
+      <FullName>AWS Device Farm</FullName>
+      <RegionName>us-west-2</RegionName>
     </Service>
   </Services>
 </XML>

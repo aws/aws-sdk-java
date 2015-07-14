@@ -1,24 +1,25 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.dynamodbv2.model;
 
 /**
- * Comparison Operator
+ * 
  */
 public enum ComparisonOperator {
-    
+
     EQ("EQ"),
     NE("NE"),
     IN("IN"),
@@ -48,42 +49,41 @@ public enum ComparisonOperator {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return ComparisonOperator corresponding to the value
      */
     public static ComparisonOperator fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("EQ".equals(value)) {
-            return ComparisonOperator.EQ;
+            return EQ;
         } else if ("NE".equals(value)) {
-            return ComparisonOperator.NE;
+            return NE;
         } else if ("IN".equals(value)) {
-            return ComparisonOperator.IN;
+            return IN;
         } else if ("LE".equals(value)) {
-            return ComparisonOperator.LE;
+            return LE;
         } else if ("LT".equals(value)) {
-            return ComparisonOperator.LT;
+            return LT;
         } else if ("GE".equals(value)) {
-            return ComparisonOperator.GE;
+            return GE;
         } else if ("GT".equals(value)) {
-            return ComparisonOperator.GT;
+            return GT;
         } else if ("BETWEEN".equals(value)) {
-            return ComparisonOperator.BETWEEN;
+            return BETWEEN;
         } else if ("NOT_NULL".equals(value)) {
-            return ComparisonOperator.NOT_NULL;
+            return NOT_NULL;
         } else if ("NULL".equals(value)) {
-            return ComparisonOperator.NULL;
+            return NULL;
         } else if ("CONTAINS".equals(value)) {
-            return ComparisonOperator.CONTAINS;
+            return CONTAINS;
         } else if ("NOT_CONTAINS".equals(value)) {
-            return ComparisonOperator.NOT_CONTAINS;
+            return NOT_CONTAINS;
         } else if ("BEGINS_WITH".equals(value)) {
-            return ComparisonOperator.BEGINS_WITH;
+            return BEGINS_WITH;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

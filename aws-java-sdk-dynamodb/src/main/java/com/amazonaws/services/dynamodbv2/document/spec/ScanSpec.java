@@ -49,10 +49,16 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
         super(new ScanRequest());
     }
 
+    /**
+     * @see ScanRequest#getScanFilter()
+     */
     public Collection<ScanFilter> getScanFilters() {
         return scanFilters;
     }
 
+    /**
+     * @see ScanRequest#withScanFilter(Map)
+     */
     public ScanSpec withScanFilters(ScanFilter... scanFilters) {
         if (scanFilters == null)
             this.scanFilters = null;
@@ -69,20 +75,33 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
         return this;
     }
 
-    /** AND|OR that applies to all the conditions in the ScanFilters. */
+    /**
+     * AND|OR that applies to all the conditions in the ScanFilters.
+     *
+     * @see ScanRequest#getConditionalOperator()
+     */
     public String getConditionalOperator() {
         return getRequest().getConditionalOperator();
     }
 
+    /**
+     * @see ScanRequest#withConditionalOperator(ConditionalOperator)
+     */
     public ScanSpec withConditionalOperator(ConditionalOperator op) {
         getRequest().setConditionalOperator(op);
         return this;
     }
 
+    /**
+     * @see ScanRequest#getAttributesToGet()
+     */
     public List<String> getAttributesToGet() {
         return getRequest().getAttributesToGet();
     }
 
+    /**
+     * @see ScanRequest#withAttributesToGet(String...)
+     */
     public ScanSpec withAttributesToGet(String ... attributes) {
         if (attributes == null)
             getRequest().setAttributesToGet(null);
@@ -96,25 +115,39 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
      * specified. When a filter expression is specified, the corresponding
      * name-map and value-map can also be specified via
      * {@link #withNameMap(Map)} and {@link #withValueMap(Map)}.
+     *
+     * @see ScanRequest#getFilterExpression()
      */
     public String getFilterExpression() {
         return getRequest().getFilterExpression();
     }
 
+    /**
+     * @see ScanRequest#withFilterExpression(String)
+     */
     public ScanSpec withFilterExpression(String filterExpression) {
         getRequest().setFilterExpression(filterExpression);
         return this;
     }
 
+    /**
+     * @see ScanRequest#getProjectionExpression()
+     */
     public String getProjectionExpression() {
         return getRequest().getProjectionExpression();
     }
 
+    /**
+     * @see ScanRequest#withProjectionExpression(String)
+     */
     public ScanSpec withProjectionExpression(String projectionExpression) {
         getRequest().setProjectionExpression(projectionExpression);
         return this;
     }
 
+    /**
+     * @see ScanRequest#getExpressionAttributeNames()
+     */
     public Map<String,String> getNameMap() {
         return nameMap;
     }
@@ -124,6 +157,8 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
      * Used to specify the actual values for the attribute-name placeholders,
      * where the value in the map can either be string for simple attribute
      * name, or a JSON path expression.
+     *
+     * @see ScanRequest#withExpressionAttributeNames(Map)
      */
     public ScanSpec withNameMap(Map<String, String> nameMap) {
         if (nameMap == null)
@@ -133,6 +168,9 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
         return this;
     }
 
+    /**
+     * @see ScanRequest#getExpressionAttributeValues()
+     */
     public Map<String,Object> getValueMap() {
         return valueMap;
     }
@@ -140,6 +178,8 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
     /**
      * Applicable only when an expression has been specified. Used to
      * specify the actual values for the attribute-value placeholders.
+     *
+     * @see ScanRequest#withExpressionAttributeValues(Map)
      */
     public ScanSpec withValueMap(Map<String, Object> valueMap) {
         if (valueMap == null)
@@ -149,50 +189,96 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
         return this;
     }
 
+    /**
+     * @see ScanRequest#getReturnConsumedCapacity()
+     */
     public String getReturnConsumedCapacity() {
         return getRequest().getReturnConsumedCapacity();
     }
 
+    /**
+     * @see ScanRequest#withReturnConsumedCapacity(ReturnConsumedCapacity)
+     */
     public ScanSpec withReturnConsumedCapacity(ReturnConsumedCapacity capacity) {
         getRequest().setReturnConsumedCapacity(capacity);
         return this;
     }
 
-    /** Specifies the attributes to be returned. */
+    /**
+     * Specifies the attributes to be returned.
+     *
+     * @see ScanRequest#getSelect()
+     */
     // ALL_ATTRIBUTES | ALL_PROJECTED_ATTRIBUTES | SPECIFIC_ATTRIBUTES | COUNT
     public String getSelect() {
         return getRequest().getSelect();
     }
 
+    /**
+     * @see ScanRequest#withSelect(Select)
+     */
     public ScanSpec withSelect(Select select) {
         getRequest().setSelect(select);
         return this;
     }
 
+    /**
+     * @see ScanRequest#getSegment()
+     */
     public Integer getSegment() {
         return getRequest().getSegment();
     }
 
+    /**
+     * @see ScanRequest#withSegment(Integer)
+     */
     public ScanSpec withSegment(Integer segment) {
         getRequest().setSegment(segment);
         return this;
     }
 
+    /**
+     * @see ScanRequest#getTotalSegments()
+     */
     public Integer getTotalSegments() {
         return getRequest().getTotalSegments();
     }
 
+    /**
+     * @see ScanRequest#withTotalSegments(Integer)
+     */
     public ScanSpec withTotalSegments(Integer totalSegments) {
         getRequest().setTotalSegments(totalSegments);
         return this;
     }
 
+    /**
+     * @see ScanRequest#isConsistentRead()
+     */
+    public Boolean isConsistentRead() {
+        return getRequest().isConsistentRead();
+    }
+
+    /**
+     * @see ScanRequest#withConsistentRead(Boolean)
+     */
+    public ScanSpec withConsistentRead(Boolean consistentRead) {
+        getRequest().withConsistentRead(consistentRead);
+        return this;
+    }
+
     // Exclusive start key
 
+    /**
+     * @see ScanRequest#getExclusiveStartKey()
+     */
     public Collection<KeyAttribute> getExclusiveStartKey() {
         return exclusiveStartKey;
     }
 
+    /**
+     * @see ScanRequest#withExclusiveStartKey(Map)
+     */
     public ScanSpec withExclusiveStartKey(KeyAttribute... exclusiveStartKey) {
         if (exclusiveStartKey == null)
             this.exclusiveStartKey = null;
@@ -201,6 +287,9 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
         return this;
     }
 
+    /**
+     * @see ScanRequest#withExclusiveStartKey(Map)
+     */
     public ScanSpec withExclusiveStartKey(PrimaryKey exclusiveStartKey) {
         if (exclusiveStartKey == null)
             this.exclusiveStartKey = null;
@@ -210,11 +299,17 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
         return this;
     }
 
+    /**
+     * @see ScanRequest#withExclusiveStartKey(Map)
+     */
     public ScanSpec withExclusiveStartKey(
             String hashKeyName, Object hashKeyValue) {
         return withExclusiveStartKey(new KeyAttribute(hashKeyName, hashKeyValue));
     }
 
+    /**
+     * @see ScanRequest#withExclusiveStartKey(Map)
+     */
     public ScanSpec withExclusiveStartKey(
             String hashKeyName, Object hashKeyValue,
             String rangeKeyName, Object rangeKeyValue) {

@@ -16,7 +16,6 @@
 package com.amazonaws.services.codecommit.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;

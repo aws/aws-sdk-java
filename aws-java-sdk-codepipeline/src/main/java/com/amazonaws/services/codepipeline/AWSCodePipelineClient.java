@@ -32,6 +32,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.services.codepipeline.model.transform.*;
 
@@ -393,10 +394,10 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory
-                        .newRequestHandlerChain("/com/amazonaws/service/codepipeline/request.handlers"));
+                        .newRequestHandlerChain("/com/amazonaws/services/codepipeline/request.handlers"));
         requestHandler2s
                 .addAll(chainFactory
-                        .newRequestHandler2Chain("/com/amazonaws/service/codepipeline/request.handler2s"));
+                        .newRequestHandler2Chain("/com/amazonaws/services/codepipeline/request.handler2s"));
     }
 
     private static ClientConfiguration adjustClientConfiguration(

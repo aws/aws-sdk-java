@@ -47,10 +47,10 @@ public class InternalConfigJsonHelperTest {
         b.setHttpClients(
             new JsonIndex<HttpClientConfigJsonHelper, HttpClientConfig>(
                 "AmazonMobiusClient",
-                    new HttpClientConfigJsonHelper("mobius-transform")),
+                    new HttpClientConfigJsonHelper("mobius-transform", "mobius-transform-endpoint")),
             new JsonIndex<HttpClientConfigJsonHelper, HttpClientConfig>(
                 "AmazonAffineJavaClient",
-                    new HttpClientConfigJsonHelper("affine-transform")));
+                    new HttpClientConfigJsonHelper("affine-transform", "affine-transform-endpoint")));
         String json = Jackson.toJsonPrettyString(b);
         p(json);
         InternalConfigJsonHelper b2 = Jackson.getObjectMapper().readValue(json, InternalConfigJsonHelper.class);

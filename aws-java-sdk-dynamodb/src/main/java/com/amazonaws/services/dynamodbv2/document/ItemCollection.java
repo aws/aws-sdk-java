@@ -18,18 +18,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.amazonaws.services.dynamodbv2.document.internal.PageBasedCollection;
+import com.amazonaws.services.dynamodbv2.document.internal.PageIterable;
 import com.amazonaws.services.dynamodbv2.model.Capacity;
 import com.amazonaws.services.dynamodbv2.model.ConsumedCapacity;
 
 /**
  * A collection of <code>Item</code>'s.
- * 
+ *
  * An <code>ItemCollection</code> object maintains a cursor pointing to its
  * current pages of data. Initially the cursor is positioned before the first page.
  * The next method moves the cursor to the next row, and because it returns
  * false when there are no more rows in the <code>ItemCollection</code> object,
  * it can be used in a while loop to iterate through the collection.
- * 
+ *
  * Network calls can be triggered when the collection is iterated across page
  * boundaries.
  *
@@ -54,13 +55,13 @@ public abstract class ItemCollection<R> extends PageBasedCollection<Item, R> {
                 totalConsumedCapacity.setTable(clone(consumedCapacity.getTable()));
                 totalConsumedCapacity.setTableName(consumedCapacity.getTableName());
             } else {
-                // Accumulate the capacity units 
+                // Accumulate the capacity units
                 final Double capunit = totalConsumedCapacity.getCapacityUnits();
                 final Double delta = consumedCapacity.getCapacityUnits();
                 if (capunit == null) {
                     totalConsumedCapacity.setCapacityUnits(delta);
                 } else {
-                    totalConsumedCapacity.setCapacityUnits(capunit.doubleValue() 
+                    totalConsumedCapacity.setCapacityUnits(capunit.doubleValue()
                         + (delta == null ? 0 : delta.doubleValue()));
                 }
                 // Accumulate the GSI capacities
@@ -121,13 +122,13 @@ public abstract class ItemCollection<R> extends PageBasedCollection<Item, R> {
             clone.put(e.getKey(), clone(e.getValue()));
         return clone;
     }
-    
+
     private Capacity clone(Capacity capacity) {
-        return capacity == null 
+        return capacity == null
              ? null
              : new Capacity().withCapacityUnits(capacity.getCapacityUnits());
     }
-    
+
     private double doubleOf(Capacity cap) {
         if (cap == null)
             return 0.0;
@@ -154,5 +155,72 @@ public abstract class ItemCollection<R> extends PageBasedCollection<Item, R> {
      */
     public ConsumedCapacity getTotalConsumedCapacity() {
         return totalConsumedCapacity;
+    }
+
+    // Overriding these just so javadocs will show up.
+
+    /**
+     * Returns an {@code Iterable<Page<Item, R>>} that iterates over pages of
+     * items from this collection. Each call to {@code Iterator.next} on an
+     * {@code Iterator} returned from this {@code Iterable} results in exactly
+     * one call to DynamoDB to retrieve a single page of results.
+     * <p>
+     * <code>
+     * ItemCollection&lt;QueryResult&gt; collection = ...;
+     * for (Page&lt;Item&gt; page : collection.pages()) {
+     *     processItems(page);
+     *
+     *     ConsumedCapacity consumedCapacity =
+     *             page.getLowLevelResult().getConsumedCapacity();
+     *
+     *     Thread.sleep(getBackoff(consumedCapacity.getCapacityUnits()));
+     * }
+     * </code>
+     * <p>
+     * The use of the internal/undocumented {@code PageIterable} class instead
+     * of {@code Iterable} in the public interface here is retained for
+     * backwards compatibility. It doesn't expose any methods beyond those
+     * of the {@code Iterable} interface. This method will be changed to return
+     * an {@code Iterable<Page<Item, R>>} directly in a future release of the
+     * SDK.
+     *
+     * @see Page
+     */
+    @Override
+    public PageIterable<Item, R> pages() {
+        return super.pages();
+    }
+
+    /**
+     * Returns the maximum number of resources to be retrieved in this
+     * collection; or null if there is no limit.
+     */
+    @Override
+    public abstract Integer getMaxResultSize();
+
+    /**
+     * Returns the low-level result last retrieved (for the current page) from
+     * the server side; or null if there has yet no calls to the server.
+     */
+    @Override
+    public R getLastLowLevelResult() {
+        return super.getLastLowLevelResult();
+    }
+
+    /**
+     * Used to register a listener for the event of receiving a low-level result
+     * from the server side.
+     *
+     * @param listener
+     *            listener to be registered. If null, a "none" listener will be
+     *            set.
+     * @return the previously registered listener. The return value is never
+     *         null.
+     */
+    @Override
+    public LowLevelResultListener<R> registerLowLevelResultListener(
+            LowLevelResultListener<R> listener) {
+
+        return super.registerLowLevelResultListener(listener);
     }
 }
