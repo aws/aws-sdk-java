@@ -2063,49 +2063,6 @@
         }
       }
     },
-    "StreamViewType" : {
-      "c2jName" : "StreamViewType",
-      "documentation" : null,
-      "shapeName" : "StreamViewType",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "members" : null,
-      "enums" : [ {
-        "name" : "NEW_IMAGE",
-        "value" : "NEW_IMAGE"
-      }, {
-        "name" : "OLD_IMAGE",
-        "value" : "OLD_IMAGE"
-      }, {
-        "name" : "NEW_AND_OLD_IMAGES",
-        "value" : "NEW_AND_OLD_IMAGES"
-      }, {
-        "name" : "KEYS_ONLY",
-        "value" : "KEYS_ONLY"
-      } ],
-      "variable" : {
-        "variableName" : "streamViewType",
-        "variableType" : "StreamViewType",
-        "variableDeclarationType" : "StreamViewType",
-        "documentation" : null,
-        "simpleType" : "StreamViewType",
-        "variableSetterType" : "StreamViewType"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null
-      },
-      "membersAsMap" : { }
-    },
     "Shard" : {
       "c2jName" : "Shard",
       "documentation" : "<p>A uniquely identified group of stream records within a stream.</p>",
@@ -6560,6 +6517,12 @@
         "inject" : null
       },
       "KeyType" : {
+        "excludeShape" : true,
+        "exclude" : null,
+        "modify" : null,
+        "inject" : null
+      },
+      "StreamViewType" : {
         "excludeShape" : true,
         "exclude" : null,
         "modify" : null,

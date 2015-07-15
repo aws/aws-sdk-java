@@ -347,6 +347,11 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * or fluent setter (with...) methods to initialize any additional object
      * members.
      * 
+     * @param attributeDefinitions
+     *        An array of attributes that describe the key schema for the table
+     *        and indexes.
+     * @param tableName
+     *        The name of the table to create.
      * @param keySchema
      *        Specifies the attributes that make up the primary key for a table
      *        or an index. The attributes in <i>KeySchema</i> must also be
@@ -386,21 +391,16 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB
      *        Developer Guide</i>.
-     * @param tableName
-     *        The name of the table to create.
-     * @param attributeDefinitions
-     *        An array of attributes that describe the key schema for the table
-     *        and indexes.
      * @param provisionedThroughput
      *        null
      */
-    public CreateTableRequest(java.util.List<KeySchemaElement> keySchema,
-            String tableName,
+    public CreateTableRequest(
             java.util.List<AttributeDefinition> attributeDefinitions,
+            String tableName, java.util.List<KeySchemaElement> keySchema,
             ProvisionedThroughput provisionedThroughput) {
-        setKeySchema(keySchema);
-        setTableName(tableName);
         setAttributeDefinitions(attributeDefinitions);
+        setTableName(tableName);
+        setKeySchema(keySchema);
         setProvisionedThroughput(provisionedThroughput);
     }
 
