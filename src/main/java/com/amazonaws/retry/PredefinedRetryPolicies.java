@@ -217,7 +217,7 @@ public class PredefinedRetryPolicies {
                                                AmazonClientException exception,
                                                int retries) {
             if (retries <= 0) return 0;
-            if (retriesAttempted > MAX_RETRIES_BEFORE_MAX_BACKOFF) return MAX_BACKOFF_IN_MILLISECONDS;
+            if (retries > MAX_RETRIES_BEFORE_MAX_BACKOFF) return MAX_BACKOFF_IN_MILLISECONDS;
             
             int scaleFactor;
             if (exception instanceof AmazonServiceException
@@ -254,7 +254,7 @@ public class PredefinedRetryPolicies {
                                                AmazonClientException exception,
                                                int retries) {
             if (retries <= 0) return 0;
-            if (retriesAttempted > MAX_RETRIES_BEFORE_MAX_BACKOFF) return MAX_BACKOFF_IN_MILLISECONDS;
+            if (retries > MAX_RETRIES_BEFORE_MAX_BACKOFF) return MAX_BACKOFF_IN_MILLISECONDS;
 
             long delay = (1L << retries) * SCALE_FACTOR;
             delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
