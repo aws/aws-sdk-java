@@ -73,6 +73,9 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
             if (runJobFlowRequest.getAmiVersion() != null) {
                 jsonWriter.key("AmiVersion").value(runJobFlowRequest.getAmiVersion());
             }
+            if (runJobFlowRequest.getReleaseLabel() != null) {
+                jsonWriter.key("ReleaseLabel").value(runJobFlowRequest.getReleaseLabel());
+            }
             JobFlowInstancesConfig instances = runJobFlowRequest.getInstances();
             if (instances != null) {
 
@@ -115,6 +118,20 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                             }
                             if (instanceGroupsListValue.getInstanceCount() != null) {
                                 jsonWriter.key("InstanceCount").value(instanceGroupsListValue.getInstanceCount());
+                            }
+
+                            com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>)(instanceGroupsListValue.getConfigurations());
+                            if (configurationsList != null && !(configurationsList.isAutoConstruct() && configurationsList.isEmpty())) {
+
+                                jsonWriter.key("Configurations");
+                                jsonWriter.array();
+
+                                for (Configuration configurationsListValue : configurationsList) {
+                                    if (configurationsListValue != null) {
+                                        ConfigurationJsonMarshaller.getInstance().marshall(configurationsListValue, jsonWriter);
+                                    }
+                                }
+                                jsonWriter.endArray();
                             }
                             jsonWriter.endObject();
                         }
@@ -337,6 +354,67 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                             jsonWriter.endArray();
                         }
                         jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<Application> applicationsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Application>)(runJobFlowRequest.getApplications());
+            if (applicationsList != null && !(applicationsList.isAutoConstruct() && applicationsList.isEmpty())) {
+
+                jsonWriter.key("Applications");
+                jsonWriter.array();
+
+                for (Application applicationsListValue : applicationsList) {
+                    if (applicationsListValue != null) {
+                        jsonWriter.object();
+                        if (applicationsListValue.getName() != null) {
+                            jsonWriter.key("Name").value(applicationsListValue.getName());
+                        }
+                        if (applicationsListValue.getVersion() != null) {
+                            jsonWriter.key("Version").value(applicationsListValue.getVersion());
+                        }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<String> argsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(applicationsListValue.getArgs());
+                        if (argsList != null && !(argsList.isAutoConstruct() && argsList.isEmpty())) {
+
+                            jsonWriter.key("Args");
+                            jsonWriter.array();
+
+                            for (String argsListValue : argsList) {
+                                if (argsListValue != null) {
+                                    jsonWriter.value(argsListValue);
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
+                        if (applicationsListValue.getAdditionalInfo() != null) {
+                            jsonWriter.key("AdditionalInfo");
+                            jsonWriter.object();
+                            for (Map.Entry<String, String> additionalInfoListValue : applicationsListValue.getAdditionalInfo().entrySet()) {
+                                if (additionalInfoListValue.getValue() != null) {
+                                    jsonWriter.key(additionalInfoListValue.getKey());
+
+                                    jsonWriter.value(additionalInfoListValue.getValue());
+                                }
+                            }
+                            jsonWriter.endObject();
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>)(runJobFlowRequest.getConfigurations());
+            if (configurationsList != null && !(configurationsList.isAutoConstruct() && configurationsList.isEmpty())) {
+
+                jsonWriter.key("Configurations");
+                jsonWriter.array();
+
+                for (Configuration configurationsListValue : configurationsList) {
+                    if (configurationsListValue != null) {
+                        ConfigurationJsonMarshaller.getInstance().marshall(configurationsListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();

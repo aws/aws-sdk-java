@@ -72,6 +72,12 @@ public class GetDevicePoolCompatibilityResult implements Serializable,
      * <p>
      * Information about compatible devices.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCompatibleDevices(java.util.Collection)} or
+     * {@link #withCompatibleDevices(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param compatibleDevices
      *        Information about compatible devices.
@@ -139,6 +145,12 @@ public class GetDevicePoolCompatibilityResult implements Serializable,
     /**
      * <p>
      * Information about incompatible devices.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIncompatibleDevices(java.util.Collection)} or
+     * {@link #withIncompatibleDevices(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param incompatibleDevices

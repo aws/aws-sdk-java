@@ -47,6 +47,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.net.ssl.SSLContext;
 
@@ -102,6 +103,7 @@ import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.retry.internal.AuthRetryParameters;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.util.CollectionUtils;
 import com.amazonaws.util.CountingInputStream;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.FakeIOException;
@@ -283,9 +285,15 @@ public class AmazonHttpClient {
         final List<RequestHandler2> requestHandler2s = requestHandler2s(request, executionContext);
         AmazonWebServiceRequest awsreq = request.getOriginalRequest();
         ProgressListener listener = awsreq.getGeneralProgressListener();
+        // add custom headers
         Map<String, String> customHeaders = awsreq.getCustomRequestHeaders();
         if (customHeaders != null) {
             request.getHeaders().putAll(customHeaders);
+        }
+        // add custom query parameters
+        Map<String, List<String>> customQueryParams = awsreq.getCustomQueryParameters();
+        if (customQueryParams != null) {
+            mergeQueryParameters(request, customQueryParams);
         }
         final AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Response<T> response = null;
@@ -313,6 +321,20 @@ public class AmazonHttpClient {
             // Always close so any progress tracking would get the final events propagated.
             closeQuietly(toBeClosed, log);
             request.setContent(origContent); // restore the original content
+        }
+    }
+
+    /**
+     * Merge query parameters into the given request.
+     */
+    private void mergeQueryParameters(Request<?> request,
+            Map<String, List<String>> params) {
+        Map<String, List<String>> existingParams = request.getParameters();
+        for (Entry<String, List<String>> param : params.entrySet()) {
+            String pName = param.getKey();
+            List<String> pValues = param.getValue();
+            existingParams.put(pName,
+                    CollectionUtils.mergeLists(existingParams.get(pName), pValues));
         }
     }
 

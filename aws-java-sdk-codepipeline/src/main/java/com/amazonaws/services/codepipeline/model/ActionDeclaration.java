@@ -282,6 +282,12 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * The name or ID of the result of the action declaration, such as a test or
      * build artifact.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOutputArtifacts(java.util.Collection)} or
+     * {@link #withOutputArtifacts(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param outputArtifacts
      *        The name or ID of the result of the action declaration, such as a
@@ -357,6 +363,12 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * <p>
      * The name or ID of the artifact consumed by the action, such as a test or
      * build artifact.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInputArtifacts(java.util.Collection)} or
+     * {@link #withInputArtifacts(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param inputArtifacts

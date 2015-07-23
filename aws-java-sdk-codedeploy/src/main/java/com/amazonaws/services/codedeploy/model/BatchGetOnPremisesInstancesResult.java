@@ -69,6 +69,12 @@ public class BatchGetOnPremisesInstancesResult implements Serializable,
      * <p>
      * Information about the on-premises instances.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceInfos(java.util.Collection)} or
+     * {@link #withInstanceInfos(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param instanceInfos
      *        Information about the on-premises instances.

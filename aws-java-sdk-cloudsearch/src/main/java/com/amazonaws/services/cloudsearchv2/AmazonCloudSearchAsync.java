@@ -369,67 +369,6 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
 
     /**
      * <p>
-     * Configures the access rules that control access to the domain's
-     * document and search endpoints. For more information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"> Configuring Access for an Amazon CloudSearch Domain </a>
-     * .
-     * </p>
-     *
-     * @param updateServiceAccessPoliciesRequest Container for the necessary
-     *           parameters to execute the UpdateServiceAccessPolicies operation on
-     *           AmazonCloudSearchv2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateServiceAccessPolicies service method, as returned by
-     *         AmazonCloudSearchv2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudSearchv2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateServiceAccessPoliciesResult> updateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Configures the access rules that control access to the domain's
-     * document and search endpoints. For more information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"> Configuring Access for an Amazon CloudSearch Domain </a>
-     * .
-     * </p>
-     *
-     * @param updateServiceAccessPoliciesRequest Container for the necessary
-     *           parameters to execute the UpdateServiceAccessPolicies operation on
-     *           AmazonCloudSearchv2.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateServiceAccessPolicies service method, as returned by
-     *         AmazonCloudSearchv2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudSearchv2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateServiceAccessPoliciesResult> updateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest,
-            AsyncHandler<UpdateServiceAccessPoliciesRequest, UpdateServiceAccessPoliciesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Configures a suggester for a domain. A suggester enables you to
      * display possible matches before users finish typing their queries.
      * When you configure a suggester, you must specify the name of the text
@@ -489,6 +428,67 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      */
     public Future<DefineSuggesterResult> defineSuggesterAsync(DefineSuggesterRequest defineSuggesterRequest,
             AsyncHandler<DefineSuggesterRequest, DefineSuggesterResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Configures the access rules that control access to the domain's
+     * document and search endpoints. For more information, see
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"> Configuring Access for an Amazon CloudSearch Domain </a>
+     * .
+     * </p>
+     *
+     * @param updateServiceAccessPoliciesRequest Container for the necessary
+     *           parameters to execute the UpdateServiceAccessPolicies operation on
+     *           AmazonCloudSearchv2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateServiceAccessPolicies service method, as returned by
+     *         AmazonCloudSearchv2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudSearchv2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateServiceAccessPoliciesResult> updateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Configures the access rules that control access to the domain's
+     * document and search endpoints. For more information, see
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"> Configuring Access for an Amazon CloudSearch Domain </a>
+     * .
+     * </p>
+     *
+     * @param updateServiceAccessPoliciesRequest Container for the necessary
+     *           parameters to execute the UpdateServiceAccessPolicies operation on
+     *           AmazonCloudSearchv2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateServiceAccessPolicies service method, as returned by
+     *         AmazonCloudSearchv2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudSearchv2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateServiceAccessPoliciesResult> updateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest,
+            AsyncHandler<UpdateServiceAccessPoliciesRequest, UpdateServiceAccessPoliciesResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

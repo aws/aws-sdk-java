@@ -1460,6 +1460,50 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
+     * Deletes the specified notification.
+     * </p>
+     *
+     * @param deleteNotificationConfigurationRequest Container for the
+     *           necessary parameters to execute the DeleteNotificationConfiguration
+     *           service method on AmazonAutoScaling.
+     * 
+     * 
+     * @throws ResourceContentionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteNotificationConfiguration(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteNotificationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteNotificationConfigurationRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNotificationConfigurationRequestMarshaller().marshall(super.beforeMarshalling(deleteNotificationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
      * Completes the lifecycle action for the associated token initiated
      * under the given lifecycle hook with the specified result.
      * </p>
@@ -1522,50 +1566,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Deletes the specified notification.
-     * </p>
-     *
-     * @param deleteNotificationConfigurationRequest Container for the
-     *           necessary parameters to execute the DeleteNotificationConfiguration
-     *           service method on AmazonAutoScaling.
-     * 
-     * 
-     * @throws ResourceContentionException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonAutoScaling indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteNotificationConfiguration(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteNotificationConfigurationRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteNotificationConfigurationRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteNotificationConfigurationRequestMarshaller().marshall(super.beforeMarshalling(deleteNotificationConfigurationRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            invoke(request, null, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null);
         }
     }
     

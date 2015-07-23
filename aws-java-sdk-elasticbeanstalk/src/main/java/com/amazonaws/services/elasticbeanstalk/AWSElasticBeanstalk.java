@@ -437,6 +437,28 @@ public interface AWSElasticBeanstalk {
 
     /**
      * <p>
+     * Swaps the CNAMEs of two environments.
+     * </p>
+     *
+     * @param swapEnvironmentCNAMEsRequest Container for the necessary
+     *           parameters to execute the SwapEnvironmentCNAMEs service method on
+     *           AWSElasticBeanstalk.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSElasticBeanstalk indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Creates an application that has one configuration template named
      * <code>default</code> and no application versions.
      * </p>
@@ -459,28 +481,6 @@ public interface AWSElasticBeanstalk {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Swaps the CNAMEs of two environments.
-     * </p>
-     *
-     * @param swapEnvironmentCNAMEsRequest Container for the necessary
-     *           parameters to execute the SwapEnvironmentCNAMEs service method on
-     *           AWSElasticBeanstalk.
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

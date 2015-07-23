@@ -539,6 +539,12 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConsumedCapacity(java.util.Collection)} or
+     * {@link #withConsumedCapacity(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param consumedCapacity
      *        The read capacity units consumed by the operation.</p>

@@ -265,38 +265,6 @@ public interface AmazonCloudSearch {
 
     /**
      * <p>
-     * Configures the access rules that control access to the domain's
-     * document and search endpoints. For more information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"> Configuring Access for an Amazon CloudSearch Domain </a>
-     * .
-     * </p>
-     *
-     * @param updateServiceAccessPoliciesRequest Container for the necessary
-     *           parameters to execute the UpdateServiceAccessPolicies service method
-     *           on AmazonCloudSearchv2.
-     * 
-     * @return The response from the UpdateServiceAccessPolicies service
-     *         method, as returned by AmazonCloudSearchv2.
-     * 
-     * @throws InternalException
-     * @throws InvalidTypeException
-     * @throws ResourceNotFoundException
-     * @throws LimitExceededException
-     * @throws BaseException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudSearchv2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateServiceAccessPoliciesResult updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Configures a suggester for a domain. A suggester enables you to
      * display possible matches before users finish typing their queries.
      * When you configure a suggester, you must specify the name of the text
@@ -327,6 +295,38 @@ public interface AmazonCloudSearch {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DefineSuggesterResult defineSuggester(DefineSuggesterRequest defineSuggesterRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Configures the access rules that control access to the domain's
+     * document and search endpoints. For more information, see
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"> Configuring Access for an Amazon CloudSearch Domain </a>
+     * .
+     * </p>
+     *
+     * @param updateServiceAccessPoliciesRequest Container for the necessary
+     *           parameters to execute the UpdateServiceAccessPolicies service method
+     *           on AmazonCloudSearchv2.
+     * 
+     * @return The response from the UpdateServiceAccessPolicies service
+     *         method, as returned by AmazonCloudSearchv2.
+     * 
+     * @throws InternalException
+     * @throws InvalidTypeException
+     * @throws ResourceNotFoundException
+     * @throws LimitExceededException
+     * @throws BaseException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudSearchv2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateServiceAccessPoliciesResult updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

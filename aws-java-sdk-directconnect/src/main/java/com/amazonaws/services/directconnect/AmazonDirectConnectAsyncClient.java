@@ -300,82 +300,6 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
             
     /**
      * <p>
-     * Returns the list of AWS Direct Connect locations in the current AWS
-     * region. These are the locations that may be selected when calling
-     * CreateConnection or CreateInterconnect.
-     * </p>
-     *
-     * @param describeLocationsRequest Container for the necessary parameters
-     *           to execute the DescribeLocations operation on AmazonDirectConnect.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeLocations service method, as returned by AmazonDirectConnect.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeLocationsResult> describeLocationsAsync(final DescribeLocationsRequest describeLocationsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeLocationsResult>() {
-            public DescribeLocationsResult call() throws Exception {
-                return describeLocations(describeLocationsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns the list of AWS Direct Connect locations in the current AWS
-     * region. These are the locations that may be selected when calling
-     * CreateConnection or CreateInterconnect.
-     * </p>
-     *
-     * @param describeLocationsRequest Container for the necessary parameters
-     *           to execute the DescribeLocations operation on AmazonDirectConnect.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeLocations service method, as returned by AmazonDirectConnect.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeLocationsResult> describeLocationsAsync(
-            final DescribeLocationsRequest describeLocationsRequest,
-            final AsyncHandler<DescribeLocationsRequest, DescribeLocationsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeLocationsResult>() {
-            public DescribeLocationsResult call() throws Exception {
-              DescribeLocationsResult result;
-                try {
-                result = describeLocations(describeLocationsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeLocationsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Accept ownership of a public virtual interface created by another
      * customer.
      * </p>
@@ -457,6 +381,82 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
             throw ex;
               }
               asyncHandler.onSuccess(confirmPublicVirtualInterfaceRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the list of AWS Direct Connect locations in the current AWS
+     * region. These are the locations that may be selected when calling
+     * CreateConnection or CreateInterconnect.
+     * </p>
+     *
+     * @param describeLocationsRequest Container for the necessary parameters
+     *           to execute the DescribeLocations operation on AmazonDirectConnect.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeLocations service method, as returned by AmazonDirectConnect.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeLocationsResult> describeLocationsAsync(final DescribeLocationsRequest describeLocationsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeLocationsResult>() {
+            public DescribeLocationsResult call() throws Exception {
+                return describeLocations(describeLocationsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the list of AWS Direct Connect locations in the current AWS
+     * region. These are the locations that may be selected when calling
+     * CreateConnection or CreateInterconnect.
+     * </p>
+     *
+     * @param describeLocationsRequest Container for the necessary parameters
+     *           to execute the DescribeLocations operation on AmazonDirectConnect.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeLocations service method, as returned by AmazonDirectConnect.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeLocationsResult> describeLocationsAsync(
+            final DescribeLocationsRequest describeLocationsRequest,
+            final AsyncHandler<DescribeLocationsRequest, DescribeLocationsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeLocationsResult>() {
+            public DescribeLocationsResult call() throws Exception {
+              DescribeLocationsResult result;
+                try {
+                result = describeLocations(describeLocationsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeLocationsRequest, result);
                  return result;
         }
     });

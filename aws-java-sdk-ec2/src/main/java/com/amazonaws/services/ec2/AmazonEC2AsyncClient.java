@@ -9297,86 +9297,6 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Describes one or more of your placement groups. For more information
-     * about placement groups and cluster instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
-     * </p>
-     *
-     * @param describePlacementGroupsRequest Container for the necessary
-     *           parameters to execute the DescribePlacementGroups operation on
-     *           AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribePlacementGroups service method, as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(final DescribePlacementGroupsRequest describePlacementGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
-            public DescribePlacementGroupsResult call() throws Exception {
-                return describePlacementGroups(describePlacementGroupsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Describes one or more of your placement groups. For more information
-     * about placement groups and cluster instances, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
-     * </p>
-     *
-     * @param describePlacementGroupsRequest Container for the necessary
-     *           parameters to execute the DescribePlacementGroups operation on
-     *           AmazonEC2.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribePlacementGroups service method, as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(
-            final DescribePlacementGroupsRequest describePlacementGroupsRequest,
-            final AsyncHandler<DescribePlacementGroupsRequest, DescribePlacementGroupsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
-            public DescribePlacementGroupsResult call() throws Exception {
-              DescribePlacementGroupsResult result;
-                try {
-                result = describePlacementGroups(describePlacementGroupsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describePlacementGroupsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Launches the specified number of instances using an AMI for which you
      * have permissions.
      * </p>
@@ -9606,6 +9526,86 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             throw ex;
               }
               asyncHandler.onSuccess(describeSubnetsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Describes one or more of your placement groups. For more information
+     * about placement groups and cluster instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     *
+     * @param describePlacementGroupsRequest Container for the necessary
+     *           parameters to execute the DescribePlacementGroups operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribePlacementGroups service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(final DescribePlacementGroupsRequest describePlacementGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
+            public DescribePlacementGroupsResult call() throws Exception {
+                return describePlacementGroups(describePlacementGroupsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes one or more of your placement groups. For more information
+     * about placement groups and cluster instances, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     *
+     * @param describePlacementGroupsRequest Container for the necessary
+     *           parameters to execute the DescribePlacementGroups operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribePlacementGroups service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(
+            final DescribePlacementGroupsRequest describePlacementGroupsRequest,
+            final AsyncHandler<DescribePlacementGroupsRequest, DescribePlacementGroupsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
+            public DescribePlacementGroupsResult call() throws Exception {
+              DescribePlacementGroupsResult result;
+                try {
+                result = describePlacementGroups(describePlacementGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describePlacementGroupsRequest, result);
                  return result;
         }
     });
@@ -15474,8 +15474,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * unencrypted snapshots remain unencrypted, unless the
      * <code>Encrypted</code> flag is specified during the snapshot copy
      * operation. By default, encrypted snapshot copies use the default AWS
-     * Key Management Service (KMS) master key; however, you can specify a
-     * non-default master key with the <code>KmsKeyId</code> parameter.
+     * Key Management Service (AWS KMS) customer master key (CMK); however,
+     * you can specify a non-default CMK with the <code>KmsKeyId</code>
+     * parameter.
      * </p>
      * <p>
      * For more information, see
@@ -15520,8 +15521,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * unencrypted snapshots remain unencrypted, unless the
      * <code>Encrypted</code> flag is specified during the snapshot copy
      * operation. By default, encrypted snapshot copies use the default AWS
-     * Key Management Service (KMS) master key; however, you can specify a
-     * non-default master key with the <code>KmsKeyId</code> parameter.
+     * Key Management Service (AWS KMS) customer master key (CMK); however,
+     * you can specify a non-default CMK with the <code>KmsKeyId</code>
+     * parameter.
      * </p>
      * <p>
      * For more information, see
@@ -16400,9 +16402,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step
-     * you must complete before you can launch an instance from the AMI. For
-     * more information about creating AMIs, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"> Creating Your Own AMIs </a>
+     * you must complete before you can launch an instance from the AMI. This
+     * step is required if you're creating an instance store-backed Linux or
+     * Windows AMI. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-instance-store.html"> Creating an Instance Store-Backed Linux AMI </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html"> Creating an Instance Store-Backed Windows AMI </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
@@ -16414,8 +16417,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * You can also use <code>RegisterImage</code> to create an Amazon
      * EBS-backed AMI from a snapshot of a root device volume. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html"> Launching an Instance from a Snapshot </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html"> Launching an Instance from a Backup </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> . Note that
+     * although you can create a Windows AMI from a snapshot, you can't
+     * launch an instance from the AMI - use the CreateImage command instead.
      * </p>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications
@@ -16455,9 +16460,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step
-     * you must complete before you can launch an instance from the AMI. For
-     * more information about creating AMIs, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"> Creating Your Own AMIs </a>
+     * you must complete before you can launch an instance from the AMI. This
+     * step is required if you're creating an instance store-backed Linux or
+     * Windows AMI. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-instance-store.html"> Creating an Instance Store-Backed Linux AMI </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html"> Creating an Instance Store-Backed Windows AMI </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
@@ -16469,8 +16475,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * You can also use <code>RegisterImage</code> to create an Amazon
      * EBS-backed AMI from a snapshot of a root device volume. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html"> Launching an Instance from a Snapshot </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html"> Launching an Instance from a Backup </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> . Note that
+     * although you can create a Windows AMI from a snapshot, you can't
+     * launch an instance from the AMI - use the CreateImage command instead.
      * </p>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications

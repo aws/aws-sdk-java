@@ -754,6 +754,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * consumption. DynamoDB determines capacity units consumed based on item
      * size, not on the amount of data that is returned to an application.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributesToGet(java.util.Collection)} or
+     * {@link #withAttributesToGet(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param attributesToGet
      *        This is a legacy parameter, for backward compatibility. New

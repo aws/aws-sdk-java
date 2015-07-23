@@ -69,6 +69,12 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * The names of the on-premises instances to get information about.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceNames(java.util.Collection)} or
+     * {@link #withInstanceNames(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param instanceNames
      *        The names of the on-premises instances to get information about.

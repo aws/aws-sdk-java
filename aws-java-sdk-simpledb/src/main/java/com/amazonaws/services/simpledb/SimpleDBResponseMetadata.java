@@ -19,21 +19,19 @@ import java.util.Map;
 import com.amazonaws.ResponseMetadata;
 
 /**
- * Extension of {@link ResponseMetadata} with Amazon SimpleDB specific data. In
- * addition to the standard AWS request ID contained in all services' response
- * metadata, Amazon SimpleDB also includes information on how much compute
- * capacity, or box usage, was used to process your request.
+ * Extension of {@link ResponseMetadata} with Amazon SimpleDB specific data. In addition to the
+ * standard AWS request ID contained in all services' response metadata, Amazon SimpleDB also
+ * includes information on how much compute capacity, or box usage, was used to process your
+ * request.
  * <p>
- * SimpleDB box usage is useful when looking at how different queries perform on
- * your data. You can use that information to tune your queries, and reduce your
- * monthly SimpleDB usage charges.
+ * SimpleDB box usage is useful when looking at how different queries perform on your data. You can
+ * use that information to tune your queries, and reduce your monthly SimpleDB usage charges.
  */
 public class SimpleDBResponseMetadata extends ResponseMetadata {
     public static final String BOX_USAGE = "BOX_USAGE";
 
     /**
-     * Creates a new SimpleDBResponseMetadata object from a specified map of
-     * metadata information.
+     * Creates a new SimpleDBResponseMetadata object from a specified map of metadata information.
      *
      * @param metadata
      *            The raw metadata for the new SimpleDBResponseMetadata object.
@@ -43,31 +41,28 @@ public class SimpleDBResponseMetadata extends ResponseMetadata {
     }
 
     /**
-     * Creates a new SimpleDBResponseMetadata object from an existing
-     * ResponseMetadata object.
+     * Creates a new SimpleDBResponseMetadata object from an existing ResponseMetadata object.
      *
      * @param originalResponseMetadata
-     *            The ResponseMetadata object from which to create the new
-     *            object.
+     *            The ResponseMetadata object from which to create the new object.
      */
     public SimpleDBResponseMetadata(ResponseMetadata originalResponseMetadata) {
         super(originalResponseMetadata);
     }
 
     /**
-     * Returns the SimpleDB box usage reported in a response's metadata.
-     * SimpleDB box usage indicates how much compute capacity was used to
-     * process your request.
+     * Returns the SimpleDB box usage reported in a response's metadata. SimpleDB box usage
+     * indicates how much compute capacity was used to process your request.
      * <p>
-     * Box usage is useful when looking at how different queries perform on your
-     * data. You can use that information to tune your queries, and reduce your
-     * monthly SimpleDB usage charges.
+     * Box usage is useful when looking at how different queries perform on your data. You can use
+     * that information to tune your queries, and reduce your monthly SimpleDB usage charges.
      *
      * @return The SimpleDB box usage reported for the associated request.
      */
     public float getBoxUsage() {
         String boxUsage = metadata.get(BOX_USAGE);
-        if (boxUsage == null || boxUsage.trim().length() == 0) return 0;
+        if (boxUsage == null || boxUsage.trim().length() == 0)
+            return 0;
         return Float.parseFloat(boxUsage);
     }
 }

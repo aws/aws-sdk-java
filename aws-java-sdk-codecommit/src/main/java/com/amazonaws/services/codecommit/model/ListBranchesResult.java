@@ -69,6 +69,12 @@ public class ListBranchesResult implements Serializable, Cloneable {
      * <p>
      * The list of branch names.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBranches(java.util.Collection)} or
+     * {@link #withBranches(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param branches
      *        The list of branch names.

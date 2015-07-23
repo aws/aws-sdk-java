@@ -24,7 +24,8 @@ import java.io.Serializable;
 public class StepStateChangeReason implements Serializable, Cloneable {
 
     /**
-     * The programmable code for the state change reason.
+     * The programmable code for the state change reason. Note: Currently,
+     * the service provides no code for the state change.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE
@@ -37,12 +38,14 @@ public class StepStateChangeReason implements Serializable, Cloneable {
     private String message;
 
     /**
-     * The programmable code for the state change reason.
+     * The programmable code for the state change reason. Note: Currently,
+     * the service provides no code for the state change.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE
      *
-     * @return The programmable code for the state change reason.
+     * @return The programmable code for the state change reason. Note: Currently,
+     *         the service provides no code for the state change.
      *
      * @see StepStateChangeReasonCode
      */
@@ -51,12 +54,14 @@ public class StepStateChangeReason implements Serializable, Cloneable {
     }
     
     /**
-     * The programmable code for the state change reason.
+     * The programmable code for the state change reason. Note: Currently,
+     * the service provides no code for the state change.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE
      *
-     * @param code The programmable code for the state change reason.
+     * @param code The programmable code for the state change reason. Note: Currently,
+     *         the service provides no code for the state change.
      *
      * @see StepStateChangeReasonCode
      */
@@ -65,14 +70,16 @@ public class StepStateChangeReason implements Serializable, Cloneable {
     }
     
     /**
-     * The programmable code for the state change reason.
+     * The programmable code for the state change reason. Note: Currently,
+     * the service provides no code for the state change.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE
      *
-     * @param code The programmable code for the state change reason.
+     * @param code The programmable code for the state change reason. Note: Currently,
+     *         the service provides no code for the state change.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -85,12 +92,14 @@ public class StepStateChangeReason implements Serializable, Cloneable {
     }
 
     /**
-     * The programmable code for the state change reason.
+     * The programmable code for the state change reason. Note: Currently,
+     * the service provides no code for the state change.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE
      *
-     * @param code The programmable code for the state change reason.
+     * @param code The programmable code for the state change reason. Note: Currently,
+     *         the service provides no code for the state change.
      *
      * @see StepStateChangeReasonCode
      */
@@ -99,14 +108,16 @@ public class StepStateChangeReason implements Serializable, Cloneable {
     }
     
     /**
-     * The programmable code for the state change reason.
+     * The programmable code for the state change reason. Note: Currently,
+     * the service provides no code for the state change.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE
      *
-     * @param code The programmable code for the state change reason.
+     * @param code The programmable code for the state change reason. Note: Currently,
+     *         the service provides no code for the state change.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

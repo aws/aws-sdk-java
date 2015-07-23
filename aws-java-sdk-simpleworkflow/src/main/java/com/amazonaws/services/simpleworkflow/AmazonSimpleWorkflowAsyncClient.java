@@ -4727,6 +4727,144 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
     
     /**
      * <p>
+     * Returns information about the specified workflow execution including
+     * its type and some statistics.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>This operation is eventually consistent. The results are
+     * best effort and may not exactly reflect recent updates and changes.
+     * </p>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
+     * </p>
+     * 
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit
+     * the action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>You cannot use an IAM policy to constrain this action's
+     * parameters.</li>
+     * 
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the
+     * action, or the parameter values fall outside the specified
+     * constraints, the action fails. The associated event attribute's
+     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
+     * details and example IAM policies, see
+     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
+     * .
+     * </p>
+     *
+     * @param describeWorkflowExecutionRequest Container for the necessary
+     *           parameters to execute the DescribeWorkflowExecution operation on
+     *           AmazonSimpleWorkflow.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeWorkflowExecution service method, as returned by
+     *         AmazonSimpleWorkflow.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleWorkflow indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<WorkflowExecutionDetail> describeWorkflowExecutionAsync(final DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<WorkflowExecutionDetail>() {
+            public WorkflowExecutionDetail call() throws Exception {
+                return describeWorkflowExecution(describeWorkflowExecutionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns information about the specified workflow execution including
+     * its type and some statistics.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>This operation is eventually consistent. The results are
+     * best effort and may not exactly reflect recent updates and changes.
+     * </p>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
+     * </p>
+     * 
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit
+     * the action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>You cannot use an IAM policy to constrain this action's
+     * parameters.</li>
+     * 
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the
+     * action, or the parameter values fall outside the specified
+     * constraints, the action fails. The associated event attribute's
+     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
+     * details and example IAM policies, see
+     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
+     * .
+     * </p>
+     *
+     * @param describeWorkflowExecutionRequest Container for the necessary
+     *           parameters to execute the DescribeWorkflowExecution operation on
+     *           AmazonSimpleWorkflow.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeWorkflowExecution service method, as returned by
+     *         AmazonSimpleWorkflow.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleWorkflow indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<WorkflowExecutionDetail> describeWorkflowExecutionAsync(
+            final DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest,
+            final AsyncHandler<DescribeWorkflowExecutionRequest, WorkflowExecutionDetail> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<WorkflowExecutionDetail>() {
+            public WorkflowExecutionDetail call() throws Exception {
+              WorkflowExecutionDetail result;
+                try {
+                result = describeWorkflowExecution(describeWorkflowExecutionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeWorkflowExecutionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Records a <code>WorkflowExecutionTerminated</code> event and forces
      * closure of the workflow execution identified by the given domain,
      * runId, and workflowId. The child policy, registered with the workflow
@@ -4885,144 +5023,6 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
               }
               asyncHandler.onSuccess(terminateWorkflowExecutionRequest, null);
                  return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns information about the specified workflow execution including
-     * its type and some statistics.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param describeWorkflowExecutionRequest Container for the necessary
-     *           parameters to execute the DescribeWorkflowExecution operation on
-     *           AmazonSimpleWorkflow.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeWorkflowExecution service method, as returned by
-     *         AmazonSimpleWorkflow.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<WorkflowExecutionDetail> describeWorkflowExecutionAsync(final DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<WorkflowExecutionDetail>() {
-            public WorkflowExecutionDetail call() throws Exception {
-                return describeWorkflowExecution(describeWorkflowExecutionRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns information about the specified workflow execution including
-     * its type and some statistics.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param describeWorkflowExecutionRequest Container for the necessary
-     *           parameters to execute the DescribeWorkflowExecution operation on
-     *           AmazonSimpleWorkflow.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeWorkflowExecution service method, as returned by
-     *         AmazonSimpleWorkflow.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<WorkflowExecutionDetail> describeWorkflowExecutionAsync(
-            final DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest,
-            final AsyncHandler<DescribeWorkflowExecutionRequest, WorkflowExecutionDetail> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<WorkflowExecutionDetail>() {
-            public WorkflowExecutionDetail call() throws Exception {
-              WorkflowExecutionDetail result;
-                try {
-                result = describeWorkflowExecution(describeWorkflowExecutionRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeWorkflowExecutionRequest, result);
-                 return result;
         }
     });
     }

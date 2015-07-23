@@ -75,6 +75,12 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
      * <p>
      * A list of deployment IDs.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDeployments(java.util.Collection)} or
+     * {@link #withDeployments(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param deployments
      *        A list of deployment IDs.

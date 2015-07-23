@@ -28,11 +28,7 @@ public class LambdaFunctionException extends RuntimeException {
     private final boolean handled;
     private final String type;
 
-
-    public LambdaFunctionException(
-            String message,
-            boolean handled,
-            String type) {
+    public LambdaFunctionException(String message, boolean handled, String type) {
 
         super(message);
 

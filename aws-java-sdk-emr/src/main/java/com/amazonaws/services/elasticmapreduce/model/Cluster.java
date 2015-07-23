@@ -57,11 +57,15 @@ public class Cluster implements Serializable, Cloneable {
     private String requestedAmiVersion;
 
     /**
-     * The AMI version running on this cluster. This differs from the
-     * requested version only if the requested version is a meta version,
-     * such as "latest".
+     * The AMI version running on this cluster.
      */
     private String runningAmiVersion;
+
+    /**
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and
+     * 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     */
+    private String releaseLabel;
 
     /**
      * Specifies whether the cluster should terminate after completing all
@@ -114,9 +118,15 @@ public class Cluster implements Serializable, Cloneable {
     private Integer normalizedInstanceHours;
 
     /**
-     * The public DNS name of the master Ec2 instance.
+     * The public DNS name of the master EC2 instance.
      */
     private String masterPublicDnsName;
+
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * Configurations supplied to the EMR cluster.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurations;
 
     /**
      * The unique identifier for the cluster.
@@ -335,47 +345,74 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * The AMI version running on this cluster. This differs from the
-     * requested version only if the requested version is a meta version,
-     * such as "latest".
+     * The AMI version running on this cluster.
      *
-     * @return The AMI version running on this cluster. This differs from the
-     *         requested version only if the requested version is a meta version,
-     *         such as "latest".
+     * @return The AMI version running on this cluster.
      */
     public String getRunningAmiVersion() {
         return runningAmiVersion;
     }
     
     /**
-     * The AMI version running on this cluster. This differs from the
-     * requested version only if the requested version is a meta version,
-     * such as "latest".
+     * The AMI version running on this cluster.
      *
-     * @param runningAmiVersion The AMI version running on this cluster. This differs from the
-     *         requested version only if the requested version is a meta version,
-     *         such as "latest".
+     * @param runningAmiVersion The AMI version running on this cluster.
      */
     public void setRunningAmiVersion(String runningAmiVersion) {
         this.runningAmiVersion = runningAmiVersion;
     }
     
     /**
-     * The AMI version running on this cluster. This differs from the
-     * requested version only if the requested version is a meta version,
-     * such as "latest".
+     * The AMI version running on this cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param runningAmiVersion The AMI version running on this cluster. This differs from the
-     *         requested version only if the requested version is a meta version,
-     *         such as "latest".
+     * @param runningAmiVersion The AMI version running on this cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withRunningAmiVersion(String runningAmiVersion) {
         this.runningAmiVersion = runningAmiVersion;
+        return this;
+    }
+
+    /**
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and
+     * 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     *
+     * @return The release label for the Amazon EMR release. For Amazon EMR 3.x and
+     *         2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     */
+    public String getReleaseLabel() {
+        return releaseLabel;
+    }
+    
+    /**
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and
+     * 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     *
+     * @param releaseLabel The release label for the Amazon EMR release. For Amazon EMR 3.x and
+     *         2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     */
+    public void setReleaseLabel(String releaseLabel) {
+        this.releaseLabel = releaseLabel;
+    }
+    
+    /**
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and
+     * 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param releaseLabel The release label for the Amazon EMR release. For Amazon EMR 3.x and
+     *         2.x AMIs, use amiVersion instead instead of ReleaseLabel.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withReleaseLabel(String releaseLabel) {
+        this.releaseLabel = releaseLabel;
         return this;
     }
 
@@ -826,35 +863,116 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * The public DNS name of the master Ec2 instance.
+     * The public DNS name of the master EC2 instance.
      *
-     * @return The public DNS name of the master Ec2 instance.
+     * @return The public DNS name of the master EC2 instance.
      */
     public String getMasterPublicDnsName() {
         return masterPublicDnsName;
     }
     
     /**
-     * The public DNS name of the master Ec2 instance.
+     * The public DNS name of the master EC2 instance.
      *
-     * @param masterPublicDnsName The public DNS name of the master Ec2 instance.
+     * @param masterPublicDnsName The public DNS name of the master EC2 instance.
      */
     public void setMasterPublicDnsName(String masterPublicDnsName) {
         this.masterPublicDnsName = masterPublicDnsName;
     }
     
     /**
-     * The public DNS name of the master Ec2 instance.
+     * The public DNS name of the master EC2 instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param masterPublicDnsName The public DNS name of the master Ec2 instance.
+     * @param masterPublicDnsName The public DNS name of the master EC2 instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withMasterPublicDnsName(String masterPublicDnsName) {
         this.masterPublicDnsName = masterPublicDnsName;
+        return this;
+    }
+
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * Configurations supplied to the EMR cluster.
+     *
+     * @return <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         Configurations supplied to the EMR cluster.
+     */
+    public java.util.List<Configuration> getConfigurations() {
+        if (configurations == null) {
+              configurations = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>();
+              configurations.setAutoConstruct(true);
+        }
+        return configurations;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * Configurations supplied to the EMR cluster.
+     *
+     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         Configurations supplied to the EMR cluster.
+     */
+    public void setConfigurations(java.util.Collection<Configuration> configurations) {
+        if (configurations == null) {
+            this.configurations = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>(configurations.size());
+        configurationsCopy.addAll(configurations);
+        this.configurations = configurationsCopy;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * Configurations supplied to the EMR cluster.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConfigurations(java.util.Collection)} or {@link
+     * #withConfigurations(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         Configurations supplied to the EMR cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withConfigurations(Configuration... configurations) {
+        if (getConfigurations() == null) setConfigurations(new java.util.ArrayList<Configuration>(configurations.length));
+        for (Configuration value : configurations) {
+            getConfigurations().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * Configurations supplied to the EMR cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         Configurations supplied to the EMR cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withConfigurations(java.util.Collection<Configuration> configurations) {
+        if (configurations == null) {
+            this.configurations = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>(configurations.size());
+            configurationsCopy.addAll(configurations);
+            this.configurations = configurationsCopy;
+        }
+
         return this;
     }
 
@@ -877,6 +995,7 @@ public class Cluster implements Serializable, Cloneable {
         if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ",");
         if (getRequestedAmiVersion() != null) sb.append("RequestedAmiVersion: " + getRequestedAmiVersion() + ",");
         if (getRunningAmiVersion() != null) sb.append("RunningAmiVersion: " + getRunningAmiVersion() + ",");
+        if (getReleaseLabel() != null) sb.append("ReleaseLabel: " + getReleaseLabel() + ",");
         if (isAutoTerminate() != null) sb.append("AutoTerminate: " + isAutoTerminate() + ",");
         if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ",");
         if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");
@@ -884,7 +1003,8 @@ public class Cluster implements Serializable, Cloneable {
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getServiceRole() != null) sb.append("ServiceRole: " + getServiceRole() + ",");
         if (getNormalizedInstanceHours() != null) sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() + ",");
-        if (getMasterPublicDnsName() != null) sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() );
+        if (getMasterPublicDnsName() != null) sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ",");
+        if (getConfigurations() != null) sb.append("Configurations: " + getConfigurations() );
         sb.append("}");
         return sb.toString();
     }
@@ -901,6 +1021,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLogUri() == null) ? 0 : getLogUri().hashCode()); 
         hashCode = prime * hashCode + ((getRequestedAmiVersion() == null) ? 0 : getRequestedAmiVersion().hashCode()); 
         hashCode = prime * hashCode + ((getRunningAmiVersion() == null) ? 0 : getRunningAmiVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getReleaseLabel() == null) ? 0 : getReleaseLabel().hashCode()); 
         hashCode = prime * hashCode + ((isAutoTerminate() == null) ? 0 : isAutoTerminate().hashCode()); 
         hashCode = prime * hashCode + ((isTerminationProtected() == null) ? 0 : isTerminationProtected().hashCode()); 
         hashCode = prime * hashCode + ((isVisibleToAllUsers() == null) ? 0 : isVisibleToAllUsers().hashCode()); 
@@ -909,6 +1030,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode()); 
         hashCode = prime * hashCode + ((getNormalizedInstanceHours() == null) ? 0 : getNormalizedInstanceHours().hashCode()); 
         hashCode = prime * hashCode + ((getMasterPublicDnsName() == null) ? 0 : getMasterPublicDnsName().hashCode()); 
+        hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode()); 
         return hashCode;
     }
     
@@ -934,6 +1056,8 @@ public class Cluster implements Serializable, Cloneable {
         if (other.getRequestedAmiVersion() != null && other.getRequestedAmiVersion().equals(this.getRequestedAmiVersion()) == false) return false; 
         if (other.getRunningAmiVersion() == null ^ this.getRunningAmiVersion() == null) return false;
         if (other.getRunningAmiVersion() != null && other.getRunningAmiVersion().equals(this.getRunningAmiVersion()) == false) return false; 
+        if (other.getReleaseLabel() == null ^ this.getReleaseLabel() == null) return false;
+        if (other.getReleaseLabel() != null && other.getReleaseLabel().equals(this.getReleaseLabel()) == false) return false; 
         if (other.isAutoTerminate() == null ^ this.isAutoTerminate() == null) return false;
         if (other.isAutoTerminate() != null && other.isAutoTerminate().equals(this.isAutoTerminate()) == false) return false; 
         if (other.isTerminationProtected() == null ^ this.isTerminationProtected() == null) return false;
@@ -950,6 +1074,8 @@ public class Cluster implements Serializable, Cloneable {
         if (other.getNormalizedInstanceHours() != null && other.getNormalizedInstanceHours().equals(this.getNormalizedInstanceHours()) == false) return false; 
         if (other.getMasterPublicDnsName() == null ^ this.getMasterPublicDnsName() == null) return false;
         if (other.getMasterPublicDnsName() != null && other.getMasterPublicDnsName().equals(this.getMasterPublicDnsName()) == false) return false; 
+        if (other.getConfigurations() == null ^ this.getConfigurations() == null) return false;
+        if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false) return false; 
         return true;
     }
     

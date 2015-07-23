@@ -198,6 +198,12 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * The primary key attribute values that define the items and the attributes
      * associated with the items.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeys(java.util.Collection)} or
+     * {@link #withKeys(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param keys
      *        The primary key attribute values that define the items and the
@@ -281,6 +287,12 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * attribute names are specified then all attributes will be returned. If
      * any of the specified attributes are not found, they will not appear in
      * the result.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributesToGet(java.util.Collection)} or
+     * {@link #withAttributesToGet(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param attributesToGet

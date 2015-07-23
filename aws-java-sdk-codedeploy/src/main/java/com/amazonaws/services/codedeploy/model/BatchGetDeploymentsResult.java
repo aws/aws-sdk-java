@@ -68,6 +68,12 @@ public class BatchGetDeploymentsResult implements Serializable, Cloneable {
      * <p>
      * Information about the deployments.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDeploymentsInfo(java.util.Collection)} or
+     * {@link #withDeploymentsInfo(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param deploymentsInfo
      *        Information about the deployments.

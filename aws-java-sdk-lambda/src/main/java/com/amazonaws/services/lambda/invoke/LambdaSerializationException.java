@@ -15,9 +15,8 @@
 package com.amazonaws.services.lambda.invoke;
 
 /**
- * An exception thrown if there's a problem serializing a request object to
- * JSON or deserializing the JSON returned by a function to the expected
- * result object.
+ * An exception thrown if there's a problem serializing a request object to JSON or deserializing
+ * the JSON returned by a function to the expected result object.
  */
 public class LambdaSerializationException extends RuntimeException {
 

@@ -512,61 +512,6 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * Configures the access rules that control access to the domain's
-     * document and search endpoints. For more information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"> Configuring Access for an Amazon CloudSearch Domain </a>
-     * .
-     * </p>
-     *
-     * @param updateServiceAccessPoliciesRequest Container for the necessary
-     *           parameters to execute the UpdateServiceAccessPolicies service method
-     *           on AmazonCloudSearchv2.
-     * 
-     * @return The response from the UpdateServiceAccessPolicies service
-     *         method, as returned by AmazonCloudSearchv2.
-     * 
-     * @throws InternalException
-     * @throws InvalidTypeException
-     * @throws ResourceNotFoundException
-     * @throws LimitExceededException
-     * @throws BaseException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudSearchv2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateServiceAccessPoliciesResult updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateServiceAccessPoliciesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateServiceAccessPoliciesRequest> request = null;
-        Response<UpdateServiceAccessPoliciesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateServiceAccessPoliciesRequestMarshaller().marshall(super.beforeMarshalling(updateServiceAccessPoliciesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new UpdateServiceAccessPoliciesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * Configures a suggester for a domain. A suggester enables you to
      * display possible matches before users finish typing their queries.
      * When you configure a suggester, you must specify the name of the text
@@ -614,6 +559,61 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             }
 
             response = invoke(request, new DefineSuggesterResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Configures the access rules that control access to the domain's
+     * document and search endpoints. For more information, see
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"> Configuring Access for an Amazon CloudSearch Domain </a>
+     * .
+     * </p>
+     *
+     * @param updateServiceAccessPoliciesRequest Container for the necessary
+     *           parameters to execute the UpdateServiceAccessPolicies service method
+     *           on AmazonCloudSearchv2.
+     * 
+     * @return The response from the UpdateServiceAccessPolicies service
+     *         method, as returned by AmazonCloudSearchv2.
+     * 
+     * @throws InternalException
+     * @throws InvalidTypeException
+     * @throws ResourceNotFoundException
+     * @throws LimitExceededException
+     * @throws BaseException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudSearchv2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateServiceAccessPoliciesResult updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateServiceAccessPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateServiceAccessPoliciesRequest> request = null;
+        Response<UpdateServiceAccessPoliciesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateServiceAccessPoliciesRequestMarshaller().marshall(super.beforeMarshalling(updateServiceAccessPoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new UpdateServiceAccessPoliciesResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {

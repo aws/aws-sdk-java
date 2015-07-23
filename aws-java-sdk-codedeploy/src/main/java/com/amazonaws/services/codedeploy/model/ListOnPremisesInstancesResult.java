@@ -76,6 +76,12 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      * <p>
      * The list of matching on-premises instance names.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceNames(java.util.Collection)} or
+     * {@link #withInstanceNames(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param instanceNames
      *        The list of matching on-premises instance names.

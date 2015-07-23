@@ -517,6 +517,12 @@ public class TableDescription implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributeDefinitions(java.util.Collection)} or
+     * {@link #withAttributeDefinitions(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param attributeDefinitions
      *        An array of <i>AttributeDefinition</i> objects. Each of these
@@ -763,6 +769,12 @@ public class TableDescription implements Serializable, Cloneable {
      * For more information about primary keys, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
      * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeySchema(java.util.Collection)} or
+     * {@link #withKeySchema(java.util.Collection)} if you want to override the
+     * existing values.
      * </p>
      * 
      * @param keySchema
@@ -1817,6 +1829,12 @@ public class TableDescription implements Serializable, Cloneable {
      * If the table is in the <code>DELETING</code> state, no information about
      * indexes will be returned.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLocalSecondaryIndexes(java.util.Collection)} or
+     * {@link #withLocalSecondaryIndexes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param localSecondaryIndexes
      *        Represents one or more local secondary indexes on the table. Each
@@ -2753,6 +2771,12 @@ public class TableDescription implements Serializable, Cloneable {
      * <p>
      * If the table is in the <code>DELETING</code> state, no information about
      * indexes will be returned.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGlobalSecondaryIndexes(java.util.Collection)} or
+     * {@link #withGlobalSecondaryIndexes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param globalSecondaryIndexes

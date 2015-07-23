@@ -118,6 +118,12 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      * <p>
      * An array of file system descriptions.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setFileSystems(java.util.Collection)} or
+     * {@link #withFileSystems(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param fileSystems
      *        An array of file system descriptions.

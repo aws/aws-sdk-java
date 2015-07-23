@@ -304,6 +304,12 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The configuration properties for the custom action.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConfigurationProperties(java.util.Collection)} or
+     * {@link #withConfigurationProperties(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param configurationProperties
      *        The configuration properties for the custom action.

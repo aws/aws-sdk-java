@@ -30,6 +30,11 @@ The **AWS SDK for Java** enables Java developers to easily work with [Amazon Web
 
 Once you check out the code from GitHub, you can build it using Maven.  To disable the GPG-signing in the build, use: `mvn clean install -Dgpg.skip=true`
 
+## Supported Versions
+
+1.10.x - Recommended.
+1.9.x - Approved. Only major critical bugs will be fixed. To get the new features, upgrade to 1.10.x version of the SDK.
+
 [install-jar]: http://sdk-for-java.amazonwebservices.com/latest/aws-java-sdk.zip
 [aws]: http://aws.amazon.com/
 [sdk-website]: http://aws.amazon.com/sdkforjava

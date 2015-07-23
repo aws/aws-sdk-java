@@ -74,6 +74,12 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
      * <p>
      * The tag key-value pairs to remove from the on-premises instances.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param tags
      *        The tag key-value pairs to remove from the on-premises instances.
@@ -141,6 +147,12 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
     /**
      * <p>
      * The names of the on-premises instances to remove tags from.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceNames(java.util.Collection)} or
+     * {@link #withInstanceNames(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param instanceNames

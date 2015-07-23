@@ -71,6 +71,12 @@ public class ListJobsResult implements Serializable, Cloneable {
      * <p>
      * Information about the jobs.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setJobs(java.util.Collection)} or
+     * {@link #withJobs(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param jobs
      *        Information about the jobs.

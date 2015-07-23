@@ -2305,6 +2305,82 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
+     * Deletes the specified notification.
+     * </p>
+     *
+     * @param deleteNotificationConfigurationRequest Container for the
+     *           necessary parameters to execute the DeleteNotificationConfiguration
+     *           operation on AmazonAutoScaling.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteNotificationConfiguration service method, as returned by
+     *         AmazonAutoScaling.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteNotificationConfigurationAsync(final DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteNotificationConfiguration(deleteNotificationConfigurationRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes the specified notification.
+     * </p>
+     *
+     * @param deleteNotificationConfigurationRequest Container for the
+     *           necessary parameters to execute the DeleteNotificationConfiguration
+     *           operation on AmazonAutoScaling.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteNotificationConfiguration service method, as returned by
+     *         AmazonAutoScaling.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteNotificationConfigurationAsync(
+            final DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest,
+            final AsyncHandler<DeleteNotificationConfigurationRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteNotificationConfiguration(deleteNotificationConfigurationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteNotificationConfigurationRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Completes the lifecycle action for the associated token initiated
      * under the given lifecycle hook with the specified result.
      * </p>
@@ -2413,82 +2489,6 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
               }
               asyncHandler.onSuccess(completeLifecycleActionRequest, result);
                  return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes the specified notification.
-     * </p>
-     *
-     * @param deleteNotificationConfigurationRequest Container for the
-     *           necessary parameters to execute the DeleteNotificationConfiguration
-     *           operation on AmazonAutoScaling.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteNotificationConfiguration service method, as returned by
-     *         AmazonAutoScaling.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonAutoScaling indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteNotificationConfigurationAsync(final DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteNotificationConfiguration(deleteNotificationConfigurationRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes the specified notification.
-     * </p>
-     *
-     * @param deleteNotificationConfigurationRequest Container for the
-     *           necessary parameters to execute the DeleteNotificationConfiguration
-     *           operation on AmazonAutoScaling.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteNotificationConfiguration service method, as returned by
-     *         AmazonAutoScaling.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonAutoScaling indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteNotificationConfigurationAsync(
-            final DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest,
-            final AsyncHandler<DeleteNotificationConfigurationRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteNotificationConfiguration(deleteNotificationConfigurationRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteNotificationConfigurationRequest, null);
-                 return null;
         }
     });
     }

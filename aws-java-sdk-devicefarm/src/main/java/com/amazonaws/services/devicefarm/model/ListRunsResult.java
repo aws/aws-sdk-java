@@ -71,6 +71,12 @@ public class ListRunsResult implements Serializable, Cloneable {
      * <p>
      * Information about the runs.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRuns(java.util.Collection)} or
+     * {@link #withRuns(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param runs
      *        Information about the runs.

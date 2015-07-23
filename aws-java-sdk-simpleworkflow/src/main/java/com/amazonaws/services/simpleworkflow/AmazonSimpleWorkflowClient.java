@@ -2867,6 +2867,91 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Returns information about the specified workflow execution including
+     * its type and some statistics.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>This operation is eventually consistent. The results are
+     * best effort and may not exactly reflect recent updates and changes.
+     * </p>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
+     * </p>
+     * 
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit
+     * the action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>You cannot use an IAM policy to constrain this action's
+     * parameters.</li>
+     * 
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the
+     * action, or the parameter values fall outside the specified
+     * constraints, the action fails. The associated event attribute's
+     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
+     * details and example IAM policies, see
+     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
+     * .
+     * </p>
+     *
+     * @param describeWorkflowExecutionRequest Container for the necessary
+     *           parameters to execute the DescribeWorkflowExecution service method on
+     *           AmazonSimpleWorkflow.
+     * 
+     * @return The response from the DescribeWorkflowExecution service
+     *         method, as returned by AmazonSimpleWorkflow.
+     * 
+     * @throws OperationNotPermittedException
+     * @throws UnknownResourceException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleWorkflow indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public WorkflowExecutionDetail describeWorkflowExecution(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeWorkflowExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeWorkflowExecutionRequest> request = null;
+        Response<WorkflowExecutionDetail> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeWorkflowExecutionRequestMarshaller().marshall(super.beforeMarshalling(describeWorkflowExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<WorkflowExecutionDetail, JsonUnmarshallerContext> unmarshaller =
+                new WorkflowExecutionDetailJsonUnmarshaller();
+            JsonResponseHandler<WorkflowExecutionDetail> responseHandler =
+                new JsonResponseHandler<WorkflowExecutionDetail>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Records a <code>WorkflowExecutionTerminated</code> event and forces
      * closure of the workflow execution identified by the given domain,
      * runId, and workflowId. The child policy, registered with the workflow
@@ -2952,91 +3037,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Returns information about the specified workflow execution including
-     * its type and some statistics.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param describeWorkflowExecutionRequest Container for the necessary
-     *           parameters to execute the DescribeWorkflowExecution service method on
-     *           AmazonSimpleWorkflow.
-     * 
-     * @return The response from the DescribeWorkflowExecution service
-     *         method, as returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public WorkflowExecutionDetail describeWorkflowExecution(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeWorkflowExecutionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeWorkflowExecutionRequest> request = null;
-        Response<WorkflowExecutionDetail> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeWorkflowExecutionRequestMarshaller().marshall(super.beforeMarshalling(describeWorkflowExecutionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<WorkflowExecutionDetail, JsonUnmarshallerContext> unmarshaller =
-                new WorkflowExecutionDetailJsonUnmarshaller();
-            JsonResponseHandler<WorkflowExecutionDetail> responseHandler =
-                new JsonResponseHandler<WorkflowExecutionDetail>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 

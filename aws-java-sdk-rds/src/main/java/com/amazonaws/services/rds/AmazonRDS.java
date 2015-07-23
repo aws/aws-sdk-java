@@ -278,21 +278,21 @@ public interface AmazonRDS {
      * @return The response from the CreateDBInstance service method, as
      *         returned by AmazonRDS.
      * 
+     * @throws KMSKeyNotAccessibleException
      * @throws DBParameterGroupNotFoundException
+     * @throws InstanceQuotaExceededException
      * @throws DBSubnetGroupNotFoundException
      * @throws DBInstanceAlreadyExistsException
+     * @throws StorageQuotaExceededException
      * @throws InvalidVPCNetworkStateException
      * @throws StorageTypeNotSupportedException
      * @throws DBSecurityGroupNotFoundException
-     * @throws InvalidSubnetException
-     * @throws AuthorizationNotFoundException
-     * @throws KMSKeyNotAccessibleException
-     * @throws InstanceQuotaExceededException
-     * @throws StorageQuotaExceededException
      * @throws InsufficientDBInstanceCapacityException
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
+     * @throws InvalidSubnetException
      * @throws OptionGroupNotFoundException
      * @throws ProvisionedIopsNotAvailableInAZException
+     * @throws AuthorizationNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -535,8 +535,8 @@ public interface AmazonRDS {
      * @throws AuthorizationNotFoundException
      * @throws StorageQuotaExceededException
      * @throws InvalidDBInstanceStateException
-     * @throws InvalidDBSecurityGroupStateException
      * @throws InsufficientDBInstanceCapacityException
+     * @throws InvalidDBSecurityGroupStateException
      * @throws OptionGroupNotFoundException
      * @throws ProvisionedIopsNotAvailableInAZException
      *
@@ -850,30 +850,6 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Describes all available options.
-     * </p>
-     *
-     * @param describeOptionGroupOptionsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroupOptions service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeOptionGroupOptions service
-     *         method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Returns the detailed parameter list for a particular DB parameter
      * group.
      * </p>
@@ -896,6 +872,30 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes all available options.
+     * </p>
+     *
+     * @param describeOptionGroupOptionsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroupOptions service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeOptionGroupOptions service
+     *         method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

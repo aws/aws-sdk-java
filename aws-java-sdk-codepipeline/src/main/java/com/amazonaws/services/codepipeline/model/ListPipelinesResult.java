@@ -71,6 +71,12 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * <p>
      * The list of pipelines.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setPipelines(java.util.Collection)} or
+     * {@link #withPipelines(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param pipelines
      *        The list of pipelines.

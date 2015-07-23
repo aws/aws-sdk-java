@@ -196,6 +196,12 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
      * The estimate is subject to change over time; therefore, do not rely on
      * the precision or accuracy of the estimate.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSizeEstimateRangeGB(java.util.Collection)} or
+     * {@link #withSizeEstimateRangeGB(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param sizeEstimateRangeGB
      *        An estimate of item collection size, in gigabytes. This value is a

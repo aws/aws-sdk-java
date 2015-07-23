@@ -225,8 +225,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyInvalidationsInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDefaultRootObjectExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidIfMatchVersionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRelativePathExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchInvalidationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StreamingDistributionAlreadyExistsExceptionUnmarshaller());
@@ -528,14 +528,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyCookieNamesInWhiteListException
      * @throws InvalidGeoRestrictionParameterException
      * @throws InvalidResponseCodeException
-     * @throws TooManyHeadersInForwardedValuesException
      * @throws MissingBodyException
+     * @throws TooManyHeadersInForwardedValuesException
      * @throws TooManyDistributionCNAMEsException
      * @throws InvalidLocationCodeException
      * @throws NoSuchOriginException
      * @throws PreconditionFailedException
-     * @throws CNAMEAlreadyExistsException
      * @throws InvalidArgumentException
+     * @throws CNAMEAlreadyExistsException
      * @throws InconsistentQuantitiesException
      * @throws InvalidOriginAccessIdentityException
      * @throws TooManyCacheBehaviorsException
@@ -802,9 +802,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws IllegalUpdateException
      * @throws MissingBodyException
      * @throws PreconditionFailedException
+     * @throws InconsistentQuantitiesException
      * @throws CNAMEAlreadyExistsException
      * @throws InvalidArgumentException
-     * @throws InconsistentQuantitiesException
      * @throws InvalidOriginAccessIdentityException
      * @throws TrustedSignerDoesNotExistException
      * @throws TooManyTrustedSignersException
@@ -926,55 +926,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
-     * List invalidation batches.
-     * </p>
-     *
-     * @param listInvalidationsRequest Container for the necessary parameters
-     *           to execute the ListInvalidations service method on AmazonCloudFront.
-     * 
-     * @return The response from the ListInvalidations service method, as
-     *         returned by AmazonCloudFront.
-     * 
-     * @throws NoSuchDistributionException
-     * @throws InvalidArgumentException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listInvalidationsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListInvalidationsRequest> request = null;
-        Response<ListInvalidationsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListInvalidationsRequestMarshaller().marshall(super.beforeMarshalling(listInvalidationsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new ListInvalidationsResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * Create a new invalidation.
      * </p>
      *
@@ -1019,6 +970,55 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             }
 
             response = invoke(request, new CreateInvalidationResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * List invalidation batches.
+     * </p>
+     *
+     * @param listInvalidationsRequest Container for the necessary parameters
+     *           to execute the ListInvalidations service method on AmazonCloudFront.
+     * 
+     * @return The response from the ListInvalidations service method, as
+     *         returned by AmazonCloudFront.
+     * 
+     * @throws NoSuchDistributionException
+     * @throws InvalidArgumentException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listInvalidationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInvalidationsRequest> request = null;
+        Response<ListInvalidationsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInvalidationsRequestMarshaller().marshall(super.beforeMarshalling(listInvalidationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ListInvalidationsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {

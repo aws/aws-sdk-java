@@ -112,6 +112,12 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * <p>
      * The key schema for the global secondary index.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeySchema(java.util.Collection)} or
+     * {@link #withKeySchema(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param keySchema
      *        The key schema for the global secondary index.

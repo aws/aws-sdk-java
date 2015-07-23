@@ -1241,84 +1241,6 @@ public class DataPipelineAsyncClient extends DataPipelineClient
     
     /**
      * <p>
-     * Task runners call <code>EvaluateExpression</code> to evaluate a
-     * string in the context of the specified object. For example, a task
-     * runner can evaluate SQL queries stored in Amazon S3.
-     * </p>
-     *
-     * @param evaluateExpressionRequest Container for the necessary
-     *           parameters to execute the EvaluateExpression operation on
-     *           DataPipeline.
-     * 
-     * @return A Java Future object containing the response from the
-     *         EvaluateExpression service method, as returned by DataPipeline.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by DataPipeline indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EvaluateExpressionResult> evaluateExpressionAsync(final EvaluateExpressionRequest evaluateExpressionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EvaluateExpressionResult>() {
-            public EvaluateExpressionResult call() throws Exception {
-                return evaluateExpression(evaluateExpressionRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Task runners call <code>EvaluateExpression</code> to evaluate a
-     * string in the context of the specified object. For example, a task
-     * runner can evaluate SQL queries stored in Amazon S3.
-     * </p>
-     *
-     * @param evaluateExpressionRequest Container for the necessary
-     *           parameters to execute the EvaluateExpression operation on
-     *           DataPipeline.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         EvaluateExpression service method, as returned by DataPipeline.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by DataPipeline indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EvaluateExpressionResult> evaluateExpressionAsync(
-            final EvaluateExpressionRequest evaluateExpressionRequest,
-            final AsyncHandler<EvaluateExpressionRequest, EvaluateExpressionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EvaluateExpressionResult>() {
-            public EvaluateExpressionResult call() throws Exception {
-              EvaluateExpressionResult result;
-                try {
-                result = evaluateExpression(evaluateExpressionRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(evaluateExpressionRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Retrieves metadata about one or more pipelines. The information
      * retrieved includes the name of the pipeline, the pipeline identifier,
      * its current state, and the user account that owns the pipeline. Using
@@ -1404,6 +1326,84 @@ public class DataPipelineAsyncClient extends DataPipelineClient
             throw ex;
               }
               asyncHandler.onSuccess(describePipelinesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Task runners call <code>EvaluateExpression</code> to evaluate a
+     * string in the context of the specified object. For example, a task
+     * runner can evaluate SQL queries stored in Amazon S3.
+     * </p>
+     *
+     * @param evaluateExpressionRequest Container for the necessary
+     *           parameters to execute the EvaluateExpression operation on
+     *           DataPipeline.
+     * 
+     * @return A Java Future object containing the response from the
+     *         EvaluateExpression service method, as returned by DataPipeline.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EvaluateExpressionResult> evaluateExpressionAsync(final EvaluateExpressionRequest evaluateExpressionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EvaluateExpressionResult>() {
+            public EvaluateExpressionResult call() throws Exception {
+                return evaluateExpression(evaluateExpressionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Task runners call <code>EvaluateExpression</code> to evaluate a
+     * string in the context of the specified object. For example, a task
+     * runner can evaluate SQL queries stored in Amazon S3.
+     * </p>
+     *
+     * @param evaluateExpressionRequest Container for the necessary
+     *           parameters to execute the EvaluateExpression operation on
+     *           DataPipeline.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         EvaluateExpression service method, as returned by DataPipeline.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EvaluateExpressionResult> evaluateExpressionAsync(
+            final EvaluateExpressionRequest evaluateExpressionRequest,
+            final AsyncHandler<EvaluateExpressionRequest, EvaluateExpressionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EvaluateExpressionResult>() {
+            public EvaluateExpressionResult call() throws Exception {
+              EvaluateExpressionResult result;
+                try {
+                result = evaluateExpression(evaluateExpressionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(evaluateExpressionRequest, result);
                  return result;
         }
     });
@@ -1715,78 +1715,6 @@ public class DataPipelineAsyncClient extends DataPipelineClient
     
     /**
      * <p>
-     * Adds or modifies tags for the specified pipeline.
-     * </p>
-     *
-     * @param addTagsRequest Container for the necessary parameters to
-     *           execute the AddTags operation on DataPipeline.
-     * 
-     * @return A Java Future object containing the response from the AddTags
-     *         service method, as returned by DataPipeline.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by DataPipeline indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<AddTagsResult> addTagsAsync(final AddTagsRequest addTagsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<AddTagsResult>() {
-            public AddTagsResult call() throws Exception {
-                return addTags(addTagsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Adds or modifies tags for the specified pipeline.
-     * </p>
-     *
-     * @param addTagsRequest Container for the necessary parameters to
-     *           execute the AddTags operation on DataPipeline.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the AddTags
-     *         service method, as returned by DataPipeline.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by DataPipeline indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<AddTagsResult> addTagsAsync(
-            final AddTagsRequest addTagsRequest,
-            final AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<AddTagsResult>() {
-            public AddTagsResult call() throws Exception {
-              AddTagsResult result;
-                try {
-                result = addTags(addTagsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(addTagsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Adds tasks, schedules, and preconditions to the specified pipeline.
      * You can use <code>PutPipelineDefinition</code> to populate a new
      * pipeline.
@@ -1890,6 +1818,78 @@ public class DataPipelineAsyncClient extends DataPipelineClient
             throw ex;
               }
               asyncHandler.onSuccess(putPipelineDefinitionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Adds or modifies tags for the specified pipeline.
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags operation on DataPipeline.
+     * 
+     * @return A Java Future object containing the response from the AddTags
+     *         service method, as returned by DataPipeline.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddTagsResult> addTagsAsync(final AddTagsRequest addTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AddTagsResult>() {
+            public AddTagsResult call() throws Exception {
+                return addTags(addTagsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Adds or modifies tags for the specified pipeline.
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags operation on DataPipeline.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the AddTags
+     *         service method, as returned by DataPipeline.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddTagsResult> addTagsAsync(
+            final AddTagsRequest addTagsRequest,
+            final AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AddTagsResult>() {
+            public AddTagsResult call() throws Exception {
+              AddTagsResult result;
+                try {
+                result = addTags(addTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(addTagsRequest, result);
                  return result;
         }
     });

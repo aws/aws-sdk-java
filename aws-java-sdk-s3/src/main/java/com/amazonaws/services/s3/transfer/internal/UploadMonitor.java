@@ -148,7 +148,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
                 setFuture(threadPool.submit(new CompleteMultipartUpload(
                         multipartUploadCallable.getMultipartUploadId(), s3,
                         origReq, futures, multipartUploadCallable
-                                .getETags(), this)));
+                                .getETags(), listener, this)));
             } else {
                 uploadComplete();
             }
@@ -159,7 +159,6 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
             throw new AmazonClientException("Upload canceled");
         } catch (Exception e) {
             transfer.setState(TransferState.Failed);
-            publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw e;
         }
     }
@@ -215,11 +214,12 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
 
     /**
      * Cancels all the futures associated with this upload operation. Also
-     * cleans up the parts on Amazon S3 if the uplaod is performed as a
+     * cleans up the parts on Amazon S3 if the upload is performed as a
      * multi-part upload operation.
      */
     void performAbort() {
         cancelFutures();
         multipartUploadCallable.performAbortMultipartUpload();
+        publishProgress(listener, ProgressEventType.TRANSFER_CANCELED_EVENT);
     }
 }

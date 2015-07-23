@@ -71,6 +71,12 @@ public class ListTestsResult implements Serializable, Cloneable {
      * <p>
      * Information about the tests.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTests(java.util.Collection)} or
+     * {@link #withTests(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param tests
      *        Information about the tests.

@@ -71,6 +71,12 @@ public class ListUploadsResult implements Serializable, Cloneable {
      * <p>
      * Information about the uploads.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setUploads(java.util.Collection)} or
+     * {@link #withUploads(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param uploads
      *        Information about the uploads.

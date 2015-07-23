@@ -676,57 +676,6 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * List invalidation batches.
-     * </p>
-     *
-     * @param listInvalidationsRequest Container for the necessary parameters
-     *           to execute the ListInvalidations operation on AmazonCloudFront.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListInvalidations service method, as returned by AmazonCloudFront.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * List invalidation batches.
-     * </p>
-     *
-     * @param listInvalidationsRequest Container for the necessary parameters
-     *           to execute the ListInvalidations operation on AmazonCloudFront.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListInvalidations service method, as returned by AmazonCloudFront.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest,
-            AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Create a new invalidation.
      * </p>
      *
@@ -776,6 +725,57 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      */
     public Future<CreateInvalidationResult> createInvalidationAsync(CreateInvalidationRequest createInvalidationRequest,
             AsyncHandler<CreateInvalidationRequest, CreateInvalidationResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * List invalidation batches.
+     * </p>
+     *
+     * @param listInvalidationsRequest Container for the necessary parameters
+     *           to execute the ListInvalidations operation on AmazonCloudFront.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListInvalidations service method, as returned by AmazonCloudFront.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * List invalidation batches.
+     * </p>
+     *
+     * @param listInvalidationsRequest Container for the necessary parameters
+     *           to execute the ListInvalidations operation on AmazonCloudFront.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListInvalidations service method, as returned by AmazonCloudFront.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest,
+            AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

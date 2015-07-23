@@ -5,5 +5,6 @@ jdk:
   - openjdk6
   - oraclejdk8
 install: /bin/true
+sudo: false
 script: mvn install -pl \!aws-java-sdk-osgi
 

@@ -352,10 +352,10 @@ public interface AmazonRedshift {
      * @throws InsufficientClusterCapacityException
      * @throws UnauthorizedOperationException
      * @throws NumberOfNodesQuotaExceededException
-     * @throws ClusterNotFoundException
      * @throws LimitExceededException
-     * @throws ClusterSecurityGroupNotFoundException
+     * @throws ClusterNotFoundException
      * @throws HsmClientCertificateNotFoundException
+     * @throws ClusterSecurityGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -732,9 +732,9 @@ public interface AmazonRedshift {
      * @throws NumberOfNodesQuotaExceededException
      * @throws NumberOfNodesPerClusterLimitExceededException
      * @throws LimitExceededException
-     * @throws HsmClientCertificateNotFoundException
      * @throws ClusterQuotaExceededException
      * @throws ClusterSecurityGroupNotFoundException
+     * @throws HsmClientCertificateNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1107,8 +1107,8 @@ public interface AmazonRedshift {
      * @throws InvalidClusterSnapshotStateException
      * @throws AccessToSnapshotDeniedException
      * @throws InvalidRestoreException
-     * @throws UnauthorizedOperationException
      * @throws InsufficientClusterCapacityException
+     * @throws UnauthorizedOperationException
      * @throws NumberOfNodesQuotaExceededException
      * @throws NumberOfNodesPerClusterLimitExceededException
      * @throws LimitExceededException
@@ -1960,44 +1960,6 @@ public interface AmazonRedshift {
 
     /**
      * <p>
-     * Creates an HSM configuration that contains the information required
-     * by an Amazon Redshift cluster to store and use database encryption
-     * keys in a Hardware Security Module (HSM). After creating the HSM
-     * configuration, you can specify it as a parameter when creating a
-     * cluster. The cluster will then store its encryption keys in the HSM.
-     * </p>
-     * <p>
-     * In addition to creating an HSM configuration, you must also create an
-     * HSM client certificate. For more information, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
-     * in the Amazon Redshift Cluster Management Guide.
-     * </p>
-     *
-     * @param createHsmConfigurationRequest Container for the necessary
-     *           parameters to execute the CreateHsmConfiguration service method on
-     *           AmazonRedshift.
-     * 
-     * @return The response from the CreateHsmConfiguration service method,
-     *         as returned by AmazonRedshift.
-     * 
-     * @throws TagLimitExceededException
-     * @throws HsmConfigurationQuotaExceededException
-     * @throws InvalidTagException
-     * @throws HsmConfigurationAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public HsmConfiguration createHsmConfiguration(CreateHsmConfigurationRequest createHsmConfigurationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Returns properties of provisioned clusters including general cluster
      * properties, cluster database properties, maintenance and backup
      * properties, and security and access properties. This operation
@@ -2038,6 +2000,44 @@ public interface AmazonRedshift {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeClustersResult describeClusters(DescribeClustersRequest describeClustersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates an HSM configuration that contains the information required
+     * by an Amazon Redshift cluster to store and use database encryption
+     * keys in a Hardware Security Module (HSM). After creating the HSM
+     * configuration, you can specify it as a parameter when creating a
+     * cluster. The cluster will then store its encryption keys in the HSM.
+     * </p>
+     * <p>
+     * In addition to creating an HSM configuration, you must also create an
+     * HSM client certificate. For more information, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
+     * in the Amazon Redshift Cluster Management Guide.
+     * </p>
+     *
+     * @param createHsmConfigurationRequest Container for the necessary
+     *           parameters to execute the CreateHsmConfiguration service method on
+     *           AmazonRedshift.
+     * 
+     * @return The response from the CreateHsmConfiguration service method,
+     *         as returned by AmazonRedshift.
+     * 
+     * @throws TagLimitExceededException
+     * @throws HsmConfigurationQuotaExceededException
+     * @throws InvalidTagException
+     * @throws HsmConfigurationAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public HsmConfiguration createHsmConfiguration(CreateHsmConfigurationRequest createHsmConfigurationRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

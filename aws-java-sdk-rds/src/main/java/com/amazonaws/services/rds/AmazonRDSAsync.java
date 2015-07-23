@@ -1454,59 +1454,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Describes all available options.
-     * </p>
-     *
-     * @param describeOptionGroupOptionsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroupOptions operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes all available options.
-     * </p>
-     *
-     * @param describeOptionGroupOptionsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroupOptions operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest,
-            AsyncHandler<DescribeOptionGroupOptionsRequest, DescribeOptionGroupOptionsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Returns the detailed parameter list for a particular DB parameter
      * group.
      * </p>
@@ -1556,6 +1503,59 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     public Future<DescribeDBParametersResult> describeDBParametersAsync(DescribeDBParametersRequest describeDBParametersRequest,
             AsyncHandler<DescribeDBParametersRequest, DescribeDBParametersResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes all available options.
+     * </p>
+     *
+     * @param describeOptionGroupOptionsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroupOptions operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes all available options.
+     * </p>
+     *
+     * @param describeOptionGroupOptionsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroupOptions operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest,
+            AsyncHandler<DescribeOptionGroupOptionsRequest, DescribeOptionGroupOptionsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

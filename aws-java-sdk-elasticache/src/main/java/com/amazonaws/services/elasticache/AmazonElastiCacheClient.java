@@ -232,8 +232,8 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new ReservedCacheNodeAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedCacheNodesOfferingNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TagNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidReplicationGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedCacheNodeNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidReplicationGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedCacheNodeQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NodeQuotaForCustomerExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CacheParameterGroupAlreadyExistsExceptionUnmarshaller());
@@ -381,58 +381,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>DescribeReservedCacheNodes</i> action returns information
-     * about reserved cache nodes for this account, or about a specified
-     * reserved cache node.
-     * </p>
-     *
-     * @param describeReservedCacheNodesRequest Container for the necessary
-     *           parameters to execute the DescribeReservedCacheNodes service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the DescribeReservedCacheNodes service
-     *         method, as returned by AmazonElastiCache.
-     * 
-     * @throws ReservedCacheNodeNotFoundException
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeReservedCacheNodesResult describeReservedCacheNodes(DescribeReservedCacheNodesRequest describeReservedCacheNodesRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeReservedCacheNodesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeReservedCacheNodesRequest> request = null;
-        Response<DescribeReservedCacheNodesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeReservedCacheNodesRequestMarshaller().marshall(super.beforeMarshalling(describeReservedCacheNodesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new DescribeReservedCacheNodesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * The <i>DeleteReplicationGroup</i> action deletes an existing
      * replication group. By default, this action deletes the entire
      * replication group, including the primary cluster and all of the read
@@ -496,6 +444,58 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
+     * The <i>DescribeReservedCacheNodes</i> action returns information
+     * about reserved cache nodes for this account, or about a specified
+     * reserved cache node.
+     * </p>
+     *
+     * @param describeReservedCacheNodesRequest Container for the necessary
+     *           parameters to execute the DescribeReservedCacheNodes service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the DescribeReservedCacheNodes service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws ReservedCacheNodeNotFoundException
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeReservedCacheNodesResult describeReservedCacheNodes(DescribeReservedCacheNodesRequest describeReservedCacheNodesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeReservedCacheNodesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReservedCacheNodesRequest> request = null;
+        Response<DescribeReservedCacheNodesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReservedCacheNodesRequestMarshaller().marshall(super.beforeMarshalling(describeReservedCacheNodesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeReservedCacheNodesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * The <i>DeleteSnapshot</i> action deletes an existing snapshot. When
      * you receive a successful response from this action, ElastiCache
      * immediately begins deleting the snapshot; you cannot cancel or revert
@@ -544,6 +544,56 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet
+     * group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You cannot delete a cache subnet group if it is
+     * associated with any cache clusters.
+     * </p>
+     *
+     * @param deleteCacheSubnetGroupRequest Container for the necessary
+     *           parameters to execute the DeleteCacheSubnetGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * 
+     * @throws CacheSubnetGroupNotFoundException
+     * @throws CacheSubnetGroupInUseException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteCacheSubnetGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteCacheSubnetGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCacheSubnetGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteCacheSubnetGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
         }
     }
     
@@ -600,56 +650,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet
-     * group.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You cannot delete a cache subnet group if it is
-     * associated with any cache clusters.
-     * </p>
-     *
-     * @param deleteCacheSubnetGroupRequest Container for the necessary
-     *           parameters to execute the DeleteCacheSubnetGroup service method on
-     *           AmazonElastiCache.
-     * 
-     * 
-     * @throws CacheSubnetGroupNotFoundException
-     * @throws CacheSubnetGroupInUseException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteCacheSubnetGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteCacheSubnetGroupRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteCacheSubnetGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteCacheSubnetGroupRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            invoke(request, null, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null);
         }
     }
     
@@ -881,58 +881,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>CopySnapshot</i> action makes a copy of an existing snapshot.
-     * </p>
-     *
-     * @param copySnapshotRequest Container for the necessary parameters to
-     *           execute the CopySnapshot service method on AmazonElastiCache.
-     * 
-     * @return The response from the CopySnapshot service method, as returned
-     *         by AmazonElastiCache.
-     * 
-     * @throws InvalidSnapshotStateException
-     * @throws InvalidParameterValueException
-     * @throws SnapshotNotFoundException
-     * @throws InvalidParameterCombinationException
-     * @throws SnapshotAlreadyExistsException
-     * @throws SnapshotQuotaExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Snapshot copySnapshot(CopySnapshotRequest copySnapshotRequest) {
-        ExecutionContext executionContext = createExecutionContext(copySnapshotRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CopySnapshotRequest> request = null;
-        Response<Snapshot> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CopySnapshotRequestMarshaller().marshall(super.beforeMarshalling(copySnapshotRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * The <i>DescribeSnapshots</i> action returns information about cache
      * cluster snapshots. By default, <i>DescribeSnapshots</i> lists all of
      * your snapshots; it can optionally describe a single snapshot, or just
@@ -976,6 +924,58 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             }
 
             response = invoke(request, new DescribeSnapshotsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>CopySnapshot</i> action makes a copy of an existing snapshot.
+     * </p>
+     *
+     * @param copySnapshotRequest Container for the necessary parameters to
+     *           execute the CopySnapshot service method on AmazonElastiCache.
+     * 
+     * @return The response from the CopySnapshot service method, as returned
+     *         by AmazonElastiCache.
+     * 
+     * @throws InvalidSnapshotStateException
+     * @throws InvalidParameterValueException
+     * @throws SnapshotNotFoundException
+     * @throws InvalidParameterCombinationException
+     * @throws SnapshotAlreadyExistsException
+     * @throws SnapshotQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Snapshot copySnapshot(CopySnapshotRequest copySnapshotRequest) {
+        ExecutionContext executionContext = createExecutionContext(copySnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CopySnapshotRequest> request = null;
+        Response<Snapshot> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CopySnapshotRequestMarshaller().marshall(super.beforeMarshalling(copySnapshotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -1115,20 +1115,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * @return The response from the CreateReplicationGroup service method,
      *         as returned by AmazonElastiCache.
      * 
-     * @throws NodeQuotaForCustomerExceededException
-     * @throws ClusterQuotaForCustomerExceededException
-     * @throws TagQuotaPerResourceExceededException
-     * @throws InsufficientCacheClusterCapacityException
-     * @throws InvalidParameterCombinationException
-     * @throws CacheClusterNotFoundException
-     * @throws CacheParameterGroupNotFoundException
-     * @throws InvalidCacheClusterStateException
-     * @throws CacheSecurityGroupNotFoundException
      * @throws ReplicationGroupAlreadyExistsException
+     * @throws NodeQuotaForCustomerExceededException
      * @throws NodeQuotaForClusterExceededException
      * @throws CacheSubnetGroupNotFoundException
      * @throws InvalidParameterValueException
+     * @throws ClusterQuotaForCustomerExceededException
      * @throws InvalidVPCNetworkStateException
+     * @throws TagQuotaPerResourceExceededException
+     * @throws InsufficientCacheClusterCapacityException
+     * @throws CacheClusterNotFoundException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheParameterGroupNotFoundException
+     * @throws InvalidCacheClusterStateException
+     * @throws CacheSecurityGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1664,18 +1664,18 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         as returned by AmazonElastiCache.
      * 
      * @throws NodeQuotaForCustomerExceededException
+     * @throws NodeQuotaForClusterExceededException
+     * @throws InvalidParameterValueException
+     * @throws InvalidReplicationGroupStateException
+     * @throws InvalidCacheSecurityGroupStateException
+     * @throws InvalidVPCNetworkStateException
      * @throws InsufficientCacheClusterCapacityException
-     * @throws ReplicationGroupNotFoundException
      * @throws CacheClusterNotFoundException
+     * @throws ReplicationGroupNotFoundException
      * @throws InvalidParameterCombinationException
      * @throws CacheParameterGroupNotFoundException
      * @throws InvalidCacheClusterStateException
      * @throws CacheSecurityGroupNotFoundException
-     * @throws NodeQuotaForClusterExceededException
-     * @throws InvalidReplicationGroupStateException
-     * @throws InvalidParameterValueException
-     * @throws InvalidCacheSecurityGroupStateException
-     * @throws InvalidVPCNetworkStateException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

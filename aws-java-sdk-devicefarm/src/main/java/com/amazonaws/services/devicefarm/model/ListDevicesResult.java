@@ -71,6 +71,12 @@ public class ListDevicesResult implements Serializable, Cloneable {
      * <p>
      * Information about the devices.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDevices(java.util.Collection)} or
+     * {@link #withDevices(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param devices
      *        Information about the devices.

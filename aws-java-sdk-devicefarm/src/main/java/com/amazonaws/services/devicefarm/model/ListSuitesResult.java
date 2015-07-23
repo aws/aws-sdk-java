@@ -71,6 +71,12 @@ public class ListSuitesResult implements Serializable, Cloneable {
      * <p>
      * Information about the suites.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSuites(java.util.Collection)} or
+     * {@link #withSuites(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param suites
      *        Information about the suites.

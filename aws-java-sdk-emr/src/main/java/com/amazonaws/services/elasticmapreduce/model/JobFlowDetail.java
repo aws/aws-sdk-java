@@ -56,7 +56,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * ElasticMapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide.</i>
+     * MapReduce Developer Guide.</i>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -287,7 +287,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * ElasticMapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide.</i>
+     * MapReduce Developer Guide.</i>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -298,7 +298,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *         ElasticMapReduce, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
-     *         MapReduce Developer's Guide.</i>
+     *         MapReduce Developer Guide.</i>
      */
     public String getAmiVersion() {
         return amiVersion;
@@ -310,7 +310,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * ElasticMapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide.</i>
+     * MapReduce Developer Guide.</i>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -321,7 +321,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *         ElasticMapReduce, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
-     *         MapReduce Developer's Guide.</i>
+     *         MapReduce Developer Guide.</i>
      */
     public void setAmiVersion(String amiVersion) {
         this.amiVersion = amiVersion;
@@ -333,7 +333,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * ElasticMapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide.</i>
+     * MapReduce Developer Guide.</i>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -346,7 +346,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *         ElasticMapReduce, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
-     *         MapReduce Developer's Guide.</i>
+     *         MapReduce Developer Guide.</i>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

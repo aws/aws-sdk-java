@@ -208,6 +208,12 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
      * Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These must be
      * for the same VPC as subnet specified.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or
+     * {@link #withSecurityGroups(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param securityGroups
      *        Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These

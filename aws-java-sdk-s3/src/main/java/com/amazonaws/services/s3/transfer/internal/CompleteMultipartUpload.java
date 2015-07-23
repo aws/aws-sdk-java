@@ -14,12 +14,16 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.event.ProgressEventType;
+import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
@@ -57,26 +61,39 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
     /** The monitor to which the upload progress has to be communicated. */
     private final UploadMonitor monitor;
 
+    /** The listener where progress of the upload needs to be published. */
+    private final ProgressListenerChain listener;
+
     public CompleteMultipartUpload(String uploadId, AmazonS3 s3,
             PutObjectRequest putObjectRequest, List<Future<PartETag>> futures,
-            List<PartETag> eTagsBeforeResume, UploadMonitor monitor) {
+            List<PartETag> eTagsBeforeResume, ProgressListenerChain progressListenerChain,
+            UploadMonitor monitor) {
         this.uploadId = uploadId;
         this.s3 = s3;
         this.origReq = putObjectRequest;
         this.futures = futures;
         this.eTagsBeforeResume = eTagsBeforeResume;
+        this.listener = progressListenerChain;
         this.monitor = monitor;
     }
 
     @Override
     public UploadResult call() throws Exception {
-        CompleteMultipartUploadRequest req = new CompleteMultipartUploadRequest(
-                origReq.getBucketName(), origReq.getKey(), uploadId,
-                collectPartETags())
-            .withGeneralProgressListener(origReq.getGeneralProgressListener())
-            .withRequestMetricCollector(origReq.getRequestMetricCollector())
-            ;
-        CompleteMultipartUploadResult res = s3.completeMultipartUpload(req);
+        CompleteMultipartUploadResult res;
+
+        try {
+            CompleteMultipartUploadRequest req = new CompleteMultipartUploadRequest(
+                    origReq.getBucketName(), origReq.getKey(), uploadId,
+                    collectPartETags())
+                .withGeneralProgressListener(origReq.getGeneralProgressListener())
+                .withRequestMetricCollector(origReq.getRequestMetricCollector())
+                ;
+            res = s3.completeMultipartUpload(req);
+        } catch (Exception e) {
+            publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
+            throw e;
+        }
+
         UploadResult uploadResult = new UploadResult();
         uploadResult.setBucketName(origReq
                 .getBucketName());

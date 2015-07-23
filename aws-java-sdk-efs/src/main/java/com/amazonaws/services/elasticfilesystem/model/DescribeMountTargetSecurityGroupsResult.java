@@ -66,6 +66,12 @@ public class DescribeMountTargetSecurityGroupsResult implements Serializable,
      * <p>
      * An array of security groups.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or
+     * {@link #withSecurityGroups(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param securityGroups
      *        An array of security groups.

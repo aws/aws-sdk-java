@@ -197,6 +197,12 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * <p>
      * The device pool's rules.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRules(java.util.Collection)} or
+     * {@link #withRules(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param rules
      *        The device pool's rules.

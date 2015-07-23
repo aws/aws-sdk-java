@@ -130,6 +130,12 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * <p>
      * A list of deployment groups that use this revision.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDeploymentGroups(java.util.Collection)} or
+     * {@link #withDeploymentGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param deploymentGroups
      *        A list of deployment groups that use this revision.

@@ -560,6 +560,55 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     
     /**
      * <p>
+     * Deletes a topic and all its subscriptions. Deleting a topic might
+     * prevent some messages previously sent to the topic from being
+     * delivered to subscribers. This action is idempotent, so deleting a
+     * topic that does not exist does not result in an error.
+     * </p>
+     *
+     * @param deleteTopicRequest Container for the necessary parameters to
+     *           execute the DeleteTopic service method on AmazonSNS.
+     * 
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteTopic(DeleteTopicRequest deleteTopicRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteTopicRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteTopicRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTopicRequestMarshaller().marshall(super.beforeMarshalling(deleteTopicRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
      * Removes a statement from a topic's access control policy.
      * </p>
      *
@@ -661,6 +710,61 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     
     /**
      * <p>
+     * Retrieves the attributes of the platform application object for the
+     * supported push notification services, such as APNS and GCM. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
+     * </p>
+     *
+     * @param getPlatformApplicationAttributesRequest Container for the
+     *           necessary parameters to execute the GetPlatformApplicationAttributes
+     *           service method on AmazonSNS.
+     * 
+     * @return The response from the GetPlatformApplicationAttributes service
+     *         method, as returned by AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetPlatformApplicationAttributesResult getPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(getPlatformApplicationAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPlatformApplicationAttributesRequest> request = null;
+        Response<GetPlatformApplicationAttributesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPlatformApplicationAttributesRequestMarshaller().marshall(super.beforeMarshalling(getPlatformApplicationAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new GetPlatformApplicationAttributesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Returns a list of the requester's subscriptions. Each call returns a
      * limited list of subscriptions, up to 100. If there are more
      * subscriptions, a <code>NextToken</code> is also returned. Use the
@@ -709,6 +813,105 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Allows a subscription owner to set an attribute of the topic to a new
+     * value.
+     * </p>
+     *
+     * @param setSubscriptionAttributesRequest Container for the necessary
+     *           parameters to execute the SetSubscriptionAttributes service method on
+     *           AmazonSNS.
+     * 
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setSubscriptionAttributes(SetSubscriptionAttributesRequest setSubscriptionAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(setSubscriptionAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetSubscriptionAttributesRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetSubscriptionAttributesRequestMarshaller().marshall(super.beforeMarshalling(setSubscriptionAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Sets the attributes of the platform application object for the
+     * supported push notification services, such as APNS and GCM. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
+     * </p>
+     *
+     * @param setPlatformApplicationAttributesRequest Container for the
+     *           necessary parameters to execute the SetPlatformApplicationAttributes
+     *           service method on AmazonSNS.
+     * 
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(setPlatformApplicationAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetPlatformApplicationAttributesRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetPlatformApplicationAttributesRequestMarshaller().marshall(super.beforeMarshalling(setPlatformApplicationAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
         }
     }
     
@@ -785,13 +988,12 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     
     /**
      * <p>
-     * Allows a subscription owner to set an attribute of the topic to a new
-     * value.
+     * Adds a statement to a topic's access control policy, granting access
+     * for the specified AWS accounts to the specified actions.
      * </p>
      *
-     * @param setSubscriptionAttributesRequest Container for the necessary
-     *           parameters to execute the SetSubscriptionAttributes service method on
-     *           AmazonSNS.
+     * @param addPermissionRequest Container for the necessary parameters to
+     *           execute the AddPermission service method on AmazonSNS.
      * 
      * 
      * @throws NotFoundException
@@ -807,16 +1009,16 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void setSubscriptionAttributes(SetSubscriptionAttributesRequest setSubscriptionAttributesRequest) {
-        ExecutionContext executionContext = createExecutionContext(setSubscriptionAttributesRequest);
+    public void addPermission(AddPermissionRequest addPermissionRequest) {
+        ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<SetSubscriptionAttributesRequest> request = null;
+        Request<AddPermissionRequest> request = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetSubscriptionAttributesRequestMarshaller().marshall(super.beforeMarshalling(setSubscriptionAttributesRequest));
+                request = new AddPermissionRequestMarshaller().marshall(super.beforeMarshalling(addPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -828,6 +1030,57 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Returns all of the properties of a subscription.
+     * </p>
+     *
+     * @param getSubscriptionAttributesRequest Container for the necessary
+     *           parameters to execute the GetSubscriptionAttributes service method on
+     *           AmazonSNS.
+     * 
+     * @return The response from the GetSubscriptionAttributes service
+     *         method, as returned by AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetSubscriptionAttributesResult getSubscriptionAttributes(GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(getSubscriptionAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSubscriptionAttributesRequest> request = null;
+        Response<GetSubscriptionAttributesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSubscriptionAttributesRequestMarshaller().marshall(super.beforeMarshalling(getSubscriptionAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new GetSubscriptionAttributesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -888,57 +1141,6 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     
     /**
      * <p>
-     * Returns all of the properties of a subscription.
-     * </p>
-     *
-     * @param getSubscriptionAttributesRequest Container for the necessary
-     *           parameters to execute the GetSubscriptionAttributes service method on
-     *           AmazonSNS.
-     * 
-     * @return The response from the GetSubscriptionAttributes service
-     *         method, as returned by AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetSubscriptionAttributesResult getSubscriptionAttributes(GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) {
-        ExecutionContext executionContext = createExecutionContext(getSubscriptionAttributesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetSubscriptionAttributesRequest> request = null;
-        Response<GetSubscriptionAttributesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetSubscriptionAttributesRequestMarshaller().marshall(super.beforeMarshalling(getSubscriptionAttributesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new GetSubscriptionAttributesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * Returns a list of the requester's topics. Each call returns a limited
      * list of topics, up to 100. If there are more topics, a
      * <code>NextToken</code> is also returned. Use the
@@ -982,6 +1184,68 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             response = invoke(request, new ListTopicsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists the endpoints and endpoint attributes for devices in a
+     * supported push notification service, such as GCM and APNS. The results
+     * for <code>ListEndpointsByPlatformApplication</code> are paginated and
+     * return a limited list of endpoints, up to 100. If additional records
+     * are available after the first page results, then a NextToken string
+     * will be returned. To receive the next page, you call
+     * <code>ListEndpointsByPlatformApplication</code> again using the
+     * NextToken string received from the previous call. When there are no
+     * more records to return, NextToken will be null. For more information,
+     * see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
+     * </p>
+     *
+     * @param listEndpointsByPlatformApplicationRequest Container for the
+     *           necessary parameters to execute the ListEndpointsByPlatformApplication
+     *           service method on AmazonSNS.
+     * 
+     * @return The response from the ListEndpointsByPlatformApplication
+     *         service method, as returned by AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest) {
+        ExecutionContext executionContext = createExecutionContext(listEndpointsByPlatformApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEndpointsByPlatformApplicationRequest> request = null;
+        Response<ListEndpointsByPlatformApplicationResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEndpointsByPlatformApplicationRequestMarshaller().marshall(super.beforeMarshalling(listEndpointsByPlatformApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ListEndpointsByPlatformApplicationResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -1200,270 +1464,6 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         } finally {
             
             endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Deletes a topic and all its subscriptions. Deleting a topic might
-     * prevent some messages previously sent to the topic from being
-     * delivered to subscribers. This action is idempotent, so deleting a
-     * topic that does not exist does not result in an error.
-     * </p>
-     *
-     * @param deleteTopicRequest Container for the necessary parameters to
-     *           execute the DeleteTopic service method on AmazonSNS.
-     * 
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteTopic(DeleteTopicRequest deleteTopicRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteTopicRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteTopicRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteTopicRequestMarshaller().marshall(super.beforeMarshalling(deleteTopicRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            invoke(request, null, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Retrieves the attributes of the platform application object for the
-     * supported push notification services, such as APNS and GCM. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param getPlatformApplicationAttributesRequest Container for the
-     *           necessary parameters to execute the GetPlatformApplicationAttributes
-     *           service method on AmazonSNS.
-     * 
-     * @return The response from the GetPlatformApplicationAttributes service
-     *         method, as returned by AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetPlatformApplicationAttributesResult getPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest) {
-        ExecutionContext executionContext = createExecutionContext(getPlatformApplicationAttributesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetPlatformApplicationAttributesRequest> request = null;
-        Response<GetPlatformApplicationAttributesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetPlatformApplicationAttributesRequestMarshaller().marshall(super.beforeMarshalling(getPlatformApplicationAttributesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new GetPlatformApplicationAttributesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Sets the attributes of the platform application object for the
-     * supported push notification services, such as APNS and GCM. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param setPlatformApplicationAttributesRequest Container for the
-     *           necessary parameters to execute the SetPlatformApplicationAttributes
-     *           service method on AmazonSNS.
-     * 
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) {
-        ExecutionContext executionContext = createExecutionContext(setPlatformApplicationAttributesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<SetPlatformApplicationAttributesRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new SetPlatformApplicationAttributesRequestMarshaller().marshall(super.beforeMarshalling(setPlatformApplicationAttributesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            invoke(request, null, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Adds a statement to a topic's access control policy, granting access
-     * for the specified AWS accounts to the specified actions.
-     * </p>
-     *
-     * @param addPermissionRequest Container for the necessary parameters to
-     *           execute the AddPermission service method on AmazonSNS.
-     * 
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void addPermission(AddPermissionRequest addPermissionRequest) {
-        ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<AddPermissionRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new AddPermissionRequestMarshaller().marshall(super.beforeMarshalling(addPermissionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            invoke(request, null, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Lists the endpoints and endpoint attributes for devices in a
-     * supported push notification service, such as GCM and APNS. The results
-     * for <code>ListEndpointsByPlatformApplication</code> are paginated and
-     * return a limited list of endpoints, up to 100. If additional records
-     * are available after the first page results, then a NextToken string
-     * will be returned. To receive the next page, you call
-     * <code>ListEndpointsByPlatformApplication</code> again using the
-     * NextToken string received from the previous call. When there are no
-     * more records to return, NextToken will be null. For more information,
-     * see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param listEndpointsByPlatformApplicationRequest Container for the
-     *           necessary parameters to execute the ListEndpointsByPlatformApplication
-     *           service method on AmazonSNS.
-     * 
-     * @return The response from the ListEndpointsByPlatformApplication
-     *         service method, as returned by AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest) {
-        ExecutionContext executionContext = createExecutionContext(listEndpointsByPlatformApplicationRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListEndpointsByPlatformApplicationRequest> request = null;
-        Response<ListEndpointsByPlatformApplicationResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListEndpointsByPlatformApplicationRequestMarshaller().marshall(super.beforeMarshalling(listEndpointsByPlatformApplicationRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new ListEndpointsByPlatformApplicationResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -1886,6 +1886,49 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     
     /**
      * <p>
+     * Deletes a topic and all its subscriptions. Deleting a topic might
+     * prevent some messages previously sent to the topic from being
+     * delivered to subscribers. This action is idempotent, so deleting a
+     * topic that does not exist does not result in an error.
+     * </p>
+     * 
+     * @param topicArn The ARN of the topic you want to delete. <examples>
+     * <queryrequest> http://sns.us-east-1.amazonaws.com/
+     * ?TopicArn=arn%3Aaws%3Asns%3Aus-east-1%3A123456789012%3AMy-Topic
+     * &Action=DeleteTopic &SignatureVersion=2 &SignatureMethod=HmacSHA256
+     * &Timestamp=2010-03-31T12%3A00%3A00.000Z &AWSAccessKeyId=(AWS Access
+     * Key ID)
+     * &Signature=DjHBa%2BbYCKQAzctOPnLP7MbHnrHT3%2FK3kFEZjwcf9%2FU%3D
+     * </queryrequest> <queryresponse> <DeleteTopicResponse
+     * xmlns="http://sns.amazonaws.com/doc/2010-03-31/"> <ResponseMetadata>
+     * <RequestId>fba800b9-3765-11df-8cf3-c58c53254dfb</RequestId>
+     * </ResponseMetadata> </DeleteTopicResponse> </queryresponse>
+     * </examples>
+     * 
+     * @return The response from the DeleteTopic service method, as returned
+     *         by AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteTopic(String topicArn) {
+        DeleteTopicRequest deleteTopicRequest = new DeleteTopicRequest();
+        deleteTopicRequest.setTopicArn(topicArn);
+        deleteTopic(deleteTopicRequest);
+    }
+    
+    /**
+     * <p>
      * Removes a statement from a topic's access control policy.
      * </p>
      * 
@@ -1987,6 +2030,76 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     
     /**
      * <p>
+     * Adds a statement to a topic's access control policy, granting access
+     * for the specified AWS accounts to the specified actions.
+     * </p>
+     * 
+     * @param topicArn The ARN of the topic whose access control policy you
+     * wish to modify.
+     * @param label A unique identifier for the new policy statement.
+     * @param aWSAccountIds The AWS account IDs of the users (principals) who
+     * will be given access to the specified actions. The users must have AWS
+     * accounts, but do not need to be signed up for this service.
+     * @param actionNames The action you want to allow for the specified
+     * principal(s). <p>Valid values: any Amazon SNS action name.
+     * 
+     * @return The response from the AddPermission service method, as
+     *         returned by AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void addPermission(String topicArn, String label, java.util.List<String> aWSAccountIds, java.util.List<String> actionNames) {
+        AddPermissionRequest addPermissionRequest = new AddPermissionRequest();
+        addPermissionRequest.setTopicArn(topicArn);
+        addPermissionRequest.setLabel(label);
+        addPermissionRequest.setAWSAccountIds(aWSAccountIds);
+        addPermissionRequest.setActionNames(actionNames);
+        addPermission(addPermissionRequest);
+    }
+    
+    /**
+     * <p>
+     * Returns all of the properties of a subscription.
+     * </p>
+     * 
+     * @param subscriptionArn The ARN of the subscription whose properties
+     * you want to get.
+     * 
+     * @return The response from the GetSubscriptionAttributes service
+     *         method, as returned by AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetSubscriptionAttributesResult getSubscriptionAttributes(String subscriptionArn) {
+        GetSubscriptionAttributesRequest getSubscriptionAttributesRequest = new GetSubscriptionAttributesRequest();
+        getSubscriptionAttributesRequest.setSubscriptionArn(subscriptionArn);
+        return getSubscriptionAttributes(getSubscriptionAttributesRequest);
+    }
+    
+    /**
+     * <p>
      * Creates a topic to which notifications can be published. Users can
      * create at most 3000 topics. For more information, see
      * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a>
@@ -2020,36 +2133,6 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         CreateTopicRequest createTopicRequest = new CreateTopicRequest();
         createTopicRequest.setName(name);
         return createTopic(createTopicRequest);
-    }
-    
-    /**
-     * <p>
-     * Returns all of the properties of a subscription.
-     * </p>
-     * 
-     * @param subscriptionArn The ARN of the subscription whose properties
-     * you want to get.
-     * 
-     * @return The response from the GetSubscriptionAttributes service
-     *         method, as returned by AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetSubscriptionAttributesResult getSubscriptionAttributes(String subscriptionArn) {
-        GetSubscriptionAttributesRequest getSubscriptionAttributesRequest = new GetSubscriptionAttributesRequest();
-        getSubscriptionAttributesRequest.setSubscriptionArn(subscriptionArn);
-        return getSubscriptionAttributes(getSubscriptionAttributesRequest);
     }
     
     /**
@@ -2119,89 +2202,6 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         UnsubscribeRequest unsubscribeRequest = new UnsubscribeRequest();
         unsubscribeRequest.setSubscriptionArn(subscriptionArn);
         unsubscribe(unsubscribeRequest);
-    }
-    
-    /**
-     * <p>
-     * Deletes a topic and all its subscriptions. Deleting a topic might
-     * prevent some messages previously sent to the topic from being
-     * delivered to subscribers. This action is idempotent, so deleting a
-     * topic that does not exist does not result in an error.
-     * </p>
-     * 
-     * @param topicArn The ARN of the topic you want to delete. <examples>
-     * <queryrequest> http://sns.us-east-1.amazonaws.com/
-     * ?TopicArn=arn%3Aaws%3Asns%3Aus-east-1%3A123456789012%3AMy-Topic
-     * &Action=DeleteTopic &SignatureVersion=2 &SignatureMethod=HmacSHA256
-     * &Timestamp=2010-03-31T12%3A00%3A00.000Z &AWSAccessKeyId=(AWS Access
-     * Key ID)
-     * &Signature=DjHBa%2BbYCKQAzctOPnLP7MbHnrHT3%2FK3kFEZjwcf9%2FU%3D
-     * </queryrequest> <queryresponse> <DeleteTopicResponse
-     * xmlns="http://sns.amazonaws.com/doc/2010-03-31/"> <ResponseMetadata>
-     * <RequestId>fba800b9-3765-11df-8cf3-c58c53254dfb</RequestId>
-     * </ResponseMetadata> </DeleteTopicResponse> </queryresponse>
-     * </examples>
-     * 
-     * @return The response from the DeleteTopic service method, as returned
-     *         by AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteTopic(String topicArn) {
-        DeleteTopicRequest deleteTopicRequest = new DeleteTopicRequest();
-        deleteTopicRequest.setTopicArn(topicArn);
-        deleteTopic(deleteTopicRequest);
-    }
-    
-    /**
-     * <p>
-     * Adds a statement to a topic's access control policy, granting access
-     * for the specified AWS accounts to the specified actions.
-     * </p>
-     * 
-     * @param topicArn The ARN of the topic whose access control policy you
-     * wish to modify.
-     * @param label A unique identifier for the new policy statement.
-     * @param aWSAccountIds The AWS account IDs of the users (principals) who
-     * will be given access to the specified actions. The users must have AWS
-     * accounts, but do not need to be signed up for this service.
-     * @param actionNames The action you want to allow for the specified
-     * principal(s). <p>Valid values: any Amazon SNS action name.
-     * 
-     * @return The response from the AddPermission service method, as
-     *         returned by AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void addPermission(String topicArn, String label, java.util.List<String> aWSAccountIds, java.util.List<String> actionNames) {
-        AddPermissionRequest addPermissionRequest = new AddPermissionRequest();
-        addPermissionRequest.setTopicArn(topicArn);
-        addPermissionRequest.setLabel(label);
-        addPermissionRequest.setAWSAccountIds(aWSAccountIds);
-        addPermissionRequest.setActionNames(actionNames);
-        addPermission(addPermissionRequest);
     }
     
     /**

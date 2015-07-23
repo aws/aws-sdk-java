@@ -195,6 +195,30 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Returns the stack policy for a specified stack. If a stack doesn't
+     * have a policy, a null value is returned.
+     * </p>
+     *
+     * @param getStackPolicyRequest Container for the necessary parameters to
+     *           execute the GetStackPolicy service method on AmazonCloudFormation.
+     * 
+     * @return The response from the GetStackPolicy service method, as
+     *         returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetStackPolicyResult getStackPolicy(GetStackPolicyRequest getStackPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns the template body for a specified stack. You can get the
      * template for running or deleted stacks.
      * </p>
@@ -223,30 +247,6 @@ public interface AmazonCloudFormation {
      *             either a problem with the data in the request, or a server side issue.
      */
     public GetTemplateResult getTemplate(GetTemplateRequest getTemplateRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns the stack policy for a specified stack. If a stack doesn't
-     * have a policy, a null value is returned.
-     * </p>
-     *
-     * @param getStackPolicyRequest Container for the necessary parameters to
-     *           execute the GetStackPolicy service method on AmazonCloudFormation.
-     * 
-     * @return The response from the GetStackPolicy service method, as
-     *         returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetStackPolicyResult getStackPolicy(GetStackPolicyRequest getStackPolicyRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

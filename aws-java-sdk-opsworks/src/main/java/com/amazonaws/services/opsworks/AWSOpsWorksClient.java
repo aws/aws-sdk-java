@@ -3065,6 +3065,69 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
     /**
      * <p>
+     * Assign a registered instance to a layer.
+     * </p>
+     * 
+     * <ul>
+     * <li>You can assign registered on-premises instances to any layer
+     * type.</li>
+     * <li>You can assign registered Amazon EC2 instances only to custom
+     * layers.</li>
+     * <li>You cannot use this action with instances that were created with
+     * AWS OpsWorks.</li>
+     * 
+     * </ul>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param assignInstanceRequest Container for the necessary parameters to
+     *           execute the AssignInstance service method on AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void assignInstance(AssignInstanceRequest assignInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(assignInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssignInstanceRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssignInstanceRequestMarshaller().marshall(super.beforeMarshalling(assignInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
      * Describes a stack's Elastic Load Balancing instances.
      * </p>
      * <p>
@@ -3128,69 +3191,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-    /**
-     * <p>
-     * Assign a registered instance to a layer.
-     * </p>
-     * 
-     * <ul>
-     * <li>You can assign registered on-premises instances to any layer
-     * type.</li>
-     * <li>You can assign registered Amazon EC2 instances only to custom
-     * layers.</li>
-     * <li>You cannot use this action with instances that were created with
-     * AWS OpsWorks.</li>
-     * 
-     * </ul>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param assignInstanceRequest Container for the necessary parameters to
-     *           execute the AssignInstance service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void assignInstance(AssignInstanceRequest assignInstanceRequest) {
-        ExecutionContext executionContext = createExecutionContext(assignInstanceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<AssignInstanceRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new AssignInstanceRequestMarshaller().marshall(super.beforeMarshalling(assignInstanceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
     /**
      * <p>
      * Deregister a registered Amazon EC2 or on-premises instance. This

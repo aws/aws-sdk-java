@@ -65,6 +65,12 @@ public class BatchGetRepositoriesRequest extends AmazonWebServiceRequest
      * <p>
      * The names of the repositories to get information about.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRepositoryNames(java.util.Collection)} or
+     * {@link #withRepositoryNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param repositoryNames
      *        The names of the repositories to get information about.

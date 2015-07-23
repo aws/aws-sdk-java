@@ -73,6 +73,10 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setRunningAmiVersion(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ReleaseLabel", targetDepth)) {
+                    context.nextToken();
+                    cluster.setReleaseLabel(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AutoTerminate", targetDepth)) {
                     context.nextToken();
                     cluster.setAutoTerminate(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
@@ -104,6 +108,10 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                 if (context.testExpression("MasterPublicDnsName", targetDepth)) {
                     context.nextToken();
                     cluster.setMasterPublicDnsName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Configurations", targetDepth)) {
+                    context.nextToken();
+                    cluster.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

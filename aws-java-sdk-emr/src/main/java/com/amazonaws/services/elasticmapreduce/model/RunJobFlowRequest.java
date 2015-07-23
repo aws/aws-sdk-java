@@ -87,15 +87,17 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     private String additionalInfo;
 
     /**
-     * The version of the Amazon Machine Image (AMI) to use when launching
-     * Amazon EC2 instances in the job flow. The following values are valid:
-     * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     * the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
-     * multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
-     * 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
-     * <code>HadoopVersion</code> parameter to modify the version of Hadoop
-     * from the defaults shown above. <p>For details about the AMI versions
-     * currently supported by Amazon Elastic MapReduce, go to <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use ReleaseLabel.</note> <p>The version of the Amazon
+     * Machine Image (AMI) to use when launching Amazon EC2 instances in the
+     * job flow. The following values are valid: <ul> <li>The version number
+     * of the AMI to use, for example, "2.0."</li> </ul> <p>If the AMI
+     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
+     * both Hadoop 0.18 and 0.20) you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     * modify the version of Hadoop from the defaults shown above. <p>For
+     * details about the AMI versions currently supported by Amazon Elastic
+     * MapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
@@ -105,6 +107,17 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String amiVersion;
+
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The release label
+     * for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
+     * amiVersion instead instead of ReleaseLabel.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     */
+    private String releaseLabel;
 
     /**
      * A specification of the number and type of Amazon EC2 instances on
@@ -124,8 +137,10 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     private com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionConfig> bootstrapActions;
 
     /**
-     * A list of strings that indicates third-party software to use with the
-     * job flow. For more information, go to <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use Applications.</note> <p>A list of strings that
+     * indicates third-party software to use with the job flow. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported
      * values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3
@@ -135,19 +150,39 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> supportedProducts;
 
     /**
-     * A list of strings that indicates third-party software to use with the
-     * job flow that accepts a user argument list. EMR accepts and forwards
-     * the argument list to the corresponding installation script as
-     * bootstrap action arguments. For more information, see <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use Applications.</note> <p>A list of strings that
+     * indicates third-party software to use with the job flow that accepts a
+     * user argument list. EMR accepts and forwards the argument list to the
+     * corresponding installation script as bootstrap action arguments. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
      * a Job Flow on the MapR Distribution for Hadoop</a>. Currently
-     * supported values are: <ul> <li>"mapr-m3" - launch the job flow using
-     * MapR M3 Edition.</li> <li>"mapr-m5" - launch the job flow using MapR
-     * M5 Edition.</li> <li>"mapr" with the user arguments specifying
+     * supported values are: <ul> <li>"mapr-m3" - launch the cluster using
+     * MapR M3 Edition.</li> <li>"mapr-m5" - launch the cluster using MapR M5
+     * Edition.</li> <li>"mapr" with the user arguments specifying
      * "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
-     * or M5 Edition respectively.</li> </ul>
+     * or M5 Edition respectively.</li> <li>"mapr-m7" - launch the cluster
+     * using MapR M7 Edition.</li> <li>"hunk" - launch the cluster with the
+     * Hunk Big Data Analtics Platform.</li> <li>"hue"- launch the cluster
+     * with Hue installed.</li> <li>"spark" - launch the cluster with Apache
+     * Spark installed.</li> <li>"ganglia" - launch the cluster with the
+     * Ganglia Monitoring System installed.</li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SupportedProductConfig> newSupportedProducts;
+
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>A list of
+     * applications for the cluster. Valid values are: "Hadoop", "Hive",
+     * "Mahout", "Pig", and "Spark." They are case insensitive.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Application> applications;
+
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * configurations supplied for the EMR cluster you are creating.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurations;
 
     /**
      * Whether the job flow is visible to all IAM users of the AWS account
@@ -349,15 +384,17 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * The version of the Amazon Machine Image (AMI) to use when launching
-     * Amazon EC2 instances in the job flow. The following values are valid:
-     * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     * the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
-     * multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
-     * 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
-     * <code>HadoopVersion</code> parameter to modify the version of Hadoop
-     * from the defaults shown above. <p>For details about the AMI versions
-     * currently supported by Amazon Elastic MapReduce, go to <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use ReleaseLabel.</note> <p>The version of the Amazon
+     * Machine Image (AMI) to use when launching Amazon EC2 instances in the
+     * job flow. The following values are valid: <ul> <li>The version number
+     * of the AMI to use, for example, "2.0."</li> </ul> <p>If the AMI
+     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
+     * both Hadoop 0.18 and 0.20) you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     * modify the version of Hadoop from the defaults shown above. <p>For
+     * details about the AMI versions currently supported by Amazon Elastic
+     * MapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
@@ -366,15 +403,17 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The version of the Amazon Machine Image (AMI) to use when launching
-     *         Amazon EC2 instances in the job flow. The following values are valid:
-     *         <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     *         the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
-     *         multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
-     *         0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
-     *         <code>HadoopVersion</code> parameter to modify the version of Hadoop
-     *         from the defaults shown above. <p>For details about the AMI versions
-     *         currently supported by Amazon Elastic MapReduce, go to <a
+     * @return <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     *         4.x and greater, use ReleaseLabel.</note> <p>The version of the Amazon
+     *         Machine Image (AMI) to use when launching Amazon EC2 instances in the
+     *         job flow. The following values are valid: <ul> <li>The version number
+     *         of the AMI to use, for example, "2.0."</li> </ul> <p>If the AMI
+     *         supports multiple versions of Hadoop (for example, AMI 1.0 supports
+     *         both Hadoop 0.18 and 0.20) you can use the
+     *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     *         modify the version of Hadoop from the defaults shown above. <p>For
+     *         details about the AMI versions currently supported by Amazon Elastic
+     *         MapReduce, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
@@ -384,15 +423,17 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The version of the Amazon Machine Image (AMI) to use when launching
-     * Amazon EC2 instances in the job flow. The following values are valid:
-     * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     * the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
-     * multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
-     * 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
-     * <code>HadoopVersion</code> parameter to modify the version of Hadoop
-     * from the defaults shown above. <p>For details about the AMI versions
-     * currently supported by Amazon Elastic MapReduce, go to <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use ReleaseLabel.</note> <p>The version of the Amazon
+     * Machine Image (AMI) to use when launching Amazon EC2 instances in the
+     * job flow. The following values are valid: <ul> <li>The version number
+     * of the AMI to use, for example, "2.0."</li> </ul> <p>If the AMI
+     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
+     * both Hadoop 0.18 and 0.20) you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     * modify the version of Hadoop from the defaults shown above. <p>For
+     * details about the AMI versions currently supported by Amazon Elastic
+     * MapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
@@ -401,15 +442,17 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param amiVersion The version of the Amazon Machine Image (AMI) to use when launching
-     *         Amazon EC2 instances in the job flow. The following values are valid:
-     *         <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     *         the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
-     *         multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
-     *         0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
-     *         <code>HadoopVersion</code> parameter to modify the version of Hadoop
-     *         from the defaults shown above. <p>For details about the AMI versions
-     *         currently supported by Amazon Elastic MapReduce, go to <a
+     * @param amiVersion <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     *         4.x and greater, use ReleaseLabel.</note> <p>The version of the Amazon
+     *         Machine Image (AMI) to use when launching Amazon EC2 instances in the
+     *         job flow. The following values are valid: <ul> <li>The version number
+     *         of the AMI to use, for example, "2.0."</li> </ul> <p>If the AMI
+     *         supports multiple versions of Hadoop (for example, AMI 1.0 supports
+     *         both Hadoop 0.18 and 0.20) you can use the
+     *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     *         modify the version of Hadoop from the defaults shown above. <p>For
+     *         details about the AMI versions currently supported by Amazon Elastic
+     *         MapReduce, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
@@ -419,15 +462,17 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The version of the Amazon Machine Image (AMI) to use when launching
-     * Amazon EC2 instances in the job flow. The following values are valid:
-     * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     * the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
-     * multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
-     * 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
-     * <code>HadoopVersion</code> parameter to modify the version of Hadoop
-     * from the defaults shown above. <p>For details about the AMI versions
-     * currently supported by Amazon Elastic MapReduce, go to <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use ReleaseLabel.</note> <p>The version of the Amazon
+     * Machine Image (AMI) to use when launching Amazon EC2 instances in the
+     * job flow. The following values are valid: <ul> <li>The version number
+     * of the AMI to use, for example, "2.0."</li> </ul> <p>If the AMI
+     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
+     * both Hadoop 0.18 and 0.20) you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     * modify the version of Hadoop from the defaults shown above. <p>For
+     * details about the AMI versions currently supported by Amazon Elastic
+     * MapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
@@ -438,15 +483,17 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param amiVersion The version of the Amazon Machine Image (AMI) to use when launching
-     *         Amazon EC2 instances in the job flow. The following values are valid:
-     *         <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     *         the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
-     *         multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
-     *         0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
-     *         <code>HadoopVersion</code> parameter to modify the version of Hadoop
-     *         from the defaults shown above. <p>For details about the AMI versions
-     *         currently supported by Amazon Elastic MapReduce, go to <a
+     * @param amiVersion <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     *         4.x and greater, use ReleaseLabel.</note> <p>The version of the Amazon
+     *         Machine Image (AMI) to use when launching Amazon EC2 instances in the
+     *         job flow. The following values are valid: <ul> <li>The version number
+     *         of the AMI to use, for example, "2.0."</li> </ul> <p>If the AMI
+     *         supports multiple versions of Hadoop (for example, AMI 1.0 supports
+     *         both Hadoop 0.18 and 0.20) you can use the
+     *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     *         modify the version of Hadoop from the defaults shown above. <p>For
+     *         details about the AMI versions currently supported by Amazon Elastic
+     *         MapReduce, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
@@ -456,6 +503,63 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      */
     public RunJobFlowRequest withAmiVersion(String amiVersion) {
         this.amiVersion = amiVersion;
+        return this;
+    }
+
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The release label
+     * for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
+     * amiVersion instead instead of ReleaseLabel.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @return <note><p>Amazon EMR releases 4.x or later.</note> <p>The release label
+     *         for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
+     *         amiVersion instead instead of ReleaseLabel.
+     */
+    public String getReleaseLabel() {
+        return releaseLabel;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The release label
+     * for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
+     * amiVersion instead instead of ReleaseLabel.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @param releaseLabel <note><p>Amazon EMR releases 4.x or later.</note> <p>The release label
+     *         for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
+     *         amiVersion instead instead of ReleaseLabel.
+     */
+    public void setReleaseLabel(String releaseLabel) {
+        this.releaseLabel = releaseLabel;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The release label
+     * for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
+     * amiVersion instead instead of ReleaseLabel.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @param releaseLabel <note><p>Amazon EMR releases 4.x or later.</note> <p>The release label
+     *         for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
+     *         amiVersion instead instead of ReleaseLabel.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RunJobFlowRequest withReleaseLabel(String releaseLabel) {
+        this.releaseLabel = releaseLabel;
         return this;
     }
 
@@ -653,16 +757,20 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * A list of strings that indicates third-party software to use with the
-     * job flow. For more information, go to <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use Applications.</note> <p>A list of strings that
+     * indicates third-party software to use with the job flow. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported
      * values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3
      * Edition.</li> <li>"mapr-m5" - launch the job flow using MapR M5
      * Edition.</li> </ul>
      *
-     * @return A list of strings that indicates third-party software to use with the
-     *         job flow. For more information, go to <a
+     * @return <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     *         4.x and greater, use Applications.</note> <p>A list of strings that
+     *         indicates third-party software to use with the job flow. For more
+     *         information, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *         Third Party Applications with Amazon EMR</a>. Currently supported
      *         values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3
@@ -678,16 +786,20 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * A list of strings that indicates third-party software to use with the
-     * job flow. For more information, go to <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use Applications.</note> <p>A list of strings that
+     * indicates third-party software to use with the job flow. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported
      * values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3
      * Edition.</li> <li>"mapr-m5" - launch the job flow using MapR M5
      * Edition.</li> </ul>
      *
-     * @param supportedProducts A list of strings that indicates third-party software to use with the
-     *         job flow. For more information, go to <a
+     * @param supportedProducts <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     *         4.x and greater, use Applications.</note> <p>A list of strings that
+     *         indicates third-party software to use with the job flow. For more
+     *         information, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *         Third Party Applications with Amazon EMR</a>. Currently supported
      *         values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3
@@ -705,8 +817,10 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * A list of strings that indicates third-party software to use with the
-     * job flow. For more information, go to <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use Applications.</note> <p>A list of strings that
+     * indicates third-party software to use with the job flow. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported
      * values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3
@@ -720,8 +834,10 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param supportedProducts A list of strings that indicates third-party software to use with the
-     *         job flow. For more information, go to <a
+     * @param supportedProducts <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     *         4.x and greater, use Applications.</note> <p>A list of strings that
+     *         indicates third-party software to use with the job flow. For more
+     *         information, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *         Third Party Applications with Amazon EMR</a>. Currently supported
      *         values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3
@@ -740,8 +856,10 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * A list of strings that indicates third-party software to use with the
-     * job flow. For more information, go to <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use Applications.</note> <p>A list of strings that
+     * indicates third-party software to use with the job flow. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported
      * values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3
@@ -750,8 +868,10 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param supportedProducts A list of strings that indicates third-party software to use with the
-     *         job flow. For more information, go to <a
+     * @param supportedProducts <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     *         4.x and greater, use Applications.</note> <p>A list of strings that
+     *         indicates third-party software to use with the job flow. For more
+     *         information, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *         Third Party Applications with Amazon EMR</a>. Currently supported
      *         values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3
@@ -774,29 +894,43 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * A list of strings that indicates third-party software to use with the
-     * job flow that accepts a user argument list. EMR accepts and forwards
-     * the argument list to the corresponding installation script as
-     * bootstrap action arguments. For more information, see <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use Applications.</note> <p>A list of strings that
+     * indicates third-party software to use with the job flow that accepts a
+     * user argument list. EMR accepts and forwards the argument list to the
+     * corresponding installation script as bootstrap action arguments. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
      * a Job Flow on the MapR Distribution for Hadoop</a>. Currently
-     * supported values are: <ul> <li>"mapr-m3" - launch the job flow using
-     * MapR M3 Edition.</li> <li>"mapr-m5" - launch the job flow using MapR
-     * M5 Edition.</li> <li>"mapr" with the user arguments specifying
+     * supported values are: <ul> <li>"mapr-m3" - launch the cluster using
+     * MapR M3 Edition.</li> <li>"mapr-m5" - launch the cluster using MapR M5
+     * Edition.</li> <li>"mapr" with the user arguments specifying
      * "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
-     * or M5 Edition respectively.</li> </ul>
+     * or M5 Edition respectively.</li> <li>"mapr-m7" - launch the cluster
+     * using MapR M7 Edition.</li> <li>"hunk" - launch the cluster with the
+     * Hunk Big Data Analtics Platform.</li> <li>"hue"- launch the cluster
+     * with Hue installed.</li> <li>"spark" - launch the cluster with Apache
+     * Spark installed.</li> <li>"ganglia" - launch the cluster with the
+     * Ganglia Monitoring System installed.</li> </ul>
      *
-     * @return A list of strings that indicates third-party software to use with the
-     *         job flow that accepts a user argument list. EMR accepts and forwards
-     *         the argument list to the corresponding installation script as
-     *         bootstrap action arguments. For more information, see <a
+     * @return <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     *         4.x and greater, use Applications.</note> <p>A list of strings that
+     *         indicates third-party software to use with the job flow that accepts a
+     *         user argument list. EMR accepts and forwards the argument list to the
+     *         corresponding installation script as bootstrap action arguments. For
+     *         more information, see <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
      *         a Job Flow on the MapR Distribution for Hadoop</a>. Currently
-     *         supported values are: <ul> <li>"mapr-m3" - launch the job flow using
-     *         MapR M3 Edition.</li> <li>"mapr-m5" - launch the job flow using MapR
-     *         M5 Edition.</li> <li>"mapr" with the user arguments specifying
+     *         supported values are: <ul> <li>"mapr-m3" - launch the cluster using
+     *         MapR M3 Edition.</li> <li>"mapr-m5" - launch the cluster using MapR M5
+     *         Edition.</li> <li>"mapr" with the user arguments specifying
      *         "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
-     *         or M5 Edition respectively.</li> </ul>
+     *         or M5 Edition respectively.</li> <li>"mapr-m7" - launch the cluster
+     *         using MapR M7 Edition.</li> <li>"hunk" - launch the cluster with the
+     *         Hunk Big Data Analtics Platform.</li> <li>"hue"- launch the cluster
+     *         with Hue installed.</li> <li>"spark" - launch the cluster with Apache
+     *         Spark installed.</li> <li>"ganglia" - launch the cluster with the
+     *         Ganglia Monitoring System installed.</li> </ul>
      */
     public java.util.List<SupportedProductConfig> getNewSupportedProducts() {
         if (newSupportedProducts == null) {
@@ -807,29 +941,43 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * A list of strings that indicates third-party software to use with the
-     * job flow that accepts a user argument list. EMR accepts and forwards
-     * the argument list to the corresponding installation script as
-     * bootstrap action arguments. For more information, see <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use Applications.</note> <p>A list of strings that
+     * indicates third-party software to use with the job flow that accepts a
+     * user argument list. EMR accepts and forwards the argument list to the
+     * corresponding installation script as bootstrap action arguments. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
      * a Job Flow on the MapR Distribution for Hadoop</a>. Currently
-     * supported values are: <ul> <li>"mapr-m3" - launch the job flow using
-     * MapR M3 Edition.</li> <li>"mapr-m5" - launch the job flow using MapR
-     * M5 Edition.</li> <li>"mapr" with the user arguments specifying
+     * supported values are: <ul> <li>"mapr-m3" - launch the cluster using
+     * MapR M3 Edition.</li> <li>"mapr-m5" - launch the cluster using MapR M5
+     * Edition.</li> <li>"mapr" with the user arguments specifying
      * "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
-     * or M5 Edition respectively.</li> </ul>
+     * or M5 Edition respectively.</li> <li>"mapr-m7" - launch the cluster
+     * using MapR M7 Edition.</li> <li>"hunk" - launch the cluster with the
+     * Hunk Big Data Analtics Platform.</li> <li>"hue"- launch the cluster
+     * with Hue installed.</li> <li>"spark" - launch the cluster with Apache
+     * Spark installed.</li> <li>"ganglia" - launch the cluster with the
+     * Ganglia Monitoring System installed.</li> </ul>
      *
-     * @param newSupportedProducts A list of strings that indicates third-party software to use with the
-     *         job flow that accepts a user argument list. EMR accepts and forwards
-     *         the argument list to the corresponding installation script as
-     *         bootstrap action arguments. For more information, see <a
+     * @param newSupportedProducts <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     *         4.x and greater, use Applications.</note> <p>A list of strings that
+     *         indicates third-party software to use with the job flow that accepts a
+     *         user argument list. EMR accepts and forwards the argument list to the
+     *         corresponding installation script as bootstrap action arguments. For
+     *         more information, see <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
      *         a Job Flow on the MapR Distribution for Hadoop</a>. Currently
-     *         supported values are: <ul> <li>"mapr-m3" - launch the job flow using
-     *         MapR M3 Edition.</li> <li>"mapr-m5" - launch the job flow using MapR
-     *         M5 Edition.</li> <li>"mapr" with the user arguments specifying
+     *         supported values are: <ul> <li>"mapr-m3" - launch the cluster using
+     *         MapR M3 Edition.</li> <li>"mapr-m5" - launch the cluster using MapR M5
+     *         Edition.</li> <li>"mapr" with the user arguments specifying
      *         "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
-     *         or M5 Edition respectively.</li> </ul>
+     *         or M5 Edition respectively.</li> <li>"mapr-m7" - launch the cluster
+     *         using MapR M7 Edition.</li> <li>"hunk" - launch the cluster with the
+     *         Hunk Big Data Analtics Platform.</li> <li>"hue"- launch the cluster
+     *         with Hue installed.</li> <li>"spark" - launch the cluster with Apache
+     *         Spark installed.</li> <li>"ganglia" - launch the cluster with the
+     *         Ganglia Monitoring System installed.</li> </ul>
      */
     public void setNewSupportedProducts(java.util.Collection<SupportedProductConfig> newSupportedProducts) {
         if (newSupportedProducts == null) {
@@ -842,17 +990,24 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * A list of strings that indicates third-party software to use with the
-     * job flow that accepts a user argument list. EMR accepts and forwards
-     * the argument list to the corresponding installation script as
-     * bootstrap action arguments. For more information, see <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use Applications.</note> <p>A list of strings that
+     * indicates third-party software to use with the job flow that accepts a
+     * user argument list. EMR accepts and forwards the argument list to the
+     * corresponding installation script as bootstrap action arguments. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
      * a Job Flow on the MapR Distribution for Hadoop</a>. Currently
-     * supported values are: <ul> <li>"mapr-m3" - launch the job flow using
-     * MapR M3 Edition.</li> <li>"mapr-m5" - launch the job flow using MapR
-     * M5 Edition.</li> <li>"mapr" with the user arguments specifying
+     * supported values are: <ul> <li>"mapr-m3" - launch the cluster using
+     * MapR M3 Edition.</li> <li>"mapr-m5" - launch the cluster using MapR M5
+     * Edition.</li> <li>"mapr" with the user arguments specifying
      * "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
-     * or M5 Edition respectively.</li> </ul>
+     * or M5 Edition respectively.</li> <li>"mapr-m7" - launch the cluster
+     * using MapR M7 Edition.</li> <li>"hunk" - launch the cluster with the
+     * Hunk Big Data Analtics Platform.</li> <li>"hue"- launch the cluster
+     * with Hue installed.</li> <li>"spark" - launch the cluster with Apache
+     * Spark installed.</li> <li>"ganglia" - launch the cluster with the
+     * Ganglia Monitoring System installed.</li> </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setNewSupportedProducts(java.util.Collection)} or
@@ -861,17 +1016,24 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param newSupportedProducts A list of strings that indicates third-party software to use with the
-     *         job flow that accepts a user argument list. EMR accepts and forwards
-     *         the argument list to the corresponding installation script as
-     *         bootstrap action arguments. For more information, see <a
+     * @param newSupportedProducts <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     *         4.x and greater, use Applications.</note> <p>A list of strings that
+     *         indicates third-party software to use with the job flow that accepts a
+     *         user argument list. EMR accepts and forwards the argument list to the
+     *         corresponding installation script as bootstrap action arguments. For
+     *         more information, see <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
      *         a Job Flow on the MapR Distribution for Hadoop</a>. Currently
-     *         supported values are: <ul> <li>"mapr-m3" - launch the job flow using
-     *         MapR M3 Edition.</li> <li>"mapr-m5" - launch the job flow using MapR
-     *         M5 Edition.</li> <li>"mapr" with the user arguments specifying
+     *         supported values are: <ul> <li>"mapr-m3" - launch the cluster using
+     *         MapR M3 Edition.</li> <li>"mapr-m5" - launch the cluster using MapR M5
+     *         Edition.</li> <li>"mapr" with the user arguments specifying
      *         "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
-     *         or M5 Edition respectively.</li> </ul>
+     *         or M5 Edition respectively.</li> <li>"mapr-m7" - launch the cluster
+     *         using MapR M7 Edition.</li> <li>"hunk" - launch the cluster with the
+     *         Hunk Big Data Analtics Platform.</li> <li>"hue"- launch the cluster
+     *         with Hue installed.</li> <li>"spark" - launch the cluster with Apache
+     *         Spark installed.</li> <li>"ganglia" - launch the cluster with the
+     *         Ganglia Monitoring System installed.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -885,31 +1047,45 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * A list of strings that indicates third-party software to use with the
-     * job flow that accepts a user argument list. EMR accepts and forwards
-     * the argument list to the corresponding installation script as
-     * bootstrap action arguments. For more information, see <a
+     * <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     * 4.x and greater, use Applications.</note> <p>A list of strings that
+     * indicates third-party software to use with the job flow that accepts a
+     * user argument list. EMR accepts and forwards the argument list to the
+     * corresponding installation script as bootstrap action arguments. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
      * a Job Flow on the MapR Distribution for Hadoop</a>. Currently
-     * supported values are: <ul> <li>"mapr-m3" - launch the job flow using
-     * MapR M3 Edition.</li> <li>"mapr-m5" - launch the job flow using MapR
-     * M5 Edition.</li> <li>"mapr" with the user arguments specifying
+     * supported values are: <ul> <li>"mapr-m3" - launch the cluster using
+     * MapR M3 Edition.</li> <li>"mapr-m5" - launch the cluster using MapR M5
+     * Edition.</li> <li>"mapr" with the user arguments specifying
      * "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
-     * or M5 Edition respectively.</li> </ul>
+     * or M5 Edition respectively.</li> <li>"mapr-m7" - launch the cluster
+     * using MapR M7 Edition.</li> <li>"hunk" - launch the cluster with the
+     * Hunk Big Data Analtics Platform.</li> <li>"hue"- launch the cluster
+     * with Hue installed.</li> <li>"spark" - launch the cluster with Apache
+     * Spark installed.</li> <li>"ganglia" - launch the cluster with the
+     * Ganglia Monitoring System installed.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param newSupportedProducts A list of strings that indicates third-party software to use with the
-     *         job flow that accepts a user argument list. EMR accepts and forwards
-     *         the argument list to the corresponding installation script as
-     *         bootstrap action arguments. For more information, see <a
+     * @param newSupportedProducts <note><p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases
+     *         4.x and greater, use Applications.</note> <p>A list of strings that
+     *         indicates third-party software to use with the job flow that accepts a
+     *         user argument list. EMR accepts and forwards the argument list to the
+     *         corresponding installation script as bootstrap action arguments. For
+     *         more information, see <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
      *         a Job Flow on the MapR Distribution for Hadoop</a>. Currently
-     *         supported values are: <ul> <li>"mapr-m3" - launch the job flow using
-     *         MapR M3 Edition.</li> <li>"mapr-m5" - launch the job flow using MapR
-     *         M5 Edition.</li> <li>"mapr" with the user arguments specifying
+     *         supported values are: <ul> <li>"mapr-m3" - launch the cluster using
+     *         MapR M3 Edition.</li> <li>"mapr-m5" - launch the cluster using MapR M5
+     *         Edition.</li> <li>"mapr" with the user arguments specifying
      *         "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
-     *         or M5 Edition respectively.</li> </ul>
+     *         or M5 Edition respectively.</li> <li>"mapr-m7" - launch the cluster
+     *         using MapR M7 Edition.</li> <li>"hunk" - launch the cluster with the
+     *         Hunk Big Data Analtics Platform.</li> <li>"hue"- launch the cluster
+     *         with Hue installed.</li> <li>"spark" - launch the cluster with Apache
+     *         Spark installed.</li> <li>"ganglia" - launch the cluster with the
+     *         Ganglia Monitoring System installed.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -921,6 +1097,176 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
             com.amazonaws.internal.ListWithAutoConstructFlag<SupportedProductConfig> newSupportedProductsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SupportedProductConfig>(newSupportedProducts.size());
             newSupportedProductsCopy.addAll(newSupportedProducts);
             this.newSupportedProducts = newSupportedProductsCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>A list of
+     * applications for the cluster. Valid values are: "Hadoop", "Hive",
+     * "Mahout", "Pig", and "Spark." They are case insensitive.
+     *
+     * @return <note><p>Amazon EMR releases 4.x or later.</note> <p>A list of
+     *         applications for the cluster. Valid values are: "Hadoop", "Hive",
+     *         "Mahout", "Pig", and "Spark." They are case insensitive.
+     */
+    public java.util.List<Application> getApplications() {
+        if (applications == null) {
+              applications = new com.amazonaws.internal.ListWithAutoConstructFlag<Application>();
+              applications.setAutoConstruct(true);
+        }
+        return applications;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>A list of
+     * applications for the cluster. Valid values are: "Hadoop", "Hive",
+     * "Mahout", "Pig", and "Spark." They are case insensitive.
+     *
+     * @param applications <note><p>Amazon EMR releases 4.x or later.</note> <p>A list of
+     *         applications for the cluster. Valid values are: "Hadoop", "Hive",
+     *         "Mahout", "Pig", and "Spark." They are case insensitive.
+     */
+    public void setApplications(java.util.Collection<Application> applications) {
+        if (applications == null) {
+            this.applications = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Application> applicationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Application>(applications.size());
+        applicationsCopy.addAll(applications);
+        this.applications = applicationsCopy;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>A list of
+     * applications for the cluster. Valid values are: "Hadoop", "Hive",
+     * "Mahout", "Pig", and "Spark." They are case insensitive.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setApplications(java.util.Collection)} or {@link
+     * #withApplications(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param applications <note><p>Amazon EMR releases 4.x or later.</note> <p>A list of
+     *         applications for the cluster. Valid values are: "Hadoop", "Hive",
+     *         "Mahout", "Pig", and "Spark." They are case insensitive.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RunJobFlowRequest withApplications(Application... applications) {
+        if (getApplications() == null) setApplications(new java.util.ArrayList<Application>(applications.length));
+        for (Application value : applications) {
+            getApplications().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>A list of
+     * applications for the cluster. Valid values are: "Hadoop", "Hive",
+     * "Mahout", "Pig", and "Spark." They are case insensitive.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param applications <note><p>Amazon EMR releases 4.x or later.</note> <p>A list of
+     *         applications for the cluster. Valid values are: "Hadoop", "Hive",
+     *         "Mahout", "Pig", and "Spark." They are case insensitive.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RunJobFlowRequest withApplications(java.util.Collection<Application> applications) {
+        if (applications == null) {
+            this.applications = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Application> applicationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Application>(applications.size());
+            applicationsCopy.addAll(applications);
+            this.applications = applicationsCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * configurations supplied for the EMR cluster you are creating.
+     *
+     * @return <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         configurations supplied for the EMR cluster you are creating.
+     */
+    public java.util.List<Configuration> getConfigurations() {
+        if (configurations == null) {
+              configurations = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>();
+              configurations.setAutoConstruct(true);
+        }
+        return configurations;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * configurations supplied for the EMR cluster you are creating.
+     *
+     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         configurations supplied for the EMR cluster you are creating.
+     */
+    public void setConfigurations(java.util.Collection<Configuration> configurations) {
+        if (configurations == null) {
+            this.configurations = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>(configurations.size());
+        configurationsCopy.addAll(configurations);
+        this.configurations = configurationsCopy;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * configurations supplied for the EMR cluster you are creating.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConfigurations(java.util.Collection)} or {@link
+     * #withConfigurations(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         configurations supplied for the EMR cluster you are creating.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RunJobFlowRequest withConfigurations(Configuration... configurations) {
+        if (getConfigurations() == null) setConfigurations(new java.util.ArrayList<Configuration>(configurations.length));
+        for (Configuration value : configurations) {
+            getConfigurations().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * configurations supplied for the EMR cluster you are creating.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         configurations supplied for the EMR cluster you are creating.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RunJobFlowRequest withConfigurations(java.util.Collection<Configuration> configurations) {
+        if (configurations == null) {
+            this.configurations = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>(configurations.size());
+            configurationsCopy.addAll(configurations);
+            this.configurations = configurationsCopy;
         }
 
         return this;
@@ -1219,11 +1565,14 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
         if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ",");
         if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");
         if (getAmiVersion() != null) sb.append("AmiVersion: " + getAmiVersion() + ",");
+        if (getReleaseLabel() != null) sb.append("ReleaseLabel: " + getReleaseLabel() + ",");
         if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");
         if (getSteps() != null) sb.append("Steps: " + getSteps() + ",");
         if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ",");
         if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ",");
         if (getNewSupportedProducts() != null) sb.append("NewSupportedProducts: " + getNewSupportedProducts() + ",");
+        if (getApplications() != null) sb.append("Applications: " + getApplications() + ",");
+        if (getConfigurations() != null) sb.append("Configurations: " + getConfigurations() + ",");
         if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");
         if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() + ",");
         if (getServiceRole() != null) sb.append("ServiceRole: " + getServiceRole() + ",");
@@ -1241,11 +1590,14 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
         hashCode = prime * hashCode + ((getLogUri() == null) ? 0 : getLogUri().hashCode()); 
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
         hashCode = prime * hashCode + ((getAmiVersion() == null) ? 0 : getAmiVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getReleaseLabel() == null) ? 0 : getReleaseLabel().hashCode()); 
         hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode()); 
         hashCode = prime * hashCode + ((getSteps() == null) ? 0 : getSteps().hashCode()); 
         hashCode = prime * hashCode + ((getBootstrapActions() == null) ? 0 : getBootstrapActions().hashCode()); 
         hashCode = prime * hashCode + ((getSupportedProducts() == null) ? 0 : getSupportedProducts().hashCode()); 
         hashCode = prime * hashCode + ((getNewSupportedProducts() == null) ? 0 : getNewSupportedProducts().hashCode()); 
+        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode()); 
+        hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode()); 
         hashCode = prime * hashCode + ((isVisibleToAllUsers() == null) ? 0 : isVisibleToAllUsers().hashCode()); 
         hashCode = prime * hashCode + ((getJobFlowRole() == null) ? 0 : getJobFlowRole().hashCode()); 
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode()); 
@@ -1269,6 +1621,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
         if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false) return false; 
         if (other.getAmiVersion() == null ^ this.getAmiVersion() == null) return false;
         if (other.getAmiVersion() != null && other.getAmiVersion().equals(this.getAmiVersion()) == false) return false; 
+        if (other.getReleaseLabel() == null ^ this.getReleaseLabel() == null) return false;
+        if (other.getReleaseLabel() != null && other.getReleaseLabel().equals(this.getReleaseLabel()) == false) return false; 
         if (other.getInstances() == null ^ this.getInstances() == null) return false;
         if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false) return false; 
         if (other.getSteps() == null ^ this.getSteps() == null) return false;
@@ -1279,6 +1633,10 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
         if (other.getSupportedProducts() != null && other.getSupportedProducts().equals(this.getSupportedProducts()) == false) return false; 
         if (other.getNewSupportedProducts() == null ^ this.getNewSupportedProducts() == null) return false;
         if (other.getNewSupportedProducts() != null && other.getNewSupportedProducts().equals(this.getNewSupportedProducts()) == false) return false; 
+        if (other.getApplications() == null ^ this.getApplications() == null) return false;
+        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false) return false; 
+        if (other.getConfigurations() == null ^ this.getConfigurations() == null) return false;
+        if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false) return false; 
         if (other.isVisibleToAllUsers() == null ^ this.isVisibleToAllUsers() == null) return false;
         if (other.isVisibleToAllUsers() != null && other.isVisibleToAllUsers().equals(this.isVisibleToAllUsers()) == false) return false; 
         if (other.getJobFlowRole() == null ^ this.getJobFlowRole() == null) return false;

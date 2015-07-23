@@ -239,14 +239,14 @@ public interface AmazonCloudFront {
      * @throws TooManyCookieNamesInWhiteListException
      * @throws InvalidGeoRestrictionParameterException
      * @throws InvalidResponseCodeException
-     * @throws TooManyHeadersInForwardedValuesException
      * @throws MissingBodyException
+     * @throws TooManyHeadersInForwardedValuesException
      * @throws TooManyDistributionCNAMEsException
      * @throws InvalidLocationCodeException
      * @throws NoSuchOriginException
      * @throws PreconditionFailedException
-     * @throws CNAMEAlreadyExistsException
      * @throws InvalidArgumentException
+     * @throws CNAMEAlreadyExistsException
      * @throws InconsistentQuantitiesException
      * @throws InvalidOriginAccessIdentityException
      * @throws TooManyCacheBehaviorsException
@@ -398,9 +398,9 @@ public interface AmazonCloudFront {
      * @throws IllegalUpdateException
      * @throws MissingBodyException
      * @throws PreconditionFailedException
+     * @throws InconsistentQuantitiesException
      * @throws CNAMEAlreadyExistsException
      * @throws InvalidArgumentException
-     * @throws InconsistentQuantitiesException
      * @throws InvalidOriginAccessIdentityException
      * @throws TrustedSignerDoesNotExistException
      * @throws TooManyTrustedSignersException
@@ -476,32 +476,6 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
-     * List invalidation batches.
-     * </p>
-     *
-     * @param listInvalidationsRequest Container for the necessary parameters
-     *           to execute the ListInvalidations service method on AmazonCloudFront.
-     * 
-     * @return The response from the ListInvalidations service method, as
-     *         returned by AmazonCloudFront.
-     * 
-     * @throws NoSuchDistributionException
-     * @throws InvalidArgumentException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Create a new invalidation.
      * </p>
      *
@@ -529,6 +503,32 @@ public interface AmazonCloudFront {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * List invalidation batches.
+     * </p>
+     *
+     * @param listInvalidationsRequest Container for the necessary parameters
+     *           to execute the ListInvalidations service method on AmazonCloudFront.
+     * 
+     * @return The response from the ListInvalidations service method, as
+     *         returned by AmazonCloudFront.
+     * 
+     * @throws NoSuchDistributionException
+     * @throws InvalidArgumentException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

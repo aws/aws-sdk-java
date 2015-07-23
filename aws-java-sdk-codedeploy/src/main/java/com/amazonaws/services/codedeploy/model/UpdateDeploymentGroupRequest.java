@@ -286,6 +286,12 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * The replacement set of Amazon EC2 tags to filter on, if you want to
      * change them.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEc2TagFilters(java.util.Collection)} or
+     * {@link #withEc2TagFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param ec2TagFilters
      *        The replacement set of Amazon EC2 tags to filter on, if you want
@@ -365,6 +371,12 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * The replacement set of on-premises instance tags for filter on, if you
      * want to change them.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOnPremisesInstanceTagFilters(java.util.Collection)}
+     * or {@link #withOnPremisesInstanceTagFilters(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
      * 
      * @param onPremisesInstanceTagFilters
      *        The replacement set of on-premises instance tags for filter on, if
@@ -443,6 +455,12 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The replacement list of Auto Scaling groups to be included in the
      * deployment group, if you want to change them.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAutoScalingGroups(java.util.Collection)} or
+     * {@link #withAutoScalingGroups(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param autoScalingGroups

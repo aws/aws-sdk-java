@@ -71,6 +71,12 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
      * <p>
      * Information about the device pools.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDevicePools(java.util.Collection)} or
+     * {@link #withDevicePools(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param devicePools
      *        Information about the device pools.

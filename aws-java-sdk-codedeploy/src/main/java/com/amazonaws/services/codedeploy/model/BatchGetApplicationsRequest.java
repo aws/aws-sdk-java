@@ -76,6 +76,12 @@ public class BatchGetApplicationsRequest extends AmazonWebServiceRequest
      * A list of application names, with multiple application names separated by
      * spaces.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setApplicationNames(java.util.Collection)} or
+     * {@link #withApplicationNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param applicationNames
      *        A list of application names, with multiple application names

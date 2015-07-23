@@ -235,6 +235,12 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * <li>Failed: Include in the resulting list failed deployments.</li>
      * <li>Aborted: Include in the resulting list aborted deployments.</li>
      * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIncludeOnlyStatuses(java.util.Collection)} or
+     * {@link #withIncludeOnlyStatuses(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param includeOnlyStatuses
      *        A subset of deployments to list, by status:</p>

@@ -155,6 +155,12 @@ public class StageState implements Serializable, Cloneable {
      * <p>
      * The state of the stage.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setActionStates(java.util.Collection)} or
+     * {@link #withActionStates(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param actionStates
      *        The state of the stage.

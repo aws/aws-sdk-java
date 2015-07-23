@@ -596,6 +596,113 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This operation initiates the vault locking process by doing the
+     * following:
+     * <ul>
+     * <li> <p>
+     * Installing a vault lock policy on the specified vault.
+     * </p>
+     * </li>
+     * <li> <p>
+     * Setting the lock state of vault lock to <code>InProgress</code> .
+     * </p>
+     * </li>
+     * <li> <p>
+     * Returning a lock ID, which is used to complete the vault locking
+     * process.
+     * </p>
+     * </li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     * <p>
+     * You can set one vault lock policy for each vault and this policy can
+     * be up to 20 KB in size. For more information about vault lock
+     * policies, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html"> Amazon Glacier Access Control with Vault Lock Policies </a>
+     * .
+     * </p>
+     * <p>
+     * You must complete the vault locking process within 24 hours after the
+     * vault lock enters the <code>InProgress</code> state. After the 24 hour
+     * window ends, the lock ID expires, the vault automatically exits the
+     * <code>InProgress</code> state, and the vault lock policy is removed
+     * from the vault. You call CompleteVaultLock to complete the vault
+     * locking process by setting the state of the vault lock to
+     * <code>Locked</code> .
+     * </p>
+     * <p>
+     * After a vault lock is in the <code>Locked</code> state, you cannot
+     * initiate a new vault lock for the vault.
+     * </p>
+     * <p>
+     * You can abort the vault locking process by calling AbortVaultLock.
+     * You can get the state of the vault lock by calling GetVaultLock. For
+     * more information about the vault locking process,
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html"> Amazon Glacier Vault Lock </a>
+     * .
+     * </p>
+     * <p>
+     * If this operation is called when the vault lock is in the
+     * <code>InProgress</code> state, the operation returns an
+     * <code>AccessDeniedException</code> error. When the vault lock is in
+     * the <code>InProgress</code> state you must call AbortVaultLock before
+     * you can initiate a new vault lock policy.
+     * </p>
+     *
+     * @param initiateVaultLockRequest Container for the necessary parameters
+     *           to execute the InitiateVaultLock service method on AmazonGlacier.
+     * 
+     * @return The response from the InitiateVaultLock service method, as
+     *         returned by AmazonGlacier.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws MissingParameterValueException
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterValueException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public InitiateVaultLockResult initiateVaultLock(InitiateVaultLockRequest initiateVaultLockRequest) {
+        ExecutionContext executionContext = createExecutionContext(initiateVaultLockRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<InitiateVaultLockRequest> request = null;
+        Response<InitiateVaultLockResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new InitiateVaultLockRequestMarshaller().marshall(super.beforeMarshalling(initiateVaultLockRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<InitiateVaultLockResult, JsonUnmarshallerContext> unmarshaller =
+                new InitiateVaultLockResultJsonUnmarshaller();
+            JsonResponseHandler<InitiateVaultLockResult> responseHandler =
+                new JsonResponseHandler<InitiateVaultLockResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * This operation initiates a multipart upload. Amazon Glacier creates a
      * multipart upload resource and returns its ID in the response. The
      * multipart upload ID is used in subsequent requests to upload parts of
@@ -900,6 +1007,168 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 new InitiateJobResultJsonUnmarshaller();
             JsonResponseHandler<InitiateJobResult> responseHandler =
                 new JsonResponseHandler<InitiateJobResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation aborts the vault locking process if the vault lock is
+     * not in the <code>Locked</code> state. If the vault lock is in the
+     * <code>Locked</code> state when this operation is requested, the
+     * operation returns an <code>AccessDeniedException</code> error.
+     * Aborting the vault locking process removes the vault lock policy from
+     * the specified vault.
+     * </p>
+     * <p>
+     * A vault lock is put into the <code>InProgress</code> state by calling
+     * InitiateVaultLock. A vault lock is put into the <code>Locked</code>
+     * state by calling CompleteVaultLock. You can get the state of a vault
+     * lock by calling GetVaultLock. For more information about the vault
+     * locking process, see
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html"> Amazon Glacier Vault Lock </a> . For more information about vault lock policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html"> Amazon Glacier Access Control with Vault Lock Policies </a>
+     * .
+     * </p>
+     * <p>
+     * This operation is idempotent. You can successfully invoke this
+     * operation multiple times, if the vault lock is in the
+     * <code>InProgress</code> state or if there is no policy associated with
+     * the vault.
+     * </p>
+     *
+     * @param abortVaultLockRequest Container for the necessary parameters to
+     *           execute the AbortVaultLock service method on AmazonGlacier.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws MissingParameterValueException
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterValueException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void abortVaultLock(AbortVaultLockRequest abortVaultLockRequest) {
+        ExecutionContext executionContext = createExecutionContext(abortVaultLockRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AbortVaultLockRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AbortVaultLockRequestMarshaller().marshall(super.beforeMarshalling(abortVaultLockRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
+     * This operation retrieves the following attributes from the
+     * <code>lock-policy</code> subresource set on the specified vault:
+     * <ul>
+     * <li> <p>
+     * The vault lock policy set on the vault.
+     * </p>
+     * </li>
+     * <li> <p>
+     * The state of the vault lock, which is either <code>InProgess</code>
+     * or <code>Locked</code> .
+     * </p>
+     * </li>
+     * <li> <p>
+     * When the lock ID expires. The lock ID is used to complete the vault
+     * locking process.
+     * </p>
+     * </li>
+     * <li> <p>
+     * When the vault lock was initiated and put into the
+     * <code>InProgress</code> state.
+     * </p>
+     * </li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     * <p>
+     * A vault lock is put into the <code>InProgress</code> state by calling
+     * InitiateVaultLock. A vault lock is put into the <code>Locked</code>
+     * state by calling CompleteVaultLock. You can abort the vault locking
+     * process by calling AbortVaultLock. For more information about the
+     * vault locking process,
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html"> Amazon Glacier Vault Lock </a>
+     * .
+     * </p>
+     * <p>
+     * If there is no vault lock policy set on the vault, the operation
+     * returns a <code>404 Not found</code> error. For more information about
+     * vault lock policies,
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html"> Amazon Glacier Access Control with Vault Lock Policies </a>
+     * .
+     * </p>
+     *
+     * @param getVaultLockRequest Container for the necessary parameters to
+     *           execute the GetVaultLock service method on AmazonGlacier.
+     * 
+     * @return The response from the GetVaultLock service method, as returned
+     *         by AmazonGlacier.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws MissingParameterValueException
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterValueException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetVaultLockResult getVaultLock(GetVaultLockRequest getVaultLockRequest) {
+        ExecutionContext executionContext = createExecutionContext(getVaultLockRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVaultLockRequest> request = null;
+        Response<GetVaultLockResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVaultLockRequestMarshaller().marshall(super.beforeMarshalling(getVaultLockRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<GetVaultLockResult, JsonUnmarshallerContext> unmarshaller =
+                new GetVaultLockResultJsonUnmarshaller();
+            JsonResponseHandler<GetVaultLockResult> responseHandler =
+                new JsonResponseHandler<GetVaultLockResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -1752,6 +2021,74 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new AbortMultipartUploadRequestMarshaller().marshall(super.beforeMarshalling(abortMultipartUploadRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
+     * This operation completes the vault locking process by transitioning
+     * the vault lock from the <code>InProgress</code> state to the
+     * <code>Locked</code> state, which causes the vault lock policy to
+     * become unchangeable. A vault lock is put into the
+     * <code>InProgress</code> state by calling InitiateVaultLock. You can
+     * obtain the state of the vault lock by calling GetVaultLock. For more
+     * information about the vault locking process,
+     * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html"> Amazon Glacier Vault Lock </a>
+     * .
+     * </p>
+     * <p>
+     * This operation is idempotent. This request is always successful if
+     * the vault lock is in the <code>Locked</code> state and the provided
+     * lock ID matches the lock ID originally used to lock the vault.
+     * </p>
+     * <p>
+     * If an invalid lock ID is passed in the request when the vault lock is
+     * in the <code>Locked</code> state, the operation returns an
+     * <code>AccessDeniedException</code> error. If an invalid lock ID is
+     * passed in the request when the vault lock is in the
+     * <code>InProgress</code> state, the operation throws an
+     * <code>InvalidParameter</code> error.
+     * </p>
+     *
+     * @param completeVaultLockRequest Container for the necessary parameters
+     *           to execute the CompleteVaultLock service method on AmazonGlacier.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws MissingParameterValueException
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterValueException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonGlacier indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void completeVaultLock(CompleteVaultLockRequest completeVaultLockRequest) {
+        ExecutionContext executionContext = createExecutionContext(completeVaultLockRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CompleteVaultLockRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CompleteVaultLockRequestMarshaller().marshall(super.beforeMarshalling(completeVaultLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

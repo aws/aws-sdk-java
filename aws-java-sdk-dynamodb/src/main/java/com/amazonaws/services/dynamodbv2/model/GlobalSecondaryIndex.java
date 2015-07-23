@@ -130,6 +130,12 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
      * one or more pairs of attribute names and key types (<code>HASH</code> or
      * <code>RANGE</code>).
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeySchema(java.util.Collection)} or
+     * {@link #withKeySchema(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param keySchema
      *        The complete key schema for a global secondary index, which

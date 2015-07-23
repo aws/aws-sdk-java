@@ -75,6 +75,12 @@ public class ListApplicationsResult implements Serializable, Cloneable {
      * <p>
      * A list of application names.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setApplications(java.util.Collection)} or
+     * {@link #withApplications(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param applications
      *        A list of application names.

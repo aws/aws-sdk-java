@@ -818,6 +818,49 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     
     /**
      * <p>
+     * Swaps the CNAMEs of two environments.
+     * </p>
+     *
+     * @param swapEnvironmentCNAMEsRequest Container for the necessary
+     *           parameters to execute the SwapEnvironmentCNAMEs service method on
+     *           AWSElasticBeanstalk.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSElasticBeanstalk indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) {
+        ExecutionContext executionContext = createExecutionContext(swapEnvironmentCNAMEsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SwapEnvironmentCNAMEsRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SwapEnvironmentCNAMEsRequestMarshaller().marshall(super.beforeMarshalling(swapEnvironmentCNAMEsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
      * Creates an application that has one configuration template named
      * <code>default</code> and no application versions.
      * </p>
@@ -862,49 +905,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Swaps the CNAMEs of two environments.
-     * </p>
-     *
-     * @param swapEnvironmentCNAMEsRequest Container for the necessary
-     *           parameters to execute the SwapEnvironmentCNAMEs service method on
-     *           AWSElasticBeanstalk.
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) {
-        ExecutionContext executionContext = createExecutionContext(swapEnvironmentCNAMEsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<SwapEnvironmentCNAMEsRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new SwapEnvironmentCNAMEsRequestMarshaller().marshall(super.beforeMarshalling(swapEnvironmentCNAMEsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            invoke(request, null, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null);
         }
     }
     

@@ -183,6 +183,12 @@ public class JobData implements Serializable, Cloneable {
      * <p>
      * The artifact supplied to the job.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInputArtifacts(java.util.Collection)} or
+     * {@link #withInputArtifacts(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param inputArtifacts
      *        The artifact supplied to the job.
@@ -249,6 +255,12 @@ public class JobData implements Serializable, Cloneable {
     /**
      * <p>
      * The output of the job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOutputArtifacts(java.util.Collection)} or
+     * {@link #withOutputArtifacts(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param outputArtifacts

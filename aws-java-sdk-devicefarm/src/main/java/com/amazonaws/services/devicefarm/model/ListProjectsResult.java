@@ -71,6 +71,12 @@ public class ListProjectsResult implements Serializable, Cloneable {
      * <p>
      * Information about the projects.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setProjects(java.util.Collection)} or
+     * {@link #withProjects(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param projects
      *        Information about the projects.

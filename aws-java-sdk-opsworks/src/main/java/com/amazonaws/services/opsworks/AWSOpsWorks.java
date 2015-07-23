@@ -1770,43 +1770,6 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Describes a stack's Elastic Load Balancing instances.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You must specify at least one of the parameters.
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Show, Deploy, or Manage permissions level for the stack, or an
-     * attached policy that explicitly grants permissions. For more
-     * information on user permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param describeElasticLoadBalancersRequest Container for the necessary
-     *           parameters to execute the DescribeElasticLoadBalancers service method
-     *           on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeElasticLoadBalancers service
-     *         method, as returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeElasticLoadBalancersResult describeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Assign a registered instance to a layer.
      * </p>
      * 
@@ -1844,6 +1807,43 @@ public interface AWSOpsWorks {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void assignInstance(AssignInstanceRequest assignInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes a stack's Elastic Load Balancing instances.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> You must specify at least one of the parameters.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack, or an
+     * attached policy that explicitly grants permissions. For more
+     * information on user permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param describeElasticLoadBalancersRequest Container for the necessary
+     *           parameters to execute the DescribeElasticLoadBalancers service method
+     *           on AWSOpsWorks.
+     * 
+     * @return The response from the DescribeElasticLoadBalancers service
+     *         method, as returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeElasticLoadBalancersResult describeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

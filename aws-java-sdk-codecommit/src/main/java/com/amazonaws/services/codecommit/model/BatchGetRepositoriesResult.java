@@ -74,6 +74,12 @@ public class BatchGetRepositoriesResult implements Serializable, Cloneable {
      * <p>
      * A list of repositories returned by the batch get repositories operation.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRepositories(java.util.Collection)} or
+     * {@link #withRepositories(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param repositories
      *        A list of repositories returned by the batch get repositories
@@ -148,6 +154,12 @@ public class BatchGetRepositoriesResult implements Serializable, Cloneable {
      * <p>
      * Returns a list of repository names for which information could not be
      * found.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRepositoriesNotFound(java.util.Collection)} or
+     * {@link #withRepositoriesNotFound(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param repositoriesNotFound

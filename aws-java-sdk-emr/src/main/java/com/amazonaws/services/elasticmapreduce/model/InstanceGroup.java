@@ -83,6 +83,14 @@ public class InstanceGroup implements Serializable, Cloneable {
     private InstanceGroupStatus status;
 
     /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * configurations supplied for an EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master,
+     * core, and task).
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurations;
+
+    /**
      * The identifier of the instance group.
      *
      * @return The identifier of the instance group.
@@ -506,6 +514,103 @@ public class InstanceGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * configurations supplied for an EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master,
+     * core, and task).
+     *
+     * @return <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         configurations supplied for an EMR cluster instance group. You can
+     *         specify a separate configuration for each instance group (master,
+     *         core, and task).
+     */
+    public java.util.List<Configuration> getConfigurations() {
+        if (configurations == null) {
+              configurations = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>();
+              configurations.setAutoConstruct(true);
+        }
+        return configurations;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * configurations supplied for an EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master,
+     * core, and task).
+     *
+     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         configurations supplied for an EMR cluster instance group. You can
+     *         specify a separate configuration for each instance group (master,
+     *         core, and task).
+     */
+    public void setConfigurations(java.util.Collection<Configuration> configurations) {
+        if (configurations == null) {
+            this.configurations = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>(configurations.size());
+        configurationsCopy.addAll(configurations);
+        this.configurations = configurationsCopy;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * configurations supplied for an EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master,
+     * core, and task).
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConfigurations(java.util.Collection)} or {@link
+     * #withConfigurations(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         configurations supplied for an EMR cluster instance group. You can
+     *         specify a separate configuration for each instance group (master,
+     *         core, and task).
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstanceGroup withConfigurations(Configuration... configurations) {
+        if (getConfigurations() == null) setConfigurations(new java.util.ArrayList<Configuration>(configurations.length));
+        for (Configuration value : configurations) {
+            getConfigurations().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     * configurations supplied for an EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master,
+     * core, and task).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param configurations <note><p>Amazon EMR releases 4.x or later.</note> <p>The list of
+     *         configurations supplied for an EMR cluster instance group. You can
+     *         specify a separate configuration for each instance group (master,
+     *         core, and task).
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstanceGroup withConfigurations(java.util.Collection<Configuration> configurations) {
+        if (configurations == null) {
+            this.configurations = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>(configurations.size());
+            configurationsCopy.addAll(configurations);
+            this.configurations = configurationsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -525,7 +630,8 @@ public class InstanceGroup implements Serializable, Cloneable {
         if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
         if (getRequestedInstanceCount() != null) sb.append("RequestedInstanceCount: " + getRequestedInstanceCount() + ",");
         if (getRunningInstanceCount() != null) sb.append("RunningInstanceCount: " + getRunningInstanceCount() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() );
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getConfigurations() != null) sb.append("Configurations: " + getConfigurations() );
         sb.append("}");
         return sb.toString();
     }
@@ -544,6 +650,7 @@ public class InstanceGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRequestedInstanceCount() == null) ? 0 : getRequestedInstanceCount().hashCode()); 
         hashCode = prime * hashCode + ((getRunningInstanceCount() == null) ? 0 : getRunningInstanceCount().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode()); 
         return hashCode;
     }
     
@@ -573,6 +680,8 @@ public class InstanceGroup implements Serializable, Cloneable {
         if (other.getRunningInstanceCount() != null && other.getRunningInstanceCount().equals(this.getRunningInstanceCount()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getConfigurations() == null ^ this.getConfigurations() == null) return false;
+        if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false) return false; 
         return true;
     }
     

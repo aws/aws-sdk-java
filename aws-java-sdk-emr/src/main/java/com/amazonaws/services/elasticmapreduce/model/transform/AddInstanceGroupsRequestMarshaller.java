@@ -88,6 +88,20 @@ public class AddInstanceGroupsRequestMarshaller implements Marshaller<Request<Ad
                         if (instanceGroupsListValue.getInstanceCount() != null) {
                             jsonWriter.key("InstanceCount").value(instanceGroupsListValue.getInstanceCount());
                         }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<Configuration> configurationsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Configuration>)(instanceGroupsListValue.getConfigurations());
+                        if (configurationsList != null && !(configurationsList.isAutoConstruct() && configurationsList.isEmpty())) {
+
+                            jsonWriter.key("Configurations");
+                            jsonWriter.array();
+
+                            for (Configuration configurationsListValue : configurationsList) {
+                                if (configurationsListValue != null) {
+                                    ConfigurationJsonMarshaller.getInstance().marshall(configurationsListValue, jsonWriter);
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
                         jsonWriter.endObject();
                     }
                 }

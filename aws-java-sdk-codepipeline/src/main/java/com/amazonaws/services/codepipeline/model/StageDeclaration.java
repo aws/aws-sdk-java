@@ -113,6 +113,12 @@ public class StageDeclaration implements Serializable, Cloneable {
      * <p>
      * The gates included in a stage.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBlockers(java.util.Collection)} or
+     * {@link #withBlockers(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param blockers
      *        The gates included in a stage.
@@ -177,6 +183,12 @@ public class StageDeclaration implements Serializable, Cloneable {
     /**
      * <p>
      * The actions included in a stage.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setActions(java.util.Collection)} or
+     * {@link #withActions(java.util.Collection)} if you want to override the
+     * existing values.
      * </p>
      * 
      * @param actions

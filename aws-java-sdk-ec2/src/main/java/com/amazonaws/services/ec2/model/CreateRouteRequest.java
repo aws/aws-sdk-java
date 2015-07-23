@@ -99,14 +99,6 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     private String vpcPeeringConnectionId;
 
     /**
-     * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.
-     */
-    private String clientToken;
-
-    /**
      * The ID of the route table for the route.
      *
      * @return The ID of the route table for the route.
@@ -329,57 +321,6 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.
-     *
-     * @return Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     *         to Ensure Idempotency</a>.
-     */
-    public String getClientToken() {
-        return clientToken;
-    }
-    
-    /**
-     * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.
-     *
-     * @param clientToken Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     *         to Ensure Idempotency</a>.
-     */
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-    
-    /**
-     * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param clientToken Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     *         to Ensure Idempotency</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public CreateRouteRequest withClientToken(String clientToken) {
-        this.clientToken = clientToken;
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to
      * enable operation dry-run.
@@ -408,8 +349,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ",");
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
-        if (getVpcPeeringConnectionId() != null) sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() + ",");
-        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() );
+        if (getVpcPeeringConnectionId() != null) sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() );
         sb.append("}");
         return sb.toString();
     }
@@ -425,7 +365,6 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode()); 
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode()); 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode()); 
         return hashCode;
     }
     
@@ -449,8 +388,6 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false) return false; 
         if (other.getVpcPeeringConnectionId() == null ^ this.getVpcPeeringConnectionId() == null) return false;
         if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false) return false; 
-        if (other.getClientToken() == null ^ this.getClientToken() == null) return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false) return false; 
         return true;
     }
     

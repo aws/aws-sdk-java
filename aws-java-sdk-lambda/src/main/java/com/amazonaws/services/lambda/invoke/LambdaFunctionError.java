@@ -29,10 +29,8 @@ class LambdaFunctionError {
     private final List<String> stackTrace;
 
     @JsonCreator
-    public LambdaFunctionError(
-            @JsonProperty("errorType") String errorType,
-            @JsonProperty("errorMessage") String errorMessage,
-            @JsonProperty("stackTrace") List<String> stackTrace) {
+    public LambdaFunctionError(@JsonProperty("errorType") String errorType,
+            @JsonProperty("errorMessage") String errorMessage, @JsonProperty("stackTrace") List<String> stackTrace) {
 
         this.errorType = errorType;
         this.errorMessage = errorMessage;

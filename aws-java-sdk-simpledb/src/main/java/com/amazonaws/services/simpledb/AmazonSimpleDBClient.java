@@ -227,8 +227,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new DuplicateItemNameExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NumberDomainAttributesExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidNumberPredicatesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyRequestedAttributesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyRequestedAttributesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NumberItemAttributesExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AttributeDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MissingParameterExceptionUnmarshaller());

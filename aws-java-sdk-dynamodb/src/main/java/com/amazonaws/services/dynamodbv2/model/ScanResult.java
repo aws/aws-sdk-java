@@ -129,6 +129,12 @@ public class ScanResult implements Serializable, Cloneable {
      * this array consists of an attribute name and the value for that
      * attribute.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setItems(java.util.Collection)} or
+     * {@link #withItems(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param items
      *        An array of item attributes that match the scan criteria. Each

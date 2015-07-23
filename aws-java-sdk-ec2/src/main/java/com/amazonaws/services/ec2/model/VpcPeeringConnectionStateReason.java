@@ -25,6 +25,9 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
 
     /**
      * The status of the VPC peering connection.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
      */
     private String code;
 
@@ -36,8 +39,13 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
 
     /**
      * The status of the VPC peering connection.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
      *
      * @return The status of the VPC peering connection.
+     *
+     * @see VpcPeeringConnectionStateReasonCode
      */
     public String getCode() {
         return code;
@@ -45,8 +53,13 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
     
     /**
      * The status of the VPC peering connection.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
      *
      * @param code The status of the VPC peering connection.
+     *
+     * @see VpcPeeringConnectionStateReasonCode
      */
     public void setCode(String code) {
         this.code = code;
@@ -56,14 +69,53 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      * The status of the VPC peering connection.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
      *
      * @param code The status of the VPC peering connection.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
+     *
+     * @see VpcPeeringConnectionStateReasonCode
      */
     public VpcPeeringConnectionStateReason withCode(String code) {
         this.code = code;
+        return this;
+    }
+
+    /**
+     * The status of the VPC peering connection.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
+     *
+     * @param code The status of the VPC peering connection.
+     *
+     * @see VpcPeeringConnectionStateReasonCode
+     */
+    public void setCode(VpcPeeringConnectionStateReasonCode code) {
+        this.code = code.toString();
+    }
+    
+    /**
+     * The status of the VPC peering connection.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
+     *
+     * @param code The status of the VPC peering connection.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see VpcPeeringConnectionStateReasonCode
+     */
+    public VpcPeeringConnectionStateReason withCode(VpcPeeringConnectionStateReasonCode code) {
+        this.code = code.toString();
         return this;
     }
 

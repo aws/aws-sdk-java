@@ -87,6 +87,12 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * A list of stream descriptors associated with the current account and
      * endpoint.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStreams(java.util.Collection)} or
+     * {@link #withStreams(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param streams
      *        A list of stream descriptors associated with the current account

@@ -76,6 +76,12 @@ public class ListDeploymentInstancesResult implements Serializable, Cloneable {
      * <p>
      * A list of instances IDs.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstancesList(java.util.Collection)} or
+     * {@link #withInstancesList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param instancesList
      *        A list of instances IDs.

@@ -208,6 +208,12 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      * <p>
      * The stage in which to perform the action.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStages(java.util.Collection)} or
+     * {@link #withStages(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param stages
      *        The stage in which to perform the action.

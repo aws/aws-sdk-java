@@ -38,7 +38,7 @@ public class GetDataRetrievalPolicyRequest extends AmazonWebServiceRequest imple
      * sign the request. You can either specify an AWS account ID or
      * optionally a single '<code>-</code>' (hyphen), in which case Amazon
      * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
+     * to sign the request. If you specify your account ID, do not include
      * any hyphens ('-') in the ID.
      */
     private String accountId;
@@ -49,7 +49,7 @@ public class GetDataRetrievalPolicyRequest extends AmazonWebServiceRequest imple
      * sign the request. You can either specify an AWS account ID or
      * optionally a single '<code>-</code>' (hyphen), in which case Amazon
      * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
+     * to sign the request. If you specify your account ID, do not include
      * any hyphens ('-') in the ID.
      *
      * @return The <code>AccountId</code> value is the AWS account ID. This value
@@ -57,7 +57,7 @@ public class GetDataRetrievalPolicyRequest extends AmazonWebServiceRequest imple
      *         sign the request. You can either specify an AWS account ID or
      *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
      *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your Account ID, do not include
+     *         to sign the request. If you specify your account ID, do not include
      *         any hyphens ('-') in the ID.
      */
     public String getAccountId() {
@@ -70,7 +70,7 @@ public class GetDataRetrievalPolicyRequest extends AmazonWebServiceRequest imple
      * sign the request. You can either specify an AWS account ID or
      * optionally a single '<code>-</code>' (hyphen), in which case Amazon
      * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
+     * to sign the request. If you specify your account ID, do not include
      * any hyphens ('-') in the ID.
      *
      * @param accountId The <code>AccountId</code> value is the AWS account ID. This value
@@ -78,7 +78,7 @@ public class GetDataRetrievalPolicyRequest extends AmazonWebServiceRequest imple
      *         sign the request. You can either specify an AWS account ID or
      *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
      *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your Account ID, do not include
+     *         to sign the request. If you specify your account ID, do not include
      *         any hyphens ('-') in the ID.
      */
     public void setAccountId(String accountId) {
@@ -91,7 +91,7 @@ public class GetDataRetrievalPolicyRequest extends AmazonWebServiceRequest imple
      * sign the request. You can either specify an AWS account ID or
      * optionally a single '<code>-</code>' (hyphen), in which case Amazon
      * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
+     * to sign the request. If you specify your account ID, do not include
      * any hyphens ('-') in the ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -101,7 +101,7 @@ public class GetDataRetrievalPolicyRequest extends AmazonWebServiceRequest imple
      *         sign the request. You can either specify an AWS account ID or
      *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
      *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your Account ID, do not include
+     *         to sign the request. If you specify your account ID, do not include
      *         any hyphens ('-') in the ID.
      *
      * @return A reference to this updated object so that method calls can be chained

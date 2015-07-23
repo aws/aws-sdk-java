@@ -139,6 +139,12 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * The complete index key schema, which consists of one or more pairs of
      * attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeySchema(java.util.Collection)} or
+     * {@link #withKeySchema(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param keySchema
      *        The complete index key schema, which consists of one or more pairs

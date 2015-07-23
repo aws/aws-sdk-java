@@ -130,6 +130,12 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * Returns tags associated with the file system as an array of
      * <code>Tag</code> objects.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param tags
      *        Returns tags associated with the file system as an array of

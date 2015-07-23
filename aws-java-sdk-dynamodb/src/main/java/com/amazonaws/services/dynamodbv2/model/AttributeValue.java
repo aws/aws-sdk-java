@@ -270,6 +270,12 @@ public class AttributeValue implements Serializable, Cloneable {
      * <p>
      * A String Set data type.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSS(java.util.Collection)} or
+     * {@link #withSS(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param sS
      *        A String Set data type.
@@ -333,6 +339,12 @@ public class AttributeValue implements Serializable, Cloneable {
      * <p>
      * A Number Set data type.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNS(java.util.Collection)} or
+     * {@link #withNS(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param nS
      *        A Number Set data type.
@@ -395,6 +407,12 @@ public class AttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * A Binary Set data type.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setBS(java.util.Collection)} or
+     * {@link #withBS(java.util.Collection)} if you want to override the
+     * existing values.
      * </p>
      * 
      * @param bS
@@ -516,6 +534,12 @@ public class AttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * A List of attribute values.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setL(java.util.Collection)} or
+     * {@link #withL(java.util.Collection)} if you want to override the existing
+     * values.
      * </p>
      * 
      * @param l

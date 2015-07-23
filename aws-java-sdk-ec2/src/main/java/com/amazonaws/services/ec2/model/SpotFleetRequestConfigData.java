@@ -78,7 +78,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<LaunchSpecification> launchSpecifications;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<SpotFleetLaunchSpecification> launchSpecifications;
 
     /**
      * A unique, case-sensitive identifier you provide to ensure idempotency
@@ -414,9 +414,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *
      * @return Information about the launch specifications for the instances.
      */
-    public java.util.List<LaunchSpecification> getLaunchSpecifications() {
+    public java.util.List<SpotFleetLaunchSpecification> getLaunchSpecifications() {
         if (launchSpecifications == null) {
-              launchSpecifications = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchSpecification>();
+              launchSpecifications = new com.amazonaws.internal.ListWithAutoConstructFlag<SpotFleetLaunchSpecification>();
               launchSpecifications.setAutoConstruct(true);
         }
         return launchSpecifications;
@@ -430,12 +430,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *
      * @param launchSpecifications Information about the launch specifications for the instances.
      */
-    public void setLaunchSpecifications(java.util.Collection<LaunchSpecification> launchSpecifications) {
+    public void setLaunchSpecifications(java.util.Collection<SpotFleetLaunchSpecification> launchSpecifications) {
         if (launchSpecifications == null) {
             this.launchSpecifications = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<LaunchSpecification> launchSpecificationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchSpecification>(launchSpecifications.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<SpotFleetLaunchSpecification> launchSpecificationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SpotFleetLaunchSpecification>(launchSpecifications.size());
         launchSpecificationsCopy.addAll(launchSpecifications);
         this.launchSpecifications = launchSpecificationsCopy;
     }
@@ -458,9 +458,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public SpotFleetRequestConfigData withLaunchSpecifications(LaunchSpecification... launchSpecifications) {
-        if (getLaunchSpecifications() == null) setLaunchSpecifications(new java.util.ArrayList<LaunchSpecification>(launchSpecifications.length));
-        for (LaunchSpecification value : launchSpecifications) {
+    public SpotFleetRequestConfigData withLaunchSpecifications(SpotFleetLaunchSpecification... launchSpecifications) {
+        if (getLaunchSpecifications() == null) setLaunchSpecifications(new java.util.ArrayList<SpotFleetLaunchSpecification>(launchSpecifications.length));
+        for (SpotFleetLaunchSpecification value : launchSpecifications) {
             getLaunchSpecifications().add(value);
         }
         return this;
@@ -479,11 +479,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public SpotFleetRequestConfigData withLaunchSpecifications(java.util.Collection<LaunchSpecification> launchSpecifications) {
+    public SpotFleetRequestConfigData withLaunchSpecifications(java.util.Collection<SpotFleetLaunchSpecification> launchSpecifications) {
         if (launchSpecifications == null) {
             this.launchSpecifications = null;
         } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<LaunchSpecification> launchSpecificationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchSpecification>(launchSpecifications.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<SpotFleetLaunchSpecification> launchSpecificationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SpotFleetLaunchSpecification>(launchSpecifications.size());
             launchSpecificationsCopy.addAll(launchSpecifications);
             this.launchSpecifications = launchSpecificationsCopy;
         }

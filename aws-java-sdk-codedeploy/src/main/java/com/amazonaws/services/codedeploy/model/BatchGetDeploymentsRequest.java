@@ -75,6 +75,12 @@ public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest
      * A list of deployment IDs, with multiple deployment IDs separated by
      * spaces.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDeploymentIds(java.util.Collection)} or
+     * {@link #withDeploymentIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param deploymentIds
      *        A list of deployment IDs, with multiple deployment IDs separated

@@ -5066,100 +5066,6 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     
     /**
      * <p>
-     * Creates an HSM configuration that contains the information required
-     * by an Amazon Redshift cluster to store and use database encryption
-     * keys in a Hardware Security Module (HSM). After creating the HSM
-     * configuration, you can specify it as a parameter when creating a
-     * cluster. The cluster will then store its encryption keys in the HSM.
-     * </p>
-     * <p>
-     * In addition to creating an HSM configuration, you must also create an
-     * HSM client certificate. For more information, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
-     * in the Amazon Redshift Cluster Management Guide.
-     * </p>
-     *
-     * @param createHsmConfigurationRequest Container for the necessary
-     *           parameters to execute the CreateHsmConfiguration operation on
-     *           AmazonRedshift.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateHsmConfiguration service method, as returned by AmazonRedshift.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<HsmConfiguration> createHsmConfigurationAsync(final CreateHsmConfigurationRequest createHsmConfigurationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<HsmConfiguration>() {
-            public HsmConfiguration call() throws Exception {
-                return createHsmConfiguration(createHsmConfigurationRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates an HSM configuration that contains the information required
-     * by an Amazon Redshift cluster to store and use database encryption
-     * keys in a Hardware Security Module (HSM). After creating the HSM
-     * configuration, you can specify it as a parameter when creating a
-     * cluster. The cluster will then store its encryption keys in the HSM.
-     * </p>
-     * <p>
-     * In addition to creating an HSM configuration, you must also create an
-     * HSM client certificate. For more information, go to
-     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
-     * in the Amazon Redshift Cluster Management Guide.
-     * </p>
-     *
-     * @param createHsmConfigurationRequest Container for the necessary
-     *           parameters to execute the CreateHsmConfiguration operation on
-     *           AmazonRedshift.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateHsmConfiguration service method, as returned by AmazonRedshift.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<HsmConfiguration> createHsmConfigurationAsync(
-            final CreateHsmConfigurationRequest createHsmConfigurationRequest,
-            final AsyncHandler<CreateHsmConfigurationRequest, HsmConfiguration> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<HsmConfiguration>() {
-            public HsmConfiguration call() throws Exception {
-              HsmConfiguration result;
-                try {
-                result = createHsmConfiguration(createHsmConfigurationRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createHsmConfigurationRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Returns properties of provisioned clusters including general cluster
      * properties, cluster database properties, maintenance and backup
      * properties, and security and access properties. This operation
@@ -5263,6 +5169,100 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
             throw ex;
               }
               asyncHandler.onSuccess(describeClustersRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates an HSM configuration that contains the information required
+     * by an Amazon Redshift cluster to store and use database encryption
+     * keys in a Hardware Security Module (HSM). After creating the HSM
+     * configuration, you can specify it as a parameter when creating a
+     * cluster. The cluster will then store its encryption keys in the HSM.
+     * </p>
+     * <p>
+     * In addition to creating an HSM configuration, you must also create an
+     * HSM client certificate. For more information, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
+     * in the Amazon Redshift Cluster Management Guide.
+     * </p>
+     *
+     * @param createHsmConfigurationRequest Container for the necessary
+     *           parameters to execute the CreateHsmConfiguration operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateHsmConfiguration service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<HsmConfiguration> createHsmConfigurationAsync(final CreateHsmConfigurationRequest createHsmConfigurationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<HsmConfiguration>() {
+            public HsmConfiguration call() throws Exception {
+                return createHsmConfiguration(createHsmConfigurationRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates an HSM configuration that contains the information required
+     * by an Amazon Redshift cluster to store and use database encryption
+     * keys in a Hardware Security Module (HSM). After creating the HSM
+     * configuration, you can specify it as a parameter when creating a
+     * cluster. The cluster will then store its encryption keys in the HSM.
+     * </p>
+     * <p>
+     * In addition to creating an HSM configuration, you must also create an
+     * HSM client certificate. For more information, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
+     * in the Amazon Redshift Cluster Management Guide.
+     * </p>
+     *
+     * @param createHsmConfigurationRequest Container for the necessary
+     *           parameters to execute the CreateHsmConfiguration operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateHsmConfiguration service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<HsmConfiguration> createHsmConfigurationAsync(
+            final CreateHsmConfigurationRequest createHsmConfigurationRequest,
+            final AsyncHandler<CreateHsmConfigurationRequest, HsmConfiguration> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<HsmConfiguration>() {
+            public HsmConfiguration call() throws Exception {
+              HsmConfiguration result;
+                try {
+                result = createHsmConfiguration(createHsmConfigurationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createHsmConfigurationRequest, result);
                  return result;
         }
     });

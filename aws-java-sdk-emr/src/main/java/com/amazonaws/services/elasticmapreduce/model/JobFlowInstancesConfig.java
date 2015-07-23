@@ -71,8 +71,8 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
     private PlacementType placement;
 
     /**
-     * Specifies whether the job flow should terminate after completing all
-     * steps.
+     * Specifies whether the job flow should be kept alive after completing
+     * all steps.
      */
     private Boolean keepJobFlowAliveWhenNoSteps;
 
@@ -84,11 +84,12 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
     private Boolean terminationProtected;
 
     /**
-     * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     * "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
-     * value, the default of 0.18 is used, unless the AmiVersion parameter is
-     * set in the RunJobFlow call, in which case the default version of
-     * Hadoop for that AMI version is used.
+     * The Hadoop version for the job flow. Valid inputs are "0.18"
+     * (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3",
+     * "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18
+     * is used, unless the AmiVersion parameter is set in the RunJobFlow
+     * call, in which case the default version of Hadoop for that AMI version
+     * is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -431,35 +432,35 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether the job flow should terminate after completing all
-     * steps.
+     * Specifies whether the job flow should be kept alive after completing
+     * all steps.
      *
-     * @return Specifies whether the job flow should terminate after completing all
-     *         steps.
+     * @return Specifies whether the job flow should be kept alive after completing
+     *         all steps.
      */
     public Boolean isKeepJobFlowAliveWhenNoSteps() {
         return keepJobFlowAliveWhenNoSteps;
     }
     
     /**
-     * Specifies whether the job flow should terminate after completing all
-     * steps.
+     * Specifies whether the job flow should be kept alive after completing
+     * all steps.
      *
-     * @param keepJobFlowAliveWhenNoSteps Specifies whether the job flow should terminate after completing all
-     *         steps.
+     * @param keepJobFlowAliveWhenNoSteps Specifies whether the job flow should be kept alive after completing
+     *         all steps.
      */
     public void setKeepJobFlowAliveWhenNoSteps(Boolean keepJobFlowAliveWhenNoSteps) {
         this.keepJobFlowAliveWhenNoSteps = keepJobFlowAliveWhenNoSteps;
     }
     
     /**
-     * Specifies whether the job flow should terminate after completing all
-     * steps.
+     * Specifies whether the job flow should be kept alive after completing
+     * all steps.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keepJobFlowAliveWhenNoSteps Specifies whether the job flow should terminate after completing all
-     *         steps.
+     * @param keepJobFlowAliveWhenNoSteps Specifies whether the job flow should be kept alive after completing
+     *         all steps.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -470,11 +471,11 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether the job flow should terminate after completing all
-     * steps.
+     * Specifies whether the job flow should be kept alive after completing
+     * all steps.
      *
-     * @return Specifies whether the job flow should terminate after completing all
-     *         steps.
+     * @return Specifies whether the job flow should be kept alive after completing
+     *         all steps.
      */
     public Boolean getKeepJobFlowAliveWhenNoSteps() {
         return keepJobFlowAliveWhenNoSteps;
@@ -539,53 +540,58 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
     }
 
     /**
-     * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     * "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
-     * value, the default of 0.18 is used, unless the AmiVersion parameter is
-     * set in the RunJobFlow call, in which case the default version of
-     * Hadoop for that AMI version is used.
+     * The Hadoop version for the job flow. Valid inputs are "0.18"
+     * (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3",
+     * "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18
+     * is used, unless the AmiVersion parameter is set in the RunJobFlow
+     * call, in which case the default version of Hadoop for that AMI version
+     * is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @return The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     *         "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
-     *         value, the default of 0.18 is used, unless the AmiVersion parameter is
-     *         set in the RunJobFlow call, in which case the default version of
-     *         Hadoop for that AMI version is used.
+     * @return The Hadoop version for the job flow. Valid inputs are "0.18"
+     *         (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3",
+     *         "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18
+     *         is used, unless the AmiVersion parameter is set in the RunJobFlow
+     *         call, in which case the default version of Hadoop for that AMI version
+     *         is used.
      */
     public String getHadoopVersion() {
         return hadoopVersion;
     }
     
     /**
-     * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     * "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
-     * value, the default of 0.18 is used, unless the AmiVersion parameter is
-     * set in the RunJobFlow call, in which case the default version of
-     * Hadoop for that AMI version is used.
+     * The Hadoop version for the job flow. Valid inputs are "0.18"
+     * (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3",
+     * "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18
+     * is used, unless the AmiVersion parameter is set in the RunJobFlow
+     * call, in which case the default version of Hadoop for that AMI version
+     * is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param hadoopVersion The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     *         "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
-     *         value, the default of 0.18 is used, unless the AmiVersion parameter is
-     *         set in the RunJobFlow call, in which case the default version of
-     *         Hadoop for that AMI version is used.
+     * @param hadoopVersion The Hadoop version for the job flow. Valid inputs are "0.18"
+     *         (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3",
+     *         "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18
+     *         is used, unless the AmiVersion parameter is set in the RunJobFlow
+     *         call, in which case the default version of Hadoop for that AMI version
+     *         is used.
      */
     public void setHadoopVersion(String hadoopVersion) {
         this.hadoopVersion = hadoopVersion;
     }
     
     /**
-     * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     * "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
-     * value, the default of 0.18 is used, unless the AmiVersion parameter is
-     * set in the RunJobFlow call, in which case the default version of
-     * Hadoop for that AMI version is used.
+     * The Hadoop version for the job flow. Valid inputs are "0.18"
+     * (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3",
+     * "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18
+     * is used, unless the AmiVersion parameter is set in the RunJobFlow
+     * call, in which case the default version of Hadoop for that AMI version
+     * is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -593,11 +599,12 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
-     * @param hadoopVersion The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
-     *         "0.20.205", "1.0.3", "2.2.0", or "2.4.0". If you do not set this
-     *         value, the default of 0.18 is used, unless the AmiVersion parameter is
-     *         set in the RunJobFlow call, in which case the default version of
-     *         Hadoop for that AMI version is used.
+     * @param hadoopVersion The Hadoop version for the job flow. Valid inputs are "0.18"
+     *         (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3",
+     *         "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18
+     *         is used, unless the AmiVersion parameter is set in the RunJobFlow
+     *         call, in which case the default version of Hadoop for that AMI version
+     *         is used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

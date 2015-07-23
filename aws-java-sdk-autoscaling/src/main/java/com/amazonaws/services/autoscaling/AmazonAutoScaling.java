@@ -796,6 +796,29 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
+     * Deletes the specified notification.
+     * </p>
+     *
+     * @param deleteNotificationConfigurationRequest Container for the
+     *           necessary parameters to execute the DeleteNotificationConfiguration
+     *           service method on AmazonAutoScaling.
+     * 
+     * 
+     * @throws ResourceContentionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteNotificationConfiguration(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Completes the lifecycle action for the associated token initiated
      * under the given lifecycle hook with the specified result.
      * </p>
@@ -836,29 +859,6 @@ public interface AmazonAutoScaling {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CompleteLifecycleActionResult completeLifecycleAction(CompleteLifecycleActionRequest completeLifecycleActionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified notification.
-     * </p>
-     *
-     * @param deleteNotificationConfigurationRequest Container for the
-     *           necessary parameters to execute the DeleteNotificationConfiguration
-     *           service method on AmazonAutoScaling.
-     * 
-     * 
-     * @throws ResourceContentionException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonAutoScaling indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteNotificationConfiguration(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

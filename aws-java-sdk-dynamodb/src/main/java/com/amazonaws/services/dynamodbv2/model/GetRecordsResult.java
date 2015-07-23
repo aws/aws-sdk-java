@@ -77,6 +77,12 @@ public class GetRecordsResult implements Serializable, Cloneable {
      * The stream records from the shard, which were retrieved using the shard
      * iterator.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRecords(java.util.Collection)} or
+     * {@link #withRecords(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param records
      *        The stream records from the shard, which were retrieved using the

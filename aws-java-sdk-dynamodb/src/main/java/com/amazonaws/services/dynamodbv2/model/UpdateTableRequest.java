@@ -161,6 +161,12 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * <i>AttributeDefinitions</i> must include the key element(s) of the new
      * index.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributeDefinitions(java.util.Collection)} or
+     * {@link #withAttributeDefinitions(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param attributeDefinitions
      *        An array of attributes that describe the key schema for the table
@@ -434,6 +440,12 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html"
      * >Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB
      * Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGlobalSecondaryIndexUpdates(java.util.Collection)}
+     * or {@link #withGlobalSecondaryIndexUpdates(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param globalSecondaryIndexUpdates

@@ -71,6 +71,12 @@ public class ListSamplesResult implements Serializable, Cloneable {
      * <p>
      * Information about the samples.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSamples(java.util.Collection)} or
+     * {@link #withSamples(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param samples
      *        Information about the samples.

@@ -293,6 +293,12 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * <p>
      * A list of auxiliary apps for the run.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAuxiliaryApps(java.util.Collection)} or
+     * {@link #withAuxiliaryApps(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param auxiliaryApps
      *        A list of auxiliary apps for the run.

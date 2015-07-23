@@ -27,7 +27,8 @@ public class SimpleDBStaxResponseHandler<T> extends StaxResponseHandler<T> {
 
     @Override
     protected void registerAdditionalMetadataExpressions(StaxUnmarshallerContext unmarshallerContext) {
-        unmarshallerContext.registerMetadataExpression("ResponseMetadata/BoxUsage", 2, SimpleDBResponseMetadata.BOX_USAGE);
+        unmarshallerContext.registerMetadataExpression("ResponseMetadata/BoxUsage", 2,
+                SimpleDBResponseMetadata.BOX_USAGE);
     }
 
 }

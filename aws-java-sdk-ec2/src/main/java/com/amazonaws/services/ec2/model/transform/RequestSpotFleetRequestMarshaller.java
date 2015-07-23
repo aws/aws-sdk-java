@@ -65,56 +65,45 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                 request.addParameter("SpotFleetRequestConfig.IamFleetRole", StringUtils.fromString(spotFleetRequestConfigDataSpotFleetRequestConfig.getIamFleetRole()));
             }
 
-            java.util.List<LaunchSpecification> launchSpecificationsList = spotFleetRequestConfigDataSpotFleetRequestConfig.getLaunchSpecifications();
+            java.util.List<SpotFleetLaunchSpecification> launchSpecificationsList = spotFleetRequestConfigDataSpotFleetRequestConfig.getLaunchSpecifications();
             int launchSpecificationsListIndex = 1;
 
-            for (LaunchSpecification launchSpecificationsListValue : launchSpecificationsList) {
-                LaunchSpecification launchSpecificationMember = launchSpecificationsListValue;
-                if (launchSpecificationMember != null) {
-                    if (launchSpecificationMember.getImageId() != null) {
-                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".ImageId", StringUtils.fromString(launchSpecificationMember.getImageId()));
+            for (SpotFleetLaunchSpecification launchSpecificationsListValue : launchSpecificationsList) {
+                SpotFleetLaunchSpecification spotFleetLaunchSpecificationMember = launchSpecificationsListValue;
+                if (spotFleetLaunchSpecificationMember != null) {
+                    if (spotFleetLaunchSpecificationMember.getImageId() != null) {
+                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".ImageId", StringUtils.fromString(spotFleetLaunchSpecificationMember.getImageId()));
                     }
-                    if (launchSpecificationMember.getKeyName() != null) {
-                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".KeyName", StringUtils.fromString(launchSpecificationMember.getKeyName()));
-                    }
-
-                    java.util.List<GroupIdentifier> allSecurityGroupsList = launchSpecificationMember.getAllSecurityGroups();
-                    int allSecurityGroupsListIndex = 1;
-
-                    for (GroupIdentifier allSecurityGroupsListValue : allSecurityGroupsList) {
-                        GroupIdentifier groupIdentifierMember = allSecurityGroupsListValue;
-                        if (groupIdentifierMember != null) {
-                            if (groupIdentifierMember.getGroupName() != null) {
-                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".GroupSet." + allSecurityGroupsListIndex + ".GroupName", StringUtils.fromString(groupIdentifierMember.getGroupName()));
-                            }
-                            if (groupIdentifierMember.getGroupId() != null) {
-                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".GroupSet." + allSecurityGroupsListIndex + ".GroupId", StringUtils.fromString(groupIdentifierMember.getGroupId()));
-                            }
-                        }
-
-                        allSecurityGroupsListIndex++;
+                    if (spotFleetLaunchSpecificationMember.getKeyName() != null) {
+                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".KeyName", StringUtils.fromString(spotFleetLaunchSpecificationMember.getKeyName()));
                     }
 
-                    java.util.List<String> securityGroupsList = launchSpecificationMember.getSecurityGroups();
+                    java.util.List<GroupIdentifier> securityGroupsList = spotFleetLaunchSpecificationMember.getSecurityGroups();
                     int securityGroupsListIndex = 1;
 
-                    for (String securityGroupsListValue : securityGroupsList) {
-                        if (securityGroupsListValue != null) {
-                            request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".SecurityGroup." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
+                    for (GroupIdentifier securityGroupsListValue : securityGroupsList) {
+                        GroupIdentifier groupIdentifierMember = securityGroupsListValue;
+                        if (groupIdentifierMember != null) {
+                            if (groupIdentifierMember.getGroupName() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".GroupSet." + securityGroupsListIndex + ".GroupName", StringUtils.fromString(groupIdentifierMember.getGroupName()));
+                            }
+                            if (groupIdentifierMember.getGroupId() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".GroupSet." + securityGroupsListIndex + ".GroupId", StringUtils.fromString(groupIdentifierMember.getGroupId()));
+                            }
                         }
 
                         securityGroupsListIndex++;
                     }
-                    if (launchSpecificationMember.getUserData() != null) {
-                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".UserData", StringUtils.fromString(launchSpecificationMember.getUserData()));
+                    if (spotFleetLaunchSpecificationMember.getUserData() != null) {
+                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".UserData", StringUtils.fromString(spotFleetLaunchSpecificationMember.getUserData()));
                     }
-                    if (launchSpecificationMember.getAddressingType() != null) {
-                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".AddressingType", StringUtils.fromString(launchSpecificationMember.getAddressingType()));
+                    if (spotFleetLaunchSpecificationMember.getAddressingType() != null) {
+                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".AddressingType", StringUtils.fromString(spotFleetLaunchSpecificationMember.getAddressingType()));
                     }
-                    if (launchSpecificationMember.getInstanceType() != null) {
-                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".InstanceType", StringUtils.fromString(launchSpecificationMember.getInstanceType()));
+                    if (spotFleetLaunchSpecificationMember.getInstanceType() != null) {
+                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".InstanceType", StringUtils.fromString(spotFleetLaunchSpecificationMember.getInstanceType()));
                     }
-                    SpotPlacement spotPlacementPlacement = launchSpecificationMember.getPlacement();
+                    SpotPlacement spotPlacementPlacement = spotFleetLaunchSpecificationMember.getPlacement();
                     if (spotPlacementPlacement != null) {
                         if (spotPlacementPlacement.getAvailabilityZone() != null) {
                             request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".Placement.AvailabilityZone", StringUtils.fromString(spotPlacementPlacement.getAvailabilityZone()));
@@ -123,14 +112,14 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                             request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".Placement.GroupName", StringUtils.fromString(spotPlacementPlacement.getGroupName()));
                         }
                     }
-                    if (launchSpecificationMember.getKernelId() != null) {
-                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".KernelId", StringUtils.fromString(launchSpecificationMember.getKernelId()));
+                    if (spotFleetLaunchSpecificationMember.getKernelId() != null) {
+                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".KernelId", StringUtils.fromString(spotFleetLaunchSpecificationMember.getKernelId()));
                     }
-                    if (launchSpecificationMember.getRamdiskId() != null) {
-                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".RamdiskId", StringUtils.fromString(launchSpecificationMember.getRamdiskId()));
+                    if (spotFleetLaunchSpecificationMember.getRamdiskId() != null) {
+                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".RamdiskId", StringUtils.fromString(spotFleetLaunchSpecificationMember.getRamdiskId()));
                     }
 
-                    java.util.List<BlockDeviceMapping> blockDeviceMappingsList = launchSpecificationMember.getBlockDeviceMappings();
+                    java.util.List<BlockDeviceMapping> blockDeviceMappingsList = spotFleetLaunchSpecificationMember.getBlockDeviceMappings();
                     int blockDeviceMappingsListIndex = 1;
 
                     for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
@@ -170,33 +159,36 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
 
                         blockDeviceMappingsListIndex++;
                     }
-                    if (launchSpecificationMember.isMonitoringEnabled() != null) {
-                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".Monitoring.Enabled", StringUtils.fromBoolean(launchSpecificationMember.isMonitoringEnabled()));
+                    SpotFleetMonitoring spotFleetMonitoringMonitoring = spotFleetLaunchSpecificationMember.getMonitoring();
+                    if (spotFleetMonitoringMonitoring != null) {
+                        if (spotFleetMonitoringMonitoring.isEnabled() != null) {
+                            request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".Monitoring.Enabled", StringUtils.fromBoolean(spotFleetMonitoringMonitoring.isEnabled()));
+                        }
                     }
-                    if (launchSpecificationMember.getSubnetId() != null) {
-                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".SubnetId", StringUtils.fromString(launchSpecificationMember.getSubnetId()));
+                    if (spotFleetLaunchSpecificationMember.getSubnetId() != null) {
+                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".SubnetId", StringUtils.fromString(spotFleetLaunchSpecificationMember.getSubnetId()));
                     }
 
-                    java.util.List<InstanceNetworkInterfaceSpecification> networkInterfacesList = launchSpecificationMember.getNetworkInterfaces();
+                    java.util.List<InstanceNetworkInterfaceSpecification> networkInterfacesList = spotFleetLaunchSpecificationMember.getNetworkInterfaces();
                     int networkInterfacesListIndex = 1;
 
                     for (InstanceNetworkInterfaceSpecification networkInterfacesListValue : networkInterfacesList) {
                         InstanceNetworkInterfaceSpecification instanceNetworkInterfaceSpecificationMember = networkInterfacesListValue;
                         if (instanceNetworkInterfaceSpecificationMember != null) {
                             if (instanceNetworkInterfaceSpecificationMember.getNetworkInterfaceId() != null) {
-                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterface." + networkInterfacesListIndex + ".NetworkInterfaceId", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getNetworkInterfaceId()));
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".NetworkInterfaceId", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getNetworkInterfaceId()));
                             }
                             if (instanceNetworkInterfaceSpecificationMember.getDeviceIndex() != null) {
-                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterface." + networkInterfacesListIndex + ".DeviceIndex", StringUtils.fromInteger(instanceNetworkInterfaceSpecificationMember.getDeviceIndex()));
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".DeviceIndex", StringUtils.fromInteger(instanceNetworkInterfaceSpecificationMember.getDeviceIndex()));
                             }
                             if (instanceNetworkInterfaceSpecificationMember.getSubnetId() != null) {
-                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterface." + networkInterfacesListIndex + ".SubnetId", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getSubnetId()));
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".SubnetId", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getSubnetId()));
                             }
                             if (instanceNetworkInterfaceSpecificationMember.getDescription() != null) {
-                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterface." + networkInterfacesListIndex + ".Description", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getDescription()));
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".Description", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getDescription()));
                             }
                             if (instanceNetworkInterfaceSpecificationMember.getPrivateIpAddress() != null) {
-                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddress", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getPrivateIpAddress()));
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".PrivateIpAddress", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getPrivateIpAddress()));
                             }
 
                             java.util.List<String> groupsList = instanceNetworkInterfaceSpecificationMember.getGroups();
@@ -204,13 +196,13 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
 
                             for (String groupsListValue : groupsList) {
                                 if (groupsListValue != null) {
-                                    request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterface." + networkInterfacesListIndex + ".SecurityGroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));
+                                    request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".SecurityGroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));
                                 }
 
                                 groupsListIndex++;
                             }
                             if (instanceNetworkInterfaceSpecificationMember.isDeleteOnTermination() != null) {
-                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterface." + networkInterfacesListIndex + ".DeleteOnTermination", StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationMember.isDeleteOnTermination()));
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".DeleteOnTermination", StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationMember.isDeleteOnTermination()));
                             }
 
                             java.util.List<PrivateIpAddressSpecification> privateIpAddressesList = instanceNetworkInterfaceSpecificationMember.getPrivateIpAddresses();
@@ -220,26 +212,26 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                 PrivateIpAddressSpecification privateIpAddressSpecificationMember = privateIpAddressesListValue;
                                 if (privateIpAddressSpecificationMember != null) {
                                     if (privateIpAddressSpecificationMember.getPrivateIpAddress() != null) {
-                                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".PrivateIpAddress", StringUtils.fromString(privateIpAddressSpecificationMember.getPrivateIpAddress()));
+                                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".PrivateIpAddress", StringUtils.fromString(privateIpAddressSpecificationMember.getPrivateIpAddress()));
                                     }
                                     if (privateIpAddressSpecificationMember.isPrimary() != null) {
-                                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".Primary", StringUtils.fromBoolean(privateIpAddressSpecificationMember.isPrimary()));
+                                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".Primary", StringUtils.fromBoolean(privateIpAddressSpecificationMember.isPrimary()));
                                     }
                                 }
 
                                 privateIpAddressesListIndex++;
                             }
                             if (instanceNetworkInterfaceSpecificationMember.getSecondaryPrivateIpAddressCount() != null) {
-                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterface." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount", StringUtils.fromInteger(instanceNetworkInterfaceSpecificationMember.getSecondaryPrivateIpAddressCount()));
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount", StringUtils.fromInteger(instanceNetworkInterfaceSpecificationMember.getSecondaryPrivateIpAddressCount()));
                             }
                             if (instanceNetworkInterfaceSpecificationMember.isAssociatePublicIpAddress() != null) {
-                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterface." + networkInterfacesListIndex + ".AssociatePublicIpAddress", StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationMember.isAssociatePublicIpAddress()));
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".AssociatePublicIpAddress", StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationMember.isAssociatePublicIpAddress()));
                             }
                         }
 
                         networkInterfacesListIndex++;
                     }
-                    IamInstanceProfileSpecification iamInstanceProfileSpecificationIamInstanceProfile = launchSpecificationMember.getIamInstanceProfile();
+                    IamInstanceProfileSpecification iamInstanceProfileSpecificationIamInstanceProfile = spotFleetLaunchSpecificationMember.getIamInstanceProfile();
                     if (iamInstanceProfileSpecificationIamInstanceProfile != null) {
                         if (iamInstanceProfileSpecificationIamInstanceProfile.getArn() != null) {
                             request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".IamInstanceProfile.Arn", StringUtils.fromString(iamInstanceProfileSpecificationIamInstanceProfile.getArn()));
@@ -248,8 +240,8 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                             request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".IamInstanceProfile.Name", StringUtils.fromString(iamInstanceProfileSpecificationIamInstanceProfile.getName()));
                         }
                     }
-                    if (launchSpecificationMember.isEbsOptimized() != null) {
-                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".EbsOptimized", StringUtils.fromBoolean(launchSpecificationMember.isEbsOptimized()));
+                    if (spotFleetLaunchSpecificationMember.isEbsOptimized() != null) {
+                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".EbsOptimized", StringUtils.fromBoolean(spotFleetLaunchSpecificationMember.isEbsOptimized()));
                     }
                 }
 

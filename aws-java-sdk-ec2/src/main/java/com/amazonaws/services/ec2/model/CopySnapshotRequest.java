@@ -34,8 +34,9 @@ import com.amazonaws.services.ec2.model.transform.CopySnapshotRequestMarshaller;
  * unencrypted snapshots remain unencrypted, unless the
  * <code>Encrypted</code> flag is specified during the snapshot copy
  * operation. By default, encrypted snapshot copies use the default AWS
- * Key Management Service (KMS) master key; however, you can specify a
- * non-default master key with the <code>KmsKeyId</code> parameter.
+ * Key Management Service (AWS KMS) customer master key (CMK); however,
+ * you can specify a non-default CMK with the <code>KmsKeyId</code>
+ * parameter.
  * </p>
  * <p>
  * For more information, see
@@ -100,8 +101,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * Specifies whether the destination snapshot should be encrypted. There
      * is no way to create an unencrypted snapshot copy from an encrypted
      * snapshot; however, you can encrypt a copy of an unencrypted snapshot
-     * with this flag. The default master key is used unless a non-default
-     * AWS Key Management Service (KMS) master key is specified with
+     * with this flag. The default CMK for EBS is used unless a non-default
+     * AWS Key Management Service (AWS KMS) CMK is specified with
      * <code>KmsKeyId</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
@@ -110,15 +111,15 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     private Boolean encrypted;
 
     /**
-     * The full ARN of the AWS Key Management Service (KMS) master key to use
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
      * when creating the snapshot copy. This parameter is only required if
-     * you want to use a non-default master key; if this parameter is not
-     * specified, the default master key is used. The ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the
-     * master key, the AWS account ID of the master key owner, the
-     * <code>key</code> namespace, and then the master key ID. For example,
+     * you want to use a non-default CMK; if this parameter is not specified,
+     * the default CMK for EBS is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     * and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
-     * The specified key must exist in the region that the snapshot is being
+     * The specified CMK must exist in the region that the snapshot is being
      * copied to. If a <code>KmsKeyId</code> is specified, the
      * <code>Encrypted</code> flag must also be set.
      */
@@ -437,8 +438,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * Specifies whether the destination snapshot should be encrypted. There
      * is no way to create an unencrypted snapshot copy from an encrypted
      * snapshot; however, you can encrypt a copy of an unencrypted snapshot
-     * with this flag. The default master key is used unless a non-default
-     * AWS Key Management Service (KMS) master key is specified with
+     * with this flag. The default CMK for EBS is used unless a non-default
+     * AWS Key Management Service (AWS KMS) CMK is specified with
      * <code>KmsKeyId</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
@@ -447,8 +448,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * @return Specifies whether the destination snapshot should be encrypted. There
      *         is no way to create an unencrypted snapshot copy from an encrypted
      *         snapshot; however, you can encrypt a copy of an unencrypted snapshot
-     *         with this flag. The default master key is used unless a non-default
-     *         AWS Key Management Service (KMS) master key is specified with
+     *         with this flag. The default CMK for EBS is used unless a non-default
+     *         AWS Key Management Service (AWS KMS) CMK is specified with
      *         <code>KmsKeyId</code>. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
@@ -462,8 +463,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * Specifies whether the destination snapshot should be encrypted. There
      * is no way to create an unencrypted snapshot copy from an encrypted
      * snapshot; however, you can encrypt a copy of an unencrypted snapshot
-     * with this flag. The default master key is used unless a non-default
-     * AWS Key Management Service (KMS) master key is specified with
+     * with this flag. The default CMK for EBS is used unless a non-default
+     * AWS Key Management Service (AWS KMS) CMK is specified with
      * <code>KmsKeyId</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
@@ -472,8 +473,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * @param encrypted Specifies whether the destination snapshot should be encrypted. There
      *         is no way to create an unencrypted snapshot copy from an encrypted
      *         snapshot; however, you can encrypt a copy of an unencrypted snapshot
-     *         with this flag. The default master key is used unless a non-default
-     *         AWS Key Management Service (KMS) master key is specified with
+     *         with this flag. The default CMK for EBS is used unless a non-default
+     *         AWS Key Management Service (AWS KMS) CMK is specified with
      *         <code>KmsKeyId</code>. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
@@ -487,8 +488,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * Specifies whether the destination snapshot should be encrypted. There
      * is no way to create an unencrypted snapshot copy from an encrypted
      * snapshot; however, you can encrypt a copy of an unencrypted snapshot
-     * with this flag. The default master key is used unless a non-default
-     * AWS Key Management Service (KMS) master key is specified with
+     * with this flag. The default CMK for EBS is used unless a non-default
+     * AWS Key Management Service (AWS KMS) CMK is specified with
      * <code>KmsKeyId</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
@@ -499,8 +500,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * @param encrypted Specifies whether the destination snapshot should be encrypted. There
      *         is no way to create an unencrypted snapshot copy from an encrypted
      *         snapshot; however, you can encrypt a copy of an unencrypted snapshot
-     *         with this flag. The default master key is used unless a non-default
-     *         AWS Key Management Service (KMS) master key is specified with
+     *         with this flag. The default CMK for EBS is used unless a non-default
+     *         AWS Key Management Service (AWS KMS) CMK is specified with
      *         <code>KmsKeyId</code>. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
@@ -518,8 +519,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * Specifies whether the destination snapshot should be encrypted. There
      * is no way to create an unencrypted snapshot copy from an encrypted
      * snapshot; however, you can encrypt a copy of an unencrypted snapshot
-     * with this flag. The default master key is used unless a non-default
-     * AWS Key Management Service (KMS) master key is specified with
+     * with this flag. The default CMK for EBS is used unless a non-default
+     * AWS Key Management Service (AWS KMS) CMK is specified with
      * <code>KmsKeyId</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
@@ -528,8 +529,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * @return Specifies whether the destination snapshot should be encrypted. There
      *         is no way to create an unencrypted snapshot copy from an encrypted
      *         snapshot; however, you can encrypt a copy of an unencrypted snapshot
-     *         with this flag. The default master key is used unless a non-default
-     *         AWS Key Management Service (KMS) master key is specified with
+     *         with this flag. The default CMK for EBS is used unless a non-default
+     *         AWS Key Management Service (AWS KMS) CMK is specified with
      *         <code>KmsKeyId</code>. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      *         EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
@@ -540,27 +541,27 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The full ARN of the AWS Key Management Service (KMS) master key to use
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
      * when creating the snapshot copy. This parameter is only required if
-     * you want to use a non-default master key; if this parameter is not
-     * specified, the default master key is used. The ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the
-     * master key, the AWS account ID of the master key owner, the
-     * <code>key</code> namespace, and then the master key ID. For example,
+     * you want to use a non-default CMK; if this parameter is not specified,
+     * the default CMK for EBS is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     * and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
-     * The specified key must exist in the region that the snapshot is being
+     * The specified CMK must exist in the region that the snapshot is being
      * copied to. If a <code>KmsKeyId</code> is specified, the
      * <code>Encrypted</code> flag must also be set.
      *
-     * @return The full ARN of the AWS Key Management Service (KMS) master key to use
+     * @return The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
      *         when creating the snapshot copy. This parameter is only required if
-     *         you want to use a non-default master key; if this parameter is not
-     *         specified, the default master key is used. The ARN contains the
-     *         <code>arn:aws:kms</code> namespace, followed by the region of the
-     *         master key, the AWS account ID of the master key owner, the
-     *         <code>key</code> namespace, and then the master key ID. For example,
+     *         you want to use a non-default CMK; if this parameter is not specified,
+     *         the default CMK for EBS is used. The ARN contains the
+     *         <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     *         the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     *         and then the CMK ID. For example,
      *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
-     *         The specified key must exist in the region that the snapshot is being
+     *         The specified CMK must exist in the region that the snapshot is being
      *         copied to. If a <code>KmsKeyId</code> is specified, the
      *         <code>Encrypted</code> flag must also be set.
      */
@@ -569,27 +570,27 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The full ARN of the AWS Key Management Service (KMS) master key to use
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
      * when creating the snapshot copy. This parameter is only required if
-     * you want to use a non-default master key; if this parameter is not
-     * specified, the default master key is used. The ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the
-     * master key, the AWS account ID of the master key owner, the
-     * <code>key</code> namespace, and then the master key ID. For example,
+     * you want to use a non-default CMK; if this parameter is not specified,
+     * the default CMK for EBS is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     * and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
-     * The specified key must exist in the region that the snapshot is being
+     * The specified CMK must exist in the region that the snapshot is being
      * copied to. If a <code>KmsKeyId</code> is specified, the
      * <code>Encrypted</code> flag must also be set.
      *
-     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) master key to use
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
      *         when creating the snapshot copy. This parameter is only required if
-     *         you want to use a non-default master key; if this parameter is not
-     *         specified, the default master key is used. The ARN contains the
-     *         <code>arn:aws:kms</code> namespace, followed by the region of the
-     *         master key, the AWS account ID of the master key owner, the
-     *         <code>key</code> namespace, and then the master key ID. For example,
+     *         you want to use a non-default CMK; if this parameter is not specified,
+     *         the default CMK for EBS is used. The ARN contains the
+     *         <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     *         the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     *         and then the CMK ID. For example,
      *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
-     *         The specified key must exist in the region that the snapshot is being
+     *         The specified CMK must exist in the region that the snapshot is being
      *         copied to. If a <code>KmsKeyId</code> is specified, the
      *         <code>Encrypted</code> flag must also be set.
      */
@@ -598,29 +599,29 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The full ARN of the AWS Key Management Service (KMS) master key to use
+     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
      * when creating the snapshot copy. This parameter is only required if
-     * you want to use a non-default master key; if this parameter is not
-     * specified, the default master key is used. The ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the
-     * master key, the AWS account ID of the master key owner, the
-     * <code>key</code> namespace, and then the master key ID. For example,
+     * you want to use a non-default CMK; if this parameter is not specified,
+     * the default CMK for EBS is used. The ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     * and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
-     * The specified key must exist in the region that the snapshot is being
+     * The specified CMK must exist in the region that the snapshot is being
      * copied to. If a <code>KmsKeyId</code> is specified, the
      * <code>Encrypted</code> flag must also be set.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param kmsKeyId The full ARN of the AWS Key Management Service (KMS) master key to use
+     * @param kmsKeyId The full ARN of the AWS Key Management Service (AWS KMS) CMK to use
      *         when creating the snapshot copy. This parameter is only required if
-     *         you want to use a non-default master key; if this parameter is not
-     *         specified, the default master key is used. The ARN contains the
-     *         <code>arn:aws:kms</code> namespace, followed by the region of the
-     *         master key, the AWS account ID of the master key owner, the
-     *         <code>key</code> namespace, and then the master key ID. For example,
+     *         you want to use a non-default CMK; if this parameter is not specified,
+     *         the default CMK for EBS is used. The ARN contains the
+     *         <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     *         the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     *         and then the CMK ID. For example,
      *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
-     *         The specified key must exist in the region that the snapshot is being
+     *         The specified CMK must exist in the region that the snapshot is being
      *         copied to. If a <code>KmsKeyId</code> is specified, the
      *         <code>Encrypted</code> flag must also be set.
      *

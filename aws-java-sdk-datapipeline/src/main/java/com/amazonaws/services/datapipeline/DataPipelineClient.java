@@ -916,65 +916,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
     /**
      * <p>
-     * Task runners call <code>EvaluateExpression</code> to evaluate a
-     * string in the context of the specified object. For example, a task
-     * runner can evaluate SQL queries stored in Amazon S3.
-     * </p>
-     *
-     * @param evaluateExpressionRequest Container for the necessary
-     *           parameters to execute the EvaluateExpression service method on
-     *           DataPipeline.
-     * 
-     * @return The response from the EvaluateExpression service method, as
-     *         returned by DataPipeline.
-     * 
-     * @throws PipelineNotFoundException
-     * @throws InternalServiceErrorException
-     * @throws InvalidRequestException
-     * @throws TaskNotFoundException
-     * @throws PipelineDeletedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by DataPipeline indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public EvaluateExpressionResult evaluateExpression(EvaluateExpressionRequest evaluateExpressionRequest) {
-        ExecutionContext executionContext = createExecutionContext(evaluateExpressionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<EvaluateExpressionRequest> request = null;
-        Response<EvaluateExpressionResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new EvaluateExpressionRequestMarshaller().marshall(super.beforeMarshalling(evaluateExpressionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<EvaluateExpressionResult, JsonUnmarshallerContext> unmarshaller =
-                new EvaluateExpressionResultJsonUnmarshaller();
-            JsonResponseHandler<EvaluateExpressionResult> responseHandler =
-                new JsonResponseHandler<EvaluateExpressionResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
      * Retrieves metadata about one or more pipelines. The information
      * retrieved includes the name of the pipeline, the pipeline identifier,
      * its current state, and the user account that owns the pipeline. Using
@@ -1028,6 +969,65 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 new DescribePipelinesResultJsonUnmarshaller();
             JsonResponseHandler<DescribePipelinesResult> responseHandler =
                 new JsonResponseHandler<DescribePipelinesResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Task runners call <code>EvaluateExpression</code> to evaluate a
+     * string in the context of the specified object. For example, a task
+     * runner can evaluate SQL queries stored in Amazon S3.
+     * </p>
+     *
+     * @param evaluateExpressionRequest Container for the necessary
+     *           parameters to execute the EvaluateExpression service method on
+     *           DataPipeline.
+     * 
+     * @return The response from the EvaluateExpression service method, as
+     *         returned by DataPipeline.
+     * 
+     * @throws PipelineNotFoundException
+     * @throws InternalServiceErrorException
+     * @throws InvalidRequestException
+     * @throws TaskNotFoundException
+     * @throws PipelineDeletedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EvaluateExpressionResult evaluateExpression(EvaluateExpressionRequest evaluateExpressionRequest) {
+        ExecutionContext executionContext = createExecutionContext(evaluateExpressionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EvaluateExpressionRequest> request = null;
+        Response<EvaluateExpressionResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EvaluateExpressionRequestMarshaller().marshall(super.beforeMarshalling(evaluateExpressionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<EvaluateExpressionResult, JsonUnmarshallerContext> unmarshaller =
+                new EvaluateExpressionResultJsonUnmarshaller();
+            JsonResponseHandler<EvaluateExpressionResult> responseHandler =
+                new JsonResponseHandler<EvaluateExpressionResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -1264,61 +1264,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
     /**
      * <p>
-     * Adds or modifies tags for the specified pipeline.
-     * </p>
-     *
-     * @param addTagsRequest Container for the necessary parameters to
-     *           execute the AddTags service method on DataPipeline.
-     * 
-     * @return The response from the AddTags service method, as returned by
-     *         DataPipeline.
-     * 
-     * @throws PipelineNotFoundException
-     * @throws InternalServiceErrorException
-     * @throws InvalidRequestException
-     * @throws PipelineDeletedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by DataPipeline indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
-        ExecutionContext executionContext = createExecutionContext(addTagsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<AddTagsRequest> request = null;
-        Response<AddTagsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new AddTagsRequestMarshaller().marshall(super.beforeMarshalling(addTagsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<AddTagsResult, JsonUnmarshallerContext> unmarshaller =
-                new AddTagsResultJsonUnmarshaller();
-            JsonResponseHandler<AddTagsResult> responseHandler =
-                new JsonResponseHandler<AddTagsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
      * Adds tasks, schedules, and preconditions to the specified pipeline.
      * You can use <code>PutPipelineDefinition</code> to populate a new
      * pipeline.
@@ -1381,6 +1326,61 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 new PutPipelineDefinitionResultJsonUnmarshaller();
             JsonResponseHandler<PutPipelineDefinitionResult> responseHandler =
                 new JsonResponseHandler<PutPipelineDefinitionResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or modifies tags for the specified pipeline.
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags service method on DataPipeline.
+     * 
+     * @return The response from the AddTags service method, as returned by
+     *         DataPipeline.
+     * 
+     * @throws PipelineNotFoundException
+     * @throws InternalServiceErrorException
+     * @throws InvalidRequestException
+     * @throws PipelineDeletedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+        ExecutionContext executionContext = createExecutionContext(addTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddTagsRequest> request = null;
+        Response<AddTagsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddTagsRequestMarshaller().marshall(super.beforeMarshalling(addTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<AddTagsResult, JsonUnmarshallerContext> unmarshaller =
+                new AddTagsResultJsonUnmarshaller();
+            JsonResponseHandler<AddTagsResult> responseHandler =
+                new JsonResponseHandler<AddTagsResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
 

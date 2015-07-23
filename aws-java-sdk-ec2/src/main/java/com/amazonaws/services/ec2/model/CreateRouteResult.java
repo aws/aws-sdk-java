@@ -28,12 +28,6 @@ public class CreateRouteResult implements Serializable, Cloneable {
     private Boolean returnValue;
 
     /**
-     * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request.
-     */
-    private String clientToken;
-
-    /**
      * Returns <code>true</code> if the request succeeds; otherwise, it
      * returns an error.
      *
@@ -84,45 +78,6 @@ public class CreateRouteResult implements Serializable, Cloneable {
     }
 
     /**
-     * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request.
-     *
-     * @return Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request.
-     */
-    public String getClientToken() {
-        return clientToken;
-    }
-    
-    /**
-     * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request.
-     *
-     * @param clientToken Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request.
-     */
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-    
-    /**
-     * Unique, case-sensitive identifier you provide to ensure the
-     * idempotency of the request.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param clientToken Unique, case-sensitive identifier you provide to ensure the
-     *         idempotency of the request.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public CreateRouteResult withClientToken(String clientToken) {
-        this.clientToken = clientToken;
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -134,8 +89,7 @@ public class CreateRouteResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (isReturn() != null) sb.append("Return: " + isReturn() + ",");
-        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() );
+        if (isReturn() != null) sb.append("Return: " + isReturn() );
         sb.append("}");
         return sb.toString();
     }
@@ -146,7 +100,6 @@ public class CreateRouteResult implements Serializable, Cloneable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((isReturn() == null) ? 0 : isReturn().hashCode()); 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode()); 
         return hashCode;
     }
     
@@ -160,8 +113,6 @@ public class CreateRouteResult implements Serializable, Cloneable {
         
         if (other.isReturn() == null ^ this.isReturn() == null) return false;
         if (other.isReturn() != null && other.isReturn().equals(this.isReturn()) == false) return false; 
-        if (other.getClientToken() == null ^ this.getClientToken() == null) return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false) return false; 
         return true;
     }
     

@@ -47,10 +47,6 @@ public class CreateRouteResultStaxUnmarshaller implements Unmarshaller<CreateRou
                     createRouteResult.setReturn(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("clientToken", targetDepth)) {
-                    createRouteResult.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createRouteResult;

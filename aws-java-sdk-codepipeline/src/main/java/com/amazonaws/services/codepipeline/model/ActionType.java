@@ -154,6 +154,12 @@ public class ActionType implements Serializable, Cloneable {
      * <p>
      * The configuration properties for the action type.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setActionConfigurationProperties(java.util.Collection)}
+     * or {@link #withActionConfigurationProperties(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
      * 
      * @param actionConfigurationProperties
      *        The configuration properties for the action type.

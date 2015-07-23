@@ -1123,6 +1123,12 @@ public class StreamDescription implements Serializable, Cloneable {
      * <p>
      * The key attribute(s) of the stream's DynamoDB table.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeySchema(java.util.Collection)} or
+     * {@link #withKeySchema(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param keySchema
      *        The key attribute(s) of the stream's DynamoDB table.
@@ -1187,6 +1193,12 @@ public class StreamDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The shards that comprise the stream.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setShards(java.util.Collection)} or
+     * {@link #withShards(java.util.Collection)} if you want to override the
+     * existing values.
      * </p>
      * 
      * @param shards

@@ -107,6 +107,12 @@ public class UniqueProblem implements Serializable, Cloneable {
      * <p>
      * Information about the problems.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setProblems(java.util.Collection)} or
+     * {@link #withProblems(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param problems
      *        Information about the problems.

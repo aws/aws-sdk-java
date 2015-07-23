@@ -49,7 +49,8 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     private String snapshotId;
 
     /**
-     * The snapshot attribute to modify.
+     * The snapshot attribute to modify. <note> <p>Only volume creation
+     * permissions may be modified at the customer level. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
@@ -88,7 +89,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * initialize any additional object members.
      * 
      * @param snapshotId The ID of the snapshot.
-     * @param attribute The snapshot attribute to modify.
+     * @param attribute The snapshot attribute to modify. <note> <p>Only
+     * volume creation permissions may be modified at the customer level.
+     * </note>
      * @param operationType The type of operation to perform to the
      * attribute.
      */
@@ -104,7 +107,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * initialize any additional object members.
      * 
      * @param snapshotId The ID of the snapshot.
-     * @param attribute The snapshot attribute to modify.
+     * @param attribute The snapshot attribute to modify. <note> <p>Only
+     * volume creation permissions may be modified at the customer level.
+     * </note>
      * @param operationType The type of operation to perform to the
      * attribute.
      */
@@ -148,12 +153,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The snapshot attribute to modify.
+     * The snapshot attribute to modify. <note> <p>Only volume creation
+     * permissions may be modified at the customer level. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @return The snapshot attribute to modify.
+     * @return The snapshot attribute to modify. <note> <p>Only volume creation
+     *         permissions may be modified at the customer level. </note>
      *
      * @see SnapshotAttributeName
      */
@@ -162,12 +169,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The snapshot attribute to modify.
+     * The snapshot attribute to modify. <note> <p>Only volume creation
+     * permissions may be modified at the customer level. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The snapshot attribute to modify.
+     * @param attribute The snapshot attribute to modify. <note> <p>Only volume creation
+     *         permissions may be modified at the customer level. </note>
      *
      * @see SnapshotAttributeName
      */
@@ -176,14 +185,16 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The snapshot attribute to modify.
+     * The snapshot attribute to modify. <note> <p>Only volume creation
+     * permissions may be modified at the customer level. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The snapshot attribute to modify.
+     * @param attribute The snapshot attribute to modify. <note> <p>Only volume creation
+     *         permissions may be modified at the customer level. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -196,12 +207,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * The snapshot attribute to modify.
+     * The snapshot attribute to modify. <note> <p>Only volume creation
+     * permissions may be modified at the customer level. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The snapshot attribute to modify.
+     * @param attribute The snapshot attribute to modify. <note> <p>Only volume creation
+     *         permissions may be modified at the customer level. </note>
      *
      * @see SnapshotAttributeName
      */
@@ -210,14 +223,16 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The snapshot attribute to modify.
+     * The snapshot attribute to modify. <note> <p>Only volume creation
+     * permissions may be modified at the customer level. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The snapshot attribute to modify.
+     * @param attribute The snapshot attribute to modify. <note> <p>Only volume creation
+     *         permissions may be modified at the customer level. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

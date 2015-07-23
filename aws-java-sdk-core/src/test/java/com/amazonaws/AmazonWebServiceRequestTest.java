@@ -5,6 +5,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
@@ -41,6 +43,9 @@ public class AmazonWebServiceRequestTest {
         from.setRequestMetricCollector(collector);
         from.putCustomRequestHeader("k1", "v1");
         from.putCustomRequestHeader("k2", "v2");
+        from.putCustomQueryParameter("k1", "v1");
+        from.putCustomQueryParameter("k2", "v2a");
+        from.putCustomQueryParameter("k2", "v2b");
         from.getRequestClientOptions().setReadLimit(1234);
 
         final AmazonWebServiceRequest to = new AmazonWebServiceRequest() {
@@ -57,6 +62,7 @@ public class AmazonWebServiceRequestTest {
 
     public static void verifyBaseBeforeCopy(final AmazonWebServiceRequest to) {
         assertNull(to.getCustomRequestHeaders());
+        assertNull(to.getCustomQueryParameters());
         assertSame(ProgressListener.NOOP, to.getGeneralProgressListener());
         assertNull(to.getRequestCredentials());
         assertNull(to.getRequestMetricCollector());
@@ -78,6 +84,10 @@ public class AmazonWebServiceRequestTest {
         assertTrue(2 == headers.size());
         assertEquals("v1", headers.get("k1"));
         assertEquals("v2", headers.get("k2"));
+        Map<String, List<String>> parmas = to.getCustomQueryParameters();
+        assertTrue(2 == parmas.size());
+        assertEquals(Arrays.asList("v1"), parmas.get("k1"));
+        assertEquals(Arrays.asList("v2a", "v2b"), parmas.get("k2"));
         assertSame(listener, to.getGeneralProgressListener());
         assertSame(credentials, to.getRequestCredentials());
         assertSame(collector, to.getRequestMetricCollector());

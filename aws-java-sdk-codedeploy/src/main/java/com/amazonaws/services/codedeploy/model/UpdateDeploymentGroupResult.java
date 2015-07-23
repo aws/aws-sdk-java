@@ -94,6 +94,12 @@ public class UpdateDeploymentGroupResult implements Serializable, Cloneable {
      * account. If the output does contain data, AWS CodeDeploy could not remove
      * some Auto Scaling lifecycle event hooks from the AWS account.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setHooksNotCleanedUp(java.util.Collection)} or
+     * {@link #withHooksNotCleanedUp(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param hooksNotCleanedUp
      *        If the output contains no data, and the corresponding deployment

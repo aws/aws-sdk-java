@@ -476,37 +476,6 @@ public interface DataPipeline {
 
     /**
      * <p>
-     * Task runners call <code>EvaluateExpression</code> to evaluate a
-     * string in the context of the specified object. For example, a task
-     * runner can evaluate SQL queries stored in Amazon S3.
-     * </p>
-     *
-     * @param evaluateExpressionRequest Container for the necessary
-     *           parameters to execute the EvaluateExpression service method on
-     *           DataPipeline.
-     * 
-     * @return The response from the EvaluateExpression service method, as
-     *         returned by DataPipeline.
-     * 
-     * @throws PipelineNotFoundException
-     * @throws InternalServiceErrorException
-     * @throws InvalidRequestException
-     * @throws TaskNotFoundException
-     * @throws PipelineDeletedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by DataPipeline indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public EvaluateExpressionResult evaluateExpression(EvaluateExpressionRequest evaluateExpressionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Retrieves metadata about one or more pipelines. The information
      * retrieved includes the name of the pipeline, the pipeline identifier,
      * its current state, and the user account that owns the pipeline. Using
@@ -540,6 +509,37 @@ public interface DataPipeline {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribePipelinesResult describePipelines(DescribePipelinesRequest describePipelinesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Task runners call <code>EvaluateExpression</code> to evaluate a
+     * string in the context of the specified object. For example, a task
+     * runner can evaluate SQL queries stored in Amazon S3.
+     * </p>
+     *
+     * @param evaluateExpressionRequest Container for the necessary
+     *           parameters to execute the EvaluateExpression service method on
+     *           DataPipeline.
+     * 
+     * @return The response from the EvaluateExpression service method, as
+     *         returned by DataPipeline.
+     * 
+     * @throws PipelineNotFoundException
+     * @throws InternalServiceErrorException
+     * @throws InvalidRequestException
+     * @throws TaskNotFoundException
+     * @throws PipelineDeletedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EvaluateExpressionResult evaluateExpression(EvaluateExpressionRequest evaluateExpressionRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -656,33 +656,6 @@ public interface DataPipeline {
 
     /**
      * <p>
-     * Adds or modifies tags for the specified pipeline.
-     * </p>
-     *
-     * @param addTagsRequest Container for the necessary parameters to
-     *           execute the AddTags service method on DataPipeline.
-     * 
-     * @return The response from the AddTags service method, as returned by
-     *         DataPipeline.
-     * 
-     * @throws PipelineNotFoundException
-     * @throws InternalServiceErrorException
-     * @throws InvalidRequestException
-     * @throws PipelineDeletedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by DataPipeline indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public AddTagsResult addTags(AddTagsRequest addTagsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Adds tasks, schedules, and preconditions to the specified pipeline.
      * You can use <code>PutPipelineDefinition</code> to populate a new
      * pipeline.
@@ -725,6 +698,33 @@ public interface DataPipeline {
      *             either a problem with the data in the request, or a server side issue.
      */
     public PutPipelineDefinitionResult putPipelineDefinition(PutPipelineDefinitionRequest putPipelineDefinitionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Adds or modifies tags for the specified pipeline.
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags service method on DataPipeline.
+     * 
+     * @return The response from the AddTags service method, as returned by
+     *         DataPipeline.
+     * 
+     * @throws PipelineNotFoundException
+     * @throws InternalServiceErrorException
+     * @throws InvalidRequestException
+     * @throws PipelineDeletedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by DataPipeline indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AddTagsResult addTags(AddTagsRequest addTagsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

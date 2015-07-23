@@ -254,62 +254,6 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Returns the list of AWS Direct Connect locations in the current AWS
-     * region. These are the locations that may be selected when calling
-     * CreateConnection or CreateInterconnect.
-     * </p>
-     *
-     * @param describeLocationsRequest Container for the necessary parameters
-     *           to execute the DescribeLocations service method on
-     *           AmazonDirectConnect.
-     * 
-     * @return The response from the DescribeLocations service method, as
-     *         returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeLocationsResult describeLocations(DescribeLocationsRequest describeLocationsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeLocationsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeLocationsRequest> request = null;
-        Response<DescribeLocationsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeLocationsRequestMarshaller().marshall(super.beforeMarshalling(describeLocationsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeLocationsResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeLocationsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeLocationsResult> responseHandler =
-                new JsonResponseHandler<DescribeLocationsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
      * Accept ownership of a public virtual interface created by another
      * customer.
      * </p>
@@ -358,6 +302,62 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 new ConfirmPublicVirtualInterfaceResultJsonUnmarshaller();
             JsonResponseHandler<ConfirmPublicVirtualInterfaceResult> responseHandler =
                 new JsonResponseHandler<ConfirmPublicVirtualInterfaceResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the list of AWS Direct Connect locations in the current AWS
+     * region. These are the locations that may be selected when calling
+     * CreateConnection or CreateInterconnect.
+     * </p>
+     *
+     * @param describeLocationsRequest Container for the necessary parameters
+     *           to execute the DescribeLocations service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the DescribeLocations service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeLocationsResult describeLocations(DescribeLocationsRequest describeLocationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeLocationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeLocationsRequest> request = null;
+        Response<DescribeLocationsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeLocationsRequestMarshaller().marshall(super.beforeMarshalling(describeLocationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<DescribeLocationsResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeLocationsResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeLocationsResult> responseHandler =
+                new JsonResponseHandler<DescribeLocationsResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
 

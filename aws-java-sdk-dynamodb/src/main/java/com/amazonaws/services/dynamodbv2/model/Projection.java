@@ -413,6 +413,12 @@ public class Projection implements Serializable, Cloneable {
      * you project the same attribute into two different indexes, this counts as
      * two distinct attributes when determining the total.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setNonKeyAttributes(java.util.Collection)} or
+     * {@link #withNonKeyAttributes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param nonKeyAttributes
      *        Represents the non-key attribute names which will be projected

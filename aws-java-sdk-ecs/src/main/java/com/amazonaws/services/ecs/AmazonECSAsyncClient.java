@@ -904,6 +904,106 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     
     /**
      * <p>
+     * Deregisters the specified task definition by family and revision.
+     * Upon deregistration, the task definition is marked as
+     * <code>INACTIVE</code> . Existing tasks and services that reference an
+     * <code>INACTIVE</code> task definition continue to run without
+     * disruption. Existing services that reference an <code>INACTIVE</code>
+     * task definition can still scale up or down by modifying the service's
+     * desired count.
+     * </p>
+     * <p>
+     * You cannot use an <code>INACTIVE</code> task definition to run new
+     * tasks or create new services, and you cannot update an existing
+     * service to reference an <code>INACTIVE</code> task definition
+     * (although there may be up to a 10 minute window following
+     * deregistration where these restrictions have not yet taken effect).
+     * </p>
+     *
+     * @param deregisterTaskDefinitionRequest Container for the necessary
+     *           parameters to execute the DeregisterTaskDefinition operation on
+     *           AmazonECS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeregisterTaskDefinition service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(final DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeregisterTaskDefinitionResult>() {
+            public DeregisterTaskDefinitionResult call() throws Exception {
+                return deregisterTaskDefinition(deregisterTaskDefinitionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deregisters the specified task definition by family and revision.
+     * Upon deregistration, the task definition is marked as
+     * <code>INACTIVE</code> . Existing tasks and services that reference an
+     * <code>INACTIVE</code> task definition continue to run without
+     * disruption. Existing services that reference an <code>INACTIVE</code>
+     * task definition can still scale up or down by modifying the service's
+     * desired count.
+     * </p>
+     * <p>
+     * You cannot use an <code>INACTIVE</code> task definition to run new
+     * tasks or create new services, and you cannot update an existing
+     * service to reference an <code>INACTIVE</code> task definition
+     * (although there may be up to a 10 minute window following
+     * deregistration where these restrictions have not yet taken effect).
+     * </p>
+     *
+     * @param deregisterTaskDefinitionRequest Container for the necessary
+     *           parameters to execute the DeregisterTaskDefinition operation on
+     *           AmazonECS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeregisterTaskDefinition service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(
+            final DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest,
+            final AsyncHandler<DeregisterTaskDefinitionRequest, DeregisterTaskDefinitionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeregisterTaskDefinitionResult>() {
+            public DeregisterTaskDefinitionResult call() throws Exception {
+              DeregisterTaskDefinitionResult result;
+                try {
+                result = deregisterTaskDefinition(deregisterTaskDefinitionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deregisterTaskDefinitionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Deregisters an Amazon ECS container instance from the specified
      * cluster. This instance will no longer be available to run tasks.
      * </p>
@@ -1079,106 +1179,6 @@ public class AmazonECSAsyncClient extends AmazonECSClient
             throw ex;
               }
               asyncHandler.onSuccess(listContainerInstancesRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deregisters the specified task definition by family and revision.
-     * Upon deregistration, the task definition is marked as
-     * <code>INACTIVE</code> . Existing tasks and services that reference an
-     * <code>INACTIVE</code> task definition continue to run without
-     * disruption. Existing services that reference an <code>INACTIVE</code>
-     * task definition can still scale up or down by modifying the service's
-     * desired count.
-     * </p>
-     * <p>
-     * You cannot use an <code>INACTIVE</code> task definition to run new
-     * tasks or create new services, and you cannot update an existing
-     * service to reference an <code>INACTIVE</code> task definition
-     * (although there may be up to a 10 minute window following
-     * deregistration where these restrictions have not yet taken effect).
-     * </p>
-     *
-     * @param deregisterTaskDefinitionRequest Container for the necessary
-     *           parameters to execute the DeregisterTaskDefinition operation on
-     *           AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeregisterTaskDefinition service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(final DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeregisterTaskDefinitionResult>() {
-            public DeregisterTaskDefinitionResult call() throws Exception {
-                return deregisterTaskDefinition(deregisterTaskDefinitionRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deregisters the specified task definition by family and revision.
-     * Upon deregistration, the task definition is marked as
-     * <code>INACTIVE</code> . Existing tasks and services that reference an
-     * <code>INACTIVE</code> task definition continue to run without
-     * disruption. Existing services that reference an <code>INACTIVE</code>
-     * task definition can still scale up or down by modifying the service's
-     * desired count.
-     * </p>
-     * <p>
-     * You cannot use an <code>INACTIVE</code> task definition to run new
-     * tasks or create new services, and you cannot update an existing
-     * service to reference an <code>INACTIVE</code> task definition
-     * (although there may be up to a 10 minute window following
-     * deregistration where these restrictions have not yet taken effect).
-     * </p>
-     *
-     * @param deregisterTaskDefinitionRequest Container for the necessary
-     *           parameters to execute the DeregisterTaskDefinition operation on
-     *           AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeregisterTaskDefinition service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(
-            final DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest,
-            final AsyncHandler<DeregisterTaskDefinitionRequest, DeregisterTaskDefinitionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeregisterTaskDefinitionResult>() {
-            public DeregisterTaskDefinitionResult call() throws Exception {
-              DeregisterTaskDefinitionResult result;
-                try {
-                result = deregisterTaskDefinition(deregisterTaskDefinitionRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deregisterTaskDefinitionRequest, result);
                  return result;
         }
     });
@@ -1538,6 +1538,84 @@ public class AmazonECSAsyncClient extends AmazonECSClient
     
     /**
      * <p>
+     * Runs and maintains a desired number of tasks from a specified task
+     * definition. If the number of tasks running in a service drops below
+     * <code>desiredCount</code> , Amazon ECS will spawn another
+     * instantiation of the task in the specified cluster.
+     * </p>
+     *
+     * @param createServiceRequest Container for the necessary parameters to
+     *           execute the CreateService operation on AmazonECS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateService service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateServiceResult> createServiceAsync(final CreateServiceRequest createServiceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateServiceResult>() {
+            public CreateServiceResult call() throws Exception {
+                return createService(createServiceRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Runs and maintains a desired number of tasks from a specified task
+     * definition. If the number of tasks running in a service drops below
+     * <code>desiredCount</code> , Amazon ECS will spawn another
+     * instantiation of the task in the specified cluster.
+     * </p>
+     *
+     * @param createServiceRequest Container for the necessary parameters to
+     *           execute the CreateService operation on AmazonECS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateService service method, as returned by AmazonECS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonECS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateServiceResult> createServiceAsync(
+            final CreateServiceRequest createServiceRequest,
+            final AsyncHandler<CreateServiceRequest, CreateServiceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateServiceResult>() {
+            public CreateServiceResult call() throws Exception {
+              CreateServiceResult result;
+                try {
+                result = createService(createServiceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createServiceRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Describes Amazon EC2 Container Service container instances. Returns
      * metadata about registered and remaining resources on each container
      * instance requested.
@@ -1765,84 +1843,6 @@ public class AmazonECSAsyncClient extends AmazonECSClient
             throw ex;
               }
               asyncHandler.onSuccess(describeServicesRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Runs and maintains a desired number of tasks from a specified task
-     * definition. If the number of tasks running in a service drops below
-     * <code>desiredCount</code> , Amazon ECS will spawn another
-     * instantiation of the task in the specified cluster.
-     * </p>
-     *
-     * @param createServiceRequest Container for the necessary parameters to
-     *           execute the CreateService operation on AmazonECS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateServiceResult> createServiceAsync(final CreateServiceRequest createServiceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateServiceResult>() {
-            public CreateServiceResult call() throws Exception {
-                return createService(createServiceRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Runs and maintains a desired number of tasks from a specified task
-     * definition. If the number of tasks running in a service drops below
-     * <code>desiredCount</code> , Amazon ECS will spawn another
-     * instantiation of the task in the specified cluster.
-     * </p>
-     *
-     * @param createServiceRequest Container for the necessary parameters to
-     *           execute the CreateService operation on AmazonECS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateService service method, as returned by AmazonECS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonECS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateServiceResult> createServiceAsync(
-            final CreateServiceRequest createServiceRequest,
-            final AsyncHandler<CreateServiceRequest, CreateServiceResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateServiceResult>() {
-            public CreateServiceResult call() throws Exception {
-              CreateServiceResult result;
-                try {
-                result = createService(createServiceRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createServiceRequest, result);
                  return result;
         }
     });

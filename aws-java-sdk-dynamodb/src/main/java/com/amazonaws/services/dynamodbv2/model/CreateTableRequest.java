@@ -443,6 +443,12 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * An array of attributes that describe the key schema for the table and
      * indexes.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setAttributeDefinitions(java.util.Collection)} or
+     * {@link #withAttributeDefinitions(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param attributeDefinitions
      *        An array of attributes that describe the key schema for the table
@@ -732,6 +738,12 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setKeySchema(java.util.Collection)} or
+     * {@link #withKeySchema(java.util.Collection)} if you want to override the
+     * existing values.
      * </p>
      * 
      * @param keySchema
@@ -1250,6 +1262,12 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * </ul>
      * </li>
      * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setLocalSecondaryIndexes(java.util.Collection)} or
+     * {@link #withLocalSecondaryIndexes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param localSecondaryIndexes
      *        One or more local secondary indexes (the maximum is five) to be
@@ -1869,6 +1887,12 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setGlobalSecondaryIndexes(java.util.Collection)} or
+     * {@link #withGlobalSecondaryIndexes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param globalSecondaryIndexes
      *        One or more global secondary indexes (the maximum is five) to be

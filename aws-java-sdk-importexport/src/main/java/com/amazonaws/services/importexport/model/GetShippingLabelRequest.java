@@ -77,6 +77,12 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
 
     /**
      * Sets the value of the JobIds property for this object.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setJobIds(java.util.Collection)} or
+     * {@link #withJobIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param jobIds
      *        The new value for the JobIds property for this object.

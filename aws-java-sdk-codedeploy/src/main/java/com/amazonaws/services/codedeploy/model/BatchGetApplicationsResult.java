@@ -68,6 +68,12 @@ public class BatchGetApplicationsResult implements Serializable, Cloneable {
      * <p>
      * Information about the applications.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setApplicationsInfo(java.util.Collection)} or
+     * {@link #withApplicationsInfo(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param applicationsInfo
      *        Information about the applications.

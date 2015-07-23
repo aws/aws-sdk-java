@@ -186,6 +186,12 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * state, most recent run details, whether the stage is disabled, and other
      * data.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStageStates(java.util.Collection)} or
+     * {@link #withStageStates(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param stageStates
      *        A list of the pipeline stage output information, including stage

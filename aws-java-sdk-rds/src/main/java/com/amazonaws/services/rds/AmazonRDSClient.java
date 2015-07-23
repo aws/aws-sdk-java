@@ -576,21 +576,21 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @return The response from the CreateDBInstance service method, as
      *         returned by AmazonRDS.
      * 
+     * @throws KMSKeyNotAccessibleException
      * @throws DBParameterGroupNotFoundException
+     * @throws InstanceQuotaExceededException
      * @throws DBSubnetGroupNotFoundException
      * @throws DBInstanceAlreadyExistsException
+     * @throws StorageQuotaExceededException
      * @throws InvalidVPCNetworkStateException
      * @throws StorageTypeNotSupportedException
      * @throws DBSecurityGroupNotFoundException
-     * @throws InvalidSubnetException
-     * @throws AuthorizationNotFoundException
-     * @throws KMSKeyNotAccessibleException
-     * @throws InstanceQuotaExceededException
-     * @throws StorageQuotaExceededException
      * @throws InsufficientDBInstanceCapacityException
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
+     * @throws InvalidSubnetException
      * @throws OptionGroupNotFoundException
      * @throws ProvisionedIopsNotAvailableInAZException
+     * @throws AuthorizationNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1015,8 +1015,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws AuthorizationNotFoundException
      * @throws StorageQuotaExceededException
      * @throws InvalidDBInstanceStateException
-     * @throws InvalidDBSecurityGroupStateException
      * @throws InsufficientDBInstanceCapacityException
+     * @throws InvalidDBSecurityGroupStateException
      * @throws OptionGroupNotFoundException
      * @throws ProvisionedIopsNotAvailableInAZException
      *
@@ -1558,53 +1558,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     
     /**
      * <p>
-     * Describes all available options.
-     * </p>
-     *
-     * @param describeOptionGroupOptionsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroupOptions service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeOptionGroupOptions service
-     *         method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeOptionGroupOptionsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeOptionGroupOptionsRequest> request = null;
-        Response<DescribeOptionGroupOptionsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeOptionGroupOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeOptionGroupOptionsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            response = invoke(request, new DescribeOptionGroupOptionsResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
      * Returns the detailed parameter list for a particular DB parameter
      * group.
      * </p>
@@ -1644,6 +1597,53 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             response = invoke(request, new DescribeDBParametersResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Describes all available options.
+     * </p>
+     *
+     * @param describeOptionGroupOptionsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroupOptions service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeOptionGroupOptions service
+     *         method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeOptionGroupOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeOptionGroupOptionsRequest> request = null;
+        Response<DescribeOptionGroupOptionsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeOptionGroupOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeOptionGroupOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeOptionGroupOptionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {

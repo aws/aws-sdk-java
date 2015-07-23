@@ -17,3 +17,4 @@
  * as padding numeric datatypes so they can be compared as strings.
  */
 package com.amazonaws.services.simpledb.util;
+

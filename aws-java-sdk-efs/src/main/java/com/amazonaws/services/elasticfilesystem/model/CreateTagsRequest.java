@@ -123,6 +123,12 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object
      * is a key-value pair.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param tags
      *        An array of <code>Tag</code> objects to add. Each <code>Tag</code>

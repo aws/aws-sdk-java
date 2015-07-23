@@ -153,6 +153,12 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
      * <p>
      * Information about the compatibility.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIncompatibilityMessages(java.util.Collection)} or
+     * {@link #withIncompatibilityMessages(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
      * 
      * @param incompatibilityMessages
      *        Information about the compatibility.

@@ -1241,80 +1241,6 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     
     /**
      * <p>
-     * Creates an application that has one configuration template named
-     * <code>default</code> and no application versions.
-     * </p>
-     *
-     * @param createApplicationRequest Container for the necessary parameters
-     *           to execute the CreateApplication operation on AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateApplication service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateApplicationResult> createApplicationAsync(final CreateApplicationRequest createApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateApplicationResult>() {
-            public CreateApplicationResult call() throws Exception {
-                return createApplication(createApplicationRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates an application that has one configuration template named
-     * <code>default</code> and no application versions.
-     * </p>
-     *
-     * @param createApplicationRequest Container for the necessary parameters
-     *           to execute the CreateApplication operation on AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateApplication service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateApplicationResult> createApplicationAsync(
-            final CreateApplicationRequest createApplicationRequest,
-            final AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateApplicationResult>() {
-            public CreateApplicationResult call() throws Exception {
-              CreateApplicationResult result;
-                try {
-                result = createApplication(createApplicationRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createApplicationRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Swaps the CNAMEs of two environments.
      * </p>
      *
@@ -1385,6 +1311,80 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
               }
               asyncHandler.onSuccess(swapEnvironmentCNAMEsRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates an application that has one configuration template named
+     * <code>default</code> and no application versions.
+     * </p>
+     *
+     * @param createApplicationRequest Container for the necessary parameters
+     *           to execute the CreateApplication operation on AWSElasticBeanstalk.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateApplication service method, as returned by AWSElasticBeanstalk.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSElasticBeanstalk indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateApplicationResult> createApplicationAsync(final CreateApplicationRequest createApplicationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateApplicationResult>() {
+            public CreateApplicationResult call() throws Exception {
+                return createApplication(createApplicationRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates an application that has one configuration template named
+     * <code>default</code> and no application versions.
+     * </p>
+     *
+     * @param createApplicationRequest Container for the necessary parameters
+     *           to execute the CreateApplication operation on AWSElasticBeanstalk.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateApplication service method, as returned by AWSElasticBeanstalk.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSElasticBeanstalk indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateApplicationResult> createApplicationAsync(
+            final CreateApplicationRequest createApplicationRequest,
+            final AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateApplicationResult>() {
+            public CreateApplicationResult call() throws Exception {
+              CreateApplicationResult result;
+                try {
+                result = createApplication(createApplicationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createApplicationRequest, result);
+                 return result;
         }
     });
     }

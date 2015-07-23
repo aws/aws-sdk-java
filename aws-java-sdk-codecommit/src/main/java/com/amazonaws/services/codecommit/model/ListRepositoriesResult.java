@@ -74,6 +74,12 @@ public class ListRepositoriesResult implements Serializable, Cloneable {
      * <p>
      * Lists the repositories called by the list repositories operation.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRepositories(java.util.Collection)} or
+     * {@link #withRepositories(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param repositories
      *        Lists the repositories called by the list repositories operation.

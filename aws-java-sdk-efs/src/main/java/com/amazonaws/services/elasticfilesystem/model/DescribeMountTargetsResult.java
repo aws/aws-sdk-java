@@ -131,6 +131,12 @@ public class DescribeMountTargetsResult implements Serializable, Cloneable {
      * Returns the file system's mount targets as an array of
      * <code>MountTargetDescription</code> objects.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setMountTargets(java.util.Collection)} or
+     * {@link #withMountTargets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param mountTargets
      *        Returns the file system's mount targets as an array of

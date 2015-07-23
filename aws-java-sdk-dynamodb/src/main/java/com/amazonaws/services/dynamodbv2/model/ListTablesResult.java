@@ -111,6 +111,12 @@ public class ListTablesResult implements Serializable, Cloneable {
      * this value as the <i>ExclusiveStartTableName</i> parameter in a
      * subsequent <i>ListTables</i> request and obtain the next page of results.
      * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTableNames(java.util.Collection)} or
+     * {@link #withTableNames(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
      * 
      * @param tableNames
      *        The names of the tables associated with the current account at the

@@ -72,7 +72,7 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
                 if (context.testExpression("launchSpecifications/item", targetDepth)) {
-                    spotFleetRequestConfigData.getLaunchSpecifications().add(LaunchSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotFleetRequestConfigData.getLaunchSpecifications().add(SpotFleetLaunchSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

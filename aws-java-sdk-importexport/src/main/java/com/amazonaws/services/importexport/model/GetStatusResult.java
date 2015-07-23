@@ -597,6 +597,12 @@ public class GetStatusResult implements Serializable, Cloneable {
 
     /**
      * Sets the value of the ArtifactList property for this object.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setArtifactList(java.util.Collection)} or
+     * {@link #withArtifactList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
      * 
      * @param artifactList
      *        The new value for the ArtifactList property for this object.

@@ -546,6 +546,80 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     
     /**
      * <p>
+     * Returns the stack policy for a specified stack. If a stack doesn't
+     * have a policy, a null value is returned.
+     * </p>
+     *
+     * @param getStackPolicyRequest Container for the necessary parameters to
+     *           execute the GetStackPolicy operation on AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetStackPolicy service method, as returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetStackPolicyResult> getStackPolicyAsync(final GetStackPolicyRequest getStackPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetStackPolicyResult>() {
+            public GetStackPolicyResult call() throws Exception {
+                return getStackPolicy(getStackPolicyRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the stack policy for a specified stack. If a stack doesn't
+     * have a policy, a null value is returned.
+     * </p>
+     *
+     * @param getStackPolicyRequest Container for the necessary parameters to
+     *           execute the GetStackPolicy operation on AmazonCloudFormation.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetStackPolicy service method, as returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetStackPolicyResult> getStackPolicyAsync(
+            final GetStackPolicyRequest getStackPolicyRequest,
+            final AsyncHandler<GetStackPolicyRequest, GetStackPolicyResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetStackPolicyResult>() {
+            public GetStackPolicyResult call() throws Exception {
+              GetStackPolicyResult result;
+                try {
+                result = getStackPolicy(getStackPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getStackPolicyRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns the template body for a specified stack. You can get the
      * template for running or deleted stacks.
      * </p>
@@ -629,80 +703,6 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
             throw ex;
               }
               asyncHandler.onSuccess(getTemplateRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns the stack policy for a specified stack. If a stack doesn't
-     * have a policy, a null value is returned.
-     * </p>
-     *
-     * @param getStackPolicyRequest Container for the necessary parameters to
-     *           execute the GetStackPolicy operation on AmazonCloudFormation.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetStackPolicy service method, as returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetStackPolicyResult> getStackPolicyAsync(final GetStackPolicyRequest getStackPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetStackPolicyResult>() {
-            public GetStackPolicyResult call() throws Exception {
-                return getStackPolicy(getStackPolicyRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns the stack policy for a specified stack. If a stack doesn't
-     * have a policy, a null value is returned.
-     * </p>
-     *
-     * @param getStackPolicyRequest Container for the necessary parameters to
-     *           execute the GetStackPolicy operation on AmazonCloudFormation.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetStackPolicy service method, as returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetStackPolicyResult> getStackPolicyAsync(
-            final GetStackPolicyRequest getStackPolicyRequest,
-            final AsyncHandler<GetStackPolicyRequest, GetStackPolicyResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetStackPolicyResult>() {
-            public GetStackPolicyResult call() throws Exception {
-              GetStackPolicyResult result;
-                try {
-                result = getStackPolicy(getStackPolicyRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getStackPolicyRequest, result);
                  return result;
         }
     });

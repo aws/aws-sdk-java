@@ -60,7 +60,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      * sign the request. You can either specify an AWS account ID or
      * optionally a single '<code>-</code>' (hyphen), in which case Amazon
      * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
+     * to sign the request. If you specify your account ID, do not include
      * any hyphens ('-') in the ID.
      */
     private String accountId;
@@ -93,7 +93,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      * credentials used to sign the request. You can either specify an AWS
      * account ID or optionally a single '<code>-</code>' (hyphen), in which
      * case Amazon Glacier uses the AWS account ID associated with the
-     * credentials used to sign the request. If you specify your Account ID,
+     * credentials used to sign the request. If you specify your account ID,
      * do not include any hyphens ('-') in the ID.
      */
     public ListVaultsRequest(String accountId) {
@@ -110,7 +110,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      * credentials used to sign the request. You can either specify an AWS
      * account ID or optionally a single '<code>-</code>' (hyphen), in which
      * case Amazon Glacier uses the AWS account ID associated with the
-     * credentials used to sign the request. If you specify your Account ID,
+     * credentials used to sign the request. If you specify your account ID,
      * do not include any hyphens ('-') in the ID.
      * @param marker A string used for pagination. The marker specifies the
      * vault ARN after which the listing of vaults should begin.
@@ -130,7 +130,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      * sign the request. You can either specify an AWS account ID or
      * optionally a single '<code>-</code>' (hyphen), in which case Amazon
      * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
+     * to sign the request. If you specify your account ID, do not include
      * any hyphens ('-') in the ID.
      *
      * @return The <code>AccountId</code> value is the AWS account ID. This value
@@ -138,7 +138,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      *         sign the request. You can either specify an AWS account ID or
      *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
      *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your Account ID, do not include
+     *         to sign the request. If you specify your account ID, do not include
      *         any hyphens ('-') in the ID.
      */
     public String getAccountId() {
@@ -151,7 +151,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      * sign the request. You can either specify an AWS account ID or
      * optionally a single '<code>-</code>' (hyphen), in which case Amazon
      * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
+     * to sign the request. If you specify your account ID, do not include
      * any hyphens ('-') in the ID.
      *
      * @param accountId The <code>AccountId</code> value is the AWS account ID. This value
@@ -159,7 +159,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      *         sign the request. You can either specify an AWS account ID or
      *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
      *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your Account ID, do not include
+     *         to sign the request. If you specify your account ID, do not include
      *         any hyphens ('-') in the ID.
      */
     public void setAccountId(String accountId) {
@@ -172,7 +172,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      * sign the request. You can either specify an AWS account ID or
      * optionally a single '<code>-</code>' (hyphen), in which case Amazon
      * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your Account ID, do not include
+     * to sign the request. If you specify your account ID, do not include
      * any hyphens ('-') in the ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -182,7 +182,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      *         sign the request. You can either specify an AWS account ID or
      *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
      *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your Account ID, do not include
+     *         to sign the request. If you specify your account ID, do not include
      *         any hyphens ('-') in the ID.
      *
      * @return A reference to this updated object so that method calls can be chained
