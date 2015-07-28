@@ -18,22 +18,23 @@ import java.util.EnumSet;
 
 /**
  * Represents the queue configuration for an Amazon S3 bucket.
- *
  */
 public class QueueConfiguration extends NotificationConfiguration {
 
     /**
      * The Amazon SQS queue ARN for this configuration.
      */
-    private final String queueARN;
+    private String queueARN;
+
+    public QueueConfiguration() {
+        super();
+    }
 
     /**
-     * Creates a new queue configuration with the given queue arn and set of
-     * events.
-     *
+     * Creates a new queue configuration with the given queue arn and set of events.
+     * 
      * @param queueARN
-     *            the Amazon SQS queue arn to which the notifications are to be
-     *            sent.
+     *            the Amazon SQS queue arn to which the notifications are to be sent.
      * @param events
      *            the events for which the notifications are to be sent
      */
@@ -43,12 +44,10 @@ public class QueueConfiguration extends NotificationConfiguration {
     }
 
     /**
-     * Creates a new queue configuration with the given queue arn and set of
-     * events.
-     *
+     * Creates a new queue configuration with the given queue arn and set of events.
+     * 
      * @param queueARN
-     *            the Amazon SQS queue arn to which the notifications are to be
-     *            sent.
+     *            the Amazon SQS queue arn to which the notifications are to be sent.
      * @param events
      *            the events for which the notifications are to be sent
      */
@@ -62,5 +61,27 @@ public class QueueConfiguration extends NotificationConfiguration {
      */
     public String getQueueARN() {
         return queueARN;
+    }
+
+    /**
+     * Sets the queue ARN for this configuration
+     * 
+     * @param queueARN
+     *            ARN for the SQS queue
+     */
+    public void setQueueARN(String queueARN) {
+        this.queueARN = queueARN;
+    }
+
+    /**
+     * Fluent method to set the queue ARN for this configuration
+     * 
+     * @param queueARN
+     *            ARN for the SQS queue
+     * @return This object for method chaining
+     */
+    public QueueConfiguration withQueueARN(String queueARN) {
+        setQueueARN(queueARN);
+        return this;
     }
 }

@@ -22,28 +22,28 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * An abstract class for all the notification configurations associated with an
- * Amazon S3 bucket.
+ * An abstract class for all the notification configurations associated with an Amazon S3 bucket.
  */
 public abstract class NotificationConfiguration {
 
     /**
      * Set of events for a notification configuration.
      */
-    private Set<String> events;
+    private Set<String> events = new HashSet<String>();
 
     /**
-     * A collection of Amazon S3 Object prefixes associated with this
-     * notification configuration.
+     * @deprecated This field is not used by S3. It will be removed in the next major version of the
+     *             SDK
      */
-    private List<String> objectPrefixes;
+    @Deprecated
+    private List<String> objectPrefixes = new ArrayList<String>();
+
+    private Filter filter;
 
     /**
      * Creates a NotificationConfiguration with empty events and prefixes.
      */
     protected NotificationConfiguration() {
-        this.events = new HashSet<String>();
-        this.objectPrefixes = new ArrayList<String>();
     }
 
     /**
@@ -53,9 +53,6 @@ public abstract class NotificationConfiguration {
      *            the list of events for the notification configuration.
      */
     protected NotificationConfiguration(EnumSet<S3Event> events) {
-        this.events = new HashSet<String>();
-        this.objectPrefixes = new ArrayList<String>();
-
         if (events != null) {
             for (S3Event s3Event : events) {
                 this.events.add(s3Event.toString());
@@ -70,9 +67,6 @@ public abstract class NotificationConfiguration {
      *            the list of events for the notification configuration.
      */
     protected NotificationConfiguration(String... events) {
-        this.events = new HashSet<String>();
-        this.objectPrefixes = new ArrayList<String>();
-
         if (events != null) {
             for (String event : events) {
                 this.events.add(event);
@@ -81,8 +75,7 @@ public abstract class NotificationConfiguration {
     }
 
     /**
-     * Returns the set of events associated with this notification
-     * configuration.
+     * Returns the set of events associated with this notification configuration.
      */
     public Set<String> getEvents() {
         return events;
@@ -99,26 +92,26 @@ public abstract class NotificationConfiguration {
     }
 
     /**
-     * Retuns the list of Amazon S3 object prefixes for this notification
-     * configuration.
+     * @deprecated This field is not used by S3. It will be removed in the next major version of the
+     *             SDK. See {@link #getFilter()} for the correct way to filter notifications.
      */
+    @Deprecated
     public List<String> getObjectPrefixes() {
         return objectPrefixes;
     }
 
     /**
-     * Sets the given prefixes in this {@link NotificationConfiguration} object.
-     *
-     * @param objectPrefixes
-     *            the list of prefixes for the notification configuration.
+     * @deprecated This field is not used by S3. It will be removed in the next major version of the
+     *             SDK. See {@link #setFilter(Filter)} for the correct way to filter notifications.
      */
+    @Deprecated
     public void setObjectPrefixes(List<String> objectPrefixes) {
         this.objectPrefixes = objectPrefixes;
     }
 
     /**
-     * Sets the given events in this {@link NotificationConfiguration} object
-     * and returns this object.
+     * Sets the given events in this {@link NotificationConfiguration} object and returns this
+     * object.
      *
      * @param events
      *            the set of events for the notification configuration.
@@ -130,14 +123,11 @@ public abstract class NotificationConfiguration {
     }
 
     /**
-     * Sets the given prefixes in this {@link NotificationConfiguration} object
-     * and returns this object.
-     *
-     * @param objectPrefixes
-     *            the list of prefixes for the notification configuration.
+     * @deprecated This field is not used by S3. It will be removed in the next major version of the
+     *             SDK. See {@link #withFilter(Filter)} for the correct way to filter notifications.
      */
-    public NotificationConfiguration withObjectPrefixes(
-            String... objectPrefixes) {
+    @Deprecated
+    public NotificationConfiguration withObjectPrefixes(String... objectPrefixes) {
         this.objectPrefixes.clear();
         if (objectPrefixes != null && objectPrefixes.length > 0)
             this.objectPrefixes.addAll(Arrays.asList(objectPrefixes));
@@ -145,8 +135,7 @@ public abstract class NotificationConfiguration {
     }
 
     /**
-     * Adds the given event to the set of events for this
-     * {@link NotificationConfiguration} object.
+     * Adds the given event to the set of events for this {@link NotificationConfiguration} object.
      *
      * @param event
      *            the event to add to this notification configuration
@@ -156,8 +145,7 @@ public abstract class NotificationConfiguration {
     }
 
     /**
-     * Adds the given event to the set of events for this
-     * {@link NotificationConfiguration} object.
+     * Adds the given event to the set of events for this {@link NotificationConfiguration} object.
      *
      * @param event
      *            the event to add to this notification configuration
@@ -167,13 +155,44 @@ public abstract class NotificationConfiguration {
     }
 
     /**
-     * Adds the given prefix to the list of prefix for this
-     * {@link NotificationConfiguration} object.
-     *
-     * @param prefix
-     *            the prefix to add to this notification configuration
+     * @deprecated This field is not used by S3. It will be removed in the next major version of the
+     *             SDK
      */
+    @Deprecated
     public void addObjectPrefix(String prefix) {
         this.objectPrefixes.add(prefix);
     }
+
+    /**
+     * Filter criteria for determining which S3 objects trigger event notifications.
+     *
+     * @return {@link Filter} object associated with this {@link NotificationConfiguration}
+     */
+    public Filter getFilter() {
+        return filter;
+    }
+
+    /**
+     * Sets the filter criteria for this {@link NotificationConfiguration}.
+     *
+     * @param filter
+     *            New {@link Filter}
+     */
+    public void setFilter(Filter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * Sets the filter criteria for this {@link NotificationConfiguration} and returns this object
+     * for method chaining.
+     *
+     * @param filter
+     *            New {@link Filter}
+     * @return This object for method chaining
+     */
+    public NotificationConfiguration withFilter(Filter filter) {
+        setFilter(filter);
+        return this;
+    }
+
 }

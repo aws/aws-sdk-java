@@ -797,10 +797,22 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
     }
 
     /**
-     *  Returns the date when the object is no longer cacheable.
+     * Returns the date when the object is no longer cacheable.
      */
     public Date getHttpExpiresDate() {
         return cloneDate(httpExpiresDate);
+    }
+
+    /**
+     * @return The storage class of the object. Returns null if the object is in STANDARD storage.
+     *         See {@link StorageClass} for possible values
+     */
+    public String getStorageClass() {
+        final Object storageClass = metadata.get(Headers.STORAGE_CLASS);
+        if (storageClass == null) {
+            return null;
+        }
+        return storageClass.toString();
     }
 
     /**

@@ -17,6 +17,7 @@ package com.amazonaws.services.s3.model.transform;
 import java.io.InputStream;
 import java.util.List;
 
+
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.Bucket;
@@ -150,17 +151,6 @@ public class Unmarshallers {
         public BucketWebsiteConfiguration unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser()
                     .parseWebsiteConfigurationResponse(in).getConfiguration();
-        }
-    }
-
-    /**
-     * Unmarshaller for the BucketNotificationConfiguration XML response.
-     */
-    public static final class BucketNotificationConfigurationUnmarshaller implements
-            Unmarshaller<BucketNotificationConfiguration, InputStream> {
-        public BucketNotificationConfiguration unmarshall(InputStream in) throws Exception {
-            return new XmlResponsesSaxParser()
-                    .parseNotificationConfigurationResponse(in).getConfiguration();
         }
     }
 

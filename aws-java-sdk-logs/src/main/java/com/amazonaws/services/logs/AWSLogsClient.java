@@ -356,6 +356,55 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     
     /**
      * <p>
+     * Deletes the destination with the specified name and eventually
+     * disables all the subscription filters that publish to it. This will
+     * not delete the physical resource encapsulated by the destination.
+     * </p>
+     *
+     * @param deleteDestinationRequest Container for the necessary parameters
+     *           to execute the DeleteDestination service method on AWSLogs.
+     * 
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     * @throws OperationAbortedException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteDestination(DeleteDestinationRequest deleteDestinationRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDestinationRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDestinationRequestMarshaller().marshall(super.beforeMarshalling(deleteDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
      * Returns all the subscription filters associated with the specified
      * log group. The list returned in the response is ASCII-sorted by filter
      * name.
@@ -711,9 +760,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * specified log group. Subscription filters allow you to subscribe to a
      * real-time stream of log events ingested through
      * <code>PutLogEvents</code> requests and have them delivered to a
-     * specific destination. Currently the only supported destination is an
-     * Amazon Kinesis stream belonging to the same account as the
-     * subscription filter.
+     * specific destination. Currently, the supported destinations are:
+     * <ul>
+     * <li> A Amazon Kinesis stream belonging to the same account as the
+     * subscription filter, for same-account delivery. </li>
+     * <li> A logical destination (used via an ARN of
+     * <code>Destination</code> ) belonging to a different account, for
+     * cross-account delivery. </li>
+     * 
+     * </ul>
+     * 
      * </p>
      * <p>
      * Currently there can only be one subscription filter associated with a
@@ -1249,6 +1305,124 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     
     /**
      * <p>
+     * Creates or updates a <code>Destination</code> . A destination
+     * encapsulates a physical resource (such as a Kinesis stream) and allows
+     * you to subscribe to a real-time stream of log events of a different
+     * account, ingested through <code>PutLogEvents</code> requests.
+     * Currently, the only supported physical resource is a Amazon Kinesis
+     * stream belonging to the same account as the destination.
+     * </p>
+     * <p>
+     * A destination controls what is written to its Amazon Kinesis stream
+     * through an access policy. By default, PutDestination does not set any
+     * access policy with the destination, which means a cross-account user
+     * will not be able to call <code>PutSubscriptionFilter</code> against
+     * this destination. To enable that, the destination owner must call
+     * <code>PutDestinationPolicy</code> after PutDestination.
+     * </p>
+     *
+     * @param putDestinationRequest Container for the necessary parameters to
+     *           execute the PutDestination service method on AWSLogs.
+     * 
+     * @return The response from the PutDestination service method, as
+     *         returned by AWSLogs.
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     * @throws OperationAbortedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public PutDestinationResult putDestination(PutDestinationRequest putDestinationRequest) {
+        ExecutionContext executionContext = createExecutionContext(putDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutDestinationRequest> request = null;
+        Response<PutDestinationResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutDestinationRequestMarshaller().marshall(super.beforeMarshalling(putDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<PutDestinationResult, JsonUnmarshallerContext> unmarshaller =
+                new PutDestinationResultJsonUnmarshaller();
+            JsonResponseHandler<PutDestinationResult> responseHandler =
+                new JsonResponseHandler<PutDestinationResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates an access policy associated with an existing
+     * <code>Destination</code> . An access policy is an
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html"> IAM policy document </a>
+     * that is used to authorize claims to register a subscription filter
+     * against a given destination.
+     * </p>
+     *
+     * @param putDestinationPolicyRequest Container for the necessary
+     *           parameters to execute the PutDestinationPolicy service method on
+     *           AWSLogs.
+     * 
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     * @throws OperationAbortedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void putDestinationPolicy(PutDestinationPolicyRequest putDestinationPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(putDestinationPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutDestinationPolicyRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutDestinationPolicyRequestMarshaller().marshall(super.beforeMarshalling(putDestinationPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
      * Deletes a log stream and permanently deletes all the archived log
      * events associated with it.
      * </p>
@@ -1359,6 +1533,69 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
+     * Returns all the destinations that are associated with the AWS account
+     * making the request. The list returned in the response is ASCII-sorted
+     * by destination name.
+     * </p>
+     * <p>
+     * By default, this operation returns up to 50 destinations. If there
+     * are more destinations to list, the response would contain a
+     * <code>nextToken</code> value in the response body. You can also limit
+     * the number of destinations returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
+     * </p>
+     *
+     * @param describeDestinationsRequest Container for the necessary
+     *           parameters to execute the DescribeDestinations service method on
+     *           AWSLogs.
+     * 
+     * @return The response from the DescribeDestinations service method, as
+     *         returned by AWSLogs.
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDestinationsResult describeDestinations(DescribeDestinationsRequest describeDestinationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDestinationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDestinationsRequest> request = null;
+        Response<DescribeDestinationsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDestinationsRequestMarshaller().marshall(super.beforeMarshalling(describeDestinationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<DescribeDestinationsResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeDestinationsResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeDestinationsResult> responseHandler =
+                new JsonResponseHandler<DescribeDestinationsResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Returns all the log groups that are associated with the AWS account
      * making the request. The list returned in the response is ASCII-sorted
      * by log group name.
@@ -1387,6 +1624,38 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     public DescribeLogGroupsResult describeLogGroups() throws AmazonServiceException, AmazonClientException {
         return describeLogGroups(new DescribeLogGroupsRequest());
+    }
+    
+    /**
+     * <p>
+     * Returns all the destinations that are associated with the AWS account
+     * making the request. The list returned in the response is ASCII-sorted
+     * by destination name.
+     * </p>
+     * <p>
+     * By default, this operation returns up to 50 destinations. If there
+     * are more destinations to list, the response would contain a
+     * <code>nextToken</code> value in the response body. You can also limit
+     * the number of destinations returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
+     * </p>
+     * 
+     * @return The response from the DescribeDestinations service method, as
+     *         returned by AWSLogs.
+     * 
+     * @throws ServiceUnavailableException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDestinationsResult describeDestinations() throws AmazonServiceException, AmazonClientException {
+        return describeDestinations(new DescribeDestinationsRequest());
     }
 
     @Override

@@ -18,6 +18,8 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.util.StringUtils;
 
+import java.util.concurrent.Semaphore;
+
 /**
  * Credentials provider based on AWS configuration profiles. This provider vends
  * AWSCredentials from the profile configuration file for the default profile,
@@ -35,14 +37,35 @@ import com.amazonaws.util.StringUtils;
 public class ProfileCredentialsProvider implements AWSCredentialsProvider {
 
     /**
+     * Refresh interval
+     */
+    private static final long REFRESH_INTERVAL_NANOS = 5*60*1000*1000*1000L;
+
+    /**
+     * Force reload interval
+     */
+    private static final long FORCE_RELOAD_INTERVAL_NANOS = 2*REFRESH_INTERVAL_NANOS;
+
+    /**
      * The credential profiles file from which this provider loads the security
      * credentials.
      * Lazily loaded by the double-check idiom.
      */
     private volatile ProfilesConfigFile profilesConfigFile;
 
+    /**
+     * When the profiles file was last refreshed.
+     */
+    private volatile long lastRefreshed;
+
     /** The name of the credential profile */
     private final String profileName;
+
+    /**
+     * Used to have only one thread block on refresh, for applications making
+     * at least one call every REFRESH_INTERVAL_NANOS.
+     */
+    private final Semaphore refreshSemaphore = new Semaphore(1);
 
     /**
      * Creates a new profile credentials provider that returns the AWS security
@@ -89,13 +112,16 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
      *
      * @param profilesConfigFile
      *            The profile configuration file containing the profiles used by
-     *            this credentials provider.
+     *            this credentials provider or null to defer load to first use.
      * @param profileName
      *            The name of a configuration profile in the specified
      *            configuration file.
      */
     public ProfileCredentialsProvider(ProfilesConfigFile profilesConfigFile, String profileName) {
         this.profilesConfigFile = profilesConfigFile;
+        if (this.profilesConfigFile != null) {
+            this.lastRefreshed = System.nanoTime();
+        }
         if (profileName == null) {
             String profileEnvVarOverride = System.getenv(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE);
             profileEnvVarOverride = StringUtils.trim(profileEnvVarOverride);
@@ -121,12 +147,37 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
             synchronized (this) {
                 if (profilesConfigFile == null) {
                     profilesConfigFile = new ProfilesConfigFile();
+                    lastRefreshed = System.nanoTime();
                 }
             }
         }
+
+        // Periodically check if the file on disk has been modified
+        // since we last read it.
+        //
+        // For active applications, only have one thread block.
+        // For applications that use this method in bursts, ensure the
+        // credentials are never too stale.
+        long now = System.nanoTime();
+        long age = now - lastRefreshed;
+        if (age > FORCE_RELOAD_INTERVAL_NANOS) {
+            refresh();
+        } else if (age > REFRESH_INTERVAL_NANOS) {
+            if (refreshSemaphore.tryAcquire()) {
+                try {
+                    refresh();
+                } finally {
+                    refreshSemaphore.release();
+                }
+            }
+        }
+
         return profilesConfigFile.getCredentials(profileName);
     }
 
     @Override
-    public void refresh() {}
+    public void refresh() {
+        profilesConfigFile.refresh();
+        lastRefreshed = System.nanoTime();
+    }
 }

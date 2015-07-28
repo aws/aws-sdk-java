@@ -273,6 +273,18 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
     private void init() {
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.dynamodbv2.model.InternalServerErrorException.class,
+                        "InternalServerError"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.dynamodbv2.model.LimitExceededException.class,
+                        "LimitExceededException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException.class,
+                        "ResourceNotFoundException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.dynamodbv2.model.TrimmedDataAccessException.class,
                         "TrimmedDataAccessException"));
         jsonErrorUnmarshallers

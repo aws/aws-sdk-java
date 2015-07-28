@@ -18,22 +18,23 @@ import java.util.EnumSet;
 
 /**
  * Represents the topic configuration for an Amazon S3 bucket.
- *
  */
 public class TopicConfiguration extends NotificationConfiguration {
 
     /**
      * The Amazon SNS topic ARN for this configuration.
      */
-    private final String topicARN;
+    private String topicARN;
+
+    public TopicConfiguration() {
+        super();
+    }
 
     /**
-     * Creates a new topic configuration with the given topic arn and set of
-     * events.
-     *
+     * Creates a new topic configuration with the given topic arn and set of events.
+     * 
      * @param topicARN
-     *            the Amazon SNS topic arn to which the notifications are to be
-     *            sent.
+     *            the Amazon SNS topic arn to which the notifications are to be sent.
      * @param events
      *            the events for which the notifications are to be sent
      */
@@ -43,12 +44,10 @@ public class TopicConfiguration extends NotificationConfiguration {
     }
 
     /**
-     * Creates a new topic configuration with the given topic arn and set of
-     * events.
-     *
+     * Creates a new topic configuration with the given topic arn and set of events.
+     * 
      * @param topicARN
-     *            the Amazon SNS topic arn to which the notifications are to be
-     *            sent.
+     *            the Amazon SNS topic arn to which the notifications are to be sent.
      * @param events
      *            the events for which the notifications are to be sent
      */
@@ -62,5 +61,27 @@ public class TopicConfiguration extends NotificationConfiguration {
      */
     public String getTopicARN() {
         return topicARN;
+    }
+
+    /**
+     * Sets the topic ARN for this configuration
+     * 
+     * @param topicARN
+     *            ARN for the SNS topic
+     */
+    public void setTopicARN(String topicARN) {
+        this.topicARN = topicARN;
+    }
+
+    /**
+     * Fluent method to set the topic ARN for this configuration
+     * 
+     * @param topicARN
+     *            ARN for the SNS topic
+     * @return This object for method chaining
+     */
+    public TopicConfiguration withTopicARN(String topicARN) {
+        setTopicARN(topicARN);
+        return this;
     }
 }

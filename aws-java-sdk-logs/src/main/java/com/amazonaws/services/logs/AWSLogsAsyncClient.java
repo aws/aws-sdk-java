@@ -118,7 +118,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient
     /**
      * Executor service for executing asynchronous requests.
      */
-    private ExecutorService executorService;
+    private final ExecutorService executorService;
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
@@ -415,6 +415,82 @@ public class AWSLogsAsyncClient extends AWSLogsClient
             throw ex;
               }
               asyncHandler.onSuccess(putRetentionPolicyRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes the destination with the specified name and eventually
+     * disables all the subscription filters that publish to it. This will
+     * not delete the physical resource encapsulated by the destination.
+     * </p>
+     *
+     * @param deleteDestinationRequest Container for the necessary parameters
+     *           to execute the DeleteDestination operation on AWSLogs.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDestination service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteDestinationAsync(final DeleteDestinationRequest deleteDestinationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteDestination(deleteDestinationRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes the destination with the specified name and eventually
+     * disables all the subscription filters that publish to it. This will
+     * not delete the physical resource encapsulated by the destination.
+     * </p>
+     *
+     * @param deleteDestinationRequest Container for the necessary parameters
+     *           to execute the DeleteDestination operation on AWSLogs.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDestination service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteDestinationAsync(
+            final DeleteDestinationRequest deleteDestinationRequest,
+            final AsyncHandler<DeleteDestinationRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteDestination(deleteDestinationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDestinationRequest, null);
                  return null;
         }
     });
@@ -948,9 +1024,16 @@ public class AWSLogsAsyncClient extends AWSLogsClient
      * specified log group. Subscription filters allow you to subscribe to a
      * real-time stream of log events ingested through
      * <code>PutLogEvents</code> requests and have them delivered to a
-     * specific destination. Currently the only supported destination is an
-     * Amazon Kinesis stream belonging to the same account as the
-     * subscription filter.
+     * specific destination. Currently, the supported destinations are:
+     * <ul>
+     * <li> A Amazon Kinesis stream belonging to the same account as the
+     * subscription filter, for same-account delivery. </li>
+     * <li> A logical destination (used via an ARN of
+     * <code>Destination</code> ) belonging to a different account, for
+     * cross-account delivery. </li>
+     * 
+     * </ul>
+     * 
      * </p>
      * <p>
      * Currently there can only be one subscription filter associated with a
@@ -988,9 +1071,16 @@ public class AWSLogsAsyncClient extends AWSLogsClient
      * specified log group. Subscription filters allow you to subscribe to a
      * real-time stream of log events ingested through
      * <code>PutLogEvents</code> requests and have them delivered to a
-     * specific destination. Currently the only supported destination is an
-     * Amazon Kinesis stream belonging to the same account as the
-     * subscription filter.
+     * specific destination. Currently, the supported destinations are:
+     * <ul>
+     * <li> A Amazon Kinesis stream belonging to the same account as the
+     * subscription filter, for same-account delivery. </li>
+     * <li> A logical destination (used via an ARN of
+     * <code>Destination</code> ) belonging to a different account, for
+     * cross-account delivery. </li>
+     * 
+     * </ul>
+     * 
      * </p>
      * <p>
      * Currently there can only be one subscription filter associated with a
@@ -1760,6 +1850,184 @@ public class AWSLogsAsyncClient extends AWSLogsClient
     
     /**
      * <p>
+     * Creates or updates a <code>Destination</code> . A destination
+     * encapsulates a physical resource (such as a Kinesis stream) and allows
+     * you to subscribe to a real-time stream of log events of a different
+     * account, ingested through <code>PutLogEvents</code> requests.
+     * Currently, the only supported physical resource is a Amazon Kinesis
+     * stream belonging to the same account as the destination.
+     * </p>
+     * <p>
+     * A destination controls what is written to its Amazon Kinesis stream
+     * through an access policy. By default, PutDestination does not set any
+     * access policy with the destination, which means a cross-account user
+     * will not be able to call <code>PutSubscriptionFilter</code> against
+     * this destination. To enable that, the destination owner must call
+     * <code>PutDestinationPolicy</code> after PutDestination.
+     * </p>
+     *
+     * @param putDestinationRequest Container for the necessary parameters to
+     *           execute the PutDestination operation on AWSLogs.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutDestination service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<PutDestinationResult> putDestinationAsync(final PutDestinationRequest putDestinationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<PutDestinationResult>() {
+            public PutDestinationResult call() throws Exception {
+                return putDestination(putDestinationRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates or updates a <code>Destination</code> . A destination
+     * encapsulates a physical resource (such as a Kinesis stream) and allows
+     * you to subscribe to a real-time stream of log events of a different
+     * account, ingested through <code>PutLogEvents</code> requests.
+     * Currently, the only supported physical resource is a Amazon Kinesis
+     * stream belonging to the same account as the destination.
+     * </p>
+     * <p>
+     * A destination controls what is written to its Amazon Kinesis stream
+     * through an access policy. By default, PutDestination does not set any
+     * access policy with the destination, which means a cross-account user
+     * will not be able to call <code>PutSubscriptionFilter</code> against
+     * this destination. To enable that, the destination owner must call
+     * <code>PutDestinationPolicy</code> after PutDestination.
+     * </p>
+     *
+     * @param putDestinationRequest Container for the necessary parameters to
+     *           execute the PutDestination operation on AWSLogs.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutDestination service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<PutDestinationResult> putDestinationAsync(
+            final PutDestinationRequest putDestinationRequest,
+            final AsyncHandler<PutDestinationRequest, PutDestinationResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<PutDestinationResult>() {
+            public PutDestinationResult call() throws Exception {
+              PutDestinationResult result;
+                try {
+                result = putDestination(putDestinationRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(putDestinationRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates or updates an access policy associated with an existing
+     * <code>Destination</code> . An access policy is an
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html"> IAM policy document </a>
+     * that is used to authorize claims to register a subscription filter
+     * against a given destination.
+     * </p>
+     *
+     * @param putDestinationPolicyRequest Container for the necessary
+     *           parameters to execute the PutDestinationPolicy operation on AWSLogs.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutDestinationPolicy service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> putDestinationPolicyAsync(final PutDestinationPolicyRequest putDestinationPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                putDestinationPolicy(putDestinationPolicyRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates or updates an access policy associated with an existing
+     * <code>Destination</code> . An access policy is an
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html"> IAM policy document </a>
+     * that is used to authorize claims to register a subscription filter
+     * against a given destination.
+     * </p>
+     *
+     * @param putDestinationPolicyRequest Container for the necessary
+     *           parameters to execute the PutDestinationPolicy operation on AWSLogs.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutDestinationPolicy service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> putDestinationPolicyAsync(
+            final PutDestinationPolicyRequest putDestinationPolicyRequest,
+            final AsyncHandler<PutDestinationPolicyRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                putDestinationPolicy(putDestinationPolicyRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(putDestinationPolicyRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Deletes a log stream and permanently deletes all the archived log
      * events associated with it.
      * </p>
@@ -1917,6 +2185,96 @@ public class AWSLogsAsyncClient extends AWSLogsClient
             throw ex;
               }
               asyncHandler.onSuccess(describeLogGroupsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns all the destinations that are associated with the AWS account
+     * making the request. The list returned in the response is ASCII-sorted
+     * by destination name.
+     * </p>
+     * <p>
+     * By default, this operation returns up to 50 destinations. If there
+     * are more destinations to list, the response would contain a
+     * <code>nextToken</code> value in the response body. You can also limit
+     * the number of destinations returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
+     * </p>
+     *
+     * @param describeDestinationsRequest Container for the necessary
+     *           parameters to execute the DescribeDestinations operation on AWSLogs.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDestinations service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDestinationsResult> describeDestinationsAsync(final DescribeDestinationsRequest describeDestinationsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDestinationsResult>() {
+            public DescribeDestinationsResult call() throws Exception {
+                return describeDestinations(describeDestinationsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns all the destinations that are associated with the AWS account
+     * making the request. The list returned in the response is ASCII-sorted
+     * by destination name.
+     * </p>
+     * <p>
+     * By default, this operation returns up to 50 destinations. If there
+     * are more destinations to list, the response would contain a
+     * <code>nextToken</code> value in the response body. You can also limit
+     * the number of destinations returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
+     * </p>
+     *
+     * @param describeDestinationsRequest Container for the necessary
+     *           parameters to execute the DescribeDestinations operation on AWSLogs.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDestinations service method, as returned by AWSLogs.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSLogs indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDestinationsResult> describeDestinationsAsync(
+            final DescribeDestinationsRequest describeDestinationsRequest,
+            final AsyncHandler<DescribeDestinationsRequest, DescribeDestinationsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDestinationsResult>() {
+            public DescribeDestinationsResult call() throws Exception {
+              DescribeDestinationsResult result;
+                try {
+                result = describeDestinations(describeDestinationsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDestinationsRequest, result);
                  return result;
         }
     });

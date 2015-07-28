@@ -213,6 +213,7 @@ import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.transform.AclXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactory;
+import com.amazonaws.services.s3.model.transform.BucketNotificationConfigurationStaxUnmarshaller;
 import com.amazonaws.services.s3.model.transform.MultiObjectDeleteXmlFactory;
 import com.amazonaws.services.s3.model.transform.RequestPaymentConfigurationXmlFactory;
 import com.amazonaws.services.s3.model.transform.RequestXmlFactory;
@@ -2357,10 +2358,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public BucketNotificationConfiguration getBucketNotificationConfiguration(String bucketName)
             throws AmazonClientException, AmazonServiceException {
-        rejectNull(bucketName,
-                "The bucket name parameter must be specified when querying notification configuration");
-
-        return getBucketNotificationConfiguration(new GetBucketNotificationConfigurationRequest(bucketName)); 
+        return getBucketNotificationConfiguration(new GetBucketNotificationConfigurationRequest(bucketName));
     }
 
     /* (non-Javadoc)
@@ -2369,15 +2367,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public BucketNotificationConfiguration getBucketNotificationConfiguration(GetBucketNotificationConfigurationRequest getBucketNotificationConfigurationRequest)
             throws AmazonClientException, AmazonServiceException {
-        rejectNull(getBucketNotificationConfigurationRequest, 
+        rejectNull(getBucketNotificationConfigurationRequest,
                 "The bucket request parameter must be specified when querying notification configuration");
-        rejectNull(getBucketNotificationConfigurationRequest.getBucketName(), 
+        rejectNull(getBucketNotificationConfigurationRequest.getBucketName(),
                 "The bucket request must specify a bucket name when querying notification configuration");
 
         Request<GetBucketNotificationConfigurationRequest> request = createRequest(getBucketNotificationConfigurationRequest.getBucketName(), null, getBucketNotificationConfigurationRequest, HttpMethodName.GET);
         request.addParameter("notification", null);
 
-        return invoke(request, new Unmarshallers.BucketNotificationConfigurationUnmarshaller(), getBucketNotificationConfigurationRequest.getBucketName(), null);
+        return invoke(request, BucketNotificationConfigurationStaxUnmarshaller.getInstance(), getBucketNotificationConfigurationRequest.getBucketName(), null);
     }
 
     /* (non-Javadoc)

@@ -25,9 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * specified log group. Subscription filters allow you to subscribe to a
  * real-time stream of log events ingested through
  * <code>PutLogEvents</code> requests and have them delivered to a
- * specific destination. Currently the only supported destination is an
- * Amazon Kinesis stream belonging to the same account as the
- * subscription filter.
+ * specific destination. Currently, the supported destinations are:
+ * <ul>
+ * <li> A Amazon Kinesis stream belonging to the same account as the
+ * subscription filter, for same-account delivery. </li>
+ * <li> A logical destination (used via an ARN of
+ * <code>Destination</code> ) belonging to a different account, for
+ * cross-account delivery. </li>
+ * 
+ * </ul>
+ * 
  * </p>
  * <p>
  * Currently there can only be one subscription filter associated with a
@@ -66,7 +73,12 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest implem
     private String filterPattern;
 
     /**
-     * The ARN of an Amazon Kinesis stream to deliver matching log events to.
+     * The ARN of the destination to deliver matching log events to.
+     * Currently, the supported destinations are: <ul> <li> A Amazon Kinesis
+     * stream belonging to the same account as the subscription filter, for
+     * same-account delivery. </li> <li> A logical destination (used via an
+     * ARN of <code>Destination</code>) belonging to a different account, for
+     * cross-account delivery. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -75,7 +87,10 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest implem
 
     /**
      * The ARN of an IAM role that grants Amazon CloudWatch Logs permissions
-     * to do Amazon Kinesis PutRecord requests on the desitnation stream.
+     * to deliver ingested log events to the destination stream. You don't
+     * need to provide the ARN when you are working with a logical
+     * destination (used via an ARN of <code>Destination</code>) for
+     * cross-account delivery.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -221,38 +236,68 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The ARN of an Amazon Kinesis stream to deliver matching log events to.
+     * The ARN of the destination to deliver matching log events to.
+     * Currently, the supported destinations are: <ul> <li> A Amazon Kinesis
+     * stream belonging to the same account as the subscription filter, for
+     * same-account delivery. </li> <li> A logical destination (used via an
+     * ARN of <code>Destination</code>) belonging to a different account, for
+     * cross-account delivery. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return The ARN of an Amazon Kinesis stream to deliver matching log events to.
+     * @return The ARN of the destination to deliver matching log events to.
+     *         Currently, the supported destinations are: <ul> <li> A Amazon Kinesis
+     *         stream belonging to the same account as the subscription filter, for
+     *         same-account delivery. </li> <li> A logical destination (used via an
+     *         ARN of <code>Destination</code>) belonging to a different account, for
+     *         cross-account delivery. </li> </ul>
      */
     public String getDestinationArn() {
         return destinationArn;
     }
     
     /**
-     * The ARN of an Amazon Kinesis stream to deliver matching log events to.
+     * The ARN of the destination to deliver matching log events to.
+     * Currently, the supported destinations are: <ul> <li> A Amazon Kinesis
+     * stream belonging to the same account as the subscription filter, for
+     * same-account delivery. </li> <li> A logical destination (used via an
+     * ARN of <code>Destination</code>) belonging to a different account, for
+     * cross-account delivery. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param destinationArn The ARN of an Amazon Kinesis stream to deliver matching log events to.
+     * @param destinationArn The ARN of the destination to deliver matching log events to.
+     *         Currently, the supported destinations are: <ul> <li> A Amazon Kinesis
+     *         stream belonging to the same account as the subscription filter, for
+     *         same-account delivery. </li> <li> A logical destination (used via an
+     *         ARN of <code>Destination</code>) belonging to a different account, for
+     *         cross-account delivery. </li> </ul>
      */
     public void setDestinationArn(String destinationArn) {
         this.destinationArn = destinationArn;
     }
     
     /**
-     * The ARN of an Amazon Kinesis stream to deliver matching log events to.
+     * The ARN of the destination to deliver matching log events to.
+     * Currently, the supported destinations are: <ul> <li> A Amazon Kinesis
+     * stream belonging to the same account as the subscription filter, for
+     * same-account delivery. </li> <li> A logical destination (used via an
+     * ARN of <code>Destination</code>) belonging to a different account, for
+     * cross-account delivery. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param destinationArn The ARN of an Amazon Kinesis stream to deliver matching log events to.
+     * @param destinationArn The ARN of the destination to deliver matching log events to.
+     *         Currently, the supported destinations are: <ul> <li> A Amazon Kinesis
+     *         stream belonging to the same account as the subscription filter, for
+     *         same-account delivery. </li> <li> A logical destination (used via an
+     *         ARN of <code>Destination</code>) belonging to a different account, for
+     *         cross-account delivery. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -264,13 +309,19 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest implem
 
     /**
      * The ARN of an IAM role that grants Amazon CloudWatch Logs permissions
-     * to do Amazon Kinesis PutRecord requests on the desitnation stream.
+     * to deliver ingested log events to the destination stream. You don't
+     * need to provide the ARN when you are working with a logical
+     * destination (used via an ARN of <code>Destination</code>) for
+     * cross-account delivery.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
      * @return The ARN of an IAM role that grants Amazon CloudWatch Logs permissions
-     *         to do Amazon Kinesis PutRecord requests on the desitnation stream.
+     *         to deliver ingested log events to the destination stream. You don't
+     *         need to provide the ARN when you are working with a logical
+     *         destination (used via an ARN of <code>Destination</code>) for
+     *         cross-account delivery.
      */
     public String getRoleArn() {
         return roleArn;
@@ -278,13 +329,19 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest implem
     
     /**
      * The ARN of an IAM role that grants Amazon CloudWatch Logs permissions
-     * to do Amazon Kinesis PutRecord requests on the desitnation stream.
+     * to deliver ingested log events to the destination stream. You don't
+     * need to provide the ARN when you are working with a logical
+     * destination (used via an ARN of <code>Destination</code>) for
+     * cross-account delivery.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
      * @param roleArn The ARN of an IAM role that grants Amazon CloudWatch Logs permissions
-     *         to do Amazon Kinesis PutRecord requests on the desitnation stream.
+     *         to deliver ingested log events to the destination stream. You don't
+     *         need to provide the ARN when you are working with a logical
+     *         destination (used via an ARN of <code>Destination</code>) for
+     *         cross-account delivery.
      */
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
@@ -292,7 +349,10 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest implem
     
     /**
      * The ARN of an IAM role that grants Amazon CloudWatch Logs permissions
-     * to do Amazon Kinesis PutRecord requests on the desitnation stream.
+     * to deliver ingested log events to the destination stream. You don't
+     * need to provide the ARN when you are working with a logical
+     * destination (used via an ARN of <code>Destination</code>) for
+     * cross-account delivery.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -300,7 +360,10 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest implem
      * <b>Length: </b>1 - <br/>
      *
      * @param roleArn The ARN of an IAM role that grants Amazon CloudWatch Logs permissions
-     *         to do Amazon Kinesis PutRecord requests on the desitnation stream.
+     *         to deliver ingested log events to the destination stream. You don't
+     *         need to provide the ARN when you are working with a logical
+     *         destination (used via an ARN of <code>Destination</code>) for
+     *         cross-account delivery.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
