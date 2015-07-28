@@ -34,8 +34,8 @@
         "variableType" : "CancelJobRequest",
         "variableDeclarationType" : "CancelJobRequest",
         "documentation" : "Input structure for the CancelJob operation.",
-        "variableSetterType" : "CancelJobRequest",
-        "simpleType" : "CancelJobRequest"
+        "simpleType" : "CancelJobRequest",
+        "variableSetterType" : "CancelJobRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -80,8 +80,8 @@
         "variableType" : "CreateJobRequest",
         "variableDeclarationType" : "CreateJobRequest",
         "documentation" : "Input structure for the CreateJob operation.",
-        "variableSetterType" : "CreateJobRequest",
-        "simpleType" : "CreateJobRequest"
+        "simpleType" : "CreateJobRequest",
+        "variableSetterType" : "CreateJobRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -156,8 +156,8 @@
         "variableType" : "GetShippingLabelRequest",
         "variableDeclarationType" : "GetShippingLabelRequest",
         "documentation" : null,
-        "variableSetterType" : "GetShippingLabelRequest",
-        "simpleType" : "GetShippingLabelRequest"
+        "simpleType" : "GetShippingLabelRequest",
+        "variableSetterType" : "GetShippingLabelRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -205,8 +205,8 @@
         "variableType" : "GetStatusRequest",
         "variableDeclarationType" : "GetStatusRequest",
         "documentation" : "Input structure for the GetStatus operation.",
-        "variableSetterType" : "GetStatusRequest",
-        "simpleType" : "GetStatusRequest"
+        "simpleType" : "GetStatusRequest",
+        "variableSetterType" : "GetStatusRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -248,8 +248,8 @@
         "variableType" : "ListJobsRequest",
         "variableDeclarationType" : "ListJobsRequest",
         "documentation" : "Input structure for the ListJobs operation.",
-        "variableSetterType" : "ListJobsRequest",
-        "simpleType" : "ListJobsRequest"
+        "simpleType" : "ListJobsRequest",
+        "variableSetterType" : "ListJobsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -285,8 +285,8 @@
         "variableType" : "UpdateJobRequest",
         "variableDeclarationType" : "UpdateJobRequest",
         "documentation" : "Input structure for the UpateJob operation.",
-        "variableSetterType" : "UpdateJobRequest",
-        "simpleType" : "UpdateJobRequest"
+        "simpleType" : "UpdateJobRequest",
+        "variableSetterType" : "UpdateJobRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -377,14 +377,17 @@
         "variableType" : "BucketPermissionException",
         "variableDeclarationType" : "BucketPermissionException",
         "documentation" : null,
-        "variableSetterType" : "BucketPermissionException",
-        "simpleType" : "BucketPermissionException"
+        "simpleType" : "BucketPermissionException",
+        "variableSetterType" : "BucketPermissionException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "BucketPermissionException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -405,14 +408,17 @@
         "variableType" : "InvalidManifestFieldException",
         "variableDeclarationType" : "InvalidManifestFieldException",
         "documentation" : null,
-        "variableSetterType" : "InvalidManifestFieldException",
-        "simpleType" : "InvalidManifestFieldException"
+        "simpleType" : "InvalidManifestFieldException",
+        "variableSetterType" : "InvalidManifestFieldException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidManifestFieldException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -433,14 +439,17 @@
         "variableType" : "MissingManifestFieldException",
         "variableDeclarationType" : "MissingManifestFieldException",
         "documentation" : null,
-        "variableSetterType" : "MissingManifestFieldException",
-        "simpleType" : "MissingManifestFieldException"
+        "simpleType" : "MissingManifestFieldException",
+        "variableSetterType" : "MissingManifestFieldException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "MissingManifestFieldException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -464,16 +473,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : null,
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "maxJobs",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : null,
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -515,16 +524,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -566,16 +575,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "aPIVersion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -614,8 +623,8 @@
         "variableType" : "ListJobsRequest",
         "variableDeclarationType" : "ListJobsRequest",
         "documentation" : null,
-        "variableSetterType" : "ListJobsRequest",
-        "simpleType" : "ListJobsRequest"
+        "simpleType" : "ListJobsRequest",
+        "variableSetterType" : "ListJobsRequest"
       },
       "marshaller" : {
         "action" : "ListJobs",
@@ -628,7 +637,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "APIVersion" : {
@@ -641,16 +653,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "aPIVersion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -693,16 +705,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -745,16 +757,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : null,
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "maxJobs",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : null,
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -809,16 +821,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : null,
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "jobIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : null,
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -847,11 +859,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "simpleType" : "String",
           "map" : false,
           "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -873,16 +885,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -924,16 +936,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "company",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -975,16 +987,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "phoneNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1026,16 +1038,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "country",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1077,16 +1089,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "stateOrProvince",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1128,16 +1140,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "city",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1179,16 +1191,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "postalCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1230,16 +1242,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "street1",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1281,16 +1293,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "street2",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1332,16 +1344,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "street3",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1383,16 +1395,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "aPIVersion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1431,8 +1443,8 @@
         "variableType" : "GetShippingLabelRequest",
         "variableDeclarationType" : "GetShippingLabelRequest",
         "documentation" : null,
-        "variableSetterType" : "GetShippingLabelRequest",
-        "simpleType" : "GetShippingLabelRequest"
+        "simpleType" : "GetShippingLabelRequest",
+        "variableSetterType" : "GetShippingLabelRequest"
       },
       "marshaller" : {
         "action" : "GetShippingLabel",
@@ -1445,7 +1457,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Name" : {
@@ -1458,16 +1473,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1510,16 +1525,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "street3",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1562,16 +1577,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "postalCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1614,16 +1629,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "aPIVersion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1666,16 +1681,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "phoneNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1718,16 +1733,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "street2",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1770,16 +1785,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "country",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1822,16 +1837,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "company",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1874,16 +1889,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "street1",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1926,16 +1941,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : null,
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "jobIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : null,
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -1964,11 +1979,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "simpleType" : "String",
             "map" : false,
             "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1991,16 +2006,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "city",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2043,16 +2058,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "stateOrProvince",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2104,14 +2119,17 @@
         "variableType" : "InvalidJobIdException",
         "variableDeclarationType" : "InvalidJobIdException",
         "documentation" : null,
-        "variableSetterType" : "InvalidJobIdException",
-        "simpleType" : "InvalidJobIdException"
+        "simpleType" : "InvalidJobIdException",
+        "variableSetterType" : "InvalidJobIdException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidJobIdException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -2132,14 +2150,17 @@
         "variableType" : "MalformedManifestException",
         "variableDeclarationType" : "MalformedManifestException",
         "documentation" : null,
-        "variableSetterType" : "MalformedManifestException",
-        "simpleType" : "MalformedManifestException"
+        "simpleType" : "MalformedManifestException",
+        "variableSetterType" : "MalformedManifestException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "MalformedManifestException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -2163,16 +2184,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "jobId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2214,16 +2235,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "jobType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2265,16 +2286,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "locationCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2316,16 +2337,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "locationMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2367,16 +2388,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "progressCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2418,16 +2439,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "progressMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2469,16 +2490,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "carrier",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2520,16 +2541,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "trackingNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2571,16 +2592,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "logBucket",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2622,16 +2643,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "logKey",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2673,16 +2694,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : null,
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "errorCount",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : null,
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -2724,16 +2745,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "signature",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2775,16 +2796,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "signatureFileContents",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2826,16 +2847,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "currentManifest",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2877,16 +2898,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : null,
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "creationDate",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : null,
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -2928,16 +2949,16 @@
           "variableType" : "java.util.List<Artifact>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "documentation" : null,
-          "variableSetterType" : "java.util.Collection<Artifact>",
-          "simpleType" : "List<Artifact>"
+          "simpleType" : "List<Artifact>",
+          "variableSetterType" : "java.util.Collection<Artifact>"
         },
         "setterModel" : {
           "variableName" : "artifactList",
           "variableType" : "java.util.List<Artifact>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "documentation" : null,
-          "variableSetterType" : "java.util.Collection<Artifact>",
-          "simpleType" : "List<Artifact>"
+          "simpleType" : "List<Artifact>",
+          "variableSetterType" : "java.util.Collection<Artifact>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Artifact>",
@@ -2973,16 +2994,16 @@
               "variableType" : "Artifact",
               "variableDeclarationType" : "Artifact",
               "documentation" : null,
-              "variableSetterType" : "Artifact",
-              "simpleType" : "Artifact"
+              "simpleType" : "Artifact",
+              "variableSetterType" : "Artifact"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Artifact",
               "variableDeclarationType" : "Artifact",
               "documentation" : null,
-              "variableSetterType" : "Artifact",
-              "simpleType" : "Artifact"
+              "simpleType" : "Artifact",
+              "variableSetterType" : "Artifact"
             },
             "getterModel" : {
               "returnType" : "Artifact",
@@ -3017,11 +3038,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "simpleType" : "Artifact",
           "map" : false,
           "simple" : false,
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-          "simpleType" : "Artifact"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3040,8 +3061,8 @@
         "variableType" : "GetStatusResult",
         "variableDeclarationType" : "GetStatusResult",
         "documentation" : null,
-        "variableSetterType" : "GetStatusResult",
-        "simpleType" : "GetStatusResult"
+        "simpleType" : "GetStatusResult",
+        "variableSetterType" : "GetStatusResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3050,7 +3071,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ArtifactList" : {
@@ -3063,16 +3087,16 @@
             "variableType" : "java.util.List<Artifact>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "documentation" : null,
-            "variableSetterType" : "java.util.Collection<Artifact>",
-            "simpleType" : "List<Artifact>"
+            "simpleType" : "List<Artifact>",
+            "variableSetterType" : "java.util.Collection<Artifact>"
           },
           "setterModel" : {
             "variableName" : "artifactList",
             "variableType" : "java.util.List<Artifact>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "documentation" : null,
-            "variableSetterType" : "java.util.Collection<Artifact>",
-            "simpleType" : "List<Artifact>"
+            "simpleType" : "List<Artifact>",
+            "variableSetterType" : "java.util.Collection<Artifact>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Artifact>",
@@ -3108,16 +3132,16 @@
                 "variableType" : "Artifact",
                 "variableDeclarationType" : "Artifact",
                 "documentation" : null,
-                "variableSetterType" : "Artifact",
-                "simpleType" : "Artifact"
+                "simpleType" : "Artifact",
+                "variableSetterType" : "Artifact"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Artifact",
                 "variableDeclarationType" : "Artifact",
                 "documentation" : null,
-                "variableSetterType" : "Artifact",
-                "simpleType" : "Artifact"
+                "simpleType" : "Artifact",
+                "variableSetterType" : "Artifact"
               },
               "getterModel" : {
                 "returnType" : "Artifact",
@@ -3152,11 +3176,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "simpleType" : "Artifact",
             "map" : false,
             "simple" : false,
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-            "simpleType" : "Artifact"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3179,16 +3203,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "currentManifest",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3231,16 +3255,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : null,
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "errorCount",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : null,
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -3283,16 +3307,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "progressCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3335,16 +3359,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "signatureFileContents",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3387,16 +3411,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : null,
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "creationDate",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : null,
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -3439,16 +3463,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "progressMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3491,16 +3515,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "signature",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3543,16 +3567,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "logKey",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3595,16 +3619,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "locationCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3647,16 +3671,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "jobType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3699,16 +3723,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "locationMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3751,16 +3775,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "logBucket",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3803,16 +3827,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "carrier",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3855,16 +3879,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "jobId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3907,16 +3931,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "trackingNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3968,14 +3992,17 @@
         "variableType" : "ExpiredJobIdException",
         "variableDeclarationType" : "ExpiredJobIdException",
         "documentation" : null,
-        "variableSetterType" : "ExpiredJobIdException",
-        "simpleType" : "ExpiredJobIdException"
+        "simpleType" : "ExpiredJobIdException",
+        "variableSetterType" : "ExpiredJobIdException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "ExpiredJobIdException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -3996,14 +4023,17 @@
         "variableType" : "InvalidFileSystemException",
         "variableDeclarationType" : "InvalidFileSystemException",
         "documentation" : null,
-        "variableSetterType" : "InvalidFileSystemException",
-        "simpleType" : "InvalidFileSystemException"
+        "simpleType" : "InvalidFileSystemException",
+        "variableSetterType" : "InvalidFileSystemException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidFileSystemException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4024,14 +4054,17 @@
         "variableType" : "UnableToUpdateJobIdException",
         "variableDeclarationType" : "UnableToUpdateJobIdException",
         "documentation" : null,
-        "variableSetterType" : "UnableToUpdateJobIdException",
-        "simpleType" : "UnableToUpdateJobIdException"
+        "simpleType" : "UnableToUpdateJobIdException",
+        "variableSetterType" : "UnableToUpdateJobIdException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "UnableToUpdateJobIdException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4052,14 +4085,17 @@
         "variableType" : "UnableToCancelJobIdException",
         "variableDeclarationType" : "UnableToCancelJobIdException",
         "documentation" : null,
-        "variableSetterType" : "UnableToCancelJobIdException",
-        "simpleType" : "UnableToCancelJobIdException"
+        "simpleType" : "UnableToCancelJobIdException",
+        "variableSetterType" : "UnableToCancelJobIdException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "UnableToCancelJobIdException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4080,14 +4116,17 @@
         "variableType" : "MissingParameterException",
         "variableDeclarationType" : "MissingParameterException",
         "documentation" : null,
-        "variableSetterType" : "MissingParameterException",
-        "simpleType" : "MissingParameterException"
+        "simpleType" : "MissingParameterException",
+        "variableSetterType" : "MissingParameterException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "MissingParameterException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4108,14 +4147,17 @@
         "variableType" : "InvalidAccessKeyIdException",
         "variableDeclarationType" : "InvalidAccessKeyIdException",
         "documentation" : null,
-        "variableSetterType" : "InvalidAccessKeyIdException",
-        "simpleType" : "InvalidAccessKeyIdException"
+        "simpleType" : "InvalidAccessKeyIdException",
+        "variableSetterType" : "InvalidAccessKeyIdException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidAccessKeyIdException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4136,14 +4178,17 @@
         "variableType" : "CreateJobQuotaExceededException",
         "variableDeclarationType" : "CreateJobQuotaExceededException",
         "documentation" : null,
-        "variableSetterType" : "CreateJobQuotaExceededException",
-        "simpleType" : "CreateJobQuotaExceededException"
+        "simpleType" : "CreateJobQuotaExceededException",
+        "variableSetterType" : "CreateJobQuotaExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "CreateJobQuotaExceededException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4167,16 +4212,16 @@
           "variableType" : "java.util.List<Job>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Job>",
           "documentation" : null,
-          "variableSetterType" : "java.util.Collection<Job>",
-          "simpleType" : "List<Job>"
+          "simpleType" : "List<Job>",
+          "variableSetterType" : "java.util.Collection<Job>"
         },
         "setterModel" : {
           "variableName" : "jobs",
           "variableType" : "java.util.List<Job>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Job>",
           "documentation" : null,
-          "variableSetterType" : "java.util.Collection<Job>",
-          "simpleType" : "List<Job>"
+          "simpleType" : "List<Job>",
+          "variableSetterType" : "java.util.Collection<Job>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Job>",
@@ -4212,16 +4257,16 @@
               "variableType" : "Job",
               "variableDeclarationType" : "Job",
               "documentation" : null,
-              "variableSetterType" : "Job",
-              "simpleType" : "Job"
+              "simpleType" : "Job",
+              "variableSetterType" : "Job"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Job",
               "variableDeclarationType" : "Job",
               "documentation" : null,
-              "variableSetterType" : "Job",
-              "simpleType" : "Job"
+              "simpleType" : "Job",
+              "variableSetterType" : "Job"
             },
             "getterModel" : {
               "returnType" : "Job",
@@ -4256,11 +4301,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "simpleType" : "Job",
           "map" : false,
           "simple" : false,
           "templateType" : "java.util.List<Job>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
-          "simpleType" : "Job"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4282,16 +4327,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "isTruncated",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -4330,8 +4375,8 @@
         "variableType" : "ListJobsResult",
         "variableDeclarationType" : "ListJobsResult",
         "documentation" : null,
-        "variableSetterType" : "ListJobsResult",
-        "simpleType" : "ListJobsResult"
+        "simpleType" : "ListJobsResult",
+        "variableSetterType" : "ListJobsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4340,7 +4385,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Jobs" : {
@@ -4353,16 +4401,16 @@
             "variableType" : "java.util.List<Job>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Job>",
             "documentation" : null,
-            "variableSetterType" : "java.util.Collection<Job>",
-            "simpleType" : "List<Job>"
+            "simpleType" : "List<Job>",
+            "variableSetterType" : "java.util.Collection<Job>"
           },
           "setterModel" : {
             "variableName" : "jobs",
             "variableType" : "java.util.List<Job>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Job>",
             "documentation" : null,
-            "variableSetterType" : "java.util.Collection<Job>",
-            "simpleType" : "List<Job>"
+            "simpleType" : "List<Job>",
+            "variableSetterType" : "java.util.Collection<Job>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Job>",
@@ -4398,16 +4446,16 @@
                 "variableType" : "Job",
                 "variableDeclarationType" : "Job",
                 "documentation" : null,
-                "variableSetterType" : "Job",
-                "simpleType" : "Job"
+                "simpleType" : "Job",
+                "variableSetterType" : "Job"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Job",
                 "variableDeclarationType" : "Job",
                 "documentation" : null,
-                "variableSetterType" : "Job",
-                "simpleType" : "Job"
+                "simpleType" : "Job",
+                "variableSetterType" : "Job"
               },
               "getterModel" : {
                 "returnType" : "Job",
@@ -4442,11 +4490,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "simpleType" : "Job",
             "map" : false,
             "simple" : false,
             "templateType" : "java.util.List<Job>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
-            "simpleType" : "Job"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4469,16 +4517,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "isTruncated",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -4533,16 +4581,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "jobId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4584,16 +4632,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "manifest",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4635,16 +4683,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "jobType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4686,16 +4734,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "validateOnly",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -4737,16 +4785,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "aPIVersion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4785,8 +4833,8 @@
         "variableType" : "UpdateJobRequest",
         "variableDeclarationType" : "UpdateJobRequest",
         "documentation" : null,
-        "variableSetterType" : "UpdateJobRequest",
-        "simpleType" : "UpdateJobRequest"
+        "simpleType" : "UpdateJobRequest",
+        "variableSetterType" : "UpdateJobRequest"
       },
       "marshaller" : {
         "action" : "UpdateJob",
@@ -4799,7 +4847,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "JobType" : {
@@ -4812,16 +4863,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "jobType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4864,16 +4915,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "manifest",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4916,16 +4967,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "jobId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4968,16 +5019,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "aPIVersion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5020,16 +5071,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "validateOnly",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -5081,14 +5132,17 @@
         "variableType" : "InvalidParameterException",
         "variableDeclarationType" : "InvalidParameterException",
         "documentation" : null,
-        "variableSetterType" : "InvalidParameterException",
-        "simpleType" : "InvalidParameterException"
+        "simpleType" : "InvalidParameterException",
+        "variableSetterType" : "InvalidParameterException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidParameterException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -5112,16 +5166,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "success",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -5163,16 +5217,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "warningMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5214,16 +5268,16 @@
           "variableType" : "java.util.List<Artifact>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "documentation" : null,
-          "variableSetterType" : "java.util.Collection<Artifact>",
-          "simpleType" : "List<Artifact>"
+          "simpleType" : "List<Artifact>",
+          "variableSetterType" : "java.util.Collection<Artifact>"
         },
         "setterModel" : {
           "variableName" : "artifactList",
           "variableType" : "java.util.List<Artifact>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "documentation" : null,
-          "variableSetterType" : "java.util.Collection<Artifact>",
-          "simpleType" : "List<Artifact>"
+          "simpleType" : "List<Artifact>",
+          "variableSetterType" : "java.util.Collection<Artifact>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Artifact>",
@@ -5259,16 +5313,16 @@
               "variableType" : "Artifact",
               "variableDeclarationType" : "Artifact",
               "documentation" : null,
-              "variableSetterType" : "Artifact",
-              "simpleType" : "Artifact"
+              "simpleType" : "Artifact",
+              "variableSetterType" : "Artifact"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Artifact",
               "variableDeclarationType" : "Artifact",
               "documentation" : null,
-              "variableSetterType" : "Artifact",
-              "simpleType" : "Artifact"
+              "simpleType" : "Artifact",
+              "variableSetterType" : "Artifact"
             },
             "getterModel" : {
               "returnType" : "Artifact",
@@ -5303,11 +5357,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "simpleType" : "Artifact",
           "map" : false,
           "simple" : false,
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-          "simpleType" : "Artifact"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5326,8 +5380,8 @@
         "variableType" : "UpdateJobResult",
         "variableDeclarationType" : "UpdateJobResult",
         "documentation" : null,
-        "variableSetterType" : "UpdateJobResult",
-        "simpleType" : "UpdateJobResult"
+        "simpleType" : "UpdateJobResult",
+        "variableSetterType" : "UpdateJobResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5336,7 +5390,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ArtifactList" : {
@@ -5349,16 +5406,16 @@
             "variableType" : "java.util.List<Artifact>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "documentation" : null,
-            "variableSetterType" : "java.util.Collection<Artifact>",
-            "simpleType" : "List<Artifact>"
+            "simpleType" : "List<Artifact>",
+            "variableSetterType" : "java.util.Collection<Artifact>"
           },
           "setterModel" : {
             "variableName" : "artifactList",
             "variableType" : "java.util.List<Artifact>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "documentation" : null,
-            "variableSetterType" : "java.util.Collection<Artifact>",
-            "simpleType" : "List<Artifact>"
+            "simpleType" : "List<Artifact>",
+            "variableSetterType" : "java.util.Collection<Artifact>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Artifact>",
@@ -5394,16 +5451,16 @@
                 "variableType" : "Artifact",
                 "variableDeclarationType" : "Artifact",
                 "documentation" : null,
-                "variableSetterType" : "Artifact",
-                "simpleType" : "Artifact"
+                "simpleType" : "Artifact",
+                "variableSetterType" : "Artifact"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Artifact",
                 "variableDeclarationType" : "Artifact",
                 "documentation" : null,
-                "variableSetterType" : "Artifact",
-                "simpleType" : "Artifact"
+                "simpleType" : "Artifact",
+                "variableSetterType" : "Artifact"
               },
               "getterModel" : {
                 "returnType" : "Artifact",
@@ -5438,11 +5495,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "simpleType" : "Artifact",
             "map" : false,
             "simple" : false,
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-            "simpleType" : "Artifact"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5465,16 +5522,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "warningMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5517,16 +5574,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "success",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -5578,14 +5635,17 @@
         "variableType" : "InvalidVersionException",
         "variableDeclarationType" : "InvalidVersionException",
         "documentation" : null,
-        "variableSetterType" : "InvalidVersionException",
-        "simpleType" : "InvalidVersionException"
+        "simpleType" : "InvalidVersionException",
+        "variableSetterType" : "InvalidVersionException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidVersionException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -5609,16 +5669,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "shippingLabelURL",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5660,16 +5720,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "warning",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5708,8 +5768,8 @@
         "variableType" : "GetShippingLabelResult",
         "variableDeclarationType" : "GetShippingLabelResult",
         "documentation" : null,
-        "variableSetterType" : "GetShippingLabelResult",
-        "simpleType" : "GetShippingLabelResult"
+        "simpleType" : "GetShippingLabelResult",
+        "variableSetterType" : "GetShippingLabelResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5718,7 +5778,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ShippingLabelURL" : {
@@ -5731,16 +5794,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "shippingLabelURL",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5783,16 +5846,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "warning",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5847,16 +5910,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "jobId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5898,16 +5961,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "aPIVersion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5946,8 +6009,8 @@
         "variableType" : "CancelJobRequest",
         "variableDeclarationType" : "CancelJobRequest",
         "documentation" : null,
-        "variableSetterType" : "CancelJobRequest",
-        "simpleType" : "CancelJobRequest"
+        "simpleType" : "CancelJobRequest",
+        "variableSetterType" : "CancelJobRequest"
       },
       "marshaller" : {
         "action" : "CancelJob",
@@ -5960,7 +6023,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "JobId" : {
@@ -5973,16 +6039,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "jobId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6025,16 +6091,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "aPIVersion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6089,16 +6155,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "success",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -6137,8 +6203,8 @@
         "variableType" : "CancelJobResult",
         "variableDeclarationType" : "CancelJobResult",
         "documentation" : null,
-        "variableSetterType" : "CancelJobResult",
-        "simpleType" : "CancelJobResult"
+        "simpleType" : "CancelJobResult",
+        "variableSetterType" : "CancelJobResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6147,7 +6213,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Success" : {
@@ -6160,16 +6229,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "success",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -6224,16 +6293,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "jobId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6275,16 +6344,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "jobType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6326,16 +6395,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "signature",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6377,16 +6446,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "signatureFileContents",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6428,16 +6497,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "warningMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6479,16 +6548,16 @@
           "variableType" : "java.util.List<Artifact>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "documentation" : null,
-          "variableSetterType" : "java.util.Collection<Artifact>",
-          "simpleType" : "List<Artifact>"
+          "simpleType" : "List<Artifact>",
+          "variableSetterType" : "java.util.Collection<Artifact>"
         },
         "setterModel" : {
           "variableName" : "artifactList",
           "variableType" : "java.util.List<Artifact>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "documentation" : null,
-          "variableSetterType" : "java.util.Collection<Artifact>",
-          "simpleType" : "List<Artifact>"
+          "simpleType" : "List<Artifact>",
+          "variableSetterType" : "java.util.Collection<Artifact>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Artifact>",
@@ -6524,16 +6593,16 @@
               "variableType" : "Artifact",
               "variableDeclarationType" : "Artifact",
               "documentation" : null,
-              "variableSetterType" : "Artifact",
-              "simpleType" : "Artifact"
+              "simpleType" : "Artifact",
+              "variableSetterType" : "Artifact"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Artifact",
               "variableDeclarationType" : "Artifact",
               "documentation" : null,
-              "variableSetterType" : "Artifact",
-              "simpleType" : "Artifact"
+              "simpleType" : "Artifact",
+              "variableSetterType" : "Artifact"
             },
             "getterModel" : {
               "returnType" : "Artifact",
@@ -6568,11 +6637,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "simpleType" : "Artifact",
           "map" : false,
           "simple" : false,
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-          "simpleType" : "Artifact"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6591,8 +6660,8 @@
         "variableType" : "CreateJobResult",
         "variableDeclarationType" : "CreateJobResult",
         "documentation" : null,
-        "variableSetterType" : "CreateJobResult",
-        "simpleType" : "CreateJobResult"
+        "simpleType" : "CreateJobResult",
+        "variableSetterType" : "CreateJobResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6601,7 +6670,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "JobType" : {
@@ -6614,16 +6686,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "jobType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6666,16 +6738,16 @@
             "variableType" : "java.util.List<Artifact>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "documentation" : null,
-            "variableSetterType" : "java.util.Collection<Artifact>",
-            "simpleType" : "List<Artifact>"
+            "simpleType" : "List<Artifact>",
+            "variableSetterType" : "java.util.Collection<Artifact>"
           },
           "setterModel" : {
             "variableName" : "artifactList",
             "variableType" : "java.util.List<Artifact>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "documentation" : null,
-            "variableSetterType" : "java.util.Collection<Artifact>",
-            "simpleType" : "List<Artifact>"
+            "simpleType" : "List<Artifact>",
+            "variableSetterType" : "java.util.Collection<Artifact>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Artifact>",
@@ -6711,16 +6783,16 @@
                 "variableType" : "Artifact",
                 "variableDeclarationType" : "Artifact",
                 "documentation" : null,
-                "variableSetterType" : "Artifact",
-                "simpleType" : "Artifact"
+                "simpleType" : "Artifact",
+                "variableSetterType" : "Artifact"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Artifact",
                 "variableDeclarationType" : "Artifact",
                 "documentation" : null,
-                "variableSetterType" : "Artifact",
-                "simpleType" : "Artifact"
+                "simpleType" : "Artifact",
+                "variableSetterType" : "Artifact"
               },
               "getterModel" : {
                 "returnType" : "Artifact",
@@ -6755,11 +6827,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "simpleType" : "Artifact",
             "map" : false,
             "simple" : false,
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-            "simpleType" : "Artifact"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6782,16 +6854,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "signatureFileContents",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6834,16 +6906,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "jobId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6886,16 +6958,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "warningMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6938,16 +7010,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "signature",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7002,16 +7074,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "jobId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7053,16 +7125,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "aPIVersion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7101,8 +7173,8 @@
         "variableType" : "GetStatusRequest",
         "variableDeclarationType" : "GetStatusRequest",
         "documentation" : null,
-        "variableSetterType" : "GetStatusRequest",
-        "simpleType" : "GetStatusRequest"
+        "simpleType" : "GetStatusRequest",
+        "variableSetterType" : "GetStatusRequest"
       },
       "marshaller" : {
         "action" : "GetStatus",
@@ -7115,7 +7187,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "JobId" : {
@@ -7128,16 +7203,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "jobId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7180,16 +7255,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "aPIVersion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7241,14 +7316,17 @@
         "variableType" : "MissingCustomsException",
         "variableDeclarationType" : "MissingCustomsException",
         "documentation" : null,
-        "variableSetterType" : "MissingCustomsException",
-        "simpleType" : "MissingCustomsException"
+        "simpleType" : "MissingCustomsException",
+        "variableSetterType" : "MissingCustomsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "MissingCustomsException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -7272,16 +7350,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "jobId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7323,16 +7401,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : null,
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "creationDate",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : null,
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -7374,16 +7452,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "isCanceled",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -7425,16 +7503,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "jobType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7473,8 +7551,8 @@
         "variableType" : "Job",
         "variableDeclarationType" : "Job",
         "documentation" : null,
-        "variableSetterType" : "Job",
-        "simpleType" : "Job"
+        "simpleType" : "Job",
+        "variableSetterType" : "Job"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7483,7 +7561,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "JobType" : {
@@ -7496,16 +7577,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "jobType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7548,16 +7629,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "jobId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7600,16 +7681,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : null,
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "creationDate",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : null,
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -7652,16 +7733,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "isCanceled",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -7713,14 +7794,17 @@
         "variableType" : "InvalidAddressException",
         "variableDeclarationType" : "InvalidAddressException",
         "documentation" : null,
-        "variableSetterType" : "InvalidAddressException",
-        "simpleType" : "InvalidAddressException"
+        "simpleType" : "InvalidAddressException",
+        "variableSetterType" : "InvalidAddressException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidAddressException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -7747,8 +7831,8 @@
         "variableType" : "JobType",
         "variableDeclarationType" : "JobType",
         "documentation" : null,
-        "variableSetterType" : "JobType",
-        "simpleType" : "JobType"
+        "simpleType" : "JobType",
+        "variableSetterType" : "JobType"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7757,7 +7841,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -7781,16 +7868,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "description",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7832,16 +7919,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "uRL",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7880,8 +7967,8 @@
         "variableType" : "Artifact",
         "variableDeclarationType" : "Artifact",
         "documentation" : null,
-        "variableSetterType" : "Artifact",
-        "simpleType" : "Artifact"
+        "simpleType" : "Artifact",
+        "variableSetterType" : "Artifact"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7890,7 +7977,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Description" : {
@@ -7903,16 +7993,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "description",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7955,16 +8045,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "uRL",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8016,14 +8106,17 @@
         "variableType" : "NoSuchBucketException",
         "variableDeclarationType" : "NoSuchBucketException",
         "documentation" : null,
-        "variableSetterType" : "NoSuchBucketException",
-        "simpleType" : "NoSuchBucketException"
+        "simpleType" : "NoSuchBucketException",
+        "variableSetterType" : "NoSuchBucketException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "NoSuchBucketException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -8044,14 +8137,17 @@
         "variableType" : "InvalidCustomsException",
         "variableDeclarationType" : "InvalidCustomsException",
         "documentation" : null,
-        "variableSetterType" : "InvalidCustomsException",
-        "simpleType" : "InvalidCustomsException"
+        "simpleType" : "InvalidCustomsException",
+        "variableSetterType" : "InvalidCustomsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidCustomsException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -8072,14 +8168,17 @@
         "variableType" : "CanceledJobIdException",
         "variableDeclarationType" : "CanceledJobIdException",
         "documentation" : null,
-        "variableSetterType" : "CanceledJobIdException",
-        "simpleType" : "CanceledJobIdException"
+        "simpleType" : "CanceledJobIdException",
+        "variableSetterType" : "CanceledJobIdException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "CanceledJobIdException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -8100,14 +8199,17 @@
         "variableType" : "MultipleRegionsException",
         "variableDeclarationType" : "MultipleRegionsException",
         "documentation" : null,
-        "variableSetterType" : "MultipleRegionsException",
-        "simpleType" : "MultipleRegionsException"
+        "simpleType" : "MultipleRegionsException",
+        "variableSetterType" : "MultipleRegionsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "MultipleRegionsException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -8131,16 +8233,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "jobType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8182,16 +8284,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "manifest",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8233,16 +8335,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "manifestAddendum",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8284,16 +8386,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "validateOnly",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : null,
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -8335,16 +8437,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "aPIVersion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : null,
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8383,8 +8485,8 @@
         "variableType" : "CreateJobRequest",
         "variableDeclarationType" : "CreateJobRequest",
         "documentation" : null,
-        "variableSetterType" : "CreateJobRequest",
-        "simpleType" : "CreateJobRequest"
+        "simpleType" : "CreateJobRequest",
+        "variableSetterType" : "CreateJobRequest"
       },
       "marshaller" : {
         "action" : "CreateJob",
@@ -8397,7 +8499,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Manifest" : {
@@ -8410,16 +8515,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "manifest",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8462,16 +8567,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "jobType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8514,16 +8619,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "aPIVersion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8566,16 +8671,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "validateOnly",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : null,
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -8618,16 +8723,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "manifestAddendum",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : null,
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",

@@ -54,13 +54,11 @@ public class S3Object implements Closeable {
     private boolean isRequesterCharged;
 
     /**
-     * Gets the metadata stored by Amazon S3 for this object. The
-     * {@link ObjectMetadata} object includes any custom user metadata supplied by the
-     * caller when the object was uploaded, as well as HTTP metadata such as
-     * content length and content type.
+     * Gets the metadata stored by Amazon S3 for this object. The {@link ObjectMetadata} object
+     * includes any custom user metadata supplied by the caller when the object was uploaded, as
+     * well as HTTP metadata such as content length and content type.
      *
      * @return The metadata stored by Amazon S3 for this object.
-     *
      * @see S3Object#getObjectContent()
      */
     public ObjectMetadata getObjectMetadata() {
@@ -244,4 +242,5 @@ public class S3Object implements Closeable {
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }
+
 }

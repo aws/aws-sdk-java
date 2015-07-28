@@ -34,9 +34,8 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
      */
     public AmazonWebServiceResponse<S3Object> handle(HttpResponse response) throws Exception {
         /*
-         * TODO: It'd be nice to set the bucket name and key here, but the
-         *       information isn't easy to pull out of the response/request
-         *       currently.
+         * TODO: It'd be nice to set the bucket name and key here, but the information isn't easy to
+         * pull out of the response/request currently.
          */
         S3Object object = new S3Object();
         AmazonWebServiceResponse<S3Object> awsResponse = parseResponseMetadata(response);
@@ -51,11 +50,10 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
         ObjectMetadata metadata = object.getObjectMetadata();
         populateObjectMetadata(response, metadata);
 
-		object.setObjectContent(new S3ObjectInputStream(response.getContent(),
-				response.getHttpRequest()));
+        object.setObjectContent(new S3ObjectInputStream(response.getContent(), response.getHttpRequest()));
 
-		awsResponse.setResult(object);
-		return awsResponse;
+        awsResponse.setResult(object);
+        return awsResponse;
     }
 
     /**

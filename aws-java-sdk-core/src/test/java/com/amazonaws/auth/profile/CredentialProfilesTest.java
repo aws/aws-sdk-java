@@ -20,6 +20,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
@@ -29,6 +30,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSSessionCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.profile.internal.Profile;
 
 public class CredentialProfilesTest {
 
@@ -168,6 +170,32 @@ public class CredentialProfilesTest {
 
         assertEquals(profile.getCredentials(PROFILE_NAME_TEST)
                 .getAWSSecretKey(), "test key");
+    }
+
+    /**
+     * Test verifying we pick up a change to a file.
+     */
+    @Test
+    public void testReadUpdatedProfile() throws URISyntaxException, IOException {
+        ProfilesConfigFile fixture = new ProfilesConfigFile(loadFile("BasicProfile.tst"));
+        File modifiable = File.createTempFile("UpdatableProfile", ".tst");
+        ProfilesConfigFileWriter.dumpToFile(modifiable, true, fixture.getAllProfiles().values().toArray(new Profile[1]));
+
+        ProfilesConfigFile test = new ProfilesConfigFile(modifiable);
+        AWSCredentials orig = test.getCredentials(DEFAULT_PROFILE_NAME);
+        assertEquals("defaultAccessKey", orig.getAWSAccessKeyId());
+        assertEquals("defaultSecretAccessKey", orig.getAWSSecretKey());
+        //Sleep to ensure that the timestamp on the file (when we modify it) is
+        //distinguishably later from the original write.
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {}
+
+        ProfilesConfigFileWriter.modifyOneProfile(modifiable, DEFAULT_PROFILE_NAME, new Profile(DEFAULT_PROFILE_NAME, new BasicAWSCredentials("newAccessKey", "newSecretKey")));
+        test.refresh();
+        AWSCredentials updated = test.getCredentials(DEFAULT_PROFILE_NAME);
+        assertEquals("newAccessKey", updated.getAWSAccessKeyId());
+        assertEquals("newSecretKey", updated.getAWSSecretKey());
     }
 
     /**

@@ -67,7 +67,6 @@
         "exceptionName" : "EncryptionKeyUnavailableException",
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about one or more repositories.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param batchGetRepositoriesRequest Represents the input of a batch get repositories operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the BatchGetRepositories operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Gets information about one or more repositories.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param batchGetRepositoriesRequest Represents the input of a batch get repositories operation.\n@return Result of the BatchGetRepositories operation returned by the service.\n@throws RepositoryNamesRequiredException A repository names object is required but was not specified.\n@throws MaximumRepositoryNamesExceededException The maximum number of allowed repository names was exceeded. Currently, this number is 25.\n@throws InvalidRepositoryNameException At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.\n@throws EncryptionIntegrityChecksFailedException An encryption integrity check failed.\n@throws EncryptionKeyAccessDeniedException An encryption key could not be accessed.\n@throws EncryptionKeyDisabledException The encryption key is disabled.\n@throws EncryptionKeyNotFoundException No encryption key was found.\n@throws EncryptionKeyUnavailableException The encryption key is not available.*/",
       "asyncDocumentation" : "/**<p>Gets information about one or more repositories.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param batchGetRepositoriesRequest Represents the input of a batch get repositories operation.\n@return A Java Future containing the result of the BatchGetRepositories operation returned by the service.*/",
       "syncReturnType" : "BatchGetRepositoriesResult",
@@ -75,6 +74,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetRepositoriesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetRepositoriesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetRepositoriesRequest, BatchGetRepositoriesResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about one or more repositories.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param batchGetRepositoriesRequest Represents the input of a batch get repositories operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the BatchGetRepositories operation returned by the service.*/",
       "methodName" : "batchGetRepositories"
     },
     "CreateBranch" : {
@@ -134,7 +134,6 @@
         "exceptionName" : "EncryptionKeyUnavailableException",
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
-      "asyncDocumentationWithHandler" : "/**<p>Creates a new branch in a repository and points the branch to a commit.</p> <note>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</note>\n@param createBranchRequest Represents the input of a create branch operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p>Creates a new branch in a repository and points the branch to a commit.</p> <note>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</note>\n@param createBranchRequest Represents the input of a create branch operation.\n@throws RepositoryNameRequiredException A repository name is required but was not specified.\n@throws InvalidRepositoryNameException At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.\n@throws RepositoryDoesNotExistException The specified repository does not exist.\n@throws BranchNameRequiredException A branch name is required but was not specified.\n@throws BranchNameExistsException The specified branch name already exists.\n@throws InvalidBranchNameException The specified branch name is not valid.\n@throws CommitIdRequiredException A commit ID was not specified.\n@throws CommitDoesNotExistException The specified commit does not exist or no commit was specified, and the specified repository has no default branch.\n@throws InvalidCommitIdException The specified commit ID is not valid.\n@throws EncryptionIntegrityChecksFailedException An encryption integrity check failed.\n@throws EncryptionKeyAccessDeniedException An encryption key could not be accessed.\n@throws EncryptionKeyDisabledException The encryption key is disabled.\n@throws EncryptionKeyNotFoundException No encryption key was found.\n@throws EncryptionKeyUnavailableException The encryption key is not available.*/",
       "asyncDocumentation" : "/**<p>Creates a new branch in a repository and points the branch to a commit.</p> <note>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</note>\n@param createBranchRequest Represents the input of a create branch operation.*/",
       "syncReturnType" : "void",
@@ -142,6 +141,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, Void>",
+      "asyncDocumentationWithHandler" : "/**<p>Creates a new branch in a repository and points the branch to a commit.</p> <note>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</note>\n@param createBranchRequest Represents the input of a create branch operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "methodName" : "createBranch"
     },
     "CreateRepository" : {
@@ -192,7 +192,6 @@
         "exceptionName" : "EncryptionKeyUnavailableException",
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
-      "asyncDocumentationWithHandler" : "/**<p>Creates a new, empty repository.</p>\n@param createRepositoryRequest Represents the input of a create repository operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateRepository operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Creates a new, empty repository.</p>\n@param createRepositoryRequest Represents the input of a create repository operation.\n@return Result of the CreateRepository operation returned by the service.\n@throws RepositoryNameExistsException The specified repository name already exists.\n@throws RepositoryNameRequiredException A repository name is required but was not specified.\n@throws InvalidRepositoryNameException At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.\n@throws InvalidRepositoryDescriptionException The specified repository description is not valid.\n@throws RepositoryLimitExceededException A repository resource limit was exceeded.\n@throws EncryptionIntegrityChecksFailedException An encryption integrity check failed.\n@throws EncryptionKeyAccessDeniedException An encryption key could not be accessed.\n@throws EncryptionKeyDisabledException The encryption key is disabled.\n@throws EncryptionKeyNotFoundException No encryption key was found.\n@throws EncryptionKeyUnavailableException The encryption key is not available.*/",
       "asyncDocumentation" : "/**<p>Creates a new, empty repository.</p>\n@param createRepositoryRequest Represents the input of a create repository operation.\n@return A Java Future containing the result of the CreateRepository operation returned by the service.*/",
       "syncReturnType" : "CreateRepositoryResult",
@@ -200,6 +199,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<CreateRepositoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateRepositoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Creates a new, empty repository.</p>\n@param createRepositoryRequest Represents the input of a create repository operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateRepository operation returned by the service.*/",
       "methodName" : "createRepository"
     },
     "DeleteRepository" : {
@@ -241,7 +241,6 @@
         "exceptionName" : "EncryptionKeyUnavailableException",
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
-      "asyncDocumentationWithHandler" : "/**<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</important>\n@param deleteRepositoryRequest Represents the input of a delete repository operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteRepository operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</important>\n@param deleteRepositoryRequest Represents the input of a delete repository operation.\n@return Result of the DeleteRepository operation returned by the service.\n@throws RepositoryNameRequiredException A repository name is required but was not specified.\n@throws InvalidRepositoryNameException At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.\n@throws EncryptionIntegrityChecksFailedException An encryption integrity check failed.\n@throws EncryptionKeyAccessDeniedException An encryption key could not be accessed.\n@throws EncryptionKeyDisabledException The encryption key is disabled.\n@throws EncryptionKeyNotFoundException No encryption key was found.\n@throws EncryptionKeyUnavailableException The encryption key is not available.*/",
       "asyncDocumentation" : "/**<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</important>\n@param deleteRepositoryRequest Represents the input of a delete repository operation.\n@return A Java Future containing the result of the DeleteRepository operation returned by the service.*/",
       "syncReturnType" : "DeleteRepositoryResult",
@@ -249,6 +248,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRepositoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteRepositoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</important>\n@param deleteRepositoryRequest Represents the input of a delete repository operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteRepository operation returned by the service.*/",
       "methodName" : "deleteRepository"
     },
     "GetBranch" : {
@@ -302,7 +302,6 @@
         "exceptionName" : "EncryptionKeyUnavailableException",
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
-      "asyncDocumentationWithHandler" : "/**<p>Retrieves information about a repository branch, including its name and the last commit ID.</p>\n@param getBranchRequest Represents the input of a get branch operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetBranch operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Retrieves information about a repository branch, including its name and the last commit ID.</p>\n@param getBranchRequest Represents the input of a get branch operation.\n@return Result of the GetBranch operation returned by the service.\n@throws RepositoryNameRequiredException A repository name is required but was not specified.\n@throws RepositoryDoesNotExistException The specified repository does not exist.\n@throws InvalidRepositoryNameException At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.\n@throws BranchNameRequiredException A branch name is required but was not specified.\n@throws InvalidBranchNameException The specified branch name is not valid.\n@throws BranchDoesNotExistException The specified branch does not exist.\n@throws EncryptionIntegrityChecksFailedException An encryption integrity check failed.\n@throws EncryptionKeyAccessDeniedException An encryption key could not be accessed.\n@throws EncryptionKeyDisabledException The encryption key is disabled.\n@throws EncryptionKeyNotFoundException No encryption key was found.\n@throws EncryptionKeyUnavailableException The encryption key is not available.*/",
       "asyncDocumentation" : "/**<p>Retrieves information about a repository branch, including its name and the last commit ID.</p>\n@param getBranchRequest Represents the input of a get branch operation.\n@return A Java Future containing the result of the GetBranch operation returned by the service.*/",
       "syncReturnType" : "GetBranchResult",
@@ -310,6 +309,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<GetBranchResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetBranchResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetBranchRequest, GetBranchResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Retrieves information about a repository branch, including its name and the last commit ID.</p>\n@param getBranchRequest Represents the input of a get branch operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetBranch operation returned by the service.*/",
       "methodName" : "getBranch"
     },
     "GetRepository" : {
@@ -354,7 +354,6 @@
         "exceptionName" : "EncryptionKeyUnavailableException",
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param getRepositoryRequest Represents the input of a get repository operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetRepository operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Gets information about a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param getRepositoryRequest Represents the input of a get repository operation.\n@return Result of the GetRepository operation returned by the service.\n@throws RepositoryNameRequiredException A repository name is required but was not specified.\n@throws RepositoryDoesNotExistException The specified repository does not exist.\n@throws InvalidRepositoryNameException At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.\n@throws EncryptionIntegrityChecksFailedException An encryption integrity check failed.\n@throws EncryptionKeyAccessDeniedException An encryption key could not be accessed.\n@throws EncryptionKeyDisabledException The encryption key is disabled.\n@throws EncryptionKeyNotFoundException No encryption key was found.\n@throws EncryptionKeyUnavailableException The encryption key is not available.*/",
       "asyncDocumentation" : "/**<p>Gets information about a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param getRepositoryRequest Represents the input of a get repository operation.\n@return A Java Future containing the result of the GetRepository operation returned by the service.*/",
       "syncReturnType" : "GetRepositoryResult",
@@ -362,6 +361,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<GetRepositoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRepositoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRepositoryRequest, GetRepositoryResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param getRepositoryRequest Represents the input of a get repository operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetRepository operation returned by the service.*/",
       "methodName" : "getRepository"
     },
     "ListBranches" : {
@@ -409,7 +409,6 @@
         "exceptionName" : "InvalidContinuationTokenException",
         "documentation" : "<p>The specified continuation token is not valid.</p>"
       } ],
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about one or more branches in a repository.</p>\n@param listBranchesRequest Represents the input of a list branches operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListBranches operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Gets information about one or more branches in a repository.</p>\n@param listBranchesRequest Represents the input of a list branches operation.\n@return Result of the ListBranches operation returned by the service.\n@throws RepositoryNameRequiredException A repository name is required but was not specified.\n@throws RepositoryDoesNotExistException The specified repository does not exist.\n@throws InvalidRepositoryNameException At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.\n@throws EncryptionIntegrityChecksFailedException An encryption integrity check failed.\n@throws EncryptionKeyAccessDeniedException An encryption key could not be accessed.\n@throws EncryptionKeyDisabledException The encryption key is disabled.\n@throws EncryptionKeyNotFoundException No encryption key was found.\n@throws EncryptionKeyUnavailableException The encryption key is not available.\n@throws InvalidContinuationTokenException The specified continuation token is not valid.*/",
       "asyncDocumentation" : "/**<p>Gets information about one or more branches in a repository.</p>\n@param listBranchesRequest Represents the input of a list branches operation.\n@return A Java Future containing the result of the ListBranches operation returned by the service.*/",
       "syncReturnType" : "ListBranchesResult",
@@ -417,6 +416,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<ListBranchesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListBranchesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListBranchesRequest, ListBranchesResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about one or more branches in a repository.</p>\n@param listBranchesRequest Represents the input of a list branches operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListBranches operation returned by the service.*/",
       "methodName" : "listBranches"
     },
     "ListRepositories" : {
@@ -446,7 +446,6 @@
         "exceptionName" : "InvalidContinuationTokenException",
         "documentation" : "<p>The specified continuation token is not valid.</p>"
       } ],
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about one or more repositories.</p>\n@param listRepositoriesRequest Represents the input of a list repositories operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListRepositories operation returned by the service.*/",
       "syncDocumentation" : "/**<p>Gets information about one or more repositories.</p>\n@param listRepositoriesRequest Represents the input of a list repositories operation.\n@return Result of the ListRepositories operation returned by the service.\n@throws InvalidSortByException The specified sort by value is not valid.\n@throws InvalidOrderException The specified sort order is not valid.\n@throws InvalidContinuationTokenException The specified continuation token is not valid.*/",
       "asyncDocumentation" : "/**<p>Gets information about one or more repositories.</p>\n@param listRepositoriesRequest Represents the input of a list repositories operation.\n@return A Java Future containing the result of the ListRepositories operation returned by the service.*/",
       "syncReturnType" : "ListRepositoriesResult",
@@ -454,6 +453,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<ListRepositoriesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRepositoriesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about one or more repositories.</p>\n@param listRepositoriesRequest Represents the input of a list repositories operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListRepositories operation returned by the service.*/",
       "methodName" : "listRepositories"
     },
     "UpdateDefaultBranch" : {
@@ -504,7 +504,6 @@
         "exceptionName" : "EncryptionKeyUnavailableException",
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
-      "asyncDocumentationWithHandler" : "/**<p>Sets or changes the default branch name for the specified repository.</p> <note>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</note>\n@param updateDefaultBranchRequest Represents the input of an update default branch operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p>Sets or changes the default branch name for the specified repository.</p> <note>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</note>\n@param updateDefaultBranchRequest Represents the input of an update default branch operation.\n@throws RepositoryNameRequiredException A repository name is required but was not specified.\n@throws RepositoryDoesNotExistException The specified repository does not exist.\n@throws InvalidRepositoryNameException At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.\n@throws BranchNameRequiredException A branch name is required but was not specified.\n@throws InvalidBranchNameException The specified branch name is not valid.\n@throws BranchDoesNotExistException The specified branch does not exist.\n@throws EncryptionIntegrityChecksFailedException An encryption integrity check failed.\n@throws EncryptionKeyAccessDeniedException An encryption key could not be accessed.\n@throws EncryptionKeyDisabledException The encryption key is disabled.\n@throws EncryptionKeyNotFoundException No encryption key was found.\n@throws EncryptionKeyUnavailableException The encryption key is not available.*/",
       "asyncDocumentation" : "/**<p>Sets or changes the default branch name for the specified repository.</p> <note>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</note>\n@param updateDefaultBranchRequest Represents the input of an update default branch operation.*/",
       "syncReturnType" : "void",
@@ -512,6 +511,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, Void>",
+      "asyncDocumentationWithHandler" : "/**<p>Sets or changes the default branch name for the specified repository.</p> <note>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</note>\n@param updateDefaultBranchRequest Represents the input of an update default branch operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "methodName" : "updateDefaultBranch"
     },
     "UpdateRepositoryDescription" : {
@@ -556,7 +556,6 @@
         "exceptionName" : "EncryptionKeyUnavailableException",
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
-      "asyncDocumentationWithHandler" : "/**<p>Sets or changes the comment or description for a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param updateRepositoryDescriptionRequest Represents the input of an update repository description operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p>Sets or changes the comment or description for a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param updateRepositoryDescriptionRequest Represents the input of an update repository description operation.\n@throws RepositoryNameRequiredException A repository name is required but was not specified.\n@throws RepositoryDoesNotExistException The specified repository does not exist.\n@throws InvalidRepositoryNameException At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.\n@throws InvalidRepositoryDescriptionException The specified repository description is not valid.\n@throws EncryptionIntegrityChecksFailedException An encryption integrity check failed.\n@throws EncryptionKeyAccessDeniedException An encryption key could not be accessed.\n@throws EncryptionKeyDisabledException The encryption key is disabled.\n@throws EncryptionKeyNotFoundException No encryption key was found.\n@throws EncryptionKeyUnavailableException The encryption key is not available.*/",
       "asyncDocumentation" : "/**<p>Sets or changes the comment or description for a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param updateRepositoryDescriptionRequest Represents the input of an update repository description operation.*/",
       "syncReturnType" : "void",
@@ -564,6 +563,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, Void>",
+      "asyncDocumentationWithHandler" : "/**<p>Sets or changes the comment or description for a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>\n@param updateRepositoryDescriptionRequest Represents the input of an update repository description operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "methodName" : "updateRepositoryDescription"
     },
     "UpdateRepositoryName" : {
@@ -593,7 +593,6 @@
         "exceptionName" : "InvalidRepositoryNameException",
         "documentation" : "<p>At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</note>"
       } ],
-      "asyncDocumentationWithHandler" : "/**<p>Renames a repository.</p>\n@param updateRepositoryNameRequest Represents the input of an update repository description operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "syncDocumentation" : "/**<p>Renames a repository.</p>\n@param updateRepositoryNameRequest Represents the input of an update repository description operation.\n@throws RepositoryDoesNotExistException The specified repository does not exist.\n@throws RepositoryNameExistsException The specified repository name already exists.\n@throws RepositoryNameRequiredException A repository name is required but was not specified.\n@throws InvalidRepositoryNameException At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.*/",
       "asyncDocumentation" : "/**<p>Renames a repository.</p>\n@param updateRepositoryNameRequest Represents the input of an update repository description operation.*/",
       "syncReturnType" : "void",
@@ -601,6 +600,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, Void>",
+      "asyncDocumentationWithHandler" : "/**<p>Renames a repository.</p>\n@param updateRepositoryNameRequest Represents the input of an update repository description operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
       "methodName" : "updateRepositoryName"
     }
   },
@@ -1142,7 +1142,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryDescription" : {
@@ -1851,7 +1854,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryName" : {
@@ -2090,7 +2096,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryMetadata" : {
@@ -2207,9 +2216,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "map" : false,
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2242,7 +2251,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryNames" : {
@@ -2295,9 +2307,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "map" : false,
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2441,7 +2453,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "BranchName" : {
@@ -2574,7 +2589,10 @@
       "unmarshaller" : null,
       "errorCode" : "EncryptionKeyNotFoundException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -2689,9 +2707,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "RepositoryNameIdPair",
           "map" : false,
-          "simple" : false,
           "templateType" : "java.util.List<RepositoryNameIdPair>",
-          "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>"
+          "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
+          "simple" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2771,7 +2789,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "NextToken" : {
@@ -2927,9 +2948,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "RepositoryNameIdPair",
             "map" : false,
-            "simple" : false,
             "templateType" : "java.util.List<RepositoryNameIdPair>",
-            "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>"
+            "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
+            "simple" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2968,7 +2989,10 @@
       "unmarshaller" : null,
       "errorCode" : "InvalidSortByException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -2996,7 +3020,10 @@
       "unmarshaller" : null,
       "errorCode" : "InvalidRepositoryNameException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -3024,7 +3051,10 @@
       "unmarshaller" : null,
       "errorCode" : "RepositoryDoesNotExistException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -3139,9 +3169,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "RepositoryMetadata",
           "map" : false,
-          "simple" : false,
           "templateType" : "java.util.List<RepositoryMetadata>",
-          "templateImplType" : "java.util.ArrayList<RepositoryMetadata>"
+          "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
+          "simple" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3203,9 +3233,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "map" : false,
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3234,7 +3264,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Repositories" : {
@@ -3338,9 +3371,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "RepositoryMetadata",
             "map" : false,
-            "simple" : false,
             "templateType" : "java.util.List<RepositoryMetadata>",
-            "templateImplType" : "java.util.ArrayList<RepositoryMetadata>"
+            "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
+            "simple" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3403,9 +3436,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "map" : false,
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3502,7 +3535,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryName" : {
@@ -3583,7 +3619,10 @@
       "unmarshaller" : null,
       "errorCode" : "EncryptionKeyDisabledException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -3611,7 +3650,10 @@
       "unmarshaller" : null,
       "errorCode" : "BranchNameExistsException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -3693,7 +3735,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryMetadata" : {
@@ -3774,7 +3819,10 @@
       "unmarshaller" : null,
       "errorCode" : "InvalidContinuationTokenException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -3962,7 +4010,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "NextToken" : {
@@ -4256,7 +4307,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryName" : {
@@ -4398,7 +4452,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4426,7 +4483,10 @@
       "unmarshaller" : null,
       "errorCode" : "InvalidRepositoryDescriptionException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4454,7 +4514,10 @@
       "unmarshaller" : null,
       "errorCode" : "EncryptionIntegrityChecksFailedException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4482,7 +4545,10 @@
       "unmarshaller" : null,
       "errorCode" : "BranchNameRequiredException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4510,7 +4576,10 @@
       "unmarshaller" : null,
       "errorCode" : "EncryptionKeyAccessDeniedException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4538,7 +4607,10 @@
       "unmarshaller" : null,
       "errorCode" : "RepositoryNamesRequiredException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4566,7 +4638,10 @@
       "unmarshaller" : null,
       "errorCode" : "CommitDoesNotExistException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4703,7 +4778,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryDescription" : {
@@ -4845,7 +4923,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -4909,9 +4990,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "map" : false,
-          "simple" : true,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4991,7 +5072,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "NextToken" : {
@@ -5096,9 +5180,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "map" : false,
-            "simple" : true,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5191,7 +5275,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Branch" : {
@@ -5272,7 +5359,10 @@
       "unmarshaller" : null,
       "errorCode" : "RepositoryNameExistsException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -5358,7 +5448,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryName" : {
@@ -5439,7 +5532,10 @@
       "unmarshaller" : null,
       "errorCode" : "InvalidOrderException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -5467,7 +5563,10 @@
       "unmarshaller" : null,
       "errorCode" : "RepositoryLimitExceededException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -5604,7 +5703,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryDescription" : {
@@ -5737,7 +5839,10 @@
       "unmarshaller" : null,
       "errorCode" : "MaximumRepositoryNamesExceededException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -5765,7 +5870,10 @@
       "unmarshaller" : null,
       "errorCode" : "CommitIdRequiredException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -5902,7 +6010,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryName" : {
@@ -6035,7 +6146,10 @@
       "unmarshaller" : null,
       "errorCode" : "InvalidCommitIdException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -6168,7 +6282,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryName" : {
@@ -6301,7 +6418,10 @@
       "unmarshaller" : null,
       "errorCode" : "RepositoryNameRequiredException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -6329,7 +6449,10 @@
       "unmarshaller" : null,
       "errorCode" : "EncryptionKeyUnavailableException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -6357,7 +6480,10 @@
       "unmarshaller" : null,
       "errorCode" : "InvalidBranchNameException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -6494,7 +6620,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryName" : {
@@ -6627,7 +6756,10 @@
       "unmarshaller" : null,
       "errorCode" : "BranchDoesNotExistException",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -6764,7 +6896,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "NewName" : {
@@ -6951,7 +7086,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "RepositoryId" : {

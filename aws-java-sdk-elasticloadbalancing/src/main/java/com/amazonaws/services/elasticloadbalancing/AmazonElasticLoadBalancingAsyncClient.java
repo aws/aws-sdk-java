@@ -57,7 +57,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     /**
      * Executor service for executing asynchronous requests.
      */
-    private ExecutorService executorService;
+    private final ExecutorService executorService;
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 

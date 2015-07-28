@@ -70,6 +70,11 @@ abstract class AbstractHandler extends DefaultHandler {
         return context.isEmpty();
     }
 
+    /**
+     * @param path
+     *            Path to test
+     * @return True if the path provided is the same as the current context. False otherwise
+     */
     protected final boolean in(String... path) {
         if (path.length != context.size()) {
             return false;
@@ -86,4 +91,5 @@ abstract class AbstractHandler extends DefaultHandler {
 
         return true;
     }
+
 }

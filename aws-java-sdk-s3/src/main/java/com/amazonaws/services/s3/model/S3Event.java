@@ -17,7 +17,6 @@ package com.amazonaws.services.s3.model;
 
 /**
  * A enum class for all Amazon S3 events.
- *
  */
 public enum S3Event {
     ReducedRedundancyLostObject("s3:ReducedRedundancyLostObject"),
@@ -30,7 +29,13 @@ public enum S3Event {
 
     ObjectCreatedByCopy("s3:ObjectCreated:Copy"),
 
-    ObjectCreatedByCompleteMultipartUpload("s3:ObjectCreated:CompleteMultipartUpload");
+    ObjectCreatedByCompleteMultipartUpload("s3:ObjectCreated:CompleteMultipartUpload"),
+
+    ObjectRemoved("s3:ObjectRemoved:*"),
+
+    ObjectRemovedDelete("s3:ObjectRemoved:Delete"),
+
+    ObjectRemovedDeleteMarkerCreated("s3:ObjectRemoved:DeleteMarkerCreated");
 
     private final String event;
 

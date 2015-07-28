@@ -14,6 +14,7 @@
  */
 package com.amazonaws.auth.profile;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.Map;
@@ -23,8 +24,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.profile.internal.Profile;
 
 public class ProfileCredentialsProviderTest {
+
+    private static final String DEFAULT_PROFILE_NAME = "default";
 
     private static String PROFILE_FILE =
             "ProfilesContainingOtherConfigurations.tst";
@@ -33,9 +38,13 @@ public class ProfileCredentialsProviderTest {
 
     @BeforeClass
     public static void setUp() {
+        profileLocation = getLocationForTestFile(PROFILE_FILE);
+    }
+
+    private static String getLocationForTestFile(String name) {
         URL url = ProfileCredentialsProviderTest.class
-                .getResource("/resources/profileconfig/" + PROFILE_FILE);
-        profileLocation = url.getFile();
+                .getResource("/resources/profileconfig/" + name);
+        return url.getFile();
     }
 
     @Test
@@ -174,5 +183,28 @@ public class ProfileCredentialsProviderTest {
 
             env.remove(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE);
         }
+    }
+
+    @Test
+    public void testUpdate() throws Exception {
+        ProfilesConfigFile fixture = new ProfilesConfigFile(getLocationForTestFile("BasicProfile.tst"));
+        File modifiable = File.createTempFile("UpdatableProfile", ".tst");
+        ProfilesConfigFileWriter.dumpToFile(modifiable, true, fixture.getAllProfiles().values().toArray(new Profile[1]));
+
+        ProfileCredentialsProvider test = new ProfileCredentialsProvider(modifiable.getPath(), null);
+        AWSCredentials orig = test.getCredentials();
+        Assert.assertEquals("defaultAccessKey", orig.getAWSAccessKeyId());
+        Assert.assertEquals("defaultSecretAccessKey", orig.getAWSSecretKey());
+        //Sleep to ensure that the timestamp on the file (when we modify it) is
+        //distinguishably later from the original write.
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {}
+
+        ProfilesConfigFileWriter.modifyOneProfile(modifiable, DEFAULT_PROFILE_NAME, new Profile(DEFAULT_PROFILE_NAME, new BasicAWSCredentials("newAccessKey", "newSecretKey")));
+        test.refresh();
+        AWSCredentials updated = test.getCredentials();
+        Assert.assertEquals("newAccessKey", updated.getAWSAccessKeyId());
+        Assert.assertEquals("newSecretKey", updated.getAWSSecretKey());
     }
 }

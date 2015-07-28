@@ -80,8 +80,9 @@ public class ProfilesConfigFile {
     /** Name of the default profile as specified in the configuration file. */
     public static final String DEFAULT_PROFILE_NAME = "default";
 
-    private Map<String, Profile> profilesByName = new LinkedHashMap<String, Profile>();
-
+    private final File profileFile;
+    private volatile Map<String, Profile> profilesByName;
+    private volatile long profileFileLastModified;
 
     /**
      * Loads the AWS credential profiles file from the default location
@@ -97,11 +98,15 @@ public class ProfilesConfigFile {
      * specified as a parameter to the constructor.
      */
     public ProfilesConfigFile(String filePath) {
+        this(new File(validateFilePath(filePath)));
+    }
+
+    private static String validateFilePath(String filePath) {
         if (filePath == null) {
             throw new IllegalArgumentException(
                     "Unable to load AWS profiles: specified file path is null.");
         }
-        loadProfiles(new File(filePath));
+        return filePath;
     }
 
     /**
@@ -109,18 +114,31 @@ public class ProfilesConfigFile {
      * file is specified as a parameter to the constructor.
      */
     public ProfilesConfigFile(File file) throws AmazonClientException {
-        loadProfiles(file);
+        profileFile = file;
+        profileFileLastModified = file.lastModified();
+        profilesByName = loadProfiles(profileFile);
     }
 
     /**
      * Returns the AWS credentials for the specified profile.
      */
     public AWSCredentials getCredentials(String profile) {
-        if (profilesByName.get(profile) == null) {
+        Profile p = profilesByName.get(profile);
+        if (p == null) {
             throw new IllegalArgumentException(
                     "No AWS profile named '" + profile + "'");
         }
-        return profilesByName.get(profile).getCredentials();
+        return p.getCredentials();
+    }
+
+    /**
+     * Reread data from disk.
+     */
+    public void refresh() {
+        if (profileFile.lastModified() > profileFileLastModified) {
+            profileFileLastModified = profileFile.lastModified();
+            profilesByName = loadProfiles(profileFile);
+        }
     }
 
     /**
@@ -172,8 +190,8 @@ public class ProfilesConfigFile {
         return credentialProfiles;
     }
 
-    private void loadProfiles(File file) {
-        profilesByName.putAll(ProfilesConfigFileLoader.loadProfiles(file));
+    private Map<String, Profile> loadProfiles(File file) {
+        return new LinkedHashMap<String, Profile>(ProfilesConfigFileLoader.loadProfiles(file));
     }
 
 }

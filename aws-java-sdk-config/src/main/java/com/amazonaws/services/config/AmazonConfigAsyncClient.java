@@ -76,7 +76,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
     /**
      * Executor service for executing asynchronous requests.
      */
-    private ExecutorService executorService;
+    private final ExecutorService executorService;
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 

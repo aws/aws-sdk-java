@@ -542,7 +542,10 @@
       "unmarshaller" : null,
       "errorCode" : "FileSystemInUse",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -674,7 +677,10 @@
       "unmarshaller" : null,
       "errorCode" : "IncorrectFileSystemLifeCycleState",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -915,7 +921,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "MaxItems" : {
@@ -1151,7 +1160,10 @@
       "unmarshaller" : null,
       "errorCode" : "DependencyTimeout",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -1283,7 +1295,10 @@
       "unmarshaller" : null,
       "errorCode" : "SubnetNotFound",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -1415,7 +1430,10 @@
       "unmarshaller" : null,
       "errorCode" : "SecurityGroupNotFound",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -1547,7 +1565,10 @@
       "unmarshaller" : null,
       "errorCode" : "FileSystemNotFound",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -1852,7 +1873,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "FileSystemId" : {
@@ -2224,7 +2248,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "MountTargetId" : {
@@ -2590,7 +2617,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "MountTargets" : {
@@ -2897,7 +2927,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "MountTargetId" : {
@@ -3029,7 +3062,10 @@
       "unmarshaller" : null,
       "errorCode" : "IpAddressInUse",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -3161,7 +3197,10 @@
       "unmarshaller" : null,
       "errorCode" : "UnsupportedAvailabilityZone",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -3309,7 +3348,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "SecurityGroups" : {
@@ -3454,7 +3496,10 @@
       "unmarshaller" : null,
       "errorCode" : "InternalServerError",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -3586,7 +3631,10 @@
       "unmarshaller" : null,
       "errorCode" : "SecurityGroupLimitExceeded",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -3718,7 +3766,10 @@
       "unmarshaller" : null,
       "errorCode" : "MountTargetConflict",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -3857,7 +3908,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "FileSystemId" : {
@@ -4349,7 +4403,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Name" : {
@@ -5154,7 +5211,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "FileSystemId" : {
@@ -5598,7 +5658,10 @@
       "unmarshaller" : null,
       "errorCode" : "NoFreeAddressesInSubnet",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -5730,7 +5793,10 @@
       "unmarshaller" : null,
       "errorCode" : "BadRequest",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -5916,7 +5982,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Value" : {
@@ -6209,7 +6278,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "MaxItems" : {
@@ -6409,7 +6481,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
     },
@@ -6797,7 +6872,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "FileSystemId" : {
@@ -7410,7 +7488,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Tags" : {
@@ -7710,7 +7791,10 @@
       "unmarshaller" : null,
       "errorCode" : "NetworkInterfaceLimitExceeded",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -7893,7 +7977,10 @@
       "unmarshaller" : null,
       "errorCode" : "FileSystemAlreadyExists",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "FileSystemId" : {
@@ -8246,7 +8333,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "FileSystems" : {
@@ -8706,7 +8796,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "MaxItems" : {
@@ -8994,7 +9087,10 @@
       "unmarshaller" : null,
       "errorCode" : "IncorrectMountTargetState",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -9126,7 +9222,10 @@
       "unmarshaller" : null,
       "errorCode" : "MountTargetNotFound",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -9329,7 +9428,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "FileSystemId" : {
@@ -9533,7 +9635,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "MountTargetId" : {
@@ -9665,7 +9770,10 @@
       "unmarshaller" : null,
       "errorCode" : "FileSystemLimitExceeded",
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "ErrorCode" : {
@@ -9919,7 +10027,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Tags" : {
@@ -10174,7 +10285,10 @@
       "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "CreationToken" : {
@@ -10666,7 +10780,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Name" : {
@@ -11216,7 +11333,10 @@
       },
       "errorCode" : null,
       "customization" : {
-        "artificialResultWrapper" : null
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
         "Value" : {
