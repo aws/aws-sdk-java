@@ -41,6 +41,7 @@ import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.Classes;
+import com.amazonaws.util.HttpUtils;
 
 /**
  * Abstract base class for Amazon Web Service Java clients.
@@ -176,20 +177,7 @@ public abstract class AmazonWebServiceClient {
 
     /** Returns the endpoint as a URI. */
     private URI toURI(String endpoint) throws IllegalArgumentException {
-        /*
-         * If the endpoint doesn't explicitly specify a protocol to use, then
-         * we'll defer to the default protocol specified in the client
-         * configuration.
-         */
-        if (endpoint.contains("://") == false) {
-            endpoint = clientConfiguration.getProtocol().toString() + "://" + endpoint;
-        }
-
-        try {
-            return new URI(endpoint);
-        } catch (URISyntaxException e) {
-            throw new IllegalArgumentException(e);
-        }
+        return HttpUtils.toUri(endpoint, clientConfiguration);
     }
 
     /**

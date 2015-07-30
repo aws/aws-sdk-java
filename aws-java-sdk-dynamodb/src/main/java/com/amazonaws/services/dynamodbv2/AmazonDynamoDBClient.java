@@ -248,7 +248,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      */
     public AmazonDynamoDBClient() {
         this(new DefaultAWSCredentialsProviderChain(),
-                new ClientConfiguration());
+                com.amazonaws.PredefinedClientConfigurations.dynamoDefault());
     }
 
     /**
@@ -289,7 +289,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AmazonDynamoDBClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, new ClientConfiguration());
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .dynamoDefault());
     }
 
     /**
@@ -328,7 +329,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AmazonDynamoDBClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, new ClientConfiguration());
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.dynamoDefault());
     }
 
     /**
@@ -373,8 +375,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
     public AmazonDynamoDBClient(AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(adjustClientConfiguration(clientConfiguration),
-                requestMetricCollector);
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -419,16 +420,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         requestHandler2s
                 .addAll(chainFactory
                         .newRequestHandler2Chain("/com/amazonaws/services/dynamodbv2/request.handler2s"));
-    }
-
-    private static ClientConfiguration adjustClientConfiguration(
-            ClientConfiguration orig) {
-        ClientConfiguration config = orig;
-        config = new ClientConfiguration(orig);
-        if (config.getRetryPolicy() == com.amazonaws.retry.PredefinedRetryPolicies.DEFAULT) {
-            config.setRetryPolicy(com.amazonaws.retry.PredefinedRetryPolicies.DYNAMODB_DEFAULT);
-        }
-        return config;
     }
 
     /**

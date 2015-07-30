@@ -131,7 +131,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
      */
     public AmazonDynamoDBStreamsClient() {
         this(new DefaultAWSCredentialsProviderChain(),
-                new ClientConfiguration());
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
@@ -173,7 +173,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AmazonDynamoDBStreamsClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, new ClientConfiguration());
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .defaultConfig());
     }
 
     /**
@@ -215,7 +216,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
      */
     public AmazonDynamoDBStreamsClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, new ClientConfiguration());
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
@@ -264,8 +266,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
             AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(adjustClientConfiguration(clientConfiguration),
-                requestMetricCollector);
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -302,12 +303,6 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
         requestHandler2s
                 .addAll(chainFactory
                         .newRequestHandler2Chain("/com/amazonaws/services/dynamodbv2/request.handler2s"));
-    }
-
-    private static ClientConfiguration adjustClientConfiguration(
-            ClientConfiguration orig) {
-        ClientConfiguration config = orig;
-        return config;
     }
 
     /**

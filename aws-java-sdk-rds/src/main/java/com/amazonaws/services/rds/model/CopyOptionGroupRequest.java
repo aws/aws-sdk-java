@@ -29,7 +29,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The identifier or ARN for the source option group. <p>Constraints:
+     * The identifier or ARN for the source option group. For information
+     * about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>. <p>Constraints:
      * <ul> <li>Must specify a valid option group.</li> <li>If the source
      * option group is in the same region as the copy, specify a valid option
      * group identifier, for example <code>my-option-group</code>, or a valid
@@ -61,7 +64,10 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The identifier or ARN for the source option group. <p>Constraints:
+     * The identifier or ARN for the source option group. For information
+     * about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>. <p>Constraints:
      * <ul> <li>Must specify a valid option group.</li> <li>If the source
      * option group is in the same region as the copy, specify a valid option
      * group identifier, for example <code>my-option-group</code>, or a valid
@@ -70,7 +76,10 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
      * </ul>
      *
-     * @return The identifier or ARN for the source option group. <p>Constraints:
+     * @return The identifier or ARN for the source option group. For information
+     *         about creating an ARN, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing an RDS Amazon Resource Name (ARN)</a>. <p>Constraints:
      *         <ul> <li>Must specify a valid option group.</li> <li>If the source
      *         option group is in the same region as the copy, specify a valid option
      *         group identifier, for example <code>my-option-group</code>, or a valid
@@ -84,7 +93,10 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The identifier or ARN for the source option group. <p>Constraints:
+     * The identifier or ARN for the source option group. For information
+     * about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>. <p>Constraints:
      * <ul> <li>Must specify a valid option group.</li> <li>If the source
      * option group is in the same region as the copy, specify a valid option
      * group identifier, for example <code>my-option-group</code>, or a valid
@@ -93,7 +105,10 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
      * </ul>
      *
-     * @param sourceOptionGroupIdentifier The identifier or ARN for the source option group. <p>Constraints:
+     * @param sourceOptionGroupIdentifier The identifier or ARN for the source option group. For information
+     *         about creating an ARN, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing an RDS Amazon Resource Name (ARN)</a>. <p>Constraints:
      *         <ul> <li>Must specify a valid option group.</li> <li>If the source
      *         option group is in the same region as the copy, specify a valid option
      *         group identifier, for example <code>my-option-group</code>, or a valid
@@ -107,7 +122,10 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The identifier or ARN for the source option group. <p>Constraints:
+     * The identifier or ARN for the source option group. For information
+     * about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>. <p>Constraints:
      * <ul> <li>Must specify a valid option group.</li> <li>If the source
      * option group is in the same region as the copy, specify a valid option
      * group identifier, for example <code>my-option-group</code>, or a valid
@@ -118,7 +136,10 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements S
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceOptionGroupIdentifier The identifier or ARN for the source option group. <p>Constraints:
+     * @param sourceOptionGroupIdentifier The identifier or ARN for the source option group. For information
+     *         about creating an ARN, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing an RDS Amazon Resource Name (ARN)</a>. <p>Constraints:
      *         <ul> <li>Must specify a valid option group.</li> <li>If the source
      *         option group is in the same region as the copy, specify a valid option
      *         group identifier, for example <code>my-option-group</code>, or a valid

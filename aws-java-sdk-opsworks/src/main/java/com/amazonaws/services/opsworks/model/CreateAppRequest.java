@@ -72,7 +72,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * specify <code>other</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      */
     private String type;
 
@@ -335,7 +335,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * specify <code>other</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      *
      * @return The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
@@ -359,7 +359,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * specify <code>other</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      *
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
@@ -385,7 +385,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      *
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
@@ -413,7 +413,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * specify <code>other</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      *
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
@@ -439,7 +439,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      *
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.

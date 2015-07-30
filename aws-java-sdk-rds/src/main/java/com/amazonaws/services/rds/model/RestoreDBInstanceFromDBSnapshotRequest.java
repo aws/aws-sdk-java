@@ -22,9 +22,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest) RestoreDBInstanceFromDBSnapshot operation}.
  * <p>
  * Creates a new DB instance from a DB snapshot. The target database is
- * created from the source database restore point with the same
- * configuration as the original source database, except that the new RDS
- * instance is created with the default security group.
+ * created from the source database restore point with the most of
+ * original configuration, but in a system chosen availability zone with
+ * the default security group, the default subnet group, and the default
+ * DB parameter group. By default, the new DB instance is created as a
+ * single-AZ deployment except when the instance is a SQL Server instance
+ * that has an option group that is associated with mirroring; in this
+ * case, the instance becomes a mirrored AZ deployment and not a
+ * single-AZ deployment.
  * </p>
  * <p>
  * If your intent is to replace your original DB instance with the new,
@@ -44,7 +49,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * Name of the DB instance to create from the DB snapshot. This parameter
-     * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     * isn't case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
@@ -206,7 +211,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * initialize any additional object members.
      * 
      * @param dBInstanceIdentifier Name of the DB instance to create from the
-     * DB snapshot. This parameter isn't case sensitive. <p>Constraints: <ul>
+     * DB snapshot. This parameter isn't case-sensitive. <p>Constraints: <ul>
      * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul> <p>Example:
@@ -224,13 +229,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * Name of the DB instance to create from the DB snapshot. This parameter
-     * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     * isn't case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      *
      * @return Name of the DB instance to create from the DB snapshot. This parameter
-     *         isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     *         isn't case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
@@ -241,13 +246,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * Name of the DB instance to create from the DB snapshot. This parameter
-     * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     * isn't case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      *
      * @param dBInstanceIdentifier Name of the DB instance to create from the DB snapshot. This parameter
-     *         isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     *         isn't case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
@@ -258,7 +263,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * Name of the DB instance to create from the DB snapshot. This parameter
-     * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     * isn't case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
@@ -266,7 +271,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceIdentifier Name of the DB instance to create from the DB snapshot. This parameter
-     *         isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     *         isn't case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>

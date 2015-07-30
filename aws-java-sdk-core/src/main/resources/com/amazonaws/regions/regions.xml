@@ -2386,11 +2386,11 @@
       <RegionName>us-east-1</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
-      <RegionName>eu-west-1</RegionName>
-      <RegionName>eu-central-1</RegionName>
+      <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
-      <RegionName>ap-northeast-1</RegionName>
+      <RegionName>eu-west-1</RegionName>
+      <RegionName>eu-central-1</RegionName>
     </Service>
     <Service>
       <Name>dynamodb</Name>

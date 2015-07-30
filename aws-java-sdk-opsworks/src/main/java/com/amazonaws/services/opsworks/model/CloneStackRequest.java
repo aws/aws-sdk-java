@@ -105,8 +105,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     private String serviceRoleArn;
 
     /**
-     * The ARN of an IAM profile that is the default profile for all of the
-     * stack's EC2 instances. For more information about IAM ARNs, see <a
+     * The Amazon Resource Name (ARN) of an IAM profile that is the default
+     * profile for all of the stack's EC2 instances. For more information
+     * about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      */
@@ -115,12 +116,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     /**
      * The stack's operating system, which must be set to one of the
      * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     * to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     * specify the custom AMI you want to use when you create instances. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</li> </ul> <p>The default option is the parent
      * stack's operating system. For more information on the supported
@@ -216,11 +217,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * associate additional security groups with a layer after you create it
      * but you cannot delete the built-in security group. </li> <li>False -
      * AWS OpsWorks does not associate built-in security groups with layers.
-     * You must create appropriate EC2 security groups and associate a
-     * security group with each layer that you create. However, you can still
-     * manually associate a built-in security group with a layer on creation;
-     * custom security groups are required only for those layers that need
-     * custom settings. </li> </ul> <p>For more information, see <a
+     * You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     * security groups and associate a security group with each layer that
+     * you create. However, you can still manually associate a built-in
+     * security group with a layer on creation; custom security groups are
+     * required only for those layers that need custom settings. </li> </ul>
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.
      */
@@ -741,13 +743,15 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * The ARN of an IAM profile that is the default profile for all of the
-     * stack's EC2 instances. For more information about IAM ARNs, see <a
+     * The Amazon Resource Name (ARN) of an IAM profile that is the default
+     * profile for all of the stack's EC2 instances. For more information
+     * about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
-     * @return The ARN of an IAM profile that is the default profile for all of the
-     *         stack's EC2 instances. For more information about IAM ARNs, see <a
+     * @return The Amazon Resource Name (ARN) of an IAM profile that is the default
+     *         profile for all of the stack's EC2 instances. For more information
+     *         about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
@@ -756,13 +760,15 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The ARN of an IAM profile that is the default profile for all of the
-     * stack's EC2 instances. For more information about IAM ARNs, see <a
+     * The Amazon Resource Name (ARN) of an IAM profile that is the default
+     * profile for all of the stack's EC2 instances. For more information
+     * about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
-     * @param defaultInstanceProfileArn The ARN of an IAM profile that is the default profile for all of the
-     *         stack's EC2 instances. For more information about IAM ARNs, see <a
+     * @param defaultInstanceProfileArn The Amazon Resource Name (ARN) of an IAM profile that is the default
+     *         profile for all of the stack's EC2 instances. For more information
+     *         about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
@@ -771,15 +777,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The ARN of an IAM profile that is the default profile for all of the
-     * stack's EC2 instances. For more information about IAM ARNs, see <a
+     * The Amazon Resource Name (ARN) of an IAM profile that is the default
+     * profile for all of the stack's EC2 instances. For more information
+     * about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultInstanceProfileArn The ARN of an IAM profile that is the default profile for all of the
-     *         stack's EC2 instances. For more information about IAM ARNs, see <a
+     * @param defaultInstanceProfileArn The Amazon Resource Name (ARN) of an IAM profile that is the default
+     *         profile for all of the stack's EC2 instances. For more information
+     *         about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
@@ -794,12 +802,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     /**
      * The stack's operating system, which must be set to one of the
      * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     * to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     * specify the custom AMI you want to use when you create instances. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</li> </ul> <p>The default option is the parent
      * stack's operating system. For more information on the supported
@@ -811,12 +819,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *
      * @return The stack's operating system, which must be set to one of the
      *         following. <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     *         custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     *         to use when you create instances. For more information on how to use
-     *         custom AMIs with OpsWorks, see <a
+     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     *         specify the custom AMI you want to use when you create instances. For
+     *         more information on how to use custom AMIs with OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.</li> </ul> <p>The default option is the parent
      *         stack's operating system. For more information on the supported
@@ -833,12 +841,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     /**
      * The stack's operating system, which must be set to one of the
      * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     * to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     * specify the custom AMI you want to use when you create instances. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</li> </ul> <p>The default option is the parent
      * stack's operating system. For more information on the supported
@@ -850,12 +858,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param defaultOs The stack's operating system, which must be set to one of the
      *         following. <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     *         custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     *         to use when you create instances. For more information on how to use
-     *         custom AMIs with OpsWorks, see <a
+     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     *         specify the custom AMI you want to use when you create instances. For
+     *         more information on how to use custom AMIs with OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.</li> </ul> <p>The default option is the parent
      *         stack's operating system. For more information on the supported
@@ -872,12 +880,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     /**
      * The stack's operating system, which must be set to one of the
      * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     * to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     * specify the custom AMI you want to use when you create instances. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</li> </ul> <p>The default option is the parent
      * stack's operating system. For more information on the supported
@@ -891,12 +899,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param defaultOs The stack's operating system, which must be set to one of the
      *         following. <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     *         custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     *         to use when you create instances. For more information on how to use
-     *         custom AMIs with OpsWorks, see <a
+     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     *         specify the custom AMI you want to use when you create instances. For
+     *         more information on how to use custom AMIs with OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.</li> </ul> <p>The default option is the parent
      *         stack's operating system. For more information on the supported
@@ -1388,11 +1396,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * associate additional security groups with a layer after you create it
      * but you cannot delete the built-in security group. </li> <li>False -
      * AWS OpsWorks does not associate built-in security groups with layers.
-     * You must create appropriate EC2 security groups and associate a
-     * security group with each layer that you create. However, you can still
-     * manually associate a built-in security group with a layer on creation;
-     * custom security groups are required only for those layers that need
-     * custom settings. </li> </ul> <p>For more information, see <a
+     * You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     * security groups and associate a security group with each layer that
+     * you create. However, you can still manually associate a built-in
+     * security group with a layer on creation; custom security groups are
+     * required only for those layers that need custom settings. </li> </ul>
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.
      *
@@ -1407,11 +1416,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         associate additional security groups with a layer after you create it
      *         but you cannot delete the built-in security group. </li> <li>False -
      *         AWS OpsWorks does not associate built-in security groups with layers.
-     *         You must create appropriate EC2 security groups and associate a
-     *         security group with each layer that you create. However, you can still
-     *         manually associate a built-in security group with a layer on creation;
-     *         custom security groups are required only for those layers that need
-     *         custom settings. </li> </ul> <p>For more information, see <a
+     *         You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     *         security groups and associate a security group with each layer that
+     *         you create. However, you can still manually associate a built-in
+     *         security group with a layer on creation; custom security groups are
+     *         required only for those layers that need custom settings. </li> </ul>
+     *         <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      *         a New Stack</a>.
      */
@@ -1431,11 +1441,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * associate additional security groups with a layer after you create it
      * but you cannot delete the built-in security group. </li> <li>False -
      * AWS OpsWorks does not associate built-in security groups with layers.
-     * You must create appropriate EC2 security groups and associate a
-     * security group with each layer that you create. However, you can still
-     * manually associate a built-in security group with a layer on creation;
-     * custom security groups are required only for those layers that need
-     * custom settings. </li> </ul> <p>For more information, see <a
+     * You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     * security groups and associate a security group with each layer that
+     * you create. However, you can still manually associate a built-in
+     * security group with a layer on creation; custom security groups are
+     * required only for those layers that need custom settings. </li> </ul>
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.
      *
@@ -1450,11 +1461,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         associate additional security groups with a layer after you create it
      *         but you cannot delete the built-in security group. </li> <li>False -
      *         AWS OpsWorks does not associate built-in security groups with layers.
-     *         You must create appropriate EC2 security groups and associate a
-     *         security group with each layer that you create. However, you can still
-     *         manually associate a built-in security group with a layer on creation;
-     *         custom security groups are required only for those layers that need
-     *         custom settings. </li> </ul> <p>For more information, see <a
+     *         You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     *         security groups and associate a security group with each layer that
+     *         you create. However, you can still manually associate a built-in
+     *         security group with a layer on creation; custom security groups are
+     *         required only for those layers that need custom settings. </li> </ul>
+     *         <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      *         a New Stack</a>.
      */
@@ -1474,11 +1486,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * associate additional security groups with a layer after you create it
      * but you cannot delete the built-in security group. </li> <li>False -
      * AWS OpsWorks does not associate built-in security groups with layers.
-     * You must create appropriate EC2 security groups and associate a
-     * security group with each layer that you create. However, you can still
-     * manually associate a built-in security group with a layer on creation;
-     * custom security groups are required only for those layers that need
-     * custom settings. </li> </ul> <p>For more information, see <a
+     * You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     * security groups and associate a security group with each layer that
+     * you create. However, you can still manually associate a built-in
+     * security group with a layer on creation; custom security groups are
+     * required only for those layers that need custom settings. </li> </ul>
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.
      * <p>
@@ -1495,11 +1508,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         associate additional security groups with a layer after you create it
      *         but you cannot delete the built-in security group. </li> <li>False -
      *         AWS OpsWorks does not associate built-in security groups with layers.
-     *         You must create appropriate EC2 security groups and associate a
-     *         security group with each layer that you create. However, you can still
-     *         manually associate a built-in security group with a layer on creation;
-     *         custom security groups are required only for those layers that need
-     *         custom settings. </li> </ul> <p>For more information, see <a
+     *         You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     *         security groups and associate a security group with each layer that
+     *         you create. However, you can still manually associate a built-in
+     *         security group with a layer on creation; custom security groups are
+     *         required only for those layers that need custom settings. </li> </ul>
+     *         <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      *         a New Stack</a>.
      *
@@ -1523,11 +1537,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * associate additional security groups with a layer after you create it
      * but you cannot delete the built-in security group. </li> <li>False -
      * AWS OpsWorks does not associate built-in security groups with layers.
-     * You must create appropriate EC2 security groups and associate a
-     * security group with each layer that you create. However, you can still
-     * manually associate a built-in security group with a layer on creation;
-     * custom security groups are required only for those layers that need
-     * custom settings. </li> </ul> <p>For more information, see <a
+     * You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     * security groups and associate a security group with each layer that
+     * you create. However, you can still manually associate a built-in
+     * security group with a layer on creation; custom security groups are
+     * required only for those layers that need custom settings. </li> </ul>
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.
      *
@@ -1542,11 +1557,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         associate additional security groups with a layer after you create it
      *         but you cannot delete the built-in security group. </li> <li>False -
      *         AWS OpsWorks does not associate built-in security groups with layers.
-     *         You must create appropriate EC2 security groups and associate a
-     *         security group with each layer that you create. However, you can still
-     *         manually associate a built-in security group with a layer on creation;
-     *         custom security groups are required only for those layers that need
-     *         custom settings. </li> </ul> <p>For more information, see <a
+     *         You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     *         security groups and associate a security group with each layer that
+     *         you create. However, you can still manually associate a built-in
+     *         security group with a layer on creation; custom security groups are
+     *         required only for those layers that need custom settings. </li> </ul>
+     *         <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      *         a New Stack</a>.
      */

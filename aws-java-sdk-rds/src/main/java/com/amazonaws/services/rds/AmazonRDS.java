@@ -23,7 +23,7 @@ import com.amazonaws.services.rds.model.*;
  * Amazon Relational Database Service <p>
  * Amazon Relational Database Service (Amazon RDS) is a web service that
  * makes it easier to set up, operate, and scale a relational database in
- * the cloud. It provides cost-efficient, resizable capacity for an
+ * the cloud. It provides cost-efficient, resizeable capacity for an
  * industry-standard relational database and manages common database
  * administration tasks, freeing up developers to focus on what makes
  * their applications and businesses unique.
@@ -44,7 +44,7 @@ import com.amazonaws.services.rds.model.*;
  * This is an interface reference for Amazon RDS. It contains
  * documentation for a programming or command line interface you can use
  * to manage Amazon RDS. Note that Amazon RDS is asynchronous, which
- * means that some interfaces may require techniques such as polling or
+ * means that some interfaces might require techniques such as polling or
  * callback functions to determine when a command has been applied. In
  * this reference, the parameter descriptions indicate whether a command
  * is applied immediately, on the next instance reboot, or during the
@@ -114,6 +114,32 @@ public interface AmazonRDS {
     
     /**
      * <p>
+     * Copies the specified option group.
+     * </p>
+     *
+     * @param copyOptionGroupRequest Container for the necessary parameters
+     *           to execute the CopyOptionGroup service method on AmazonRDS.
+     * 
+     * @return The response from the CopyOptionGroup service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws OptionGroupAlreadyExistsException
+     * @throws OptionGroupNotFoundException
+     * @throws OptionGroupQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public OptionGroup copyOptionGroup(CopyOptionGroupRequest copyOptionGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Deletes a DB subnet group.
      * </p>
      * <p>
@@ -143,38 +169,16 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Copies the specified option group.
-     * </p>
-     *
-     * @param copyOptionGroupRequest Container for the necessary parameters
-     *           to execute the CopyOptionGroup service method on AmazonRDS.
-     * 
-     * @return The response from the CopyOptionGroup service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws OptionGroupAlreadyExistsException
-     * @throws OptionGroupNotFoundException
-     * @throws OptionGroupQuotaExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public OptionGroup copyOptionGroup(CopyOptionGroupRequest copyOptionGroupRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Restores a DB instance to an arbitrary point-in-time. Users can
      * restore to any point in time before the LatestRestorableTime for up to
-     * BackupRetentionPeriod days. The target database is created from the
-     * source database with the same configuration as the original database
-     * except that the DB instance is created with the default DB security
-     * group.
+     * BackupRetentionPeriod days. The target database is created with the
+     * most of original configuration, but in a system chosen availability
+     * zone with the default security group, the default subnet group, and
+     * the default DB parameter group. By default, the new DB instance is
+     * created as a single-AZ deployment except when the instance is a SQL
+     * Server instance that has an option group that is associated with
+     * mirroring; in this case, the instance becomes a mirrored deployment
+     * and not a single-AZ deployment.
      * </p>
      *
      * @param restoreDBInstanceToPointInTimeRequest Container for the
@@ -190,6 +194,7 @@ public interface AmazonRDS {
      * @throws DBInstanceNotFoundException
      * @throws InvalidVPCNetworkStateException
      * @throws StorageTypeNotSupportedException
+     * @throws DBSecurityGroupNotFoundException
      * @throws InvalidSubnetException
      * @throws AuthorizationNotFoundException
      * @throws KMSKeyNotAccessibleException
@@ -211,6 +216,32 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DBInstance restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns a list of resources (for example, DB instances) that have at
+     * least one pending maintenance action.
+     * </p>
+     *
+     * @param describePendingMaintenanceActionsRequest Container for the
+     *           necessary parameters to execute the DescribePendingMaintenanceActions
+     *           service method on AmazonRDS.
+     * 
+     * @return The response from the DescribePendingMaintenanceActions
+     *         service method, as returned by AmazonRDS.
+     * 
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribePendingMaintenanceActionsResult describePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest describePendingMaintenanceActionsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -243,56 +274,17 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns a list of resources (for example, DB instances) that have at
-     * least one pending maintenance action.
+     * Describes the available option groups.
      * </p>
      *
-     * @param describePendingMaintenanceActionsRequest Container for the
-     *           necessary parameters to execute the DescribePendingMaintenanceActions
-     *           service method on AmazonRDS.
+     * @param describeOptionGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroups service method on
+     *           AmazonRDS.
      * 
-     * @return The response from the DescribePendingMaintenanceActions
-     *         service method, as returned by AmazonRDS.
-     * 
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribePendingMaintenanceActionsResult describePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest describePendingMaintenanceActionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new DB instance.
-     * </p>
-     *
-     * @param createDBInstanceRequest Container for the necessary parameters
-     *           to execute the CreateDBInstance service method on AmazonRDS.
-     * 
-     * @return The response from the CreateDBInstance service method, as
+     * @return The response from the DescribeOptionGroups service method, as
      *         returned by AmazonRDS.
      * 
-     * @throws KMSKeyNotAccessibleException
-     * @throws DBParameterGroupNotFoundException
-     * @throws InstanceQuotaExceededException
-     * @throws DBSubnetGroupNotFoundException
-     * @throws DBInstanceAlreadyExistsException
-     * @throws StorageQuotaExceededException
-     * @throws InvalidVPCNetworkStateException
-     * @throws StorageTypeNotSupportedException
-     * @throws DBSecurityGroupNotFoundException
-     * @throws InsufficientDBInstanceCapacityException
-     * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
-     * @throws InvalidSubnetException
      * @throws OptionGroupNotFoundException
-     * @throws ProvisionedIopsNotAvailableInAZException
-     * @throws AuthorizationNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -302,7 +294,7 @@ public interface AmazonRDS {
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBInstance createDBInstance(CreateDBInstanceRequest createDBInstanceRequest) 
+    public DescribeOptionGroupsResult describeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -335,17 +327,32 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Describes the available option groups.
+     * Creates a new DB instance.
      * </p>
      *
-     * @param describeOptionGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroups service method on
-     *           AmazonRDS.
+     * @param createDBInstanceRequest Container for the necessary parameters
+     *           to execute the CreateDBInstance service method on AmazonRDS.
      * 
-     * @return The response from the DescribeOptionGroups service method, as
+     * @return The response from the CreateDBInstance service method, as
      *         returned by AmazonRDS.
      * 
+     * @throws DBParameterGroupNotFoundException
+     * @throws DBSubnetGroupNotFoundException
+     * @throws DBInstanceAlreadyExistsException
+     * @throws InvalidVPCNetworkStateException
+     * @throws StorageTypeNotSupportedException
+     * @throws DBSecurityGroupNotFoundException
+     * @throws InvalidSubnetException
+     * @throws AuthorizationNotFoundException
+     * @throws KMSKeyNotAccessibleException
+     * @throws InstanceQuotaExceededException
+     * @throws StorageQuotaExceededException
+     * @throws DBClusterNotFoundException
+     * @throws InvalidDBClusterStateException
+     * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
+     * @throws InsufficientDBInstanceCapacityException
      * @throws OptionGroupNotFoundException
+     * @throws ProvisionedIopsNotAvailableInAZException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -355,7 +362,7 @@ public interface AmazonRDS {
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeOptionGroupsResult describeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest) 
+    public DBInstance createDBInstance(CreateDBInstanceRequest createDBInstanceRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -441,6 +448,39 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Returns a list of <code>DBClusterParameterGroup</code> descriptions.
+     * If a <code>DBClusterParameterGroupName</code> parameter is specified,
+     * the list will contain only the description of the specified DB cluster
+     * parameter group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClusterParameterGroupsRequest Container for the
+     *           necessary parameters to execute the DescribeDBClusterParameterGroups
+     *           service method on AmazonRDS.
+     * 
+     * @return The response from the DescribeDBClusterParameterGroups service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBClusterParameterGroupsResult describeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest describeDBClusterParameterGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Enables ingress to a DBSecurityGroup using one of two forms of
      * authorization. First, EC2 or VPC security groups can be added to the
      * DBSecurityGroup if the application using the database is running on
@@ -452,7 +492,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * <b>NOTE:</b> You cannot authorize ingress from an EC2 security group
-     * in one Region to an Amazon RDS DB instance in another. You cannot
+     * in one region to an Amazon RDS DB instance in another. You cannot
      * authorize ingress from a VPC security group in one VPC to an Amazon
      * RDS DB instance in another.
      * </p>
@@ -487,8 +527,69 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Applies a pending maintenance action to a resource (for example, a DB
-     * instance).
+     * Creates a new DB cluster parameter group.
+     * </p>
+     * <p>
+     * Parameters in a DB cluster parameter group apply to all of the
+     * instances in a DB cluster.
+     * </p>
+     * <p>
+     * A DB cluster parameter group is initially created with the default
+     * parameters for the database engine used by instances in the DB
+     * cluster. To provide custom values for any of the parameters, you must
+     * modify the group after creating it using
+     * ModifyDBClusterParameterGroup. Once you've created a DB cluster
+     * parameter group, you need to associate it with your DB cluster using
+     * ModifyDBCluster. When you associate a new DB cluster parameter group
+     * with a running DB cluster, you need to reboot the DB instances in the
+     * DB cluster without failover for the new DB cluster parameter group and
+     * associated settings to take effect.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> After you create a DB cluster parameter group, you
+     * should wait at least 5 minutes before creating your first DB cluster
+     * that uses that DB cluster parameter group as the default parameter
+     * group. This allows Amazon RDS to fully complete the create action
+     * before the DB cluster parameter group is used as the default for a new
+     * DB cluster. This is especially important for parameters that are
+     * critical when creating the default database for a DB cluster, such as
+     * the character set for the default database defined by the
+     * character_set_database parameter. You can use the Parameter Groups
+     * option of the Amazon RDS console or the DescribeDBClusterParameters
+     * command to verify that your DB cluster parameter group has been
+     * created or modified.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param createDBClusterParameterGroupRequest Container for the
+     *           necessary parameters to execute the CreateDBClusterParameterGroup
+     *           service method on AmazonRDS.
+     * 
+     * @return The response from the CreateDBClusterParameterGroup service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupQuotaExceededException
+     * @throws DBParameterGroupAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBClusterParameterGroup createDBClusterParameterGroup(CreateDBClusterParameterGroupRequest createDBClusterParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Applies a pending maintenance action to a resource (for example, to a
+     * DB instance).
      * </p>
      *
      * @param applyPendingMaintenanceActionRequest Container for the
@@ -579,6 +680,68 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Returns information about DB cluster snapshots. This API supports
+     * pagination.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClusterSnapshotsRequest Container for the necessary
+     *           parameters to execute the DescribeDBClusterSnapshots service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeDBClusterSnapshots service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws DBClusterSnapshotNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBClusterSnapshotsResult describeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest describeDBClusterSnapshotsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns the detailed parameter list for a particular DB cluster
+     * parameter group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClusterParametersRequest Container for the necessary
+     *           parameters to execute the DescribeDBClusterParameters service method
+     *           on AmazonRDS.
+     * 
+     * @return The response from the DescribeDBClusterParameters service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBClusterParametersResult describeDBClusterParameters(DescribeDBClusterParametersRequest describeDBClusterParametersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Removes metadata tags from an Amazon RDS resource.
      * </p>
      * <p>
@@ -612,7 +775,7 @@ public interface AmazonRDS {
      * specified, for a specified source type. You can see a list of the
      * event categories and source types in the
      * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events </a>
-     * topic in the Amazon RDS User Guide.
+     * topic in the <i>Amazon RDS User Guide.</i>
      * </p>
      *
      * @param describeEventCategoriesRequest Container for the necessary
@@ -663,8 +826,131 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Creates a DB instance that acts as a Read Replica of a source DB
-     * instance.
+     * Creates a new DB cluster from a DB cluster snapshot. The target DB
+     * cluster is created from the source DB cluster restore point with the
+     * same configuration as the original source DB cluster, except that the
+     * new DB cluster is created with the default security group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param restoreDBClusterFromSnapshotRequest Container for the necessary
+     *           parameters to execute the RestoreDBClusterFromSnapshot service method
+     *           on AmazonRDS.
+     * 
+     * @return The response from the RestoreDBClusterFromSnapshot service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws InsufficientDBClusterCapacityException
+     * @throws InvalidRestoreException
+     * @throws DBClusterQuotaExceededException
+     * @throws DBSubnetGroupNotFoundException
+     * @throws DBClusterSnapshotNotFoundException
+     * @throws StorageQuotaExceededException
+     * @throws InvalidVPCNetworkStateException
+     * @throws InvalidDBSnapshotStateException
+     * @throws InvalidDBClusterSnapshotStateException
+     * @throws InvalidSubnetException
+     * @throws DBClusterAlreadyExistsException
+     * @throws InsufficientStorageClusterCapacityException
+     * @throws OptionGroupNotFoundException
+     * @throws DBSnapshotNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBCluster restoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest restoreDBClusterFromSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns information about provisioned Aurora DB clusters. This API
+     * supports pagination.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClustersRequest Container for the necessary
+     *           parameters to execute the DescribeDBClusters service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeDBClusters service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBClusterNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBClustersResult describeDBClusters(DescribeDBClustersRequest describeDBClustersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Rebooting a DB instance restarts the database engine service. A
+     * reboot also applies to the DB instance any modifications to the
+     * associated DB parameter group that were pending. Rebooting a DB
+     * instance results in a momentary outage of the instance, during which
+     * the DB instance status is set to rebooting. If the RDS instance is
+     * configured for MultiAZ, it is possible that the reboot will be
+     * conducted through a failover. An Amazon RDS event is created when the
+     * reboot is completed.
+     * </p>
+     * <p>
+     * If your DB instance is deployed in multiple Availability Zones, you
+     * can force a failover from one AZ to the other during the reboot. You
+     * might force a failover to test the availability of your DB instance
+     * deployment or to restore operations to the original AZ after a
+     * failover occurs.
+     * </p>
+     * <p>
+     * The time required to reboot is a function of the specific database
+     * engine's crash recovery process. To improve the reboot time, we
+     * recommend that you reduce database activities as much as possible
+     * during the reboot process to reduce rollback activity for in-transit
+     * transactions.
+     * </p>
+     *
+     * @param rebootDBInstanceRequest Container for the necessary parameters
+     *           to execute the RebootDBInstance service method on AmazonRDS.
+     * 
+     * @return The response from the RebootDBInstance service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBInstanceNotFoundException
+     * @throws InvalidDBInstanceStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a DB instance for a DB instance running MySQL or PostgreSQL
+     * that acts as a Read Replica of a source DB instance.
      * </p>
      * <p>
      * All Read Replica DB instances are created as Single-AZ deployments
@@ -746,52 +1032,6 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Rebooting a DB instance restarts the database engine service. A
-     * reboot also applies to the DB instance any modifications to the
-     * associated DB parameter group that were pending. Rebooting a DB
-     * instance results in a momentary outage of the instance, during which
-     * the DB instance status is set to rebooting. If the RDS instance is
-     * configured for MultiAZ, it is possible that the reboot will be
-     * conducted through a failover. An Amazon RDS event is created when the
-     * reboot is completed.
-     * </p>
-     * <p>
-     * If your DB instance is deployed in multiple Availability Zones, you
-     * can force a failover from one AZ to the other during the reboot. You
-     * might force a failover to test the availability of your DB instance
-     * deployment or to restore operations to the original AZ after a
-     * failover occurs.
-     * </p>
-     * <p>
-     * The time required to reboot is a function of the specific database
-     * engine's crash recovery process. To improve the reboot time, we
-     * recommend that you reduce database activities as much as possible
-     * during the reboot process to reduce rollback activity for in-transit
-     * transactions.
-     * </p>
-     *
-     * @param rebootDBInstanceRequest Container for the necessary parameters
-     *           to execute the RebootDBInstance service method on AmazonRDS.
-     * 
-     * @return The response from the RebootDBInstance service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBInstanceNotFoundException
-     * @throws InvalidDBInstanceStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Returns events related to DB instances, DB security groups, DB
      * snapshots, and DB parameter groups for the past 14 days. Events
      * specific to a particular DB instance, DB security group, database
@@ -815,6 +1055,41 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The DeleteDBCluster action deletes a previously provisioned DB
+     * cluster. A successful response from the web service indicates the
+     * request was received correctly. When you delete a DB cluster, all
+     * automated backups for that DB cluster are deleted and cannot be
+     * recovered. Manual DB cluster snapshots of the DB cluster to be deleted
+     * are not deleted.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param deleteDBClusterRequest Container for the necessary parameters
+     *           to execute the DeleteDBCluster service method on AmazonRDS.
+     * 
+     * @return The response from the DeleteDBCluster service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBClusterNotFoundException
+     * @throws InvalidDBClusterStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBCluster deleteDBCluster(DeleteDBClusterRequest deleteDBClusterRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -850,6 +1125,30 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Describes all available options.
+     * </p>
+     *
+     * @param describeOptionGroupOptionsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroupOptions service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeOptionGroupOptions service
+     *         method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns the detailed parameter list for a particular DB parameter
      * group.
      * </p>
@@ -876,16 +1175,47 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Describes all available options.
+     * Modifies the parameters of a DB cluster parameter group. To modify
+     * more than one parameter, submit a list of the following:
+     * <code>ParameterName</code> , <code>ParameterValue</code> , and
+     * <code>ApplyMethod</code> . A maximum of 20 parameters can be modified
+     * in a single request.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Changes to dynamic parameters are applied immediately.
+     * Changes to static parameters require a reboot without failover to the
+     * DB cluster associated with the parameter group before the change can
+     * take effect.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> After you create a DB cluster parameter group, you
+     * should wait at least 5 minutes before creating your first DB cluster
+     * that uses that DB cluster parameter group as the default parameter
+     * group. This allows Amazon RDS to fully complete the create action
+     * before the parameter group is used as the default for a new DB
+     * cluster. This is especially important for parameters that are critical
+     * when creating the default database for a DB cluster, such as the
+     * character set for the default database defined by the
+     * character_set_database parameter. You can use the Parameter Groups
+     * option of the Amazon RDS console or the DescribeDBClusterParameters
+     * command to verify that your DB cluster parameter group has been
+     * created or modified.
      * </p>
      *
-     * @param describeOptionGroupOptionsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroupOptions service method on
-     *           AmazonRDS.
+     * @param modifyDBClusterParameterGroupRequest Container for the
+     *           necessary parameters to execute the ModifyDBClusterParameterGroup
+     *           service method on AmazonRDS.
      * 
-     * @return The response from the DescribeOptionGroupOptions service
+     * @return The response from the ModifyDBClusterParameterGroup service
      *         method, as returned by AmazonRDS.
      * 
+     * @throws DBParameterGroupNotFoundException
+     * @throws InvalidDBParameterGroupStateException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -895,7 +1225,54 @@ public interface AmazonRDS {
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) 
+    public ModifyDBClusterParameterGroupResult modifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest modifyDBClusterParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Restores a DB cluster to an arbitrary point in time. Users can
+     * restore to any point in time before <code>LatestRestorableTime</code>
+     * for up to <code>BackupRetentionPeriod</code> days. The target DB
+     * cluster is created from the source DB cluster with the same
+     * configuration as the original DB cluster, except that the new DB
+     * cluster is created with the default DB security group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param restoreDBClusterToPointInTimeRequest Container for the
+     *           necessary parameters to execute the RestoreDBClusterToPointInTime
+     *           service method on AmazonRDS.
+     * 
+     * @return The response from the RestoreDBClusterToPointInTime service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws InsufficientDBClusterCapacityException
+     * @throws InvalidRestoreException
+     * @throws DBClusterQuotaExceededException
+     * @throws DBSubnetGroupNotFoundException
+     * @throws DBClusterSnapshotNotFoundException
+     * @throws StorageQuotaExceededException
+     * @throws InvalidVPCNetworkStateException
+     * @throws InvalidDBSnapshotStateException
+     * @throws DBClusterNotFoundException
+     * @throws InvalidDBClusterSnapshotStateException
+     * @throws InvalidSubnetException
+     * @throws DBClusterAlreadyExistsException
+     * @throws OptionGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBCluster restoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest restoreDBClusterToPointInTimeRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1008,6 +1385,11 @@ public interface AmazonRDS {
      * <code>DescribeDBInstance</code> is used to monitor the status of this
      * operation. The action cannot be canceled or reverted once submitted.
      * </p>
+     * <p>
+     * Note that when a DB instance is in a failure state and has a status
+     * of 'failed', 'incompatible-restore', or 'incompatible-network', it can
+     * only be deleted when the SkipFinalSnapshot parameter is set to "true".
+     * </p>
      *
      * @param deleteDBInstanceRequest Container for the necessary parameters
      *           to execute the DeleteDBInstance service method on AmazonRDS.
@@ -1034,9 +1416,14 @@ public interface AmazonRDS {
     /**
      * <p>
      * Creates a new DB instance from a DB snapshot. The target database is
-     * created from the source database restore point with the same
-     * configuration as the original source database, except that the new RDS
-     * instance is created with the default security group.
+     * created from the source database restore point with the most of
+     * original configuration, but in a system chosen availability zone with
+     * the default security group, the default subnet group, and the default
+     * DB parameter group. By default, the new DB instance is created as a
+     * single-AZ deployment except when the instance is a SQL Server instance
+     * that has an option group that is associated with mirroring; in this
+     * case, the instance becomes a mirrored AZ deployment and not a
+     * single-AZ deployment.
      * </p>
      * <p>
      * If your intent is to replace your original DB instance with the new,
@@ -1062,6 +1449,7 @@ public interface AmazonRDS {
      * @throws InvalidVPCNetworkStateException
      * @throws InvalidDBSnapshotStateException
      * @throws StorageTypeNotSupportedException
+     * @throws DBSecurityGroupNotFoundException
      * @throws InvalidSubnetException
      * @throws AuthorizationNotFoundException
      * @throws DBSnapshotNotFoundException
@@ -1257,6 +1645,116 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Modifies the parameters of a DB cluster parameter group to the
+     * default value. To reset specific parameters submit a list of the
+     * following: <code>ParameterName</code> and <code>ApplyMethod</code> .
+     * To reset the entire DB cluster parameter group, specify the
+     * <code>DBClusterParameterGroupName</code> and
+     * <code>ResetAllParameters</code> parameters.
+     * </p>
+     * <p>
+     * When resetting the entire group, dynamic parameters are updated
+     * immediately and static parameters are set to
+     * <code>pending-reboot</code> to take effect on the next DB instance
+     * restart or RebootDBInstance request. You must call RebootDBInstance
+     * for every DB instance in your DB cluster that you want the updated
+     * static parameter to apply to.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param resetDBClusterParameterGroupRequest Container for the necessary
+     *           parameters to execute the ResetDBClusterParameterGroup service method
+     *           on AmazonRDS.
+     * 
+     * @return The response from the ResetDBClusterParameterGroup service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     * @throws InvalidDBParameterGroupStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ResetDBClusterParameterGroupResult resetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest resetDBClusterParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a new Amazon Aurora DB cluster. For more information on
+     * Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param createDBClusterRequest Container for the necessary parameters
+     *           to execute the CreateDBCluster service method on AmazonRDS.
+     * 
+     * @return The response from the CreateDBCluster service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBClusterQuotaExceededException
+     * @throws DBSubnetGroupNotFoundException
+     * @throws StorageQuotaExceededException
+     * @throws InvalidVPCNetworkStateException
+     * @throws DBClusterParameterGroupNotFoundException
+     * @throws InvalidDBSubnetGroupStateException
+     * @throws InvalidDBClusterStateException
+     * @throws InvalidSubnetException
+     * @throws DBClusterAlreadyExistsException
+     * @throws InsufficientStorageClusterCapacityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBCluster createDBCluster(CreateDBClusterRequest createDBClusterRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns the default engine and system parameter information for the
+     * cluster database engine.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeEngineDefaultClusterParametersRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeEngineDefaultClusterParameters service method on AmazonRDS.
+     * 
+     * @return The response from the DescribeEngineDefaultClusterParameters
+     *         service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EngineDefaults describeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest describeEngineDefaultClusterParametersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns information about DB snapshots. This API supports pagination.
      * </p>
      *
@@ -1278,6 +1776,73 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeDBSnapshotsResult describeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes a DB cluster snapshot. If the snapshot is being copied, the
+     * copy operation is terminated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The DB cluster snapshot must be in the available state to
+     * be deleted.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param deleteDBClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the DeleteDBClusterSnapshot service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DeleteDBClusterSnapshot service method,
+     *         as returned by AmazonRDS.
+     * 
+     * @throws DBClusterSnapshotNotFoundException
+     * @throws InvalidDBClusterSnapshotStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBClusterSnapshot deleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest deleteDBClusterSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes a specified DB cluster parameter group. The DB cluster
+     * parameter group to be deleted cannot be associated with any DB
+     * clusters.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param deleteDBClusterParameterGroupRequest Container for the
+     *           necessary parameters to execute the DeleteDBClusterParameterGroup
+     *           service method on AmazonRDS.
+     * 
+     * 
+     * @throws DBParameterGroupNotFoundException
+     * @throws InvalidDBParameterGroupStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest deleteDBClusterParameterGroupRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1436,6 +2001,37 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a snapshot of a DB cluster. For more information on Amazon
+     * Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param createDBClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CreateDBClusterSnapshot service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the CreateDBClusterSnapshot service method,
+     *         as returned by AmazonRDS.
+     * 
+     * @throws DBClusterNotFoundException
+     * @throws InvalidDBClusterStateException
+     * @throws DBClusterSnapshotAlreadyExistsException
+     * @throws SnapshotQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBClusterSnapshot createDBClusterSnapshot(CreateDBClusterSnapshotRequest createDBClusterSnapshotRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1605,6 +2201,50 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Forces a failover for a DB cluster.
+     * </p>
+     * <p>
+     * A failover for a DB cluster promotes one of the read-only instances
+     * in the DB cluster to the master DB instance (the cluster writer) and
+     * deletes the current primary instance.
+     * </p>
+     * <p>
+     * Amazon Aurora will automatically fail over to a read-only instance,
+     * if one exists, when the primary instance fails. You can force a
+     * failover when you want to simulate a failure of a DB instance for
+     * testing. Because each instance in a DB cluster has its own endpoint
+     * address, you will need to clean up and re-establish any existing
+     * connections that use those endpoint addresses when the failover is
+     * complete.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param failoverDBClusterRequest Container for the necessary parameters
+     *           to execute the FailoverDBCluster service method on AmazonRDS.
+     * 
+     * @return The response from the FailoverDBCluster service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBClusterNotFoundException
+     * @throws InvalidDBClusterStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBCluster failoverDBCluster(FailoverDBClusterRequest failoverDBClusterRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Promotes a Read Replica DB instance to a standalone DB instance.
      * </p>
      * <p>
@@ -1640,8 +2280,8 @@ public interface AmazonRDS {
      * <p>
      * Adds metadata tags to an Amazon RDS resource. These tags can also be
      * used with cost allocation reporting to track cost associated with
-     * Amazon RDS resources, or used in Condition statement in IAM policy for
-     * Amazon RDS.
+     * Amazon RDS resources, or used in a Condition statement in an IAM
+     * policy for Amazon RDS.
      * </p>
      * <p>
      * For an overview on tagging Amazon RDS resources, see
@@ -1669,7 +2309,76 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Downloads all or a portion of the specified log file.
+     * Modify a setting for an Amazon Aurora DB cluster. You can change one
+     * or more database configuration parameters by specifying these
+     * parameters and the new values in the request. For more information on
+     * Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param modifyDBClusterRequest Container for the necessary parameters
+     *           to execute the ModifyDBCluster service method on AmazonRDS.
+     * 
+     * @return The response from the ModifyDBCluster service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBSubnetGroupNotFoundException
+     * @throws StorageQuotaExceededException
+     * @throws InvalidVPCNetworkStateException
+     * @throws DBClusterParameterGroupNotFoundException
+     * @throws InvalidDBSubnetGroupStateException
+     * @throws DBClusterNotFoundException
+     * @throws InvalidDBInstanceStateException
+     * @throws InvalidDBClusterStateException
+     * @throws InvalidDBSecurityGroupStateException
+     * @throws InvalidSubnetException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBCluster modifyDBCluster(ModifyDBClusterRequest modifyDBClusterRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a snapshot of a DB cluster. For more information on Amazon
+     * Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param copyDBClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CopyDBClusterSnapshot service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the CopyDBClusterSnapshot service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBClusterSnapshotNotFoundException
+     * @throws InvalidDBClusterStateException
+     * @throws DBClusterSnapshotAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBClusterSnapshot copyDBClusterSnapshot(CopyDBClusterSnapshotRequest copyDBClusterSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Downloads all or a portion of the specified log file, up to 1 MB in
+     * size.
      * </p>
      *
      * @param downloadDBLogFilePortionRequest Container for the necessary
@@ -1679,6 +2388,7 @@ public interface AmazonRDS {
      * @return The response from the DownloadDBLogFilePortion service method,
      *         as returned by AmazonRDS.
      * 
+     * @throws DBLogFileNotFoundException
      * @throws DBInstanceNotFoundException
      *
      * @throws AmazonClientException
@@ -1778,17 +2488,18 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns a list of orderable DB instance options for the specified
-     * engine.
+     * Lists the set of CA certificates provided by Amazon RDS for this AWS
+     * account.
      * </p>
      *
-     * @param describeOrderableDBInstanceOptionsRequest Container for the
-     *           necessary parameters to execute the DescribeOrderableDBInstanceOptions
-     *           service method on AmazonRDS.
+     * @param describeCertificatesRequest Container for the necessary
+     *           parameters to execute the DescribeCertificates service method on
+     *           AmazonRDS.
      * 
-     * @return The response from the DescribeOrderableDBInstanceOptions
-     *         service method, as returned by AmazonRDS.
+     * @return The response from the DescribeCertificates service method, as
+     *         returned by AmazonRDS.
      * 
+     * @throws CertificateNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1798,7 +2509,7 @@ public interface AmazonRDS {
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeOrderableDBInstanceOptionsResult describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) 
+    public DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest describeCertificatesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1853,18 +2564,17 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Lists the set of CA certificates provided by Amazon RDS for this AWS
-     * account.
+     * Returns a list of orderable DB instance options for the specified
+     * engine.
      * </p>
      *
-     * @param describeCertificatesRequest Container for the necessary
-     *           parameters to execute the DescribeCertificates service method on
-     *           AmazonRDS.
+     * @param describeOrderableDBInstanceOptionsRequest Container for the
+     *           necessary parameters to execute the DescribeOrderableDBInstanceOptions
+     *           service method on AmazonRDS.
      * 
-     * @return The response from the DescribeCertificates service method, as
-     *         returned by AmazonRDS.
+     * @return The response from the DescribeOrderableDBInstanceOptions
+     *         service method, as returned by AmazonRDS.
      * 
-     * @throws CertificateNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1874,7 +2584,30 @@ public interface AmazonRDS {
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest describeCertificatesRequest) 
+    public DescribeOrderableDBInstanceOptionsResult describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes an existing option group.
+     * </p>
+     *
+     * @param deleteOptionGroupRequest Container for the necessary parameters
+     *           to execute the DeleteOptionGroup service method on AmazonRDS.
+     * 
+     * 
+     * @throws InvalidOptionGroupStateException
+     * @throws OptionGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1900,29 +2633,6 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeReservedDBInstancesOfferingsResult describeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes an existing option group.
-     * </p>
-     *
-     * @param deleteOptionGroupRequest Container for the necessary parameters
-     *           to execute the DeleteOptionGroup service method on AmazonRDS.
-     * 
-     * 
-     * @throws InvalidOptionGroupStateException
-     * @throws OptionGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1989,11 +2699,65 @@ public interface AmazonRDS {
     
     /**
      * <p>
+     * Returns a list of <code>DBClusterParameterGroup</code> descriptions.
+     * If a <code>DBClusterParameterGroupName</code> parameter is specified,
+     * the list will contain only the description of the specified DB cluster
+     * parameter group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return The response from the DescribeDBClusterParameterGroups service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBClusterParameterGroupsResult describeDBClusterParameterGroups() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns information about DB cluster snapshots. This API supports
+     * pagination.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return The response from the DescribeDBClusterSnapshots service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws DBClusterSnapshotNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBClusterSnapshotsResult describeDBClusterSnapshots() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
      * Displays a list of categories for all event source types, or, if
      * specified, for a specified source type. You can see a list of the
      * event categories and source types in the
      * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events </a>
-     * topic in the Amazon RDS User Guide.
+     * topic in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return The response from the DescribeEventCategories service method,
@@ -2009,6 +2773,32 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeEventCategoriesResult describeEventCategories() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns information about provisioned Aurora DB clusters. This API
+     * supports pagination.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return The response from the DescribeDBClusters service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBClusterNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBClustersResult describeDBClusters() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -2032,6 +2822,37 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeEventsResult describeEvents() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * The DeleteDBCluster action deletes a previously provisioned DB
+     * cluster. A successful response from the web service indicates the
+     * request was received correctly. When you delete a DB cluster, all
+     * automated backups for that DB cluster are deleted and cannot be
+     * recovered. Manual DB cluster snapshots of the DB cluster to be deleted
+     * are not deleted.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return The response from the DeleteDBCluster service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBClusterNotFoundException
+     * @throws InvalidDBClusterStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBCluster deleteDBCluster() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -2132,6 +2953,38 @@ public interface AmazonRDS {
     
     /**
      * <p>
+     * Creates a new Amazon Aurora DB cluster. For more information on
+     * Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return The response from the CreateDBCluster service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBClusterQuotaExceededException
+     * @throws DBSubnetGroupNotFoundException
+     * @throws StorageQuotaExceededException
+     * @throws InvalidVPCNetworkStateException
+     * @throws DBClusterParameterGroupNotFoundException
+     * @throws InvalidDBSubnetGroupStateException
+     * @throws InvalidDBClusterStateException
+     * @throws InvalidSubnetException
+     * @throws DBClusterAlreadyExistsException
+     * @throws InsufficientStorageClusterCapacityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBCluster createDBCluster() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
      * Returns information about DB snapshots. This API supports pagination.
      * </p>
      * 
@@ -2214,6 +3067,80 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeReservedDBInstancesResult describeReservedDBInstances() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Forces a failover for a DB cluster.
+     * </p>
+     * <p>
+     * A failover for a DB cluster promotes one of the read-only instances
+     * in the DB cluster to the master DB instance (the cluster writer) and
+     * deletes the current primary instance.
+     * </p>
+     * <p>
+     * Amazon Aurora will automatically fail over to a read-only instance,
+     * if one exists, when the primary instance fails. You can force a
+     * failover when you want to simulate a failure of a DB instance for
+     * testing. Because each instance in a DB cluster has its own endpoint
+     * address, you will need to clean up and re-establish any existing
+     * connections that use those endpoint addresses when the failover is
+     * complete.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return The response from the FailoverDBCluster service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBClusterNotFoundException
+     * @throws InvalidDBClusterStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBCluster failoverDBCluster() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Modify a setting for an Amazon Aurora DB cluster. You can change one
+     * or more database configuration parameters by specifying these
+     * parameters and the new values in the request. For more information on
+     * Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return The response from the ModifyDBCluster service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBSubnetGroupNotFoundException
+     * @throws StorageQuotaExceededException
+     * @throws InvalidVPCNetworkStateException
+     * @throws DBClusterParameterGroupNotFoundException
+     * @throws InvalidDBSubnetGroupStateException
+     * @throws DBClusterNotFoundException
+     * @throws InvalidDBInstanceStateException
+     * @throws InvalidDBClusterStateException
+     * @throws InvalidDBSecurityGroupStateException
+     * @throws InvalidSubnetException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBCluster modifyDBCluster() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>

@@ -56,7 +56,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      * 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul> <note>This value is stored as a lower-case
+     * hyphens</li> </ul> <note>This value is stored as a lowercase
      * string.</note>
      */
     private String dBParameterGroupName;
@@ -94,7 +94,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul> <note>This value is
-     * stored as a lower-case string.</note>
+     * stored as a lowercase string.</note>
      * @param dBParameterGroupFamily The DB parameter group family name. A DB
      * parameter group can be associated with one and only one DB parameter
      * group family, and can be applied only to a DB instance running a
@@ -112,13 +112,13 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      * 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul> <note>This value is stored as a lower-case
+     * hyphens</li> </ul> <note>This value is stored as a lowercase
      * string.</note>
      *
      * @return The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      *         1 to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul> <note>This value is stored as a lower-case
+     *         hyphens</li> </ul> <note>This value is stored as a lowercase
      *         string.</note>
      */
     public String getDBParameterGroupName() {
@@ -129,13 +129,13 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      * 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul> <note>This value is stored as a lower-case
+     * hyphens</li> </ul> <note>This value is stored as a lowercase
      * string.</note>
      *
      * @param dBParameterGroupName The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      *         1 to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul> <note>This value is stored as a lower-case
+     *         hyphens</li> </ul> <note>This value is stored as a lowercase
      *         string.</note>
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
@@ -146,7 +146,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      * 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul> <note>This value is stored as a lower-case
+     * hyphens</li> </ul> <note>This value is stored as a lowercase
      * string.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -154,7 +154,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      * @param dBParameterGroupName The name of the DB parameter group. <p> Constraints: <ul> <li>Must be
      *         1 to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul> <note>This value is stored as a lower-case
+     *         hyphens</li> </ul> <note>This value is stored as a lowercase
      *         string.</note>
      *
      * @return A reference to this updated object so that method calls can be chained

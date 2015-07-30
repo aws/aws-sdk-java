@@ -19,6 +19,7 @@ package com.amazonaws.services.opsworks.model;
  */
 public enum AppType {
     
+    AwsFlowRuby("aws-flow-ruby"),
     Java("java"),
     Rails("rails"),
     Php("php"),
@@ -48,6 +49,8 @@ public enum AppType {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
+        } else if ("aws-flow-ruby".equals(value)) {
+            return AppType.AwsFlowRuby;
         } else if ("java".equals(value)) {
             return AppType.Java;
         } else if ("rails".equals(value)) {

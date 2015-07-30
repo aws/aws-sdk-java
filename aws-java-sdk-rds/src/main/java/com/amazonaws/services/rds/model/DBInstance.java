@@ -36,8 +36,8 @@ import java.io.Serializable;
 public class DBInstance implements Serializable, Cloneable {
 
     /**
-     * Contains a user-supplied database identifier. This is the unique key
-     * that identifies a DB instance.
+     * Contains a user-supplied database identifier. This identifier is the
+     * unique key that identifies a DB instance.
      */
     private String dBInstanceIdentifier;
 
@@ -138,8 +138,8 @@ public class DBInstance implements Serializable, Cloneable {
     private DBSubnetGroup dBSubnetGroup;
 
     /**
-     * Specifies the weekly time range (in UTC) during which system
-     * maintenance can occur.
+     * Specifies the weekly time range during which system maintenance can
+     * occur, in Universal Coordinated Time (UTC).
      */
     private String preferredMaintenanceWindow;
 
@@ -245,6 +245,19 @@ public class DBInstance implements Serializable, Cloneable {
     private String tdeCredentialArn;
 
     /**
+     * Specifies the port that the DB instance listens on. If the DB instance
+     * is part of a DB cluster, this can be a different port than the DB
+     * cluster port.
+     */
+    private Integer dbInstancePort;
+
+    /**
+     * If the DB instance is a member of a DB cluster, contains the name of
+     * the DB cluster that the DB instance is a member of.
+     */
+    private String dBClusterIdentifier;
+
+    /**
      * Specifies whether the DB instance is encrypted.
      */
     private Boolean storageEncrypted;
@@ -269,35 +282,35 @@ public class DBInstance implements Serializable, Cloneable {
     private String cACertificateIdentifier;
 
     /**
-     * Contains a user-supplied database identifier. This is the unique key
-     * that identifies a DB instance.
+     * Contains a user-supplied database identifier. This identifier is the
+     * unique key that identifies a DB instance.
      *
-     * @return Contains a user-supplied database identifier. This is the unique key
-     *         that identifies a DB instance.
+     * @return Contains a user-supplied database identifier. This identifier is the
+     *         unique key that identifies a DB instance.
      */
     public String getDBInstanceIdentifier() {
         return dBInstanceIdentifier;
     }
     
     /**
-     * Contains a user-supplied database identifier. This is the unique key
-     * that identifies a DB instance.
+     * Contains a user-supplied database identifier. This identifier is the
+     * unique key that identifies a DB instance.
      *
-     * @param dBInstanceIdentifier Contains a user-supplied database identifier. This is the unique key
-     *         that identifies a DB instance.
+     * @param dBInstanceIdentifier Contains a user-supplied database identifier. This identifier is the
+     *         unique key that identifies a DB instance.
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
     }
     
     /**
-     * Contains a user-supplied database identifier. This is the unique key
-     * that identifies a DB instance.
+     * Contains a user-supplied database identifier. This identifier is the
+     * unique key that identifies a DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceIdentifier Contains a user-supplied database identifier. This is the unique key
-     *         that identifies a DB instance.
+     * @param dBInstanceIdentifier Contains a user-supplied database identifier. This identifier is the
+     *         unique key that identifies a DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1055,35 +1068,35 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies the weekly time range (in UTC) during which system
-     * maintenance can occur.
+     * Specifies the weekly time range during which system maintenance can
+     * occur, in Universal Coordinated Time (UTC).
      *
-     * @return Specifies the weekly time range (in UTC) during which system
-     *         maintenance can occur.
+     * @return Specifies the weekly time range during which system maintenance can
+     *         occur, in Universal Coordinated Time (UTC).
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
     }
     
     /**
-     * Specifies the weekly time range (in UTC) during which system
-     * maintenance can occur.
+     * Specifies the weekly time range during which system maintenance can
+     * occur, in Universal Coordinated Time (UTC).
      *
-     * @param preferredMaintenanceWindow Specifies the weekly time range (in UTC) during which system
-     *         maintenance can occur.
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which system maintenance can
+     *         occur, in Universal Coordinated Time (UTC).
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
     }
     
     /**
-     * Specifies the weekly time range (in UTC) during which system
-     * maintenance can occur.
+     * Specifies the weekly time range during which system maintenance can
+     * occur, in Universal Coordinated Time (UTC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param preferredMaintenanceWindow Specifies the weekly time range (in UTC) during which system
-     *         maintenance can occur.
+     * @param preferredMaintenanceWindow Specifies the weekly time range during which system maintenance can
+     *         occur, in Universal Coordinated Time (UTC).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1924,6 +1937,90 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * Specifies the port that the DB instance listens on. If the DB instance
+     * is part of a DB cluster, this can be a different port than the DB
+     * cluster port.
+     *
+     * @return Specifies the port that the DB instance listens on. If the DB instance
+     *         is part of a DB cluster, this can be a different port than the DB
+     *         cluster port.
+     */
+    public Integer getDbInstancePort() {
+        return dbInstancePort;
+    }
+    
+    /**
+     * Specifies the port that the DB instance listens on. If the DB instance
+     * is part of a DB cluster, this can be a different port than the DB
+     * cluster port.
+     *
+     * @param dbInstancePort Specifies the port that the DB instance listens on. If the DB instance
+     *         is part of a DB cluster, this can be a different port than the DB
+     *         cluster port.
+     */
+    public void setDbInstancePort(Integer dbInstancePort) {
+        this.dbInstancePort = dbInstancePort;
+    }
+    
+    /**
+     * Specifies the port that the DB instance listens on. If the DB instance
+     * is part of a DB cluster, this can be a different port than the DB
+     * cluster port.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dbInstancePort Specifies the port that the DB instance listens on. If the DB instance
+     *         is part of a DB cluster, this can be a different port than the DB
+     *         cluster port.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBInstance withDbInstancePort(Integer dbInstancePort) {
+        this.dbInstancePort = dbInstancePort;
+        return this;
+    }
+
+    /**
+     * If the DB instance is a member of a DB cluster, contains the name of
+     * the DB cluster that the DB instance is a member of.
+     *
+     * @return If the DB instance is a member of a DB cluster, contains the name of
+     *         the DB cluster that the DB instance is a member of.
+     */
+    public String getDBClusterIdentifier() {
+        return dBClusterIdentifier;
+    }
+    
+    /**
+     * If the DB instance is a member of a DB cluster, contains the name of
+     * the DB cluster that the DB instance is a member of.
+     *
+     * @param dBClusterIdentifier If the DB instance is a member of a DB cluster, contains the name of
+     *         the DB cluster that the DB instance is a member of.
+     */
+    public void setDBClusterIdentifier(String dBClusterIdentifier) {
+        this.dBClusterIdentifier = dBClusterIdentifier;
+    }
+    
+    /**
+     * If the DB instance is a member of a DB cluster, contains the name of
+     * the DB cluster that the DB instance is a member of.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dBClusterIdentifier If the DB instance is a member of a DB cluster, contains the name of
+     *         the DB cluster that the DB instance is a member of.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBInstance withDBClusterIdentifier(String dBClusterIdentifier) {
+        this.dBClusterIdentifier = dBClusterIdentifier;
+        return this;
+    }
+
+    /**
      * Specifies whether the DB instance is encrypted.
      *
      * @return Specifies whether the DB instance is encrypted.
@@ -2133,6 +2230,8 @@ public class DBInstance implements Serializable, Cloneable {
         if (getStatusInfos() != null) sb.append("StatusInfos: " + getStatusInfos() + ",");
         if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
         if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
+        if (getDbInstancePort() != null) sb.append("DbInstancePort: " + getDbInstancePort() + ",");
+        if (getDBClusterIdentifier() != null) sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
         if (isStorageEncrypted() != null) sb.append("StorageEncrypted: " + isStorageEncrypted() + ",");
         if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (getDbiResourceId() != null) sb.append("DbiResourceId: " + getDbiResourceId() + ",");
@@ -2179,6 +2278,8 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStatusInfos() == null) ? 0 : getStatusInfos().hashCode()); 
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
+        hashCode = prime * hashCode + ((getDbInstancePort() == null) ? 0 : getDbInstancePort().hashCode()); 
+        hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((isStorageEncrypted() == null) ? 0 : isStorageEncrypted().hashCode()); 
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode()); 
@@ -2260,6 +2361,10 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
         if (other.getTdeCredentialArn() == null ^ this.getTdeCredentialArn() == null) return false;
         if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false) return false; 
+        if (other.getDbInstancePort() == null ^ this.getDbInstancePort() == null) return false;
+        if (other.getDbInstancePort() != null && other.getDbInstancePort().equals(this.getDbInstancePort()) == false) return false; 
+        if (other.getDBClusterIdentifier() == null ^ this.getDBClusterIdentifier() == null) return false;
+        if (other.getDBClusterIdentifier() != null && other.getDBClusterIdentifier().equals(this.getDBClusterIdentifier()) == false) return false; 
         if (other.isStorageEncrypted() == null ^ this.isStorageEncrypted() == null) return false;
         if (other.isStorageEncrypted() != null && other.isStorageEncrypted().equals(this.isStorageEncrypted()) == false) return false; 
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;

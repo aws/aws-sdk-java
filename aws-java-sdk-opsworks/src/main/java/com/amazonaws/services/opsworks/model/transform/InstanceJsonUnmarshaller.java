@@ -81,6 +81,14 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setEc2InstanceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EcsClusterArn", targetDepth)) {
+                    context.nextToken();
+                    instance.setEcsClusterArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EcsContainerInstanceArn", targetDepth)) {
+                    context.nextToken();
+                    instance.setEcsContainerInstanceArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ElasticIp", targetDepth)) {
                     context.nextToken();
                     instance.setElasticIp(StringJsonUnmarshaller.getInstance().unmarshall(context));

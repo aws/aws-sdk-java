@@ -30,21 +30,22 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * A DB instance identifier to retrieve the list of DB snapshots for.
-     * Cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case sensitive. <p>Constraints: <ul> <li>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * This parameter cannot be used in conjunction with
+     * <code>DBSnapshotIdentifier</code>. This parameter is not
+     * case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      */
     private String dBInstanceIdentifier;
 
     /**
-     * A specific DB snapshot identifier to describe. Cannot be used in
-     * conjunction with <code>DBInstanceIdentifier</code>. This value is
-     * stored as a lowercase string. <p>Constraints: <ul> <li>Must be 1 to
-     * 255 alphanumeric characters</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> <li>If this is the identifier of an automated snapshot,
+     * A specific DB snapshot identifier to describe. This parameter cannot
+     * be used in conjunction with <code>DBInstanceIdentifier</code>. This
+     * value is stored as a lowercase string. <p>Constraints: <ul> <li>Must
+     * be 1 to 255 alphanumeric characters.</li> <li>First character must be
+     * a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</li> <li>If this is the identifier of an automated snapshot,
      * the <code>SnapshotType</code> parameter must also be specified.</li>
      * </ul>
      */
@@ -66,8 +67,8 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * pagination token called a marker is included in the response so that
-     * the remaining results may be retrieved. <p>Default: 100
-     * <p>Constraints: minimum 20, maximum 100
+     * the remaining results can be retrieved. <p>Default: 100
+     * <p>Constraints: Minimum 20, maximum 100.
      */
     private Integer maxRecords;
 
@@ -87,18 +88,20 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
     
     /**
      * A DB instance identifier to retrieve the list of DB snapshots for.
-     * Cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case sensitive. <p>Constraints: <ul> <li>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * This parameter cannot be used in conjunction with
+     * <code>DBSnapshotIdentifier</code>. This parameter is not
+     * case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      *
      * @return A DB instance identifier to retrieve the list of DB snapshots for.
-     *         Cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     *         This parameter is not case sensitive. <p>Constraints: <ul> <li>Must
-     *         contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     *         character must be a letter</li> <li>Cannot end with a hyphen or
-     *         contain two consecutive hyphens</li> </ul>
+     *         This parameter cannot be used in conjunction with
+     *         <code>DBSnapshotIdentifier</code>. This parameter is not
+     *         case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     *         alphanumeric characters or hyphens</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      */
     public String getDBInstanceIdentifier() {
         return dBInstanceIdentifier;
@@ -106,18 +109,20 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
     
     /**
      * A DB instance identifier to retrieve the list of DB snapshots for.
-     * Cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case sensitive. <p>Constraints: <ul> <li>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * This parameter cannot be used in conjunction with
+     * <code>DBSnapshotIdentifier</code>. This parameter is not
+     * case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      *
      * @param dBInstanceIdentifier A DB instance identifier to retrieve the list of DB snapshots for.
-     *         Cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     *         This parameter is not case sensitive. <p>Constraints: <ul> <li>Must
-     *         contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     *         character must be a letter</li> <li>Cannot end with a hyphen or
-     *         contain two consecutive hyphens</li> </ul>
+     *         This parameter cannot be used in conjunction with
+     *         <code>DBSnapshotIdentifier</code>. This parameter is not
+     *         case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     *         alphanumeric characters or hyphens</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -125,20 +130,22 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
     
     /**
      * A DB instance identifier to retrieve the list of DB snapshots for.
-     * Cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case sensitive. <p>Constraints: <ul> <li>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * This parameter cannot be used in conjunction with
+     * <code>DBSnapshotIdentifier</code>. This parameter is not
+     * case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceIdentifier A DB instance identifier to retrieve the list of DB snapshots for.
-     *         Cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     *         This parameter is not case sensitive. <p>Constraints: <ul> <li>Must
-     *         contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     *         character must be a letter</li> <li>Cannot end with a hyphen or
-     *         contain two consecutive hyphens</li> </ul>
+     *         This parameter cannot be used in conjunction with
+     *         <code>DBSnapshotIdentifier</code>. This parameter is not
+     *         case-sensitive. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     *         alphanumeric characters or hyphens</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -149,21 +156,21 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * A specific DB snapshot identifier to describe. Cannot be used in
-     * conjunction with <code>DBInstanceIdentifier</code>. This value is
-     * stored as a lowercase string. <p>Constraints: <ul> <li>Must be 1 to
-     * 255 alphanumeric characters</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> <li>If this is the identifier of an automated snapshot,
+     * A specific DB snapshot identifier to describe. This parameter cannot
+     * be used in conjunction with <code>DBInstanceIdentifier</code>. This
+     * value is stored as a lowercase string. <p>Constraints: <ul> <li>Must
+     * be 1 to 255 alphanumeric characters.</li> <li>First character must be
+     * a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</li> <li>If this is the identifier of an automated snapshot,
      * the <code>SnapshotType</code> parameter must also be specified.</li>
      * </ul>
      *
-     * @return A specific DB snapshot identifier to describe. Cannot be used in
-     *         conjunction with <code>DBInstanceIdentifier</code>. This value is
-     *         stored as a lowercase string. <p>Constraints: <ul> <li>Must be 1 to
-     *         255 alphanumeric characters</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> <li>If this is the identifier of an automated snapshot,
+     * @return A specific DB snapshot identifier to describe. This parameter cannot
+     *         be used in conjunction with <code>DBInstanceIdentifier</code>. This
+     *         value is stored as a lowercase string. <p>Constraints: <ul> <li>Must
+     *         be 1 to 255 alphanumeric characters.</li> <li>First character must be
+     *         a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens.</li> <li>If this is the identifier of an automated snapshot,
      *         the <code>SnapshotType</code> parameter must also be specified.</li>
      *         </ul>
      */
@@ -172,21 +179,21 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A specific DB snapshot identifier to describe. Cannot be used in
-     * conjunction with <code>DBInstanceIdentifier</code>. This value is
-     * stored as a lowercase string. <p>Constraints: <ul> <li>Must be 1 to
-     * 255 alphanumeric characters</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> <li>If this is the identifier of an automated snapshot,
+     * A specific DB snapshot identifier to describe. This parameter cannot
+     * be used in conjunction with <code>DBInstanceIdentifier</code>. This
+     * value is stored as a lowercase string. <p>Constraints: <ul> <li>Must
+     * be 1 to 255 alphanumeric characters.</li> <li>First character must be
+     * a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</li> <li>If this is the identifier of an automated snapshot,
      * the <code>SnapshotType</code> parameter must also be specified.</li>
      * </ul>
      *
-     * @param dBSnapshotIdentifier A specific DB snapshot identifier to describe. Cannot be used in
-     *         conjunction with <code>DBInstanceIdentifier</code>. This value is
-     *         stored as a lowercase string. <p>Constraints: <ul> <li>Must be 1 to
-     *         255 alphanumeric characters</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> <li>If this is the identifier of an automated snapshot,
+     * @param dBSnapshotIdentifier A specific DB snapshot identifier to describe. This parameter cannot
+     *         be used in conjunction with <code>DBInstanceIdentifier</code>. This
+     *         value is stored as a lowercase string. <p>Constraints: <ul> <li>Must
+     *         be 1 to 255 alphanumeric characters.</li> <li>First character must be
+     *         a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens.</li> <li>If this is the identifier of an automated snapshot,
      *         the <code>SnapshotType</code> parameter must also be specified.</li>
      *         </ul>
      */
@@ -195,23 +202,23 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
     }
     
     /**
-     * A specific DB snapshot identifier to describe. Cannot be used in
-     * conjunction with <code>DBInstanceIdentifier</code>. This value is
-     * stored as a lowercase string. <p>Constraints: <ul> <li>Must be 1 to
-     * 255 alphanumeric characters</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> <li>If this is the identifier of an automated snapshot,
+     * A specific DB snapshot identifier to describe. This parameter cannot
+     * be used in conjunction with <code>DBInstanceIdentifier</code>. This
+     * value is stored as a lowercase string. <p>Constraints: <ul> <li>Must
+     * be 1 to 255 alphanumeric characters.</li> <li>First character must be
+     * a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</li> <li>If this is the identifier of an automated snapshot,
      * the <code>SnapshotType</code> parameter must also be specified.</li>
      * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSnapshotIdentifier A specific DB snapshot identifier to describe. Cannot be used in
-     *         conjunction with <code>DBInstanceIdentifier</code>. This value is
-     *         stored as a lowercase string. <p>Constraints: <ul> <li>Must be 1 to
-     *         255 alphanumeric characters</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> <li>If this is the identifier of an automated snapshot,
+     * @param dBSnapshotIdentifier A specific DB snapshot identifier to describe. This parameter cannot
+     *         be used in conjunction with <code>DBInstanceIdentifier</code>. This
+     *         value is stored as a lowercase string. <p>Constraints: <ul> <li>Must
+     *         be 1 to 255 alphanumeric characters.</li> <li>First character must be
+     *         a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens.</li> <li>If this is the identifier of an automated snapshot,
      *         the <code>SnapshotType</code> parameter must also be specified.</li>
      *         </ul>
      *
@@ -345,14 +352,14 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * pagination token called a marker is included in the response so that
-     * the remaining results may be retrieved. <p>Default: 100
-     * <p>Constraints: minimum 20, maximum 100
+     * the remaining results can be retrieved. <p>Default: 100
+     * <p>Constraints: Minimum 20, maximum 100.
      *
      * @return The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         pagination token called a marker is included in the response so that
-     *         the remaining results may be retrieved. <p>Default: 100
-     *         <p>Constraints: minimum 20, maximum 100
+     *         the remaining results can be retrieved. <p>Default: 100
+     *         <p>Constraints: Minimum 20, maximum 100.
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -362,14 +369,14 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * pagination token called a marker is included in the response so that
-     * the remaining results may be retrieved. <p>Default: 100
-     * <p>Constraints: minimum 20, maximum 100
+     * the remaining results can be retrieved. <p>Default: 100
+     * <p>Constraints: Minimum 20, maximum 100.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         pagination token called a marker is included in the response so that
-     *         the remaining results may be retrieved. <p>Default: 100
-     *         <p>Constraints: minimum 20, maximum 100
+     *         the remaining results can be retrieved. <p>Default: 100
+     *         <p>Constraints: Minimum 20, maximum 100.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -379,16 +386,16 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * pagination token called a marker is included in the response so that
-     * the remaining results may be retrieved. <p>Default: 100
-     * <p>Constraints: minimum 20, maximum 100
+     * the remaining results can be retrieved. <p>Default: 100
+     * <p>Constraints: Minimum 20, maximum 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         pagination token called a marker is included in the response so that
-     *         the remaining results may be retrieved. <p>Default: 100
-     *         <p>Constraints: minimum 20, maximum 100
+     *         the remaining results can be retrieved. <p>Default: 100
+     *         <p>Constraints: Minimum 20, maximum 100.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -82,6 +82,16 @@ public class Instance implements Serializable, Cloneable {
     private String ec2InstanceId;
 
     /**
+     * For container instances, the Amazon ECS cluster's ARN.
+     */
+    private String ecsClusterArn;
+
+    /**
+     * For container instances, the instance's ARN.
+     */
+    private String ecsContainerInstanceArn;
+
+    /**
      * The instance <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.
@@ -738,6 +748,72 @@ public class Instance implements Serializable, Cloneable {
      */
     public Instance withEc2InstanceId(String ec2InstanceId) {
         this.ec2InstanceId = ec2InstanceId;
+        return this;
+    }
+
+    /**
+     * For container instances, the Amazon ECS cluster's ARN.
+     *
+     * @return For container instances, the Amazon ECS cluster's ARN.
+     */
+    public String getEcsClusterArn() {
+        return ecsClusterArn;
+    }
+    
+    /**
+     * For container instances, the Amazon ECS cluster's ARN.
+     *
+     * @param ecsClusterArn For container instances, the Amazon ECS cluster's ARN.
+     */
+    public void setEcsClusterArn(String ecsClusterArn) {
+        this.ecsClusterArn = ecsClusterArn;
+    }
+    
+    /**
+     * For container instances, the Amazon ECS cluster's ARN.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ecsClusterArn For container instances, the Amazon ECS cluster's ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Instance withEcsClusterArn(String ecsClusterArn) {
+        this.ecsClusterArn = ecsClusterArn;
+        return this;
+    }
+
+    /**
+     * For container instances, the instance's ARN.
+     *
+     * @return For container instances, the instance's ARN.
+     */
+    public String getEcsContainerInstanceArn() {
+        return ecsContainerInstanceArn;
+    }
+    
+    /**
+     * For container instances, the instance's ARN.
+     *
+     * @param ecsContainerInstanceArn For container instances, the instance's ARN.
+     */
+    public void setEcsContainerInstanceArn(String ecsContainerInstanceArn) {
+        this.ecsContainerInstanceArn = ecsContainerInstanceArn;
+    }
+    
+    /**
+     * For container instances, the instance's ARN.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ecsContainerInstanceArn For container instances, the instance's ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Instance withEcsContainerInstanceArn(String ecsContainerInstanceArn) {
+        this.ecsContainerInstanceArn = ecsContainerInstanceArn;
         return this;
     }
 
@@ -2057,6 +2133,8 @@ public class Instance implements Serializable, Cloneable {
         if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");
         if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ",");
         if (getEc2InstanceId() != null) sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+        if (getEcsClusterArn() != null) sb.append("EcsClusterArn: " + getEcsClusterArn() + ",");
+        if (getEcsContainerInstanceArn() != null) sb.append("EcsContainerInstanceArn: " + getEcsContainerInstanceArn() + ",");
         if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() + ",");
         if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");
         if (getInfrastructureClass() != null) sb.append("InfrastructureClass: " + getInfrastructureClass() + ",");
@@ -2103,6 +2181,8 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode()); 
         hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getEcsClusterArn() == null) ? 0 : getEcsClusterArn().hashCode()); 
+        hashCode = prime * hashCode + ((getEcsContainerInstanceArn() == null) ? 0 : getEcsContainerInstanceArn().hashCode()); 
         hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode()); 
         hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode()); 
         hashCode = prime * hashCode + ((getInfrastructureClass() == null) ? 0 : getInfrastructureClass().hashCode()); 
@@ -2160,6 +2240,10 @@ public class Instance implements Serializable, Cloneable {
         if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null) return false;
         if (other.getEc2InstanceId() != null && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false) return false; 
+        if (other.getEcsClusterArn() == null ^ this.getEcsClusterArn() == null) return false;
+        if (other.getEcsClusterArn() != null && other.getEcsClusterArn().equals(this.getEcsClusterArn()) == false) return false; 
+        if (other.getEcsContainerInstanceArn() == null ^ this.getEcsContainerInstanceArn() == null) return false;
+        if (other.getEcsContainerInstanceArn() != null && other.getEcsContainerInstanceArn().equals(this.getEcsContainerInstanceArn()) == false) return false; 
         if (other.getElasticIp() == null ^ this.getElasticIp() == null) return false;
         if (other.getElasticIp() != null && other.getElasticIp().equals(this.getElasticIp()) == false) return false; 
         if (other.getHostname() == null ^ this.getHostname() == null) return false;

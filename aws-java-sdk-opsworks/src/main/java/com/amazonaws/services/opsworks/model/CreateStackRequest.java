@@ -106,11 +106,12 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * instance unless you specify a different operating system when you
      * create the instance. You can specify one of the following. <ul> <li>A
      * supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For
-     * more information, see <a
+     * <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux
+     * 7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
+     * LTS</code>.</li> <li><code>Microsoft Windows Server 2012 R2
+     * Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify
+     * the custom AMI you want to use when you create instances. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      * Using Custom AMIs</a>.</li> </ul> <p>The default option is the current
      * Amazon Linux version. For more information on the supported operating
@@ -713,11 +714,12 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * instance unless you specify a different operating system when you
      * create the instance. You can specify one of the following. <ul> <li>A
      * supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For
-     * more information, see <a
+     * <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux
+     * 7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
+     * LTS</code>.</li> <li><code>Microsoft Windows Server 2012 R2
+     * Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify
+     * the custom AMI you want to use when you create instances. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      * Using Custom AMIs</a>.</li> </ul> <p>The default option is the current
      * Amazon Linux version. For more information on the supported operating
@@ -729,11 +731,12 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         instance unless you specify a different operating system when you
      *         create the instance. You can specify one of the following. <ul> <li>A
      *         supported Linux operating system: An Amazon Linux version, such as
-     *         <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     *         specify the custom AMI you want to use when you create instances. For
-     *         more information, see <a
+     *         <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux
+     *         7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
+     *         LTS</code>.</li> <li><code>Microsoft Windows Server 2012 R2
+     *         Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify
+     *         the custom AMI you want to use when you create instances. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      *         Using Custom AMIs</a>.</li> </ul> <p>The default option is the current
      *         Amazon Linux version. For more information on the supported operating
@@ -750,11 +753,12 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * instance unless you specify a different operating system when you
      * create the instance. You can specify one of the following. <ul> <li>A
      * supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For
-     * more information, see <a
+     * <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux
+     * 7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
+     * LTS</code>.</li> <li><code>Microsoft Windows Server 2012 R2
+     * Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify
+     * the custom AMI you want to use when you create instances. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      * Using Custom AMIs</a>.</li> </ul> <p>The default option is the current
      * Amazon Linux version. For more information on the supported operating
@@ -766,11 +770,12 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         instance unless you specify a different operating system when you
      *         create the instance. You can specify one of the following. <ul> <li>A
      *         supported Linux operating system: An Amazon Linux version, such as
-     *         <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     *         specify the custom AMI you want to use when you create instances. For
-     *         more information, see <a
+     *         <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux
+     *         7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
+     *         LTS</code>.</li> <li><code>Microsoft Windows Server 2012 R2
+     *         Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify
+     *         the custom AMI you want to use when you create instances. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      *         Using Custom AMIs</a>.</li> </ul> <p>The default option is the current
      *         Amazon Linux version. For more information on the supported operating
@@ -787,11 +792,12 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * instance unless you specify a different operating system when you
      * create the instance. You can specify one of the following. <ul> <li>A
      * supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or
-     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For
-     * more information, see <a
+     * <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux
+     * 7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
+     * LTS</code>.</li> <li><code>Microsoft Windows Server 2012 R2
+     * Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify
+     * the custom AMI you want to use when you create instances. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      * Using Custom AMIs</a>.</li> </ul> <p>The default option is the current
      * Amazon Linux version. For more information on the supported operating
@@ -805,11 +811,12 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         instance unless you specify a different operating system when you
      *         create the instance. You can specify one of the following. <ul> <li>A
      *         supported Linux operating system: An Amazon Linux version, such as
-     *         <code>Amazon Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or
-     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
-     *         specify the custom AMI you want to use when you create instances. For
-     *         more information, see <a
+     *         <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux
+     *         7</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04
+     *         LTS</code>.</li> <li><code>Microsoft Windows Server 2012 R2
+     *         Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify
+     *         the custom AMI you want to use when you create instances. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      *         Using Custom AMIs</a>.</li> </ul> <p>The default option is the current
      *         Amazon Linux version. For more information on the supported operating

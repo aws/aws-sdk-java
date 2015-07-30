@@ -75,11 +75,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     /**
      * The instance's operating system, which must be set to one of the
      * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on
-     * the supported operating systems, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li>
+     * </ul> <p>For more information on the supported operating systems, see
+     * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Operating Systems</a>. <p>The default option is the current
      * Amazon Linux version. If you set this parameter to
@@ -465,11 +466,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     /**
      * The instance's operating system, which must be set to one of the
      * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on
-     * the supported operating systems, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li>
+     * </ul> <p>For more information on the supported operating systems, see
+     * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Operating Systems</a>. <p>The default option is the current
      * Amazon Linux version. If you set this parameter to
@@ -486,11 +488,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @return The instance's operating system, which must be set to one of the
      *         following. <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     *         custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on
-     *         the supported operating systems, see <a
+     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li>
+     *         </ul> <p>For more information on the supported operating systems, see
+     *         <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      *         OpsWorks Operating Systems</a>. <p>The default option is the current
      *         Amazon Linux version. If you set this parameter to
@@ -512,11 +515,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     /**
      * The instance's operating system, which must be set to one of the
      * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on
-     * the supported operating systems, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li>
+     * </ul> <p>For more information on the supported operating systems, see
+     * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Operating Systems</a>. <p>The default option is the current
      * Amazon Linux version. If you set this parameter to
@@ -533,11 +537,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param os The instance's operating system, which must be set to one of the
      *         following. <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     *         custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on
-     *         the supported operating systems, see <a
+     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li>
+     *         </ul> <p>For more information on the supported operating systems, see
+     *         <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      *         OpsWorks Operating Systems</a>. <p>The default option is the current
      *         Amazon Linux version. If you set this parameter to
@@ -559,11 +564,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     /**
      * The instance's operating system, which must be set to one of the
      * following. <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on
-     * the supported operating systems, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li>
+     * </ul> <p>For more information on the supported operating systems, see
+     * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Operating Systems</a>. <p>The default option is the current
      * Amazon Linux version. If you set this parameter to
@@ -582,11 +588,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param os The instance's operating system, which must be set to one of the
      *         following. <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     *         custom AMI: <code>Custom</code>.</li> </ul> <p>For more information on
-     *         the supported operating systems, see <a
+     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li>
+     *         </ul> <p>For more information on the supported operating systems, see
+     *         <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      *         OpsWorks Operating Systems</a>. <p>The default option is the current
      *         Amazon Linux version. If you set this parameter to

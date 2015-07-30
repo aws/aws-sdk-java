@@ -55,7 +55,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request. <p> <b>MySQL</b>
+     * parameters can be modified in a single request. <p> <b>MySQL</b>
      * <p>Valid Values (for Apply method): <code>immediate</code> |
      * <code>pending-reboot</code> <p>You can use the immediate value with
      * dynamic parameters only. You can use the <code>pending-reboot</code>
@@ -198,7 +198,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request. <p> <b>MySQL</b>
+     * parameters can be modified in a single request. <p> <b>MySQL</b>
      * <p>Valid Values (for Apply method): <code>immediate</code> |
      * <code>pending-reboot</code> <p>You can use the immediate value with
      * dynamic parameters only. You can use the <code>pending-reboot</code>
@@ -209,7 +209,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      * @return An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request. <p> <b>MySQL</b>
+     *         parameters can be modified in a single request. <p> <b>MySQL</b>
      *         <p>Valid Values (for Apply method): <code>immediate</code> |
      *         <code>pending-reboot</code> <p>You can use the immediate value with
      *         dynamic parameters only. You can use the <code>pending-reboot</code>
@@ -229,7 +229,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request. <p> <b>MySQL</b>
+     * parameters can be modified in a single request. <p> <b>MySQL</b>
      * <p>Valid Values (for Apply method): <code>immediate</code> |
      * <code>pending-reboot</code> <p>You can use the immediate value with
      * dynamic parameters only. You can use the <code>pending-reboot</code>
@@ -240,7 +240,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      * @param parameters An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request. <p> <b>MySQL</b>
+     *         parameters can be modified in a single request. <p> <b>MySQL</b>
      *         <p>Valid Values (for Apply method): <code>immediate</code> |
      *         <code>pending-reboot</code> <p>You can use the immediate value with
      *         dynamic parameters only. You can use the <code>pending-reboot</code>
@@ -262,7 +262,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request. <p> <b>MySQL</b>
+     * parameters can be modified in a single request. <p> <b>MySQL</b>
      * <p>Valid Values (for Apply method): <code>immediate</code> |
      * <code>pending-reboot</code> <p>You can use the immediate value with
      * dynamic parameters only. You can use the <code>pending-reboot</code>
@@ -280,7 +280,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      * @param parameters An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request. <p> <b>MySQL</b>
+     *         parameters can be modified in a single request. <p> <b>MySQL</b>
      *         <p>Valid Values (for Apply method): <code>immediate</code> |
      *         <code>pending-reboot</code> <p>You can use the immediate value with
      *         dynamic parameters only. You can use the <code>pending-reboot</code>
@@ -303,7 +303,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request. <p> <b>MySQL</b>
+     * parameters can be modified in a single request. <p> <b>MySQL</b>
      * <p>Valid Values (for Apply method): <code>immediate</code> |
      * <code>pending-reboot</code> <p>You can use the immediate value with
      * dynamic parameters only. You can use the <code>pending-reboot</code>
@@ -316,7 +316,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      * @param parameters An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request. <p> <b>MySQL</b>
+     *         parameters can be modified in a single request. <p> <b>MySQL</b>
      *         <p>Valid Values (for Apply method): <code>immediate</code> |
      *         <code>pending-reboot</code> <p>You can use the immediate value with
      *         dynamic parameters only. You can use the <code>pending-reboot</code>

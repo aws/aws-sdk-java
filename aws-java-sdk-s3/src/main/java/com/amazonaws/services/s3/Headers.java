@@ -201,4 +201,7 @@ public interface Headers {
 
     /** Region where the request is being served */
     public static final String S3_SERVING_REGION = "x-amz-region";
+
+    /** Region where the bucket is located. This header is returned only in HEAD bucket and ListObjects response. */
+    public static final String S3_BUCKET_REGION = "x-amz-bucket-region";
 }

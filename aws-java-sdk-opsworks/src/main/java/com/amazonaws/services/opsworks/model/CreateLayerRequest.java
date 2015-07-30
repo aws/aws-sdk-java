@@ -56,7 +56,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * the same type. It can have any number of custom layers.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
+     * <b>Allowed Values: </b>aws-flow-ruby, ecs-cluster, java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      */
     private String type;
 
@@ -74,23 +74,33 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * '_', and '.'. <p>The built-in layers' short names are defined by AWS
      * OpsWorks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a>
+     * Reference</a>.
      */
     private String shortname;
 
     /**
-     * One or more user-defined key/value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key-value pairs to be added to the stack
+     * attributes. <p>To create a cluster layer, set the
+     * <code>EcsClusterArn</code> attribute to the cluster's ARN.
      */
     private java.util.Map<String,String> attributes;
 
     /**
-     * The ARN of an IAM profile that to be used for the layer's EC2
-     * instances. For more information about IAM ARNs, see <a
+     * The ARN of an IAM profile to be used for the layer's EC2 instances.
+     * For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      */
     private String customInstanceProfileArn;
+
+    /**
+     * A JSON-formatted string containing custom stack configuration and
+     * deployment attributes to be installed on the layer's instances. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * Using Custom JSON</a>.
+     */
+    private String customJson;
 
     /**
      * An array containing the layer custom security group IDs.
@@ -98,7 +108,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> customSecurityGroupIds;
 
     /**
-     * An array of <code>Package</code> objects that describe the layer
+     * An array of <code>Package</code> objects that describes the layer
      * packages.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> packages;
@@ -144,10 +154,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * when updates are installed, set this value to <code>false</code>. You
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-     * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates. </note>
+     * stack command or by manually running <code>yum</code> (Amazon Linux)
+     * or <code>apt-get</code> (Ubuntu) on the instances. <note> <p>To ensure
+     * that your instances have the latest security updates, we strongly
+     * recommend using the default value of <code>true</code>. </note>
      */
     private Boolean installUpdatesOnBoot;
 
@@ -157,9 +167,9 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     private Boolean useEbsOptimizedInstances;
 
     /**
-     * A LifeCycleEventConfiguration object that you can use to configure the
-     * Shutdown event to specify an execution timeout and enable or disable
-     * Elastic Load Balancer connection draining.
+     * A <code>LifeCycleEventConfiguration</code> object that you can use to
+     * configure the Shutdown event to specify an execution timeout and
+     * enable or disable Elastic Load Balancer connection draining.
      */
     private LifecycleEventConfiguration lifecycleEventConfiguration;
 
@@ -201,7 +211,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * the same type. It can have any number of custom layers.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
+     * <b>Allowed Values: </b>aws-flow-ruby, ecs-cluster, java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
      * @return The layer type. A stack cannot have more than one built-in layer of
      *         the same type. It can have any number of custom layers.
@@ -217,7 +227,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * the same type. It can have any number of custom layers.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
+     * <b>Allowed Values: </b>aws-flow-ruby, ecs-cluster, java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
      * @param type The layer type. A stack cannot have more than one built-in layer of
      *         the same type. It can have any number of custom layers.
@@ -235,7 +245,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
+     * <b>Allowed Values: </b>aws-flow-ruby, ecs-cluster, java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
      * @param type The layer type. A stack cannot have more than one built-in layer of
      *         the same type. It can have any number of custom layers.
@@ -255,7 +265,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * the same type. It can have any number of custom layers.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
+     * <b>Allowed Values: </b>aws-flow-ruby, ecs-cluster, java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
      * @param type The layer type. A stack cannot have more than one built-in layer of
      *         the same type. It can have any number of custom layers.
@@ -273,7 +283,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
+     * <b>Allowed Values: </b>aws-flow-ruby, ecs-cluster, java-app, lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
      * @param type The layer type. A stack cannot have more than one built-in layer of
      *         the same type. It can have any number of custom layers.
@@ -330,7 +340,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * '_', and '.'. <p>The built-in layers' short names are defined by AWS
      * OpsWorks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a>
+     * Reference</a>.
      *
      * @return For custom layers only, use this parameter to specify the layer's
      *         short name, which is used internally by AWS OpsWorks and by Chef
@@ -340,7 +350,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         '_', and '.'. <p>The built-in layers' short names are defined by AWS
      *         OpsWorks. For more information, see the <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     *         Reference</a>
+     *         Reference</a>.
      */
     public String getShortname() {
         return shortname;
@@ -355,7 +365,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * '_', and '.'. <p>The built-in layers' short names are defined by AWS
      * OpsWorks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a>
+     * Reference</a>.
      *
      * @param shortname For custom layers only, use this parameter to specify the layer's
      *         short name, which is used internally by AWS OpsWorks and by Chef
@@ -365,7 +375,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         '_', and '.'. <p>The built-in layers' short names are defined by AWS
      *         OpsWorks. For more information, see the <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     *         Reference</a>
+     *         Reference</a>.
      */
     public void setShortname(String shortname) {
         this.shortname = shortname;
@@ -380,7 +390,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * '_', and '.'. <p>The built-in layers' short names are defined by AWS
      * OpsWorks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a>
+     * Reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -392,7 +402,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         '_', and '.'. <p>The built-in layers' short names are defined by AWS
      *         OpsWorks. For more information, see the <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     *         Reference</a>
+     *         Reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -403,11 +413,13 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * One or more user-defined key/value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key-value pairs to be added to the stack
+     * attributes. <p>To create a cluster layer, set the
+     * <code>EcsClusterArn</code> attribute to the cluster's ARN.
      *
-     * @return One or more user-defined key/value pairs to be added to the stack
-     *         attributes.
+     * @return One or more user-defined key-value pairs to be added to the stack
+     *         attributes. <p>To create a cluster layer, set the
+     *         <code>EcsClusterArn</code> attribute to the cluster's ARN.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -418,24 +430,28 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * One or more user-defined key/value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key-value pairs to be added to the stack
+     * attributes. <p>To create a cluster layer, set the
+     * <code>EcsClusterArn</code> attribute to the cluster's ARN.
      *
-     * @param attributes One or more user-defined key/value pairs to be added to the stack
-     *         attributes.
+     * @param attributes One or more user-defined key-value pairs to be added to the stack
+     *         attributes. <p>To create a cluster layer, set the
+     *         <code>EcsClusterArn</code> attribute to the cluster's ARN.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * One or more user-defined key/value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key-value pairs to be added to the stack
+     * attributes. <p>To create a cluster layer, set the
+     * <code>EcsClusterArn</code> attribute to the cluster's ARN.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes One or more user-defined key/value pairs to be added to the stack
-     *         attributes.
+     * @param attributes One or more user-defined key-value pairs to be added to the stack
+     *         attributes. <p>To create a cluster layer, set the
+     *         <code>EcsClusterArn</code> attribute to the cluster's ARN.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -446,8 +462,9 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * One or more user-defined key/value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key-value pairs to be added to the stack
+     * attributes. <p>To create a cluster layer, set the
+     * <code>EcsClusterArn</code> attribute to the cluster's ARN.
      * <p>
      * The method adds a new key-value pair into Attributes parameter, and
      * returns a reference to this object so that method calls can be chained
@@ -477,13 +494,13 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
   }
   
     /**
-     * The ARN of an IAM profile that to be used for the layer's EC2
-     * instances. For more information about IAM ARNs, see <a
+     * The ARN of an IAM profile to be used for the layer's EC2 instances.
+     * For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
-     * @return The ARN of an IAM profile that to be used for the layer's EC2
-     *         instances. For more information about IAM ARNs, see <a
+     * @return The ARN of an IAM profile to be used for the layer's EC2 instances.
+     *         For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
@@ -492,13 +509,13 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * The ARN of an IAM profile that to be used for the layer's EC2
-     * instances. For more information about IAM ARNs, see <a
+     * The ARN of an IAM profile to be used for the layer's EC2 instances.
+     * For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
-     * @param customInstanceProfileArn The ARN of an IAM profile that to be used for the layer's EC2
-     *         instances. For more information about IAM ARNs, see <a
+     * @param customInstanceProfileArn The ARN of an IAM profile to be used for the layer's EC2 instances.
+     *         For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
@@ -507,15 +524,15 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * The ARN of an IAM profile that to be used for the layer's EC2
-     * instances. For more information about IAM ARNs, see <a
+     * The ARN of an IAM profile to be used for the layer's EC2 instances.
+     * For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customInstanceProfileArn The ARN of an IAM profile that to be used for the layer's EC2
-     *         instances. For more information about IAM ARNs, see <a
+     * @param customInstanceProfileArn The ARN of an IAM profile to be used for the layer's EC2 instances.
+     *         For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
@@ -524,6 +541,63 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      */
     public CreateLayerRequest withCustomInstanceProfileArn(String customInstanceProfileArn) {
         this.customInstanceProfileArn = customInstanceProfileArn;
+        return this;
+    }
+
+    /**
+     * A JSON-formatted string containing custom stack configuration and
+     * deployment attributes to be installed on the layer's instances. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * Using Custom JSON</a>.
+     *
+     * @return A JSON-formatted string containing custom stack configuration and
+     *         deployment attributes to be installed on the layer's instances. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     *         Using Custom JSON</a>.
+     */
+    public String getCustomJson() {
+        return customJson;
+    }
+    
+    /**
+     * A JSON-formatted string containing custom stack configuration and
+     * deployment attributes to be installed on the layer's instances. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * Using Custom JSON</a>.
+     *
+     * @param customJson A JSON-formatted string containing custom stack configuration and
+     *         deployment attributes to be installed on the layer's instances. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     *         Using Custom JSON</a>.
+     */
+    public void setCustomJson(String customJson) {
+        this.customJson = customJson;
+    }
+    
+    /**
+     * A JSON-formatted string containing custom stack configuration and
+     * deployment attributes to be installed on the layer's instances. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * Using Custom JSON</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param customJson A JSON-formatted string containing custom stack configuration and
+     *         deployment attributes to be installed on the layer's instances. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     *         Using Custom JSON</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateLayerRequest withCustomJson(String customJson) {
+        this.customJson = customJson;
         return this;
     }
 
@@ -601,10 +675,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * An array of <code>Package</code> objects that describe the layer
+     * An array of <code>Package</code> objects that describes the layer
      * packages.
      *
-     * @return An array of <code>Package</code> objects that describe the layer
+     * @return An array of <code>Package</code> objects that describes the layer
      *         packages.
      */
     public java.util.List<String> getPackages() {
@@ -616,10 +690,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * An array of <code>Package</code> objects that describe the layer
+     * An array of <code>Package</code> objects that describes the layer
      * packages.
      *
-     * @param packages An array of <code>Package</code> objects that describe the layer
+     * @param packages An array of <code>Package</code> objects that describes the layer
      *         packages.
      */
     public void setPackages(java.util.Collection<String> packages) {
@@ -633,7 +707,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * An array of <code>Package</code> objects that describe the layer
+     * An array of <code>Package</code> objects that describes the layer
      * packages.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -643,7 +717,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param packages An array of <code>Package</code> objects that describe the layer
+     * @param packages An array of <code>Package</code> objects that describes the layer
      *         packages.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -658,12 +732,12 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * An array of <code>Package</code> objects that describe the layer
+     * An array of <code>Package</code> objects that describes the layer
      * packages.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param packages An array of <code>Package</code> objects that describe the layer
+     * @param packages An array of <code>Package</code> objects that describes the layer
      *         packages.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -997,20 +1071,20 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * when updates are installed, set this value to <code>false</code>. You
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-     * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates. </note>
+     * stack command or by manually running <code>yum</code> (Amazon Linux)
+     * or <code>apt-get</code> (Ubuntu) on the instances. <note> <p>To ensure
+     * that your instances have the latest security updates, we strongly
+     * recommend using the default value of <code>true</code>. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
      *         when updates are installed, set this value to <code>false</code>. You
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-     *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
-     *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates. </note>
+     *         stack command or by manually running <code>yum</code> (Amazon Linux)
+     *         or <code>apt-get</code> (Ubuntu) on the instances. <note> <p>To ensure
+     *         that your instances have the latest security updates, we strongly
+     *         recommend using the default value of <code>true</code>. </note>
      */
     public Boolean isInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
@@ -1022,20 +1096,20 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * when updates are installed, set this value to <code>false</code>. You
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-     * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates. </note>
+     * stack command or by manually running <code>yum</code> (Amazon Linux)
+     * or <code>apt-get</code> (Ubuntu) on the instances. <note> <p>To ensure
+     * that your instances have the latest security updates, we strongly
+     * recommend using the default value of <code>true</code>. </note>
      *
      * @param installUpdatesOnBoot Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
      *         when updates are installed, set this value to <code>false</code>. You
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-     *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
-     *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates. </note>
+     *         stack command or by manually running <code>yum</code> (Amazon Linux)
+     *         or <code>apt-get</code> (Ubuntu) on the instances. <note> <p>To ensure
+     *         that your instances have the latest security updates, we strongly
+     *         recommend using the default value of <code>true</code>. </note>
      */
     public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;
@@ -1047,10 +1121,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * when updates are installed, set this value to <code>false</code>. You
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-     * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates. </note>
+     * stack command or by manually running <code>yum</code> (Amazon Linux)
+     * or <code>apt-get</code> (Ubuntu) on the instances. <note> <p>To ensure
+     * that your instances have the latest security updates, we strongly
+     * recommend using the default value of <code>true</code>. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1059,10 +1133,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         when updates are installed, set this value to <code>false</code>. You
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-     *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
-     *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates. </note>
+     *         stack command or by manually running <code>yum</code> (Amazon Linux)
+     *         or <code>apt-get</code> (Ubuntu) on the instances. <note> <p>To ensure
+     *         that your instances have the latest security updates, we strongly
+     *         recommend using the default value of <code>true</code>. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1078,20 +1152,20 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * when updates are installed, set this value to <code>false</code>. You
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-     * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates. </note>
+     * stack command or by manually running <code>yum</code> (Amazon Linux)
+     * or <code>apt-get</code> (Ubuntu) on the instances. <note> <p>To ensure
+     * that your instances have the latest security updates, we strongly
+     * recommend using the default value of <code>true</code>. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
      *         when updates are installed, set this value to <code>false</code>. You
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-     *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
-     *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates. </note>
+     *         stack command or by manually running <code>yum</code> (Amazon Linux)
+     *         or <code>apt-get</code> (Ubuntu) on the instances. <note> <p>To ensure
+     *         that your instances have the latest security updates, we strongly
+     *         recommend using the default value of <code>true</code>. </note>
      */
     public Boolean getInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
@@ -1140,41 +1214,41 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * A LifeCycleEventConfiguration object that you can use to configure the
-     * Shutdown event to specify an execution timeout and enable or disable
-     * Elastic Load Balancer connection draining.
+     * A <code>LifeCycleEventConfiguration</code> object that you can use to
+     * configure the Shutdown event to specify an execution timeout and
+     * enable or disable Elastic Load Balancer connection draining.
      *
-     * @return A LifeCycleEventConfiguration object that you can use to configure the
-     *         Shutdown event to specify an execution timeout and enable or disable
-     *         Elastic Load Balancer connection draining.
+     * @return A <code>LifeCycleEventConfiguration</code> object that you can use to
+     *         configure the Shutdown event to specify an execution timeout and
+     *         enable or disable Elastic Load Balancer connection draining.
      */
     public LifecycleEventConfiguration getLifecycleEventConfiguration() {
         return lifecycleEventConfiguration;
     }
     
     /**
-     * A LifeCycleEventConfiguration object that you can use to configure the
-     * Shutdown event to specify an execution timeout and enable or disable
-     * Elastic Load Balancer connection draining.
+     * A <code>LifeCycleEventConfiguration</code> object that you can use to
+     * configure the Shutdown event to specify an execution timeout and
+     * enable or disable Elastic Load Balancer connection draining.
      *
-     * @param lifecycleEventConfiguration A LifeCycleEventConfiguration object that you can use to configure the
-     *         Shutdown event to specify an execution timeout and enable or disable
-     *         Elastic Load Balancer connection draining.
+     * @param lifecycleEventConfiguration A <code>LifeCycleEventConfiguration</code> object that you can use to
+     *         configure the Shutdown event to specify an execution timeout and
+     *         enable or disable Elastic Load Balancer connection draining.
      */
     public void setLifecycleEventConfiguration(LifecycleEventConfiguration lifecycleEventConfiguration) {
         this.lifecycleEventConfiguration = lifecycleEventConfiguration;
     }
     
     /**
-     * A LifeCycleEventConfiguration object that you can use to configure the
-     * Shutdown event to specify an execution timeout and enable or disable
-     * Elastic Load Balancer connection draining.
+     * A <code>LifeCycleEventConfiguration</code> object that you can use to
+     * configure the Shutdown event to specify an execution timeout and
+     * enable or disable Elastic Load Balancer connection draining.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lifecycleEventConfiguration A LifeCycleEventConfiguration object that you can use to configure the
-     *         Shutdown event to specify an execution timeout and enable or disable
-     *         Elastic Load Balancer connection draining.
+     * @param lifecycleEventConfiguration A <code>LifeCycleEventConfiguration</code> object that you can use to
+     *         configure the Shutdown event to specify an execution timeout and
+     *         enable or disable Elastic Load Balancer connection draining.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1202,6 +1276,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");
         if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");
         if (getCustomInstanceProfileArn() != null) sb.append("CustomInstanceProfileArn: " + getCustomInstanceProfileArn() + ",");
+        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");
         if (getCustomSecurityGroupIds() != null) sb.append("CustomSecurityGroupIds: " + getCustomSecurityGroupIds() + ",");
         if (getPackages() != null) sb.append("Packages: " + getPackages() + ",");
         if (getVolumeConfigurations() != null) sb.append("VolumeConfigurations: " + getVolumeConfigurations() + ",");
@@ -1227,6 +1302,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getShortname() == null) ? 0 : getShortname().hashCode()); 
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode()); 
         hashCode = prime * hashCode + ((getCustomInstanceProfileArn() == null) ? 0 : getCustomInstanceProfileArn().hashCode()); 
+        hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode()); 
         hashCode = prime * hashCode + ((getCustomSecurityGroupIds() == null) ? 0 : getCustomSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getPackages() == null) ? 0 : getPackages().hashCode()); 
         hashCode = prime * hashCode + ((getVolumeConfigurations() == null) ? 0 : getVolumeConfigurations().hashCode()); 
@@ -1260,6 +1336,8 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false) return false; 
         if (other.getCustomInstanceProfileArn() == null ^ this.getCustomInstanceProfileArn() == null) return false;
         if (other.getCustomInstanceProfileArn() != null && other.getCustomInstanceProfileArn().equals(this.getCustomInstanceProfileArn()) == false) return false; 
+        if (other.getCustomJson() == null ^ this.getCustomJson() == null) return false;
+        if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false) return false; 
         if (other.getCustomSecurityGroupIds() == null ^ this.getCustomSecurityGroupIds() == null) return false;
         if (other.getCustomSecurityGroupIds() != null && other.getCustomSecurityGroupIds().equals(this.getCustomSecurityGroupIds()) == false) return false; 
         if (other.getPackages() == null ^ this.getPackages() == null) return false;

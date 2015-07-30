@@ -74,6 +74,15 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
     private String customInstanceProfileArn;
 
     /**
+     * A JSON-formatted string containing custom stack configuration and
+     * deployment attributes to be installed on the layer's instances. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * Using Custom JSON</a>.
+     */
+    private String customJson;
+
+    /**
      * An array containing the layer's custom security group IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> customSecurityGroupIds;
@@ -411,6 +420,63 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      */
     public UpdateLayerRequest withCustomInstanceProfileArn(String customInstanceProfileArn) {
         this.customInstanceProfileArn = customInstanceProfileArn;
+        return this;
+    }
+
+    /**
+     * A JSON-formatted string containing custom stack configuration and
+     * deployment attributes to be installed on the layer's instances. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * Using Custom JSON</a>.
+     *
+     * @return A JSON-formatted string containing custom stack configuration and
+     *         deployment attributes to be installed on the layer's instances. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     *         Using Custom JSON</a>.
+     */
+    public String getCustomJson() {
+        return customJson;
+    }
+    
+    /**
+     * A JSON-formatted string containing custom stack configuration and
+     * deployment attributes to be installed on the layer's instances. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * Using Custom JSON</a>.
+     *
+     * @param customJson A JSON-formatted string containing custom stack configuration and
+     *         deployment attributes to be installed on the layer's instances. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     *         Using Custom JSON</a>.
+     */
+    public void setCustomJson(String customJson) {
+        this.customJson = customJson;
+    }
+    
+    /**
+     * A JSON-formatted string containing custom stack configuration and
+     * deployment attributes to be installed on the layer's instances. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * Using Custom JSON</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param customJson A JSON-formatted string containing custom stack configuration and
+     *         deployment attributes to be installed on the layer's instances. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     *         Using Custom JSON</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateLayerRequest withCustomJson(String customJson) {
+        this.customJson = customJson;
         return this;
     }
 
@@ -1076,6 +1142,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
         if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");
         if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");
         if (getCustomInstanceProfileArn() != null) sb.append("CustomInstanceProfileArn: " + getCustomInstanceProfileArn() + ",");
+        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");
         if (getCustomSecurityGroupIds() != null) sb.append("CustomSecurityGroupIds: " + getCustomSecurityGroupIds() + ",");
         if (getPackages() != null) sb.append("Packages: " + getPackages() + ",");
         if (getVolumeConfigurations() != null) sb.append("VolumeConfigurations: " + getVolumeConfigurations() + ",");
@@ -1100,6 +1167,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getShortname() == null) ? 0 : getShortname().hashCode()); 
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode()); 
         hashCode = prime * hashCode + ((getCustomInstanceProfileArn() == null) ? 0 : getCustomInstanceProfileArn().hashCode()); 
+        hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode()); 
         hashCode = prime * hashCode + ((getCustomSecurityGroupIds() == null) ? 0 : getCustomSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getPackages() == null) ? 0 : getPackages().hashCode()); 
         hashCode = prime * hashCode + ((getVolumeConfigurations() == null) ? 0 : getVolumeConfigurations().hashCode()); 
@@ -1131,6 +1199,8 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false) return false; 
         if (other.getCustomInstanceProfileArn() == null ^ this.getCustomInstanceProfileArn() == null) return false;
         if (other.getCustomInstanceProfileArn() != null && other.getCustomInstanceProfileArn().equals(this.getCustomInstanceProfileArn()) == false) return false; 
+        if (other.getCustomJson() == null ^ this.getCustomJson() == null) return false;
+        if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false) return false; 
         if (other.getCustomSecurityGroupIds() == null ^ this.getCustomSecurityGroupIds() == null) return false;
         if (other.getCustomSecurityGroupIds() != null && other.getCustomSecurityGroupIds().equals(this.getCustomSecurityGroupIds()) == false) return false; 
         if (other.getPackages() == null ^ this.getPackages() == null) return false;

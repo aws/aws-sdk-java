@@ -88,6 +88,9 @@ public class CreateLayerRequestMarshaller implements Marshaller<Request<CreateLa
             if (createLayerRequest.getCustomInstanceProfileArn() != null) {
                 jsonWriter.key("CustomInstanceProfileArn").value(createLayerRequest.getCustomInstanceProfileArn());
             }
+            if (createLayerRequest.getCustomJson() != null) {
+                jsonWriter.key("CustomJson").value(createLayerRequest.getCustomJson());
+            }
 
             com.amazonaws.internal.ListWithAutoConstructFlag<String> customSecurityGroupIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(createLayerRequest.getCustomSecurityGroupIds());
             if (customSecurityGroupIdsList != null && !(customSecurityGroupIdsList.isAutoConstruct() && customSecurityGroupIdsList.isEmpty())) {

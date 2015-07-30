@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#applyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest) ApplyPendingMaintenanceAction operation}.
  * <p>
- * Applies a pending maintenance action to a resource (for example, a DB
- * instance).
+ * Applies a pending maintenance action to a resource (for example, to a
+ * DB instance).
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#applyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest)
@@ -30,8 +30,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ApplyPendingMaintenanceActionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The ARN of the resource that the pending maintenance action applies
-     * to.
+     * The RDS Amazon Resource Name (ARN) of the resource that the pending
+     * maintenance action applies to. For information about creating an ARN,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
     private String resourceIdentifier;
 
@@ -53,35 +56,53 @@ public class ApplyPendingMaintenanceActionRequest extends AmazonWebServiceReques
     private String optInType;
 
     /**
-     * The ARN of the resource that the pending maintenance action applies
-     * to.
+     * The RDS Amazon Resource Name (ARN) of the resource that the pending
+     * maintenance action applies to. For information about creating an ARN,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      *
-     * @return The ARN of the resource that the pending maintenance action applies
-     *         to.
+     * @return The RDS Amazon Resource Name (ARN) of the resource that the pending
+     *         maintenance action applies to. For information about creating an ARN,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
     public String getResourceIdentifier() {
         return resourceIdentifier;
     }
     
     /**
-     * The ARN of the resource that the pending maintenance action applies
-     * to.
+     * The RDS Amazon Resource Name (ARN) of the resource that the pending
+     * maintenance action applies to. For information about creating an ARN,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      *
-     * @param resourceIdentifier The ARN of the resource that the pending maintenance action applies
-     *         to.
+     * @param resourceIdentifier The RDS Amazon Resource Name (ARN) of the resource that the pending
+     *         maintenance action applies to. For information about creating an ARN,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
     public void setResourceIdentifier(String resourceIdentifier) {
         this.resourceIdentifier = resourceIdentifier;
     }
     
     /**
-     * The ARN of the resource that the pending maintenance action applies
-     * to.
+     * The RDS Amazon Resource Name (ARN) of the resource that the pending
+     * maintenance action applies to. For information about creating an ARN,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceIdentifier The ARN of the resource that the pending maintenance action applies
-     *         to.
+     * @param resourceIdentifier The RDS Amazon Resource Name (ARN) of the resource that the pending
+     *         maintenance action applies to. For information about creating an ARN,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing an RDS Amazon Resource Name (ARN)</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

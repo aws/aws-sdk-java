@@ -117,6 +117,10 @@ public class DBSnapshotStaxUnmarshaller implements Unmarshaller<DBSnapshot, Stax
                     dBSnapshot.setSourceRegion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("SourceDBSnapshotIdentifier", targetDepth)) {
+                    dBSnapshot.setSourceDBSnapshotIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("StorageType", targetDepth)) {
                     dBSnapshot.setStorageType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

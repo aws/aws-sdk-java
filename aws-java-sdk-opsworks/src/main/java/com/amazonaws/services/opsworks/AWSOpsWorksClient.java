@@ -101,17 +101,17 @@ import com.amazonaws.services.opsworks.model.transform.*;
  * <p>
  * When you call CreateStack, CloneStack, or UpdateStack we recommend you
  * use the <code>ConfigurationManager</code> parameter to specify the
- * Chef version, 0.9, 11.4, or 11.10. The default value is currently
- * 11.10. For more information, see
+ * Chef version. The recommended value for Linux stacks, which is also
+ * the default value, is currently 11.10. Windows stacks use Chef 12.2.
+ * For more information, see
  * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"> Chef Versions </a>
  * .
  * </p>
  * <p>
- * <b>NOTE:</b>You can still specify Chef 0.9 for your stack, but new
- * features are not available for Chef 0.9 stacks, and support is
- * scheduled to end on July 24, 2014. We do not recommend using Chef 0.9
- * for new stacks, and we recommend migrating your existing Chef 0.9
- * stacks to Chef 11.10 as soon as possible.
+ * <b>NOTE:</b>You can also specify Chef 11.4 or Chef 0.9 for your Linux
+ * stack. However, Chef 0.9 has been deprecated. We do not recommend
+ * using Chef 0.9 for new stacks, and we recommend migrating your
+ * existing Chef 0.9 stacks to Chef 11.10 as soon as possible.
  * </p>
  */
 public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsWorks {
@@ -629,6 +629,63 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
+    /**
+     * <p>
+     * Deregisters a specified Amazon ECS cluster from a stack. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete"> Resource Management </a>
+     * .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> </a>
+     * .
+     * </p>
+     *
+     * @param deregisterEcsClusterRequest Container for the necessary
+     *           parameters to execute the DeregisterEcsCluster service method on
+     *           AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deregisterEcsCluster(DeregisterEcsClusterRequest deregisterEcsClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterEcsClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterEcsClusterRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterEcsClusterRequestMarshaller().marshall(super.beforeMarshalling(deregisterEcsClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
     /**
      * <p>
      * Describes the permissions for a specified stack.
@@ -1474,6 +1531,72 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
     /**
      * <p>
+     * Describes Amazon ECS clusters that are registered with a stack. If
+     * you specify only a stack ID, you can use the <code>MaxResults</code>
+     * and <code>NextToken</code> parameters to paginate the response.
+     * However, AWS OpsWorks currently supports only one cluster per layer,
+     * so the result set has a maximum of one element.
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Show, Deploy, or Manage permissions level for the stack or an
+     * attached policy that explicitly grants permission. For more
+     * information on user permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param describeEcsClustersRequest Container for the necessary
+     *           parameters to execute the DescribeEcsClusters service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the DescribeEcsClusters service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeEcsClustersResult describeEcsClusters(DescribeEcsClustersRequest describeEcsClustersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEcsClustersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEcsClustersRequest> request = null;
+        Response<DescribeEcsClustersResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEcsClustersRequestMarshaller().marshall(super.beforeMarshalling(describeEcsClustersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<DescribeEcsClustersResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeEcsClustersResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeEcsClustersResult> responseHandler =
+                new JsonResponseHandler<DescribeEcsClustersResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Assigns one of the stack's registered Amazon EBS volumes to a
      * specified instance. The volume must first be registered with the stack
      * by calling RegisterVolume. After you register the volume, you must
@@ -1869,6 +1992,72 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
     
+    /**
+     * <p>
+     * Registers a specified Amazon ECS cluster with a stack. You can
+     * register only one cluster with a stack. A cluster can be registered
+     * with only one stack. For more information, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html"> Resource Management </a>
+     * .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param registerEcsClusterRequest Container for the necessary
+     *           parameters to execute the RegisterEcsCluster service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the RegisterEcsCluster service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RegisterEcsClusterResult registerEcsCluster(RegisterEcsClusterRequest registerEcsClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerEcsClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterEcsClusterRequest> request = null;
+        Response<RegisterEcsClusterResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterEcsClusterRequestMarshaller().marshall(super.beforeMarshalling(registerEcsClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<RegisterEcsClusterResult, JsonUnmarshallerContext> unmarshaller =
+                new RegisterEcsClusterResultJsonUnmarshaller();
+            JsonResponseHandler<RegisterEcsClusterResult> responseHandler =
+                new JsonResponseHandler<RegisterEcsClusterResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
     /**
      * <p>
      * Creates a layer. For more information, see
@@ -3078,10 +3267,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * 
      * </ul>
      * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
+     * <b>Required Permissions</b> : To use this action, an AWS Identity and
+     * Access Management (IAM) user must have a Manage permissions level for
+     * the stack or an attached policy that explicitly grants permissions.
+     * For more information on user permissions, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
      * .
      * </p>

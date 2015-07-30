@@ -45,16 +45,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * does not result in an outage and the change is applied during the next
      * maintenance window unless <code>ApplyImmediately</code> is set to
      * <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
-     * existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
+     * existing setting <p>Valid Values: 5-6144 <p>Constraints: Value
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
      * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     * <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
+     * <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
      * least 10% greater than the current value. Values that are not at least
      * 10% greater than the existing value are rounded up so that they are
      * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     * <p>Default: Uses existing setting <p>Valid Values: 10-3072
+     * <p>Default: Uses existing setting <p>Valid Values: 10-6144
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
@@ -67,7 +67,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * provisioned (if any), and the number of prior scale storage
      * operations. Typical migration times are under 24 hours, but the
      * process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but may
+     * migration, the DB instance will be available for use, but might
      * experience performance degradation. While the migration takes place,
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
@@ -141,8 +141,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
      * action provides a way to regain access to a primary instance user if
-     * the password is lost. This includes restoring privileges that may have
-     * been accidentally revoked. </note>
+     * the password is lost. This includes restoring privileges that might
+     * have been accidentally revoked. </note>
      */
     private String masterUserPassword;
 
@@ -180,10 +180,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. Changing this parameter does not
-     * result in an outage and the change is asynchronously applied as soon
-     * as possible. <p>Constraints: <ul> <li>Must be in the format
-     * hh24:mi-hh24:mi</li> <li>Times should be Universal Time Coordinated
+     * <code>BackupRetentionPeriod</code> parameter. Changing this parameter
+     * does not result in an outage and the change is asynchronously applied
+     * as soon as possible. <p>Constraints: <ul> <li>Must be in the format
+     * hh24:mi-hh24:mi</li> <li>Times should be in Universal Time Coordinated
      * (UTC)</li> <li>Must not conflict with the preferred maintenance
      * window</li> <li>Must be at least 30 minutes</li> </ul>
      */
@@ -191,17 +191,17 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur, which may result in an outage. Changing this parameter does not
-     * result in an outage, except in the following situation, and the change
-     * is asynchronously applied as soon as possible. If there are pending
-     * actions that cause a reboot, and the maintenance window is changed to
-     * include the current time, then changing this parameter will cause a
-     * reboot of the DB instance. If moving this window to the current time,
-     * there must be at least 30 minutes between the current time and end of
-     * the window to ensure pending changes are applied. <p>Default: Uses
-     * existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
-     * | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Must be at least
-     * 30 minutes
+     * occur, which might result in an outage. Changing this parameter does
+     * not result in an outage, except in the following situation, and the
+     * change is asynchronously applied as soon as possible. If there are
+     * pending actions that cause a reboot, and the maintenance window is
+     * changed to include the current time, then changing this parameter will
+     * cause a reboot of the DB instance. If moving this window to the
+     * current time, there must be at least 30 minutes between the current
+     * time and end of the window to ensure pending changes are applied.
+     * <p>Default: Uses existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi
+     * <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     * Must be at least 30 minutes
      */
     private String preferredMaintenanceWindow;
 
@@ -211,7 +211,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * instance is a Read Replica.
+     * instance is a Read Replica. This parameter cannot be used with SQL
+     * Server DB instances. Multi-AZ for SQL Server DB instances is set using
+     * the Mirroring option in an option group associated with the DB
+     * instance.
      */
     private Boolean multiAZ;
 
@@ -270,7 +273,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * amount of IOPS provisioned (if any), and the number of prior scale
      * storage operations. Typical migration times are under 24 hours, but
      * the process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but may
+     * migration, the DB instance will be available for use, but might
      * experience performance degradation. While the migration takes place,
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
@@ -331,7 +334,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private String tdeCredentialPassword;
 
     /**
-     * Indicates the certificate which needs to be associated with the
+     * Indicates the certificate that needs to be associated with the
      * instance.
      */
     private String cACertificateIdentifier;
@@ -426,16 +429,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * does not result in an outage and the change is applied during the next
      * maintenance window unless <code>ApplyImmediately</code> is set to
      * <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
-     * existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
+     * existing setting <p>Valid Values: 5-6144 <p>Constraints: Value
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
      * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     * <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
+     * <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
      * least 10% greater than the current value. Values that are not at least
      * 10% greater than the existing value are rounded up so that they are
      * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     * <p>Default: Uses existing setting <p>Valid Values: 10-3072
+     * <p>Default: Uses existing setting <p>Valid Values: 10-6144
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
@@ -448,7 +451,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * provisioned (if any), and the number of prior scale storage
      * operations. Typical migration times are under 24 hours, but the
      * process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but may
+     * migration, the DB instance will be available for use, but might
      * experience performance degradation. While the migration takes place,
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
@@ -460,16 +463,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         does not result in an outage and the change is applied during the next
      *         maintenance window unless <code>ApplyImmediately</code> is set to
      *         <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
-     *         existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
+     *         existing setting <p>Valid Values: 5-6144 <p>Constraints: Value
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
      *         Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     *         <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
+     *         <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
      *         least 10% greater than the current value. Values that are not at least
      *         10% greater than the existing value are rounded up so that they are
      *         10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     *         <p>Default: Uses existing setting <p>Valid Values: 10-3072
+     *         <p>Default: Uses existing setting <p>Valid Values: 10-6144
      *         <p>Constraints: Value supplied must be at least 10% greater than the
      *         current value. Values that are not at least 10% greater than the
      *         existing value are rounded up so that they are 10% greater than the
@@ -482,7 +485,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         provisioned (if any), and the number of prior scale storage
      *         operations. Typical migration times are under 24 hours, but the
      *         process can take up to several days in some cases. During the
-     *         migration, the DB instance will be available for use, but may
+     *         migration, the DB instance will be available for use, but might
      *         experience performance degradation. While the migration takes place,
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
@@ -499,16 +502,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * does not result in an outage and the change is applied during the next
      * maintenance window unless <code>ApplyImmediately</code> is set to
      * <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
-     * existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
+     * existing setting <p>Valid Values: 5-6144 <p>Constraints: Value
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
      * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     * <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
+     * <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
      * least 10% greater than the current value. Values that are not at least
      * 10% greater than the existing value are rounded up so that they are
      * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     * <p>Default: Uses existing setting <p>Valid Values: 10-3072
+     * <p>Default: Uses existing setting <p>Valid Values: 10-6144
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
@@ -521,7 +524,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * provisioned (if any), and the number of prior scale storage
      * operations. Typical migration times are under 24 hours, but the
      * process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but may
+     * migration, the DB instance will be available for use, but might
      * experience performance degradation. While the migration takes place,
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
@@ -533,16 +536,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         does not result in an outage and the change is applied during the next
      *         maintenance window unless <code>ApplyImmediately</code> is set to
      *         <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
-     *         existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
+     *         existing setting <p>Valid Values: 5-6144 <p>Constraints: Value
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
      *         Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     *         <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
+     *         <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
      *         least 10% greater than the current value. Values that are not at least
      *         10% greater than the existing value are rounded up so that they are
      *         10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     *         <p>Default: Uses existing setting <p>Valid Values: 10-3072
+     *         <p>Default: Uses existing setting <p>Valid Values: 10-6144
      *         <p>Constraints: Value supplied must be at least 10% greater than the
      *         current value. Values that are not at least 10% greater than the
      *         existing value are rounded up so that they are 10% greater than the
@@ -555,7 +558,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         provisioned (if any), and the number of prior scale storage
      *         operations. Typical migration times are under 24 hours, but the
      *         process can take up to several days in some cases. During the
-     *         migration, the DB instance will be available for use, but may
+     *         migration, the DB instance will be available for use, but might
      *         experience performance degradation. While the migration takes place,
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
@@ -572,16 +575,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * does not result in an outage and the change is applied during the next
      * maintenance window unless <code>ApplyImmediately</code> is set to
      * <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
-     * existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
+     * existing setting <p>Valid Values: 5-6144 <p>Constraints: Value
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
      * Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     * <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
+     * <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
      * least 10% greater than the current value. Values that are not at least
      * 10% greater than the existing value are rounded up so that they are
      * 10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     * <p>Default: Uses existing setting <p>Valid Values: 10-3072
+     * <p>Default: Uses existing setting <p>Valid Values: 10-6144
      * <p>Constraints: Value supplied must be at least 10% greater than the
      * current value. Values that are not at least 10% greater than the
      * existing value are rounded up so that they are 10% greater than the
@@ -594,7 +597,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * provisioned (if any), and the number of prior scale storage
      * operations. Typical migration times are under 24 hours, but the
      * process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but may
+     * migration, the DB instance will be available for use, but might
      * experience performance degradation. While the migration takes place,
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
@@ -608,16 +611,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         does not result in an outage and the change is applied during the next
      *         maintenance window unless <code>ApplyImmediately</code> is set to
      *         <code>true</code> for this request. <p> <b>MySQL</b> <p>Default: Uses
-     *         existing setting <p>Valid Values: 5-3072 <p>Constraints: Value
+     *         existing setting <p>Valid Values: 5-6144 <p>Constraints: Value
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
      *         Integer <p> <b>PostgreSQL</b> <p>Default: Uses existing setting
-     *         <p>Valid Values: 5-3072 <p>Constraints: Value supplied must be at
+     *         <p>Valid Values: 5-6144 <p>Constraints: Value supplied must be at
      *         least 10% greater than the current value. Values that are not at least
      *         10% greater than the existing value are rounded up so that they are
      *         10% greater than the current value. <p>Type: Integer <p> <b>Oracle</b>
-     *         <p>Default: Uses existing setting <p>Valid Values: 10-3072
+     *         <p>Default: Uses existing setting <p>Valid Values: 10-6144
      *         <p>Constraints: Value supplied must be at least 10% greater than the
      *         current value. Values that are not at least 10% greater than the
      *         existing value are rounded up so that they are 10% greater than the
@@ -630,7 +633,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         provisioned (if any), and the number of prior scale storage
      *         operations. Typical migration times are under 24 hours, but the
      *         process can take up to several days in some cases. During the
-     *         migration, the DB instance will be available for use, but may
+     *         migration, the DB instance will be available for use, but might
      *         experience performance degradation. While the migration takes place,
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
@@ -1113,8 +1116,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
      * action provides a way to regain access to a primary instance user if
-     * the password is lost. This includes restoring privileges that may have
-     * been accidentally revoked. </note>
+     * the password is lost. This includes restoring privileges that might
+     * have been accidentally revoked. </note>
      *
      * @return The new password for the DB instance master user. Can be any printable
      *         ASCII character except "/", """, or "@". <p> Changing this parameter
@@ -1127,8 +1130,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *         <note> Amazon RDS API actions never return the password, so this
      *         action provides a way to regain access to a primary instance user if
-     *         the password is lost. This includes restoring privileges that may have
-     *         been accidentally revoked. </note>
+     *         the password is lost. This includes restoring privileges that might
+     *         have been accidentally revoked. </note>
      */
     public String getMasterUserPassword() {
         return masterUserPassword;
@@ -1146,8 +1149,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
      * action provides a way to regain access to a primary instance user if
-     * the password is lost. This includes restoring privileges that may have
-     * been accidentally revoked. </note>
+     * the password is lost. This includes restoring privileges that might
+     * have been accidentally revoked. </note>
      *
      * @param masterUserPassword The new password for the DB instance master user. Can be any printable
      *         ASCII character except "/", """, or "@". <p> Changing this parameter
@@ -1160,8 +1163,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *         <note> Amazon RDS API actions never return the password, so this
      *         action provides a way to regain access to a primary instance user if
-     *         the password is lost. This includes restoring privileges that may have
-     *         been accidentally revoked. </note>
+     *         the password is lost. This includes restoring privileges that might
+     *         have been accidentally revoked. </note>
      */
     public void setMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
@@ -1179,8 +1182,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      * <note> Amazon RDS API actions never return the password, so this
      * action provides a way to regain access to a primary instance user if
-     * the password is lost. This includes restoring privileges that may have
-     * been accidentally revoked. </note>
+     * the password is lost. This includes restoring privileges that might
+     * have been accidentally revoked. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1195,8 +1198,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *         <note> Amazon RDS API actions never return the password, so this
      *         action provides a way to regain access to a primary instance user if
-     *         the password is lost. This includes restoring privileges that may have
-     *         been accidentally revoked. </note>
+     *         the password is lost. This includes restoring privileges that might
+     *         have been accidentally revoked. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1401,19 +1404,19 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. Changing this parameter does not
-     * result in an outage and the change is asynchronously applied as soon
-     * as possible. <p>Constraints: <ul> <li>Must be in the format
-     * hh24:mi-hh24:mi</li> <li>Times should be Universal Time Coordinated
+     * <code>BackupRetentionPeriod</code> parameter. Changing this parameter
+     * does not result in an outage and the change is asynchronously applied
+     * as soon as possible. <p>Constraints: <ul> <li>Must be in the format
+     * hh24:mi-hh24:mi</li> <li>Times should be in Universal Time Coordinated
      * (UTC)</li> <li>Must not conflict with the preferred maintenance
      * window</li> <li>Must be at least 30 minutes</li> </ul>
      *
      * @return The daily time range during which automated backups are created if
      *         automated backups are enabled, as determined by the
-     *         <code>BackupRetentionPeriod</code>. Changing this parameter does not
-     *         result in an outage and the change is asynchronously applied as soon
-     *         as possible. <p>Constraints: <ul> <li>Must be in the format
-     *         hh24:mi-hh24:mi</li> <li>Times should be Universal Time Coordinated
+     *         <code>BackupRetentionPeriod</code> parameter. Changing this parameter
+     *         does not result in an outage and the change is asynchronously applied
+     *         as soon as possible. <p>Constraints: <ul> <li>Must be in the format
+     *         hh24:mi-hh24:mi</li> <li>Times should be in Universal Time Coordinated
      *         (UTC)</li> <li>Must not conflict with the preferred maintenance
      *         window</li> <li>Must be at least 30 minutes</li> </ul>
      */
@@ -1424,19 +1427,19 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. Changing this parameter does not
-     * result in an outage and the change is asynchronously applied as soon
-     * as possible. <p>Constraints: <ul> <li>Must be in the format
-     * hh24:mi-hh24:mi</li> <li>Times should be Universal Time Coordinated
+     * <code>BackupRetentionPeriod</code> parameter. Changing this parameter
+     * does not result in an outage and the change is asynchronously applied
+     * as soon as possible. <p>Constraints: <ul> <li>Must be in the format
+     * hh24:mi-hh24:mi</li> <li>Times should be in Universal Time Coordinated
      * (UTC)</li> <li>Must not conflict with the preferred maintenance
      * window</li> <li>Must be at least 30 minutes</li> </ul>
      *
      * @param preferredBackupWindow The daily time range during which automated backups are created if
      *         automated backups are enabled, as determined by the
-     *         <code>BackupRetentionPeriod</code>. Changing this parameter does not
-     *         result in an outage and the change is asynchronously applied as soon
-     *         as possible. <p>Constraints: <ul> <li>Must be in the format
-     *         hh24:mi-hh24:mi</li> <li>Times should be Universal Time Coordinated
+     *         <code>BackupRetentionPeriod</code> parameter. Changing this parameter
+     *         does not result in an outage and the change is asynchronously applied
+     *         as soon as possible. <p>Constraints: <ul> <li>Must be in the format
+     *         hh24:mi-hh24:mi</li> <li>Times should be in Universal Time Coordinated
      *         (UTC)</li> <li>Must not conflict with the preferred maintenance
      *         window</li> <li>Must be at least 30 minutes</li> </ul>
      */
@@ -1447,10 +1450,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. Changing this parameter does not
-     * result in an outage and the change is asynchronously applied as soon
-     * as possible. <p>Constraints: <ul> <li>Must be in the format
-     * hh24:mi-hh24:mi</li> <li>Times should be Universal Time Coordinated
+     * <code>BackupRetentionPeriod</code> parameter. Changing this parameter
+     * does not result in an outage and the change is asynchronously applied
+     * as soon as possible. <p>Constraints: <ul> <li>Must be in the format
+     * hh24:mi-hh24:mi</li> <li>Times should be in Universal Time Coordinated
      * (UTC)</li> <li>Must not conflict with the preferred maintenance
      * window</li> <li>Must be at least 30 minutes</li> </ul>
      * <p>
@@ -1458,10 +1461,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *
      * @param preferredBackupWindow The daily time range during which automated backups are created if
      *         automated backups are enabled, as determined by the
-     *         <code>BackupRetentionPeriod</code>. Changing this parameter does not
-     *         result in an outage and the change is asynchronously applied as soon
-     *         as possible. <p>Constraints: <ul> <li>Must be in the format
-     *         hh24:mi-hh24:mi</li> <li>Times should be Universal Time Coordinated
+     *         <code>BackupRetentionPeriod</code> parameter. Changing this parameter
+     *         does not result in an outage and the change is asynchronously applied
+     *         as soon as possible. <p>Constraints: <ul> <li>Must be in the format
+     *         hh24:mi-hh24:mi</li> <li>Times should be in Universal Time Coordinated
      *         (UTC)</li> <li>Must not conflict with the preferred maintenance
      *         window</li> <li>Must be at least 30 minutes</li> </ul>
      *
@@ -1475,30 +1478,30 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur, which may result in an outage. Changing this parameter does not
-     * result in an outage, except in the following situation, and the change
-     * is asynchronously applied as soon as possible. If there are pending
-     * actions that cause a reboot, and the maintenance window is changed to
-     * include the current time, then changing this parameter will cause a
-     * reboot of the DB instance. If moving this window to the current time,
-     * there must be at least 30 minutes between the current time and end of
-     * the window to ensure pending changes are applied. <p>Default: Uses
-     * existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
-     * | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Must be at least
-     * 30 minutes
+     * occur, which might result in an outage. Changing this parameter does
+     * not result in an outage, except in the following situation, and the
+     * change is asynchronously applied as soon as possible. If there are
+     * pending actions that cause a reboot, and the maintenance window is
+     * changed to include the current time, then changing this parameter will
+     * cause a reboot of the DB instance. If moving this window to the
+     * current time, there must be at least 30 minutes between the current
+     * time and end of the window to ensure pending changes are applied.
+     * <p>Default: Uses existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi
+     * <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     * Must be at least 30 minutes
      *
      * @return The weekly time range (in UTC) during which system maintenance can
-     *         occur, which may result in an outage. Changing this parameter does not
-     *         result in an outage, except in the following situation, and the change
-     *         is asynchronously applied as soon as possible. If there are pending
-     *         actions that cause a reboot, and the maintenance window is changed to
-     *         include the current time, then changing this parameter will cause a
-     *         reboot of the DB instance. If moving this window to the current time,
-     *         there must be at least 30 minutes between the current time and end of
-     *         the window to ensure pending changes are applied. <p>Default: Uses
-     *         existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
-     *         | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Must be at least
-     *         30 minutes
+     *         occur, which might result in an outage. Changing this parameter does
+     *         not result in an outage, except in the following situation, and the
+     *         change is asynchronously applied as soon as possible. If there are
+     *         pending actions that cause a reboot, and the maintenance window is
+     *         changed to include the current time, then changing this parameter will
+     *         cause a reboot of the DB instance. If moving this window to the
+     *         current time, there must be at least 30 minutes between the current
+     *         time and end of the window to ensure pending changes are applied.
+     *         <p>Default: Uses existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi
+     *         <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     *         Must be at least 30 minutes
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
@@ -1506,30 +1509,30 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur, which may result in an outage. Changing this parameter does not
-     * result in an outage, except in the following situation, and the change
-     * is asynchronously applied as soon as possible. If there are pending
-     * actions that cause a reboot, and the maintenance window is changed to
-     * include the current time, then changing this parameter will cause a
-     * reboot of the DB instance. If moving this window to the current time,
-     * there must be at least 30 minutes between the current time and end of
-     * the window to ensure pending changes are applied. <p>Default: Uses
-     * existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
-     * | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Must be at least
-     * 30 minutes
+     * occur, which might result in an outage. Changing this parameter does
+     * not result in an outage, except in the following situation, and the
+     * change is asynchronously applied as soon as possible. If there are
+     * pending actions that cause a reboot, and the maintenance window is
+     * changed to include the current time, then changing this parameter will
+     * cause a reboot of the DB instance. If moving this window to the
+     * current time, there must be at least 30 minutes between the current
+     * time and end of the window to ensure pending changes are applied.
+     * <p>Default: Uses existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi
+     * <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     * Must be at least 30 minutes
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur, which may result in an outage. Changing this parameter does not
-     *         result in an outage, except in the following situation, and the change
-     *         is asynchronously applied as soon as possible. If there are pending
-     *         actions that cause a reboot, and the maintenance window is changed to
-     *         include the current time, then changing this parameter will cause a
-     *         reboot of the DB instance. If moving this window to the current time,
-     *         there must be at least 30 minutes between the current time and end of
-     *         the window to ensure pending changes are applied. <p>Default: Uses
-     *         existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
-     *         | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Must be at least
-     *         30 minutes
+     *         occur, which might result in an outage. Changing this parameter does
+     *         not result in an outage, except in the following situation, and the
+     *         change is asynchronously applied as soon as possible. If there are
+     *         pending actions that cause a reboot, and the maintenance window is
+     *         changed to include the current time, then changing this parameter will
+     *         cause a reboot of the DB instance. If moving this window to the
+     *         current time, there must be at least 30 minutes between the current
+     *         time and end of the window to ensure pending changes are applied.
+     *         <p>Default: Uses existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi
+     *         <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     *         Must be at least 30 minutes
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -1537,32 +1540,32 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur, which may result in an outage. Changing this parameter does not
-     * result in an outage, except in the following situation, and the change
-     * is asynchronously applied as soon as possible. If there are pending
-     * actions that cause a reboot, and the maintenance window is changed to
-     * include the current time, then changing this parameter will cause a
-     * reboot of the DB instance. If moving this window to the current time,
-     * there must be at least 30 minutes between the current time and end of
-     * the window to ensure pending changes are applied. <p>Default: Uses
-     * existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
-     * | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Must be at least
-     * 30 minutes
+     * occur, which might result in an outage. Changing this parameter does
+     * not result in an outage, except in the following situation, and the
+     * change is asynchronously applied as soon as possible. If there are
+     * pending actions that cause a reboot, and the maintenance window is
+     * changed to include the current time, then changing this parameter will
+     * cause a reboot of the DB instance. If moving this window to the
+     * current time, there must be at least 30 minutes between the current
+     * time and end of the window to ensure pending changes are applied.
+     * <p>Default: Uses existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi
+     * <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     * Must be at least 30 minutes
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur, which may result in an outage. Changing this parameter does not
-     *         result in an outage, except in the following situation, and the change
-     *         is asynchronously applied as soon as possible. If there are pending
-     *         actions that cause a reboot, and the maintenance window is changed to
-     *         include the current time, then changing this parameter will cause a
-     *         reboot of the DB instance. If moving this window to the current time,
-     *         there must be at least 30 minutes between the current time and end of
-     *         the window to ensure pending changes are applied. <p>Default: Uses
-     *         existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon
-     *         | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Must be at least
-     *         30 minutes
+     *         occur, which might result in an outage. Changing this parameter does
+     *         not result in an outage, except in the following situation, and the
+     *         change is asynchronously applied as soon as possible. If there are
+     *         pending actions that cause a reboot, and the maintenance window is
+     *         changed to include the current time, then changing this parameter will
+     *         cause a reboot of the DB instance. If moving this window to the
+     *         current time, there must be at least 30 minutes between the current
+     *         time and end of the window to ensure pending changes are applied.
+     *         <p>Default: Uses existing setting <p>Format: ddd:hh24:mi-ddd:hh24:mi
+     *         <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     *         Must be at least 30 minutes
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1578,14 +1581,20 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * instance is a Read Replica.
+     * instance is a Read Replica. This parameter cannot be used with SQL
+     * Server DB instances. Multi-AZ for SQL Server DB instances is set using
+     * the Mirroring option in an option group associated with the DB
+     * instance.
      *
      * @return Specifies if the DB instance is a Multi-AZ deployment. Changing this
      *         parameter does not result in an outage and the change is applied
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         instance is a Read Replica.
+     *         instance is a Read Replica. This parameter cannot be used with SQL
+     *         Server DB instances. Multi-AZ for SQL Server DB instances is set using
+     *         the Mirroring option in an option group associated with the DB
+     *         instance.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
@@ -1597,14 +1606,20 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * instance is a Read Replica.
+     * instance is a Read Replica. This parameter cannot be used with SQL
+     * Server DB instances. Multi-AZ for SQL Server DB instances is set using
+     * the Mirroring option in an option group associated with the DB
+     * instance.
      *
      * @param multiAZ Specifies if the DB instance is a Multi-AZ deployment. Changing this
      *         parameter does not result in an outage and the change is applied
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         instance is a Read Replica.
+     *         instance is a Read Replica. This parameter cannot be used with SQL
+     *         Server DB instances. Multi-AZ for SQL Server DB instances is set using
+     *         the Mirroring option in an option group associated with the DB
+     *         instance.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
@@ -1616,7 +1631,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * instance is a Read Replica.
+     * instance is a Read Replica. This parameter cannot be used with SQL
+     * Server DB instances. Multi-AZ for SQL Server DB instances is set using
+     * the Mirroring option in an option group associated with the DB
+     * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1625,7 +1643,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         instance is a Read Replica.
+     *         instance is a Read Replica. This parameter cannot be used with SQL
+     *         Server DB instances. Multi-AZ for SQL Server DB instances is set using
+     *         the Mirroring option in an option group associated with the DB
+     *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1641,14 +1662,20 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. <p>Constraints: Cannot be specified if the DB
-     * instance is a Read Replica.
+     * instance is a Read Replica. This parameter cannot be used with SQL
+     * Server DB instances. Multi-AZ for SQL Server DB instances is set using
+     * the Mirroring option in an option group associated with the DB
+     * instance.
      *
      * @return Specifies if the DB instance is a Multi-AZ deployment. Changing this
      *         parameter does not result in an outage and the change is applied
      *         during the next maintenance window unless the
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. <p>Constraints: Cannot be specified if the DB
-     *         instance is a Read Replica.
+     *         instance is a Read Replica. This parameter cannot be used with SQL
+     *         Server DB instances. Multi-AZ for SQL Server DB instances is set using
+     *         the Mirroring option in an option group associated with the DB
+     *         instance.
      */
     public Boolean getMultiAZ() {
         return multiAZ;
@@ -1928,7 +1955,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * amount of IOPS provisioned (if any), and the number of prior scale
      * storage operations. Typical migration times are under 24 hours, but
      * the process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but may
+     * migration, the DB instance will be available for use, but might
      * experience performance degradation. While the migration takes place,
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
@@ -1956,7 +1983,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         amount of IOPS provisioned (if any), and the number of prior scale
      *         storage operations. Typical migration times are under 24 hours, but
      *         the process can take up to several days in some cases. During the
-     *         migration, the DB instance will be available for use, but may
+     *         migration, the DB instance will be available for use, but might
      *         experience performance degradation. While the migration takes place,
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
@@ -1989,7 +2016,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * amount of IOPS provisioned (if any), and the number of prior scale
      * storage operations. Typical migration times are under 24 hours, but
      * the process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but may
+     * migration, the DB instance will be available for use, but might
      * experience performance degradation. While the migration takes place,
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
@@ -2017,7 +2044,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         amount of IOPS provisioned (if any), and the number of prior scale
      *         storage operations. Typical migration times are under 24 hours, but
      *         the process can take up to several days in some cases. During the
-     *         migration, the DB instance will be available for use, but may
+     *         migration, the DB instance will be available for use, but might
      *         experience performance degradation. While the migration takes place,
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
@@ -2050,7 +2077,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * amount of IOPS provisioned (if any), and the number of prior scale
      * storage operations. Typical migration times are under 24 hours, but
      * the process can take up to several days in some cases. During the
-     * migration, the DB instance will be available for use, but may
+     * migration, the DB instance will be available for use, but might
      * experience performance degradation. While the migration takes place,
      * nightly backups for the instance will be suspended. No other Amazon
      * RDS operations can take place for the instance, including modifying
@@ -2080,7 +2107,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         amount of IOPS provisioned (if any), and the number of prior scale
      *         storage operations. Typical migration times are under 24 hours, but
      *         the process can take up to several days in some cases. During the
-     *         migration, the DB instance will be available for use, but may
+     *         migration, the DB instance will be available for use, but might
      *         experience performance degradation. While the migration takes place,
      *         nightly backups for the instance will be suspended. No other Amazon
      *         RDS operations can take place for the instance, including modifying
@@ -2412,10 +2439,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Indicates the certificate which needs to be associated with the
+     * Indicates the certificate that needs to be associated with the
      * instance.
      *
-     * @return Indicates the certificate which needs to be associated with the
+     * @return Indicates the certificate that needs to be associated with the
      *         instance.
      */
     public String getCACertificateIdentifier() {
@@ -2423,10 +2450,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Indicates the certificate which needs to be associated with the
+     * Indicates the certificate that needs to be associated with the
      * instance.
      *
-     * @param cACertificateIdentifier Indicates the certificate which needs to be associated with the
+     * @param cACertificateIdentifier Indicates the certificate that needs to be associated with the
      *         instance.
      */
     public void setCACertificateIdentifier(String cACertificateIdentifier) {
@@ -2434,12 +2461,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * Indicates the certificate which needs to be associated with the
+     * Indicates the certificate that needs to be associated with the
      * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cACertificateIdentifier Indicates the certificate which needs to be associated with the
+     * @param cACertificateIdentifier Indicates the certificate that needs to be associated with the
      *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained
