@@ -57,7 +57,7 @@ public class App implements Serializable, Cloneable {
      * The app type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      */
     private String type;
 
@@ -350,7 +350,7 @@ public class App implements Serializable, Cloneable {
      * The app type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      *
      * @return The app type.
      *
@@ -364,7 +364,7 @@ public class App implements Serializable, Cloneable {
      * The app type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      *
      * @param type The app type.
      *
@@ -380,7 +380,7 @@ public class App implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      *
      * @param type The app type.
      *
@@ -398,7 +398,7 @@ public class App implements Serializable, Cloneable {
      * The app type.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      *
      * @param type The app type.
      *
@@ -414,7 +414,7 @@ public class App implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>java, rails, php, nodejs, static, other
+     * <b>Allowed Values: </b>aws-flow-ruby, java, rails, php, nodejs, static, other
      *
      * @param type The app type.
      *

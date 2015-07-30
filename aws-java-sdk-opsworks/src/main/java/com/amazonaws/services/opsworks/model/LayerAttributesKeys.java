@@ -19,6 +19,7 @@ package com.amazonaws.services.opsworks.model;
  */
 public enum LayerAttributesKeys {
     
+    EcsClusterArn("EcsClusterArn"),
     EnableHaproxyStats("EnableHaproxyStats"),
     HaproxyStatsUrl("HaproxyStatsUrl"),
     HaproxyStatsUser("HaproxyStatsUser"),
@@ -66,6 +67,8 @@ public enum LayerAttributesKeys {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
+        } else if ("EcsClusterArn".equals(value)) {
+            return LayerAttributesKeys.EcsClusterArn;
         } else if ("EnableHaproxyStats".equals(value)) {
             return LayerAttributesKeys.EnableHaproxyStats;
         } else if ("HaproxyStatsUrl".equals(value)) {

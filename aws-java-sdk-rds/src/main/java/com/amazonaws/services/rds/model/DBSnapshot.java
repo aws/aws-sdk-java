@@ -46,7 +46,8 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String dBInstanceIdentifier;
 
     /**
-     * Provides the time (UTC) when the snapshot was taken.
+     * Provides the time when the snapshot was taken, in Universal
+     * Coordinated Time (UTC).
      */
     private java.util.Date snapshotCreateTime;
 
@@ -78,12 +79,13 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String availabilityZone;
 
     /**
-     * Provides the Vpc Id associated with the DB snapshot.
+     * Provides the VPC ID associated with the DB snapshot.
      */
     private String vpcId;
 
     /**
-     * Specifies the time (UTC) when the snapshot was taken.
+     * Specifies the time when the snapshot was taken, in Universal
+     * Coordinated Time (UTC).
      */
     private java.util.Date instanceCreateTime;
 
@@ -127,6 +129,12 @@ public class DBSnapshot implements Serializable, Cloneable {
      * The region that the DB snapshot was created in or copied from.
      */
     private String sourceRegion;
+
+    /**
+     * The DB snapshot Arn that the DB snapshot was copied from. It only has
+     * value in case of cross customer or cross region copy.
+     */
+    private String sourceDBSnapshotIdentifier;
 
     /**
      * Specifies the storage type associated with DB Snapshot.
@@ -223,29 +231,35 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
-     * Provides the time (UTC) when the snapshot was taken.
+     * Provides the time when the snapshot was taken, in Universal
+     * Coordinated Time (UTC).
      *
-     * @return Provides the time (UTC) when the snapshot was taken.
+     * @return Provides the time when the snapshot was taken, in Universal
+     *         Coordinated Time (UTC).
      */
     public java.util.Date getSnapshotCreateTime() {
         return snapshotCreateTime;
     }
     
     /**
-     * Provides the time (UTC) when the snapshot was taken.
+     * Provides the time when the snapshot was taken, in Universal
+     * Coordinated Time (UTC).
      *
-     * @param snapshotCreateTime Provides the time (UTC) when the snapshot was taken.
+     * @param snapshotCreateTime Provides the time when the snapshot was taken, in Universal
+     *         Coordinated Time (UTC).
      */
     public void setSnapshotCreateTime(java.util.Date snapshotCreateTime) {
         this.snapshotCreateTime = snapshotCreateTime;
     }
     
     /**
-     * Provides the time (UTC) when the snapshot was taken.
+     * Provides the time when the snapshot was taken, in Universal
+     * Coordinated Time (UTC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotCreateTime Provides the time (UTC) when the snapshot was taken.
+     * @param snapshotCreateTime Provides the time when the snapshot was taken, in Universal
+     *         Coordinated Time (UTC).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -433,29 +447,29 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
-     * Provides the Vpc Id associated with the DB snapshot.
+     * Provides the VPC ID associated with the DB snapshot.
      *
-     * @return Provides the Vpc Id associated with the DB snapshot.
+     * @return Provides the VPC ID associated with the DB snapshot.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Provides the Vpc Id associated with the DB snapshot.
+     * Provides the VPC ID associated with the DB snapshot.
      *
-     * @param vpcId Provides the Vpc Id associated with the DB snapshot.
+     * @param vpcId Provides the VPC ID associated with the DB snapshot.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Provides the Vpc Id associated with the DB snapshot.
+     * Provides the VPC ID associated with the DB snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId Provides the Vpc Id associated with the DB snapshot.
+     * @param vpcId Provides the VPC ID associated with the DB snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -466,29 +480,35 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies the time (UTC) when the snapshot was taken.
+     * Specifies the time when the snapshot was taken, in Universal
+     * Coordinated Time (UTC).
      *
-     * @return Specifies the time (UTC) when the snapshot was taken.
+     * @return Specifies the time when the snapshot was taken, in Universal
+     *         Coordinated Time (UTC).
      */
     public java.util.Date getInstanceCreateTime() {
         return instanceCreateTime;
     }
     
     /**
-     * Specifies the time (UTC) when the snapshot was taken.
+     * Specifies the time when the snapshot was taken, in Universal
+     * Coordinated Time (UTC).
      *
-     * @param instanceCreateTime Specifies the time (UTC) when the snapshot was taken.
+     * @param instanceCreateTime Specifies the time when the snapshot was taken, in Universal
+     *         Coordinated Time (UTC).
      */
     public void setInstanceCreateTime(java.util.Date instanceCreateTime) {
         this.instanceCreateTime = instanceCreateTime;
     }
     
     /**
-     * Specifies the time (UTC) when the snapshot was taken.
+     * Specifies the time when the snapshot was taken, in Universal
+     * Coordinated Time (UTC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceCreateTime Specifies the time (UTC) when the snapshot was taken.
+     * @param instanceCreateTime Specifies the time when the snapshot was taken, in Universal
+     *         Coordinated Time (UTC).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -769,6 +789,45 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * The DB snapshot Arn that the DB snapshot was copied from. It only has
+     * value in case of cross customer or cross region copy.
+     *
+     * @return The DB snapshot Arn that the DB snapshot was copied from. It only has
+     *         value in case of cross customer or cross region copy.
+     */
+    public String getSourceDBSnapshotIdentifier() {
+        return sourceDBSnapshotIdentifier;
+    }
+    
+    /**
+     * The DB snapshot Arn that the DB snapshot was copied from. It only has
+     * value in case of cross customer or cross region copy.
+     *
+     * @param sourceDBSnapshotIdentifier The DB snapshot Arn that the DB snapshot was copied from. It only has
+     *         value in case of cross customer or cross region copy.
+     */
+    public void setSourceDBSnapshotIdentifier(String sourceDBSnapshotIdentifier) {
+        this.sourceDBSnapshotIdentifier = sourceDBSnapshotIdentifier;
+    }
+    
+    /**
+     * The DB snapshot Arn that the DB snapshot was copied from. It only has
+     * value in case of cross customer or cross region copy.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sourceDBSnapshotIdentifier The DB snapshot Arn that the DB snapshot was copied from. It only has
+     *         value in case of cross customer or cross region copy.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBSnapshot withSourceDBSnapshotIdentifier(String sourceDBSnapshotIdentifier) {
+        this.sourceDBSnapshotIdentifier = sourceDBSnapshotIdentifier;
+        return this;
+    }
+
+    /**
      * Specifies the storage type associated with DB Snapshot.
      *
      * @return Specifies the storage type associated with DB Snapshot.
@@ -951,6 +1010,7 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
         if (getPercentProgress() != null) sb.append("PercentProgress: " + getPercentProgress() + ",");
         if (getSourceRegion() != null) sb.append("SourceRegion: " + getSourceRegion() + ",");
+        if (getSourceDBSnapshotIdentifier() != null) sb.append("SourceDBSnapshotIdentifier: " + getSourceDBSnapshotIdentifier() + ",");
         if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
         if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
         if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ",");
@@ -982,6 +1042,7 @@ public class DBSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getPercentProgress() == null) ? 0 : getPercentProgress().hashCode()); 
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode()); 
+        hashCode = prime * hashCode + ((getSourceDBSnapshotIdentifier() == null) ? 0 : getSourceDBSnapshotIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
         hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
@@ -1033,6 +1094,8 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (other.getPercentProgress() != null && other.getPercentProgress().equals(this.getPercentProgress()) == false) return false; 
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null) return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false) return false; 
+        if (other.getSourceDBSnapshotIdentifier() == null ^ this.getSourceDBSnapshotIdentifier() == null) return false;
+        if (other.getSourceDBSnapshotIdentifier() != null && other.getSourceDBSnapshotIdentifier().equals(this.getSourceDBSnapshotIdentifier()) == false) return false; 
         if (other.getStorageType() == null ^ this.getStorageType() == null) return false;
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
         if (other.getTdeCredentialArn() == null ^ this.getTdeCredentialArn() == null) return false;

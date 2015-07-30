@@ -154,7 +154,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      */
     public AmazonCodeDeployClient() {
         this(new DefaultAWSCredentialsProviderChain(),
-                new ClientConfiguration());
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
@@ -195,7 +195,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AmazonCodeDeployClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, new ClientConfiguration());
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .defaultConfig());
     }
 
     /**
@@ -234,7 +235,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AmazonCodeDeployClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, new ClientConfiguration());
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
@@ -281,8 +283,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
             AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(adjustClientConfiguration(clientConfiguration),
-                requestMetricCollector);
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -527,12 +528,6 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
         requestHandler2s
                 .addAll(chainFactory
                         .newRequestHandler2Chain("/com/amazonaws/services/codedeploy/request.handler2s"));
-    }
-
-    private static ClientConfiguration adjustClientConfiguration(
-            ClientConfiguration orig) {
-        ClientConfiguration config = orig;
-        return config;
     }
 
     /**

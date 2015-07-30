@@ -53,14 +53,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     private java.util.Map<String,String> attributes;
 
     /**
-     * The stack IAM role, which allows AWS OpsWorks to work with AWS
-     * resources on your behalf. You must set this parameter to the ARN for
-     * an existing IAM role. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note> <p>There is no default value. You must set
-     * this parameter to a valid service role ARN or the action will fail.
-     * You can specify the stack's current service role ARN, if you prefer,
-     * but you must do so explicitly. </note>
+     * Do not use this parameter. You cannot update a stack's service role.
      */
     private String serviceRoleArn;
 
@@ -75,12 +68,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * The stack's operating system, which must be set to one of the
      * following: <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     * to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     * specify the custom AMI you want to use when you create instances. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</li> </ul> <p>The default option is the stack's
      * current operating system. For more information on the supported
@@ -383,71 +376,29 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
   }
   
     /**
-     * The stack IAM role, which allows AWS OpsWorks to work with AWS
-     * resources on your behalf. You must set this parameter to the ARN for
-     * an existing IAM role. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note> <p>There is no default value. You must set
-     * this parameter to a valid service role ARN or the action will fail.
-     * You can specify the stack's current service role ARN, if you prefer,
-     * but you must do so explicitly. </note>
+     * Do not use this parameter. You cannot update a stack's service role.
      *
-     * @return The stack IAM role, which allows AWS OpsWorks to work with AWS
-     *         resources on your behalf. You must set this parameter to the ARN for
-     *         an existing IAM role. For more information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>. <note> <p>There is no default value. You must set
-     *         this parameter to a valid service role ARN or the action will fail.
-     *         You can specify the stack's current service role ARN, if you prefer,
-     *         but you must do so explicitly. </note>
+     * @return Do not use this parameter. You cannot update a stack's service role.
      */
     public String getServiceRoleArn() {
         return serviceRoleArn;
     }
     
     /**
-     * The stack IAM role, which allows AWS OpsWorks to work with AWS
-     * resources on your behalf. You must set this parameter to the ARN for
-     * an existing IAM role. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note> <p>There is no default value. You must set
-     * this parameter to a valid service role ARN or the action will fail.
-     * You can specify the stack's current service role ARN, if you prefer,
-     * but you must do so explicitly. </note>
+     * Do not use this parameter. You cannot update a stack's service role.
      *
-     * @param serviceRoleArn The stack IAM role, which allows AWS OpsWorks to work with AWS
-     *         resources on your behalf. You must set this parameter to the ARN for
-     *         an existing IAM role. For more information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>. <note> <p>There is no default value. You must set
-     *         this parameter to a valid service role ARN or the action will fail.
-     *         You can specify the stack's current service role ARN, if you prefer,
-     *         but you must do so explicitly. </note>
+     * @param serviceRoleArn Do not use this parameter. You cannot update a stack's service role.
      */
     public void setServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
     }
     
     /**
-     * The stack IAM role, which allows AWS OpsWorks to work with AWS
-     * resources on your behalf. You must set this parameter to the ARN for
-     * an existing IAM role. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note> <p>There is no default value. You must set
-     * this parameter to a valid service role ARN or the action will fail.
-     * You can specify the stack's current service role ARN, if you prefer,
-     * but you must do so explicitly. </note>
+     * Do not use this parameter. You cannot update a stack's service role.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param serviceRoleArn The stack IAM role, which allows AWS OpsWorks to work with AWS
-     *         resources on your behalf. You must set this parameter to the ARN for
-     *         an existing IAM role. For more information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>. <note> <p>There is no default value. You must set
-     *         this parameter to a valid service role ARN or the action will fail.
-     *         You can specify the stack's current service role ARN, if you prefer,
-     *         but you must do so explicitly. </note>
+     * @param serviceRoleArn Do not use this parameter. You cannot update a stack's service role.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -511,12 +462,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * The stack's operating system, which must be set to one of the
      * following: <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     * to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     * specify the custom AMI you want to use when you create instances. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</li> </ul> <p>The default option is the stack's
      * current operating system. For more information on the supported
@@ -526,12 +477,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *
      * @return The stack's operating system, which must be set to one of the
      *         following: <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     *         custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     *         to use when you create instances. For more information on how to use
-     *         custom AMIs with OpsWorks, see <a
+     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     *         specify the custom AMI you want to use when you create instances. For
+     *         more information on how to use custom AMIs with OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.</li> </ul> <p>The default option is the stack's
      *         current operating system. For more information on the supported
@@ -546,12 +497,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * The stack's operating system, which must be set to one of the
      * following: <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     * to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     * specify the custom AMI you want to use when you create instances. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</li> </ul> <p>The default option is the stack's
      * current operating system. For more information on the supported
@@ -561,12 +512,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param defaultOs The stack's operating system, which must be set to one of the
      *         following: <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     *         custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     *         to use when you create instances. For more information on how to use
-     *         custom AMIs with OpsWorks, see <a
+     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     *         specify the custom AMI you want to use when you create instances. For
+     *         more information on how to use custom AMIs with OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.</li> </ul> <p>The default option is the stack's
      *         current operating system. For more information on the supported
@@ -581,12 +532,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * The stack's operating system, which must be set to one of the
      * following: <ul> <li>A supported Linux operating system: An Amazon
-     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     * 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     * custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     * to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a
+     * Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     * Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     * <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     * 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     * specify the custom AMI you want to use when you create instances. For
+     * more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</li> </ul> <p>The default option is the stack's
      * current operating system. For more information on the supported
@@ -598,12 +549,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param defaultOs The stack's operating system, which must be set to one of the
      *         following: <ul> <li>A supported Linux operating system: An Amazon
-     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Ubuntu
-     *         12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A
-     *         custom AMI: <code>Custom</code>. You specify the custom AMI you want
-     *         to use when you create instances. For more information on how to use
-     *         custom AMIs with OpsWorks, see <a
+     *         Linux version, such as <code>Amazon Linux 2015.03</code>, <code>Red
+     *         Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>, or
+     *         <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
+     *         2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You
+     *         specify the custom AMI you want to use when you create instances. For
+     *         more information on how to use custom AMIs with OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.</li> </ul> <p>The default option is the stack's
      *         current operating system. For more information on the supported

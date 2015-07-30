@@ -11453,9 +11453,7 @@
     "serviceClientHoldInputStream" : false,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "customExceptionUnmarshallerImpl" : null,
-    "customMaxConnections" : null,
-    "customRetryPolicy" : null,
-    "customSocketTimeout" : null,
+    "customClientConfiguration" : null,
     "customResponseMetadataClassName" : null,
     "skipInterfaceAdditions" : false,
     "customServiceNameForRequest" : null,
@@ -11475,5 +11473,6 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null
-  }
+  },
+  "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
 }

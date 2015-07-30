@@ -37,7 +37,7 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implem
      * the default DB security group.</note> <p> Constraints: <ul> <li>Must
      * be 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> <li>Must not be "Default"</li> <li>May not contain
+     * hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain
      * spaces</li> </ul>
      */
     private String dBSecurityGroupName;
@@ -58,7 +58,7 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implem
      * <p> Constraints: <ul> <li>Must be 1 to 255 alphanumeric
      * characters</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> <li>Must not
-     * be "Default"</li> <li>May not contain spaces</li> </ul>
+     * be "Default"</li> <li>Cannot contain spaces</li> </ul>
      */
     public DeleteDBSecurityGroupRequest(String dBSecurityGroupName) {
         setDBSecurityGroupName(dBSecurityGroupName);
@@ -69,14 +69,14 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implem
      * the default DB security group.</note> <p> Constraints: <ul> <li>Must
      * be 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> <li>Must not be "Default"</li> <li>May not contain
+     * hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain
      * spaces</li> </ul>
      *
      * @return The name of the DB security group to delete. <note>You cannot delete
      *         the default DB security group.</note> <p> Constraints: <ul> <li>Must
      *         be 1 to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> <li>Must not be "Default"</li> <li>May not contain
+     *         hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain
      *         spaces</li> </ul>
      */
     public String getDBSecurityGroupName() {
@@ -88,14 +88,14 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implem
      * the default DB security group.</note> <p> Constraints: <ul> <li>Must
      * be 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> <li>Must not be "Default"</li> <li>May not contain
+     * hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain
      * spaces</li> </ul>
      *
      * @param dBSecurityGroupName The name of the DB security group to delete. <note>You cannot delete
      *         the default DB security group.</note> <p> Constraints: <ul> <li>Must
      *         be 1 to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> <li>Must not be "Default"</li> <li>May not contain
+     *         hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain
      *         spaces</li> </ul>
      */
     public void setDBSecurityGroupName(String dBSecurityGroupName) {
@@ -107,7 +107,7 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implem
      * the default DB security group.</note> <p> Constraints: <ul> <li>Must
      * be 1 to 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> <li>Must not be "Default"</li> <li>May not contain
+     * hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain
      * spaces</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -116,7 +116,7 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implem
      *         the default DB security group.</note> <p> Constraints: <ul> <li>Must
      *         be 1 to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> <li>Must not be "Default"</li> <li>May not contain
+     *         hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain
      *         spaces</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained

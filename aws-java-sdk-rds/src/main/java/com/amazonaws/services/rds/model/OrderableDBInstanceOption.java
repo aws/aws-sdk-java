@@ -38,7 +38,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     private String engineVersion;
 
     /**
-     * The DB instance Class for the orderable DB instance
+     * The DB instance class for the orderable DB instance.
      */
     private String dBInstanceClass;
 
@@ -48,7 +48,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     private String licenseModel;
 
     /**
-     * A list of availability zones for the orderable DB instance.
+     * A list of Availability Zones for the orderable DB instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone> availabilityZones;
 
@@ -74,7 +74,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     private Boolean supportsStorageEncryption;
 
     /**
-     * The storage type for this orderable DB instance.
+     * Indicates the storage type for this orderable DB instance.
      */
     private String storageType;
 
@@ -151,29 +151,29 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
-     * The DB instance Class for the orderable DB instance
+     * The DB instance class for the orderable DB instance.
      *
-     * @return The DB instance Class for the orderable DB instance
+     * @return The DB instance class for the orderable DB instance.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
     }
     
     /**
-     * The DB instance Class for the orderable DB instance
+     * The DB instance class for the orderable DB instance.
      *
-     * @param dBInstanceClass The DB instance Class for the orderable DB instance
+     * @param dBInstanceClass The DB instance class for the orderable DB instance.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
     
     /**
-     * The DB instance Class for the orderable DB instance
+     * The DB instance class for the orderable DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The DB instance Class for the orderable DB instance
+     * @param dBInstanceClass The DB instance class for the orderable DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -217,9 +217,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
-     * A list of availability zones for the orderable DB instance.
+     * A list of Availability Zones for the orderable DB instance.
      *
-     * @return A list of availability zones for the orderable DB instance.
+     * @return A list of Availability Zones for the orderable DB instance.
      */
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
         if (availabilityZones == null) {
@@ -230,9 +230,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
     
     /**
-     * A list of availability zones for the orderable DB instance.
+     * A list of Availability Zones for the orderable DB instance.
      *
-     * @param availabilityZones A list of availability zones for the orderable DB instance.
+     * @param availabilityZones A list of Availability Zones for the orderable DB instance.
      */
     public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
         if (availabilityZones == null) {
@@ -245,7 +245,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
     
     /**
-     * A list of availability zones for the orderable DB instance.
+     * A list of Availability Zones for the orderable DB instance.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
@@ -254,7 +254,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of availability zones for the orderable DB instance.
+     * @param availabilityZones A list of Availability Zones for the orderable DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -268,11 +268,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
     
     /**
-     * A list of availability zones for the orderable DB instance.
+     * A list of Availability Zones for the orderable DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of availability zones for the orderable DB instance.
+     * @param availabilityZones A list of Availability Zones for the orderable DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -466,29 +466,29 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
-     * The storage type for this orderable DB instance.
+     * Indicates the storage type for this orderable DB instance.
      *
-     * @return The storage type for this orderable DB instance.
+     * @return Indicates the storage type for this orderable DB instance.
      */
     public String getStorageType() {
         return storageType;
     }
     
     /**
-     * The storage type for this orderable DB instance.
+     * Indicates the storage type for this orderable DB instance.
      *
-     * @param storageType The storage type for this orderable DB instance.
+     * @param storageType Indicates the storage type for this orderable DB instance.
      */
     public void setStorageType(String storageType) {
         this.storageType = storageType;
     }
     
     /**
-     * The storage type for this orderable DB instance.
+     * Indicates the storage type for this orderable DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storageType The storage type for this orderable DB instance.
+     * @param storageType Indicates the storage type for this orderable DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

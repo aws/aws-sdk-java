@@ -45,7 +45,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
 
     /**
      * Filters the available log files for files written since the specified
-     * date, in POSIX timestamp format.
+     * date, in POSIX timestamp format with milliseconds.
      */
     private Long fileLastWritten;
 
@@ -173,10 +173,10 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
 
     /**
      * Filters the available log files for files written since the specified
-     * date, in POSIX timestamp format.
+     * date, in POSIX timestamp format with milliseconds.
      *
      * @return Filters the available log files for files written since the specified
-     *         date, in POSIX timestamp format.
+     *         date, in POSIX timestamp format with milliseconds.
      */
     public Long getFileLastWritten() {
         return fileLastWritten;
@@ -184,10 +184,10 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
     
     /**
      * Filters the available log files for files written since the specified
-     * date, in POSIX timestamp format.
+     * date, in POSIX timestamp format with milliseconds.
      *
      * @param fileLastWritten Filters the available log files for files written since the specified
-     *         date, in POSIX timestamp format.
+     *         date, in POSIX timestamp format with milliseconds.
      */
     public void setFileLastWritten(Long fileLastWritten) {
         this.fileLastWritten = fileLastWritten;
@@ -195,12 +195,12 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
     
     /**
      * Filters the available log files for files written since the specified
-     * date, in POSIX timestamp format.
+     * date, in POSIX timestamp format with milliseconds.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fileLastWritten Filters the available log files for files written since the specified
-     *         date, in POSIX timestamp format.
+     *         date, in POSIX timestamp format with milliseconds.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -85,6 +85,9 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
             if (updateLayerRequest.getCustomInstanceProfileArn() != null) {
                 jsonWriter.key("CustomInstanceProfileArn").value(updateLayerRequest.getCustomInstanceProfileArn());
             }
+            if (updateLayerRequest.getCustomJson() != null) {
+                jsonWriter.key("CustomJson").value(updateLayerRequest.getCustomJson());
+            }
 
             com.amazonaws.internal.ListWithAutoConstructFlag<String> customSecurityGroupIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(updateLayerRequest.getCustomSecurityGroupIds());
             if (customSecurityGroupIdsList != null && !(customSecurityGroupIdsList.isAutoConstruct() && customSecurityGroupIdsList.isEmpty())) {

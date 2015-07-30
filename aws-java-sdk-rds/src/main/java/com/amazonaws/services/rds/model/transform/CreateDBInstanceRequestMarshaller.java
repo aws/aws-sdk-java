@@ -146,6 +146,9 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
 
             tagsListIndex++;
         }
+        if (createDBInstanceRequest.getDBClusterIdentifier() != null) {
+            request.addParameter("DBClusterIdentifier", StringUtils.fromString(createDBInstanceRequest.getDBClusterIdentifier()));
+        }
         if (createDBInstanceRequest.getStorageType() != null) {
             request.addParameter("StorageType", StringUtils.fromString(createDBInstanceRequest.getStorageType()));
         }

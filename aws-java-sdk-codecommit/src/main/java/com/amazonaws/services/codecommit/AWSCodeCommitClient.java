@@ -89,7 +89,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      */
     public AWSCodeCommitClient() {
         this(new DefaultAWSCredentialsProviderChain(),
-                new ClientConfiguration());
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
@@ -130,7 +130,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AWSCodeCommitClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, new ClientConfiguration());
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .defaultConfig());
     }
 
     /**
@@ -169,7 +170,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AWSCodeCommitClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, new ClientConfiguration());
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
@@ -214,8 +216,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
     public AWSCodeCommitClient(AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(adjustClientConfiguration(clientConfiguration),
-                requestMetricCollector);
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -324,12 +325,6 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         requestHandler2s
                 .addAll(chainFactory
                         .newRequestHandler2Chain("/com/amazonaws/services/codecommit/request.handler2s"));
-    }
-
-    private static ClientConfiguration adjustClientConfiguration(
-            ClientConfiguration orig) {
-        ClientConfiguration config = orig;
-        return config;
     }
 
     /**

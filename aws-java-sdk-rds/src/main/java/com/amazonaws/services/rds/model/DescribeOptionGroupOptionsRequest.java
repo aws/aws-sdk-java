@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * A required parameter. Options available for the given Engine name will
+     * A required parameter. Options available for the given engine name will
      * be described.
      */
     private String engineName;
@@ -50,7 +50,7 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest i
      * records exist than the specified <code>MaxRecords</code> value, a
      * pagination token called a marker is included in the response so that
      * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: minimum 20, maximum 100
+     * <p>Constraints: Minimum 20, maximum 100.
      */
     private Integer maxRecords;
 
@@ -62,10 +62,10 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest i
     private String marker;
 
     /**
-     * A required parameter. Options available for the given Engine name will
+     * A required parameter. Options available for the given engine name will
      * be described.
      *
-     * @return A required parameter. Options available for the given Engine name will
+     * @return A required parameter. Options available for the given engine name will
      *         be described.
      */
     public String getEngineName() {
@@ -73,10 +73,10 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A required parameter. Options available for the given Engine name will
+     * A required parameter. Options available for the given engine name will
      * be described.
      *
-     * @param engineName A required parameter. Options available for the given Engine name will
+     * @param engineName A required parameter. Options available for the given engine name will
      *         be described.
      */
     public void setEngineName(String engineName) {
@@ -84,12 +84,12 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest i
     }
     
     /**
-     * A required parameter. Options available for the given Engine name will
+     * A required parameter. Options available for the given engine name will
      * be described.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineName A required parameter. Options available for the given Engine name will
+     * @param engineName A required parameter. Options available for the given engine name will
      *         be described.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -217,13 +217,13 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest i
      * records exist than the specified <code>MaxRecords</code> value, a
      * pagination token called a marker is included in the response so that
      * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: minimum 20, maximum 100
+     * <p>Constraints: Minimum 20, maximum 100.
      *
      * @return The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         pagination token called a marker is included in the response so that
      *         the remaining results can be retrieved. <p>Default: 100
-     *         <p>Constraints: minimum 20, maximum 100
+     *         <p>Constraints: Minimum 20, maximum 100.
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -234,13 +234,13 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest i
      * records exist than the specified <code>MaxRecords</code> value, a
      * pagination token called a marker is included in the response so that
      * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: minimum 20, maximum 100
+     * <p>Constraints: Minimum 20, maximum 100.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         pagination token called a marker is included in the response so that
      *         the remaining results can be retrieved. <p>Default: 100
-     *         <p>Constraints: minimum 20, maximum 100
+     *         <p>Constraints: Minimum 20, maximum 100.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -251,7 +251,7 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest i
      * records exist than the specified <code>MaxRecords</code> value, a
      * pagination token called a marker is included in the response so that
      * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: minimum 20, maximum 100
+     * <p>Constraints: Minimum 20, maximum 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -259,7 +259,7 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest i
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         pagination token called a marker is included in the response so that
      *         the remaining results can be retrieved. <p>Default: 100
-     *         <p>Constraints: minimum 20, maximum 100
+     *         <p>Constraints: Minimum 20, maximum 100.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

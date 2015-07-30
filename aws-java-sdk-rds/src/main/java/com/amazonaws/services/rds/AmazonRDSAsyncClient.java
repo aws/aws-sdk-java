@@ -37,7 +37,7 @@ import com.amazonaws.services.rds.model.*;
  * Amazon Relational Database Service <p>
  * Amazon Relational Database Service (Amazon RDS) is a web service that
  * makes it easier to set up, operate, and scale a relational database in
- * the cloud. It provides cost-efficient, resizable capacity for an
+ * the cloud. It provides cost-efficient, resizeable capacity for an
  * industry-standard relational database and manages common database
  * administration tasks, freeing up developers to focus on what makes
  * their applications and businesses unique.
@@ -58,7 +58,7 @@ import com.amazonaws.services.rds.model.*;
  * This is an interface reference for Amazon RDS. It contains
  * documentation for a programming or command line interface you can use
  * to manage Amazon RDS. Note that Amazon RDS is asynchronous, which
- * means that some interfaces may require techniques such as polling or
+ * means that some interfaces might require techniques such as polling or
  * callback functions to determine when a command has been applied. In
  * this reference, the parameter descriptions indicate whether a command
  * is applied immediately, on the next instance reboot, or during the
@@ -301,6 +301,78 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             
     /**
      * <p>
+     * Copies the specified option group.
+     * </p>
+     *
+     * @param copyOptionGroupRequest Container for the necessary parameters
+     *           to execute the CopyOptionGroup operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CopyOptionGroup service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<OptionGroup> copyOptionGroupAsync(final CopyOptionGroupRequest copyOptionGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<OptionGroup>() {
+            public OptionGroup call() throws Exception {
+                return copyOptionGroup(copyOptionGroupRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Copies the specified option group.
+     * </p>
+     *
+     * @param copyOptionGroupRequest Container for the necessary parameters
+     *           to execute the CopyOptionGroup operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CopyOptionGroup service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<OptionGroup> copyOptionGroupAsync(
+            final CopyOptionGroupRequest copyOptionGroupRequest,
+            final AsyncHandler<CopyOptionGroupRequest, OptionGroup> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<OptionGroup>() {
+            public OptionGroup call() throws Exception {
+              OptionGroup result;
+                try {
+                result = copyOptionGroup(copyOptionGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(copyOptionGroupRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Deletes a DB subnet group.
      * </p>
      * <p>
@@ -381,84 +453,16 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Copies the specified option group.
-     * </p>
-     *
-     * @param copyOptionGroupRequest Container for the necessary parameters
-     *           to execute the CopyOptionGroup operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CopyOptionGroup service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<OptionGroup> copyOptionGroupAsync(final CopyOptionGroupRequest copyOptionGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<OptionGroup>() {
-            public OptionGroup call() throws Exception {
-                return copyOptionGroup(copyOptionGroupRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Copies the specified option group.
-     * </p>
-     *
-     * @param copyOptionGroupRequest Container for the necessary parameters
-     *           to execute the CopyOptionGroup operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CopyOptionGroup service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<OptionGroup> copyOptionGroupAsync(
-            final CopyOptionGroupRequest copyOptionGroupRequest,
-            final AsyncHandler<CopyOptionGroupRequest, OptionGroup> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<OptionGroup>() {
-            public OptionGroup call() throws Exception {
-              OptionGroup result;
-                try {
-                result = copyOptionGroup(copyOptionGroupRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(copyOptionGroupRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Restores a DB instance to an arbitrary point-in-time. Users can
      * restore to any point in time before the LatestRestorableTime for up to
-     * BackupRetentionPeriod days. The target database is created from the
-     * source database with the same configuration as the original database
-     * except that the DB instance is created with the default DB security
-     * group.
+     * BackupRetentionPeriod days. The target database is created with the
+     * most of original configuration, but in a system chosen availability
+     * zone with the default security group, the default subnet group, and
+     * the default DB parameter group. By default, the new DB instance is
+     * created as a single-AZ deployment except when the instance is a SQL
+     * Server instance that has an option group that is associated with
+     * mirroring; in this case, the instance becomes a mirrored deployment
+     * and not a single-AZ deployment.
      * </p>
      *
      * @param restoreDBInstanceToPointInTimeRequest Container for the
@@ -491,10 +495,14 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * <p>
      * Restores a DB instance to an arbitrary point-in-time. Users can
      * restore to any point in time before the LatestRestorableTime for up to
-     * BackupRetentionPeriod days. The target database is created from the
-     * source database with the same configuration as the original database
-     * except that the DB instance is created with the default DB security
-     * group.
+     * BackupRetentionPeriod days. The target database is created with the
+     * most of original configuration, but in a system chosen availability
+     * zone with the default security group, the default subnet group, and
+     * the default DB parameter group. By default, the new DB instance is
+     * created as a single-AZ deployment except when the instance is a SQL
+     * Server instance that has an option group that is associated with
+     * mirroring; in this case, the instance becomes a mirrored deployment
+     * and not a single-AZ deployment.
      * </p>
      *
      * @param restoreDBInstanceToPointInTimeRequest Container for the
@@ -532,80 +540,6 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             throw ex;
               }
               asyncHandler.onSuccess(restoreDBInstanceToPointInTimeRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
-     * "available" state.
-     * </p>
-     *
-     * @param copyDBSnapshotRequest Container for the necessary parameters to
-     *           execute the CopyDBSnapshot operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CopyDBSnapshot service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSnapshot> copyDBSnapshotAsync(final CopyDBSnapshotRequest copyDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSnapshot>() {
-            public DBSnapshot call() throws Exception {
-                return copyDBSnapshot(copyDBSnapshotRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
-     * "available" state.
-     * </p>
-     *
-     * @param copyDBSnapshotRequest Container for the necessary parameters to
-     *           execute the CopyDBSnapshot operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CopyDBSnapshot service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSnapshot> copyDBSnapshotAsync(
-            final CopyDBSnapshotRequest copyDBSnapshotRequest,
-            final AsyncHandler<CopyDBSnapshotRequest, DBSnapshot> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSnapshot>() {
-            public DBSnapshot call() throws Exception {
-              DBSnapshot result;
-                try {
-                result = copyDBSnapshot(copyDBSnapshotRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(copyDBSnapshotRequest, result);
                  return result;
         }
     });
@@ -691,14 +625,15 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Creates a new DB instance.
+     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
+     * "available" state.
      * </p>
      *
-     * @param createDBInstanceRequest Container for the necessary parameters
-     *           to execute the CreateDBInstance operation on AmazonRDS.
+     * @param copyDBSnapshotRequest Container for the necessary parameters to
+     *           execute the CopyDBSnapshot operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         CreateDBInstance service method, as returned by AmazonRDS.
+     *         CopyDBSnapshot service method, as returned by AmazonRDS.
      * 
      *
      * @throws AmazonClientException
@@ -709,29 +644,30 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBInstance> createDBInstanceAsync(final CreateDBInstanceRequest createDBInstanceRequest) 
+    public Future<DBSnapshot> copyDBSnapshotAsync(final CopyDBSnapshotRequest copyDBSnapshotRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-                return createDBInstance(createDBInstanceRequest);
+        return executorService.submit(new Callable<DBSnapshot>() {
+            public DBSnapshot call() throws Exception {
+                return copyDBSnapshot(copyDBSnapshotRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Creates a new DB instance.
+     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
+     * "available" state.
      * </p>
      *
-     * @param createDBInstanceRequest Container for the necessary parameters
-     *           to execute the CreateDBInstance operation on AmazonRDS.
+     * @param copyDBSnapshotRequest Container for the necessary parameters to
+     *           execute the CopyDBSnapshot operation on AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         CreateDBInstance service method, as returned by AmazonRDS.
+     *         CopyDBSnapshot service method, as returned by AmazonRDS.
      * 
      *
      * @throws AmazonClientException
@@ -742,20 +678,92 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBInstance> createDBInstanceAsync(
-            final CreateDBInstanceRequest createDBInstanceRequest,
-            final AsyncHandler<CreateDBInstanceRequest, DBInstance> asyncHandler)
+    public Future<DBSnapshot> copyDBSnapshotAsync(
+            final CopyDBSnapshotRequest copyDBSnapshotRequest,
+            final AsyncHandler<CopyDBSnapshotRequest, DBSnapshot> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-              DBInstance result;
+        return executorService.submit(new Callable<DBSnapshot>() {
+            public DBSnapshot call() throws Exception {
+              DBSnapshot result;
                 try {
-                result = createDBInstance(createDBInstanceRequest);
+                result = copyDBSnapshot(copyDBSnapshotRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(createDBInstanceRequest, result);
+              asyncHandler.onSuccess(copyDBSnapshotRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Describes the available option groups.
+     * </p>
+     *
+     * @param describeOptionGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroups operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeOptionGroups service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeOptionGroupsResult> describeOptionGroupsAsync(final DescribeOptionGroupsRequest describeOptionGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeOptionGroupsResult>() {
+            public DescribeOptionGroupsResult call() throws Exception {
+                return describeOptionGroups(describeOptionGroupsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes the available option groups.
+     * </p>
+     *
+     * @param describeOptionGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroups operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeOptionGroups service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeOptionGroupsResult> describeOptionGroupsAsync(
+            final DescribeOptionGroupsRequest describeOptionGroupsRequest,
+            final AsyncHandler<DescribeOptionGroupsRequest, DescribeOptionGroupsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeOptionGroupsResult>() {
+            public DescribeOptionGroupsResult call() throws Exception {
+              DescribeOptionGroupsResult result;
+                try {
+                result = describeOptionGroups(describeOptionGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeOptionGroupsRequest, result);
                  return result;
         }
     });
@@ -839,14 +847,14 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Describes the available option groups.
+     * Creates a new DB instance.
      * </p>
      *
-     * @param describeOptionGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroups operation on AmazonRDS.
+     * @param createDBInstanceRequest Container for the necessary parameters
+     *           to execute the CreateDBInstance operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeOptionGroups service method, as returned by AmazonRDS.
+     *         CreateDBInstance service method, as returned by AmazonRDS.
      * 
      *
      * @throws AmazonClientException
@@ -857,29 +865,29 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeOptionGroupsResult> describeOptionGroupsAsync(final DescribeOptionGroupsRequest describeOptionGroupsRequest) 
+    public Future<DBInstance> createDBInstanceAsync(final CreateDBInstanceRequest createDBInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeOptionGroupsResult>() {
-            public DescribeOptionGroupsResult call() throws Exception {
-                return describeOptionGroups(describeOptionGroupsRequest);
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+                return createDBInstance(createDBInstanceRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Describes the available option groups.
+     * Creates a new DB instance.
      * </p>
      *
-     * @param describeOptionGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroups operation on AmazonRDS.
+     * @param createDBInstanceRequest Container for the necessary parameters
+     *           to execute the CreateDBInstance operation on AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeOptionGroups service method, as returned by AmazonRDS.
+     *         CreateDBInstance service method, as returned by AmazonRDS.
      * 
      *
      * @throws AmazonClientException
@@ -890,20 +898,20 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeOptionGroupsResult> describeOptionGroupsAsync(
-            final DescribeOptionGroupsRequest describeOptionGroupsRequest,
-            final AsyncHandler<DescribeOptionGroupsRequest, DescribeOptionGroupsResult> asyncHandler)
+    public Future<DBInstance> createDBInstanceAsync(
+            final CreateDBInstanceRequest createDBInstanceRequest,
+            final AsyncHandler<CreateDBInstanceRequest, DBInstance> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeOptionGroupsResult>() {
-            public DescribeOptionGroupsResult call() throws Exception {
-              DescribeOptionGroupsResult result;
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+              DBInstance result;
                 try {
-                result = describeOptionGroups(describeOptionGroupsRequest);
+                result = createDBInstance(createDBInstanceRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(describeOptionGroupsRequest, result);
+              asyncHandler.onSuccess(createDBInstanceRequest, result);
                  return result;
         }
     });
@@ -1145,6 +1153,98 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
+     * Returns a list of <code>DBClusterParameterGroup</code> descriptions.
+     * If a <code>DBClusterParameterGroupName</code> parameter is specified,
+     * the list will contain only the description of the specified DB cluster
+     * parameter group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClusterParameterGroupsRequest Container for the
+     *           necessary parameters to execute the DescribeDBClusterParameterGroups
+     *           operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBClusterParameterGroups service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBClusterParameterGroupsResult> describeDBClusterParameterGroupsAsync(final DescribeDBClusterParameterGroupsRequest describeDBClusterParameterGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBClusterParameterGroupsResult>() {
+            public DescribeDBClusterParameterGroupsResult call() throws Exception {
+                return describeDBClusterParameterGroups(describeDBClusterParameterGroupsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns a list of <code>DBClusterParameterGroup</code> descriptions.
+     * If a <code>DBClusterParameterGroupName</code> parameter is specified,
+     * the list will contain only the description of the specified DB cluster
+     * parameter group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClusterParameterGroupsRequest Container for the
+     *           necessary parameters to execute the DescribeDBClusterParameterGroups
+     *           operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBClusterParameterGroups service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBClusterParameterGroupsResult> describeDBClusterParameterGroupsAsync(
+            final DescribeDBClusterParameterGroupsRequest describeDBClusterParameterGroupsRequest,
+            final AsyncHandler<DescribeDBClusterParameterGroupsRequest, DescribeDBClusterParameterGroupsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBClusterParameterGroupsResult>() {
+            public DescribeDBClusterParameterGroupsResult call() throws Exception {
+              DescribeDBClusterParameterGroupsResult result;
+                try {
+                result = describeDBClusterParameterGroups(describeDBClusterParameterGroupsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBClusterParameterGroupsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Enables ingress to a DBSecurityGroup using one of two forms of
      * authorization. First, EC2 or VPC security groups can be added to the
      * DBSecurityGroup if the application using the database is running on
@@ -1156,7 +1256,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * </p>
      * <p>
      * <b>NOTE:</b> You cannot authorize ingress from an EC2 security group
-     * in one Region to an Amazon RDS DB instance in another. You cannot
+     * in one region to an Amazon RDS DB instance in another. You cannot
      * authorize ingress from a VPC security group in one VPC to an Amazon
      * RDS DB instance in another.
      * </p>
@@ -1205,7 +1305,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * </p>
      * <p>
      * <b>NOTE:</b> You cannot authorize ingress from an EC2 security group
-     * in one Region to an Amazon RDS DB instance in another. You cannot
+     * in one region to an Amazon RDS DB instance in another. You cannot
      * authorize ingress from a VPC security group in one VPC to an Amazon
      * RDS DB instance in another.
      * </p>
@@ -1257,8 +1357,154 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Applies a pending maintenance action to a resource (for example, a DB
-     * instance).
+     * Creates a new DB cluster parameter group.
+     * </p>
+     * <p>
+     * Parameters in a DB cluster parameter group apply to all of the
+     * instances in a DB cluster.
+     * </p>
+     * <p>
+     * A DB cluster parameter group is initially created with the default
+     * parameters for the database engine used by instances in the DB
+     * cluster. To provide custom values for any of the parameters, you must
+     * modify the group after creating it using
+     * ModifyDBClusterParameterGroup. Once you've created a DB cluster
+     * parameter group, you need to associate it with your DB cluster using
+     * ModifyDBCluster. When you associate a new DB cluster parameter group
+     * with a running DB cluster, you need to reboot the DB instances in the
+     * DB cluster without failover for the new DB cluster parameter group and
+     * associated settings to take effect.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> After you create a DB cluster parameter group, you
+     * should wait at least 5 minutes before creating your first DB cluster
+     * that uses that DB cluster parameter group as the default parameter
+     * group. This allows Amazon RDS to fully complete the create action
+     * before the DB cluster parameter group is used as the default for a new
+     * DB cluster. This is especially important for parameters that are
+     * critical when creating the default database for a DB cluster, such as
+     * the character set for the default database defined by the
+     * character_set_database parameter. You can use the Parameter Groups
+     * option of the Amazon RDS console or the DescribeDBClusterParameters
+     * command to verify that your DB cluster parameter group has been
+     * created or modified.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param createDBClusterParameterGroupRequest Container for the
+     *           necessary parameters to execute the CreateDBClusterParameterGroup
+     *           operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBClusterParameterGroup service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBClusterParameterGroup> createDBClusterParameterGroupAsync(final CreateDBClusterParameterGroupRequest createDBClusterParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBClusterParameterGroup>() {
+            public DBClusterParameterGroup call() throws Exception {
+                return createDBClusterParameterGroup(createDBClusterParameterGroupRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a new DB cluster parameter group.
+     * </p>
+     * <p>
+     * Parameters in a DB cluster parameter group apply to all of the
+     * instances in a DB cluster.
+     * </p>
+     * <p>
+     * A DB cluster parameter group is initially created with the default
+     * parameters for the database engine used by instances in the DB
+     * cluster. To provide custom values for any of the parameters, you must
+     * modify the group after creating it using
+     * ModifyDBClusterParameterGroup. Once you've created a DB cluster
+     * parameter group, you need to associate it with your DB cluster using
+     * ModifyDBCluster. When you associate a new DB cluster parameter group
+     * with a running DB cluster, you need to reboot the DB instances in the
+     * DB cluster without failover for the new DB cluster parameter group and
+     * associated settings to take effect.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> After you create a DB cluster parameter group, you
+     * should wait at least 5 minutes before creating your first DB cluster
+     * that uses that DB cluster parameter group as the default parameter
+     * group. This allows Amazon RDS to fully complete the create action
+     * before the DB cluster parameter group is used as the default for a new
+     * DB cluster. This is especially important for parameters that are
+     * critical when creating the default database for a DB cluster, such as
+     * the character set for the default database defined by the
+     * character_set_database parameter. You can use the Parameter Groups
+     * option of the Amazon RDS console or the DescribeDBClusterParameters
+     * command to verify that your DB cluster parameter group has been
+     * created or modified.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param createDBClusterParameterGroupRequest Container for the
+     *           necessary parameters to execute the CreateDBClusterParameterGroup
+     *           operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBClusterParameterGroup service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBClusterParameterGroup> createDBClusterParameterGroupAsync(
+            final CreateDBClusterParameterGroupRequest createDBClusterParameterGroupRequest,
+            final AsyncHandler<CreateDBClusterParameterGroupRequest, DBClusterParameterGroup> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBClusterParameterGroup>() {
+            public DBClusterParameterGroup call() throws Exception {
+              DBClusterParameterGroup result;
+                try {
+                result = createDBClusterParameterGroup(createDBClusterParameterGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDBClusterParameterGroupRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Applies a pending maintenance action to a resource (for example, to a
+     * DB instance).
      * </p>
      *
      * @param applyPendingMaintenanceActionRequest Container for the
@@ -1289,8 +1535,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
 
     /**
      * <p>
-     * Applies a pending maintenance action to a resource (for example, a DB
-     * instance).
+     * Applies a pending maintenance action to a resource (for example, to a
+     * DB instance).
      * </p>
      *
      * @param applyPendingMaintenanceActionRequest Container for the
@@ -1485,6 +1731,178 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
+     * Returns information about DB cluster snapshots. This API supports
+     * pagination.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClusterSnapshotsRequest Container for the necessary
+     *           parameters to execute the DescribeDBClusterSnapshots operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBClusterSnapshots service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBClusterSnapshotsResult> describeDBClusterSnapshotsAsync(final DescribeDBClusterSnapshotsRequest describeDBClusterSnapshotsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBClusterSnapshotsResult>() {
+            public DescribeDBClusterSnapshotsResult call() throws Exception {
+                return describeDBClusterSnapshots(describeDBClusterSnapshotsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns information about DB cluster snapshots. This API supports
+     * pagination.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClusterSnapshotsRequest Container for the necessary
+     *           parameters to execute the DescribeDBClusterSnapshots operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBClusterSnapshots service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBClusterSnapshotsResult> describeDBClusterSnapshotsAsync(
+            final DescribeDBClusterSnapshotsRequest describeDBClusterSnapshotsRequest,
+            final AsyncHandler<DescribeDBClusterSnapshotsRequest, DescribeDBClusterSnapshotsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBClusterSnapshotsResult>() {
+            public DescribeDBClusterSnapshotsResult call() throws Exception {
+              DescribeDBClusterSnapshotsResult result;
+                try {
+                result = describeDBClusterSnapshots(describeDBClusterSnapshotsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBClusterSnapshotsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the detailed parameter list for a particular DB cluster
+     * parameter group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClusterParametersRequest Container for the necessary
+     *           parameters to execute the DescribeDBClusterParameters operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBClusterParameters service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBClusterParametersResult> describeDBClusterParametersAsync(final DescribeDBClusterParametersRequest describeDBClusterParametersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBClusterParametersResult>() {
+            public DescribeDBClusterParametersResult call() throws Exception {
+                return describeDBClusterParameters(describeDBClusterParametersRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the detailed parameter list for a particular DB cluster
+     * parameter group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClusterParametersRequest Container for the necessary
+     *           parameters to execute the DescribeDBClusterParameters operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBClusterParameters service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBClusterParametersResult> describeDBClusterParametersAsync(
+            final DescribeDBClusterParametersRequest describeDBClusterParametersRequest,
+            final AsyncHandler<DescribeDBClusterParametersRequest, DescribeDBClusterParametersResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBClusterParametersResult>() {
+            public DescribeDBClusterParametersResult call() throws Exception {
+              DescribeDBClusterParametersResult result;
+                try {
+                result = describeDBClusterParameters(describeDBClusterParametersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBClusterParametersRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Removes metadata tags from an Amazon RDS resource.
      * </p>
      * <p>
@@ -1573,7 +1991,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * specified, for a specified source type. You can see a list of the
      * event categories and source types in the
      * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events </a>
-     * topic in the Amazon RDS User Guide.
+     * topic in the <i>Amazon RDS User Guide.</i>
      * </p>
      *
      * @param describeEventCategoriesRequest Container for the necessary
@@ -1607,7 +2025,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * specified, for a specified source type. You can see a list of the
      * event categories and source types in the
      * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events </a>
-     * topic in the Amazon RDS User Guide.
+     * topic in the <i>Amazon RDS User Guide.</i>
      * </p>
      *
      * @param describeEventCategoriesRequest Container for the necessary
@@ -1723,8 +2141,296 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Creates a DB instance that acts as a Read Replica of a source DB
-     * instance.
+     * Creates a new DB cluster from a DB cluster snapshot. The target DB
+     * cluster is created from the source DB cluster restore point with the
+     * same configuration as the original source DB cluster, except that the
+     * new DB cluster is created with the default security group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param restoreDBClusterFromSnapshotRequest Container for the necessary
+     *           parameters to execute the RestoreDBClusterFromSnapshot operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RestoreDBClusterFromSnapshot service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> restoreDBClusterFromSnapshotAsync(final RestoreDBClusterFromSnapshotRequest restoreDBClusterFromSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+                return restoreDBClusterFromSnapshot(restoreDBClusterFromSnapshotRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a new DB cluster from a DB cluster snapshot. The target DB
+     * cluster is created from the source DB cluster restore point with the
+     * same configuration as the original source DB cluster, except that the
+     * new DB cluster is created with the default security group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param restoreDBClusterFromSnapshotRequest Container for the necessary
+     *           parameters to execute the RestoreDBClusterFromSnapshot operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RestoreDBClusterFromSnapshot service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> restoreDBClusterFromSnapshotAsync(
+            final RestoreDBClusterFromSnapshotRequest restoreDBClusterFromSnapshotRequest,
+            final AsyncHandler<RestoreDBClusterFromSnapshotRequest, DBCluster> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+              DBCluster result;
+                try {
+                result = restoreDBClusterFromSnapshot(restoreDBClusterFromSnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(restoreDBClusterFromSnapshotRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns information about provisioned Aurora DB clusters. This API
+     * supports pagination.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClustersRequest Container for the necessary
+     *           parameters to execute the DescribeDBClusters operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBClusters service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBClustersResult> describeDBClustersAsync(final DescribeDBClustersRequest describeDBClustersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBClustersResult>() {
+            public DescribeDBClustersResult call() throws Exception {
+                return describeDBClusters(describeDBClustersRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns information about provisioned Aurora DB clusters. This API
+     * supports pagination.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeDBClustersRequest Container for the necessary
+     *           parameters to execute the DescribeDBClusters operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBClusters service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBClustersResult> describeDBClustersAsync(
+            final DescribeDBClustersRequest describeDBClustersRequest,
+            final AsyncHandler<DescribeDBClustersRequest, DescribeDBClustersResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBClustersResult>() {
+            public DescribeDBClustersResult call() throws Exception {
+              DescribeDBClustersResult result;
+                try {
+                result = describeDBClusters(describeDBClustersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDBClustersRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Rebooting a DB instance restarts the database engine service. A
+     * reboot also applies to the DB instance any modifications to the
+     * associated DB parameter group that were pending. Rebooting a DB
+     * instance results in a momentary outage of the instance, during which
+     * the DB instance status is set to rebooting. If the RDS instance is
+     * configured for MultiAZ, it is possible that the reboot will be
+     * conducted through a failover. An Amazon RDS event is created when the
+     * reboot is completed.
+     * </p>
+     * <p>
+     * If your DB instance is deployed in multiple Availability Zones, you
+     * can force a failover from one AZ to the other during the reboot. You
+     * might force a failover to test the availability of your DB instance
+     * deployment or to restore operations to the original AZ after a
+     * failover occurs.
+     * </p>
+     * <p>
+     * The time required to reboot is a function of the specific database
+     * engine's crash recovery process. To improve the reboot time, we
+     * recommend that you reduce database activities as much as possible
+     * during the reboot process to reduce rollback activity for in-transit
+     * transactions.
+     * </p>
+     *
+     * @param rebootDBInstanceRequest Container for the necessary parameters
+     *           to execute the RebootDBInstance operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RebootDBInstance service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> rebootDBInstanceAsync(final RebootDBInstanceRequest rebootDBInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+                return rebootDBInstance(rebootDBInstanceRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Rebooting a DB instance restarts the database engine service. A
+     * reboot also applies to the DB instance any modifications to the
+     * associated DB parameter group that were pending. Rebooting a DB
+     * instance results in a momentary outage of the instance, during which
+     * the DB instance status is set to rebooting. If the RDS instance is
+     * configured for MultiAZ, it is possible that the reboot will be
+     * conducted through a failover. An Amazon RDS event is created when the
+     * reboot is completed.
+     * </p>
+     * <p>
+     * If your DB instance is deployed in multiple Availability Zones, you
+     * can force a failover from one AZ to the other during the reboot. You
+     * might force a failover to test the availability of your DB instance
+     * deployment or to restore operations to the original AZ after a
+     * failover occurs.
+     * </p>
+     * <p>
+     * The time required to reboot is a function of the specific database
+     * engine's crash recovery process. To improve the reboot time, we
+     * recommend that you reduce database activities as much as possible
+     * during the reboot process to reduce rollback activity for in-transit
+     * transactions.
+     * </p>
+     *
+     * @param rebootDBInstanceRequest Container for the necessary parameters
+     *           to execute the RebootDBInstance operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RebootDBInstance service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> rebootDBInstanceAsync(
+            final RebootDBInstanceRequest rebootDBInstanceRequest,
+            final AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+              DBInstance result;
+                try {
+                result = rebootDBInstance(rebootDBInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(rebootDBInstanceRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a DB instance for a DB instance running MySQL or PostgreSQL
+     * that acts as a Read Replica of a source DB instance.
      * </p>
      * <p>
      * All Read Replica DB instances are created as Single-AZ deployments
@@ -1764,8 +2470,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
 
     /**
      * <p>
-     * Creates a DB instance that acts as a Read Replica of a source DB
-     * instance.
+     * Creates a DB instance for a DB instance running MySQL or PostgreSQL
+     * that acts as a Read Replica of a source DB instance.
      * </p>
      * <p>
      * All Read Replica DB instances are created as Single-AZ deployments
@@ -1901,120 +2607,6 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Rebooting a DB instance restarts the database engine service. A
-     * reboot also applies to the DB instance any modifications to the
-     * associated DB parameter group that were pending. Rebooting a DB
-     * instance results in a momentary outage of the instance, during which
-     * the DB instance status is set to rebooting. If the RDS instance is
-     * configured for MultiAZ, it is possible that the reboot will be
-     * conducted through a failover. An Amazon RDS event is created when the
-     * reboot is completed.
-     * </p>
-     * <p>
-     * If your DB instance is deployed in multiple Availability Zones, you
-     * can force a failover from one AZ to the other during the reboot. You
-     * might force a failover to test the availability of your DB instance
-     * deployment or to restore operations to the original AZ after a
-     * failover occurs.
-     * </p>
-     * <p>
-     * The time required to reboot is a function of the specific database
-     * engine's crash recovery process. To improve the reboot time, we
-     * recommend that you reduce database activities as much as possible
-     * during the reboot process to reduce rollback activity for in-transit
-     * transactions.
-     * </p>
-     *
-     * @param rebootDBInstanceRequest Container for the necessary parameters
-     *           to execute the RebootDBInstance operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RebootDBInstance service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBInstance> rebootDBInstanceAsync(final RebootDBInstanceRequest rebootDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-                return rebootDBInstance(rebootDBInstanceRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Rebooting a DB instance restarts the database engine service. A
-     * reboot also applies to the DB instance any modifications to the
-     * associated DB parameter group that were pending. Rebooting a DB
-     * instance results in a momentary outage of the instance, during which
-     * the DB instance status is set to rebooting. If the RDS instance is
-     * configured for MultiAZ, it is possible that the reboot will be
-     * conducted through a failover. An Amazon RDS event is created when the
-     * reboot is completed.
-     * </p>
-     * <p>
-     * If your DB instance is deployed in multiple Availability Zones, you
-     * can force a failover from one AZ to the other during the reboot. You
-     * might force a failover to test the availability of your DB instance
-     * deployment or to restore operations to the original AZ after a
-     * failover occurs.
-     * </p>
-     * <p>
-     * The time required to reboot is a function of the specific database
-     * engine's crash recovery process. To improve the reboot time, we
-     * recommend that you reduce database activities as much as possible
-     * during the reboot process to reduce rollback activity for in-transit
-     * transactions.
-     * </p>
-     *
-     * @param rebootDBInstanceRequest Container for the necessary parameters
-     *           to execute the RebootDBInstance operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RebootDBInstance service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBInstance> rebootDBInstanceAsync(
-            final RebootDBInstanceRequest rebootDBInstanceRequest,
-            final AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-              DBInstance result;
-                try {
-                result = rebootDBInstance(rebootDBInstanceRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(rebootDBInstanceRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Returns events related to DB instances, DB security groups, DB
      * snapshots, and DB parameter groups for the past 14 days. Events
      * specific to a particular DB instance, DB security group, database
@@ -2088,6 +2680,98 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             throw ex;
               }
               asyncHandler.onSuccess(describeEventsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * The DeleteDBCluster action deletes a previously provisioned DB
+     * cluster. A successful response from the web service indicates the
+     * request was received correctly. When you delete a DB cluster, all
+     * automated backups for that DB cluster are deleted and cannot be
+     * recovered. Manual DB cluster snapshots of the DB cluster to be deleted
+     * are not deleted.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param deleteDBClusterRequest Container for the necessary parameters
+     *           to execute the DeleteDBCluster operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBCluster service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> deleteDBClusterAsync(final DeleteDBClusterRequest deleteDBClusterRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+                return deleteDBCluster(deleteDBClusterRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * The DeleteDBCluster action deletes a previously provisioned DB
+     * cluster. A successful response from the web service indicates the
+     * request was received correctly. When you delete a DB cluster, all
+     * automated backups for that DB cluster are deleted and cannot be
+     * recovered. Manual DB cluster snapshots of the DB cluster to be deleted
+     * are not deleted.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param deleteDBClusterRequest Container for the necessary parameters
+     *           to execute the DeleteDBCluster operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBCluster service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> deleteDBClusterAsync(
+            final DeleteDBClusterRequest deleteDBClusterRequest,
+            final AsyncHandler<DeleteDBClusterRequest, DBCluster> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+              DBCluster result;
+                try {
+                result = deleteDBCluster(deleteDBClusterRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDBClusterRequest, result);
                  return result;
         }
     });
@@ -2177,6 +2861,80 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
+     * Describes all available options.
+     * </p>
+     *
+     * @param describeOptionGroupOptionsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroupOptions operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(final DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeOptionGroupOptionsResult>() {
+            public DescribeOptionGroupOptionsResult call() throws Exception {
+                return describeOptionGroupOptions(describeOptionGroupOptionsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes all available options.
+     * </p>
+     *
+     * @param describeOptionGroupOptionsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroupOptions operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(
+            final DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest,
+            final AsyncHandler<DescribeOptionGroupOptionsRequest, DescribeOptionGroupOptionsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeOptionGroupOptionsResult>() {
+            public DescribeOptionGroupOptionsResult call() throws Exception {
+              DescribeOptionGroupOptionsResult result;
+                try {
+                result = describeOptionGroupOptions(describeOptionGroupOptionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeOptionGroupOptionsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns the detailed parameter list for a particular DB parameter
      * group.
      * </p>
@@ -2251,15 +3009,45 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Describes all available options.
+     * Modifies the parameters of a DB cluster parameter group. To modify
+     * more than one parameter, submit a list of the following:
+     * <code>ParameterName</code> , <code>ParameterValue</code> , and
+     * <code>ApplyMethod</code> . A maximum of 20 parameters can be modified
+     * in a single request.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Changes to dynamic parameters are applied immediately.
+     * Changes to static parameters require a reboot without failover to the
+     * DB cluster associated with the parameter group before the change can
+     * take effect.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> After you create a DB cluster parameter group, you
+     * should wait at least 5 minutes before creating your first DB cluster
+     * that uses that DB cluster parameter group as the default parameter
+     * group. This allows Amazon RDS to fully complete the create action
+     * before the parameter group is used as the default for a new DB
+     * cluster. This is especially important for parameters that are critical
+     * when creating the default database for a DB cluster, such as the
+     * character set for the default database defined by the
+     * character_set_database parameter. You can use the Parameter Groups
+     * option of the Amazon RDS console or the DescribeDBClusterParameters
+     * command to verify that your DB cluster parameter group has been
+     * created or modified.
      * </p>
      *
-     * @param describeOptionGroupOptionsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroupOptions operation on
-     *           AmazonRDS.
+     * @param modifyDBClusterParameterGroupRequest Container for the
+     *           necessary parameters to execute the ModifyDBClusterParameterGroup
+     *           operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
+     *         ModifyDBClusterParameterGroup service method, as returned by
+     *         AmazonRDS.
      * 
      *
      * @throws AmazonClientException
@@ -2270,30 +3058,60 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(final DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) 
+    public Future<ModifyDBClusterParameterGroupResult> modifyDBClusterParameterGroupAsync(final ModifyDBClusterParameterGroupRequest modifyDBClusterParameterGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeOptionGroupOptionsResult>() {
-            public DescribeOptionGroupOptionsResult call() throws Exception {
-                return describeOptionGroupOptions(describeOptionGroupOptionsRequest);
+        return executorService.submit(new Callable<ModifyDBClusterParameterGroupResult>() {
+            public ModifyDBClusterParameterGroupResult call() throws Exception {
+                return modifyDBClusterParameterGroup(modifyDBClusterParameterGroupRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Describes all available options.
+     * Modifies the parameters of a DB cluster parameter group. To modify
+     * more than one parameter, submit a list of the following:
+     * <code>ParameterName</code> , <code>ParameterValue</code> , and
+     * <code>ApplyMethod</code> . A maximum of 20 parameters can be modified
+     * in a single request.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Changes to dynamic parameters are applied immediately.
+     * Changes to static parameters require a reboot without failover to the
+     * DB cluster associated with the parameter group before the change can
+     * take effect.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> After you create a DB cluster parameter group, you
+     * should wait at least 5 minutes before creating your first DB cluster
+     * that uses that DB cluster parameter group as the default parameter
+     * group. This allows Amazon RDS to fully complete the create action
+     * before the parameter group is used as the default for a new DB
+     * cluster. This is especially important for parameters that are critical
+     * when creating the default database for a DB cluster, such as the
+     * character set for the default database defined by the
+     * character_set_database parameter. You can use the Parameter Groups
+     * option of the Amazon RDS console or the DescribeDBClusterParameters
+     * command to verify that your DB cluster parameter group has been
+     * created or modified.
      * </p>
      *
-     * @param describeOptionGroupOptionsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroupOptions operation on
-     *           AmazonRDS.
+     * @param modifyDBClusterParameterGroupRequest Container for the
+     *           necessary parameters to execute the ModifyDBClusterParameterGroup
+     *           operation on AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
+     *         ModifyDBClusterParameterGroup service method, as returned by
+     *         AmazonRDS.
      * 
      *
      * @throws AmazonClientException
@@ -2304,20 +3122,116 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(
-            final DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest,
-            final AsyncHandler<DescribeOptionGroupOptionsRequest, DescribeOptionGroupOptionsResult> asyncHandler)
+    public Future<ModifyDBClusterParameterGroupResult> modifyDBClusterParameterGroupAsync(
+            final ModifyDBClusterParameterGroupRequest modifyDBClusterParameterGroupRequest,
+            final AsyncHandler<ModifyDBClusterParameterGroupRequest, ModifyDBClusterParameterGroupResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeOptionGroupOptionsResult>() {
-            public DescribeOptionGroupOptionsResult call() throws Exception {
-              DescribeOptionGroupOptionsResult result;
+        return executorService.submit(new Callable<ModifyDBClusterParameterGroupResult>() {
+            public ModifyDBClusterParameterGroupResult call() throws Exception {
+              ModifyDBClusterParameterGroupResult result;
                 try {
-                result = describeOptionGroupOptions(describeOptionGroupOptionsRequest);
+                result = modifyDBClusterParameterGroup(modifyDBClusterParameterGroupRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(describeOptionGroupOptionsRequest, result);
+              asyncHandler.onSuccess(modifyDBClusterParameterGroupRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Restores a DB cluster to an arbitrary point in time. Users can
+     * restore to any point in time before <code>LatestRestorableTime</code>
+     * for up to <code>BackupRetentionPeriod</code> days. The target DB
+     * cluster is created from the source DB cluster with the same
+     * configuration as the original DB cluster, except that the new DB
+     * cluster is created with the default DB security group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param restoreDBClusterToPointInTimeRequest Container for the
+     *           necessary parameters to execute the RestoreDBClusterToPointInTime
+     *           operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RestoreDBClusterToPointInTime service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> restoreDBClusterToPointInTimeAsync(final RestoreDBClusterToPointInTimeRequest restoreDBClusterToPointInTimeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+                return restoreDBClusterToPointInTime(restoreDBClusterToPointInTimeRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Restores a DB cluster to an arbitrary point in time. Users can
+     * restore to any point in time before <code>LatestRestorableTime</code>
+     * for up to <code>BackupRetentionPeriod</code> days. The target DB
+     * cluster is created from the source DB cluster with the same
+     * configuration as the original DB cluster, except that the new DB
+     * cluster is created with the default DB security group.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param restoreDBClusterToPointInTimeRequest Container for the
+     *           necessary parameters to execute the RestoreDBClusterToPointInTime
+     *           operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RestoreDBClusterToPointInTime service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> restoreDBClusterToPointInTimeAsync(
+            final RestoreDBClusterToPointInTimeRequest restoreDBClusterToPointInTimeRequest,
+            final AsyncHandler<RestoreDBClusterToPointInTimeRequest, DBCluster> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+              DBCluster result;
+                try {
+                result = restoreDBClusterToPointInTime(restoreDBClusterToPointInTimeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(restoreDBClusterToPointInTimeRequest, result);
                  return result;
         }
     });
@@ -2588,6 +3502,11 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * <code>DescribeDBInstance</code> is used to monitor the status of this
      * operation. The action cannot be canceled or reverted once submitted.
      * </p>
+     * <p>
+     * Note that when a DB instance is in a failure state and has a status
+     * of 'failed', 'incompatible-restore', or 'incompatible-network', it can
+     * only be deleted when the SkipFinalSnapshot parameter is set to "true".
+     * </p>
      *
      * @param deleteDBInstanceRequest Container for the necessary parameters
      *           to execute the DeleteDBInstance operation on AmazonRDS.
@@ -2627,6 +3546,11 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * will be "deleting" until the DB snapshot is created. The API action
      * <code>DescribeDBInstance</code> is used to monitor the status of this
      * operation. The action cannot be canceled or reverted once submitted.
+     * </p>
+     * <p>
+     * Note that when a DB instance is in a failure state and has a status
+     * of 'failed', 'incompatible-restore', or 'incompatible-network', it can
+     * only be deleted when the SkipFinalSnapshot parameter is set to "true".
      * </p>
      *
      * @param deleteDBInstanceRequest Container for the necessary parameters
@@ -2670,9 +3594,14 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     /**
      * <p>
      * Creates a new DB instance from a DB snapshot. The target database is
-     * created from the source database restore point with the same
-     * configuration as the original source database, except that the new RDS
-     * instance is created with the default security group.
+     * created from the source database restore point with the most of
+     * original configuration, but in a system chosen availability zone with
+     * the default security group, the default subnet group, and the default
+     * DB parameter group. By default, the new DB instance is created as a
+     * single-AZ deployment except when the instance is a SQL Server instance
+     * that has an option group that is associated with mirroring; in this
+     * case, the instance becomes a mirrored AZ deployment and not a
+     * single-AZ deployment.
      * </p>
      * <p>
      * If your intent is to replace your original DB instance with the new,
@@ -2715,9 +3644,14 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     /**
      * <p>
      * Creates a new DB instance from a DB snapshot. The target database is
-     * created from the source database restore point with the same
-     * configuration as the original source database, except that the new RDS
-     * instance is created with the default security group.
+     * created from the source database restore point with the most of
+     * original configuration, but in a system chosen availability zone with
+     * the default security group, the default subnet group, and the default
+     * DB parameter group. By default, the new DB instance is created as a
+     * single-AZ deployment except when the instance is a SQL Server instance
+     * that has an option group that is associated with mirroring; in this
+     * case, the instance becomes a mirrored AZ deployment and not a
+     * single-AZ deployment.
      * </p>
      * <p>
      * If your intent is to replace your original DB instance with the new,
@@ -3243,6 +4177,282 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
+     * Modifies the parameters of a DB cluster parameter group to the
+     * default value. To reset specific parameters submit a list of the
+     * following: <code>ParameterName</code> and <code>ApplyMethod</code> .
+     * To reset the entire DB cluster parameter group, specify the
+     * <code>DBClusterParameterGroupName</code> and
+     * <code>ResetAllParameters</code> parameters.
+     * </p>
+     * <p>
+     * When resetting the entire group, dynamic parameters are updated
+     * immediately and static parameters are set to
+     * <code>pending-reboot</code> to take effect on the next DB instance
+     * restart or RebootDBInstance request. You must call RebootDBInstance
+     * for every DB instance in your DB cluster that you want the updated
+     * static parameter to apply to.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param resetDBClusterParameterGroupRequest Container for the necessary
+     *           parameters to execute the ResetDBClusterParameterGroup operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ResetDBClusterParameterGroup service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ResetDBClusterParameterGroupResult> resetDBClusterParameterGroupAsync(final ResetDBClusterParameterGroupRequest resetDBClusterParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ResetDBClusterParameterGroupResult>() {
+            public ResetDBClusterParameterGroupResult call() throws Exception {
+                return resetDBClusterParameterGroup(resetDBClusterParameterGroupRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Modifies the parameters of a DB cluster parameter group to the
+     * default value. To reset specific parameters submit a list of the
+     * following: <code>ParameterName</code> and <code>ApplyMethod</code> .
+     * To reset the entire DB cluster parameter group, specify the
+     * <code>DBClusterParameterGroupName</code> and
+     * <code>ResetAllParameters</code> parameters.
+     * </p>
+     * <p>
+     * When resetting the entire group, dynamic parameters are updated
+     * immediately and static parameters are set to
+     * <code>pending-reboot</code> to take effect on the next DB instance
+     * restart or RebootDBInstance request. You must call RebootDBInstance
+     * for every DB instance in your DB cluster that you want the updated
+     * static parameter to apply to.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param resetDBClusterParameterGroupRequest Container for the necessary
+     *           parameters to execute the ResetDBClusterParameterGroup operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ResetDBClusterParameterGroup service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ResetDBClusterParameterGroupResult> resetDBClusterParameterGroupAsync(
+            final ResetDBClusterParameterGroupRequest resetDBClusterParameterGroupRequest,
+            final AsyncHandler<ResetDBClusterParameterGroupRequest, ResetDBClusterParameterGroupResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ResetDBClusterParameterGroupResult>() {
+            public ResetDBClusterParameterGroupResult call() throws Exception {
+              ResetDBClusterParameterGroupResult result;
+                try {
+                result = resetDBClusterParameterGroup(resetDBClusterParameterGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(resetDBClusterParameterGroupRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a new Amazon Aurora DB cluster. For more information on
+     * Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param createDBClusterRequest Container for the necessary parameters
+     *           to execute the CreateDBCluster operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBCluster service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> createDBClusterAsync(final CreateDBClusterRequest createDBClusterRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+                return createDBCluster(createDBClusterRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a new Amazon Aurora DB cluster. For more information on
+     * Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param createDBClusterRequest Container for the necessary parameters
+     *           to execute the CreateDBCluster operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBCluster service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> createDBClusterAsync(
+            final CreateDBClusterRequest createDBClusterRequest,
+            final AsyncHandler<CreateDBClusterRequest, DBCluster> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+              DBCluster result;
+                try {
+                result = createDBCluster(createDBClusterRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDBClusterRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the default engine and system parameter information for the
+     * cluster database engine.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeEngineDefaultClusterParametersRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeEngineDefaultClusterParameters operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeEngineDefaultClusterParameters service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EngineDefaults> describeEngineDefaultClusterParametersAsync(final DescribeEngineDefaultClusterParametersRequest describeEngineDefaultClusterParametersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EngineDefaults>() {
+            public EngineDefaults call() throws Exception {
+                return describeEngineDefaultClusterParameters(describeEngineDefaultClusterParametersRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the default engine and system parameter information for the
+     * cluster database engine.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param describeEngineDefaultClusterParametersRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeEngineDefaultClusterParameters operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeEngineDefaultClusterParameters service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EngineDefaults> describeEngineDefaultClusterParametersAsync(
+            final DescribeEngineDefaultClusterParametersRequest describeEngineDefaultClusterParametersRequest,
+            final AsyncHandler<DescribeEngineDefaultClusterParametersRequest, EngineDefaults> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EngineDefaults>() {
+            public EngineDefaults call() throws Exception {
+              EngineDefaults result;
+                try {
+                result = describeEngineDefaultClusterParameters(describeEngineDefaultClusterParametersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeEngineDefaultClusterParametersRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns information about DB snapshots. This API supports pagination.
      * </p>
      *
@@ -3309,6 +4519,190 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
               }
               asyncHandler.onSuccess(describeDBSnapshotsRequest, result);
                  return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes a DB cluster snapshot. If the snapshot is being copied, the
+     * copy operation is terminated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The DB cluster snapshot must be in the available state to
+     * be deleted.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param deleteDBClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the DeleteDBClusterSnapshot operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBClusterSnapshot service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBClusterSnapshot> deleteDBClusterSnapshotAsync(final DeleteDBClusterSnapshotRequest deleteDBClusterSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBClusterSnapshot>() {
+            public DBClusterSnapshot call() throws Exception {
+                return deleteDBClusterSnapshot(deleteDBClusterSnapshotRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a DB cluster snapshot. If the snapshot is being copied, the
+     * copy operation is terminated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The DB cluster snapshot must be in the available state to
+     * be deleted.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param deleteDBClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the DeleteDBClusterSnapshot operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBClusterSnapshot service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBClusterSnapshot> deleteDBClusterSnapshotAsync(
+            final DeleteDBClusterSnapshotRequest deleteDBClusterSnapshotRequest,
+            final AsyncHandler<DeleteDBClusterSnapshotRequest, DBClusterSnapshot> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBClusterSnapshot>() {
+            public DBClusterSnapshot call() throws Exception {
+              DBClusterSnapshot result;
+                try {
+                result = deleteDBClusterSnapshot(deleteDBClusterSnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDBClusterSnapshotRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes a specified DB cluster parameter group. The DB cluster
+     * parameter group to be deleted cannot be associated with any DB
+     * clusters.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param deleteDBClusterParameterGroupRequest Container for the
+     *           necessary parameters to execute the DeleteDBClusterParameterGroup
+     *           operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBClusterParameterGroup service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteDBClusterParameterGroupAsync(final DeleteDBClusterParameterGroupRequest deleteDBClusterParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteDBClusterParameterGroup(deleteDBClusterParameterGroupRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a specified DB cluster parameter group. The DB cluster
+     * parameter group to be deleted cannot be associated with any DB
+     * clusters.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param deleteDBClusterParameterGroupRequest Container for the
+     *           necessary parameters to execute the DeleteDBClusterParameterGroup
+     *           operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBClusterParameterGroup service method, as returned by
+     *         AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteDBClusterParameterGroupAsync(
+            final DeleteDBClusterParameterGroupRequest deleteDBClusterParameterGroupRequest,
+            final AsyncHandler<DeleteDBClusterParameterGroupRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteDBClusterParameterGroup(deleteDBClusterParameterGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteDBClusterParameterGroupRequest, null);
+                 return null;
         }
     });
     }
@@ -3740,6 +5134,86 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             throw ex;
               }
               asyncHandler.onSuccess(describeEngineDefaultParametersRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a snapshot of a DB cluster. For more information on Amazon
+     * Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param createDBClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CreateDBClusterSnapshot operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBClusterSnapshot service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBClusterSnapshot> createDBClusterSnapshotAsync(final CreateDBClusterSnapshotRequest createDBClusterSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBClusterSnapshot>() {
+            public DBClusterSnapshot call() throws Exception {
+                return createDBClusterSnapshot(createDBClusterSnapshotRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a snapshot of a DB cluster. For more information on Amazon
+     * Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param createDBClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CreateDBClusterSnapshot operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBClusterSnapshot service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBClusterSnapshot> createDBClusterSnapshotAsync(
+            final CreateDBClusterSnapshotRequest createDBClusterSnapshotRequest,
+            final AsyncHandler<CreateDBClusterSnapshotRequest, DBClusterSnapshot> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBClusterSnapshot>() {
+            public DBClusterSnapshot call() throws Exception {
+              DBClusterSnapshot result;
+                try {
+                result = createDBClusterSnapshot(createDBClusterSnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createDBClusterSnapshotRequest, result);
                  return result;
         }
     });
@@ -4213,6 +5687,116 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
+     * Forces a failover for a DB cluster.
+     * </p>
+     * <p>
+     * A failover for a DB cluster promotes one of the read-only instances
+     * in the DB cluster to the master DB instance (the cluster writer) and
+     * deletes the current primary instance.
+     * </p>
+     * <p>
+     * Amazon Aurora will automatically fail over to a read-only instance,
+     * if one exists, when the primary instance fails. You can force a
+     * failover when you want to simulate a failure of a DB instance for
+     * testing. Because each instance in a DB cluster has its own endpoint
+     * address, you will need to clean up and re-establish any existing
+     * connections that use those endpoint addresses when the failover is
+     * complete.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param failoverDBClusterRequest Container for the necessary parameters
+     *           to execute the FailoverDBCluster operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         FailoverDBCluster service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> failoverDBClusterAsync(final FailoverDBClusterRequest failoverDBClusterRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+                return failoverDBCluster(failoverDBClusterRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Forces a failover for a DB cluster.
+     * </p>
+     * <p>
+     * A failover for a DB cluster promotes one of the read-only instances
+     * in the DB cluster to the master DB instance (the cluster writer) and
+     * deletes the current primary instance.
+     * </p>
+     * <p>
+     * Amazon Aurora will automatically fail over to a read-only instance,
+     * if one exists, when the primary instance fails. You can force a
+     * failover when you want to simulate a failure of a DB instance for
+     * testing. Because each instance in a DB cluster has its own endpoint
+     * address, you will need to clean up and re-establish any existing
+     * connections that use those endpoint addresses when the failover is
+     * complete.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param failoverDBClusterRequest Container for the necessary parameters
+     *           to execute the FailoverDBCluster operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         FailoverDBCluster service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> failoverDBClusterAsync(
+            final FailoverDBClusterRequest failoverDBClusterRequest,
+            final AsyncHandler<FailoverDBClusterRequest, DBCluster> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+              DBCluster result;
+                try {
+                result = failoverDBCluster(failoverDBClusterRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(failoverDBClusterRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Promotes a Read Replica DB instance to a standalone DB instance.
      * </p>
      * <p>
@@ -4301,8 +5885,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * <p>
      * Adds metadata tags to an Amazon RDS resource. These tags can also be
      * used with cost allocation reporting to track cost associated with
-     * Amazon RDS resources, or used in Condition statement in IAM policy for
-     * Amazon RDS.
+     * Amazon RDS resources, or used in a Condition statement in an IAM
+     * policy for Amazon RDS.
      * </p>
      * <p>
      * For an overview on tagging Amazon RDS resources, see
@@ -4339,8 +5923,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * <p>
      * Adds metadata tags to an Amazon RDS resource. These tags can also be
      * used with cost allocation reporting to track cost associated with
-     * Amazon RDS resources, or used in Condition statement in IAM policy for
-     * Amazon RDS.
+     * Amazon RDS resources, or used in a Condition statement in an IAM
+     * policy for Amazon RDS.
      * </p>
      * <p>
      * For an overview on tagging Amazon RDS resources, see
@@ -4387,7 +5971,170 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Downloads all or a portion of the specified log file.
+     * Modify a setting for an Amazon Aurora DB cluster. You can change one
+     * or more database configuration parameters by specifying these
+     * parameters and the new values in the request. For more information on
+     * Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param modifyDBClusterRequest Container for the necessary parameters
+     *           to execute the ModifyDBCluster operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyDBCluster service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> modifyDBClusterAsync(final ModifyDBClusterRequest modifyDBClusterRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+                return modifyDBCluster(modifyDBClusterRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Modify a setting for an Amazon Aurora DB cluster. You can change one
+     * or more database configuration parameters by specifying these
+     * parameters and the new values in the request. For more information on
+     * Amazon Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param modifyDBClusterRequest Container for the necessary parameters
+     *           to execute the ModifyDBCluster operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyDBCluster service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBCluster> modifyDBClusterAsync(
+            final ModifyDBClusterRequest modifyDBClusterRequest,
+            final AsyncHandler<ModifyDBClusterRequest, DBCluster> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBCluster>() {
+            public DBCluster call() throws Exception {
+              DBCluster result;
+                try {
+                result = modifyDBCluster(modifyDBClusterRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyDBClusterRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates a snapshot of a DB cluster. For more information on Amazon
+     * Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param copyDBClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CopyDBClusterSnapshot operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CopyDBClusterSnapshot service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBClusterSnapshot> copyDBClusterSnapshotAsync(final CopyDBClusterSnapshotRequest copyDBClusterSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBClusterSnapshot>() {
+            public DBClusterSnapshot call() throws Exception {
+                return copyDBClusterSnapshot(copyDBClusterSnapshotRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a snapshot of a DB cluster. For more information on Amazon
+     * Aurora, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     *
+     * @param copyDBClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CopyDBClusterSnapshot operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CopyDBClusterSnapshot service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBClusterSnapshot> copyDBClusterSnapshotAsync(
+            final CopyDBClusterSnapshotRequest copyDBClusterSnapshotRequest,
+            final AsyncHandler<CopyDBClusterSnapshotRequest, DBClusterSnapshot> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBClusterSnapshot>() {
+            public DBClusterSnapshot call() throws Exception {
+              DBClusterSnapshot result;
+                try {
+                result = copyDBClusterSnapshot(copyDBClusterSnapshotRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(copyDBClusterSnapshotRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Downloads all or a portion of the specified log file, up to 1 MB in
+     * size.
      * </p>
      *
      * @param downloadDBLogFilePortionRequest Container for the necessary
@@ -4417,7 +6164,8 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
 
     /**
      * <p>
-     * Downloads all or a portion of the specified log file.
+     * Downloads all or a portion of the specified log file, up to 1 MB in
+     * size.
      * </p>
      *
      * @param downloadDBLogFilePortionRequest Container for the necessary
@@ -4661,17 +6409,15 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Returns a list of orderable DB instance options for the specified
-     * engine.
+     * Lists the set of CA certificates provided by Amazon RDS for this AWS
+     * account.
      * </p>
      *
-     * @param describeOrderableDBInstanceOptionsRequest Container for the
-     *           necessary parameters to execute the DescribeOrderableDBInstanceOptions
-     *           operation on AmazonRDS.
+     * @param describeCertificatesRequest Container for the necessary
+     *           parameters to execute the DescribeCertificates operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeOrderableDBInstanceOptions service method, as returned by
-     *         AmazonRDS.
+     *         DescribeCertificates service method, as returned by AmazonRDS.
      * 
      *
      * @throws AmazonClientException
@@ -4682,32 +6428,30 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeOrderableDBInstanceOptionsResult> describeOrderableDBInstanceOptionsAsync(final DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) 
+    public Future<DescribeCertificatesResult> describeCertificatesAsync(final DescribeCertificatesRequest describeCertificatesRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeOrderableDBInstanceOptionsResult>() {
-            public DescribeOrderableDBInstanceOptionsResult call() throws Exception {
-                return describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
+        return executorService.submit(new Callable<DescribeCertificatesResult>() {
+            public DescribeCertificatesResult call() throws Exception {
+                return describeCertificates(describeCertificatesRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Returns a list of orderable DB instance options for the specified
-     * engine.
+     * Lists the set of CA certificates provided by Amazon RDS for this AWS
+     * account.
      * </p>
      *
-     * @param describeOrderableDBInstanceOptionsRequest Container for the
-     *           necessary parameters to execute the DescribeOrderableDBInstanceOptions
-     *           operation on AmazonRDS.
+     * @param describeCertificatesRequest Container for the necessary
+     *           parameters to execute the DescribeCertificates operation on AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeOrderableDBInstanceOptions service method, as returned by
-     *         AmazonRDS.
+     *         DescribeCertificates service method, as returned by AmazonRDS.
      * 
      *
      * @throws AmazonClientException
@@ -4718,20 +6462,20 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeOrderableDBInstanceOptionsResult> describeOrderableDBInstanceOptionsAsync(
-            final DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest,
-            final AsyncHandler<DescribeOrderableDBInstanceOptionsRequest, DescribeOrderableDBInstanceOptionsResult> asyncHandler)
+    public Future<DescribeCertificatesResult> describeCertificatesAsync(
+            final DescribeCertificatesRequest describeCertificatesRequest,
+            final AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeOrderableDBInstanceOptionsResult>() {
-            public DescribeOrderableDBInstanceOptionsResult call() throws Exception {
-              DescribeOrderableDBInstanceOptionsResult result;
+        return executorService.submit(new Callable<DescribeCertificatesResult>() {
+            public DescribeCertificatesResult call() throws Exception {
+              DescribeCertificatesResult result;
                 try {
-                result = describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
+                result = describeCertificates(describeCertificatesRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(describeOrderableDBInstanceOptionsRequest, result);
+              asyncHandler.onSuccess(describeCertificatesRequest, result);
                  return result;
         }
     });
@@ -4861,15 +6605,17 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Lists the set of CA certificates provided by Amazon RDS for this AWS
-     * account.
+     * Returns a list of orderable DB instance options for the specified
+     * engine.
      * </p>
      *
-     * @param describeCertificatesRequest Container for the necessary
-     *           parameters to execute the DescribeCertificates operation on AmazonRDS.
+     * @param describeOrderableDBInstanceOptionsRequest Container for the
+     *           necessary parameters to execute the DescribeOrderableDBInstanceOptions
+     *           operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeCertificates service method, as returned by AmazonRDS.
+     *         DescribeOrderableDBInstanceOptions service method, as returned by
+     *         AmazonRDS.
      * 
      *
      * @throws AmazonClientException
@@ -4880,30 +6626,32 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeCertificatesResult> describeCertificatesAsync(final DescribeCertificatesRequest describeCertificatesRequest) 
+    public Future<DescribeOrderableDBInstanceOptionsResult> describeOrderableDBInstanceOptionsAsync(final DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeCertificatesResult>() {
-            public DescribeCertificatesResult call() throws Exception {
-                return describeCertificates(describeCertificatesRequest);
+        return executorService.submit(new Callable<DescribeOrderableDBInstanceOptionsResult>() {
+            public DescribeOrderableDBInstanceOptionsResult call() throws Exception {
+                return describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Lists the set of CA certificates provided by Amazon RDS for this AWS
-     * account.
+     * Returns a list of orderable DB instance options for the specified
+     * engine.
      * </p>
      *
-     * @param describeCertificatesRequest Container for the necessary
-     *           parameters to execute the DescribeCertificates operation on AmazonRDS.
+     * @param describeOrderableDBInstanceOptionsRequest Container for the
+     *           necessary parameters to execute the DescribeOrderableDBInstanceOptions
+     *           operation on AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeCertificates service method, as returned by AmazonRDS.
+     *         DescribeOrderableDBInstanceOptions service method, as returned by
+     *         AmazonRDS.
      * 
      *
      * @throws AmazonClientException
@@ -4914,21 +6662,93 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeCertificatesResult> describeCertificatesAsync(
-            final DescribeCertificatesRequest describeCertificatesRequest,
-            final AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler)
+    public Future<DescribeOrderableDBInstanceOptionsResult> describeOrderableDBInstanceOptionsAsync(
+            final DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest,
+            final AsyncHandler<DescribeOrderableDBInstanceOptionsRequest, DescribeOrderableDBInstanceOptionsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeCertificatesResult>() {
-            public DescribeCertificatesResult call() throws Exception {
-              DescribeCertificatesResult result;
+        return executorService.submit(new Callable<DescribeOrderableDBInstanceOptionsResult>() {
+            public DescribeOrderableDBInstanceOptionsResult call() throws Exception {
+              DescribeOrderableDBInstanceOptionsResult result;
                 try {
-                result = describeCertificates(describeCertificatesRequest);
+                result = describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(describeCertificatesRequest, result);
+              asyncHandler.onSuccess(describeOrderableDBInstanceOptionsRequest, result);
                  return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes an existing option group.
+     * </p>
+     *
+     * @param deleteOptionGroupRequest Container for the necessary parameters
+     *           to execute the DeleteOptionGroup operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteOptionGroup service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteOptionGroupAsync(final DeleteOptionGroupRequest deleteOptionGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteOptionGroup(deleteOptionGroupRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes an existing option group.
+     * </p>
+     *
+     * @param deleteOptionGroupRequest Container for the necessary parameters
+     *           to execute the DeleteOptionGroup operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteOptionGroup service method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteOptionGroupAsync(
+            final DeleteOptionGroupRequest deleteOptionGroupRequest,
+            final AsyncHandler<DeleteOptionGroupRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteOptionGroup(deleteOptionGroupRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteOptionGroupRequest, null);
+                 return null;
         }
     });
     }
@@ -5005,78 +6825,6 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
               }
               asyncHandler.onSuccess(describeReservedDBInstancesOfferingsRequest, result);
                  return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes an existing option group.
-     * </p>
-     *
-     * @param deleteOptionGroupRequest Container for the necessary parameters
-     *           to execute the DeleteOptionGroup operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteOptionGroup service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteOptionGroupAsync(final DeleteOptionGroupRequest deleteOptionGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteOptionGroup(deleteOptionGroupRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes an existing option group.
-     * </p>
-     *
-     * @param deleteOptionGroupRequest Container for the necessary parameters
-     *           to execute the DeleteOptionGroup operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteOptionGroup service method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteOptionGroupAsync(
-            final DeleteOptionGroupRequest deleteOptionGroupRequest,
-            final AsyncHandler<DeleteOptionGroupRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteOptionGroup(deleteOptionGroupRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteOptionGroupRequest, null);
-                 return null;
         }
     });
     }

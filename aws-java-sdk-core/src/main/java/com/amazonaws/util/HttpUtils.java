@@ -17,6 +17,7 @@ package com.amazonaws.util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.net.URISyntaxException;
 
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
@@ -34,7 +35,7 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 
 public class HttpUtils {
-    
+
     /**
      * @deprecated by {@link SdkHttpUtils#urlEncode(String, boolean)}
      */
@@ -171,5 +172,37 @@ public class HttpUtils {
             return config.getSocketTimeout();
         }
         return ClientConfiguration.DEFAULT_SOCKET_TIMEOUT;
+    }
+
+    /**
+     * Returns an URI for the given endpoint.
+     * Prefixes the protocol if the endpoint given does not have it.
+     *
+     * @throws IllegalArgumentException if the inputs are null.
+     */
+    public static URI toUri(String endpoint, ClientConfiguration config) {
+
+        if (config == null) {
+            throw new IllegalArgumentException("ClientConfiguration cannot be null");
+        }
+
+        if (endpoint == null) {
+            throw new IllegalArgumentException("endpoint cannot be null");
+        }
+
+        /*
+         * If the endpoint doesn't explicitly specify a protocol to use, then
+         * we'll defer to the default protocol specified in the client
+         * configuration.
+         */
+        if (!endpoint.contains("://")) {
+            endpoint = config.getProtocol().toString() + "://" + endpoint;
+        }
+
+        try {
+            return new URI(endpoint);
+        } catch (URISyntaxException e) {
+            throw new IllegalArgumentException(e);
+        }
     }
 }

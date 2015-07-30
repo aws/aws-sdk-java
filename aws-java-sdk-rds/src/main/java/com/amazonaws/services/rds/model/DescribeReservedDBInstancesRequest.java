@@ -65,8 +65,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     /**
      * The offering type filter value. Specify this parameter to show only
      * the available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
-     * Utilization" </code>
+     * Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
      */
     private String offeringType;
 
@@ -85,8 +84,8 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a pagination token
      * called a marker is included in the response so that the following
-     * results can be retrieved. <p>Default: 100 <p>Constraints: minimum 20,
-     * maximum 100
+     * results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
+     * maximum 100.
      */
     private Integer maxRecords;
 
@@ -319,13 +318,11 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     /**
      * The offering type filter value. Specify this parameter to show only
      * the available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
-     * Utilization" </code>
+     * Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
      *
      * @return The offering type filter value. Specify this parameter to show only
      *         the available offerings matching the specified offering type. <p>Valid
-     *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
-     *         Utilization" </code>
+     *         Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
      */
     public String getOfferingType() {
         return offeringType;
@@ -334,13 +331,11 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     /**
      * The offering type filter value. Specify this parameter to show only
      * the available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
-     * Utilization" </code>
+     * Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
      *
      * @param offeringType The offering type filter value. Specify this parameter to show only
      *         the available offerings matching the specified offering type. <p>Valid
-     *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
-     *         Utilization" </code>
+     *         Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
      */
     public void setOfferingType(String offeringType) {
         this.offeringType = offeringType;
@@ -349,15 +344,13 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     /**
      * The offering type filter value. Specify this parameter to show only
      * the available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
-     * Utilization" </code>
+     * Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param offeringType The offering type filter value. Specify this parameter to show only
      *         the available offerings matching the specified offering type. <p>Valid
-     *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
-     *         Utilization" </code>
+     *         Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -494,14 +487,14 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a pagination token
      * called a marker is included in the response so that the following
-     * results can be retrieved. <p>Default: 100 <p>Constraints: minimum 20,
-     * maximum 100
+     * results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
+     * maximum 100.
      *
      * @return The maximum number of records to include in the response. If more than
      *         the <code>MaxRecords</code> value is available, a pagination token
      *         called a marker is included in the response so that the following
-     *         results can be retrieved. <p>Default: 100 <p>Constraints: minimum 20,
-     *         maximum 100
+     *         results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
+     *         maximum 100.
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -511,14 +504,14 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a pagination token
      * called a marker is included in the response so that the following
-     * results can be retrieved. <p>Default: 100 <p>Constraints: minimum 20,
-     * maximum 100
+     * results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
+     * maximum 100.
      *
      * @param maxRecords The maximum number of records to include in the response. If more than
      *         the <code>MaxRecords</code> value is available, a pagination token
      *         called a marker is included in the response so that the following
-     *         results can be retrieved. <p>Default: 100 <p>Constraints: minimum 20,
-     *         maximum 100
+     *         results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
+     *         maximum 100.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -528,16 +521,16 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a pagination token
      * called a marker is included in the response so that the following
-     * results can be retrieved. <p>Default: 100 <p>Constraints: minimum 20,
-     * maximum 100
+     * results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
+     * maximum 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more than
      *         the <code>MaxRecords</code> value is available, a pagination token
      *         called a marker is included in the response so that the following
-     *         results can be retrieved. <p>Default: 100 <p>Constraints: minimum 20,
-     *         maximum 100
+     *         results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
+     *         maximum 100.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

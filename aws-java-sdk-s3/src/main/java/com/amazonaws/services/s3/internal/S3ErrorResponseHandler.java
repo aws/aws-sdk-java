@@ -178,6 +178,8 @@ public class S3ErrorResponseHandler implements
         exceptionBuilder.setRequestId(headers.get(Headers.REQUEST_ID));
         exceptionBuilder
                 .setErrorCode(statusCode + " " + errorResponse.getStatusText());
+        exceptionBuilder.addAdditionalDetail(Headers.S3_BUCKET_REGION,
+                errorResponse.getHeaders().get(Headers.S3_BUCKET_REGION));
         return exceptionBuilder.build();
     }
 

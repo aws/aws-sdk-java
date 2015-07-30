@@ -73,7 +73,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      */
     public AmazonElasticFileSystemClient() {
         this(new DefaultAWSCredentialsProviderChain(),
-                new ClientConfiguration());
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
@@ -113,7 +113,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AmazonElasticFileSystemClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, new ClientConfiguration());
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .defaultConfig());
     }
 
     /**
@@ -153,7 +154,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      */
     public AmazonElasticFileSystemClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, new ClientConfiguration());
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
@@ -200,8 +202,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
             AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(adjustClientConfiguration(clientConfiguration),
-                requestMetricCollector);
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -290,12 +291,6 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         requestHandler2s
                 .addAll(chainFactory
                         .newRequestHandler2Chain("/com/amazonaws/services/elasticfilesystem/request.handler2s"));
-    }
-
-    private static ClientConfiguration adjustClientConfiguration(
-            ClientConfiguration orig) {
-        ClientConfiguration config = orig;
-        return config;
     }
 
     /**

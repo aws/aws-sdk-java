@@ -23,10 +23,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Restores a DB instance to an arbitrary point-in-time. Users can
  * restore to any point in time before the LatestRestorableTime for up to
- * BackupRetentionPeriod days. The target database is created from the
- * source database with the same configuration as the original database
- * except that the DB instance is created with the default DB security
- * group.
+ * BackupRetentionPeriod days. The target database is created with the
+ * most of original configuration, but in a system chosen availability
+ * zone with the default security group, the default subnet group, and
+ * the default DB parameter group. By default, the new DB instance is
+ * created as a single-AZ deployment except when the instance is a SQL
+ * Server instance that has an option group that is associated with
+ * mirroring; in this case, the instance becomes a mirrored deployment
+ * and not a single-AZ deployment.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest)
@@ -53,10 +57,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
 
     /**
      * The date and time to restore from. <p>Valid Values: Value must be a
-     * UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
-     * time for the DB instance</li> <li>Cannot be specified if
-     * UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
-     * <code>2009-09-07T23:45:00Z</code>
+     * time in Universal Coordinated Time (UTC) format <p>Constraints: <ul>
+     * <li>Must be before the latest restorable time for the DB instance</li>
+     * <li>Cannot be specified if UseLatestRestorableTime parameter is
+     * true</li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code>
      */
     private java.util.Date restoreTime;
 
@@ -343,16 +347,16 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
 
     /**
      * The date and time to restore from. <p>Valid Values: Value must be a
-     * UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
-     * time for the DB instance</li> <li>Cannot be specified if
-     * UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
-     * <code>2009-09-07T23:45:00Z</code>
+     * time in Universal Coordinated Time (UTC) format <p>Constraints: <ul>
+     * <li>Must be before the latest restorable time for the DB instance</li>
+     * <li>Cannot be specified if UseLatestRestorableTime parameter is
+     * true</li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code>
      *
      * @return The date and time to restore from. <p>Valid Values: Value must be a
-     *         UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
-     *         time for the DB instance</li> <li>Cannot be specified if
-     *         UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
-     *         <code>2009-09-07T23:45:00Z</code>
+     *         time in Universal Coordinated Time (UTC) format <p>Constraints: <ul>
+     *         <li>Must be before the latest restorable time for the DB instance</li>
+     *         <li>Cannot be specified if UseLatestRestorableTime parameter is
+     *         true</li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code>
      */
     public java.util.Date getRestoreTime() {
         return restoreTime;
@@ -360,16 +364,16 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The date and time to restore from. <p>Valid Values: Value must be a
-     * UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
-     * time for the DB instance</li> <li>Cannot be specified if
-     * UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
-     * <code>2009-09-07T23:45:00Z</code>
+     * time in Universal Coordinated Time (UTC) format <p>Constraints: <ul>
+     * <li>Must be before the latest restorable time for the DB instance</li>
+     * <li>Cannot be specified if UseLatestRestorableTime parameter is
+     * true</li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code>
      *
      * @param restoreTime The date and time to restore from. <p>Valid Values: Value must be a
-     *         UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
-     *         time for the DB instance</li> <li>Cannot be specified if
-     *         UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
-     *         <code>2009-09-07T23:45:00Z</code>
+     *         time in Universal Coordinated Time (UTC) format <p>Constraints: <ul>
+     *         <li>Must be before the latest restorable time for the DB instance</li>
+     *         <li>Cannot be specified if UseLatestRestorableTime parameter is
+     *         true</li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code>
      */
     public void setRestoreTime(java.util.Date restoreTime) {
         this.restoreTime = restoreTime;
@@ -377,18 +381,18 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The date and time to restore from. <p>Valid Values: Value must be a
-     * UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
-     * time for the DB instance</li> <li>Cannot be specified if
-     * UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
-     * <code>2009-09-07T23:45:00Z</code>
+     * time in Universal Coordinated Time (UTC) format <p>Constraints: <ul>
+     * <li>Must be before the latest restorable time for the DB instance</li>
+     * <li>Cannot be specified if UseLatestRestorableTime parameter is
+     * true</li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param restoreTime The date and time to restore from. <p>Valid Values: Value must be a
-     *         UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
-     *         time for the DB instance</li> <li>Cannot be specified if
-     *         UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
-     *         <code>2009-09-07T23:45:00Z</code>
+     *         time in Universal Coordinated Time (UTC) format <p>Constraints: <ul>
+     *         <li>Must be before the latest restorable time for the DB instance</li>
+     *         <li>Cannot be specified if UseLatestRestorableTime parameter is
+     *         true</li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

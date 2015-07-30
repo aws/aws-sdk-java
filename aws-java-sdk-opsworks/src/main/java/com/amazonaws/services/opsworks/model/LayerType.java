@@ -19,6 +19,8 @@ package com.amazonaws.services.opsworks.model;
  */
 public enum LayerType {
     
+    AwsFlowRuby("aws-flow-ruby"),
+    EcsCluster("ecs-cluster"),
     JavaApp("java-app"),
     Lb("lb"),
     Web("web"),
@@ -52,6 +54,10 @@ public enum LayerType {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
+        } else if ("aws-flow-ruby".equals(value)) {
+            return LayerType.AwsFlowRuby;
+        } else if ("ecs-cluster".equals(value)) {
+            return LayerType.EcsCluster;
         } else if ("java-app".equals(value)) {
             return LayerType.JavaApp;
         } else if ("lb".equals(value)) {

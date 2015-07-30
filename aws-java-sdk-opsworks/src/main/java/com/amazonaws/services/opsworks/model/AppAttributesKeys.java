@@ -21,7 +21,8 @@ public enum AppAttributesKeys {
     
     DocumentRoot("DocumentRoot"),
     RailsEnv("RailsEnv"),
-    AutoBundleOnDeploy("AutoBundleOnDeploy");
+    AutoBundleOnDeploy("AutoBundleOnDeploy"),
+    AwsFlowRubySettings("AwsFlowRubySettings");
 
     private String value;
 
@@ -51,6 +52,8 @@ public enum AppAttributesKeys {
             return AppAttributesKeys.RailsEnv;
         } else if ("AutoBundleOnDeploy".equals(value)) {
             return AppAttributesKeys.AutoBundleOnDeploy;
+        } else if ("AwsFlowRubySettings".equals(value)) {
+            return AppAttributesKeys.AwsFlowRubySettings;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

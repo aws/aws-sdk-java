@@ -73,6 +73,10 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                     context.nextToken();
                     layer.setCustomInstanceProfileArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CustomJson", targetDepth)) {
+                    context.nextToken();
+                    layer.setCustomJson(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CustomSecurityGroupIds", targetDepth)) {
                     context.nextToken();
                     layer.setCustomSecurityGroupIds(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));

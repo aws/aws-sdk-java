@@ -77,7 +77,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      */
     public AWSDeviceFarmClient() {
         this(new DefaultAWSCredentialsProviderChain(),
-                new ClientConfiguration());
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
@@ -119,7 +119,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AWSDeviceFarmClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, new ClientConfiguration());
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .defaultConfig());
     }
 
     /**
@@ -160,7 +161,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AWSDeviceFarmClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, new ClientConfiguration());
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
     }
 
     /**
@@ -207,8 +209,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
     public AWSDeviceFarmClient(AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(adjustClientConfiguration(clientConfiguration),
-                requestMetricCollector);
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
@@ -245,12 +246,6 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         requestHandler2s
                 .addAll(chainFactory
                         .newRequestHandler2Chain("/com/amazonaws/services/devicefarm/request.handler2s"));
-    }
-
-    private static ClientConfiguration adjustClientConfiguration(
-            ClientConfiguration orig) {
-        ClientConfiguration config = orig;
-        return config;
     }
 
     /**
