@@ -278,12 +278,10 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
      * input ByteBuffer and all the bytes it contains.
      */
     private static void updateLengthAndBytes(MessageDigest digest, ByteBuffer binaryValue) {
-        // Rewind the ByteBuffer, in case that get/put operations were applied to
-        // the unmarshalled BB before it's passed to this handler.
-        binaryValue.rewind();
-        int size = binaryValue.remaining();
+        ByteBuffer readOnlyBuffer = binaryValue.asReadOnlyBuffer();
+        int size = readOnlyBuffer.remaining();
         ByteBuffer lengthBytes = ByteBuffer.allocate(INTEGER_SIZE_IN_BYTES).putInt(size);
         digest.update(lengthBytes.array());
-        digest.update(binaryValue);
+        digest.update(readOnlyBuffer);
     }
 }
