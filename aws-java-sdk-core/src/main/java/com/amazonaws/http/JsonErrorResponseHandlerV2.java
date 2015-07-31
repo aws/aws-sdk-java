@@ -96,7 +96,7 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
                 try {
                     return unmarshaller.unmarshall(jsonContent.jsonNode);
                 } catch (Exception e) {
-                    LOG.error("Unable to unmarshall exception content", e);
+                    LOG.info("Unable to unmarshall exception content", e);
                     return null;
                 }
             }
@@ -136,7 +136,7 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
             try {
                 rawJsonContent = IOUtils.toString(httpResponse.getContent());
             } catch (Exception e) {
-                LOG.error("Unable to read HTTP response content", e);
+                LOG.info("Unable to read HTTP response content", e);
             }
             return new JsonContent(rawJsonContent);
 
@@ -151,7 +151,7 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
             try {
                 return MAPPER.readTree(rawJsonContent);
             } catch (Exception e) {
-                LOG.error("Unable to parse HTTP response content", e);
+                LOG.info("Unable to parse HTTP response content", e);
                 return null;
             }
         }
