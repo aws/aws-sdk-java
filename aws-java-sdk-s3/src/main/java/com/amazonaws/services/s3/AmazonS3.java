@@ -2126,7 +2126,6 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * If versioning is enabled for the specified bucket,
-     * this operation will
      * this operation will never overwrite an existing object
      * with the same key, but will keep the existing object as an
      * older version
