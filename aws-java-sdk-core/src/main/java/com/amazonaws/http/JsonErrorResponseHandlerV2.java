@@ -121,6 +121,7 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
      * Simple struct like class to hold both the raw json string content and it's parsed JsonNode
      */
     private static class JsonContent {
+
         private static final ObjectMapper MAPPER = new ObjectMapper()
                 .configure(JsonParser.Feature.ALLOW_COMMENTS, true);
 
@@ -144,10 +145,13 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
 
         private JsonContent(String rawJsonContent) {
             this.rawJsonContent = rawJsonContent;
-            this.jsonNode = parseJsonContent();
+            this.jsonNode = parseJsonContent(rawJsonContent);
         }
 
-        private JsonNode parseJsonContent() {
+        private static JsonNode parseJsonContent(String rawJsonContent) {
+            if (rawJsonContent == null) {
+                return null;
+            }
             try {
                 return MAPPER.readTree(rawJsonContent);
             } catch (Exception e) {

@@ -20,10 +20,18 @@ import java.util.NoSuchElementException;
 import com.amazonaws.services.dynamodbv2.document.Page;
 
 /**
- * @param <T> resource type
- * @param <R> low level result type
+ * An internal iterator implementation for {@link PageBasedCollection}.
+ * <p>
+ * <b>NOTE</b>: this internal class is marked as public since it has been incorrectly
+ * exposed in the public method {@link PageBasedCollection#iterator()}, and it
+ * will be changed to be package private in the next major version.
+ *
+ * @param <T>
+ *            resource type
+ * @param <R>
+ *            low level result type
  */
-class IteratorSupport<T,R> implements Iterator<T> {
+public class IteratorSupport<T,R> implements Iterator<T> {
     /**
      * Used to iterate through the resource pages, dynamically making network
      * calls as needed.

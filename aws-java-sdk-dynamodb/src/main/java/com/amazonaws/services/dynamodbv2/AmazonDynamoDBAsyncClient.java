@@ -438,20 +438,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<BatchGetItemResult> batchGetItemAsync(
-            final BatchGetItemRequest batchGetItemRequest) {
+            BatchGetItemRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<BatchGetItemResult>() {
-                    @Override
-                    public BatchGetItemResult call() {
-                        return batchGetItem(batchGetItemRequest);
-                    }
-                });
+        return batchGetItemAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<BatchGetItemResult> batchGetItemAsync(
-            final BatchGetItemRequest batchGetItemRequest,
+            final BatchGetItemRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchGetItemRequest, BatchGetItemResult> asyncHandler) {
 
         return executorService
@@ -459,18 +453,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public BatchGetItemResult call() throws Exception {
                         BatchGetItemResult result;
+
                         try {
-                            result = batchGetItem(batchGetItemRequest);
+                            result = batchGetItem(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(batchGetItemRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the BatchGetItem operation.
+     *
+     * @see #batchGetItemAsync(BatchGetItemRequest)
+     */
     @Override
     public java.util.concurrent.Future<BatchGetItemResult> batchGetItemAsync(
             java.util.Map<String, KeysAndAttributes> requestItems,
@@ -499,6 +504,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                 asyncHandler);
     }
 
+    /**
+     * Simplified method form for invoking the BatchGetItem operation.
+     *
+     * @see #batchGetItemAsync(BatchGetItemRequest)
+     */
     @Override
     public java.util.concurrent.Future<BatchGetItemResult> batchGetItemAsync(
             java.util.Map<String, KeysAndAttributes> requestItems) {
@@ -525,20 +535,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<BatchWriteItemResult> batchWriteItemAsync(
-            final BatchWriteItemRequest batchWriteItemRequest) {
+            BatchWriteItemRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<BatchWriteItemResult>() {
-                    @Override
-                    public BatchWriteItemResult call() {
-                        return batchWriteItem(batchWriteItemRequest);
-                    }
-                });
+        return batchWriteItemAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<BatchWriteItemResult> batchWriteItemAsync(
-            final BatchWriteItemRequest batchWriteItemRequest,
+            final BatchWriteItemRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchWriteItemRequest, BatchWriteItemResult> asyncHandler) {
 
         return executorService
@@ -546,18 +550,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public BatchWriteItemResult call() throws Exception {
                         BatchWriteItemResult result;
+
                         try {
-                            result = batchWriteItem(batchWriteItemRequest);
+                            result = batchWriteItem(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(batchWriteItemRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the BatchWriteItem operation.
+     *
+     * @see #batchWriteItemAsync(BatchWriteItemRequest)
+     */
     @Override
     public java.util.concurrent.Future<BatchWriteItemResult> batchWriteItemAsync(
             java.util.Map<String, java.util.List<WriteRequest>> requestItems) {
@@ -584,20 +599,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<CreateTableResult> createTableAsync(
-            final CreateTableRequest createTableRequest) {
+            CreateTableRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreateTableResult>() {
-                    @Override
-                    public CreateTableResult call() {
-                        return createTable(createTableRequest);
-                    }
-                });
+        return createTableAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<CreateTableResult> createTableAsync(
-            final CreateTableRequest createTableRequest,
+            final CreateTableRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateTableRequest, CreateTableResult> asyncHandler) {
 
         return executorService
@@ -605,18 +614,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public CreateTableResult call() throws Exception {
                         CreateTableResult result;
+
                         try {
-                            result = createTable(createTableRequest);
+                            result = createTable(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(createTableRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the CreateTable operation.
+     *
+     * @see #createTableAsync(CreateTableRequest)
+     */
     @Override
     public java.util.concurrent.Future<CreateTableResult> createTableAsync(
             java.util.List<AttributeDefinition> attributeDefinitions,
@@ -653,20 +673,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<DeleteItemResult> deleteItemAsync(
-            final DeleteItemRequest deleteItemRequest) {
+            DeleteItemRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DeleteItemResult>() {
-                    @Override
-                    public DeleteItemResult call() {
-                        return deleteItem(deleteItemRequest);
-                    }
-                });
+        return deleteItemAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<DeleteItemResult> deleteItemAsync(
-            final DeleteItemRequest deleteItemRequest,
+            final DeleteItemRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteItemRequest, DeleteItemResult> asyncHandler) {
 
         return executorService
@@ -674,18 +688,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public DeleteItemResult call() throws Exception {
                         DeleteItemResult result;
+
                         try {
-                            result = deleteItem(deleteItemRequest);
+                            result = deleteItem(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(deleteItemRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the DeleteItem operation.
+     *
+     * @see #deleteItemAsync(DeleteItemRequest)
+     */
     @Override
     public java.util.concurrent.Future<DeleteItemResult> deleteItemAsync(
             String tableName, java.util.Map<String, AttributeValue> key) {
@@ -710,6 +735,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                 .withKey(key), asyncHandler);
     }
 
+    /**
+     * Simplified method form for invoking the DeleteItem operation.
+     *
+     * @see #deleteItemAsync(DeleteItemRequest)
+     */
     @Override
     public java.util.concurrent.Future<DeleteItemResult> deleteItemAsync(
             String tableName, java.util.Map<String, AttributeValue> key,
@@ -738,20 +768,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<DeleteTableResult> deleteTableAsync(
-            final DeleteTableRequest deleteTableRequest) {
+            DeleteTableRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DeleteTableResult>() {
-                    @Override
-                    public DeleteTableResult call() {
-                        return deleteTable(deleteTableRequest);
-                    }
-                });
+        return deleteTableAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<DeleteTableResult> deleteTableAsync(
-            final DeleteTableRequest deleteTableRequest,
+            final DeleteTableRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteTableRequest, DeleteTableResult> asyncHandler) {
 
         return executorService
@@ -759,18 +783,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public DeleteTableResult call() throws Exception {
                         DeleteTableResult result;
+
                         try {
-                            result = deleteTable(deleteTableRequest);
+                            result = deleteTable(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(deleteTableRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the DeleteTable operation.
+     *
+     * @see #deleteTableAsync(DeleteTableRequest)
+     */
     @Override
     public java.util.concurrent.Future<DeleteTableResult> deleteTableAsync(
             String tableName) {
@@ -796,20 +831,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<DescribeTableResult> describeTableAsync(
-            final DescribeTableRequest describeTableRequest) {
+            DescribeTableRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DescribeTableResult>() {
-                    @Override
-                    public DescribeTableResult call() {
-                        return describeTable(describeTableRequest);
-                    }
-                });
+        return describeTableAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<DescribeTableResult> describeTableAsync(
-            final DescribeTableRequest describeTableRequest,
+            final DescribeTableRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeTableRequest, DescribeTableResult> asyncHandler) {
 
         return executorService
@@ -817,18 +846,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public DescribeTableResult call() throws Exception {
                         DescribeTableResult result;
+
                         try {
-                            result = describeTable(describeTableRequest);
+                            result = describeTable(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(describeTableRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the DescribeTable operation.
+     *
+     * @see #describeTableAsync(DescribeTableRequest)
+     */
     @Override
     public java.util.concurrent.Future<DescribeTableResult> describeTableAsync(
             String tableName) {
@@ -855,20 +895,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<GetItemResult> getItemAsync(
-            final GetItemRequest getItemRequest) {
+            GetItemRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetItemResult>() {
-                    @Override
-                    public GetItemResult call() {
-                        return getItem(getItemRequest);
-                    }
-                });
+        return getItemAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetItemResult> getItemAsync(
-            final GetItemRequest getItemRequest,
+            final GetItemRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetItemRequest, GetItemResult> asyncHandler) {
 
         return executorService
@@ -876,18 +910,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public GetItemResult call() throws Exception {
                         GetItemResult result;
+
                         try {
-                            result = getItem(getItemRequest);
+                            result = getItem(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getItemRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the GetItem operation.
+     *
+     * @see #getItemAsync(GetItemRequest)
+     */
     @Override
     public java.util.concurrent.Future<GetItemResult> getItemAsync(
             String tableName, java.util.Map<String, AttributeValue> key) {
@@ -911,6 +956,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                 .withKey(key), asyncHandler);
     }
 
+    /**
+     * Simplified method form for invoking the GetItem operation.
+     *
+     * @see #getItemAsync(GetItemRequest)
+     */
     @Override
     public java.util.concurrent.Future<GetItemResult> getItemAsync(
             String tableName, java.util.Map<String, AttributeValue> key,
@@ -938,20 +988,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<ListTablesResult> listTablesAsync(
-            final ListTablesRequest listTablesRequest) {
+            ListTablesRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListTablesResult>() {
-                    @Override
-                    public ListTablesResult call() {
-                        return listTables(listTablesRequest);
-                    }
-                });
+        return listTablesAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListTablesResult> listTablesAsync(
-            final ListTablesRequest listTablesRequest,
+            final ListTablesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTablesRequest, ListTablesResult> asyncHandler) {
 
         return executorService
@@ -959,18 +1003,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public ListTablesResult call() throws Exception {
                         ListTablesResult result;
+
                         try {
-                            result = listTables(listTablesRequest);
+                            result = listTables(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listTablesRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the ListTables operation.
+     *
+     * @see #listTablesAsync(ListTablesRequest)
+     */
     @Override
     public java.util.concurrent.Future<ListTablesResult> listTablesAsync() {
 
@@ -990,6 +1045,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
         return listTablesAsync(new ListTablesRequest(), asyncHandler);
     }
 
+    /**
+     * Simplified method form for invoking the ListTables operation.
+     *
+     * @see #listTablesAsync(ListTablesRequest)
+     */
     @Override
     public java.util.concurrent.Future<ListTablesResult> listTablesAsync(
             String exclusiveStartTableName) {
@@ -1015,6 +1075,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                 asyncHandler);
     }
 
+    /**
+     * Simplified method form for invoking the ListTables operation.
+     *
+     * @see #listTablesAsync(ListTablesRequest)
+     */
     @Override
     public java.util.concurrent.Future<ListTablesResult> listTablesAsync(
             String exclusiveStartTableName, Integer limit) {
@@ -1041,6 +1106,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                 .withLimit(limit), asyncHandler);
     }
 
+    /**
+     * Simplified method form for invoking the ListTables operation.
+     *
+     * @see #listTablesAsync(ListTablesRequest)
+     */
     @Override
     public java.util.concurrent.Future<ListTablesResult> listTablesAsync(
             Integer limit) {
@@ -1065,20 +1135,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<PutItemResult> putItemAsync(
-            final PutItemRequest putItemRequest) {
+            PutItemRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<PutItemResult>() {
-                    @Override
-                    public PutItemResult call() {
-                        return putItem(putItemRequest);
-                    }
-                });
+        return putItemAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<PutItemResult> putItemAsync(
-            final PutItemRequest putItemRequest,
+            final PutItemRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutItemRequest, PutItemResult> asyncHandler) {
 
         return executorService
@@ -1086,18 +1150,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public PutItemResult call() throws Exception {
                         PutItemResult result;
+
                         try {
-                            result = putItem(putItemRequest);
+                            result = putItem(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(putItemRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the PutItem operation.
+     *
+     * @see #putItemAsync(PutItemRequest)
+     */
     @Override
     public java.util.concurrent.Future<PutItemResult> putItemAsync(
             String tableName, java.util.Map<String, AttributeValue> item) {
@@ -1121,6 +1196,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                 .withItem(item), asyncHandler);
     }
 
+    /**
+     * Simplified method form for invoking the PutItem operation.
+     *
+     * @see #putItemAsync(PutItemRequest)
+     */
     @Override
     public java.util.concurrent.Future<PutItemResult> putItemAsync(
             String tableName, java.util.Map<String, AttributeValue> item,
@@ -1148,20 +1228,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<QueryResult> queryAsync(
-            final QueryRequest queryRequest) {
+            QueryRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<QueryResult>() {
-                    @Override
-                    public QueryResult call() {
-                        return query(queryRequest);
-                    }
-                });
+        return queryAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<QueryResult> queryAsync(
-            final QueryRequest queryRequest,
+            final QueryRequest request,
             final com.amazonaws.handlers.AsyncHandler<QueryRequest, QueryResult> asyncHandler) {
 
         return executorService
@@ -1169,34 +1243,33 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public QueryResult call() throws Exception {
                         QueryResult result;
+
                         try {
-                            result = query(queryRequest);
+                            result = query(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(queryRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
     @Override
-    public java.util.concurrent.Future<ScanResult> scanAsync(
-            final ScanRequest scanRequest) {
+    public java.util.concurrent.Future<ScanResult> scanAsync(ScanRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ScanResult>() {
-                    @Override
-                    public ScanResult call() {
-                        return scan(scanRequest);
-                    }
-                });
+        return scanAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ScanResult> scanAsync(
-            final ScanRequest scanRequest,
+            final ScanRequest request,
             final com.amazonaws.handlers.AsyncHandler<ScanRequest, ScanResult> asyncHandler) {
 
         return executorService
@@ -1204,18 +1277,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public ScanResult call() throws Exception {
                         ScanResult result;
+
                         try {
-                            result = scan(scanRequest);
+                            result = scan(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(scanRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the Scan operation.
+     *
+     * @see #scanAsync(ScanRequest)
+     */
     @Override
     public java.util.concurrent.Future<ScanResult> scanAsync(String tableName,
             java.util.List<String> attributesToGet) {
@@ -1239,6 +1323,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                 .withAttributesToGet(attributesToGet), asyncHandler);
     }
 
+    /**
+     * Simplified method form for invoking the Scan operation.
+     *
+     * @see #scanAsync(ScanRequest)
+     */
     @Override
     public java.util.concurrent.Future<ScanResult> scanAsync(String tableName,
             java.util.Map<String, Condition> scanFilter) {
@@ -1262,6 +1351,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                 .withScanFilter(scanFilter), asyncHandler);
     }
 
+    /**
+     * Simplified method form for invoking the Scan operation.
+     *
+     * @see #scanAsync(ScanRequest)
+     */
     @Override
     public java.util.concurrent.Future<ScanResult> scanAsync(String tableName,
             java.util.List<String> attributesToGet,
@@ -1291,20 +1385,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<UpdateItemResult> updateItemAsync(
-            final UpdateItemRequest updateItemRequest) {
+            UpdateItemRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<UpdateItemResult>() {
-                    @Override
-                    public UpdateItemResult call() {
-                        return updateItem(updateItemRequest);
-                    }
-                });
+        return updateItemAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<UpdateItemResult> updateItemAsync(
-            final UpdateItemRequest updateItemRequest,
+            final UpdateItemRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateItemRequest, UpdateItemResult> asyncHandler) {
 
         return executorService
@@ -1312,18 +1400,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public UpdateItemResult call() throws Exception {
                         UpdateItemResult result;
+
                         try {
-                            result = updateItem(updateItemRequest);
+                            result = updateItem(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(updateItemRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the UpdateItem operation.
+     *
+     * @see #updateItemAsync(UpdateItemRequest)
+     */
     @Override
     public java.util.concurrent.Future<UpdateItemResult> updateItemAsync(
             String tableName, java.util.Map<String, AttributeValue> key,
@@ -1351,6 +1450,11 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                 asyncHandler);
     }
 
+    /**
+     * Simplified method form for invoking the UpdateItem operation.
+     *
+     * @see #updateItemAsync(UpdateItemRequest)
+     */
     @Override
     public java.util.concurrent.Future<UpdateItemResult> updateItemAsync(
             String tableName, java.util.Map<String, AttributeValue> key,
@@ -1383,20 +1487,14 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
     @Override
     public java.util.concurrent.Future<UpdateTableResult> updateTableAsync(
-            final UpdateTableRequest updateTableRequest) {
+            UpdateTableRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<UpdateTableResult>() {
-                    @Override
-                    public UpdateTableResult call() {
-                        return updateTable(updateTableRequest);
-                    }
-                });
+        return updateTableAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<UpdateTableResult> updateTableAsync(
-            final UpdateTableRequest updateTableRequest,
+            final UpdateTableRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateTableRequest, UpdateTableResult> asyncHandler) {
 
         return executorService
@@ -1404,18 +1502,29 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                     @Override
                     public UpdateTableResult call() throws Exception {
                         UpdateTableResult result;
+
                         try {
-                            result = updateTable(updateTableRequest);
+                            result = updateTable(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(updateTableRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the UpdateTable operation.
+     *
+     * @see #updateTableAsync(UpdateTableRequest)
+     */
     @Override
     public java.util.concurrent.Future<UpdateTableResult> updateTableAsync(
             String tableName, ProvisionedThroughput provisionedThroughput) {

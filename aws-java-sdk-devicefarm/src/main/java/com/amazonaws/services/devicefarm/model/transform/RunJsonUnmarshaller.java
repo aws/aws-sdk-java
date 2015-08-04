@@ -114,6 +114,11 @@ public class RunJsonUnmarshaller implements
                     run.setCompletedJobs(IntegerJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("billingMethod", targetDepth)) {
+                    context.nextToken();
+                    run.setBillingMethod(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

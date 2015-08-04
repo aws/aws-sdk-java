@@ -26,7 +26,9 @@ public enum TestType {
     APPIUM_JAVA_TESTNG("APPIUM_JAVA_TESTNG"),
     CALABASH("CALABASH"),
     INSTRUMENTATION("INSTRUMENTATION"),
-    UIAUTOMATOR("UIAUTOMATOR");
+    UIAUTOMATION("UIAUTOMATION"),
+    UIAUTOMATOR("UIAUTOMATOR"),
+    XCTEST("XCTEST");
 
     private String value;
 
@@ -61,8 +63,12 @@ public enum TestType {
             return CALABASH;
         } else if ("INSTRUMENTATION".equals(value)) {
             return INSTRUMENTATION;
+        } else if ("UIAUTOMATION".equals(value)) {
+            return UIAUTOMATION;
         } else if ("UIAUTOMATOR".equals(value)) {
             return UIAUTOMATOR;
+        } else if ("XCTEST".equals(value)) {
+            return XCTEST;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

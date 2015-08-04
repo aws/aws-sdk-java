@@ -53,6 +53,16 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -69,17 +79,17 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -183,6 +193,16 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -199,17 +219,17 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -223,6 +243,16 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        ANDROID_APP: An Android upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
      *        <li>
@@ -244,17 +274,17 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
      * @see UploadType
@@ -278,6 +308,16 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -294,17 +334,17 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -317,6 +357,16 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         ANDROID_APP: An Android upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IOS_APP: An iOS upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EXTERNAL_DATA: An external data upload.
      *         </p>
      *         </li>
      *         <li>
@@ -338,17 +388,17 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         EXTERNAL_DATA: An external data upload.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_TEST_PACKAGE: An XCode test package upload.
      *         </p>
      *         </li>
      * @see UploadType
@@ -372,6 +422,16 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -388,17 +448,17 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -412,6 +472,16 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        ANDROID_APP: An Android upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
      *        <li>
@@ -433,17 +503,17 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -470,6 +540,16 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -486,17 +566,17 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -510,6 +590,16 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        ANDROID_APP: An Android upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
      *        <li>
@@ -531,17 +621,17 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -567,6 +657,16 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -583,17 +683,17 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -607,6 +707,16 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        ANDROID_APP: An Android upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
      *        <li>
@@ -628,17 +738,17 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

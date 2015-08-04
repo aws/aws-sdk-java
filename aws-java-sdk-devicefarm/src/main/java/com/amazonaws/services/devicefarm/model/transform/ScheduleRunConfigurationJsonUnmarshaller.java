@@ -85,6 +85,12 @@ public class ScheduleRunConfigurationJsonUnmarshaller implements
                                     StringJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }
+                if (context.testExpression("billingMethod", targetDepth)) {
+                    context.nextToken();
+                    scheduleRunConfiguration
+                            .setBillingMethod(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

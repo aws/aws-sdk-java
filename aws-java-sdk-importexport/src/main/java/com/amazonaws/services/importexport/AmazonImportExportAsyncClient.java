@@ -277,20 +277,14 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
 
     @Override
     public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(
-            final CancelJobRequest cancelJobRequest) {
+            CancelJobRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CancelJobResult>() {
-                    @Override
-                    public CancelJobResult call() {
-                        return cancelJob(cancelJobRequest);
-                    }
-                });
+        return cancelJobAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(
-            final CancelJobRequest cancelJobRequest,
+            final CancelJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler) {
 
         return executorService
@@ -298,13 +292,19 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     @Override
                     public CancelJobResult call() throws Exception {
                         CancelJobResult result;
+
                         try {
-                            result = cancelJob(cancelJobRequest);
+                            result = cancelJob(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(cancelJobRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -312,20 +312,14 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
 
     @Override
     public java.util.concurrent.Future<CreateJobResult> createJobAsync(
-            final CreateJobRequest createJobRequest) {
+            CreateJobRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreateJobResult>() {
-                    @Override
-                    public CreateJobResult call() {
-                        return createJob(createJobRequest);
-                    }
-                });
+        return createJobAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<CreateJobResult> createJobAsync(
-            final CreateJobRequest createJobRequest,
+            final CreateJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler) {
 
         return executorService
@@ -333,13 +327,19 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     @Override
                     public CreateJobResult call() throws Exception {
                         CreateJobResult result;
+
                         try {
-                            result = createJob(createJobRequest);
+                            result = createJob(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(createJobRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -347,20 +347,14 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
 
     @Override
     public java.util.concurrent.Future<GetShippingLabelResult> getShippingLabelAsync(
-            final GetShippingLabelRequest getShippingLabelRequest) {
+            GetShippingLabelRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetShippingLabelResult>() {
-                    @Override
-                    public GetShippingLabelResult call() {
-                        return getShippingLabel(getShippingLabelRequest);
-                    }
-                });
+        return getShippingLabelAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetShippingLabelResult> getShippingLabelAsync(
-            final GetShippingLabelRequest getShippingLabelRequest,
+            final GetShippingLabelRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetShippingLabelRequest, GetShippingLabelResult> asyncHandler) {
 
         return executorService
@@ -368,13 +362,19 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     @Override
                     public GetShippingLabelResult call() throws Exception {
                         GetShippingLabelResult result;
+
                         try {
-                            result = getShippingLabel(getShippingLabelRequest);
+                            result = getShippingLabel(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getShippingLabelRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -382,20 +382,14 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
 
     @Override
     public java.util.concurrent.Future<GetStatusResult> getStatusAsync(
-            final GetStatusRequest getStatusRequest) {
+            GetStatusRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetStatusResult>() {
-                    @Override
-                    public GetStatusResult call() {
-                        return getStatus(getStatusRequest);
-                    }
-                });
+        return getStatusAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetStatusResult> getStatusAsync(
-            final GetStatusRequest getStatusRequest,
+            final GetStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetStatusRequest, GetStatusResult> asyncHandler) {
 
         return executorService
@@ -403,13 +397,19 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     @Override
                     public GetStatusResult call() throws Exception {
                         GetStatusResult result;
+
                         try {
-                            result = getStatus(getStatusRequest);
+                            result = getStatus(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getStatusRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -417,20 +417,14 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
 
     @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(
-            final ListJobsRequest listJobsRequest) {
+            ListJobsRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListJobsResult>() {
-                    @Override
-                    public ListJobsResult call() {
-                        return listJobs(listJobsRequest);
-                    }
-                });
+        return listJobsAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(
-            final ListJobsRequest listJobsRequest,
+            final ListJobsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
 
         return executorService
@@ -438,18 +432,29 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     @Override
                     public ListJobsResult call() throws Exception {
                         ListJobsResult result;
+
                         try {
-                            result = listJobs(listJobsRequest);
+                            result = listJobs(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listJobsRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the ListJobs operation.
+     *
+     * @see #listJobsAsync(ListJobsRequest)
+     */
     @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync() {
 
@@ -470,20 +475,14 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
 
     @Override
     public java.util.concurrent.Future<UpdateJobResult> updateJobAsync(
-            final UpdateJobRequest updateJobRequest) {
+            UpdateJobRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<UpdateJobResult>() {
-                    @Override
-                    public UpdateJobResult call() {
-                        return updateJob(updateJobRequest);
-                    }
-                });
+        return updateJobAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<UpdateJobResult> updateJobAsync(
-            final UpdateJobRequest updateJobRequest,
+            final UpdateJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateJobRequest, UpdateJobResult> asyncHandler) {
 
         return executorService
@@ -491,13 +490,19 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
                     @Override
                     public UpdateJobResult call() throws Exception {
                         UpdateJobResult result;
+
                         try {
-                            result = updateJob(updateJobRequest);
+                            result = updateJob(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(updateJobRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });

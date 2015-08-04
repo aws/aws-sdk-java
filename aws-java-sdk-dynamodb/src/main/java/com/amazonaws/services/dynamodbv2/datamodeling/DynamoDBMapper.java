@@ -149,6 +149,20 @@ import com.amazonaws.util.VersionInfoUtils;
  * mapper.delete(obj);
  * </pre>
  * <p>
+ * If you don't have your DynamoDB table set up yet, you can use
+ * {@link DynamoDBMapper#generateCreateTableRequest(Class)} to construct the
+ * {@link CreateTableRequest} for the table represented by your annotated class.
+ *
+ * <pre class="brush: java">
+ * AmazonDynamoDB dynamoDBClient = new AmazonDynamoDBClient();
+ * DynamoDBMapper mapper = new DynamoDBMapper(dynamoDBClient);
+ * CreateTableRequest req = mapper.generateCreateTableRequest(TestClass.class);
+ * // Table provision throughput is still required since it cannot be specified in your POJO
+ * req.setProvisionedThroughput(new ProvisionedThroughput(5L, 5L));
+ * // Fire off the CreateTableRequest using the low-level client
+ * dynamoDBClient.createTable(req);
+ * </pre>
+ * <p>
  * When using the save, load, and delete methods, {@link DynamoDBMapper} will
  * throw {@link DynamoDBMappingException}s to indicate that domain classes are
  * incorrectly annotated or otherwise incompatible with this class. Service

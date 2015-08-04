@@ -46,23 +46,24 @@ public class Run implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -77,7 +78,17 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -94,6 +105,11 @@ public class Run implements Serializable, Cloneable {
      * <li>
      * <p>
      * ANDROID: The Android platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
      * </p>
      * </li>
      * </ul>
@@ -223,6 +239,14 @@ public class Run implements Serializable, Cloneable {
      * </p>
      */
     private Integer completedJobs;
+    /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     */
+    private String billingMethod;
 
     /**
      * <p>
@@ -310,23 +334,24 @@ public class Run implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -341,7 +366,17 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -354,23 +389,24 @@ public class Run implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
+     *        an Android app, interacting with it and capturing screenshots at
+     *        the same time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_EXPLORER: An app explorer that will traverse an app,
-     *        interacting with it and capturing screenshots at the same time.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
      *        </p>
      *        </li>
      *        <li>
@@ -385,7 +421,17 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        UIAUTOMATION: The uiautomation type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        UIAUTOMATOR: The uiautomator type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
      * @see TestType
@@ -404,23 +450,24 @@ public class Run implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -435,7 +482,17 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -447,23 +504,24 @@ public class Run implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
+     *         BUILTIN_FUZZ: The built-in fuzz type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         BUILTIN_EXPLORER: For Android, an app explorer that will traverse
+     *         an Android app, interacting with it and capturing screenshots at
+     *         the same time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         BUILTIN_EXPLORER: An app explorer that will traverse an app,
-     *         interacting with it and capturing screenshots at the same time.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         BUILTIN_FUZZ: The built-in fuzz type.
      *         </p>
      *         </li>
      *         <li>
@@ -478,7 +536,17 @@ public class Run implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         UIAUTOMATION: The uiautomation type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         UIAUTOMATOR: The uiautomator type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST: The XCode test type.
      *         </p>
      *         </li>
      * @see TestType
@@ -497,23 +565,24 @@ public class Run implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -528,7 +597,17 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -541,23 +620,24 @@ public class Run implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
+     *        an Android app, interacting with it and capturing screenshots at
+     *        the same time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_EXPLORER: An app explorer that will traverse an app,
-     *        interacting with it and capturing screenshots at the same time.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
      *        </p>
      *        </li>
      *        <li>
@@ -572,7 +652,17 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        UIAUTOMATION: The uiautomation type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        UIAUTOMATOR: The uiautomator type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -594,23 +684,24 @@ public class Run implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -625,7 +716,17 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -638,23 +739,24 @@ public class Run implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
+     *        an Android app, interacting with it and capturing screenshots at
+     *        the same time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_EXPLORER: An app explorer that will traverse an app,
-     *        interacting with it and capturing screenshots at the same time.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
      *        </p>
      *        </li>
      *        <li>
@@ -669,7 +771,17 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        UIAUTOMATION: The uiautomation type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        UIAUTOMATOR: The uiautomator type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -690,23 +802,24 @@ public class Run implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -721,7 +834,17 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -734,23 +857,24 @@ public class Run implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
+     *        an Android app, interacting with it and capturing screenshots at
+     *        the same time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_EXPLORER: An app explorer that will traverse an app,
-     *        interacting with it and capturing screenshots at the same time.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
      *        </p>
      *        </li>
      *        <li>
@@ -765,7 +889,17 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        UIAUTOMATION: The uiautomation type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        UIAUTOMATOR: The uiautomator type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -790,6 +924,11 @@ public class Run implements Serializable, Cloneable {
      * ANDROID: The Android platform.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param platform
@@ -801,6 +940,11 @@ public class Run implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID: The Android platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS: The iOS platform.
      *        </p>
      *        </li>
      * @see DevicePlatform
@@ -822,6 +966,11 @@ public class Run implements Serializable, Cloneable {
      * ANDROID: The Android platform.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The run's platform.</p>
@@ -832,6 +981,11 @@ public class Run implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         ANDROID: The Android platform.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IOS: The iOS platform.
      *         </p>
      *         </li>
      * @see DevicePlatform
@@ -853,6 +1007,11 @@ public class Run implements Serializable, Cloneable {
      * ANDROID: The Android platform.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param platform
@@ -864,6 +1023,11 @@ public class Run implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID: The Android platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS: The iOS platform.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -888,6 +1052,11 @@ public class Run implements Serializable, Cloneable {
      * ANDROID: The Android platform.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param platform
@@ -899,6 +1068,11 @@ public class Run implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID: The Android platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS: The iOS platform.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -922,6 +1096,11 @@ public class Run implements Serializable, Cloneable {
      * ANDROID: The Android platform.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param platform
@@ -933,6 +1112,11 @@ public class Run implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID: The Android platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS: The iOS platform.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -2045,6 +2229,98 @@ public class Run implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     * 
+     * @param billingMethod
+     *        Specifies the billing method for a test run: <code>metered</code>
+     *        or <code>unmetered</code>. If the parameter is not specified, the
+     *        default value is <code>unmetered</code>.
+     * @see BillingMethod
+     */
+    public void setBillingMethod(String billingMethod) {
+        this.billingMethod = billingMethod;
+    }
+
+    /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     * 
+     * @return Specifies the billing method for a test run: <code>metered</code>
+     *         or <code>unmetered</code>. If the parameter is not specified, the
+     *         default value is <code>unmetered</code>.
+     * @see BillingMethod
+     */
+    public String getBillingMethod() {
+        return this.billingMethod;
+    }
+
+    /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     * 
+     * @param billingMethod
+     *        Specifies the billing method for a test run: <code>metered</code>
+     *        or <code>unmetered</code>. If the parameter is not specified, the
+     *        default value is <code>unmetered</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see BillingMethod
+     */
+    public Run withBillingMethod(String billingMethod) {
+        setBillingMethod(billingMethod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     * 
+     * @param billingMethod
+     *        Specifies the billing method for a test run: <code>metered</code>
+     *        or <code>unmetered</code>. If the parameter is not specified, the
+     *        default value is <code>unmetered</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see BillingMethod
+     */
+    public void setBillingMethod(BillingMethod billingMethod) {
+        this.billingMethod = billingMethod.toString();
+    }
+
+    /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     * 
+     * @param billingMethod
+     *        Specifies the billing method for a test run: <code>metered</code>
+     *        or <code>unmetered</code>. If the parameter is not specified, the
+     *        default value is <code>unmetered</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see BillingMethod
+     */
+    public Run withBillingMethod(BillingMethod billingMethod) {
+        setBillingMethod(billingMethod);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2081,7 +2357,9 @@ public class Run implements Serializable, Cloneable {
         if (getTotalJobs() != null)
             sb.append("TotalJobs: " + getTotalJobs() + ",");
         if (getCompletedJobs() != null)
-            sb.append("CompletedJobs: " + getCompletedJobs());
+            sb.append("CompletedJobs: " + getCompletedJobs() + ",");
+        if (getBillingMethod() != null)
+            sb.append("BillingMethod: " + getBillingMethod());
         sb.append("}");
         return sb.toString();
     }
@@ -2161,6 +2439,11 @@ public class Run implements Serializable, Cloneable {
         if (other.getCompletedJobs() != null
                 && other.getCompletedJobs().equals(this.getCompletedJobs()) == false)
             return false;
+        if (other.getBillingMethod() == null ^ this.getBillingMethod() == null)
+            return false;
+        if (other.getBillingMethod() != null
+                && other.getBillingMethod().equals(this.getBillingMethod()) == false)
+            return false;
         return true;
     }
 
@@ -2196,6 +2479,10 @@ public class Run implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getCompletedJobs() == null) ? 0 : getCompletedJobs()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getBillingMethod() == null) ? 0 : getBillingMethod()
                         .hashCode());
         return hashCode;
     }

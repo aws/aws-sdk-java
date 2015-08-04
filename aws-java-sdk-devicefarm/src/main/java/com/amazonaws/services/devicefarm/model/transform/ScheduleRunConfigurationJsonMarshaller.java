@@ -90,6 +90,11 @@ public class ScheduleRunConfigurationJsonMarshaller {
                 jsonWriter.endArray();
             }
 
+            if (scheduleRunConfiguration.getBillingMethod() != null) {
+                jsonWriter.key("billingMethod").value(
+                        scheduleRunConfiguration.getBillingMethod());
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

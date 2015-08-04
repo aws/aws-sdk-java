@@ -351,21 +351,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<Void> addTagsToOnPremisesInstancesAsync(
-            final AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest) {
+            AddTagsToOnPremisesInstancesRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        addTagsToOnPremisesInstances(addTagsToOnPremisesInstancesRequest);
-                        return null;
-                    }
-                });
+        return addTagsToOnPremisesInstancesAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> addTagsToOnPremisesInstancesAsync(
-            final AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest,
+            final AddTagsToOnPremisesInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddTagsToOnPremisesInstancesRequest, Void> asyncHandler) {
 
         return executorService
@@ -373,15 +366,20 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            addTagsToOnPremisesInstances(addTagsToOnPremisesInstancesRequest);
+                            addTagsToOnPremisesInstances(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(
-                                addTagsToOnPremisesInstancesRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -389,20 +387,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync(
-            final BatchGetApplicationsRequest batchGetApplicationsRequest) {
+            BatchGetApplicationsRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<BatchGetApplicationsResult>() {
-                    @Override
-                    public BatchGetApplicationsResult call() {
-                        return batchGetApplications(batchGetApplicationsRequest);
-                    }
-                });
+        return batchGetApplicationsAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync(
-            final BatchGetApplicationsRequest batchGetApplicationsRequest,
+            final BatchGetApplicationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchGetApplicationsRequest, BatchGetApplicationsResult> asyncHandler) {
 
         return executorService
@@ -410,19 +402,29 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public BatchGetApplicationsResult call() throws Exception {
                         BatchGetApplicationsResult result;
+
                         try {
-                            result = batchGetApplications(batchGetApplicationsRequest);
+                            result = batchGetApplications(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(batchGetApplicationsRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the BatchGetApplications operation.
+     *
+     * @see #batchGetApplicationsAsync(BatchGetApplicationsRequest)
+     */
     @Override
     public java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync() {
 
@@ -445,20 +447,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(
-            final BatchGetDeploymentsRequest batchGetDeploymentsRequest) {
+            BatchGetDeploymentsRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<BatchGetDeploymentsResult>() {
-                    @Override
-                    public BatchGetDeploymentsResult call() {
-                        return batchGetDeployments(batchGetDeploymentsRequest);
-                    }
-                });
+        return batchGetDeploymentsAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(
-            final BatchGetDeploymentsRequest batchGetDeploymentsRequest,
+            final BatchGetDeploymentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentsRequest, BatchGetDeploymentsResult> asyncHandler) {
 
         return executorService
@@ -466,19 +462,29 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public BatchGetDeploymentsResult call() throws Exception {
                         BatchGetDeploymentsResult result;
+
                         try {
-                            result = batchGetDeployments(batchGetDeploymentsRequest);
+                            result = batchGetDeployments(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(batchGetDeploymentsRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the BatchGetDeployments operation.
+     *
+     * @see #batchGetDeploymentsAsync(BatchGetDeploymentsRequest)
+     */
     @Override
     public java.util.concurrent.Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync() {
 
@@ -501,20 +507,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<BatchGetOnPremisesInstancesResult> batchGetOnPremisesInstancesAsync(
-            final BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest) {
+            BatchGetOnPremisesInstancesRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<BatchGetOnPremisesInstancesResult>() {
-                    @Override
-                    public BatchGetOnPremisesInstancesResult call() {
-                        return batchGetOnPremisesInstances(batchGetOnPremisesInstancesRequest);
-                    }
-                });
+        return batchGetOnPremisesInstancesAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<BatchGetOnPremisesInstancesResult> batchGetOnPremisesInstancesAsync(
-            final BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest,
+            final BatchGetOnPremisesInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchGetOnPremisesInstancesRequest, BatchGetOnPremisesInstancesResult> asyncHandler) {
 
         return executorService
@@ -523,19 +523,30 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     public BatchGetOnPremisesInstancesResult call()
                             throws Exception {
                         BatchGetOnPremisesInstancesResult result;
+
                         try {
-                            result = batchGetOnPremisesInstances(batchGetOnPremisesInstancesRequest);
+                            result = batchGetOnPremisesInstances(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(
-                                batchGetOnPremisesInstancesRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the BatchGetOnPremisesInstances
+     * operation.
+     *
+     * @see #batchGetOnPremisesInstancesAsync(BatchGetOnPremisesInstancesRequest)
+     */
     @Override
     public java.util.concurrent.Future<BatchGetOnPremisesInstancesResult> batchGetOnPremisesInstancesAsync() {
 
@@ -558,20 +569,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
-            final CreateApplicationRequest createApplicationRequest) {
+            CreateApplicationRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreateApplicationResult>() {
-                    @Override
-                    public CreateApplicationResult call() {
-                        return createApplication(createApplicationRequest);
-                    }
-                });
+        return createApplicationAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
-            final CreateApplicationRequest createApplicationRequest,
+            final CreateApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
 
         return executorService
@@ -579,14 +584,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public CreateApplicationResult call() throws Exception {
                         CreateApplicationResult result;
+
                         try {
-                            result = createApplication(createApplicationRequest);
+                            result = createApplication(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler
-                                .onSuccess(createApplicationRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -594,20 +604,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(
-            final CreateDeploymentRequest createDeploymentRequest) {
+            CreateDeploymentRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreateDeploymentResult>() {
-                    @Override
-                    public CreateDeploymentResult call() {
-                        return createDeployment(createDeploymentRequest);
-                    }
-                });
+        return createDeploymentAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(
-            final CreateDeploymentRequest createDeploymentRequest,
+            final CreateDeploymentRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDeploymentRequest, CreateDeploymentResult> asyncHandler) {
 
         return executorService
@@ -615,13 +619,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public CreateDeploymentResult call() throws Exception {
                         CreateDeploymentResult result;
+
                         try {
-                            result = createDeployment(createDeploymentRequest);
+                            result = createDeployment(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(createDeploymentRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -629,20 +639,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<CreateDeploymentConfigResult> createDeploymentConfigAsync(
-            final CreateDeploymentConfigRequest createDeploymentConfigRequest) {
+            CreateDeploymentConfigRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreateDeploymentConfigResult>() {
-                    @Override
-                    public CreateDeploymentConfigResult call() {
-                        return createDeploymentConfig(createDeploymentConfigRequest);
-                    }
-                });
+        return createDeploymentConfigAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<CreateDeploymentConfigResult> createDeploymentConfigAsync(
-            final CreateDeploymentConfigRequest createDeploymentConfigRequest,
+            final CreateDeploymentConfigRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDeploymentConfigRequest, CreateDeploymentConfigResult> asyncHandler) {
 
         return executorService
@@ -650,14 +654,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public CreateDeploymentConfigResult call() throws Exception {
                         CreateDeploymentConfigResult result;
+
                         try {
-                            result = createDeploymentConfig(createDeploymentConfigRequest);
+                            result = createDeploymentConfig(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(createDeploymentConfigRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -665,20 +674,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<CreateDeploymentGroupResult> createDeploymentGroupAsync(
-            final CreateDeploymentGroupRequest createDeploymentGroupRequest) {
+            CreateDeploymentGroupRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreateDeploymentGroupResult>() {
-                    @Override
-                    public CreateDeploymentGroupResult call() {
-                        return createDeploymentGroup(createDeploymentGroupRequest);
-                    }
-                });
+        return createDeploymentGroupAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<CreateDeploymentGroupResult> createDeploymentGroupAsync(
-            final CreateDeploymentGroupRequest createDeploymentGroupRequest,
+            final CreateDeploymentGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDeploymentGroupRequest, CreateDeploymentGroupResult> asyncHandler) {
 
         return executorService
@@ -686,14 +689,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public CreateDeploymentGroupResult call() throws Exception {
                         CreateDeploymentGroupResult result;
+
                         try {
-                            result = createDeploymentGroup(createDeploymentGroupRequest);
+                            result = createDeploymentGroup(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(createDeploymentGroupRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -701,21 +709,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<Void> deleteApplicationAsync(
-            final DeleteApplicationRequest deleteApplicationRequest) {
+            DeleteApplicationRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        deleteApplication(deleteApplicationRequest);
-                        return null;
-                    }
-                });
+        return deleteApplicationAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> deleteApplicationAsync(
-            final DeleteApplicationRequest deleteApplicationRequest,
+            final DeleteApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, Void> asyncHandler) {
 
         return executorService
@@ -723,15 +724,20 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            deleteApplication(deleteApplicationRequest);
+                            deleteApplication(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler
-                                .onSuccess(deleteApplicationRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -739,21 +745,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<Void> deleteDeploymentConfigAsync(
-            final DeleteDeploymentConfigRequest deleteDeploymentConfigRequest) {
+            DeleteDeploymentConfigRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        deleteDeploymentConfig(deleteDeploymentConfigRequest);
-                        return null;
-                    }
-                });
+        return deleteDeploymentConfigAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> deleteDeploymentConfigAsync(
-            final DeleteDeploymentConfigRequest deleteDeploymentConfigRequest,
+            final DeleteDeploymentConfigRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDeploymentConfigRequest, Void> asyncHandler) {
 
         return executorService
@@ -761,15 +760,20 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            deleteDeploymentConfig(deleteDeploymentConfigRequest);
+                            deleteDeploymentConfig(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(deleteDeploymentConfigRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -777,20 +781,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<DeleteDeploymentGroupResult> deleteDeploymentGroupAsync(
-            final DeleteDeploymentGroupRequest deleteDeploymentGroupRequest) {
+            DeleteDeploymentGroupRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DeleteDeploymentGroupResult>() {
-                    @Override
-                    public DeleteDeploymentGroupResult call() {
-                        return deleteDeploymentGroup(deleteDeploymentGroupRequest);
-                    }
-                });
+        return deleteDeploymentGroupAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<DeleteDeploymentGroupResult> deleteDeploymentGroupAsync(
-            final DeleteDeploymentGroupRequest deleteDeploymentGroupRequest,
+            final DeleteDeploymentGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDeploymentGroupRequest, DeleteDeploymentGroupResult> asyncHandler) {
 
         return executorService
@@ -798,14 +796,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public DeleteDeploymentGroupResult call() throws Exception {
                         DeleteDeploymentGroupResult result;
+
                         try {
-                            result = deleteDeploymentGroup(deleteDeploymentGroupRequest);
+                            result = deleteDeploymentGroup(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(deleteDeploymentGroupRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -813,21 +816,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<Void> deregisterOnPremisesInstanceAsync(
-            final DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest) {
+            DeregisterOnPremisesInstanceRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        deregisterOnPremisesInstance(deregisterOnPremisesInstanceRequest);
-                        return null;
-                    }
-                });
+        return deregisterOnPremisesInstanceAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> deregisterOnPremisesInstanceAsync(
-            final DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest,
+            final DeregisterOnPremisesInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeregisterOnPremisesInstanceRequest, Void> asyncHandler) {
 
         return executorService
@@ -835,15 +831,20 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            deregisterOnPremisesInstance(deregisterOnPremisesInstanceRequest);
+                            deregisterOnPremisesInstance(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(
-                                deregisterOnPremisesInstanceRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -851,20 +852,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<GetApplicationResult> getApplicationAsync(
-            final GetApplicationRequest getApplicationRequest) {
+            GetApplicationRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetApplicationResult>() {
-                    @Override
-                    public GetApplicationResult call() {
-                        return getApplication(getApplicationRequest);
-                    }
-                });
+        return getApplicationAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetApplicationResult> getApplicationAsync(
-            final GetApplicationRequest getApplicationRequest,
+            final GetApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetApplicationRequest, GetApplicationResult> asyncHandler) {
 
         return executorService
@@ -872,13 +867,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public GetApplicationResult call() throws Exception {
                         GetApplicationResult result;
+
                         try {
-                            result = getApplication(getApplicationRequest);
+                            result = getApplication(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getApplicationRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -886,20 +887,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<GetApplicationRevisionResult> getApplicationRevisionAsync(
-            final GetApplicationRevisionRequest getApplicationRevisionRequest) {
+            GetApplicationRevisionRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetApplicationRevisionResult>() {
-                    @Override
-                    public GetApplicationRevisionResult call() {
-                        return getApplicationRevision(getApplicationRevisionRequest);
-                    }
-                });
+        return getApplicationRevisionAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetApplicationRevisionResult> getApplicationRevisionAsync(
-            final GetApplicationRevisionRequest getApplicationRevisionRequest,
+            final GetApplicationRevisionRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetApplicationRevisionRequest, GetApplicationRevisionResult> asyncHandler) {
 
         return executorService
@@ -907,14 +902,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public GetApplicationRevisionResult call() throws Exception {
                         GetApplicationRevisionResult result;
+
                         try {
-                            result = getApplicationRevision(getApplicationRevisionRequest);
+                            result = getApplicationRevision(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getApplicationRevisionRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -922,20 +922,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(
-            final GetDeploymentRequest getDeploymentRequest) {
+            GetDeploymentRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetDeploymentResult>() {
-                    @Override
-                    public GetDeploymentResult call() {
-                        return getDeployment(getDeploymentRequest);
-                    }
-                });
+        return getDeploymentAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(
-            final GetDeploymentRequest getDeploymentRequest,
+            final GetDeploymentRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDeploymentRequest, GetDeploymentResult> asyncHandler) {
 
         return executorService
@@ -943,13 +937,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public GetDeploymentResult call() throws Exception {
                         GetDeploymentResult result;
+
                         try {
-                            result = getDeployment(getDeploymentRequest);
+                            result = getDeployment(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getDeploymentRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -957,20 +957,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<GetDeploymentConfigResult> getDeploymentConfigAsync(
-            final GetDeploymentConfigRequest getDeploymentConfigRequest) {
+            GetDeploymentConfigRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetDeploymentConfigResult>() {
-                    @Override
-                    public GetDeploymentConfigResult call() {
-                        return getDeploymentConfig(getDeploymentConfigRequest);
-                    }
-                });
+        return getDeploymentConfigAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetDeploymentConfigResult> getDeploymentConfigAsync(
-            final GetDeploymentConfigRequest getDeploymentConfigRequest,
+            final GetDeploymentConfigRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDeploymentConfigRequest, GetDeploymentConfigResult> asyncHandler) {
 
         return executorService
@@ -978,14 +972,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public GetDeploymentConfigResult call() throws Exception {
                         GetDeploymentConfigResult result;
+
                         try {
-                            result = getDeploymentConfig(getDeploymentConfigRequest);
+                            result = getDeploymentConfig(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getDeploymentConfigRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -993,20 +992,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<GetDeploymentGroupResult> getDeploymentGroupAsync(
-            final GetDeploymentGroupRequest getDeploymentGroupRequest) {
+            GetDeploymentGroupRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetDeploymentGroupResult>() {
-                    @Override
-                    public GetDeploymentGroupResult call() {
-                        return getDeploymentGroup(getDeploymentGroupRequest);
-                    }
-                });
+        return getDeploymentGroupAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetDeploymentGroupResult> getDeploymentGroupAsync(
-            final GetDeploymentGroupRequest getDeploymentGroupRequest,
+            final GetDeploymentGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDeploymentGroupRequest, GetDeploymentGroupResult> asyncHandler) {
 
         return executorService
@@ -1014,14 +1007,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public GetDeploymentGroupResult call() throws Exception {
                         GetDeploymentGroupResult result;
+
                         try {
-                            result = getDeploymentGroup(getDeploymentGroupRequest);
+                            result = getDeploymentGroup(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getDeploymentGroupRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -1029,20 +1027,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(
-            final GetDeploymentInstanceRequest getDeploymentInstanceRequest) {
+            GetDeploymentInstanceRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetDeploymentInstanceResult>() {
-                    @Override
-                    public GetDeploymentInstanceResult call() {
-                        return getDeploymentInstance(getDeploymentInstanceRequest);
-                    }
-                });
+        return getDeploymentInstanceAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(
-            final GetDeploymentInstanceRequest getDeploymentInstanceRequest,
+            final GetDeploymentInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDeploymentInstanceRequest, GetDeploymentInstanceResult> asyncHandler) {
 
         return executorService
@@ -1050,14 +1042,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public GetDeploymentInstanceResult call() throws Exception {
                         GetDeploymentInstanceResult result;
+
                         try {
-                            result = getDeploymentInstance(getDeploymentInstanceRequest);
+                            result = getDeploymentInstance(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getDeploymentInstanceRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -1065,20 +1062,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<GetOnPremisesInstanceResult> getOnPremisesInstanceAsync(
-            final GetOnPremisesInstanceRequest getOnPremisesInstanceRequest) {
+            GetOnPremisesInstanceRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetOnPremisesInstanceResult>() {
-                    @Override
-                    public GetOnPremisesInstanceResult call() {
-                        return getOnPremisesInstance(getOnPremisesInstanceRequest);
-                    }
-                });
+        return getOnPremisesInstanceAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetOnPremisesInstanceResult> getOnPremisesInstanceAsync(
-            final GetOnPremisesInstanceRequest getOnPremisesInstanceRequest,
+            final GetOnPremisesInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetOnPremisesInstanceRequest, GetOnPremisesInstanceResult> asyncHandler) {
 
         return executorService
@@ -1086,14 +1077,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public GetOnPremisesInstanceResult call() throws Exception {
                         GetOnPremisesInstanceResult result;
+
                         try {
-                            result = getOnPremisesInstance(getOnPremisesInstanceRequest);
+                            result = getOnPremisesInstance(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getOnPremisesInstanceRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -1101,20 +1097,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<ListApplicationRevisionsResult> listApplicationRevisionsAsync(
-            final ListApplicationRevisionsRequest listApplicationRevisionsRequest) {
+            ListApplicationRevisionsRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListApplicationRevisionsResult>() {
-                    @Override
-                    public ListApplicationRevisionsResult call() {
-                        return listApplicationRevisions(listApplicationRevisionsRequest);
-                    }
-                });
+        return listApplicationRevisionsAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListApplicationRevisionsResult> listApplicationRevisionsAsync(
-            final ListApplicationRevisionsRequest listApplicationRevisionsRequest,
+            final ListApplicationRevisionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListApplicationRevisionsRequest, ListApplicationRevisionsResult> asyncHandler) {
 
         return executorService
@@ -1123,14 +1113,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     public ListApplicationRevisionsResult call()
                             throws Exception {
                         ListApplicationRevisionsResult result;
+
                         try {
-                            result = listApplicationRevisions(listApplicationRevisionsRequest);
+                            result = listApplicationRevisions(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listApplicationRevisionsRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -1138,20 +1133,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
-            final ListApplicationsRequest listApplicationsRequest) {
+            ListApplicationsRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListApplicationsResult>() {
-                    @Override
-                    public ListApplicationsResult call() {
-                        return listApplications(listApplicationsRequest);
-                    }
-                });
+        return listApplicationsAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
-            final ListApplicationsRequest listApplicationsRequest,
+            final ListApplicationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler) {
 
         return executorService
@@ -1159,18 +1148,29 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public ListApplicationsResult call() throws Exception {
                         ListApplicationsResult result;
+
                         try {
-                            result = listApplications(listApplicationsRequest);
+                            result = listApplications(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listApplicationsRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the ListApplications operation.
+     *
+     * @see #listApplicationsAsync(ListApplicationsRequest)
+     */
     @Override
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync() {
 
@@ -1193,20 +1193,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<ListDeploymentConfigsResult> listDeploymentConfigsAsync(
-            final ListDeploymentConfigsRequest listDeploymentConfigsRequest) {
+            ListDeploymentConfigsRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListDeploymentConfigsResult>() {
-                    @Override
-                    public ListDeploymentConfigsResult call() {
-                        return listDeploymentConfigs(listDeploymentConfigsRequest);
-                    }
-                });
+        return listDeploymentConfigsAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListDeploymentConfigsResult> listDeploymentConfigsAsync(
-            final ListDeploymentConfigsRequest listDeploymentConfigsRequest,
+            final ListDeploymentConfigsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDeploymentConfigsRequest, ListDeploymentConfigsResult> asyncHandler) {
 
         return executorService
@@ -1214,19 +1208,29 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public ListDeploymentConfigsResult call() throws Exception {
                         ListDeploymentConfigsResult result;
+
                         try {
-                            result = listDeploymentConfigs(listDeploymentConfigsRequest);
+                            result = listDeploymentConfigs(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listDeploymentConfigsRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the ListDeploymentConfigs operation.
+     *
+     * @see #listDeploymentConfigsAsync(ListDeploymentConfigsRequest)
+     */
     @Override
     public java.util.concurrent.Future<ListDeploymentConfigsResult> listDeploymentConfigsAsync() {
 
@@ -1249,20 +1253,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<ListDeploymentGroupsResult> listDeploymentGroupsAsync(
-            final ListDeploymentGroupsRequest listDeploymentGroupsRequest) {
+            ListDeploymentGroupsRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListDeploymentGroupsResult>() {
-                    @Override
-                    public ListDeploymentGroupsResult call() {
-                        return listDeploymentGroups(listDeploymentGroupsRequest);
-                    }
-                });
+        return listDeploymentGroupsAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListDeploymentGroupsResult> listDeploymentGroupsAsync(
-            final ListDeploymentGroupsRequest listDeploymentGroupsRequest,
+            final ListDeploymentGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDeploymentGroupsRequest, ListDeploymentGroupsResult> asyncHandler) {
 
         return executorService
@@ -1270,14 +1268,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public ListDeploymentGroupsResult call() throws Exception {
                         ListDeploymentGroupsResult result;
+
                         try {
-                            result = listDeploymentGroups(listDeploymentGroupsRequest);
+                            result = listDeploymentGroups(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listDeploymentGroupsRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -1285,20 +1288,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(
-            final ListDeploymentInstancesRequest listDeploymentInstancesRequest) {
+            ListDeploymentInstancesRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListDeploymentInstancesResult>() {
-                    @Override
-                    public ListDeploymentInstancesResult call() {
-                        return listDeploymentInstances(listDeploymentInstancesRequest);
-                    }
-                });
+        return listDeploymentInstancesAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(
-            final ListDeploymentInstancesRequest listDeploymentInstancesRequest,
+            final ListDeploymentInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDeploymentInstancesRequest, ListDeploymentInstancesResult> asyncHandler) {
 
         return executorService
@@ -1307,14 +1304,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     public ListDeploymentInstancesResult call()
                             throws Exception {
                         ListDeploymentInstancesResult result;
+
                         try {
-                            result = listDeploymentInstances(listDeploymentInstancesRequest);
+                            result = listDeploymentInstances(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listDeploymentInstancesRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -1322,20 +1324,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(
-            final ListDeploymentsRequest listDeploymentsRequest) {
+            ListDeploymentsRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListDeploymentsResult>() {
-                    @Override
-                    public ListDeploymentsResult call() {
-                        return listDeployments(listDeploymentsRequest);
-                    }
-                });
+        return listDeploymentsAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(
-            final ListDeploymentsRequest listDeploymentsRequest,
+            final ListDeploymentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult> asyncHandler) {
 
         return executorService
@@ -1343,18 +1339,29 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public ListDeploymentsResult call() throws Exception {
                         ListDeploymentsResult result;
+
                         try {
-                            result = listDeployments(listDeploymentsRequest);
+                            result = listDeployments(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listDeploymentsRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the ListDeployments operation.
+     *
+     * @see #listDeploymentsAsync(ListDeploymentsRequest)
+     */
     @Override
     public java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync() {
 
@@ -1376,20 +1383,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(
-            final ListOnPremisesInstancesRequest listOnPremisesInstancesRequest) {
+            ListOnPremisesInstancesRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListOnPremisesInstancesResult>() {
-                    @Override
-                    public ListOnPremisesInstancesResult call() {
-                        return listOnPremisesInstances(listOnPremisesInstancesRequest);
-                    }
-                });
+        return listOnPremisesInstancesAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(
-            final ListOnPremisesInstancesRequest listOnPremisesInstancesRequest,
+            final ListOnPremisesInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListOnPremisesInstancesRequest, ListOnPremisesInstancesResult> asyncHandler) {
 
         return executorService
@@ -1398,19 +1399,30 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     public ListOnPremisesInstancesResult call()
                             throws Exception {
                         ListOnPremisesInstancesResult result;
+
                         try {
-                            result = listOnPremisesInstances(listOnPremisesInstancesRequest);
+                            result = listOnPremisesInstances(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listOnPremisesInstancesRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the ListOnPremisesInstances
+     * operation.
+     *
+     * @see #listOnPremisesInstancesAsync(ListOnPremisesInstancesRequest)
+     */
     @Override
     public java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync() {
 
@@ -1433,21 +1445,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<Void> registerApplicationRevisionAsync(
-            final RegisterApplicationRevisionRequest registerApplicationRevisionRequest) {
+            RegisterApplicationRevisionRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        registerApplicationRevision(registerApplicationRevisionRequest);
-                        return null;
-                    }
-                });
+        return registerApplicationRevisionAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> registerApplicationRevisionAsync(
-            final RegisterApplicationRevisionRequest registerApplicationRevisionRequest,
+            final RegisterApplicationRevisionRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterApplicationRevisionRequest, Void> asyncHandler) {
 
         return executorService
@@ -1455,15 +1460,20 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            registerApplicationRevision(registerApplicationRevisionRequest);
+                            registerApplicationRevision(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(
-                                registerApplicationRevisionRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -1471,21 +1481,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<Void> registerOnPremisesInstanceAsync(
-            final RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest) {
+            RegisterOnPremisesInstanceRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        registerOnPremisesInstance(registerOnPremisesInstanceRequest);
-                        return null;
-                    }
-                });
+        return registerOnPremisesInstanceAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> registerOnPremisesInstanceAsync(
-            final RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest,
+            final RegisterOnPremisesInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterOnPremisesInstanceRequest, Void> asyncHandler) {
 
         return executorService
@@ -1493,15 +1496,20 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            registerOnPremisesInstance(registerOnPremisesInstanceRequest);
+                            registerOnPremisesInstance(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(
-                                registerOnPremisesInstanceRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -1509,21 +1517,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<Void> removeTagsFromOnPremisesInstancesAsync(
-            final RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest) {
+            RemoveTagsFromOnPremisesInstancesRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        removeTagsFromOnPremisesInstances(removeTagsFromOnPremisesInstancesRequest);
-                        return null;
-                    }
-                });
+        return removeTagsFromOnPremisesInstancesAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> removeTagsFromOnPremisesInstancesAsync(
-            final RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest,
+            final RemoveTagsFromOnPremisesInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveTagsFromOnPremisesInstancesRequest, Void> asyncHandler) {
 
         return executorService
@@ -1531,16 +1532,20 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            removeTagsFromOnPremisesInstances(removeTagsFromOnPremisesInstancesRequest);
+                            removeTagsFromOnPremisesInstances(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(
-                                removeTagsFromOnPremisesInstancesRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -1548,20 +1553,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<StopDeploymentResult> stopDeploymentAsync(
-            final StopDeploymentRequest stopDeploymentRequest) {
+            StopDeploymentRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<StopDeploymentResult>() {
-                    @Override
-                    public StopDeploymentResult call() {
-                        return stopDeployment(stopDeploymentRequest);
-                    }
-                });
+        return stopDeploymentAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<StopDeploymentResult> stopDeploymentAsync(
-            final StopDeploymentRequest stopDeploymentRequest,
+            final StopDeploymentRequest request,
             final com.amazonaws.handlers.AsyncHandler<StopDeploymentRequest, StopDeploymentResult> asyncHandler) {
 
         return executorService
@@ -1569,13 +1568,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public StopDeploymentResult call() throws Exception {
                         StopDeploymentResult result;
+
                         try {
-                            result = stopDeployment(stopDeploymentRequest);
+                            result = stopDeployment(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(stopDeploymentRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -1583,21 +1588,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<Void> updateApplicationAsync(
-            final UpdateApplicationRequest updateApplicationRequest) {
+            UpdateApplicationRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        updateApplication(updateApplicationRequest);
-                        return null;
-                    }
-                });
+        return updateApplicationAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> updateApplicationAsync(
-            final UpdateApplicationRequest updateApplicationRequest,
+            final UpdateApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, Void> asyncHandler) {
 
         return executorService
@@ -1605,20 +1603,30 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            updateApplication(updateApplicationRequest);
+                            updateApplication(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler
-                                .onSuccess(updateApplicationRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
     }
 
+    /**
+     * Simplified method form for invoking the UpdateApplication operation.
+     *
+     * @see #updateApplicationAsync(UpdateApplicationRequest)
+     */
     @Override
     public java.util.concurrent.Future<Void> updateApplicationAsync() {
 
@@ -1641,20 +1649,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
     @Override
     public java.util.concurrent.Future<UpdateDeploymentGroupResult> updateDeploymentGroupAsync(
-            final UpdateDeploymentGroupRequest updateDeploymentGroupRequest) {
+            UpdateDeploymentGroupRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<UpdateDeploymentGroupResult>() {
-                    @Override
-                    public UpdateDeploymentGroupResult call() {
-                        return updateDeploymentGroup(updateDeploymentGroupRequest);
-                    }
-                });
+        return updateDeploymentGroupAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<UpdateDeploymentGroupResult> updateDeploymentGroupAsync(
-            final UpdateDeploymentGroupRequest updateDeploymentGroupRequest,
+            final UpdateDeploymentGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDeploymentGroupRequest, UpdateDeploymentGroupResult> asyncHandler) {
 
         return executorService
@@ -1662,14 +1664,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
                     @Override
                     public UpdateDeploymentGroupResult call() throws Exception {
                         UpdateDeploymentGroupResult result;
+
                         try {
-                            result = updateDeploymentGroup(updateDeploymentGroupRequest);
+                            result = updateDeploymentGroup(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(updateDeploymentGroupRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
