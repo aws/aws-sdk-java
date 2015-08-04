@@ -48,23 +48,24 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -79,7 +80,17 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -176,23 +187,24 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -207,7 +219,17 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -220,23 +242,24 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
+     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
+     *        an Android app, interacting with it and capturing screenshots at
+     *        the same time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_EXPLORER: An app explorer that will traverse an app,
-     *        interacting with it and capturing screenshots at the same time.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
      *        </p>
      *        </li>
      *        <li>
@@ -251,7 +274,17 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        UIAUTOMATION: The uiautomation type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        UIAUTOMATOR: The uiautomator type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
      * @see TestType
@@ -270,23 +303,24 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -301,7 +335,17 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -313,23 +357,24 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
+     *         BUILTIN_FUZZ: The built-in fuzz type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         BUILTIN_EXPLORER: For Android, an app explorer that will traverse
+     *         an Android app, interacting with it and capturing screenshots at
+     *         the same time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         BUILTIN_EXPLORER: An app explorer that will traverse an app,
-     *         interacting with it and capturing screenshots at the same time.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         BUILTIN_FUZZ: The built-in fuzz type.
      *         </p>
      *         </li>
      *         <li>
@@ -344,7 +389,17 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
+     *         UIAUTOMATION: The uiautomation type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         UIAUTOMATOR: The uiautomator type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST: The XCode test type.
      *         </p>
      *         </li>
      * @see TestType
@@ -363,23 +418,24 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -394,7 +450,17 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -407,23 +473,24 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
+     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
+     *        an Android app, interacting with it and capturing screenshots at
+     *        the same time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_EXPLORER: An app explorer that will traverse an app,
-     *        interacting with it and capturing screenshots at the same time.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
      *        </p>
      *        </li>
      *        <li>
@@ -438,7 +505,17 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        UIAUTOMATION: The uiautomation type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        UIAUTOMATOR: The uiautomator type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -460,23 +537,24 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -491,7 +569,17 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -504,23 +592,24 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
+     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
+     *        an Android app, interacting with it and capturing screenshots at
+     *        the same time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_EXPLORER: An app explorer that will traverse an app,
-     *        interacting with it and capturing screenshots at the same time.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
      *        </p>
      *        </li>
      *        <li>
@@ -535,7 +624,17 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        UIAUTOMATION: The uiautomation type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        UIAUTOMATOR: The uiautomator type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -556,23 +655,24 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
+     * BUILTIN_FUZZ: The built-in fuzz type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an
+     * Android app, interacting with it and capturing screenshots at the same
+     * time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      * </p>
      * </li>
      * <li>
      * <p>
      * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting
-     * with it and capturing screenshots at the same time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
      * </p>
      * </li>
      * <li>
@@ -587,7 +687,17 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * UIAUTOMATION: The uiautomation type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UIAUTOMATOR: The uiautomator type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST: The XCode test type.
      * </p>
      * </li>
      * </ul>
@@ -600,23 +710,24 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
+     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse
+     *        an Android app, interacting with it and capturing screenshots at
+     *        the same time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_EXPLORER: An app explorer that will traverse an app,
-     *        interacting with it and capturing screenshots at the same time.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
      *        </p>
      *        </li>
      *        <li>
@@ -631,7 +742,17 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        UIAUTOMATION: The uiautomation type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        UIAUTOMATOR: The uiautomator type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

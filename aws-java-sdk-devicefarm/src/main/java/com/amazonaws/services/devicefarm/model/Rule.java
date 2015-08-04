@@ -49,7 +49,7 @@ public class Rule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -62,7 +62,7 @@ public class Rule implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * EQUAL: The equals operator.
+     * EQUALS: The equals operator.
      * </p>
      * </li>
      * <li>
@@ -120,7 +120,7 @@ public class Rule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -148,7 +148,7 @@ public class Rule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform.
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -182,7 +182,7 @@ public class Rule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -209,7 +209,7 @@ public class Rule implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         PLATFORM: The platform.
+     *         PLATFORM: The platform (for example, Android or iOS).
      *         </p>
      *         </li>
      * @see DeviceAttribute
@@ -243,7 +243,7 @@ public class Rule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -271,7 +271,7 @@ public class Rule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform.
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -308,7 +308,7 @@ public class Rule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -336,7 +336,7 @@ public class Rule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform.
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -372,7 +372,7 @@ public class Rule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -400,7 +400,7 @@ public class Rule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform.
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -419,7 +419,7 @@ public class Rule implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * EQUAL: The equals operator.
+     * EQUALS: The equals operator.
      * </p>
      * </li>
      * <li>
@@ -449,7 +449,7 @@ public class Rule implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        EQUAL: The equals operator.
+     *        EQUALS: The equals operator.
      *        </p>
      *        </li>
      *        <li>
@@ -485,7 +485,7 @@ public class Rule implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * EQUAL: The equals operator.
+     * EQUALS: The equals operator.
      * </p>
      * </li>
      * <li>
@@ -514,7 +514,7 @@ public class Rule implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         EQUAL: The equals operator.
+     *         EQUALS: The equals operator.
      *         </p>
      *         </li>
      *         <li>
@@ -550,7 +550,7 @@ public class Rule implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * EQUAL: The equals operator.
+     * EQUALS: The equals operator.
      * </p>
      * </li>
      * <li>
@@ -580,7 +580,7 @@ public class Rule implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        EQUAL: The equals operator.
+     *        EQUALS: The equals operator.
      *        </p>
      *        </li>
      *        <li>
@@ -619,7 +619,7 @@ public class Rule implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * EQUAL: The equals operator.
+     * EQUALS: The equals operator.
      * </p>
      * </li>
      * <li>
@@ -649,7 +649,7 @@ public class Rule implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        EQUAL: The equals operator.
+     *        EQUALS: The equals operator.
      *        </p>
      *        </li>
      *        <li>
@@ -687,7 +687,7 @@ public class Rule implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * EQUAL: The equals operator.
+     * EQUALS: The equals operator.
      * </p>
      * </li>
      * <li>
@@ -717,7 +717,7 @@ public class Rule implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        EQUAL: The equals operator.
+     *        EQUALS: The equals operator.
      *        </p>
      *        </li>
      *        <li>

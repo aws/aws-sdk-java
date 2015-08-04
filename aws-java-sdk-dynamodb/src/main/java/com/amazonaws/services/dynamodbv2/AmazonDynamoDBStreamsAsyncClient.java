@@ -326,20 +326,14 @@ public class AmazonDynamoDBStreamsAsyncClient extends
 
     @Override
     public java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(
-            final DescribeStreamRequest describeStreamRequest) {
+            DescribeStreamRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DescribeStreamResult>() {
-                    @Override
-                    public DescribeStreamResult call() {
-                        return describeStream(describeStreamRequest);
-                    }
-                });
+        return describeStreamAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(
-            final DescribeStreamRequest describeStreamRequest,
+            final DescribeStreamRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler) {
 
         return executorService
@@ -347,13 +341,19 @@ public class AmazonDynamoDBStreamsAsyncClient extends
                     @Override
                     public DescribeStreamResult call() throws Exception {
                         DescribeStreamResult result;
+
                         try {
-                            result = describeStream(describeStreamRequest);
+                            result = describeStream(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(describeStreamRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -361,20 +361,14 @@ public class AmazonDynamoDBStreamsAsyncClient extends
 
     @Override
     public java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(
-            final GetRecordsRequest getRecordsRequest) {
+            GetRecordsRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetRecordsResult>() {
-                    @Override
-                    public GetRecordsResult call() {
-                        return getRecords(getRecordsRequest);
-                    }
-                });
+        return getRecordsAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(
-            final GetRecordsRequest getRecordsRequest,
+            final GetRecordsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetRecordsRequest, GetRecordsResult> asyncHandler) {
 
         return executorService
@@ -382,13 +376,19 @@ public class AmazonDynamoDBStreamsAsyncClient extends
                     @Override
                     public GetRecordsResult call() throws Exception {
                         GetRecordsResult result;
+
                         try {
-                            result = getRecords(getRecordsRequest);
+                            result = getRecords(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getRecordsRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -396,20 +396,14 @@ public class AmazonDynamoDBStreamsAsyncClient extends
 
     @Override
     public java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(
-            final GetShardIteratorRequest getShardIteratorRequest) {
+            GetShardIteratorRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetShardIteratorResult>() {
-                    @Override
-                    public GetShardIteratorResult call() {
-                        return getShardIterator(getShardIteratorRequest);
-                    }
-                });
+        return getShardIteratorAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(
-            final GetShardIteratorRequest getShardIteratorRequest,
+            final GetShardIteratorRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult> asyncHandler) {
 
         return executorService
@@ -417,13 +411,19 @@ public class AmazonDynamoDBStreamsAsyncClient extends
                     @Override
                     public GetShardIteratorResult call() throws Exception {
                         GetShardIteratorResult result;
+
                         try {
-                            result = getShardIterator(getShardIteratorRequest);
+                            result = getShardIterator(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getShardIteratorRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -431,20 +431,14 @@ public class AmazonDynamoDBStreamsAsyncClient extends
 
     @Override
     public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(
-            final ListStreamsRequest listStreamsRequest) {
+            ListStreamsRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListStreamsResult>() {
-                    @Override
-                    public ListStreamsResult call() {
-                        return listStreams(listStreamsRequest);
-                    }
-                });
+        return listStreamsAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(
-            final ListStreamsRequest listStreamsRequest,
+            final ListStreamsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler) {
 
         return executorService
@@ -452,13 +446,19 @@ public class AmazonDynamoDBStreamsAsyncClient extends
                     @Override
                     public ListStreamsResult call() throws Exception {
                         ListStreamsResult result;
+
                         try {
-                            result = listStreams(listStreamsRequest);
+                            result = listStreams(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listStreamsRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });

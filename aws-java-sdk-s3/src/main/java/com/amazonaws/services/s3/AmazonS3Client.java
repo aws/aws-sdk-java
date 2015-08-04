@@ -4203,12 +4203,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             bucketRegion = headBucket(new HeadBucketRequest(bucketName))
                     .getBucketRegion();
         } catch (AmazonS3Exception exception) {
-            bucketRegion = exception.getAdditionalDetails().get(
+            if (exception.getAdditionalDetails() != null) {
+                bucketRegion = exception.getAdditionalDetails().get(
                     Headers.S3_BUCKET_REGION);
+            }
         }
 
-        if (bucketRegion == null) {
-            log.warn("Not able to derive region of the " + bucketName + " from the HEAD Bucket requests.");
+        if (bucketRegion == null && log.isDebugEnabled()) {
+            log.debug("Not able to derive region of the " + bucketName + " from the HEAD Bucket requests.");
         }
 
         return bucketRegion;

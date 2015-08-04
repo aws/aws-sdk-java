@@ -82,6 +82,11 @@ public class Device implements Serializable, Cloneable {
      * ANDROID: The Android platform.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
+     * </p>
+     * </li>
      * </ul>
      */
     private String platform;
@@ -512,6 +517,11 @@ public class Device implements Serializable, Cloneable {
      * ANDROID: The Android platform.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param platform
@@ -523,6 +533,11 @@ public class Device implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID: The Android platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS: The iOS platform.
      *        </p>
      *        </li>
      * @see DevicePlatform
@@ -544,6 +559,11 @@ public class Device implements Serializable, Cloneable {
      * ANDROID: The Android platform.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The device's platform.</p>
@@ -554,6 +574,11 @@ public class Device implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         ANDROID: The Android platform.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IOS: The iOS platform.
      *         </p>
      *         </li>
      * @see DevicePlatform
@@ -575,6 +600,11 @@ public class Device implements Serializable, Cloneable {
      * ANDROID: The Android platform.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param platform
@@ -586,6 +616,11 @@ public class Device implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID: The Android platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS: The iOS platform.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -610,6 +645,11 @@ public class Device implements Serializable, Cloneable {
      * ANDROID: The Android platform.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param platform
@@ -621,6 +661,11 @@ public class Device implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID: The Android platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS: The iOS platform.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -644,6 +689,11 @@ public class Device implements Serializable, Cloneable {
      * ANDROID: The Android platform.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * IOS: The iOS platform.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param platform
@@ -655,6 +705,11 @@ public class Device implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID: The Android platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS: The iOS platform.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

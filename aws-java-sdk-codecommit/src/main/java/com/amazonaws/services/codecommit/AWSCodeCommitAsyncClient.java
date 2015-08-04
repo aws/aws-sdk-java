@@ -286,20 +286,14 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
     @Override
     public java.util.concurrent.Future<BatchGetRepositoriesResult> batchGetRepositoriesAsync(
-            final BatchGetRepositoriesRequest batchGetRepositoriesRequest) {
+            BatchGetRepositoriesRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<BatchGetRepositoriesResult>() {
-                    @Override
-                    public BatchGetRepositoriesResult call() {
-                        return batchGetRepositories(batchGetRepositoriesRequest);
-                    }
-                });
+        return batchGetRepositoriesAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<BatchGetRepositoriesResult> batchGetRepositoriesAsync(
-            final BatchGetRepositoriesRequest batchGetRepositoriesRequest,
+            final BatchGetRepositoriesRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchGetRepositoriesRequest, BatchGetRepositoriesResult> asyncHandler) {
 
         return executorService
@@ -307,14 +301,19 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
                     @Override
                     public BatchGetRepositoriesResult call() throws Exception {
                         BatchGetRepositoriesResult result;
+
                         try {
-                            result = batchGetRepositories(batchGetRepositoriesRequest);
+                            result = batchGetRepositories(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(batchGetRepositoriesRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -322,21 +321,14 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
     @Override
     public java.util.concurrent.Future<Void> createBranchAsync(
-            final CreateBranchRequest createBranchRequest) {
+            CreateBranchRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        createBranch(createBranchRequest);
-                        return null;
-                    }
-                });
+        return createBranchAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> createBranchAsync(
-            final CreateBranchRequest createBranchRequest,
+            final CreateBranchRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, Void> asyncHandler) {
 
         return executorService
@@ -344,14 +336,20 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            createBranch(createBranchRequest);
+                            createBranch(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(createBranchRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -359,20 +357,14 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
     @Override
     public java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(
-            final CreateRepositoryRequest createRepositoryRequest) {
+            CreateRepositoryRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreateRepositoryResult>() {
-                    @Override
-                    public CreateRepositoryResult call() {
-                        return createRepository(createRepositoryRequest);
-                    }
-                });
+        return createRepositoryAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(
-            final CreateRepositoryRequest createRepositoryRequest,
+            final CreateRepositoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResult> asyncHandler) {
 
         return executorService
@@ -380,13 +372,19 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
                     @Override
                     public CreateRepositoryResult call() throws Exception {
                         CreateRepositoryResult result;
+
                         try {
-                            result = createRepository(createRepositoryRequest);
+                            result = createRepository(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(createRepositoryRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -394,20 +392,14 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
     @Override
     public java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(
-            final DeleteRepositoryRequest deleteRepositoryRequest) {
+            DeleteRepositoryRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<DeleteRepositoryResult>() {
-                    @Override
-                    public DeleteRepositoryResult call() {
-                        return deleteRepository(deleteRepositoryRequest);
-                    }
-                });
+        return deleteRepositoryAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(
-            final DeleteRepositoryRequest deleteRepositoryRequest,
+            final DeleteRepositoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResult> asyncHandler) {
 
         return executorService
@@ -415,13 +407,19 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
                     @Override
                     public DeleteRepositoryResult call() throws Exception {
                         DeleteRepositoryResult result;
+
                         try {
-                            result = deleteRepository(deleteRepositoryRequest);
+                            result = deleteRepository(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(deleteRepositoryRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -429,20 +427,14 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
     @Override
     public java.util.concurrent.Future<GetBranchResult> getBranchAsync(
-            final GetBranchRequest getBranchRequest) {
+            GetBranchRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetBranchResult>() {
-                    @Override
-                    public GetBranchResult call() {
-                        return getBranch(getBranchRequest);
-                    }
-                });
+        return getBranchAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetBranchResult> getBranchAsync(
-            final GetBranchRequest getBranchRequest,
+            final GetBranchRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetBranchRequest, GetBranchResult> asyncHandler) {
 
         return executorService
@@ -450,13 +442,19 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
                     @Override
                     public GetBranchResult call() throws Exception {
                         GetBranchResult result;
+
                         try {
-                            result = getBranch(getBranchRequest);
+                            result = getBranch(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getBranchRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -464,20 +462,14 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
     @Override
     public java.util.concurrent.Future<GetRepositoryResult> getRepositoryAsync(
-            final GetRepositoryRequest getRepositoryRequest) {
+            GetRepositoryRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<GetRepositoryResult>() {
-                    @Override
-                    public GetRepositoryResult call() {
-                        return getRepository(getRepositoryRequest);
-                    }
-                });
+        return getRepositoryAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<GetRepositoryResult> getRepositoryAsync(
-            final GetRepositoryRequest getRepositoryRequest,
+            final GetRepositoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetRepositoryRequest, GetRepositoryResult> asyncHandler) {
 
         return executorService
@@ -485,13 +477,19 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
                     @Override
                     public GetRepositoryResult call() throws Exception {
                         GetRepositoryResult result;
+
                         try {
-                            result = getRepository(getRepositoryRequest);
+                            result = getRepository(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(getRepositoryRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -499,20 +497,14 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
     @Override
     public java.util.concurrent.Future<ListBranchesResult> listBranchesAsync(
-            final ListBranchesRequest listBranchesRequest) {
+            ListBranchesRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListBranchesResult>() {
-                    @Override
-                    public ListBranchesResult call() {
-                        return listBranches(listBranchesRequest);
-                    }
-                });
+        return listBranchesAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListBranchesResult> listBranchesAsync(
-            final ListBranchesRequest listBranchesRequest,
+            final ListBranchesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListBranchesRequest, ListBranchesResult> asyncHandler) {
 
         return executorService
@@ -520,13 +512,19 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
                     @Override
                     public ListBranchesResult call() throws Exception {
                         ListBranchesResult result;
+
                         try {
-                            result = listBranches(listBranchesRequest);
+                            result = listBranches(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listBranchesRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -534,20 +532,14 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
     @Override
     public java.util.concurrent.Future<ListRepositoriesResult> listRepositoriesAsync(
-            final ListRepositoriesRequest listRepositoriesRequest) {
+            ListRepositoriesRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListRepositoriesResult>() {
-                    @Override
-                    public ListRepositoriesResult call() {
-                        return listRepositories(listRepositoriesRequest);
-                    }
-                });
+        return listRepositoriesAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<ListRepositoriesResult> listRepositoriesAsync(
-            final ListRepositoriesRequest listRepositoriesRequest,
+            final ListRepositoriesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResult> asyncHandler) {
 
         return executorService
@@ -555,13 +547,19 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
                     @Override
                     public ListRepositoriesResult call() throws Exception {
                         ListRepositoriesResult result;
+
                         try {
-                            result = listRepositories(listRepositoriesRequest);
+                            result = listRepositories(request);
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(listRepositoriesRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -569,21 +567,14 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
     @Override
     public java.util.concurrent.Future<Void> updateDefaultBranchAsync(
-            final UpdateDefaultBranchRequest updateDefaultBranchRequest) {
+            UpdateDefaultBranchRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        updateDefaultBranch(updateDefaultBranchRequest);
-                        return null;
-                    }
-                });
+        return updateDefaultBranchAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> updateDefaultBranchAsync(
-            final UpdateDefaultBranchRequest updateDefaultBranchRequest,
+            final UpdateDefaultBranchRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, Void> asyncHandler) {
 
         return executorService
@@ -591,15 +582,20 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            updateDefaultBranch(updateDefaultBranchRequest);
+                            updateDefaultBranch(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(updateDefaultBranchRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -607,21 +603,14 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
     @Override
     public java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
-            final UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest) {
+            UpdateRepositoryDescriptionRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        updateRepositoryDescription(updateRepositoryDescriptionRequest);
-                        return null;
-                    }
-                });
+        return updateRepositoryDescriptionAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
-            final UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest,
+            final UpdateRepositoryDescriptionRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, Void> asyncHandler) {
 
         return executorService
@@ -629,15 +618,20 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            updateRepositoryDescription(updateRepositoryDescriptionRequest);
+                            updateRepositoryDescription(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(
-                                updateRepositoryDescriptionRequest, result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });
@@ -645,21 +639,14 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
     @Override
     public java.util.concurrent.Future<Void> updateRepositoryNameAsync(
-            final UpdateRepositoryNameRequest updateRepositoryNameRequest) {
+            UpdateRepositoryNameRequest request) {
 
-        return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
-                    @Override
-                    public Void call() {
-                        updateRepositoryName(updateRepositoryNameRequest);
-                        return null;
-                    }
-                });
+        return updateRepositoryNameAsync(request, null);
     }
 
     @Override
     public java.util.concurrent.Future<Void> updateRepositoryNameAsync(
-            final UpdateRepositoryNameRequest updateRepositoryNameRequest,
+            final UpdateRepositoryNameRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, Void> asyncHandler) {
 
         return executorService
@@ -667,15 +654,20 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
                     @Override
                     public Void call() throws Exception {
                         Void result;
+
                         try {
-                            updateRepositoryName(updateRepositoryNameRequest);
+                            updateRepositoryName(request);
                             result = null;
                         } catch (Exception ex) {
-                            asyncHandler.onError(ex);
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
                             throw ex;
                         }
-                        asyncHandler.onSuccess(updateRepositoryNameRequest,
-                                result);
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
                         return result;
                     }
                 });

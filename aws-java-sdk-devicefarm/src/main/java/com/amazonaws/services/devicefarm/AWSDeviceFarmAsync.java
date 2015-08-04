@@ -24,8 +24,8 @@ import com.amazonaws.services.devicefarm.model.*;
  * <p>
  * <p>
  * AWS Device Farm is a service that enables mobile app developers to test
- * Android and Fire OS apps on physical phones, tablets, and other devices in
- * the cloud.
+ * Android, iOS, and Fire OS apps on physical phones, tablets, and other devices
+ * in the cloud.
  * </p>
  */
 public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
@@ -125,6 +125,40 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
     java.util.concurrent.Future<CreateUploadResult> createUploadAsync(
             CreateUploadRequest createUploadRequest,
             com.amazonaws.handlers.AsyncHandler<CreateUploadRequest, CreateUploadResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the number of unmetered iOS and/or unmetered Android devices that
+     * have been purchased by the account.
+     * </p>
+     * 
+     * @param getAccountSettingsRequest
+     *        null
+     * @return A Java Future containing the result of the GetAccountSettings
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(
+            GetAccountSettingsRequest getAccountSettingsRequest);
+
+    /**
+     * <p>
+     * Returns the number of unmetered iOS and/or unmetered Android devices that
+     * have been purchased by the account.
+     * </p>
+     * 
+     * @param getAccountSettingsRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccountSettings
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(
+            GetAccountSettingsRequest getAccountSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccountSettingsRequest, GetAccountSettingsResult> asyncHandler);
 
     /**
      * <p>

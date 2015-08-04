@@ -32,6 +32,8 @@ public enum DevicefarmActions implements Action {
     CreateProject("devicefarm:CreateProject"),
     /** Action for the CreateUpload operation. */
     CreateUpload("devicefarm:CreateUpload"),
+    /** Action for the GetAccountSettings operation. */
+    GetAccountSettings("devicefarm:GetAccountSettings"),
     /** Action for the GetDevice operation. */
     GetDevice("devicefarm:GetDevice"),
     /** Action for the GetDevicePool operation. */

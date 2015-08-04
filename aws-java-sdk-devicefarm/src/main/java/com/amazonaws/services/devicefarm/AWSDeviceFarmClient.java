@@ -42,8 +42,8 @@ import com.amazonaws.services.devicefarm.model.transform.*;
  * <p>
  * <p>
  * AWS Device Farm is a service that enables mobile app developers to test
- * Android and Fire OS apps on physical phones, tablets, and other devices in
- * the cloud.
+ * Android, iOS, and Fire OS apps on physical phones, tablets, and other devices
+ * in the cloud.
  * </p>
  */
 public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
@@ -387,6 +387,58 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
             response = invoke(request,
                     new CreateUploadResultJsonUnmarshaller(), executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the number of unmetered iOS and/or unmetered Android devices that
+     * have been purchased by the account.
+     * </p>
+     * 
+     * @param getAccountSettingsRequest
+     *        null
+     * @return Result of the GetAccountSettings operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     */
+    @Override
+    public GetAccountSettingsResult getAccountSettings(
+            GetAccountSettingsRequest getAccountSettingsRequest) {
+        ExecutionContext executionContext = createExecutionContext(getAccountSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccountSettingsRequest> request = null;
+        Response<GetAccountSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccountSettingsRequestMarshaller()
+                        .marshall(getAccountSettingsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request,
+                    new GetAccountSettingsResultJsonUnmarshaller(),
+                    executionContext);
 
             return response.getAwsResponse();
 

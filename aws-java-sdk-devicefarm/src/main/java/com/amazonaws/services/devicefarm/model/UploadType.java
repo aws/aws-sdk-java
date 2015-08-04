@@ -21,12 +21,15 @@ package com.amazonaws.services.devicefarm.model;
 public enum UploadType {
 
     ANDROID_APP("ANDROID_APP"),
+    IOS_APP("IOS_APP"),
     EXTERNAL_DATA("EXTERNAL_DATA"),
     APPIUM_JAVA_JUNIT_TEST_PACKAGE("APPIUM_JAVA_JUNIT_TEST_PACKAGE"),
     APPIUM_JAVA_TESTNG_TEST_PACKAGE("APPIUM_JAVA_TESTNG_TEST_PACKAGE"),
     CALABASH_TEST_PACKAGE("CALABASH_TEST_PACKAGE"),
     INSTRUMENTATION_TEST_PACKAGE("INSTRUMENTATION_TEST_PACKAGE"),
-    UIAUTOMATOR_TEST_PACKAGE("UIAUTOMATOR_TEST_PACKAGE");
+    UIAUTOMATION_TEST_PACKAGE("UIAUTOMATION_TEST_PACKAGE"),
+    UIAUTOMATOR_TEST_PACKAGE("UIAUTOMATOR_TEST_PACKAGE"),
+    XCTEST_TEST_PACKAGE("XCTEST_TEST_PACKAGE");
 
     private String value;
 
@@ -51,6 +54,8 @@ public enum UploadType {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         } else if ("ANDROID_APP".equals(value)) {
             return ANDROID_APP;
+        } else if ("IOS_APP".equals(value)) {
+            return IOS_APP;
         } else if ("EXTERNAL_DATA".equals(value)) {
             return EXTERNAL_DATA;
         } else if ("APPIUM_JAVA_JUNIT_TEST_PACKAGE".equals(value)) {
@@ -61,8 +66,12 @@ public enum UploadType {
             return CALABASH_TEST_PACKAGE;
         } else if ("INSTRUMENTATION_TEST_PACKAGE".equals(value)) {
             return INSTRUMENTATION_TEST_PACKAGE;
+        } else if ("UIAUTOMATION_TEST_PACKAGE".equals(value)) {
+            return UIAUTOMATION_TEST_PACKAGE;
         } else if ("UIAUTOMATOR_TEST_PACKAGE".equals(value)) {
             return UIAUTOMATOR_TEST_PACKAGE;
+        } else if ("XCTEST_TEST_PACKAGE".equals(value)) {
+            return XCTEST_TEST_PACKAGE;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

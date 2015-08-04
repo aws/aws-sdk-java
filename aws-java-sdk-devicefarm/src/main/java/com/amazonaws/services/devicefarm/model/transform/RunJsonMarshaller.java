@@ -103,6 +103,10 @@ public class RunJsonMarshaller {
                 jsonWriter.key("completedJobs").value(run.getCompletedJobs());
             }
 
+            if (run.getBillingMethod() != null) {
+                jsonWriter.key("billingMethod").value(run.getBillingMethod());
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

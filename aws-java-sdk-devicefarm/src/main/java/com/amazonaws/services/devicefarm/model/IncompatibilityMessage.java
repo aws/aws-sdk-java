@@ -55,7 +55,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -125,7 +125,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -153,7 +153,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform.
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -187,7 +187,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -214,7 +214,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         PLATFORM: The platform.
+     *         PLATFORM: The platform (for example, Android or iOS).
      *         </p>
      *         </li>
      * @see DeviceAttribute
@@ -248,7 +248,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -276,7 +276,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform.
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -313,7 +313,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -341,7 +341,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform.
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -377,7 +377,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform.
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * </ul>
@@ -405,7 +405,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform.
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

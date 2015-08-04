@@ -28,7 +28,8 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the extra data for the run. The extra data is a .zip file that
-     * AWS Device Farm will extract to external data.
+     * AWS Device Farm will extract to external data for Android or the app's
+     * sandbox for iOS.
      * </p>
      */
     private String extraDataPackageArn;
@@ -62,16 +63,26 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<String> auxiliaryApps;
+    /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     */
+    private String billingMethod;
 
     /**
      * <p>
      * The ARN of the extra data for the run. The extra data is a .zip file that
-     * AWS Device Farm will extract to external data.
+     * AWS Device Farm will extract to external data for Android or the app's
+     * sandbox for iOS.
      * </p>
      * 
      * @param extraDataPackageArn
      *        The ARN of the extra data for the run. The extra data is a .zip
-     *        file that AWS Device Farm will extract to external data.
+     *        file that AWS Device Farm will extract to external data for
+     *        Android or the app's sandbox for iOS.
      */
     public void setExtraDataPackageArn(String extraDataPackageArn) {
         this.extraDataPackageArn = extraDataPackageArn;
@@ -80,11 +91,13 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the extra data for the run. The extra data is a .zip file that
-     * AWS Device Farm will extract to external data.
+     * AWS Device Farm will extract to external data for Android or the app's
+     * sandbox for iOS.
      * </p>
      * 
      * @return The ARN of the extra data for the run. The extra data is a .zip
-     *         file that AWS Device Farm will extract to external data.
+     *         file that AWS Device Farm will extract to external data for
+     *         Android or the app's sandbox for iOS.
      */
     public String getExtraDataPackageArn() {
         return this.extraDataPackageArn;
@@ -93,12 +106,14 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the extra data for the run. The extra data is a .zip file that
-     * AWS Device Farm will extract to external data.
+     * AWS Device Farm will extract to external data for Android or the app's
+     * sandbox for iOS.
      * </p>
      * 
      * @param extraDataPackageArn
      *        The ARN of the extra data for the run. The extra data is a .zip
-     *        file that AWS Device Farm will extract to external data.
+     *        file that AWS Device Farm will extract to external data for
+     *        Android or the app's sandbox for iOS.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -333,6 +348,99 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     * 
+     * @param billingMethod
+     *        Specifies the billing method for a test run: <code>metered</code>
+     *        or <code>unmetered</code>. If the parameter is not specified, the
+     *        default value is <code>unmetered</code>.
+     * @see BillingMethod
+     */
+    public void setBillingMethod(String billingMethod) {
+        this.billingMethod = billingMethod;
+    }
+
+    /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     * 
+     * @return Specifies the billing method for a test run: <code>metered</code>
+     *         or <code>unmetered</code>. If the parameter is not specified, the
+     *         default value is <code>unmetered</code>.
+     * @see BillingMethod
+     */
+    public String getBillingMethod() {
+        return this.billingMethod;
+    }
+
+    /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     * 
+     * @param billingMethod
+     *        Specifies the billing method for a test run: <code>metered</code>
+     *        or <code>unmetered</code>. If the parameter is not specified, the
+     *        default value is <code>unmetered</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see BillingMethod
+     */
+    public ScheduleRunConfiguration withBillingMethod(String billingMethod) {
+        setBillingMethod(billingMethod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     * 
+     * @param billingMethod
+     *        Specifies the billing method for a test run: <code>metered</code>
+     *        or <code>unmetered</code>. If the parameter is not specified, the
+     *        default value is <code>unmetered</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see BillingMethod
+     */
+    public void setBillingMethod(BillingMethod billingMethod) {
+        this.billingMethod = billingMethod.toString();
+    }
+
+    /**
+     * <p>
+     * Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default
+     * value is <code>unmetered</code>.
+     * </p>
+     * 
+     * @param billingMethod
+     *        Specifies the billing method for a test run: <code>metered</code>
+     *        or <code>unmetered</code>. If the parameter is not specified, the
+     *        default value is <code>unmetered</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see BillingMethod
+     */
+    public ScheduleRunConfiguration withBillingMethod(
+            BillingMethod billingMethod) {
+        setBillingMethod(billingMethod);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -355,7 +463,9 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
         if (getRadios() != null)
             sb.append("Radios: " + getRadios() + ",");
         if (getAuxiliaryApps() != null)
-            sb.append("AuxiliaryApps: " + getAuxiliaryApps());
+            sb.append("AuxiliaryApps: " + getAuxiliaryApps() + ",");
+        if (getBillingMethod() != null)
+            sb.append("BillingMethod: " + getBillingMethod());
         sb.append("}");
         return sb.toString();
     }
@@ -404,6 +514,11 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
         if (other.getAuxiliaryApps() != null
                 && other.getAuxiliaryApps().equals(this.getAuxiliaryApps()) == false)
             return false;
+        if (other.getBillingMethod() == null ^ this.getBillingMethod() == null)
+            return false;
+        if (other.getBillingMethod() != null
+                && other.getBillingMethod().equals(this.getBillingMethod()) == false)
+            return false;
         return true;
     }
 
@@ -429,6 +544,10 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getAuxiliaryApps() == null) ? 0 : getAuxiliaryApps()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getBillingMethod() == null) ? 0 : getBillingMethod()
                         .hashCode());
         return hashCode;
     }

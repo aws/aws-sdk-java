@@ -57,6 +57,16 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -73,17 +83,17 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -129,9 +139,9 @@ public class Upload implements Serializable, Cloneable {
     private String url;
     /**
      * <p>
-     * The upload's metadata. This contains information that is parsed from the
-     * manifest and is displayed in the AWS Device Farm console after the
-     * associated app is uploaded.
+     * The upload's metadata. For example, for Android, this contains
+     * information that is parsed from the manifest and is displayed in the AWS
+     * Device Farm console after the associated app is uploaded.
      * </p>
      */
     private String metadata;
@@ -277,6 +287,16 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -293,17 +313,17 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -317,6 +337,16 @@ public class Upload implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID_APP: An Android upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
      *        <li>
@@ -338,17 +368,17 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
      * @see UploadType
@@ -372,6 +402,16 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -388,17 +428,17 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -411,6 +451,16 @@ public class Upload implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         ANDROID_APP: An Android upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IOS_APP: An iOS upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EXTERNAL_DATA: An external data upload.
      *         </p>
      *         </li>
      *         <li>
@@ -432,17 +482,17 @@ public class Upload implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         EXTERNAL_DATA: An external data upload.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_TEST_PACKAGE: An XCode test package upload.
      *         </p>
      *         </li>
      * @see UploadType
@@ -466,6 +516,16 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -482,17 +542,17 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -506,6 +566,16 @@ public class Upload implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID_APP: An Android upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
      *        <li>
@@ -527,17 +597,17 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -564,6 +634,16 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -580,17 +660,17 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -604,6 +684,16 @@ public class Upload implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID_APP: An Android upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
      *        <li>
@@ -625,17 +715,17 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -661,6 +751,16 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
      * </p>
      * </li>
@@ -677,17 +777,17 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
      * </p>
      * </li>
      * </ul>
@@ -701,6 +801,16 @@ public class Upload implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        ANDROID_APP: An Android upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
      *        <li>
@@ -722,17 +832,17 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -1107,15 +1217,15 @@ public class Upload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The upload's metadata. This contains information that is parsed from the
-     * manifest and is displayed in the AWS Device Farm console after the
-     * associated app is uploaded.
+     * The upload's metadata. For example, for Android, this contains
+     * information that is parsed from the manifest and is displayed in the AWS
+     * Device Farm console after the associated app is uploaded.
      * </p>
      * 
      * @param metadata
-     *        The upload's metadata. This contains information that is parsed
-     *        from the manifest and is displayed in the AWS Device Farm console
-     *        after the associated app is uploaded.
+     *        The upload's metadata. For example, for Android, this contains
+     *        information that is parsed from the manifest and is displayed in
+     *        the AWS Device Farm console after the associated app is uploaded.
      */
     public void setMetadata(String metadata) {
         this.metadata = metadata;
@@ -1123,14 +1233,14 @@ public class Upload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The upload's metadata. This contains information that is parsed from the
-     * manifest and is displayed in the AWS Device Farm console after the
-     * associated app is uploaded.
+     * The upload's metadata. For example, for Android, this contains
+     * information that is parsed from the manifest and is displayed in the AWS
+     * Device Farm console after the associated app is uploaded.
      * </p>
      * 
-     * @return The upload's metadata. This contains information that is parsed
-     *         from the manifest and is displayed in the AWS Device Farm console
-     *         after the associated app is uploaded.
+     * @return The upload's metadata. For example, for Android, this contains
+     *         information that is parsed from the manifest and is displayed in
+     *         the AWS Device Farm console after the associated app is uploaded.
      */
     public String getMetadata() {
         return this.metadata;
@@ -1138,15 +1248,15 @@ public class Upload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The upload's metadata. This contains information that is parsed from the
-     * manifest and is displayed in the AWS Device Farm console after the
-     * associated app is uploaded.
+     * The upload's metadata. For example, for Android, this contains
+     * information that is parsed from the manifest and is displayed in the AWS
+     * Device Farm console after the associated app is uploaded.
      * </p>
      * 
      * @param metadata
-     *        The upload's metadata. This contains information that is parsed
-     *        from the manifest and is displayed in the AWS Device Farm console
-     *        after the associated app is uploaded.
+     *        The upload's metadata. For example, for Android, this contains
+     *        information that is parsed from the manifest and is displayed in
+     *        the AWS Device Farm console after the associated app is uploaded.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
