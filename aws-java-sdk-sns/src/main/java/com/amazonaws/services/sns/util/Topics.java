@@ -121,8 +121,6 @@ public class Topics {
                     .withResources(new Resource(sqsQueueArn))
                     .withConditions(ConditionFactory.newSourceArnCondition(snsTopicArn)));
 
-        System.out.println("Policy: " + policy.toJson());
-
         queueAttributes = new HashMap<String, String>();
         queueAttributes.put(QueueAttributeName.Policy.toString(), policy.toJson());
         sqs.setQueueAttributes(new SetQueueAttributesRequest(sqsQueueUrl, queueAttributes));
