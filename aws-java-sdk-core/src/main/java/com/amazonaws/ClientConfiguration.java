@@ -22,6 +22,9 @@ import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.VersionInfoUtils;
+import org.apache.http.conn.DnsResolver;
+import org.apache.http.impl.conn.SystemDefaultDnsResolver;
+
 /**
  * Client configuration options such as proxy settings, user agent string, max
  * retry attempts, etc.
@@ -210,6 +213,11 @@ public class ClientConfiguration {
     private int responseMetadataCacheSize = DEFAULT_RESPONSE_METADATA_CACHE_SIZE;
 
     /**
+     * The DNS Resolver to resolve ip addresses of amazon web services
+     */
+    private DnsResolver dnsResolver = new SystemDefaultDnsResolver();
+
+    /**
      * Can be used to specify custom specific Apache HTTP client configurations.
      */
     private final ApacheHttpClientConfig apacheHttpClientConfig;
@@ -240,6 +248,7 @@ public class ClientConfiguration {
         this.socketSendBufferSizeHint    = other.socketSendBufferSizeHint;
         this.signerOverride              = other.signerOverride;
         this.responseMetadataCacheSize   = other.responseMetadataCacheSize;
+        this.dnsResolver                 = other.dnsResolver;
         this.apacheHttpClientConfig =
             new ApacheHttpClientConfig(other.apacheHttpClientConfig);
     }
@@ -1151,6 +1160,32 @@ public class ClientConfiguration {
      */
     public ClientConfiguration withTcpKeepAlive(final boolean use) {
         setUseTcpKeepAlive(use);
+        return this;
+    }
+
+    /**
+     * Returns the DnsResolver that is used by the client for resolving AWS ip addresses
+     *
+     */
+    public DnsResolver getDnsResolver() {
+        return dnsResolver;
+    }
+
+    /**
+     * Sets the DNS Resolver that should be used to for resolving AWS ip addresses
+     */
+    public void setDnsResolver(final DnsResolver resolver) {
+        if(resolver!=null) {
+            this.dnsResolver = resolver;
+        }
+    }
+
+    /**
+     * Sets the DNS Resolver that should be used to for resolving AWS ip addresses
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withDnsResolver(final DnsResolver resolver) {
+        setDnsResolver(resolver);
         return this;
     }
 
