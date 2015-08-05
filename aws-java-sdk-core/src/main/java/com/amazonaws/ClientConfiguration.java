@@ -22,8 +22,6 @@ import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.VersionInfoUtils;
-import org.apache.http.conn.DnsResolver;
-import org.apache.http.impl.conn.SystemDefaultDnsResolver;
 
 /**
  * Client configuration options such as proxy settings, user agent string, max

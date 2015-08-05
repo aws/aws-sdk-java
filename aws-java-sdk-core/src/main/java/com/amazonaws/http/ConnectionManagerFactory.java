@@ -28,7 +28,7 @@ class ConnectionManagerFactory {
     public static PoolingClientConnectionManager createPoolingClientConnManager( ClientConfiguration config, HttpParams httpClientParams ) {
         PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager(
                 SchemeRegistryFactory.createDefault(),
-                config.getConnectionTTL(), TimeUnit.MILLISECONDS,config.getDnsResolver());
+                config.getConnectionTTL(), TimeUnit.MILLISECONDS,new DelegatingDnsResolver(config.getDnsResolver()));
         connectionManager.setDefaultMaxPerRoute(config.getMaxConnections());
         connectionManager.setMaxTotal(config.getMaxConnections());
         if (config.useReaper()) {

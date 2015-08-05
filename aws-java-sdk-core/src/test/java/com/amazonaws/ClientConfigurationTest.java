@@ -22,9 +22,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.KeyStore;
 
-import org.apache.http.conn.DnsResolver;
 import org.apache.http.conn.ssl.SSLSocketFactory;
-import org.apache.http.impl.conn.SystemDefaultDnsResolver;
 import org.junit.Test;
 
 public class ClientConfigurationTest {
