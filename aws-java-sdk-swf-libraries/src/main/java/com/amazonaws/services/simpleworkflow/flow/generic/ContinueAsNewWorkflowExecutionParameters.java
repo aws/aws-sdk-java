@@ -30,6 +30,7 @@ public class ContinueAsNewWorkflowExecutionParameters {
     private long taskStartToCloseTimeoutSeconds = FlowConstants.USE_REGISTERED_DEFAULTS;
     private ChildPolicy childPolicy;
     private int taskPriority;
+    private String lambdaRole;
     
     public ContinueAsNewWorkflowExecutionParameters() {
     }
@@ -128,6 +129,19 @@ public class ContinueAsNewWorkflowExecutionParameters {
         return this;
     }
 
+    public String getLambdaRole() {
+        return lambdaRole;
+    }
+
+    public void setLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+    }
+
+    public ContinueAsNewWorkflowExecutionParameters withLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+        return this;
+    }
+
     public ContinueAsNewWorkflowExecutionParameters createContinueAsNewParametersFromOptions(StartWorkflowOptions options, 
             StartWorkflowOptions optionsOverride) {
         ContinueAsNewWorkflowExecutionParameters continueAsNewWorkflowExecutionParameters = this.clone();
@@ -162,6 +176,11 @@ public class ContinueAsNewWorkflowExecutionParameters {
             if (taskPriority != null) {
                 continueAsNewWorkflowExecutionParameters.setTaskPriority(taskPriority);
             }
+
+            String lambdaRole = options.getLambdaRole();
+            if (lambdaRole != null) {
+                continueAsNewWorkflowExecutionParameters.setLambdaRole(lambdaRole);
+            }
         }
         
         if (optionsOverride != null) {    
@@ -194,6 +213,11 @@ public class ContinueAsNewWorkflowExecutionParameters {
             if (taskPriority != null) {
                 continueAsNewWorkflowExecutionParameters.setTaskPriority(taskPriority);
             }
+
+            String lambdaRole = optionsOverride.getLambdaRole();
+            if (lambdaRole != null) {
+                continueAsNewWorkflowExecutionParameters.setLambdaRole(lambdaRole);
+            }
         }
         
         return continueAsNewWorkflowExecutionParameters;
@@ -208,7 +232,8 @@ public class ContinueAsNewWorkflowExecutionParameters {
         sb.append("TaskStartToCloseTimeout: " + taskStartToCloseTimeoutSeconds + ", ");
         sb.append("TagList: " + tagList + ", ");
         sb.append("TaskList: " + taskList + ", ");
-        sb.append("TaskPriority: " + taskPriority);
+        sb.append("TaskPriority: " + taskPriority + ", ");
+        sb.append("LambdaRole: " + lambdaRole);
         sb.append("}");
         return sb.toString();
     }
@@ -223,6 +248,7 @@ public class ContinueAsNewWorkflowExecutionParameters {
         result.setTaskStartToCloseTimeoutSeconds(taskStartToCloseTimeoutSeconds);
         result.setChildPolicy(childPolicy);
         result.setTaskPriority(taskPriority);
+        result.setLambdaRole(lambdaRole);
         return result;
     }
 

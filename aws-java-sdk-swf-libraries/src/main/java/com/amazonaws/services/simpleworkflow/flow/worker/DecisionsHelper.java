@@ -45,12 +45,18 @@ import com.amazonaws.services.simpleworkflow.model.DecisionTaskCompletedEventAtt
 import com.amazonaws.services.simpleworkflow.model.DecisionType;
 import com.amazonaws.services.simpleworkflow.model.FailWorkflowExecutionDecisionAttributes;
 import com.amazonaws.services.simpleworkflow.model.HistoryEvent;
+import com.amazonaws.services.simpleworkflow.model.LambdaFunctionCompletedEventAttributes;
+import com.amazonaws.services.simpleworkflow.model.LambdaFunctionFailedEventAttributes;
+import com.amazonaws.services.simpleworkflow.model.LambdaFunctionScheduledEventAttributes;
+import com.amazonaws.services.simpleworkflow.model.LambdaFunctionTimedOutEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.RequestCancelActivityTaskFailedEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.RequestCancelExternalWorkflowExecutionDecisionAttributes;
 import com.amazonaws.services.simpleworkflow.model.RequestCancelExternalWorkflowExecutionFailedEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.RequestCancelExternalWorkflowExecutionInitiatedEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.ScheduleActivityTaskDecisionAttributes;
 import com.amazonaws.services.simpleworkflow.model.ScheduleActivityTaskFailedEventAttributes;
+import com.amazonaws.services.simpleworkflow.model.ScheduleLambdaFunctionDecisionAttributes;
+import com.amazonaws.services.simpleworkflow.model.ScheduleLambdaFunctionFailedEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.SignalExternalWorkflowExecutionDecisionAttributes;
 import com.amazonaws.services.simpleworkflow.model.SignalExternalWorkflowExecutionInitiatedEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.StartChildWorkflowExecutionDecisionAttributes;
@@ -78,6 +84,8 @@ class DecisionsHelper {
 
     private final Map<Long, String> signalInitiatedEventIdToSignalId = new HashMap<Long, String>();
 
+    private final Map<Long, String> lambdaSchedulingEventIdToLambdaId = new HashMap<Long, String>();
+
     /**
      * Use access-order to ensure that decisions are emitted in order of their
      * creation
@@ -93,6 +101,45 @@ class DecisionsHelper {
 
     DecisionsHelper(DecisionTask task) {
         this.task = task;
+    }
+
+    void scheduleLambdaFunction(ScheduleLambdaFunctionDecisionAttributes schedule) {
+        DecisionId decisionId = new DecisionId(DecisionTarget.LAMBDA_FUNCTION, schedule.getId());
+        addDecision(decisionId, new LambdaFunctionDecisionStateMachine(decisionId, schedule));
+    }
+
+    /**
+     * @return
+     * @return true if cancellation already happened as schedule event was found
+     *         in the new decisions list
+     */
+    boolean requestCancelLambdaFunction(String lambdaId, Runnable immediateCancellationCallback) {
+        DecisionStateMachine decision = getDecision(new DecisionId(DecisionTarget.LAMBDA_FUNCTION, lambdaId));
+        decision.cancel(immediateCancellationCallback);
+        return decision.isDone();
+    }
+
+    boolean handleLambdaFunctionClosed(String lambdaId) {
+        DecisionStateMachine decision = getDecision(new DecisionId(DecisionTarget.LAMBDA_FUNCTION, lambdaId));
+        decision.handleCompletionEvent();
+        return decision.isDone();
+    }
+
+    boolean handleLambdaFunctionScheduled(HistoryEvent event) {
+        LambdaFunctionScheduledEventAttributes attributes = event.getLambdaFunctionScheduledEventAttributes();
+        String functionId = attributes.getId();
+        lambdaSchedulingEventIdToLambdaId.put(event.getEventId(), functionId);
+        DecisionStateMachine decision = getDecision(new DecisionId(DecisionTarget.LAMBDA_FUNCTION, functionId));
+        decision.handleInitiatedEvent(event);
+        return decision.isDone();
+    }
+
+    public boolean handleScheduleLambdaFunctionFailed(HistoryEvent event) {
+        ScheduleLambdaFunctionFailedEventAttributes attributes = event.getScheduleLambdaFunctionFailedEventAttributes();
+        String functionId = attributes.getId();
+        DecisionStateMachine decision = getDecision(new DecisionId(DecisionTarget.LAMBDA_FUNCTION, functionId));
+        decision.handleInitiationFailedEvent(event);
+        return decision.isDone();
     }
 
     void scheduleActivityTask(ScheduleActivityTaskDecisionAttributes schedule) {
@@ -330,6 +377,7 @@ class DecisionsHelper {
         if (taskList != null && !taskList.isEmpty()) {
             attributes.setTaskList(new TaskList().withName(taskList));
         }
+        attributes.setLambdaRole(continueParameters.getLambdaRole());
 
         Decision decision = new Decision();
         decision.setDecisionType(DecisionType.ContinueAsNewWorkflowExecution.toString());
@@ -514,6 +562,21 @@ class DecisionsHelper {
     String getActivityId(ActivityTaskTimedOutEventAttributes attributes) {
         Long sourceId = attributes.getScheduledEventId();
         return activitySchedulingEventIdToActivityId.get(sourceId);
+    }
+
+    String getFunctionId(LambdaFunctionCompletedEventAttributes attributes) {
+        Long sourceId = attributes.getScheduledEventId();
+        return lambdaSchedulingEventIdToLambdaId.get(sourceId);
+    }
+
+    String getFunctionId(LambdaFunctionFailedEventAttributes attributes) {
+        Long sourceId = attributes.getScheduledEventId();
+        return lambdaSchedulingEventIdToLambdaId.get(sourceId);
+    }
+
+    String getFunctionId(LambdaFunctionTimedOutEventAttributes attributes) {
+        Long sourceId = attributes.getScheduledEventId();
+        return lambdaSchedulingEventIdToLambdaId.get(sourceId);
     }
 
     String getSignalIdFromExternalWorkflowExecutionSignaled(long initiatedEventId) {

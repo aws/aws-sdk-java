@@ -245,6 +245,34 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
                     context.nextToken();
                     historyEvent.setStartChildWorkflowExecutionFailedEventAttributes(StartChildWorkflowExecutionFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("lambdaFunctionScheduledEventAttributes", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setLambdaFunctionScheduledEventAttributes(LambdaFunctionScheduledEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionStartedEventAttributes", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setLambdaFunctionStartedEventAttributes(LambdaFunctionStartedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionCompletedEventAttributes", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setLambdaFunctionCompletedEventAttributes(LambdaFunctionCompletedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionFailedEventAttributes", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setLambdaFunctionFailedEventAttributes(LambdaFunctionFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionTimedOutEventAttributes", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setLambdaFunctionTimedOutEventAttributes(LambdaFunctionTimedOutEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("scheduleLambdaFunctionFailedEventAttributes", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setScheduleLambdaFunctionFailedEventAttributes(ScheduleLambdaFunctionFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("startLambdaFunctionFailedEventAttributes", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setStartLambdaFunctionFailedEventAttributes(StartLambdaFunctionFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

@@ -23,6 +23,7 @@ import com.amazonaws.services.simpleworkflow.flow.DecisionContext;
 import com.amazonaws.services.simpleworkflow.flow.junit.WorkflowTestBase;
 import com.amazonaws.services.simpleworkflow.flow.spring.WorkflowScope;
 import com.amazonaws.services.simpleworkflow.flow.test.TestDecisionContext;
+import com.amazonaws.services.simpleworkflow.flow.test.TestLambdaFunctionClient;
 import com.amazonaws.services.simpleworkflow.flow.test.TestPOJOActivityImplementationGenericActivityClient;
 import com.amazonaws.services.simpleworkflow.flow.test.TestPOJOActivityImplementationWorker;
 import com.amazonaws.services.simpleworkflow.flow.test.TestWorkflowClock;
@@ -48,7 +49,7 @@ public class SpringWorkflowTest extends WorkflowTestBase {
     public SpringWorkflowTest() {
         super(new TestDecisionContext(new TestPOJOActivityImplementationGenericActivityClient(),
                 new SpringTestPOJOWorkflowImplementationGenericWorkflowClient(), new TestWorkflowClock(),
-                new TestWorkflowContext()));
+                new TestWorkflowContext(), new TestLambdaFunctionClient()));
         activityClient = (TestPOJOActivityImplementationGenericActivityClient) decisionContext.getActivityClient();
         workflowClient = (SpringTestPOJOWorkflowImplementationGenericWorkflowClient) decisionContext.getWorkflowClient();
     }

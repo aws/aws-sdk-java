@@ -37,4 +37,7 @@ public final class FlowConstants {
      * Use task priority 0
      */
     public static final int DEFAULT_TASK_PRIORITY = 0;
+
+	public static final long DEFAULT_LAMBDA_FUNCTION_TIMEOUT = 60;
+
 }

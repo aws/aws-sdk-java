@@ -29,7 +29,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
     private ActivityType activityType;
 
     /**
-     * The unique id of the activity task.
+     * The unique ID of the activity task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -87,9 +87,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <i>Optional.</i> The priority to assign to the scheduled activity
-     * task. This will override any default priority that was assigned when
-     * the activity type was registered. If not set, then the priority set on
-     * the activity type is used as the task priority. <p>Valid values are
+     * task. If set, this will override any default priority value that was
+     * assigned when the activity type was registered. <p>Valid values are
      * integers that range from Java's <code>Integer.MIN_VALUE</code>
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
      * numbers indicate higher priority. <p>For more information about
@@ -104,7 +103,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
     private String taskPriority;
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision that resulted in the scheduling of this activity task.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
@@ -157,38 +156,38 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
     }
 
     /**
-     * The unique id of the activity task.
+     * The unique ID of the activity task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The unique id of the activity task.
+     * @return The unique ID of the activity task.
      */
     public String getActivityId() {
         return activityId;
     }
     
     /**
-     * The unique id of the activity task.
+     * The unique ID of the activity task.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param activityId The unique id of the activity task.
+     * @param activityId The unique ID of the activity task.
      */
     public void setActivityId(String activityId) {
         this.activityId = activityId;
     }
     
     /**
-     * The unique id of the activity task.
+     * The unique ID of the activity task.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param activityId The unique id of the activity task.
+     * @param activityId The unique ID of the activity task.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -467,9 +466,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <i>Optional.</i> The priority to assign to the scheduled activity
-     * task. This will override any default priority that was assigned when
-     * the activity type was registered. If not set, then the priority set on
-     * the activity type is used as the task priority. <p>Valid values are
+     * task. If set, this will override any default priority value that was
+     * assigned when the activity type was registered. <p>Valid values are
      * integers that range from Java's <code>Integer.MIN_VALUE</code>
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
      * numbers indicate higher priority. <p>For more information about
@@ -482,9 +480,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * <b>Length: </b>0 - 11<br/>
      *
      * @return <i>Optional.</i> The priority to assign to the scheduled activity
-     *         task. This will override any default priority that was assigned when
-     *         the activity type was registered. If not set, then the priority set on
-     *         the activity type is used as the task priority. <p>Valid values are
+     *         task. If set, this will override any default priority value that was
+     *         assigned when the activity type was registered. <p>Valid values are
      *         integers that range from Java's <code>Integer.MIN_VALUE</code>
      *         (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
      *         numbers indicate higher priority. <p>For more information about
@@ -499,9 +496,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
     
     /**
      * <i>Optional.</i> The priority to assign to the scheduled activity
-     * task. This will override any default priority that was assigned when
-     * the activity type was registered. If not set, then the priority set on
-     * the activity type is used as the task priority. <p>Valid values are
+     * task. If set, this will override any default priority value that was
+     * assigned when the activity type was registered. <p>Valid values are
      * integers that range from Java's <code>Integer.MIN_VALUE</code>
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
      * numbers indicate higher priority. <p>For more information about
@@ -514,9 +510,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * <b>Length: </b>0 - 11<br/>
      *
      * @param taskPriority <i>Optional.</i> The priority to assign to the scheduled activity
-     *         task. This will override any default priority that was assigned when
-     *         the activity type was registered. If not set, then the priority set on
-     *         the activity type is used as the task priority. <p>Valid values are
+     *         task. If set, this will override any default priority value that was
+     *         assigned when the activity type was registered. <p>Valid values are
      *         integers that range from Java's <code>Integer.MIN_VALUE</code>
      *         (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
      *         numbers indicate higher priority. <p>For more information about
@@ -531,9 +526,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
     
     /**
      * <i>Optional.</i> The priority to assign to the scheduled activity
-     * task. This will override any default priority that was assigned when
-     * the activity type was registered. If not set, then the priority set on
-     * the activity type is used as the task priority. <p>Valid values are
+     * task. If set, this will override any default priority value that was
+     * assigned when the activity type was registered. <p>Valid values are
      * integers that range from Java's <code>Integer.MIN_VALUE</code>
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
      * numbers indicate higher priority. <p>For more information about
@@ -548,9 +542,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * <b>Length: </b>0 - 11<br/>
      *
      * @param taskPriority <i>Optional.</i> The priority to assign to the scheduled activity
-     *         task. This will override any default priority that was assigned when
-     *         the activity type was registered. If not set, then the priority set on
-     *         the activity type is used as the task priority. <p>Valid values are
+     *         task. If set, this will override any default priority value that was
+     *         assigned when the activity type was registered. <p>Valid values are
      *         integers that range from Java's <code>Integer.MIN_VALUE</code>
      *         (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
      *         numbers indicate higher priority. <p>For more information about
@@ -568,12 +561,12 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
     }
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision that resulted in the scheduling of this activity task.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      *
-     * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision that resulted in the scheduling of this activity task.
      *         This information can be useful for diagnosing problems by tracing back
      *         the chain of events leading up to this event.
@@ -583,12 +576,12 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision that resulted in the scheduling of this activity task.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision that resulted in the scheduling of this activity task.
      *         This information can be useful for diagnosing problems by tracing back
      *         the chain of events leading up to this event.
@@ -598,14 +591,14 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision that resulted in the scheduling of this activity task.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision that resulted in the scheduling of this activity task.
      *         This information can be useful for diagnosing problems by tracing back
      *         the chain of events leading up to this event.

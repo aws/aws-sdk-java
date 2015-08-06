@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class TimerFiredEventAttributes implements Serializable, Cloneable {
 
     /**
-     * The unique Id of the timer that fired.
+     * The unique ID of the timer that fired.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -32,45 +32,45 @@ public class TimerFiredEventAttributes implements Serializable, Cloneable {
     private String timerId;
 
     /**
-     * The id of the <code>TimerStarted</code> event that was recorded when
+     * The ID of the <code>TimerStarted</code> event that was recorded when
      * this timer was started. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
      */
     private Long startedEventId;
 
     /**
-     * The unique Id of the timer that fired.
+     * The unique ID of the timer that fired.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The unique Id of the timer that fired.
+     * @return The unique ID of the timer that fired.
      */
     public String getTimerId() {
         return timerId;
     }
     
     /**
-     * The unique Id of the timer that fired.
+     * The unique ID of the timer that fired.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId The unique Id of the timer that fired.
+     * @param timerId The unique ID of the timer that fired.
      */
     public void setTimerId(String timerId) {
         this.timerId = timerId;
     }
     
     /**
-     * The unique Id of the timer that fired.
+     * The unique ID of the timer that fired.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId The unique Id of the timer that fired.
+     * @param timerId The unique ID of the timer that fired.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -81,11 +81,11 @@ public class TimerFiredEventAttributes implements Serializable, Cloneable {
     }
 
     /**
-     * The id of the <code>TimerStarted</code> event that was recorded when
+     * The ID of the <code>TimerStarted</code> event that was recorded when
      * this timer was started. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
      *
-     * @return The id of the <code>TimerStarted</code> event that was recorded when
+     * @return The ID of the <code>TimerStarted</code> event that was recorded when
      *         this timer was started. This information can be useful for diagnosing
      *         problems by tracing back the chain of events leading up to this event.
      */
@@ -94,11 +94,11 @@ public class TimerFiredEventAttributes implements Serializable, Cloneable {
     }
     
     /**
-     * The id of the <code>TimerStarted</code> event that was recorded when
+     * The ID of the <code>TimerStarted</code> event that was recorded when
      * this timer was started. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
      *
-     * @param startedEventId The id of the <code>TimerStarted</code> event that was recorded when
+     * @param startedEventId The ID of the <code>TimerStarted</code> event that was recorded when
      *         this timer was started. This information can be useful for diagnosing
      *         problems by tracing back the chain of events leading up to this event.
      */
@@ -107,13 +107,13 @@ public class TimerFiredEventAttributes implements Serializable, Cloneable {
     }
     
     /**
-     * The id of the <code>TimerStarted</code> event that was recorded when
+     * The ID of the <code>TimerStarted</code> event that was recorded when
      * this timer was started. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startedEventId The id of the <code>TimerStarted</code> event that was recorded when
+     * @param startedEventId The ID of the <code>TimerStarted</code> event that was recorded when
      *         this timer was started. This information can be useful for diagnosing
      *         problems by tracing back the chain of events leading up to this event.
      *

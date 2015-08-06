@@ -59,7 +59,12 @@ public class GenericWorkflowClientExternalImpl implements GenericWorkflowClientE
         request.setWorkflowId(startParameters.getWorkflowId());
         request.setWorkflowType(startParameters.getWorkflowType());
         request.setTaskPriority(FlowHelpers.taskPriorityToString(startParameters.getTaskPriority()));
-        
+
+        if(startParameters.getChildPolicy() != null) {
+            request.setChildPolicy(startParameters.getChildPolicy());
+        }
+        request.setLambdaRole(startParameters.getLambdaRole());
+
         Run result = service.startWorkflowExecution(request);
         WorkflowExecution execution = new WorkflowExecution().withRunId(result.getRunId()).withWorkflowId(request.getWorkflowId());
 

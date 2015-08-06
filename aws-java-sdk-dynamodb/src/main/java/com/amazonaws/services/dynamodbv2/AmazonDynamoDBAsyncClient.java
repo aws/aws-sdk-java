@@ -422,20 +422,6 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
         return executorService;
     }
 
-    /**
-     * Shuts down the client, releasing all managed resources. This includes
-     * forcibly terminating all pending asynchronous service calls. Clients who
-     * wish to give pending asynchronous service calls time to complete should
-     * call {@code getExecutorService().shutdown()} followed by
-     * {@code getExecutorService().awaitTermination()} prior to calling this
-     * method.
-     */
-    @Override
-    public void shutdown() {
-        super.shutdown();
-        executorService.shutdownNow();
-    }
-
     @Override
     public java.util.concurrent.Future<BatchGetItemResult> batchGetItemAsync(
             BatchGetItemRequest request) {
@@ -1549,5 +1535,19 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
                 new UpdateTableRequest().withTableName(tableName)
                         .withProvisionedThroughput(provisionedThroughput),
                 asyncHandler);
+    }
+
+    /**
+     * Shuts down the client, releasing all managed resources. This includes
+     * forcibly terminating all pending asynchronous service calls. Clients who
+     * wish to give pending asynchronous service calls time to complete should
+     * call {@code getExecutorService().shutdown()} followed by
+     * {@code getExecutorService().awaitTermination()} prior to calling this
+     * method.
+     */
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        executorService.shutdownNow();
     }
 }

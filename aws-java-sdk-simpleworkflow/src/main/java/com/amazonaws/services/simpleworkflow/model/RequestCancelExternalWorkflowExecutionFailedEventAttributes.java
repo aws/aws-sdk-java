@@ -55,7 +55,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
     private String cause;
 
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -66,7 +66,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
     private Long initiatedEventId;
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>RequestCancelExternalWorkflowExecution</code> decision for this
      * cancellation request. This information can be useful for diagnosing
@@ -299,7 +299,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
     }
 
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -307,7 +307,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @return The id of the
+     * @return The ID of the
      *         <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      *         corresponding to the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -320,7 +320,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
     }
     
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -328,7 +328,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @param initiatedEventId The id of the
+     * @param initiatedEventId The ID of the
      *         <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      *         corresponding to the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -341,7 +341,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
     }
     
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -351,7 +351,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param initiatedEventId The id of the
+     * @param initiatedEventId The ID of the
      *         <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      *         corresponding to the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -368,13 +368,13 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
     }
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>RequestCancelExternalWorkflowExecution</code> decision for this
      * cancellation request. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
      *
-     * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision for this
      *         cancellation request. This information can be useful for diagnosing
@@ -385,13 +385,13 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>RequestCancelExternalWorkflowExecution</code> decision for this
      * cancellation request. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision for this
      *         cancellation request. This information can be useful for diagnosing
@@ -402,7 +402,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>RequestCancelExternalWorkflowExecution</code> decision for this
      * cancellation request. This information can be useful for diagnosing
@@ -410,7 +410,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision for this
      *         cancellation request. This information can be useful for diagnosing

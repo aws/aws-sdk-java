@@ -31,11 +31,11 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
     private WorkflowExecution externalWorkflowExecution;
 
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
-     * this workflow execution.The source event with this Id can be found in
+     * this workflow execution.The source event with this ID can be found in
      * the history of the source workflow execution. This information can be
      * useful for diagnosing problems by tracing back the chain of events
      * leading up to this event.
@@ -93,20 +93,20 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
     }
 
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
-     * this workflow execution.The source event with this Id can be found in
+     * this workflow execution.The source event with this ID can be found in
      * the history of the source workflow execution. This information can be
      * useful for diagnosing problems by tracing back the chain of events
      * leading up to this event.
      *
-     * @return The id of the
+     * @return The ID of the
      *         <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      *         corresponding to the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
-     *         this workflow execution.The source event with this Id can be found in
+     *         this workflow execution.The source event with this ID can be found in
      *         the history of the source workflow execution. This information can be
      *         useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
@@ -116,20 +116,20 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
     }
     
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
-     * this workflow execution.The source event with this Id can be found in
+     * this workflow execution.The source event with this ID can be found in
      * the history of the source workflow execution. This information can be
      * useful for diagnosing problems by tracing back the chain of events
      * leading up to this event.
      *
-     * @param externalInitiatedEventId The id of the
+     * @param externalInitiatedEventId The ID of the
      *         <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      *         corresponding to the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
-     *         this workflow execution.The source event with this Id can be found in
+     *         this workflow execution.The source event with this ID can be found in
      *         the history of the source workflow execution. This information can be
      *         useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
@@ -139,22 +139,22 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
     }
     
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
-     * this workflow execution.The source event with this Id can be found in
+     * this workflow execution.The source event with this ID can be found in
      * the history of the source workflow execution. This information can be
      * useful for diagnosing problems by tracing back the chain of events
      * leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param externalInitiatedEventId The id of the
+     * @param externalInitiatedEventId The ID of the
      *         <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      *         corresponding to the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
-     *         this workflow execution.The source event with this Id can be found in
+     *         this workflow execution.The source event with this ID can be found in
      *         the history of the source workflow execution. This information can be
      *         useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.

@@ -33,7 +33,7 @@ import java.io.Serializable;
  * history .</li>
  * <li> <b>ContinueAsNewWorkflowExecution</b> : closes the workflow
  * execution and starts a new workflow execution of the same type using
- * the same workflow id and a unique run Id. A
+ * the same workflow ID and a unique run ID. A
  * <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the
  * history.</li>
  * <li> <b>FailWorkflowExecution</b> : closes the workflow execution and
@@ -55,6 +55,8 @@ import java.io.Serializable;
  * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in
  * the history.</li>
  * <li> <b>ScheduleActivityTask</b> : schedules an activity task.</li>
+ * <li> <b>ScheduleLambdaFunction</b> : schedules a AWS Lambda
+ * function.</li>
  * <li> <b>SignalExternalWorkflowExecution</b> : requests a signal to be
  * delivered to the specified external workflow execution and records a
  * <code>SignalExternalWorkflowExecutionInitiated</code> event in the
@@ -113,6 +115,10 @@ import java.io.Serializable;
  * decision failed. This could happen if the activity type specified in
  * the decision is not registered, is in a deprecated state, or the
  * decision is not properly configured.</li>
+ * <li> <b>ScheduleLambdaFunctionFailed</b> : a
+ * ScheduleLambdaFunctionFailed decision failed. This could happen if the
+ * AWS Lambda function specified in the decision does not exist, or the
+ * AWS Lambda service's limits are exceeded.</li>
  * <li> <b>RequestCancelActivityTaskFailed</b> : a
  * RequestCancelActivityTask decision failed. This could happen if there
  * is no open activity task with the specified activityId.</li>
@@ -172,7 +178,7 @@ import java.io.Serializable;
  * the new events and may decide to close the workflow execution.
  * </p>
  * <p>
- * <b>How to Code a Decision</b>
+ * <b>How to code a decision</b>
  * </p>
  * <p>
  * You code a decision by first setting the decision type field to one of
@@ -182,6 +188,7 @@ import java.io.Serializable;
  * 
  * <ul>
  * <li> ScheduleActivityTaskDecisionAttributes </li>
+ * <li> ScheduleLambdaFunctionDecisionAttributes </li>
  * <li> RequestCancelActivityTaskDecisionAttributes </li>
  * <li> CompleteWorkflowExecutionDecisionAttributes </li>
  * <li> FailWorkflowExecutionDecisionAttributes </li>
@@ -202,7 +209,7 @@ public class Decision implements Serializable, Cloneable {
      * Specifies the type of the decision.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution
+     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution, ScheduleLambdaFunction
      */
     private String decisionType;
 
@@ -280,10 +287,33 @@ public class Decision implements Serializable, Cloneable {
     private StartChildWorkflowExecutionDecisionAttributes startChildWorkflowExecutionDecisionAttributes;
 
     /**
+     * Provides details of the <code>ScheduleLambdaFunction</code> decision.
+     * <p><b>Access Control</b> <p>You can use IAM policies to control this
+     * decision's access to Amazon SWF resources as follows: <ul> <li>Use a
+     * <code>Resource</code> element with the domain name to limit the action
+     * to only specified domains.</li> <li>Use an <code>Action</code> element
+     * to allow or deny permission to call this action.</li> <li>Constrain
+     * the following parameters by using a <code>Condition</code> element
+     * with the appropriate keys. <ul> <li><code>activityType.name</code>:
+     * String constraint. The key is <code>swf:activityType.name</code>.</li>
+     * <li><code>activityType.version</code>: String constraint. The key is
+     * <code>swf:activityType.version</code>.</li> <li><code>taskList</code>:
+     * String constraint. The key is <code>swf:taskList.name</code>.</li>
+     * </ul> </li> </ul> <p>If the caller does not have sufficient
+     * permissions to invoke the action, or the parameter values fall outside
+     * the specified constraints, the action fails. The associated event
+     * attribute's <b>cause</b> parameter will be set to
+     * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * IAM to Manage Access to Amazon SWF Workflows</a>.
+     */
+    private ScheduleLambdaFunctionDecisionAttributes scheduleLambdaFunctionDecisionAttributes;
+
+    /**
      * Specifies the type of the decision.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution
+     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution, ScheduleLambdaFunction
      *
      * @return Specifies the type of the decision.
      *
@@ -297,7 +327,7 @@ public class Decision implements Serializable, Cloneable {
      * Specifies the type of the decision.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution
+     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution, ScheduleLambdaFunction
      *
      * @param decisionType Specifies the type of the decision.
      *
@@ -313,7 +343,7 @@ public class Decision implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution
+     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution, ScheduleLambdaFunction
      *
      * @param decisionType Specifies the type of the decision.
      *
@@ -331,7 +361,7 @@ public class Decision implements Serializable, Cloneable {
      * Specifies the type of the decision.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution
+     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution, ScheduleLambdaFunction
      *
      * @param decisionType Specifies the type of the decision.
      *
@@ -347,7 +377,7 @@ public class Decision implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution
+     * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution, ScheduleLambdaFunction
      *
      * @param decisionType Specifies the type of the decision.
      *
@@ -836,6 +866,147 @@ public class Decision implements Serializable, Cloneable {
     }
 
     /**
+     * Provides details of the <code>ScheduleLambdaFunction</code> decision.
+     * <p><b>Access Control</b> <p>You can use IAM policies to control this
+     * decision's access to Amazon SWF resources as follows: <ul> <li>Use a
+     * <code>Resource</code> element with the domain name to limit the action
+     * to only specified domains.</li> <li>Use an <code>Action</code> element
+     * to allow or deny permission to call this action.</li> <li>Constrain
+     * the following parameters by using a <code>Condition</code> element
+     * with the appropriate keys. <ul> <li><code>activityType.name</code>:
+     * String constraint. The key is <code>swf:activityType.name</code>.</li>
+     * <li><code>activityType.version</code>: String constraint. The key is
+     * <code>swf:activityType.version</code>.</li> <li><code>taskList</code>:
+     * String constraint. The key is <code>swf:taskList.name</code>.</li>
+     * </ul> </li> </ul> <p>If the caller does not have sufficient
+     * permissions to invoke the action, or the parameter values fall outside
+     * the specified constraints, the action fails. The associated event
+     * attribute's <b>cause</b> parameter will be set to
+     * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * IAM to Manage Access to Amazon SWF Workflows</a>.
+     *
+     * @return Provides details of the <code>ScheduleLambdaFunction</code> decision.
+     *         <p><b>Access Control</b> <p>You can use IAM policies to control this
+     *         decision's access to Amazon SWF resources as follows: <ul> <li>Use a
+     *         <code>Resource</code> element with the domain name to limit the action
+     *         to only specified domains.</li> <li>Use an <code>Action</code> element
+     *         to allow or deny permission to call this action.</li> <li>Constrain
+     *         the following parameters by using a <code>Condition</code> element
+     *         with the appropriate keys. <ul> <li><code>activityType.name</code>:
+     *         String constraint. The key is <code>swf:activityType.name</code>.</li>
+     *         <li><code>activityType.version</code>: String constraint. The key is
+     *         <code>swf:activityType.version</code>.</li> <li><code>taskList</code>:
+     *         String constraint. The key is <code>swf:taskList.name</code>.</li>
+     *         </ul> </li> </ul> <p>If the caller does not have sufficient
+     *         permissions to invoke the action, or the parameter values fall outside
+     *         the specified constraints, the action fails. The associated event
+     *         attribute's <b>cause</b> parameter will be set to
+     *         OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         IAM to Manage Access to Amazon SWF Workflows</a>.
+     */
+    public ScheduleLambdaFunctionDecisionAttributes getScheduleLambdaFunctionDecisionAttributes() {
+        return scheduleLambdaFunctionDecisionAttributes;
+    }
+    
+    /**
+     * Provides details of the <code>ScheduleLambdaFunction</code> decision.
+     * <p><b>Access Control</b> <p>You can use IAM policies to control this
+     * decision's access to Amazon SWF resources as follows: <ul> <li>Use a
+     * <code>Resource</code> element with the domain name to limit the action
+     * to only specified domains.</li> <li>Use an <code>Action</code> element
+     * to allow or deny permission to call this action.</li> <li>Constrain
+     * the following parameters by using a <code>Condition</code> element
+     * with the appropriate keys. <ul> <li><code>activityType.name</code>:
+     * String constraint. The key is <code>swf:activityType.name</code>.</li>
+     * <li><code>activityType.version</code>: String constraint. The key is
+     * <code>swf:activityType.version</code>.</li> <li><code>taskList</code>:
+     * String constraint. The key is <code>swf:taskList.name</code>.</li>
+     * </ul> </li> </ul> <p>If the caller does not have sufficient
+     * permissions to invoke the action, or the parameter values fall outside
+     * the specified constraints, the action fails. The associated event
+     * attribute's <b>cause</b> parameter will be set to
+     * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * IAM to Manage Access to Amazon SWF Workflows</a>.
+     *
+     * @param scheduleLambdaFunctionDecisionAttributes Provides details of the <code>ScheduleLambdaFunction</code> decision.
+     *         <p><b>Access Control</b> <p>You can use IAM policies to control this
+     *         decision's access to Amazon SWF resources as follows: <ul> <li>Use a
+     *         <code>Resource</code> element with the domain name to limit the action
+     *         to only specified domains.</li> <li>Use an <code>Action</code> element
+     *         to allow or deny permission to call this action.</li> <li>Constrain
+     *         the following parameters by using a <code>Condition</code> element
+     *         with the appropriate keys. <ul> <li><code>activityType.name</code>:
+     *         String constraint. The key is <code>swf:activityType.name</code>.</li>
+     *         <li><code>activityType.version</code>: String constraint. The key is
+     *         <code>swf:activityType.version</code>.</li> <li><code>taskList</code>:
+     *         String constraint. The key is <code>swf:taskList.name</code>.</li>
+     *         </ul> </li> </ul> <p>If the caller does not have sufficient
+     *         permissions to invoke the action, or the parameter values fall outside
+     *         the specified constraints, the action fails. The associated event
+     *         attribute's <b>cause</b> parameter will be set to
+     *         OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         IAM to Manage Access to Amazon SWF Workflows</a>.
+     */
+    public void setScheduleLambdaFunctionDecisionAttributes(ScheduleLambdaFunctionDecisionAttributes scheduleLambdaFunctionDecisionAttributes) {
+        this.scheduleLambdaFunctionDecisionAttributes = scheduleLambdaFunctionDecisionAttributes;
+    }
+    
+    /**
+     * Provides details of the <code>ScheduleLambdaFunction</code> decision.
+     * <p><b>Access Control</b> <p>You can use IAM policies to control this
+     * decision's access to Amazon SWF resources as follows: <ul> <li>Use a
+     * <code>Resource</code> element with the domain name to limit the action
+     * to only specified domains.</li> <li>Use an <code>Action</code> element
+     * to allow or deny permission to call this action.</li> <li>Constrain
+     * the following parameters by using a <code>Condition</code> element
+     * with the appropriate keys. <ul> <li><code>activityType.name</code>:
+     * String constraint. The key is <code>swf:activityType.name</code>.</li>
+     * <li><code>activityType.version</code>: String constraint. The key is
+     * <code>swf:activityType.version</code>.</li> <li><code>taskList</code>:
+     * String constraint. The key is <code>swf:taskList.name</code>.</li>
+     * </ul> </li> </ul> <p>If the caller does not have sufficient
+     * permissions to invoke the action, or the parameter values fall outside
+     * the specified constraints, the action fails. The associated event
+     * attribute's <b>cause</b> parameter will be set to
+     * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * IAM to Manage Access to Amazon SWF Workflows</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param scheduleLambdaFunctionDecisionAttributes Provides details of the <code>ScheduleLambdaFunction</code> decision.
+     *         <p><b>Access Control</b> <p>You can use IAM policies to control this
+     *         decision's access to Amazon SWF resources as follows: <ul> <li>Use a
+     *         <code>Resource</code> element with the domain name to limit the action
+     *         to only specified domains.</li> <li>Use an <code>Action</code> element
+     *         to allow or deny permission to call this action.</li> <li>Constrain
+     *         the following parameters by using a <code>Condition</code> element
+     *         with the appropriate keys. <ul> <li><code>activityType.name</code>:
+     *         String constraint. The key is <code>swf:activityType.name</code>.</li>
+     *         <li><code>activityType.version</code>: String constraint. The key is
+     *         <code>swf:activityType.version</code>.</li> <li><code>taskList</code>:
+     *         String constraint. The key is <code>swf:taskList.name</code>.</li>
+     *         </ul> </li> </ul> <p>If the caller does not have sufficient
+     *         permissions to invoke the action, or the parameter values fall outside
+     *         the specified constraints, the action fails. The associated event
+     *         attribute's <b>cause</b> parameter will be set to
+     *         OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         IAM to Manage Access to Amazon SWF Workflows</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Decision withScheduleLambdaFunctionDecisionAttributes(ScheduleLambdaFunctionDecisionAttributes scheduleLambdaFunctionDecisionAttributes) {
+        this.scheduleLambdaFunctionDecisionAttributes = scheduleLambdaFunctionDecisionAttributes;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -859,7 +1030,8 @@ public class Decision implements Serializable, Cloneable {
         if (getCancelTimerDecisionAttributes() != null) sb.append("CancelTimerDecisionAttributes: " + getCancelTimerDecisionAttributes() + ",");
         if (getSignalExternalWorkflowExecutionDecisionAttributes() != null) sb.append("SignalExternalWorkflowExecutionDecisionAttributes: " + getSignalExternalWorkflowExecutionDecisionAttributes() + ",");
         if (getRequestCancelExternalWorkflowExecutionDecisionAttributes() != null) sb.append("RequestCancelExternalWorkflowExecutionDecisionAttributes: " + getRequestCancelExternalWorkflowExecutionDecisionAttributes() + ",");
-        if (getStartChildWorkflowExecutionDecisionAttributes() != null) sb.append("StartChildWorkflowExecutionDecisionAttributes: " + getStartChildWorkflowExecutionDecisionAttributes() );
+        if (getStartChildWorkflowExecutionDecisionAttributes() != null) sb.append("StartChildWorkflowExecutionDecisionAttributes: " + getStartChildWorkflowExecutionDecisionAttributes() + ",");
+        if (getScheduleLambdaFunctionDecisionAttributes() != null) sb.append("ScheduleLambdaFunctionDecisionAttributes: " + getScheduleLambdaFunctionDecisionAttributes() );
         sb.append("}");
         return sb.toString();
     }
@@ -882,6 +1054,7 @@ public class Decision implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSignalExternalWorkflowExecutionDecisionAttributes() == null) ? 0 : getSignalExternalWorkflowExecutionDecisionAttributes().hashCode()); 
         hashCode = prime * hashCode + ((getRequestCancelExternalWorkflowExecutionDecisionAttributes() == null) ? 0 : getRequestCancelExternalWorkflowExecutionDecisionAttributes().hashCode()); 
         hashCode = prime * hashCode + ((getStartChildWorkflowExecutionDecisionAttributes() == null) ? 0 : getStartChildWorkflowExecutionDecisionAttributes().hashCode()); 
+        hashCode = prime * hashCode + ((getScheduleLambdaFunctionDecisionAttributes() == null) ? 0 : getScheduleLambdaFunctionDecisionAttributes().hashCode()); 
         return hashCode;
     }
     
@@ -919,6 +1092,8 @@ public class Decision implements Serializable, Cloneable {
         if (other.getRequestCancelExternalWorkflowExecutionDecisionAttributes() != null && other.getRequestCancelExternalWorkflowExecutionDecisionAttributes().equals(this.getRequestCancelExternalWorkflowExecutionDecisionAttributes()) == false) return false; 
         if (other.getStartChildWorkflowExecutionDecisionAttributes() == null ^ this.getStartChildWorkflowExecutionDecisionAttributes() == null) return false;
         if (other.getStartChildWorkflowExecutionDecisionAttributes() != null && other.getStartChildWorkflowExecutionDecisionAttributes().equals(this.getStartChildWorkflowExecutionDecisionAttributes()) == false) return false; 
+        if (other.getScheduleLambdaFunctionDecisionAttributes() == null ^ this.getScheduleLambdaFunctionDecisionAttributes() == null) return false;
+        if (other.getScheduleLambdaFunctionDecisionAttributes() != null && other.getScheduleLambdaFunctionDecisionAttributes().equals(this.getScheduleLambdaFunctionDecisionAttributes()) == false) return false; 
         return true;
     }
     

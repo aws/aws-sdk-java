@@ -90,10 +90,10 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
     private String taskPriority;
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a> to request
-     * this child workflow execution. This information can be useful for
+     * <code>StartChildWorkflowExecution</code> decision to request this
+     * child workflow execution. This information can be useful for
      * diagnosing problems by tracing back the cause of events.
      */
     private Long decisionTaskCompletedEventId;
@@ -134,6 +134,15 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
      * <b>Length: </b>0 - 5<br/>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagList;
+
+    /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     */
+    private String lambdaRole;
 
     /**
      * The <code>workflowId</code> of the child workflow execution.
@@ -502,16 +511,16 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
     }
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a> to request
-     * this child workflow execution. This information can be useful for
+     * <code>StartChildWorkflowExecution</code> decision to request this
+     * child workflow execution. This information can be useful for
      * diagnosing problems by tracing back the cause of events.
      *
-     * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a> to request
-     *         this child workflow execution. This information can be useful for
+     *         <code>StartChildWorkflowExecution</code> decision to request this
+     *         child workflow execution. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
      */
     public Long getDecisionTaskCompletedEventId() {
@@ -519,16 +528,16 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a> to request
-     * this child workflow execution. This information can be useful for
+     * <code>StartChildWorkflowExecution</code> decision to request this
+     * child workflow execution. This information can be useful for
      * diagnosing problems by tracing back the cause of events.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a> to request
-     *         this child workflow execution. This information can be useful for
+     *         <code>StartChildWorkflowExecution</code> decision to request this
+     *         child workflow execution. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
      */
     public void setDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
@@ -536,18 +545,18 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a> to request
-     * this child workflow execution. This information can be useful for
+     * <code>StartChildWorkflowExecution</code> decision to request this
+     * child workflow execution. This information can be useful for
      * diagnosing problems by tracing back the cause of events.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a> to request
-     *         this child workflow execution. This information can be useful for
+     *         <code>StartChildWorkflowExecution</code> decision to request this
+     *         child workflow execution. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -882,6 +891,54 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
     }
 
     /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @return The IAM role attached to this workflow execution to use when invoking
+     *         AWS Lambda functions.
+     */
+    public String getLambdaRole() {
+        return lambdaRole;
+    }
+    
+    /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The IAM role attached to this workflow execution to use when invoking
+     *         AWS Lambda functions.
+     */
+    public void setLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+    }
+    
+    /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The IAM role attached to this workflow execution to use when invoking
+     *         AWS Lambda functions.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public StartChildWorkflowExecutionInitiatedEventAttributes withLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -903,7 +960,8 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
         if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");
         if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
-        if (getTagList() != null) sb.append("TagList: " + getTagList() );
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");
+        if (getLambdaRole() != null) sb.append("LambdaRole: " + getLambdaRole() );
         sb.append("}");
         return sb.toString();
     }
@@ -924,6 +982,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         hashCode = prime * hashCode + ((getChildPolicy() == null) ? 0 : getChildPolicy().hashCode()); 
         hashCode = prime * hashCode + ((getTaskStartToCloseTimeout() == null) ? 0 : getTaskStartToCloseTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode()); 
+        hashCode = prime * hashCode + ((getLambdaRole() == null) ? 0 : getLambdaRole().hashCode()); 
         return hashCode;
     }
     
@@ -957,6 +1016,8 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         if (other.getTaskStartToCloseTimeout() != null && other.getTaskStartToCloseTimeout().equals(this.getTaskStartToCloseTimeout()) == false) return false; 
         if (other.getTagList() == null ^ this.getTagList() == null) return false;
         if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false) return false; 
+        if (other.getLambdaRole() == null ^ this.getLambdaRole() == null) return false;
+        if (other.getLambdaRole() != null && other.getLambdaRole().equals(this.getLambdaRole()) == false) return false; 
         return true;
     }
     

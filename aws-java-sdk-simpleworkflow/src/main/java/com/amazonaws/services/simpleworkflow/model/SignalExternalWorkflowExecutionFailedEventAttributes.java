@@ -56,7 +56,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
     private String cause;
 
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the
      * <code>SignalExternalWorkflowExecution</code> decision to request this
      * signal. This information can be useful for diagnosing problems by
@@ -65,7 +65,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
     private Long initiatedEventId;
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
@@ -304,13 +304,13 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
     }
 
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the
      * <code>SignalExternalWorkflowExecution</code> decision to request this
      * signal. This information can be useful for diagnosing problems by
      * tracing back the chain of events leading up to this event.
      *
-     * @return The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * @return The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      *         event corresponding to the
      *         <code>SignalExternalWorkflowExecution</code> decision to request this
      *         signal. This information can be useful for diagnosing problems by
@@ -321,13 +321,13 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
     }
     
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the
      * <code>SignalExternalWorkflowExecution</code> decision to request this
      * signal. This information can be useful for diagnosing problems by
      * tracing back the chain of events leading up to this event.
      *
-     * @param initiatedEventId The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * @param initiatedEventId The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      *         event corresponding to the
      *         <code>SignalExternalWorkflowExecution</code> decision to request this
      *         signal. This information can be useful for diagnosing problems by
@@ -338,7 +338,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
     }
     
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the
      * <code>SignalExternalWorkflowExecution</code> decision to request this
      * signal. This information can be useful for diagnosing problems by
@@ -346,7 +346,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param initiatedEventId The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * @param initiatedEventId The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      *         event corresponding to the
      *         <code>SignalExternalWorkflowExecution</code> decision to request this
      *         signal. This information can be useful for diagnosing problems by
@@ -361,13 +361,13 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
     }
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      *
-     * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>SignalExternalWorkflowExecution</code> decision for this signal.
      *         This information can be useful for diagnosing problems by tracing back
@@ -378,13 +378,13 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>SignalExternalWorkflowExecution</code> decision for this signal.
      *         This information can be useful for diagnosing problems by tracing back
@@ -395,7 +395,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
@@ -403,7 +403,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>SignalExternalWorkflowExecution</code> decision for this signal.
      *         This information can be useful for diagnosing problems by tracing back

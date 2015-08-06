@@ -251,4 +251,5 @@ public interface AmazonImportExportAsync extends AmazonImportExport {
     java.util.concurrent.Future<UpdateJobResult> updateJobAsync(
             UpdateJobRequest updateJobRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateJobRequest, UpdateJobResult> asyncHandler);
+
 }

@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class Run implements Serializable, Cloneable {
 
     /**
-     * The <code>runId</code> of a workflow execution. This Id is generated
+     * The <code>runId</code> of a workflow execution. This ID is generated
      * by the service and can be used to uniquely identify the workflow
      * execution within a domain.
      * <p>
@@ -34,14 +34,14 @@ public class Run implements Serializable, Cloneable {
     private String runId;
 
     /**
-     * The <code>runId</code> of a workflow execution. This Id is generated
+     * The <code>runId</code> of a workflow execution. This ID is generated
      * by the service and can be used to uniquely identify the workflow
      * execution within a domain.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      *
-     * @return The <code>runId</code> of a workflow execution. This Id is generated
+     * @return The <code>runId</code> of a workflow execution. This ID is generated
      *         by the service and can be used to uniquely identify the workflow
      *         execution within a domain.
      */
@@ -50,14 +50,14 @@ public class Run implements Serializable, Cloneable {
     }
     
     /**
-     * The <code>runId</code> of a workflow execution. This Id is generated
+     * The <code>runId</code> of a workflow execution. This ID is generated
      * by the service and can be used to uniquely identify the workflow
      * execution within a domain.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      *
-     * @param runId The <code>runId</code> of a workflow execution. This Id is generated
+     * @param runId The <code>runId</code> of a workflow execution. This ID is generated
      *         by the service and can be used to uniquely identify the workflow
      *         execution within a domain.
      */
@@ -66,7 +66,7 @@ public class Run implements Serializable, Cloneable {
     }
     
     /**
-     * The <code>runId</code> of a workflow execution. This Id is generated
+     * The <code>runId</code> of a workflow execution. This ID is generated
      * by the service and can be used to uniquely identify the workflow
      * execution within a domain.
      * <p>
@@ -75,7 +75,7 @@ public class Run implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      *
-     * @param runId The <code>runId</code> of a workflow execution. This Id is generated
+     * @param runId The <code>runId</code> of a workflow execution. This ID is generated
      *         by the service and can be used to uniquely identify the workflow
      *         execution within a domain.
      *

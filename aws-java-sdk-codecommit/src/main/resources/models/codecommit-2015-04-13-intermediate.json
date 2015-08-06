@@ -2214,11 +2214,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "templateImplType" : "java.util.ArrayList<String>",
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2305,11 +2305,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "templateImplType" : "java.util.ArrayList<String>",
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2705,11 +2705,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
           "simple" : false,
           "simpleType" : "RepositoryNameIdPair",
           "map" : false,
-          "templateType" : "java.util.List<RepositoryNameIdPair>"
+          "templateType" : "java.util.List<RepositoryNameIdPair>",
+          "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2946,11 +2946,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
             "simple" : false,
             "simpleType" : "RepositoryNameIdPair",
             "map" : false,
-            "templateType" : "java.util.List<RepositoryNameIdPair>"
+            "templateType" : "java.util.List<RepositoryNameIdPair>",
+            "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3167,11 +3167,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
           "simple" : false,
           "simpleType" : "RepositoryMetadata",
           "map" : false,
-          "templateType" : "java.util.List<RepositoryMetadata>"
+          "templateType" : "java.util.List<RepositoryMetadata>",
+          "templateImplType" : "java.util.ArrayList<RepositoryMetadata>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3231,11 +3231,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "templateImplType" : "java.util.ArrayList<String>",
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3369,11 +3369,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
             "simple" : false,
             "simpleType" : "RepositoryMetadata",
             "map" : false,
-            "templateType" : "java.util.List<RepositoryMetadata>"
+            "templateType" : "java.util.List<RepositoryMetadata>",
+            "templateImplType" : "java.util.ArrayList<RepositoryMetadata>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3434,11 +3434,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "templateImplType" : "java.util.ArrayList<String>",
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4988,11 +4988,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "templateImplType" : "java.util.ArrayList<String>",
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5178,11 +5178,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "templateImplType" : "java.util.ArrayList<String>",
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,

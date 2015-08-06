@@ -59,18 +59,26 @@ import com.amazonaws.services.s3.model.DeleteObjectsResult;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GetBucketAclRequest;
+import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketLocationRequest;
+import com.amazonaws.services.s3.model.GetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketsRequest;
 import com.amazonaws.services.s3.model.ListMultipartUploadsRequest;
+import com.amazonaws.services.s3.model.ListNextBatchOfObjectsRequest;
+import com.amazonaws.services.s3.model.ListNextBatchOfVersionsRequest;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ListPartsRequest;
 import com.amazonaws.services.s3.model.ListVersionsRequest;
@@ -451,8 +459,52 @@ public interface AmazonS3 extends S3DirectSpi {
      * @see AmazonS3Client#listObjects(String)
      * @see AmazonS3Client#listObjects(String, String)
      * @see AmazonS3Client#listObjects(ListObjectsRequest)
+     * @see AmazonS3Client#listNextBatchOfObjects(ListNextBatchOfObjectsRequest)
      */
     public ObjectListing listNextBatchOfObjects(ObjectListing previousObjectListing)
+            throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
+     * Provides an easy way to continue a truncated object listing and retrieve
+     * the next page of results.
+     * </p>
+     * <p>
+     * To continue the object listing and retrieve the next page of results,
+     * call the initial {@link ObjectListing} from one of the
+     * <code>listObjects</code> methods.
+     * If truncated
+     * (indicated when {@link ObjectListing#isTruncated()} returns <code>true</code>),
+     * pass the <code>ObjectListing</code> back into this method
+     * in order to retrieve the
+     * next page of results. Continue using this method to
+     * retrieve more results until the returned <code>ObjectListing</code> indicates that
+     * it is not truncated.
+     * </p>
+     * @param listNextBatchOfObjectsRequest
+     *            The request object for listing next batch of objects using the previous
+     *            truncated <code>ObjectListing</code>. If a
+     *            non-truncated <code>ObjectListing</code> is passed in by the request object, an empty
+     *            <code>ObjectListing</code> is returned without ever contacting
+     *            Amazon S3.
+     *
+     * @return The next set of <code>ObjectListing</code> results, beginning immediately
+     *         after the last result in the specified previous <code>ObjectListing</code>.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3Client#listObjects(String)
+     * @see AmazonS3Client#listObjects(String, String)
+     * @see AmazonS3Client#listObjects(ListObjectsRequest)
+     * @see AmazonS3Client#listNextBatchOfObjects(ObjectListing)
+     */
+    public ObjectListing listNextBatchOfObjects(
+            ListNextBatchOfObjectsRequest listNextBatchOfObjectsRequest)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -517,7 +569,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * <p>
      * Obtain the initial
      * <code>VersionListing</code> from one of the <code>listVersions</code> methods. If the result
-     * is truncated (indicated when {@link ObjectListing#isTruncated()} returns <code>true</code>),
+     * is truncated (indicated when {@link VersionListing#isTruncated()} returns <code>true</code>),
      * pass the <code>VersionListing</code> back into this method in order to retrieve the
      * next page of results. From there, continue using this method to
      * retrieve more results until the returned <code>VersionListing</code> indicates that
@@ -548,9 +600,55 @@ public interface AmazonS3 extends S3DirectSpi {
      * @see AmazonS3Client#listVersions(String, String)
      * @see AmazonS3Client#listVersions(ListVersionsRequest)
      * @see AmazonS3Client#listVersions(String, String, String, String, String, Integer)
+     * @see AmazonS3Client#listNextBatchOfVersions(ListNextBatchOfVersionsRequest)
      */
     public VersionListing listNextBatchOfVersions(VersionListing previousVersionListing)
         throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
+     * Provides an easy way to continue a truncated {@link VersionListing} and retrieve
+     * the next page of results.
+     * </p>
+     * <p>
+     * Obtain the initial
+     * <code>VersionListing</code> from one of the <code>listVersions</code> methods. If the result
+     * is truncated (indicated when {@link VersionListing#isTruncated()} returns <code>true</code>),
+     * pass the <code>VersionListing</code> back into this method in order to retrieve the
+     * next page of results. From there, continue using this method to
+     * retrieve more results until the returned <code>VersionListing</code> indicates that
+     * it is not truncated.
+     * </p>
+     * <p>
+     * For more information about enabling versioning for a bucket, see
+     * {@link #setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
+     * </p>
+     *
+     * @param listNextBatchOfVersionsRequest
+     *            The request object for listing next batch of versions using the previous
+     *            truncated <code>VersionListing</code>. If a
+     *            non-truncated <code>VersionListing</code> is passed in by the request object, an empty
+     *            <code>VersionListing</code> is returned without ever contacting
+     *            Amazon S3.
+     *
+     * @return The next set of <code>VersionListing</code> results, beginning immediately
+     *         after the last result in the specified previous <code>VersionListing</code>.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3Client#listVersions(String, String)
+     * @see AmazonS3Client#listVersions(ListVersionsRequest)
+     * @see AmazonS3Client#listVersions(String, String, String, String, String, Integer)
+     * @see AmazonS3Client#listNextBatchOfVersions(VersionListing)
+     */
+    public VersionListing listNextBatchOfVersions(
+            ListNextBatchOfVersionsRequest listNextBatchOfVersionsRequest)
+            throws AmazonClientException, AmazonServiceException;
 
     /**
      * <p>
@@ -787,7 +885,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * The caller <i>must</i> authenticate with a valid AWS Access Key ID that is registered
-     * with Amazon S3.
+     * with AWS.
      * </p>
      *
      * @return The account of the authenticated sender
@@ -798,9 +896,38 @@ public interface AmazonS3 extends S3DirectSpi {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
+     *
+     * @see AmazonS3#getS3AccountOwner(GetS3AccountOwnerRequest)
      */
     public Owner getS3AccountOwner() throws AmazonClientException,
             AmazonServiceException;
+
+    /**
+     * <p>
+     * Gets the current owner of the AWS account
+     * that the authenticated sender of the request is using.
+     * </p>
+     * <p>
+     * The caller <i>must</i> authenticate with a valid AWS Access Key ID that is registered
+     * with AWS.
+     * </p>
+     *
+     * @param getS3AccountOwnerRequest
+     *          The request object for retrieving the S3 account owner.
+     *
+     * @return The account of the authenticated sender
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3#getS3AccountOwner()
+     */
+    public Owner getS3AccountOwner(GetS3AccountOwnerRequest getS3AccountOwnerRequest)
+            throws AmazonClientException, AmazonServiceException;
 
     /**
      * Checks if the specified bucket exists. Amazon S3 buckets are named in a
@@ -2616,7 +2743,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * Gets the logging configuration for the specified bucket.
      * The bucket
      * logging configuration object indicates if server access logging is
-     * enabled the specified bucket, the destination bucket
+     * enabled for the specified bucket, the destination bucket
      * where server access logs are delivered, and the optional log file prefix.
      * </p>
      *
@@ -2634,8 +2761,37 @@ public interface AmazonS3 extends S3DirectSpi {
      *             request.
      *
      * @see AmazonS3#setBucketLoggingConfiguration(SetBucketLoggingConfigurationRequest)
+     * @see AmazonS3#getBucketLoggingConfiguration(GetBucketLoggingConfigurationRequest)
      */
     public BucketLoggingConfiguration getBucketLoggingConfiguration(String bucketName)
+            throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
+     * Gets the logging configuration for the specified bucket. The bucket
+     * logging configuration object indicates if server access logging is
+     * enabled for the specified bucket, the destination bucket where server access
+     * logs are delivered, and the optional log file prefix.
+     * </p>
+     *
+     * @param getBucketLoggingConfigurationRequest
+     *            The request object for retrieving the bucket logging
+     *            configuration.
+     *
+     * @return The bucket logging configuration for the specified bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request}
+     *
+     * @see AmazonS3#setBucketLoggingConfiguration(SetBucketLoggingConfigurationRequest)
+     * @see AmazonS3#getBucketLoggingConfiguration(String)
+     */
+    public BucketLoggingConfiguration getBucketLoggingConfiguration(
+            GetBucketLoggingConfigurationRequest getBucketLoggingConfigurationRequest)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -2712,7 +2868,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * Additionally, the <code>PutObject</code> API guarantees that,
      * if versioning is enabled for a bucket the request,
      * no other object will be overwritten by that request.
-     * Refer to the documentation sections for each API for information on how
+     * Refer to the <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETversioningStatus.html">documentation</a> sections for each API for information on how
      * versioning status affects the semantics of that particular API.
      * </p>
      * <p>
@@ -2733,8 +2889,65 @@ public interface AmazonS3 extends S3DirectSpi {
      *             request.
      *
      * @see AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)
+     * @see AmazonS3#getBucketVersioningConfiguration(GetBucketVersioningConfigurationRequest)
      */
     public BucketVersioningConfiguration getBucketVersioningConfiguration(String bucketName)
+            throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
+     * Returns the versioning configuration for the specified bucket.
+     * </p>
+     * <p>
+     * A bucket's versioning configuration can be in one of three possible
+     * states:
+     *  <ul>
+     *      <li>{@link BucketVersioningConfiguration#OFF}
+     *      <li>{@link BucketVersioningConfiguration#ENABLED}
+     *      <li>{@link BucketVersioningConfiguration#SUSPENDED}
+     *  </ul>
+     * </p>
+     * <p>
+     * By default, new buckets are in the
+     * {@link BucketVersioningConfiguration#OFF off} state. Once versioning is
+     * enabled for a bucket the status can never be reverted to
+     * {@link BucketVersioningConfiguration#OFF off}.
+     * </p>
+     * <p>
+     * The versioning configuration of a bucket has different implications for
+     * each operation performed on that bucket or for objects within that
+     * bucket. For example, when versioning is enabled a <code>PutObject</code>
+     * operation creates a unique object version-id for the object being uploaded. The
+     * The <code>PutObject</code> API guarantees that, if versioning is enabled for a bucket at
+     * the time of the request, the new object can only be permanently deleted
+     * using a <code>DeleteVersion</code> operation. It can never be overwritten.
+     * Additionally, the <code>PutObject</code> API guarantees that,
+     * if versioning is enabled for a bucket the request,
+     * no other object will be overwritten by that request.
+     * Refer to the <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETversioningStatus.html">documentation</a> sections for each API for information on how
+     * versioning status affects the semantics of that particular API.
+     * </p>
+     * <p>
+     * Amazon S3 is eventually consistent. It can take time for the versioning status
+     * of a bucket to be propagated throughout the system.
+     * </p>
+     *
+     * @param getBucketVersioningConfigurationRequest
+     *            The request object for retrieving the bucket versioning configuration.
+     *
+     * @return The bucket versioning configuration for the specified bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)
+     * @see AmazonS3#getBucketVersioningConfiguration(String)
+     */
+    public BucketVersioningConfiguration getBucketVersioningConfiguration(GetBucketVersioningConfigurationRequest getBucketVersioningConfigurationRequest)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -2799,14 +3012,31 @@ public interface AmazonS3 extends S3DirectSpi {
         throws AmazonClientException, AmazonServiceException;
 
     /**
-     * Gets the lifecycle configuration for the specified bucket, or null if no
+     * Gets the lifecycle configuration for the specified bucket, or null if
+     * the specified bucket does not exists, or an empty list if no
      * configuration has been established.
      *
      * @param bucketName
      *            The name of the bucket for which to retrieve lifecycle
      *            configuration.
+     *
+     * @see AmazonS3#getBucketLifecycleConfiguration(GetBucketLifecycleConfigurationRequest)
      */
     public BucketLifecycleConfiguration getBucketLifecycleConfiguration(String bucketName);
+
+    /**
+     * Gets the lifecycle configuration for the specified bucket, or null if
+     * the specified bucket does not exists, or an empty list if no
+     * configuration has been established.
+     *
+     * @param getBucketLifecycleConfigurationRequest
+     *            The request object for retrieving the bucket lifecycle
+     *            configuration.
+     *
+     * @see AmazonS3#getBucketLifecycleConfiguration(String)
+     */
+    public BucketLifecycleConfiguration getBucketLifecycleConfiguration(
+            GetBucketLifecycleConfigurationRequest getBucketLifecycleConfigurationRequest);
 
     /**
      * Sets the lifecycle configuration for the specified bucket.
@@ -2848,14 +3078,30 @@ public interface AmazonS3 extends S3DirectSpi {
     public void deleteBucketLifecycleConfiguration(DeleteBucketLifecycleConfigurationRequest deleteBucketLifecycleConfigurationRequest);
 
     /**
-     * Gets the cross origin configuration for the specified bucket, or null if no
+     * Gets the cross origin configuration for the specified bucket, or null if
+     * the specified bucket does not exists, or an empty list if no
      * configuration has been established.
      *
      * @param bucketName
      *            The name of the bucket for which to retrieve cross origin
      *            configuration.
+     *
+     * @see AmazonS3#getBucketCrossOriginConfiguration(GetBucketCrossOriginConfigurationRequest)
      */
     public BucketCrossOriginConfiguration getBucketCrossOriginConfiguration(String bucketName);
+
+    /**
+     * Gets the cross origin configuration for the specified bucket, or null if
+     * no configuration has been established.
+     *
+     * @param getBucketCrossOriginConfigurationRequest
+     *            The request object for retrieving the bucket cross origin
+     *            configuration.
+     *
+     * @see AmazonS3#getBucketCrossOriginConfiguration(String)
+     */
+    public BucketCrossOriginConfiguration getBucketCrossOriginConfiguration(
+            GetBucketCrossOriginConfigurationRequest getBucketCrossOriginConfigurationRequest);
 
     /**
      * Sets the cross origin configuration for the specified bucket.
@@ -2897,14 +3143,31 @@ public interface AmazonS3 extends S3DirectSpi {
     public void deleteBucketCrossOriginConfiguration(DeleteBucketCrossOriginConfigurationRequest deleteBucketCrossOriginConfigurationRequest);
 
     /**
-     * Gets the tagging configuration for the specified bucket, or null if no
+     * Gets the tagging configuration for the specified bucket, or null if
+     * the specified bucket does not exists, or an empty list if no
      * configuration has been established.
      *
      * @param bucketName
      *            The name of the bucket for which to retrieve tagging
      *            configuration.
+     *
+     * @see AmazonS3#getBucketTaggingConfiguration(GetBucketTaggingConfigurationRequest)
      */
     public BucketTaggingConfiguration getBucketTaggingConfiguration(String bucketName);
+
+    /**
+     * Gets the tagging configuration for the specified bucket, or null if
+     * the specified bucket does not exists, or an empty list if no
+     * configuration has been established.
+     *
+     * @param getBucketTaggingConfigurationRequest
+     *            The request object for retrieving the bucket tagging
+     *            configuration.
+     *
+     * @see AmazonS3#getBucketTaggingConfiguration(String)
+     */
+    public BucketTaggingConfiguration getBucketTaggingConfiguration(
+            GetBucketTaggingConfigurationRequest getBucketTaggingConfigurationRequest);
 
     /**
      * Sets the tagging configuration for the specified bucket.
@@ -2975,6 +3238,8 @@ public interface AmazonS3 extends S3DirectSpi {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
+     *
+     * @see AmazonS3#getBucketNotificationConfiguration(GetBucketNotificationConfigurationRequest)
      */
     public BucketNotificationConfiguration getBucketNotificationConfiguration(String bucketName)
         throws AmazonClientException, AmazonServiceException;
@@ -2998,7 +3263,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * of a bucket to be propagated throughout the system.
      *
      * @param getBucketNotificationConfigurationRequest
-     *            A GetBucketNotificationConfigurationRequest object created for the bucket.
+     *            The request object for retrieving the bucket notification configuration.
      *
      * @return The bucket notification configuration for the specified bucket.
      *
@@ -3008,8 +3273,10 @@ public interface AmazonS3 extends S3DirectSpi {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
+     *
+     * @see AmazonS3#getBucketNotificationConfiguration(String)
      */
-    BucketNotificationConfiguration getBucketNotificationConfiguration(GetBucketNotificationConfigurationRequest getBucketNotificationConfigurationRequest)
+    public BucketNotificationConfiguration getBucketNotificationConfiguration(GetBucketNotificationConfigurationRequest getBucketNotificationConfigurationRequest)
         throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -3142,9 +3409,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * <code>S3:GetBucketWebsite</code> permission.
      *
      * @param getBucketWebsiteConfigurationRequest
-     *            The request object containing all the information on the
-     *            specific bucket whose website configuration is to be
-     *            retrieved.
+     *            The request object for retrieving the bucket website configuration.
      *
      * @return The bucket website configuration for the specified bucket,
      *         otherwise null if there is no website configuration set for the
@@ -4121,8 +4386,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * Retrieves the replication configuration for the given Amazon S3 bucket.
      *
      * @param getBucketReplicationConfigurationRequest
-     *            A GetBucketReplicationConfigurationRequest object containing the bucket name for which
-     *            the configuration is to be retrieved.
+     *            The request object for retrieving the bucket replication configuration.
      * @return the replication configuration of the bucket.
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the

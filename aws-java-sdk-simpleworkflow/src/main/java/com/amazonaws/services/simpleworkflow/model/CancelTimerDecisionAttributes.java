@@ -50,7 +50,7 @@ import java.io.Serializable;
 public class CancelTimerDecisionAttributes implements Serializable, Cloneable {
 
     /**
-     * <b>Required.</b> The unique Id of the timer to cancel.
+     * <b>Required.</b> The unique ID of the timer to cancel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -58,38 +58,38 @@ public class CancelTimerDecisionAttributes implements Serializable, Cloneable {
     private String timerId;
 
     /**
-     * <b>Required.</b> The unique Id of the timer to cancel.
+     * <b>Required.</b> The unique ID of the timer to cancel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return <b>Required.</b> The unique Id of the timer to cancel.
+     * @return <b>Required.</b> The unique ID of the timer to cancel.
      */
     public String getTimerId() {
         return timerId;
     }
     
     /**
-     * <b>Required.</b> The unique Id of the timer to cancel.
+     * <b>Required.</b> The unique ID of the timer to cancel.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId <b>Required.</b> The unique Id of the timer to cancel.
+     * @param timerId <b>Required.</b> The unique ID of the timer to cancel.
      */
     public void setTimerId(String timerId) {
         this.timerId = timerId;
     }
     
     /**
-     * <b>Required.</b> The unique Id of the timer to cancel.
+     * <b>Required.</b> The unique ID of the timer to cancel.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId <b>Required.</b> The unique Id of the timer to cancel.
+     * @param timerId <b>Required.</b> The unique ID of the timer to cancel.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

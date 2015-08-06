@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class TimerCanceledEventAttributes implements Serializable, Cloneable {
 
     /**
-     * The unique Id of the timer that was canceled.
+     * The unique ID of the timer that was canceled.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -32,14 +32,14 @@ public class TimerCanceledEventAttributes implements Serializable, Cloneable {
     private String timerId;
 
     /**
-     * The id of the <code>TimerStarted</code> event that was recorded when
+     * The ID of the <code>TimerStarted</code> event that was recorded when
      * this timer was started. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
      */
     private Long startedEventId;
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>CancelTimer</code>
      * decision to cancel this timer. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
@@ -48,38 +48,38 @@ public class TimerCanceledEventAttributes implements Serializable, Cloneable {
     private Long decisionTaskCompletedEventId;
 
     /**
-     * The unique Id of the timer that was canceled.
+     * The unique ID of the timer that was canceled.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The unique Id of the timer that was canceled.
+     * @return The unique ID of the timer that was canceled.
      */
     public String getTimerId() {
         return timerId;
     }
     
     /**
-     * The unique Id of the timer that was canceled.
+     * The unique ID of the timer that was canceled.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId The unique Id of the timer that was canceled.
+     * @param timerId The unique ID of the timer that was canceled.
      */
     public void setTimerId(String timerId) {
         this.timerId = timerId;
     }
     
     /**
-     * The unique Id of the timer that was canceled.
+     * The unique ID of the timer that was canceled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId The unique Id of the timer that was canceled.
+     * @param timerId The unique ID of the timer that was canceled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -90,11 +90,11 @@ public class TimerCanceledEventAttributes implements Serializable, Cloneable {
     }
 
     /**
-     * The id of the <code>TimerStarted</code> event that was recorded when
+     * The ID of the <code>TimerStarted</code> event that was recorded when
      * this timer was started. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
      *
-     * @return The id of the <code>TimerStarted</code> event that was recorded when
+     * @return The ID of the <code>TimerStarted</code> event that was recorded when
      *         this timer was started. This information can be useful for diagnosing
      *         problems by tracing back the chain of events leading up to this event.
      */
@@ -103,11 +103,11 @@ public class TimerCanceledEventAttributes implements Serializable, Cloneable {
     }
     
     /**
-     * The id of the <code>TimerStarted</code> event that was recorded when
+     * The ID of the <code>TimerStarted</code> event that was recorded when
      * this timer was started. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
      *
-     * @param startedEventId The id of the <code>TimerStarted</code> event that was recorded when
+     * @param startedEventId The ID of the <code>TimerStarted</code> event that was recorded when
      *         this timer was started. This information can be useful for diagnosing
      *         problems by tracing back the chain of events leading up to this event.
      */
@@ -116,13 +116,13 @@ public class TimerCanceledEventAttributes implements Serializable, Cloneable {
     }
     
     /**
-     * The id of the <code>TimerStarted</code> event that was recorded when
+     * The ID of the <code>TimerStarted</code> event that was recorded when
      * this timer was started. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startedEventId The id of the <code>TimerStarted</code> event that was recorded when
+     * @param startedEventId The ID of the <code>TimerStarted</code> event that was recorded when
      *         this timer was started. This information can be useful for diagnosing
      *         problems by tracing back the chain of events leading up to this event.
      *
@@ -135,13 +135,13 @@ public class TimerCanceledEventAttributes implements Serializable, Cloneable {
     }
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>CancelTimer</code>
      * decision to cancel this timer. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>CancelTimer</code>
      *         decision to cancel this timer. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
@@ -152,13 +152,13 @@ public class TimerCanceledEventAttributes implements Serializable, Cloneable {
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>CancelTimer</code>
      * decision to cancel this timer. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>CancelTimer</code>
      *         decision to cancel this timer. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
@@ -169,7 +169,7 @@ public class TimerCanceledEventAttributes implements Serializable, Cloneable {
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>CancelTimer</code>
      * decision to cancel this timer. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
@@ -177,7 +177,7 @@ public class TimerCanceledEventAttributes implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>CancelTimer</code>
      *         decision to cancel this timer. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to

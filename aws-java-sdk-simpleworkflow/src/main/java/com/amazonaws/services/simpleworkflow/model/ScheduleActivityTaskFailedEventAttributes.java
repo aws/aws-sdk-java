@@ -52,7 +52,7 @@ public class ScheduleActivityTaskFailedEventAttributes implements Serializable, 
     private String cause;
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision that resulted in the scheduling of this activity task.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
@@ -279,12 +279,12 @@ public class ScheduleActivityTaskFailedEventAttributes implements Serializable, 
     }
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision that resulted in the scheduling of this activity task.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      *
-     * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision that resulted in the scheduling of this activity task.
      *         This information can be useful for diagnosing problems by tracing back
      *         the chain of events leading up to this event.
@@ -294,12 +294,12 @@ public class ScheduleActivityTaskFailedEventAttributes implements Serializable, 
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision that resulted in the scheduling of this activity task.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision that resulted in the scheduling of this activity task.
      *         This information can be useful for diagnosing problems by tracing back
      *         the chain of events leading up to this event.
@@ -309,14 +309,14 @@ public class ScheduleActivityTaskFailedEventAttributes implements Serializable, 
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision that resulted in the scheduling of this activity task.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision that resulted in the scheduling of this activity task.
      *         This information can be useful for diagnosing problems by tracing back
      *         the chain of events leading up to this event.

@@ -85,6 +85,10 @@ public class WorkflowExecutionContinuedAsNewEventAttributesJsonUnmarshaller impl
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setWorkflowType(WorkflowTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("lambdaRole", targetDepth)) {
+                    context.nextToken();
+                    workflowExecutionContinuedAsNewEventAttributes.setLambdaRole(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

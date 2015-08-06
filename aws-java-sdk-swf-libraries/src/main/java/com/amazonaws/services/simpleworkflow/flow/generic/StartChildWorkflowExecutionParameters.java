@@ -42,7 +42,9 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
     private ChildPolicy childPolicy;
 
     private int taskPriority;
-    
+
+    private String lambdaRole;
+
     public StartChildWorkflowExecutionParameters() {
     }
 
@@ -176,6 +178,19 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
         return this;
     }
 	
+    public String getLambdaRole() {
+        return lambdaRole;
+    }
+
+    public void setLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+    }
+
+    public StartChildWorkflowExecutionParameters withLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+        return this;
+    }
+
     public StartChildWorkflowExecutionParameters createStartChildWorkflowExecutionParametersFromOptions(
             StartWorkflowOptions options, StartWorkflowOptions optionsOverride) {
         StartChildWorkflowExecutionParameters startChildWorkflowExecutionParameters = this.clone();
@@ -211,6 +226,11 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
             if (taskPriority != null) {
                 startChildWorkflowExecutionParameters.setTaskPriority(taskPriority);
             }
+
+            String lambdaRole = options.getLambdaRole();
+            if (lambdaRole != null) {
+                startChildWorkflowExecutionParameters.setLambdaRole(lambdaRole);
+            }
         }
 
         if (optionsOverride != null) {
@@ -243,6 +263,11 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
             if (taskPriority != null) {
                 startChildWorkflowExecutionParameters.setTaskPriority(taskPriority);
             }
+
+            String lambdaRole = options.getLambdaRole();
+            if (lambdaRole != null) {
+                startChildWorkflowExecutionParameters.setLambdaRole(lambdaRole);
+            }
         }
 
         return startChildWorkflowExecutionParameters;
@@ -260,7 +285,8 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
         sb.append("TaskStartToCloseTimeout: " + taskStartToCloseTimeoutSeconds + ", ");
         sb.append("TagList: " + tagList + ", ");
         sb.append("TaskList: " + taskList + ", ");
-        sb.append("TaskPriority: " + taskPriority);
+        sb.append("TaskPriority: " + taskPriority + ", ");
+        sb.append("LambdaRole: " + lambdaRole);
         sb.append("}");
         return sb.toString();
     }
@@ -276,6 +302,7 @@ public class StartChildWorkflowExecutionParameters implements Cloneable {
         result.setWorkflowId(workflowId);
         result.setWorkflowType(workflowType);
         result.setTaskPriority(taskPriority);
+        result.setLambdaRole(lambdaRole);
         return result;
     }
 

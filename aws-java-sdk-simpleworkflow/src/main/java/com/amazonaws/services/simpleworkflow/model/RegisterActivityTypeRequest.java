@@ -117,7 +117,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default maximum duration that a worker can take
      * to process tasks of this activity type. This default can be overridden
      * when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     * <code>ScheduleActivityTask</code> decision. <p>The duration is
      * specified in seconds; an integer greater than or equal to 0. The value
      * "NONE" can be used to specify unlimited duration.
      * <p>
@@ -132,14 +132,13 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the
      * activity task is automatically timed out. This default can be
      * overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity
-     * worker subsequently attempts to record a heartbeat or returns a
-     * result, the activity worker receives an <code>UnknownResource</code>
-     * fault. In this case, Amazon SWF no longer considers the activity task
-     * to be valid; the activity worker should clean up the activity task.
-     * <p>The duration is specified in seconds; an integer greater than or
-     * equal to 0. The value "NONE" can be used to specify unlimited
-     * duration.
+     * <code>ScheduleActivityTask</code> decision. If the activity worker
+     * subsequently attempts to record a heartbeat or returns a result, the
+     * activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be
+     * valid; the activity worker should clean up the activity task. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -150,7 +149,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default task list to use for scheduling tasks of
      * this activity type. This default task list is used if a task list is
      * not provided when a task is scheduled through the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>.
+     * <code>ScheduleActivityTask</code> decision.
      */
     private TaskList defaultTaskList;
 
@@ -174,7 +173,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default maximum duration that a task of this
      * activity type can wait before being assigned to a worker. This default
      * can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     * <code>ScheduleActivityTask</code> decision. <p>The duration is
      * specified in seconds; an integer greater than or equal to 0. The value
      * "NONE" can be used to specify unlimited duration.
      * <p>
@@ -186,10 +185,10 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
     /**
      * If set, specifies the default maximum duration for a task of this
      * activity type. This default can be overridden when scheduling an
-     * activity task using the <code>ScheduleActivityTask</code>
-     * <a>Decision</a>. <p>The duration is specified in seconds; an integer
-     * greater than or equal to 0. The value "NONE" can be used to specify
-     * unlimited duration.
+     * activity task using the <code>ScheduleActivityTask</code> decision.
+     * <p>The duration is specified in seconds; an integer greater than or
+     * equal to 0. The value "NONE" can be used to specify unlimited
+     * duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -428,7 +427,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default maximum duration that a worker can take
      * to process tasks of this activity type. This default can be overridden
      * when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     * <code>ScheduleActivityTask</code> decision. <p>The duration is
      * specified in seconds; an integer greater than or equal to 0. The value
      * "NONE" can be used to specify unlimited duration.
      * <p>
@@ -438,7 +437,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * @return If set, specifies the default maximum duration that a worker can take
      *         to process tasks of this activity type. This default can be overridden
      *         when scheduling an activity task using the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     *         <code>ScheduleActivityTask</code> decision. <p>The duration is
      *         specified in seconds; an integer greater than or equal to 0. The value
      *         "NONE" can be used to specify unlimited duration.
      */
@@ -450,7 +449,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default maximum duration that a worker can take
      * to process tasks of this activity type. This default can be overridden
      * when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     * <code>ScheduleActivityTask</code> decision. <p>The duration is
      * specified in seconds; an integer greater than or equal to 0. The value
      * "NONE" can be used to specify unlimited duration.
      * <p>
@@ -460,7 +459,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * @param defaultTaskStartToCloseTimeout If set, specifies the default maximum duration that a worker can take
      *         to process tasks of this activity type. This default can be overridden
      *         when scheduling an activity task using the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     *         <code>ScheduleActivityTask</code> decision. <p>The duration is
      *         specified in seconds; an integer greater than or equal to 0. The value
      *         "NONE" can be used to specify unlimited duration.
      */
@@ -472,7 +471,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default maximum duration that a worker can take
      * to process tasks of this activity type. This default can be overridden
      * when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     * <code>ScheduleActivityTask</code> decision. <p>The duration is
      * specified in seconds; an integer greater than or equal to 0. The value
      * "NONE" can be used to specify unlimited duration.
      * <p>
@@ -484,7 +483,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * @param defaultTaskStartToCloseTimeout If set, specifies the default maximum duration that a worker can take
      *         to process tasks of this activity type. This default can be overridden
      *         when scheduling an activity task using the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     *         <code>ScheduleActivityTask</code> decision. <p>The duration is
      *         specified in seconds; an integer greater than or equal to 0. The value
      *         "NONE" can be used to specify unlimited duration.
      *
@@ -502,14 +501,13 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the
      * activity task is automatically timed out. This default can be
      * overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity
-     * worker subsequently attempts to record a heartbeat or returns a
-     * result, the activity worker receives an <code>UnknownResource</code>
-     * fault. In this case, Amazon SWF no longer considers the activity task
-     * to be valid; the activity worker should clean up the activity task.
-     * <p>The duration is specified in seconds; an integer greater than or
-     * equal to 0. The value "NONE" can be used to specify unlimited
-     * duration.
+     * <code>ScheduleActivityTask</code> decision. If the activity worker
+     * subsequently attempts to record a heartbeat or returns a result, the
+     * activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be
+     * valid; the activity worker should clean up the activity task. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -519,14 +517,13 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *         <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the
      *         activity task is automatically timed out. This default can be
      *         overridden when scheduling an activity task using the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity
-     *         worker subsequently attempts to record a heartbeat or returns a
-     *         result, the activity worker receives an <code>UnknownResource</code>
-     *         fault. In this case, Amazon SWF no longer considers the activity task
-     *         to be valid; the activity worker should clean up the activity task.
-     *         <p>The duration is specified in seconds; an integer greater than or
-     *         equal to 0. The value "NONE" can be used to specify unlimited
-     *         duration.
+     *         <code>ScheduleActivityTask</code> decision. If the activity worker
+     *         subsequently attempts to record a heartbeat or returns a result, the
+     *         activity worker receives an <code>UnknownResource</code> fault. In
+     *         this case, Amazon SWF no longer considers the activity task to be
+     *         valid; the activity worker should clean up the activity task. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      */
     public String getDefaultTaskHeartbeatTimeout() {
         return defaultTaskHeartbeatTimeout;
@@ -538,14 +535,13 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the
      * activity task is automatically timed out. This default can be
      * overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity
-     * worker subsequently attempts to record a heartbeat or returns a
-     * result, the activity worker receives an <code>UnknownResource</code>
-     * fault. In this case, Amazon SWF no longer considers the activity task
-     * to be valid; the activity worker should clean up the activity task.
-     * <p>The duration is specified in seconds; an integer greater than or
-     * equal to 0. The value "NONE" can be used to specify unlimited
-     * duration.
+     * <code>ScheduleActivityTask</code> decision. If the activity worker
+     * subsequently attempts to record a heartbeat or returns a result, the
+     * activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be
+     * valid; the activity worker should clean up the activity task. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -555,14 +551,13 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *         <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the
      *         activity task is automatically timed out. This default can be
      *         overridden when scheduling an activity task using the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity
-     *         worker subsequently attempts to record a heartbeat or returns a
-     *         result, the activity worker receives an <code>UnknownResource</code>
-     *         fault. In this case, Amazon SWF no longer considers the activity task
-     *         to be valid; the activity worker should clean up the activity task.
-     *         <p>The duration is specified in seconds; an integer greater than or
-     *         equal to 0. The value "NONE" can be used to specify unlimited
-     *         duration.
+     *         <code>ScheduleActivityTask</code> decision. If the activity worker
+     *         subsequently attempts to record a heartbeat or returns a result, the
+     *         activity worker receives an <code>UnknownResource</code> fault. In
+     *         this case, Amazon SWF no longer considers the activity task to be
+     *         valid; the activity worker should clean up the activity task. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      */
     public void setDefaultTaskHeartbeatTimeout(String defaultTaskHeartbeatTimeout) {
         this.defaultTaskHeartbeatTimeout = defaultTaskHeartbeatTimeout;
@@ -574,14 +569,13 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the
      * activity task is automatically timed out. This default can be
      * overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity
-     * worker subsequently attempts to record a heartbeat or returns a
-     * result, the activity worker receives an <code>UnknownResource</code>
-     * fault. In this case, Amazon SWF no longer considers the activity task
-     * to be valid; the activity worker should clean up the activity task.
-     * <p>The duration is specified in seconds; an integer greater than or
-     * equal to 0. The value "NONE" can be used to specify unlimited
-     * duration.
+     * <code>ScheduleActivityTask</code> decision. If the activity worker
+     * subsequently attempts to record a heartbeat or returns a result, the
+     * activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be
+     * valid; the activity worker should clean up the activity task. <p>The
+     * duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -593,14 +587,13 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *         <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the
      *         activity task is automatically timed out. This default can be
      *         overridden when scheduling an activity task using the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity
-     *         worker subsequently attempts to record a heartbeat or returns a
-     *         result, the activity worker receives an <code>UnknownResource</code>
-     *         fault. In this case, Amazon SWF no longer considers the activity task
-     *         to be valid; the activity worker should clean up the activity task.
-     *         <p>The duration is specified in seconds; an integer greater than or
-     *         equal to 0. The value "NONE" can be used to specify unlimited
-     *         duration.
+     *         <code>ScheduleActivityTask</code> decision. If the activity worker
+     *         subsequently attempts to record a heartbeat or returns a result, the
+     *         activity worker receives an <code>UnknownResource</code> fault. In
+     *         this case, Amazon SWF no longer considers the activity task to be
+     *         valid; the activity worker should clean up the activity task. <p>The
+     *         duration is specified in seconds; an integer greater than or equal to
+     *         0. The value "NONE" can be used to specify unlimited duration.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -614,12 +607,12 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default task list to use for scheduling tasks of
      * this activity type. This default task list is used if a task list is
      * not provided when a task is scheduled through the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>.
+     * <code>ScheduleActivityTask</code> decision.
      *
      * @return If set, specifies the default task list to use for scheduling tasks of
      *         this activity type. This default task list is used if a task list is
      *         not provided when a task is scheduled through the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>.
+     *         <code>ScheduleActivityTask</code> decision.
      */
     public TaskList getDefaultTaskList() {
         return defaultTaskList;
@@ -629,12 +622,12 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default task list to use for scheduling tasks of
      * this activity type. This default task list is used if a task list is
      * not provided when a task is scheduled through the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>.
+     * <code>ScheduleActivityTask</code> decision.
      *
      * @param defaultTaskList If set, specifies the default task list to use for scheduling tasks of
      *         this activity type. This default task list is used if a task list is
      *         not provided when a task is scheduled through the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>.
+     *         <code>ScheduleActivityTask</code> decision.
      */
     public void setDefaultTaskList(TaskList defaultTaskList) {
         this.defaultTaskList = defaultTaskList;
@@ -644,14 +637,14 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default task list to use for scheduling tasks of
      * this activity type. This default task list is used if a task list is
      * not provided when a task is scheduled through the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>.
+     * <code>ScheduleActivityTask</code> decision.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultTaskList If set, specifies the default task list to use for scheduling tasks of
      *         this activity type. This default task list is used if a task list is
      *         not provided when a task is scheduled through the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>.
+     *         <code>ScheduleActivityTask</code> decision.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -755,7 +748,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default maximum duration that a task of this
      * activity type can wait before being assigned to a worker. This default
      * can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     * <code>ScheduleActivityTask</code> decision. <p>The duration is
      * specified in seconds; an integer greater than or equal to 0. The value
      * "NONE" can be used to specify unlimited duration.
      * <p>
@@ -765,7 +758,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * @return If set, specifies the default maximum duration that a task of this
      *         activity type can wait before being assigned to a worker. This default
      *         can be overridden when scheduling an activity task using the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     *         <code>ScheduleActivityTask</code> decision. <p>The duration is
      *         specified in seconds; an integer greater than or equal to 0. The value
      *         "NONE" can be used to specify unlimited duration.
      */
@@ -777,7 +770,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default maximum duration that a task of this
      * activity type can wait before being assigned to a worker. This default
      * can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     * <code>ScheduleActivityTask</code> decision. <p>The duration is
      * specified in seconds; an integer greater than or equal to 0. The value
      * "NONE" can be used to specify unlimited duration.
      * <p>
@@ -787,7 +780,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * @param defaultTaskScheduleToStartTimeout If set, specifies the default maximum duration that a task of this
      *         activity type can wait before being assigned to a worker. This default
      *         can be overridden when scheduling an activity task using the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     *         <code>ScheduleActivityTask</code> decision. <p>The duration is
      *         specified in seconds; an integer greater than or equal to 0. The value
      *         "NONE" can be used to specify unlimited duration.
      */
@@ -799,7 +792,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * If set, specifies the default maximum duration that a task of this
      * activity type can wait before being assigned to a worker. This default
      * can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     * <code>ScheduleActivityTask</code> decision. <p>The duration is
      * specified in seconds; an integer greater than or equal to 0. The value
      * "NONE" can be used to specify unlimited duration.
      * <p>
@@ -811,7 +804,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      * @param defaultTaskScheduleToStartTimeout If set, specifies the default maximum duration that a task of this
      *         activity type can wait before being assigned to a worker. This default
      *         can be overridden when scheduling an activity task using the
-     *         <code>ScheduleActivityTask</code> <a>Decision</a>. <p>The duration is
+     *         <code>ScheduleActivityTask</code> decision. <p>The duration is
      *         specified in seconds; an integer greater than or equal to 0. The value
      *         "NONE" can be used to specify unlimited duration.
      *
@@ -826,20 +819,20 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
     /**
      * If set, specifies the default maximum duration for a task of this
      * activity type. This default can be overridden when scheduling an
-     * activity task using the <code>ScheduleActivityTask</code>
-     * <a>Decision</a>. <p>The duration is specified in seconds; an integer
-     * greater than or equal to 0. The value "NONE" can be used to specify
-     * unlimited duration.
+     * activity task using the <code>ScheduleActivityTask</code> decision.
+     * <p>The duration is specified in seconds; an integer greater than or
+     * equal to 0. The value "NONE" can be used to specify unlimited
+     * duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
      * @return If set, specifies the default maximum duration for a task of this
      *         activity type. This default can be overridden when scheduling an
-     *         activity task using the <code>ScheduleActivityTask</code>
-     *         <a>Decision</a>. <p>The duration is specified in seconds; an integer
-     *         greater than or equal to 0. The value "NONE" can be used to specify
-     *         unlimited duration.
+     *         activity task using the <code>ScheduleActivityTask</code> decision.
+     *         <p>The duration is specified in seconds; an integer greater than or
+     *         equal to 0. The value "NONE" can be used to specify unlimited
+     *         duration.
      */
     public String getDefaultTaskScheduleToCloseTimeout() {
         return defaultTaskScheduleToCloseTimeout;
@@ -848,20 +841,20 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
     /**
      * If set, specifies the default maximum duration for a task of this
      * activity type. This default can be overridden when scheduling an
-     * activity task using the <code>ScheduleActivityTask</code>
-     * <a>Decision</a>. <p>The duration is specified in seconds; an integer
-     * greater than or equal to 0. The value "NONE" can be used to specify
-     * unlimited duration.
+     * activity task using the <code>ScheduleActivityTask</code> decision.
+     * <p>The duration is specified in seconds; an integer greater than or
+     * equal to 0. The value "NONE" can be used to specify unlimited
+     * duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
      *
      * @param defaultTaskScheduleToCloseTimeout If set, specifies the default maximum duration for a task of this
      *         activity type. This default can be overridden when scheduling an
-     *         activity task using the <code>ScheduleActivityTask</code>
-     *         <a>Decision</a>. <p>The duration is specified in seconds; an integer
-     *         greater than or equal to 0. The value "NONE" can be used to specify
-     *         unlimited duration.
+     *         activity task using the <code>ScheduleActivityTask</code> decision.
+     *         <p>The duration is specified in seconds; an integer greater than or
+     *         equal to 0. The value "NONE" can be used to specify unlimited
+     *         duration.
      */
     public void setDefaultTaskScheduleToCloseTimeout(String defaultTaskScheduleToCloseTimeout) {
         this.defaultTaskScheduleToCloseTimeout = defaultTaskScheduleToCloseTimeout;
@@ -870,10 +863,10 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
     /**
      * If set, specifies the default maximum duration for a task of this
      * activity type. This default can be overridden when scheduling an
-     * activity task using the <code>ScheduleActivityTask</code>
-     * <a>Decision</a>. <p>The duration is specified in seconds; an integer
-     * greater than or equal to 0. The value "NONE" can be used to specify
-     * unlimited duration.
+     * activity task using the <code>ScheduleActivityTask</code> decision.
+     * <p>The duration is specified in seconds; an integer greater than or
+     * equal to 0. The value "NONE" can be used to specify unlimited
+     * duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -882,10 +875,10 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *
      * @param defaultTaskScheduleToCloseTimeout If set, specifies the default maximum duration for a task of this
      *         activity type. This default can be overridden when scheduling an
-     *         activity task using the <code>ScheduleActivityTask</code>
-     *         <a>Decision</a>. <p>The duration is specified in seconds; an integer
-     *         greater than or equal to 0. The value "NONE" can be used to specify
-     *         unlimited duration.
+     *         activity task using the <code>ScheduleActivityTask</code> decision.
+     *         <p>The duration is specified in seconds; an integer greater than or
+     *         equal to 0. The value "NONE" can be used to specify unlimited
+     *         duration.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

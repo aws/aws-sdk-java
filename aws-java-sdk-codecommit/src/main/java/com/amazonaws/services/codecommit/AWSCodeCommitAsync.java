@@ -463,4 +463,5 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
     java.util.concurrent.Future<Void> updateRepositoryNameAsync(
             UpdateRepositoryNameRequest updateRepositoryNameRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, Void> asyncHandler);
+
 }

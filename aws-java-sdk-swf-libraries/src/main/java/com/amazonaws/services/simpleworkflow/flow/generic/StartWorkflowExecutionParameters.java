@@ -16,6 +16,7 @@ package com.amazonaws.services.simpleworkflow.flow.generic;
 
 import com.amazonaws.services.simpleworkflow.flow.StartWorkflowOptions;
 import com.amazonaws.services.simpleworkflow.flow.common.FlowConstants;
+import com.amazonaws.services.simpleworkflow.model.ChildPolicy;
 import com.amazonaws.services.simpleworkflow.model.WorkflowType;
 
 public class StartWorkflowExecutionParameters {
@@ -35,7 +36,11 @@ public class StartWorkflowExecutionParameters {
     private java.util.List<String> tagList;
     
     private int taskPriority;
-    
+
+    private String lambdaRole;
+
+    private ChildPolicy childPolicy;
+
     /**
      * Returns the value of the WorkflowId property for this object.
      * <p>
@@ -244,6 +249,19 @@ public class StartWorkflowExecutionParameters {
         this.taskStartToCloseTimeoutSeconds = taskStartToCloseTimeoutSeconds;
         return this;
     }
+
+    public ChildPolicy getChildPolicy() {
+        return childPolicy;
+    }
+ 
+    public void setChildPolicy(ChildPolicy childPolicy) {
+        this.childPolicy = childPolicy;
+    }
+    
+    public StartWorkflowExecutionParameters withChildPolicy(ChildPolicy childPolicy) {
+        this.childPolicy = childPolicy;
+        return this;
+    }
     
     /**
      * Returns the value of the TagList property for this object.
@@ -332,6 +350,19 @@ public class StartWorkflowExecutionParameters {
         return this;
     }
     
+    public String getLambdaRole() {
+        return lambdaRole;
+    }
+
+    public void setLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+    }
+
+    public StartWorkflowExecutionParameters withLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+        return this;
+    }
+
     public StartWorkflowExecutionParameters createStartWorkflowExecutionParametersFromOptions(StartWorkflowOptions options, 
     		StartWorkflowOptions optionsOverride) {
     	StartWorkflowExecutionParameters parameters = this.clone();
@@ -361,7 +392,17 @@ public class StartWorkflowExecutionParameters {
             if (taskPriority != null) {
                 parameters.setTaskPriority(taskPriority);
             }
-    	}
+
+    		ChildPolicy childPolicy = options.getChildPolicy();
+    		if (childPolicy != null) {
+    		    parameters.setChildPolicy(childPolicy);
+    		}
+
+            String lambdaRole = options.getLambdaRole();
+            if (lambdaRole != null && !lambdaRole.isEmpty()) {
+                parameters.setLambdaRole(lambdaRole);
+            }
+        }
     	
     	if (optionsOverride != null) {
     	    Long executionStartToCloseTimeout = optionsOverride.getExecutionStartToCloseTimeoutSeconds();
@@ -388,7 +429,17 @@ public class StartWorkflowExecutionParameters {
             if (taskPriority != null) {
                 parameters.setTaskPriority(taskPriority);
             }
-    	}
+
+    		ChildPolicy childPolicy = optionsOverride.getChildPolicy();
+    		if (childPolicy != null) {
+    		    parameters.setChildPolicy(childPolicy);
+    		}
+
+            String lambdaRole = optionsOverride.getLambdaRole();
+            if (lambdaRole != null && !lambdaRole.isEmpty()) {
+                parameters.setLambdaRole(lambdaRole);
+            }
+        }
     	
     	return parameters;
     }
@@ -411,7 +462,9 @@ public class StartWorkflowExecutionParameters {
         sb.append("Input: " + input + ", ");
         sb.append("StartToCloseTimeout: " + executionStartToCloseTimeoutSeconds + ", ");
         sb.append("TagList: " + tagList + ", ");
-        sb.append("TaskPriority: " + taskPriority);
+        sb.append("TaskPriority: " + taskPriority + ", ");
+        sb.append("ChildPolicy: " + childPolicy + ", ");
+        sb.append("LambdaRole: " + lambdaRole + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -426,6 +479,8 @@ public class StartWorkflowExecutionParameters {
         result.setWorkflowId(workflowId);
         result.setWorkflowType(workflowType);
         result.setTaskPriority(taskPriority);
+        result.setChildPolicy(childPolicy);
+        result.setLambdaRole(lambdaRole);
         return result;
     }
 

@@ -61,6 +61,10 @@ public class WorkflowExecutionOpenCountsJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     workflowExecutionOpenCounts.setOpenChildWorkflowExecutions(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("openLambdaFunctions", targetDepth)) {
+                    context.nextToken();
+                    workflowExecutionOpenCounts.setOpenLambdaFunctions(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

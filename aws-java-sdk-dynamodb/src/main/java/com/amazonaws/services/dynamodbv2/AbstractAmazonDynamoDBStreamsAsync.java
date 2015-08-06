@@ -87,4 +87,5 @@ public class AbstractAmazonDynamoDBStreamsAsync extends
 
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

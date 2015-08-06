@@ -65,8 +65,8 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
 
     /**
      * The list of decisions (possibly empty) made by the decider while
-     * processing this decision task. See the docs for the <a>Decision</a>
-     * structure for details.
+     * processing this decision task. See the docs for the decision structure
+     * for details.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Decision> decisions;
 
@@ -146,12 +146,12 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
 
     /**
      * The list of decisions (possibly empty) made by the decider while
-     * processing this decision task. See the docs for the <a>Decision</a>
-     * structure for details.
+     * processing this decision task. See the docs for the decision structure
+     * for details.
      *
      * @return The list of decisions (possibly empty) made by the decider while
-     *         processing this decision task. See the docs for the <a>Decision</a>
-     *         structure for details.
+     *         processing this decision task. See the docs for the decision structure
+     *         for details.
      */
     public java.util.List<Decision> getDecisions() {
         return decisions;
@@ -159,12 +159,12 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
     
     /**
      * The list of decisions (possibly empty) made by the decider while
-     * processing this decision task. See the docs for the <a>Decision</a>
-     * structure for details.
+     * processing this decision task. See the docs for the decision structure
+     * for details.
      *
      * @param decisions The list of decisions (possibly empty) made by the decider while
-     *         processing this decision task. See the docs for the <a>Decision</a>
-     *         structure for details.
+     *         processing this decision task. See the docs for the decision structure
+     *         for details.
      */
     public void setDecisions(java.util.Collection<Decision> decisions) {
         if (decisions == null) {
@@ -178,8 +178,8 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
     
     /**
      * The list of decisions (possibly empty) made by the decider while
-     * processing this decision task. See the docs for the <a>Decision</a>
-     * structure for details.
+     * processing this decision task. See the docs for the decision structure
+     * for details.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setDecisions(java.util.Collection)} or {@link
@@ -189,8 +189,8 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param decisions The list of decisions (possibly empty) made by the decider while
-     *         processing this decision task. See the docs for the <a>Decision</a>
-     *         structure for details.
+     *         processing this decision task. See the docs for the decision structure
+     *         for details.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -205,14 +205,14 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
     
     /**
      * The list of decisions (possibly empty) made by the decider while
-     * processing this decision task. See the docs for the <a>Decision</a>
-     * structure for details.
+     * processing this decision task. See the docs for the decision structure
+     * for details.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param decisions The list of decisions (possibly empty) made by the decider while
-     *         processing this decision task. See the docs for the <a>Decision</a>
-     *         structure for details.
+     *         processing this decision task. See the docs for the decision structure
+     *         for details.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

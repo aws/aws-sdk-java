@@ -78,14 +78,14 @@ import java.io.Serializable;
  * execution due to a <code>StartTimer</code> decision.</li>
  * <li> <b>StartTimerFailed</b> : Failed to process StartTimer decision.
  * This happens when the decision is not configured properly, for example
- * a timer already exists with the specified timer Id.</li>
+ * a timer already exists with the specified timer ID.</li>
  * <li> <b>TimerFired</b> : A timer, previously started for this
  * workflow execution, fired.</li>
  * <li> <b>TimerCanceled</b> : A timer, previously started for this
  * workflow execution, was successfully canceled.</li>
  * <li> <b>CancelTimerFailed</b> : Failed to process CancelTimer
  * decision. This happens when the decision is not configured properly,
- * for example no timer exists with the specified timer Id.</li>
+ * for example no timer exists with the specified timer ID.</li>
  * <li> <b>StartChildWorkflowExecutionInitiated</b> : A request was made
  * to start a child workflow execution.</li>
  * <li> <b>StartChildWorkflowExecutionFailed</b> : Failed to process
@@ -123,6 +123,24 @@ import java.io.Serializable;
  * the target execution.</li>
  * <li> <b>RequestCancelExternalWorkflowExecutionFailed</b> : Request to
  * cancel an external workflow execution failed.</li>
+ * <li> <b>LambdaFunctionScheduled</b> : An AWS Lambda function was
+ * scheduled for execution.</li>
+ * <li> <b>LambdaFunctionStarted</b> : The scheduled function was
+ * invoked in the AWS Lambda service.</li>
+ * <li> <b>LambdaFunctionCompleted</b> : The AWS Lambda function
+ * successfully completed.</li>
+ * <li> <b>LambdaFunctionFailed</b> : The AWS Lambda function execution
+ * failed.</li>
+ * <li> <b>LambdaFunctionTimedOut</b> : The AWS Lambda function
+ * execution timed out.</li>
+ * <li> <b>ScheduleLambdaFunctionFailed</b> : Failed to process
+ * ScheduleLambdaFunction decision. This happens when the workflow
+ * execution does not have the proper IAM role attached to invoke AWS
+ * Lambda functions.</li>
+ * <li> <b>StartLambdaFunctionFailed</b> : Failed to invoke the
+ * scheduled function in the AWS Lambda service. This happens when the
+ * AWS Lambda service is not available in the current region, or received
+ * too many requests.</li>
  * 
  * </ul>
  */
@@ -137,12 +155,12 @@ public class HistoryEvent implements Serializable, Cloneable {
      * The type of the history event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested
+     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested, LambdaFunctionScheduled, LambdaFunctionStarted, LambdaFunctionCompleted, LambdaFunctionFailed, LambdaFunctionTimedOut, ScheduleLambdaFunctionFailed, StartLambdaFunctionFailed
      */
     private String eventType;
 
     /**
-     * The system generated id of the event. This id uniquely identifies the
+     * The system generated ID of the event. This ID uniquely identifies the
      * event with in the workflow execution history.
      */
     private Long eventId;
@@ -484,6 +502,42 @@ public class HistoryEvent implements Serializable, Cloneable {
     private StartChildWorkflowExecutionFailedEventAttributes startChildWorkflowExecutionFailedEventAttributes;
 
     /**
+     * Provides details for the <code>LambdaFunctionScheduled</code> event.
+     */
+    private LambdaFunctionScheduledEventAttributes lambdaFunctionScheduledEventAttributes;
+
+    /**
+     * Provides details for the <code>LambdaFunctionStarted</code> event.
+     */
+    private LambdaFunctionStartedEventAttributes lambdaFunctionStartedEventAttributes;
+
+    /**
+     * Provides details for the <code>LambdaFunctionCompleted</code> event.
+     */
+    private LambdaFunctionCompletedEventAttributes lambdaFunctionCompletedEventAttributes;
+
+    /**
+     * Provides details for the <code>LambdaFunctionFailed</code> event.
+     */
+    private LambdaFunctionFailedEventAttributes lambdaFunctionFailedEventAttributes;
+
+    /**
+     * Provides details for the <code>LambdaFunctionTimedOut</code> event.
+     */
+    private LambdaFunctionTimedOutEventAttributes lambdaFunctionTimedOutEventAttributes;
+
+    /**
+     * Provides details for the <code>ScheduleLambdaFunctionFailed</code>
+     * event.
+     */
+    private ScheduleLambdaFunctionFailedEventAttributes scheduleLambdaFunctionFailedEventAttributes;
+
+    /**
+     * Provides details for the <code>StartLambdaFunctionFailed</code> event.
+     */
+    private StartLambdaFunctionFailedEventAttributes startLambdaFunctionFailedEventAttributes;
+
+    /**
      * The date and time when the event occurred.
      *
      * @return The date and time when the event occurred.
@@ -520,7 +574,7 @@ public class HistoryEvent implements Serializable, Cloneable {
      * The type of the history event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested
+     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested, LambdaFunctionScheduled, LambdaFunctionStarted, LambdaFunctionCompleted, LambdaFunctionFailed, LambdaFunctionTimedOut, ScheduleLambdaFunctionFailed, StartLambdaFunctionFailed
      *
      * @return The type of the history event.
      *
@@ -534,7 +588,7 @@ public class HistoryEvent implements Serializable, Cloneable {
      * The type of the history event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested
+     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested, LambdaFunctionScheduled, LambdaFunctionStarted, LambdaFunctionCompleted, LambdaFunctionFailed, LambdaFunctionTimedOut, ScheduleLambdaFunctionFailed, StartLambdaFunctionFailed
      *
      * @param eventType The type of the history event.
      *
@@ -550,7 +604,7 @@ public class HistoryEvent implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested
+     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested, LambdaFunctionScheduled, LambdaFunctionStarted, LambdaFunctionCompleted, LambdaFunctionFailed, LambdaFunctionTimedOut, ScheduleLambdaFunctionFailed, StartLambdaFunctionFailed
      *
      * @param eventType The type of the history event.
      *
@@ -568,7 +622,7 @@ public class HistoryEvent implements Serializable, Cloneable {
      * The type of the history event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested
+     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested, LambdaFunctionScheduled, LambdaFunctionStarted, LambdaFunctionCompleted, LambdaFunctionFailed, LambdaFunctionTimedOut, ScheduleLambdaFunctionFailed, StartLambdaFunctionFailed
      *
      * @param eventType The type of the history event.
      *
@@ -584,7 +638,7 @@ public class HistoryEvent implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested
+     * <b>Allowed Values: </b>WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested, LambdaFunctionScheduled, LambdaFunctionStarted, LambdaFunctionCompleted, LambdaFunctionFailed, LambdaFunctionTimedOut, ScheduleLambdaFunctionFailed, StartLambdaFunctionFailed
      *
      * @param eventType The type of the history event.
      *
@@ -599,10 +653,10 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * The system generated id of the event. This id uniquely identifies the
+     * The system generated ID of the event. This ID uniquely identifies the
      * event with in the workflow execution history.
      *
-     * @return The system generated id of the event. This id uniquely identifies the
+     * @return The system generated ID of the event. This ID uniquely identifies the
      *         event with in the workflow execution history.
      */
     public Long getEventId() {
@@ -610,10 +664,10 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
     
     /**
-     * The system generated id of the event. This id uniquely identifies the
+     * The system generated ID of the event. This ID uniquely identifies the
      * event with in the workflow execution history.
      *
-     * @param eventId The system generated id of the event. This id uniquely identifies the
+     * @param eventId The system generated ID of the event. This ID uniquely identifies the
      *         event with in the workflow execution history.
      */
     public void setEventId(Long eventId) {
@@ -621,12 +675,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
     
     /**
-     * The system generated id of the event. This id uniquely identifies the
+     * The system generated ID of the event. This ID uniquely identifies the
      * event with in the workflow execution history.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eventId The system generated id of the event. This id uniquely identifies the
+     * @param eventId The system generated ID of the event. This ID uniquely identifies the
      *         event with in the workflow execution history.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -2795,6 +2849,243 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * Provides details for the <code>LambdaFunctionScheduled</code> event.
+     *
+     * @return Provides details for the <code>LambdaFunctionScheduled</code> event.
+     */
+    public LambdaFunctionScheduledEventAttributes getLambdaFunctionScheduledEventAttributes() {
+        return lambdaFunctionScheduledEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>LambdaFunctionScheduled</code> event.
+     *
+     * @param lambdaFunctionScheduledEventAttributes Provides details for the <code>LambdaFunctionScheduled</code> event.
+     */
+    public void setLambdaFunctionScheduledEventAttributes(LambdaFunctionScheduledEventAttributes lambdaFunctionScheduledEventAttributes) {
+        this.lambdaFunctionScheduledEventAttributes = lambdaFunctionScheduledEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>LambdaFunctionScheduled</code> event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param lambdaFunctionScheduledEventAttributes Provides details for the <code>LambdaFunctionScheduled</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HistoryEvent withLambdaFunctionScheduledEventAttributes(LambdaFunctionScheduledEventAttributes lambdaFunctionScheduledEventAttributes) {
+        this.lambdaFunctionScheduledEventAttributes = lambdaFunctionScheduledEventAttributes;
+        return this;
+    }
+
+    /**
+     * Provides details for the <code>LambdaFunctionStarted</code> event.
+     *
+     * @return Provides details for the <code>LambdaFunctionStarted</code> event.
+     */
+    public LambdaFunctionStartedEventAttributes getLambdaFunctionStartedEventAttributes() {
+        return lambdaFunctionStartedEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>LambdaFunctionStarted</code> event.
+     *
+     * @param lambdaFunctionStartedEventAttributes Provides details for the <code>LambdaFunctionStarted</code> event.
+     */
+    public void setLambdaFunctionStartedEventAttributes(LambdaFunctionStartedEventAttributes lambdaFunctionStartedEventAttributes) {
+        this.lambdaFunctionStartedEventAttributes = lambdaFunctionStartedEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>LambdaFunctionStarted</code> event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param lambdaFunctionStartedEventAttributes Provides details for the <code>LambdaFunctionStarted</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HistoryEvent withLambdaFunctionStartedEventAttributes(LambdaFunctionStartedEventAttributes lambdaFunctionStartedEventAttributes) {
+        this.lambdaFunctionStartedEventAttributes = lambdaFunctionStartedEventAttributes;
+        return this;
+    }
+
+    /**
+     * Provides details for the <code>LambdaFunctionCompleted</code> event.
+     *
+     * @return Provides details for the <code>LambdaFunctionCompleted</code> event.
+     */
+    public LambdaFunctionCompletedEventAttributes getLambdaFunctionCompletedEventAttributes() {
+        return lambdaFunctionCompletedEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>LambdaFunctionCompleted</code> event.
+     *
+     * @param lambdaFunctionCompletedEventAttributes Provides details for the <code>LambdaFunctionCompleted</code> event.
+     */
+    public void setLambdaFunctionCompletedEventAttributes(LambdaFunctionCompletedEventAttributes lambdaFunctionCompletedEventAttributes) {
+        this.lambdaFunctionCompletedEventAttributes = lambdaFunctionCompletedEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>LambdaFunctionCompleted</code> event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param lambdaFunctionCompletedEventAttributes Provides details for the <code>LambdaFunctionCompleted</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HistoryEvent withLambdaFunctionCompletedEventAttributes(LambdaFunctionCompletedEventAttributes lambdaFunctionCompletedEventAttributes) {
+        this.lambdaFunctionCompletedEventAttributes = lambdaFunctionCompletedEventAttributes;
+        return this;
+    }
+
+    /**
+     * Provides details for the <code>LambdaFunctionFailed</code> event.
+     *
+     * @return Provides details for the <code>LambdaFunctionFailed</code> event.
+     */
+    public LambdaFunctionFailedEventAttributes getLambdaFunctionFailedEventAttributes() {
+        return lambdaFunctionFailedEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>LambdaFunctionFailed</code> event.
+     *
+     * @param lambdaFunctionFailedEventAttributes Provides details for the <code>LambdaFunctionFailed</code> event.
+     */
+    public void setLambdaFunctionFailedEventAttributes(LambdaFunctionFailedEventAttributes lambdaFunctionFailedEventAttributes) {
+        this.lambdaFunctionFailedEventAttributes = lambdaFunctionFailedEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>LambdaFunctionFailed</code> event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param lambdaFunctionFailedEventAttributes Provides details for the <code>LambdaFunctionFailed</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HistoryEvent withLambdaFunctionFailedEventAttributes(LambdaFunctionFailedEventAttributes lambdaFunctionFailedEventAttributes) {
+        this.lambdaFunctionFailedEventAttributes = lambdaFunctionFailedEventAttributes;
+        return this;
+    }
+
+    /**
+     * Provides details for the <code>LambdaFunctionTimedOut</code> event.
+     *
+     * @return Provides details for the <code>LambdaFunctionTimedOut</code> event.
+     */
+    public LambdaFunctionTimedOutEventAttributes getLambdaFunctionTimedOutEventAttributes() {
+        return lambdaFunctionTimedOutEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>LambdaFunctionTimedOut</code> event.
+     *
+     * @param lambdaFunctionTimedOutEventAttributes Provides details for the <code>LambdaFunctionTimedOut</code> event.
+     */
+    public void setLambdaFunctionTimedOutEventAttributes(LambdaFunctionTimedOutEventAttributes lambdaFunctionTimedOutEventAttributes) {
+        this.lambdaFunctionTimedOutEventAttributes = lambdaFunctionTimedOutEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>LambdaFunctionTimedOut</code> event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param lambdaFunctionTimedOutEventAttributes Provides details for the <code>LambdaFunctionTimedOut</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HistoryEvent withLambdaFunctionTimedOutEventAttributes(LambdaFunctionTimedOutEventAttributes lambdaFunctionTimedOutEventAttributes) {
+        this.lambdaFunctionTimedOutEventAttributes = lambdaFunctionTimedOutEventAttributes;
+        return this;
+    }
+
+    /**
+     * Provides details for the <code>ScheduleLambdaFunctionFailed</code>
+     * event.
+     *
+     * @return Provides details for the <code>ScheduleLambdaFunctionFailed</code>
+     *         event.
+     */
+    public ScheduleLambdaFunctionFailedEventAttributes getScheduleLambdaFunctionFailedEventAttributes() {
+        return scheduleLambdaFunctionFailedEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>ScheduleLambdaFunctionFailed</code>
+     * event.
+     *
+     * @param scheduleLambdaFunctionFailedEventAttributes Provides details for the <code>ScheduleLambdaFunctionFailed</code>
+     *         event.
+     */
+    public void setScheduleLambdaFunctionFailedEventAttributes(ScheduleLambdaFunctionFailedEventAttributes scheduleLambdaFunctionFailedEventAttributes) {
+        this.scheduleLambdaFunctionFailedEventAttributes = scheduleLambdaFunctionFailedEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>ScheduleLambdaFunctionFailed</code>
+     * event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param scheduleLambdaFunctionFailedEventAttributes Provides details for the <code>ScheduleLambdaFunctionFailed</code>
+     *         event.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HistoryEvent withScheduleLambdaFunctionFailedEventAttributes(ScheduleLambdaFunctionFailedEventAttributes scheduleLambdaFunctionFailedEventAttributes) {
+        this.scheduleLambdaFunctionFailedEventAttributes = scheduleLambdaFunctionFailedEventAttributes;
+        return this;
+    }
+
+    /**
+     * Provides details for the <code>StartLambdaFunctionFailed</code> event.
+     *
+     * @return Provides details for the <code>StartLambdaFunctionFailed</code> event.
+     */
+    public StartLambdaFunctionFailedEventAttributes getStartLambdaFunctionFailedEventAttributes() {
+        return startLambdaFunctionFailedEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>StartLambdaFunctionFailed</code> event.
+     *
+     * @param startLambdaFunctionFailedEventAttributes Provides details for the <code>StartLambdaFunctionFailed</code> event.
+     */
+    public void setStartLambdaFunctionFailedEventAttributes(StartLambdaFunctionFailedEventAttributes startLambdaFunctionFailedEventAttributes) {
+        this.startLambdaFunctionFailedEventAttributes = startLambdaFunctionFailedEventAttributes;
+    }
+    
+    /**
+     * Provides details for the <code>StartLambdaFunctionFailed</code> event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param startLambdaFunctionFailedEventAttributes Provides details for the <code>StartLambdaFunctionFailed</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HistoryEvent withStartLambdaFunctionFailedEventAttributes(StartLambdaFunctionFailedEventAttributes startLambdaFunctionFailedEventAttributes) {
+        this.startLambdaFunctionFailedEventAttributes = startLambdaFunctionFailedEventAttributes;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2855,7 +3146,14 @@ public class HistoryEvent implements Serializable, Cloneable {
         if (getRequestCancelActivityTaskFailedEventAttributes() != null) sb.append("RequestCancelActivityTaskFailedEventAttributes: " + getRequestCancelActivityTaskFailedEventAttributes() + ",");
         if (getStartTimerFailedEventAttributes() != null) sb.append("StartTimerFailedEventAttributes: " + getStartTimerFailedEventAttributes() + ",");
         if (getCancelTimerFailedEventAttributes() != null) sb.append("CancelTimerFailedEventAttributes: " + getCancelTimerFailedEventAttributes() + ",");
-        if (getStartChildWorkflowExecutionFailedEventAttributes() != null) sb.append("StartChildWorkflowExecutionFailedEventAttributes: " + getStartChildWorkflowExecutionFailedEventAttributes() );
+        if (getStartChildWorkflowExecutionFailedEventAttributes() != null) sb.append("StartChildWorkflowExecutionFailedEventAttributes: " + getStartChildWorkflowExecutionFailedEventAttributes() + ",");
+        if (getLambdaFunctionScheduledEventAttributes() != null) sb.append("LambdaFunctionScheduledEventAttributes: " + getLambdaFunctionScheduledEventAttributes() + ",");
+        if (getLambdaFunctionStartedEventAttributes() != null) sb.append("LambdaFunctionStartedEventAttributes: " + getLambdaFunctionStartedEventAttributes() + ",");
+        if (getLambdaFunctionCompletedEventAttributes() != null) sb.append("LambdaFunctionCompletedEventAttributes: " + getLambdaFunctionCompletedEventAttributes() + ",");
+        if (getLambdaFunctionFailedEventAttributes() != null) sb.append("LambdaFunctionFailedEventAttributes: " + getLambdaFunctionFailedEventAttributes() + ",");
+        if (getLambdaFunctionTimedOutEventAttributes() != null) sb.append("LambdaFunctionTimedOutEventAttributes: " + getLambdaFunctionTimedOutEventAttributes() + ",");
+        if (getScheduleLambdaFunctionFailedEventAttributes() != null) sb.append("ScheduleLambdaFunctionFailedEventAttributes: " + getScheduleLambdaFunctionFailedEventAttributes() + ",");
+        if (getStartLambdaFunctionFailedEventAttributes() != null) sb.append("StartLambdaFunctionFailedEventAttributes: " + getStartLambdaFunctionFailedEventAttributes() );
         sb.append("}");
         return sb.toString();
     }
@@ -2915,6 +3213,13 @@ public class HistoryEvent implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStartTimerFailedEventAttributes() == null) ? 0 : getStartTimerFailedEventAttributes().hashCode()); 
         hashCode = prime * hashCode + ((getCancelTimerFailedEventAttributes() == null) ? 0 : getCancelTimerFailedEventAttributes().hashCode()); 
         hashCode = prime * hashCode + ((getStartChildWorkflowExecutionFailedEventAttributes() == null) ? 0 : getStartChildWorkflowExecutionFailedEventAttributes().hashCode()); 
+        hashCode = prime * hashCode + ((getLambdaFunctionScheduledEventAttributes() == null) ? 0 : getLambdaFunctionScheduledEventAttributes().hashCode()); 
+        hashCode = prime * hashCode + ((getLambdaFunctionStartedEventAttributes() == null) ? 0 : getLambdaFunctionStartedEventAttributes().hashCode()); 
+        hashCode = prime * hashCode + ((getLambdaFunctionCompletedEventAttributes() == null) ? 0 : getLambdaFunctionCompletedEventAttributes().hashCode()); 
+        hashCode = prime * hashCode + ((getLambdaFunctionFailedEventAttributes() == null) ? 0 : getLambdaFunctionFailedEventAttributes().hashCode()); 
+        hashCode = prime * hashCode + ((getLambdaFunctionTimedOutEventAttributes() == null) ? 0 : getLambdaFunctionTimedOutEventAttributes().hashCode()); 
+        hashCode = prime * hashCode + ((getScheduleLambdaFunctionFailedEventAttributes() == null) ? 0 : getScheduleLambdaFunctionFailedEventAttributes().hashCode()); 
+        hashCode = prime * hashCode + ((getStartLambdaFunctionFailedEventAttributes() == null) ? 0 : getStartLambdaFunctionFailedEventAttributes().hashCode()); 
         return hashCode;
     }
     
@@ -3026,6 +3331,20 @@ public class HistoryEvent implements Serializable, Cloneable {
         if (other.getCancelTimerFailedEventAttributes() != null && other.getCancelTimerFailedEventAttributes().equals(this.getCancelTimerFailedEventAttributes()) == false) return false; 
         if (other.getStartChildWorkflowExecutionFailedEventAttributes() == null ^ this.getStartChildWorkflowExecutionFailedEventAttributes() == null) return false;
         if (other.getStartChildWorkflowExecutionFailedEventAttributes() != null && other.getStartChildWorkflowExecutionFailedEventAttributes().equals(this.getStartChildWorkflowExecutionFailedEventAttributes()) == false) return false; 
+        if (other.getLambdaFunctionScheduledEventAttributes() == null ^ this.getLambdaFunctionScheduledEventAttributes() == null) return false;
+        if (other.getLambdaFunctionScheduledEventAttributes() != null && other.getLambdaFunctionScheduledEventAttributes().equals(this.getLambdaFunctionScheduledEventAttributes()) == false) return false; 
+        if (other.getLambdaFunctionStartedEventAttributes() == null ^ this.getLambdaFunctionStartedEventAttributes() == null) return false;
+        if (other.getLambdaFunctionStartedEventAttributes() != null && other.getLambdaFunctionStartedEventAttributes().equals(this.getLambdaFunctionStartedEventAttributes()) == false) return false; 
+        if (other.getLambdaFunctionCompletedEventAttributes() == null ^ this.getLambdaFunctionCompletedEventAttributes() == null) return false;
+        if (other.getLambdaFunctionCompletedEventAttributes() != null && other.getLambdaFunctionCompletedEventAttributes().equals(this.getLambdaFunctionCompletedEventAttributes()) == false) return false; 
+        if (other.getLambdaFunctionFailedEventAttributes() == null ^ this.getLambdaFunctionFailedEventAttributes() == null) return false;
+        if (other.getLambdaFunctionFailedEventAttributes() != null && other.getLambdaFunctionFailedEventAttributes().equals(this.getLambdaFunctionFailedEventAttributes()) == false) return false; 
+        if (other.getLambdaFunctionTimedOutEventAttributes() == null ^ this.getLambdaFunctionTimedOutEventAttributes() == null) return false;
+        if (other.getLambdaFunctionTimedOutEventAttributes() != null && other.getLambdaFunctionTimedOutEventAttributes().equals(this.getLambdaFunctionTimedOutEventAttributes()) == false) return false; 
+        if (other.getScheduleLambdaFunctionFailedEventAttributes() == null ^ this.getScheduleLambdaFunctionFailedEventAttributes() == null) return false;
+        if (other.getScheduleLambdaFunctionFailedEventAttributes() != null && other.getScheduleLambdaFunctionFailedEventAttributes().equals(this.getScheduleLambdaFunctionFailedEventAttributes()) == false) return false; 
+        if (other.getStartLambdaFunctionFailedEventAttributes() == null ^ this.getStartLambdaFunctionFailedEventAttributes() == null) return false;
+        if (other.getStartLambdaFunctionFailedEventAttributes() != null && other.getStartLambdaFunctionFailedEventAttributes().equals(this.getStartLambdaFunctionFailedEventAttributes()) == false) return false; 
         return true;
     }
     

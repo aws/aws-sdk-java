@@ -329,6 +329,10 @@ public class POJOWorkflowDefinitionFactoryFactory extends WorkflowDefinitionFact
             result.setDefaultTaskList(taskList);
         }
         result.setDefaultChildPolicy(registrationOptionsAnnotation.defaultChildPolicy());
+        String defaultLambdaRole = registrationOptionsAnnotation.defaultLambdaRole();
+        if (defaultLambdaRole != null && !defaultLambdaRole.isEmpty()) {
+            result.setDefaultLambdaRole(defaultLambdaRole);
+        }
         return result;
     }
 

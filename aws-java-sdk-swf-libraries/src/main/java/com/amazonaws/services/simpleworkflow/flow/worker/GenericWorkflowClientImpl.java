@@ -154,6 +154,7 @@ class GenericWorkflowClientImpl implements GenericWorkflowClient {
         if (taskList != null && !taskList.isEmpty()) {
             attributes.setTaskList(new TaskList().withName(taskList));
         }
+        attributes.setLambdaRole(parameters.getLambdaRole());
         String taskName = "workflowId=" + workflowId + ", workflowType=" + attributes.getWorkflowType();
         new ExternalTask() {
 

@@ -36,6 +36,7 @@ public class TestWorkflowContext implements WorkflowContext {
     private long executionStartToCloseTimeout;
     private String taskList;
     private int taskPriority;
+    private String lambdaRole;
     private TryCatchFinally rootTryCatch;
     
     public WorkflowExecution getWorkflowExecution() {
@@ -108,6 +109,14 @@ public class TestWorkflowContext implements WorkflowContext {
     
     public void setTaskList(String taskList) {
         this.taskList = taskList;
+    }
+
+    public String getLambdaRole() {
+        return lambdaRole;
+    }
+
+    public void setLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
     }
     
     public boolean isCancelRequested() {

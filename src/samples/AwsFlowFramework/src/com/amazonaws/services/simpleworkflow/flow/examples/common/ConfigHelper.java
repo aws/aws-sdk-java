@@ -44,6 +44,11 @@ public class ConfigHelper {
     private String swfSecretKey;
     private String s3AccessId;
     private String s3SecretKey;
+    
+    private String swfLambdaRoleArn;
+    private String swfLambdaFunction;
+    private String swfLambdaFunctionInput;
+    
     private String domain;
     private long domainRetentionPeriodInDays;
     
@@ -64,6 +69,10 @@ public class ConfigHelper {
         this.s3AccessId = sampleConfig.getProperty(ConfigKeys.S3_ACCESS_ID_KEY);
         this.s3SecretKey = sampleConfig.getProperty(ConfigKeys.S3_SECRET_KEY_KEY);
         
+        this.swfLambdaRoleArn = sampleConfig.getProperty(ConfigKeys.SWF_LAMBDA_ROLE_ARN);
+        this.swfLambdaFunction = sampleConfig.getProperty(ConfigKeys.SWF_LAMBDA_FUNCTION);
+        this.swfLambdaFunctionInput = sampleConfig.getProperty(ConfigKeys.SWF_LAMBDA_FUNCTION_INPUT);
+        
         this.domain = sampleConfig.getProperty(ConfigKeys.DOMAIN_KEY);
         this.domainRetentionPeriodInDays = Long.parseLong(sampleConfig.getProperty(ConfigKeys.DOMAIN_RETENTION_PERIOD_KEY));
     }
@@ -71,7 +80,7 @@ public class ConfigHelper {
     public static ConfigHelper createConfig() throws IOException, IllegalArgumentException {
 
         BasicConfigurator.configure();
-        Logger.getRootLogger().setLevel(Level.INFO);
+        Logger.getRootLogger().setLevel(Level.DEBUG);
 
 //        Logger.getLogger("org.apache.http").setLevel(Level.INFO);
 
@@ -130,4 +139,17 @@ public class ConfigHelper {
     public String getValueFromConfig(String key) {
     	return sampleConfig.getProperty(key);
     }
+
+    public String getSwfLambdaRoleArn() {
+        return swfLambdaRoleArn;
+    }
+
+    public String getSwfLambdaFunction() {
+        return swfLambdaFunction;
+    }
+
+    public String getSwfLambdaFunctionInput() {
+        return swfLambdaFunctionInput;
+    }
+    
 }

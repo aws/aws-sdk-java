@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class TimerStartedEventAttributes implements Serializable, Cloneable {
 
     /**
-     * The unique Id of the timer that was started.
+     * The unique ID of the timer that was started.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -50,7 +50,7 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable {
     private String startToFireTimeout;
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
@@ -59,38 +59,38 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable {
     private Long decisionTaskCompletedEventId;
 
     /**
-     * The unique Id of the timer that was started.
+     * The unique ID of the timer that was started.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The unique Id of the timer that was started.
+     * @return The unique ID of the timer that was started.
      */
     public String getTimerId() {
         return timerId;
     }
     
     /**
-     * The unique Id of the timer that was started.
+     * The unique ID of the timer that was started.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId The unique Id of the timer that was started.
+     * @param timerId The unique ID of the timer that was started.
      */
     public void setTimerId(String timerId) {
         this.timerId = timerId;
     }
     
     /**
-     * The unique Id of the timer that was started.
+     * The unique ID of the timer that was started.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId The unique Id of the timer that was started.
+     * @param timerId The unique ID of the timer that was started.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -197,13 +197,13 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable {
     }
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>StartTimer</code>
      *         decision for this activity task. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
@@ -214,13 +214,13 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable {
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>StartTimer</code>
      *         decision for this activity task. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
@@ -231,7 +231,7 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable {
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
@@ -239,7 +239,7 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>StartTimer</code>
      *         decision for this activity task. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to

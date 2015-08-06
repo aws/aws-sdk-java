@@ -30,7 +30,8 @@ public enum DecisionType {
     CancelTimer("CancelTimer"),
     SignalExternalWorkflowExecution("SignalExternalWorkflowExecution"),
     RequestCancelExternalWorkflowExecution("RequestCancelExternalWorkflowExecution"),
-    StartChildWorkflowExecution("StartChildWorkflowExecution");
+    StartChildWorkflowExecution("StartChildWorkflowExecution"),
+    ScheduleLambdaFunction("ScheduleLambdaFunction");
 
     private String value;
 
@@ -78,6 +79,8 @@ public enum DecisionType {
             return DecisionType.RequestCancelExternalWorkflowExecution;
         } else if ("StartChildWorkflowExecution".equals(value)) {
             return DecisionType.StartChildWorkflowExecution;
+        } else if ("ScheduleLambdaFunction".equals(value)) {
+            return DecisionType.ScheduleLambdaFunction;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

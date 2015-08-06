@@ -882,4 +882,5 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB
                         .withProvisionedThroughput(provisionedThroughput),
                 asyncHandler);
     }
+
 }

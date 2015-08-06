@@ -14,8 +14,12 @@
  */
 package com.amazonaws.services.simpleworkflow.flow.test;
 
-import com.amazonaws.services.simpleworkflow.flow.*;
-import com.amazonaws.services.simpleworkflow.flow.generic.*;
+import com.amazonaws.services.simpleworkflow.flow.DecisionContext;
+import com.amazonaws.services.simpleworkflow.flow.WorkflowClock;
+import com.amazonaws.services.simpleworkflow.flow.WorkflowContext;
+import com.amazonaws.services.simpleworkflow.flow.generic.GenericActivityClient;
+import com.amazonaws.services.simpleworkflow.flow.generic.GenericWorkflowClient;
+import com.amazonaws.services.simpleworkflow.flow.worker.LambdaFunctionClient;
 
 public class TestDecisionContext extends DecisionContext {
 
@@ -23,13 +27,15 @@ public class TestDecisionContext extends DecisionContext {
     private final GenericWorkflowClient workflowClient;
     private final WorkflowClock workflowClock;
     private final WorkflowContext workfowContext;
+    private final LambdaFunctionClient lambdaFunctionClient;
     
     public TestDecisionContext(GenericActivityClient activityClient, GenericWorkflowClient workflowClient,
-            WorkflowClock workflowClock, WorkflowContext workfowContext) {
+            WorkflowClock workflowClock, WorkflowContext workfowContext, LambdaFunctionClient lambdaFunctionClient) {
         this.activityClient = activityClient;
         this.workflowClient = workflowClient;
         this.workflowClock = workflowClock;
         this.workfowContext = workfowContext;
+        this.lambdaFunctionClient = lambdaFunctionClient;
     }
 
     @Override
@@ -51,5 +57,10 @@ public class TestDecisionContext extends DecisionContext {
     public WorkflowContext getWorkflowContext() {
         return workfowContext;
     }
+
+	@Override
+	public LambdaFunctionClient getLambdaFunctionClient() {
+		return lambdaFunctionClient;
+	}
 
 }

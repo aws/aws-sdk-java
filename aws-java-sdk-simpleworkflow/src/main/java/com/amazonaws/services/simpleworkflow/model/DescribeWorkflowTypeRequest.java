@@ -23,7 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Returns information about the specified <i>workflow type</i> . This
  * includes configuration settings specified when the type was registered
- * and other information such as creation date, current status, etc.
+ * and other information such as creation date, current status, and so
+ * on.
  * </p>
  * <p>
  * <b>Access Control</b>

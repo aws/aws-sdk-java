@@ -304,4 +304,5 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
     java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(
             ListStreamsRequest listStreamsRequest,
             com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler);
+
 }
