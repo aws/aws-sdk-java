@@ -110,14 +110,23 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable, Cl
     private WorkflowExecution parentWorkflowExecution;
 
     /**
-     * The id of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code>
-     * <a>Decision</a> to start this workflow execution. The source event
-     * with this Id can be found in the history of the source workflow
-     * execution. This information can be useful for diagnosing problems by
-     * tracing back the chain of events leading up to this event.
+     * The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>StartChildWorkflowExecution</code> decision
+     * to start this workflow execution. The source event with this ID can be
+     * found in the history of the source workflow execution. This
+     * information can be useful for diagnosing problems by tracing back the
+     * chain of events leading up to this event.
      */
     private Long parentInitiatedEventId;
+
+    /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     */
+    private String lambdaRole;
 
     /**
      * The input provided to the workflow execution (if any).
@@ -760,65 +769,113 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable, Cl
     }
 
     /**
-     * The id of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code>
-     * <a>Decision</a> to start this workflow execution. The source event
-     * with this Id can be found in the history of the source workflow
-     * execution. This information can be useful for diagnosing problems by
-     * tracing back the chain of events leading up to this event.
+     * The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>StartChildWorkflowExecution</code> decision
+     * to start this workflow execution. The source event with this ID can be
+     * found in the history of the source workflow execution. This
+     * information can be useful for diagnosing problems by tracing back the
+     * chain of events leading up to this event.
      *
-     * @return The id of the <code>StartChildWorkflowExecutionInitiated</code> event
-     *         corresponding to the <code>StartChildWorkflowExecution</code>
-     *         <a>Decision</a> to start this workflow execution. The source event
-     *         with this Id can be found in the history of the source workflow
-     *         execution. This information can be useful for diagnosing problems by
-     *         tracing back the chain of events leading up to this event.
+     * @return The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     *         corresponding to the <code>StartChildWorkflowExecution</code> decision
+     *         to start this workflow execution. The source event with this ID can be
+     *         found in the history of the source workflow execution. This
+     *         information can be useful for diagnosing problems by tracing back the
+     *         chain of events leading up to this event.
      */
     public Long getParentInitiatedEventId() {
         return parentInitiatedEventId;
     }
     
     /**
-     * The id of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code>
-     * <a>Decision</a> to start this workflow execution. The source event
-     * with this Id can be found in the history of the source workflow
-     * execution. This information can be useful for diagnosing problems by
-     * tracing back the chain of events leading up to this event.
+     * The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>StartChildWorkflowExecution</code> decision
+     * to start this workflow execution. The source event with this ID can be
+     * found in the history of the source workflow execution. This
+     * information can be useful for diagnosing problems by tracing back the
+     * chain of events leading up to this event.
      *
-     * @param parentInitiatedEventId The id of the <code>StartChildWorkflowExecutionInitiated</code> event
-     *         corresponding to the <code>StartChildWorkflowExecution</code>
-     *         <a>Decision</a> to start this workflow execution. The source event
-     *         with this Id can be found in the history of the source workflow
-     *         execution. This information can be useful for diagnosing problems by
-     *         tracing back the chain of events leading up to this event.
+     * @param parentInitiatedEventId The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     *         corresponding to the <code>StartChildWorkflowExecution</code> decision
+     *         to start this workflow execution. The source event with this ID can be
+     *         found in the history of the source workflow execution. This
+     *         information can be useful for diagnosing problems by tracing back the
+     *         chain of events leading up to this event.
      */
     public void setParentInitiatedEventId(Long parentInitiatedEventId) {
         this.parentInitiatedEventId = parentInitiatedEventId;
     }
     
     /**
-     * The id of the <code>StartChildWorkflowExecutionInitiated</code> event
-     * corresponding to the <code>StartChildWorkflowExecution</code>
-     * <a>Decision</a> to start this workflow execution. The source event
-     * with this Id can be found in the history of the source workflow
-     * execution. This information can be useful for diagnosing problems by
-     * tracing back the chain of events leading up to this event.
+     * The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>StartChildWorkflowExecution</code> decision
+     * to start this workflow execution. The source event with this ID can be
+     * found in the history of the source workflow execution. This
+     * information can be useful for diagnosing problems by tracing back the
+     * chain of events leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parentInitiatedEventId The id of the <code>StartChildWorkflowExecutionInitiated</code> event
-     *         corresponding to the <code>StartChildWorkflowExecution</code>
-     *         <a>Decision</a> to start this workflow execution. The source event
-     *         with this Id can be found in the history of the source workflow
-     *         execution. This information can be useful for diagnosing problems by
-     *         tracing back the chain of events leading up to this event.
+     * @param parentInitiatedEventId The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     *         corresponding to the <code>StartChildWorkflowExecution</code> decision
+     *         to start this workflow execution. The source event with this ID can be
+     *         found in the history of the source workflow execution. This
+     *         information can be useful for diagnosing problems by tracing back the
+     *         chain of events leading up to this event.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionStartedEventAttributes withParentInitiatedEventId(Long parentInitiatedEventId) {
         this.parentInitiatedEventId = parentInitiatedEventId;
+        return this;
+    }
+
+    /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @return The IAM role attached to this workflow execution to use when invoking
+     *         AWS Lambda functions.
+     */
+    public String getLambdaRole() {
+        return lambdaRole;
+    }
+    
+    /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The IAM role attached to this workflow execution to use when invoking
+     *         AWS Lambda functions.
+     */
+    public void setLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+    }
+    
+    /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The IAM role attached to this workflow execution to use when invoking
+     *         AWS Lambda functions.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public WorkflowExecutionStartedEventAttributes withLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
         return this;
     }
 
@@ -844,7 +901,8 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable, Cl
         if (getTaskPriority() != null) sb.append("TaskPriority: " + getTaskPriority() + ",");
         if (getContinuedExecutionRunId() != null) sb.append("ContinuedExecutionRunId: " + getContinuedExecutionRunId() + ",");
         if (getParentWorkflowExecution() != null) sb.append("ParentWorkflowExecution: " + getParentWorkflowExecution() + ",");
-        if (getParentInitiatedEventId() != null) sb.append("ParentInitiatedEventId: " + getParentInitiatedEventId() );
+        if (getParentInitiatedEventId() != null) sb.append("ParentInitiatedEventId: " + getParentInitiatedEventId() + ",");
+        if (getLambdaRole() != null) sb.append("LambdaRole: " + getLambdaRole() );
         sb.append("}");
         return sb.toString();
     }
@@ -865,6 +923,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable, Cl
         hashCode = prime * hashCode + ((getContinuedExecutionRunId() == null) ? 0 : getContinuedExecutionRunId().hashCode()); 
         hashCode = prime * hashCode + ((getParentWorkflowExecution() == null) ? 0 : getParentWorkflowExecution().hashCode()); 
         hashCode = prime * hashCode + ((getParentInitiatedEventId() == null) ? 0 : getParentInitiatedEventId().hashCode()); 
+        hashCode = prime * hashCode + ((getLambdaRole() == null) ? 0 : getLambdaRole().hashCode()); 
         return hashCode;
     }
     
@@ -898,6 +957,8 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable, Cl
         if (other.getParentWorkflowExecution() != null && other.getParentWorkflowExecution().equals(this.getParentWorkflowExecution()) == false) return false; 
         if (other.getParentInitiatedEventId() == null ^ this.getParentInitiatedEventId() == null) return false;
         if (other.getParentInitiatedEventId() != null && other.getParentInitiatedEventId().equals(this.getParentInitiatedEventId()) == false) return false; 
+        if (other.getLambdaRole() == null ^ this.getLambdaRole() == null) return false;
+        if (other.getLambdaRole() != null && other.getLambdaRole().equals(this.getLambdaRole()) == false) return false; 
         return true;
     }
     

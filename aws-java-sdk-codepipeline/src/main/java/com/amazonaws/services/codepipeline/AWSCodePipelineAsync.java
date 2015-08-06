@@ -967,4 +967,5 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     java.util.concurrent.Future<UpdatePipelineResult> updatePipelineAsync(
             UpdatePipelineRequest updatePipelineRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult> asyncHandler);
+
 }

@@ -38,7 +38,7 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable,
     private String cause;
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>FailWorkflowExecution</code> decision to fail this execution.
      * This information can be useful for diagnosing problems by tracing back
@@ -179,13 +179,13 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable,
     }
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>FailWorkflowExecution</code> decision to fail this execution.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      *
-     * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>FailWorkflowExecution</code> decision to fail this execution.
      *         This information can be useful for diagnosing problems by tracing back
@@ -196,13 +196,13 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable,
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>FailWorkflowExecution</code> decision to fail this execution.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>FailWorkflowExecution</code> decision to fail this execution.
      *         This information can be useful for diagnosing problems by tracing back
@@ -213,7 +213,7 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable,
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>FailWorkflowExecution</code> decision to fail this execution.
      * This information can be useful for diagnosing problems by tracing back
@@ -221,7 +221,7 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable,
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>FailWorkflowExecution</code> decision to fail this execution.
      *         This information can be useful for diagnosing problems by tracing back

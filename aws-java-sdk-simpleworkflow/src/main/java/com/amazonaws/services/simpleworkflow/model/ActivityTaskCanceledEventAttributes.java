@@ -32,7 +32,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     private String details;
 
     /**
-     * The id of the <code>ActivityTaskScheduled</code> event that was
+     * The ID of the <code>ActivityTaskScheduled</code> event that was
      * recorded when this activity task was scheduled. This information can
      * be useful for diagnosing problems by tracing back the chain of events
      * leading up to this event.
@@ -40,7 +40,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     private Long scheduledEventId;
 
     /**
-     * The Id of the <code>ActivityTaskStarted</code> event recorded when
+     * The ID of the <code>ActivityTaskStarted</code> event recorded when
      * this activity task was started. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
@@ -48,7 +48,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     private Long startedEventId;
 
     /**
-     * If set, contains the Id of the last
+     * If set, contains the ID of the last
      * <code>ActivityTaskCancelRequested</code> event recorded for this
      * activity task. This information can be useful for diagnosing problems
      * by tracing back the chain of events leading up to this event.
@@ -98,12 +98,12 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     }
 
     /**
-     * The id of the <code>ActivityTaskScheduled</code> event that was
+     * The ID of the <code>ActivityTaskScheduled</code> event that was
      * recorded when this activity task was scheduled. This information can
      * be useful for diagnosing problems by tracing back the chain of events
      * leading up to this event.
      *
-     * @return The id of the <code>ActivityTaskScheduled</code> event that was
+     * @return The ID of the <code>ActivityTaskScheduled</code> event that was
      *         recorded when this activity task was scheduled. This information can
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
@@ -113,12 +113,12 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     }
     
     /**
-     * The id of the <code>ActivityTaskScheduled</code> event that was
+     * The ID of the <code>ActivityTaskScheduled</code> event that was
      * recorded when this activity task was scheduled. This information can
      * be useful for diagnosing problems by tracing back the chain of events
      * leading up to this event.
      *
-     * @param scheduledEventId The id of the <code>ActivityTaskScheduled</code> event that was
+     * @param scheduledEventId The ID of the <code>ActivityTaskScheduled</code> event that was
      *         recorded when this activity task was scheduled. This information can
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
@@ -128,14 +128,14 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     }
     
     /**
-     * The id of the <code>ActivityTaskScheduled</code> event that was
+     * The ID of the <code>ActivityTaskScheduled</code> event that was
      * recorded when this activity task was scheduled. This information can
      * be useful for diagnosing problems by tracing back the chain of events
      * leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scheduledEventId The id of the <code>ActivityTaskScheduled</code> event that was
+     * @param scheduledEventId The ID of the <code>ActivityTaskScheduled</code> event that was
      *         recorded when this activity task was scheduled. This information can
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
@@ -149,12 +149,12 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     }
 
     /**
-     * The Id of the <code>ActivityTaskStarted</code> event recorded when
+     * The ID of the <code>ActivityTaskStarted</code> event recorded when
      * this activity task was started. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @return The Id of the <code>ActivityTaskStarted</code> event recorded when
+     * @return The ID of the <code>ActivityTaskStarted</code> event recorded when
      *         this activity task was started. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
@@ -164,12 +164,12 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     }
     
     /**
-     * The Id of the <code>ActivityTaskStarted</code> event recorded when
+     * The ID of the <code>ActivityTaskStarted</code> event recorded when
      * this activity task was started. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @param startedEventId The Id of the <code>ActivityTaskStarted</code> event recorded when
+     * @param startedEventId The ID of the <code>ActivityTaskStarted</code> event recorded when
      *         this activity task was started. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
@@ -179,14 +179,14 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     }
     
     /**
-     * The Id of the <code>ActivityTaskStarted</code> event recorded when
+     * The ID of the <code>ActivityTaskStarted</code> event recorded when
      * this activity task was started. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startedEventId The Id of the <code>ActivityTaskStarted</code> event recorded when
+     * @param startedEventId The ID of the <code>ActivityTaskStarted</code> event recorded when
      *         this activity task was started. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
@@ -200,12 +200,12 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     }
 
     /**
-     * If set, contains the Id of the last
+     * If set, contains the ID of the last
      * <code>ActivityTaskCancelRequested</code> event recorded for this
      * activity task. This information can be useful for diagnosing problems
      * by tracing back the chain of events leading up to this event.
      *
-     * @return If set, contains the Id of the last
+     * @return If set, contains the ID of the last
      *         <code>ActivityTaskCancelRequested</code> event recorded for this
      *         activity task. This information can be useful for diagnosing problems
      *         by tracing back the chain of events leading up to this event.
@@ -215,12 +215,12 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     }
     
     /**
-     * If set, contains the Id of the last
+     * If set, contains the ID of the last
      * <code>ActivityTaskCancelRequested</code> event recorded for this
      * activity task. This information can be useful for diagnosing problems
      * by tracing back the chain of events leading up to this event.
      *
-     * @param latestCancelRequestedEventId If set, contains the Id of the last
+     * @param latestCancelRequestedEventId If set, contains the ID of the last
      *         <code>ActivityTaskCancelRequested</code> event recorded for this
      *         activity task. This information can be useful for diagnosing problems
      *         by tracing back the chain of events leading up to this event.
@@ -230,14 +230,14 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
     }
     
     /**
-     * If set, contains the Id of the last
+     * If set, contains the ID of the last
      * <code>ActivityTaskCancelRequested</code> event recorded for this
      * activity task. This information can be useful for diagnosing problems
      * by tracing back the chain of events leading up to this event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param latestCancelRequestedEventId If set, contains the Id of the last
+     * @param latestCancelRequestedEventId If set, contains the ID of the last
      *         <code>ActivityTaskCancelRequested</code> event recorded for this
      *         activity task. This information can be useful for diagnosing problems
      *         by tracing back the chain of events leading up to this event.

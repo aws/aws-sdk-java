@@ -230,6 +230,9 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                             if (continueAsNewWorkflowExecutionDecisionAttributes.getWorkflowTypeVersion() != null) {
                                 jsonWriter.key("workflowTypeVersion").value(continueAsNewWorkflowExecutionDecisionAttributes.getWorkflowTypeVersion());
                             }
+                            if (continueAsNewWorkflowExecutionDecisionAttributes.getLambdaRole() != null) {
+                                jsonWriter.key("lambdaRole").value(continueAsNewWorkflowExecutionDecisionAttributes.getLambdaRole());
+                            }
                             jsonWriter.endObject();
                         }
                         RecordMarkerDecisionAttributes recordMarkerDecisionAttributes = decisionsListValue.getRecordMarkerDecisionAttributes();
@@ -379,6 +382,29 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                                     }
                                 }
                                 jsonWriter.endArray();
+                            }
+                            if (startChildWorkflowExecutionDecisionAttributes.getLambdaRole() != null) {
+                                jsonWriter.key("lambdaRole").value(startChildWorkflowExecutionDecisionAttributes.getLambdaRole());
+                            }
+                            jsonWriter.endObject();
+                        }
+                        ScheduleLambdaFunctionDecisionAttributes scheduleLambdaFunctionDecisionAttributes = decisionsListValue.getScheduleLambdaFunctionDecisionAttributes();
+                        if (scheduleLambdaFunctionDecisionAttributes != null) {
+
+                            jsonWriter.key("scheduleLambdaFunctionDecisionAttributes");
+                            jsonWriter.object();
+
+                            if (scheduleLambdaFunctionDecisionAttributes.getId() != null) {
+                                jsonWriter.key("id").value(scheduleLambdaFunctionDecisionAttributes.getId());
+                            }
+                            if (scheduleLambdaFunctionDecisionAttributes.getName() != null) {
+                                jsonWriter.key("name").value(scheduleLambdaFunctionDecisionAttributes.getName());
+                            }
+                            if (scheduleLambdaFunctionDecisionAttributes.getInput() != null) {
+                                jsonWriter.key("input").value(scheduleLambdaFunctionDecisionAttributes.getInput());
+                            }
+                            if (scheduleLambdaFunctionDecisionAttributes.getStartToCloseTimeout() != null) {
+                                jsonWriter.key("startToCloseTimeout").value(scheduleLambdaFunctionDecisionAttributes.getStartToCloseTimeout());
                             }
                             jsonWriter.endObject();
                         }

@@ -31,7 +31,7 @@ public class ExternalWorkflowExecutionCancelRequestedEventAttributes implements 
     private WorkflowExecution workflowExecution;
 
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -81,7 +81,7 @@ public class ExternalWorkflowExecutionCancelRequestedEventAttributes implements 
     }
 
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -89,7 +89,7 @@ public class ExternalWorkflowExecutionCancelRequestedEventAttributes implements 
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @return The id of the
+     * @return The ID of the
      *         <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      *         corresponding to the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -102,7 +102,7 @@ public class ExternalWorkflowExecutionCancelRequestedEventAttributes implements 
     }
     
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -110,7 +110,7 @@ public class ExternalWorkflowExecutionCancelRequestedEventAttributes implements 
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @param initiatedEventId The id of the
+     * @param initiatedEventId The ID of the
      *         <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      *         corresponding to the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -123,7 +123,7 @@ public class ExternalWorkflowExecutionCancelRequestedEventAttributes implements 
     }
     
     /**
-     * The id of the
+     * The ID of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      * corresponding to the
      * <code>RequestCancelExternalWorkflowExecution</code> decision to cancel
@@ -133,7 +133,7 @@ public class ExternalWorkflowExecutionCancelRequestedEventAttributes implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param initiatedEventId The id of the
+     * @param initiatedEventId The ID of the
      *         <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
      *         corresponding to the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision to cancel

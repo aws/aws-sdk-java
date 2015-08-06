@@ -30,7 +30,7 @@ public class ExternalWorkflowExecutionSignaledEventAttributes implements Seriali
     private WorkflowExecution workflowExecution;
 
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the
      * <code>SignalExternalWorkflowExecution</code> decision to request this
      * signal. This information can be useful for diagnosing problems by
@@ -72,13 +72,13 @@ public class ExternalWorkflowExecutionSignaledEventAttributes implements Seriali
     }
 
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the
      * <code>SignalExternalWorkflowExecution</code> decision to request this
      * signal. This information can be useful for diagnosing problems by
      * tracing back the chain of events leading up to this event.
      *
-     * @return The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * @return The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      *         event corresponding to the
      *         <code>SignalExternalWorkflowExecution</code> decision to request this
      *         signal. This information can be useful for diagnosing problems by
@@ -89,13 +89,13 @@ public class ExternalWorkflowExecutionSignaledEventAttributes implements Seriali
     }
     
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the
      * <code>SignalExternalWorkflowExecution</code> decision to request this
      * signal. This information can be useful for diagnosing problems by
      * tracing back the chain of events leading up to this event.
      *
-     * @param initiatedEventId The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * @param initiatedEventId The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      *         event corresponding to the
      *         <code>SignalExternalWorkflowExecution</code> decision to request this
      *         signal. This information can be useful for diagnosing problems by
@@ -106,7 +106,7 @@ public class ExternalWorkflowExecutionSignaledEventAttributes implements Seriali
     }
     
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the
      * <code>SignalExternalWorkflowExecution</code> decision to request this
      * signal. This information can be useful for diagnosing problems by
@@ -114,7 +114,7 @@ public class ExternalWorkflowExecutionSignaledEventAttributes implements Seriali
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param initiatedEventId The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * @param initiatedEventId The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      *         event corresponding to the
      *         <code>SignalExternalWorkflowExecution</code> decision to request this
      *         signal. This information can be useful for diagnosing problems by

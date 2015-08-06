@@ -90,10 +90,10 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     /**
      * The maximum number of results that will be returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of
-     * results. The default is 100, which is the maximum allowed page size.
-     * You can, however, specify a page size <i>smaller</i> than 100. <p>This
-     * is an upper limit only; the actual number of results returned per call
-     * may be fewer than the specified maximum.
+     * results. The default is 1000, which is the maximum allowed page size.
+     * You can, however, specify a page size <i>smaller</i> than the maximum.
+     * <p>This is an upper limit only; the actual number of results returned
+     * per call may be fewer than the specified maximum.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 1000<br/>
@@ -257,20 +257,20 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     /**
      * The maximum number of results that will be returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of
-     * results. The default is 100, which is the maximum allowed page size.
-     * You can, however, specify a page size <i>smaller</i> than 100. <p>This
-     * is an upper limit only; the actual number of results returned per call
-     * may be fewer than the specified maximum.
+     * results. The default is 1000, which is the maximum allowed page size.
+     * You can, however, specify a page size <i>smaller</i> than the maximum.
+     * <p>This is an upper limit only; the actual number of results returned
+     * per call may be fewer than the specified maximum.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 1000<br/>
      *
      * @return The maximum number of results that will be returned per call.
      *         <code>nextPageToken</code> can be used to obtain futher pages of
-     *         results. The default is 100, which is the maximum allowed page size.
-     *         You can, however, specify a page size <i>smaller</i> than 100. <p>This
-     *         is an upper limit only; the actual number of results returned per call
-     *         may be fewer than the specified maximum.
+     *         results. The default is 1000, which is the maximum allowed page size.
+     *         You can, however, specify a page size <i>smaller</i> than the maximum.
+     *         <p>This is an upper limit only; the actual number of results returned
+     *         per call may be fewer than the specified maximum.
      */
     public Integer getMaximumPageSize() {
         return maximumPageSize;
@@ -279,20 +279,20 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     /**
      * The maximum number of results that will be returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of
-     * results. The default is 100, which is the maximum allowed page size.
-     * You can, however, specify a page size <i>smaller</i> than 100. <p>This
-     * is an upper limit only; the actual number of results returned per call
-     * may be fewer than the specified maximum.
+     * results. The default is 1000, which is the maximum allowed page size.
+     * You can, however, specify a page size <i>smaller</i> than the maximum.
+     * <p>This is an upper limit only; the actual number of results returned
+     * per call may be fewer than the specified maximum.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 1000<br/>
      *
      * @param maximumPageSize The maximum number of results that will be returned per call.
      *         <code>nextPageToken</code> can be used to obtain futher pages of
-     *         results. The default is 100, which is the maximum allowed page size.
-     *         You can, however, specify a page size <i>smaller</i> than 100. <p>This
-     *         is an upper limit only; the actual number of results returned per call
-     *         may be fewer than the specified maximum.
+     *         results. The default is 1000, which is the maximum allowed page size.
+     *         You can, however, specify a page size <i>smaller</i> than the maximum.
+     *         <p>This is an upper limit only; the actual number of results returned
+     *         per call may be fewer than the specified maximum.
      */
     public void setMaximumPageSize(Integer maximumPageSize) {
         this.maximumPageSize = maximumPageSize;
@@ -301,10 +301,10 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     /**
      * The maximum number of results that will be returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of
-     * results. The default is 100, which is the maximum allowed page size.
-     * You can, however, specify a page size <i>smaller</i> than 100. <p>This
-     * is an upper limit only; the actual number of results returned per call
-     * may be fewer than the specified maximum.
+     * results. The default is 1000, which is the maximum allowed page size.
+     * You can, however, specify a page size <i>smaller</i> than the maximum.
+     * <p>This is an upper limit only; the actual number of results returned
+     * per call may be fewer than the specified maximum.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -313,10 +313,10 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
      *
      * @param maximumPageSize The maximum number of results that will be returned per call.
      *         <code>nextPageToken</code> can be used to obtain futher pages of
-     *         results. The default is 100, which is the maximum allowed page size.
-     *         You can, however, specify a page size <i>smaller</i> than 100. <p>This
-     *         is an upper limit only; the actual number of results returned per call
-     *         may be fewer than the specified maximum.
+     *         results. The default is 1000, which is the maximum allowed page size.
+     *         You can, however, specify a page size <i>smaller</i> than the maximum.
+     *         <p>This is an upper limit only; the actual number of results returned
+     *         per call may be fewer than the specified maximum.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

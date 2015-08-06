@@ -121,6 +121,9 @@ public class StartWorkflowExecutionRequestMarshaller implements Marshaller<Reque
             if (startWorkflowExecutionRequest.getChildPolicy() != null) {
                 jsonWriter.key("childPolicy").value(startWorkflowExecutionRequest.getChildPolicy());
             }
+            if (startWorkflowExecutionRequest.getLambdaRole() != null) {
+                jsonWriter.key("lambdaRole").value(startWorkflowExecutionRequest.getLambdaRole());
+            }
 
           jsonWriter.endObject();
 

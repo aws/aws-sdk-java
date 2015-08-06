@@ -58,7 +58,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
     private String input;
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
@@ -250,13 +250,13 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
     }
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      *
-     * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>SignalExternalWorkflowExecution</code> decision for this signal.
      *         This information can be useful for diagnosing problems by tracing back
@@ -267,13 +267,13 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
      * the chain of events leading up to this event.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>SignalExternalWorkflowExecution</code> decision for this signal.
      *         This information can be useful for diagnosing problems by tracing back
@@ -284,7 +284,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>SignalExternalWorkflowExecution</code> decision for this signal.
      * This information can be useful for diagnosing problems by tracing back
@@ -292,7 +292,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>SignalExternalWorkflowExecution</code> decision for this signal.
      *         This information can be useful for diagnosing problems by tracing back

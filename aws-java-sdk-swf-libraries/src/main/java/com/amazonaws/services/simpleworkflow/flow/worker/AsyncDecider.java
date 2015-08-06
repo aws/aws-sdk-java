@@ -139,6 +139,8 @@ class AsyncDecider {
 
     private final GenericWorkflowClientImpl workflowClient;
 
+    private final LambdaFunctionClientImpl lambdaFunctionClient;
+
     private final WorkflowClockImpl workflowClock;
 
     private final DecisionContext context;
@@ -165,7 +167,9 @@ class AsyncDecider {
         workflowContext = new WorkfowContextImpl(decisionTask);
         this.workflowClient = new GenericWorkflowClientImpl(decisionsHelper, workflowContext);
         this.workflowClock = new WorkflowClockImpl(decisionsHelper);
-        context = new DecisionContextImpl(activityClient, workflowClient, workflowClock, workflowContext);
+        this.lambdaFunctionClient = new LambdaFunctionClientImpl(decisionsHelper);
+        context = new DecisionContextImpl(activityClient, workflowClient, workflowClock, 
+        		workflowContext, lambdaFunctionClient);
     }
 
     public boolean isCancelRequested() {
@@ -301,6 +305,21 @@ class AsyncDecider {
             break;
         case TimerCanceled:
             workflowClock.handleTimerCanceled(event);
+            break;
+        case LambdaFunctionScheduled:
+            decisionsHelper.handleLambdaFunctionScheduled(event);
+            break;
+        case LambdaFunctionStarted:
+            lambdaFunctionClient.handleLambdaFunctionStarted(event.getLambdaFunctionStartedEventAttributes());
+            break;
+        case LambdaFunctionCompleted:
+        	lambdaFunctionClient.handleLambdaFunctionCompleted(event);
+            break;
+        case LambdaFunctionFailed:
+        	lambdaFunctionClient.handleLambdaFunctionFailed(event);
+            break;
+        case LambdaFunctionTimedOut:
+        	lambdaFunctionClient.handleLambdaFunctionTimedOut(event);
             break;
         case SignalExternalWorkflowExecutionInitiated:
             decisionsHelper.handleSignalExternalWorkflowExecutionInitiated(event);

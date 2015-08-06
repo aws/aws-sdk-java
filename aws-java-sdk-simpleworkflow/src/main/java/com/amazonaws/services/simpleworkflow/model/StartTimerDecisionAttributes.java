@@ -50,7 +50,7 @@ import java.io.Serializable;
 public class StartTimerDecisionAttributes implements Serializable, Cloneable {
 
     /**
-     * <b>Required.</b> The unique Id of the timer. <p>The specified string
+     * <b>Required.</b> The unique ID of the timer. <p>The specified string
      * must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
@@ -81,7 +81,7 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable {
     private String startToFireTimeout;
 
     /**
-     * <b>Required.</b> The unique Id of the timer. <p>The specified string
+     * <b>Required.</b> The unique ID of the timer. <p>The specified string
      * must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
@@ -90,7 +90,7 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return <b>Required.</b> The unique Id of the timer. <p>The specified string
+     * @return <b>Required.</b> The unique ID of the timer. <p>The specified string
      *         must not start or end with whitespace. It must not contain a
      *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
@@ -101,7 +101,7 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable {
     }
     
     /**
-     * <b>Required.</b> The unique Id of the timer. <p>The specified string
+     * <b>Required.</b> The unique ID of the timer. <p>The specified string
      * must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
@@ -110,7 +110,7 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId <b>Required.</b> The unique Id of the timer. <p>The specified string
+     * @param timerId <b>Required.</b> The unique ID of the timer. <p>The specified string
      *         must not start or end with whitespace. It must not contain a
      *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
@@ -121,7 +121,7 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable {
     }
     
     /**
-     * <b>Required.</b> The unique Id of the timer. <p>The specified string
+     * <b>Required.</b> The unique ID of the timer. <p>The specified string
      * must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
@@ -132,7 +132,7 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param timerId <b>Required.</b> The unique Id of the timer. <p>The specified string
+     * @param timerId <b>Required.</b> The unique ID of the timer. <p>The specified string
      *         must not start or end with whitespace. It must not contain a
      *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -

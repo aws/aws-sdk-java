@@ -33,7 +33,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     private String input;
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>ContinueAsNewWorkflowExecution</code> decision that started this
      * execution. This information can be useful for diagnosing problems by
@@ -109,6 +109,15 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     private WorkflowType workflowType;
 
     /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     */
+    private String lambdaRole;
+
+    /**
      * The input provided to the new workflow execution.
      * <p>
      * <b>Constraints:</b><br/>
@@ -151,13 +160,13 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>ContinueAsNewWorkflowExecution</code> decision that started this
      * execution. This information can be useful for diagnosing problems by
      * tracing back the chain of events leading up to this event.
      *
-     * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>ContinueAsNewWorkflowExecution</code> decision that started this
      *         execution. This information can be useful for diagnosing problems by
@@ -168,13 +177,13 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>ContinueAsNewWorkflowExecution</code> decision that started this
      * execution. This information can be useful for diagnosing problems by
      * tracing back the chain of events leading up to this event.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>ContinueAsNewWorkflowExecution</code> decision that started this
      *         execution. This information can be useful for diagnosing problems by
@@ -185,7 +194,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
      * <code>ContinueAsNewWorkflowExecution</code> decision that started this
      * execution. This information can be useful for diagnosing problems by
@@ -193,7 +202,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the
      *         <code>ContinueAsNewWorkflowExecution</code> decision that started this
      *         execution. This information can be useful for diagnosing problems by
@@ -735,6 +744,54 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @return The IAM role attached to this workflow execution to use when invoking
+     *         AWS Lambda functions.
+     */
+    public String getLambdaRole() {
+        return lambdaRole;
+    }
+    
+    /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The IAM role attached to this workflow execution to use when invoking
+     *         AWS Lambda functions.
+     */
+    public void setLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+    }
+    
+    /**
+     * The IAM role attached to this workflow execution to use when invoking
+     * AWS Lambda functions.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The IAM role attached to this workflow execution to use when invoking
+     *         AWS Lambda functions.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public WorkflowExecutionContinuedAsNewEventAttributes withLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -755,7 +812,8 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
         if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");
         if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() );
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");
+        if (getLambdaRole() != null) sb.append("LambdaRole: " + getLambdaRole() );
         sb.append("}");
         return sb.toString();
     }
@@ -775,6 +833,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         hashCode = prime * hashCode + ((getChildPolicy() == null) ? 0 : getChildPolicy().hashCode()); 
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode()); 
         hashCode = prime * hashCode + ((getWorkflowType() == null) ? 0 : getWorkflowType().hashCode()); 
+        hashCode = prime * hashCode + ((getLambdaRole() == null) ? 0 : getLambdaRole().hashCode()); 
         return hashCode;
     }
     
@@ -806,6 +865,8 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false) return false; 
         if (other.getWorkflowType() == null ^ this.getWorkflowType() == null) return false;
         if (other.getWorkflowType() != null && other.getWorkflowType().equals(this.getWorkflowType()) == false) return false; 
+        if (other.getLambdaRole() == null ^ this.getLambdaRole() == null) return false;
+        if (other.getLambdaRole() != null && other.getLambdaRole().equals(this.getLambdaRole()) == false) return false; 
         return true;
     }
     

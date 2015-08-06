@@ -833,4 +833,5 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
     java.util.concurrent.Future<ScheduleRunResult> scheduleRunAsync(
             ScheduleRunRequest scheduleRunRequest,
             com.amazonaws.handlers.AsyncHandler<ScheduleRunRequest, ScheduleRunResult> asyncHandler);
+
 }

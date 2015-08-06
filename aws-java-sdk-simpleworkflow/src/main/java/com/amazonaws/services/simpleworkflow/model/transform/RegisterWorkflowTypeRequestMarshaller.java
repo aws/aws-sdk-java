@@ -96,6 +96,9 @@ public class RegisterWorkflowTypeRequestMarshaller implements Marshaller<Request
             if (registerWorkflowTypeRequest.getDefaultChildPolicy() != null) {
                 jsonWriter.key("defaultChildPolicy").value(registerWorkflowTypeRequest.getDefaultChildPolicy());
             }
+            if (registerWorkflowTypeRequest.getDefaultLambdaRole() != null) {
+                jsonWriter.key("defaultLambdaRole").value(registerWorkflowTypeRequest.getDefaultLambdaRole());
+            }
 
           jsonWriter.endObject();
 

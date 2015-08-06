@@ -29,7 +29,9 @@ public class StartWorkflowOptions {
     private String taskList;
 	
     private Integer taskPriority;
-    
+
+    private String lambdaRole;
+
     private ChildPolicy childPolicy;
     
     public ChildPolicy getChildPolicy() {
@@ -104,4 +106,17 @@ public class StartWorkflowOptions {
     	this.taskPriority = taskPriority;
     	return this;
     }
+
+	public String getLambdaRole() {
+		return lambdaRole;
+	}
+
+	public void setLambdaRole(String lambdaRole) {
+		this.lambdaRole = lambdaRole;
+	}
+
+	public StartWorkflowOptions withLambdaRole(String lambdaRole) {
+		this.lambdaRole = lambdaRole;
+		return this;
+	}
 }

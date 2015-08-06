@@ -165,6 +165,17 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
     private String workflowTypeVersion;
 
     /**
+     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     * functions. <note>In order for this workflow execution to invoke AWS
+     * Lambda functions, an appropriate IAM role must be specified either as
+     * a default for the workflow type or through this field.</note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     */
+    private String lambdaRole;
+
+    /**
      * The input provided to the new workflow execution.
      * <p>
      * <b>Constraints:</b><br/>
@@ -929,6 +940,66 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
     }
 
     /**
+     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     * functions. <note>In order for this workflow execution to invoke AWS
+     * Lambda functions, an appropriate IAM role must be specified either as
+     * a default for the workflow type or through this field.</note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @return The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     *         functions. <note>In order for this workflow execution to invoke AWS
+     *         Lambda functions, an appropriate IAM role must be specified either as
+     *         a default for the workflow type or through this field.</note>
+     */
+    public String getLambdaRole() {
+        return lambdaRole;
+    }
+    
+    /**
+     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     * functions. <note>In order for this workflow execution to invoke AWS
+     * Lambda functions, an appropriate IAM role must be specified either as
+     * a default for the workflow type or through this field.</note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     *         functions. <note>In order for this workflow execution to invoke AWS
+     *         Lambda functions, an appropriate IAM role must be specified either as
+     *         a default for the workflow type or through this field.</note>
+     */
+    public void setLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+    }
+    
+    /**
+     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     * functions. <note>In order for this workflow execution to invoke AWS
+     * Lambda functions, an appropriate IAM role must be specified either as
+     * a default for the workflow type or through this field.</note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     *         functions. <note>In order for this workflow execution to invoke AWS
+     *         Lambda functions, an appropriate IAM role must be specified either as
+     *         a default for the workflow type or through this field.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ContinueAsNewWorkflowExecutionDecisionAttributes withLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -947,7 +1018,8 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
         if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
         if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");
         if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");
-        if (getWorkflowTypeVersion() != null) sb.append("WorkflowTypeVersion: " + getWorkflowTypeVersion() );
+        if (getWorkflowTypeVersion() != null) sb.append("WorkflowTypeVersion: " + getWorkflowTypeVersion() + ",");
+        if (getLambdaRole() != null) sb.append("LambdaRole: " + getLambdaRole() );
         sb.append("}");
         return sb.toString();
     }
@@ -965,6 +1037,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
         hashCode = prime * hashCode + ((getChildPolicy() == null) ? 0 : getChildPolicy().hashCode()); 
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode()); 
         hashCode = prime * hashCode + ((getWorkflowTypeVersion() == null) ? 0 : getWorkflowTypeVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getLambdaRole() == null) ? 0 : getLambdaRole().hashCode()); 
         return hashCode;
     }
     
@@ -992,6 +1065,8 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
         if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false) return false; 
         if (other.getWorkflowTypeVersion() == null ^ this.getWorkflowTypeVersion() == null) return false;
         if (other.getWorkflowTypeVersion() != null && other.getWorkflowTypeVersion().equals(this.getWorkflowTypeVersion()) == false) return false; 
+        if (other.getLambdaRole() == null ^ this.getLambdaRole() == null) return false;
+        if (other.getLambdaRole() != null && other.getLambdaRole().equals(this.getLambdaRole()) == false) return false; 
         return true;
     }
     

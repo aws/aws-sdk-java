@@ -19,6 +19,7 @@ import com.amazonaws.services.simpleworkflow.flow.generic.WorkflowDefinitionFact
 import com.amazonaws.services.simpleworkflow.flow.test.TestDecisionContext;
 import com.amazonaws.services.simpleworkflow.flow.test.TestGenericActivityClient;
 import com.amazonaws.services.simpleworkflow.flow.test.TestGenericWorkflowClient;
+import com.amazonaws.services.simpleworkflow.flow.test.TestLambdaFunctionClient;
 import com.amazonaws.services.simpleworkflow.flow.test.TestWorkflowClock;
 import com.amazonaws.services.simpleworkflow.flow.test.TestWorkflowContext;
 
@@ -28,7 +29,7 @@ public class GenericWorkflowTest extends WorkflowTestBase {
 
     public GenericWorkflowTest(WorkflowDefinitionFactoryFactory factoryFactory) {
         super(new TestDecisionContext(new TestGenericActivityClient(),
-                new TestGenericWorkflowClient(factoryFactory), new TestWorkflowClock(), new TestWorkflowContext()));
+                new TestGenericWorkflowClient(factoryFactory), new TestWorkflowClock(), new TestWorkflowContext(), new TestLambdaFunctionClient()));
         activityClient = (TestGenericActivityClient) decisionContext.getActivityClient();
     }
 

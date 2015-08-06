@@ -42,6 +42,7 @@ import com.amazonaws.services.simpleworkflow.flow.generic.StartChildWorkflowRepl
 import com.amazonaws.services.simpleworkflow.flow.generic.WorkflowDefinition;
 import com.amazonaws.services.simpleworkflow.flow.generic.WorkflowDefinitionFactory;
 import com.amazonaws.services.simpleworkflow.flow.generic.WorkflowDefinitionFactoryFactory;
+import com.amazonaws.services.simpleworkflow.flow.worker.LambdaFunctionClient;
 import com.amazonaws.services.simpleworkflow.model.StartChildWorkflowExecutionFailedCause;
 import com.amazonaws.services.simpleworkflow.model.UnknownResourceException;
 import com.amazonaws.services.simpleworkflow.model.WorkflowExecution;
@@ -231,6 +232,7 @@ public class TestGenericWorkflowClient implements GenericWorkflowClient {
 
             final GenericActivityClient activityClient = parentDecisionContext.getActivityClient();
             final WorkflowClock workflowClock = parentDecisionContext.getWorkflowClock();
+            final LambdaFunctionClient lambdaFunctionClient = parentDecisionContext.getLambdaFunctionClient();
             WorkflowDefinitionFactory factory;
             if (factoryFactory == null) {
                 throw new IllegalStateException("required property factoryFactory is null");
@@ -247,7 +249,7 @@ public class TestGenericWorkflowClient implements GenericWorkflowClient {
             workflowContext.setTagList(parameters.getTagList());
             workflowContext.setTaskList(parameters.getTaskList());
             DecisionContext context = new TestDecisionContext(activityClient, TestGenericWorkflowClient.this, workflowClock,
-                    workflowContext);
+                    workflowContext, lambdaFunctionClient);
             //this, parameters, childExecution, workflowClock, activityClient);
             final WorkflowDefinition childWorkflowDefinition = factory.getWorkflowDefinition(context);
             final ChildWorkflowTryCatchFinally tryCatch = new ChildWorkflowTryCatchFinally(parameters, childExecution,

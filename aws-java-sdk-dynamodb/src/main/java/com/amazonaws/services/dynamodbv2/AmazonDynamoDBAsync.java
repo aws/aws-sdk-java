@@ -1854,4 +1854,5 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
             String tableName,
             ProvisionedThroughput provisionedThroughput,
             com.amazonaws.handlers.AsyncHandler<UpdateTableRequest, UpdateTableResult> asyncHandler);
+
 }

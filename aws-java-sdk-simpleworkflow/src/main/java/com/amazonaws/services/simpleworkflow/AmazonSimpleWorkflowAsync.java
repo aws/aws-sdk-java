@@ -1113,7 +1113,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * <p>
      * Returns information about the specified <i>workflow type</i> . This
      * includes configuration settings specified when the type was registered
-     * and other information such as creation date, current status, etc.
+     * and other information such as creation date, current status, and so
+     * on.
      * </p>
      * <p>
      * <b>Access Control</b>
@@ -1174,7 +1175,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * <p>
      * Returns information about the specified <i>workflow type</i> . This
      * includes configuration settings specified when the type was registered
-     * and other information such as creation date, current status, etc.
+     * and other information such as creation date, current status, and so
+     * on.
      * </p>
      * <p>
      * <b>Access Control</b>
@@ -3264,10 +3266,10 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * decision task is available in the specified task list before the
      * timeout of 60 seconds expires, an empty result is returned. An empty
      * result, in this context, means that a DecisionTask is returned, but
-     * that the value of taskToken is an empty string.
+     * that the value of <code>taskToken</code> is an empty string.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Deciders should set their client side socket timeout
+     * <b>IMPORTANT:</b>Deciders should set their client-side socket timeout
      * to at least 70 seconds (10 seconds higher than the timeout).
      * </p>
      * <p>
@@ -3342,10 +3344,10 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * decision task is available in the specified task list before the
      * timeout of 60 seconds expires, an empty result is returned. An empty
      * result, in this context, means that a DecisionTask is returned, but
-     * that the value of taskToken is an empty string.
+     * that the value of <code>taskToken</code> is an empty string.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Deciders should set their client side socket timeout
+     * <b>IMPORTANT:</b>Deciders should set their client-side socket timeout
      * to at least 70 seconds (10 seconds higher than the timeout).
      * </p>
      * <p>

@@ -225,6 +225,17 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
     private String childPolicy;
 
     /**
+     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     * functions. <note>In order for this workflow execution to invoke AWS
+     * Lambda functions, an appropriate IAM role must be specified either as
+     * a default for the workflow type or through this field.</note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     */
+    private String lambdaRole;
+
+    /**
      * The name of the domain in which the workflow execution is created.
      * <p>
      * <b>Constraints:</b><br/>
@@ -1208,6 +1219,66 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     * functions. <note>In order for this workflow execution to invoke AWS
+     * Lambda functions, an appropriate IAM role must be specified either as
+     * a default for the workflow type or through this field.</note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @return The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     *         functions. <note>In order for this workflow execution to invoke AWS
+     *         Lambda functions, an appropriate IAM role must be specified either as
+     *         a default for the workflow type or through this field.</note>
+     */
+    public String getLambdaRole() {
+        return lambdaRole;
+    }
+    
+    /**
+     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     * functions. <note>In order for this workflow execution to invoke AWS
+     * Lambda functions, an appropriate IAM role must be specified either as
+     * a default for the workflow type or through this field.</note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     *         functions. <note>In order for this workflow execution to invoke AWS
+     *         Lambda functions, an appropriate IAM role must be specified either as
+     *         a default for the workflow type or through this field.</note>
+     */
+    public void setLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+    }
+    
+    /**
+     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     * functions. <note>In order for this workflow execution to invoke AWS
+     * Lambda functions, an appropriate IAM role must be specified either as
+     * a default for the workflow type or through this field.</note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
+     *         functions. <note>In order for this workflow execution to invoke AWS
+     *         Lambda functions, an appropriate IAM role must be specified either as
+     *         a default for the workflow type or through this field.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public StartWorkflowExecutionRequest withLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1228,7 +1299,8 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");
         if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");
         if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
-        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() );
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");
+        if (getLambdaRole() != null) sb.append("LambdaRole: " + getLambdaRole() );
         sb.append("}");
         return sb.toString();
     }
@@ -1248,6 +1320,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode()); 
         hashCode = prime * hashCode + ((getTaskStartToCloseTimeout() == null) ? 0 : getTaskStartToCloseTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getChildPolicy() == null) ? 0 : getChildPolicy().hashCode()); 
+        hashCode = prime * hashCode + ((getLambdaRole() == null) ? 0 : getLambdaRole().hashCode()); 
         return hashCode;
     }
     
@@ -1279,6 +1352,8 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         if (other.getTaskStartToCloseTimeout() != null && other.getTaskStartToCloseTimeout().equals(this.getTaskStartToCloseTimeout()) == false) return false; 
         if (other.getChildPolicy() == null ^ this.getChildPolicy() == null) return false;
         if (other.getChildPolicy() != null && other.getChildPolicy().equals(this.getChildPolicy()) == false) return false; 
+        if (other.getLambdaRole() == null ^ this.getLambdaRole() == null) return false;
+        if (other.getLambdaRole() != null && other.getLambdaRole().equals(this.getLambdaRole()) == false) return false; 
         return true;
     }
     

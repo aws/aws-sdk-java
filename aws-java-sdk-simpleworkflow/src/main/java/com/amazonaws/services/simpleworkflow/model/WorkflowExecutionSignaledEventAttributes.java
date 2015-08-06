@@ -48,10 +48,10 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
     private WorkflowExecution externalWorkflowExecution;
 
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the <code>SignalExternalWorkflow</code>
      * decision to signal this workflow execution.The source event with this
-     * Id can be found in the history of the source workflow execution. This
+     * ID can be found in the history of the source workflow execution. This
      * information can be useful for diagnosing problems by tracing back the
      * chain of events leading up to this event. This field is set only if
      * the signal was initiated by another workflow execution.
@@ -194,18 +194,18 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
     }
 
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the <code>SignalExternalWorkflow</code>
      * decision to signal this workflow execution.The source event with this
-     * Id can be found in the history of the source workflow execution. This
+     * ID can be found in the history of the source workflow execution. This
      * information can be useful for diagnosing problems by tracing back the
      * chain of events leading up to this event. This field is set only if
      * the signal was initiated by another workflow execution.
      *
-     * @return The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * @return The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      *         event corresponding to the <code>SignalExternalWorkflow</code>
      *         decision to signal this workflow execution.The source event with this
-     *         Id can be found in the history of the source workflow execution. This
+     *         ID can be found in the history of the source workflow execution. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event. This field is set only if
      *         the signal was initiated by another workflow execution.
@@ -215,18 +215,18 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
     }
     
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the <code>SignalExternalWorkflow</code>
      * decision to signal this workflow execution.The source event with this
-     * Id can be found in the history of the source workflow execution. This
+     * ID can be found in the history of the source workflow execution. This
      * information can be useful for diagnosing problems by tracing back the
      * chain of events leading up to this event. This field is set only if
      * the signal was initiated by another workflow execution.
      *
-     * @param externalInitiatedEventId The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * @param externalInitiatedEventId The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      *         event corresponding to the <code>SignalExternalWorkflow</code>
      *         decision to signal this workflow execution.The source event with this
-     *         Id can be found in the history of the source workflow execution. This
+     *         ID can be found in the history of the source workflow execution. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event. This field is set only if
      *         the signal was initiated by another workflow execution.
@@ -236,20 +236,20 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
     }
     
     /**
-     * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the <code>SignalExternalWorkflow</code>
      * decision to signal this workflow execution.The source event with this
-     * Id can be found in the history of the source workflow execution. This
+     * ID can be found in the history of the source workflow execution. This
      * information can be useful for diagnosing problems by tracing back the
      * chain of events leading up to this event. This field is set only if
      * the signal was initiated by another workflow execution.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param externalInitiatedEventId The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
+     * @param externalInitiatedEventId The ID of the <code>SignalExternalWorkflowExecutionInitiated</code>
      *         event corresponding to the <code>SignalExternalWorkflow</code>
      *         decision to signal this workflow execution.The source event with this
-     *         Id can be found in the history of the source workflow execution. This
+     *         ID can be found in the history of the source workflow execution. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event. This field is set only if
      *         the signal was initiated by another workflow execution.

@@ -402,4 +402,5 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
 
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

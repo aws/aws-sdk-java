@@ -16,6 +16,7 @@ package com.amazonaws.services.simpleworkflow.flow.worker;
 
 enum DecisionTarget {
     ACTIVITY,
+    LAMBDA_FUNCTION,
     EXTERNAL_WORKFLOW,
     SIGNAL,
     TIMER,

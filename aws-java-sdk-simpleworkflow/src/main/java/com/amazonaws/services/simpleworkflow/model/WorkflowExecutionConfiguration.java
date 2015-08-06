@@ -88,6 +88,15 @@ public class WorkflowExecutionConfiguration implements Serializable, Cloneable {
     private String childPolicy;
 
     /**
+     * The IAM role used by this workflow execution when invoking AWS Lambda
+     * functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     */
+    private String lambdaRole;
+
+    /**
      * The maximum duration allowed for decision tasks for this workflow
      * execution. <p>The duration is specified in seconds; an integer greater
      * than or equal to 0. The value "NONE" can be used to specify unlimited
@@ -513,6 +522,54 @@ public class WorkflowExecutionConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * The IAM role used by this workflow execution when invoking AWS Lambda
+     * functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @return The IAM role used by this workflow execution when invoking AWS Lambda
+     *         functions.
+     */
+    public String getLambdaRole() {
+        return lambdaRole;
+    }
+    
+    /**
+     * The IAM role used by this workflow execution when invoking AWS Lambda
+     * functions.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The IAM role used by this workflow execution when invoking AWS Lambda
+     *         functions.
+     */
+    public void setLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+    }
+    
+    /**
+     * The IAM role used by this workflow execution when invoking AWS Lambda
+     * functions.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param lambdaRole The IAM role used by this workflow execution when invoking AWS Lambda
+     *         functions.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public WorkflowExecutionConfiguration withLambdaRole(String lambdaRole) {
+        this.lambdaRole = lambdaRole;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -528,7 +585,8 @@ public class WorkflowExecutionConfiguration implements Serializable, Cloneable {
         if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");
         if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
         if (getTaskPriority() != null) sb.append("TaskPriority: " + getTaskPriority() + ",");
-        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() );
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");
+        if (getLambdaRole() != null) sb.append("LambdaRole: " + getLambdaRole() );
         sb.append("}");
         return sb.toString();
     }
@@ -543,6 +601,7 @@ public class WorkflowExecutionConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTaskList() == null) ? 0 : getTaskList().hashCode()); 
         hashCode = prime * hashCode + ((getTaskPriority() == null) ? 0 : getTaskPriority().hashCode()); 
         hashCode = prime * hashCode + ((getChildPolicy() == null) ? 0 : getChildPolicy().hashCode()); 
+        hashCode = prime * hashCode + ((getLambdaRole() == null) ? 0 : getLambdaRole().hashCode()); 
         return hashCode;
     }
     
@@ -564,6 +623,8 @@ public class WorkflowExecutionConfiguration implements Serializable, Cloneable {
         if (other.getTaskPriority() != null && other.getTaskPriority().equals(this.getTaskPriority()) == false) return false; 
         if (other.getChildPolicy() == null ^ this.getChildPolicy() == null) return false;
         if (other.getChildPolicy() != null && other.getChildPolicy().equals(this.getChildPolicy()) == false) return false; 
+        if (other.getLambdaRole() == null ^ this.getLambdaRole() == null) return false;
+        if (other.getLambdaRole() != null && other.getLambdaRole().equals(this.getLambdaRole()) == false) return false; 
         return true;
     }
     

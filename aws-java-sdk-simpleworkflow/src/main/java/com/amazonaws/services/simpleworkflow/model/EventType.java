@@ -65,7 +65,14 @@ public enum EventType {
     ExternalWorkflowExecutionSignaled("ExternalWorkflowExecutionSignaled"),
     RequestCancelExternalWorkflowExecutionInitiated("RequestCancelExternalWorkflowExecutionInitiated"),
     RequestCancelExternalWorkflowExecutionFailed("RequestCancelExternalWorkflowExecutionFailed"),
-    ExternalWorkflowExecutionCancelRequested("ExternalWorkflowExecutionCancelRequested");
+    ExternalWorkflowExecutionCancelRequested("ExternalWorkflowExecutionCancelRequested"),
+    LambdaFunctionScheduled("LambdaFunctionScheduled"),
+    LambdaFunctionStarted("LambdaFunctionStarted"),
+    LambdaFunctionCompleted("LambdaFunctionCompleted"),
+    LambdaFunctionFailed("LambdaFunctionFailed"),
+    LambdaFunctionTimedOut("LambdaFunctionTimedOut"),
+    ScheduleLambdaFunctionFailed("ScheduleLambdaFunctionFailed"),
+    StartLambdaFunctionFailed("StartLambdaFunctionFailed");
 
     private String value;
 
@@ -183,6 +190,20 @@ public enum EventType {
             return EventType.RequestCancelExternalWorkflowExecutionFailed;
         } else if ("ExternalWorkflowExecutionCancelRequested".equals(value)) {
             return EventType.ExternalWorkflowExecutionCancelRequested;
+        } else if ("LambdaFunctionScheduled".equals(value)) {
+            return EventType.LambdaFunctionScheduled;
+        } else if ("LambdaFunctionStarted".equals(value)) {
+            return EventType.LambdaFunctionStarted;
+        } else if ("LambdaFunctionCompleted".equals(value)) {
+            return EventType.LambdaFunctionCompleted;
+        } else if ("LambdaFunctionFailed".equals(value)) {
+            return EventType.LambdaFunctionFailed;
+        } else if ("LambdaFunctionTimedOut".equals(value)) {
+            return EventType.LambdaFunctionTimedOut;
+        } else if ("ScheduleLambdaFunctionFailed".equals(value)) {
+            return EventType.ScheduleLambdaFunctionFailed;
+        } else if ("StartLambdaFunctionFailed".equals(value)) {
+            return EventType.StartLambdaFunctionFailed;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

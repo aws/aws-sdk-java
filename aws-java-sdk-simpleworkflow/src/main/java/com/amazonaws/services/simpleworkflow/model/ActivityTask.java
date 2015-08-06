@@ -42,7 +42,7 @@ public class ActivityTask implements Serializable, Cloneable {
     private String activityId;
 
     /**
-     * The id of the <code>ActivityTaskStarted</code> event recorded in the
+     * The ID of the <code>ActivityTaskStarted</code> event recorded in the
      * history.
      */
     private Long startedEventId;
@@ -164,10 +164,10 @@ public class ActivityTask implements Serializable, Cloneable {
     }
 
     /**
-     * The id of the <code>ActivityTaskStarted</code> event recorded in the
+     * The ID of the <code>ActivityTaskStarted</code> event recorded in the
      * history.
      *
-     * @return The id of the <code>ActivityTaskStarted</code> event recorded in the
+     * @return The ID of the <code>ActivityTaskStarted</code> event recorded in the
      *         history.
      */
     public Long getStartedEventId() {
@@ -175,10 +175,10 @@ public class ActivityTask implements Serializable, Cloneable {
     }
     
     /**
-     * The id of the <code>ActivityTaskStarted</code> event recorded in the
+     * The ID of the <code>ActivityTaskStarted</code> event recorded in the
      * history.
      *
-     * @param startedEventId The id of the <code>ActivityTaskStarted</code> event recorded in the
+     * @param startedEventId The ID of the <code>ActivityTaskStarted</code> event recorded in the
      *         history.
      */
     public void setStartedEventId(Long startedEventId) {
@@ -186,12 +186,12 @@ public class ActivityTask implements Serializable, Cloneable {
     }
     
     /**
-     * The id of the <code>ActivityTaskStarted</code> event recorded in the
+     * The ID of the <code>ActivityTaskStarted</code> event recorded in the
      * history.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startedEventId The id of the <code>ActivityTaskStarted</code> event recorded in the
+     * @param startedEventId The ID of the <code>ActivityTaskStarted</code> event recorded in the
      *         history.
      *
      * @return A reference to this updated object so that method calls can be chained

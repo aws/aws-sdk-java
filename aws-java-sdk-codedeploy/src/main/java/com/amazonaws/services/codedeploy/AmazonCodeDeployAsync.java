@@ -1276,4 +1276,5 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
     java.util.concurrent.Future<UpdateDeploymentGroupResult> updateDeploymentGroupAsync(
             UpdateDeploymentGroupRequest updateDeploymentGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDeploymentGroupRequest, UpdateDeploymentGroupResult> asyncHandler);
+
 }

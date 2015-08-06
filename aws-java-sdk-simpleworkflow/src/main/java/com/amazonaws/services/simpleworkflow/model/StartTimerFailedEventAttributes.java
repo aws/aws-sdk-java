@@ -46,7 +46,7 @@ public class StartTimerFailedEventAttributes implements Serializable, Cloneable 
     private String cause;
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
@@ -235,13 +235,13 @@ public class StartTimerFailedEventAttributes implements Serializable, Cloneable 
     }
 
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @return The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>StartTimer</code>
      *         decision for this activity task. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
@@ -252,13 +252,13 @@ public class StartTimerFailedEventAttributes implements Serializable, Cloneable 
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
      * this event.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>StartTimer</code>
      *         decision for this activity task. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
@@ -269,7 +269,7 @@ public class StartTimerFailedEventAttributes implements Serializable, Cloneable 
     }
     
     /**
-     * The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>StartTimer</code>
      * decision for this activity task. This information can be useful for
      * diagnosing problems by tracing back the chain of events leading up to
@@ -277,7 +277,7 @@ public class StartTimerFailedEventAttributes implements Serializable, Cloneable 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decisionTaskCompletedEventId The id of the <code>DecisionTaskCompleted</code> event corresponding
+     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
      *         to the decision task that resulted in the <code>StartTimer</code>
      *         decision for this activity task. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to

@@ -102,7 +102,13 @@ class WorkfowContextImpl implements WorkflowContext {
         WorkflowExecutionStartedEventAttributes attributes = getWorkflowStartedEventAttributes();
         return attributes.getTaskList().getName();
     }
-    
+
+    @Override
+    public String getLambdaRole() {
+        WorkflowExecutionStartedEventAttributes attributes = getWorkflowStartedEventAttributes();
+        return attributes.getLambdaRole();
+    }
+
     private WorkflowExecutionStartedEventAttributes getWorkflowStartedEventAttributes() {
         HistoryEvent firstHistoryEvent = decisionTask.getEvents().get(0);
         WorkflowExecutionStartedEventAttributes attributes = firstHistoryEvent.getWorkflowExecutionStartedEventAttributes();

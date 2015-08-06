@@ -79,5 +79,7 @@ public @interface WorkflowRegistrationOptions {
      * is not specified on activity invocation
      */
     int defaultTaskPriority() default FlowConstants.DEFAULT_TASK_PRIORITY;
-    
+
+    String defaultLambdaRole() default "";
+
 }

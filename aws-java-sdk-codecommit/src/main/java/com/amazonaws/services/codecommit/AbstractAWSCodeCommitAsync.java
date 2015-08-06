@@ -192,4 +192,5 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
 
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

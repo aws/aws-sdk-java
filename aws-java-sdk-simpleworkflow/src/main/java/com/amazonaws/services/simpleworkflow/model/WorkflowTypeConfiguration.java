@@ -32,9 +32,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * reports a completion or failure, it is ignored. This default can be
      * overridden when starting a workflow execution using the
      * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     * duration is specified in seconds; an integer greater than or equal to
-     * 0. The value "NONE" can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -46,9 +46,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * registering the workflow type, for executions of this workflow type.
      * This default can be overridden when starting a workflow execution
      * using the <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     * duration is specified in seconds; an integer greater than or equal to
-     * 0. The value "NONE" can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -60,7 +60,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * workflow type, for decisions tasks scheduled for workflow executions
      * of this type. This default can be overridden when starting a workflow
      * execution using the <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+     * <code>StartChildWorkflowExecution</code> decision.
      */
     private TaskList defaultTaskList;
 
@@ -89,7 +89,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
      * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * the <code>StartChildWorkflowExecution</code> decision. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
@@ -105,6 +105,15 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
     private String defaultChildPolicy;
 
     /**
+     * The default IAM role to use when a workflow execution invokes a AWS
+     * Lambda function.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     */
+    private String defaultLambdaRole;
+
+    /**
      * <i>Optional.</i> The default maximum duration, specified when
      * registering the workflow type, that a decision task for executions of
      * this workflow type might take before returning completion or failure.
@@ -113,9 +122,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * reports a completion or failure, it is ignored. This default can be
      * overridden when starting a workflow execution using the
      * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     * duration is specified in seconds; an integer greater than or equal to
-     * 0. The value "NONE" can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -128,9 +137,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         reports a completion or failure, it is ignored. This default can be
      *         overridden when starting a workflow execution using the
      *         <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     *         duration is specified in seconds; an integer greater than or equal to
-     *         0. The value "NONE" can be used to specify unlimited duration.
+     *         <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration.
      */
     public String getDefaultTaskStartToCloseTimeout() {
         return defaultTaskStartToCloseTimeout;
@@ -145,9 +154,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * reports a completion or failure, it is ignored. This default can be
      * overridden when starting a workflow execution using the
      * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     * duration is specified in seconds; an integer greater than or equal to
-     * 0. The value "NONE" can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -160,9 +169,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         reports a completion or failure, it is ignored. This default can be
      *         overridden when starting a workflow execution using the
      *         <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     *         duration is specified in seconds; an integer greater than or equal to
-     *         0. The value "NONE" can be used to specify unlimited duration.
+     *         <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration.
      */
     public void setDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
         this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
@@ -177,9 +186,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * reports a completion or failure, it is ignored. This default can be
      * overridden when starting a workflow execution using the
      * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     * duration is specified in seconds; an integer greater than or equal to
-     * 0. The value "NONE" can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -194,9 +203,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         reports a completion or failure, it is ignored. This default can be
      *         overridden when starting a workflow execution using the
      *         <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     *         duration is specified in seconds; an integer greater than or equal to
-     *         0. The value "NONE" can be used to specify unlimited duration.
+     *         <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -211,9 +220,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * registering the workflow type, for executions of this workflow type.
      * This default can be overridden when starting a workflow execution
      * using the <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     * duration is specified in seconds; an integer greater than or equal to
-     * 0. The value "NONE" can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -222,9 +231,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         registering the workflow type, for executions of this workflow type.
      *         This default can be overridden when starting a workflow execution
      *         using the <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     *         duration is specified in seconds; an integer greater than or equal to
-     *         0. The value "NONE" can be used to specify unlimited duration.
+     *         <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration.
      */
     public String getDefaultExecutionStartToCloseTimeout() {
         return defaultExecutionStartToCloseTimeout;
@@ -235,9 +244,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * registering the workflow type, for executions of this workflow type.
      * This default can be overridden when starting a workflow execution
      * using the <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     * duration is specified in seconds; an integer greater than or equal to
-     * 0. The value "NONE" can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 8<br/>
@@ -246,9 +255,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         registering the workflow type, for executions of this workflow type.
      *         This default can be overridden when starting a workflow execution
      *         using the <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     *         duration is specified in seconds; an integer greater than or equal to
-     *         0. The value "NONE" can be used to specify unlimited duration.
+     *         <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration.
      */
     public void setDefaultExecutionStartToCloseTimeout(String defaultExecutionStartToCloseTimeout) {
         this.defaultExecutionStartToCloseTimeout = defaultExecutionStartToCloseTimeout;
@@ -259,9 +268,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * registering the workflow type, for executions of this workflow type.
      * This default can be overridden when starting a workflow execution
      * using the <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     * duration is specified in seconds; an integer greater than or equal to
-     * 0. The value "NONE" can be used to specify unlimited duration.
+     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     * specified in seconds; an integer greater than or equal to 0. The value
+     * "NONE" can be used to specify unlimited duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -272,9 +281,9 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         registering the workflow type, for executions of this workflow type.
      *         This default can be overridden when starting a workflow execution
      *         using the <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
-     *         duration is specified in seconds; an integer greater than or equal to
-     *         0. The value "NONE" can be used to specify unlimited duration.
+     *         <code>StartChildWorkflowExecution</code> decision. <p>The duration is
+     *         specified in seconds; an integer greater than or equal to 0. The value
+     *         "NONE" can be used to specify unlimited duration.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -289,13 +298,13 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * workflow type, for decisions tasks scheduled for workflow executions
      * of this type. This default can be overridden when starting a workflow
      * execution using the <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+     * <code>StartChildWorkflowExecution</code> decision.
      *
      * @return <i>Optional.</i> The default task list, specified when registering the
      *         workflow type, for decisions tasks scheduled for workflow executions
      *         of this type. This default can be overridden when starting a workflow
      *         execution using the <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+     *         <code>StartChildWorkflowExecution</code> decision.
      */
     public TaskList getDefaultTaskList() {
         return defaultTaskList;
@@ -306,13 +315,13 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * workflow type, for decisions tasks scheduled for workflow executions
      * of this type. This default can be overridden when starting a workflow
      * execution using the <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+     * <code>StartChildWorkflowExecution</code> decision.
      *
      * @param defaultTaskList <i>Optional.</i> The default task list, specified when registering the
      *         workflow type, for decisions tasks scheduled for workflow executions
      *         of this type. This default can be overridden when starting a workflow
      *         execution using the <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+     *         <code>StartChildWorkflowExecution</code> decision.
      */
     public void setDefaultTaskList(TaskList defaultTaskList) {
         this.defaultTaskList = defaultTaskList;
@@ -323,7 +332,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * workflow type, for decisions tasks scheduled for workflow executions
      * of this type. This default can be overridden when starting a workflow
      * execution using the <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+     * <code>StartChildWorkflowExecution</code> decision.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -331,7 +340,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         workflow type, for decisions tasks scheduled for workflow executions
      *         of this type. This default can be overridden when starting a workflow
      *         execution using the <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+     *         <code>StartChildWorkflowExecution</code> decision.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -455,7 +464,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
      * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * the <code>StartChildWorkflowExecution</code> decision. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
@@ -473,7 +482,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
      *         to an expired timeout. This default can be overridden when starting a
      *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     *         the <code>StartChildWorkflowExecution</code> decision. <p>The
      *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      *         request to cancel will be attempted for each child execution by
@@ -495,7 +504,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
      * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * the <code>StartChildWorkflowExecution</code> decision. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
@@ -513,7 +522,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
      *         to an expired timeout. This default can be overridden when starting a
      *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     *         the <code>StartChildWorkflowExecution</code> decision. <p>The
      *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      *         request to cancel will be attempted for each child execution by
@@ -535,7 +544,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
      * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * the <code>StartChildWorkflowExecution</code> decision. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
@@ -555,7 +564,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
      *         to an expired timeout. This default can be overridden when starting a
      *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     *         the <code>StartChildWorkflowExecution</code> decision. <p>The
      *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      *         request to cancel will be attempted for each child execution by
@@ -581,7 +590,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
      * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * the <code>StartChildWorkflowExecution</code> decision. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
@@ -599,7 +608,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
      *         to an expired timeout. This default can be overridden when starting a
      *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     *         the <code>StartChildWorkflowExecution</code> decision. <p>The
      *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      *         request to cancel will be attempted for each child execution by
@@ -621,7 +630,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
      * to an expired timeout. This default can be overridden when starting a
      * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     * the <code>StartChildWorkflowExecution</code> decision. <p>The
      * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      * request to cancel will be attempted for each child execution by
@@ -641,7 +650,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
      *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
      *         to an expired timeout. This default can be overridden when starting a
      *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> <a>Decision</a>. <p>The
+     *         the <code>StartChildWorkflowExecution</code> decision. <p>The
      *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
      *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
      *         request to cancel will be attempted for each child execution by
@@ -662,6 +671,54 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * The default IAM role to use when a workflow execution invokes a AWS
+     * Lambda function.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @return The default IAM role to use when a workflow execution invokes a AWS
+     *         Lambda function.
+     */
+    public String getDefaultLambdaRole() {
+        return defaultLambdaRole;
+    }
+    
+    /**
+     * The default IAM role to use when a workflow execution invokes a AWS
+     * Lambda function.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param defaultLambdaRole The default IAM role to use when a workflow execution invokes a AWS
+     *         Lambda function.
+     */
+    public void setDefaultLambdaRole(String defaultLambdaRole) {
+        this.defaultLambdaRole = defaultLambdaRole;
+    }
+    
+    /**
+     * The default IAM role to use when a workflow execution invokes a AWS
+     * Lambda function.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1224<br/>
+     *
+     * @param defaultLambdaRole The default IAM role to use when a workflow execution invokes a AWS
+     *         Lambda function.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public WorkflowTypeConfiguration withDefaultLambdaRole(String defaultLambdaRole) {
+        this.defaultLambdaRole = defaultLambdaRole;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -677,7 +734,8 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
         if (getDefaultExecutionStartToCloseTimeout() != null) sb.append("DefaultExecutionStartToCloseTimeout: " + getDefaultExecutionStartToCloseTimeout() + ",");
         if (getDefaultTaskList() != null) sb.append("DefaultTaskList: " + getDefaultTaskList() + ",");
         if (getDefaultTaskPriority() != null) sb.append("DefaultTaskPriority: " + getDefaultTaskPriority() + ",");
-        if (getDefaultChildPolicy() != null) sb.append("DefaultChildPolicy: " + getDefaultChildPolicy() );
+        if (getDefaultChildPolicy() != null) sb.append("DefaultChildPolicy: " + getDefaultChildPolicy() + ",");
+        if (getDefaultLambdaRole() != null) sb.append("DefaultLambdaRole: " + getDefaultLambdaRole() );
         sb.append("}");
         return sb.toString();
     }
@@ -692,6 +750,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDefaultTaskList() == null) ? 0 : getDefaultTaskList().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultTaskPriority() == null) ? 0 : getDefaultTaskPriority().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultChildPolicy() == null) ? 0 : getDefaultChildPolicy().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultLambdaRole() == null) ? 0 : getDefaultLambdaRole().hashCode()); 
         return hashCode;
     }
     
@@ -713,6 +772,8 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
         if (other.getDefaultTaskPriority() != null && other.getDefaultTaskPriority().equals(this.getDefaultTaskPriority()) == false) return false; 
         if (other.getDefaultChildPolicy() == null ^ this.getDefaultChildPolicy() == null) return false;
         if (other.getDefaultChildPolicy() != null && other.getDefaultChildPolicy().equals(this.getDefaultChildPolicy()) == false) return false; 
+        if (other.getDefaultLambdaRole() == null ^ this.getDefaultLambdaRole() == null) return false;
+        if (other.getDefaultLambdaRole() != null && other.getDefaultLambdaRole().equals(this.getDefaultLambdaRole()) == false) return false; 
         return true;
     }
     
