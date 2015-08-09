@@ -45,14 +45,14 @@ class Base16Codec implements Codec {
         }
     }
 
-    private final byte[] ALPAHBETS;
+    private final byte[] ALPHABETS;
 
     Base16Codec() {
         this(true);
     }
 
     Base16Codec(boolean upperCase) {
-        ALPAHBETS = upperCase
+        ALPHABETS = upperCase
                   ? CodecUtils.toBytesDirect("0123456789ABCDEF")
                   : CodecUtils.toBytesDirect("0123456789abcdef");
     }
@@ -63,8 +63,8 @@ class Base16Codec implements Codec {
         byte p;
 
         for (int i=0,j=0; i < src.length; i++) {
-            dest[j++] = (byte)ALPAHBETS[(p=src[i]) >>> 4 & MASK_4BITS];
-            dest[j++] = (byte)ALPAHBETS[p & MASK_4BITS];
+            dest[j++] = (byte)ALPHABETS[(p=src[i]) >>> 4 & MASK_4BITS];
+            dest[j++] = (byte)ALPHABETS[p & MASK_4BITS];
         }
         return dest;
     }
