@@ -174,6 +174,8 @@ class QueueBuffer {
                     rq, callback);
             future.setBuffer(this);
             return future;
+        } else if (handler != null) {
+            return realSqs.receiveMessageAsync(rq, handler);
         } else {
             return realSqs.receiveMessageAsync(rq);
         }
