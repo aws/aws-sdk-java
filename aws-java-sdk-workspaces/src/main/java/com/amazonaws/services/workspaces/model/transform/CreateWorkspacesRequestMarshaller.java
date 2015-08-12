@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.workspaces.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,63 +40,62 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Create Workspaces Request Marshaller
+ * CreateWorkspacesRequest Marshaller
  */
-public class CreateWorkspacesRequestMarshaller implements Marshaller<Request<CreateWorkspacesRequest>, CreateWorkspacesRequest> {
+public class CreateWorkspacesRequestMarshaller implements
+        Marshaller<Request<CreateWorkspacesRequest>, CreateWorkspacesRequest> {
 
-    public Request<CreateWorkspacesRequest> marshall(CreateWorkspacesRequest createWorkspacesRequest) {
+    public Request<CreateWorkspacesRequest> marshall(
+            CreateWorkspacesRequest createWorkspacesRequest) {
+
         if (createWorkspacesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateWorkspacesRequest> request = new DefaultRequest<CreateWorkspacesRequest>(createWorkspacesRequest, "AmazonWorkspaces");
-        String target = "WorkspacesService.CreateWorkspaces";
-        request.addHeader("X-Amz-Target", target);
+        Request<CreateWorkspacesRequest> request = new DefaultRequest<CreateWorkspacesRequest>(
+                createWorkspacesRequest, "AmazonWorkspaces");
+        request.addHeader("X-Amz-Target", "WorkspacesService.CreateWorkspaces");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
+            jsonWriter.object();
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<WorkspaceRequest> workspacesList = (com.amazonaws.internal.ListWithAutoConstructFlag<WorkspaceRequest>)(createWorkspacesRequest.getWorkspaces());
-            if (workspacesList != null && !(workspacesList.isAutoConstruct() && workspacesList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<WorkspaceRequest> workspacesList = (com.amazonaws.internal.SdkInternalList<WorkspaceRequest>) createWorkspacesRequest
+                    .getWorkspaces();
+            if (!workspacesList.isEmpty() || !workspacesList.isAutoConstruct()) {
                 jsonWriter.key("Workspaces");
                 jsonWriter.array();
-
                 for (WorkspaceRequest workspacesListValue : workspacesList) {
                     if (workspacesListValue != null) {
-                        jsonWriter.object();
-                        if (workspacesListValue.getDirectoryId() != null) {
-                            jsonWriter.key("DirectoryId").value(workspacesListValue.getDirectoryId());
-                        }
-                        if (workspacesListValue.getUserName() != null) {
-                            jsonWriter.key("UserName").value(workspacesListValue.getUserName());
-                        }
-                        if (workspacesListValue.getBundleId() != null) {
-                            jsonWriter.key("BundleId").value(workspacesListValue.getBundleId());
-                        }
-                        jsonWriter.endObject();
+
+                        WorkspaceRequestJsonMarshaller.getInstance().marshall(
+                                workspacesListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

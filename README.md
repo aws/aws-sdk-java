@@ -7,6 +7,51 @@ The **AWS SDK for Java** enables Java developers to easily work with [Amazon Web
 * [Forum][sdk-forum]
 * [Issues][sdk-issues]
 * [SDK Blog][blog]
+* [Developer Guide][docs-guide]
+
+## Getting Started
+#### Sign up for AWS ####
+Before you begin, you need an AWS account. Please see the [AWS Account and Credentials][docs-signup] section of the developer guide for information about how to create an AWS account and retrieve your AWS credentials.
+
+#### Minimum requirements ####
+To run the SDK you will need **Java 1.6+**. For more information about the requirements and optimum settings for the SDK, please see the [Java Development Environment][docs-signup] section of the developer guide.
+
+#### Install the SDK ####
+The recommended way to use the AWS SDK for Java in your project is to consume it from Maven. Import the <a href="https://github.com/aws/aws-sdk-java/tree/master/aws-java-sdk-bom">aws-java-sdk-bom</a> and specify the SDK Maven modules your project needs in the dependencies.
+
+##### Importing the BOM #####
+```
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-bom</artifactId>
+      <version>1.10.11</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+```
+##### Using the SDK Maven modules #####
+``` 
+<dependencies>
+  <dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-ec2</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-s3</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-dynamodb</artifactId>
+  </dependency>
+</dependencies>
+```
+   Please see the
+   [Install the AWS SDK for Java][docs-signup] section of the user guide for more detailed information about installing the SDK through other means.
 
 ## Features
 
@@ -17,14 +62,6 @@ The **AWS SDK for Java** enables Java developers to easily work with [Amazon Web
 * Amazon SQS Client-Side Buffering - Collect and send SQS requests in asynchronous batches, improving application and network performance.
 * Automatically uses [IAM Instance Profile Credentials][aws-iam-credentials] on configured Amazon EC2 instances.
 * And more!
-
-## Getting Started
-
-1. **Sign up for AWS** - Before you begin, you need an AWS account. Please see the [AWS Account and Credentials][docs-signup] section of the developer guide for information about how to create an AWS account and retrieve your AWS credentials.
-1. **Minimum requirements** - To run the SDK you will need **Java 1.6+**. For more information about the requirements and optimum settings for the SDK, please see the [Java Development Environment][docs-signup] section of the developer guide.
-1. **Install the SDK** - Using ***Maven*** is the recommended way to install the AWS SDK for Java. Please see the
-   [Install the AWS SDK for Java][docs-signup] section of the user guide for more detailed information about installing the SDK through other means.
-1. **Using the SDK** - The best way to become familiar with how to use the SDK is to read the [Developer Guide][docs-guide].
 
 ## Building From Source
 

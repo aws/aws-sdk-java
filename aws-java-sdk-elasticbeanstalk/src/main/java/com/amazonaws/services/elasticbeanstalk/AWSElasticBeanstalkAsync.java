@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,1635 +14,197 @@
  */
 package com.amazonaws.services.elasticbeanstalk;
 
-import java.util.concurrent.Future;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.handlers.AsyncHandler;
 import com.amazonaws.services.elasticbeanstalk.model.*;
 
 /**
- * Interface for accessing AWSElasticBeanstalk asynchronously.
- * Each asynchronous method will return a Java Future object, and users are also allowed
- * to provide a callback handler.
- * AWS Elastic Beanstalk <p>
- * This is the AWS Elastic Beanstalk API Reference. This guide provides
- * detailed information about AWS Elastic Beanstalk actions, data types,
- * parameters, and errors.
+ * Interface for accessing Elastic Beanstalk asynchronously. Each asynchronous
+ * method will return a Java Future object representing the asynchronous
+ * operation; overloads which accept an {@code AsyncHandler} can be used to
+ * receive notification when an asynchronous operation completes.
+ * <p>
+ * <fullname>AWS Elastic Beanstalk</fullname>
+ * <p>
+ * This is the AWS Elastic Beanstalk API Reference. This guide provides detailed
+ * information about AWS Elastic Beanstalk actions, data types, parameters, and
+ * errors.
  * </p>
  * <p>
- * AWS Elastic Beanstalk is a tool that makes it easy for you to create,
- * deploy, and manage scalable, fault-tolerant applications running on
- * Amazon Web Services cloud resources.
+ * AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy,
+ * and manage scalable, fault-tolerant applications running on Amazon Web
+ * Services cloud resources.
  * </p>
  * <p>
- * For more information about this product, go to the
- * <a href="http://aws.amazon.com/elasticbeanstalk/"> AWS Elastic Beanstalk </a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"> http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl </a> . To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to <a href="https://aws.amazon.com/tools/"> Tools for Amazon Web Services </a>
- * .
+ * For more information about this product, go to the <a
+ * href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a>
+ * details page. The location of the latest AWS Elastic Beanstalk WSDL is <a
+ * href=
+ * "http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"
+ * >http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.
+ * wsdl</a>. To install the Software Development Kits (SDKs), Integrated
+ * Development Environment (IDE) Toolkits, and command line tools that enable
+ * you to access the API, go to <a href="https://aws.amazon.com/tools/">Tools
+ * for Amazon Web Services</a>.
  * </p>
  * <p>
  * <b>Endpoints</b>
  * </p>
  * <p>
- * For a list of region-specific endpoints that AWS Elastic Beanstalk
- * supports, go to
- * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> Regions and Endpoints </a>
- * in the <i>Amazon Web Services Glossary</i> .
+ * For a list of region-specific endpoints that AWS Elastic Beanstalk supports,
+ * go to <a href=
+ * "http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"
+ * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
  * </p>
  */
 public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
-    /**
-     * <p>
-     * Checks if the specified CNAME is available.
-     * </p>
-     *
-     * @param checkDNSAvailabilityRequest Container for the necessary
-     *           parameters to execute the CheckDNSAvailability operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CheckDNSAvailability service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CheckDNSAvailabilityResult> checkDNSAvailabilityAsync(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Checks if the specified CNAME is available.
-     * </p>
-     *
-     * @param checkDNSAvailabilityRequest Container for the necessary
-     *           parameters to execute the CheckDNSAvailability operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CheckDNSAvailability service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CheckDNSAvailabilityResult> checkDNSAvailabilityAsync(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest,
-            AsyncHandler<CheckDNSAvailabilityRequest, CheckDNSAvailabilityResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes the configuration options that are used in a particular
-     * configuration template or environment, or that a specified solution
-     * stack defines. The description includes the values the options, their
-     * default values, and an indication of the required action on a running
-     * environment if an option value is changed.
-     * </p>
-     *
-     * @param describeConfigurationOptionsRequest Container for the necessary
-     *           parameters to execute the DescribeConfigurationOptions operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeConfigurationOptions service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeConfigurationOptionsResult> describeConfigurationOptionsAsync(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes the configuration options that are used in a particular
-     * configuration template or environment, or that a specified solution
-     * stack defines. The description includes the values the options, their
-     * default values, and an indication of the required action on a running
-     * environment if an option value is changed.
-     * </p>
-     *
-     * @param describeConfigurationOptionsRequest Container for the necessary
-     *           parameters to execute the DescribeConfigurationOptions operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeConfigurationOptions service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeConfigurationOptionsResult> describeConfigurationOptionsAsync(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest,
-            AsyncHandler<DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified configuration template.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>When you launch an environment using a configuration
-     * template, the environment gets a copy of the template. You can delete
-     * or modify the environment's copy of the template without affecting the
-     * running environment.
-     * </p>
-     *
-     * @param deleteConfigurationTemplateRequest Container for the necessary
-     *           parameters to execute the DeleteConfigurationTemplate operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteConfigurationTemplate service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteConfigurationTemplateAsync(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified configuration template.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>When you launch an environment using a configuration
-     * template, the environment gets a copy of the template. You can delete
-     * or modify the environment's copy of the template without affecting the
-     * running environment.
-     * </p>
-     *
-     * @param deleteConfigurationTemplateRequest Container for the necessary
-     *           parameters to execute the DeleteConfigurationTemplate operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteConfigurationTemplate service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteConfigurationTemplateAsync(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest,
-            AsyncHandler<DeleteConfigurationTemplateRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Launches an environment for the specified application using the
-     * specified configuration.
-     * </p>
-     *
-     * @param createEnvironmentRequest Container for the necessary parameters
-     *           to execute the CreateEnvironment operation on AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateEnvironment service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateEnvironmentResult> createEnvironmentAsync(CreateEnvironmentRequest createEnvironmentRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Launches an environment for the specified application using the
-     * specified configuration.
-     * </p>
-     *
-     * @param createEnvironmentRequest Container for the necessary parameters
-     *           to execute the CreateEnvironment operation on AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateEnvironment service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateEnvironmentResult> createEnvironmentAsync(CreateEnvironmentRequest createEnvironmentRequest,
-            AsyncHandler<CreateEnvironmentRequest, CreateEnvironmentResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates the Amazon S3 storage location for the account.
-     * </p>
-     * <p>
-     * This location is used to store user log files.
-     * </p>
-     *
-     * @param createStorageLocationRequest Container for the necessary
-     *           parameters to execute the CreateStorageLocation operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateStorageLocation service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateStorageLocationResult> createStorageLocationAsync(CreateStorageLocationRequest createStorageLocationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates the Amazon S3 storage location for the account.
-     * </p>
-     * <p>
-     * This location is used to store user log files.
-     * </p>
-     *
-     * @param createStorageLocationRequest Container for the necessary
-     *           parameters to execute the CreateStorageLocation operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateStorageLocation service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateStorageLocationResult> createStorageLocationAsync(CreateStorageLocationRequest createStorageLocationRequest,
-            AsyncHandler<CreateStorageLocationRequest, CreateStorageLocationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Initiates a request to compile the specified type of information of
-     * the deployed environment.
-     * </p>
-     * <p>
-     * Setting the <code>InfoType</code> to <code>tail</code> compiles the
-     * last lines from the application server log files of every Amazon EC2
-     * instance in your environment.
-     * </p>
-     * <p>
-     * Setting the <code>InfoType</code> to <code>bundle</code> compresses
-     * the application server log files for every Amazon EC2 instance into a
-     * <code>.zip</code> file. Legacy and .NET containers do not support
-     * bundle logs.
-     * </p>
-     * <p>
-     * Use RetrieveEnvironmentInfo to obtain the set of logs.
-     * </p>
-     * <p>
-     * Related Topics
-     * </p>
-     * 
-     * <ul>
-     * <li> RetrieveEnvironmentInfo </li>
-     * 
-     * </ul>
-     *
-     * @param requestEnvironmentInfoRequest Container for the necessary
-     *           parameters to execute the RequestEnvironmentInfo operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RequestEnvironmentInfo service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> requestEnvironmentInfoAsync(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Initiates a request to compile the specified type of information of
-     * the deployed environment.
-     * </p>
-     * <p>
-     * Setting the <code>InfoType</code> to <code>tail</code> compiles the
-     * last lines from the application server log files of every Amazon EC2
-     * instance in your environment.
-     * </p>
-     * <p>
-     * Setting the <code>InfoType</code> to <code>bundle</code> compresses
-     * the application server log files for every Amazon EC2 instance into a
-     * <code>.zip</code> file. Legacy and .NET containers do not support
-     * bundle logs.
-     * </p>
-     * <p>
-     * Use RetrieveEnvironmentInfo to obtain the set of logs.
-     * </p>
-     * <p>
-     * Related Topics
-     * </p>
-     * 
-     * <ul>
-     * <li> RetrieveEnvironmentInfo </li>
-     * 
-     * </ul>
-     *
-     * @param requestEnvironmentInfoRequest Container for the necessary
-     *           parameters to execute the RequestEnvironmentInfo operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RequestEnvironmentInfo service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> requestEnvironmentInfoAsync(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest,
-            AsyncHandler<RequestEnvironmentInfoRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates an application version for the specified application.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Once you create an application version with a specified
-     * Amazon S3 bucket and key location, you cannot change that Amazon S3
-     * location. If you change the Amazon S3 location, you receive an
-     * exception when you attempt to launch an environment from the
-     * application version.
-     * </p>
-     *
-     * @param createApplicationVersionRequest Container for the necessary
-     *           parameters to execute the CreateApplicationVersion operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateApplicationVersion service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateApplicationVersionResult> createApplicationVersionAsync(CreateApplicationVersionRequest createApplicationVersionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates an application version for the specified application.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Once you create an application version with a specified
-     * Amazon S3 bucket and key location, you cannot change that Amazon S3
-     * location. If you change the Amazon S3 location, you receive an
-     * exception when you attempt to launch an environment from the
-     * application version.
-     * </p>
-     *
-     * @param createApplicationVersionRequest Container for the necessary
-     *           parameters to execute the CreateApplicationVersion operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateApplicationVersion service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateApplicationVersionResult> createApplicationVersionAsync(CreateApplicationVersionRequest createApplicationVersionRequest,
-            AsyncHandler<CreateApplicationVersionRequest, CreateApplicationVersionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified version from the specified application.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You cannot delete an application version that is
-     * associated with a running environment.
-     * </p>
-     *
-     * @param deleteApplicationVersionRequest Container for the necessary
-     *           parameters to execute the DeleteApplicationVersion operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteApplicationVersion service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteApplicationVersionAsync(DeleteApplicationVersionRequest deleteApplicationVersionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified version from the specified application.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You cannot delete an application version that is
-     * associated with a running environment.
-     * </p>
-     *
-     * @param deleteApplicationVersionRequest Container for the necessary
-     *           parameters to execute the DeleteApplicationVersion operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteApplicationVersion service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteApplicationVersionAsync(DeleteApplicationVersionRequest deleteApplicationVersionRequest,
-            AsyncHandler<DeleteApplicationVersionRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns descriptions for existing application versions.
-     * </p>
-     *
-     * @param describeApplicationVersionsRequest Container for the necessary
-     *           parameters to execute the DescribeApplicationVersions operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeApplicationVersions service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(DescribeApplicationVersionsRequest describeApplicationVersionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns descriptions for existing application versions.
-     * </p>
-     *
-     * @param describeApplicationVersionsRequest Container for the necessary
-     *           parameters to execute the DescribeApplicationVersions operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeApplicationVersions service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(DescribeApplicationVersionsRequest describeApplicationVersionsRequest,
-            AsyncHandler<DescribeApplicationVersionsRequest, DescribeApplicationVersionsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified application along with all associated versions
-     * and configurations. The application versions will not be deleted from
-     * your Amazon S3 bucket.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You cannot delete an application that has a running
-     * environment.
-     * </p>
-     *
-     * @param deleteApplicationRequest Container for the necessary parameters
-     *           to execute the DeleteApplication operation on AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteApplication service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified application along with all associated versions
-     * and configurations. The application versions will not be deleted from
-     * your Amazon S3 bucket.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You cannot delete an application that has a running
-     * environment.
-     * </p>
-     *
-     * @param deleteApplicationRequest Container for the necessary parameters
-     *           to execute the DeleteApplication operation on AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteApplication service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest,
-            AsyncHandler<DeleteApplicationRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the specified application version to have the specified
-     * properties.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If a property (for example, description) is not
-     * provided, the value remains unchanged. To clear properties, specify an
-     * empty string.
-     * </p>
-     *
-     * @param updateApplicationVersionRequest Container for the necessary
-     *           parameters to execute the UpdateApplicationVersion operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateApplicationVersion service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateApplicationVersionResult> updateApplicationVersionAsync(UpdateApplicationVersionRequest updateApplicationVersionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the specified application version to have the specified
-     * properties.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If a property (for example, description) is not
-     * provided, the value remains unchanged. To clear properties, specify an
-     * empty string.
-     * </p>
-     *
-     * @param updateApplicationVersionRequest Container for the necessary
-     *           parameters to execute the UpdateApplicationVersion operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateApplicationVersion service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateApplicationVersionResult> updateApplicationVersionAsync(UpdateApplicationVersionRequest updateApplicationVersionRequest,
-            AsyncHandler<UpdateApplicationVersionRequest, UpdateApplicationVersionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Swaps the CNAMEs of two environments.
-     * </p>
-     *
-     * @param swapEnvironmentCNAMEsRequest Container for the necessary
-     *           parameters to execute the SwapEnvironmentCNAMEs operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SwapEnvironmentCNAMEs service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Swaps the CNAMEs of two environments.
-     * </p>
-     *
-     * @param swapEnvironmentCNAMEsRequest Container for the necessary
-     *           parameters to execute the SwapEnvironmentCNAMEs operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SwapEnvironmentCNAMEs service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest,
-            AsyncHandler<SwapEnvironmentCNAMEsRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates an application that has one configuration template named
-     * <code>default</code> and no application versions.
-     * </p>
-     *
-     * @param createApplicationRequest Container for the necessary parameters
-     *           to execute the CreateApplication operation on AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateApplication service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates an application that has one configuration template named
-     * <code>default</code> and no application versions.
-     * </p>
-     *
-     * @param createApplicationRequest Container for the necessary parameters
-     *           to execute the CreateApplication operation on AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateApplication service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest,
-            AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the specified configuration template to have the specified
-     * properties or configuration option values.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If a property (for example, ApplicationName) is not
-     * provided, its value remains unchanged. To clear such properties,
-     * specify an empty string.
-     * </p>
-     * <p>
-     * Related Topics
-     * </p>
-     * 
-     * <ul>
-     * <li> DescribeConfigurationOptions </li>
-     * 
-     * </ul>
-     *
-     * @param updateConfigurationTemplateRequest Container for the necessary
-     *           parameters to execute the UpdateConfigurationTemplate operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateConfigurationTemplate service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateConfigurationTemplateResult> updateConfigurationTemplateAsync(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the specified configuration template to have the specified
-     * properties or configuration option values.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If a property (for example, ApplicationName) is not
-     * provided, its value remains unchanged. To clear such properties,
-     * specify an empty string.
-     * </p>
-     * <p>
-     * Related Topics
-     * </p>
-     * 
-     * <ul>
-     * <li> DescribeConfigurationOptions </li>
-     * 
-     * </ul>
-     *
-     * @param updateConfigurationTemplateRequest Container for the necessary
-     *           parameters to execute the UpdateConfigurationTemplate operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateConfigurationTemplate service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateConfigurationTemplateResult> updateConfigurationTemplateAsync(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest,
-            AsyncHandler<UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Retrieves the compiled information from a RequestEnvironmentInfo
-     * request.
-     * </p>
-     * <p>
-     * Related Topics
-     * </p>
-     * 
-     * <ul>
-     * <li> RequestEnvironmentInfo </li>
-     * 
-     * </ul>
-     *
-     * @param retrieveEnvironmentInfoRequest Container for the necessary
-     *           parameters to execute the RetrieveEnvironmentInfo operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RetrieveEnvironmentInfo service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RetrieveEnvironmentInfoResult> retrieveEnvironmentInfoAsync(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Retrieves the compiled information from a RequestEnvironmentInfo
-     * request.
-     * </p>
-     * <p>
-     * Related Topics
-     * </p>
-     * 
-     * <ul>
-     * <li> RequestEnvironmentInfo </li>
-     * 
-     * </ul>
-     *
-     * @param retrieveEnvironmentInfoRequest Container for the necessary
-     *           parameters to execute the RetrieveEnvironmentInfo operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RetrieveEnvironmentInfo service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<RetrieveEnvironmentInfoResult> retrieveEnvironmentInfoAsync(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest,
-            AsyncHandler<RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of the available solution stack names.
-     * </p>
-     *
-     * @param listAvailableSolutionStacksRequest Container for the necessary
-     *           parameters to execute the ListAvailableSolutionStacks operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListAvailableSolutionStacks service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of the available solution stack names.
-     * </p>
-     *
-     * @param listAvailableSolutionStacksRequest Container for the necessary
-     *           parameters to execute the ListAvailableSolutionStacks operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListAvailableSolutionStacks service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest,
-            AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the specified application to have the specified properties.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If a property (for example, description) is not
-     * provided, the value remains unchanged. To clear these properties,
-     * specify an empty string.
-     * </p>
-     *
-     * @param updateApplicationRequest Container for the necessary parameters
-     *           to execute the UpdateApplication operation on AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateApplication service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the specified application to have the specified properties.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If a property (for example, description) is not
-     * provided, the value remains unchanged. To clear these properties,
-     * specify an empty string.
-     * </p>
-     *
-     * @param updateApplicationRequest Container for the necessary parameters
-     *           to execute the UpdateApplication operation on AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateApplication service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest,
-            AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns descriptions for existing environments.
-     * </p>
-     *
-     * @param describeEnvironmentsRequest Container for the necessary
-     *           parameters to execute the DescribeEnvironments operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEnvironments service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(DescribeEnvironmentsRequest describeEnvironmentsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns descriptions for existing environments.
-     * </p>
-     *
-     * @param describeEnvironmentsRequest Container for the necessary
-     *           parameters to execute the DescribeEnvironments operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEnvironments service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(DescribeEnvironmentsRequest describeEnvironmentsRequest,
-            AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns AWS resources for this environment.
-     * </p>
-     *
-     * @param describeEnvironmentResourcesRequest Container for the necessary
-     *           parameters to execute the DescribeEnvironmentResources operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEnvironmentResources service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeEnvironmentResourcesResult> describeEnvironmentResourcesAsync(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns AWS resources for this environment.
-     * </p>
-     *
-     * @param describeEnvironmentResourcesRequest Container for the necessary
-     *           parameters to execute the DescribeEnvironmentResources operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEnvironmentResources service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeEnvironmentResourcesResult> describeEnvironmentResourcesAsync(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest,
-            AsyncHandler<DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Terminates the specified environment.
-     * </p>
-     *
-     * @param terminateEnvironmentRequest Container for the necessary
-     *           parameters to execute the TerminateEnvironment operation on
-     *           AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         TerminateEnvironment service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<TerminateEnvironmentResult> terminateEnvironmentAsync(TerminateEnvironmentRequest terminateEnvironmentRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Terminates the specified environment.
-     * </p>
-     *
-     * @param terminateEnvironmentRequest Container for the necessary
-     *           parameters to execute the TerminateEnvironment operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         TerminateEnvironment service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<TerminateEnvironmentResult> terminateEnvironmentAsync(TerminateEnvironmentRequest terminateEnvironmentRequest,
-            AsyncHandler<TerminateEnvironmentRequest, TerminateEnvironmentResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Takes a set of configuration settings and either a configuration
-     * template or environment, and determines whether those values are
-     * valid.
-     * </p>
-     * <p>
-     * This action returns a list of messages indicating any errors or
-     * warnings associated with the selection of option values.
-     * </p>
-     *
-     * @param validateConfigurationSettingsRequest Container for the
-     *           necessary parameters to execute the ValidateConfigurationSettings
-     *           operation on AWSElasticBeanstalk.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ValidateConfigurationSettings service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ValidateConfigurationSettingsResult> validateConfigurationSettingsAsync(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Takes a set of configuration settings and either a configuration
-     * template or environment, and determines whether those values are
-     * valid.
-     * </p>
-     * <p>
-     * This action returns a list of messages indicating any errors or
-     * warnings associated with the selection of option values.
-     * </p>
-     *
-     * @param validateConfigurationSettingsRequest Container for the
-     *           necessary parameters to execute the ValidateConfigurationSettings
-     *           operation on AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ValidateConfigurationSettings service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ValidateConfigurationSettingsResult> validateConfigurationSettingsAsync(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest,
-            AsyncHandler<ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
      * Cancels in-progress environment configuration update or application
      * version deployment.
      * </p>
-     *
-     * @param abortEnvironmentUpdateRequest Container for the necessary
-     *           parameters to execute the AbortEnvironmentUpdate operation on
-     *           AWSElasticBeanstalk.
      * 
-     * @return A Java Future object containing the response from the
-     *         AbortEnvironmentUpdate service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param abortEnvironmentUpdateRequest
      */
-    public Future<Void> abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
+            AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest);
 
     /**
      * <p>
      * Cancels in-progress environment configuration update or application
      * version deployment.
      * </p>
-     *
-     * @param abortEnvironmentUpdateRequest Container for the necessary
-     *           parameters to execute the AbortEnvironmentUpdate operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         AbortEnvironmentUpdate service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param abortEnvironmentUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
      */
-    public Future<Void> abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest,
-            AsyncHandler<AbortEnvironmentUpdateRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
+            AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, Void> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the AbortEnvironmentUpdate operation.
+     *
+     * @see #abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest)
+     */
+    java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync();
+
+    /**
+     * Simplified method form for invoking the AbortEnvironmentUpdate operation
+     * with an AsyncHandler.
+     *
+     * @see #abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
+            com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, Void> asyncHandler);
 
     /**
      * <p>
-     * Causes the environment to restart the application container server
-     * running on each Amazon EC2 instance.
+     * Checks if the specified CNAME is available.
      * </p>
-     *
-     * @param restartAppServerRequest Container for the necessary parameters
-     *           to execute the RestartAppServer operation on AWSElasticBeanstalk.
      * 
-     * @return A Java Future object containing the response from the
-     *         RestartAppServer service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param checkDNSAvailabilityRequest
+     *        Results message indicating whether a CNAME is available.
+     * @return A Java Future containing the result of the CheckDNSAvailability
+     *         operation returned by the service.
      */
-    public Future<Void> restartAppServerAsync(RestartAppServerRequest restartAppServerRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CheckDNSAvailabilityResult> checkDNSAvailabilityAsync(
+            CheckDNSAvailabilityRequest checkDNSAvailabilityRequest);
 
     /**
      * <p>
-     * Causes the environment to restart the application container server
-     * running on each Amazon EC2 instance.
+     * Checks if the specified CNAME is available.
      * </p>
-     *
-     * @param restartAppServerRequest Container for the necessary parameters
-     *           to execute the RestartAppServer operation on AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         RestartAppServer service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param checkDNSAvailabilityRequest
+     *        Results message indicating whether a CNAME is available.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CheckDNSAvailability
+     *         operation returned by the service.
      */
-    public Future<Void> restartAppServerAsync(RestartAppServerRequest restartAppServerRequest,
-            AsyncHandler<RestartAppServerRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CheckDNSAvailabilityResult> checkDNSAvailabilityAsync(
+            CheckDNSAvailabilityRequest checkDNSAvailabilityRequest,
+            com.amazonaws.handlers.AsyncHandler<CheckDNSAvailabilityRequest, CheckDNSAvailabilityResult> asyncHandler);
 
     /**
      * <p>
-     * Deletes the draft configuration associated with the running
-     * environment.
+     * Creates an application that has one configuration template named
+     * <code>default</code> and no application versions.
      * </p>
-     * <p>
-     * Updating a running environment with any configuration changes creates
-     * a draft configuration set. You can get the draft configuration using
-     * DescribeConfigurationSettings while the update is in progress or if
-     * the update fails. The <code>DeploymentStatus</code> for the draft
-     * configuration indicates whether the deployment is in process or has
-     * failed. The draft configuration remains in existence until it is
-     * deleted with this action.
-     * </p>
-     *
-     * @param deleteEnvironmentConfigurationRequest Container for the
-     *           necessary parameters to execute the DeleteEnvironmentConfiguration
-     *           operation on AWSElasticBeanstalk.
      * 
-     * @return A Java Future object containing the response from the
-     *         DeleteEnvironmentConfiguration service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createApplicationRequest
+     *        This documentation target is not reported in the API reference.
+     * @return A Java Future containing the result of the CreateApplication
+     *         operation returned by the service.
      */
-    public Future<Void> deleteEnvironmentConfigurationAsync(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
+            CreateApplicationRequest createApplicationRequest);
 
     /**
      * <p>
-     * Deletes the draft configuration associated with the running
-     * environment.
+     * Creates an application that has one configuration template named
+     * <code>default</code> and no application versions.
      * </p>
-     * <p>
-     * Updating a running environment with any configuration changes creates
-     * a draft configuration set. You can get the draft configuration using
-     * DescribeConfigurationSettings while the update is in progress or if
-     * the update fails. The <code>DeploymentStatus</code> for the draft
-     * configuration indicates whether the deployment is in process or has
-     * failed. The draft configuration remains in existence until it is
-     * deleted with this action.
-     * </p>
-     *
-     * @param deleteEnvironmentConfigurationRequest Container for the
-     *           necessary parameters to execute the DeleteEnvironmentConfiguration
-     *           operation on AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         DeleteEnvironmentConfiguration service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createApplicationRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateApplication
+     *         operation returned by the service.
      */
-    public Future<Void> deleteEnvironmentConfigurationAsync(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest,
-            AsyncHandler<DeleteEnvironmentConfigurationRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
+            CreateApplicationRequest createApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler);
 
     /**
      * <p>
-     * Updates the environment description, deploys a new application
-     * version, updates the configuration settings to an entirely new
-     * configuration template, or updates select configuration option values
-     * in the running environment.
+     * Creates an application version for the specified application.
      * </p>
-     * <p>
-     * Attempting to update both the release and configuration is not
-     * allowed and AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error.
-     * </p>
-     * <p>
-     * When updating the configuration settings to a new template or
-     * individual settings, a draft configuration is created and
-     * DescribeConfigurationSettings for this environment returns two setting
-     * descriptions with different <code>DeploymentStatus</code> values.
-     * </p>
-     *
-     * @param updateEnvironmentRequest Container for the necessary parameters
-     *           to execute the UpdateEnvironment operation on AWSElasticBeanstalk.
+     * <note>Once you create an application version with a specified Amazon S3
+     * bucket and key location, you cannot change that Amazon S3 location. If
+     * you change the Amazon S3 location, you receive an exception when you
+     * attempt to launch an environment from the application version. </note>
      * 
-     * @return A Java Future object containing the response from the
-     *         UpdateEnvironment service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createApplicationVersionRequest
+     * @return A Java Future containing the result of the
+     *         CreateApplicationVersion operation returned by the service.
      */
-    public Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest updateEnvironmentRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateApplicationVersionResult> createApplicationVersionAsync(
+            CreateApplicationVersionRequest createApplicationVersionRequest);
 
     /**
      * <p>
-     * Updates the environment description, deploys a new application
-     * version, updates the configuration settings to an entirely new
-     * configuration template, or updates select configuration option values
-     * in the running environment.
+     * Creates an application version for the specified application.
      * </p>
-     * <p>
-     * Attempting to update both the release and configuration is not
-     * allowed and AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error.
-     * </p>
-     * <p>
-     * When updating the configuration settings to a new template or
-     * individual settings, a draft configuration is created and
-     * DescribeConfigurationSettings for this environment returns two setting
-     * descriptions with different <code>DeploymentStatus</code> values.
-     * </p>
-     *
-     * @param updateEnvironmentRequest Container for the necessary parameters
-     *           to execute the UpdateEnvironment operation on AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
+     * <note>Once you create an application version with a specified Amazon S3
+     * bucket and key location, you cannot change that Amazon S3 location. If
+     * you change the Amazon S3 location, you receive an exception when you
+     * attempt to launch an environment from the application version. </note>
      * 
-     * @return A Java Future object containing the response from the
-     *         UpdateEnvironment service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createApplicationVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CreateApplicationVersion operation returned by the service.
      */
-    public Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest updateEnvironmentRequest,
-            AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateApplicationVersionResult> createApplicationVersionAsync(
+            CreateApplicationVersionRequest createApplicationVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationVersionRequest, CreateApplicationVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1653,33 +215,19 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * <p>
      * Related Topics
      * </p>
-     * 
      * <ul>
-     * <li> DescribeConfigurationOptions </li>
-     * <li> DescribeConfigurationSettings </li>
-     * <li> ListAvailableSolutionStacks </li>
-     * 
+     * <li><a>DescribeConfigurationOptions</a></li>
+     * <li><a>DescribeConfigurationSettings</a></li>
+     * <li><a>ListAvailableSolutionStacks</a></li>
      * </ul>
-     *
-     * @param createConfigurationTemplateRequest Container for the necessary
-     *           parameters to execute the CreateConfigurationTemplate operation on
-     *           AWSElasticBeanstalk.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateConfigurationTemplate service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createConfigurationTemplateRequest
+     *        This documentation target is not reported in the API reference.
+     * @return A Java Future containing the result of the
+     *         CreateConfigurationTemplate operation returned by the service.
      */
-    public Future<CreateConfigurationTemplateResult> createConfigurationTemplateAsync(CreateConfigurationTemplateRequest createConfigurationTemplateRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateConfigurationTemplateResult> createConfigurationTemplateAsync(
+            CreateConfigurationTemplateRequest createConfigurationTemplateRequest);
 
     /**
      * <p>
@@ -1690,38 +238,403 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * <p>
      * Related Topics
      * </p>
-     * 
      * <ul>
-     * <li> DescribeConfigurationOptions </li>
-     * <li> DescribeConfigurationSettings </li>
-     * <li> ListAvailableSolutionStacks </li>
-     * 
+     * <li><a>DescribeConfigurationOptions</a></li>
+     * <li><a>DescribeConfigurationSettings</a></li>
+     * <li><a>ListAvailableSolutionStacks</a></li>
      * </ul>
-     *
-     * @param createConfigurationTemplateRequest Container for the necessary
-     *           parameters to execute the CreateConfigurationTemplate operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateConfigurationTemplate service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createConfigurationTemplateRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CreateConfigurationTemplate operation returned by the service.
      */
-    public Future<CreateConfigurationTemplateResult> createConfigurationTemplateAsync(CreateConfigurationTemplateRequest createConfigurationTemplateRequest,
-            AsyncHandler<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateConfigurationTemplateResult> createConfigurationTemplateAsync(
+            CreateConfigurationTemplateRequest createConfigurationTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Launches an environment for the specified application using the specified
+     * configuration.
+     * </p>
+     * 
+     * @param createEnvironmentRequest
+     * @return A Java Future containing the result of the CreateEnvironment
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<CreateEnvironmentResult> createEnvironmentAsync(
+            CreateEnvironmentRequest createEnvironmentRequest);
+
+    /**
+     * <p>
+     * Launches an environment for the specified application using the specified
+     * configuration.
+     * </p>
+     * 
+     * @param createEnvironmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEnvironment
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<CreateEnvironmentResult> createEnvironmentAsync(
+            CreateEnvironmentRequest createEnvironmentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEnvironmentRequest, CreateEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates the Amazon S3 storage location for the account.
+     * </p>
+     * <p>
+     * This location is used to store user log files.
+     * </p>
+     * 
+     * @param createStorageLocationRequest
+     *        null
+     * @return A Java Future containing the result of the CreateStorageLocation
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<CreateStorageLocationResult> createStorageLocationAsync(
+            CreateStorageLocationRequest createStorageLocationRequest);
+
+    /**
+     * <p>
+     * Creates the Amazon S3 storage location for the account.
+     * </p>
+     * <p>
+     * This location is used to store user log files.
+     * </p>
+     * 
+     * @param createStorageLocationRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateStorageLocation
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<CreateStorageLocationResult> createStorageLocationAsync(
+            CreateStorageLocationRequest createStorageLocationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateStorageLocationRequest, CreateStorageLocationResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the CreateStorageLocation operation.
+     *
+     * @see #createStorageLocationAsync(CreateStorageLocationRequest)
+     */
+    java.util.concurrent.Future<CreateStorageLocationResult> createStorageLocationAsync();
+
+    /**
+     * Simplified method form for invoking the CreateStorageLocation operation
+     * with an AsyncHandler.
+     *
+     * @see #createStorageLocationAsync(CreateStorageLocationRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<CreateStorageLocationResult> createStorageLocationAsync(
+            com.amazonaws.handlers.AsyncHandler<CreateStorageLocationRequest, CreateStorageLocationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified application along with all associated versions and
+     * configurations. The application versions will not be deleted from your
+     * Amazon S3 bucket.
+     * </p>
+     * <note>You cannot delete an application that has a running environment.
+     * </note>
+     * 
+     * @param deleteApplicationRequest
+     *        This documentation target is not reported in the API reference.
+     */
+    java.util.concurrent.Future<Void> deleteApplicationAsync(
+            DeleteApplicationRequest deleteApplicationRequest);
+
+    /**
+     * <p>
+     * Deletes the specified application along with all associated versions and
+     * configurations. The application versions will not be deleted from your
+     * Amazon S3 bucket.
+     * </p>
+     * <note>You cannot delete an application that has a running environment.
+     * </note>
+     * 
+     * @param deleteApplicationRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     */
+    java.util.concurrent.Future<Void> deleteApplicationAsync(
+            DeleteApplicationRequest deleteApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified version from the specified application.
+     * </p>
+     * <note>You cannot delete an application version that is associated with a
+     * running environment.</note>
+     * 
+     * @param deleteApplicationVersionRequest
+     *        This documentation target is not reported in the API reference.
+     */
+    java.util.concurrent.Future<Void> deleteApplicationVersionAsync(
+            DeleteApplicationVersionRequest deleteApplicationVersionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified version from the specified application.
+     * </p>
+     * <note>You cannot delete an application version that is associated with a
+     * running environment.</note>
+     * 
+     * @param deleteApplicationVersionRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     */
+    java.util.concurrent.Future<Void> deleteApplicationVersionAsync(
+            DeleteApplicationVersionRequest deleteApplicationVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified configuration template.
+     * </p>
+     * <note>When you launch an environment using a configuration template, the
+     * environment gets a copy of the template. You can delete or modify the
+     * environment's copy of the template without affecting the running
+     * environment.</note>
+     * 
+     * @param deleteConfigurationTemplateRequest
+     *        This documentation target is not reported in the API reference.
+     */
+    java.util.concurrent.Future<Void> deleteConfigurationTemplateAsync(
+            DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes the specified configuration template.
+     * </p>
+     * <note>When you launch an environment using a configuration template, the
+     * environment gets a copy of the template. You can delete or modify the
+     * environment's copy of the template without affecting the running
+     * environment.</note>
+     * 
+     * @param deleteConfigurationTemplateRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     */
+    java.util.concurrent.Future<Void> deleteConfigurationTemplateAsync(
+            DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the draft configuration associated with the running environment.
+     * </p>
+     * <p>
+     * Updating a running environment with any configuration changes creates a
+     * draft configuration set. You can get the draft configuration using
+     * <a>DescribeConfigurationSettings</a> while the update is in progress or
+     * if the update fails. The <code>DeploymentStatus</code> for the draft
+     * configuration indicates whether the deployment is in process or has
+     * failed. The draft configuration remains in existence until it is deleted
+     * with this action.
+     * </p>
+     * 
+     * @param deleteEnvironmentConfigurationRequest
+     *        This documentation target is not reported in the API reference.
+     */
+    java.util.concurrent.Future<Void> deleteEnvironmentConfigurationAsync(
+            DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the draft configuration associated with the running environment.
+     * </p>
+     * <p>
+     * Updating a running environment with any configuration changes creates a
+     * draft configuration set. You can get the draft configuration using
+     * <a>DescribeConfigurationSettings</a> while the update is in progress or
+     * if the update fails. The <code>DeploymentStatus</code> for the draft
+     * configuration indicates whether the deployment is in process or has
+     * failed. The draft configuration remains in existence until it is deleted
+     * with this action.
+     * </p>
+     * 
+     * @param deleteEnvironmentConfigurationRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     */
+    java.util.concurrent.Future<Void> deleteEnvironmentConfigurationAsync(
+            DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Returns descriptions for existing application versions.
+     * </p>
+     * 
+     * @param describeApplicationVersionsRequest
+     *        Result message containing a list of configuration descriptions.
+     * @return A Java Future containing the result of the
+     *         DescribeApplicationVersions operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(
+            DescribeApplicationVersionsRequest describeApplicationVersionsRequest);
+
+    /**
+     * <p>
+     * Returns descriptions for existing application versions.
+     * </p>
+     * 
+     * @param describeApplicationVersionsRequest
+     *        Result message containing a list of configuration descriptions.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeApplicationVersions operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(
+            DescribeApplicationVersionsRequest describeApplicationVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationVersionsRequest, DescribeApplicationVersionsResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the DescribeApplicationVersions
+     * operation.
+     *
+     * @see #describeApplicationVersionsAsync(DescribeApplicationVersionsRequest)
+     */
+    java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync();
+
+    /**
+     * Simplified method form for invoking the DescribeApplicationVersions
+     * operation with an AsyncHandler.
+     *
+     * @see #describeApplicationVersionsAsync(DescribeApplicationVersionsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationVersionsRequest, DescribeApplicationVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the descriptions of existing applications.
+     * </p>
+     * 
+     * @param describeApplicationsRequest
+     *        This documentation target is not reported in the API reference.
+     * @return A Java Future containing the result of the DescribeApplications
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(
+            DescribeApplicationsRequest describeApplicationsRequest);
+
+    /**
+     * <p>
+     * Returns the descriptions of existing applications.
+     * </p>
+     * 
+     * @param describeApplicationsRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeApplications
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(
+            DescribeApplicationsRequest describeApplicationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the DescribeApplications operation.
+     *
+     * @see #describeApplicationsAsync(DescribeApplicationsRequest)
+     */
+    java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync();
+
+    /**
+     * Simplified method form for invoking the DescribeApplications operation
+     * with an AsyncHandler.
+     *
+     * @see #describeApplicationsAsync(DescribeApplicationsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the configuration options that are used in a particular
+     * configuration template or environment, or that a specified solution stack
+     * defines. The description includes the values the options, their default
+     * values, and an indication of the required action on a running environment
+     * if an option value is changed.
+     * </p>
+     * 
+     * @param describeConfigurationOptionsRequest
+     *        Result message containig a list of application version
+     *        descriptions.
+     * @return A Java Future containing the result of the
+     *         DescribeConfigurationOptions operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeConfigurationOptionsResult> describeConfigurationOptionsAsync(
+            DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest);
+
+    /**
+     * <p>
+     * Describes the configuration options that are used in a particular
+     * configuration template or environment, or that a specified solution stack
+     * defines. The description includes the values the options, their default
+     * values, and an indication of the required action on a running environment
+     * if an option value is changed.
+     * </p>
+     * 
+     * @param describeConfigurationOptionsRequest
+     *        Result message containig a list of application version
+     *        descriptions.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeConfigurationOptions operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeConfigurationOptionsResult> describeConfigurationOptionsAsync(
+            DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1730,40 +643,27 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * associated with a running environment.
      * </p>
      * <p>
-     * When describing the settings for the configuration set associated
-     * with a running environment, it is possible to receive two sets of
-     * setting descriptions. One is the deployed configuration set, and the
-     * other is a draft configuration of an environment that is either in the
-     * process of deployment or that failed to deploy.
+     * When describing the settings for the configuration set associated with a
+     * running environment, it is possible to receive two sets of setting
+     * descriptions. One is the deployed configuration set, and the other is a
+     * draft configuration of an environment that is either in the process of
+     * deployment or that failed to deploy.
      * </p>
      * <p>
      * Related Topics
      * </p>
-     * 
      * <ul>
-     * <li> DeleteEnvironmentConfiguration </li>
-     * 
+     * <li><a>DeleteEnvironmentConfiguration</a></li>
      * </ul>
-     *
-     * @param describeConfigurationSettingsRequest Container for the
-     *           necessary parameters to execute the DescribeConfigurationSettings
-     *           operation on AWSElasticBeanstalk.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeConfigurationSettings service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeConfigurationSettingsRequest
+     *        Result message containing all of the configuration settings for a
+     *        specified solution stack or configuration template.
+     * @return A Java Future containing the result of the
+     *         DescribeConfigurationSettings operation returned by the service.
      */
-    public Future<DescribeConfigurationSettingsResult> describeConfigurationSettingsAsync(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeConfigurationSettingsResult> describeConfigurationSettingsAsync(
+            DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest);
 
     /**
      * <p>
@@ -1772,100 +672,293 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * associated with a running environment.
      * </p>
      * <p>
-     * When describing the settings for the configuration set associated
-     * with a running environment, it is possible to receive two sets of
-     * setting descriptions. One is the deployed configuration set, and the
-     * other is a draft configuration of an environment that is either in the
-     * process of deployment or that failed to deploy.
+     * When describing the settings for the configuration set associated with a
+     * running environment, it is possible to receive two sets of setting
+     * descriptions. One is the deployed configuration set, and the other is a
+     * draft configuration of an environment that is either in the process of
+     * deployment or that failed to deploy.
      * </p>
      * <p>
      * Related Topics
      * </p>
-     * 
      * <ul>
-     * <li> DeleteEnvironmentConfiguration </li>
-     * 
+     * <li><a>DeleteEnvironmentConfiguration</a></li>
      * </ul>
-     *
-     * @param describeConfigurationSettingsRequest Container for the
-     *           necessary parameters to execute the DescribeConfigurationSettings
-     *           operation on AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeConfigurationSettings service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeConfigurationSettingsRequest
+     *        Result message containing all of the configuration settings for a
+     *        specified solution stack or configuration template.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeConfigurationSettings operation returned by the service.
      */
-    public Future<DescribeConfigurationSettingsResult> describeConfigurationSettingsAsync(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest,
-            AsyncHandler<DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeConfigurationSettingsResult> describeConfigurationSettingsAsync(
+            DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResult> asyncHandler);
 
     /**
      * <p>
-     * Returns the descriptions of existing applications.
+     * Returns information about the overall health of the specified
+     * environment. The <b>DescribeEnvironmentHealth</b> operation is only
+     * available with AWS Elastic Beanstalk Enhanced Health.
      * </p>
-     *
-     * @param describeApplicationsRequest Container for the necessary
-     *           parameters to execute the DescribeApplications operation on
-     *           AWSElasticBeanstalk.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeApplications service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeEnvironmentHealthRequest
+     *        See the example below to learn how to create a request body.
+     * @return A Java Future containing the result of the
+     *         DescribeEnvironmentHealth operation returned by the service.
      */
-    public Future<DescribeApplicationsResult> describeApplicationsAsync(DescribeApplicationsRequest describeApplicationsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeEnvironmentHealthResult> describeEnvironmentHealthAsync(
+            DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest);
 
     /**
      * <p>
-     * Returns the descriptions of existing applications.
+     * Returns information about the overall health of the specified
+     * environment. The <b>DescribeEnvironmentHealth</b> operation is only
+     * available with AWS Elastic Beanstalk Enhanced Health.
      * </p>
-     *
-     * @param describeApplicationsRequest Container for the necessary
-     *           parameters to execute the DescribeApplications operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeApplications service method, as returned by
-     *         AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeEnvironmentHealthRequest
+     *        See the example below to learn how to create a request body.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeEnvironmentHealth operation returned by the service.
      */
-    public Future<DescribeApplicationsResult> describeApplicationsAsync(DescribeApplicationsRequest describeApplicationsRequest,
-            AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeEnvironmentHealthResult> describeEnvironmentHealthAsync(
+            DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentHealthRequest, DescribeEnvironmentHealthResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns AWS resources for this environment.
+     * </p>
+     * 
+     * @param describeEnvironmentResourcesRequest
+     *        This documentation target is not reported in the API reference.
+     * @return A Java Future containing the result of the
+     *         DescribeEnvironmentResources operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeEnvironmentResourcesResult> describeEnvironmentResourcesAsync(
+            DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest);
+
+    /**
+     * <p>
+     * Returns AWS resources for this environment.
+     * </p>
+     * 
+     * @param describeEnvironmentResourcesRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeEnvironmentResources operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeEnvironmentResourcesResult> describeEnvironmentResourcesAsync(
+            DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns descriptions for existing environments.
+     * </p>
+     * 
+     * @param describeEnvironmentsRequest
+     *        This documentation target is not reported in the API reference.
+     * @return A Java Future containing the result of the DescribeEnvironments
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(
+            DescribeEnvironmentsRequest describeEnvironmentsRequest);
+
+    /**
+     * <p>
+     * Returns descriptions for existing environments.
+     * </p>
+     * 
+     * @param describeEnvironmentsRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEnvironments
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(
+            DescribeEnvironmentsRequest describeEnvironmentsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the DescribeEnvironments operation.
+     *
+     * @see #describeEnvironmentsAsync(DescribeEnvironmentsRequest)
+     */
+    java.util.concurrent.Future<DescribeEnvironmentsResult> describeEnvironmentsAsync();
+
+    /**
+     * Simplified method form for invoking the DescribeEnvironments operation
+     * with an AsyncHandler.
+     *
+     * @see #describeEnvironmentsAsync(DescribeEnvironmentsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(
+            com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns list of event descriptions matching criteria up to the last 6
+     * weeks.
+     * </p>
+     * <note> This action returns the most recent 1,000 events from the
+     * specified <code>NextToken</code>. </note>
+     * 
+     * @param describeEventsRequest
+     *        This documentation target is not reported in the API reference.
+     * @return A Java Future containing the result of the DescribeEvents
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(
+            DescribeEventsRequest describeEventsRequest);
+
+    /**
+     * <p>
+     * Returns list of event descriptions matching criteria up to the last 6
+     * weeks.
+     * </p>
+     * <note> This action returns the most recent 1,000 events from the
+     * specified <code>NextToken</code>. </note>
+     * 
+     * @param describeEventsRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEvents
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(
+            DescribeEventsRequest describeEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the DescribeEvents operation.
+     *
+     * @see #describeEventsAsync(DescribeEventsRequest)
+     */
+    java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync();
+
+    /**
+     * Simplified method form for invoking the DescribeEvents operation with an
+     * AsyncHandler.
+     *
+     * @see #describeEventsAsync(DescribeEventsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(
+            com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns more detailed information about the health of the specified
+     * instances (for example, CPU utilization, load average, and causes). The
+     * <b>DescribeInstancesHealth</b> operation is only available with AWS
+     * Elastic Beanstalk Enhanced Health.
+     * </p>
+     * 
+     * @param describeInstancesHealthRequest
+     *        See the example below to learn how to create a request body.
+     * @return A Java Future containing the result of the
+     *         DescribeInstancesHealth operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeInstancesHealthResult> describeInstancesHealthAsync(
+            DescribeInstancesHealthRequest describeInstancesHealthRequest);
+
+    /**
+     * <p>
+     * Returns more detailed information about the health of the specified
+     * instances (for example, CPU utilization, load average, and causes). The
+     * <b>DescribeInstancesHealth</b> operation is only available with AWS
+     * Elastic Beanstalk Enhanced Health.
+     * </p>
+     * 
+     * @param describeInstancesHealthRequest
+     *        See the example below to learn how to create a request body.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeInstancesHealth operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeInstancesHealthResult> describeInstancesHealthAsync(
+            DescribeInstancesHealthRequest describeInstancesHealthRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstancesHealthRequest, DescribeInstancesHealthResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the available solution stack names.
+     * </p>
+     * 
+     * @param listAvailableSolutionStacksRequest
+     *        null
+     * @return A Java Future containing the result of the
+     *         ListAvailableSolutionStacks operation returned by the service.
+     */
+    java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(
+            ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest);
+
+    /**
+     * <p>
+     * Returns a list of the available solution stack names.
+     * </p>
+     * 
+     * @param listAvailableSolutionStacksRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ListAvailableSolutionStacks operation returned by the service.
+     */
+    java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(
+            ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListAvailableSolutionStacks
+     * operation.
+     *
+     * @see #listAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest)
+     */
+    java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync();
+
+    /**
+     * Simplified method form for invoking the ListAvailableSolutionStacks
+     * operation with an AsyncHandler.
+     *
+     * @see #listAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(
+            com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult> asyncHandler);
 
     /**
      * <p>
@@ -1873,25 +966,11 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * Scaling group, load balancer, etc.) for a specified environment and
      * forces a restart.
      * </p>
-     *
-     * @param rebuildEnvironmentRequest Container for the necessary
-     *           parameters to execute the RebuildEnvironment operation on
-     *           AWSElasticBeanstalk.
      * 
-     * @return A Java Future object containing the response from the
-     *         RebuildEnvironment service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param rebuildEnvironmentRequest
      */
-    public Future<Void> rebuildEnvironmentAsync(RebuildEnvironmentRequest rebuildEnvironmentRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<Void> rebuildEnvironmentAsync(
+            RebuildEnvironmentRequest rebuildEnvironmentRequest);
 
     /**
      * <p>
@@ -1899,90 +978,471 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * Scaling group, load balancer, etc.) for a specified environment and
      * forces a restart.
      * </p>
-     *
-     * @param rebuildEnvironmentRequest Container for the necessary
-     *           parameters to execute the RebuildEnvironment operation on
-     *           AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         RebuildEnvironment service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param rebuildEnvironmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
      */
-    public Future<Void> rebuildEnvironmentAsync(RebuildEnvironmentRequest rebuildEnvironmentRequest,
-            AsyncHandler<RebuildEnvironmentRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<Void> rebuildEnvironmentAsync(
+            RebuildEnvironmentRequest rebuildEnvironmentRequest,
+            com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, Void> asyncHandler);
 
     /**
      * <p>
-     * Returns list of event descriptions matching criteria up to the last 6
-     * weeks.
+     * Initiates a request to compile the specified type of information of the
+     * deployed environment.
      * </p>
      * <p>
-     * <b>NOTE:</b> This action returns the most recent 1,000 events from
-     * the specified NextToken.
+     * Setting the <code>InfoType</code> to <code>tail</code> compiles the last
+     * lines from the application server log files of every Amazon EC2 instance
+     * in your environment.
      * </p>
-     *
-     * @param describeEventsRequest Container for the necessary parameters to
-     *           execute the DescribeEvents operation on AWSElasticBeanstalk.
+     * <p>
+     * Setting the <code>InfoType</code> to <code>bundle</code> compresses the
+     * application server log files for every Amazon EC2 instance into a
+     * <code>.zip</code> file. Legacy and .NET containers do not support bundle
+     * logs.
+     * </p>
+     * <p>
+     * Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs.
+     * </p>
+     * <p>
+     * Related Topics
+     * </p>
+     * <ul>
+     * <li><a>RetrieveEnvironmentInfo</a></li>
+     * </ul>
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEvents service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param requestEnvironmentInfoRequest
+     *        This documentation target is not reported in the API reference.
      */
-    public Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<Void> requestEnvironmentInfoAsync(
+            RequestEnvironmentInfoRequest requestEnvironmentInfoRequest);
 
     /**
      * <p>
-     * Returns list of event descriptions matching criteria up to the last 6
-     * weeks.
+     * Initiates a request to compile the specified type of information of the
+     * deployed environment.
      * </p>
      * <p>
-     * <b>NOTE:</b> This action returns the most recent 1,000 events from
-     * the specified NextToken.
+     * Setting the <code>InfoType</code> to <code>tail</code> compiles the last
+     * lines from the application server log files of every Amazon EC2 instance
+     * in your environment.
      * </p>
-     *
-     * @param describeEventsRequest Container for the necessary parameters to
-     *           execute the DescribeEvents operation on AWSElasticBeanstalk.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
+     * <p>
+     * Setting the <code>InfoType</code> to <code>bundle</code> compresses the
+     * application server log files for every Amazon EC2 instance into a
+     * <code>.zip</code> file. Legacy and .NET containers do not support bundle
+     * logs.
+     * </p>
+     * <p>
+     * Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs.
+     * </p>
+     * <p>
+     * Related Topics
+     * </p>
+     * <ul>
+     * <li><a>RetrieveEnvironmentInfo</a></li>
+     * </ul>
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEvents service method, as returned by AWSElasticBeanstalk.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSElasticBeanstalk indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param requestEnvironmentInfoRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
      */
-    public Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest,
-            AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<Void> requestEnvironmentInfoAsync(
+            RequestEnvironmentInfoRequest requestEnvironmentInfoRequest,
+            com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Causes the environment to restart the application container server
+     * running on each Amazon EC2 instance.
+     * </p>
+     * 
+     * @param restartAppServerRequest
+     */
+    java.util.concurrent.Future<Void> restartAppServerAsync(
+            RestartAppServerRequest restartAppServerRequest);
+
+    /**
+     * <p>
+     * Causes the environment to restart the application container server
+     * running on each Amazon EC2 instance.
+     * </p>
+     * 
+     * @param restartAppServerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     */
+    java.util.concurrent.Future<Void> restartAppServerAsync(
+            RestartAppServerRequest restartAppServerRequest,
+            com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
+     * request.
+     * </p>
+     * <p>
+     * Related Topics
+     * </p>
+     * <ul>
+     * <li><a>RequestEnvironmentInfo</a></li>
+     * </ul>
+     * 
+     * @param retrieveEnvironmentInfoRequest
+     *        This documentation target is not reported in the API reference.
+     * @return A Java Future containing the result of the
+     *         RetrieveEnvironmentInfo operation returned by the service.
+     */
+    java.util.concurrent.Future<RetrieveEnvironmentInfoResult> retrieveEnvironmentInfoAsync(
+            RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest);
+
+    /**
+     * <p>
+     * Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
+     * request.
+     * </p>
+     * <p>
+     * Related Topics
+     * </p>
+     * <ul>
+     * <li><a>RequestEnvironmentInfo</a></li>
+     * </ul>
+     * 
+     * @param retrieveEnvironmentInfoRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RetrieveEnvironmentInfo operation returned by the service.
+     */
+    java.util.concurrent.Future<RetrieveEnvironmentInfoResult> retrieveEnvironmentInfoAsync(
+            RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest,
+            com.amazonaws.handlers.AsyncHandler<RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResult> asyncHandler);
+
+    /**
+     * <p>
+     * Swaps the CNAMEs of two environments.
+     * </p>
+     * 
+     * @param swapEnvironmentCNAMEsRequest
+     *        Swaps the CNAMEs of two environments.
+     */
+    java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync(
+            SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest);
+
+    /**
+     * <p>
+     * Swaps the CNAMEs of two environments.
+     * </p>
+     * 
+     * @param swapEnvironmentCNAMEsRequest
+     *        Swaps the CNAMEs of two environments.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     */
+    java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync(
+            SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest,
+            com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, Void> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the SwapEnvironmentCNAMEs operation.
+     *
+     * @see #swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest)
+     */
+    java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync();
+
+    /**
+     * Simplified method form for invoking the SwapEnvironmentCNAMEs operation
+     * with an AsyncHandler.
+     *
+     * @see #swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync(
+            com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Terminates the specified environment.
+     * </p>
+     * 
+     * @param terminateEnvironmentRequest
+     *        This documentation target is not reported in the API reference.
+     * @return A Java Future containing the result of the TerminateEnvironment
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<TerminateEnvironmentResult> terminateEnvironmentAsync(
+            TerminateEnvironmentRequest terminateEnvironmentRequest);
+
+    /**
+     * <p>
+     * Terminates the specified environment.
+     * </p>
+     * 
+     * @param terminateEnvironmentRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TerminateEnvironment
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<TerminateEnvironmentResult> terminateEnvironmentAsync(
+            TerminateEnvironmentRequest terminateEnvironmentRequest,
+            com.amazonaws.handlers.AsyncHandler<TerminateEnvironmentRequest, TerminateEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified application to have the specified properties.
+     * </p>
+     * <note> If a property (for example, <code>description</code>) is not
+     * provided, the value remains unchanged. To clear these properties, specify
+     * an empty string. </note>
+     * 
+     * @param updateApplicationRequest
+     *        This documentation target is not reported in the API reference.
+     * @return A Java Future containing the result of the UpdateApplication
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
+            UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * <p>
+     * Updates the specified application to have the specified properties.
+     * </p>
+     * <note> If a property (for example, <code>description</code>) is not
+     * provided, the value remains unchanged. To clear these properties, specify
+     * an empty string. </note>
+     * 
+     * @param updateApplicationRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApplication
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
+            UpdateApplicationRequest updateApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified application version to have the specified
+     * properties.
+     * </p>
+     * <note> If a property (for example, <code>description</code>) is not
+     * provided, the value remains unchanged. To clear properties, specify an
+     * empty string. </note>
+     * 
+     * @param updateApplicationVersionRequest
+     * @return A Java Future containing the result of the
+     *         UpdateApplicationVersion operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateApplicationVersionResult> updateApplicationVersionAsync(
+            UpdateApplicationVersionRequest updateApplicationVersionRequest);
+
+    /**
+     * <p>
+     * Updates the specified application version to have the specified
+     * properties.
+     * </p>
+     * <note> If a property (for example, <code>description</code>) is not
+     * provided, the value remains unchanged. To clear properties, specify an
+     * empty string. </note>
+     * 
+     * @param updateApplicationVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateApplicationVersion operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateApplicationVersionResult> updateApplicationVersionAsync(
+            UpdateApplicationVersionRequest updateApplicationVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationVersionRequest, UpdateApplicationVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified configuration template to have the specified
+     * properties or configuration option values.
+     * </p>
+     * <note> If a property (for example, <code>ApplicationName</code>) is not
+     * provided, its value remains unchanged. To clear such properties, specify
+     * an empty string. </note>
+     * <p>
+     * Related Topics
+     * </p>
+     * <ul>
+     * <li><a>DescribeConfigurationOptions</a></li>
+     * </ul>
+     * 
+     * @param updateConfigurationTemplateRequest
+     *        The result message containing the options for the specified
+     *        solution stack.
+     * @return A Java Future containing the result of the
+     *         UpdateConfigurationTemplate operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateConfigurationTemplateResult> updateConfigurationTemplateAsync(
+            UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest);
+
+    /**
+     * <p>
+     * Updates the specified configuration template to have the specified
+     * properties or configuration option values.
+     * </p>
+     * <note> If a property (for example, <code>ApplicationName</code>) is not
+     * provided, its value remains unchanged. To clear such properties, specify
+     * an empty string. </note>
+     * <p>
+     * Related Topics
+     * </p>
+     * <ul>
+     * <li><a>DescribeConfigurationOptions</a></li>
+     * </ul>
+     * 
+     * @param updateConfigurationTemplateRequest
+     *        The result message containing the options for the specified
+     *        solution stack.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateConfigurationTemplate operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateConfigurationTemplateResult> updateConfigurationTemplateAsync(
+            UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the environment description, deploys a new application version,
+     * updates the configuration settings to an entirely new configuration
+     * template, or updates select configuration option values in the running
+     * environment.
+     * </p>
+     * <p>
+     * Attempting to update both the release and configuration is not allowed
+     * and AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error.
+     * </p>
+     * <p>
+     * When updating the configuration settings to a new template or individual
+     * settings, a draft configuration is created and
+     * <a>DescribeConfigurationSettings</a> for this environment returns two
+     * setting descriptions with different <code>DeploymentStatus</code> values.
+     * </p>
+     * 
+     * @param updateEnvironmentRequest
+     *        This documentation target is not reported in the API reference.
+     * @return A Java Future containing the result of the UpdateEnvironment
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(
+            UpdateEnvironmentRequest updateEnvironmentRequest);
+
+    /**
+     * <p>
+     * Updates the environment description, deploys a new application version,
+     * updates the configuration settings to an entirely new configuration
+     * template, or updates select configuration option values in the running
+     * environment.
+     * </p>
+     * <p>
+     * Attempting to update both the release and configuration is not allowed
+     * and AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error.
+     * </p>
+     * <p>
+     * When updating the configuration settings to a new template or individual
+     * settings, a draft configuration is created and
+     * <a>DescribeConfigurationSettings</a> for this environment returns two
+     * setting descriptions with different <code>DeploymentStatus</code> values.
+     * </p>
+     * 
+     * @param updateEnvironmentRequest
+     *        This documentation target is not reported in the API reference.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateEnvironment
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(
+            UpdateEnvironmentRequest updateEnvironmentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Takes a set of configuration settings and either a configuration template
+     * or environment, and determines whether those values are valid.
+     * </p>
+     * <p>
+     * This action returns a list of messages indicating any errors or warnings
+     * associated with the selection of option values.
+     * </p>
+     * 
+     * @param validateConfigurationSettingsRequest
+     *        A list of validation messages for a specified configuration
+     *        template.
+     * @return A Java Future containing the result of the
+     *         ValidateConfigurationSettings operation returned by the service.
+     */
+    java.util.concurrent.Future<ValidateConfigurationSettingsResult> validateConfigurationSettingsAsync(
+            ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest);
+
+    /**
+     * <p>
+     * Takes a set of configuration settings and either a configuration template
+     * or environment, and determines whether those values are valid.
+     * </p>
+     * <p>
+     * This action returns a list of messages indicating any errors or warnings
+     * associated with the selection of option values.
+     * </p>
+     * 
+     * @param validateConfigurationSettingsRequest
+     *        A list of validation messages for a specified configuration
+     *        template.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ValidateConfigurationSettings operation returned by the service.
+     */
+    java.util.concurrent.Future<ValidateConfigurationSettingsResult> validateConfigurationSettingsAsync(
+            ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResult> asyncHandler);
+
 }
-        

@@ -28,10 +28,10 @@ abstract class AbstractBase32Codec implements Codec {
     // Base 32 alphabet as defined at http://www.ietf.org/rfc/rfc4648.txt
     private static final byte PAD = '=';
     
-    private final byte[] ALPHABETS;
+    private final byte[] alphabets;
 
     protected AbstractBase32Codec(byte[] alphabets) {
-        ALPHABETS = alphabets;
+        this.alphabets = alphabets;
     }
 
     @Override
@@ -76,27 +76,27 @@ abstract class AbstractBase32Codec implements Codec {
     private final void encode5bytes(byte[] src, int s, byte[] dest, int d) {
         // operator precedence in descending order: >>> or <<, &, |
         byte p;
-        dest[d++] = (byte)ALPHABETS[(p=src[s++]) >>> 3 & MASK_5BITS];                         // 5
-        dest[d++] = (byte)ALPHABETS[(p & MASK_3BITS) << 2 | (p=src[s++]) >>> 6 & MASK_2BITS]; // 3 2
-        dest[d++] = (byte)ALPHABETS[p >>> 1 & MASK_5BITS];                                    //   5
-        dest[d++] = (byte)ALPHABETS[(p & 1) << 4 | (p=src[s++]) >>> 4 & MASK_4BITS];          //   1 4
-        dest[d++] = (byte)ALPHABETS[(p & MASK_4BITS) << 1 | (p=src[s++]) >>> 7 & 1];          //     4 1
-        dest[d++] = (byte)ALPHABETS[p >>> 2 & MASK_5BITS];                                    //       5
-        dest[d++] = (byte)ALPHABETS[(p & MASK_2BITS) << 3 | (p=src[s]) >>> 5 & MASK_3BITS];   //       2 3
-        dest[d] = (byte)ALPHABETS[p & MASK_5BITS];                                            //         5
+        dest[d++] = (byte)alphabets[(p=src[s++]) >>> 3 & MASK_5BITS];                         // 5 
+        dest[d++] = (byte)alphabets[(p & MASK_3BITS) << 2 | (p=src[s++]) >>> 6 & MASK_2BITS]; // 3 2
+        dest[d++] = (byte)alphabets[p >>> 1 & MASK_5BITS];                                    //   5
+        dest[d++] = (byte)alphabets[(p & 1) << 4 | (p=src[s++]) >>> 4 & MASK_4BITS];          //   1 4
+        dest[d++] = (byte)alphabets[(p & MASK_4BITS) << 1 | (p=src[s++]) >>> 7 & 1];          //     4 1
+        dest[d++] = (byte)alphabets[p >>> 2 & MASK_5BITS];                                    //       5
+        dest[d++] = (byte)alphabets[(p & MASK_2BITS) << 3 | (p=src[s]) >>> 5 & MASK_3BITS];   //       2 3
+        dest[d] = (byte)alphabets[p & MASK_5BITS];                                            //         5
         return;
     }
     
     private final void encode4bytes(byte[] src, int s, byte[] dest, int d) {
         // operator precedence in descending order: >>> or <<, &, |
         byte p;
-        dest[d++] = (byte)ALPHABETS[(p=src[s++]) >>> 3 & MASK_5BITS];                         // 5
-        dest[d++] = (byte)ALPHABETS[(p & MASK_3BITS) << 2 | (p=src[s++]) >>> 6 & MASK_2BITS]; // 3 2
-        dest[d++] = (byte)ALPHABETS[p >>> 1 & MASK_5BITS];                                    //   5
-        dest[d++] = (byte)ALPHABETS[(p & 1) << 4 | (p=src[s++]) >>> 4 & MASK_4BITS];          //   1 4
-        dest[d++] = (byte)ALPHABETS[(p & MASK_4BITS) << 1 | (p=src[s]) >>> 7 & 1];            //     4 1
-        dest[d++] = (byte)ALPHABETS[p >>> 2 & MASK_5BITS];                                    //       5
-        dest[d++] = (byte)ALPHABETS[(p & MASK_2BITS) << 3];                                   //       2
+        dest[d++] = (byte)alphabets[(p=src[s++]) >>> 3 & MASK_5BITS];                         // 5 
+        dest[d++] = (byte)alphabets[(p & MASK_3BITS) << 2 | (p=src[s++]) >>> 6 & MASK_2BITS]; // 3 2
+        dest[d++] = (byte)alphabets[p >>> 1 & MASK_5BITS];                                    //   5
+        dest[d++] = (byte)alphabets[(p & 1) << 4 | (p=src[s++]) >>> 4 & MASK_4BITS];          //   1 4
+        dest[d++] = (byte)alphabets[(p & MASK_4BITS) << 1 | (p=src[s]) >>> 7 & 1];            //     4 1
+        dest[d++] = (byte)alphabets[p >>> 2 & MASK_5BITS];                                    //       5
+        dest[d++] = (byte)alphabets[(p & MASK_2BITS) << 3];                                   //       2
         dest[d] = PAD;
         return;
     }
@@ -104,11 +104,11 @@ abstract class AbstractBase32Codec implements Codec {
     private final void encode3bytes(byte[] src, int s, byte[] dest, int d) {
         // operator precedence in descending order: >>> or <<, &, |
         byte p;
-        dest[d++] = (byte)ALPHABETS[(p=src[s++]) >>> 3 & MASK_5BITS];                         // 5
-        dest[d++] = (byte)ALPHABETS[(p & MASK_3BITS) << 2 | (p=src[s++]) >>> 6 & MASK_2BITS]; // 3 2
-        dest[d++] = (byte)ALPHABETS[p >>> 1 & MASK_5BITS];                                    //   5
-        dest[d++] = (byte)ALPHABETS[(p & 1) << 4 | (p=src[s]) >>> 4 & MASK_4BITS];            //   1 4
-        dest[d++] = (byte)ALPHABETS[(p & MASK_4BITS) << 1];                                   //     4
+        dest[d++] = (byte)alphabets[(p=src[s++]) >>> 3 & MASK_5BITS];                         // 5 
+        dest[d++] = (byte)alphabets[(p & MASK_3BITS) << 2 | (p=src[s++]) >>> 6 & MASK_2BITS]; // 3 2
+        dest[d++] = (byte)alphabets[p >>> 1 & MASK_5BITS];                                    //   5
+        dest[d++] = (byte)alphabets[(p & 1) << 4 | (p=src[s]) >>> 4 & MASK_4BITS];            //   1 4
+        dest[d++] = (byte)alphabets[(p & MASK_4BITS) << 1];                                   //     4
         
         for (int i=0; i < 3; i++)
             dest[d++] = PAD;                                                                       
@@ -118,10 +118,10 @@ abstract class AbstractBase32Codec implements Codec {
     private final void encode2bytes(byte[] src, int s, byte[] dest, int d) {
         // operator precedence in descending order: >>> or <<, &, |
         byte p;
-        dest[d++] = (byte)ALPHABETS[(p=src[s++]) >>> 3 & MASK_5BITS];                         // 5
-        dest[d++] = (byte)ALPHABETS[(p & MASK_3BITS) << 2 | (p=src[s]) >>> 6 & MASK_2BITS];   // 3 2
-        dest[d++] = (byte)ALPHABETS[p >>> 1 & MASK_5BITS];                                    //   5
-        dest[d++] = (byte)ALPHABETS[(p & 1) << 4];                                            //   1
+        dest[d++] = (byte)alphabets[(p=src[s++]) >>> 3 & MASK_5BITS];                         // 5 
+        dest[d++] = (byte)alphabets[(p & MASK_3BITS) << 2 | (p=src[s]) >>> 6 & MASK_2BITS];   // 3 2
+        dest[d++] = (byte)alphabets[p >>> 1 & MASK_5BITS];                                    //   5
+        dest[d++] = (byte)alphabets[(p & 1) << 4];                                            //   1
         
         for (int i=0; i < 4; i++)
             dest[d++] = PAD;                                                                       
@@ -131,8 +131,8 @@ abstract class AbstractBase32Codec implements Codec {
     private final void encode1byte(byte[] src, int s, byte[] dest, int d) {
         // operator precedence in descending order: >>> or <<, &, |
         byte p;
-        dest[d++] = (byte)ALPHABETS[(p=src[s]) >>> 3 & MASK_5BITS];                            // 5
-        dest[d++] = (byte)ALPHABETS[(p & MASK_3BITS) << 2];                                    // 3
+        dest[d++] = (byte)alphabets[(p=src[s]) >>> 3 & MASK_5BITS];                            // 5 
+        dest[d++] = (byte)alphabets[(p & MASK_3BITS) << 2];                                    // 3
         
         for (int i=0; i < 6; i++)
             dest[d++] = PAD;                                                                       

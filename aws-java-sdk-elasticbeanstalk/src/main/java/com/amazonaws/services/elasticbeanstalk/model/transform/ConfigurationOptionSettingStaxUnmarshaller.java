@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,36 +27,51 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Configuration Option Setting StAX Unmarshaller
+ * ConfigurationOptionSetting StAX Unmarshaller
  */
-public class ConfigurationOptionSettingStaxUnmarshaller implements Unmarshaller<ConfigurationOptionSetting, StaxUnmarshallerContext> {
+public class ConfigurationOptionSettingStaxUnmarshaller implements
+        Unmarshaller<ConfigurationOptionSetting, StaxUnmarshallerContext> {
 
-    public ConfigurationOptionSetting unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public ConfigurationOptionSetting unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         ConfigurationOptionSetting configurationOptionSetting = new ConfigurationOptionSetting();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return configurationOptionSetting;
+            if (xmlEvent.isEndDocument())
+                return configurationOptionSetting;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("ResourceName", targetDepth)) {
-                    configurationOptionSetting.setResourceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    configurationOptionSetting
+                            .setResourceName(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Namespace", targetDepth)) {
-                    configurationOptionSetting.setNamespace(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    configurationOptionSetting
+                            .setNamespace(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("OptionName", targetDepth)) {
-                    configurationOptionSetting.setOptionName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    configurationOptionSetting
+                            .setOptionName(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Value", targetDepth)) {
-                    configurationOptionSetting.setValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    configurationOptionSetting.setValue(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -68,9 +83,10 @@ public class ConfigurationOptionSettingStaxUnmarshaller implements Unmarshaller<
     }
 
     private static ConfigurationOptionSettingStaxUnmarshaller instance;
+
     public static ConfigurationOptionSettingStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ConfigurationOptionSettingStaxUnmarshaller();
+        if (instance == null)
+            instance = new ConfigurationOptionSettingStaxUnmarshaller();
         return instance;
     }
 }
-    

@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
@@ -19,86 +20,93 @@ import java.io.Serializable;
 /**
  * <p>
  * The summaries of the Trusted Advisor checks returned by the
- * DescribeTrustedAdvisorCheckSummaries operation.
+ * <a>DescribeTrustedAdvisorCheckSummaries</a> operation.
  * </p>
  */
-public class DescribeTrustedAdvisorCheckSummariesResult implements Serializable, Cloneable {
+public class DescribeTrustedAdvisorCheckSummariesResult implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * The summary information for the requested Trusted Advisor checks.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary> summaries;
+    private com.amazonaws.internal.SdkInternalList<TrustedAdvisorCheckSummary> summaries;
 
     /**
+     * <p>
      * The summary information for the requested Trusted Advisor checks.
-     *
+     * </p>
+     * 
      * @return The summary information for the requested Trusted Advisor checks.
      */
     public java.util.List<TrustedAdvisorCheckSummary> getSummaries() {
         if (summaries == null) {
-              summaries = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary>();
-              summaries.setAutoConstruct(true);
+            summaries = new com.amazonaws.internal.SdkInternalList<TrustedAdvisorCheckSummary>();
         }
         return summaries;
     }
-    
+
     /**
+     * <p>
      * The summary information for the requested Trusted Advisor checks.
-     *
-     * @param summaries The summary information for the requested Trusted Advisor checks.
+     * </p>
+     * 
+     * @param summaries
+     *        The summary information for the requested Trusted Advisor checks.
      */
-    public void setSummaries(java.util.Collection<TrustedAdvisorCheckSummary> summaries) {
+    public void setSummaries(
+            java.util.Collection<TrustedAdvisorCheckSummary> summaries) {
         if (summaries == null) {
             this.summaries = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary> summariesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary>(summaries.size());
-        summariesCopy.addAll(summaries);
-        this.summaries = summariesCopy;
+
+        this.summaries = new com.amazonaws.internal.SdkInternalList<TrustedAdvisorCheckSummary>(
+                summaries);
     }
-    
+
     /**
+     * <p>
      * The summary information for the requested Trusted Advisor checks.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSummaries(java.util.Collection)} or {@link
-     * #withSummaries(java.util.Collection)} if you want to override the
+     * any). Use {@link #setSummaries(java.util.Collection)} or
+     * {@link #withSummaries(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param summaries The summary information for the requested Trusted Advisor checks.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param summaries
+     *        The summary information for the requested Trusted Advisor checks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeTrustedAdvisorCheckSummariesResult withSummaries(TrustedAdvisorCheckSummary... summaries) {
-        if (getSummaries() == null) setSummaries(new java.util.ArrayList<TrustedAdvisorCheckSummary>(summaries.length));
-        for (TrustedAdvisorCheckSummary value : summaries) {
-            getSummaries().add(value);
+    public DescribeTrustedAdvisorCheckSummariesResult withSummaries(
+            TrustedAdvisorCheckSummary... summaries) {
+        if (this.summaries == null) {
+            setSummaries(new com.amazonaws.internal.SdkInternalList<TrustedAdvisorCheckSummary>(
+                    summaries.length));
+        }
+        for (TrustedAdvisorCheckSummary ele : summaries) {
+            this.summaries.add(ele);
         }
         return this;
     }
-    
-    /**
-     * The summary information for the requested Trusted Advisor checks.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param summaries The summary information for the requested Trusted Advisor checks.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribeTrustedAdvisorCheckSummariesResult withSummaries(java.util.Collection<TrustedAdvisorCheckSummary> summaries) {
-        if (summaries == null) {
-            this.summaries = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary> summariesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary>(summaries.size());
-            summariesCopy.addAll(summaries);
-            this.summaries = summariesCopy;
-        }
 
+    /**
+     * <p>
+     * The summary information for the requested Trusted Advisor checks.
+     * </p>
+     * 
+     * @param summaries
+     *        The summary information for the requested Trusted Advisor checks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeTrustedAdvisorCheckSummariesResult withSummaries(
+            java.util.Collection<TrustedAdvisorCheckSummary> summaries) {
+        setSummaries(summaries);
         return this;
     }
 
@@ -114,46 +122,48 @@ public class DescribeTrustedAdvisorCheckSummariesResult implements Serializable,
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSummaries() != null) sb.append("Summaries: " + getSummaries() );
+        if (getSummaries() != null)
+            sb.append("Summaries: " + getSummaries());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeTrustedAdvisorCheckSummariesResult == false)
+            return false;
+        DescribeTrustedAdvisorCheckSummariesResult other = (DescribeTrustedAdvisorCheckSummariesResult) obj;
+        if (other.getSummaries() == null ^ this.getSummaries() == null)
+            return false;
+        if (other.getSummaries() != null
+                && other.getSummaries().equals(this.getSummaries()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getSummaries() == null) ? 0 : getSummaries().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getSummaries() == null) ? 0 : getSummaries().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeTrustedAdvisorCheckSummariesResult == false) return false;
-        DescribeTrustedAdvisorCheckSummariesResult other = (DescribeTrustedAdvisorCheckSummariesResult)obj;
-        
-        if (other.getSummaries() == null ^ this.getSummaries() == null) return false;
-        if (other.getSummaries() != null && other.getSummaries().equals(this.getSummaries()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeTrustedAdvisorCheckSummariesResult clone() {
         try {
             return (DescribeTrustedAdvisorCheckSummariesResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

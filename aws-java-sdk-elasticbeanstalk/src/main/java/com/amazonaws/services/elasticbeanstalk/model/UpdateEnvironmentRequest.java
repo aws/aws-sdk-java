@@ -1,699 +1,717 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateEnvironment(UpdateEnvironmentRequest) UpdateEnvironment operation}.
  * <p>
- * Updates the environment description, deploys a new application
- * version, updates the configuration settings to an entirely new
- * configuration template, or updates select configuration option values
- * in the running environment.
+ * This documentation target is not reported in the API reference.
  * </p>
- * <p>
- * Attempting to update both the release and configuration is not
- * allowed and AWS Elastic Beanstalk returns an
- * <code>InvalidParameterCombination</code> error.
- * </p>
- * <p>
- * When updating the configuration settings to a new template or
- * individual settings, a draft configuration is created and
- * DescribeConfigurationSettings for this environment returns two setting
- * descriptions with different <code>DeploymentStatus</code> values.
- * </p>
- *
- * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateEnvironment(UpdateEnvironmentRequest)
  */
-public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The ID of the environment to update. <p> If no environment with this
-     * ID exists, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. <p> Condition: You must
-     * specify either this or an EnvironmentName, or both. If you do not
-     * specify either, AWS Elastic Beanstalk returns
+     * <p>
+     * The ID of the environment to update.
+     * </p>
+     * <p>
+     * If no environment with this ID exists, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentName, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error.
+     * </p>
      */
     private String environmentId;
-
     /**
-     * The name of the environment to update. If no environment with this
-     * name exists, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. <p> Condition: You must
-     * specify either this or an EnvironmentId, or both. If you do not
-     * specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>4 - 23<br/>
+     * The name of the environment to update. If no environment with this name
+     * exists, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentId, or both. If
+     * you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
      */
     private String environmentName;
-
     /**
+     * <p>
      * If this parameter is specified, AWS Elastic Beanstalk updates the
      * description of this environment.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
+     * </p>
      */
     private String description;
-
     /**
-     * This specifies the tier to use to update the environment. <p>
-     * Condition: At this time, if you change the tier version, name, or
-     * type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
-     * error.
+     * <p>
+     * This specifies the tier to use to update the environment.
+     * </p>
+     * <p>
+     * Condition: At this time, if you change the tier version, name, or type,
+     * AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error.
+     * </p>
      */
     private EnvironmentTier tier;
-
     /**
-     * If this parameter is specified, AWS Elastic Beanstalk deploys the
-     * named application version to the environment. If no such application
-     * version is found, returns an <code>InvalidParameterValue</code> error.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * If this parameter is specified, AWS Elastic Beanstalk deploys the named
+     * application version to the environment. If no such application version is
+     * found, returns an <code>InvalidParameterValue</code> error.
+     * </p>
      */
     private String versionLabel;
-
     /**
+     * <p>
      * If this parameter is specified, AWS Elastic Beanstalk deploys this
      * configuration template to the environment. If no such configuration
      * template is found, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * </p>
      */
     private String templateName;
-
     /**
-     * This specifies the platform version that the environment will run
-     * after the environment is updated.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
+     * This specifies the platform version that the environment will run after
+     * the environment is updated.
+     * </p>
      */
     private String solutionStackName;
-
     /**
+     * <p>
      * If specified, AWS Elastic Beanstalk updates the configuration set
      * associated with the running environment and sets the specified
      * configuration options to the requested value.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettings;
-
+    private com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettings;
     /**
+     * <p>
      * A list of custom user-defined configuration options to remove from the
      * configuration set for this environment.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> optionsToRemove;
+    private com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsToRemove;
 
     /**
-     * Default constructor for a new UpdateEnvironmentRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
-     */
-    public UpdateEnvironmentRequest() {}
-    
-    /**
-     * The ID of the environment to update. <p> If no environment with this
-     * ID exists, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. <p> Condition: You must
-     * specify either this or an EnvironmentName, or both. If you do not
-     * specify either, AWS Elastic Beanstalk returns
+     * <p>
+     * The ID of the environment to update.
+     * </p>
+     * <p>
+     * If no environment with this ID exists, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentName, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error.
-     *
-     * @return The ID of the environment to update. <p> If no environment with this
-     *         ID exists, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error. <p> Condition: You must
-     *         specify either this or an EnvironmentName, or both. If you do not
-     *         specify either, AWS Elastic Beanstalk returns
-     *         <code>MissingRequiredParameter</code> error.
-     */
-    public String getEnvironmentId() {
-        return environmentId;
-    }
-    
-    /**
-     * The ID of the environment to update. <p> If no environment with this
-     * ID exists, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. <p> Condition: You must
-     * specify either this or an EnvironmentName, or both. If you do not
-     * specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
-     *
-     * @param environmentId The ID of the environment to update. <p> If no environment with this
-     *         ID exists, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error. <p> Condition: You must
-     *         specify either this or an EnvironmentName, or both. If you do not
-     *         specify either, AWS Elastic Beanstalk returns
-     *         <code>MissingRequiredParameter</code> error.
+     * </p>
+     * 
+     * @param environmentId
+     *        The ID of the environment to update.</p>
+     *        <p>
+     *        If no environment with this ID exists, AWS Elastic Beanstalk
+     *        returns an <code>InvalidParameterValue</code> error.
+     *        </p>
+     *        <p>
+     *        Condition: You must specify either this or an EnvironmentName, or
+     *        both. If you do not specify either, AWS Elastic Beanstalk returns
+     *        <code>MissingRequiredParameter</code> error.
      */
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
-    
+
     /**
-     * The ID of the environment to update. <p> If no environment with this
-     * ID exists, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. <p> Condition: You must
-     * specify either this or an EnvironmentName, or both. If you do not
-     * specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param environmentId The ID of the environment to update. <p> If no environment with this
-     *         ID exists, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error. <p> Condition: You must
-     *         specify either this or an EnvironmentName, or both. If you do not
-     *         specify either, AWS Elastic Beanstalk returns
+     * The ID of the environment to update.
+     * </p>
+     * <p>
+     * If no environment with this ID exists, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentName, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
+     * 
+     * @return The ID of the environment to update.</p>
+     *         <p>
+     *         If no environment with this ID exists, AWS Elastic Beanstalk
+     *         returns an <code>InvalidParameterValue</code> error.
+     *         </p>
+     *         <p>
+     *         Condition: You must specify either this or an EnvironmentName, or
+     *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getEnvironmentId() {
+        return this.environmentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the environment to update.
+     * </p>
+     * <p>
+     * If no environment with this ID exists, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentName, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
+     * 
+     * @param environmentId
+     *        The ID of the environment to update.</p>
+     *        <p>
+     *        If no environment with this ID exists, AWS Elastic Beanstalk
+     *        returns an <code>InvalidParameterValue</code> error.
+     *        </p>
+     *        <p>
+     *        Condition: You must specify either this or an EnvironmentName, or
+     *        both. If you do not specify either, AWS Elastic Beanstalk returns
+     *        <code>MissingRequiredParameter</code> error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateEnvironmentRequest withEnvironmentId(String environmentId) {
-        this.environmentId = environmentId;
+        setEnvironmentId(environmentId);
         return this;
     }
 
     /**
-     * The name of the environment to update. If no environment with this
-     * name exists, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. <p> Condition: You must
-     * specify either this or an EnvironmentId, or both. If you do not
-     * specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>4 - 23<br/>
-     *
-     * @return The name of the environment to update. If no environment with this
-     *         name exists, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error. <p> Condition: You must
-     *         specify either this or an EnvironmentId, or both. If you do not
-     *         specify either, AWS Elastic Beanstalk returns
-     *         <code>MissingRequiredParameter</code> error.
-     */
-    public String getEnvironmentName() {
-        return environmentName;
-    }
-    
-    /**
-     * The name of the environment to update. If no environment with this
-     * name exists, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. <p> Condition: You must
-     * specify either this or an EnvironmentId, or both. If you do not
-     * specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * The name of the environment to update. If no environment with this name
+     * exists, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>4 - 23<br/>
-     *
-     * @param environmentName The name of the environment to update. If no environment with this
-     *         name exists, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error. <p> Condition: You must
-     *         specify either this or an EnvironmentId, or both. If you do not
-     *         specify either, AWS Elastic Beanstalk returns
-     *         <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentId, or both. If
+     * you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
+     * 
+     * @param environmentName
+     *        The name of the environment to update. If no environment with this
+     *        name exists, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error. </p>
+     *        <p>
+     *        Condition: You must specify either this or an EnvironmentId, or
+     *        both. If you do not specify either, AWS Elastic Beanstalk returns
+     *        <code>MissingRequiredParameter</code> error.
      */
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
-    
+
     /**
-     * The name of the environment to update. If no environment with this
-     * name exists, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. <p> Condition: You must
-     * specify either this or an EnvironmentId, or both. If you do not
-     * specify either, AWS Elastic Beanstalk returns
+     * <p>
+     * The name of the environment to update. If no environment with this name
+     * exists, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentId, or both. If
+     * you do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>4 - 23<br/>
-     *
-     * @param environmentName The name of the environment to update. If no environment with this
-     *         name exists, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error. <p> Condition: You must
-     *         specify either this or an EnvironmentId, or both. If you do not
-     *         specify either, AWS Elastic Beanstalk returns
+     * </p>
+     * 
+     * @return The name of the environment to update. If no environment with
+     *         this name exists, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterValue</code> error. </p>
+     *         <p>
+     *         Condition: You must specify either this or an EnvironmentId, or
+     *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getEnvironmentName() {
+        return this.environmentName;
+    }
+
+    /**
+     * <p>
+     * The name of the environment to update. If no environment with this name
+     * exists, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * <p>
+     * Condition: You must specify either this or an EnvironmentId, or both. If
+     * you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
+     * </p>
+     * 
+     * @param environmentName
+     *        The name of the environment to update. If no environment with this
+     *        name exists, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error. </p>
+     *        <p>
+     *        Condition: You must specify either this or an EnvironmentId, or
+     *        both. If you do not specify either, AWS Elastic Beanstalk returns
+     *        <code>MissingRequiredParameter</code> error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateEnvironmentRequest withEnvironmentName(String environmentName) {
-        this.environmentName = environmentName;
+        setEnvironmentName(environmentName);
         return this;
     }
 
     /**
+     * <p>
      * If this parameter is specified, AWS Elastic Beanstalk updates the
      * description of this environment.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
-     *
-     * @return If this parameter is specified, AWS Elastic Beanstalk updates the
-     *         description of this environment.
-     */
-    public String getDescription() {
-        return description;
-    }
-    
-    /**
-     * If this parameter is specified, AWS Elastic Beanstalk updates the
-     * description of this environment.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
-     *
-     * @param description If this parameter is specified, AWS Elastic Beanstalk updates the
-     *         description of this environment.
+     * </p>
+     * 
+     * @param description
+     *        If this parameter is specified, AWS Elastic Beanstalk updates the
+     *        description of this environment.
      */
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     /**
+     * <p>
      * If this parameter is specified, AWS Elastic Beanstalk updates the
      * description of this environment.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
-     *
-     * @param description If this parameter is specified, AWS Elastic Beanstalk updates the
+     * </p>
+     * 
+     * @return If this parameter is specified, AWS Elastic Beanstalk updates the
      *         description of this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * If this parameter is specified, AWS Elastic Beanstalk updates the
+     * description of this environment.
+     * </p>
+     * 
+     * @param description
+     *        If this parameter is specified, AWS Elastic Beanstalk updates the
+     *        description of this environment.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateEnvironmentRequest withDescription(String description) {
-        this.description = description;
+        setDescription(description);
         return this;
     }
 
     /**
-     * This specifies the tier to use to update the environment. <p>
-     * Condition: At this time, if you change the tier version, name, or
-     * type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
-     * error.
-     *
-     * @return This specifies the tier to use to update the environment. <p>
-     *         Condition: At this time, if you change the tier version, name, or
-     *         type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
-     *         error.
-     */
-    public EnvironmentTier getTier() {
-        return tier;
-    }
-    
-    /**
-     * This specifies the tier to use to update the environment. <p>
-     * Condition: At this time, if you change the tier version, name, or
-     * type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
-     * error.
-     *
-     * @param tier This specifies the tier to use to update the environment. <p>
-     *         Condition: At this time, if you change the tier version, name, or
-     *         type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
-     *         error.
+     * <p>
+     * This specifies the tier to use to update the environment.
+     * </p>
+     * <p>
+     * Condition: At this time, if you change the tier version, name, or type,
+     * AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @param tier
+     *        This specifies the tier to use to update the environment. </p>
+     *        <p>
+     *        Condition: At this time, if you change the tier version, name, or
+     *        type, AWS Elastic Beanstalk returns
+     *        <code>InvalidParameterValue</code> error.
      */
     public void setTier(EnvironmentTier tier) {
         this.tier = tier;
     }
-    
+
     /**
-     * This specifies the tier to use to update the environment. <p>
-     * Condition: At this time, if you change the tier version, name, or
-     * type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
-     * error.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tier This specifies the tier to use to update the environment. <p>
+     * This specifies the tier to use to update the environment.
+     * </p>
+     * <p>
+     * Condition: At this time, if you change the tier version, name, or type,
+     * AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @return This specifies the tier to use to update the environment. </p>
+     *         <p>
      *         Condition: At this time, if you change the tier version, name, or
-     *         type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code>
-     *         error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         type, AWS Elastic Beanstalk returns
+     *         <code>InvalidParameterValue</code> error.
+     */
+    public EnvironmentTier getTier() {
+        return this.tier;
+    }
+
+    /**
+     * <p>
+     * This specifies the tier to use to update the environment.
+     * </p>
+     * <p>
+     * Condition: At this time, if you change the tier version, name, or type,
+     * AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @param tier
+     *        This specifies the tier to use to update the environment. </p>
+     *        <p>
+     *        Condition: At this time, if you change the tier version, name, or
+     *        type, AWS Elastic Beanstalk returns
+     *        <code>InvalidParameterValue</code> error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateEnvironmentRequest withTier(EnvironmentTier tier) {
-        this.tier = tier;
+        setTier(tier);
         return this;
     }
 
     /**
-     * If this parameter is specified, AWS Elastic Beanstalk deploys the
-     * named application version to the environment. If no such application
-     * version is found, returns an <code>InvalidParameterValue</code> error.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @return If this parameter is specified, AWS Elastic Beanstalk deploys the
-     *         named application version to the environment. If no such application
-     *         version is found, returns an <code>InvalidParameterValue</code> error.
-     */
-    public String getVersionLabel() {
-        return versionLabel;
-    }
-    
-    /**
-     * If this parameter is specified, AWS Elastic Beanstalk deploys the
-     * named application version to the environment. If no such application
-     * version is found, returns an <code>InvalidParameterValue</code> error.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @param versionLabel If this parameter is specified, AWS Elastic Beanstalk deploys the
-     *         named application version to the environment. If no such application
-     *         version is found, returns an <code>InvalidParameterValue</code> error.
+     * If this parameter is specified, AWS Elastic Beanstalk deploys the named
+     * application version to the environment. If no such application version is
+     * found, returns an <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @param versionLabel
+     *        If this parameter is specified, AWS Elastic Beanstalk deploys the
+     *        named application version to the environment. If no such
+     *        application version is found, returns an
+     *        <code>InvalidParameterValue</code> error.
      */
     public void setVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
     }
-    
+
     /**
-     * If this parameter is specified, AWS Elastic Beanstalk deploys the
-     * named application version to the environment. If no such application
-     * version is found, returns an <code>InvalidParameterValue</code> error.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * If this parameter is specified, AWS Elastic Beanstalk deploys the named
+     * application version to the environment. If no such application version is
+     * found, returns an <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @return If this parameter is specified, AWS Elastic Beanstalk deploys the
+     *         named application version to the environment. If no such
+     *         application version is found, returns an
+     *         <code>InvalidParameterValue</code> error.
+     */
+    public String getVersionLabel() {
+        return this.versionLabel;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @param versionLabel If this parameter is specified, AWS Elastic Beanstalk deploys the
-     *         named application version to the environment. If no such application
-     *         version is found, returns an <code>InvalidParameterValue</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * If this parameter is specified, AWS Elastic Beanstalk deploys the named
+     * application version to the environment. If no such application version is
+     * found, returns an <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @param versionLabel
+     *        If this parameter is specified, AWS Elastic Beanstalk deploys the
+     *        named application version to the environment. If no such
+     *        application version is found, returns an
+     *        <code>InvalidParameterValue</code> error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateEnvironmentRequest withVersionLabel(String versionLabel) {
-        this.versionLabel = versionLabel;
+        setVersionLabel(versionLabel);
         return this;
     }
 
     /**
+     * <p>
      * If this parameter is specified, AWS Elastic Beanstalk deploys this
      * configuration template to the environment. If no such configuration
      * template is found, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @return If this parameter is specified, AWS Elastic Beanstalk deploys this
-     *         configuration template to the environment. If no such configuration
-     *         template is found, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error.
-     */
-    public String getTemplateName() {
-        return templateName;
-    }
-    
-    /**
-     * If this parameter is specified, AWS Elastic Beanstalk deploys this
-     * configuration template to the environment. If no such configuration
-     * template is found, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @param templateName If this parameter is specified, AWS Elastic Beanstalk deploys this
-     *         configuration template to the environment. If no such configuration
-     *         template is found, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @param templateName
+     *        If this parameter is specified, AWS Elastic Beanstalk deploys this
+     *        configuration template to the environment. If no such
+     *        configuration template is found, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error.
      */
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
-    
+
     /**
+     * <p>
      * If this parameter is specified, AWS Elastic Beanstalk deploys this
      * configuration template to the environment. If no such configuration
      * template is found, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @param templateName If this parameter is specified, AWS Elastic Beanstalk deploys this
-     *         configuration template to the environment. If no such configuration
-     *         template is found, AWS Elastic Beanstalk returns an
+     * </p>
+     * 
+     * @return If this parameter is specified, AWS Elastic Beanstalk deploys
+     *         this configuration template to the environment. If no such
+     *         configuration template is found, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterValue</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getTemplateName() {
+        return this.templateName;
+    }
+
+    /**
+     * <p>
+     * If this parameter is specified, AWS Elastic Beanstalk deploys this
+     * configuration template to the environment. If no such configuration
+     * template is found, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @param templateName
+     *        If this parameter is specified, AWS Elastic Beanstalk deploys this
+     *        configuration template to the environment. If no such
+     *        configuration template is found, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public UpdateEnvironmentRequest withTemplateName(String templateName) {
-        this.templateName = templateName;
+        setTemplateName(templateName);
         return this;
     }
 
     /**
-     * This specifies the platform version that the environment will run
-     * after the environment is updated.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
-     *
-     * @return This specifies the platform version that the environment will run
-     *         after the environment is updated.
-     */
-    public String getSolutionStackName() {
-        return solutionStackName;
-    }
-    
-    /**
-     * This specifies the platform version that the environment will run
-     * after the environment is updated.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
-     *
-     * @param solutionStackName This specifies the platform version that the environment will run
-     *         after the environment is updated.
+     * This specifies the platform version that the environment will run after
+     * the environment is updated.
+     * </p>
+     * 
+     * @param solutionStackName
+     *        This specifies the platform version that the environment will run
+     *        after the environment is updated.
      */
     public void setSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
     }
-    
+
     /**
-     * This specifies the platform version that the environment will run
-     * after the environment is updated.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
-     *
-     * @param solutionStackName This specifies the platform version that the environment will run
+     * This specifies the platform version that the environment will run after
+     * the environment is updated.
+     * </p>
+     * 
+     * @return This specifies the platform version that the environment will run
      *         after the environment is updated.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public UpdateEnvironmentRequest withSolutionStackName(String solutionStackName) {
-        this.solutionStackName = solutionStackName;
+    public String getSolutionStackName() {
+        return this.solutionStackName;
+    }
+
+    /**
+     * <p>
+     * This specifies the platform version that the environment will run after
+     * the environment is updated.
+     * </p>
+     * 
+     * @param solutionStackName
+     *        This specifies the platform version that the environment will run
+     *        after the environment is updated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateEnvironmentRequest withSolutionStackName(
+            String solutionStackName) {
+        setSolutionStackName(solutionStackName);
         return this;
     }
 
     /**
+     * <p>
      * If specified, AWS Elastic Beanstalk updates the configuration set
      * associated with the running environment and sets the specified
      * configuration options to the requested value.
-     *
+     * </p>
+     * 
      * @return If specified, AWS Elastic Beanstalk updates the configuration set
      *         associated with the running environment and sets the specified
      *         configuration options to the requested value.
      */
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         if (optionSettings == null) {
-              optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>();
-              optionSettings.setAutoConstruct(true);
+            optionSettings = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>();
         }
         return optionSettings;
     }
-    
+
     /**
+     * <p>
      * If specified, AWS Elastic Beanstalk updates the configuration set
      * associated with the running environment and sets the specified
      * configuration options to the requested value.
-     *
-     * @param optionSettings If specified, AWS Elastic Beanstalk updates the configuration set
-     *         associated with the running environment and sets the specified
-     *         configuration options to the requested value.
+     * </p>
+     * 
+     * @param optionSettings
+     *        If specified, AWS Elastic Beanstalk updates the configuration set
+     *        associated with the running environment and sets the specified
+     *        configuration options to the requested value.
      */
-    public void setOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
+    public void setOptionSettings(
+            java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {
             this.optionSettings = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
-        optionSettingsCopy.addAll(optionSettings);
-        this.optionSettings = optionSettingsCopy;
+
+        this.optionSettings = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>(
+                optionSettings);
     }
-    
+
     /**
+     * <p>
      * If specified, AWS Elastic Beanstalk updates the configuration set
      * associated with the running environment and sets the specified
      * configuration options to the requested value.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOptionSettings(java.util.Collection)} or {@link
-     * #withOptionSettings(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param optionSettings If specified, AWS Elastic Beanstalk updates the configuration set
-     *         associated with the running environment and sets the specified
-     *         configuration options to the requested value.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setOptionSettings(java.util.Collection)} or
+     * {@link #withOptionSettings(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param optionSettings
+     *        If specified, AWS Elastic Beanstalk updates the configuration set
+     *        associated with the running environment and sets the specified
+     *        configuration options to the requested value.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public UpdateEnvironmentRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
-        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.length));
-        for (ConfigurationOptionSetting value : optionSettings) {
-            getOptionSettings().add(value);
+    public UpdateEnvironmentRequest withOptionSettings(
+            ConfigurationOptionSetting... optionSettings) {
+        if (this.optionSettings == null) {
+            setOptionSettings(new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>(
+                    optionSettings.length));
+        }
+        for (ConfigurationOptionSetting ele : optionSettings) {
+            this.optionSettings.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * If specified, AWS Elastic Beanstalk updates the configuration set
      * associated with the running environment and sets the specified
      * configuration options to the requested value.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param optionSettings If specified, AWS Elastic Beanstalk updates the configuration set
-     *         associated with the running environment and sets the specified
-     *         configuration options to the requested value.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param optionSettings
+     *        If specified, AWS Elastic Beanstalk updates the configuration set
+     *        associated with the running environment and sets the specified
+     *        configuration options to the requested value.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public UpdateEnvironmentRequest withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
-        if (optionSettings == null) {
-            this.optionSettings = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
-            optionSettingsCopy.addAll(optionSettings);
-            this.optionSettings = optionSettingsCopy;
-        }
-
+    public UpdateEnvironmentRequest withOptionSettings(
+            java.util.Collection<ConfigurationOptionSetting> optionSettings) {
+        setOptionSettings(optionSettings);
         return this;
     }
 
     /**
+     * <p>
      * A list of custom user-defined configuration options to remove from the
      * configuration set for this environment.
-     *
-     * @return A list of custom user-defined configuration options to remove from the
-     *         configuration set for this environment.
+     * </p>
+     * 
+     * @return A list of custom user-defined configuration options to remove
+     *         from the configuration set for this environment.
      */
     public java.util.List<OptionSpecification> getOptionsToRemove() {
         if (optionsToRemove == null) {
-              optionsToRemove = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>();
-              optionsToRemove.setAutoConstruct(true);
+            optionsToRemove = new com.amazonaws.internal.SdkInternalList<OptionSpecification>();
         }
         return optionsToRemove;
     }
-    
+
     /**
+     * <p>
      * A list of custom user-defined configuration options to remove from the
      * configuration set for this environment.
-     *
-     * @param optionsToRemove A list of custom user-defined configuration options to remove from the
-     *         configuration set for this environment.
+     * </p>
+     * 
+     * @param optionsToRemove
+     *        A list of custom user-defined configuration options to remove from
+     *        the configuration set for this environment.
      */
-    public void setOptionsToRemove(java.util.Collection<OptionSpecification> optionsToRemove) {
+    public void setOptionsToRemove(
+            java.util.Collection<OptionSpecification> optionsToRemove) {
         if (optionsToRemove == null) {
             this.optionsToRemove = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> optionsToRemoveCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>(optionsToRemove.size());
-        optionsToRemoveCopy.addAll(optionsToRemove);
-        this.optionsToRemove = optionsToRemoveCopy;
+
+        this.optionsToRemove = new com.amazonaws.internal.SdkInternalList<OptionSpecification>(
+                optionsToRemove);
     }
-    
+
     /**
+     * <p>
      * A list of custom user-defined configuration options to remove from the
      * configuration set for this environment.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setOptionsToRemove(java.util.Collection)} or {@link
-     * #withOptionsToRemove(java.util.Collection)} if you want to override
-     * the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param optionsToRemove A list of custom user-defined configuration options to remove from the
-     *         configuration set for this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setOptionsToRemove(java.util.Collection)} or
+     * {@link #withOptionsToRemove(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param optionsToRemove
+     *        A list of custom user-defined configuration options to remove from
+     *        the configuration set for this environment.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public UpdateEnvironmentRequest withOptionsToRemove(OptionSpecification... optionsToRemove) {
-        if (getOptionsToRemove() == null) setOptionsToRemove(new java.util.ArrayList<OptionSpecification>(optionsToRemove.length));
-        for (OptionSpecification value : optionsToRemove) {
-            getOptionsToRemove().add(value);
+    public UpdateEnvironmentRequest withOptionsToRemove(
+            OptionSpecification... optionsToRemove) {
+        if (this.optionsToRemove == null) {
+            setOptionsToRemove(new com.amazonaws.internal.SdkInternalList<OptionSpecification>(
+                    optionsToRemove.length));
+        }
+        for (OptionSpecification ele : optionsToRemove) {
+            this.optionsToRemove.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * A list of custom user-defined configuration options to remove from the
      * configuration set for this environment.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param optionsToRemove A list of custom user-defined configuration options to remove from the
-     *         configuration set for this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param optionsToRemove
+     *        A list of custom user-defined configuration options to remove from
+     *        the configuration set for this environment.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public UpdateEnvironmentRequest withOptionsToRemove(java.util.Collection<OptionSpecification> optionsToRemove) {
-        if (optionsToRemove == null) {
-            this.optionsToRemove = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> optionsToRemoveCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>(optionsToRemove.size());
-            optionsToRemoveCopy.addAll(optionsToRemove);
-            this.optionsToRemove = optionsToRemoveCopy;
-        }
-
+    public UpdateEnvironmentRequest withOptionsToRemove(
+            java.util.Collection<OptionSpecification> optionsToRemove) {
+        setOptionsToRemove(optionsToRemove);
         return this;
     }
 
@@ -709,70 +727,134 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ",");
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
-        if (getTier() != null) sb.append("Tier: " + getTier() + ",");
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");
-        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ",");
-        if (getOptionsToRemove() != null) sb.append("OptionsToRemove: " + getOptionsToRemove() );
+        if (getEnvironmentId() != null)
+            sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+        if (getEnvironmentName() != null)
+            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+        if (getDescription() != null)
+            sb.append("Description: " + getDescription() + ",");
+        if (getTier() != null)
+            sb.append("Tier: " + getTier() + ",");
+        if (getVersionLabel() != null)
+            sb.append("VersionLabel: " + getVersionLabel() + ",");
+        if (getTemplateName() != null)
+            sb.append("TemplateName: " + getTemplateName() + ",");
+        if (getSolutionStackName() != null)
+            sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+        if (getOptionSettings() != null)
+            sb.append("OptionSettings: " + getOptionSettings() + ",");
+        if (getOptionsToRemove() != null)
+            sb.append("OptionsToRemove: " + getOptionsToRemove());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof UpdateEnvironmentRequest == false)
+            return false;
+        UpdateEnvironmentRequest other = (UpdateEnvironmentRequest) obj;
+        if (other.getEnvironmentId() == null ^ this.getEnvironmentId() == null)
+            return false;
+        if (other.getEnvironmentId() != null
+                && other.getEnvironmentId().equals(this.getEnvironmentId()) == false)
+            return false;
+        if (other.getEnvironmentName() == null
+                ^ this.getEnvironmentName() == null)
+            return false;
+        if (other.getEnvironmentName() != null
+                && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null
+                && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getTier() == null ^ this.getTier() == null)
+            return false;
+        if (other.getTier() != null
+                && other.getTier().equals(this.getTier()) == false)
+            return false;
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
+            return false;
+        if (other.getVersionLabel() != null
+                && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+            return false;
+        if (other.getTemplateName() == null ^ this.getTemplateName() == null)
+            return false;
+        if (other.getTemplateName() != null
+                && other.getTemplateName().equals(this.getTemplateName()) == false)
+            return false;
+        if (other.getSolutionStackName() == null
+                ^ this.getSolutionStackName() == null)
+            return false;
+        if (other.getSolutionStackName() != null
+                && other.getSolutionStackName().equals(
+                        this.getSolutionStackName()) == false)
+            return false;
+        if (other.getOptionSettings() == null
+                ^ this.getOptionSettings() == null)
+            return false;
+        if (other.getOptionSettings() != null
+                && other.getOptionSettings().equals(this.getOptionSettings()) == false)
+            return false;
+        if (other.getOptionsToRemove() == null
+                ^ this.getOptionsToRemove() == null)
+            return false;
+        if (other.getOptionsToRemove() != null
+                && other.getOptionsToRemove().equals(this.getOptionsToRemove()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode()); 
-        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode()); 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode()); 
-        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode()); 
-        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode()); 
-        hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode()); 
-        hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode()); 
-        hashCode = prime * hashCode + ((getOptionsToRemove() == null) ? 0 : getOptionsToRemove().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getEnvironmentId() == null) ? 0 : getEnvironmentId()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEnvironmentName() == null) ? 0 : getEnvironmentName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode
+                + ((getTier() == null) ? 0 : getTier().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVersionLabel() == null) ? 0 : getVersionLabel()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTemplateName() == null) ? 0 : getTemplateName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSolutionStackName() == null) ? 0
+                        : getSolutionStackName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getOptionSettings() == null) ? 0 : getOptionSettings()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getOptionsToRemove() == null) ? 0 : getOptionsToRemove()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof UpdateEnvironmentRequest == false) return false;
-        UpdateEnvironmentRequest other = (UpdateEnvironmentRequest)obj;
-        
-        if (other.getEnvironmentId() == null ^ this.getEnvironmentId() == null) return false;
-        if (other.getEnvironmentId() != null && other.getEnvironmentId().equals(this.getEnvironmentId()) == false) return false; 
-        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null) return false;
-        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false) return false; 
-        if (other.getDescription() == null ^ this.getDescription() == null) return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
-        if (other.getTier() == null ^ this.getTier() == null) return false;
-        if (other.getTier() != null && other.getTier().equals(this.getTier()) == false) return false; 
-        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null) return false;
-        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false) return false; 
-        if (other.getTemplateName() == null ^ this.getTemplateName() == null) return false;
-        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false) return false; 
-        if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null) return false;
-        if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false) return false; 
-        if (other.getOptionSettings() == null ^ this.getOptionSettings() == null) return false;
-        if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false) return false; 
-        if (other.getOptionsToRemove() == null ^ this.getOptionsToRemove() == null) return false;
-        if (other.getOptionsToRemove() != null && other.getOptionsToRemove().equals(this.getOptionsToRemove()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public UpdateEnvironmentRequest clone() {
-        
-            return (UpdateEnvironmentRequest) super.clone();
+        return (UpdateEnvironmentRequest) super.clone();
     }
-
 }
-    

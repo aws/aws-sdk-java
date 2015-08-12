@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Create Workspaces Result JSON Unmarshaller
+ * CreateWorkspacesResult JSON Unmarshaller
  */
-public class CreateWorkspacesResultJsonUnmarshaller implements Unmarshaller<CreateWorkspacesResult, JsonUnmarshallerContext> {
+public class CreateWorkspacesResultJsonUnmarshaller implements
+        Unmarshaller<CreateWorkspacesResult, JsonUnmarshallerContext> {
 
-    public CreateWorkspacesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public CreateWorkspacesResult unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         CreateWorkspacesResult createWorkspacesResult = new CreateWorkspacesResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,37 +40,49 @@ public class CreateWorkspacesResultJsonUnmarshaller implements Unmarshaller<Crea
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FailedRequests", targetDepth)) {
                     context.nextToken();
-                    createWorkspacesResult.setFailedRequests(new ListUnmarshaller<FailedCreateWorkspaceRequest>(FailedCreateWorkspaceRequestJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createWorkspacesResult
+                            .setFailedRequests(new ListUnmarshaller<FailedCreateWorkspaceRequest>(
+                                    FailedCreateWorkspaceRequestJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("PendingRequests", targetDepth)) {
                     context.nextToken();
-                    createWorkspacesResult.setPendingRequests(new ListUnmarshaller<Workspace>(WorkspaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createWorkspacesResult
+                            .setPendingRequests(new ListUnmarshaller<Workspace>(
+                                    WorkspaceJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return createWorkspacesResult;
     }
 
     private static CreateWorkspacesResultJsonUnmarshaller instance;
+
     public static CreateWorkspacesResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new CreateWorkspacesResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new CreateWorkspacesResultJsonUnmarshaller();
         return instance;
     }
 }
-    

@@ -57,14 +57,14 @@ class Base64Codec implements Codec {
         }
     }
 
-    private final byte[] ALPHABETS;
+    private final byte[] alphabets;
 
     Base64Codec() {
-        ALPHABETS = CodecUtils.toBytesDirect("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/");
+        this.alphabets = CodecUtils.toBytesDirect("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/");
     }
     
     protected Base64Codec(byte[] alphabets) {
-        ALPHABETS = alphabets;
+        this.alphabets = alphabets;
     }
 
     @Override
@@ -103,19 +103,19 @@ class Base64Codec implements Codec {
     void encode3bytes(byte[] src, int s, byte[] dest, int d) {
         // operator precedence in descending order: >>> or <<, &, |
         byte p;
-        dest[d++] = (byte)ALPHABETS[(p=src[s++]) >>> 2 & MASK_6BITS];                         // 6
-        dest[d++] = (byte)ALPHABETS[(p & MASK_2BITS) << 4 | (p=src[s++]) >>> 4 & MASK_4BITS]; // 2 4
-        dest[d++] = (byte)ALPHABETS[(p & MASK_4BITS) << 2 | (p=src[s]) >>> 6 & MASK_2BITS];   //   4 2
-        dest[d] = (byte)ALPHABETS[p & MASK_6BITS];                                            //     6
+        dest[d++] = (byte)alphabets[(p=src[s++]) >>> 2 & MASK_6BITS];                         // 6 
+        dest[d++] = (byte)alphabets[(p & MASK_2BITS) << 4 | (p=src[s++]) >>> 4 & MASK_4BITS]; // 2 4
+        dest[d++] = (byte)alphabets[(p & MASK_4BITS) << 2 | (p=src[s]) >>> 6 & MASK_2BITS];   //   4 2
+        dest[d] = (byte)alphabets[p & MASK_6BITS];                                            //     6
         return;
     }
     
     void encode2bytes(byte[] src, int s, byte[] dest, int d) {
         // operator precedence in descending order: >>> or <<, &, |
         byte p;
-        dest[d++] = (byte)ALPHABETS[(p=src[s++]) >>> 2 & MASK_6BITS];                         // 6
-        dest[d++] = (byte)ALPHABETS[(p & MASK_2BITS) << 4 | (p=src[s]) >>> 4 & MASK_4BITS];   // 2 4
-        dest[d++] = (byte)ALPHABETS[(p & MASK_4BITS) << 2];                                   //   4
+        dest[d++] = (byte)alphabets[(p=src[s++]) >>> 2 & MASK_6BITS];                         // 6 
+        dest[d++] = (byte)alphabets[(p & MASK_2BITS) << 4 | (p=src[s]) >>> 4 & MASK_4BITS];   // 2 4
+        dest[d++] = (byte)alphabets[(p & MASK_4BITS) << 2];                                   //   4
         dest[d] = PAD;
         return;
     }
@@ -123,8 +123,8 @@ class Base64Codec implements Codec {
     void encode1byte(byte[] src, int s, byte[] dest, int d) {
         // operator precedence in descending order: >>> or <<, &, |
         byte p;
-        dest[d++] = (byte)ALPHABETS[(p=src[s]) >>> 2 & MASK_6BITS];                           // 6
-        dest[d++] = (byte)ALPHABETS[(p & MASK_2BITS) << 4];                                   // 2
+        dest[d++] = (byte)alphabets[(p=src[s]) >>> 2 & MASK_6BITS];                           // 6 
+        dest[d++] = (byte)alphabets[(p & MASK_2BITS) << 4];                                   // 2
         dest[d++] = PAD;
         dest[d] = PAD;
         return;

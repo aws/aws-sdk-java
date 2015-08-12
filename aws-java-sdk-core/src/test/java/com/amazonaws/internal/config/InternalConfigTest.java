@@ -160,7 +160,7 @@ public class InternalConfigTest {
 
     @Test
     public void loadFromFile() throws Exception {
-        loadFrom(InternalConfig.DEFAULT_CONFIG_RESOURCE);
+        loadFrom(InternalConfig.DEFAULT_CONFIG_RESOURCE_ABSOLUTE_PATH);
     }
 
     private void loadFrom(String resource) throws Exception {

@@ -1686,10 +1686,10 @@
             "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -2391,10 +2391,10 @@
               "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
@@ -7356,10 +7356,10 @@
             "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -7471,10 +7471,10 @@
             "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -7586,10 +7586,10 @@
             "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -7877,10 +7877,10 @@
               "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
@@ -8149,10 +8149,10 @@
               "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
@@ -8265,10 +8265,10 @@
               "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,

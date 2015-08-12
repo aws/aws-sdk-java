@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,32 +27,42 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Environment Tier StAX Unmarshaller
+ * EnvironmentTier StAX Unmarshaller
  */
-public class EnvironmentTierStaxUnmarshaller implements Unmarshaller<EnvironmentTier, StaxUnmarshallerContext> {
+public class EnvironmentTierStaxUnmarshaller implements
+        Unmarshaller<EnvironmentTier, StaxUnmarshallerContext> {
 
-    public EnvironmentTier unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public EnvironmentTier unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         EnvironmentTier environmentTier = new EnvironmentTier();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return environmentTier;
+            if (xmlEvent.isEndDocument())
+                return environmentTier;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("Name", targetDepth)) {
-                    environmentTier.setName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    environmentTier.setName(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Type", targetDepth)) {
-                    environmentTier.setType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    environmentTier.setType(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Version", targetDepth)) {
-                    environmentTier.setVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    environmentTier.setVersion(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -64,9 +74,10 @@ public class EnvironmentTierStaxUnmarshaller implements Unmarshaller<Environment
     }
 
     private static EnvironmentTierStaxUnmarshaller instance;
+
     public static EnvironmentTierStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new EnvironmentTierStaxUnmarshaller();
+        if (instance == null)
+            instance = new EnvironmentTierStaxUnmarshaller();
         return instance;
     }
 }
-    

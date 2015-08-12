@@ -1,39 +1,41 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.support.model;
 
 import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The limit for the number of DescribeAttachment requests in a short
+ * The limit for the number of <a>DescribeAttachment</a> requests in a short
  * period of time has been exceeded.
  * </p>
- */        
-public class DescribeAttachmentLimitExceededException extends AmazonServiceException {
+ */
+public class DescribeAttachmentLimitExceededException extends
+        AmazonServiceException {
     private static final long serialVersionUID = 1L;
-    
+
     /**
-     * Constructs a new DescribeAttachmentLimitExceededException with the specified error
-     * message.
-     * 
-     * @param message Describes the error encountered.
+     * Constructs a new DescribeAttachmentLimitExceededException with the
+     * specified error message.
+     *
+     * @param message
+     *        Describes the error encountered.
      */
     public DescribeAttachmentLimitExceededException(String message) {
         super(message);
     }
-    
+
 }
-    

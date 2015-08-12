@@ -1,497 +1,659 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createApplicationVersion(CreateApplicationVersionRequest) CreateApplicationVersion operation}.
  * <p>
- * Creates an application version for the specified application.
  * </p>
- * <p>
- * <b>NOTE:</b>Once you create an application version with a specified
- * Amazon S3 bucket and key location, you cannot change that Amazon S3
- * location. If you change the Amazon S3 location, you receive an
- * exception when you attempt to launch an environment from the
- * application version.
- * </p>
- *
- * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createApplicationVersion(CreateApplicationVersionRequest)
  */
-public class CreateApplicationVersionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
-     * The name of the application. If no application is found with this
-     * name, and <code>AutoCreateApplication</code> is <code>false</code>,
-     * returns an <code>InvalidParameterValue</code> error.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * The name of the application. If no application is found with this name,
+     * and <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
      */
     private String applicationName;
-
     /**
-     * A label identifying this version. <p>Constraint: Must be unique per
-     * application. If an application version already exists with this label
-     * for the specified application, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * A label identifying this version.
+     * </p>
+     * <p>
+     * Constraint: Must be unique per application. If an application version
+     * already exists with this label for the specified application, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * </p>
      */
     private String versionLabel;
-
     /**
-     * Describes this version.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
+     * Describes this version.
+     * </p>
      */
     private String description;
-
     /**
+     * <p>
      * The Amazon S3 bucket and key that identify the location of the source
-     * bundle for this version. <p> If data found at the Amazon S3 location
-     * exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. The maximum size
-     * allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
-     * uses a sample application. If only partially specified (for example, a
-     * bucket is provided but not the key) or if no data is found at the
-     * Amazon S3 location, AWS Elastic Beanstalk returns an
+     * bundle for this version.
+     * </p>
+     * <p>
+     * If data found at the Amazon S3 location exceeds the maximum allowed
+     * source bundle size, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512
+     * MB.
+     * </p>
+     * <p>
+     * Default: If not specified, AWS Elastic Beanstalk uses a sample
+     * application. If only partially specified (for example, a bucket is
+     * provided but not the key) or if no data is found at the Amazon S3
+     * location, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterCombination</code> error.
+     * </p>
      */
     private S3Location sourceBundle;
-
     /**
-     * Determines how the system behaves if the specified application for
-     * this version does not already exist: <enumValues> <value name="true">
-     * <p> <code>true</code>: Automatically creates the specified application
-     * for this version if it does not already exist. </value> <value
-     * name="false"> <p> <code>false</code>: Returns an
-     * <code>InvalidParameterValue</code> if the specified application for
-     * this version does not already exist. </value> </enumValues> <ul> <li>
-     * <code>true</code> : Automatically creates the specified application
-     * for this release if it does not already exist. </li> <li>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist.
-     * </li> </ul> <p> Default: <code>false</code> <p> Valid Values:
-     * <code>true</code> | <code>false</code>
+     * <p>
+     * Determines how the system behaves if the specified application for this
+     * version does not already exist:
+     * </p>
+     * <enumValues> <value name="true">
+     * <p>
+     * <code>true</code>: Automatically creates the specified application for
+     * this version if it does not already exist.
+     * </p>
+     * </value> <value name="false">
+     * <p>
+     * <code>false</code>: Returns an <code>InvalidParameterValue</code> if the
+     * specified application for this version does not already exist.
+     * </p>
+     * </value> </enumValues>
+     * <ul>
+     * <li> <code>true</code> : Automatically creates the specified application
+     * for this release if it does not already exist.</li>
+     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
+     * the specified application for this release does not already exist.</li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     private Boolean autoCreateApplication;
 
     /**
-     * Default constructor for a new CreateApplicationVersionRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for CreateApplicationVersionRequest object. Callers
+     * should use the setter or fluent setter (with...) methods to initialize
+     * the object after creating it.
      */
-    public CreateApplicationVersionRequest() {}
-    
+    public CreateApplicationVersionRequest() {
+    }
+
     /**
-     * Constructs a new CreateApplicationVersionRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new CreateApplicationVersionRequest object. Callers should
+     * use the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param applicationName The name of the application. If no application
-     * is found with this name, and <code>AutoCreateApplication</code> is
-     * <code>false</code>, returns an <code>InvalidParameterValue</code>
-     * error.
-     * @param versionLabel A label identifying this version. <p>Constraint:
-     * Must be unique per application. If an application version already
-     * exists with this label for the specified application, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * @param applicationName
+     *        The name of the application. If no application is found with this
+     *        name, and <code>AutoCreateApplication</code> is <code>false</code>
+     *        , returns an <code>InvalidParameterValue</code> error.
+     * @param versionLabel
+     *        A label identifying this version.</p>
+     *        <p>
+     *        Constraint: Must be unique per application. If an application
+     *        version already exists with this label for the specified
+     *        application, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error.
      */
-    public CreateApplicationVersionRequest(String applicationName, String versionLabel) {
+    public CreateApplicationVersionRequest(String applicationName,
+            String versionLabel) {
         setApplicationName(applicationName);
         setVersionLabel(versionLabel);
     }
 
     /**
-     * The name of the application. If no application is found with this
-     * name, and <code>AutoCreateApplication</code> is <code>false</code>,
-     * returns an <code>InvalidParameterValue</code> error.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @return The name of the application. If no application is found with this
-     *         name, and <code>AutoCreateApplication</code> is <code>false</code>,
-     *         returns an <code>InvalidParameterValue</code> error.
-     */
-    public String getApplicationName() {
-        return applicationName;
-    }
-    
-    /**
-     * The name of the application. If no application is found with this
-     * name, and <code>AutoCreateApplication</code> is <code>false</code>,
-     * returns an <code>InvalidParameterValue</code> error.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @param applicationName The name of the application. If no application is found with this
-     *         name, and <code>AutoCreateApplication</code> is <code>false</code>,
-     *         returns an <code>InvalidParameterValue</code> error.
+     * The name of the application. If no application is found with this name,
+     * and <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @param applicationName
+     *        The name of the application. If no application is found with this
+     *        name, and <code>AutoCreateApplication</code> is <code>false</code>
+     *        , returns an <code>InvalidParameterValue</code> error.
      */
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
-    
+
     /**
-     * The name of the application. If no application is found with this
-     * name, and <code>AutoCreateApplication</code> is <code>false</code>,
-     * returns an <code>InvalidParameterValue</code> error.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @param applicationName The name of the application. If no application is found with this
-     *         name, and <code>AutoCreateApplication</code> is <code>false</code>,
-     *         returns an <code>InvalidParameterValue</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the application. If no application is found with this name,
+     * and <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @return The name of the application. If no application is found with this
+     *         name, and <code>AutoCreateApplication</code> is
+     *         <code>false</code>, returns an <code>InvalidParameterValue</code>
+     *         error.
      */
-    public CreateApplicationVersionRequest withApplicationName(String applicationName) {
-        this.applicationName = applicationName;
+    public String getApplicationName() {
+        return this.applicationName;
+    }
+
+    /**
+     * <p>
+     * The name of the application. If no application is found with this name,
+     * and <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @param applicationName
+     *        The name of the application. If no application is found with this
+     *        name, and <code>AutoCreateApplication</code> is <code>false</code>
+     *        , returns an <code>InvalidParameterValue</code> error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateApplicationVersionRequest withApplicationName(
+            String applicationName) {
+        setApplicationName(applicationName);
         return this;
     }
 
     /**
-     * A label identifying this version. <p>Constraint: Must be unique per
-     * application. If an application version already exists with this label
-     * for the specified application, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @return A label identifying this version. <p>Constraint: Must be unique per
-     *         application. If an application version already exists with this label
-     *         for the specified application, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error.
-     */
-    public String getVersionLabel() {
-        return versionLabel;
-    }
-    
-    /**
-     * A label identifying this version. <p>Constraint: Must be unique per
-     * application. If an application version already exists with this label
-     * for the specified application, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error.
+     * A label identifying this version.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @param versionLabel A label identifying this version. <p>Constraint: Must be unique per
-     *         application. If an application version already exists with this label
-     *         for the specified application, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error.
+     * Constraint: Must be unique per application. If an application version
+     * already exists with this label for the specified application, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @param versionLabel
+     *        A label identifying this version.</p>
+     *        <p>
+     *        Constraint: Must be unique per application. If an application
+     *        version already exists with this label for the specified
+     *        application, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error.
      */
     public void setVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
     }
-    
+
     /**
-     * A label identifying this version. <p>Constraint: Must be unique per
-     * application. If an application version already exists with this label
-     * for the specified application, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * A label identifying this version.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @param versionLabel A label identifying this version. <p>Constraint: Must be unique per
-     *         application. If an application version already exists with this label
-     *         for the specified application, AWS Elastic Beanstalk returns an
+     * Constraint: Must be unique per application. If an application version
+     * already exists with this label for the specified application, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @return A label identifying this version.</p>
+     *         <p>
+     *         Constraint: Must be unique per application. If an application
+     *         version already exists with this label for the specified
+     *         application, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterValue</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getVersionLabel() {
+        return this.versionLabel;
+    }
+
+    /**
+     * <p>
+     * A label identifying this version.
+     * </p>
+     * <p>
+     * Constraint: Must be unique per application. If an application version
+     * already exists with this label for the specified application, AWS Elastic
+     * Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * </p>
+     * 
+     * @param versionLabel
+     *        A label identifying this version.</p>
+     *        <p>
+     *        Constraint: Must be unique per application. If an application
+     *        version already exists with this label for the specified
+     *        application, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateApplicationVersionRequest withVersionLabel(String versionLabel) {
-        this.versionLabel = versionLabel;
+        setVersionLabel(versionLabel);
         return this;
     }
 
     /**
-     * Describes this version.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
-     *
-     * @return Describes this version.
-     */
-    public String getDescription() {
-        return description;
-    }
-    
-    /**
      * Describes this version.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
-     *
-     * @param description Describes this version.
+     * </p>
+     * 
+     * @param description
+     *        Describes this version.
      */
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     /**
+     * <p>
      * Describes this version.
+     * </p>
+     * 
+     * @return Describes this version.
+     */
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
-     *
-     * @param description Describes this version.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Describes this version.
+     * </p>
+     * 
+     * @param description
+     *        Describes this version.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateApplicationVersionRequest withDescription(String description) {
-        this.description = description;
+        setDescription(description);
         return this;
     }
 
     /**
+     * <p>
      * The Amazon S3 bucket and key that identify the location of the source
-     * bundle for this version. <p> If data found at the Amazon S3 location
-     * exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. The maximum size
-     * allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
-     * uses a sample application. If only partially specified (for example, a
-     * bucket is provided but not the key) or if no data is found at the
-     * Amazon S3 location, AWS Elastic Beanstalk returns an
+     * bundle for this version.
+     * </p>
+     * <p>
+     * If data found at the Amazon S3 location exceeds the maximum allowed
+     * source bundle size, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512
+     * MB.
+     * </p>
+     * <p>
+     * Default: If not specified, AWS Elastic Beanstalk uses a sample
+     * application. If only partially specified (for example, a bucket is
+     * provided but not the key) or if no data is found at the Amazon S3
+     * location, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterCombination</code> error.
-     *
-     * @return The Amazon S3 bucket and key that identify the location of the source
-     *         bundle for this version. <p> If data found at the Amazon S3 location
-     *         exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     *         returns an <code>InvalidParameterValue</code> error. The maximum size
-     *         allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
-     *         uses a sample application. If only partially specified (for example, a
-     *         bucket is provided but not the key) or if no data is found at the
-     *         Amazon S3 location, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterCombination</code> error.
-     */
-    public S3Location getSourceBundle() {
-        return sourceBundle;
-    }
-    
-    /**
-     * The Amazon S3 bucket and key that identify the location of the source
-     * bundle for this version. <p> If data found at the Amazon S3 location
-     * exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. The maximum size
-     * allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
-     * uses a sample application. If only partially specified (for example, a
-     * bucket is provided but not the key) or if no data is found at the
-     * Amazon S3 location, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error.
-     *
-     * @param sourceBundle The Amazon S3 bucket and key that identify the location of the source
-     *         bundle for this version. <p> If data found at the Amazon S3 location
-     *         exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     *         returns an <code>InvalidParameterValue</code> error. The maximum size
-     *         allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
-     *         uses a sample application. If only partially specified (for example, a
-     *         bucket is provided but not the key) or if no data is found at the
-     *         Amazon S3 location, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterCombination</code> error.
+     * </p>
+     * 
+     * @param sourceBundle
+     *        The Amazon S3 bucket and key that identify the location of the
+     *        source bundle for this version. </p>
+     *        <p>
+     *        If data found at the Amazon S3 location exceeds the maximum
+     *        allowed source bundle size, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error. The maximum size allowed
+     *        is 512 MB.
+     *        </p>
+     *        <p>
+     *        Default: If not specified, AWS Elastic Beanstalk uses a sample
+     *        application. If only partially specified (for example, a bucket is
+     *        provided but not the key) or if no data is found at the Amazon S3
+     *        location, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterCombination</code> error.
      */
     public void setSourceBundle(S3Location sourceBundle) {
         this.sourceBundle = sourceBundle;
     }
-    
+
     /**
-     * The Amazon S3 bucket and key that identify the location of the source
-     * bundle for this version. <p> If data found at the Amazon S3 location
-     * exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. The maximum size
-     * allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
-     * uses a sample application. If only partially specified (for example, a
-     * bucket is provided but not the key) or if no data is found at the
-     * Amazon S3 location, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param sourceBundle The Amazon S3 bucket and key that identify the location of the source
-     *         bundle for this version. <p> If data found at the Amazon S3 location
-     *         exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     *         returns an <code>InvalidParameterValue</code> error. The maximum size
-     *         allowed is 512 MB. <p>Default: If not specified, AWS Elastic Beanstalk
-     *         uses a sample application. If only partially specified (for example, a
-     *         bucket is provided but not the key) or if no data is found at the
-     *         Amazon S3 location, AWS Elastic Beanstalk returns an
+     * The Amazon S3 bucket and key that identify the location of the source
+     * bundle for this version.
+     * </p>
+     * <p>
+     * If data found at the Amazon S3 location exceeds the maximum allowed
+     * source bundle size, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512
+     * MB.
+     * </p>
+     * <p>
+     * Default: If not specified, AWS Elastic Beanstalk uses a sample
+     * application. If only partially specified (for example, a bucket is
+     * provided but not the key) or if no data is found at the Amazon S3
+     * location, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error.
+     * </p>
+     * 
+     * @return The Amazon S3 bucket and key that identify the location of the
+     *         source bundle for this version. </p>
+     *         <p>
+     *         If data found at the Amazon S3 location exceeds the maximum
+     *         allowed source bundle size, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterValue</code> error. The maximum size
+     *         allowed is 512 MB.
+     *         </p>
+     *         <p>
+     *         Default: If not specified, AWS Elastic Beanstalk uses a sample
+     *         application. If only partially specified (for example, a bucket
+     *         is provided but not the key) or if no data is found at the Amazon
+     *         S3 location, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterCombination</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public CreateApplicationVersionRequest withSourceBundle(S3Location sourceBundle) {
-        this.sourceBundle = sourceBundle;
+    public S3Location getSourceBundle() {
+        return this.sourceBundle;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 bucket and key that identify the location of the source
+     * bundle for this version.
+     * </p>
+     * <p>
+     * If data found at the Amazon S3 location exceeds the maximum allowed
+     * source bundle size, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. The maximum size allowed is 512
+     * MB.
+     * </p>
+     * <p>
+     * Default: If not specified, AWS Elastic Beanstalk uses a sample
+     * application. If only partially specified (for example, a bucket is
+     * provided but not the key) or if no data is found at the Amazon S3
+     * location, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error.
+     * </p>
+     * 
+     * @param sourceBundle
+     *        The Amazon S3 bucket and key that identify the location of the
+     *        source bundle for this version. </p>
+     *        <p>
+     *        If data found at the Amazon S3 location exceeds the maximum
+     *        allowed source bundle size, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error. The maximum size allowed
+     *        is 512 MB.
+     *        </p>
+     *        <p>
+     *        Default: If not specified, AWS Elastic Beanstalk uses a sample
+     *        application. If only partially specified (for example, a bucket is
+     *        provided but not the key) or if no data is found at the Amazon S3
+     *        location, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterCombination</code> error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateApplicationVersionRequest withSourceBundle(
+            S3Location sourceBundle) {
+        setSourceBundle(sourceBundle);
         return this;
     }
 
     /**
-     * Determines how the system behaves if the specified application for
-     * this version does not already exist: <enumValues> <value name="true">
-     * <p> <code>true</code>: Automatically creates the specified application
-     * for this version if it does not already exist. </value> <value
-     * name="false"> <p> <code>false</code>: Returns an
-     * <code>InvalidParameterValue</code> if the specified application for
-     * this version does not already exist. </value> </enumValues> <ul> <li>
-     * <code>true</code> : Automatically creates the specified application
-     * for this release if it does not already exist. </li> <li>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist.
-     * </li> </ul> <p> Default: <code>false</code> <p> Valid Values:
-     * <code>true</code> | <code>false</code>
-     *
-     * @return Determines how the system behaves if the specified application for
-     *         this version does not already exist: <enumValues> <value name="true">
-     *         <p> <code>true</code>: Automatically creates the specified application
-     *         for this version if it does not already exist. </value> <value
-     *         name="false"> <p> <code>false</code>: Returns an
-     *         <code>InvalidParameterValue</code> if the specified application for
-     *         this version does not already exist. </value> </enumValues> <ul> <li>
-     *         <code>true</code> : Automatically creates the specified application
-     *         for this release if it does not already exist. </li> <li>
-     *         <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     *         the specified application for this release does not already exist.
-     *         </li> </ul> <p> Default: <code>false</code> <p> Valid Values:
-     *         <code>true</code> | <code>false</code>
-     */
-    public Boolean isAutoCreateApplication() {
-        return autoCreateApplication;
-    }
-    
-    /**
-     * Determines how the system behaves if the specified application for
-     * this version does not already exist: <enumValues> <value name="true">
-     * <p> <code>true</code>: Automatically creates the specified application
-     * for this version if it does not already exist. </value> <value
-     * name="false"> <p> <code>false</code>: Returns an
-     * <code>InvalidParameterValue</code> if the specified application for
-     * this version does not already exist. </value> </enumValues> <ul> <li>
-     * <code>true</code> : Automatically creates the specified application
-     * for this release if it does not already exist. </li> <li>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist.
-     * </li> </ul> <p> Default: <code>false</code> <p> Valid Values:
-     * <code>true</code> | <code>false</code>
-     *
-     * @param autoCreateApplication Determines how the system behaves if the specified application for
-     *         this version does not already exist: <enumValues> <value name="true">
-     *         <p> <code>true</code>: Automatically creates the specified application
-     *         for this version if it does not already exist. </value> <value
-     *         name="false"> <p> <code>false</code>: Returns an
-     *         <code>InvalidParameterValue</code> if the specified application for
-     *         this version does not already exist. </value> </enumValues> <ul> <li>
-     *         <code>true</code> : Automatically creates the specified application
-     *         for this release if it does not already exist. </li> <li>
-     *         <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     *         the specified application for this release does not already exist.
-     *         </li> </ul> <p> Default: <code>false</code> <p> Valid Values:
-     *         <code>true</code> | <code>false</code>
+     * <p>
+     * Determines how the system behaves if the specified application for this
+     * version does not already exist:
+     * </p>
+     * <enumValues> <value name="true">
+     * <p>
+     * <code>true</code>: Automatically creates the specified application for
+     * this version if it does not already exist.
+     * </p>
+     * </value> <value name="false">
+     * <p>
+     * <code>false</code>: Returns an <code>InvalidParameterValue</code> if the
+     * specified application for this version does not already exist.
+     * </p>
+     * </value> </enumValues>
+     * <ul>
+     * <li> <code>true</code> : Automatically creates the specified application
+     * for this release if it does not already exist.</li>
+     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
+     * the specified application for this release does not already exist.</li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @param autoCreateApplication
+     *        Determines how the system behaves if the specified application for
+     *        this version does not already exist: </p> <enumValues> <value
+     *        name="true">
+     *        <p>
+     *        <code>true</code>: Automatically creates the specified application
+     *        for this version if it does not already exist.
+     *        </p>
+     *        </value> <value name="false">
+     *        <p>
+     *        <code>false</code>: Returns an <code>InvalidParameterValue</code>
+     *        if the specified application for this version does not already
+     *        exist.
+     *        </p>
+     *        </value> </enumValues>
+     *        <ul>
+     *        <li> <code>true</code> : Automatically creates the specified
+     *        application for this release if it does not already exist.</li>
+     *        <li> <code>false</code> : Throws an
+     *        <code>InvalidParameterValue</code> if the specified application
+     *        for this release does not already exist.</li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>false</code>
+     *        </p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
     public void setAutoCreateApplication(Boolean autoCreateApplication) {
         this.autoCreateApplication = autoCreateApplication;
     }
-    
+
     /**
-     * Determines how the system behaves if the specified application for
-     * this version does not already exist: <enumValues> <value name="true">
-     * <p> <code>true</code>: Automatically creates the specified application
-     * for this version if it does not already exist. </value> <value
-     * name="false"> <p> <code>false</code>: Returns an
-     * <code>InvalidParameterValue</code> if the specified application for
-     * this version does not already exist. </value> </enumValues> <ul> <li>
-     * <code>true</code> : Automatically creates the specified application
-     * for this release if it does not already exist. </li> <li>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist.
-     * </li> </ul> <p> Default: <code>false</code> <p> Valid Values:
-     * <code>true</code> | <code>false</code>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param autoCreateApplication Determines how the system behaves if the specified application for
-     *         this version does not already exist: <enumValues> <value name="true">
-     *         <p> <code>true</code>: Automatically creates the specified application
-     *         for this version if it does not already exist. </value> <value
-     *         name="false"> <p> <code>false</code>: Returns an
-     *         <code>InvalidParameterValue</code> if the specified application for
-     *         this version does not already exist. </value> </enumValues> <ul> <li>
-     *         <code>true</code> : Automatically creates the specified application
-     *         for this release if it does not already exist. </li> <li>
-     *         <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     *         the specified application for this release does not already exist.
-     *         </li> </ul> <p> Default: <code>false</code> <p> Valid Values:
-     *         <code>true</code> | <code>false</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Determines how the system behaves if the specified application for this
+     * version does not already exist:
+     * </p>
+     * <enumValues> <value name="true">
+     * <p>
+     * <code>true</code>: Automatically creates the specified application for
+     * this version if it does not already exist.
+     * </p>
+     * </value> <value name="false">
+     * <p>
+     * <code>false</code>: Returns an <code>InvalidParameterValue</code> if the
+     * specified application for this version does not already exist.
+     * </p>
+     * </value> </enumValues>
+     * <ul>
+     * <li> <code>true</code> : Automatically creates the specified application
+     * for this release if it does not already exist.</li>
+     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
+     * the specified application for this release does not already exist.</li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @return Determines how the system behaves if the specified application
+     *         for this version does not already exist: </p> <enumValues> <value
+     *         name="true">
+     *         <p>
+     *         <code>true</code>: Automatically creates the specified
+     *         application for this version if it does not already exist.
+     *         </p>
+     *         </value> <value name="false">
+     *         <p>
+     *         <code>false</code>: Returns an <code>InvalidParameterValue</code>
+     *         if the specified application for this version does not already
+     *         exist.
+     *         </p>
+     *         </value> </enumValues>
+     *         <ul>
+     *         <li> <code>true</code> : Automatically creates the specified
+     *         application for this release if it does not already exist.</li>
+     *         <li> <code>false</code> : Throws an
+     *         <code>InvalidParameterValue</code> if the specified application
+     *         for this release does not already exist.</li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>false</code>
+     *         </p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
-    public CreateApplicationVersionRequest withAutoCreateApplication(Boolean autoCreateApplication) {
-        this.autoCreateApplication = autoCreateApplication;
+    public Boolean getAutoCreateApplication() {
+        return this.autoCreateApplication;
+    }
+
+    /**
+     * <p>
+     * Determines how the system behaves if the specified application for this
+     * version does not already exist:
+     * </p>
+     * <enumValues> <value name="true">
+     * <p>
+     * <code>true</code>: Automatically creates the specified application for
+     * this version if it does not already exist.
+     * </p>
+     * </value> <value name="false">
+     * <p>
+     * <code>false</code>: Returns an <code>InvalidParameterValue</code> if the
+     * specified application for this version does not already exist.
+     * </p>
+     * </value> </enumValues>
+     * <ul>
+     * <li> <code>true</code> : Automatically creates the specified application
+     * for this release if it does not already exist.</li>
+     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
+     * the specified application for this release does not already exist.</li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @param autoCreateApplication
+     *        Determines how the system behaves if the specified application for
+     *        this version does not already exist: </p> <enumValues> <value
+     *        name="true">
+     *        <p>
+     *        <code>true</code>: Automatically creates the specified application
+     *        for this version if it does not already exist.
+     *        </p>
+     *        </value> <value name="false">
+     *        <p>
+     *        <code>false</code>: Returns an <code>InvalidParameterValue</code>
+     *        if the specified application for this version does not already
+     *        exist.
+     *        </p>
+     *        </value> </enumValues>
+     *        <ul>
+     *        <li> <code>true</code> : Automatically creates the specified
+     *        application for this release if it does not already exist.</li>
+     *        <li> <code>false</code> : Throws an
+     *        <code>InvalidParameterValue</code> if the specified application
+     *        for this release does not already exist.</li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>false</code>
+     *        </p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateApplicationVersionRequest withAutoCreateApplication(
+            Boolean autoCreateApplication) {
+        setAutoCreateApplication(autoCreateApplication);
         return this;
     }
 
     /**
-     * Determines how the system behaves if the specified application for
-     * this version does not already exist: <enumValues> <value name="true">
-     * <p> <code>true</code>: Automatically creates the specified application
-     * for this version if it does not already exist. </value> <value
-     * name="false"> <p> <code>false</code>: Returns an
-     * <code>InvalidParameterValue</code> if the specified application for
-     * this version does not already exist. </value> </enumValues> <ul> <li>
-     * <code>true</code> : Automatically creates the specified application
-     * for this release if it does not already exist. </li> <li>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist.
-     * </li> </ul> <p> Default: <code>false</code> <p> Valid Values:
-     * <code>true</code> | <code>false</code>
-     *
-     * @return Determines how the system behaves if the specified application for
-     *         this version does not already exist: <enumValues> <value name="true">
-     *         <p> <code>true</code>: Automatically creates the specified application
-     *         for this version if it does not already exist. </value> <value
-     *         name="false"> <p> <code>false</code>: Returns an
-     *         <code>InvalidParameterValue</code> if the specified application for
-     *         this version does not already exist. </value> </enumValues> <ul> <li>
-     *         <code>true</code> : Automatically creates the specified application
-     *         for this release if it does not already exist. </li> <li>
-     *         <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     *         the specified application for this release does not already exist.
-     *         </li> </ul> <p> Default: <code>false</code> <p> Valid Values:
-     *         <code>true</code> | <code>false</code>
+     * <p>
+     * Determines how the system behaves if the specified application for this
+     * version does not already exist:
+     * </p>
+     * <enumValues> <value name="true">
+     * <p>
+     * <code>true</code>: Automatically creates the specified application for
+     * this version if it does not already exist.
+     * </p>
+     * </value> <value name="false">
+     * <p>
+     * <code>false</code>: Returns an <code>InvalidParameterValue</code> if the
+     * specified application for this version does not already exist.
+     * </p>
+     * </value> </enumValues>
+     * <ul>
+     * <li> <code>true</code> : Automatically creates the specified application
+     * for this release if it does not already exist.</li>
+     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
+     * the specified application for this release does not already exist.</li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @return Determines how the system behaves if the specified application
+     *         for this version does not already exist: </p> <enumValues> <value
+     *         name="true">
+     *         <p>
+     *         <code>true</code>: Automatically creates the specified
+     *         application for this version if it does not already exist.
+     *         </p>
+     *         </value> <value name="false">
+     *         <p>
+     *         <code>false</code>: Returns an <code>InvalidParameterValue</code>
+     *         if the specified application for this version does not already
+     *         exist.
+     *         </p>
+     *         </value> </enumValues>
+     *         <ul>
+     *         <li> <code>true</code> : Automatically creates the specified
+     *         application for this release if it does not already exist.</li>
+     *         <li> <code>false</code> : Throws an
+     *         <code>InvalidParameterValue</code> if the specified application
+     *         for this release does not already exist.</li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>false</code>
+     *         </p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
-    public Boolean getAutoCreateApplication() {
-        return autoCreateApplication;
+    public Boolean isAutoCreateApplication() {
+        return this.autoCreateApplication;
     }
 
     /**
@@ -506,54 +668,90 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
-        if (getSourceBundle() != null) sb.append("SourceBundle: " + getSourceBundle() + ",");
-        if (isAutoCreateApplication() != null) sb.append("AutoCreateApplication: " + isAutoCreateApplication() );
+        if (getApplicationName() != null)
+            sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getVersionLabel() != null)
+            sb.append("VersionLabel: " + getVersionLabel() + ",");
+        if (getDescription() != null)
+            sb.append("Description: " + getDescription() + ",");
+        if (getSourceBundle() != null)
+            sb.append("SourceBundle: " + getSourceBundle() + ",");
+        if (getAutoCreateApplication() != null)
+            sb.append("AutoCreateApplication: " + getAutoCreateApplication());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateApplicationVersionRequest == false)
+            return false;
+        CreateApplicationVersionRequest other = (CreateApplicationVersionRequest) obj;
+        if (other.getApplicationName() == null
+                ^ this.getApplicationName() == null)
+            return false;
+        if (other.getApplicationName() != null
+                && other.getApplicationName().equals(this.getApplicationName()) == false)
+            return false;
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
+            return false;
+        if (other.getVersionLabel() != null
+                && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null
+                && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getSourceBundle() == null ^ this.getSourceBundle() == null)
+            return false;
+        if (other.getSourceBundle() != null
+                && other.getSourceBundle().equals(this.getSourceBundle()) == false)
+            return false;
+        if (other.getAutoCreateApplication() == null
+                ^ this.getAutoCreateApplication() == null)
+            return false;
+        if (other.getAutoCreateApplication() != null
+                && other.getAutoCreateApplication().equals(
+                        this.getAutoCreateApplication()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode()); 
-        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode()); 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getSourceBundle() == null) ? 0 : getSourceBundle().hashCode()); 
-        hashCode = prime * hashCode + ((isAutoCreateApplication() == null) ? 0 : isAutoCreateApplication().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getApplicationName() == null) ? 0 : getApplicationName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVersionLabel() == null) ? 0 : getVersionLabel()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSourceBundle() == null) ? 0 : getSourceBundle()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAutoCreateApplication() == null) ? 0
+                        : getAutoCreateApplication().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateApplicationVersionRequest == false) return false;
-        CreateApplicationVersionRequest other = (CreateApplicationVersionRequest)obj;
-        
-        if (other.getApplicationName() == null ^ this.getApplicationName() == null) return false;
-        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false) return false; 
-        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null) return false;
-        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false) return false; 
-        if (other.getDescription() == null ^ this.getDescription() == null) return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
-        if (other.getSourceBundle() == null ^ this.getSourceBundle() == null) return false;
-        if (other.getSourceBundle() != null && other.getSourceBundle().equals(this.getSourceBundle()) == false) return false; 
-        if (other.isAutoCreateApplication() == null ^ this.isAutoCreateApplication() == null) return false;
-        if (other.isAutoCreateApplication() != null && other.isAutoCreateApplication().equals(this.isAutoCreateApplication()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateApplicationVersionRequest clone() {
-        
-            return (CreateApplicationVersionRequest) super.clone();
+        return (CreateApplicationVersionRequest) super.clone();
     }
-
 }
-    

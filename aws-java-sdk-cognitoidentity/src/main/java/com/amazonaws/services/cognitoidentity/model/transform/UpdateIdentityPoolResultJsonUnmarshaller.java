@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Update Identity Pool Result JSON Unmarshaller
+ * UpdateIdentityPoolResult JSON Unmarshaller
  */
-public class UpdateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<UpdateIdentityPoolResult, JsonUnmarshallerContext> {
+public class UpdateIdentityPoolResultJsonUnmarshaller implements
+        Unmarshaller<UpdateIdentityPoolResult, JsonUnmarshallerContext> {
 
-    public UpdateIdentityPoolResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public UpdateIdentityPoolResult unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         UpdateIdentityPoolResult updateIdentityPoolResult = new UpdateIdentityPoolResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,53 +40,78 @@ public class UpdateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<Up
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityPoolId", targetDepth)) {
                     context.nextToken();
-                    updateIdentityPoolResult.setIdentityPoolId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    updateIdentityPoolResult
+                            .setIdentityPoolId(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IdentityPoolName", targetDepth)) {
                     context.nextToken();
-                    updateIdentityPoolResult.setIdentityPoolName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    updateIdentityPoolResult
+                            .setIdentityPoolName(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("AllowUnauthenticatedIdentities", targetDepth)) {
+                if (context.testExpression("AllowUnauthenticatedIdentities",
+                        targetDepth)) {
                     context.nextToken();
-                    updateIdentityPoolResult.setAllowUnauthenticatedIdentities(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    updateIdentityPoolResult
+                            .setAllowUnauthenticatedIdentities(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("SupportedLoginProviders", targetDepth)) {
+                if (context.testExpression("SupportedLoginProviders",
+                        targetDepth)) {
                     context.nextToken();
-                    updateIdentityPoolResult.setSupportedLoginProviders(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateIdentityPoolResult
+                            .setSupportedLoginProviders(new MapUnmarshaller<String, String>(
+                                    StringJsonUnmarshaller.getInstance(),
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
-                if (context.testExpression("DeveloperProviderName", targetDepth)) {
+                if (context
+                        .testExpression("DeveloperProviderName", targetDepth)) {
                     context.nextToken();
-                    updateIdentityPoolResult.setDeveloperProviderName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    updateIdentityPoolResult
+                            .setDeveloperProviderName(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("OpenIdConnectProviderARNs", targetDepth)) {
+                if (context.testExpression("OpenIdConnectProviderARNs",
+                        targetDepth)) {
                     context.nextToken();
-                    updateIdentityPoolResult.setOpenIdConnectProviderARNs(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateIdentityPoolResult
+                            .setOpenIdConnectProviderARNs(new ListUnmarshaller<String>(
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return updateIdentityPoolResult;
     }
 
     private static UpdateIdentityPoolResultJsonUnmarshaller instance;
+
     public static UpdateIdentityPoolResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new UpdateIdentityPoolResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new UpdateIdentityPoolResultJsonUnmarshaller();
         return instance;
     }
 }
-    

@@ -1,113 +1,109 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest) DescribeTrustedAdvisorCheckSummaries operation}.
- * <p>
- * Returns the summaries of the results of the Trusted Advisor checks
- * that have the specified check IDs. Check IDs can be obtained by
- * calling DescribeTrustedAdvisorChecks.
- * </p>
- * <p>
- * The response contains an array of TrustedAdvisorCheckSummary objects.
- * </p>
- *
- * @see com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest)
+ * 
  */
-public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeTrustedAdvisorCheckSummariesRequest extends
+        AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The IDs of the Trusted Advisor checks.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIds;
+    private com.amazonaws.internal.SdkInternalList<String> checkIds;
 
     /**
+     * <p>
      * The IDs of the Trusted Advisor checks.
-     *
+     * </p>
+     * 
      * @return The IDs of the Trusted Advisor checks.
      */
     public java.util.List<String> getCheckIds() {
         if (checkIds == null) {
-              checkIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              checkIds.setAutoConstruct(true);
+            checkIds = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return checkIds;
     }
-    
+
     /**
+     * <p>
      * The IDs of the Trusted Advisor checks.
-     *
-     * @param checkIds The IDs of the Trusted Advisor checks.
+     * </p>
+     * 
+     * @param checkIds
+     *        The IDs of the Trusted Advisor checks.
      */
     public void setCheckIds(java.util.Collection<String> checkIds) {
         if (checkIds == null) {
             this.checkIds = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(checkIds.size());
-        checkIdsCopy.addAll(checkIds);
-        this.checkIds = checkIdsCopy;
+
+        this.checkIds = new com.amazonaws.internal.SdkInternalList<String>(
+                checkIds);
     }
-    
+
     /**
+     * <p>
      * The IDs of the Trusted Advisor checks.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCheckIds(java.util.Collection)} or {@link
-     * #withCheckIds(java.util.Collection)} if you want to override the
+     * any). Use {@link #setCheckIds(java.util.Collection)} or
+     * {@link #withCheckIds(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param checkIds The IDs of the Trusted Advisor checks.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param checkIds
+     *        The IDs of the Trusted Advisor checks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeTrustedAdvisorCheckSummariesRequest withCheckIds(String... checkIds) {
-        if (getCheckIds() == null) setCheckIds(new java.util.ArrayList<String>(checkIds.length));
-        for (String value : checkIds) {
-            getCheckIds().add(value);
+    public DescribeTrustedAdvisorCheckSummariesRequest withCheckIds(
+            String... checkIds) {
+        if (this.checkIds == null) {
+            setCheckIds(new com.amazonaws.internal.SdkInternalList<String>(
+                    checkIds.length));
+        }
+        for (String ele : checkIds) {
+            this.checkIds.add(ele);
         }
         return this;
     }
-    
-    /**
-     * The IDs of the Trusted Advisor checks.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param checkIds The IDs of the Trusted Advisor checks.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribeTrustedAdvisorCheckSummariesRequest withCheckIds(java.util.Collection<String> checkIds) {
-        if (checkIds == null) {
-            this.checkIds = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(checkIds.size());
-            checkIdsCopy.addAll(checkIds);
-            this.checkIds = checkIdsCopy;
-        }
 
+    /**
+     * <p>
+     * The IDs of the Trusted Advisor checks.
+     * </p>
+     * 
+     * @param checkIds
+     *        The IDs of the Trusted Advisor checks.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeTrustedAdvisorCheckSummariesRequest withCheckIds(
+            java.util.Collection<String> checkIds) {
+        setCheckIds(checkIds);
         return this;
     }
 
@@ -123,38 +119,42 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCheckIds() != null) sb.append("CheckIds: " + getCheckIds() );
+        if (getCheckIds() != null)
+            sb.append("CheckIds: " + getCheckIds());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeTrustedAdvisorCheckSummariesRequest == false)
+            return false;
+        DescribeTrustedAdvisorCheckSummariesRequest other = (DescribeTrustedAdvisorCheckSummariesRequest) obj;
+        if (other.getCheckIds() == null ^ this.getCheckIds() == null)
+            return false;
+        if (other.getCheckIds() != null
+                && other.getCheckIds().equals(this.getCheckIds()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getCheckIds() == null) ? 0 : getCheckIds().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getCheckIds() == null) ? 0 : getCheckIds().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeTrustedAdvisorCheckSummariesRequest == false) return false;
-        DescribeTrustedAdvisorCheckSummariesRequest other = (DescribeTrustedAdvisorCheckSummariesRequest)obj;
-        
-        if (other.getCheckIds() == null ^ this.getCheckIds() == null) return false;
-        if (other.getCheckIds() != null && other.getCheckIds().equals(this.getCheckIds()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeTrustedAdvisorCheckSummariesRequest clone() {
-        
-            return (DescribeTrustedAdvisorCheckSummariesRequest) super.clone();
+        return (DescribeTrustedAdvisorCheckSummariesRequest) super.clone();
     }
-
 }
-    

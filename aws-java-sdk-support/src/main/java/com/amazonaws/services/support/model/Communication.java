@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
@@ -26,246 +27,281 @@ import java.io.Serializable;
 public class Communication implements Serializable, Cloneable {
 
     /**
-     * The AWS Support case ID requested or returned in the call. The case ID
-     * is an alphanumeric string formatted as shown in this example:
+     * <p>
+     * The AWS Support case ID requested or returned in the call. The case ID is
+     * an alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * </p>
      */
     private String caseId;
-
     /**
+     * <p>
      * The text of the communication between the customer and AWS Support.
+     * </p>
      */
     private String body;
-
     /**
+     * <p>
      * The email address of the account that submitted the AWS Support case.
+     * </p>
      */
     private String submittedBy;
-
     /**
+     * <p>
      * The time the communication was created.
+     * </p>
      */
     private String timeCreated;
-
     /**
+     * <p>
      * Information about the attachments to the case communication.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails> attachmentSet;
+    private com.amazonaws.internal.SdkInternalList<AttachmentDetails> attachmentSet;
 
     /**
-     * The AWS Support case ID requested or returned in the call. The case ID
-     * is an alphanumeric string formatted as shown in this example:
+     * <p>
+     * The AWS Support case ID requested or returned in the call. The case ID is
+     * an alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-     *
-     * @return The AWS Support case ID requested or returned in the call. The case ID
-     *         is an alphanumeric string formatted as shown in this example:
-     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-     */
-    public String getCaseId() {
-        return caseId;
-    }
-    
-    /**
-     * The AWS Support case ID requested or returned in the call. The case ID
-     * is an alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-     *
-     * @param caseId The AWS Support case ID requested or returned in the call. The case ID
-     *         is an alphanumeric string formatted as shown in this example:
-     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * </p>
+     * 
+     * @param caseId
+     *        The AWS Support case ID requested or returned in the call. The
+     *        case ID is an alphanumeric string formatted as shown in this
+     *        example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
-    
+
     /**
-     * The AWS Support case ID requested or returned in the call. The case ID
-     * is an alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param caseId The AWS Support case ID requested or returned in the call. The case ID
-     *         is an alphanumeric string formatted as shown in this example:
-     *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The AWS Support case ID requested or returned in the call. The case ID is
+     * an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * </p>
+     * 
+     * @return The AWS Support case ID requested or returned in the call. The
+     *         case ID is an alphanumeric string formatted as shown in this
+     *         example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     */
+    public String getCaseId() {
+        return this.caseId;
+    }
+
+    /**
+     * <p>
+     * The AWS Support case ID requested or returned in the call. The case ID is
+     * an alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * </p>
+     * 
+     * @param caseId
+     *        The AWS Support case ID requested or returned in the call. The
+     *        case ID is an alphanumeric string formatted as shown in this
+     *        example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Communication withCaseId(String caseId) {
-        this.caseId = caseId;
+        setCaseId(caseId);
         return this;
     }
 
     /**
+     * <p>
      * The text of the communication between the customer and AWS Support.
-     *
-     * @return The text of the communication between the customer and AWS Support.
-     */
-    public String getBody() {
-        return body;
-    }
-    
-    /**
-     * The text of the communication between the customer and AWS Support.
-     *
-     * @param body The text of the communication between the customer and AWS Support.
+     * </p>
+     * 
+     * @param body
+     *        The text of the communication between the customer and AWS
+     *        Support.
      */
     public void setBody(String body) {
         this.body = body;
     }
-    
+
     /**
-     * The text of the communication between the customer and AWS Support.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param body The text of the communication between the customer and AWS Support.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The text of the communication between the customer and AWS Support.
+     * </p>
+     * 
+     * @return The text of the communication between the customer and AWS
+     *         Support.
+     */
+    public String getBody() {
+        return this.body;
+    }
+
+    /**
+     * <p>
+     * The text of the communication between the customer and AWS Support.
+     * </p>
+     * 
+     * @param body
+     *        The text of the communication between the customer and AWS
+     *        Support.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Communication withBody(String body) {
-        this.body = body;
+        setBody(body);
         return this;
     }
 
     /**
+     * <p>
      * The email address of the account that submitted the AWS Support case.
-     *
-     * @return The email address of the account that submitted the AWS Support case.
-     */
-    public String getSubmittedBy() {
-        return submittedBy;
-    }
-    
-    /**
-     * The email address of the account that submitted the AWS Support case.
-     *
-     * @param submittedBy The email address of the account that submitted the AWS Support case.
+     * </p>
+     * 
+     * @param submittedBy
+     *        The email address of the account that submitted the AWS Support
+     *        case.
      */
     public void setSubmittedBy(String submittedBy) {
         this.submittedBy = submittedBy;
     }
-    
+
     /**
-     * The email address of the account that submitted the AWS Support case.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param submittedBy The email address of the account that submitted the AWS Support case.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The email address of the account that submitted the AWS Support case.
+     * </p>
+     * 
+     * @return The email address of the account that submitted the AWS Support
+     *         case.
+     */
+    public String getSubmittedBy() {
+        return this.submittedBy;
+    }
+
+    /**
+     * <p>
+     * The email address of the account that submitted the AWS Support case.
+     * </p>
+     * 
+     * @param submittedBy
+     *        The email address of the account that submitted the AWS Support
+     *        case.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Communication withSubmittedBy(String submittedBy) {
-        this.submittedBy = submittedBy;
+        setSubmittedBy(submittedBy);
         return this;
     }
 
     /**
+     * <p>
      * The time the communication was created.
-     *
-     * @return The time the communication was created.
-     */
-    public String getTimeCreated() {
-        return timeCreated;
-    }
-    
-    /**
-     * The time the communication was created.
-     *
-     * @param timeCreated The time the communication was created.
+     * </p>
+     * 
+     * @param timeCreated
+     *        The time the communication was created.
      */
     public void setTimeCreated(String timeCreated) {
         this.timeCreated = timeCreated;
     }
-    
+
     /**
-     * The time the communication was created.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param timeCreated The time the communication was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The time the communication was created.
+     * </p>
+     * 
+     * @return The time the communication was created.
+     */
+    public String getTimeCreated() {
+        return this.timeCreated;
+    }
+
+    /**
+     * <p>
+     * The time the communication was created.
+     * </p>
+     * 
+     * @param timeCreated
+     *        The time the communication was created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Communication withTimeCreated(String timeCreated) {
-        this.timeCreated = timeCreated;
+        setTimeCreated(timeCreated);
         return this;
     }
 
     /**
+     * <p>
      * Information about the attachments to the case communication.
-     *
+     * </p>
+     * 
      * @return Information about the attachments to the case communication.
      */
     public java.util.List<AttachmentDetails> getAttachmentSet() {
         if (attachmentSet == null) {
-              attachmentSet = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails>();
-              attachmentSet.setAutoConstruct(true);
+            attachmentSet = new com.amazonaws.internal.SdkInternalList<AttachmentDetails>();
         }
         return attachmentSet;
     }
-    
+
     /**
+     * <p>
      * Information about the attachments to the case communication.
-     *
-     * @param attachmentSet Information about the attachments to the case communication.
+     * </p>
+     * 
+     * @param attachmentSet
+     *        Information about the attachments to the case communication.
      */
-    public void setAttachmentSet(java.util.Collection<AttachmentDetails> attachmentSet) {
+    public void setAttachmentSet(
+            java.util.Collection<AttachmentDetails> attachmentSet) {
         if (attachmentSet == null) {
             this.attachmentSet = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails> attachmentSetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails>(attachmentSet.size());
-        attachmentSetCopy.addAll(attachmentSet);
-        this.attachmentSet = attachmentSetCopy;
+
+        this.attachmentSet = new com.amazonaws.internal.SdkInternalList<AttachmentDetails>(
+                attachmentSet);
     }
-    
+
     /**
+     * <p>
      * Information about the attachments to the case communication.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttachmentSet(java.util.Collection)} or {@link
-     * #withAttachmentSet(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param attachmentSet Information about the attachments to the case communication.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setAttachmentSet(java.util.Collection)} or
+     * {@link #withAttachmentSet(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param attachmentSet
+     *        Information about the attachments to the case communication.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Communication withAttachmentSet(AttachmentDetails... attachmentSet) {
-        if (getAttachmentSet() == null) setAttachmentSet(new java.util.ArrayList<AttachmentDetails>(attachmentSet.length));
-        for (AttachmentDetails value : attachmentSet) {
-            getAttachmentSet().add(value);
+        if (this.attachmentSet == null) {
+            setAttachmentSet(new com.amazonaws.internal.SdkInternalList<AttachmentDetails>(
+                    attachmentSet.length));
+        }
+        for (AttachmentDetails ele : attachmentSet) {
+            this.attachmentSet.add(ele);
         }
         return this;
     }
-    
-    /**
-     * Information about the attachments to the case communication.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param attachmentSet Information about the attachments to the case communication.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public Communication withAttachmentSet(java.util.Collection<AttachmentDetails> attachmentSet) {
-        if (attachmentSet == null) {
-            this.attachmentSet = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails> attachmentSetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails>(attachmentSet.size());
-            attachmentSetCopy.addAll(attachmentSet);
-            this.attachmentSet = attachmentSetCopy;
-        }
 
+    /**
+     * <p>
+     * Information about the attachments to the case communication.
+     * </p>
+     * 
+     * @param attachmentSet
+     *        Information about the attachments to the case communication.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Communication withAttachmentSet(
+            java.util.Collection<AttachmentDetails> attachmentSet) {
+        setAttachmentSet(attachmentSet);
         return this;
     }
 
@@ -281,62 +317,88 @@ public class Communication implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCaseId() != null) sb.append("CaseId: " + getCaseId() + ",");
-        if (getBody() != null) sb.append("Body: " + getBody() + ",");
-        if (getSubmittedBy() != null) sb.append("SubmittedBy: " + getSubmittedBy() + ",");
-        if (getTimeCreated() != null) sb.append("TimeCreated: " + getTimeCreated() + ",");
-        if (getAttachmentSet() != null) sb.append("AttachmentSet: " + getAttachmentSet() );
+        if (getCaseId() != null)
+            sb.append("CaseId: " + getCaseId() + ",");
+        if (getBody() != null)
+            sb.append("Body: " + getBody() + ",");
+        if (getSubmittedBy() != null)
+            sb.append("SubmittedBy: " + getSubmittedBy() + ",");
+        if (getTimeCreated() != null)
+            sb.append("TimeCreated: " + getTimeCreated() + ",");
+        if (getAttachmentSet() != null)
+            sb.append("AttachmentSet: " + getAttachmentSet());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof Communication == false)
+            return false;
+        Communication other = (Communication) obj;
+        if (other.getCaseId() == null ^ this.getCaseId() == null)
+            return false;
+        if (other.getCaseId() != null
+                && other.getCaseId().equals(this.getCaseId()) == false)
+            return false;
+        if (other.getBody() == null ^ this.getBody() == null)
+            return false;
+        if (other.getBody() != null
+                && other.getBody().equals(this.getBody()) == false)
+            return false;
+        if (other.getSubmittedBy() == null ^ this.getSubmittedBy() == null)
+            return false;
+        if (other.getSubmittedBy() != null
+                && other.getSubmittedBy().equals(this.getSubmittedBy()) == false)
+            return false;
+        if (other.getTimeCreated() == null ^ this.getTimeCreated() == null)
+            return false;
+        if (other.getTimeCreated() != null
+                && other.getTimeCreated().equals(this.getTimeCreated()) == false)
+            return false;
+        if (other.getAttachmentSet() == null ^ this.getAttachmentSet() == null)
+            return false;
+        if (other.getAttachmentSet() != null
+                && other.getAttachmentSet().equals(this.getAttachmentSet()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getCaseId() == null) ? 0 : getCaseId().hashCode()); 
-        hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode()); 
-        hashCode = prime * hashCode + ((getSubmittedBy() == null) ? 0 : getSubmittedBy().hashCode()); 
-        hashCode = prime * hashCode + ((getTimeCreated() == null) ? 0 : getTimeCreated().hashCode()); 
-        hashCode = prime * hashCode + ((getAttachmentSet() == null) ? 0 : getAttachmentSet().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getCaseId() == null) ? 0 : getCaseId().hashCode());
+        hashCode = prime * hashCode
+                + ((getBody() == null) ? 0 : getBody().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSubmittedBy() == null) ? 0 : getSubmittedBy().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTimeCreated() == null) ? 0 : getTimeCreated().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAttachmentSet() == null) ? 0 : getAttachmentSet()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof Communication == false) return false;
-        Communication other = (Communication)obj;
-        
-        if (other.getCaseId() == null ^ this.getCaseId() == null) return false;
-        if (other.getCaseId() != null && other.getCaseId().equals(this.getCaseId()) == false) return false; 
-        if (other.getBody() == null ^ this.getBody() == null) return false;
-        if (other.getBody() != null && other.getBody().equals(this.getBody()) == false) return false; 
-        if (other.getSubmittedBy() == null ^ this.getSubmittedBy() == null) return false;
-        if (other.getSubmittedBy() != null && other.getSubmittedBy().equals(this.getSubmittedBy()) == false) return false; 
-        if (other.getTimeCreated() == null ^ this.getTimeCreated() == null) return false;
-        if (other.getTimeCreated() != null && other.getTimeCreated().equals(this.getTimeCreated()) == false) return false; 
-        if (other.getAttachmentSet() == null ^ this.getAttachmentSet() == null) return false;
-        if (other.getAttachmentSet() != null && other.getAttachmentSet().equals(this.getAttachmentSet()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public Communication clone() {
         try {
             return (Communication) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

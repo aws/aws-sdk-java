@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Describe Identity Result JSON Unmarshaller
+ * DescribeIdentityResult JSON Unmarshaller
  */
-public class DescribeIdentityResultJsonUnmarshaller implements Unmarshaller<DescribeIdentityResult, JsonUnmarshallerContext> {
+public class DescribeIdentityResultJsonUnmarshaller implements
+        Unmarshaller<DescribeIdentityResult, JsonUnmarshallerContext> {
 
-    public DescribeIdentityResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public DescribeIdentityResult unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         DescribeIdentityResult describeIdentityResult = new DescribeIdentityResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,45 +40,58 @@ public class DescribeIdentityResultJsonUnmarshaller implements Unmarshaller<Desc
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityId", targetDepth)) {
                     context.nextToken();
-                    describeIdentityResult.setIdentityId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    describeIdentityResult.setIdentityId(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Logins", targetDepth)) {
                     context.nextToken();
-                    describeIdentityResult.setLogins(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeIdentityResult
+                            .setLogins(new ListUnmarshaller<String>(
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    describeIdentityResult.setCreationDate(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    describeIdentityResult.setCreationDate(DateJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    describeIdentityResult.setLastModifiedDate(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    describeIdentityResult
+                            .setLastModifiedDate(DateJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return describeIdentityResult;
     }
 
     private static DescribeIdentityResultJsonUnmarshaller instance;
+
     public static DescribeIdentityResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new DescribeIdentityResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new DescribeIdentityResultJsonUnmarshaller();
         return instance;
     }
 }
-    
