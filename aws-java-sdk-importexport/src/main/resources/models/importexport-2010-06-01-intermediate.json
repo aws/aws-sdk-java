@@ -61,15 +61,15 @@
         "exceptionName" : "InvalidVersionException",
         "documentation" : "The client tool version is invalid."
       } ],
-      "methodName" : "cancelJob",
-      "asyncDocumentationWithHandler" : "/**This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is complete.\n@param cancelJobRequest Input structure for the CancelJob operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CancelJob operation returned by the service.*/",
       "syncDocumentation" : "/**This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is complete.\n@param cancelJobRequest Input structure for the CancelJob operation.\n@return Result of the CancelJob operation returned by the service.\n@throws InvalidJobIdException The JOBID was missing, not found, or not associated with the AWS account.\n@throws ExpiredJobIdException Indicates that the specified job has expired out of the system.\n@throws CanceledJobIdException The specified job ID has been canceled and is no longer valid.\n@throws UnableToCancelJobIdException AWS Import/Export cannot cancel the job\n@throws InvalidAccessKeyIdException The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.\n@throws InvalidVersionException The client tool version is invalid.*/",
       "asyncDocumentation" : "/**This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is complete.\n@param cancelJobRequest Input structure for the CancelJob operation.\n@return A Java Future containing the result of the CancelJob operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is complete.\n@param cancelJobRequest Input structure for the CancelJob operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CancelJob operation returned by the service.*/",
       "syncReturnType" : "CancelJobResult",
       "asyncReturnType" : "CancelJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult>",
+      "methodName" : "cancelJob"
     },
     "CreateJob" : {
       "documentation" : "This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature that you use to identify your storage device, and the address where you should ship your storage device.",
@@ -108,7 +108,7 @@
         "documentation" : "One or more required fields were missing from the manifest file. Please correct and resubmit."
       }, {
         "exceptionName" : "NoSuchBucketException",
-        "documentation" : "The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or logBucket field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to."
+        "documentation" : "The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or il field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to."
       }, {
         "exceptionName" : "MissingCustomsException",
         "documentation" : "One or more required customs parameters was missing from the manifest."
@@ -137,15 +137,15 @@
         "exceptionName" : "InvalidVersionException",
         "documentation" : "The client tool version is invalid."
       } ],
-      "methodName" : "createJob",
-      "asyncDocumentationWithHandler" : "/**This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature that you use to identify your storage device, and the address where you should ship your storage device.\n@param createJobRequest Input structure for the CreateJob operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateJob operation returned by the service.*/",
-      "syncDocumentation" : "/**This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature that you use to identify your storage device, and the address where you should ship your storage device.\n@param createJobRequest Input structure for the CreateJob operation.\n@return Result of the CreateJob operation returned by the service.\n@throws MissingParameterException One or more required parameters was missing from the request.\n@throws InvalidParameterException One or more parameters had an invalid value.\n@throws InvalidAccessKeyIdException The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.\n@throws InvalidAddressException The address specified in the manifest is invalid.\n@throws InvalidManifestFieldException One or more manifest fields was invalid. Please correct and resubmit.\n@throws MissingManifestFieldException One or more required fields were missing from the manifest file. Please correct and resubmit.\n@throws NoSuchBucketException The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or logBucket field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.\n@throws MissingCustomsException One or more required customs parameters was missing from the manifest.\n@throws InvalidCustomsException One or more customs parameters was invalid. Please correct and resubmit.\n@throws InvalidFileSystemException File system specified in export manifest is invalid.\n@throws MultipleRegionsException Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please correct and resubmit.\n@throws BucketPermissionException The account specified does not have the appropriate bucket permissions.\n@throws MalformedManifestException Your manifest is not well-formed.\n@throws CreateJobQuotaExceededException Each account can create only a certain number of jobs per day. If you need to create more than this, please contact awsimportexport@amazon.com to explain your particular use case.\n@throws InvalidJobIdException The JOBID was missing, not found, or not associated with the AWS account.\n@throws InvalidVersionException The client tool version is invalid.*/",
+      "syncDocumentation" : "/**This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature that you use to identify your storage device, and the address where you should ship your storage device.\n@param createJobRequest Input structure for the CreateJob operation.\n@return Result of the CreateJob operation returned by the service.\n@throws MissingParameterException One or more required parameters was missing from the request.\n@throws InvalidParameterException One or more parameters had an invalid value.\n@throws InvalidAccessKeyIdException The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.\n@throws InvalidAddressException The address specified in the manifest is invalid.\n@throws InvalidManifestFieldException One or more manifest fields was invalid. Please correct and resubmit.\n@throws MissingManifestFieldException One or more required fields were missing from the manifest file. Please correct and resubmit.\n@throws NoSuchBucketException The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or il field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.\n@throws MissingCustomsException One or more required customs parameters was missing from the manifest.\n@throws InvalidCustomsException One or more customs parameters was invalid. Please correct and resubmit.\n@throws InvalidFileSystemException File system specified in export manifest is invalid.\n@throws MultipleRegionsException Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please correct and resubmit.\n@throws BucketPermissionException The account specified does not have the appropriate bucket permissions.\n@throws MalformedManifestException Your manifest is not well-formed.\n@throws CreateJobQuotaExceededException Each account can create only a certain number of jobs per day. If you need to create more than this, please contact awsimportexport@amazon.com to explain your particular use case.\n@throws InvalidJobIdException The JOBID was missing, not found, or not associated with the AWS account.\n@throws InvalidVersionException The client tool version is invalid.*/",
       "asyncDocumentation" : "/**This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature that you use to identify your storage device, and the address where you should ship your storage device.\n@param createJobRequest Input structure for the CreateJob operation.\n@return A Java Future containing the result of the CreateJob operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature that you use to identify your storage device, and the address where you should ship your storage device.\n@param createJobRequest Input structure for the CreateJob operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateJob operation returned by the service.*/",
       "syncReturnType" : "CreateJobResult",
       "asyncReturnType" : "CreateJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult>",
+      "methodName" : "createJob"
     },
     "GetShippingLabel" : {
       "documentation" : "This operation generates a pre-paid UPS shipping label that you will use to ship your device to AWS for processing.",
@@ -186,15 +186,15 @@
         "exceptionName" : "InvalidParameterException",
         "documentation" : "One or more parameters had an invalid value."
       } ],
-      "methodName" : "getShippingLabel",
-      "asyncDocumentationWithHandler" : "/**This operation generates a pre-paid UPS shipping label that you will use to ship your device to AWS for processing.\n@param getShippingLabelRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetShippingLabel operation returned by the service.*/",
       "syncDocumentation" : "/**This operation generates a pre-paid UPS shipping label that you will use to ship your device to AWS for processing.\n@param getShippingLabelRequest null\n@return Result of the GetShippingLabel operation returned by the service.\n@throws InvalidJobIdException The JOBID was missing, not found, or not associated with the AWS account.\n@throws ExpiredJobIdException Indicates that the specified job has expired out of the system.\n@throws CanceledJobIdException The specified job ID has been canceled and is no longer valid.\n@throws InvalidAccessKeyIdException The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.\n@throws InvalidAddressException The address specified in the manifest is invalid.\n@throws InvalidVersionException The client tool version is invalid.\n@throws InvalidParameterException One or more parameters had an invalid value.*/",
       "asyncDocumentation" : "/**This operation generates a pre-paid UPS shipping label that you will use to ship your device to AWS for processing.\n@param getShippingLabelRequest null\n@return A Java Future containing the result of the GetShippingLabel operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**This operation generates a pre-paid UPS shipping label that you will use to ship your device to AWS for processing.\n@param getShippingLabelRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetShippingLabel operation returned by the service.*/",
       "syncReturnType" : "GetShippingLabelResult",
       "asyncReturnType" : "GetShippingLabelResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetShippingLabelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetShippingLabelResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetShippingLabelRequest, GetShippingLabelResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetShippingLabelRequest, GetShippingLabelResult>",
+      "methodName" : "getShippingLabel"
     },
     "GetStatus" : {
       "documentation" : "This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and the signature value associated with the job. You can only return information about jobs you own.",
@@ -229,15 +229,15 @@
         "exceptionName" : "InvalidVersionException",
         "documentation" : "The client tool version is invalid."
       } ],
-      "methodName" : "getStatus",
-      "asyncDocumentationWithHandler" : "/**This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and the signature value associated with the job. You can only return information about jobs you own.\n@param getStatusRequest Input structure for the GetStatus operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetStatus operation returned by the service.*/",
       "syncDocumentation" : "/**This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and the signature value associated with the job. You can only return information about jobs you own.\n@param getStatusRequest Input structure for the GetStatus operation.\n@return Result of the GetStatus operation returned by the service.\n@throws InvalidJobIdException The JOBID was missing, not found, or not associated with the AWS account.\n@throws ExpiredJobIdException Indicates that the specified job has expired out of the system.\n@throws CanceledJobIdException The specified job ID has been canceled and is no longer valid.\n@throws InvalidAccessKeyIdException The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.\n@throws InvalidVersionException The client tool version is invalid.*/",
       "asyncDocumentation" : "/**This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and the signature value associated with the job. You can only return information about jobs you own.\n@param getStatusRequest Input structure for the GetStatus operation.\n@return A Java Future containing the result of the GetStatus operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and the signature value associated with the job. You can only return information about jobs you own.\n@param getStatusRequest Input structure for the GetStatus operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetStatus operation returned by the service.*/",
       "syncReturnType" : "GetStatusResult",
       "asyncReturnType" : "GetStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStatusRequest, GetStatusResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStatusRequest, GetStatusResult>",
+      "methodName" : "getStatus"
     },
     "ListJobs" : {
       "documentation" : "This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return Test2 followed by Test1.",
@@ -266,15 +266,15 @@
         "exceptionName" : "InvalidVersionException",
         "documentation" : "The client tool version is invalid."
       } ],
-      "methodName" : "listJobs",
-      "asyncDocumentationWithHandler" : "/**This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return Test2 followed by Test1.\n@param listJobsRequest Input structure for the ListJobs operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListJobs operation returned by the service.*/",
       "syncDocumentation" : "/**This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return Test2 followed by Test1.\n@param listJobsRequest Input structure for the ListJobs operation.\n@return Result of the ListJobs operation returned by the service.\n@throws InvalidParameterException One or more parameters had an invalid value.\n@throws InvalidAccessKeyIdException The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.\n@throws InvalidVersionException The client tool version is invalid.*/",
       "asyncDocumentation" : "/**This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return Test2 followed by Test1.\n@param listJobsRequest Input structure for the ListJobs operation.\n@return A Java Future containing the result of the ListJobs operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return Test2 followed by Test1.\n@param listJobsRequest Input structure for the ListJobs operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListJobs operation returned by the service.*/",
       "syncReturnType" : "ListJobsResult",
       "asyncReturnType" : "ListJobsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListJobsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListJobsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult>",
+      "methodName" : "listJobs"
     },
     "UpdateJob" : {
       "documentation" : "You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The manifest file attached to this request replaces the original manifest file. You can only use the operation after a CreateJob request but before the data transfer starts and you can only use it on jobs you own.",
@@ -316,7 +316,7 @@
         "documentation" : "One or more required fields were missing from the manifest file. Please correct and resubmit."
       }, {
         "exceptionName" : "NoSuchBucketException",
-        "documentation" : "The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or logBucket field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to."
+        "documentation" : "The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or il field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to."
       }, {
         "exceptionName" : "ExpiredJobIdException",
         "documentation" : "Indicates that the specified job has expired out of the system."
@@ -348,15 +348,15 @@
         "exceptionName" : "InvalidVersionException",
         "documentation" : "The client tool version is invalid."
       } ],
-      "methodName" : "updateJob",
-      "asyncDocumentationWithHandler" : "/**You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The manifest file attached to this request replaces the original manifest file. You can only use the operation after a CreateJob request but before the data transfer starts and you can only use it on jobs you own.\n@param updateJobRequest Input structure for the UpateJob operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateJob operation returned by the service.*/",
-      "syncDocumentation" : "/**You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The manifest file attached to this request replaces the original manifest file. You can only use the operation after a CreateJob request but before the data transfer starts and you can only use it on jobs you own.\n@param updateJobRequest Input structure for the UpateJob operation.\n@return Result of the UpdateJob operation returned by the service.\n@throws MissingParameterException One or more required parameters was missing from the request.\n@throws InvalidParameterException One or more parameters had an invalid value.\n@throws InvalidAccessKeyIdException The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.\n@throws InvalidAddressException The address specified in the manifest is invalid.\n@throws InvalidManifestFieldException One or more manifest fields was invalid. Please correct and resubmit.\n@throws InvalidJobIdException The JOBID was missing, not found, or not associated with the AWS account.\n@throws MissingManifestFieldException One or more required fields were missing from the manifest file. Please correct and resubmit.\n@throws NoSuchBucketException The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or logBucket field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.\n@throws ExpiredJobIdException Indicates that the specified job has expired out of the system.\n@throws CanceledJobIdException The specified job ID has been canceled and is no longer valid.\n@throws MissingCustomsException One or more required customs parameters was missing from the manifest.\n@throws InvalidCustomsException One or more customs parameters was invalid. Please correct and resubmit.\n@throws InvalidFileSystemException File system specified in export manifest is invalid.\n@throws MultipleRegionsException Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please correct and resubmit.\n@throws BucketPermissionException The account specified does not have the appropriate bucket permissions.\n@throws MalformedManifestException Your manifest is not well-formed.\n@throws UnableToUpdateJobIdException AWS Import/Export cannot update the job\n@throws InvalidVersionException The client tool version is invalid.*/",
+      "syncDocumentation" : "/**You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The manifest file attached to this request replaces the original manifest file. You can only use the operation after a CreateJob request but before the data transfer starts and you can only use it on jobs you own.\n@param updateJobRequest Input structure for the UpateJob operation.\n@return Result of the UpdateJob operation returned by the service.\n@throws MissingParameterException One or more required parameters was missing from the request.\n@throws InvalidParameterException One or more parameters had an invalid value.\n@throws InvalidAccessKeyIdException The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.\n@throws InvalidAddressException The address specified in the manifest is invalid.\n@throws InvalidManifestFieldException One or more manifest fields was invalid. Please correct and resubmit.\n@throws InvalidJobIdException The JOBID was missing, not found, or not associated with the AWS account.\n@throws MissingManifestFieldException One or more required fields were missing from the manifest file. Please correct and resubmit.\n@throws NoSuchBucketException The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or il field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.\n@throws ExpiredJobIdException Indicates that the specified job has expired out of the system.\n@throws CanceledJobIdException The specified job ID has been canceled and is no longer valid.\n@throws MissingCustomsException One or more required customs parameters was missing from the manifest.\n@throws InvalidCustomsException One or more customs parameters was invalid. Please correct and resubmit.\n@throws InvalidFileSystemException File system specified in export manifest is invalid.\n@throws MultipleRegionsException Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please correct and resubmit.\n@throws BucketPermissionException The account specified does not have the appropriate bucket permissions.\n@throws MalformedManifestException Your manifest is not well-formed.\n@throws UnableToUpdateJobIdException AWS Import/Export cannot update the job\n@throws InvalidVersionException The client tool version is invalid.*/",
       "asyncDocumentation" : "/**You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The manifest file attached to this request replaces the original manifest file. You can only use the operation after a CreateJob request but before the data transfer starts and you can only use it on jobs you own.\n@param updateJobRequest Input structure for the UpateJob operation.\n@return A Java Future containing the result of the UpdateJob operation returned by the service.*/",
+      "asyncDocumentationWithHandler" : "/**You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The manifest file attached to this request replaces the original manifest file. You can only use the operation after a CreateJob request but before the data transfer starts and you can only use it on jobs you own.\n@param updateJobRequest Input structure for the UpateJob operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateJob operation returned by the service.*/",
       "syncReturnType" : "UpdateJobResult",
       "asyncReturnType" : "UpdateJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateJobRequest, UpdateJobResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateJobRequest, UpdateJobResult>",
+      "methodName" : "updateJob"
     }
   },
   "shapes" : {
@@ -861,9 +861,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -879,7 +879,7 @@
         "documentation" : null,
         "name" : "Name",
         "c2jName" : "name",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "name",
         "variable" : {
           "variableName" : "name",
           "variableType" : "String",
@@ -930,7 +930,7 @@
         "documentation" : null,
         "name" : "Company",
         "c2jName" : "company",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "company",
         "variable" : {
           "variableName" : "company",
           "variableType" : "String",
@@ -981,7 +981,7 @@
         "documentation" : null,
         "name" : "PhoneNumber",
         "c2jName" : "phoneNumber",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "phoneNumber",
         "variable" : {
           "variableName" : "phoneNumber",
           "variableType" : "String",
@@ -1032,7 +1032,7 @@
         "documentation" : null,
         "name" : "Country",
         "c2jName" : "country",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "country",
         "variable" : {
           "variableName" : "country",
           "variableType" : "String",
@@ -1083,7 +1083,7 @@
         "documentation" : null,
         "name" : "StateOrProvince",
         "c2jName" : "stateOrProvince",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "stateOrProvince",
         "variable" : {
           "variableName" : "stateOrProvince",
           "variableType" : "String",
@@ -1134,7 +1134,7 @@
         "documentation" : null,
         "name" : "City",
         "c2jName" : "city",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "city",
         "variable" : {
           "variableName" : "city",
           "variableType" : "String",
@@ -1185,7 +1185,7 @@
         "documentation" : null,
         "name" : "PostalCode",
         "c2jName" : "postalCode",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "postalCode",
         "variable" : {
           "variableName" : "postalCode",
           "variableType" : "String",
@@ -1236,7 +1236,7 @@
         "documentation" : null,
         "name" : "Street1",
         "c2jName" : "street1",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "street1",
         "variable" : {
           "variableName" : "street1",
           "variableType" : "String",
@@ -1287,7 +1287,7 @@
         "documentation" : null,
         "name" : "Street2",
         "c2jName" : "street2",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "street2",
         "variable" : {
           "variableName" : "street2",
           "variableType" : "String",
@@ -1338,7 +1338,7 @@
         "documentation" : null,
         "name" : "Street3",
         "c2jName" : "street3",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "street3",
         "variable" : {
           "variableName" : "street3",
           "variableType" : "String",
@@ -1389,7 +1389,7 @@
         "documentation" : null,
         "name" : "APIVersion",
         "c2jName" : "APIVersion",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "APIVersion",
         "variable" : {
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -1467,7 +1467,7 @@
           "documentation" : null,
           "name" : "Name",
           "c2jName" : "name",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "name",
           "variable" : {
             "variableName" : "name",
             "variableType" : "String",
@@ -1519,7 +1519,7 @@
           "documentation" : null,
           "name" : "Street3",
           "c2jName" : "street3",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "street3",
           "variable" : {
             "variableName" : "street3",
             "variableType" : "String",
@@ -1571,7 +1571,7 @@
           "documentation" : null,
           "name" : "PostalCode",
           "c2jName" : "postalCode",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "postalCode",
           "variable" : {
             "variableName" : "postalCode",
             "variableType" : "String",
@@ -1623,7 +1623,7 @@
           "documentation" : null,
           "name" : "APIVersion",
           "c2jName" : "APIVersion",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "APIVersion",
           "variable" : {
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -1675,7 +1675,7 @@
           "documentation" : null,
           "name" : "PhoneNumber",
           "c2jName" : "phoneNumber",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "phoneNumber",
           "variable" : {
             "variableName" : "phoneNumber",
             "variableType" : "String",
@@ -1727,7 +1727,7 @@
           "documentation" : null,
           "name" : "Street2",
           "c2jName" : "street2",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "street2",
           "variable" : {
             "variableName" : "street2",
             "variableType" : "String",
@@ -1779,7 +1779,7 @@
           "documentation" : null,
           "name" : "Country",
           "c2jName" : "country",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "country",
           "variable" : {
             "variableName" : "country",
             "variableType" : "String",
@@ -1831,7 +1831,7 @@
           "documentation" : null,
           "name" : "Company",
           "c2jName" : "company",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "company",
           "variable" : {
             "variableName" : "company",
             "variableType" : "String",
@@ -1883,7 +1883,7 @@
           "documentation" : null,
           "name" : "Street1",
           "c2jName" : "street1",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "street1",
           "variable" : {
             "variableName" : "street1",
             "variableType" : "String",
@@ -1981,9 +1981,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2000,7 +2000,7 @@
           "documentation" : null,
           "name" : "City",
           "c2jName" : "city",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "city",
           "variable" : {
             "variableName" : "city",
             "variableType" : "String",
@@ -2052,7 +2052,7 @@
           "documentation" : null,
           "name" : "StateOrProvince",
           "c2jName" : "stateOrProvince",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "stateOrProvince",
           "variable" : {
             "variableName" : "stateOrProvince",
             "variableType" : "String",
@@ -3040,9 +3040,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Artifact",
           "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3178,9 +3178,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Artifact",
             "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4303,9 +4303,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Job",
           "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Job>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4492,9 +4492,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Job",
             "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Job>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5359,9 +5359,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Artifact",
           "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5497,9 +5497,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Artifact",
             "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6639,9 +6639,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Artifact",
           "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6829,9 +6829,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Artifact",
             "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8091,7 +8091,7 @@
     },
     "NoSuchBucketException" : {
       "c2jName" : "NoSuchBucketException",
-      "documentation" : "The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or logBucket field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.",
+      "documentation" : "The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or il field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.",
       "shapeName" : "NoSuchBucketException",
       "deprecated" : false,
       "required" : null,

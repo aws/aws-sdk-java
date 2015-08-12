@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Case Details JSON Unmarshaller
+ * CaseDetails JSON Unmarshaller
  */
-public class CaseDetailsJsonUnmarshaller implements Unmarshaller<CaseDetails, JsonUnmarshallerContext> {
+public class CaseDetailsJsonUnmarshaller implements
+        Unmarshaller<CaseDetails, JsonUnmarshallerContext> {
 
-    public CaseDetails unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public CaseDetails unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         CaseDetails caseDetails = new CaseDetails();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,77 +40,98 @@ public class CaseDetailsJsonUnmarshaller implements Unmarshaller<CaseDetails, Js
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("caseId", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setCaseId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    caseDetails.setCaseId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("displayId", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setDisplayId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    caseDetails.setDisplayId(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("subject", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setSubject(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    caseDetails.setSubject(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    caseDetails.setStatus(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("serviceCode", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setServiceCode(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    caseDetails.setServiceCode(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("categoryCode", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setCategoryCode(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    caseDetails.setCategoryCode(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("severityCode", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setSeverityCode(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    caseDetails.setSeverityCode(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("submittedBy", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setSubmittedBy(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    caseDetails.setSubmittedBy(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeCreated", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setTimeCreated(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    caseDetails.setTimeCreated(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("recentCommunications", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setRecentCommunications(RecentCaseCommunicationsJsonUnmarshaller.getInstance().unmarshall(context));
+                    caseDetails
+                            .setRecentCommunications(RecentCaseCommunicationsJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ccEmailAddresses", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setCcEmailAddresses(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    caseDetails
+                            .setCcEmailAddresses(new ListUnmarshaller<String>(
+                                    StringJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("language", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setLanguage(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    caseDetails.setLanguage(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return caseDetails;
     }
 
     private static CaseDetailsJsonUnmarshaller instance;
+
     public static CaseDetailsJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new CaseDetailsJsonUnmarshaller();
+        if (instance == null)
+            instance = new CaseDetailsJsonUnmarshaller();
         return instance;
     }
 }
-    

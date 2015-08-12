@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,36 +27,48 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Validation Message StAX Unmarshaller
+ * ValidationMessage StAX Unmarshaller
  */
-public class ValidationMessageStaxUnmarshaller implements Unmarshaller<ValidationMessage, StaxUnmarshallerContext> {
+public class ValidationMessageStaxUnmarshaller implements
+        Unmarshaller<ValidationMessage, StaxUnmarshallerContext> {
 
-    public ValidationMessage unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public ValidationMessage unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         ValidationMessage validationMessage = new ValidationMessage();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return validationMessage;
+            if (xmlEvent.isEndDocument())
+                return validationMessage;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("Message", targetDepth)) {
-                    validationMessage.setMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    validationMessage.setMessage(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Severity", targetDepth)) {
-                    validationMessage.setSeverity(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    validationMessage.setSeverity(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Namespace", targetDepth)) {
-                    validationMessage.setNamespace(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    validationMessage.setNamespace(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("OptionName", targetDepth)) {
-                    validationMessage.setOptionName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    validationMessage.setOptionName(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -68,9 +80,10 @@ public class ValidationMessageStaxUnmarshaller implements Unmarshaller<Validatio
     }
 
     private static ValidationMessageStaxUnmarshaller instance;
+
     public static ValidationMessageStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ValidationMessageStaxUnmarshaller();
+        if (instance == null)
+            instance = new ValidationMessageStaxUnmarshaller();
         return instance;
     }
 }
-    

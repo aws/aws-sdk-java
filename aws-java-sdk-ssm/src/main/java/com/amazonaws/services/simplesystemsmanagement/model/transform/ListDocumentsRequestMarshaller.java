@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,66 +40,73 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * List Documents Request Marshaller
+ * ListDocumentsRequest Marshaller
  */
-public class ListDocumentsRequestMarshaller implements Marshaller<Request<ListDocumentsRequest>, ListDocumentsRequest> {
+public class ListDocumentsRequestMarshaller implements
+        Marshaller<Request<ListDocumentsRequest>, ListDocumentsRequest> {
 
-    public Request<ListDocumentsRequest> marshall(ListDocumentsRequest listDocumentsRequest) {
+    public Request<ListDocumentsRequest> marshall(
+            ListDocumentsRequest listDocumentsRequest) {
+
         if (listDocumentsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDocumentsRequest> request = new DefaultRequest<ListDocumentsRequest>(listDocumentsRequest, "AWSSimpleSystemsManagement");
-        String target = "AmazonSSM.ListDocuments";
-        request.addHeader("X-Amz-Target", target);
+        Request<ListDocumentsRequest> request = new DefaultRequest<ListDocumentsRequest>(
+                listDocumentsRequest, "AWSSimpleSystemsManagement");
+        request.addHeader("X-Amz-Target", "AmazonSSM.ListDocuments");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
+            jsonWriter.object();
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<DocumentFilter> documentFilterListList = (com.amazonaws.internal.ListWithAutoConstructFlag<DocumentFilter>)(listDocumentsRequest.getDocumentFilterList());
-            if (documentFilterListList != null && !(documentFilterListList.isAutoConstruct() && documentFilterListList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<DocumentFilter> documentFilterListList = (com.amazonaws.internal.SdkInternalList<DocumentFilter>) listDocumentsRequest
+                    .getDocumentFilterList();
+            if (!documentFilterListList.isEmpty()
+                    || !documentFilterListList.isAutoConstruct()) {
                 jsonWriter.key("DocumentFilterList");
                 jsonWriter.array();
-
                 for (DocumentFilter documentFilterListListValue : documentFilterListList) {
                     if (documentFilterListListValue != null) {
-                        jsonWriter.object();
-                        if (documentFilterListListValue.getKey() != null) {
-                            jsonWriter.key("key").value(documentFilterListListValue.getKey());
-                        }
-                        if (documentFilterListListValue.getValue() != null) {
-                            jsonWriter.key("value").value(documentFilterListListValue.getValue());
-                        }
-                        jsonWriter.endObject();
+
+                        DocumentFilterJsonMarshaller.getInstance().marshall(
+                                documentFilterListListValue, jsonWriter);
                     }
                 }
                 jsonWriter.endArray();
             }
+
             if (listDocumentsRequest.getMaxResults() != null) {
-                jsonWriter.key("MaxResults").value(listDocumentsRequest.getMaxResults());
+                jsonWriter.key("MaxResults").value(
+                        listDocumentsRequest.getMaxResults());
             }
+
             if (listDocumentsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(listDocumentsRequest.getNextToken());
+                jsonWriter.key("NextToken").value(
+                        listDocumentsRequest.getNextToken());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

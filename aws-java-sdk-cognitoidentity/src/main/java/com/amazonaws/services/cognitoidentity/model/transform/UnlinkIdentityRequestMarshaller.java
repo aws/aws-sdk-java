@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cognitoidentity.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,50 +40,61 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Unlink Identity Request Marshaller
+ * UnlinkIdentityRequest Marshaller
  */
-public class UnlinkIdentityRequestMarshaller implements Marshaller<Request<UnlinkIdentityRequest>, UnlinkIdentityRequest> {
+public class UnlinkIdentityRequestMarshaller implements
+        Marshaller<Request<UnlinkIdentityRequest>, UnlinkIdentityRequest> {
 
-    public Request<UnlinkIdentityRequest> marshall(UnlinkIdentityRequest unlinkIdentityRequest) {
+    public Request<UnlinkIdentityRequest> marshall(
+            UnlinkIdentityRequest unlinkIdentityRequest) {
+
         if (unlinkIdentityRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<UnlinkIdentityRequest> request = new DefaultRequest<UnlinkIdentityRequest>(unlinkIdentityRequest, "AmazonCognitoIdentity");
-        String target = "AWSCognitoIdentityService.UnlinkIdentity";
-        request.addHeader("X-Amz-Target", target);
+        Request<UnlinkIdentityRequest> request = new DefaultRequest<UnlinkIdentityRequest>(
+                unlinkIdentityRequest, "AmazonCognitoIdentity");
+        request.addHeader("X-Amz-Target",
+                "AWSCognitoIdentityService.UnlinkIdentity");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (unlinkIdentityRequest.getIdentityId() != null) {
-                jsonWriter.key("IdentityId").value(unlinkIdentityRequest.getIdentityId());
+                jsonWriter.key("IdentityId").value(
+                        unlinkIdentityRequest.getIdentityId());
             }
-            if (unlinkIdentityRequest.getLogins() != null) {
+
+            java.util.Map<String, String> loginsMap = unlinkIdentityRequest
+                    .getLogins();
+            if (loginsMap != null) {
                 jsonWriter.key("Logins");
                 jsonWriter.object();
-                for (Map.Entry<String, String> loginsListValue : unlinkIdentityRequest.getLogins().entrySet()) {
-                    if (loginsListValue.getValue() != null) {
-                        jsonWriter.key(loginsListValue.getKey());
 
-                        jsonWriter.value(loginsListValue.getValue());
+                for (Map.Entry<String, String> loginsMapValue : loginsMap
+                        .entrySet()) {
+                    if (loginsMapValue.getValue() != null) {
+                        jsonWriter.key(loginsMapValue.getKey());
+
+                        jsonWriter.value(loginsMapValue.getValue());
                     }
                 }
                 jsonWriter.endObject();
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> loginsToRemoveList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(unlinkIdentityRequest.getLoginsToRemove());
-            if (loginsToRemoveList != null && !(loginsToRemoveList.isAutoConstruct() && loginsToRemoveList.isEmpty())) {
-
+            java.util.List<String> loginsToRemoveList = unlinkIdentityRequest
+                    .getLoginsToRemove();
+            if (loginsToRemoveList != null) {
                 jsonWriter.key("LoginsToRemove");
                 jsonWriter.array();
-
                 for (String loginsToRemoveListValue : loginsToRemoveList) {
                     if (loginsToRemoveListValue != null) {
                         jsonWriter.value(loginsToRemoveListValue);
@@ -91,17 +103,20 @@ public class UnlinkIdentityRequestMarshaller implements Marshaller<Request<Unlin
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.0");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

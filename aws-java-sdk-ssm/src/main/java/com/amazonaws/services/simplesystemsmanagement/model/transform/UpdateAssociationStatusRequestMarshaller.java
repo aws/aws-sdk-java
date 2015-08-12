@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,66 +40,65 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Update Association Status Request Marshaller
+ * UpdateAssociationStatusRequest Marshaller
  */
-public class UpdateAssociationStatusRequestMarshaller implements Marshaller<Request<UpdateAssociationStatusRequest>, UpdateAssociationStatusRequest> {
+public class UpdateAssociationStatusRequestMarshaller
+        implements
+        Marshaller<Request<UpdateAssociationStatusRequest>, UpdateAssociationStatusRequest> {
 
-    public Request<UpdateAssociationStatusRequest> marshall(UpdateAssociationStatusRequest updateAssociationStatusRequest) {
+    public Request<UpdateAssociationStatusRequest> marshall(
+            UpdateAssociationStatusRequest updateAssociationStatusRequest) {
+
         if (updateAssociationStatusRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateAssociationStatusRequest> request = new DefaultRequest<UpdateAssociationStatusRequest>(updateAssociationStatusRequest, "AWSSimpleSystemsManagement");
-        String target = "AmazonSSM.UpdateAssociationStatus";
-        request.addHeader("X-Amz-Target", target);
+        Request<UpdateAssociationStatusRequest> request = new DefaultRequest<UpdateAssociationStatusRequest>(
+                updateAssociationStatusRequest, "AWSSimpleSystemsManagement");
+        request.addHeader("X-Amz-Target", "AmazonSSM.UpdateAssociationStatus");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (updateAssociationStatusRequest.getName() != null) {
-                jsonWriter.key("Name").value(updateAssociationStatusRequest.getName());
+                jsonWriter.key("Name").value(
+                        updateAssociationStatusRequest.getName());
             }
+
             if (updateAssociationStatusRequest.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(updateAssociationStatusRequest.getInstanceId());
+                jsonWriter.key("InstanceId").value(
+                        updateAssociationStatusRequest.getInstanceId());
             }
-            AssociationStatus associationStatus = updateAssociationStatusRequest.getAssociationStatus();
-            if (associationStatus != null) {
 
+            if (updateAssociationStatusRequest.getAssociationStatus() != null) {
                 jsonWriter.key("AssociationStatus");
-                jsonWriter.object();
-
-                if (associationStatus.getDate() != null) {
-                    jsonWriter.key("Date").value(associationStatus.getDate());
-                }
-                if (associationStatus.getName() != null) {
-                    jsonWriter.key("Name").value(associationStatus.getName());
-                }
-                if (associationStatus.getMessage() != null) {
-                    jsonWriter.key("Message").value(associationStatus.getMessage());
-                }
-                if (associationStatus.getAdditionalInfo() != null) {
-                    jsonWriter.key("AdditionalInfo").value(associationStatus.getAdditionalInfo());
-                }
-                jsonWriter.endObject();
+                AssociationStatusJsonMarshaller.getInstance().marshall(
+                        updateAssociationStatusRequest.getAssociationStatus(),
+                        jsonWriter);
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

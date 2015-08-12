@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,14 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Default Workspace Creation Properties JSON Unmarshaller
+ * DefaultWorkspaceCreationProperties JSON Unmarshaller
  */
-public class DefaultWorkspaceCreationPropertiesJsonUnmarshaller implements Unmarshaller<DefaultWorkspaceCreationProperties, JsonUnmarshallerContext> {
+public class DefaultWorkspaceCreationPropertiesJsonUnmarshaller
+        implements
+        Unmarshaller<DefaultWorkspaceCreationProperties, JsonUnmarshallerContext> {
 
-    public DefaultWorkspaceCreationProperties unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public DefaultWorkspaceCreationProperties unmarshall(
+            JsonUnmarshallerContext context) throws Exception {
         DefaultWorkspaceCreationProperties defaultWorkspaceCreationProperties = new DefaultWorkspaceCreationProperties();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,49 +41,67 @@ public class DefaultWorkspaceCreationPropertiesJsonUnmarshaller implements Unmar
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EnableWorkDocs", targetDepth)) {
                     context.nextToken();
-                    defaultWorkspaceCreationProperties.setEnableWorkDocs(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    defaultWorkspaceCreationProperties
+                            .setEnableWorkDocs(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EnableInternetAccess", targetDepth)) {
                     context.nextToken();
-                    defaultWorkspaceCreationProperties.setEnableInternetAccess(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    defaultWorkspaceCreationProperties
+                            .setEnableInternetAccess(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultOu", targetDepth)) {
                     context.nextToken();
-                    defaultWorkspaceCreationProperties.setDefaultOu(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    defaultWorkspaceCreationProperties
+                            .setDefaultOu(StringJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
                 }
-                if (context.testExpression("CustomSecurityGroupId", targetDepth)) {
+                if (context
+                        .testExpression("CustomSecurityGroupId", targetDepth)) {
                     context.nextToken();
-                    defaultWorkspaceCreationProperties.setCustomSecurityGroupId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    defaultWorkspaceCreationProperties
+                            .setCustomSecurityGroupId(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("UserEnabledAsLocalAdministrator", targetDepth)) {
+                if (context.testExpression("UserEnabledAsLocalAdministrator",
+                        targetDepth)) {
                     context.nextToken();
-                    defaultWorkspaceCreationProperties.setUserEnabledAsLocalAdministrator(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    defaultWorkspaceCreationProperties
+                            .setUserEnabledAsLocalAdministrator(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return defaultWorkspaceCreationProperties;
     }
 
     private static DefaultWorkspaceCreationPropertiesJsonUnmarshaller instance;
+
     public static DefaultWorkspaceCreationPropertiesJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new DefaultWorkspaceCreationPropertiesJsonUnmarshaller();
+        if (instance == null)
+            instance = new DefaultWorkspaceCreationPropertiesJsonUnmarshaller();
         return instance;
     }
 }
-    

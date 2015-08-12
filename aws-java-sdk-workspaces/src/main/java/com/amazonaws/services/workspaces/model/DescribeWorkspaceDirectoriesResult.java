@@ -1,174 +1,180 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * Contains the results of the DescribeWorkspaceDirectories operation.
+ * Contains the results of the <a>DescribeWorkspaceDirectories</a> operation.
  * </p>
  */
-public class DescribeWorkspaceDirectoriesResult implements Serializable, Cloneable {
+public class DescribeWorkspaceDirectoriesResult implements Serializable,
+        Cloneable {
 
     /**
-     * An array of structures that contain information about the directories.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<WorkspaceDirectory> directories;
-
-    /**
-     * If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this
-     * operation to retrieve the next set of items. This token is valid for
-     * one day and must be used within that timeframe.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 63<br/>
+     * An array of structures that contain information about the directories.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<WorkspaceDirectory> directories;
+    /**
+     * <p>
+     * If not null, more results are available. Pass this value for the
+     * <code>NextToken</code> parameter in a subsequent call to this operation
+     * to retrieve the next set of items. This token is valid for one day and
+     * must be used within that timeframe.
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * An array of structures that contain information about the directories.
-     *
-     * @return An array of structures that contain information about the directories.
+     * </p>
+     * 
+     * @return An array of structures that contain information about the
+     *         directories.
      */
     public java.util.List<WorkspaceDirectory> getDirectories() {
         if (directories == null) {
-              directories = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkspaceDirectory>();
-              directories.setAutoConstruct(true);
+            directories = new com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>();
         }
         return directories;
     }
-    
+
     /**
+     * <p>
      * An array of structures that contain information about the directories.
-     *
-     * @param directories An array of structures that contain information about the directories.
+     * </p>
+     * 
+     * @param directories
+     *        An array of structures that contain information about the
+     *        directories.
      */
-    public void setDirectories(java.util.Collection<WorkspaceDirectory> directories) {
+    public void setDirectories(
+            java.util.Collection<WorkspaceDirectory> directories) {
         if (directories == null) {
             this.directories = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<WorkspaceDirectory> directoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkspaceDirectory>(directories.size());
-        directoriesCopy.addAll(directories);
-        this.directories = directoriesCopy;
+
+        this.directories = new com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>(
+                directories);
     }
-    
+
     /**
+     * <p>
      * An array of structures that contain information about the directories.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDirectories(java.util.Collection)} or {@link
-     * #withDirectories(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param directories An array of structures that contain information about the directories.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setDirectories(java.util.Collection)} or
+     * {@link #withDirectories(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param directories
+     *        An array of structures that contain information about the
+     *        directories.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeWorkspaceDirectoriesResult withDirectories(WorkspaceDirectory... directories) {
-        if (getDirectories() == null) setDirectories(new java.util.ArrayList<WorkspaceDirectory>(directories.length));
-        for (WorkspaceDirectory value : directories) {
-            getDirectories().add(value);
+    public DescribeWorkspaceDirectoriesResult withDirectories(
+            WorkspaceDirectory... directories) {
+        if (this.directories == null) {
+            setDirectories(new com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>(
+                    directories.length));
+        }
+        for (WorkspaceDirectory ele : directories) {
+            this.directories.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * An array of structures that contain information about the directories.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param directories An array of structures that contain information about the directories.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param directories
+     *        An array of structures that contain information about the
+     *        directories.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeWorkspaceDirectoriesResult withDirectories(java.util.Collection<WorkspaceDirectory> directories) {
-        if (directories == null) {
-            this.directories = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<WorkspaceDirectory> directoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkspaceDirectory>(directories.size());
-            directoriesCopy.addAll(directories);
-            this.directories = directoriesCopy;
-        }
-
+    public DescribeWorkspaceDirectoriesResult withDirectories(
+            java.util.Collection<WorkspaceDirectory> directories) {
+        setDirectories(directories);
         return this;
     }
 
     /**
-     * If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this
-     * operation to retrieve the next set of items. This token is valid for
-     * one day and must be used within that timeframe.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 63<br/>
-     *
-     * @return If not null, more results are available. Pass this value for the
-     *         <code>NextToken</code> parameter in a subsequent call to this
-     *         operation to retrieve the next set of items. This token is valid for
-     *         one day and must be used within that timeframe.
-     */
-    public String getNextToken() {
-        return nextToken;
-    }
-    
-    /**
      * If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this
-     * operation to retrieve the next set of items. This token is valid for
-     * one day and must be used within that timeframe.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 63<br/>
-     *
-     * @param nextToken If not null, more results are available. Pass this value for the
-     *         <code>NextToken</code> parameter in a subsequent call to this
-     *         operation to retrieve the next set of items. This token is valid for
-     *         one day and must be used within that timeframe.
+     * <code>NextToken</code> parameter in a subsequent call to this operation
+     * to retrieve the next set of items. This token is valid for one day and
+     * must be used within that timeframe.
+     * </p>
+     * 
+     * @param nextToken
+     *        If not null, more results are available. Pass this value for the
+     *        <code>NextToken</code> parameter in a subsequent call to this
+     *        operation to retrieve the next set of items. This token is valid
+     *        for one day and must be used within that timeframe.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
-    
+
     /**
+     * <p>
      * If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this
-     * operation to retrieve the next set of items. This token is valid for
-     * one day and must be used within that timeframe.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 63<br/>
-     *
-     * @param nextToken If not null, more results are available. Pass this value for the
+     * <code>NextToken</code> parameter in a subsequent call to this operation
+     * to retrieve the next set of items. This token is valid for one day and
+     * must be used within that timeframe.
+     * </p>
+     * 
+     * @return If not null, more results are available. Pass this value for the
      *         <code>NextToken</code> parameter in a subsequent call to this
-     *         operation to retrieve the next set of items. This token is valid for
-     *         one day and must be used within that timeframe.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         operation to retrieve the next set of items. This token is valid
+     *         for one day and must be used within that timeframe.
+     */
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * If not null, more results are available. Pass this value for the
+     * <code>NextToken</code> parameter in a subsequent call to this operation
+     * to retrieve the next set of items. This token is valid for one day and
+     * must be used within that timeframe.
+     * </p>
+     * 
+     * @param nextToken
+     *        If not null, more results are available. Pass this value for the
+     *        <code>NextToken</code> parameter in a subsequent call to this
+     *        operation to retrieve the next set of items. This token is valid
+     *        for one day and must be used within that timeframe.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeWorkspaceDirectoriesResult withNextToken(String nextToken) {
-        this.nextToken = nextToken;
+        setNextToken(nextToken);
         return this;
     }
 
@@ -184,50 +190,58 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable, Cloneab
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDirectories() != null) sb.append("Directories: " + getDirectories() + ",");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
+        if (getDirectories() != null)
+            sb.append("Directories: " + getDirectories() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeWorkspaceDirectoriesResult == false)
+            return false;
+        DescribeWorkspaceDirectoriesResult other = (DescribeWorkspaceDirectoriesResult) obj;
+        if (other.getDirectories() == null ^ this.getDirectories() == null)
+            return false;
+        if (other.getDirectories() != null
+                && other.getDirectories().equals(this.getDirectories()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null
+                && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDirectories() == null) ? 0 : getDirectories().hashCode()); 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDirectories() == null) ? 0 : getDirectories().hashCode());
+        hashCode = prime * hashCode
+                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeWorkspaceDirectoriesResult == false) return false;
-        DescribeWorkspaceDirectoriesResult other = (DescribeWorkspaceDirectoriesResult)obj;
-        
-        if (other.getDirectories() == null ^ this.getDirectories() == null) return false;
-        if (other.getDirectories() != null && other.getDirectories().equals(this.getDirectories()) == false) return false; 
-        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeWorkspaceDirectoriesResult clone() {
         try {
             return (DescribeWorkspaceDirectoriesResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

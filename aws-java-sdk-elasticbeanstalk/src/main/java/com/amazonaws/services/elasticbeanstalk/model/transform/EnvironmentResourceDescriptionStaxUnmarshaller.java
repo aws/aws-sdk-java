@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,50 +27,78 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Environment Resource Description StAX Unmarshaller
+ * EnvironmentResourceDescription StAX Unmarshaller
  */
-public class EnvironmentResourceDescriptionStaxUnmarshaller implements Unmarshaller<EnvironmentResourceDescription, StaxUnmarshallerContext> {
+public class EnvironmentResourceDescriptionStaxUnmarshaller implements
+        Unmarshaller<EnvironmentResourceDescription, StaxUnmarshallerContext> {
 
-    public EnvironmentResourceDescription unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public EnvironmentResourceDescription unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         EnvironmentResourceDescription environmentResourceDescription = new EnvironmentResourceDescription();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return environmentResourceDescription;
+            if (xmlEvent.isEndDocument())
+                return environmentResourceDescription;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("EnvironmentName", targetDepth)) {
-                    environmentResourceDescription.setEnvironmentName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    environmentResourceDescription
+                            .setEnvironmentName(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("AutoScalingGroups/member", targetDepth)) {
-                    environmentResourceDescription.getAutoScalingGroups().add(AutoScalingGroupStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("AutoScalingGroups/member",
+                        targetDepth)) {
+                    environmentResourceDescription.getAutoScalingGroups().add(
+                            AutoScalingGroupStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Instances/member", targetDepth)) {
-                    environmentResourceDescription.getInstances().add(InstanceStaxUnmarshaller.getInstance().unmarshall(context));
+                    environmentResourceDescription.getInstances().add(
+                            InstanceStaxUnmarshaller.getInstance().unmarshall(
+                                    context));
                     continue;
                 }
-                if (context.testExpression("LaunchConfigurations/member", targetDepth)) {
-                    environmentResourceDescription.getLaunchConfigurations().add(LaunchConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("LaunchConfigurations/member",
+                        targetDepth)) {
+                    environmentResourceDescription.getLaunchConfigurations()
+                            .add(LaunchConfigurationStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("LoadBalancers/member", targetDepth)) {
-                    environmentResourceDescription.getLoadBalancers().add(LoadBalancerStaxUnmarshaller.getInstance().unmarshall(context));
+                    environmentResourceDescription.getLoadBalancers().add(
+                            LoadBalancerStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Triggers/member", targetDepth)) {
-                    environmentResourceDescription.getTriggers().add(TriggerStaxUnmarshaller.getInstance().unmarshall(context));
+                    environmentResourceDescription.getTriggers().add(
+                            TriggerStaxUnmarshaller.getInstance().unmarshall(
+                                    context));
                     continue;
                 }
+
                 if (context.testExpression("Queues/member", targetDepth)) {
-                    environmentResourceDescription.getQueues().add(QueueStaxUnmarshaller.getInstance().unmarshall(context));
+                    environmentResourceDescription.getQueues().add(
+                            QueueStaxUnmarshaller.getInstance().unmarshall(
+                                    context));
                     continue;
                 }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return environmentResourceDescription;
@@ -80,9 +108,10 @@ public class EnvironmentResourceDescriptionStaxUnmarshaller implements Unmarshal
     }
 
     private static EnvironmentResourceDescriptionStaxUnmarshaller instance;
+
     public static EnvironmentResourceDescriptionStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new EnvironmentResourceDescriptionStaxUnmarshaller();
+        if (instance == null)
+            instance = new EnvironmentResourceDescriptionStaxUnmarshaller();
         return instance;
     }
 }
-    

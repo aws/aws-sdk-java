@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,9 +28,11 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Attachment JSON Unmarshaller
  */
-public class AttachmentJsonUnmarshaller implements Unmarshaller<Attachment, JsonUnmarshallerContext> {
+public class AttachmentJsonUnmarshaller implements
+        Unmarshaller<Attachment, JsonUnmarshallerContext> {
 
-    public Attachment unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public Attachment unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         Attachment attachment = new Attachment();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,37 +40,45 @@ public class AttachmentJsonUnmarshaller implements Unmarshaller<Attachment, Json
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fileName", targetDepth)) {
                     context.nextToken();
-                    attachment.setFileName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    attachment.setFileName(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("data", targetDepth)) {
                     context.nextToken();
-                    attachment.setData(ByteBufferJsonUnmarshaller.getInstance().unmarshall(context));
+                    attachment.setData(ByteBufferJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return attachment;
     }
 
     private static AttachmentJsonUnmarshaller instance;
+
     public static AttachmentJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new AttachmentJsonUnmarshaller();
+        if (instance == null)
+            instance = new AttachmentJsonUnmarshaller();
         return instance;
     }
 }
-    

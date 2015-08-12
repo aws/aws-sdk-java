@@ -158,13 +158,7 @@ class QueueBuffer {
 
     public Future<ReceiveMessageResult> receiveMessage(ReceiveMessageRequest rq,
                                                        AsyncHandler<ReceiveMessageRequest, ReceiveMessageResult> handler) {
-        // only handle simple requests, because these are the settings we pre-fetch with
-        boolean noAttributes = (rq.getAttributeNames() == null) || rq.getAttributeNames().isEmpty();
-        boolean noMessageAttributesToRetrieve = (rq.getMessageAttributeNames() == null)
-                || rq.getMessageAttributeNames().isEmpty();
-        boolean bufferngEnabled = (config.getMaxInflightReceiveBatches() > 0)
-                && (config.getMaxDoneReceiveBatches() > 0);
-        if (noMessageAttributesToRetrieve && noAttributes && bufferngEnabled && (rq.getVisibilityTimeout() == null)) {
+        if (canBeRetrievedFromQueueBuffer(rq)) {
             QueueBufferCallback<ReceiveMessageRequest, ReceiveMessageResult> callback = null;
             if (handler != null) {
                 callback = new QueueBufferCallback<ReceiveMessageRequest, ReceiveMessageResult>(handler, rq);
@@ -199,6 +193,43 @@ class QueueBuffer {
         // send buffer does not require shutdown, only
         // shut down receive buffer
         receiveBuffer.shutdown();
+    }
+
+    /**
+     * We prefetch and load results in the buffer by making basic requests. I.E. we don't request
+     * queue or message attributes and we have a default visibility timeout. If the user's request
+     * deviates from the basic request we can't fulfill the request directly from the buffer, we
+     * have to hit SQS directly (Note that when going to SQS directly messages currently in the
+     * buffer may be unavailable due to the visibility timeout).
+     * 
+     * @return True if the request can be fulfilled directly from the buffer, false if we have to go
+     *         back to the service to fetch the results
+     */
+    private boolean canBeRetrievedFromQueueBuffer(ReceiveMessageRequest rq) {
+        return !hasRequestedQueueAttributes(rq) && !hasRequestedMessageAttributes(rq) && isBufferingEnabled()
+                && (rq.getVisibilityTimeout() == null);
+    }
+
+    /**
+     * @return True if request has been configured to return queue attributes. False otherwise
+     */
+    private boolean hasRequestedQueueAttributes(ReceiveMessageRequest rq) {
+        return rq.getAttributeNames() != null && !rq.getAttributeNames().isEmpty();
+    }
+
+    /**
+     * @return True if request has been configured to return message attributes. False otherwise
+     */
+    private boolean hasRequestedMessageAttributes(ReceiveMessageRequest rq) {
+        return rq.getMessageAttributeNames() != null && !rq.getMessageAttributeNames().isEmpty();
+    }
+
+    /**
+     * @return True if the client has been configured to prefetch batches of messages. False
+     *         otherwise
+     */
+    private boolean isBufferingEnabled() {
+        return (config.getMaxInflightReceiveBatches() > 0 && config.getMaxDoneReceiveBatches() > 0);
     }
 
     /**

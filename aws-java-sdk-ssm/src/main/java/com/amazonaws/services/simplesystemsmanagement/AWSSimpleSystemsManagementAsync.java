@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,169 +14,51 @@
  */
 package com.amazonaws.services.simplesystemsmanagement;
 
-import java.util.concurrent.Future;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.handlers.AsyncHandler;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 
 /**
- * Interface for accessing AWSSimpleSystemsManagement asynchronously.
- * Each asynchronous method will return a Java Future object, and users are also allowed
- * to provide a callback handler.
+ * Interface for accessing Amazon SSM asynchronously. Each asynchronous method
+ * will return a Java Future object representing the asynchronous operation;
+ * overloads which accept an {@code AsyncHandler} can be used to receive
+ * notification when an asynchronous operation completes.
  * <p>
- * Amazon EC2 Simple Systems Manager (SSM) enables you to configure and
- * manage your EC2 instances. You can create a configuration document and
- * then associate it with one or more running instances.
+ * <p>
+ * Amazon EC2 Simple Systems Manager (SSM) enables you to configure and manage
+ * your EC2 instances. You can create a configuration document and then
+ * associate it with one or more running instances.
  * </p>
  * <p>
- * You can use a configuration document to automate the following tasks
- * for your Windows instances:
+ * You can use a configuration document to automate the following tasks for your
+ * Windows instances:
  * </p>
- * 
  * <ul>
- * <li> <p>
+ * <li>
+ * <p>
  * Join an AWS Directory
  * </p>
  * </li>
- * <li> <p>
+ * <li>
+ * <p>
  * Install, repair, or uninstall software using an MSI package
  * </p>
  * </li>
- * <li> <p>
+ * <li>
+ * <p>
  * Run PowerShell scripts
  * </p>
  * </li>
- * <li> <p>
+ * <li>
+ * <p>
  * Configure CloudWatch Logs to monitor applications and systems
  * </p>
  * </li>
- * 
  * </ul>
  * <p>
- * Note that configuration documents are not supported on Linux
- * instances.
+ * Note that configuration documents are not supported on Linux instances.
  * </p>
  */
-public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagement {
-    /**
-     * <p>
-     * Deletes the specified configuration document.
-     * </p>
-     * <p>
-     * You must use DeleteAssociation to disassociate all instances that are
-     * associated with the configuration document before you can delete it.
-     * </p>
-     *
-     * @param deleteDocumentRequest Container for the necessary parameters to
-     *           execute the DeleteDocument operation on AWSSimpleSystemsManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteDocument service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteDocumentResult> deleteDocumentAsync(DeleteDocumentRequest deleteDocumentRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified configuration document.
-     * </p>
-     * <p>
-     * You must use DeleteAssociation to disassociate all instances that are
-     * associated with the configuration document before you can delete it.
-     * </p>
-     *
-     * @param deleteDocumentRequest Container for the necessary parameters to
-     *           execute the DeleteDocument operation on AWSSimpleSystemsManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteDocument service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteDocumentResult> deleteDocumentAsync(DeleteDocumentRequest deleteDocumentRequest,
-            AsyncHandler<DeleteDocumentRequest, DeleteDocumentResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes the associations for the specified configuration document
-     * or instance.
-     * </p>
-     *
-     * @param describeAssociationRequest Container for the necessary
-     *           parameters to execute the DescribeAssociation operation on
-     *           AWSSimpleSystemsManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeAssociation service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeAssociationResult> describeAssociationAsync(DescribeAssociationRequest describeAssociationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes the associations for the specified configuration document
-     * or instance.
-     * </p>
-     *
-     * @param describeAssociationRequest Container for the necessary
-     *           parameters to execute the DescribeAssociation operation on
-     *           AWSSimpleSystemsManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeAssociation service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeAssociationResult> describeAssociationAsync(DescribeAssociationRequest describeAssociationRequest,
-            AsyncHandler<DescribeAssociationRequest, DescribeAssociationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+public interface AWSSimpleSystemsManagementAsync extends
+        AWSSimpleSystemsManagement {
 
     /**
      * <p>
@@ -185,34 +67,22 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * <p>
      * When you associate a configuration document with an instance, the
-     * configuration agent on the instance processes the configuration
-     * document and configures the instance as specified.
+     * configuration agent on the instance processes the configuration document
+     * and configures the instance as specified.
      * </p>
      * <p>
-     * If you associate a configuration document with an instance that
-     * already has an associated configuration document, we replace the
-     * current configuration document with the new configuration document.
+     * If you associate a configuration document with an instance that already
+     * has an associated configuration document, we replace the current
+     * configuration document with the new configuration document.
      * </p>
-     *
-     * @param createAssociationRequest Container for the necessary parameters
-     *           to execute the CreateAssociation operation on
-     *           AWSSimpleSystemsManagement.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateAssociation service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createAssociationRequest
+     *        null
+     * @return A Java Future containing the result of the CreateAssociation
+     *         operation returned by the service.
      */
-    public Future<CreateAssociationResult> createAssociationAsync(CreateAssociationRequest createAssociationRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateAssociationResult> createAssociationAsync(
+            CreateAssociationRequest createAssociationRequest);
 
     /**
      * <p>
@@ -221,39 +91,28 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * <p>
      * When you associate a configuration document with an instance, the
-     * configuration agent on the instance processes the configuration
-     * document and configures the instance as specified.
+     * configuration agent on the instance processes the configuration document
+     * and configures the instance as specified.
      * </p>
      * <p>
-     * If you associate a configuration document with an instance that
-     * already has an associated configuration document, we replace the
-     * current configuration document with the new configuration document.
+     * If you associate a configuration document with an instance that already
+     * has an associated configuration document, we replace the current
+     * configuration document with the new configuration document.
      * </p>
-     *
-     * @param createAssociationRequest Container for the necessary parameters
-     *           to execute the CreateAssociation operation on
-     *           AWSSimpleSystemsManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateAssociation service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createAssociationRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAssociation
+     *         operation returned by the service.
      */
-    public Future<CreateAssociationResult> createAssociationAsync(CreateAssociationRequest createAssociationRequest,
-            AsyncHandler<CreateAssociationRequest, CreateAssociationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateAssociationResult> createAssociationAsync(
+            CreateAssociationRequest createAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAssociationRequest, CreateAssociationResult> asyncHandler);
 
     /**
      * <p>
@@ -262,34 +121,22 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * <p>
      * When you associate a configuration document with an instance, the
-     * configuration agent on the instance processes the configuration
-     * document and configures the instance as specified.
+     * configuration agent on the instance processes the configuration document
+     * and configures the instance as specified.
      * </p>
      * <p>
-     * If you associate a configuration document with an instance that
-     * already has an associated configuration document, we replace the
-     * current configuration document with the new configuration document.
+     * If you associate a configuration document with an instance that already
+     * has an associated configuration document, we replace the current
+     * configuration document with the new configuration document.
      * </p>
-     *
-     * @param createAssociationBatchRequest Container for the necessary
-     *           parameters to execute the CreateAssociationBatch operation on
-     *           AWSSimpleSystemsManagement.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateAssociationBatch service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createAssociationBatchRequest
+     *        null
+     * @return A Java Future containing the result of the CreateAssociationBatch
+     *         operation returned by the service.
      */
-    public Future<CreateAssociationBatchResult> createAssociationBatchAsync(CreateAssociationBatchRequest createAssociationBatchRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateAssociationBatchResult> createAssociationBatchAsync(
+            CreateAssociationBatchRequest createAssociationBatchRequest);
 
     /**
      * <p>
@@ -298,332 +145,28 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * <p>
      * When you associate a configuration document with an instance, the
-     * configuration agent on the instance processes the configuration
-     * document and configures the instance as specified.
+     * configuration agent on the instance processes the configuration document
+     * and configures the instance as specified.
      * </p>
      * <p>
-     * If you associate a configuration document with an instance that
-     * already has an associated configuration document, we replace the
-     * current configuration document with the new configuration document.
+     * If you associate a configuration document with an instance that already
+     * has an associated configuration document, we replace the current
+     * configuration document with the new configuration document.
      * </p>
-     *
-     * @param createAssociationBatchRequest Container for the necessary
-     *           parameters to execute the CreateAssociationBatch operation on
-     *           AWSSimpleSystemsManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateAssociationBatch service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createAssociationBatchRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAssociationBatch
+     *         operation returned by the service.
      */
-    public Future<CreateAssociationBatchResult> createAssociationBatchAsync(CreateAssociationBatchRequest createAssociationBatchRequest,
-            AsyncHandler<CreateAssociationBatchRequest, CreateAssociationBatchResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes the specified configuration document.
-     * </p>
-     *
-     * @param describeDocumentRequest Container for the necessary parameters
-     *           to execute the DescribeDocument operation on
-     *           AWSSimpleSystemsManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDocument service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDocumentResult> describeDocumentAsync(DescribeDocumentRequest describeDocumentRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes the specified configuration document.
-     * </p>
-     *
-     * @param describeDocumentRequest Container for the necessary parameters
-     *           to execute the DescribeDocument operation on
-     *           AWSSimpleSystemsManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDocument service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDocumentResult> describeDocumentAsync(DescribeDocumentRequest describeDocumentRequest,
-            AsyncHandler<DescribeDocumentRequest, DescribeDocumentResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the status of the configuration document associated with the
-     * specified instance.
-     * </p>
-     *
-     * @param updateAssociationStatusRequest Container for the necessary
-     *           parameters to execute the UpdateAssociationStatus operation on
-     *           AWSSimpleSystemsManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateAssociationStatus service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(UpdateAssociationStatusRequest updateAssociationStatusRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Updates the status of the configuration document associated with the
-     * specified instance.
-     * </p>
-     *
-     * @param updateAssociationStatusRequest Container for the necessary
-     *           parameters to execute the UpdateAssociationStatus operation on
-     *           AWSSimpleSystemsManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateAssociationStatus service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(UpdateAssociationStatusRequest updateAssociationStatusRequest,
-            AsyncHandler<UpdateAssociationStatusRequest, UpdateAssociationStatusResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Lists the associations for the specified configuration document or
-     * instance.
-     * </p>
-     *
-     * @param listAssociationsRequest Container for the necessary parameters
-     *           to execute the ListAssociations operation on
-     *           AWSSimpleSystemsManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListAssociations service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListAssociationsResult> listAssociationsAsync(ListAssociationsRequest listAssociationsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Lists the associations for the specified configuration document or
-     * instance.
-     * </p>
-     *
-     * @param listAssociationsRequest Container for the necessary parameters
-     *           to execute the ListAssociations operation on
-     *           AWSSimpleSystemsManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListAssociations service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListAssociationsResult> listAssociationsAsync(ListAssociationsRequest listAssociationsRequest,
-            AsyncHandler<ListAssociationsRequest, ListAssociationsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes one or more of your configuration documents.
-     * </p>
-     *
-     * @param listDocumentsRequest Container for the necessary parameters to
-     *           execute the ListDocuments operation on AWSSimpleSystemsManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListDocuments service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListDocumentsResult> listDocumentsAsync(ListDocumentsRequest listDocumentsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes one or more of your configuration documents.
-     * </p>
-     *
-     * @param listDocumentsRequest Container for the necessary parameters to
-     *           execute the ListDocuments operation on AWSSimpleSystemsManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListDocuments service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListDocumentsResult> listDocumentsAsync(ListDocumentsRequest listDocumentsRequest,
-            AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Disassociates the specified configuration document from the specified
-     * instance.
-     * </p>
-     * <p>
-     * When you disassociate a configuration document from an instance, it
-     * does not change the configuration of the instance. To change the
-     * configuration state of an instance after you disassociate a
-     * configuration document, you must create a new configuration document
-     * with the desired configuration and associate it with the instance.
-     * </p>
-     *
-     * @param deleteAssociationRequest Container for the necessary parameters
-     *           to execute the DeleteAssociation operation on
-     *           AWSSimpleSystemsManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteAssociation service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteAssociationResult> deleteAssociationAsync(DeleteAssociationRequest deleteAssociationRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Disassociates the specified configuration document from the specified
-     * instance.
-     * </p>
-     * <p>
-     * When you disassociate a configuration document from an instance, it
-     * does not change the configuration of the instance. To change the
-     * configuration state of an instance after you disassociate a
-     * configuration document, you must create a new configuration document
-     * with the desired configuration and associate it with the instance.
-     * </p>
-     *
-     * @param deleteAssociationRequest Container for the necessary parameters
-     *           to execute the DeleteAssociation operation on
-     *           AWSSimpleSystemsManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteAssociation service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteAssociationResult> deleteAssociationAsync(DeleteAssociationRequest deleteAssociationRequest,
-            AsyncHandler<DeleteAssociationRequest, DeleteAssociationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateAssociationBatchResult> createAssociationBatchAsync(
+            CreateAssociationBatchRequest createAssociationBatchRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAssociationBatchRequest, CreateAssociationBatchResult> asyncHandler);
 
     /**
      * <p>
@@ -631,27 +174,17 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * <p>
      * After you create a configuration document, you can use
-     * CreateAssociation to associate it with one or more running instances.
+     * <a>CreateAssociation</a> to associate it with one or more running
+     * instances.
      * </p>
-     *
-     * @param createDocumentRequest Container for the necessary parameters to
-     *           execute the CreateDocument operation on AWSSimpleSystemsManagement.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateDocument service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createDocumentRequest
+     *        null
+     * @return A Java Future containing the result of the CreateDocument
+     *         operation returned by the service.
      */
-    public Future<CreateDocumentResult> createDocumentAsync(CreateDocumentRequest createDocumentRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateDocumentResult> createDocumentAsync(
+            CreateDocumentRequest createDocumentRequest);
 
     /**
      * <p>
@@ -659,82 +192,325 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * <p>
      * After you create a configuration document, you can use
-     * CreateAssociation to associate it with one or more running instances.
+     * <a>CreateAssociation</a> to associate it with one or more running
+     * instances.
      * </p>
-     *
-     * @param createDocumentRequest Container for the necessary parameters to
-     *           execute the CreateDocument operation on AWSSimpleSystemsManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateDocument service method, as returned by
-     *         AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createDocumentRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDocument
+     *         operation returned by the service.
      */
-    public Future<CreateDocumentResult> createDocumentAsync(CreateDocumentRequest createDocumentRequest,
-            AsyncHandler<CreateDocumentRequest, CreateDocumentResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateDocumentResult> createDocumentAsync(
+            CreateDocumentRequest createDocumentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDocumentRequest, CreateDocumentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates the specified configuration document from the specified
+     * instance.
+     * </p>
+     * <p>
+     * When you disassociate a configuration document from an instance, it does
+     * not change the configuration of the instance. To change the configuration
+     * state of an instance after you disassociate a configuration document, you
+     * must create a new configuration document with the desired configuration
+     * and associate it with the instance.
+     * </p>
+     * 
+     * @param deleteAssociationRequest
+     *        null
+     * @return A Java Future containing the result of the DeleteAssociation
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteAssociationResult> deleteAssociationAsync(
+            DeleteAssociationRequest deleteAssociationRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified configuration document from the specified
+     * instance.
+     * </p>
+     * <p>
+     * When you disassociate a configuration document from an instance, it does
+     * not change the configuration of the instance. To change the configuration
+     * state of an instance after you disassociate a configuration document, you
+     * must create a new configuration document with the desired configuration
+     * and associate it with the instance.
+     * </p>
+     * 
+     * @param deleteAssociationRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAssociation
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteAssociationResult> deleteAssociationAsync(
+            DeleteAssociationRequest deleteAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAssociationRequest, DeleteAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified configuration document.
+     * </p>
+     * <p>
+     * You must use <a>DeleteAssociation</a> to disassociate all instances that
+     * are associated with the configuration document before you can delete it.
+     * </p>
+     * 
+     * @param deleteDocumentRequest
+     *        null
+     * @return A Java Future containing the result of the DeleteDocument
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(
+            DeleteDocumentRequest deleteDocumentRequest);
+
+    /**
+     * <p>
+     * Deletes the specified configuration document.
+     * </p>
+     * <p>
+     * You must use <a>DeleteAssociation</a> to disassociate all instances that
+     * are associated with the configuration document before you can delete it.
+     * </p>
+     * 
+     * @param deleteDocumentRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDocument
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(
+            DeleteDocumentRequest deleteDocumentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDocumentRequest, DeleteDocumentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the associations for the specified configuration document or
+     * instance.
+     * </p>
+     * 
+     * @param describeAssociationRequest
+     *        null
+     * @return A Java Future containing the result of the DescribeAssociation
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeAssociationResult> describeAssociationAsync(
+            DescribeAssociationRequest describeAssociationRequest);
+
+    /**
+     * <p>
+     * Describes the associations for the specified configuration document or
+     * instance.
+     * </p>
+     * 
+     * @param describeAssociationRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAssociation
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeAssociationResult> describeAssociationAsync(
+            DescribeAssociationRequest describeAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssociationRequest, DescribeAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified configuration document.
+     * </p>
+     * 
+     * @param describeDocumentRequest
+     *        null
+     * @return A Java Future containing the result of the DescribeDocument
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeDocumentResult> describeDocumentAsync(
+            DescribeDocumentRequest describeDocumentRequest);
+
+    /**
+     * <p>
+     * Describes the specified configuration document.
+     * </p>
+     * 
+     * @param describeDocumentRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDocument
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DescribeDocumentResult> describeDocumentAsync(
+            DescribeDocumentRequest describeDocumentRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDocumentRequest, DescribeDocumentResult> asyncHandler);
 
     /**
      * <p>
      * Gets the contents of the specified configuration document.
      * </p>
-     *
-     * @param getDocumentRequest Container for the necessary parameters to
-     *           execute the GetDocument operation on AWSSimpleSystemsManagement.
      * 
-     * @return A Java Future object containing the response from the
-     *         GetDocument service method, as returned by AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param getDocumentRequest
+     *        null
+     * @return A Java Future containing the result of the GetDocument operation
+     *         returned by the service.
      */
-    public Future<GetDocumentResult> getDocumentAsync(GetDocumentRequest getDocumentRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<GetDocumentResult> getDocumentAsync(
+            GetDocumentRequest getDocumentRequest);
 
     /**
      * <p>
      * Gets the contents of the specified configuration document.
      * </p>
-     *
-     * @param getDocumentRequest Container for the necessary parameters to
-     *           execute the GetDocument operation on AWSSimpleSystemsManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         GetDocument service method, as returned by AWSSimpleSystemsManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSimpleSystemsManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param getDocumentRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDocument operation
+     *         returned by the service.
      */
-    public Future<GetDocumentResult> getDocumentAsync(GetDocumentRequest getDocumentRequest,
-            AsyncHandler<GetDocumentRequest, GetDocumentResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<GetDocumentResult> getDocumentAsync(
+            GetDocumentRequest getDocumentRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDocumentRequest, GetDocumentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the associations for the specified configuration document or
+     * instance.
+     * </p>
+     * 
+     * @param listAssociationsRequest
+     *        null
+     * @return A Java Future containing the result of the ListAssociations
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<ListAssociationsResult> listAssociationsAsync(
+            ListAssociationsRequest listAssociationsRequest);
+
+    /**
+     * <p>
+     * Lists the associations for the specified configuration document or
+     * instance.
+     * </p>
+     * 
+     * @param listAssociationsRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAssociations
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<ListAssociationsResult> listAssociationsAsync(
+            ListAssociationsRequest listAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAssociationsRequest, ListAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more of your configuration documents.
+     * </p>
+     * 
+     * @param listDocumentsRequest
+     *        null
+     * @return A Java Future containing the result of the ListDocuments
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(
+            ListDocumentsRequest listDocumentsRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your configuration documents.
+     * </p>
+     * 
+     * @param listDocumentsRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDocuments
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(
+            ListDocumentsRequest listDocumentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListDocuments operation.
+     *
+     * @see #listDocumentsAsync(ListDocumentsRequest)
+     */
+    java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync();
+
+    /**
+     * Simplified method form for invoking the ListDocuments operation with an
+     * AsyncHandler.
+     *
+     * @see #listDocumentsAsync(ListDocumentsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(
+            com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the status of the configuration document associated with the
+     * specified instance.
+     * </p>
+     * 
+     * @param updateAssociationStatusRequest
+     *        null
+     * @return A Java Future containing the result of the
+     *         UpdateAssociationStatus operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(
+            UpdateAssociationStatusRequest updateAssociationStatusRequest);
+
+    /**
+     * <p>
+     * Updates the status of the configuration document associated with the
+     * specified instance.
+     * </p>
+     * 
+     * @param updateAssociationStatusRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateAssociationStatus operation returned by the service.
+     */
+    java.util.concurrent.Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(
+            UpdateAssociationStatusRequest updateAssociationStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAssociationStatusRequest, UpdateAssociationStatusResult> asyncHandler);
+
 }
-        

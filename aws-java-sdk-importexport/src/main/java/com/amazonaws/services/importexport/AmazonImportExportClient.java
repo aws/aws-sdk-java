@@ -343,9 +343,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      *         Please correct and resubmit.
      * @throws NoSuchBucketException
      *         The specified bucket does not exist. Create the specified bucket
-     *         or change the manifest's bucket, exportBucket, or logBucket field
-     *         to a bucket that the account, as specified by the manifest's
-     *         Access Key ID, has write permissions to.
+     *         or change the manifest's bucket, exportBucket, or il field to a
+     *         bucket that the account, as specified by the manifest's Access
+     *         Key ID, has write permissions to.
      * @throws MissingCustomsException
      *         One or more required customs parameters was missing from the
      *         manifest.
@@ -602,9 +602,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      *         Please correct and resubmit.
      * @throws NoSuchBucketException
      *         The specified bucket does not exist. Create the specified bucket
-     *         or change the manifest's bucket, exportBucket, or logBucket field
-     *         to a bucket that the account, as specified by the manifest's
-     *         Access Key ID, has write permissions to.
+     *         or change the manifest's bucket, exportBucket, or il field to a
+     *         bucket that the account, as specified by the manifest's Access
+     *         Key ID, has write permissions to.
      * @throws ExpiredJobIdException
      *         Indicates that the specified job has expired out of the system.
      * @throws CanceledJobIdException

@@ -1,82 +1,92 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * The result of the AddCommunicationToCase operation.
+ * The result of the <a>AddCommunicationToCase</a> operation.
  * </p>
  */
 public class AddCommunicationToCaseResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
      * error.
+     * </p>
      */
     private Boolean result;
 
     /**
+     * <p>
      * True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
      * error.
-     *
-     * @return True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
-     *         error.
-     */
-    public Boolean isResult() {
-        return result;
-    }
-    
-    /**
-     * True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
-     * error.
-     *
-     * @param result True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
-     *         error.
+     * </p>
+     * 
+     * @param result
+     *        True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns
+     *        an error.
      */
     public void setResult(Boolean result) {
         this.result = result;
     }
-    
+
     /**
+     * <p>
      * True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
      * error.
+     * </p>
+     * 
+     * @return True if <a>AddCommunicationToCase</a> succeeds. Otherwise,
+     *         returns an error.
+     */
+    public Boolean getResult() {
+        return this.result;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param result True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
-     *         error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
+     * error.
+     * </p>
+     * 
+     * @param result
+     *        True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns
+     *        an error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AddCommunicationToCaseResult withResult(Boolean result) {
-        this.result = result;
+        setResult(result);
         return this;
     }
 
     /**
+     * <p>
      * True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
      * error.
-     *
-     * @return True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
-     *         error.
+     * </p>
+     * 
+     * @return True if <a>AddCommunicationToCase</a> succeeds. Otherwise,
+     *         returns an error.
      */
-    public Boolean getResult() {
-        return result;
+    public Boolean isResult() {
+        return this.result;
     }
 
     /**
@@ -91,46 +101,48 @@ public class AddCommunicationToCaseResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (isResult() != null) sb.append("Result: " + isResult() );
+        if (getResult() != null)
+            sb.append("Result: " + getResult());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof AddCommunicationToCaseResult == false)
+            return false;
+        AddCommunicationToCaseResult other = (AddCommunicationToCaseResult) obj;
+        if (other.getResult() == null ^ this.getResult() == null)
+            return false;
+        if (other.getResult() != null
+                && other.getResult().equals(this.getResult()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((isResult() == null) ? 0 : isResult().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getResult() == null) ? 0 : getResult().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof AddCommunicationToCaseResult == false) return false;
-        AddCommunicationToCaseResult other = (AddCommunicationToCaseResult)obj;
-        
-        if (other.isResult() == null ^ this.isResult() == null) return false;
-        if (other.isResult() != null && other.isResult().equals(this.isResult()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public AddCommunicationToCaseResult clone() {
         try {
             return (AddCommunicationToCaseResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    
