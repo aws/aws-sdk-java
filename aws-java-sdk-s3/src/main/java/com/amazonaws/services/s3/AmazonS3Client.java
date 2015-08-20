@@ -898,9 +898,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public AccessControlList getBucketAcl(String bucketName)
             throws AmazonClientException, AmazonServiceException {
-        rejectNull(bucketName,
-                "The bucket name parameter must be specified when requesting a bucket's ACL");
-        return getAcl(bucketName, null, null, null);
+        return getBucketAcl(new GetBucketAclRequest(bucketName));
     }
 
     @Override
@@ -915,7 +913,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public void setBucketAcl(String bucketName, AccessControlList acl)
             throws AmazonClientException, AmazonServiceException {
-        setBucketAcl0(bucketName, acl, null);
+        setBucketAcl(new SetBucketAclRequest(bucketName, acl));
     }
 
     /**
@@ -924,61 +922,53 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public void setBucketAcl(String bucketName, AccessControlList acl,
             RequestMetricCollector requestMetricCollector) {
-        setBucketAcl0(bucketName, acl, requestMetricCollector);
-    }
-
-    private void setBucketAcl0(String bucketName, AccessControlList acl,
-            RequestMetricCollector requestMetricCollector) {
-        rejectNull(bucketName, "The bucket name parameter must be specified when setting a bucket's ACL");
-        rejectNull(acl, "The ACL parameter must be specified when setting a bucket's ACL");
-
-        setAcl(bucketName, null, null, acl,
-            new GenericBucketRequest(bucketName)
-                .withRequestMetricCollector(requestMetricCollector));
+        SetBucketAclRequest request = new SetBucketAclRequest(bucketName, acl)
+            .withRequestMetricCollector(requestMetricCollector);
+        setBucketAcl(request);
     }
 
     @Override
-    public void setBucketAcl(SetBucketAclRequest setBucketAclRequest)
+    public void setBucketAcl(String bucketName, CannedAccessControlList cannedAcl)
             throws AmazonClientException, AmazonServiceException {
-        String bucketName = setBucketAclRequest.getBucketName();
-        AccessControlList acl = setBucketAclRequest.getAcl();
-        CannedAccessControlList cannedAcl = setBucketAclRequest.getCannedAcl();
-        rejectNull(bucketName, "The bucket name parameter must be specified when setting a bucket's ACL");
-
-        if (acl != null) {
-            setAcl(bucketName, null, null, acl, setBucketAclRequest);
-        } else if (cannedAcl != null) {
-            setAcl(bucketName, null, null, cannedAcl, setBucketAclRequest);
-        } else {
-            rejectNull(null, "The ACL parameter must be specified when setting a bucket's ACL");
-        }
-    }
-
-    @Override
-    public void setBucketAcl(String bucketName, CannedAccessControlList acl)
-            throws AmazonClientException, AmazonServiceException {
-        setBucketAcl0(bucketName, acl, null);
+        setBucketAcl(new SetBucketAclRequest(bucketName, cannedAcl));
     }
 
     /**
      * Same as {@link #setBucketAcl(String, CannedAccessControlList)}
      * but allows specifying a request metric collector.
      */
-    public void setBucketAcl(String bucketName, CannedAccessControlList acl,
+    public void setBucketAcl(String bucketName, CannedAccessControlList cannedAcl,
             RequestMetricCollector requestMetricCollector) throws AmazonClientException,
             AmazonServiceException {
-        setBucketAcl0(bucketName, acl, requestMetricCollector);
+        SetBucketAclRequest request = new SetBucketAclRequest(bucketName, cannedAcl)
+            .withRequestMetricCollector(requestMetricCollector);
+        setBucketAcl(request);
     }
 
-    private void setBucketAcl0(String bucketName, CannedAccessControlList acl,
-            RequestMetricCollector col) throws AmazonClientException,
-            AmazonServiceException {
-        rejectNull(bucketName, "The bucket name parameter must be specified when setting a bucket's ACL");
-        rejectNull(acl, "The ACL parameter must be specified when setting a bucket's ACL");
+    @Override
+    public void setBucketAcl(SetBucketAclRequest setBucketAclRequest)
+            throws AmazonClientException, AmazonServiceException {
 
-        setAcl(bucketName, null, null, acl,
-            new GenericBucketRequest(bucketName)
-                .withRequestMetricCollector(col));
+        String bucketName = setBucketAclRequest.getBucketName();
+        rejectNull(bucketName, "The bucket name parameter must be specified when setting a bucket's ACL");
+
+        AccessControlList acl = setBucketAclRequest.getAcl();
+        CannedAccessControlList cannedAcl = setBucketAclRequest.getCannedAcl();
+
+        if (acl == null && cannedAcl == null) {
+            throw new IllegalArgumentException(
+                    "The ACL parameter must be specified when setting a bucket's ACL");
+        }
+        if (acl != null && cannedAcl != null) {
+            throw new IllegalArgumentException(
+                    "Only one of the acl and cannedAcl parameter can be specified, not both.");
+        }
+
+        if (acl != null) {
+            setAcl(bucketName, null, null, acl, setBucketAclRequest);
+        } else {
+            setAcl(bucketName, null, null, cannedAcl, setBucketAclRequest);
+        }
     }
 
     @Override
@@ -1433,15 +1423,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
         }
         publishProgress(listener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
-        PutObjectResult result = new PutObjectResult();
-        result.setETag(etag);
-        result.setVersionId(returnedMetadata.getVersionId());
-        result.setSSEAlgorithm(returnedMetadata.getSSEAlgorithm());
-        result.setSSECustomerAlgorithm(returnedMetadata.getSSECustomerAlgorithm());
-        result.setSSECustomerKeyMd5(returnedMetadata.getSSECustomerKeyMd5());
-        result.setExpirationTime(returnedMetadata.getExpirationTime());
-        result.setExpirationTimeRuleId(returnedMetadata.getExpirationTimeRuleId());
+        final PutObjectResult result = createPutObjectResult(returnedMetadata);
         result.setContentMd5(contentMd5);
+        return result;
+    }
+
+    private static PutObjectResult createPutObjectResult(ObjectMetadata metadata) {
+        final PutObjectResult result = new PutObjectResult();
+        result.setVersionId(metadata.getVersionId());
+        result.setSSEAlgorithm(metadata.getSSEAlgorithm());
+        result.setSSECustomerAlgorithm(metadata.getSSECustomerAlgorithm());
+        result.setSSECustomerKeyMd5(metadata.getSSECustomerKeyMd5());
+        result.setExpirationTime(metadata.getExpirationTime());
+        result.setExpirationTimeRuleId(metadata.getExpirationTimeRuleId());
+        result.setETag(metadata.getETag());
+        result.setMetadata(metadata);
         return result;
     }
 

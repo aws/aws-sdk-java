@@ -65,6 +65,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
 
     private static final Log log = LogFactory.getLog(AWSCodeCommit.class);
 
+    /** Default signing name for the service. */
+    private final String DEFAULT_SIGNING_NAME = "codecommit";
+
     /**
      * List of exception unmarshallers for all CodeCommit exceptions.
      */
@@ -317,7 +320,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("https://codecommit.us-east-1.amazonaws.com");
+        setEndpoint("https://codecommit.us-east-1.amazonaws.com");
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

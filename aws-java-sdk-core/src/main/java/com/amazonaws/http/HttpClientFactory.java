@@ -67,6 +67,7 @@ import org.apache.http.protocol.HttpContext;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.http.conn.SdkConnectionKeepAliveStrategy;
 import com.amazonaws.http.conn.ssl.SdkTLSSocketFactory;
 import com.amazonaws.http.impl.client.HttpRequestNoRetryHandler;
 import com.amazonaws.http.impl.client.SdkHttpClient;
@@ -103,9 +104,15 @@ class HttpClientFactory {
 
         PoolingClientConnectionManager connectionManager = ConnectionManagerFactory
                 .createPoolingClientConnManager(config, httpClientParams);
+
         SdkHttpClient httpClient = new SdkHttpClient(connectionManager, httpClientParams);
         httpClient.setHttpRequestRetryHandler(HttpRequestNoRetryHandler.Singleton);
         httpClient.setRedirectStrategy(new NeverFollowRedirectStrategy());
+
+        if (config.getConnectionMaxIdleMillis() > 0) {
+            httpClient.setKeepAliveStrategy(new SdkConnectionKeepAliveStrategy(
+                    config.getConnectionMaxIdleMillis()));
+        }
 
         if (config.getLocalAddress() != null) {
             ConnRouteParams.setLocalAddress(httpClientParams, config.getLocalAddress());
@@ -167,6 +174,7 @@ class HttpClientFactory {
 
             httpClient.addRequestInterceptor(new HttpRequestInterceptor() {
 
+                @Override
                 public void process(final HttpRequest request,
                         final HttpContext context) throws HttpException,
                         IOException {
@@ -179,6 +187,7 @@ class HttpClientFactory {
 
             httpClient.addResponseInterceptor(new HttpResponseInterceptor() {
 
+                @Override
                 public void process(final HttpResponse response,
                         final HttpContext context) throws HttpException,
                         IOException {
@@ -250,10 +259,12 @@ class HttpClientFactory {
             return this.sslcontext;
         }
 
+        @Override
         public Socket createSocket(HttpParams params) throws IOException {
             return getSSLContext().getSocketFactory().createSocket();
         }
 
+        @Override
         public Socket connectSocket(Socket sock,
                 InetSocketAddress remoteAddress,
                 InetSocketAddress localAddress, HttpParams params)
@@ -270,10 +281,12 @@ class HttpClientFactory {
             return sslsock;
         }
 
+        @Override
         public boolean isSecure(Socket sock) throws IllegalArgumentException {
             return true;
         }
 
+        @Override
         public Socket createLayeredSocket(Socket arg0, String arg1, int arg2, HttpParams arg3)
                 throws IOException, UnknownHostException {
             return getSSLContext().getSocketFactory().createSocket(arg0, arg1, arg2, true);
@@ -287,15 +300,18 @@ class HttpClientFactory {
     private static class TrustingX509TrustManager implements X509TrustManager {
         private static final X509Certificate[] X509_CERTIFICATES = new X509Certificate[0];
 
+        @Override
         public X509Certificate[] getAcceptedIssuers() {
             return X509_CERTIFICATES;
         }
 
+        @Override
         public void checkServerTrusted(X509Certificate[] chain, String authType)
                 throws CertificateException {
             // No-op, to trust all certs
         }
 
+        @Override
         public void checkClientTrusted(X509Certificate[] chain, String authType)
                 throws CertificateException {
             // No-op, to trust all certs
@@ -313,6 +329,7 @@ class HttpClientFactory {
             this.proxyHost = proxyHost;
         }
 
+        @Override
         public void process(HttpRequest request, HttpContext context) {
             AuthCache authCache;
             // Set up the a Basic Auth scheme scoped for the proxy - we don't

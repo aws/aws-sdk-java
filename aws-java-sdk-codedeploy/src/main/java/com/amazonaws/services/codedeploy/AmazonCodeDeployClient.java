@@ -130,6 +130,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
 
     private static final Log log = LogFactory.getLog(AmazonCodeDeploy.class);
 
+    /** Default signing name for the service. */
+    private final String DEFAULT_SIGNING_NAME = "codedeploy";
+
     /**
      * List of exception unmarshallers for all CodeDeploy exceptions.
      */
@@ -520,7 +523,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("https://codedeploy.us-east-1.amazonaws.com");
+        setEndpoint("https://codedeploy.us-east-1.amazonaws.com");
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

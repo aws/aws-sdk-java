@@ -18,6 +18,7 @@
     "hasApiWithStreamInput" : false,
     "jsonContentVersion" : null,
     "endpointPrefix" : "elasticbeanstalk",
+    "signingName" : "elasticbeanstalk",
     "serviceName" : "Elastic Beanstalk",
     "jsonProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
@@ -43,6 +44,7 @@
         "exceptionName" : "InsufficientPrivilegesException",
         "documentation" : "<p>Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services</p>"
       } ],
+      "methodName" : "abortEnvironmentUpdate",
       "syncDocumentation" : "/**<p>Cancels in-progress environment configuration update or application version deployment.</p>\n@param abortEnvironmentUpdateRequest \n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services*/",
       "asyncDocumentation" : "/**<p>Cancels in-progress environment configuration update or application version deployment.</p>\n@param abortEnvironmentUpdateRequest */",
       "asyncDocumentationWithHandler" : "/**<p>Cancels in-progress environment configuration update or application version deployment.</p>\n@param abortEnvironmentUpdateRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
@@ -50,8 +52,7 @@
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, Void>",
-      "methodName" : "abortEnvironmentUpdate"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, Void>"
     },
     "CheckDNSAvailability" : {
       "documentation" : "<p> Checks if the specified CNAME is available. </p>",
@@ -71,6 +72,7 @@
         "documentation" : "<p>Indicates if the specified CNAME is available.</p>"
       },
       "exceptions" : null,
+      "methodName" : "checkDNSAvailability",
       "syncDocumentation" : "/**<p> Checks if the specified CNAME is available. </p>\n@param checkDNSAvailabilityRequest Results message indicating whether a CNAME is available.\n@return Result of the CheckDNSAvailability operation returned by the service.*/",
       "asyncDocumentation" : "/**<p> Checks if the specified CNAME is available. </p>\n@param checkDNSAvailabilityRequest Results message indicating whether a CNAME is available.\n@return A Java Future containing the result of the CheckDNSAvailability operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Checks if the specified CNAME is available. </p>\n@param checkDNSAvailabilityRequest Results message indicating whether a CNAME is available.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CheckDNSAvailability operation returned by the service.*/",
@@ -78,8 +80,7 @@
       "asyncReturnType" : "CheckDNSAvailabilityResult",
       "asyncFutureType" : "java.util.concurrent.Future<CheckDNSAvailabilityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CheckDNSAvailabilityResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CheckDNSAvailabilityRequest, CheckDNSAvailabilityResult>",
-      "methodName" : "checkDNSAvailability"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CheckDNSAvailabilityRequest, CheckDNSAvailabilityResult>"
     },
     "CreateApplication" : {
       "documentation" : "<p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>",
@@ -102,6 +103,7 @@
         "exceptionName" : "TooManyApplicationsException",
         "documentation" : "<p>The caller has exceeded the limit on the number of applications associated with their account.</p>"
       } ],
+      "methodName" : "createApplication",
       "syncDocumentation" : "/**<p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>\n@param createApplicationRequest This documentation target is not reported in the API reference.\n@return Result of the CreateApplication operation returned by the service.\n@throws TooManyApplicationsException The caller has exceeded the limit on the number of applications associated with their account.*/",
       "asyncDocumentation" : "/**<p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>\n@param createApplicationRequest This documentation target is not reported in the API reference.\n@return A Java Future containing the result of the CreateApplication operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>\n@param createApplicationRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateApplication operation returned by the service.*/",
@@ -109,8 +111,7 @@
       "asyncReturnType" : "CreateApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateApplicationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult>",
-      "methodName" : "createApplication"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult>"
     },
     "CreateApplicationVersion" : {
       "documentation" : "<p>Creates an application version for the specified application.</p> <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version. </note>",
@@ -142,6 +143,7 @@
         "exceptionName" : "S3LocationNotInServiceRegionException",
         "documentation" : "<p>The specified S3 bucket does not belong to the S3 region in which the service is running.</p>"
       } ],
+      "methodName" : "createApplicationVersion",
       "syncDocumentation" : "/**<p>Creates an application version for the specified application.</p> <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version. </note>\n@param createApplicationVersionRequest \n@return Result of the CreateApplicationVersion operation returned by the service.\n@throws TooManyApplicationsException The caller has exceeded the limit on the number of applications associated with their account.\n@throws TooManyApplicationVersionsException The caller has exceeded the limit on the number of application versions associated with their account.\n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services\n@throws S3LocationNotInServiceRegionException The specified S3 bucket does not belong to the S3 region in which the service is running.*/",
       "asyncDocumentation" : "/**<p>Creates an application version for the specified application.</p> <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version. </note>\n@param createApplicationVersionRequest \n@return A Java Future containing the result of the CreateApplicationVersion operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Creates an application version for the specified application.</p> <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version. </note>\n@param createApplicationVersionRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateApplicationVersion operation returned by the service.*/",
@@ -149,8 +151,7 @@
       "asyncReturnType" : "CreateApplicationVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateApplicationVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateApplicationVersionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationVersionRequest, CreateApplicationVersionResult>",
-      "methodName" : "createApplicationVersion"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationVersionRequest, CreateApplicationVersionResult>"
     },
     "CreateConfigurationTemplate" : {
       "documentation" : "<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>",
@@ -176,6 +177,7 @@
         "exceptionName" : "TooManyConfigurationTemplatesException",
         "documentation" : "<p>The caller has exceeded the limit on the number of configuration templates associated with their account.</p>"
       } ],
+      "methodName" : "createConfigurationTemplate",
       "syncDocumentation" : "/**<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>\n@param createConfigurationTemplateRequest This documentation target is not reported in the API reference.\n@return Result of the CreateConfigurationTemplate operation returned by the service.\n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services\n@throws TooManyConfigurationTemplatesException The caller has exceeded the limit on the number of configuration templates associated with their account.*/",
       "asyncDocumentation" : "/**<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>\n@param createConfigurationTemplateRequest This documentation target is not reported in the API reference.\n@return A Java Future containing the result of the CreateConfigurationTemplate operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>\n@param createConfigurationTemplateRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateConfigurationTemplate operation returned by the service.*/",
@@ -183,8 +185,7 @@
       "asyncReturnType" : "CreateConfigurationTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateConfigurationTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateConfigurationTemplateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResult>",
-      "methodName" : "createConfigurationTemplate"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResult>"
     },
     "CreateEnvironment" : {
       "documentation" : "<p> Launches an environment for the specified application using the specified configuration. </p>",
@@ -210,6 +211,7 @@
         "exceptionName" : "InsufficientPrivilegesException",
         "documentation" : "<p>Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services</p>"
       } ],
+      "methodName" : "createEnvironment",
       "syncDocumentation" : "/**<p> Launches an environment for the specified application using the specified configuration. </p>\n@param createEnvironmentRequest \n@return Result of the CreateEnvironment operation returned by the service.\n@throws TooManyEnvironmentsException The caller has exceeded the limit of allowed environments associated with the account.\n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services*/",
       "asyncDocumentation" : "/**<p> Launches an environment for the specified application using the specified configuration. </p>\n@param createEnvironmentRequest \n@return A Java Future containing the result of the CreateEnvironment operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Launches an environment for the specified application using the specified configuration. </p>\n@param createEnvironmentRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateEnvironment operation returned by the service.*/",
@@ -217,8 +219,7 @@
       "asyncReturnType" : "CreateEnvironmentResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateEnvironmentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateEnvironmentResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEnvironmentRequest, CreateEnvironmentResult>",
-      "methodName" : "createEnvironment"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEnvironmentRequest, CreateEnvironmentResult>"
     },
     "CreateStorageLocation" : {
       "documentation" : "<p> Creates the Amazon S3 storage location for the account. </p> <p> This location is used to store user log files. </p>",
@@ -247,6 +248,7 @@
         "exceptionName" : "InsufficientPrivilegesException",
         "documentation" : "<p>Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services</p>"
       } ],
+      "methodName" : "createStorageLocation",
       "syncDocumentation" : "/**<p> Creates the Amazon S3 storage location for the account. </p> <p> This location is used to store user log files. </p>\n@param createStorageLocationRequest null\n@return Result of the CreateStorageLocation operation returned by the service.\n@throws TooManyBucketsException The web service attempted to create a bucket in an Amazon S3 account that already has 100 buckets.\n@throws S3SubscriptionRequiredException The caller does not have a subscription to Amazon S3.\n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services*/",
       "asyncDocumentation" : "/**<p> Creates the Amazon S3 storage location for the account. </p> <p> This location is used to store user log files. </p>\n@param createStorageLocationRequest null\n@return A Java Future containing the result of the CreateStorageLocation operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Creates the Amazon S3 storage location for the account. </p> <p> This location is used to store user log files. </p>\n@param createStorageLocationRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateStorageLocation operation returned by the service.*/",
@@ -254,8 +256,7 @@
       "asyncReturnType" : "CreateStorageLocationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateStorageLocationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateStorageLocationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStorageLocationRequest, CreateStorageLocationResult>",
-      "methodName" : "createStorageLocation"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStorageLocationRequest, CreateStorageLocationResult>"
     },
     "DeleteApplication" : {
       "documentation" : "<p> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. </p> <note>You cannot delete an application that has a running environment. </note>",
@@ -275,6 +276,7 @@
         "exceptionName" : "OperationInProgressException",
         "documentation" : "<p>Unable to perform the specified operation because another operation is already in progress affecting an element in this activity.</p>"
       } ],
+      "methodName" : "deleteApplication",
       "syncDocumentation" : "/**<p> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. </p> <note>You cannot delete an application that has a running environment. </note>\n@param deleteApplicationRequest This documentation target is not reported in the API reference.\n@throws OperationInProgressException Unable to perform the specified operation because another operation is already in progress affecting an element in this activity.*/",
       "asyncDocumentation" : "/**<p> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. </p> <note>You cannot delete an application that has a running environment. </note>\n@param deleteApplicationRequest This documentation target is not reported in the API reference.*/",
       "asyncDocumentationWithHandler" : "/**<p> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. </p> <note>You cannot delete an application that has a running environment. </note>\n@param deleteApplicationRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
@@ -282,8 +284,7 @@
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, Void>",
-      "methodName" : "deleteApplication"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, Void>"
     },
     "DeleteApplicationVersion" : {
       "documentation" : "<p> Deletes the specified version from the specified application. </p> <note>You cannot delete an application version that is associated with a running environment.</note>",
@@ -312,6 +313,7 @@
         "exceptionName" : "S3LocationNotInServiceRegionException",
         "documentation" : "<p>The specified S3 bucket does not belong to the S3 region in which the service is running.</p>"
       } ],
+      "methodName" : "deleteApplicationVersion",
       "syncDocumentation" : "/**<p> Deletes the specified version from the specified application. </p> <note>You cannot delete an application version that is associated with a running environment.</note>\n@param deleteApplicationVersionRequest This documentation target is not reported in the API reference.\n@throws SourceBundleDeletionException Unable to delete the Amazon S3 source bundle associated with the application version, although the application version deleted successfully.\n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services\n@throws OperationInProgressException Unable to perform the specified operation because another operation is already in progress affecting an element in this activity.\n@throws S3LocationNotInServiceRegionException The specified S3 bucket does not belong to the S3 region in which the service is running.*/",
       "asyncDocumentation" : "/**<p> Deletes the specified version from the specified application. </p> <note>You cannot delete an application version that is associated with a running environment.</note>\n@param deleteApplicationVersionRequest This documentation target is not reported in the API reference.*/",
       "asyncDocumentationWithHandler" : "/**<p> Deletes the specified version from the specified application. </p> <note>You cannot delete an application version that is associated with a running environment.</note>\n@param deleteApplicationVersionRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
@@ -319,8 +321,7 @@
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, Void>",
-      "methodName" : "deleteApplicationVersion"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, Void>"
     },
     "DeleteConfigurationTemplate" : {
       "documentation" : "<p>Deletes the specified configuration template.</p> <note>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</note>",
@@ -340,6 +341,7 @@
         "exceptionName" : "OperationInProgressException",
         "documentation" : "<p>Unable to perform the specified operation because another operation is already in progress affecting an element in this activity.</p>"
       } ],
+      "methodName" : "deleteConfigurationTemplate",
       "syncDocumentation" : "/**<p>Deletes the specified configuration template.</p> <note>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</note>\n@param deleteConfigurationTemplateRequest This documentation target is not reported in the API reference.\n@throws OperationInProgressException Unable to perform the specified operation because another operation is already in progress affecting an element in this activity.*/",
       "asyncDocumentation" : "/**<p>Deletes the specified configuration template.</p> <note>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</note>\n@param deleteConfigurationTemplateRequest This documentation target is not reported in the API reference.*/",
       "asyncDocumentationWithHandler" : "/**<p>Deletes the specified configuration template.</p> <note>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</note>\n@param deleteConfigurationTemplateRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
@@ -347,8 +349,7 @@
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, Void>",
-      "methodName" : "deleteConfigurationTemplate"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, Void>"
     },
     "DeleteEnvironmentConfiguration" : {
       "documentation" : "<p> Deletes the draft configuration associated with the running environment. </p> <p> Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action. </p>",
@@ -365,6 +366,7 @@
       "inputStreamPropertyName" : null,
       "returnType" : null,
       "exceptions" : null,
+      "methodName" : "deleteEnvironmentConfiguration",
       "syncDocumentation" : "/**<p> Deletes the draft configuration associated with the running environment. </p> <p> Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action. </p>\n@param deleteEnvironmentConfigurationRequest This documentation target is not reported in the API reference.*/",
       "asyncDocumentation" : "/**<p> Deletes the draft configuration associated with the running environment. </p> <p> Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action. </p>\n@param deleteEnvironmentConfigurationRequest This documentation target is not reported in the API reference.*/",
       "asyncDocumentationWithHandler" : "/**<p> Deletes the draft configuration associated with the running environment. </p> <p> Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action. </p>\n@param deleteEnvironmentConfigurationRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
@@ -372,8 +374,7 @@
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, Void>",
-      "methodName" : "deleteEnvironmentConfiguration"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, Void>"
     },
     "DescribeApplicationVersions" : {
       "documentation" : "<p>Returns descriptions for existing application versions.</p>",
@@ -393,6 +394,7 @@
         "documentation" : "<p>Result message wrapping a list of application version descriptions.</p>"
       },
       "exceptions" : null,
+      "methodName" : "describeApplicationVersions",
       "syncDocumentation" : "/**<p>Returns descriptions for existing application versions.</p>\n@param describeApplicationVersionsRequest Result message containing a list of configuration descriptions.\n@return Result of the DescribeApplicationVersions operation returned by the service.*/",
       "asyncDocumentation" : "/**<p>Returns descriptions for existing application versions.</p>\n@param describeApplicationVersionsRequest Result message containing a list of configuration descriptions.\n@return A Java Future containing the result of the DescribeApplicationVersions operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Returns descriptions for existing application versions.</p>\n@param describeApplicationVersionsRequest Result message containing a list of configuration descriptions.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeApplicationVersions operation returned by the service.*/",
@@ -400,8 +402,7 @@
       "asyncReturnType" : "DescribeApplicationVersionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeApplicationVersionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeApplicationVersionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeApplicationVersionsRequest, DescribeApplicationVersionsResult>",
-      "methodName" : "describeApplicationVersions"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeApplicationVersionsRequest, DescribeApplicationVersionsResult>"
     },
     "DescribeApplications" : {
       "documentation" : "<p>Returns the descriptions of existing applications.</p>",
@@ -421,6 +422,7 @@
         "documentation" : "<p>Result message containing a list of application descriptions.</p>"
       },
       "exceptions" : null,
+      "methodName" : "describeApplications",
       "syncDocumentation" : "/**<p>Returns the descriptions of existing applications.</p>\n@param describeApplicationsRequest This documentation target is not reported in the API reference.\n@return Result of the DescribeApplications operation returned by the service.*/",
       "asyncDocumentation" : "/**<p>Returns the descriptions of existing applications.</p>\n@param describeApplicationsRequest This documentation target is not reported in the API reference.\n@return A Java Future containing the result of the DescribeApplications operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Returns the descriptions of existing applications.</p>\n@param describeApplicationsRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeApplications operation returned by the service.*/",
@@ -428,8 +430,7 @@
       "asyncReturnType" : "DescribeApplicationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeApplicationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeApplicationsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult>",
-      "methodName" : "describeApplications"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult>"
     },
     "DescribeConfigurationOptions" : {
       "documentation" : "<p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>",
@@ -449,6 +450,7 @@
         "documentation" : "<p>Describes the settings for a specified configuration set.</p>"
       },
       "exceptions" : null,
+      "methodName" : "describeConfigurationOptions",
       "syncDocumentation" : "/**<p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>\n@param describeConfigurationOptionsRequest Result message containig a list of application version descriptions.\n@return Result of the DescribeConfigurationOptions operation returned by the service.*/",
       "asyncDocumentation" : "/**<p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>\n@param describeConfigurationOptionsRequest Result message containig a list of application version descriptions.\n@return A Java Future containing the result of the DescribeConfigurationOptions operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>\n@param describeConfigurationOptionsRequest Result message containig a list of application version descriptions.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeConfigurationOptions operation returned by the service.*/",
@@ -456,8 +458,7 @@
       "asyncReturnType" : "DescribeConfigurationOptionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationOptionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationOptionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResult>",
-      "methodName" : "describeConfigurationOptions"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResult>"
     },
     "DescribeConfigurationSettings" : {
       "documentation" : "<p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>",
@@ -477,6 +478,7 @@
         "documentation" : "<p>The results from a request to change the configuration settings of an environment.</p>"
       },
       "exceptions" : null,
+      "methodName" : "describeConfigurationSettings",
       "syncDocumentation" : "/**<p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>\n@param describeConfigurationSettingsRequest Result message containing all of the configuration settings for a specified solution stack or configuration template.\n@return Result of the DescribeConfigurationSettings operation returned by the service.*/",
       "asyncDocumentation" : "/**<p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>\n@param describeConfigurationSettingsRequest Result message containing all of the configuration settings for a specified solution stack or configuration template.\n@return A Java Future containing the result of the DescribeConfigurationSettings operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>\n@param describeConfigurationSettingsRequest Result message containing all of the configuration settings for a specified solution stack or configuration template.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeConfigurationSettings operation returned by the service.*/",
@@ -484,8 +486,7 @@
       "asyncReturnType" : "DescribeConfigurationSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationSettingsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResult>",
-      "methodName" : "describeConfigurationSettings"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResult>"
     },
     "DescribeEnvironmentHealth" : {
       "documentation" : "<p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>",
@@ -511,6 +512,7 @@
         "exceptionName" : "ElasticBeanstalkServiceException",
         "documentation" : null
       } ],
+      "methodName" : "describeEnvironmentHealth",
       "syncDocumentation" : "/**<p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>\n@param describeEnvironmentHealthRequest See the example below to learn how to create a request body.\n@return Result of the DescribeEnvironmentHealth operation returned by the service.\n@throws InvalidRequestException The request is invalid, please check parameters and their values\n@throws ElasticBeanstalkServiceException null*/",
       "asyncDocumentation" : "/**<p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>\n@param describeEnvironmentHealthRequest See the example below to learn how to create a request body.\n@return A Java Future containing the result of the DescribeEnvironmentHealth operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>\n@param describeEnvironmentHealthRequest See the example below to learn how to create a request body.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeEnvironmentHealth operation returned by the service.*/",
@@ -518,8 +520,7 @@
       "asyncReturnType" : "DescribeEnvironmentHealthResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentHealthResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentHealthResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentHealthRequest, DescribeEnvironmentHealthResult>",
-      "methodName" : "describeEnvironmentHealth"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentHealthRequest, DescribeEnvironmentHealthResult>"
     },
     "DescribeEnvironmentResources" : {
       "documentation" : "<p>Returns AWS resources for this environment.</p>",
@@ -542,6 +543,7 @@
         "exceptionName" : "InsufficientPrivilegesException",
         "documentation" : "<p>Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services</p>"
       } ],
+      "methodName" : "describeEnvironmentResources",
       "syncDocumentation" : "/**<p>Returns AWS resources for this environment.</p>\n@param describeEnvironmentResourcesRequest This documentation target is not reported in the API reference.\n@return Result of the DescribeEnvironmentResources operation returned by the service.\n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services*/",
       "asyncDocumentation" : "/**<p>Returns AWS resources for this environment.</p>\n@param describeEnvironmentResourcesRequest This documentation target is not reported in the API reference.\n@return A Java Future containing the result of the DescribeEnvironmentResources operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Returns AWS resources for this environment.</p>\n@param describeEnvironmentResourcesRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeEnvironmentResources operation returned by the service.*/",
@@ -549,8 +551,7 @@
       "asyncReturnType" : "DescribeEnvironmentResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentResourcesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResult>",
-      "methodName" : "describeEnvironmentResources"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResult>"
     },
     "DescribeEnvironments" : {
       "documentation" : "<p>Returns descriptions for existing environments.</p>",
@@ -570,6 +571,7 @@
         "documentation" : "<p>Result message containing a list of environment descriptions.</p>"
       },
       "exceptions" : null,
+      "methodName" : "describeEnvironments",
       "syncDocumentation" : "/**<p>Returns descriptions for existing environments.</p>\n@param describeEnvironmentsRequest This documentation target is not reported in the API reference.\n@return Result of the DescribeEnvironments operation returned by the service.*/",
       "asyncDocumentation" : "/**<p>Returns descriptions for existing environments.</p>\n@param describeEnvironmentsRequest This documentation target is not reported in the API reference.\n@return A Java Future containing the result of the DescribeEnvironments operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Returns descriptions for existing environments.</p>\n@param describeEnvironmentsRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeEnvironments operation returned by the service.*/",
@@ -577,8 +579,7 @@
       "asyncReturnType" : "DescribeEnvironmentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult>",
-      "methodName" : "describeEnvironments"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult>"
     },
     "DescribeEvents" : {
       "documentation" : "<p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>. </note>",
@@ -598,6 +599,7 @@
         "documentation" : "<p>Result message wrapping a list of event descriptions.</p>"
       },
       "exceptions" : null,
+      "methodName" : "describeEvents",
       "syncDocumentation" : "/**<p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>. </note>\n@param describeEventsRequest This documentation target is not reported in the API reference.\n@return Result of the DescribeEvents operation returned by the service.*/",
       "asyncDocumentation" : "/**<p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>. </note>\n@param describeEventsRequest This documentation target is not reported in the API reference.\n@return A Java Future containing the result of the DescribeEvents operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>. </note>\n@param describeEventsRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeEvents operation returned by the service.*/",
@@ -605,8 +607,7 @@
       "asyncReturnType" : "DescribeEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEventsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult>",
-      "methodName" : "describeEvents"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult>"
     },
     "DescribeInstancesHealth" : {
       "documentation" : "<p>Returns more detailed information about the health of the specified instances (for example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>",
@@ -632,6 +633,7 @@
         "exceptionName" : "ElasticBeanstalkServiceException",
         "documentation" : null
       } ],
+      "methodName" : "describeInstancesHealth",
       "syncDocumentation" : "/**<p>Returns more detailed information about the health of the specified instances (for example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>\n@param describeInstancesHealthRequest See the example below to learn how to create a request body.\n@return Result of the DescribeInstancesHealth operation returned by the service.\n@throws InvalidRequestException The request is invalid, please check parameters and their values\n@throws ElasticBeanstalkServiceException null*/",
       "asyncDocumentation" : "/**<p>Returns more detailed information about the health of the specified instances (for example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>\n@param describeInstancesHealthRequest See the example below to learn how to create a request body.\n@return A Java Future containing the result of the DescribeInstancesHealth operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Returns more detailed information about the health of the specified instances (for example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>\n@param describeInstancesHealthRequest See the example below to learn how to create a request body.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeInstancesHealth operation returned by the service.*/",
@@ -639,8 +641,7 @@
       "asyncReturnType" : "DescribeInstancesHealthResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeInstancesHealthResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeInstancesHealthResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInstancesHealthRequest, DescribeInstancesHealthResult>",
-      "methodName" : "describeInstancesHealth"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInstancesHealthRequest, DescribeInstancesHealthResult>"
     },
     "ListAvailableSolutionStacks" : {
       "documentation" : "<p> Returns a list of the available solution stack names. </p>",
@@ -660,6 +661,7 @@
         "documentation" : "<p>A list of available AWS Elastic Beanstalk solution stacks. </p>"
       },
       "exceptions" : null,
+      "methodName" : "listAvailableSolutionStacks",
       "syncDocumentation" : "/**<p> Returns a list of the available solution stack names. </p>\n@param listAvailableSolutionStacksRequest null\n@return Result of the ListAvailableSolutionStacks operation returned by the service.*/",
       "asyncDocumentation" : "/**<p> Returns a list of the available solution stack names. </p>\n@param listAvailableSolutionStacksRequest null\n@return A Java Future containing the result of the ListAvailableSolutionStacks operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Returns a list of the available solution stack names. </p>\n@param listAvailableSolutionStacksRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListAvailableSolutionStacks operation returned by the service.*/",
@@ -667,8 +669,7 @@
       "asyncReturnType" : "ListAvailableSolutionStacksResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAvailableSolutionStacksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAvailableSolutionStacksResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult>",
-      "methodName" : "listAvailableSolutionStacks"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult>"
     },
     "RebuildEnvironment" : {
       "documentation" : "<p> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart. </p>",
@@ -688,6 +689,7 @@
         "exceptionName" : "InsufficientPrivilegesException",
         "documentation" : "<p>Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services</p>"
       } ],
+      "methodName" : "rebuildEnvironment",
       "syncDocumentation" : "/**<p> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart. </p>\n@param rebuildEnvironmentRequest \n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services*/",
       "asyncDocumentation" : "/**<p> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart. </p>\n@param rebuildEnvironmentRequest */",
       "asyncDocumentationWithHandler" : "/**<p> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart. </p>\n@param rebuildEnvironmentRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
@@ -695,8 +697,7 @@
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, Void>",
-      "methodName" : "rebuildEnvironment"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, Void>"
     },
     "RequestEnvironmentInfo" : {
       "documentation" : "<p> Initiates a request to compile the specified type of information of the deployed environment. </p> <p> Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. </p> <p> Setting the <code>InfoType</code> to <code>bundle</code> compresses the application server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy and .NET containers do not support bundle logs. </p> <p> Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>",
@@ -713,6 +714,7 @@
       "inputStreamPropertyName" : null,
       "returnType" : null,
       "exceptions" : null,
+      "methodName" : "requestEnvironmentInfo",
       "syncDocumentation" : "/**<p> Initiates a request to compile the specified type of information of the deployed environment. </p> <p> Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. </p> <p> Setting the <code>InfoType</code> to <code>bundle</code> compresses the application server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy and .NET containers do not support bundle logs. </p> <p> Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>\n@param requestEnvironmentInfoRequest This documentation target is not reported in the API reference.*/",
       "asyncDocumentation" : "/**<p> Initiates a request to compile the specified type of information of the deployed environment. </p> <p> Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. </p> <p> Setting the <code>InfoType</code> to <code>bundle</code> compresses the application server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy and .NET containers do not support bundle logs. </p> <p> Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>\n@param requestEnvironmentInfoRequest This documentation target is not reported in the API reference.*/",
       "asyncDocumentationWithHandler" : "/**<p> Initiates a request to compile the specified type of information of the deployed environment. </p> <p> Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. </p> <p> Setting the <code>InfoType</code> to <code>bundle</code> compresses the application server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy and .NET containers do not support bundle logs. </p> <p> Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>\n@param requestEnvironmentInfoRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
@@ -720,8 +722,7 @@
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, Void>",
-      "methodName" : "requestEnvironmentInfo"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, Void>"
     },
     "RestartAppServer" : {
       "documentation" : "<p> Causes the environment to restart the application container server running on each Amazon EC2 instance. </p>",
@@ -738,6 +739,7 @@
       "inputStreamPropertyName" : null,
       "returnType" : null,
       "exceptions" : null,
+      "methodName" : "restartAppServer",
       "syncDocumentation" : "/**<p> Causes the environment to restart the application container server running on each Amazon EC2 instance. </p>\n@param restartAppServerRequest */",
       "asyncDocumentation" : "/**<p> Causes the environment to restart the application container server running on each Amazon EC2 instance. </p>\n@param restartAppServerRequest */",
       "asyncDocumentationWithHandler" : "/**<p> Causes the environment to restart the application container server running on each Amazon EC2 instance. </p>\n@param restartAppServerRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
@@ -745,8 +747,7 @@
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, Void>",
-      "methodName" : "restartAppServer"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, Void>"
     },
     "RetrieveEnvironmentInfo" : {
       "documentation" : "<p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>",
@@ -766,6 +767,7 @@
         "documentation" : "<p>Result message containing a description of the requested environment info.</p>"
       },
       "exceptions" : null,
+      "methodName" : "retrieveEnvironmentInfo",
       "syncDocumentation" : "/**<p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>\n@param retrieveEnvironmentInfoRequest This documentation target is not reported in the API reference.\n@return Result of the RetrieveEnvironmentInfo operation returned by the service.*/",
       "asyncDocumentation" : "/**<p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>\n@param retrieveEnvironmentInfoRequest This documentation target is not reported in the API reference.\n@return A Java Future containing the result of the RetrieveEnvironmentInfo operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>\n@param retrieveEnvironmentInfoRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the RetrieveEnvironmentInfo operation returned by the service.*/",
@@ -773,8 +775,7 @@
       "asyncReturnType" : "RetrieveEnvironmentInfoResult",
       "asyncFutureType" : "java.util.concurrent.Future<RetrieveEnvironmentInfoResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RetrieveEnvironmentInfoResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResult>",
-      "methodName" : "retrieveEnvironmentInfo"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResult>"
     },
     "SwapEnvironmentCNAMEs" : {
       "documentation" : "<p> Swaps the CNAMEs of two environments. </p>",
@@ -791,6 +792,7 @@
       "inputStreamPropertyName" : null,
       "returnType" : null,
       "exceptions" : null,
+      "methodName" : "swapEnvironmentCNAMEs",
       "syncDocumentation" : "/**<p> Swaps the CNAMEs of two environments. </p>\n@param swapEnvironmentCNAMEsRequest Swaps the CNAMEs of two environments.*/",
       "asyncDocumentation" : "/**<p> Swaps the CNAMEs of two environments. </p>\n@param swapEnvironmentCNAMEsRequest Swaps the CNAMEs of two environments.*/",
       "asyncDocumentationWithHandler" : "/**<p> Swaps the CNAMEs of two environments. </p>\n@param swapEnvironmentCNAMEsRequest Swaps the CNAMEs of two environments.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
@@ -798,8 +800,7 @@
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, Void>",
-      "methodName" : "swapEnvironmentCNAMEs"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, Void>"
     },
     "TerminateEnvironment" : {
       "documentation" : "<p> Terminates the specified environment. </p>",
@@ -822,6 +823,7 @@
         "exceptionName" : "InsufficientPrivilegesException",
         "documentation" : "<p>Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services</p>"
       } ],
+      "methodName" : "terminateEnvironment",
       "syncDocumentation" : "/**<p> Terminates the specified environment. </p>\n@param terminateEnvironmentRequest This documentation target is not reported in the API reference.\n@return Result of the TerminateEnvironment operation returned by the service.\n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services*/",
       "asyncDocumentation" : "/**<p> Terminates the specified environment. </p>\n@param terminateEnvironmentRequest This documentation target is not reported in the API reference.\n@return A Java Future containing the result of the TerminateEnvironment operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Terminates the specified environment. </p>\n@param terminateEnvironmentRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the TerminateEnvironment operation returned by the service.*/",
@@ -829,8 +831,7 @@
       "asyncReturnType" : "TerminateEnvironmentResult",
       "asyncFutureType" : "java.util.concurrent.Future<TerminateEnvironmentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TerminateEnvironmentResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateEnvironmentRequest, TerminateEnvironmentResult>",
-      "methodName" : "terminateEnvironment"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateEnvironmentRequest, TerminateEnvironmentResult>"
     },
     "UpdateApplication" : {
       "documentation" : "<p>Updates the specified application to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </note>",
@@ -850,6 +851,7 @@
         "documentation" : "<p>Result message containing a single description of an application.</p>"
       },
       "exceptions" : null,
+      "methodName" : "updateApplication",
       "syncDocumentation" : "/**<p>Updates the specified application to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </note>\n@param updateApplicationRequest This documentation target is not reported in the API reference.\n@return Result of the UpdateApplication operation returned by the service.*/",
       "asyncDocumentation" : "/**<p>Updates the specified application to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </note>\n@param updateApplicationRequest This documentation target is not reported in the API reference.\n@return A Java Future containing the result of the UpdateApplication operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Updates the specified application to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </note>\n@param updateApplicationRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateApplication operation returned by the service.*/",
@@ -857,8 +859,7 @@
       "asyncReturnType" : "UpdateApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateApplicationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult>",
-      "methodName" : "updateApplication"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult>"
     },
     "UpdateApplicationVersion" : {
       "documentation" : "<p> Updates the specified application version to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string. </note>",
@@ -878,6 +879,7 @@
         "documentation" : "<p> Result message wrapping a single description of an application version. </p>"
       },
       "exceptions" : null,
+      "methodName" : "updateApplicationVersion",
       "syncDocumentation" : "/**<p> Updates the specified application version to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string. </note>\n@param updateApplicationVersionRequest \n@return Result of the UpdateApplicationVersion operation returned by the service.*/",
       "asyncDocumentation" : "/**<p> Updates the specified application version to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string. </note>\n@param updateApplicationVersionRequest \n@return A Java Future containing the result of the UpdateApplicationVersion operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Updates the specified application version to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string. </note>\n@param updateApplicationVersionRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateApplicationVersion operation returned by the service.*/",
@@ -885,8 +887,7 @@
       "asyncReturnType" : "UpdateApplicationVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateApplicationVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateApplicationVersionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationVersionRequest, UpdateApplicationVersionResult>",
-      "methodName" : "updateApplicationVersion"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationVersionRequest, UpdateApplicationVersionResult>"
     },
     "UpdateConfigurationTemplate" : {
       "documentation" : "<p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>",
@@ -909,6 +910,7 @@
         "exceptionName" : "InsufficientPrivilegesException",
         "documentation" : "<p>Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services</p>"
       } ],
+      "methodName" : "updateConfigurationTemplate",
       "syncDocumentation" : "/**<p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>\n@param updateConfigurationTemplateRequest The result message containing the options for the specified solution stack.\n@return Result of the UpdateConfigurationTemplate operation returned by the service.\n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services*/",
       "asyncDocumentation" : "/**<p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>\n@param updateConfigurationTemplateRequest The result message containing the options for the specified solution stack.\n@return A Java Future containing the result of the UpdateConfigurationTemplate operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>\n@param updateConfigurationTemplateRequest The result message containing the options for the specified solution stack.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateConfigurationTemplate operation returned by the service.*/",
@@ -916,8 +918,7 @@
       "asyncReturnType" : "UpdateConfigurationTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateConfigurationTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateConfigurationTemplateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResult>",
-      "methodName" : "updateConfigurationTemplate"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResult>"
     },
     "UpdateEnvironment" : {
       "documentation" : "<p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>",
@@ -940,6 +941,7 @@
         "exceptionName" : "InsufficientPrivilegesException",
         "documentation" : "<p>Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services</p>"
       } ],
+      "methodName" : "updateEnvironment",
       "syncDocumentation" : "/**<p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>\n@param updateEnvironmentRequest This documentation target is not reported in the API reference.\n@return Result of the UpdateEnvironment operation returned by the service.\n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services*/",
       "asyncDocumentation" : "/**<p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>\n@param updateEnvironmentRequest This documentation target is not reported in the API reference.\n@return A Java Future containing the result of the UpdateEnvironment operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>\n@param updateEnvironmentRequest This documentation target is not reported in the API reference.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateEnvironment operation returned by the service.*/",
@@ -947,8 +949,7 @@
       "asyncReturnType" : "UpdateEnvironmentResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateEnvironmentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateEnvironmentResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult>",
-      "methodName" : "updateEnvironment"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult>"
     },
     "ValidateConfigurationSettings" : {
       "documentation" : "<p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>",
@@ -971,6 +972,7 @@
         "exceptionName" : "InsufficientPrivilegesException",
         "documentation" : "<p>Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services</p>"
       } ],
+      "methodName" : "validateConfigurationSettings",
       "syncDocumentation" : "/**<p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>\n@param validateConfigurationSettingsRequest A list of validation messages for a specified configuration template.\n@return Result of the ValidateConfigurationSettings operation returned by the service.\n@throws InsufficientPrivilegesException Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services*/",
       "asyncDocumentation" : "/**<p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>\n@param validateConfigurationSettingsRequest A list of validation messages for a specified configuration template.\n@return A Java Future containing the result of the ValidateConfigurationSettings operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>\n@param validateConfigurationSettingsRequest A list of validation messages for a specified configuration template.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ValidateConfigurationSettings operation returned by the service.*/",
@@ -978,8 +980,7 @@
       "asyncReturnType" : "ValidateConfigurationSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ValidateConfigurationSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ValidateConfigurationSettingsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResult>",
-      "methodName" : "validateConfigurationSettings"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResult>"
     }
   },
   "shapes" : {

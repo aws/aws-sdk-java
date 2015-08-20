@@ -55,6 +55,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
 
     private static final Log log = LogFactory.getLog(AmazonImportExport.class);
 
+    /** Default signing name for the service. */
+    private final String DEFAULT_SIGNING_NAME = "importexport";
+
     /**
      * List of exception unmarshallers for all AWS Import/Export exceptions.
      */
@@ -251,6 +254,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("https://importexport.amazonaws.com");
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory
@@ -343,9 +347,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      *         Please correct and resubmit.
      * @throws NoSuchBucketException
      *         The specified bucket does not exist. Create the specified bucket
-     *         or change the manifest's bucket, exportBucket, or il field to a
-     *         bucket that the account, as specified by the manifest's Access
-     *         Key ID, has write permissions to.
+     *         or change the manifest's bucket, exportBucket, or logBucket field
+     *         to a bucket that the account, as specified by the manifest's
+     *         Access Key ID, has write permissions to.
      * @throws MissingCustomsException
      *         One or more required customs parameters was missing from the
      *         manifest.
@@ -602,9 +606,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      *         Please correct and resubmit.
      * @throws NoSuchBucketException
      *         The specified bucket does not exist. Create the specified bucket
-     *         or change the manifest's bucket, exportBucket, or il field to a
-     *         bucket that the account, as specified by the manifest's Access
-     *         Key ID, has write permissions to.
+     *         or change the manifest's bucket, exportBucket, or logBucket field
+     *         to a bucket that the account, as specified by the manifest's
+     *         Access Key ID, has write permissions to.
      * @throws ExpiredJobIdException
      *         Indicates that the specified job has expired out of the system.
      * @throws CanceledJobIdException

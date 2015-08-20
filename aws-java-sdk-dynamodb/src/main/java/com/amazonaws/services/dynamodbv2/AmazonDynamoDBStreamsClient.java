@@ -106,6 +106,9 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
     private static final Log log = LogFactory
             .getLog(AmazonDynamoDBStreams.class);
 
+    /** Default signing name for the service. */
+    private final String DEFAULT_SIGNING_NAME = "dynamodb";
+
     /**
      * List of exception unmarshallers for all Amazon DynamoDB Streams
      * exceptions.
@@ -295,7 +298,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("https://streams.dynamodb.us-east-1.amazonaws.com");
+        setEndpoint("https://streams.dynamodb.us-east-1.amazonaws.com");
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

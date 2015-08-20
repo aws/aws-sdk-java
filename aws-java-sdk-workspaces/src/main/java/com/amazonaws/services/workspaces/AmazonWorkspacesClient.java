@@ -54,6 +54,9 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
 
     private static final Log log = LogFactory.getLog(AmazonWorkspaces.class);
 
+    /** Default signing name for the service. */
+    private final String DEFAULT_SIGNING_NAME = "workspaces";
+
     /**
      * List of exception unmarshallers for all Amazon WorkSpaces exceptions.
      */
@@ -233,7 +236,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("https://workspaces.us-east-1.amazonaws.com");
+        setEndpoint("https://workspaces.us-east-1.amazonaws.com");
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

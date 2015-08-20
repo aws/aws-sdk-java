@@ -109,6 +109,9 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
 
     private static final Log log = LogFactory.getLog(AWSSupport.class);
 
+    /** Default signing name for the service. */
+    private final String DEFAULT_SIGNING_NAME = "support";
+
     /**
      * List of exception unmarshallers for all AWS Support exceptions.
      */
@@ -305,7 +308,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("https://support.us-east-1.amazonaws.com");
+        setEndpoint("https://support.us-east-1.amazonaws.com");
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

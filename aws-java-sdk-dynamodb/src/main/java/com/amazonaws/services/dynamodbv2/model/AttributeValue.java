@@ -216,6 +216,16 @@ public class AttributeValue implements Serializable, Cloneable {
      * <p>
      * A Binary data type.
      * </p>
+     * <p>
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
+     * changes their {@code position}. We recommend using
+     * {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view
+     * of the buffer with an independent {@code position}, and calling
+     * {@code get} methods on this rather than directly on the returned
+     * {@code ByteBuffer}. Doing so will ensure that anyone else using the
+     * {@code ByteBuffer} will not be affected by changes to the {@code position}
+     * .
+     * </p>
      * 
      * @return A Binary data type.
      */

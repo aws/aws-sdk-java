@@ -19,7 +19,11 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 /**
  * AWS credentials provider chain that looks for credentials in this order:
  * <ul>
- *   <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+ *   <li>Environment Variables -
+ *      <code>AWS_ACCESS_KEY_ID</code> and <code>AWS_SECRET_ACCESS_KEY</code>
+ *      (RECOMMENDED since they are recognized by all the AWS SDKs and CLI except for .NET),
+ *      or <code>AWS_ACCESS_KEY</code> and <code>AWS_SECRET_KEY</code> (only recognized by Java SDK)
+ *   </li>
  *   <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
  *   <li>Credential profiles file at the default location (~/.aws/credentials) shared by all AWS SDKs and the AWS CLI</li>
  *   <li>Instance profile credentials delivered through the Amazon EC2 metadata service</li>

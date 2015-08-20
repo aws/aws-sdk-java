@@ -18,6 +18,7 @@
     "hasApiWithStreamInput" : false,
     "jsonContentVersion" : "application/x-amz-json-1.0",
     "endpointPrefix" : "streams.dynamodb",
+    "signingName" : "dynamodb",
     "serviceName" : "Amazon DynamoDB Streams",
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
@@ -1391,7 +1392,7 @@
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.*/",
-        "getterDocumentation" : "/**<p>A Binary data type.</p>\n@return A Binary data type.*/",
+        "getterDocumentation" : "/**<p>A Binary data type.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return A Binary data type.*/",
         "fluentSetterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
@@ -1442,11 +1443,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "simpleType" : "String",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1506,11 +1507,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "simpleType" : "String",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1570,11 +1571,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ByteBuffer",
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<java.nio.ByteBuffer>",
-          "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>"
+          "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>",
+          "simple" : true,
+          "simpleType" : "ByteBuffer",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1686,10 +1687,10 @@
             "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -1800,11 +1801,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "AttributeValue",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<AttributeValue>",
-          "templateImplType" : "java.util.ArrayList<AttributeValue>"
+          "templateImplType" : "java.util.ArrayList<AttributeValue>",
+          "simple" : false,
+          "simpleType" : "AttributeValue",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1989,11 +1990,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "simpleType" : "String",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2054,11 +2055,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ByteBuffer",
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<java.nio.ByteBuffer>",
-            "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>"
+            "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>",
+            "simple" : true,
+            "simpleType" : "ByteBuffer",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2119,7 +2120,7 @@
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.*/",
-          "getterDocumentation" : "/**<p>A Binary data type.</p>\n@return A Binary data type.*/",
+          "getterDocumentation" : "/**<p>A Binary data type.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return A Binary data type.*/",
           "fluentSetterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
@@ -2274,11 +2275,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "AttributeValue",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<AttributeValue>",
-            "templateImplType" : "java.util.ArrayList<AttributeValue>"
+            "templateImplType" : "java.util.ArrayList<AttributeValue>",
+            "simple" : false,
+            "simpleType" : "AttributeValue",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2391,10 +2392,10 @@
               "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
@@ -2455,11 +2456,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "simpleType" : "String",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3085,11 +3086,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "KeySchemaElement",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<KeySchemaElement>",
-          "templateImplType" : "java.util.ArrayList<KeySchemaElement>"
+          "templateImplType" : "java.util.ArrayList<KeySchemaElement>",
+          "simple" : false,
+          "simpleType" : "KeySchemaElement",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3200,11 +3201,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Shard",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Shard>",
-          "templateImplType" : "java.util.ArrayList<Shard>"
+          "templateImplType" : "java.util.ArrayList<Shard>",
+          "simple" : false,
+          "simpleType" : "Shard",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3441,11 +3442,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Shard",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Shard>",
-            "templateImplType" : "java.util.ArrayList<Shard>"
+            "templateImplType" : "java.util.ArrayList<Shard>",
+            "simple" : false,
+            "simpleType" : "Shard",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3609,11 +3610,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "KeySchemaElement",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<KeySchemaElement>",
-            "templateImplType" : "java.util.ArrayList<KeySchemaElement>"
+            "templateImplType" : "java.util.ArrayList<KeySchemaElement>",
+            "simple" : false,
+            "simpleType" : "KeySchemaElement",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4273,11 +4274,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Record",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Record>",
-          "templateImplType" : "java.util.ArrayList<Record>"
+          "templateImplType" : "java.util.ArrayList<Record>",
+          "simple" : false,
+          "simpleType" : "Record",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4514,11 +4515,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Record",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Record>",
-            "templateImplType" : "java.util.ArrayList<Record>"
+            "templateImplType" : "java.util.ArrayList<Record>",
+            "simple" : false,
+            "simpleType" : "Record",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5128,11 +5129,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Stream",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Stream>",
-          "templateImplType" : "java.util.ArrayList<Stream>"
+          "templateImplType" : "java.util.ArrayList<Stream>",
+          "simple" : false,
+          "simpleType" : "Stream",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5369,11 +5370,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Stream",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Stream>",
-            "templateImplType" : "java.util.ArrayList<Stream>"
+            "templateImplType" : "java.util.ArrayList<Stream>",
+            "simple" : false,
+            "simpleType" : "Stream",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7356,10 +7357,10 @@
             "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -7471,10 +7472,10 @@
             "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -7586,10 +7587,10 @@
             "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
+          "templateType" : "java.util.Map<String,AttributeValue>",
           "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
@@ -7877,10 +7878,10 @@
               "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
@@ -8149,10 +8150,10 @@
               "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
@@ -8265,10 +8266,10 @@
               "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
+            "templateType" : "java.util.Map<String,AttributeValue>",
             "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,

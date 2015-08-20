@@ -18,6 +18,7 @@
     "hasApiWithStreamInput" : false,
     "jsonContentVersion" : null,
     "endpointPrefix" : "elasticfilesystem",
+    "signingName" : "elasticfilesystem",
     "serviceName" : "EFS",
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",

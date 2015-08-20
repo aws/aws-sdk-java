@@ -18,6 +18,7 @@
     "hasApiWithStreamInput" : false,
     "jsonContentVersion" : "application/x-amz-json-1.1",
     "endpointPrefix" : "support",
+    "signingName" : "support",
     "serviceName" : "AWS Support",
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
@@ -1353,7 +1354,7 @@
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The content of the attachment file.</p>\n@param data The content of the attachment file.*/",
-        "getterDocumentation" : "/**<p>The content of the attachment file.</p>\n@return The content of the attachment file.*/",
+        "getterDocumentation" : "/**<p>The content of the attachment file.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The content of the attachment file.*/",
         "fluentSetterDocumentation" : "/**<p>The content of the attachment file.</p>\n@param data The content of the attachment file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The content of the attachment file.</p>\n@param data The content of the attachment file.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
@@ -1427,7 +1428,7 @@
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The content of the attachment file.</p>\n@param data The content of the attachment file.*/",
-          "getterDocumentation" : "/**<p>The content of the attachment file.</p>\n@return The content of the attachment file.*/",
+          "getterDocumentation" : "/**<p>The content of the attachment file.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The content of the attachment file.*/",
           "fluentSetterDocumentation" : "/**<p>The content of the attachment file.</p>\n@param data The content of the attachment file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The content of the attachment file.</p>\n@param data The content of the attachment file.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },

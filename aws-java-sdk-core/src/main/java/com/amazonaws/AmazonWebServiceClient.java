@@ -17,7 +17,6 @@ package com.amazonaws;
 import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -662,6 +661,9 @@ public abstract class AmazonWebServiceClient {
      * normally called except for AWS internal development purposes.
      */
     public final void setServiceNameIntern(String serviceName) {
+        if (serviceName == null)
+            throw new IllegalArgumentException(
+                    "The parameter serviceName must be specified!");
         this.serviceName = serviceName;
     }
 

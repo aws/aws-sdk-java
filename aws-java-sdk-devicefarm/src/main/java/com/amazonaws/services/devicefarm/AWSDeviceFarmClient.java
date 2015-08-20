@@ -53,6 +53,9 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
     private static final Log log = LogFactory.getLog(AWSDeviceFarm.class);
 
+    /** Default signing name for the service. */
+    private final String DEFAULT_SIGNING_NAME = "devicefarm";
+
     /**
      * List of exception unmarshallers for all AWS Device Farm exceptions.
      */
@@ -238,7 +241,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("https://devicefarm.us-west-2.amazonaws.com");
+        setEndpoint("https://devicefarm.us-west-2.amazonaws.com");
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

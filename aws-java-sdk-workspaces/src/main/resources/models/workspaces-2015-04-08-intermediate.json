@@ -18,6 +18,7 @@
     "hasApiWithStreamInput" : false,
     "jsonContentVersion" : "application/x-amz-json-1.1",
     "endpointPrefix" : "workspaces",
+    "signingName" : "workspaces",
     "serviceName" : "Amazon WorkSpaces",
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",

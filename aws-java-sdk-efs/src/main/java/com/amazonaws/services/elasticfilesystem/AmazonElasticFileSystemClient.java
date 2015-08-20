@@ -50,6 +50,9 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
     private static final Log log = LogFactory
             .getLog(AmazonElasticFileSystem.class);
 
+    /** Default signing name for the service. */
+    private final String DEFAULT_SIGNING_NAME = "elasticfilesystem";
+
     /**
      * List of exception unmarshallers for all EFS exceptions.
      */
@@ -283,7 +286,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("https://elasticfilesystem.us-east-1.amazonaws.com");
+        setEndpoint("https://elasticfilesystem.us-east-1.amazonaws.com");
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

@@ -56,6 +56,9 @@ public class PutObjectResult extends SSEResultBase implements ObjectExpirationRe
     /** The content MD5 */
     private String contentMd5;
 
+    /** The metadata returned as a result of PutObject operation.*/
+    private ObjectMetadata metadata;
+
     /**
      * Gets the optional version ID of the newly uploaded object. This field will
      * be set only if object versioning is enabled for the bucket the
@@ -161,5 +164,21 @@ public class PutObjectResult extends SSEResultBase implements ObjectExpirationRe
      */
     public String getContentMd5() {
         return contentMd5;
+    }
+
+    /**
+     * Returns the metadata retrieved as a response to
+     * {@link AmazonS3Client#putObject(PutObjectRequest)} operation.
+     */
+    public ObjectMetadata getMetadata() {
+        return metadata;
+    }
+
+    /**
+     * Sets the metadata retrieved as a response to
+     * {@link AmazonS3Client#putObject(PutObjectRequest)} operation.
+     */
+    public void setMetadata(ObjectMetadata metadata) {
+        this.metadata = metadata;
     }
 }

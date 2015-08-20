@@ -18,6 +18,7 @@
     "hasApiWithStreamInput" : false,
     "jsonContentVersion" : "application/x-amz-json-1.1",
     "endpointPrefix" : "ssm",
+    "signingName" : "ssm",
     "serviceName" : "Amazon SSM",
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",

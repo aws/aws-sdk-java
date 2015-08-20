@@ -756,6 +756,12 @@
         <Hostname>lambda.ap-northeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>codedeploy</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>codedeploy.ap-northeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>kms</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1803,6 +1809,12 @@
         <Hostname>ssm.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>machinelearning</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>machinelearning.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>workspaces</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -2283,6 +2295,7 @@
       <FullName>AWS CodeDeploy</FullName>
       <RegionName>us-east-1</RegionName>
       <RegionName>us-west-2</RegionName>
+      <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>eu-west-1</RegionName>
     </Service>
@@ -2784,6 +2797,7 @@
       <Name>machinelearning</Name>
       <FullName>Amazon Machine Learning</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>eu-west-1</RegionName>
     </Service>
     <Service>
       <Name>workspaces</Name>
