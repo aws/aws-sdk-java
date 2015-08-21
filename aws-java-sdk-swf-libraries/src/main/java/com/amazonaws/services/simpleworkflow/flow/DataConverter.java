@@ -45,5 +45,4 @@ public abstract class DataConverter {
      *             reason.
      */
     public abstract <T> T fromData(String content, Class<T> valueType) throws DataConverterException;
-
 }
