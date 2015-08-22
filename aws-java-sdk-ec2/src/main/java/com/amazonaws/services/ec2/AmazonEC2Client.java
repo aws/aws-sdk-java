@@ -11738,6 +11738,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 return new DryRunResult<X>(true, request, ase.getMessage(), ase);
             } else if (ase.getErrorCode().equals("UnauthorizedOperation") && ase.getStatusCode() == 403) {
                 return new DryRunResult<X>(false, request, ase.getMessage(), ase);
+            } else if (ase.getErrorCode().equals("AuthFailure") && ase.getStatusCode() == 401) {
+                return new DryRunResult<X>(false, request, ase.getMessage(), ase);
             }
             throw new AmazonClientException("Unrecognized service response for the dry-run request.", ase);
         }
@@ -11783,4 +11785,3 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
-        
