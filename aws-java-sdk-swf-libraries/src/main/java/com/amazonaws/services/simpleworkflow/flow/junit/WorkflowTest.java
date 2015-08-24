@@ -74,8 +74,12 @@ public class WorkflowTest extends WorkflowTestBase {
     }
 
     public void addWorkflowImplementationType(Class<?> workflowImplementationType) {
+        addWorkflowImplementationType(workflowImplementationType, null);
+    }
+
+    public void addWorkflowImplementationType(Class<?> workflowImplementationType, Object[] constructorArgs) {
         try {
-            workflowClient.addWorkflowImplementationType(workflowImplementationType);
+            workflowClient.addWorkflowImplementationType(workflowImplementationType, null, constructorArgs);
         }
         catch (Exception e) {
             throw new IllegalArgumentException("Invalid workflow type: " + workflowImplementationType, e);

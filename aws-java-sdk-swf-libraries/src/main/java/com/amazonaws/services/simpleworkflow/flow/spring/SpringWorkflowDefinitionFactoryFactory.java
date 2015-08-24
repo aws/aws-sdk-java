@@ -45,6 +45,12 @@ class SpringWorkflowDefinitionFactoryFactory extends WorkflowDefinitionFactoryFa
                 }
 
                 @Override
+                public Object newInstance(DecisionContext decisionContext, Object[] constructorArgs) throws Exception {
+                    WorkflowScope.setDecisionContext(decisionContext);
+                    return instanceProxy;
+                }
+
+                @Override
                 public void deleteInstance(Object instance) {
                     WorkflowScope.removeDecisionContext();
                 }

@@ -75,6 +75,11 @@ public class POJOWorkflowDefinitionFactoryFactory extends WorkflowDefinitionFact
 
     public void addWorkflowImplementationType(Class<?> workflowImplementationType, DataConverter converterOverride)
             throws InstantiationException, IllegalAccessException {
+        addWorkflowImplementationType(workflowImplementationType, converterOverride, null);
+    }
+
+    public void addWorkflowImplementationType(Class<?> workflowImplementationType, DataConverter converterOverride, Object[] constructorArgs)
+        throws InstantiationException, IllegalAccessException {
         if (workflowImplementationType.isInterface()) {
             throw new IllegalArgumentException(workflowImplementationType + " has to be a instantiatable class");
         }
@@ -82,10 +87,10 @@ public class POJOWorkflowDefinitionFactoryFactory extends WorkflowDefinitionFact
         getImplementedInterfacesAnnotatedWithWorkflow(workflowImplementationType, implementedInterfaces);
         if (implementedInterfaces.size() == 0) {
             throw new IllegalArgumentException("Workflow definition does not implement any @Workflow interface. "
-                    + workflowImplementationType);
+                + workflowImplementationType);
         }
         for (Class<?> interfaze : implementedInterfaces) {
-            addWorkflowType(interfaze, workflowImplementationType, converterOverride);
+            addWorkflowType(interfaze, workflowImplementationType, converterOverride, constructorArgs);
         }
     }
 
@@ -100,7 +105,7 @@ public class POJOWorkflowDefinitionFactoryFactory extends WorkflowDefinitionFact
         return workflowImplementationTypes;
     }
 
-    private void addWorkflowType(Class<?> interfaze, Class<?> workflowImplementationType, DataConverter converterOverride)
+    private void addWorkflowType(Class<?> interfaze, Class<?> workflowImplementationType, DataConverter converterOverride, Object[] constructorArgs)
             throws InstantiationException, IllegalAccessException {
         Workflow workflowAnnotation = interfaze.getAnnotation(Workflow.class);
         String interfaceName = interfaze.getSimpleName();
@@ -185,7 +190,7 @@ public class POJOWorkflowDefinitionFactoryFactory extends WorkflowDefinitionFact
         POJOWorkflowImplementationFactory implementationFactory = getImplementationFactory(workflowImplementationType, interfaze,
                 workflowType);
         WorkflowDefinitionFactory factory = new POJOWorkflowDefinitionFactory(implementationFactory, workflowType,
-                registrationOptions, workflowImplementationMethod, signals, getStateMethod);
+                registrationOptions, workflowImplementationMethod, signals, getStateMethod, constructorArgs);
         factories.put(workflowType, factory);
         workflowImplementationTypes.add(workflowImplementationType);
         if (factory.getWorkflowRegistrationOptions() != null) {
@@ -224,6 +229,19 @@ public class POJOWorkflowDefinitionFactoryFactory extends WorkflowDefinitionFact
             @Override
             public Object newInstance(DecisionContext decisionContext) throws Exception {
                 return workflowImplementationType.newInstance();
+            }
+
+            @Override
+            public Object newInstance(DecisionContext decisionContext, Object[] constructorArgs) throws Exception {
+                List<Class<?>> constructorArgsTypes = new ArrayList<Class<?>>();
+
+                for (Object arg : constructorArgs) {
+                    constructorArgsTypes.add(arg.getClass());
+                }
+
+                Class<?>[] constructorArgsTypesArray = constructorArgsTypes.toArray(new Class<?>[constructorArgs.length]);
+
+                return workflowImplementationType.getDeclaredConstructor(constructorArgsTypesArray).newInstance(constructorArgs);
             }
 
             @Override

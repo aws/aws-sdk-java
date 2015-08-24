@@ -59,6 +59,11 @@ public class WorkflowReplayer<T> {
                 }
 
                 @Override
+                public Object newInstance(DecisionContext decisionContext, Object[] constructorArgs) throws Exception {
+                    return workflowImplementation;
+                }
+
+                @Override
                 public void deleteInstance(Object instance) {
                 }
             };

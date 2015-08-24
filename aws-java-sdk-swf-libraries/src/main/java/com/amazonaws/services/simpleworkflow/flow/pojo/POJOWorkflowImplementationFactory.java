@@ -19,7 +19,9 @@ import com.amazonaws.services.simpleworkflow.flow.DecisionContext;
 public interface POJOWorkflowImplementationFactory {
     
     public Object newInstance(DecisionContext decisionContext) throws Exception;
-    
+
+    public Object newInstance(DecisionContext decisionContext, Object[] constructorArgs) throws Exception;
+
     public void deleteInstance(Object instance);
 
 }
