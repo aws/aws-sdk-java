@@ -57,6 +57,8 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
      */
     private String continuationToken;
 
+    private EncryptionKey encryptionKey;
+
     /**
      * Sets the value of the ActionTypeId property for this object.
      * 
@@ -430,6 +432,38 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
+     * Sets the value of the EncryptionKey property for this object.
+     * 
+     * @param encryptionKey
+     *        The new value for the EncryptionKey property for this object.
+     */
+    public void setEncryptionKey(EncryptionKey encryptionKey) {
+        this.encryptionKey = encryptionKey;
+    }
+
+    /**
+     * Returns the value of the EncryptionKey property for this object.
+     * 
+     * @return The value of the EncryptionKey property for this object.
+     */
+    public EncryptionKey getEncryptionKey() {
+        return this.encryptionKey;
+    }
+
+    /**
+     * Sets the value of the EncryptionKey property for this object.
+     * 
+     * @param encryptionKey
+     *        The new value for the EncryptionKey property for this object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public ThirdPartyJobData withEncryptionKey(EncryptionKey encryptionKey) {
+        setEncryptionKey(encryptionKey);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -454,7 +488,9 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
         if (getArtifactCredentials() != null)
             sb.append("ArtifactCredentials: " + getArtifactCredentials() + ",");
         if (getContinuationToken() != null)
-            sb.append("ContinuationToken: " + getContinuationToken());
+            sb.append("ContinuationToken: " + getContinuationToken() + ",");
+        if (getEncryptionKey() != null)
+            sb.append("EncryptionKey: " + getEncryptionKey());
         sb.append("}");
         return sb.toString();
     }
@@ -513,6 +549,11 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
                 && other.getContinuationToken().equals(
                         this.getContinuationToken()) == false)
             return false;
+        if (other.getEncryptionKey() == null ^ this.getEncryptionKey() == null)
+            return false;
+        if (other.getEncryptionKey() != null
+                && other.getEncryptionKey().equals(this.getEncryptionKey()) == false)
+            return false;
         return true;
     }
 
@@ -549,6 +590,10 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
                 * hashCode
                 + ((getContinuationToken() == null) ? 0
                         : getContinuationToken().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEncryptionKey() == null) ? 0 : getEncryptionKey()
+                        .hashCode());
         return hashCode;
     }
 

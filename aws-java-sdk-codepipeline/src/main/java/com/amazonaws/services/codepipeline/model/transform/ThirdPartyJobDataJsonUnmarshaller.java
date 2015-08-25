@@ -94,6 +94,12 @@ public class ThirdPartyJobDataJsonUnmarshaller implements
                             .setContinuationToken(StringJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("encryptionKey", targetDepth)) {
+                    context.nextToken();
+                    thirdPartyJobData
+                            .setEncryptionKey(EncryptionKeyJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

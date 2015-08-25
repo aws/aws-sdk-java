@@ -904,6 +904,12 @@
         "Boolean"
       ]
     },
+    "ActionConfigurationQueryableValue":{
+      "type":"string",
+      "min":1,
+      "max":20,
+      "pattern":"[a-zA-Z0-9_-]+"
+    },
     "ActionConfigurationValue":{
       "type":"string",
       "min":1,
@@ -1244,7 +1250,8 @@
         "location":{
           "shape":"ArtifactStoreLocation",
           "documentation":"<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>"
-        }
+        },
+        "encryptionKey":{"shape":"EncryptionKey"}
       },
       "documentation":"<p>The Amazon S3 location where artifacts are stored for the pipeline. If this Amazon S3 bucket is created manually, it must meet the requirements for AWS CodePipeline. For more information, see the <ulink url=\"http://docs.aws.amazon.com/codepipeline/latest/UserGuide/concepts.html\">Concepts</ulink>.</p>"
     },
@@ -1463,6 +1470,26 @@
       "documentation":"<p>Represents the input of an enable stage transition action.</p>"
     },
     "Enabled":{"type":"boolean"},
+    "EncryptionKey":{
+      "type":"structure",
+      "required":[
+        "id",
+        "type"
+      ],
+      "members":{
+        "id":{"shape":"EncryptionKeyId"},
+        "type":{"shape":"EncryptionKeyType"}
+      }
+    },
+    "EncryptionKeyId":{
+      "type":"string",
+      "min":1,
+      "max":100
+    },
+    "EncryptionKeyType":{
+      "type":"string",
+      "enum":["KMS"]
+    },
     "ErrorDetails":{
       "type":"structure",
       "members":{
@@ -1499,7 +1526,10 @@
     "ExecutionSummary":{"type":"string"},
     "FailureDetails":{
       "type":"structure",
-      "required":["type"],
+      "required":[
+        "type",
+        "message"
+      ],
       "members":{
         "type":{
           "shape":"FailureType",
@@ -1753,7 +1783,8 @@
         "continuationToken":{
           "shape":"ContinuationToken",
           "documentation":"<p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.</p>"
-        }
+        },
+        "encryptionKey":{"shape":"EncryptionKey"}
       },
       "documentation":"<p>Represents additional information about a job required for a job worker to complete the job. </p>"
     },
@@ -2182,7 +2213,7 @@
     "QueryParamMap":{
       "type":"map",
       "key":{"shape":"ActionConfigurationKey"},
-      "value":{"shape":"ActionConfigurationValue"},
+      "value":{"shape":"ActionConfigurationQueryableValue"},
       "min":0,
       "max":1
     },
@@ -2351,7 +2382,8 @@
         "continuationToken":{
           "shape":"ContinuationToken",
           "documentation":"<p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.</p>"
-        }
+        },
+        "encryptionKey":{"shape":"EncryptionKey"}
       },
       "documentation":"<p>Represents information about the job data for a partner action.</p>"
     },

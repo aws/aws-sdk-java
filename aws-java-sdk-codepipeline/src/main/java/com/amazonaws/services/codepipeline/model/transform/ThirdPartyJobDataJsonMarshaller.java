@@ -109,6 +109,12 @@ public class ThirdPartyJobDataJsonMarshaller {
                         thirdPartyJobData.getContinuationToken());
             }
 
+            if (thirdPartyJobData.getEncryptionKey() != null) {
+                jsonWriter.key("encryptionKey");
+                EncryptionKeyJsonMarshaller.getInstance().marshall(
+                        thirdPartyJobData.getEncryptionKey(), jsonWriter);
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

@@ -56,14 +56,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Creates a device pool.</p>\n@param createDevicePoolRequest Represents a request to the create device pool operation.\n@return Result of the CreateDevicePool operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Creates a device pool.</p>\n@param createDevicePoolRequest Represents a request to the create device pool operation.\n@return A Java Future containing the result of the CreateDevicePool operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Creates a device pool.</p>\n@param createDevicePoolRequest Represents a request to the create device pool operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateDevicePool operation returned by the service.*/",
       "syncReturnType" : "CreateDevicePoolResult",
       "asyncReturnType" : "CreateDevicePoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDevicePoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDevicePoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDevicePoolRequest, CreateDevicePoolResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Creates a device pool.</p>\n@param createDevicePoolRequest Represents a request to the create device pool operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateDevicePool operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Creates a device pool.</p>\n@param createDevicePoolRequest Represents a request to the create device pool operation.\n@return Result of the CreateDevicePool operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "createDevicePool"
     },
     "CreateProject" : {
@@ -96,14 +96,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Creates a new project.</p>\n@param createProjectRequest Represents a request to the create project operation.\n@return Result of the CreateProject operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Creates a new project.</p>\n@param createProjectRequest Represents a request to the create project operation.\n@return A Java Future containing the result of the CreateProject operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Creates a new project.</p>\n@param createProjectRequest Represents a request to the create project operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateProject operation returned by the service.*/",
       "syncReturnType" : "CreateProjectResult",
       "asyncReturnType" : "CreateProjectResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateProjectResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateProjectResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateProjectRequest, CreateProjectResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Creates a new project.</p>\n@param createProjectRequest Represents a request to the create project operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateProject operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Creates a new project.</p>\n@param createProjectRequest Represents a request to the create project operation.\n@return Result of the CreateProject operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "createProject"
     },
     "CreateUpload" : {
@@ -136,14 +136,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Uploads an app or test scripts.</p>\n@param createUploadRequest Represents a request to the create upload operation.\n@return Result of the CreateUpload operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Uploads an app or test scripts.</p>\n@param createUploadRequest Represents a request to the create upload operation.\n@return A Java Future containing the result of the CreateUpload operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Uploads an app or test scripts.</p>\n@param createUploadRequest Represents a request to the create upload operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateUpload operation returned by the service.*/",
       "syncReturnType" : "CreateUploadResult",
       "asyncReturnType" : "CreateUploadResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateUploadResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateUploadResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateUploadRequest, CreateUploadResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Uploads an app or test scripts.</p>\n@param createUploadRequest Represents a request to the create upload operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateUpload operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Uploads an app or test scripts.</p>\n@param createUploadRequest Represents a request to the create upload operation.\n@return Result of the CreateUpload operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "createUpload"
     },
     "GetAccountSettings" : {
@@ -176,14 +176,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.</p>\n@param getAccountSettingsRequest null\n@return Result of the GetAccountSettings operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.</p>\n@param getAccountSettingsRequest null\n@return A Java Future containing the result of the GetAccountSettings operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.</p>\n@param getAccountSettingsRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetAccountSettings operation returned by the service.*/",
       "syncReturnType" : "GetAccountSettingsResult",
       "asyncReturnType" : "GetAccountSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetAccountSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetAccountSettingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetAccountSettingsRequest, GetAccountSettingsResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.</p>\n@param getAccountSettingsRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetAccountSettings operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.</p>\n@param getAccountSettingsRequest null\n@return Result of the GetAccountSettings operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "getAccountSettings"
     },
     "GetDevice" : {
@@ -216,14 +216,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about a unique device type.</p>\n@param getDeviceRequest Represents a request to the get device request.\n@return Result of the GetDevice operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about a unique device type.</p>\n@param getDeviceRequest Represents a request to the get device request.\n@return A Java Future containing the result of the GetDevice operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a unique device type.</p>\n@param getDeviceRequest Represents a request to the get device request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetDevice operation returned by the service.*/",
       "syncReturnType" : "GetDeviceResult",
       "asyncReturnType" : "GetDeviceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDeviceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDeviceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about a unique device type.</p>\n@param getDeviceRequest Represents a request to the get device request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetDevice operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about a unique device type.</p>\n@param getDeviceRequest Represents a request to the get device request.\n@return Result of the GetDevice operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "getDevice"
     },
     "GetDevicePool" : {
@@ -256,14 +256,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about a device pool.</p>\n@param getDevicePoolRequest Represents a request to the get device pool operation.\n@return Result of the GetDevicePool operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about a device pool.</p>\n@param getDevicePoolRequest Represents a request to the get device pool operation.\n@return A Java Future containing the result of the GetDevicePool operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a device pool.</p>\n@param getDevicePoolRequest Represents a request to the get device pool operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetDevicePool operation returned by the service.*/",
       "syncReturnType" : "GetDevicePoolResult",
       "asyncReturnType" : "GetDevicePoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDevicePoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDevicePoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDevicePoolRequest, GetDevicePoolResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about a device pool.</p>\n@param getDevicePoolRequest Represents a request to the get device pool operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetDevicePool operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about a device pool.</p>\n@param getDevicePoolRequest Represents a request to the get device pool operation.\n@return Result of the GetDevicePool operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "getDevicePool"
     },
     "GetDevicePoolCompatibility" : {
@@ -296,14 +296,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about compatibility with a device pool.</p>\n@param getDevicePoolCompatibilityRequest Represents a request to the get device pool compatibility operation.\n@return Result of the GetDevicePoolCompatibility operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about compatibility with a device pool.</p>\n@param getDevicePoolCompatibilityRequest Represents a request to the get device pool compatibility operation.\n@return A Java Future containing the result of the GetDevicePoolCompatibility operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about compatibility with a device pool.</p>\n@param getDevicePoolCompatibilityRequest Represents a request to the get device pool compatibility operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetDevicePoolCompatibility operation returned by the service.*/",
       "syncReturnType" : "GetDevicePoolCompatibilityResult",
       "asyncReturnType" : "GetDevicePoolCompatibilityResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDevicePoolCompatibilityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDevicePoolCompatibilityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDevicePoolCompatibilityRequest, GetDevicePoolCompatibilityResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about compatibility with a device pool.</p>\n@param getDevicePoolCompatibilityRequest Represents a request to the get device pool compatibility operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetDevicePoolCompatibility operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about compatibility with a device pool.</p>\n@param getDevicePoolCompatibilityRequest Represents a request to the get device pool compatibility operation.\n@return Result of the GetDevicePoolCompatibility operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "getDevicePoolCompatibility"
     },
     "GetJob" : {
@@ -336,14 +336,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about a job.</p>\n@param getJobRequest Represents a request to the get job operation.\n@return Result of the GetJob operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about a job.</p>\n@param getJobRequest Represents a request to the get job operation.\n@return A Java Future containing the result of the GetJob operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a job.</p>\n@param getJobRequest Represents a request to the get job operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetJob operation returned by the service.*/",
       "syncReturnType" : "GetJobResult",
       "asyncReturnType" : "GetJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetJobResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetJobRequest, GetJobResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about a job.</p>\n@param getJobRequest Represents a request to the get job operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetJob operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about a job.</p>\n@param getJobRequest Represents a request to the get job operation.\n@return Result of the GetJob operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "getJob"
     },
     "GetProject" : {
@@ -376,14 +376,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about a project.</p>\n@param getProjectRequest Represents a request to the get project operation.\n@return Result of the GetProject operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about a project.</p>\n@param getProjectRequest Represents a request to the get project operation.\n@return A Java Future containing the result of the GetProject operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a project.</p>\n@param getProjectRequest Represents a request to the get project operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetProject operation returned by the service.*/",
       "syncReturnType" : "GetProjectResult",
       "asyncReturnType" : "GetProjectResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetProjectResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetProjectResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetProjectRequest, GetProjectResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about a project.</p>\n@param getProjectRequest Represents a request to the get project operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetProject operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about a project.</p>\n@param getProjectRequest Represents a request to the get project operation.\n@return Result of the GetProject operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "getProject"
     },
     "GetRun" : {
@@ -416,14 +416,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about a run.</p>\n@param getRunRequest Represents a request to the get run operation.\n@return Result of the GetRun operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about a run.</p>\n@param getRunRequest Represents a request to the get run operation.\n@return A Java Future containing the result of the GetRun operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a run.</p>\n@param getRunRequest Represents a request to the get run operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetRun operation returned by the service.*/",
       "syncReturnType" : "GetRunResult",
       "asyncReturnType" : "GetRunResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRunResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRunResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRunRequest, GetRunResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about a run.</p>\n@param getRunRequest Represents a request to the get run operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetRun operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about a run.</p>\n@param getRunRequest Represents a request to the get run operation.\n@return Result of the GetRun operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "getRun"
     },
     "GetSuite" : {
@@ -456,14 +456,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about a suite.</p>\n@param getSuiteRequest Represents a request to the get suite operation.\n@return Result of the GetSuite operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about a suite.</p>\n@param getSuiteRequest Represents a request to the get suite operation.\n@return A Java Future containing the result of the GetSuite operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a suite.</p>\n@param getSuiteRequest Represents a request to the get suite operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetSuite operation returned by the service.*/",
       "syncReturnType" : "GetSuiteResult",
       "asyncReturnType" : "GetSuiteResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSuiteResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSuiteResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSuiteRequest, GetSuiteResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about a suite.</p>\n@param getSuiteRequest Represents a request to the get suite operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetSuite operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about a suite.</p>\n@param getSuiteRequest Represents a request to the get suite operation.\n@return Result of the GetSuite operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "getSuite"
     },
     "GetTest" : {
@@ -496,14 +496,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about a test.</p>\n@param getTestRequest Represents a request to the get test operation.\n@return Result of the GetTest operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about a test.</p>\n@param getTestRequest Represents a request to the get test operation.\n@return A Java Future containing the result of the GetTest operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a test.</p>\n@param getTestRequest Represents a request to the get test operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetTest operation returned by the service.*/",
       "syncReturnType" : "GetTestResult",
       "asyncReturnType" : "GetTestResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTestResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTestResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTestRequest, GetTestResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about a test.</p>\n@param getTestRequest Represents a request to the get test operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetTest operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about a test.</p>\n@param getTestRequest Represents a request to the get test operation.\n@return Result of the GetTest operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "getTest"
     },
     "GetUpload" : {
@@ -536,14 +536,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about an upload.</p>\n@param getUploadRequest Represents a request to the get upload operation.\n@return Result of the GetUpload operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about an upload.</p>\n@param getUploadRequest Represents a request to the get upload operation.\n@return A Java Future containing the result of the GetUpload operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about an upload.</p>\n@param getUploadRequest Represents a request to the get upload operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetUpload operation returned by the service.*/",
       "syncReturnType" : "GetUploadResult",
       "asyncReturnType" : "GetUploadResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetUploadResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetUploadResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetUploadRequest, GetUploadResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about an upload.</p>\n@param getUploadRequest Represents a request to the get upload operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetUpload operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about an upload.</p>\n@param getUploadRequest Represents a request to the get upload operation.\n@return Result of the GetUpload operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "getUpload"
     },
     "ListArtifacts" : {
@@ -576,14 +576,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about artifacts.</p>\n@param listArtifactsRequest Represents a request to the list artifacts operation.\n@return Result of the ListArtifacts operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about artifacts.</p>\n@param listArtifactsRequest Represents a request to the list artifacts operation.\n@return A Java Future containing the result of the ListArtifacts operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about artifacts.</p>\n@param listArtifactsRequest Represents a request to the list artifacts operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListArtifacts operation returned by the service.*/",
       "syncReturnType" : "ListArtifactsResult",
       "asyncReturnType" : "ListArtifactsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListArtifactsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListArtifactsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListArtifactsRequest, ListArtifactsResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about artifacts.</p>\n@param listArtifactsRequest Represents a request to the list artifacts operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListArtifacts operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about artifacts.</p>\n@param listArtifactsRequest Represents a request to the list artifacts operation.\n@return Result of the ListArtifacts operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "listArtifacts"
     },
     "ListDevicePools" : {
@@ -616,14 +616,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about device pools.</p>\n@param listDevicePoolsRequest Represents the result of a list device pools request.\n@return Result of the ListDevicePools operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about device pools.</p>\n@param listDevicePoolsRequest Represents the result of a list device pools request.\n@return A Java Future containing the result of the ListDevicePools operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about device pools.</p>\n@param listDevicePoolsRequest Represents the result of a list device pools request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListDevicePools operation returned by the service.*/",
       "syncReturnType" : "ListDevicePoolsResult",
       "asyncReturnType" : "ListDevicePoolsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDevicePoolsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDevicePoolsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDevicePoolsRequest, ListDevicePoolsResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about device pools.</p>\n@param listDevicePoolsRequest Represents the result of a list device pools request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListDevicePools operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about device pools.</p>\n@param listDevicePoolsRequest Represents the result of a list device pools request.\n@return Result of the ListDevicePools operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "listDevicePools"
     },
     "ListDevices" : {
@@ -656,14 +656,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about unique device types.</p>\n@param listDevicesRequest Represents the result of a list devices request.\n@return Result of the ListDevices operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about unique device types.</p>\n@param listDevicesRequest Represents the result of a list devices request.\n@return A Java Future containing the result of the ListDevices operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about unique device types.</p>\n@param listDevicesRequest Represents the result of a list devices request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListDevices operation returned by the service.*/",
       "syncReturnType" : "ListDevicesResult",
       "asyncReturnType" : "ListDevicesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDevicesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDevicesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDevicesRequest, ListDevicesResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about unique device types.</p>\n@param listDevicesRequest Represents the result of a list devices request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListDevices operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about unique device types.</p>\n@param listDevicesRequest Represents the result of a list devices request.\n@return Result of the ListDevices operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "listDevices"
     },
     "ListJobs" : {
@@ -696,14 +696,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about jobs.</p>\n@param listJobsRequest Represents a request to the list jobs operation.\n@return Result of the ListJobs operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about jobs.</p>\n@param listJobsRequest Represents a request to the list jobs operation.\n@return A Java Future containing the result of the ListJobs operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about jobs.</p>\n@param listJobsRequest Represents a request to the list jobs operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListJobs operation returned by the service.*/",
       "syncReturnType" : "ListJobsResult",
       "asyncReturnType" : "ListJobsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListJobsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListJobsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about jobs.</p>\n@param listJobsRequest Represents a request to the list jobs operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListJobs operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about jobs.</p>\n@param listJobsRequest Represents a request to the list jobs operation.\n@return Result of the ListJobs operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "listJobs"
     },
     "ListProjects" : {
@@ -736,14 +736,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about projects.</p>\n@param listProjectsRequest Represents a request to the list projects operation.\n@return Result of the ListProjects operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about projects.</p>\n@param listProjectsRequest Represents a request to the list projects operation.\n@return A Java Future containing the result of the ListProjects operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about projects.</p>\n@param listProjectsRequest Represents a request to the list projects operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListProjects operation returned by the service.*/",
       "syncReturnType" : "ListProjectsResult",
       "asyncReturnType" : "ListProjectsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListProjectsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListProjectsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about projects.</p>\n@param listProjectsRequest Represents a request to the list projects operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListProjects operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about projects.</p>\n@param listProjectsRequest Represents a request to the list projects operation.\n@return Result of the ListProjects operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "listProjects"
     },
     "ListRuns" : {
@@ -776,14 +776,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about runs.</p>\n@param listRunsRequest Represents a request to the list runs operation.\n@return Result of the ListRuns operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about runs.</p>\n@param listRunsRequest Represents a request to the list runs operation.\n@return A Java Future containing the result of the ListRuns operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about runs.</p>\n@param listRunsRequest Represents a request to the list runs operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListRuns operation returned by the service.*/",
       "syncReturnType" : "ListRunsResult",
       "asyncReturnType" : "ListRunsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRunsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRunsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRunsRequest, ListRunsResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about runs.</p>\n@param listRunsRequest Represents a request to the list runs operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListRuns operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about runs.</p>\n@param listRunsRequest Represents a request to the list runs operation.\n@return Result of the ListRuns operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "listRuns"
     },
     "ListSamples" : {
@@ -816,14 +816,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about samples.</p>\n@param listSamplesRequest Represents a request to the list samples operation.\n@return Result of the ListSamples operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about samples.</p>\n@param listSamplesRequest Represents a request to the list samples operation.\n@return A Java Future containing the result of the ListSamples operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about samples.</p>\n@param listSamplesRequest Represents a request to the list samples operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListSamples operation returned by the service.*/",
       "syncReturnType" : "ListSamplesResult",
       "asyncReturnType" : "ListSamplesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSamplesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListSamplesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListSamplesRequest, ListSamplesResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about samples.</p>\n@param listSamplesRequest Represents a request to the list samples operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListSamples operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about samples.</p>\n@param listSamplesRequest Represents a request to the list samples operation.\n@return Result of the ListSamples operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "listSamples"
     },
     "ListSuites" : {
@@ -856,14 +856,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about suites.</p>\n@param listSuitesRequest Represents a request to the list suites operation.\n@return Result of the ListSuites operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about suites.</p>\n@param listSuitesRequest Represents a request to the list suites operation.\n@return A Java Future containing the result of the ListSuites operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about suites.</p>\n@param listSuitesRequest Represents a request to the list suites operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListSuites operation returned by the service.*/",
       "syncReturnType" : "ListSuitesResult",
       "asyncReturnType" : "ListSuitesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSuitesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListSuitesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListSuitesRequest, ListSuitesResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about suites.</p>\n@param listSuitesRequest Represents a request to the list suites operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListSuites operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about suites.</p>\n@param listSuitesRequest Represents a request to the list suites operation.\n@return Result of the ListSuites operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "listSuites"
     },
     "ListTests" : {
@@ -896,14 +896,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about tests.</p>\n@param listTestsRequest Represents a request to the list tests operation.\n@return Result of the ListTests operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about tests.</p>\n@param listTestsRequest Represents a request to the list tests operation.\n@return A Java Future containing the result of the ListTests operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about tests.</p>\n@param listTestsRequest Represents a request to the list tests operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListTests operation returned by the service.*/",
       "syncReturnType" : "ListTestsResult",
       "asyncReturnType" : "ListTestsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTestsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTestsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTestsRequest, ListTestsResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about tests.</p>\n@param listTestsRequest Represents a request to the list tests operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListTests operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about tests.</p>\n@param listTestsRequest Represents a request to the list tests operation.\n@return Result of the ListTests operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "listTests"
     },
     "ListUniqueProblems" : {
@@ -936,14 +936,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about unique problems.</p>\n@param listUniqueProblemsRequest Represents a request to the list unique problems operation.\n@return Result of the ListUniqueProblems operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about unique problems.</p>\n@param listUniqueProblemsRequest Represents a request to the list unique problems operation.\n@return A Java Future containing the result of the ListUniqueProblems operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about unique problems.</p>\n@param listUniqueProblemsRequest Represents a request to the list unique problems operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListUniqueProblems operation returned by the service.*/",
       "syncReturnType" : "ListUniqueProblemsResult",
       "asyncReturnType" : "ListUniqueProblemsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUniqueProblemsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListUniqueProblemsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListUniqueProblemsRequest, ListUniqueProblemsResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about unique problems.</p>\n@param listUniqueProblemsRequest Represents a request to the list unique problems operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListUniqueProblems operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about unique problems.</p>\n@param listUniqueProblemsRequest Represents a request to the list unique problems operation.\n@return Result of the ListUniqueProblems operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "listUniqueProblems"
     },
     "ListUploads" : {
@@ -976,14 +976,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Gets information about uploads.</p>\n@param listUploadsRequest Represents a request to the list uploads operation.\n@return Result of the ListUploads operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Gets information about uploads.</p>\n@param listUploadsRequest Represents a request to the list uploads operation.\n@return A Java Future containing the result of the ListUploads operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about uploads.</p>\n@param listUploadsRequest Represents a request to the list uploads operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListUploads operation returned by the service.*/",
       "syncReturnType" : "ListUploadsResult",
       "asyncReturnType" : "ListUploadsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUploadsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListUploadsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListUploadsRequest, ListUploadsResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Gets information about uploads.</p>\n@param listUploadsRequest Represents a request to the list uploads operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListUploads operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Gets information about uploads.</p>\n@param listUploadsRequest Represents a request to the list uploads operation.\n@return Result of the ListUploads operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "listUploads"
     },
     "ScheduleRun" : {
@@ -1019,14 +1019,14 @@
         "exceptionName" : "ServiceAccountException",
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
-      "syncDocumentation" : "/**<p>Schedules a run.</p>\n@param scheduleRunRequest Represents a request to the schedule run operation.\n@return Result of the ScheduleRun operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws IdempotencyException An entity with the same name already exists.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "asyncDocumentation" : "/**<p>Schedules a run.</p>\n@param scheduleRunRequest Represents a request to the schedule run operation.\n@return A Java Future containing the result of the ScheduleRun operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Schedules a run.</p>\n@param scheduleRunRequest Represents a request to the schedule run operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ScheduleRun operation returned by the service.*/",
       "syncReturnType" : "ScheduleRunResult",
       "asyncReturnType" : "ScheduleRunResult",
       "asyncFutureType" : "java.util.concurrent.Future<ScheduleRunResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ScheduleRunResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ScheduleRunRequest, ScheduleRunResult>",
+      "asyncDocumentationWithHandler" : "/**<p>Schedules a run.</p>\n@param scheduleRunRequest Represents a request to the schedule run operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ScheduleRun operation returned by the service.*/",
+      "syncDocumentation" : "/**<p>Schedules a run.</p>\n@param scheduleRunRequest Represents a request to the schedule run operation.\n@return Result of the ScheduleRun operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws IdempotencyException An entity with the same name already exists.\n@throws ServiceAccountException There was a problem with the service account.*/",
       "methodName" : "scheduleRun"
     }
   },
