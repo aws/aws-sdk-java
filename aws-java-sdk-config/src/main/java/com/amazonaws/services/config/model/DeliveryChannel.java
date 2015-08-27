@@ -46,8 +46,8 @@ public class DeliveryChannel implements Serializable, Cloneable {
     private String s3KeyPrefix;
 
     /**
-     * The Amazon Resource Name (ARN) of the IAM role used for accessing the
-     * Amazon S3 bucket and the Amazon SNS topic.
+     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config
+     * delivers notifications to.
      */
     private String snsTopicARN;
 
@@ -178,35 +178,35 @@ public class DeliveryChannel implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the IAM role used for accessing the
-     * Amazon S3 bucket and the Amazon SNS topic.
+     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config
+     * delivers notifications to.
      *
-     * @return The Amazon Resource Name (ARN) of the IAM role used for accessing the
-     *         Amazon S3 bucket and the Amazon SNS topic.
+     * @return The Amazon Resource Name (ARN) of the SNS topic that AWS Config
+     *         delivers notifications to.
      */
     public String getSnsTopicARN() {
         return snsTopicARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the IAM role used for accessing the
-     * Amazon S3 bucket and the Amazon SNS topic.
+     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config
+     * delivers notifications to.
      *
-     * @param snsTopicARN The Amazon Resource Name (ARN) of the IAM role used for accessing the
-     *         Amazon S3 bucket and the Amazon SNS topic.
+     * @param snsTopicARN The Amazon Resource Name (ARN) of the SNS topic that AWS Config
+     *         delivers notifications to.
      */
     public void setSnsTopicARN(String snsTopicARN) {
         this.snsTopicARN = snsTopicARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the IAM role used for accessing the
-     * Amazon S3 bucket and the Amazon SNS topic.
+     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config
+     * delivers notifications to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snsTopicARN The Amazon Resource Name (ARN) of the IAM role used for accessing the
-     *         Amazon S3 bucket and the Amazon SNS topic.
+     * @param snsTopicARN The Amazon Resource Name (ARN) of the SNS topic that AWS Config
+     *         delivers notifications to.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

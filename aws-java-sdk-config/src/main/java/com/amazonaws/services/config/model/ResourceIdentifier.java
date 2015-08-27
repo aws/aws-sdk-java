@@ -18,13 +18,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The relationship of the related resource to the main resource.
+ * The details that identify a resource that is discovered by AWS Config,
+ * including the resource type, ID, and (if available) the custom
+ * resource name.
  * </p>
  */
-public class Relationship implements Serializable, Cloneable {
+public class ResourceIdentifier implements Serializable, Cloneable {
 
     /**
-     * The resource type of the related resource.
+     * The type of resource.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AWS::EC2::CustomerGateway, AWS::EC2::EIP, AWS::EC2::Instance, AWS::EC2::InternetGateway, AWS::EC2::NetworkAcl, AWS::EC2::NetworkInterface, AWS::EC2::RouteTable, AWS::EC2::SecurityGroup, AWS::EC2::Subnet, AWS::CloudTrail::Trail, AWS::EC2::Volume, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway
@@ -32,27 +34,27 @@ public class Relationship implements Serializable, Cloneable {
     private String resourceType;
 
     /**
-     * The ID of the related resource (for example, <code>sg-xxxxxx</code>).
+     * The ID of the resource (for example., <code>sg-xxxxxx</code>).
      */
     private String resourceId;
 
     /**
-     * The custom name of the related resource, if available.
+     * The custom name of the resource (if available).
      */
     private String resourceName;
 
     /**
-     * The type of relationship with the related resource.
+     * The time that the resource was deleted.
      */
-    private String relationshipName;
+    private java.util.Date resourceDeletionTime;
 
     /**
-     * The resource type of the related resource.
+     * The type of resource.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AWS::EC2::CustomerGateway, AWS::EC2::EIP, AWS::EC2::Instance, AWS::EC2::InternetGateway, AWS::EC2::NetworkAcl, AWS::EC2::NetworkInterface, AWS::EC2::RouteTable, AWS::EC2::SecurityGroup, AWS::EC2::Subnet, AWS::CloudTrail::Trail, AWS::EC2::Volume, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway
      *
-     * @return The resource type of the related resource.
+     * @return The type of resource.
      *
      * @see ResourceType
      */
@@ -61,12 +63,12 @@ public class Relationship implements Serializable, Cloneable {
     }
     
     /**
-     * The resource type of the related resource.
+     * The type of resource.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AWS::EC2::CustomerGateway, AWS::EC2::EIP, AWS::EC2::Instance, AWS::EC2::InternetGateway, AWS::EC2::NetworkAcl, AWS::EC2::NetworkInterface, AWS::EC2::RouteTable, AWS::EC2::SecurityGroup, AWS::EC2::Subnet, AWS::CloudTrail::Trail, AWS::EC2::Volume, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway
      *
-     * @param resourceType The resource type of the related resource.
+     * @param resourceType The type of resource.
      *
      * @see ResourceType
      */
@@ -75,32 +77,32 @@ public class Relationship implements Serializable, Cloneable {
     }
     
     /**
-     * The resource type of the related resource.
+     * The type of resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AWS::EC2::CustomerGateway, AWS::EC2::EIP, AWS::EC2::Instance, AWS::EC2::InternetGateway, AWS::EC2::NetworkAcl, AWS::EC2::NetworkInterface, AWS::EC2::RouteTable, AWS::EC2::SecurityGroup, AWS::EC2::Subnet, AWS::CloudTrail::Trail, AWS::EC2::Volume, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway
      *
-     * @param resourceType The resource type of the related resource.
+     * @param resourceType The type of resource.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ResourceType
      */
-    public Relationship withResourceType(String resourceType) {
+    public ResourceIdentifier withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
     /**
-     * The resource type of the related resource.
+     * The type of resource.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AWS::EC2::CustomerGateway, AWS::EC2::EIP, AWS::EC2::Instance, AWS::EC2::InternetGateway, AWS::EC2::NetworkAcl, AWS::EC2::NetworkInterface, AWS::EC2::RouteTable, AWS::EC2::SecurityGroup, AWS::EC2::Subnet, AWS::CloudTrail::Trail, AWS::EC2::Volume, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway
      *
-     * @param resourceType The resource type of the related resource.
+     * @param resourceType The type of resource.
      *
      * @see ResourceType
      */
@@ -109,121 +111,121 @@ public class Relationship implements Serializable, Cloneable {
     }
     
     /**
-     * The resource type of the related resource.
+     * The type of resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>AWS::EC2::CustomerGateway, AWS::EC2::EIP, AWS::EC2::Instance, AWS::EC2::InternetGateway, AWS::EC2::NetworkAcl, AWS::EC2::NetworkInterface, AWS::EC2::RouteTable, AWS::EC2::SecurityGroup, AWS::EC2::Subnet, AWS::CloudTrail::Trail, AWS::EC2::Volume, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway
      *
-     * @param resourceType The resource type of the related resource.
+     * @param resourceType The type of resource.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ResourceType
      */
-    public Relationship withResourceType(ResourceType resourceType) {
+    public ResourceIdentifier withResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
         return this;
     }
 
     /**
-     * The ID of the related resource (for example, <code>sg-xxxxxx</code>).
+     * The ID of the resource (for example., <code>sg-xxxxxx</code>).
      *
-     * @return The ID of the related resource (for example, <code>sg-xxxxxx</code>).
+     * @return The ID of the resource (for example., <code>sg-xxxxxx</code>).
      */
     public String getResourceId() {
         return resourceId;
     }
     
     /**
-     * The ID of the related resource (for example, <code>sg-xxxxxx</code>).
+     * The ID of the resource (for example., <code>sg-xxxxxx</code>).
      *
-     * @param resourceId The ID of the related resource (for example, <code>sg-xxxxxx</code>).
+     * @param resourceId The ID of the resource (for example., <code>sg-xxxxxx</code>).
      */
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
     
     /**
-     * The ID of the related resource (for example, <code>sg-xxxxxx</code>).
+     * The ID of the resource (for example., <code>sg-xxxxxx</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceId The ID of the related resource (for example, <code>sg-xxxxxx</code>).
+     * @param resourceId The ID of the resource (for example., <code>sg-xxxxxx</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public Relationship withResourceId(String resourceId) {
+    public ResourceIdentifier withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
     /**
-     * The custom name of the related resource, if available.
+     * The custom name of the resource (if available).
      *
-     * @return The custom name of the related resource, if available.
+     * @return The custom name of the resource (if available).
      */
     public String getResourceName() {
         return resourceName;
     }
     
     /**
-     * The custom name of the related resource, if available.
+     * The custom name of the resource (if available).
      *
-     * @param resourceName The custom name of the related resource, if available.
+     * @param resourceName The custom name of the resource (if available).
      */
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
     
     /**
-     * The custom name of the related resource, if available.
+     * The custom name of the resource (if available).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceName The custom name of the related resource, if available.
+     * @param resourceName The custom name of the resource (if available).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public Relationship withResourceName(String resourceName) {
+    public ResourceIdentifier withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
     /**
-     * The type of relationship with the related resource.
+     * The time that the resource was deleted.
      *
-     * @return The type of relationship with the related resource.
+     * @return The time that the resource was deleted.
      */
-    public String getRelationshipName() {
-        return relationshipName;
+    public java.util.Date getResourceDeletionTime() {
+        return resourceDeletionTime;
     }
     
     /**
-     * The type of relationship with the related resource.
+     * The time that the resource was deleted.
      *
-     * @param relationshipName The type of relationship with the related resource.
+     * @param resourceDeletionTime The time that the resource was deleted.
      */
-    public void setRelationshipName(String relationshipName) {
-        this.relationshipName = relationshipName;
+    public void setResourceDeletionTime(java.util.Date resourceDeletionTime) {
+        this.resourceDeletionTime = resourceDeletionTime;
     }
     
     /**
-     * The type of relationship with the related resource.
+     * The time that the resource was deleted.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param relationshipName The type of relationship with the related resource.
+     * @param resourceDeletionTime The time that the resource was deleted.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public Relationship withRelationshipName(String relationshipName) {
-        this.relationshipName = relationshipName;
+    public ResourceIdentifier withResourceDeletionTime(java.util.Date resourceDeletionTime) {
+        this.resourceDeletionTime = resourceDeletionTime;
         return this;
     }
 
@@ -242,7 +244,7 @@ public class Relationship implements Serializable, Cloneable {
         if (getResourceType() != null) sb.append("ResourceType: " + getResourceType() + ",");
         if (getResourceId() != null) sb.append("ResourceId: " + getResourceId() + ",");
         if (getResourceName() != null) sb.append("ResourceName: " + getResourceName() + ",");
-        if (getRelationshipName() != null) sb.append("RelationshipName: " + getRelationshipName() );
+        if (getResourceDeletionTime() != null) sb.append("ResourceDeletionTime: " + getResourceDeletionTime() );
         sb.append("}");
         return sb.toString();
     }
@@ -255,7 +257,7 @@ public class Relationship implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode()); 
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode()); 
         hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode()); 
-        hashCode = prime * hashCode + ((getRelationshipName() == null) ? 0 : getRelationshipName().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceDeletionTime() == null) ? 0 : getResourceDeletionTime().hashCode()); 
         return hashCode;
     }
     
@@ -264,8 +266,8 @@ public class Relationship implements Serializable, Cloneable {
         if (this == obj) return true;
         if (obj == null) return false;
 
-        if (obj instanceof Relationship == false) return false;
-        Relationship other = (Relationship)obj;
+        if (obj instanceof ResourceIdentifier == false) return false;
+        ResourceIdentifier other = (ResourceIdentifier)obj;
         
         if (other.getResourceType() == null ^ this.getResourceType() == null) return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false) return false; 
@@ -273,15 +275,15 @@ public class Relationship implements Serializable, Cloneable {
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false) return false; 
         if (other.getResourceName() == null ^ this.getResourceName() == null) return false;
         if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false) return false; 
-        if (other.getRelationshipName() == null ^ this.getRelationshipName() == null) return false;
-        if (other.getRelationshipName() != null && other.getRelationshipName().equals(this.getRelationshipName()) == false) return false; 
+        if (other.getResourceDeletionTime() == null ^ this.getResourceDeletionTime() == null) return false;
+        if (other.getResourceDeletionTime() != null && other.getResourceDeletionTime().equals(this.getResourceDeletionTime()) == false) return false; 
         return true;
     }
     
     @Override
-    public Relationship clone() {
+    public ResourceIdentifier clone() {
         try {
-            return (Relationship) super.clone();
+            return (ResourceIdentifier) super.clone();
         
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(

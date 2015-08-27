@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * You have reached the limit on the pagination.
+ * The specified limit is outside the allowable range.
  * </p>
  */        
 public class InvalidLimitException extends AmazonServiceException {

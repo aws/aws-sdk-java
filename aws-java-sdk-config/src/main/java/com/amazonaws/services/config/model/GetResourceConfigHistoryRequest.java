@@ -23,16 +23,21 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Returns a list of configuration items for the specified resource. The
  * list contains details about each state of the resource during the
- * specified time interval. You can specify a <code>limit</code> on the
- * number of results returned on the page. If a limit is specified, a
- * <code>nextToken</code> is returned as part of the result that you can
- * use to continue this request.
+ * specified time interval.
+ * </p>
+ * <p>
+ * The response is paginated, and by default, AWS Config returns a limit
+ * of 10 configuration items per page. You can customize this number with
+ * the <code>limit</code> parameter. The response includes a
+ * <code>nextToken</code> string, and to get the next
+ * page of results, run the request again and enter this string for the
+ * <code>nextToken</code> parameter.
  * </p>
  * <p>
  * <b>NOTE:</b> Each call to the API is limited to span a duration of
  * seven days. It is likely that the number of records returned is
  * smaller than the specified limit. In such cases, you can make another
- * call, using the nextToken .
+ * call, using the nextToken.
  * </p>
  *
  * @see com.amazonaws.services.config.AmazonConfig#getResourceConfigHistory(GetResourceConfigHistoryRequest)
@@ -75,8 +80,9 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest imp
     private String chronologicalOrder;
 
     /**
-     * The maximum number of configuration items returned in each page. The
-     * default is 10. You cannot specify a limit greater than 100.
+     * The maximum number of configuration items returned on each page. The
+     * default is 10. You cannot specify a limit greater than 100. If you
+     * specify 0, AWS Config uses the default.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 100<br/>
@@ -84,7 +90,8 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest imp
     private Integer limit;
 
     /**
-     * An optional parameter used for pagination of the results.
+     * The <code>nextToken</code> string returned on a previous page that you
+     * use to get the next page of results in a paginated response.
      */
     private String nextToken;
 
@@ -380,44 +387,50 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * The maximum number of configuration items returned in each page. The
-     * default is 10. You cannot specify a limit greater than 100.
+     * The maximum number of configuration items returned on each page. The
+     * default is 10. You cannot specify a limit greater than 100. If you
+     * specify 0, AWS Config uses the default.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 100<br/>
      *
-     * @return The maximum number of configuration items returned in each page. The
-     *         default is 10. You cannot specify a limit greater than 100.
+     * @return The maximum number of configuration items returned on each page. The
+     *         default is 10. You cannot specify a limit greater than 100. If you
+     *         specify 0, AWS Config uses the default.
      */
     public Integer getLimit() {
         return limit;
     }
     
     /**
-     * The maximum number of configuration items returned in each page. The
-     * default is 10. You cannot specify a limit greater than 100.
+     * The maximum number of configuration items returned on each page. The
+     * default is 10. You cannot specify a limit greater than 100. If you
+     * specify 0, AWS Config uses the default.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 100<br/>
      *
-     * @param limit The maximum number of configuration items returned in each page. The
-     *         default is 10. You cannot specify a limit greater than 100.
+     * @param limit The maximum number of configuration items returned on each page. The
+     *         default is 10. You cannot specify a limit greater than 100. If you
+     *         specify 0, AWS Config uses the default.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
     
     /**
-     * The maximum number of configuration items returned in each page. The
-     * default is 10. You cannot specify a limit greater than 100.
+     * The maximum number of configuration items returned on each page. The
+     * default is 10. You cannot specify a limit greater than 100. If you
+     * specify 0, AWS Config uses the default.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 100<br/>
      *
-     * @param limit The maximum number of configuration items returned in each page. The
-     *         default is 10. You cannot specify a limit greater than 100.
+     * @param limit The maximum number of configuration items returned on each page. The
+     *         default is 10. You cannot specify a limit greater than 100. If you
+     *         specify 0, AWS Config uses the default.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -428,29 +441,35 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * An optional parameter used for pagination of the results.
+     * The <code>nextToken</code> string returned on a previous page that you
+     * use to get the next page of results in a paginated response.
      *
-     * @return An optional parameter used for pagination of the results.
+     * @return The <code>nextToken</code> string returned on a previous page that you
+     *         use to get the next page of results in a paginated response.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * An optional parameter used for pagination of the results.
+     * The <code>nextToken</code> string returned on a previous page that you
+     * use to get the next page of results in a paginated response.
      *
-     * @param nextToken An optional parameter used for pagination of the results.
+     * @param nextToken The <code>nextToken</code> string returned on a previous page that you
+     *         use to get the next page of results in a paginated response.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * An optional parameter used for pagination of the results.
+     * The <code>nextToken</code> string returned on a previous page that you
+     * use to get the next page of results in a paginated response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken An optional parameter used for pagination of the results.
+     * @param nextToken The <code>nextToken</code> string returned on a previous page that you
+     *         use to get the next page of results in a paginated response.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

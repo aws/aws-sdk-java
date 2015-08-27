@@ -18,7 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified nextToken for pagination is not valid.
+ * The specified next token is invalid. Specify the
+ * <code>nextToken</code> string that was returned in the previous
+ * response to get the next page of results.
  * </p>
  */        
 public class InvalidNextTokenException extends AmazonServiceException {

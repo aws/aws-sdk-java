@@ -83,6 +83,16 @@ public class ConfigurationItem implements Serializable, Cloneable {
     private String resourceId;
 
     /**
+     * The custom name of the resource, if available.
+     */
+    private String resourceName;
+
+    /**
+     * The region where the resource resides.
+     */
+    private String awsRegion;
+
+    /**
      * The Availability Zone associated with the resource.
      */
     private String availabilityZone;
@@ -531,6 +541,72 @@ public class ConfigurationItem implements Serializable, Cloneable {
     }
 
     /**
+     * The custom name of the resource, if available.
+     *
+     * @return The custom name of the resource, if available.
+     */
+    public String getResourceName() {
+        return resourceName;
+    }
+    
+    /**
+     * The custom name of the resource, if available.
+     *
+     * @param resourceName The custom name of the resource, if available.
+     */
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+    
+    /**
+     * The custom name of the resource, if available.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceName The custom name of the resource, if available.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ConfigurationItem withResourceName(String resourceName) {
+        this.resourceName = resourceName;
+        return this;
+    }
+
+    /**
+     * The region where the resource resides.
+     *
+     * @return The region where the resource resides.
+     */
+    public String getAwsRegion() {
+        return awsRegion;
+    }
+    
+    /**
+     * The region where the resource resides.
+     *
+     * @param awsRegion The region where the resource resides.
+     */
+    public void setAwsRegion(String awsRegion) {
+        this.awsRegion = awsRegion;
+    }
+    
+    /**
+     * The region where the resource resides.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param awsRegion The region where the resource resides.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ConfigurationItem withAwsRegion(String awsRegion) {
+        this.awsRegion = awsRegion;
+        return this;
+    }
+
+    /**
      * The Availability Zone associated with the resource.
      *
      * @return The Availability Zone associated with the resource.
@@ -903,6 +979,8 @@ public class ConfigurationItem implements Serializable, Cloneable {
         if (getArn() != null) sb.append("Arn: " + getArn() + ",");
         if (getResourceType() != null) sb.append("ResourceType: " + getResourceType() + ",");
         if (getResourceId() != null) sb.append("ResourceId: " + getResourceId() + ",");
+        if (getResourceName() != null) sb.append("ResourceName: " + getResourceName() + ",");
+        if (getAwsRegion() != null) sb.append("AwsRegion: " + getAwsRegion() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getResourceCreationTime() != null) sb.append("ResourceCreationTime: " + getResourceCreationTime() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
@@ -927,6 +1005,8 @@ public class ConfigurationItem implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode()); 
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode()); 
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode()); 
+        hashCode = prime * hashCode + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getResourceCreationTime() == null) ? 0 : getResourceCreationTime().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
@@ -962,6 +1042,10 @@ public class ConfigurationItem implements Serializable, Cloneable {
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false) return false; 
         if (other.getResourceId() == null ^ this.getResourceId() == null) return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false) return false; 
+        if (other.getResourceName() == null ^ this.getResourceName() == null) return false;
+        if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false) return false; 
+        if (other.getAwsRegion() == null ^ this.getAwsRegion() == null) return false;
+        if (other.getAwsRegion() != null && other.getAwsRegion().equals(this.getAwsRegion()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
         if (other.getResourceCreationTime() == null ^ this.getResourceCreationTime() == null) return false;

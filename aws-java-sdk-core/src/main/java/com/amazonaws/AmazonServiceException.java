@@ -14,6 +14,8 @@
  */
 package com.amazonaws;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Extension of AmazonClientException that represents an error response returned
  * by an Amazon web service. Receiving an exception of this type indicates that
@@ -84,7 +86,7 @@ public class AmazonServiceException extends AmazonClientException {
     /**
      * The error message as returned by the service.
      */
-    private final String errorMessage;
+    private String errorMessage;
 
     /** The HTTP status code that was returned with this error */
     private int statusCode;
@@ -101,7 +103,7 @@ public class AmazonServiceException extends AmazonClientException {
 
     /**
      * Constructs a new AmazonServiceException with the specified message.
-     * 
+     *
      * @param errorMessage
      *            An error message describing what went wrong.
      */
@@ -214,6 +216,13 @@ public class AmazonServiceException extends AmazonClientException {
         return errorMessage;
     }
 
+    // Jackson has special-casing for 'message' values when deserializing
+    // Throwables, but sometimes we get 'Message' instead - handle it here.
+    @JsonProperty("Message")
+    public void setErrorMessage(String value) {
+        errorMessage = value;
+    }
+
     /**
      * Sets the HTTP status code that was returned with this service exception.
      *
@@ -248,7 +257,7 @@ public class AmazonServiceException extends AmazonClientException {
     /**
      * Typically only useful for debugging purpose if for some reason the SDK cannot parse the HTTP
      * response from a service
-     * 
+     *
      * @return The raw content of the HTTP response
      */
     public String getRawResponseContent() {

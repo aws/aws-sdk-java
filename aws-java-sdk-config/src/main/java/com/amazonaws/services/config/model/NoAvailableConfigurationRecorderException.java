@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * There are no configuration recorders available to provide the role
- * needed to describe your resources.
+ * needed to describe your resources. Create a configuration recorder.
  * </p>
  */        
 public class NoAvailableConfigurationRecorderException extends AmazonServiceException {

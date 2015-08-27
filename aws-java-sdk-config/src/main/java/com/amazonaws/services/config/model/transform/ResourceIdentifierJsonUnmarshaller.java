@@ -26,12 +26,12 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Relationship JSON Unmarshaller
+ * Resource Identifier JSON Unmarshaller
  */
-public class RelationshipJsonUnmarshaller implements Unmarshaller<Relationship, JsonUnmarshallerContext> {
+public class ResourceIdentifierJsonUnmarshaller implements Unmarshaller<ResourceIdentifier, JsonUnmarshallerContext> {
 
-    public Relationship unmarshall(JsonUnmarshallerContext context) throws Exception {
-        Relationship relationship = new Relationship();
+    public ResourceIdentifier unmarshall(JsonUnmarshallerContext context) throws Exception {
+        ResourceIdentifier resourceIdentifier = new ResourceIdentifier();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -47,19 +47,19 @@ public class RelationshipJsonUnmarshaller implements Unmarshaller<Relationship, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
-                    relationship.setResourceType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    resourceIdentifier.setResourceType(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
-                    relationship.setResourceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    resourceIdentifier.setResourceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceName", targetDepth)) {
                     context.nextToken();
-                    relationship.setResourceName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    resourceIdentifier.setResourceName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("relationshipName", targetDepth)) {
+                if (context.testExpression("resourceDeletionTime", targetDepth)) {
                     context.nextToken();
-                    relationship.setRelationshipName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    resourceIdentifier.setResourceDeletionTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -70,12 +70,12 @@ public class RelationshipJsonUnmarshaller implements Unmarshaller<Relationship, 
             token = context.nextToken();
         }
         
-        return relationship;
+        return resourceIdentifier;
     }
 
-    private static RelationshipJsonUnmarshaller instance;
-    public static RelationshipJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new RelationshipJsonUnmarshaller();
+    private static ResourceIdentifierJsonUnmarshaller instance;
+    public static ResourceIdentifierJsonUnmarshaller getInstance() {
+        if (instance == null) instance = new ResourceIdentifierJsonUnmarshaller();
         return instance;
     }
 }
