@@ -2520,7 +2520,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addParameter("uploadId", uploadId);
 
         byte[] xml = RequestXmlFactory.convertToXmlByteArray(completeMultipartUploadRequest.getPartETags());
-        request.addHeader("Content-Type", "text/plain");
+        request.addHeader("Content-Type", "application/xml");
         request.addHeader("Content-Length", String.valueOf(xml.length));
 
         request.setContent(new ByteArrayInputStream(xml));
