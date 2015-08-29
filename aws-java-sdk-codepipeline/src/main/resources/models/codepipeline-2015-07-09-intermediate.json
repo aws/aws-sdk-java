@@ -3336,247 +3336,6 @@
         }
       }
     },
-    "ArtifactStore" : {
-      "c2jName" : "ArtifactStore",
-      "documentation" : "<p>The Amazon S3 location where artifacts are stored for the pipeline. If this Amazon S3 bucket is created manually, it must meet the requirements for AWS CodePipeline. For more information, see the <ulink url=\"http://docs.aws.amazon.com/codepipeline/latest/UserGuide/concepts.html\">Concepts</ulink>.</p>",
-      "shapeName" : "ArtifactStore",
-      "deprecated" : false,
-      "required" : [ "type", "location" ],
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "members" : [ {
-        "documentation" : "<p>The type of the artifact store, such as S3.</p>",
-        "name" : "Type",
-        "c2jName" : "type",
-        "c2jShape" : "ArtifactStoreType",
-        "variable" : {
-          "variableName" : "type",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The type of the artifact store, such as S3.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "type",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "type",
-          "marshallLocationName" : "type",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : "ArtifactStoreType",
-        "xmlNameSpaceUri" : null,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@see ArtifactStoreType*/",
-        "getterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@return The type of the artifact store, such as S3.\n@see ArtifactStoreType*/",
-        "fluentSetterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ArtifactStoreType*/",
-        "varargSetterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ArtifactStoreType*/"
-      }, {
-        "documentation" : "<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>",
-        "name" : "Location",
-        "c2jName" : "location",
-        "c2jShape" : "ArtifactStoreLocation",
-        "variable" : {
-          "variableName" : "location",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "location",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : null,
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "location",
-          "marshallLocationName" : "location",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.*/",
-        "getterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@return The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.*/",
-        "fluentSetterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "artifactStore",
-        "variableType" : "ArtifactStore",
-        "variableDeclarationType" : "ArtifactStore",
-        "documentation" : null,
-        "simpleType" : "ArtifactStore",
-        "variableSetterType" : "ArtifactStore"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "Type" : {
-          "documentation" : "<p>The type of the artifact store, such as S3.</p>",
-          "name" : "Type",
-          "c2jName" : "type",
-          "c2jShape" : "ArtifactStoreType",
-          "variable" : {
-            "variableName" : "type",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The type of the artifact store, such as S3.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "type",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "type",
-            "marshallLocationName" : "type",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : "ArtifactStoreType",
-          "xmlNameSpaceUri" : null,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@see ArtifactStoreType*/",
-          "getterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@return The type of the artifact store, such as S3.\n@see ArtifactStoreType*/",
-          "fluentSetterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ArtifactStoreType*/",
-          "varargSetterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ArtifactStoreType*/"
-        },
-        "Location" : {
-          "documentation" : "<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>",
-          "name" : "Location",
-          "c2jName" : "location",
-          "c2jShape" : "ArtifactStoreLocation",
-          "variable" : {
-            "variableName" : "location",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "location",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : null,
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "location",
-            "marshallLocationName" : "location",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.*/",
-          "getterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@return The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.*/",
-          "fluentSetterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
     "ExecutionDetails" : {
       "c2jName" : "ExecutionDetails",
       "documentation" : "<p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.</p>",
@@ -3921,6 +3680,350 @@
         }
       }
     },
+    "ArtifactStore" : {
+      "c2jName" : "ArtifactStore",
+      "documentation" : "<p>The Amazon S3 location where artifacts are stored for the pipeline. If this Amazon S3 bucket is created manually, it must meet the requirements for AWS CodePipeline. For more information, see the <ulink url=\"http://docs.aws.amazon.com/codepipeline/latest/UserGuide/concepts.html\">Concepts</ulink>.</p>",
+      "shapeName" : "ArtifactStore",
+      "deprecated" : false,
+      "required" : [ "type", "location" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The type of the artifact store, such as S3.</p>",
+        "name" : "Type",
+        "c2jName" : "type",
+        "c2jShape" : "ArtifactStoreType",
+        "variable" : {
+          "variableName" : "type",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The type of the artifact store, such as S3.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "type",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "type",
+          "marshallLocationName" : "type",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "ArtifactStoreType",
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@see ArtifactStoreType*/",
+        "getterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@return The type of the artifact store, such as S3.\n@see ArtifactStoreType*/",
+        "fluentSetterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ArtifactStoreType*/",
+        "varargSetterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ArtifactStoreType*/"
+      }, {
+        "documentation" : "<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>",
+        "name" : "Location",
+        "c2jName" : "location",
+        "c2jShape" : "ArtifactStoreLocation",
+        "variable" : {
+          "variableName" : "location",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "location",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "location",
+          "marshallLocationName" : "location",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.*/",
+        "getterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@return The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.*/",
+        "fluentSetterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : null,
+        "name" : "EncryptionKey",
+        "c2jName" : "encryptionKey",
+        "c2jShape" : "EncryptionKey",
+        "variable" : {
+          "variableName" : "encryptionKey",
+          "variableType" : "EncryptionKey",
+          "variableDeclarationType" : "EncryptionKey",
+          "documentation" : null,
+          "simpleType" : "EncryptionKey",
+          "variableSetterType" : "EncryptionKey"
+        },
+        "setterModel" : {
+          "variableName" : "encryptionKey",
+          "variableType" : "EncryptionKey",
+          "variableDeclarationType" : "EncryptionKey",
+          "documentation" : null,
+          "simpleType" : "EncryptionKey",
+          "variableSetterType" : "EncryptionKey"
+        },
+        "getterModel" : {
+          "returnType" : "EncryptionKey",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "encryptionKey",
+          "marshallLocationName" : "encryptionKey",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : false,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the EncryptionKey property for this object.\n@return The value of the EncryptionKey property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "artifactStore",
+        "variableType" : "ArtifactStore",
+        "variableDeclarationType" : "ArtifactStore",
+        "documentation" : null,
+        "simpleType" : "ArtifactStore",
+        "variableSetterType" : "ArtifactStore"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "EncryptionKey" : {
+          "documentation" : null,
+          "name" : "EncryptionKey",
+          "c2jName" : "encryptionKey",
+          "c2jShape" : "EncryptionKey",
+          "variable" : {
+            "variableName" : "encryptionKey",
+            "variableType" : "EncryptionKey",
+            "variableDeclarationType" : "EncryptionKey",
+            "documentation" : null,
+            "simpleType" : "EncryptionKey",
+            "variableSetterType" : "EncryptionKey"
+          },
+          "setterModel" : {
+            "variableName" : "encryptionKey",
+            "variableType" : "EncryptionKey",
+            "variableDeclarationType" : "EncryptionKey",
+            "documentation" : null,
+            "simpleType" : "EncryptionKey",
+            "variableSetterType" : "EncryptionKey"
+          },
+          "getterModel" : {
+            "returnType" : "EncryptionKey",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "encryptionKey",
+            "marshallLocationName" : "encryptionKey",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : false,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the EncryptionKey property for this object.\n@return The value of the EncryptionKey property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Type" : {
+          "documentation" : "<p>The type of the artifact store, such as S3.</p>",
+          "name" : "Type",
+          "c2jName" : "type",
+          "c2jShape" : "ArtifactStoreType",
+          "variable" : {
+            "variableName" : "type",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The type of the artifact store, such as S3.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "type",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "type",
+            "marshallLocationName" : "type",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "ArtifactStoreType",
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@see ArtifactStoreType*/",
+          "getterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@return The type of the artifact store, such as S3.\n@see ArtifactStoreType*/",
+          "fluentSetterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ArtifactStoreType*/",
+          "varargSetterDocumentation" : "/**<p>The type of the artifact store, such as S3.</p>\n@param type The type of the artifact store, such as S3.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ArtifactStoreType*/"
+        },
+        "Location" : {
+          "documentation" : "<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>",
+          "name" : "Location",
+          "c2jName" : "location",
+          "c2jShape" : "ArtifactStoreLocation",
+          "variable" : {
+            "variableName" : "location",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "location",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "location",
+            "marshallLocationName" : "location",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.*/",
+          "getterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@return The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.*/",
+          "fluentSetterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "UpdatePipelineResult" : {
       "c2jName" : "UpdatePipelineOutput",
       "documentation" : "<p>Represents the output of an update pipeline action.</p>",
@@ -4056,6 +4159,247 @@
           "getterDocumentation" : "/**<p>The structure of the updated pipeline.</p>\n@return The structure of the updated pipeline.*/",
           "fluentSetterDocumentation" : "/**<p>The structure of the updated pipeline.</p>\n@param pipeline The structure of the updated pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The structure of the updated pipeline.</p>\n@param pipeline The structure of the updated pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "EncryptionKey" : {
+      "c2jName" : "EncryptionKey",
+      "documentation" : null,
+      "shapeName" : "EncryptionKey",
+      "deprecated" : false,
+      "required" : [ "id", "type" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : null,
+        "name" : "Id",
+        "c2jName" : "id",
+        "c2jShape" : "EncryptionKeyId",
+        "variable" : {
+          "variableName" : "id",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "id",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "id",
+          "marshallLocationName" : "id",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the Id property for this object.\n@param id The new value for the Id property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the Id property for this object.\n@return The value of the Id property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the Id property for this object.\n@param id The new value for the Id property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the Id property for this object.\n@param id The new value for the Id property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : null,
+        "name" : "Type",
+        "c2jName" : "type",
+        "c2jShape" : "EncryptionKeyType",
+        "variable" : {
+          "variableName" : "type",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "type",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "type",
+          "marshallLocationName" : "type",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "EncryptionKeyType",
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the Type property for this object.\n@param type The new value for the Type property for this object.\n@see EncryptionKeyType*/",
+        "getterDocumentation" : "/**Returns the value of the Type property for this object.\n@return The value of the Type property for this object.\n@see EncryptionKeyType*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the Type property for this object.\n@param type The new value for the Type property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/",
+        "varargSetterDocumentation" : "/**Sets the value of the Type property for this object.\n@param type The new value for the Type property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "encryptionKey",
+        "variableType" : "EncryptionKey",
+        "variableDeclarationType" : "EncryptionKey",
+        "documentation" : null,
+        "simpleType" : "EncryptionKey",
+        "variableSetterType" : "EncryptionKey"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Type" : {
+          "documentation" : null,
+          "name" : "Type",
+          "c2jName" : "type",
+          "c2jShape" : "EncryptionKeyType",
+          "variable" : {
+            "variableName" : "type",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "type",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "type",
+            "marshallLocationName" : "type",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "EncryptionKeyType",
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the Type property for this object.\n@param type The new value for the Type property for this object.\n@see EncryptionKeyType*/",
+          "getterDocumentation" : "/**Returns the value of the Type property for this object.\n@return The value of the Type property for this object.\n@see EncryptionKeyType*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the Type property for this object.\n@param type The new value for the Type property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/",
+          "varargSetterDocumentation" : "/**Sets the value of the Type property for this object.\n@param type The new value for the Type property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/"
+        },
+        "Id" : {
+          "documentation" : null,
+          "name" : "Id",
+          "c2jName" : "id",
+          "c2jShape" : "EncryptionKeyId",
+          "variable" : {
+            "variableName" : "id",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "id",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "id",
+            "marshallLocationName" : "id",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the Id property for this object.\n@param id The new value for the Id property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the Id property for this object.\n@return The value of the Id property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the Id property for this object.\n@param id The new value for the Id property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the Id property for this object.\n@param id The new value for the Id property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -9954,7 +10298,7 @@
       "documentation" : "<p>Represents information about failure details.</p>",
       "shapeName" : "FailureDetails",
       "deprecated" : false,
-      "required" : [ "type" ],
+      "required" : [ "type", "message" ],
       "hasPayloadMember" : false,
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
@@ -15892,6 +16236,57 @@
         "getterDocumentation" : "/**<p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.</p>\n@return A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.*/",
         "fluentSetterDocumentation" : "/**<p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.</p>\n@param continuationToken A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.</p>\n@param continuationToken A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : null,
+        "name" : "EncryptionKey",
+        "c2jName" : "encryptionKey",
+        "c2jShape" : "EncryptionKey",
+        "variable" : {
+          "variableName" : "encryptionKey",
+          "variableType" : "EncryptionKey",
+          "variableDeclarationType" : "EncryptionKey",
+          "documentation" : null,
+          "simpleType" : "EncryptionKey",
+          "variableSetterType" : "EncryptionKey"
+        },
+        "setterModel" : {
+          "variableName" : "encryptionKey",
+          "variableType" : "EncryptionKey",
+          "variableDeclarationType" : "EncryptionKey",
+          "documentation" : null,
+          "simpleType" : "EncryptionKey",
+          "variableSetterType" : "EncryptionKey"
+        },
+        "getterModel" : {
+          "returnType" : "EncryptionKey",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "encryptionKey",
+          "marshallLocationName" : "encryptionKey",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : false,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the EncryptionKey property for this object.\n@return The value of the EncryptionKey property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -15915,6 +16310,58 @@
         "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
+        "EncryptionKey" : {
+          "documentation" : null,
+          "name" : "EncryptionKey",
+          "c2jName" : "encryptionKey",
+          "c2jShape" : "EncryptionKey",
+          "variable" : {
+            "variableName" : "encryptionKey",
+            "variableType" : "EncryptionKey",
+            "variableDeclarationType" : "EncryptionKey",
+            "documentation" : null,
+            "simpleType" : "EncryptionKey",
+            "variableSetterType" : "EncryptionKey"
+          },
+          "setterModel" : {
+            "variableName" : "encryptionKey",
+            "variableType" : "EncryptionKey",
+            "variableDeclarationType" : "EncryptionKey",
+            "documentation" : null,
+            "simpleType" : "EncryptionKey",
+            "variableSetterType" : "EncryptionKey"
+          },
+          "getterModel" : {
+            "returnType" : "EncryptionKey",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "encryptionKey",
+            "marshallLocationName" : "encryptionKey",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : false,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the EncryptionKey property for this object.\n@return The value of the EncryptionKey property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
         "ArtifactCredentials" : {
           "documentation" : null,
           "name" : "ArtifactCredentials",
@@ -20106,6 +20553,43 @@
       },
       "membersAsMap" : { }
     },
+    "EncryptionKeyType" : {
+      "c2jName" : "EncryptionKeyType",
+      "documentation" : null,
+      "shapeName" : "EncryptionKeyType",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "KMS",
+        "value" : "KMS"
+      } ],
+      "variable" : {
+        "variableName" : "encryptionKeyType",
+        "variableType" : "EncryptionKeyType",
+        "variableDeclarationType" : "EncryptionKeyType",
+        "documentation" : null,
+        "simpleType" : "EncryptionKeyType",
+        "variableSetterType" : "EncryptionKeyType"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "FailureType" : {
       "c2jName" : "FailureType",
       "documentation" : null,
@@ -20653,6 +21137,57 @@
         "getterDocumentation" : "/**<p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.</p>\n@return A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.*/",
         "fluentSetterDocumentation" : "/**<p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.</p>\n@param continuationToken A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.</p>\n@param continuationToken A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : null,
+        "name" : "EncryptionKey",
+        "c2jName" : "encryptionKey",
+        "c2jShape" : "EncryptionKey",
+        "variable" : {
+          "variableName" : "encryptionKey",
+          "variableType" : "EncryptionKey",
+          "variableDeclarationType" : "EncryptionKey",
+          "documentation" : null,
+          "simpleType" : "EncryptionKey",
+          "variableSetterType" : "EncryptionKey"
+        },
+        "setterModel" : {
+          "variableName" : "encryptionKey",
+          "variableType" : "EncryptionKey",
+          "variableDeclarationType" : "EncryptionKey",
+          "documentation" : null,
+          "simpleType" : "EncryptionKey",
+          "variableSetterType" : "EncryptionKey"
+        },
+        "getterModel" : {
+          "returnType" : "EncryptionKey",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "encryptionKey",
+          "marshallLocationName" : "encryptionKey",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : false,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the EncryptionKey property for this object.\n@return The value of the EncryptionKey property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -20676,6 +21211,58 @@
         "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
+        "EncryptionKey" : {
+          "documentation" : null,
+          "name" : "EncryptionKey",
+          "c2jName" : "encryptionKey",
+          "c2jShape" : "EncryptionKey",
+          "variable" : {
+            "variableName" : "encryptionKey",
+            "variableType" : "EncryptionKey",
+            "variableDeclarationType" : "EncryptionKey",
+            "documentation" : null,
+            "simpleType" : "EncryptionKey",
+            "variableSetterType" : "EncryptionKey"
+          },
+          "setterModel" : {
+            "variableName" : "encryptionKey",
+            "variableType" : "EncryptionKey",
+            "variableDeclarationType" : "EncryptionKey",
+            "documentation" : null,
+            "simpleType" : "EncryptionKey",
+            "variableSetterType" : "EncryptionKey"
+          },
+          "getterModel" : {
+            "returnType" : "EncryptionKey",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "encryptionKey",
+            "marshallLocationName" : "encryptionKey",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : false,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the EncryptionKey property for this object.\n@return The value of the EncryptionKey property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the EncryptionKey property for this object.\n@param encryptionKey The new value for the EncryptionKey property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
         "ArtifactCredentials" : {
           "documentation" : null,
           "name" : "ArtifactCredentials",

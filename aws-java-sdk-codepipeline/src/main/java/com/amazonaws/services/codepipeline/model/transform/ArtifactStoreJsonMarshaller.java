@@ -57,6 +57,12 @@ public class ArtifactStoreJsonMarshaller {
                 jsonWriter.key("location").value(artifactStore.getLocation());
             }
 
+            if (artifactStore.getEncryptionKey() != null) {
+                jsonWriter.key("encryptionKey");
+                EncryptionKeyJsonMarshaller.getInstance().marshall(
+                        artifactStore.getEncryptionKey(), jsonWriter);
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

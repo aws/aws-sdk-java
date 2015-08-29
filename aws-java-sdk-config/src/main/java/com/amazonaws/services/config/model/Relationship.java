@@ -32,13 +32,17 @@ public class Relationship implements Serializable, Cloneable {
     private String resourceType;
 
     /**
-     * The resource ID of the related resource (for example,
-     * <code>sg-xxxxxx</code>).
+     * The ID of the related resource (for example, <code>sg-xxxxxx</code>).
      */
     private String resourceId;
 
     /**
-     * The name of the related resource.
+     * The custom name of the related resource, if available.
+     */
+    private String resourceName;
+
+    /**
+     * The type of relationship with the related resource.
      */
     private String relationshipName;
 
@@ -125,35 +129,29 @@ public class Relationship implements Serializable, Cloneable {
     }
 
     /**
-     * The resource ID of the related resource (for example,
-     * <code>sg-xxxxxx</code>).
+     * The ID of the related resource (for example, <code>sg-xxxxxx</code>).
      *
-     * @return The resource ID of the related resource (for example,
-     *         <code>sg-xxxxxx</code>).
+     * @return The ID of the related resource (for example, <code>sg-xxxxxx</code>).
      */
     public String getResourceId() {
         return resourceId;
     }
     
     /**
-     * The resource ID of the related resource (for example,
-     * <code>sg-xxxxxx</code>).
+     * The ID of the related resource (for example, <code>sg-xxxxxx</code>).
      *
-     * @param resourceId The resource ID of the related resource (for example,
-     *         <code>sg-xxxxxx</code>).
+     * @param resourceId The ID of the related resource (for example, <code>sg-xxxxxx</code>).
      */
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
     
     /**
-     * The resource ID of the related resource (for example,
-     * <code>sg-xxxxxx</code>).
+     * The ID of the related resource (for example, <code>sg-xxxxxx</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceId The resource ID of the related resource (for example,
-     *         <code>sg-xxxxxx</code>).
+     * @param resourceId The ID of the related resource (for example, <code>sg-xxxxxx</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -164,29 +162,62 @@ public class Relationship implements Serializable, Cloneable {
     }
 
     /**
-     * The name of the related resource.
+     * The custom name of the related resource, if available.
      *
-     * @return The name of the related resource.
+     * @return The custom name of the related resource, if available.
+     */
+    public String getResourceName() {
+        return resourceName;
+    }
+    
+    /**
+     * The custom name of the related resource, if available.
+     *
+     * @param resourceName The custom name of the related resource, if available.
+     */
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+    
+    /**
+     * The custom name of the related resource, if available.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceName The custom name of the related resource, if available.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Relationship withResourceName(String resourceName) {
+        this.resourceName = resourceName;
+        return this;
+    }
+
+    /**
+     * The type of relationship with the related resource.
+     *
+     * @return The type of relationship with the related resource.
      */
     public String getRelationshipName() {
         return relationshipName;
     }
     
     /**
-     * The name of the related resource.
+     * The type of relationship with the related resource.
      *
-     * @param relationshipName The name of the related resource.
+     * @param relationshipName The type of relationship with the related resource.
      */
     public void setRelationshipName(String relationshipName) {
         this.relationshipName = relationshipName;
     }
     
     /**
-     * The name of the related resource.
+     * The type of relationship with the related resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param relationshipName The name of the related resource.
+     * @param relationshipName The type of relationship with the related resource.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -210,6 +241,7 @@ public class Relationship implements Serializable, Cloneable {
         sb.append("{");
         if (getResourceType() != null) sb.append("ResourceType: " + getResourceType() + ",");
         if (getResourceId() != null) sb.append("ResourceId: " + getResourceId() + ",");
+        if (getResourceName() != null) sb.append("ResourceName: " + getResourceName() + ",");
         if (getRelationshipName() != null) sb.append("RelationshipName: " + getRelationshipName() );
         sb.append("}");
         return sb.toString();
@@ -222,6 +254,7 @@ public class Relationship implements Serializable, Cloneable {
         
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode()); 
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode()); 
         hashCode = prime * hashCode + ((getRelationshipName() == null) ? 0 : getRelationshipName().hashCode()); 
         return hashCode;
     }
@@ -238,6 +271,8 @@ public class Relationship implements Serializable, Cloneable {
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false) return false; 
         if (other.getResourceId() == null ^ this.getResourceId() == null) return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false) return false; 
+        if (other.getResourceName() == null ^ this.getResourceName() == null) return false;
+        if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false) return false; 
         if (other.getRelationshipName() == null ^ this.getRelationshipName() == null) return false;
         if (other.getRelationshipName() != null && other.getRelationshipName().equals(this.getRelationshipName()) == false) return false; 
         return true;

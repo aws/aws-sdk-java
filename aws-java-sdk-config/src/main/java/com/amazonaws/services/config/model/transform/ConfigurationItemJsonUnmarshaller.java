@@ -81,6 +81,14 @@ public class ConfigurationItemJsonUnmarshaller implements Unmarshaller<Configura
                     context.nextToken();
                     configurationItem.setResourceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("resourceName", targetDepth)) {
+                    context.nextToken();
+                    configurationItem.setResourceName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("awsRegion", targetDepth)) {
+                    context.nextToken();
+                    configurationItem.setAwsRegion(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("availabilityZone", targetDepth)) {
                     context.nextToken();
                     configurationItem.setAvailabilityZone(StringJsonUnmarshaller.getInstance().unmarshall(context));

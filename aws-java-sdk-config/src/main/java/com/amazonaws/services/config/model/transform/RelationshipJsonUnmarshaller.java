@@ -53,6 +53,10 @@ public class RelationshipJsonUnmarshaller implements Unmarshaller<Relationship, 
                     context.nextToken();
                     relationship.setResourceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("resourceName", targetDepth)) {
+                    context.nextToken();
+                    relationship.setResourceName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("relationshipName", targetDepth)) {
                     context.nextToken();
                     relationship.setRelationshipName(StringJsonUnmarshaller.getInstance().unmarshall(context));
