@@ -54,7 +54,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * A new value for the attribute. Use only with the <code>kernel</code>,
      * <code>ramdisk</code>, <code>userData</code>,
      * <code>disableApiTermination</code>, or
-     * <code>intanceInitiateShutdownBehavior</code> attribute.
+     * <code>instanceInitiatedShutdownBehavior</code> attribute.
      */
     private String value;
 
@@ -82,7 +82,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * If the value is <code>true</code>, you can't terminate the instance
-     * using the Amazon EC2 console, CLI, or API; otherwise, you can.
+     * using the Amazon EC2 console, CLI, or API; otherwise, you can. You
+     * cannot use this paramater for Spot Instances.
      */
     private Boolean disableApiTermination;
 
@@ -299,12 +300,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * A new value for the attribute. Use only with the <code>kernel</code>,
      * <code>ramdisk</code>, <code>userData</code>,
      * <code>disableApiTermination</code>, or
-     * <code>intanceInitiateShutdownBehavior</code> attribute.
+     * <code>instanceInitiatedShutdownBehavior</code> attribute.
      *
      * @return A new value for the attribute. Use only with the <code>kernel</code>,
      *         <code>ramdisk</code>, <code>userData</code>,
      *         <code>disableApiTermination</code>, or
-     *         <code>intanceInitiateShutdownBehavior</code> attribute.
+     *         <code>instanceInitiatedShutdownBehavior</code> attribute.
      */
     public String getValue() {
         return value;
@@ -314,12 +315,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * A new value for the attribute. Use only with the <code>kernel</code>,
      * <code>ramdisk</code>, <code>userData</code>,
      * <code>disableApiTermination</code>, or
-     * <code>intanceInitiateShutdownBehavior</code> attribute.
+     * <code>instanceInitiatedShutdownBehavior</code> attribute.
      *
      * @param value A new value for the attribute. Use only with the <code>kernel</code>,
      *         <code>ramdisk</code>, <code>userData</code>,
      *         <code>disableApiTermination</code>, or
-     *         <code>intanceInitiateShutdownBehavior</code> attribute.
+     *         <code>instanceInitiatedShutdownBehavior</code> attribute.
      */
     public void setValue(String value) {
         this.value = value;
@@ -329,14 +330,14 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * A new value for the attribute. Use only with the <code>kernel</code>,
      * <code>ramdisk</code>, <code>userData</code>,
      * <code>disableApiTermination</code>, or
-     * <code>intanceInitiateShutdownBehavior</code> attribute.
+     * <code>instanceInitiatedShutdownBehavior</code> attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param value A new value for the attribute. Use only with the <code>kernel</code>,
      *         <code>ramdisk</code>, <code>userData</code>,
      *         <code>disableApiTermination</code>, or
-     *         <code>intanceInitiateShutdownBehavior</code> attribute.
+     *         <code>instanceInitiatedShutdownBehavior</code> attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -559,10 +560,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * If the value is <code>true</code>, you can't terminate the instance
-     * using the Amazon EC2 console, CLI, or API; otherwise, you can.
+     * using the Amazon EC2 console, CLI, or API; otherwise, you can. You
+     * cannot use this paramater for Spot Instances.
      *
      * @return If the value is <code>true</code>, you can't terminate the instance
-     *         using the Amazon EC2 console, CLI, or API; otherwise, you can.
+     *         using the Amazon EC2 console, CLI, or API; otherwise, you can. You
+     *         cannot use this paramater for Spot Instances.
      */
     public Boolean isDisableApiTermination() {
         return disableApiTermination;
@@ -570,10 +573,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     
     /**
      * If the value is <code>true</code>, you can't terminate the instance
-     * using the Amazon EC2 console, CLI, or API; otherwise, you can.
+     * using the Amazon EC2 console, CLI, or API; otherwise, you can. You
+     * cannot use this paramater for Spot Instances.
      *
      * @param disableApiTermination If the value is <code>true</code>, you can't terminate the instance
-     *         using the Amazon EC2 console, CLI, or API; otherwise, you can.
+     *         using the Amazon EC2 console, CLI, or API; otherwise, you can. You
+     *         cannot use this paramater for Spot Instances.
      */
     public void setDisableApiTermination(Boolean disableApiTermination) {
         this.disableApiTermination = disableApiTermination;
@@ -581,12 +586,14 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     
     /**
      * If the value is <code>true</code>, you can't terminate the instance
-     * using the Amazon EC2 console, CLI, or API; otherwise, you can.
+     * using the Amazon EC2 console, CLI, or API; otherwise, you can. You
+     * cannot use this paramater for Spot Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param disableApiTermination If the value is <code>true</code>, you can't terminate the instance
-     *         using the Amazon EC2 console, CLI, or API; otherwise, you can.
+     *         using the Amazon EC2 console, CLI, or API; otherwise, you can. You
+     *         cannot use this paramater for Spot Instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -598,10 +605,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * If the value is <code>true</code>, you can't terminate the instance
-     * using the Amazon EC2 console, CLI, or API; otherwise, you can.
+     * using the Amazon EC2 console, CLI, or API; otherwise, you can. You
+     * cannot use this paramater for Spot Instances.
      *
      * @return If the value is <code>true</code>, you can't terminate the instance
-     *         using the Amazon EC2 console, CLI, or API; otherwise, you can.
+     *         using the Amazon EC2 console, CLI, or API; otherwise, you can. You
+     *         cannot use this paramater for Spot Instances.
      */
     public Boolean getDisableApiTermination() {
         return disableApiTermination;

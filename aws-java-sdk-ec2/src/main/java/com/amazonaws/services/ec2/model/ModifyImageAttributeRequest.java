@@ -47,6 +47,9 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * The operation type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
      */
     private String operationType;
 
@@ -172,8 +175,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * The operation type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
      *
      * @return The operation type.
+     *
+     * @see OperationType
      */
     public String getOperationType() {
         return operationType;
@@ -181,8 +189,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
     
     /**
      * The operation type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
      *
      * @param operationType The operation type.
+     *
+     * @see OperationType
      */
     public void setOperationType(String operationType) {
         this.operationType = operationType;
@@ -192,14 +205,53 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * The operation type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
      *
      * @param operationType The operation type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
+     *
+     * @see OperationType
      */
     public ModifyImageAttributeRequest withOperationType(String operationType) {
         this.operationType = operationType;
+        return this;
+    }
+
+    /**
+     * The operation type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
+     *
+     * @param operationType The operation type.
+     *
+     * @see OperationType
+     */
+    public void setOperationType(OperationType operationType) {
+        this.operationType = operationType.toString();
+    }
+    
+    /**
+     * The operation type.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
+     *
+     * @param operationType The operation type.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see OperationType
+     */
+    public ModifyImageAttributeRequest withOperationType(OperationType operationType) {
+        this.operationType = operationType.toString();
         return this;
     }
 

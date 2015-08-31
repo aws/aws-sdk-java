@@ -1,405 +1,345 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.machinelearning.AmazonMachineLearning#createBatchPrediction(CreateBatchPredictionRequest) CreateBatchPrediction operation}.
- * <p>
- * Generates predictions for a group of observations. The observations to
- * process exist in one or more data files referenced by a
- * <code>DataSource</code> . This operation creates a new
- * <code>BatchPrediction</code> , and uses an <code>MLModel</code> and
- * the data files referenced by the <code>DataSource</code> as
- * information sources.
- * </p>
- * <p>
- * <code>CreateBatchPrediction</code> is an asynchronous operation. In
- * response to <code>CreateBatchPrediction</code> ,
- * Amazon Machine Learning (Amazon ML) immediately returns and
- * sets the <code>BatchPrediction</code> status to <code>PENDING</code> .
- * After the <code>BatchPrediction</code> completes, Amazon ML
- * sets the status to <code>COMPLETED</code> .
  * 
- * </p>
- * <p>
- * You can poll for status updates by using the GetBatchPrediction
- * operation and checking the <code>Status</code> parameter of the
- * result. After the <code>COMPLETED</code> status appears, the results
- * are available in the location specified by the <code>OutputUri</code>
- * parameter.
- * </p>
- *
- * @see com.amazonaws.services.machinelearning.AmazonMachineLearning#createBatchPrediction(CreateBatchPredictionRequest)
  */
-public class CreateBatchPredictionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
+     * <p>
      * A user-supplied ID that uniquely identifies the
      * <code>BatchPrediction</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     * </p>
      */
     private String batchPredictionId;
-
     /**
-     * A user-supplied name or description of the
-     * <code>BatchPrediction</code>. <code>BatchPredictionName</code> can
-     * only use the UTF-8 character set.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>.*\S.*|^$<br/>
+     * A user-supplied name or description of the <code>BatchPrediction</code>.
+     * <code>BatchPredictionName</code> can only use the UTF-8 character set.
+     * </p>
      */
     private String batchPredictionName;
-
     /**
-     * The ID of the <code>MLModel</code> that will generate predictions for
-     * the group of observations.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     * The ID of the <code>MLModel</code> that will generate predictions for the
+     * group of observations.
+     * </p>
      */
     private String mLModelId;
-
     /**
+     * <p>
      * The ID of the <code>DataSource</code> that points to the group of
      * observations to predict.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     * </p>
      */
     private String batchPredictionDataSourceId;
-
     /**
+     * <p>
      * The location of an Amazon Simple Storage Service (Amazon S3) bucket or
-     * directory to store the batch prediction results. The following
-     * substrings are not allowed in the s3 key portion of the "outputURI"
-     * field: ':', '//', '/./', '/../'. <p>Amazon ML needs permissions to
-     * store and retrieve the logs on your behalf. For information about how
-     * to set permissions, see the <a
+     * directory to store the batch prediction results. The following substrings
+     * are not allowed in the s3 key portion of the "outputURI" field: ':',
+     * '//', '/./', '/../'.
+     * </p>
+     * <p>
+     * Amazon ML needs permissions to store and retrieve the logs on your
+     * behalf. For information about how to set permissions, see the <a
      * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      * Machine Learning Developer Guide</a>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 2048<br/>
-     * <b>Pattern: </b>s3://([^/]+)(/.*)?<br/>
+     * </p>
      */
     private String outputUri;
 
     /**
+     * <p>
      * A user-supplied ID that uniquely identifies the
      * <code>BatchPrediction</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @return A user-supplied ID that uniquely identifies the
-     *         <code>BatchPrediction</code>.
-     */
-    public String getBatchPredictionId() {
-        return batchPredictionId;
-    }
-    
-    /**
-     * A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param batchPredictionId A user-supplied ID that uniquely identifies the
-     *         <code>BatchPrediction</code>.
+     * </p>
+     * 
+     * @param batchPredictionId
+     *        A user-supplied ID that uniquely identifies the
+     *        <code>BatchPrediction</code>.
      */
     public void setBatchPredictionId(String batchPredictionId) {
         this.batchPredictionId = batchPredictionId;
     }
-    
+
     /**
+     * <p>
      * A user-supplied ID that uniquely identifies the
      * <code>BatchPrediction</code>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param batchPredictionId A user-supplied ID that uniquely identifies the
+     * </p>
+     * 
+     * @return A user-supplied ID that uniquely identifies the
      *         <code>BatchPrediction</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public CreateBatchPredictionRequest withBatchPredictionId(String batchPredictionId) {
-        this.batchPredictionId = batchPredictionId;
+    public String getBatchPredictionId() {
+        return this.batchPredictionId;
+    }
+
+    /**
+     * <p>
+     * A user-supplied ID that uniquely identifies the
+     * <code>BatchPrediction</code>.
+     * </p>
+     * 
+     * @param batchPredictionId
+     *        A user-supplied ID that uniquely identifies the
+     *        <code>BatchPrediction</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateBatchPredictionRequest withBatchPredictionId(
+            String batchPredictionId) {
+        setBatchPredictionId(batchPredictionId);
         return this;
     }
 
     /**
-     * A user-supplied name or description of the
-     * <code>BatchPrediction</code>. <code>BatchPredictionName</code> can
-     * only use the UTF-8 character set.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>.*\S.*|^$<br/>
-     *
-     * @return A user-supplied name or description of the
-     *         <code>BatchPrediction</code>. <code>BatchPredictionName</code> can
-     *         only use the UTF-8 character set.
-     */
-    public String getBatchPredictionName() {
-        return batchPredictionName;
-    }
-    
-    /**
-     * A user-supplied name or description of the
-     * <code>BatchPrediction</code>. <code>BatchPredictionName</code> can
-     * only use the UTF-8 character set.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>.*\S.*|^$<br/>
-     *
-     * @param batchPredictionName A user-supplied name or description of the
-     *         <code>BatchPrediction</code>. <code>BatchPredictionName</code> can
-     *         only use the UTF-8 character set.
+     * A user-supplied name or description of the <code>BatchPrediction</code>.
+     * <code>BatchPredictionName</code> can only use the UTF-8 character set.
+     * </p>
+     * 
+     * @param batchPredictionName
+     *        A user-supplied name or description of the
+     *        <code>BatchPrediction</code>. <code>BatchPredictionName</code> can
+     *        only use the UTF-8 character set.
      */
     public void setBatchPredictionName(String batchPredictionName) {
         this.batchPredictionName = batchPredictionName;
     }
-    
+
     /**
-     * A user-supplied name or description of the
-     * <code>BatchPrediction</code>. <code>BatchPredictionName</code> can
-     * only use the UTF-8 character set.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>.*\S.*|^$<br/>
-     *
-     * @param batchPredictionName A user-supplied name or description of the
-     *         <code>BatchPrediction</code>. <code>BatchPredictionName</code> can
-     *         only use the UTF-8 character set.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A user-supplied name or description of the <code>BatchPrediction</code>.
+     * <code>BatchPredictionName</code> can only use the UTF-8 character set.
+     * </p>
+     * 
+     * @return A user-supplied name or description of the
+     *         <code>BatchPrediction</code>. <code>BatchPredictionName</code>
+     *         can only use the UTF-8 character set.
      */
-    public CreateBatchPredictionRequest withBatchPredictionName(String batchPredictionName) {
-        this.batchPredictionName = batchPredictionName;
+    public String getBatchPredictionName() {
+        return this.batchPredictionName;
+    }
+
+    /**
+     * <p>
+     * A user-supplied name or description of the <code>BatchPrediction</code>.
+     * <code>BatchPredictionName</code> can only use the UTF-8 character set.
+     * </p>
+     * 
+     * @param batchPredictionName
+     *        A user-supplied name or description of the
+     *        <code>BatchPrediction</code>. <code>BatchPredictionName</code> can
+     *        only use the UTF-8 character set.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateBatchPredictionRequest withBatchPredictionName(
+            String batchPredictionName) {
+        setBatchPredictionName(batchPredictionName);
         return this;
     }
 
     /**
-     * The ID of the <code>MLModel</code> that will generate predictions for
-     * the group of observations.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @return The ID of the <code>MLModel</code> that will generate predictions for
-     *         the group of observations.
-     */
-    public String getMLModelId() {
-        return mLModelId;
-    }
-    
-    /**
-     * The ID of the <code>MLModel</code> that will generate predictions for
-     * the group of observations.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param mLModelId The ID of the <code>MLModel</code> that will generate predictions for
-     *         the group of observations.
+     * The ID of the <code>MLModel</code> that will generate predictions for the
+     * group of observations.
+     * </p>
+     * 
+     * @param mLModelId
+     *        The ID of the <code>MLModel</code> that will generate predictions
+     *        for the group of observations.
      */
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
-    
+
     /**
-     * The ID of the <code>MLModel</code> that will generate predictions for
-     * the group of observations.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The ID of the <code>MLModel</code> that will generate predictions for the
+     * group of observations.
+     * </p>
+     * 
+     * @return The ID of the <code>MLModel</code> that will generate predictions
+     *         for the group of observations.
+     */
+    public String getMLModelId() {
+        return this.mLModelId;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param mLModelId The ID of the <code>MLModel</code> that will generate predictions for
-     *         the group of observations.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the <code>MLModel</code> that will generate predictions for the
+     * group of observations.
+     * </p>
+     * 
+     * @param mLModelId
+     *        The ID of the <code>MLModel</code> that will generate predictions
+     *        for the group of observations.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateBatchPredictionRequest withMLModelId(String mLModelId) {
-        this.mLModelId = mLModelId;
+        setMLModelId(mLModelId);
         return this;
     }
 
     /**
+     * <p>
      * The ID of the <code>DataSource</code> that points to the group of
      * observations to predict.
+     * </p>
+     * 
+     * @param batchPredictionDataSourceId
+     *        The ID of the <code>DataSource</code> that points to the group of
+     *        observations to predict.
+     */
+    public void setBatchPredictionDataSourceId(
+            String batchPredictionDataSourceId) {
+        this.batchPredictionDataSourceId = batchPredictionDataSourceId;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
+     * The ID of the <code>DataSource</code> that points to the group of
+     * observations to predict.
+     * </p>
+     * 
      * @return The ID of the <code>DataSource</code> that points to the group of
      *         observations to predict.
      */
     public String getBatchPredictionDataSourceId() {
-        return batchPredictionDataSourceId;
+        return this.batchPredictionDataSourceId;
     }
-    
+
     /**
+     * <p>
      * The ID of the <code>DataSource</code> that points to the group of
      * observations to predict.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param batchPredictionDataSourceId The ID of the <code>DataSource</code> that points to the group of
-     *         observations to predict.
+     * </p>
+     * 
+     * @param batchPredictionDataSourceId
+     *        The ID of the <code>DataSource</code> that points to the group of
+     *        observations to predict.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public void setBatchPredictionDataSourceId(String batchPredictionDataSourceId) {
-        this.batchPredictionDataSourceId = batchPredictionDataSourceId;
-    }
-    
-    /**
-     * The ID of the <code>DataSource</code> that points to the group of
-     * observations to predict.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param batchPredictionDataSourceId The ID of the <code>DataSource</code> that points to the group of
-     *         observations to predict.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public CreateBatchPredictionRequest withBatchPredictionDataSourceId(String batchPredictionDataSourceId) {
-        this.batchPredictionDataSourceId = batchPredictionDataSourceId;
+    public CreateBatchPredictionRequest withBatchPredictionDataSourceId(
+            String batchPredictionDataSourceId) {
+        setBatchPredictionDataSourceId(batchPredictionDataSourceId);
         return this;
     }
 
     /**
+     * <p>
      * The location of an Amazon Simple Storage Service (Amazon S3) bucket or
-     * directory to store the batch prediction results. The following
-     * substrings are not allowed in the s3 key portion of the "outputURI"
-     * field: ':', '//', '/./', '/../'. <p>Amazon ML needs permissions to
-     * store and retrieve the logs on your behalf. For information about how
-     * to set permissions, see the <a
+     * directory to store the batch prediction results. The following substrings
+     * are not allowed in the s3 key portion of the "outputURI" field: ':',
+     * '//', '/./', '/../'.
+     * </p>
+     * <p>
+     * Amazon ML needs permissions to store and retrieve the logs on your
+     * behalf. For information about how to set permissions, see the <a
      * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      * Machine Learning Developer Guide</a>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 2048<br/>
-     * <b>Pattern: </b>s3://([^/]+)(/.*)?<br/>
-     *
-     * @return The location of an Amazon Simple Storage Service (Amazon S3) bucket or
-     *         directory to store the batch prediction results. The following
-     *         substrings are not allowed in the s3 key portion of the "outputURI"
-     *         field: ':', '//', '/./', '/../'. <p>Amazon ML needs permissions to
-     *         store and retrieve the logs on your behalf. For information about how
-     *         to set permissions, see the <a
-     *         href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-     *         Machine Learning Developer Guide</a>.
-     */
-    public String getOutputUri() {
-        return outputUri;
-    }
-    
-    /**
-     * The location of an Amazon Simple Storage Service (Amazon S3) bucket or
-     * directory to store the batch prediction results. The following
-     * substrings are not allowed in the s3 key portion of the "outputURI"
-     * field: ':', '//', '/./', '/../'. <p>Amazon ML needs permissions to
-     * store and retrieve the logs on your behalf. For information about how
-     * to set permissions, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-     * Machine Learning Developer Guide</a>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 2048<br/>
-     * <b>Pattern: </b>s3://([^/]+)(/.*)?<br/>
-     *
-     * @param outputUri The location of an Amazon Simple Storage Service (Amazon S3) bucket or
-     *         directory to store the batch prediction results. The following
-     *         substrings are not allowed in the s3 key portion of the "outputURI"
-     *         field: ':', '//', '/./', '/../'. <p>Amazon ML needs permissions to
-     *         store and retrieve the logs on your behalf. For information about how
-     *         to set permissions, see the <a
-     *         href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-     *         Machine Learning Developer Guide</a>.
+     * </p>
+     * 
+     * @param outputUri
+     *        The location of an Amazon Simple Storage Service (Amazon S3)
+     *        bucket or directory to store the batch prediction results. The
+     *        following substrings are not allowed in the s3 key portion of the
+     *        "outputURI" field: ':', '//', '/./', '/../'.</p>
+     *        <p>
+     *        Amazon ML needs permissions to store and retrieve the logs on your
+     *        behalf. For information about how to set permissions, see the <a
+     *        href
+     *        ="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     *        Machine Learning Developer Guide</a>.
      */
     public void setOutputUri(String outputUri) {
         this.outputUri = outputUri;
     }
-    
+
     /**
+     * <p>
      * The location of an Amazon Simple Storage Service (Amazon S3) bucket or
-     * directory to store the batch prediction results. The following
-     * substrings are not allowed in the s3 key portion of the "outputURI"
-     * field: ':', '//', '/./', '/../'. <p>Amazon ML needs permissions to
-     * store and retrieve the logs on your behalf. For information about how
-     * to set permissions, see the <a
+     * directory to store the batch prediction results. The following substrings
+     * are not allowed in the s3 key portion of the "outputURI" field: ':',
+     * '//', '/./', '/../'.
+     * </p>
+     * <p>
+     * Amazon ML needs permissions to store and retrieve the logs on your
+     * behalf. For information about how to set permissions, see the <a
      * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      * Machine Learning Developer Guide</a>.
+     * </p>
+     * 
+     * @return The location of an Amazon Simple Storage Service (Amazon S3)
+     *         bucket or directory to store the batch prediction results. The
+     *         following substrings are not allowed in the s3 key portion of the
+     *         "outputURI" field: ':', '//', '/./', '/../'.</p>
+     *         <p>
+     *         Amazon ML needs permissions to store and retrieve the logs on
+     *         your behalf. For information about how to set permissions, see
+     *         the <a
+     *         href="http://docs.aws.amazon.com/machine-learning/latest/dg"
+     *         >Amazon Machine Learning Developer Guide</a>.
+     */
+    public String getOutputUri() {
+        return this.outputUri;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The location of an Amazon Simple Storage Service (Amazon S3) bucket or
+     * directory to store the batch prediction results. The following substrings
+     * are not allowed in the s3 key portion of the "outputURI" field: ':',
+     * '//', '/./', '/../'.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 2048<br/>
-     * <b>Pattern: </b>s3://([^/]+)(/.*)?<br/>
-     *
-     * @param outputUri The location of an Amazon Simple Storage Service (Amazon S3) bucket or
-     *         directory to store the batch prediction results. The following
-     *         substrings are not allowed in the s3 key portion of the "outputURI"
-     *         field: ':', '//', '/./', '/../'. <p>Amazon ML needs permissions to
-     *         store and retrieve the logs on your behalf. For information about how
-     *         to set permissions, see the <a
-     *         href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-     *         Machine Learning Developer Guide</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Amazon ML needs permissions to store and retrieve the logs on your
+     * behalf. For information about how to set permissions, see the <a
+     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * Machine Learning Developer Guide</a>.
+     * </p>
+     * 
+     * @param outputUri
+     *        The location of an Amazon Simple Storage Service (Amazon S3)
+     *        bucket or directory to store the batch prediction results. The
+     *        following substrings are not allowed in the s3 key portion of the
+     *        "outputURI" field: ':', '//', '/./', '/../'.</p>
+     *        <p>
+     *        Amazon ML needs permissions to store and retrieve the logs on your
+     *        behalf. For information about how to set permissions, see the <a
+     *        href
+     *        ="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     *        Machine Learning Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateBatchPredictionRequest withOutputUri(String outputUri) {
-        this.outputUri = outputUri;
+        setOutputUri(outputUri);
         return this;
     }
 
@@ -415,54 +355,91 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getBatchPredictionId() != null) sb.append("BatchPredictionId: " + getBatchPredictionId() + ",");
-        if (getBatchPredictionName() != null) sb.append("BatchPredictionName: " + getBatchPredictionName() + ",");
-        if (getMLModelId() != null) sb.append("MLModelId: " + getMLModelId() + ",");
-        if (getBatchPredictionDataSourceId() != null) sb.append("BatchPredictionDataSourceId: " + getBatchPredictionDataSourceId() + ",");
-        if (getOutputUri() != null) sb.append("OutputUri: " + getOutputUri() );
+        if (getBatchPredictionId() != null)
+            sb.append("BatchPredictionId: " + getBatchPredictionId() + ",");
+        if (getBatchPredictionName() != null)
+            sb.append("BatchPredictionName: " + getBatchPredictionName() + ",");
+        if (getMLModelId() != null)
+            sb.append("MLModelId: " + getMLModelId() + ",");
+        if (getBatchPredictionDataSourceId() != null)
+            sb.append("BatchPredictionDataSourceId: "
+                    + getBatchPredictionDataSourceId() + ",");
+        if (getOutputUri() != null)
+            sb.append("OutputUri: " + getOutputUri());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateBatchPredictionRequest == false)
+            return false;
+        CreateBatchPredictionRequest other = (CreateBatchPredictionRequest) obj;
+        if (other.getBatchPredictionId() == null
+                ^ this.getBatchPredictionId() == null)
+            return false;
+        if (other.getBatchPredictionId() != null
+                && other.getBatchPredictionId().equals(
+                        this.getBatchPredictionId()) == false)
+            return false;
+        if (other.getBatchPredictionName() == null
+                ^ this.getBatchPredictionName() == null)
+            return false;
+        if (other.getBatchPredictionName() != null
+                && other.getBatchPredictionName().equals(
+                        this.getBatchPredictionName()) == false)
+            return false;
+        if (other.getMLModelId() == null ^ this.getMLModelId() == null)
+            return false;
+        if (other.getMLModelId() != null
+                && other.getMLModelId().equals(this.getMLModelId()) == false)
+            return false;
+        if (other.getBatchPredictionDataSourceId() == null
+                ^ this.getBatchPredictionDataSourceId() == null)
+            return false;
+        if (other.getBatchPredictionDataSourceId() != null
+                && other.getBatchPredictionDataSourceId().equals(
+                        this.getBatchPredictionDataSourceId()) == false)
+            return false;
+        if (other.getOutputUri() == null ^ this.getOutputUri() == null)
+            return false;
+        if (other.getOutputUri() != null
+                && other.getOutputUri().equals(this.getOutputUri()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getBatchPredictionId() == null) ? 0 : getBatchPredictionId().hashCode()); 
-        hashCode = prime * hashCode + ((getBatchPredictionName() == null) ? 0 : getBatchPredictionName().hashCode()); 
-        hashCode = prime * hashCode + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode()); 
-        hashCode = prime * hashCode + ((getBatchPredictionDataSourceId() == null) ? 0 : getBatchPredictionDataSourceId().hashCode()); 
-        hashCode = prime * hashCode + ((getOutputUri() == null) ? 0 : getOutputUri().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getBatchPredictionId() == null) ? 0
+                        : getBatchPredictionId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getBatchPredictionName() == null) ? 0
+                        : getBatchPredictionName().hashCode());
+        hashCode = prime * hashCode
+                + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getBatchPredictionDataSourceId() == null) ? 0
+                        : getBatchPredictionDataSourceId().hashCode());
+        hashCode = prime * hashCode
+                + ((getOutputUri() == null) ? 0 : getOutputUri().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateBatchPredictionRequest == false) return false;
-        CreateBatchPredictionRequest other = (CreateBatchPredictionRequest)obj;
-        
-        if (other.getBatchPredictionId() == null ^ this.getBatchPredictionId() == null) return false;
-        if (other.getBatchPredictionId() != null && other.getBatchPredictionId().equals(this.getBatchPredictionId()) == false) return false; 
-        if (other.getBatchPredictionName() == null ^ this.getBatchPredictionName() == null) return false;
-        if (other.getBatchPredictionName() != null && other.getBatchPredictionName().equals(this.getBatchPredictionName()) == false) return false; 
-        if (other.getMLModelId() == null ^ this.getMLModelId() == null) return false;
-        if (other.getMLModelId() != null && other.getMLModelId().equals(this.getMLModelId()) == false) return false; 
-        if (other.getBatchPredictionDataSourceId() == null ^ this.getBatchPredictionDataSourceId() == null) return false;
-        if (other.getBatchPredictionDataSourceId() != null && other.getBatchPredictionDataSourceId().equals(this.getBatchPredictionDataSourceId()) == false) return false; 
-        if (other.getOutputUri() == null ^ this.getOutputUri() == null) return false;
-        if (other.getOutputUri() != null && other.getOutputUri().equals(this.getOutputUri()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateBatchPredictionRequest clone() {
-        
-            return (CreateBatchPredictionRequest) super.clone();
+        return (CreateBatchPredictionRequest) super.clone();
     }
-
 }
-    

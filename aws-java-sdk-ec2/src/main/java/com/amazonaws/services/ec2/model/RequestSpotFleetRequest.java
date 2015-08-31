@@ -26,7 +26,11 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotFleetRequestMarshal
  * Creates a Spot fleet request.
  * </p>
  * <p>
- * For more information, see
+ * You can submit a single request that specifies multiple instance
+ * types, each with its own instance weighting that reflects its value to
+ * your application workload. Amazon EC2 computes the bid price for each
+ * launch specification and requests Spot Instances in the Spot pool
+ * where the price per unit is the lowest. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html"> Spot Fleets </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>

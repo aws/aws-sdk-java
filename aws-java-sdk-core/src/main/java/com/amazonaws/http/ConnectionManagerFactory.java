@@ -22,18 +22,29 @@ import org.apache.http.params.HttpParams;
 
 import com.amazonaws.ClientConfiguration;
 
-/** Responsible for creating and configuring instances of Apache HttpClient4's Connection Manager. */
+/**
+ * Responsible for creating and configuring instances of Apache HttpClient4's
+ * Connection Manager.
+ */
 class ConnectionManagerFactory {
 
-    public static PoolingClientConnectionManager createPoolingClientConnManager( ClientConfiguration config, HttpParams httpClientParams ) {
+    public static PoolingClientConnectionManager createPoolingClientConnManager(
+            ClientConfiguration config,
+            HttpParams httpClientParams) {
+
         PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager(
                 SchemeRegistryFactory.createDefault(),
-                config.getConnectionTTL(), TimeUnit.MILLISECONDS,new DelegatingDnsResolver(config.getDnsResolver()));
+                config.getConnectionTTL(),
+                TimeUnit.MILLISECONDS,
+                new DelegatingDnsResolver(config.getDnsResolver()));
+
         connectionManager.setDefaultMaxPerRoute(config.getMaxConnections());
         connectionManager.setMaxTotal(config.getMaxConnections());
+
         if (config.useReaper()) {
             IdleConnectionReaper.registerConnectionManager(connectionManager);
         }
+
         return connectionManager;
     }
 }

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,9 +26,10 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * M L Model JSON Unmarshaller
+ * MLModel JSON Unmarshaller
  */
-public class MLModelJsonUnmarshaller implements Unmarshaller<MLModel, JsonUnmarshallerContext> {
+public class MLModelJsonUnmarshaller implements
+        Unmarshaller<MLModel, JsonUnmarshallerContext> {
 
     public MLModel unmarshall(JsonUnmarshallerContext context) throws Exception {
         MLModel mLModel = new MLModel();
@@ -38,93 +39,118 @@ public class MLModelJsonUnmarshaller implements Unmarshaller<MLModel, JsonUnmars
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MLModelId", targetDepth)) {
                     context.nextToken();
-                    mLModel.setMLModelId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setMLModelId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("TrainingDataSourceId", targetDepth)) {
                     context.nextToken();
-                    mLModel.setTrainingDataSourceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setTrainingDataSourceId(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedByIamUser", targetDepth)) {
                     context.nextToken();
-                    mLModel.setCreatedByIamUser(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setCreatedByIamUser(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    mLModel.setCreatedAt(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setCreatedAt(DateJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    mLModel.setLastUpdatedAt(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setLastUpdatedAt(DateJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    mLModel.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setName(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    mLModel.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setStatus(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("SizeInBytes", targetDepth)) {
                     context.nextToken();
-                    mLModel.setSizeInBytes(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setSizeInBytes(LongJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("EndpointInfo", targetDepth)) {
                     context.nextToken();
-                    mLModel.setEndpointInfo(RealtimeEndpointInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setEndpointInfo(RealtimeEndpointInfoJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TrainingParameters", targetDepth)) {
                     context.nextToken();
-                    mLModel.setTrainingParameters(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    mLModel.setTrainingParameters(new MapUnmarshaller<String, String>(
+                            StringJsonUnmarshaller.getInstance(),
+                            StringJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("InputDataLocationS3", targetDepth)) {
                     context.nextToken();
-                    mLModel.setInputDataLocationS3(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setInputDataLocationS3(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Algorithm", targetDepth)) {
                     context.nextToken();
-                    mLModel.setAlgorithm(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setAlgorithm(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("MLModelType", targetDepth)) {
                     context.nextToken();
-                    mLModel.setMLModelType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setMLModelType(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("ScoreThreshold", targetDepth)) {
                     context.nextToken();
-                    mLModel.setScoreThreshold(FloatJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setScoreThreshold(FloatJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("ScoreThresholdLastUpdatedAt", targetDepth)) {
+                if (context.testExpression("ScoreThresholdLastUpdatedAt",
+                        targetDepth)) {
                     context.nextToken();
-                    mLModel.setScoreThresholdLastUpdatedAt(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setScoreThresholdLastUpdatedAt(DateJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    mLModel.setMessage(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    mLModel.setMessage(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return mLModel;
     }
 
     private static MLModelJsonUnmarshaller instance;
+
     public static MLModelJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new MLModelJsonUnmarshaller();
+        if (instance == null)
+            instance = new MLModelJsonUnmarshaller();
         return instance;
     }
 }
-    

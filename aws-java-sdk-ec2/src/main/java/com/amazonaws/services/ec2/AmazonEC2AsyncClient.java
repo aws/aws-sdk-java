@@ -7212,7 +7212,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Creates a Spot fleet request.
      * </p>
      * <p>
-     * For more information, see
+     * You can submit a single request that specifies multiple instance
+     * types, each with its own instance weighting that reflects its value to
+     * your application workload. Amazon EC2 computes the bid price for each
+     * launch specification and requests Spot Instances in the Spot pool
+     * where the price per unit is the lowest. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html"> Spot Fleets </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -7246,7 +7250,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Creates a Spot fleet request.
      * </p>
      * <p>
-     * For more information, see
+     * You can submit a single request that specifies multiple instance
+     * types, each with its own instance weighting that reflects its value to
+     * your application workload. Amazon EC2 computes the bid price for each
+     * launch specification and requests Spot Instances in the Spot pool
+     * where the price per unit is the lowest. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html"> Spot Fleets </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -9313,6 +9321,14 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
+     * [EC2-VPC only accounts] If you don't specify a subnet in the request,
+     * we choose a default subnet from your default VPC for you.
+     * </p>
+     * <p>
+     * [EC2-Classic accounts] If you're launching into EC2-Classic and you
+     * don't specify an Availability Zone, we choose one for you.
+     * </p>
+     * <p>
      * Linux instances have access to the public key of the key pair at
      * boot. You can use this key to provide secure access to the instance.
      * Amazon EC2 public images use this feature to provide secure access
@@ -9381,6 +9397,14 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Amazon EC2 uses the default security group. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Security Groups </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     * <p>
+     * [EC2-VPC only accounts] If you don't specify a subnet in the request,
+     * we choose a default subnet from your default VPC for you.
+     * </p>
+     * <p>
+     * [EC2-Classic accounts] If you're launching into EC2-Classic and you
+     * don't specify an Availability Zone, we choose one for you.
      * </p>
      * <p>
      * Linux instances have access to the public key of the key pair at
@@ -12826,10 +12850,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * terminate instance store-backed instances. What happens to an instance
      * differs if you stop it or terminate it. For example, when you stop an
      * instance, the root device and any other devices attached to the
-     * instance persist. When you terminate an instance, the root device and
-     * any other devices attached during the instance launch are
-     * automatically deleted. For more information about the differences
-     * between stopping and terminating instances, see
+     * instance persist. When you terminate an instance, any attached EBS
+     * volumes with the <code>DeleteOnTermination</code> block device mapping
+     * parameter set to <code>true</code> are automatically deleted. For more
+     * information about the differences between stopping and terminating
+     * instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -12882,10 +12907,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * terminate instance store-backed instances. What happens to an instance
      * differs if you stop it or terminate it. For example, when you stop an
      * instance, the root device and any other devices attached to the
-     * instance persist. When you terminate an instance, the root device and
-     * any other devices attached during the instance launch are
-     * automatically deleted. For more information about the differences
-     * between stopping and terminating instances, see
+     * instance persist. When you terminate an instance, any attached EBS
+     * volumes with the <code>DeleteOnTermination</code> block device mapping
+     * parameter set to <code>true</code> are automatically deleted. For more
+     * information about the differences between stopping and terminating
+     * instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -16402,10 +16428,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step
-     * you must complete before you can launch an instance from the AMI. This
-     * step is required if you're creating an instance store-backed Linux or
-     * Windows AMI. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-instance-store.html"> Creating an Instance Store-Backed Linux AMI </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html"> Creating an Instance Store-Backed Windows AMI </a>
+     * you must complete before you can launch an instance from the AMI. For
+     * more information about creating AMIs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"> Creating Your Own AMIs </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
@@ -16415,12 +16440,23 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * You can also use <code>RegisterImage</code> to create an Amazon
-     * EBS-backed AMI from a snapshot of a root device volume. For more
+     * EBS-backed Linux AMI from a snapshot of a root device volume. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html"> Launching an Instance from a Backup </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> . Note that
-     * although you can create a Windows AMI from a snapshot, you can't
-     * launch an instance from the AMI - use the CreateImage command instead.
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html"> Launching an Instance from a Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Some Linux distributions, such as Red Hat
+     * Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES), use
+     * the EC2 billingProduct code associated with an AMI to verify
+     * subscription status for package updates. Creating an AMI from an EBS
+     * snapshot does not maintain this billing code, and subsequent instances
+     * launched from such an AMI will not be able to connect to package
+     * update infrastructure. Similarly, although you can create a Windows
+     * AMI from a snapshot, you can't successfully launch an instance from
+     * the AMI. To create Windows AMIs or to create AMIs for Linux operating
+     * systems that must retain AMI billing codes to work properly, see
+     * CreateImage.
      * </p>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications
@@ -16460,10 +16496,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step
-     * you must complete before you can launch an instance from the AMI. This
-     * step is required if you're creating an instance store-backed Linux or
-     * Windows AMI. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-instance-store.html"> Creating an Instance Store-Backed Linux AMI </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html"> Creating an Instance Store-Backed Windows AMI </a>
+     * you must complete before you can launch an instance from the AMI. For
+     * more information about creating AMIs, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"> Creating Your Own AMIs </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
@@ -16473,12 +16508,23 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * You can also use <code>RegisterImage</code> to create an Amazon
-     * EBS-backed AMI from a snapshot of a root device volume. For more
+     * EBS-backed Linux AMI from a snapshot of a root device volume. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html"> Launching an Instance from a Backup </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> . Note that
-     * although you can create a Windows AMI from a snapshot, you can't
-     * launch an instance from the AMI - use the CreateImage command instead.
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html"> Launching an Instance from a Snapshot </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Some Linux distributions, such as Red Hat
+     * Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES), use
+     * the EC2 billingProduct code associated with an AMI to verify
+     * subscription status for package updates. Creating an AMI from an EBS
+     * snapshot does not maintain this billing code, and subsequent instances
+     * launched from such an AMI will not be able to connect to package
+     * update infrastructure. Similarly, although you can create a Windows
+     * AMI from a snapshot, you can't successfully launch an instance from
+     * the AMI. To create Windows AMIs or to create AMIs for Linux operating
+     * systems that must retain AMI billing codes to work properly, see
+     * CreateImage.
      * </p>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications

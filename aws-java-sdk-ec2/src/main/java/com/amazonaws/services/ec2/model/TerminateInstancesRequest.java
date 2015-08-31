@@ -40,10 +40,11 @@ import com.amazonaws.services.ec2.model.transform.TerminateInstancesRequestMarsh
  * terminate instance store-backed instances. What happens to an instance
  * differs if you stop it or terminate it. For example, when you stop an
  * instance, the root device and any other devices attached to the
- * instance persist. When you terminate an instance, the root device and
- * any other devices attached during the instance launch are
- * automatically deleted. For more information about the differences
- * between stopping and terminating instances, see
+ * instance persist. When you terminate an instance, any attached EBS
+ * volumes with the <code>DeleteOnTermination</code> block device mapping
+ * parameter set to <code>true</code> are automatically deleted. For more
+ * information about the differences between stopping and terminating
+ * instances, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>

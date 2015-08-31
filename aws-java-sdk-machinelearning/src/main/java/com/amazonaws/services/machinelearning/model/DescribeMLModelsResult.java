@@ -1,149 +1,160 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a DescribeMLModels operation. The content is
- * essentially a list of <code>MLModel</code> .
+ * Represents the output of a <a>DescribeMLModels</a> operation. The content is
+ * essentially a list of <code>MLModel</code>.
  * </p>
  */
 public class DescribeMLModelsResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * A list of <a>MLModel</a> that meet the search criteria.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<MLModel> results;
-
+    private com.amazonaws.internal.SdkInternalList<MLModel> results;
     /**
-     * The ID of the next page in the paginated results that indicates at
-     * least one more page follows.
+     * <p>
+     * The ID of the next page in the paginated results that indicates at least
+     * one more page follows.
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * A list of <a>MLModel</a> that meet the search criteria.
-     *
+     * </p>
+     * 
      * @return A list of <a>MLModel</a> that meet the search criteria.
      */
     public java.util.List<MLModel> getResults() {
         if (results == null) {
-              results = new com.amazonaws.internal.ListWithAutoConstructFlag<MLModel>();
-              results.setAutoConstruct(true);
+            results = new com.amazonaws.internal.SdkInternalList<MLModel>();
         }
         return results;
     }
-    
+
     /**
+     * <p>
      * A list of <a>MLModel</a> that meet the search criteria.
-     *
-     * @param results A list of <a>MLModel</a> that meet the search criteria.
+     * </p>
+     * 
+     * @param results
+     *        A list of <a>MLModel</a> that meet the search criteria.
      */
     public void setResults(java.util.Collection<MLModel> results) {
         if (results == null) {
             this.results = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<MLModel> resultsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MLModel>(results.size());
-        resultsCopy.addAll(results);
-        this.results = resultsCopy;
+
+        this.results = new com.amazonaws.internal.SdkInternalList<MLModel>(
+                results);
     }
-    
+
     /**
+     * <p>
      * A list of <a>MLModel</a> that meet the search criteria.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setResults(java.util.Collection)} or {@link
-     * #withResults(java.util.Collection)} if you want to override the
+     * any). Use {@link #setResults(java.util.Collection)} or
+     * {@link #withResults(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param results A list of <a>MLModel</a> that meet the search criteria.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param results
+     *        A list of <a>MLModel</a> that meet the search criteria.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeMLModelsResult withResults(MLModel... results) {
-        if (getResults() == null) setResults(new java.util.ArrayList<MLModel>(results.length));
-        for (MLModel value : results) {
-            getResults().add(value);
+        if (this.results == null) {
+            setResults(new com.amazonaws.internal.SdkInternalList<MLModel>(
+                    results.length));
+        }
+        for (MLModel ele : results) {
+            this.results.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * A list of <a>MLModel</a> that meet the search criteria.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param results A list of <a>MLModel</a> that meet the search criteria.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A list of <a>MLModel</a> that meet the search criteria.
+     * </p>
+     * 
+     * @param results
+     *        A list of <a>MLModel</a> that meet the search criteria.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeMLModelsResult withResults(java.util.Collection<MLModel> results) {
-        if (results == null) {
-            this.results = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<MLModel> resultsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MLModel>(results.size());
-            resultsCopy.addAll(results);
-            this.results = resultsCopy;
-        }
-
+    public DescribeMLModelsResult withResults(
+            java.util.Collection<MLModel> results) {
+        setResults(results);
         return this;
     }
 
     /**
-     * The ID of the next page in the paginated results that indicates at
-     * least one more page follows.
-     *
-     * @return The ID of the next page in the paginated results that indicates at
-     *         least one more page follows.
-     */
-    public String getNextToken() {
-        return nextToken;
-    }
-    
-    /**
-     * The ID of the next page in the paginated results that indicates at
-     * least one more page follows.
-     *
-     * @param nextToken The ID of the next page in the paginated results that indicates at
-     *         least one more page follows.
+     * <p>
+     * The ID of the next page in the paginated results that indicates at least
+     * one more page follows.
+     * </p>
+     * 
+     * @param nextToken
+     *        The ID of the next page in the paginated results that indicates at
+     *        least one more page follows.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
-    
+
     /**
-     * The ID of the next page in the paginated results that indicates at
-     * least one more page follows.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param nextToken The ID of the next page in the paginated results that indicates at
-     *         least one more page follows.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the next page in the paginated results that indicates at least
+     * one more page follows.
+     * </p>
+     * 
+     * @return The ID of the next page in the paginated results that indicates
+     *         at least one more page follows.
+     */
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The ID of the next page in the paginated results that indicates at least
+     * one more page follows.
+     * </p>
+     * 
+     * @param nextToken
+     *        The ID of the next page in the paginated results that indicates at
+     *        least one more page follows.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeMLModelsResult withNextToken(String nextToken) {
-        this.nextToken = nextToken;
+        setNextToken(nextToken);
         return this;
     }
 
@@ -159,50 +170,57 @@ public class DescribeMLModelsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getResults() != null) sb.append("Results: " + getResults() + ",");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
+        if (getResults() != null)
+            sb.append("Results: " + getResults() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeMLModelsResult == false)
+            return false;
+        DescribeMLModelsResult other = (DescribeMLModelsResult) obj;
+        if (other.getResults() == null ^ this.getResults() == null)
+            return false;
+        if (other.getResults() != null
+                && other.getResults().equals(this.getResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null
+                && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getResults() == null) ? 0 : getResults().hashCode()); 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getResults() == null) ? 0 : getResults().hashCode());
+        hashCode = prime * hashCode
+                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeMLModelsResult == false) return false;
-        DescribeMLModelsResult other = (DescribeMLModelsResult)obj;
-        
-        if (other.getResults() == null ^ this.getResults() == null) return false;
-        if (other.getResults() != null && other.getResults().equals(this.getResults()) == false) return false; 
-        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeMLModelsResult clone() {
         try {
             return (DescribeMLModelsResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

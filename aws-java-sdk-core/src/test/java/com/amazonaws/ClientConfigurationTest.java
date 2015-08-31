@@ -17,6 +17,7 @@ package com.amazonaws;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.fail;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -36,7 +37,7 @@ public class ClientConfigurationTest {
         assertNull("default ssl socket factory is null",
                 httpclientConfig.getSslSocketFactory());
 
-        SSLSocketFactory customFactory = new SSLSocketFactory((KeyStore)null);
+        SSLSocketFactory customFactory = new SSLSocketFactory((KeyStore) null);
         config.getApacheHttpClientConfig().setSslSocketFactory(customFactory);
         assertSame("custom ssl socket factory configured", customFactory,
                 config.getApacheHttpClientConfig().getSslSocketFactory());
@@ -63,9 +64,14 @@ public class ClientConfigurationTest {
             "ssl soscket of the new httpclient config should not be affected",
             config2.getApacheHttpClientConfig().getSslSocketFactory());
 
-        assertNotNull("Client Configuration must have a default DnsResolver",config.getDnsResolver());
-        config.setDnsResolver(null);
-        assertNotNull("Client Configuration DnsResolver cannot be override with null",config.getDnsResolver());
+        assertNotNull("Client Configuration must have a default DnsResolver",
+                config.getDnsResolver());
+
+        try {
+            config.setDnsResolver(null);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {
+        }
 
         DnsResolver resolver = new DnsResolver() {
             @Override
@@ -78,7 +84,6 @@ public class ClientConfigurationTest {
         assertSame("custom dns resolver set via fluent API",
                 resolver,
                 config.getDnsResolver());
-
     }
 
 }

@@ -1,166 +1,186 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.machinelearning.AmazonMachineLearning#getDataSource(GetDataSourceRequest) GetDataSource operation}.
- * <p>
- * Returns a <code>DataSource</code> that includes metadata and data file
- * information, as well as the current status of the
- * <code>DataSource</code> .
- * </p>
- * <p>
- * <code>GetDataSource</code> provides results in normal or verbose
- * format. The verbose format adds the schema description and the list of
- * files pointed to by the DataSource to the normal format.
- * </p>
- *
- * @see com.amazonaws.services.machinelearning.AmazonMachineLearning#getDataSource(GetDataSourceRequest)
+ * 
  */
-public class GetDataSourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class GetDataSourceRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The ID assigned to the <code>DataSource</code> at creation.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     * The ID assigned to the <code>DataSource</code> at creation.
+     * </p>
      */
     private String dataSourceId;
-
     /**
-     * Specifies whether the <code>GetDataSource</code> operation should
-     * return <code>DataSourceSchema</code>. <p>If true,
-     * <code>DataSourceSchema</code> is returned. <p>If false,
-     * <code>DataSourceSchema</code> is not returned.
+     * <p>
+     * Specifies whether the <code>GetDataSource</code> operation should return
+     * <code>DataSourceSchema</code>.
+     * </p>
+     * <p>
+     * If true, <code>DataSourceSchema</code> is returned.
+     * </p>
+     * <p>
+     * If false, <code>DataSourceSchema</code> is not returned.
+     * </p>
      */
     private Boolean verbose;
 
     /**
-     * The ID assigned to the <code>DataSource</code> at creation.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @return The ID assigned to the <code>DataSource</code> at creation.
-     */
-    public String getDataSourceId() {
-        return dataSourceId;
-    }
-    
-    /**
      * The ID assigned to the <code>DataSource</code> at creation.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param dataSourceId The ID assigned to the <code>DataSource</code> at creation.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The ID assigned to the <code>DataSource</code> at creation.
      */
     public void setDataSourceId(String dataSourceId) {
         this.dataSourceId = dataSourceId;
     }
-    
+
     /**
+     * <p>
      * The ID assigned to the <code>DataSource</code> at creation.
+     * </p>
+     * 
+     * @return The ID assigned to the <code>DataSource</code> at creation.
+     */
+    public String getDataSourceId() {
+        return this.dataSourceId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
-     *
-     * @param dataSourceId The ID assigned to the <code>DataSource</code> at creation.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID assigned to the <code>DataSource</code> at creation.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The ID assigned to the <code>DataSource</code> at creation.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetDataSourceRequest withDataSourceId(String dataSourceId) {
-        this.dataSourceId = dataSourceId;
+        setDataSourceId(dataSourceId);
         return this;
     }
 
     /**
-     * Specifies whether the <code>GetDataSource</code> operation should
-     * return <code>DataSourceSchema</code>. <p>If true,
-     * <code>DataSourceSchema</code> is returned. <p>If false,
-     * <code>DataSourceSchema</code> is not returned.
-     *
-     * @return Specifies whether the <code>GetDataSource</code> operation should
-     *         return <code>DataSourceSchema</code>. <p>If true,
-     *         <code>DataSourceSchema</code> is returned. <p>If false,
-     *         <code>DataSourceSchema</code> is not returned.
-     */
-    public Boolean isVerbose() {
-        return verbose;
-    }
-    
-    /**
-     * Specifies whether the <code>GetDataSource</code> operation should
-     * return <code>DataSourceSchema</code>. <p>If true,
-     * <code>DataSourceSchema</code> is returned. <p>If false,
-     * <code>DataSourceSchema</code> is not returned.
-     *
-     * @param verbose Specifies whether the <code>GetDataSource</code> operation should
-     *         return <code>DataSourceSchema</code>. <p>If true,
-     *         <code>DataSourceSchema</code> is returned. <p>If false,
-     *         <code>DataSourceSchema</code> is not returned.
+     * <p>
+     * Specifies whether the <code>GetDataSource</code> operation should return
+     * <code>DataSourceSchema</code>.
+     * </p>
+     * <p>
+     * If true, <code>DataSourceSchema</code> is returned.
+     * </p>
+     * <p>
+     * If false, <code>DataSourceSchema</code> is not returned.
+     * </p>
+     * 
+     * @param verbose
+     *        Specifies whether the <code>GetDataSource</code> operation should
+     *        return <code>DataSourceSchema</code>.</p>
+     *        <p>
+     *        If true, <code>DataSourceSchema</code> is returned.
+     *        </p>
+     *        <p>
+     *        If false, <code>DataSourceSchema</code> is not returned.
      */
     public void setVerbose(Boolean verbose) {
         this.verbose = verbose;
     }
-    
+
     /**
-     * Specifies whether the <code>GetDataSource</code> operation should
-     * return <code>DataSourceSchema</code>. <p>If true,
-     * <code>DataSourceSchema</code> is returned. <p>If false,
-     * <code>DataSourceSchema</code> is not returned.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param verbose Specifies whether the <code>GetDataSource</code> operation should
-     *         return <code>DataSourceSchema</code>. <p>If true,
-     *         <code>DataSourceSchema</code> is returned. <p>If false,
-     *         <code>DataSourceSchema</code> is not returned.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies whether the <code>GetDataSource</code> operation should return
+     * <code>DataSourceSchema</code>.
+     * </p>
+     * <p>
+     * If true, <code>DataSourceSchema</code> is returned.
+     * </p>
+     * <p>
+     * If false, <code>DataSourceSchema</code> is not returned.
+     * </p>
+     * 
+     * @return Specifies whether the <code>GetDataSource</code> operation should
+     *         return <code>DataSourceSchema</code>.</p>
+     *         <p>
+     *         If true, <code>DataSourceSchema</code> is returned.
+     *         </p>
+     *         <p>
+     *         If false, <code>DataSourceSchema</code> is not returned.
+     */
+    public Boolean getVerbose() {
+        return this.verbose;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the <code>GetDataSource</code> operation should return
+     * <code>DataSourceSchema</code>.
+     * </p>
+     * <p>
+     * If true, <code>DataSourceSchema</code> is returned.
+     * </p>
+     * <p>
+     * If false, <code>DataSourceSchema</code> is not returned.
+     * </p>
+     * 
+     * @param verbose
+     *        Specifies whether the <code>GetDataSource</code> operation should
+     *        return <code>DataSourceSchema</code>.</p>
+     *        <p>
+     *        If true, <code>DataSourceSchema</code> is returned.
+     *        </p>
+     *        <p>
+     *        If false, <code>DataSourceSchema</code> is not returned.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetDataSourceRequest withVerbose(Boolean verbose) {
-        this.verbose = verbose;
+        setVerbose(verbose);
         return this;
     }
 
     /**
-     * Specifies whether the <code>GetDataSource</code> operation should
-     * return <code>DataSourceSchema</code>. <p>If true,
-     * <code>DataSourceSchema</code> is returned. <p>If false,
-     * <code>DataSourceSchema</code> is not returned.
-     *
+     * <p>
+     * Specifies whether the <code>GetDataSource</code> operation should return
+     * <code>DataSourceSchema</code>.
+     * </p>
+     * <p>
+     * If true, <code>DataSourceSchema</code> is returned.
+     * </p>
+     * <p>
+     * If false, <code>DataSourceSchema</code> is not returned.
+     * </p>
+     * 
      * @return Specifies whether the <code>GetDataSource</code> operation should
-     *         return <code>DataSourceSchema</code>. <p>If true,
-     *         <code>DataSourceSchema</code> is returned. <p>If false,
-     *         <code>DataSourceSchema</code> is not returned.
+     *         return <code>DataSourceSchema</code>.</p>
+     *         <p>
+     *         If true, <code>DataSourceSchema</code> is returned.
+     *         </p>
+     *         <p>
+     *         If false, <code>DataSourceSchema</code> is not returned.
      */
-    public Boolean getVerbose() {
-        return verbose;
+    public Boolean isVerbose() {
+        return this.verbose;
     }
 
     /**
@@ -175,42 +195,53 @@ public class GetDataSourceRequest extends AmazonWebServiceRequest implements Ser
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDataSourceId() != null) sb.append("DataSourceId: " + getDataSourceId() + ",");
-        if (isVerbose() != null) sb.append("Verbose: " + isVerbose() );
+        if (getDataSourceId() != null)
+            sb.append("DataSourceId: " + getDataSourceId() + ",");
+        if (getVerbose() != null)
+            sb.append("Verbose: " + getVerbose());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetDataSourceRequest == false)
+            return false;
+        GetDataSourceRequest other = (GetDataSourceRequest) obj;
+        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
+            return false;
+        if (other.getDataSourceId() != null
+                && other.getDataSourceId().equals(this.getDataSourceId()) == false)
+            return false;
+        if (other.getVerbose() == null ^ this.getVerbose() == null)
+            return false;
+        if (other.getVerbose() != null
+                && other.getVerbose().equals(this.getVerbose()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode()); 
-        hashCode = prime * hashCode + ((isVerbose() == null) ? 0 : isVerbose().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDataSourceId() == null) ? 0 : getDataSourceId()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getVerbose() == null) ? 0 : getVerbose().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof GetDataSourceRequest == false) return false;
-        GetDataSourceRequest other = (GetDataSourceRequest)obj;
-        
-        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null) return false;
-        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false) return false; 
-        if (other.isVerbose() == null ^ this.isVerbose() == null) return false;
-        if (other.isVerbose() != null && other.isVerbose().equals(this.isVerbose()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public GetDataSourceRequest clone() {
-        
-            return (GetDataSourceRequest) super.clone();
+        return (GetDataSourceRequest) super.clone();
     }
-
 }
-    
