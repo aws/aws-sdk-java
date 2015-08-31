@@ -51,7 +51,7 @@ public class EventInformation implements Serializable, Cloneable {
      * its Spot Instances are terminating. </li> <li> <p><code>expired</code>
      * - The Spot fleet request has expired. A subsequent event indicates
      * that the instances were terminated, if the request was created with
-     * <code>terminateInstancesWithExpiration</code> set. </li> <li>
+     * <code>TerminateInstancesWithExpiration</code> set. </li> <li>
      * <p><code>price_update</code> - The bid price for a launch
      * configuration was adjusted because it was too high. This change is
      * permanent. </li> <li> <p><code>submitted</code> - The Spot fleet
@@ -130,7 +130,7 @@ public class EventInformation implements Serializable, Cloneable {
      * its Spot Instances are terminating. </li> <li> <p><code>expired</code>
      * - The Spot fleet request has expired. A subsequent event indicates
      * that the instances were terminated, if the request was created with
-     * <code>terminateInstancesWithExpiration</code> set. </li> <li>
+     * <code>TerminateInstancesWithExpiration</code> set. </li> <li>
      * <p><code>price_update</code> - The bid price for a launch
      * configuration was adjusted because it was too high. This change is
      * permanent. </li> <li> <p><code>submitted</code> - The Spot fleet
@@ -162,7 +162,7 @@ public class EventInformation implements Serializable, Cloneable {
      *         its Spot Instances are terminating. </li> <li> <p><code>expired</code>
      *         - The Spot fleet request has expired. A subsequent event indicates
      *         that the instances were terminated, if the request was created with
-     *         <code>terminateInstancesWithExpiration</code> set. </li> <li>
+     *         <code>TerminateInstancesWithExpiration</code> set. </li> <li>
      *         <p><code>price_update</code> - The bid price for a launch
      *         configuration was adjusted because it was too high. This change is
      *         permanent. </li> <li> <p><code>submitted</code> - The Spot fleet
@@ -199,7 +199,7 @@ public class EventInformation implements Serializable, Cloneable {
      * its Spot Instances are terminating. </li> <li> <p><code>expired</code>
      * - The Spot fleet request has expired. A subsequent event indicates
      * that the instances were terminated, if the request was created with
-     * <code>terminateInstancesWithExpiration</code> set. </li> <li>
+     * <code>TerminateInstancesWithExpiration</code> set. </li> <li>
      * <p><code>price_update</code> - The bid price for a launch
      * configuration was adjusted because it was too high. This change is
      * permanent. </li> <li> <p><code>submitted</code> - The Spot fleet
@@ -231,7 +231,7 @@ public class EventInformation implements Serializable, Cloneable {
      *         its Spot Instances are terminating. </li> <li> <p><code>expired</code>
      *         - The Spot fleet request has expired. A subsequent event indicates
      *         that the instances were terminated, if the request was created with
-     *         <code>terminateInstancesWithExpiration</code> set. </li> <li>
+     *         <code>TerminateInstancesWithExpiration</code> set. </li> <li>
      *         <p><code>price_update</code> - The bid price for a launch
      *         configuration was adjusted because it was too high. This change is
      *         permanent. </li> <li> <p><code>submitted</code> - The Spot fleet
@@ -268,7 +268,7 @@ public class EventInformation implements Serializable, Cloneable {
      * its Spot Instances are terminating. </li> <li> <p><code>expired</code>
      * - The Spot fleet request has expired. A subsequent event indicates
      * that the instances were terminated, if the request was created with
-     * <code>terminateInstancesWithExpiration</code> set. </li> <li>
+     * <code>TerminateInstancesWithExpiration</code> set. </li> <li>
      * <p><code>price_update</code> - The bid price for a launch
      * configuration was adjusted because it was too high. This change is
      * permanent. </li> <li> <p><code>submitted</code> - The Spot fleet
@@ -302,7 +302,7 @@ public class EventInformation implements Serializable, Cloneable {
      *         its Spot Instances are terminating. </li> <li> <p><code>expired</code>
      *         - The Spot fleet request has expired. A subsequent event indicates
      *         that the instances were terminated, if the request was created with
-     *         <code>terminateInstancesWithExpiration</code> set. </li> <li>
+     *         <code>TerminateInstancesWithExpiration</code> set. </li> <li>
      *         <p><code>price_update</code> - The bid price for a launch
      *         configuration was adjusted because it was too high. This change is
      *         permanent. </li> <li> <p><code>submitted</code> - The Spot fleet

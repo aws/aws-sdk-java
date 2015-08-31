@@ -33,13 +33,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private String clientToken;
 
     /**
-     * The maximum hourly price (bid) for any Spot Instance launched to
-     * fulfill the request.
+     * The bid price per unit hour.
      */
     private String spotPrice;
 
     /**
-     * The maximum number of Spot Instances to launch.
+     * The number of units to request. You can choose to set the target
+     * capacity in terms of instances or a performance characteristic that is
+     * important to your application workload, such as vCPUs, memory, or I/O.
      */
     private Integer targetCapacity;
 
@@ -138,35 +139,29 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
 
     /**
-     * The maximum hourly price (bid) for any Spot Instance launched to
-     * fulfill the request.
+     * The bid price per unit hour.
      *
-     * @return The maximum hourly price (bid) for any Spot Instance launched to
-     *         fulfill the request.
+     * @return The bid price per unit hour.
      */
     public String getSpotPrice() {
         return spotPrice;
     }
     
     /**
-     * The maximum hourly price (bid) for any Spot Instance launched to
-     * fulfill the request.
+     * The bid price per unit hour.
      *
-     * @param spotPrice The maximum hourly price (bid) for any Spot Instance launched to
-     *         fulfill the request.
+     * @param spotPrice The bid price per unit hour.
      */
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
     
     /**
-     * The maximum hourly price (bid) for any Spot Instance launched to
-     * fulfill the request.
+     * The bid price per unit hour.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPrice The maximum hourly price (bid) for any Spot Instance launched to
-     *         fulfill the request.
+     * @param spotPrice The bid price per unit hour.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -177,29 +172,41 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
 
     /**
-     * The maximum number of Spot Instances to launch.
+     * The number of units to request. You can choose to set the target
+     * capacity in terms of instances or a performance characteristic that is
+     * important to your application workload, such as vCPUs, memory, or I/O.
      *
-     * @return The maximum number of Spot Instances to launch.
+     * @return The number of units to request. You can choose to set the target
+     *         capacity in terms of instances or a performance characteristic that is
+     *         important to your application workload, such as vCPUs, memory, or I/O.
      */
     public Integer getTargetCapacity() {
         return targetCapacity;
     }
     
     /**
-     * The maximum number of Spot Instances to launch.
+     * The number of units to request. You can choose to set the target
+     * capacity in terms of instances or a performance characteristic that is
+     * important to your application workload, such as vCPUs, memory, or I/O.
      *
-     * @param targetCapacity The maximum number of Spot Instances to launch.
+     * @param targetCapacity The number of units to request. You can choose to set the target
+     *         capacity in terms of instances or a performance characteristic that is
+     *         important to your application workload, such as vCPUs, memory, or I/O.
      */
     public void setTargetCapacity(Integer targetCapacity) {
         this.targetCapacity = targetCapacity;
     }
     
     /**
-     * The maximum number of Spot Instances to launch.
+     * The number of units to request. You can choose to set the target
+     * capacity in terms of instances or a performance characteristic that is
+     * important to your application workload, such as vCPUs, memory, or I/O.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetCapacity The maximum number of Spot Instances to launch.
+     * @param targetCapacity The number of units to request. You can choose to set the target
+     *         capacity in terms of instances or a performance characteristic that is
+     *         important to your application workload, such as vCPUs, memory, or I/O.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

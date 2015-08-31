@@ -1,134 +1,95 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * Describes the database details required to connect to an Amazon
- * Redshift database.
+ * Describes the database details required to connect to an Amazon Redshift
+ * database.
  * </p>
  */
 public class RedshiftDatabase implements Serializable, Cloneable {
 
-    /**
-     * The name of a database hosted on an Amazon Redshift cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-z0-9]+<br/>
-     */
     private String databaseName;
 
-    /**
-     * The ID of an Amazon Redshift cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 63<br/>
-     * <b>Pattern: </b>[a-z0-9-]+<br/>
-     */
     private String clusterIdentifier;
 
     /**
-     * The name of a database hosted on an Amazon Redshift cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-z0-9]+<br/>
-     *
-     * @return The name of a database hosted on an Amazon Redshift cluster.
-     */
-    public String getDatabaseName() {
-        return databaseName;
-    }
-    
-    /**
-     * The name of a database hosted on an Amazon Redshift cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-z0-9]+<br/>
-     *
-     * @param databaseName The name of a database hosted on an Amazon Redshift cluster.
+     * Sets the value of the DatabaseName property for this object.
+     * 
+     * @param databaseName
+     *        The new value for the DatabaseName property for this object.
      */
     public void setDatabaseName(String databaseName) {
         this.databaseName = databaseName;
     }
-    
+
     /**
-     * The name of a database hosted on an Amazon Redshift cluster.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[a-z0-9]+<br/>
-     *
-     * @param databaseName The name of a database hosted on an Amazon Redshift cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Returns the value of the DatabaseName property for this object.
+     * 
+     * @return The value of the DatabaseName property for this object.
+     */
+    public String getDatabaseName() {
+        return this.databaseName;
+    }
+
+    /**
+     * Sets the value of the DatabaseName property for this object.
+     * 
+     * @param databaseName
+     *        The new value for the DatabaseName property for this object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public RedshiftDatabase withDatabaseName(String databaseName) {
-        this.databaseName = databaseName;
+        setDatabaseName(databaseName);
         return this;
     }
 
     /**
-     * The ID of an Amazon Redshift cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 63<br/>
-     * <b>Pattern: </b>[a-z0-9-]+<br/>
-     *
-     * @return The ID of an Amazon Redshift cluster.
-     */
-    public String getClusterIdentifier() {
-        return clusterIdentifier;
-    }
-    
-    /**
-     * The ID of an Amazon Redshift cluster.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 63<br/>
-     * <b>Pattern: </b>[a-z0-9-]+<br/>
-     *
-     * @param clusterIdentifier The ID of an Amazon Redshift cluster.
+     * Sets the value of the ClusterIdentifier property for this object.
+     * 
+     * @param clusterIdentifier
+     *        The new value for the ClusterIdentifier property for this object.
      */
     public void setClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;
     }
-    
+
     /**
-     * The ID of an Amazon Redshift cluster.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 63<br/>
-     * <b>Pattern: </b>[a-z0-9-]+<br/>
-     *
-     * @param clusterIdentifier The ID of an Amazon Redshift cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Returns the value of the ClusterIdentifier property for this object.
+     * 
+     * @return The value of the ClusterIdentifier property for this object.
+     */
+    public String getClusterIdentifier() {
+        return this.clusterIdentifier;
+    }
+
+    /**
+     * Sets the value of the ClusterIdentifier property for this object.
+     * 
+     * @param clusterIdentifier
+     *        The new value for the ClusterIdentifier property for this object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public RedshiftDatabase withClusterIdentifier(String clusterIdentifier) {
-        this.clusterIdentifier = clusterIdentifier;
+        setClusterIdentifier(clusterIdentifier);
         return this;
     }
 
@@ -144,50 +105,63 @@ public class RedshiftDatabase implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDatabaseName() != null) sb.append("DatabaseName: " + getDatabaseName() + ",");
-        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() );
+        if (getDatabaseName() != null)
+            sb.append("DatabaseName: " + getDatabaseName() + ",");
+        if (getClusterIdentifier() != null)
+            sb.append("ClusterIdentifier: " + getClusterIdentifier());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RedshiftDatabase == false)
+            return false;
+        RedshiftDatabase other = (RedshiftDatabase) obj;
+        if (other.getDatabaseName() == null ^ this.getDatabaseName() == null)
+            return false;
+        if (other.getDatabaseName() != null
+                && other.getDatabaseName().equals(this.getDatabaseName()) == false)
+            return false;
+        if (other.getClusterIdentifier() == null
+                ^ this.getClusterIdentifier() == null)
+            return false;
+        if (other.getClusterIdentifier() != null
+                && other.getClusterIdentifier().equals(
+                        this.getClusterIdentifier()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode()); 
-        hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDatabaseName() == null) ? 0 : getDatabaseName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getClusterIdentifier() == null) ? 0
+                        : getClusterIdentifier().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof RedshiftDatabase == false) return false;
-        RedshiftDatabase other = (RedshiftDatabase)obj;
-        
-        if (other.getDatabaseName() == null ^ this.getDatabaseName() == null) return false;
-        if (other.getDatabaseName() != null && other.getDatabaseName().equals(this.getDatabaseName()) == false) return false; 
-        if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null) return false;
-        if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public RedshiftDatabase clone() {
         try {
             return (RedshiftDatabase) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

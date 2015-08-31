@@ -1,24 +1,25 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.machinelearning.model;
 
 /**
- * M L Model Filter Variable
+ * 
  */
 public enum MLModelFilterVariable {
-    
+
     CreatedAt("CreatedAt"),
     LastUpdatedAt("LastUpdatedAt"),
     Status("Status"),
@@ -45,36 +46,35 @@ public enum MLModelFilterVariable {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return MLModelFilterVariable corresponding to the value
      */
     public static MLModelFilterVariable fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("CreatedAt".equals(value)) {
-            return MLModelFilterVariable.CreatedAt;
+            return CreatedAt;
         } else if ("LastUpdatedAt".equals(value)) {
-            return MLModelFilterVariable.LastUpdatedAt;
+            return LastUpdatedAt;
         } else if ("Status".equals(value)) {
-            return MLModelFilterVariable.Status;
+            return Status;
         } else if ("Name".equals(value)) {
-            return MLModelFilterVariable.Name;
+            return Name;
         } else if ("IAMUser".equals(value)) {
-            return MLModelFilterVariable.IAMUser;
+            return IAMUser;
         } else if ("TrainingDataSourceId".equals(value)) {
-            return MLModelFilterVariable.TrainingDataSourceId;
+            return TrainingDataSourceId;
         } else if ("RealtimeEndpointStatus".equals(value)) {
-            return MLModelFilterVariable.RealtimeEndpointStatus;
+            return RealtimeEndpointStatus;
         } else if ("MLModelType".equals(value)) {
-            return MLModelFilterVariable.MLModelType;
+            return MLModelType;
         } else if ("Algorithm".equals(value)) {
-            return MLModelFilterVariable.Algorithm;
+            return Algorithm;
         } else if ("TrainingDataURI".equals(value)) {
-            return MLModelFilterVariable.TrainingDataURI;
+            return TrainingDataURI;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

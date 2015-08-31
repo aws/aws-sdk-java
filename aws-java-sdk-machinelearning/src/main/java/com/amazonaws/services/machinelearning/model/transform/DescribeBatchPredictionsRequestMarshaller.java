@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.machinelearning.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,73 +40,104 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Describe Batch Predictions Request Marshaller
+ * DescribeBatchPredictionsRequest Marshaller
  */
-public class DescribeBatchPredictionsRequestMarshaller implements Marshaller<Request<DescribeBatchPredictionsRequest>, DescribeBatchPredictionsRequest> {
+public class DescribeBatchPredictionsRequestMarshaller
+        implements
+        Marshaller<Request<DescribeBatchPredictionsRequest>, DescribeBatchPredictionsRequest> {
 
-    public Request<DescribeBatchPredictionsRequest> marshall(DescribeBatchPredictionsRequest describeBatchPredictionsRequest) {
+    public Request<DescribeBatchPredictionsRequest> marshall(
+            DescribeBatchPredictionsRequest describeBatchPredictionsRequest) {
+
         if (describeBatchPredictionsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeBatchPredictionsRequest> request = new DefaultRequest<DescribeBatchPredictionsRequest>(describeBatchPredictionsRequest, "AmazonMachineLearning");
-        String target = "AmazonML_20141212.DescribeBatchPredictions";
-        request.addHeader("X-Amz-Target", target);
+        Request<DescribeBatchPredictionsRequest> request = new DefaultRequest<DescribeBatchPredictionsRequest>(
+                describeBatchPredictionsRequest, "AmazonMachineLearning");
+        request.addHeader("X-Amz-Target",
+                "AmazonML_20141212.DescribeBatchPredictions");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (describeBatchPredictionsRequest.getFilterVariable() != null) {
-                jsonWriter.key("FilterVariable").value(describeBatchPredictionsRequest.getFilterVariable());
+                jsonWriter.key("FilterVariable").value(
+                        describeBatchPredictionsRequest.getFilterVariable());
             }
+
             if (describeBatchPredictionsRequest.getEQ() != null) {
-                jsonWriter.key("EQ").value(describeBatchPredictionsRequest.getEQ());
+                jsonWriter.key("EQ").value(
+                        describeBatchPredictionsRequest.getEQ());
             }
+
             if (describeBatchPredictionsRequest.getGT() != null) {
-                jsonWriter.key("GT").value(describeBatchPredictionsRequest.getGT());
+                jsonWriter.key("GT").value(
+                        describeBatchPredictionsRequest.getGT());
             }
+
             if (describeBatchPredictionsRequest.getLT() != null) {
-                jsonWriter.key("LT").value(describeBatchPredictionsRequest.getLT());
+                jsonWriter.key("LT").value(
+                        describeBatchPredictionsRequest.getLT());
             }
+
             if (describeBatchPredictionsRequest.getGE() != null) {
-                jsonWriter.key("GE").value(describeBatchPredictionsRequest.getGE());
+                jsonWriter.key("GE").value(
+                        describeBatchPredictionsRequest.getGE());
             }
+
             if (describeBatchPredictionsRequest.getLE() != null) {
-                jsonWriter.key("LE").value(describeBatchPredictionsRequest.getLE());
+                jsonWriter.key("LE").value(
+                        describeBatchPredictionsRequest.getLE());
             }
+
             if (describeBatchPredictionsRequest.getNE() != null) {
-                jsonWriter.key("NE").value(describeBatchPredictionsRequest.getNE());
+                jsonWriter.key("NE").value(
+                        describeBatchPredictionsRequest.getNE());
             }
+
             if (describeBatchPredictionsRequest.getPrefix() != null) {
-                jsonWriter.key("Prefix").value(describeBatchPredictionsRequest.getPrefix());
+                jsonWriter.key("Prefix").value(
+                        describeBatchPredictionsRequest.getPrefix());
             }
+
             if (describeBatchPredictionsRequest.getSortOrder() != null) {
-                jsonWriter.key("SortOrder").value(describeBatchPredictionsRequest.getSortOrder());
+                jsonWriter.key("SortOrder").value(
+                        describeBatchPredictionsRequest.getSortOrder());
             }
+
             if (describeBatchPredictionsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(describeBatchPredictionsRequest.getNextToken());
+                jsonWriter.key("NextToken").value(
+                        describeBatchPredictionsRequest.getNextToken());
             }
+
             if (describeBatchPredictionsRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(describeBatchPredictionsRequest.getLimit());
+                jsonWriter.key("Limit").value(
+                        describeBatchPredictionsRequest.getLimit());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

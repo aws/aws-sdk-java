@@ -1443,11 +1443,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1507,11 +1507,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1571,11 +1571,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ByteBuffer",
           "simple" : true,
+          "simpleType" : "ByteBuffer",
+          "map" : false,
           "templateType" : "java.util.List<java.nio.ByteBuffer>",
-          "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1633,6 +1633,7 @@
           "interfaceType" : "java.util.Map",
           "keyType" : "String",
           "keyLocationName" : "key",
+          "keyModel" : null,
           "valueType" : "AttributeValue",
           "valueLocationName" : "value",
           "valueModel" : {
@@ -1801,11 +1802,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "AttributeValue",
           "simple" : false,
+          "simpleType" : "AttributeValue",
+          "map" : false,
           "templateType" : "java.util.List<AttributeValue>",
-          "templateImplType" : "java.util.ArrayList<AttributeValue>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<AttributeValue>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1990,11 +1991,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2055,11 +2056,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ByteBuffer",
             "simple" : true,
+            "simpleType" : "ByteBuffer",
+            "map" : false,
             "templateType" : "java.util.List<java.nio.ByteBuffer>",
-            "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2275,11 +2276,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "AttributeValue",
             "simple" : false,
+            "simpleType" : "AttributeValue",
+            "map" : false,
             "templateType" : "java.util.List<AttributeValue>",
-            "templateImplType" : "java.util.ArrayList<AttributeValue>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<AttributeValue>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2338,6 +2339,7 @@
             "interfaceType" : "java.util.Map",
             "keyType" : "String",
             "keyLocationName" : "key",
+            "keyModel" : null,
             "valueType" : "AttributeValue",
             "valueLocationName" : "value",
             "valueModel" : {
@@ -2456,11 +2458,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3086,11 +3088,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "KeySchemaElement",
           "simple" : false,
+          "simpleType" : "KeySchemaElement",
+          "map" : false,
           "templateType" : "java.util.List<KeySchemaElement>",
-          "templateImplType" : "java.util.ArrayList<KeySchemaElement>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<KeySchemaElement>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3201,11 +3203,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Shard",
           "simple" : false,
+          "simpleType" : "Shard",
+          "map" : false,
           "templateType" : "java.util.List<Shard>",
-          "templateImplType" : "java.util.ArrayList<Shard>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Shard>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3442,11 +3444,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Shard",
             "simple" : false,
+            "simpleType" : "Shard",
+            "map" : false,
             "templateType" : "java.util.List<Shard>",
-            "templateImplType" : "java.util.ArrayList<Shard>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Shard>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3610,11 +3612,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "KeySchemaElement",
             "simple" : false,
+            "simpleType" : "KeySchemaElement",
+            "map" : false,
             "templateType" : "java.util.List<KeySchemaElement>",
-            "templateImplType" : "java.util.ArrayList<KeySchemaElement>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<KeySchemaElement>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4274,11 +4276,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Record",
           "simple" : false,
+          "simpleType" : "Record",
+          "map" : false,
           "templateType" : "java.util.List<Record>",
-          "templateImplType" : "java.util.ArrayList<Record>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Record>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4515,11 +4517,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Record",
             "simple" : false,
+            "simpleType" : "Record",
+            "map" : false,
             "templateType" : "java.util.List<Record>",
-            "templateImplType" : "java.util.ArrayList<Record>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Record>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5129,11 +5131,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Stream",
           "simple" : false,
+          "simpleType" : "Stream",
+          "map" : false,
           "templateType" : "java.util.List<Stream>",
-          "templateImplType" : "java.util.ArrayList<Stream>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Stream>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5370,11 +5372,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Stream",
             "simple" : false,
+            "simpleType" : "Stream",
+            "map" : false,
             "templateType" : "java.util.List<Stream>",
-            "templateImplType" : "java.util.ArrayList<Stream>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Stream>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7303,6 +7305,7 @@
           "interfaceType" : "java.util.Map",
           "keyType" : "String",
           "keyLocationName" : "key",
+          "keyModel" : null,
           "valueType" : "AttributeValue",
           "valueLocationName" : "value",
           "valueModel" : {
@@ -7418,6 +7421,7 @@
           "interfaceType" : "java.util.Map",
           "keyType" : "String",
           "keyLocationName" : "key",
+          "keyModel" : null,
           "valueType" : "AttributeValue",
           "valueLocationName" : "value",
           "valueModel" : {
@@ -7533,6 +7537,7 @@
           "interfaceType" : "java.util.Map",
           "keyType" : "String",
           "keyLocationName" : "key",
+          "keyModel" : null,
           "valueType" : "AttributeValue",
           "valueLocationName" : "value",
           "valueModel" : {
@@ -7824,6 +7829,7 @@
             "interfaceType" : "java.util.Map",
             "keyType" : "String",
             "keyLocationName" : "key",
+            "keyModel" : null,
             "valueType" : "AttributeValue",
             "valueLocationName" : "value",
             "valueModel" : {
@@ -8096,6 +8102,7 @@
             "interfaceType" : "java.util.Map",
             "keyType" : "String",
             "keyLocationName" : "key",
+            "keyModel" : null,
             "valueType" : "AttributeValue",
             "valueLocationName" : "value",
             "valueModel" : {
@@ -8212,6 +8219,7 @@
             "interfaceType" : "java.util.Map",
             "keyType" : "String",
             "keyLocationName" : "key",
+            "keyModel" : null,
             "valueType" : "AttributeValue",
             "valueLocationName" : "value",
             "valueModel" : {

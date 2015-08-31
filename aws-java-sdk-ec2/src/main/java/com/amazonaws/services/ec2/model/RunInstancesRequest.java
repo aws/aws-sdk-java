@@ -39,6 +39,14 @@ import com.amazonaws.services.ec2.model.transform.RunInstancesRequestMarshaller;
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
+ * [EC2-VPC only accounts] If you don't specify a subnet in the request,
+ * we choose a default subnet from your default VPC for you.
+ * </p>
+ * <p>
+ * [EC2-Classic accounts] If you're launching into EC2-Classic and you
+ * don't specify an Availability Zone, we choose one for you.
+ * </p>
+ * <p>
  * Linux instances have access to the public key of the key pair at boot.
  * You can use this key to provide secure access to the instance. Amazon
  * EC2 public images use this feature to provide secure access without

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about the error that occured. For more information about
+ * Information about the error that occurred. For more information about
  * errors, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html"> Error Codes </a>
  * .

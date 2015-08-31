@@ -59,6 +59,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * The type of operation to perform to the attribute.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
      */
     private String operationType;
 
@@ -113,10 +116,10 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * @param operationType The type of operation to perform to the
      * attribute.
      */
-    public ModifySnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute, String operationType) {
+    public ModifySnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute, OperationType operationType) {
         this.snapshotId = snapshotId;
         this.attribute = attribute.toString();
-        this.operationType = operationType;
+        this.operationType = operationType.toString();
     }
 
     /**
@@ -246,8 +249,13 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * The type of operation to perform to the attribute.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
      *
      * @return The type of operation to perform to the attribute.
+     *
+     * @see OperationType
      */
     public String getOperationType() {
         return operationType;
@@ -255,8 +263,13 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     
     /**
      * The type of operation to perform to the attribute.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
      *
      * @param operationType The type of operation to perform to the attribute.
+     *
+     * @see OperationType
      */
     public void setOperationType(String operationType) {
         this.operationType = operationType;
@@ -266,14 +279,53 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * The type of operation to perform to the attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
      *
      * @param operationType The type of operation to perform to the attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
+     *
+     * @see OperationType
      */
     public ModifySnapshotAttributeRequest withOperationType(String operationType) {
         this.operationType = operationType;
+        return this;
+    }
+
+    /**
+     * The type of operation to perform to the attribute.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
+     *
+     * @param operationType The type of operation to perform to the attribute.
+     *
+     * @see OperationType
+     */
+    public void setOperationType(OperationType operationType) {
+        this.operationType = operationType.toString();
+    }
+    
+    /**
+     * The type of operation to perform to the attribute.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>add, remove
+     *
+     * @param operationType The type of operation to perform to the attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see OperationType
+     */
+    public ModifySnapshotAttributeRequest withOperationType(OperationType operationType) {
+        this.operationType = operationType.toString();
         return this;
     }
 

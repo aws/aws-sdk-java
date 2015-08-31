@@ -222,7 +222,7 @@ public class ClientConfiguration {
     private int responseMetadataCacheSize = DEFAULT_RESPONSE_METADATA_CACHE_SIZE;
 
     /**
-     * The DNS Resolver to resolve ip addresses of amazon web services
+     * The DNS Resolver to resolve IP addresses of Amazon Web Services.
      */
     private DnsResolver dnsResolver = new SystemDefaultDnsResolver();
 
@@ -1277,24 +1277,24 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the DnsResolver that is used by the client for resolving AWS ip addresses
-     *
+     * Returns the DnsResolver that is used by the client for resolving AWS IP addresses.
      */
     public DnsResolver getDnsResolver() {
         return dnsResolver;
     }
 
     /**
-     * Sets the DNS Resolver that should be used to for resolving AWS ip addresses
+     * Sets the DNS Resolver that should be used to for resolving AWS IP addresses.
      */
     public void setDnsResolver(final DnsResolver resolver) {
-        if(resolver!=null) {
-            this.dnsResolver = resolver;
+        if (resolver == null) {
+            throw new IllegalArgumentException("resolver cannot be null");
         }
+        this.dnsResolver = resolver;
     }
 
     /**
-     * Sets the DNS Resolver that should be used to for resolving AWS ip addresses
+     * Sets the DNS Resolver that should be used to for resolving AWS IP addresses.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withDnsResolver(final DnsResolver resolver) {

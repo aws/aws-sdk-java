@@ -243,6 +243,12 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                     if (spotFleetLaunchSpecificationMember.isEbsOptimized() != null) {
                         request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".EbsOptimized", StringUtils.fromBoolean(spotFleetLaunchSpecificationMember.isEbsOptimized()));
                     }
+                    if (spotFleetLaunchSpecificationMember.getWeightedCapacity() != null) {
+                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".WeightedCapacity", StringUtils.fromDouble(spotFleetLaunchSpecificationMember.getWeightedCapacity()));
+                    }
+                    if (spotFleetLaunchSpecificationMember.getSpotPrice() != null) {
+                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".SpotPrice", StringUtils.fromString(spotFleetLaunchSpecificationMember.getSpotPrice()));
+                    }
                 }
 
                 launchSpecificationsListIndex++;
