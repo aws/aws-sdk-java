@@ -98,6 +98,11 @@ public class TestPOJOWorkflowImplementationGenericWorkflowClient implements Gene
         factoryFactory.addWorkflowImplementationType(workflowImplementationType, converterOverride);
     }
 
+    public void addWorkflowImplementationType(Class<?> workflowImplementationType, DataConverter converterOverride, Object[] constructorArgs)
+        throws InstantiationException, IllegalAccessException {
+        factoryFactory.addWorkflowImplementationType(workflowImplementationType, converterOverride, constructorArgs);
+    }
+
     public void setWorkflowImplementationTypes(Collection<Class<?>> workflowImplementationTypes)
             throws InstantiationException, IllegalAccessException {
         factoryFactory.setWorkflowImplementationTypes(workflowImplementationTypes);

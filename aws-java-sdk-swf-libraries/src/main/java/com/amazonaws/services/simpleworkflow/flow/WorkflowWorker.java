@@ -219,6 +219,10 @@ public class WorkflowWorker implements WorkerBase {
     public void addWorkflowImplementationType(Class<?> workflowImplementationType, DataConverter converter) throws InstantiationException, IllegalAccessException {
         factoryFactory.addWorkflowImplementationType(workflowImplementationType, converter);
     }
+
+    public void addWorkflowImplementationType(Class<?> workflowImplementationType, DataConverter converter, Object[] constructorArgs) throws InstantiationException, IllegalAccessException {
+        factoryFactory.addWorkflowImplementationType(workflowImplementationType, converter, constructorArgs);
+    }
     
     @Override
     public String toString() {
