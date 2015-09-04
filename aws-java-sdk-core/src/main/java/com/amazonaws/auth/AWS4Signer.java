@@ -569,7 +569,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
     /**
      * Generates a new signing key from the given parameters and returns it.
      */
-    private byte[] newSigningKey(AWSCredentials credentials,
+    protected byte[] newSigningKey(AWSCredentials credentials,
             String dateStamp, String regionName, String serviceName) {
         byte[] kSecret = ("AWS4" + credentials.getAWSSecretKey())
                 .getBytes(Charset.forName("UTF-8"));
