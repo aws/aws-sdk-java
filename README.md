@@ -26,7 +26,7 @@ The recommended way to use the AWS SDK for Java in your project is to consume it
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.10.15</version>
+      <version>1.10.16</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>

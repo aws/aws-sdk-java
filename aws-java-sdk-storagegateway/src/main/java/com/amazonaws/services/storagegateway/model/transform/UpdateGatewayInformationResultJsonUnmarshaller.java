@@ -49,6 +49,10 @@ public class UpdateGatewayInformationResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     updateGatewayInformationResult.setGatewayARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("GatewayName", targetDepth)) {
+                    context.nextToken();
+                    updateGatewayInformationResult.setGatewayName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

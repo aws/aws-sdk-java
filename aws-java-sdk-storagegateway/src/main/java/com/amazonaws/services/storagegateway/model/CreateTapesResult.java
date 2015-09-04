@@ -24,16 +24,16 @@ import java.io.Serializable;
 public class CreateTapesResult implements Serializable, Cloneable {
 
     /**
-     * A list of unique Amazon Resource Named (ARN) the represents the
+     * A list of unique Amazon Resource Named (ARN) that represents the
      * virtual tapes that were created.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> tapeARNs;
 
     /**
-     * A list of unique Amazon Resource Named (ARN) the represents the
+     * A list of unique Amazon Resource Named (ARN) that represents the
      * virtual tapes that were created.
      *
-     * @return A list of unique Amazon Resource Named (ARN) the represents the
+     * @return A list of unique Amazon Resource Named (ARN) that represents the
      *         virtual tapes that were created.
      */
     public java.util.List<String> getTapeARNs() {
@@ -45,10 +45,10 @@ public class CreateTapesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of unique Amazon Resource Named (ARN) the represents the
+     * A list of unique Amazon Resource Named (ARN) that represents the
      * virtual tapes that were created.
      *
-     * @param tapeARNs A list of unique Amazon Resource Named (ARN) the represents the
+     * @param tapeARNs A list of unique Amazon Resource Named (ARN) that represents the
      *         virtual tapes that were created.
      */
     public void setTapeARNs(java.util.Collection<String> tapeARNs) {
@@ -62,7 +62,7 @@ public class CreateTapesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of unique Amazon Resource Named (ARN) the represents the
+     * A list of unique Amazon Resource Named (ARN) that represents the
      * virtual tapes that were created.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -72,7 +72,7 @@ public class CreateTapesResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tapeARNs A list of unique Amazon Resource Named (ARN) the represents the
+     * @param tapeARNs A list of unique Amazon Resource Named (ARN) that represents the
      *         virtual tapes that were created.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -87,12 +87,12 @@ public class CreateTapesResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of unique Amazon Resource Named (ARN) the represents the
+     * A list of unique Amazon Resource Named (ARN) that represents the
      * virtual tapes that were created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tapeARNs A list of unique Amazon Resource Named (ARN) the represents the
+     * @param tapeARNs A list of unique Amazon Resource Named (ARN) that represents the
      *         virtual tapes that were created.
      *
      * @return A reference to this updated object so that method calls can be chained

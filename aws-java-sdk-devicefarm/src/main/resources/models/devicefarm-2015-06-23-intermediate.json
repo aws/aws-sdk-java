@@ -4461,11 +4461,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<DevicePool>",
+          "templateType" : "java.util.List<DevicePool>",
           "simpleType" : "DevicePool",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<DevicePool>",
-          "templateImplType" : "java.util.ArrayList<DevicePool>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4702,11 +4702,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<DevicePool>",
+            "templateType" : "java.util.List<DevicePool>",
             "simpleType" : "DevicePool",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<DevicePool>",
-            "templateImplType" : "java.util.ArrayList<DevicePool>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4830,11 +4830,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Device>",
+          "templateType" : "java.util.List<Device>",
           "simpleType" : "Device",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Device>",
-          "templateImplType" : "java.util.ArrayList<Device>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5071,11 +5071,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Device>",
+            "templateType" : "java.util.List<Device>",
             "simpleType" : "Device",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Device>",
-            "templateImplType" : "java.util.ArrayList<Device>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6624,11 +6624,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Sample>",
+          "templateType" : "java.util.List<Sample>",
           "simpleType" : "Sample",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Sample>",
-          "templateImplType" : "java.util.ArrayList<Sample>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6865,11 +6865,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Sample>",
+            "templateType" : "java.util.List<Sample>",
             "simpleType" : "Sample",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Sample>",
-            "templateImplType" : "java.util.ArrayList<Sample>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8702,11 +8702,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Problem>",
+          "templateType" : "java.util.List<Problem>",
           "simpleType" : "Problem",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Problem>",
-          "templateImplType" : "java.util.ArrayList<Problem>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8840,11 +8840,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Problem>",
+            "templateType" : "java.util.List<Problem>",
             "simpleType" : "Problem",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Problem>",
-            "templateImplType" : "java.util.ArrayList<Problem>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9224,11 +9224,11 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>",
           "simpleType" : "String",
           "simple" : true,
-          "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9466,11 +9466,11 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>",
             "simpleType" : "String",
             "simple" : true,
-            "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15114,7 +15114,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : "<p>The artifacts' ARNs.</p>",
+        "documentation" : "<p>The Run, Job, Suite, or Test ARN.</p>",
         "name" : "Arn",
         "c2jName" : "arn",
         "c2jShape" : "AmazonResourceName",
@@ -15122,7 +15122,7 @@
           "variableName" : "arn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The artifacts' ARNs.</p>",
+          "documentation" : "<p>The Run, Job, Suite, or Test ARN.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -15160,10 +15160,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The artifacts' ARNs.</p>\n@param arn The artifacts' ARNs.*/",
-        "getterDocumentation" : "/**<p>The artifacts' ARNs.</p>\n@return The artifacts' ARNs.*/",
-        "fluentSetterDocumentation" : "/**<p>The artifacts' ARNs.</p>\n@param arn The artifacts' ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The artifacts' ARNs.</p>\n@param arn The artifacts' ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The Run, Job, Suite, or Test ARN.</p>\n@param arn The Run, Job, Suite, or Test ARN.*/",
+        "getterDocumentation" : "/**<p>The Run, Job, Suite, or Test ARN.</p>\n@return The Run, Job, Suite, or Test ARN.*/",
+        "fluentSetterDocumentation" : "/**<p>The Run, Job, Suite, or Test ARN.</p>\n@param arn The Run, Job, Suite, or Test ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Run, Job, Suite, or Test ARN.</p>\n@param arn The Run, Job, Suite, or Test ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li>FILE: The artifacts are files.</li> <li>LOG: The artifacts are logs.</li> <li>SCREENSHOT: The artifacts are screenshots.</li> </ul>",
         "name" : "Type",
@@ -15398,7 +15398,7 @@
           "varargSetterDocumentation" : "/**<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>\n@param nextToken An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Arn" : {
-          "documentation" : "<p>The artifacts' ARNs.</p>",
+          "documentation" : "<p>The Run, Job, Suite, or Test ARN.</p>",
           "name" : "Arn",
           "c2jName" : "arn",
           "c2jShape" : "AmazonResourceName",
@@ -15406,7 +15406,7 @@
             "variableName" : "arn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The artifacts' ARNs.</p>",
+            "documentation" : "<p>The Run, Job, Suite, or Test ARN.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -15444,10 +15444,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The artifacts' ARNs.</p>\n@param arn The artifacts' ARNs.*/",
-          "getterDocumentation" : "/**<p>The artifacts' ARNs.</p>\n@return The artifacts' ARNs.*/",
-          "fluentSetterDocumentation" : "/**<p>The artifacts' ARNs.</p>\n@param arn The artifacts' ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The artifacts' ARNs.</p>\n@param arn The artifacts' ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The Run, Job, Suite, or Test ARN.</p>\n@param arn The Run, Job, Suite, or Test ARN.*/",
+          "getterDocumentation" : "/**<p>The Run, Job, Suite, or Test ARN.</p>\n@return The Run, Job, Suite, or Test ARN.*/",
+          "fluentSetterDocumentation" : "/**<p>The Run, Job, Suite, or Test ARN.</p>\n@param arn The Run, Job, Suite, or Test ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Run, Job, Suite, or Test ARN.</p>\n@param arn The Run, Job, Suite, or Test ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -18404,11 +18404,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>",
+          "templateType" : "java.util.List<IncompatibilityMessage>",
           "simpleType" : "IncompatibilityMessage",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<IncompatibilityMessage>",
-          "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18542,11 +18542,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>",
+            "templateType" : "java.util.List<IncompatibilityMessage>",
             "simpleType" : "IncompatibilityMessage",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<IncompatibilityMessage>",
-            "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18774,11 +18774,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Job>",
+          "templateType" : "java.util.List<Job>",
           "simpleType" : "Job",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Job>",
-          "templateImplType" : "java.util.ArrayList<Job>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19015,11 +19015,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Job>",
+            "templateType" : "java.util.List<Job>",
             "simpleType" : "Job",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Job>",
-            "templateImplType" : "java.util.ArrayList<Job>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19384,11 +19384,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Upload>",
+          "templateType" : "java.util.List<Upload>",
           "simpleType" : "Upload",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Upload>",
-          "templateImplType" : "java.util.ArrayList<Upload>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19573,11 +19573,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Upload>",
+            "templateType" : "java.util.List<Upload>",
             "simpleType" : "Upload",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Upload>",
-            "templateImplType" : "java.util.ArrayList<Upload>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19753,11 +19753,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Run>",
+          "templateType" : "java.util.List<Run>",
           "simpleType" : "Run",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Run>",
-          "templateImplType" : "java.util.ArrayList<Run>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19994,11 +19994,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Run>",
+            "templateType" : "java.util.List<Run>",
             "simpleType" : "Run",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Run>",
-            "templateImplType" : "java.util.ArrayList<Run>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20122,11 +20122,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Suite>",
+          "templateType" : "java.util.List<Suite>",
           "simpleType" : "Suite",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Suite>",
-          "templateImplType" : "java.util.ArrayList<Suite>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20363,11 +20363,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Suite>",
+            "templateType" : "java.util.List<Suite>",
             "simpleType" : "Suite",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Suite>",
-            "templateImplType" : "java.util.ArrayList<Suite>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20782,11 +20782,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Artifact>",
+          "templateType" : "java.util.List<Artifact>",
           "simpleType" : "Artifact",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "java.util.ArrayList<Artifact>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20971,11 +20971,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Artifact>",
+            "templateType" : "java.util.List<Artifact>",
             "simpleType" : "Artifact",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "java.util.ArrayList<Artifact>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21499,11 +21499,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Test>",
+          "templateType" : "java.util.List<Test>",
           "simpleType" : "Test",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Test>",
-          "templateImplType" : "java.util.ArrayList<Test>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21740,11 +21740,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Test>",
+            "templateType" : "java.util.List<Test>",
             "simpleType" : "Test",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Test>",
-            "templateImplType" : "java.util.ArrayList<Test>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22021,11 +22021,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Rule>",
+          "templateType" : "java.util.List<Rule>",
           "simpleType" : "Rule",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Rule>",
-          "templateImplType" : "java.util.ArrayList<Rule>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22267,11 +22267,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Rule>",
+            "templateType" : "java.util.List<Rule>",
             "simpleType" : "Rule",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Rule>",
-            "templateImplType" : "java.util.ArrayList<Rule>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22685,11 +22685,11 @@
               },
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
+              "templateImplType" : "java.util.ArrayList<UniqueProblem>",
+              "templateType" : "java.util.List<UniqueProblem>",
               "simpleType" : "UniqueProblem",
               "simple" : false,
-              "map" : false,
-              "templateType" : "java.util.List<UniqueProblem>",
-              "templateImplType" : "java.util.ArrayList<UniqueProblem>"
+              "map" : false
             },
             "mapModel" : null,
             "enumType" : null,
@@ -22702,8 +22702,8 @@
             "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
           "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
+          "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : true
@@ -22990,11 +22990,11 @@
                 },
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
+                "templateImplType" : "java.util.ArrayList<UniqueProblem>",
+                "templateType" : "java.util.List<UniqueProblem>",
                 "simpleType" : "UniqueProblem",
                 "simple" : false,
-                "map" : false,
-                "templateType" : "java.util.List<UniqueProblem>",
-                "templateImplType" : "java.util.ArrayList<UniqueProblem>"
+                "map" : false
               },
               "mapModel" : null,
               "enumType" : null,
@@ -23007,8 +23007,8 @@
               "fluentSetterDocumentation" : "/**Sets the value of the Value property for this object.\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**Sets the value of the Value property for this object.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value The new value for the Value property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
             "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
+            "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : true
@@ -25124,11 +25124,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+          "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
           "simpleType" : "DevicePoolCompatibilityResult",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25239,11 +25239,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+          "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
           "simpleType" : "DevicePoolCompatibilityResult",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25377,11 +25377,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+            "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
             "simpleType" : "DevicePoolCompatibilityResult",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25493,11 +25493,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+            "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
             "simpleType" : "DevicePoolCompatibilityResult",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26173,11 +26173,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Rule>",
+          "templateType" : "java.util.List<Rule>",
           "simpleType" : "Rule",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Rule>",
-          "templateImplType" : "java.util.ArrayList<Rule>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26467,11 +26467,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Rule>",
+            "templateType" : "java.util.List<Rule>",
             "simpleType" : "Rule",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Rule>",
-            "templateImplType" : "java.util.ArrayList<Rule>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27250,8 +27250,8 @@
           "valueType" : "Integer",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,Integer>",
           "templateImplType" : "java.util.HashMap<String,Integer>",
+          "templateType" : "java.util.Map<String,Integer>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false
@@ -27389,8 +27389,8 @@
             "valueType" : "Integer",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,Integer>",
             "templateImplType" : "java.util.HashMap<String,Integer>",
+            "templateType" : "java.util.Map<String,Integer>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false
@@ -27813,11 +27813,11 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
+          "templateImplType" : "java.util.ArrayList<Project>",
+          "templateType" : "java.util.List<Project>",
           "simpleType" : "Project",
           "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<Project>",
-          "templateImplType" : "java.util.ArrayList<Project>"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28054,11 +28054,11 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
+            "templateImplType" : "java.util.ArrayList<Project>",
+            "templateType" : "java.util.List<Project>",
             "simpleType" : "Project",
             "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<Project>",
-            "templateImplType" : "java.util.ArrayList<Project>"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28791,8 +28791,8 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
+          "templateType" : "java.util.Map<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false
@@ -28931,8 +28931,8 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
+            "templateType" : "java.util.Map<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false

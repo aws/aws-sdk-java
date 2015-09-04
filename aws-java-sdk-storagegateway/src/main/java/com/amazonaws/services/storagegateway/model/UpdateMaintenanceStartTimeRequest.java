@@ -42,8 +42,8 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest i
 
     /**
      * The hour component of the maintenance start time represented as
-     * <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
-     * hour of the day is in the time zone of the gateway.
+     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day
+     * is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
@@ -124,15 +124,15 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest i
 
     /**
      * The hour component of the maintenance start time represented as
-     * <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
-     * hour of the day is in the time zone of the gateway.
+     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day
+     * is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
      * @return The hour component of the maintenance start time represented as
-     *         <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
-     *         hour of the day is in the time zone of the gateway.
+     *         <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day
+     *         is in the time zone of the gateway.
      */
     public Integer getHourOfDay() {
         return hourOfDay;
@@ -140,15 +140,15 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest i
     
     /**
      * The hour component of the maintenance start time represented as
-     * <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
-     * hour of the day is in the time zone of the gateway.
+     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day
+     * is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
      * @param hourOfDay The hour component of the maintenance start time represented as
-     *         <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
-     *         hour of the day is in the time zone of the gateway.
+     *         <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day
+     *         is in the time zone of the gateway.
      */
     public void setHourOfDay(Integer hourOfDay) {
         this.hourOfDay = hourOfDay;
@@ -156,8 +156,8 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest i
     
     /**
      * The hour component of the maintenance start time represented as
-     * <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
-     * hour of the day is in the time zone of the gateway.
+     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day
+     * is in the time zone of the gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -165,8 +165,8 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest i
      * <b>Range: </b>0 - 23<br/>
      *
      * @param hourOfDay The hour component of the maintenance start time represented as
-     *         <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
-     *         hour of the day is in the time zone of the gateway.
+     *         <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day
+     *         is in the time zone of the gateway.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

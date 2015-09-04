@@ -28,7 +28,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The artifacts' ARNs.
+     * The Run, Job, Suite, or Test ARN.
      * </p>
      */
     private String arn;
@@ -56,11 +56,11 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The artifacts' ARNs.
+     * The Run, Job, Suite, or Test ARN.
      * </p>
      * 
      * @param arn
-     *        The artifacts' ARNs.
+     *        The Run, Job, Suite, or Test ARN.
      */
     public void setArn(String arn) {
         this.arn = arn;
@@ -68,10 +68,10 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The artifacts' ARNs.
+     * The Run, Job, Suite, or Test ARN.
      * </p>
      * 
-     * @return The artifacts' ARNs.
+     * @return The Run, Job, Suite, or Test ARN.
      */
     public String getArn() {
         return this.arn;
@@ -79,11 +79,11 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The artifacts' ARNs.
+     * The Run, Job, Suite, or Test ARN.
      * </p>
      * 
      * @param arn
-     *        The artifacts' ARNs.
+     *        The Run, Job, Suite, or Test ARN.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

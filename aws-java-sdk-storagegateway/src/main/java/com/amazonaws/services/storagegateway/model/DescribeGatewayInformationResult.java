@@ -42,6 +42,11 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
     private String gatewayId;
 
     /**
+     * The gateway name.
+     */
+    private String gatewayName;
+
+    /**
      * One of the values that indicates the time zone configured for the
      * gateway.
      * <p>
@@ -185,6 +190,39 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
      */
     public DescribeGatewayInformationResult withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
+        return this;
+    }
+
+    /**
+     * The gateway name.
+     *
+     * @return The gateway name.
+     */
+    public String getGatewayName() {
+        return gatewayName;
+    }
+    
+    /**
+     * The gateway name.
+     *
+     * @param gatewayName The gateway name.
+     */
+    public void setGatewayName(String gatewayName) {
+        this.gatewayName = gatewayName;
+    }
+    
+    /**
+     * The gateway name.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param gatewayName The gateway name.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeGatewayInformationResult withGatewayName(String gatewayName) {
+        this.gatewayName = gatewayName;
         return this;
     }
 
@@ -523,6 +561,7 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
         sb.append("{");
         if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
         if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ",");
+        if (getGatewayName() != null) sb.append("GatewayName: " + getGatewayName() + ",");
         if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ",");
         if (getGatewayState() != null) sb.append("GatewayState: " + getGatewayState() + ",");
         if (getGatewayNetworkInterfaces() != null) sb.append("GatewayNetworkInterfaces: " + getGatewayNetworkInterfaces() + ",");
@@ -540,6 +579,7 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
         
         hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode()); 
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode()); 
+        hashCode = prime * hashCode + ((getGatewayName() == null) ? 0 : getGatewayName().hashCode()); 
         hashCode = prime * hashCode + ((getGatewayTimezone() == null) ? 0 : getGatewayTimezone().hashCode()); 
         hashCode = prime * hashCode + ((getGatewayState() == null) ? 0 : getGatewayState().hashCode()); 
         hashCode = prime * hashCode + ((getGatewayNetworkInterfaces() == null) ? 0 : getGatewayNetworkInterfaces().hashCode()); 
@@ -561,6 +601,8 @@ public class DescribeGatewayInformationResult implements Serializable, Cloneable
         if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false) return false; 
         if (other.getGatewayId() == null ^ this.getGatewayId() == null) return false;
         if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false) return false; 
+        if (other.getGatewayName() == null ^ this.getGatewayName() == null) return false;
+        if (other.getGatewayName() != null && other.getGatewayName().equals(this.getGatewayName()) == false) return false; 
         if (other.getGatewayTimezone() == null ^ this.getGatewayTimezone() == null) return false;
         if (other.getGatewayTimezone() != null && other.getGatewayTimezone().equals(this.getGatewayTimezone()) == false) return false; 
         if (other.getGatewayState() == null ^ this.getGatewayState() == null) return false;

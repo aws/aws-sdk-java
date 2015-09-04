@@ -21,11 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#deleteVolume(DeleteVolumeRequest) DeleteVolume operation}.
  * <p>
- * This operation delete the specified gateway volume that you previously
- * created using the CreateStorediSCSIVolume API. For gateway-stored
- * volumes, the local disk that was configured as the storage volume is
- * not deleted. You can reuse the local disk to create another storage
- * volume.
+ * This operation deletes the specified gateway volume that you
+ * previously created using the CreateCachediSCSIVolume or
+ * CreateStorediSCSIVolume API. For gateway-stored volumes, the local
+ * disk that was configured as the storage volume is not deleted. You can
+ * reuse the local disk to create another storage volume.
  * </p>
  * <p>
  * Before you delete a gateway volume, make sure there are no iSCSI

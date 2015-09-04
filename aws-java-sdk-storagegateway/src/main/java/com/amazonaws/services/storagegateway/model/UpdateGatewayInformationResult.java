@@ -33,6 +33,8 @@ public class UpdateGatewayInformationResult implements Serializable, Cloneable {
      */
     private String gatewayARN;
 
+    private String gatewayName;
+
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
      * <a>ListGateways</a> operation to return a list of gateways for your
@@ -88,6 +90,39 @@ public class UpdateGatewayInformationResult implements Serializable, Cloneable {
     }
 
     /**
+     * Returns the value of the GatewayName property for this object.
+     *
+     * @return The value of the GatewayName property for this object.
+     */
+    public String getGatewayName() {
+        return gatewayName;
+    }
+    
+    /**
+     * Sets the value of the GatewayName property for this object.
+     *
+     * @param gatewayName The new value for the GatewayName property for this object.
+     */
+    public void setGatewayName(String gatewayName) {
+        this.gatewayName = gatewayName;
+    }
+    
+    /**
+     * Sets the value of the GatewayName property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param gatewayName The new value for the GatewayName property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateGatewayInformationResult withGatewayName(String gatewayName) {
+        this.gatewayName = gatewayName;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -99,7 +134,8 @@ public class UpdateGatewayInformationResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() );
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
+        if (getGatewayName() != null) sb.append("GatewayName: " + getGatewayName() );
         sb.append("}");
         return sb.toString();
     }
@@ -110,6 +146,7 @@ public class UpdateGatewayInformationResult implements Serializable, Cloneable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode()); 
+        hashCode = prime * hashCode + ((getGatewayName() == null) ? 0 : getGatewayName().hashCode()); 
         return hashCode;
     }
     
@@ -123,6 +160,8 @@ public class UpdateGatewayInformationResult implements Serializable, Cloneable {
         
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null) return false;
         if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false) return false; 
+        if (other.getGatewayName() == null ^ this.getGatewayName() == null) return false;
+        if (other.getGatewayName() != null && other.getGatewayName().equals(this.getGatewayName()) == false) return false; 
         return true;
     }
     
