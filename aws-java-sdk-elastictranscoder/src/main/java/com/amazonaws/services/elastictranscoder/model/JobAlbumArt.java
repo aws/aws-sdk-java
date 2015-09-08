@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -79,7 +79,7 @@ public class JobAlbumArt implements Serializable, Cloneable {
     public String getMergePolicy() {
         return mergePolicy;
     }
-    
+
     /**
      * A policy that determines how Elastic Transcoder will handle the
      * existence of multiple album artwork files. <p> <ul>
@@ -111,7 +111,7 @@ public class JobAlbumArt implements Serializable, Cloneable {
     public void setMergePolicy(String mergePolicy) {
         this.mergePolicy = mergePolicy;
     }
-    
+
     /**
      * A policy that determines how Elastic Transcoder will handle the
      * existence of multiple album artwork files. <p> <ul>
@@ -166,7 +166,7 @@ public class JobAlbumArt implements Serializable, Cloneable {
         }
         return artwork;
     }
-    
+
     /**
      * The file to be used as album art. There can be multiple artworks
      * associated with an audio file, to a maximum of 20. Valid formats are
@@ -185,7 +185,7 @@ public class JobAlbumArt implements Serializable, Cloneable {
         artworkCopy.addAll(artwork);
         this.artwork = artworkCopy;
     }
-    
+
     /**
      * The file to be used as album art. There can be multiple artworks
      * associated with an audio file, to a maximum of 20. Valid formats are
@@ -206,13 +206,13 @@ public class JobAlbumArt implements Serializable, Cloneable {
      *         together.
      */
     public JobAlbumArt withArtwork(Artwork... artwork) {
-        if (getArtwork() == null) setArtwork(new java.util.ArrayList<Artwork>(artwork.length));
-        for (Artwork value : artwork) {
-            getArtwork().add(value);
+        if (this.artwork == null) {
+            setArtwork(new java.util.ArrayList<Artwork>(artwork.length));
         }
+        java.util.Collections.addAll(getArtwork(), artwork);
         return this;
     }
-    
+
     /**
      * The file to be used as album art. There can be multiple artworks
      * associated with an audio file, to a maximum of 20. Valid formats are
@@ -256,17 +256,17 @@ public class JobAlbumArt implements Serializable, Cloneable {
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getMergePolicy() == null) ? 0 : getMergePolicy().hashCode()); 
-        hashCode = prime * hashCode + ((getArtwork() == null) ? 0 : getArtwork().hashCode()); 
+
+        hashCode = prime * hashCode + ((getMergePolicy() == null) ? 0 : getMergePolicy().hashCode());
+        hashCode = prime * hashCode + ((getArtwork() == null) ? 0 : getArtwork().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -274,27 +274,26 @@ public class JobAlbumArt implements Serializable, Cloneable {
 
         if (obj instanceof JobAlbumArt == false) return false;
         JobAlbumArt other = (JobAlbumArt)obj;
-        
+
         if (other.getMergePolicy() == null ^ this.getMergePolicy() == null) return false;
-        if (other.getMergePolicy() != null && other.getMergePolicy().equals(this.getMergePolicy()) == false) return false; 
+        if (other.getMergePolicy() != null && other.getMergePolicy().equals(this.getMergePolicy()) == false) return false;
         if (other.getArtwork() == null ^ this.getArtwork() == null) return false;
-        if (other.getArtwork() != null && other.getArtwork().equals(this.getArtwork()) == false) return false; 
+        if (other.getArtwork() != null && other.getArtwork().equals(this.getArtwork()) == false) return false;
         return true;
     }
-    
+
     @Override
     public JobAlbumArt clone() {
         try {
             return (JobAlbumArt) super.clone();
-        
+
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
                     + "even though we're Cloneable!",
                     e);
         }
-        
+
     }
 
 }
-    
