@@ -49,6 +49,10 @@ public class RecordJsonUnmarshaller implements Unmarshaller<Record, JsonUnmarsha
                     context.nextToken();
                     record.setSequenceNumber(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ApproximateArrivalTimestamp", targetDepth)) {
+                    context.nextToken();
+                    record.setApproximateArrivalTimestamp(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Data", targetDepth)) {
                     context.nextToken();
                     record.setData(ByteBufferJsonUnmarshaller.getInstance().unmarshall(context));

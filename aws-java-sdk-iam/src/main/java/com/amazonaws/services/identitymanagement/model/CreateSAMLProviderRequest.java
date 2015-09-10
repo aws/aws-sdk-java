@@ -44,8 +44,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For more information, see
- * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html"> Giving Console Access Using SAML </a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html"> Creating Temporary Security Credentials for SAML Federation </a>
- * in the <i>Using Temporary Credentials</i> guide.
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html"> Enabling SAML 2.0 Federated Users to Access the AWS Management Console </a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html"> About SAML 2.0-based Federation </a>
+ * in the <i>IAM User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createSAMLProvider(CreateSAMLProviderRequest)
@@ -60,9 +60,8 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * You must generate the metadata document using the identity management
      * software that is used as your organization's IdP. <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-     * Temporary Security Credentials for SAML Federation</a> in the <i>Using
-     * Temporary Security Credentials</i> guide.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1000 - 10000000<br/>
@@ -86,9 +85,8 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * You must generate the metadata document using the identity management
      * software that is used as your organization's IdP. <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-     * Temporary Security Credentials for SAML Federation</a> in the <i>Using
-     * Temporary Security Credentials</i> guide.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1000 - 10000000<br/>
@@ -100,9 +98,8 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      *         You must generate the metadata document using the identity management
      *         software that is used as your organization's IdP. <p>For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-     *         Temporary Security Credentials for SAML Federation</a> in the <i>Using
-     *         Temporary Security Credentials</i> guide.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     *         SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>
      */
     public String getSAMLMetadataDocument() {
         return sAMLMetadataDocument;
@@ -116,9 +113,8 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * You must generate the metadata document using the identity management
      * software that is used as your organization's IdP. <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-     * Temporary Security Credentials for SAML Federation</a> in the <i>Using
-     * Temporary Security Credentials</i> guide.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1000 - 10000000<br/>
@@ -130,9 +126,8 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      *         You must generate the metadata document using the identity management
      *         software that is used as your organization's IdP. <p>For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-     *         Temporary Security Credentials for SAML Federation</a> in the <i>Using
-     *         Temporary Security Credentials</i> guide.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     *         SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>
      */
     public void setSAMLMetadataDocument(String sAMLMetadataDocument) {
         this.sAMLMetadataDocument = sAMLMetadataDocument;
@@ -146,9 +141,8 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * You must generate the metadata document using the identity management
      * software that is used as your organization's IdP. <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-     * Temporary Security Credentials for SAML Federation</a> in the <i>Using
-     * Temporary Security Credentials</i> guide.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -162,9 +156,8 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      *         You must generate the metadata document using the identity management
      *         software that is used as your organization's IdP. <p>For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-     *         Temporary Security Credentials for SAML Federation</a> in the <i>Using
-     *         Temporary Security Credentials</i> guide.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     *         SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

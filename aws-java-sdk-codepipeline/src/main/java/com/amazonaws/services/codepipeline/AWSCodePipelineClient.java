@@ -160,7 +160,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
     private static final Log log = LogFactory.getLog(AWSCodePipeline.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "codepipeline";
+    private static final String DEFAULT_SIGNING_NAME = "codepipeline";
 
     /**
      * List of exception unmarshallers for all CodePipeline exceptions.

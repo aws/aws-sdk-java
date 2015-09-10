@@ -37,7 +37,10 @@ public class GetGroupResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * items.
+     * items. Note that IAM might return fewer than the <code>MaxItems</code>
+     * number of results even when there are more results available. We
+     * recommend that you check <code>IsTruncated</code> after every call to
+     * ensure that you receive all of your results.
      */
     private Boolean isTruncated;
 
@@ -162,12 +165,18 @@ public class GetGroupResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * items.
+     * items. Note that IAM might return fewer than the <code>MaxItems</code>
+     * number of results even when there are more results available. We
+     * recommend that you check <code>IsTruncated</code> after every call to
+     * ensure that you receive all of your results.
      *
      * @return A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         items.
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code>
+     *         number of results even when there are more results available. We
+     *         recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
     public Boolean isTruncated() {
         return isTruncated;
@@ -177,12 +186,18 @@ public class GetGroupResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * items.
+     * items. Note that IAM might return fewer than the <code>MaxItems</code>
+     * number of results even when there are more results available. We
+     * recommend that you check <code>IsTruncated</code> after every call to
+     * ensure that you receive all of your results.
      *
      * @param isTruncated A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         items.
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code>
+     *         number of results even when there are more results available. We
+     *         recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -192,14 +207,20 @@ public class GetGroupResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * items.
+     * items. Note that IAM might return fewer than the <code>MaxItems</code>
+     * number of results even when there are more results available. We
+     * recommend that you check <code>IsTruncated</code> after every call to
+     * ensure that you receive all of your results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param isTruncated A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         items.
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code>
+     *         number of results even when there are more results available. We
+     *         recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -213,12 +234,18 @@ public class GetGroupResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * items.
+     * items. Note that IAM might return fewer than the <code>MaxItems</code>
+     * number of results even when there are more results available. We
+     * recommend that you check <code>IsTruncated</code> after every call to
+     * ensure that you receive all of your results.
      *
      * @return A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         items.
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code>
+     *         number of results even when there are more results available. We
+     *         recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
     public Boolean getIsTruncated() {
         return isTruncated;

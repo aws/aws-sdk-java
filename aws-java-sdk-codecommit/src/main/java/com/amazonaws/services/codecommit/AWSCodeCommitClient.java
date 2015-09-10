@@ -66,7 +66,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
     private static final Log log = LogFactory.getLog(AWSCodeCommit.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "codecommit";
+    private static final String DEFAULT_SIGNING_NAME = "codecommit";
 
     /**
      * List of exception unmarshallers for all CodeCommit exceptions.

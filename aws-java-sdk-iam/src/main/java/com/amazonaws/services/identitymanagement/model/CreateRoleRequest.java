@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates a new role for your AWS account. For more information about
  * roles, go to
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  * <p>
  * The policy in the following example grants permission to an EC2

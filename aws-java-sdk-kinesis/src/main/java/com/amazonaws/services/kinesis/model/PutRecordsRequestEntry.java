@@ -25,11 +25,12 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. The maximum size of the data blob (the payload
-     * before base64-encoding) is 50 kilobytes (KB)
+     * blob is serialized. When the data blob (the payload before
+     * base64-encoding) is added to the partition key size, the total size
+     * must not exceed the maximum record size (1 MB).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      */
     private java.nio.ByteBuffer data;
 
@@ -60,15 +61,17 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
 
     /**
      * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. The maximum size of the data blob (the payload
-     * before base64-encoding) is 50 kilobytes (KB)
+     * blob is serialized. When the data blob (the payload before
+     * base64-encoding) is added to the partition key size, the total size
+     * must not exceed the maximum record size (1 MB).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      *
      * @return The data blob to put into the record, which is base64-encoded when the
-     *         blob is serialized. The maximum size of the data blob (the payload
-     *         before base64-encoding) is 50 kilobytes (KB)
+     *         blob is serialized. When the data blob (the payload before
+     *         base64-encoding) is added to the partition key size, the total size
+     *         must not exceed the maximum record size (1 MB).
      */
     public java.nio.ByteBuffer getData() {
         return data;
@@ -76,15 +79,17 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
     
     /**
      * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. The maximum size of the data blob (the payload
-     * before base64-encoding) is 50 kilobytes (KB)
+     * blob is serialized. When the data blob (the payload before
+     * base64-encoding) is added to the partition key size, the total size
+     * must not exceed the maximum record size (1 MB).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      *
      * @param data The data blob to put into the record, which is base64-encoded when the
-     *         blob is serialized. The maximum size of the data blob (the payload
-     *         before base64-encoding) is 50 kilobytes (KB)
+     *         blob is serialized. When the data blob (the payload before
+     *         base64-encoding) is added to the partition key size, the total size
+     *         must not exceed the maximum record size (1 MB).
      */
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
@@ -92,17 +97,19 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
     
     /**
      * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. The maximum size of the data blob (the payload
-     * before base64-encoding) is 50 kilobytes (KB)
+     * blob is serialized. When the data blob (the payload before
+     * base64-encoding) is added to the partition key size, the total size
+     * must not exceed the maximum record size (1 MB).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      *
      * @param data The data blob to put into the record, which is base64-encoded when the
-     *         blob is serialized. The maximum size of the data blob (the payload
-     *         before base64-encoding) is 50 kilobytes (KB)
+     *         blob is serialized. When the data blob (the payload before
+     *         base64-encoding) is added to the partition key size, the total size
+     *         must not exceed the maximum record size (1 MB).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

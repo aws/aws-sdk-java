@@ -90,7 +90,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      * <br>
      * <p>
      * Sample -
-     * <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
      * </li>
      * </ul>
@@ -269,7 +269,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      * <br>
      * <p>
      * Sample -
-     * <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
      * </li>
      * </ul>
@@ -329,7 +329,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        <br>
      *        <p>
      *        Sample -
-     *        <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     *        <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      *        </p>
      *        </li>
      */
@@ -391,7 +391,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      * <br>
      * <p>
      * Sample -
-     * <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
      * </li>
      * </ul>
@@ -451,7 +451,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *         <br>
      *         <p>
      *         Sample -
-     *         <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     *         <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      *         </p>
      *         </li>
      */
@@ -513,7 +513,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      * <br>
      * <p>
      * Sample -
-     * <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
      * </li>
      * </ul>
@@ -573,7 +573,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        <br>
      *        <p>
      *        Sample -
-     *        <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     *        <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

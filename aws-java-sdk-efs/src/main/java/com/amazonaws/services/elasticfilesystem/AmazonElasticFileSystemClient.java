@@ -51,7 +51,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
             .getLog(AmazonElasticFileSystem.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "elasticfilesystem";
+    private static final String DEFAULT_SIGNING_NAME = "elasticfilesystem";
 
     /**
      * List of exception unmarshallers for all EFS exceptions.

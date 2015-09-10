@@ -62,15 +62,60 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * <br>
      * <p>
      * Sample -
-     * <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
      */
     private String dataRearrangement;
     /**
      * <p>
-     * A JSON string that represents the schema. This is not required if
-     * <code>DataSchemaUri</code> is specified.
+     * A JSON string that represents the schema for an Amazon RDS
+     * <code>DataSource</code>. The <code>DataSchema</code> defines the
+     * structure of the observation data in the data file(s) referenced in the
+     * <code>DataSource</code>.
      * </p>
+     * <p>
+     * A <code>DataSchema</code> is not required if you specify a
+     * <code>DataSchemaUri</code>
+     * </p>
+     * <p>
+     * Define your <code>DataSchema</code> as a series of key-value pairs.
+     * <code>attributes</code> and <code>excludedVariableNames</code> have an
+     * array of key-value pairs for their value. Use the following format to
+     * define your <code>DataSchema</code>.
+     * </p>
+     * <p>
+     * { "version": "1.0",
+     * </p>
+     * <p>
+     * "recordAnnotationFieldName": "F1",
+     * </p>
+     * <p>
+     * "recordWeightFieldName": "F2",
+     * </p>
+     * <p>
+     * "targetFieldName": "F3",
+     * </p>
+     * <p>
+     * "dataFormat": "CSV",
+     * </p>
+     * <p>
+     * "dataFileContainsHeader": true,
+     * </p>
+     * <p>
+     * "attributes": [
+     * </p>
+     * <p>
+     * { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2",
+     * "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL"
+     * }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5",
+     * "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
+     * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, {
+     * "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],
+     * </p>
+     * <p>
+     * "excludedVariableNames": [ "F6" ] }
+     * </p>
+     * <?oxy_insert_end>
      */
     private String dataSchema;
     /**
@@ -309,7 +354,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * <br>
      * <p>
      * Sample -
-     * <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
      * 
      * @param dataRearrangement
@@ -317,7 +362,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        requirement of a <code>DataSource</code>. </p> <br>
      *        <p>
      *        Sample -
-     *        <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     *        <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      */
     public void setDataRearrangement(String dataRearrangement) {
         this.dataRearrangement = dataRearrangement;
@@ -331,14 +376,14 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * <br>
      * <p>
      * Sample -
-     * <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
      * 
      * @return DataRearrangement - A JSON string that represents the splitting
      *         requirement of a <code>DataSource</code>. </p> <br>
      *         <p>
      *         Sample -
-     *         <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     *         <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      */
     public String getDataRearrangement() {
         return this.dataRearrangement;
@@ -352,7 +397,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * <br>
      * <p>
      * Sample -
-     * <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
      * 
      * @param dataRearrangement
@@ -360,7 +405,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        requirement of a <code>DataSource</code>. </p> <br>
      *        <p>
      *        Sample -
-     *        <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+     *        <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -371,13 +416,104 @@ public class RDSDataSpec implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string that represents the schema. This is not required if
-     * <code>DataSchemaUri</code> is specified.
+     * A JSON string that represents the schema for an Amazon RDS
+     * <code>DataSource</code>. The <code>DataSchema</code> defines the
+     * structure of the observation data in the data file(s) referenced in the
+     * <code>DataSource</code>.
      * </p>
+     * <p>
+     * A <code>DataSchema</code> is not required if you specify a
+     * <code>DataSchemaUri</code>
+     * </p>
+     * <p>
+     * Define your <code>DataSchema</code> as a series of key-value pairs.
+     * <code>attributes</code> and <code>excludedVariableNames</code> have an
+     * array of key-value pairs for their value. Use the following format to
+     * define your <code>DataSchema</code>.
+     * </p>
+     * <p>
+     * { "version": "1.0",
+     * </p>
+     * <p>
+     * "recordAnnotationFieldName": "F1",
+     * </p>
+     * <p>
+     * "recordWeightFieldName": "F2",
+     * </p>
+     * <p>
+     * "targetFieldName": "F3",
+     * </p>
+     * <p>
+     * "dataFormat": "CSV",
+     * </p>
+     * <p>
+     * "dataFileContainsHeader": true,
+     * </p>
+     * <p>
+     * "attributes": [
+     * </p>
+     * <p>
+     * { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2",
+     * "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL"
+     * }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5",
+     * "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
+     * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, {
+     * "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],
+     * </p>
+     * <p>
+     * "excludedVariableNames": [ "F6" ] }
+     * </p>
+     * <?oxy_insert_end>
      * 
      * @param dataSchema
-     *        A JSON string that represents the schema. This is not required if
-     *        <code>DataSchemaUri</code> is specified.
+     *        A JSON string that represents the schema for an Amazon RDS
+     *        <code>DataSource</code>. The <code>DataSchema</code> defines the
+     *        structure of the observation data in the data file(s) referenced
+     *        in the <code>DataSource</code>.</p>
+     *        <p>
+     *        A <code>DataSchema</code> is not required if you specify a
+     *        <code>DataSchemaUri</code>
+     *        </p>
+     *        <p>
+     *        Define your <code>DataSchema</code> as a series of key-value
+     *        pairs. <code>attributes</code> and
+     *        <code>excludedVariableNames</code> have an array of key-value
+     *        pairs for their value. Use the following format to define your
+     *        <code>DataSchema</code>.
+     *        </p>
+     *        <p>
+     *        { "version": "1.0",
+     *        </p>
+     *        <p>
+     *        "recordAnnotationFieldName": "F1",
+     *        </p>
+     *        <p>
+     *        "recordWeightFieldName": "F2",
+     *        </p>
+     *        <p>
+     *        "targetFieldName": "F3",
+     *        </p>
+     *        <p>
+     *        "dataFormat": "CSV",
+     *        </p>
+     *        <p>
+     *        "dataFileContainsHeader": true,
+     *        </p>
+     *        <p>
+     *        "attributes": [
+     *        </p>
+     *        <p>
+     *        { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2",
+     *        "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
+     *        "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, {
+     *        "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName":
+     *        "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType":
+     *        "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType":
+     *        "WEIGHTED_STRING_SEQUENCE" } ],
+     *        </p>
+     *        <p>
+     *        "excludedVariableNames": [ "F6" ] }
+     *        </p>
      */
     public void setDataSchema(String dataSchema) {
         this.dataSchema = dataSchema;
@@ -385,12 +521,103 @@ public class RDSDataSpec implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string that represents the schema. This is not required if
-     * <code>DataSchemaUri</code> is specified.
+     * A JSON string that represents the schema for an Amazon RDS
+     * <code>DataSource</code>. The <code>DataSchema</code> defines the
+     * structure of the observation data in the data file(s) referenced in the
+     * <code>DataSource</code>.
      * </p>
+     * <p>
+     * A <code>DataSchema</code> is not required if you specify a
+     * <code>DataSchemaUri</code>
+     * </p>
+     * <p>
+     * Define your <code>DataSchema</code> as a series of key-value pairs.
+     * <code>attributes</code> and <code>excludedVariableNames</code> have an
+     * array of key-value pairs for their value. Use the following format to
+     * define your <code>DataSchema</code>.
+     * </p>
+     * <p>
+     * { "version": "1.0",
+     * </p>
+     * <p>
+     * "recordAnnotationFieldName": "F1",
+     * </p>
+     * <p>
+     * "recordWeightFieldName": "F2",
+     * </p>
+     * <p>
+     * "targetFieldName": "F3",
+     * </p>
+     * <p>
+     * "dataFormat": "CSV",
+     * </p>
+     * <p>
+     * "dataFileContainsHeader": true,
+     * </p>
+     * <p>
+     * "attributes": [
+     * </p>
+     * <p>
+     * { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2",
+     * "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL"
+     * }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5",
+     * "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
+     * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, {
+     * "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],
+     * </p>
+     * <p>
+     * "excludedVariableNames": [ "F6" ] }
+     * </p>
+     * <?oxy_insert_end>
      * 
-     * @return A JSON string that represents the schema. This is not required if
-     *         <code>DataSchemaUri</code> is specified.
+     * @return A JSON string that represents the schema for an Amazon RDS
+     *         <code>DataSource</code>. The <code>DataSchema</code> defines the
+     *         structure of the observation data in the data file(s) referenced
+     *         in the <code>DataSource</code>.</p>
+     *         <p>
+     *         A <code>DataSchema</code> is not required if you specify a
+     *         <code>DataSchemaUri</code>
+     *         </p>
+     *         <p>
+     *         Define your <code>DataSchema</code> as a series of key-value
+     *         pairs. <code>attributes</code> and
+     *         <code>excludedVariableNames</code> have an array of key-value
+     *         pairs for their value. Use the following format to define your
+     *         <code>DataSchema</code>.
+     *         </p>
+     *         <p>
+     *         { "version": "1.0",
+     *         </p>
+     *         <p>
+     *         "recordAnnotationFieldName": "F1",
+     *         </p>
+     *         <p>
+     *         "recordWeightFieldName": "F2",
+     *         </p>
+     *         <p>
+     *         "targetFieldName": "F3",
+     *         </p>
+     *         <p>
+     *         "dataFormat": "CSV",
+     *         </p>
+     *         <p>
+     *         "dataFileContainsHeader": true,
+     *         </p>
+     *         <p>
+     *         "attributes": [
+     *         </p>
+     *         <p>
+     *         { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2",
+     *         "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
+     *         "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, {
+     *         "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName":
+     *         "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType":
+     *         "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType":
+     *         "WEIGHTED_STRING_SEQUENCE" } ],
+     *         </p>
+     *         <p>
+     *         "excludedVariableNames": [ "F6" ] }
+     *         </p>
      */
     public String getDataSchema() {
         return this.dataSchema;
@@ -398,13 +625,104 @@ public class RDSDataSpec implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string that represents the schema. This is not required if
-     * <code>DataSchemaUri</code> is specified.
+     * A JSON string that represents the schema for an Amazon RDS
+     * <code>DataSource</code>. The <code>DataSchema</code> defines the
+     * structure of the observation data in the data file(s) referenced in the
+     * <code>DataSource</code>.
      * </p>
+     * <p>
+     * A <code>DataSchema</code> is not required if you specify a
+     * <code>DataSchemaUri</code>
+     * </p>
+     * <p>
+     * Define your <code>DataSchema</code> as a series of key-value pairs.
+     * <code>attributes</code> and <code>excludedVariableNames</code> have an
+     * array of key-value pairs for their value. Use the following format to
+     * define your <code>DataSchema</code>.
+     * </p>
+     * <p>
+     * { "version": "1.0",
+     * </p>
+     * <p>
+     * "recordAnnotationFieldName": "F1",
+     * </p>
+     * <p>
+     * "recordWeightFieldName": "F2",
+     * </p>
+     * <p>
+     * "targetFieldName": "F3",
+     * </p>
+     * <p>
+     * "dataFormat": "CSV",
+     * </p>
+     * <p>
+     * "dataFileContainsHeader": true,
+     * </p>
+     * <p>
+     * "attributes": [
+     * </p>
+     * <p>
+     * { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2",
+     * "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL"
+     * }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5",
+     * "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
+     * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, {
+     * "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],
+     * </p>
+     * <p>
+     * "excludedVariableNames": [ "F6" ] }
+     * </p>
+     * <?oxy_insert_end>
      * 
      * @param dataSchema
-     *        A JSON string that represents the schema. This is not required if
-     *        <code>DataSchemaUri</code> is specified.
+     *        A JSON string that represents the schema for an Amazon RDS
+     *        <code>DataSource</code>. The <code>DataSchema</code> defines the
+     *        structure of the observation data in the data file(s) referenced
+     *        in the <code>DataSource</code>.</p>
+     *        <p>
+     *        A <code>DataSchema</code> is not required if you specify a
+     *        <code>DataSchemaUri</code>
+     *        </p>
+     *        <p>
+     *        Define your <code>DataSchema</code> as a series of key-value
+     *        pairs. <code>attributes</code> and
+     *        <code>excludedVariableNames</code> have an array of key-value
+     *        pairs for their value. Use the following format to define your
+     *        <code>DataSchema</code>.
+     *        </p>
+     *        <p>
+     *        { "version": "1.0",
+     *        </p>
+     *        <p>
+     *        "recordAnnotationFieldName": "F1",
+     *        </p>
+     *        <p>
+     *        "recordWeightFieldName": "F2",
+     *        </p>
+     *        <p>
+     *        "targetFieldName": "F3",
+     *        </p>
+     *        <p>
+     *        "dataFormat": "CSV",
+     *        </p>
+     *        <p>
+     *        "dataFileContainsHeader": true,
+     *        </p>
+     *        <p>
+     *        "attributes": [
+     *        </p>
+     *        <p>
+     *        { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2",
+     *        "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
+     *        "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, {
+     *        "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName":
+     *        "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType":
+     *        "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType":
+     *        "WEIGHTED_STRING_SEQUENCE" } ],
+     *        </p>
+     *        <p>
+     *        "excludedVariableNames": [ "F6" ] }
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

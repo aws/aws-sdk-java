@@ -225,7 +225,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
     private static final Log log = LogFactory.getLog(AmazonDynamoDB.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "dynamodb";
+    private static final String DEFAULT_SIGNING_NAME = "dynamodb";
 
     /**
      * List of exception unmarshallers for all DynamoDB exceptions.

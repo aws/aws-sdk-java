@@ -95,7 +95,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
             .getLog(AmazonCognitoIdentity.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "cognito-identity";
+    private static final String DEFAULT_SIGNING_NAME = "cognito-identity";
 
     /**
      * List of exception unmarshallers for all Amazon Cognito Identity

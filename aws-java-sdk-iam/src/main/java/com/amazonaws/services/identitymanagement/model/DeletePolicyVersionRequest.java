@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For information about versions for managed policies, refer to
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"> Versioning for Managed Policies </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deletePolicyVersion(DeletePolicyVersionRequest)
@@ -55,7 +55,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest implemen
      * The policy version to delete. <p>For more information about managed
      * policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?<br/>
@@ -132,7 +132,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest implemen
      * The policy version to delete. <p>For more information about managed
      * policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?<br/>
@@ -140,7 +140,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest implemen
      * @return The policy version to delete. <p>For more information about managed
      *         policy versions, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     *         for Managed Policies</a> in the <i>Using IAM</i> guide.
+     *         for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
     public String getVersionId() {
         return versionId;
@@ -150,7 +150,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest implemen
      * The policy version to delete. <p>For more information about managed
      * policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?<br/>
@@ -158,7 +158,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest implemen
      * @param versionId The policy version to delete. <p>For more information about managed
      *         policy versions, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     *         for Managed Policies</a> in the <i>Using IAM</i> guide.
+     *         for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
     public void setVersionId(String versionId) {
         this.versionId = versionId;
@@ -168,7 +168,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest implemen
      * The policy version to delete. <p>For more information about managed
      * policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -178,7 +178,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest implemen
      * @param versionId The policy version to delete. <p>For more information about managed
      *         policy versions, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     *         for Managed Policies</a> in the <i>Using IAM</i> guide.
+     *         for Managed Policies</a> in the <i>IAM User Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

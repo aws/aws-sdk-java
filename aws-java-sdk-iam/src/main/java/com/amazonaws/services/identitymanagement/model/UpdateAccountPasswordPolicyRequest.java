@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For more information about using a password policy, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html"> Managing an IAM Password Policy </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest)
@@ -79,8 +79,8 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      * Allows all IAM users in your account to use the AWS Management Console
      * to change their own passwords. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
-     * guide. <p>Default value: false
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.
+     * <p>Default value: false
      */
     private Boolean allowUsersToChangePassword;
 
@@ -385,14 +385,14 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      * Allows all IAM users in your account to use the AWS Management Console
      * to change their own passwords. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
-     * guide. <p>Default value: false
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.
+     * <p>Default value: false
      *
      * @return Allows all IAM users in your account to use the AWS Management Console
      *         to change their own passwords. For more information, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     *         IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
-     *         guide. <p>Default value: false
+     *         IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.
+     *         <p>Default value: false
      */
     public Boolean isAllowUsersToChangePassword() {
         return allowUsersToChangePassword;
@@ -402,14 +402,14 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      * Allows all IAM users in your account to use the AWS Management Console
      * to change their own passwords. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
-     * guide. <p>Default value: false
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.
+     * <p>Default value: false
      *
      * @param allowUsersToChangePassword Allows all IAM users in your account to use the AWS Management Console
      *         to change their own passwords. For more information, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     *         IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
-     *         guide. <p>Default value: false
+     *         IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.
+     *         <p>Default value: false
      */
     public void setAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
         this.allowUsersToChangePassword = allowUsersToChangePassword;
@@ -419,16 +419,16 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      * Allows all IAM users in your account to use the AWS Management Console
      * to change their own passwords. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
-     * guide. <p>Default value: false
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.
+     * <p>Default value: false
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowUsersToChangePassword Allows all IAM users in your account to use the AWS Management Console
      *         to change their own passwords. For more information, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     *         IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
-     *         guide. <p>Default value: false
+     *         IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.
+     *         <p>Default value: false
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -442,14 +442,14 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      * Allows all IAM users in your account to use the AWS Management Console
      * to change their own passwords. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
-     * guide. <p>Default value: false
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.
+     * <p>Default value: false
      *
      * @return Allows all IAM users in your account to use the AWS Management Console
      *         to change their own passwords. For more information, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     *         IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
-     *         guide. <p>Default value: false
+     *         IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.
+     *         <p>Default value: false
      */
     public Boolean getAllowUsersToChangePassword() {
         return allowUsersToChangePassword;

@@ -47,13 +47,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * record to process.
  * </p>
  * <p>
- * Each data record can be up to 50 KB in size, and each shard can read
- * up to 2 MB per second. You can ensure that your calls don't exceed the
+ * Each data record can be up to 1 MB in size, and each shard can read up
+ * to 2 MB per second. You can ensure that your calls don't exceed the
  * maximum supported size or throughput by using the <code>Limit</code>
  * parameter to specify the maximum number of records that GetRecords can
  * return. Consider your average record size when determining this limit.
- * For example, if your average record size is 40 KB, you can limit the
- * data returned to about 1 MB per call by specifying 25 as the limit.
  * </p>
  * <p>
  * The size of the data returned by GetRecords will vary depending on the
@@ -72,10 +70,21 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * To detect whether the application is falling behind in processing, you
  * can use the <code>MillisBehindLatest</code> response attribute. You
- * can also monitor the amount of data in a stream using the CloudWatch
- * metrics. For more information, see
- * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html"> Monitoring Amazon Kinesis with Amazon CloudWatch </a>
- * in the <i>Amazon Kinesis Developer Guide</i> .
+ * can also monitor the stream using CloudWatch metrics (see
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html"> Monitoring Amazon Kinesis </a>
+ * in the <i>Amazon Kinesis Developer Guide</i> ).
+ * </p>
+ * <p>
+ * Each Amazon Kinesis record includes a value,
+ * <code>ApproximateArrivalTimestamp</code> ,
+ * that is set when an Amazon Kinesis stream successfully
+ * receives and stores a record. This is commonly referred to as a
+ * server-side timestamp, which is different than a client-side
+ * timestamp, where the timestamp is set when a data producer creates or
+ * sends the record to a stream. The timestamp has millisecond precision.
+ * There are no guarantees about the timestamp accuracy, or that the
+ * timestamp is always increasing. For example, records in a shard or
+ * across a stream might have timestamps that are out of order.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#getRecords(GetRecordsRequest)

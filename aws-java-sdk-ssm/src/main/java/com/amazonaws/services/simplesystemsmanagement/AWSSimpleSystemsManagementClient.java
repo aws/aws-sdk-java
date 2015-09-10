@@ -84,7 +84,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
             .getLog(AWSSimpleSystemsManagement.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "ssm";
+    private static final String DEFAULT_SIGNING_NAME = "ssm";
 
     /**
      * List of exception unmarshallers for all Amazon SSM exceptions.

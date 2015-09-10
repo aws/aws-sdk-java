@@ -96,12 +96,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
 
     /**
      * <p>
-     * Puts (writes) a single data record from a producer into an Amazon
-     * Kinesis stream. Call <code>PutRecord</code> to send data from the
-     * producer into the Amazon Kinesis stream for real-time ingestion and
-     * subsequent processing, one record at a time. Each shard can support up
-     * to 1000 records written per second, up to a maximum total of 1 MB data
-     * written per second.
+     * Writes a single data record from a producer into an Amazon Kinesis
+     * stream. Call <code>PutRecord</code> to send data from the producer
+     * into the Amazon Kinesis stream for real-time ingestion and subsequent
+     * processing, one record at a time. Each shard can support writes up to
+     * 1,000 records per second, up to a maximum data write total of 1 MB per
+     * second.
      * </p>
      * <p>
      * You must specify the name of the stream that captures, stores, and
@@ -127,7 +127,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * override hashing the partition key to determine the shard by
      * explicitly specifying a hash value using the
      * <code>ExplicitHashKey</code> parameter. For more information, see
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html"> Adding Data to a Stream </a>
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream"> Adding Data to a Stream </a>
      * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
@@ -139,7 +139,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Sequence numbers generally increase over time. To guarantee strictly
      * increasing ordering, use the <code>SequenceNumberForOrdering</code>
      * parameter. For more information, see
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html"> Adding Data to a Stream </a>
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream"> Adding Data to a Stream </a>
      * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
@@ -173,12 +173,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
 
     /**
      * <p>
-     * Puts (writes) a single data record from a producer into an Amazon
-     * Kinesis stream. Call <code>PutRecord</code> to send data from the
-     * producer into the Amazon Kinesis stream for real-time ingestion and
-     * subsequent processing, one record at a time. Each shard can support up
-     * to 1000 records written per second, up to a maximum total of 1 MB data
-     * written per second.
+     * Writes a single data record from a producer into an Amazon Kinesis
+     * stream. Call <code>PutRecord</code> to send data from the producer
+     * into the Amazon Kinesis stream for real-time ingestion and subsequent
+     * processing, one record at a time. Each shard can support writes up to
+     * 1,000 records per second, up to a maximum data write total of 1 MB per
+     * second.
      * </p>
      * <p>
      * You must specify the name of the stream that captures, stores, and
@@ -204,7 +204,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * override hashing the partition key to determine the shard by
      * explicitly specifying a hash value using the
      * <code>ExplicitHashKey</code> parameter. For more information, see
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html"> Adding Data to a Stream </a>
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream"> Adding Data to a Stream </a>
      * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
@@ -216,7 +216,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Sequence numbers generally increase over time. To guarantee strictly
      * increasing ordering, use the <code>SequenceNumberForOrdering</code>
      * parameter. For more information, see
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html"> Adding Data to a Stream </a>
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream"> Adding Data to a Stream </a>
      * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
@@ -263,12 +263,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * </p>
      * <p>
      * You specify and control the number of shards that a stream is
-     * composed of. Each open shard can support up to 5 read transactions per
-     * second, up to a maximum total of 2 MB of data read per second. Each
-     * shard can support up to 1000 records written per second, up to a
-     * maximum total of 1 MB data written per second. You can add shards to a
-     * stream if the amount of data input increases and you can remove shards
-     * if the amount of data input decreases.
+     * composed of. Each shard can support reads up to 5 transactions per
+     * second, up to a maximum data read total of 2 MB per second. Each shard
+     * can support writes up to 1,000 records per second, up to a maximum
+     * data write total of 1 MB per second. You can add shards to a stream if
+     * the amount of data input increases and you can remove shards if the
+     * amount of data input decreases.
      * </p>
      * <p>
      * The stream name identifies the stream. The name is scoped to the AWS
@@ -300,7 +300,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * For the default shard limit for an AWS account, see
      * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html"> Amazon Kinesis Limits </a> . If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
-     * 
+     * .
      * </p>
      * <p>
      * You can use <code>DescribeStream</code> to check the stream status,
@@ -338,12 +338,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * </p>
      * <p>
      * You specify and control the number of shards that a stream is
-     * composed of. Each open shard can support up to 5 read transactions per
-     * second, up to a maximum total of 2 MB of data read per second. Each
-     * shard can support up to 1000 records written per second, up to a
-     * maximum total of 1 MB data written per second. You can add shards to a
-     * stream if the amount of data input increases and you can remove shards
-     * if the amount of data input decreases.
+     * composed of. Each shard can support reads up to 5 transactions per
+     * second, up to a maximum data read total of 2 MB per second. Each shard
+     * can support writes up to 1,000 records per second, up to a maximum
+     * data write total of 1 MB per second. You can add shards to a stream if
+     * the amount of data input increases and you can remove shards if the
+     * amount of data input decreases.
      * </p>
      * <p>
      * The stream name identifies the stream. The name is scoped to the AWS
@@ -375,7 +375,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * For the default shard limit for an AWS account, see
      * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html"> Amazon Kinesis Limits </a> . If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
-     * 
+     * .
      * </p>
      * <p>
      * You can use <code>DescribeStream</code> to check the stream status,
@@ -666,17 +666,24 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
 
     /**
      * <p>
-     * Puts (writes) multiple data records from a producer into an Amazon
-     * Kinesis stream in a single call (also referred to as a
-     * <code>PutRecords</code> request). Use this operation to send data from
-     * a data producer into the Amazon Kinesis stream for real-time ingestion
-     * and processing. Each shard can support up to 1000 records written per
-     * second, up to a maximum total of 1 MB data written per second.
+     * Writes multiple data records from a producer into an Amazon Kinesis
+     * stream in a single call (also referred to as a <code>PutRecords</code>
+     * request). Use this operation to send data from a data producer into
+     * the Amazon Kinesis stream for data ingestion and processing.
+     * </p>
+     * <p>
+     * Each <code>PutRecords</code> request can support up to 500 records.
+     * Each record in the request can be as large as 1 MB, up to a limit of 5
+     * MB for the entire request, including partition keys. Each shard can
+     * support writes up to 1,000 records per second, up to a maximum data
+     * write total of 1 MB per second.
      * </p>
      * <p>
      * You must specify the name of the stream that captures, stores, and
      * transports the data; and an array of request <code>Records</code> ,
      * with each record in the array requiring a partition key and data blob.
+     * The record size limit applies to the total size of the partition key
+     * and data blob.
      * </p>
      * <p>
      * The data blob can be any type of data; for example, a segment from a
@@ -691,7 +698,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * result of this hashing mechanism, all data records with the same
      * partition key map to the same shard within the stream. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html"> Adding Data to a Stream </a>
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream"> Adding Data to a Stream </a>
      * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
@@ -700,7 +707,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * partition key to shard mapping. This parameter allows a data producer
      * to determine explicitly the shard where the record is stored. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords"> Adding Multiple Records with PutRecords </a>
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords"> Adding Multiple Records with PutRecords </a>
      * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
@@ -763,17 +770,24 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
 
     /**
      * <p>
-     * Puts (writes) multiple data records from a producer into an Amazon
-     * Kinesis stream in a single call (also referred to as a
-     * <code>PutRecords</code> request). Use this operation to send data from
-     * a data producer into the Amazon Kinesis stream for real-time ingestion
-     * and processing. Each shard can support up to 1000 records written per
-     * second, up to a maximum total of 1 MB data written per second.
+     * Writes multiple data records from a producer into an Amazon Kinesis
+     * stream in a single call (also referred to as a <code>PutRecords</code>
+     * request). Use this operation to send data from a data producer into
+     * the Amazon Kinesis stream for data ingestion and processing.
+     * </p>
+     * <p>
+     * Each <code>PutRecords</code> request can support up to 500 records.
+     * Each record in the request can be as large as 1 MB, up to a limit of 5
+     * MB for the entire request, including partition keys. Each shard can
+     * support writes up to 1,000 records per second, up to a maximum data
+     * write total of 1 MB per second.
      * </p>
      * <p>
      * You must specify the name of the stream that captures, stores, and
      * transports the data; and an array of request <code>Records</code> ,
      * with each record in the array requiring a partition key and data blob.
+     * The record size limit applies to the total size of the partition key
+     * and data blob.
      * </p>
      * <p>
      * The data blob can be any type of data; for example, a segment from a
@@ -788,7 +802,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * result of this hashing mechanism, all data records with the same
      * partition key map to the same shard within the stream. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html"> Adding Data to a Stream </a>
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream"> Adding Data to a Stream </a>
      * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
@@ -797,7 +811,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * partition key to shard mapping. This parameter allows a data producer
      * to determine explicitly the shard where the record is stored. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords"> Adding Multiple Records with PutRecords </a>
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords"> Adding Multiple Records with PutRecords </a>
      * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
@@ -1198,13 +1212,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * record to process.
      * </p>
      * <p>
-     * Each data record can be up to 50 KB in size, and each shard can read
+     * Each data record can be up to 1 MB in size, and each shard can read
      * up to 2 MB per second. You can ensure that your calls don't exceed the
      * maximum supported size or throughput by using the <code>Limit</code>
      * parameter to specify the maximum number of records that GetRecords can
      * return. Consider your average record size when determining this limit.
-     * For example, if your average record size is 40 KB, you can limit the
-     * data returned to about 1 MB per call by specifying 25 as the limit.
      * </p>
      * <p>
      * The size of the data returned by GetRecords will vary depending on
@@ -1223,10 +1235,21 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * To detect whether the application is falling behind in processing,
      * you can use the <code>MillisBehindLatest</code> response attribute.
-     * You can also monitor the amount of data in a stream using the
-     * CloudWatch metrics. For more information, see
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html"> Monitoring Amazon Kinesis with Amazon CloudWatch </a>
-     * in the <i>Amazon Kinesis Developer Guide</i> .
+     * You can also monitor the stream using CloudWatch metrics (see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html"> Monitoring Amazon Kinesis </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> ).
+     * </p>
+     * <p>
+     * Each Amazon Kinesis record includes a value,
+     * <code>ApproximateArrivalTimestamp</code> , that is set when an Amazon
+     * Kinesis stream successfully receives and stores a record. This is
+     * commonly referred to as a server-side timestamp, which is different
+     * than a client-side timestamp, where the timestamp is set when a data
+     * producer creates or sends the record to a stream. The timestamp has
+     * millisecond precision. There are no guarantees about the timestamp
+     * accuracy, or that the timestamp is always increasing. For example,
+     * records in a shard or across a stream might have timestamps that are
+     * out of order.
      * </p>
      *
      * @param getRecordsRequest Container for the necessary parameters to
@@ -1275,13 +1298,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * record to process.
      * </p>
      * <p>
-     * Each data record can be up to 50 KB in size, and each shard can read
+     * Each data record can be up to 1 MB in size, and each shard can read
      * up to 2 MB per second. You can ensure that your calls don't exceed the
      * maximum supported size or throughput by using the <code>Limit</code>
      * parameter to specify the maximum number of records that GetRecords can
      * return. Consider your average record size when determining this limit.
-     * For example, if your average record size is 40 KB, you can limit the
-     * data returned to about 1 MB per call by specifying 25 as the limit.
      * </p>
      * <p>
      * The size of the data returned by GetRecords will vary depending on
@@ -1300,10 +1321,21 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * To detect whether the application is falling behind in processing,
      * you can use the <code>MillisBehindLatest</code> response attribute.
-     * You can also monitor the amount of data in a stream using the
-     * CloudWatch metrics. For more information, see
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html"> Monitoring Amazon Kinesis with Amazon CloudWatch </a>
-     * in the <i>Amazon Kinesis Developer Guide</i> .
+     * You can also monitor the stream using CloudWatch metrics (see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html"> Monitoring Amazon Kinesis </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> ).
+     * </p>
+     * <p>
+     * Each Amazon Kinesis record includes a value,
+     * <code>ApproximateArrivalTimestamp</code> , that is set when an Amazon
+     * Kinesis stream successfully receives and stores a record. This is
+     * commonly referred to as a server-side timestamp, which is different
+     * than a client-side timestamp, where the timestamp is set when a data
+     * producer creates or sends the record to a stream. The timestamp has
+     * millisecond precision. There are no guarantees about the timestamp
+     * accuracy, or that the timestamp is always increasing. For example,
+     * records in a shard or across a stream might have timestamps that are
+     * out of order.
      * </p>
      *
      * @param getRecordsRequest Container for the necessary parameters to
@@ -1388,7 +1420,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * For the default shard limit for an AWS account, see
      * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html"> Amazon Kinesis Limits </a> . If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
-     * 
+     * .
      * </p>
      * <p>
      * If you try to operate on too many streams in parallel using
@@ -1477,7 +1509,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * For the default shard limit for an AWS account, see
      * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html"> Amazon Kinesis Limits </a> . If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html"> contact AWS Support </a>
-     * 
+     * .
      * </p>
      * <p>
      * If you try to operate on too many streams in parallel using

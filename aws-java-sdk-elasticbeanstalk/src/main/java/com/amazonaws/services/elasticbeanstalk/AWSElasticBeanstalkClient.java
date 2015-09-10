@@ -81,7 +81,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     private static final Log log = LogFactory.getLog(AWSElasticBeanstalk.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "elasticbeanstalk";
+    private static final String DEFAULT_SIGNING_NAME = "elasticbeanstalk";
 
     /**
      * List of exception unmarshallers for all Elastic Beanstalk exceptions.
