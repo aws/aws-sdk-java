@@ -110,7 +110,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
     private static final Log log = LogFactory.getLog(AWSSupport.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "support";
+    private static final String DEFAULT_SIGNING_NAME = "support";
 
     /**
      * List of exception unmarshallers for all AWS Support exceptions.

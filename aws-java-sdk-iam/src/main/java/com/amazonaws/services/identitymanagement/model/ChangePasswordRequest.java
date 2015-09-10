@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * To change the password for a different user, see UpdateLoginProfile.
  * For more information about modifying passwords, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(ChangePasswordRequest)

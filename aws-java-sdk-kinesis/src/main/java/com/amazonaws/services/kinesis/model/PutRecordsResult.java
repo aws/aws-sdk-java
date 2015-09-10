@@ -28,7 +28,7 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * <code>PutRecords</code> request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
+     * <b>Range: </b>1 - 100000<br/>
      */
     private Integer failedRecordCount;
 
@@ -50,7 +50,7 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * <code>PutRecords</code> request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
+     * <b>Range: </b>1 - 100000<br/>
      *
      * @return The number of unsuccessfully processed records in a
      *         <code>PutRecords</code> request.
@@ -64,7 +64,7 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * <code>PutRecords</code> request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
+     * <b>Range: </b>1 - 100000<br/>
      *
      * @param failedRecordCount The number of unsuccessfully processed records in a
      *         <code>PutRecords</code> request.
@@ -80,7 +80,7 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
+     * <b>Range: </b>1 - 100000<br/>
      *
      * @param failedRecordCount The number of unsuccessfully processed records in a
      *         <code>PutRecords</code> request.

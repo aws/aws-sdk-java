@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * For information about the number of server certificates you can
  * upload, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  * <p>
  * <b>NOTE:</b>Because the body of the public key certificate, private
@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * about setting up signatures and authorization through the API, go to
  * Signing AWS API Requests in the AWS General Reference. For general
  * information about using the Query API with IAM, go to Making Query
- * Requests in the Using IAM guide.
+ * Requests in the IAM User Guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(UploadServerCertificateRequest)

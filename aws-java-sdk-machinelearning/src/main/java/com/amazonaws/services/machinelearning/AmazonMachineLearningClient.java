@@ -52,7 +52,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
             .getLog(AmazonMachineLearning.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "machinelearning";
+    private static final String DEFAULT_SIGNING_NAME = "machinelearning";
 
     /**
      * List of exception unmarshallers for all Amazon Machine Learning
@@ -800,12 +800,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      * the <a>GetBatchPrediction</a> operation to verify that the status of the
      * <code>BatchPrediction</code> changed to DELETED.
      * </p>
-     * <caution><title>Caution</title>
      * <p>
-     * The result of the <code>DeleteBatchPrediction</code> operation is
-     * irreversible.
+     * <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code>
+     * operation is irreversible.
      * </p>
-     * </caution>
      * 
      * @param deleteBatchPredictionRequest
      *        null
@@ -862,12 +860,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      * <a>GetDataSource</a> operation to verify that the status of the
      * <code>DataSource</code> changed to DELETED.
      * </p>
-     * <caution><title>Caution</title>
      * <p>
-     * The results of the <code>DeleteDataSource</code> operation are
-     * irreversible.
+     * <b>Caution:</b> The results of the <code>DeleteDataSource</code>
+     * operation are irreversible.
      * </p>
-     * </caution>
      * 
      * @param deleteDataSourceRequest
      *        null
@@ -923,12 +919,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      * the <a>GetEvaluation</a> operation to verify that the status of the
      * <code>Evaluation</code> changed to <code>DELETED</code>.
      * </p>
-     * <caution><title>Caution</title>
      * <p>
-     * The results of the <code>DeleteEvaluation</code> operation are
-     * irreversible.
+     * <b>Caution:</b> The results of the <code>DeleteEvaluation</code>
+     * operation are irreversible.
      * </p>
-     * </caution>
      * 
      * @param deleteEvaluationRequest
      *        null
@@ -984,11 +978,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      * <a>GetMLModel</a> operation to verify that the status of the
      * <code>MLModel</code> changed to DELETED.
      * </p>
-     * <caution><title>Caution</title>
      * <p>
-     * The result of the <code>DeleteMLModel</code> operation is irreversible.
+     * <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is
+     * irreversible.
      * </p>
-     * </caution>
      * 
      * @param deleteMLModelRequest
      *        null
@@ -1509,12 +1502,12 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
     /**
      * <p>
      * Generates a prediction for the observation using the specified
-     * <code>MLModel</code>.
+     * <code>ML Model</code>.
      * </p>
      * <note><title>Note</title>
      * <p>
-     * Not all response parameters will be populated because this is dependent
-     * on the type of requested model.
+     * Not all response parameters will be populated. Whether a response
+     * parameter is populated depends on the type of model requested.
      * </p>
      * </note>
      * 

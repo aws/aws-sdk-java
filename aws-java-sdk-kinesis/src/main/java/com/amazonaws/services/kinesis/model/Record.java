@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class Record implements Serializable, Cloneable {
 
     /**
-     * The unique identifier for the record in the Amazon Kinesis stream.
+     * The unique identifier of the record in the stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
@@ -33,13 +33,19 @@ public class Record implements Serializable, Cloneable {
     private String sequenceNumber;
 
     /**
+     * The approximate time that the record was inserted into the stream.
+     */
+    private java.util.Date approximateArrivalTimestamp;
+
+    /**
      * The data blob. The data in the blob is both opaque and immutable to
      * the Amazon Kinesis service, which does not inspect, interpret, or
-     * change the data in the blob in any way. The maximum size of the data
-     * blob (the payload before base64-encoding) is 50 kilobytes (KB)
+     * change the data in the blob in any way. When the data blob (the
+     * payload before base64-encoding) is added to the partition key size,
+     * the total size must not exceed the maximum record size (1 MB).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      */
     private java.nio.ByteBuffer data;
 
@@ -52,38 +58,38 @@ public class Record implements Serializable, Cloneable {
     private String partitionKey;
 
     /**
-     * The unique identifier for the record in the Amazon Kinesis stream.
+     * The unique identifier of the record in the stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
      *
-     * @return The unique identifier for the record in the Amazon Kinesis stream.
+     * @return The unique identifier of the record in the stream.
      */
     public String getSequenceNumber() {
         return sequenceNumber;
     }
     
     /**
-     * The unique identifier for the record in the Amazon Kinesis stream.
+     * The unique identifier of the record in the stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
      *
-     * @param sequenceNumber The unique identifier for the record in the Amazon Kinesis stream.
+     * @param sequenceNumber The unique identifier of the record in the stream.
      */
     public void setSequenceNumber(String sequenceNumber) {
         this.sequenceNumber = sequenceNumber;
     }
     
     /**
-     * The unique identifier for the record in the Amazon Kinesis stream.
+     * The unique identifier of the record in the stream.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>0|([1-9]\d{0,128})<br/>
      *
-     * @param sequenceNumber The unique identifier for the record in the Amazon Kinesis stream.
+     * @param sequenceNumber The unique identifier of the record in the stream.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -94,18 +100,53 @@ public class Record implements Serializable, Cloneable {
     }
 
     /**
+     * The approximate time that the record was inserted into the stream.
+     *
+     * @return The approximate time that the record was inserted into the stream.
+     */
+    public java.util.Date getApproximateArrivalTimestamp() {
+        return approximateArrivalTimestamp;
+    }
+    
+    /**
+     * The approximate time that the record was inserted into the stream.
+     *
+     * @param approximateArrivalTimestamp The approximate time that the record was inserted into the stream.
+     */
+    public void setApproximateArrivalTimestamp(java.util.Date approximateArrivalTimestamp) {
+        this.approximateArrivalTimestamp = approximateArrivalTimestamp;
+    }
+    
+    /**
+     * The approximate time that the record was inserted into the stream.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param approximateArrivalTimestamp The approximate time that the record was inserted into the stream.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Record withApproximateArrivalTimestamp(java.util.Date approximateArrivalTimestamp) {
+        this.approximateArrivalTimestamp = approximateArrivalTimestamp;
+        return this;
+    }
+
+    /**
      * The data blob. The data in the blob is both opaque and immutable to
      * the Amazon Kinesis service, which does not inspect, interpret, or
-     * change the data in the blob in any way. The maximum size of the data
-     * blob (the payload before base64-encoding) is 50 kilobytes (KB)
+     * change the data in the blob in any way. When the data blob (the
+     * payload before base64-encoding) is added to the partition key size,
+     * the total size must not exceed the maximum record size (1 MB).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      *
      * @return The data blob. The data in the blob is both opaque and immutable to
      *         the Amazon Kinesis service, which does not inspect, interpret, or
-     *         change the data in the blob in any way. The maximum size of the data
-     *         blob (the payload before base64-encoding) is 50 kilobytes (KB)
+     *         change the data in the blob in any way. When the data blob (the
+     *         payload before base64-encoding) is added to the partition key size,
+     *         the total size must not exceed the maximum record size (1 MB).
      */
     public java.nio.ByteBuffer getData() {
         return data;
@@ -114,16 +155,18 @@ public class Record implements Serializable, Cloneable {
     /**
      * The data blob. The data in the blob is both opaque and immutable to
      * the Amazon Kinesis service, which does not inspect, interpret, or
-     * change the data in the blob in any way. The maximum size of the data
-     * blob (the payload before base64-encoding) is 50 kilobytes (KB)
+     * change the data in the blob in any way. When the data blob (the
+     * payload before base64-encoding) is added to the partition key size,
+     * the total size must not exceed the maximum record size (1 MB).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      *
      * @param data The data blob. The data in the blob is both opaque and immutable to
      *         the Amazon Kinesis service, which does not inspect, interpret, or
-     *         change the data in the blob in any way. The maximum size of the data
-     *         blob (the payload before base64-encoding) is 50 kilobytes (KB)
+     *         change the data in the blob in any way. When the data blob (the
+     *         payload before base64-encoding) is added to the partition key size,
+     *         the total size must not exceed the maximum record size (1 MB).
      */
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
@@ -132,18 +175,20 @@ public class Record implements Serializable, Cloneable {
     /**
      * The data blob. The data in the blob is both opaque and immutable to
      * the Amazon Kinesis service, which does not inspect, interpret, or
-     * change the data in the blob in any way. The maximum size of the data
-     * blob (the payload before base64-encoding) is 50 kilobytes (KB)
+     * change the data in the blob in any way. When the data blob (the
+     * payload before base64-encoding) is added to the partition key size,
+     * the total size must not exceed the maximum record size (1 MB).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      *
      * @param data The data blob. The data in the blob is both opaque and immutable to
      *         the Amazon Kinesis service, which does not inspect, interpret, or
-     *         change the data in the blob in any way. The maximum size of the data
-     *         blob (the payload before base64-encoding) is 50 kilobytes (KB)
+     *         change the data in the blob in any way. When the data blob (the
+     *         payload before base64-encoding) is added to the partition key size,
+     *         the total size must not exceed the maximum record size (1 MB).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -208,6 +253,7 @@ public class Record implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSequenceNumber() != null) sb.append("SequenceNumber: " + getSequenceNumber() + ",");
+        if (getApproximateArrivalTimestamp() != null) sb.append("ApproximateArrivalTimestamp: " + getApproximateArrivalTimestamp() + ",");
         if (getData() != null) sb.append("Data: " + getData() + ",");
         if (getPartitionKey() != null) sb.append("PartitionKey: " + getPartitionKey() );
         sb.append("}");
@@ -220,6 +266,7 @@ public class Record implements Serializable, Cloneable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getSequenceNumber() == null) ? 0 : getSequenceNumber().hashCode()); 
+        hashCode = prime * hashCode + ((getApproximateArrivalTimestamp() == null) ? 0 : getApproximateArrivalTimestamp().hashCode()); 
         hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode()); 
         hashCode = prime * hashCode + ((getPartitionKey() == null) ? 0 : getPartitionKey().hashCode()); 
         return hashCode;
@@ -235,6 +282,8 @@ public class Record implements Serializable, Cloneable {
         
         if (other.getSequenceNumber() == null ^ this.getSequenceNumber() == null) return false;
         if (other.getSequenceNumber() != null && other.getSequenceNumber().equals(this.getSequenceNumber()) == false) return false; 
+        if (other.getApproximateArrivalTimestamp() == null ^ this.getApproximateArrivalTimestamp() == null) return false;
+        if (other.getApproximateArrivalTimestamp() != null && other.getApproximateArrivalTimestamp().equals(this.getApproximateArrivalTimestamp()) == false) return false; 
         if (other.getData() == null ^ this.getData() == null) return false;
         if (other.getData() != null && other.getData().equals(this.getData()) == false) return false; 
         if (other.getPartitionKey() == null ^ this.getPartitionKey() == null) return false;

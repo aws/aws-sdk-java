@@ -55,7 +55,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
     private static final Log log = LogFactory.getLog(AmazonWorkspaces.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "workspaces";
+    private static final String DEFAULT_SIGNING_NAME = "workspaces";
 
     /**
      * List of exception unmarshallers for all Amazon WorkSpaces exceptions.

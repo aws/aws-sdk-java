@@ -56,7 +56,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
     private static final Log log = LogFactory.getLog(AmazonImportExport.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "importexport";
+    private static final String DEFAULT_SIGNING_NAME = "importexport";
 
     /**
      * List of exception unmarshallers for all AWS Import/Export exceptions.

@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates an alias for your AWS account. For information about using an
  * AWS account alias, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createAccountAlias(CreateAccountAliasRequest)

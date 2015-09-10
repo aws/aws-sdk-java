@@ -21,12 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.kinesis.AmazonKinesis#putRecord(PutRecordRequest) PutRecord operation}.
  * <p>
- * Puts (writes) a single data record from a producer into an Amazon
- * Kinesis stream. Call <code>PutRecord</code> to send data from the
- * producer into the Amazon Kinesis stream for real-time ingestion and
- * subsequent processing, one record at a time. Each shard can support up
- * to 1000 records written per second, up to a maximum total of 1 MB data
- * written per second.
+ * Writes a single data record from a producer into an Amazon Kinesis
+ * stream. Call <code>PutRecord</code> to send data from the producer
+ * into the Amazon Kinesis stream for real-time ingestion and subsequent
+ * processing, one record at a time. Each shard can support writes up to
+ * 1,000 records per second, up to a maximum data write total of 1 MB per
+ * second.
  * </p>
  * <p>
  * You must specify the name of the stream that captures, stores, and
@@ -52,7 +52,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * hashing the partition key to determine the shard by explicitly
  * specifying a hash value using the <code>ExplicitHashKey</code>
  * parameter. For more information, see
- * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html"> Adding Data to a Stream </a>
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream"> Adding Data to a Stream </a>
  * in the <i>Amazon Kinesis Developer Guide</i> .
  * </p>
  * <p>
@@ -64,7 +64,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Sequence numbers generally increase over time. To guarantee strictly
  * increasing ordering, use the <code>SequenceNumberForOrdering</code>
  * parameter. For more information, see
- * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html"> Adding Data to a Stream </a>
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream"> Adding Data to a Stream </a>
  * in the <i>Amazon Kinesis Developer Guide</i> .
  * </p>
  * <p>
@@ -93,11 +93,12 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. The maximum size of the data blob (the payload
-     * before base64-encoding) is 50 kilobytes (KB)
+     * blob is serialized. When the data blob (the payload before
+     * base64-encoding) is added to the partition key size, the total size
+     * must not exceed the maximum record size (1 MB).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      */
     private java.nio.ByteBuffer data;
 
@@ -186,15 +187,17 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. The maximum size of the data blob (the payload
-     * before base64-encoding) is 50 kilobytes (KB)
+     * blob is serialized. When the data blob (the payload before
+     * base64-encoding) is added to the partition key size, the total size
+     * must not exceed the maximum record size (1 MB).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      *
      * @return The data blob to put into the record, which is base64-encoded when the
-     *         blob is serialized. The maximum size of the data blob (the payload
-     *         before base64-encoding) is 50 kilobytes (KB)
+     *         blob is serialized. When the data blob (the payload before
+     *         base64-encoding) is added to the partition key size, the total size
+     *         must not exceed the maximum record size (1 MB).
      */
     public java.nio.ByteBuffer getData() {
         return data;
@@ -202,15 +205,17 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. The maximum size of the data blob (the payload
-     * before base64-encoding) is 50 kilobytes (KB)
+     * blob is serialized. When the data blob (the payload before
+     * base64-encoding) is added to the partition key size, the total size
+     * must not exceed the maximum record size (1 MB).
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      *
      * @param data The data blob to put into the record, which is base64-encoded when the
-     *         blob is serialized. The maximum size of the data blob (the payload
-     *         before base64-encoding) is 50 kilobytes (KB)
+     *         blob is serialized. When the data blob (the payload before
+     *         base64-encoding) is added to the partition key size, the total size
+     *         must not exceed the maximum record size (1 MB).
      */
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
@@ -218,17 +223,19 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * The data blob to put into the record, which is base64-encoded when the
-     * blob is serialized. The maximum size of the data blob (the payload
-     * before base64-encoding) is 50 kilobytes (KB)
+     * blob is serialized. When the data blob (the payload before
+     * base64-encoding) is added to the partition key size, the total size
+     * must not exceed the maximum record size (1 MB).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 51200<br/>
+     * <b>Length: </b>0 - 1048576<br/>
      *
      * @param data The data blob to put into the record, which is base64-encoded when the
-     *         blob is serialized. The maximum size of the data blob (the payload
-     *         before base64-encoding) is 50 kilobytes (KB)
+     *         blob is serialized. When the data blob (the payload before
+     *         base64-encoding) is added to the partition key size, the total size
+     *         must not exceed the maximum record size (1 MB).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

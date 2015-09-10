@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * inline policy, use the DeleteGroupPolicy API. For information about
  * policies, refer to
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#detachGroupPolicy(DetachGroupPolicyRequest)

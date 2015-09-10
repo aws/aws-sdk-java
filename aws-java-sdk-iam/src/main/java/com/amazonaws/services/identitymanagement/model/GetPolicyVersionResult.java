@@ -27,7 +27,7 @@ public class GetPolicyVersionResult implements Serializable, Cloneable {
      * Information about the policy version. <p>For more information about
      * managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
     private PolicyVersion policyVersion;
 
@@ -35,12 +35,12 @@ public class GetPolicyVersionResult implements Serializable, Cloneable {
      * Information about the policy version. <p>For more information about
      * managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      *
      * @return Information about the policy version. <p>For more information about
      *         managed policy versions, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     *         for Managed Policies</a> in the <i>Using IAM</i> guide.
+     *         for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
     public PolicyVersion getPolicyVersion() {
         return policyVersion;
@@ -50,12 +50,12 @@ public class GetPolicyVersionResult implements Serializable, Cloneable {
      * Information about the policy version. <p>For more information about
      * managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      *
      * @param policyVersion Information about the policy version. <p>For more information about
      *         managed policy versions, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     *         for Managed Policies</a> in the <i>Using IAM</i> guide.
+     *         for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
     public void setPolicyVersion(PolicyVersion policyVersion) {
         this.policyVersion = policyVersion;
@@ -65,14 +65,14 @@ public class GetPolicyVersionResult implements Serializable, Cloneable {
      * Information about the policy version. <p>For more information about
      * managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyVersion Information about the policy version. <p>For more information about
      *         managed policy versions, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     *         for Managed Policies</a> in the <i>Using IAM</i> guide.
+     *         for Managed Policies</a> in the <i>IAM User Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

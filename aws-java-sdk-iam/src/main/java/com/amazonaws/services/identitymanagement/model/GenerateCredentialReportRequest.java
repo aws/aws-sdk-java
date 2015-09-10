@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Generates a credential report for the AWS account. For more
  * information about the credential report, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"> Getting Credential Reports </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#generateCredentialReport(GenerateCredentialReportRequest)

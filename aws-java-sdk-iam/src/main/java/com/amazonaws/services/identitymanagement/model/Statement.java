@@ -1,0 +1,315 @@
+/*
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+package com.amazonaws.services.identitymanagement.model;
+
+import java.io.Serializable;
+
+/**
+ * <p>
+ * Contains a reference to a <code>Statement</code> element in a policy
+ * document that determines the result of the simulation.
+ * </p>
+ * <p>
+ * This data type is used by the <code>MatchedStatements</code> member of
+ * the <code> EvaluationResult </code> type.
+ * </p>
+ */
+public class Statement implements Serializable, Cloneable {
+
+    /**
+     * The identifier of the policy that was provided as an input.
+     */
+    private String sourcePolicyId;
+
+    /**
+     * The type of the policy.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     */
+    private String sourcePolicyType;
+
+    /**
+     * The row and column of the beginning of the <code>Statement</code> in
+     * an IAM policy.
+     */
+    private Position startPosition;
+
+    /**
+     * The row and column of the end of a <code>Statement</code> in an IAM
+     * policy.
+     */
+    private Position endPosition;
+
+    /**
+     * The identifier of the policy that was provided as an input.
+     *
+     * @return The identifier of the policy that was provided as an input.
+     */
+    public String getSourcePolicyId() {
+        return sourcePolicyId;
+    }
+    
+    /**
+     * The identifier of the policy that was provided as an input.
+     *
+     * @param sourcePolicyId The identifier of the policy that was provided as an input.
+     */
+    public void setSourcePolicyId(String sourcePolicyId) {
+        this.sourcePolicyId = sourcePolicyId;
+    }
+    
+    /**
+     * The identifier of the policy that was provided as an input.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sourcePolicyId The identifier of the policy that was provided as an input.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Statement withSourcePolicyId(String sourcePolicyId) {
+        this.sourcePolicyId = sourcePolicyId;
+        return this;
+    }
+
+    /**
+     * The type of the policy.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     *
+     * @return The type of the policy.
+     *
+     * @see PolicySourceType
+     */
+    public String getSourcePolicyType() {
+        return sourcePolicyType;
+    }
+    
+    /**
+     * The type of the policy.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     *
+     * @param sourcePolicyType The type of the policy.
+     *
+     * @see PolicySourceType
+     */
+    public void setSourcePolicyType(String sourcePolicyType) {
+        this.sourcePolicyType = sourcePolicyType;
+    }
+    
+    /**
+     * The type of the policy.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     *
+     * @param sourcePolicyType The type of the policy.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see PolicySourceType
+     */
+    public Statement withSourcePolicyType(String sourcePolicyType) {
+        this.sourcePolicyType = sourcePolicyType;
+        return this;
+    }
+
+    /**
+     * The type of the policy.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     *
+     * @param sourcePolicyType The type of the policy.
+     *
+     * @see PolicySourceType
+     */
+    public void setSourcePolicyType(PolicySourceType sourcePolicyType) {
+        this.sourcePolicyType = sourcePolicyType.toString();
+    }
+    
+    /**
+     * The type of the policy.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>user, group, role, aws-managed, user-managed, none
+     *
+     * @param sourcePolicyType The type of the policy.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see PolicySourceType
+     */
+    public Statement withSourcePolicyType(PolicySourceType sourcePolicyType) {
+        this.sourcePolicyType = sourcePolicyType.toString();
+        return this;
+    }
+
+    /**
+     * The row and column of the beginning of the <code>Statement</code> in
+     * an IAM policy.
+     *
+     * @return The row and column of the beginning of the <code>Statement</code> in
+     *         an IAM policy.
+     */
+    public Position getStartPosition() {
+        return startPosition;
+    }
+    
+    /**
+     * The row and column of the beginning of the <code>Statement</code> in
+     * an IAM policy.
+     *
+     * @param startPosition The row and column of the beginning of the <code>Statement</code> in
+     *         an IAM policy.
+     */
+    public void setStartPosition(Position startPosition) {
+        this.startPosition = startPosition;
+    }
+    
+    /**
+     * The row and column of the beginning of the <code>Statement</code> in
+     * an IAM policy.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param startPosition The row and column of the beginning of the <code>Statement</code> in
+     *         an IAM policy.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Statement withStartPosition(Position startPosition) {
+        this.startPosition = startPosition;
+        return this;
+    }
+
+    /**
+     * The row and column of the end of a <code>Statement</code> in an IAM
+     * policy.
+     *
+     * @return The row and column of the end of a <code>Statement</code> in an IAM
+     *         policy.
+     */
+    public Position getEndPosition() {
+        return endPosition;
+    }
+    
+    /**
+     * The row and column of the end of a <code>Statement</code> in an IAM
+     * policy.
+     *
+     * @param endPosition The row and column of the end of a <code>Statement</code> in an IAM
+     *         policy.
+     */
+    public void setEndPosition(Position endPosition) {
+        this.endPosition = endPosition;
+    }
+    
+    /**
+     * The row and column of the end of a <code>Statement</code> in an IAM
+     * policy.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param endPosition The row and column of the end of a <code>Statement</code> in an IAM
+     *         policy.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Statement withEndPosition(Position endPosition) {
+        this.endPosition = endPosition;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getSourcePolicyId() != null) sb.append("SourcePolicyId: " + getSourcePolicyId() + ",");
+        if (getSourcePolicyType() != null) sb.append("SourcePolicyType: " + getSourcePolicyType() + ",");
+        if (getStartPosition() != null) sb.append("StartPosition: " + getStartPosition() + ",");
+        if (getEndPosition() != null) sb.append("EndPosition: " + getEndPosition() );
+        sb.append("}");
+        return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSourcePolicyId() == null) ? 0 : getSourcePolicyId().hashCode()); 
+        hashCode = prime * hashCode + ((getSourcePolicyType() == null) ? 0 : getSourcePolicyType().hashCode()); 
+        hashCode = prime * hashCode + ((getStartPosition() == null) ? 0 : getStartPosition().hashCode()); 
+        hashCode = prime * hashCode + ((getEndPosition() == null) ? 0 : getEndPosition().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+
+        if (obj instanceof Statement == false) return false;
+        Statement other = (Statement)obj;
+        
+        if (other.getSourcePolicyId() == null ^ this.getSourcePolicyId() == null) return false;
+        if (other.getSourcePolicyId() != null && other.getSourcePolicyId().equals(this.getSourcePolicyId()) == false) return false; 
+        if (other.getSourcePolicyType() == null ^ this.getSourcePolicyType() == null) return false;
+        if (other.getSourcePolicyType() != null && other.getSourcePolicyType().equals(this.getSourcePolicyType()) == false) return false; 
+        if (other.getStartPosition() == null ^ this.getStartPosition() == null) return false;
+        if (other.getStartPosition() != null && other.getStartPosition().equals(this.getStartPosition()) == false) return false; 
+        if (other.getEndPosition() == null ^ this.getEndPosition() == null) return false;
+        if (other.getEndPosition() != null && other.getEndPosition().equals(this.getEndPosition()) == false) return false; 
+        return true;
+    }
+    
+    @Override
+    public Statement clone() {
+        try {
+            return (Statement) super.clone();
+        
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException(
+                    "Got a CloneNotSupportedException from Object.clone() "
+                    + "even though we're Cloneable!",
+                    e);
+        }
+        
+    }
+
+}
+    

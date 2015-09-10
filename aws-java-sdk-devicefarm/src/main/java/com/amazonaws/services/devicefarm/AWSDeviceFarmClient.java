@@ -54,7 +54,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
     private static final Log log = LogFactory.getLog(AWSDeviceFarm.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "devicefarm";
+    private static final String DEFAULT_SIGNING_NAME = "devicefarm";
 
     /**
      * List of exception unmarshallers for all AWS Device Farm exceptions.

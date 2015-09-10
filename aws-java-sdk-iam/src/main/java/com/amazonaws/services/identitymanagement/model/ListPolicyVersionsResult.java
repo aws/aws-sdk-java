@@ -27,7 +27,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * A list of policy versions. <p>For more information about managed
      * policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PolicyVersion> versions;
 
@@ -35,7 +35,10 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * items.
+     * items. Note that IAM might return fewer than the <code>MaxItems</code>
+     * number of results even when there are more results available. We
+     * recommend that you check <code>IsTruncated</code> after every call to
+     * ensure that you receive all of your results.
      */
     private Boolean isTruncated;
 
@@ -54,12 +57,12 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * A list of policy versions. <p>For more information about managed
      * policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      *
      * @return A list of policy versions. <p>For more information about managed
      *         policy versions, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     *         for Managed Policies</a> in the <i>Using IAM</i> guide.
+     *         for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
     public java.util.List<PolicyVersion> getVersions() {
         if (versions == null) {
@@ -73,12 +76,12 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * A list of policy versions. <p>For more information about managed
      * policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      *
      * @param versions A list of policy versions. <p>For more information about managed
      *         policy versions, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     *         for Managed Policies</a> in the <i>Using IAM</i> guide.
+     *         for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
     public void setVersions(java.util.Collection<PolicyVersion> versions) {
         if (versions == null) {
@@ -94,7 +97,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * A list of policy versions. <p>For more information about managed
      * policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setVersions(java.util.Collection)} or {@link
@@ -106,7 +109,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * @param versions A list of policy versions. <p>For more information about managed
      *         policy versions, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     *         for Managed Policies</a> in the <i>Using IAM</i> guide.
+     *         for Managed Policies</a> in the <i>IAM User Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -123,14 +126,14 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * A list of policy versions. <p>For more information about managed
      * policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide.
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param versions A list of policy versions. <p>For more information about managed
      *         policy versions, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     *         for Managed Policies</a> in the <i>Using IAM</i> guide.
+     *         for Managed Policies</a> in the <i>IAM User Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -151,12 +154,18 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * items.
+     * items. Note that IAM might return fewer than the <code>MaxItems</code>
+     * number of results even when there are more results available. We
+     * recommend that you check <code>IsTruncated</code> after every call to
+     * ensure that you receive all of your results.
      *
      * @return A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         items.
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code>
+     *         number of results even when there are more results available. We
+     *         recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
     public Boolean isTruncated() {
         return isTruncated;
@@ -166,12 +175,18 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * items.
+     * items. Note that IAM might return fewer than the <code>MaxItems</code>
+     * number of results even when there are more results available. We
+     * recommend that you check <code>IsTruncated</code> after every call to
+     * ensure that you receive all of your results.
      *
      * @param isTruncated A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         items.
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code>
+     *         number of results even when there are more results available. We
+     *         recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -181,14 +196,20 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * items.
+     * items. Note that IAM might return fewer than the <code>MaxItems</code>
+     * number of results even when there are more results available. We
+     * recommend that you check <code>IsTruncated</code> after every call to
+     * ensure that you receive all of your results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param isTruncated A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         items.
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code>
+     *         number of results even when there are more results available. We
+     *         recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -202,12 +223,18 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more items to return. If your
      * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more
-     * items.
+     * items. Note that IAM might return fewer than the <code>MaxItems</code>
+     * number of results even when there are more results available. We
+     * recommend that you check <code>IsTruncated</code> after every call to
+     * ensure that you receive all of your results.
      *
      * @return A flag that indicates whether there are more items to return. If your
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
-     *         items.
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code>
+     *         number of results even when there are more results available. We
+     *         recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all of your results.
      */
     public Boolean getIsTruncated() {
         return isTruncated;

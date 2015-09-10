@@ -28,12 +28,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <code>v1</code> and sets v1 as the policy's default version. For more
  * information about policy versions, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"> Versioning for Managed Policies </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  * <p>
  * For more information about managed policies in general, refer to
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createPolicy(CreatePolicyRequest)
@@ -52,7 +52,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements Seri
     /**
      * The path for the policy. <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * Identifiers</a> in the <i>IAM User Guide</i>. <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
@@ -129,7 +129,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements Seri
     /**
      * The path for the policy. <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * Identifiers</a> in the <i>IAM User Guide</i>. <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
@@ -137,7 +137,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements Seri
      *
      * @return The path for the policy. <p>For more information about paths, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     *         Identifiers</a> in the <i>IAM User Guide</i>. <p>This parameter is
      *         optional. If it is not included, it defaults to a slash (/).
      */
     public String getPath() {
@@ -147,7 +147,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements Seri
     /**
      * The path for the policy. <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * Identifiers</a> in the <i>IAM User Guide</i>. <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
@@ -155,7 +155,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param path The path for the policy. <p>For more information about paths, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     *         Identifiers</a> in the <i>IAM User Guide</i>. <p>This parameter is
      *         optional. If it is not included, it defaults to a slash (/).
      */
     public void setPath(String path) {
@@ -165,7 +165,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements Seri
     /**
      * The path for the policy. <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * Identifiers</a> in the <i>IAM User Guide</i>. <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -175,7 +175,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param path The path for the policy. <p>For more information about paths, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     *         Identifiers</a> in the <i>IAM User Guide</i>. <p>This parameter is
      *         optional. If it is not included, it defaults to a slash (/).
      *
      * @return A reference to this updated object so that method calls can be chained

@@ -68,10 +68,6 @@
  * . This topic presents a list of suggestions for using the IAM service
  * to help secure your AWS resources. </li>
  * <li>
- * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/"> AWS Security Token Service </a>
- * . This guide describes how to create and use temporary security
- * credentials. </li>
- * <li>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"> Signing AWS API Requests </a>
  * . This set of topics walk you through the process of signing a
  * request using an access key ID and secret access key. </li>

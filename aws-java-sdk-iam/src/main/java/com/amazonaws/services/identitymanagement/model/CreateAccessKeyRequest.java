@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * For information about limits on the number of keys you can create,
  * see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  * <p>
  * <b>IMPORTANT:</b> To ensure the security of your AWS account, the

@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class GetRecordsResult implements Serializable, Cloneable {
 
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * The data records retrieved from the shard.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Record> records;
 
@@ -50,9 +50,9 @@ public class GetRecordsResult implements Serializable, Cloneable {
     private Long millisBehindLatest;
 
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * The data records retrieved from the shard.
      *
-     * @return <P>The data records retrieved from the shard.</P>
+     * @return The data records retrieved from the shard.
      */
     public java.util.List<Record> getRecords() {
         if (records == null) {
@@ -63,9 +63,9 @@ public class GetRecordsResult implements Serializable, Cloneable {
     }
     
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * The data records retrieved from the shard.
      *
-     * @param records <P>The data records retrieved from the shard.</P>
+     * @param records The data records retrieved from the shard.
      */
     public void setRecords(java.util.Collection<Record> records) {
         if (records == null) {
@@ -78,7 +78,7 @@ public class GetRecordsResult implements Serializable, Cloneable {
     }
     
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * The data records retrieved from the shard.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setRecords(java.util.Collection)} or {@link
@@ -87,7 +87,7 @@ public class GetRecordsResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param records <P>The data records retrieved from the shard.</P>
+     * @param records The data records retrieved from the shard.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -101,11 +101,11 @@ public class GetRecordsResult implements Serializable, Cloneable {
     }
     
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * The data records retrieved from the shard.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param records <P>The data records retrieved from the shard.</P>
+     * @param records The data records retrieved from the shard.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * policy in a role, use PutRolePolicy. For more information about
  * policies, refer to
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
- * in the <i>Using IAM</i> guide.
+ * in the <i>IAM User Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#attachRolePolicy(AttachRolePolicyRequest)

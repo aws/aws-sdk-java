@@ -131,7 +131,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
     private static final Log log = LogFactory.getLog(AmazonCodeDeploy.class);
 
     /** Default signing name for the service. */
-    private final String DEFAULT_SIGNING_NAME = "codedeploy";
+    private static final String DEFAULT_SIGNING_NAME = "codedeploy";
 
     /**
      * List of exception unmarshallers for all CodeDeploy exceptions.

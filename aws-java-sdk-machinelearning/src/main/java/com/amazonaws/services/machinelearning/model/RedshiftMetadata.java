@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the <Code>DataSource</Code> details specific to Amazon Redshift.
+ * Describes the <code>DataSource</code> details specific to Amazon Redshift.
  * </p>
  */
 public class RedshiftMetadata implements Serializable, Cloneable {
