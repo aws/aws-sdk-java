@@ -52,14 +52,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupIds;
 
     /**
-     * One or more filters. <ul> <li> <p><code>description</code> - The
-     * description of the security group. </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix)
-     * of the AWS service to which the security group allows access. </li>
-     * <li> <p><code>group-id</code> - The ID of the security group. </li>
-     * <li> <p><code>group-name</code> - The name of the security group.
-     * </li> <li> <p><code>ip-permission.cidr</code> - A CIDR range that has
-     * been granted permission. </li> <li>
+     * One or more filters. If using multiple filters for rules, the results
+     * include security groups for which any combination of rules - not
+     * necessarily a single rule - match all filters. <ul> <li>
+     * <p><code>description</code> - The description of the security group.
+     * </li> <li> <p><code>egress.ip-permission.prefix-list-id</code> - The
+     * ID (prefix) of the AWS service to which the security group allows
+     * access. </li> <li> <p><code>group-id</code> - The ID of the security
+     * group. </li> <li> <p><code>group-name</code> - The name of the
+     * security group. </li> <li> <p><code>ip-permission.cidr</code> - A CIDR
+     * range that has been granted permission. </li> <li>
      * <p><code>ip-permission.from-port</code> - The start of port range for
      * the TCP and UDP protocols, or an ICMP type number. </li> <li>
      * <p><code>ip-permission.group-id</code> - The ID of a security group
@@ -268,14 +270,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * One or more filters. <ul> <li> <p><code>description</code> - The
-     * description of the security group. </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix)
-     * of the AWS service to which the security group allows access. </li>
-     * <li> <p><code>group-id</code> - The ID of the security group. </li>
-     * <li> <p><code>group-name</code> - The name of the security group.
-     * </li> <li> <p><code>ip-permission.cidr</code> - A CIDR range that has
-     * been granted permission. </li> <li>
+     * One or more filters. If using multiple filters for rules, the results
+     * include security groups for which any combination of rules - not
+     * necessarily a single rule - match all filters. <ul> <li>
+     * <p><code>description</code> - The description of the security group.
+     * </li> <li> <p><code>egress.ip-permission.prefix-list-id</code> - The
+     * ID (prefix) of the AWS service to which the security group allows
+     * access. </li> <li> <p><code>group-id</code> - The ID of the security
+     * group. </li> <li> <p><code>group-name</code> - The name of the
+     * security group. </li> <li> <p><code>ip-permission.cidr</code> - A CIDR
+     * range that has been granted permission. </li> <li>
      * <p><code>ip-permission.from-port</code> - The start of port range for
      * the TCP and UDP protocols, or an ICMP type number. </li> <li>
      * <p><code>ip-permission.group-id</code> - The ID of a security group
@@ -295,14 +299,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <p><code>vpc-id</code> - The ID of the VPC specified when the security
      * group was created. </li> </ul>
      *
-     * @return One or more filters. <ul> <li> <p><code>description</code> - The
-     *         description of the security group. </li> <li>
-     *         <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix)
-     *         of the AWS service to which the security group allows access. </li>
-     *         <li> <p><code>group-id</code> - The ID of the security group. </li>
-     *         <li> <p><code>group-name</code> - The name of the security group.
-     *         </li> <li> <p><code>ip-permission.cidr</code> - A CIDR range that has
-     *         been granted permission. </li> <li>
+     * @return One or more filters. If using multiple filters for rules, the results
+     *         include security groups for which any combination of rules - not
+     *         necessarily a single rule - match all filters. <ul> <li>
+     *         <p><code>description</code> - The description of the security group.
+     *         </li> <li> <p><code>egress.ip-permission.prefix-list-id</code> - The
+     *         ID (prefix) of the AWS service to which the security group allows
+     *         access. </li> <li> <p><code>group-id</code> - The ID of the security
+     *         group. </li> <li> <p><code>group-name</code> - The name of the
+     *         security group. </li> <li> <p><code>ip-permission.cidr</code> - A CIDR
+     *         range that has been granted permission. </li> <li>
      *         <p><code>ip-permission.from-port</code> - The start of port range for
      *         the TCP and UDP protocols, or an ICMP type number. </li> <li>
      *         <p><code>ip-permission.group-id</code> - The ID of a security group
@@ -331,14 +337,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * One or more filters. <ul> <li> <p><code>description</code> - The
-     * description of the security group. </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix)
-     * of the AWS service to which the security group allows access. </li>
-     * <li> <p><code>group-id</code> - The ID of the security group. </li>
-     * <li> <p><code>group-name</code> - The name of the security group.
-     * </li> <li> <p><code>ip-permission.cidr</code> - A CIDR range that has
-     * been granted permission. </li> <li>
+     * One or more filters. If using multiple filters for rules, the results
+     * include security groups for which any combination of rules - not
+     * necessarily a single rule - match all filters. <ul> <li>
+     * <p><code>description</code> - The description of the security group.
+     * </li> <li> <p><code>egress.ip-permission.prefix-list-id</code> - The
+     * ID (prefix) of the AWS service to which the security group allows
+     * access. </li> <li> <p><code>group-id</code> - The ID of the security
+     * group. </li> <li> <p><code>group-name</code> - The name of the
+     * security group. </li> <li> <p><code>ip-permission.cidr</code> - A CIDR
+     * range that has been granted permission. </li> <li>
      * <p><code>ip-permission.from-port</code> - The start of port range for
      * the TCP and UDP protocols, or an ICMP type number. </li> <li>
      * <p><code>ip-permission.group-id</code> - The ID of a security group
@@ -358,14 +366,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <p><code>vpc-id</code> - The ID of the VPC specified when the security
      * group was created. </li> </ul>
      *
-     * @param filters One or more filters. <ul> <li> <p><code>description</code> - The
-     *         description of the security group. </li> <li>
-     *         <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix)
-     *         of the AWS service to which the security group allows access. </li>
-     *         <li> <p><code>group-id</code> - The ID of the security group. </li>
-     *         <li> <p><code>group-name</code> - The name of the security group.
-     *         </li> <li> <p><code>ip-permission.cidr</code> - A CIDR range that has
-     *         been granted permission. </li> <li>
+     * @param filters One or more filters. If using multiple filters for rules, the results
+     *         include security groups for which any combination of rules - not
+     *         necessarily a single rule - match all filters. <ul> <li>
+     *         <p><code>description</code> - The description of the security group.
+     *         </li> <li> <p><code>egress.ip-permission.prefix-list-id</code> - The
+     *         ID (prefix) of the AWS service to which the security group allows
+     *         access. </li> <li> <p><code>group-id</code> - The ID of the security
+     *         group. </li> <li> <p><code>group-name</code> - The name of the
+     *         security group. </li> <li> <p><code>ip-permission.cidr</code> - A CIDR
+     *         range that has been granted permission. </li> <li>
      *         <p><code>ip-permission.from-port</code> - The start of port range for
      *         the TCP and UDP protocols, or an ICMP type number. </li> <li>
      *         <p><code>ip-permission.group-id</code> - The ID of a security group
@@ -396,14 +406,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * One or more filters. <ul> <li> <p><code>description</code> - The
-     * description of the security group. </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix)
-     * of the AWS service to which the security group allows access. </li>
-     * <li> <p><code>group-id</code> - The ID of the security group. </li>
-     * <li> <p><code>group-name</code> - The name of the security group.
-     * </li> <li> <p><code>ip-permission.cidr</code> - A CIDR range that has
-     * been granted permission. </li> <li>
+     * One or more filters. If using multiple filters for rules, the results
+     * include security groups for which any combination of rules - not
+     * necessarily a single rule - match all filters. <ul> <li>
+     * <p><code>description</code> - The description of the security group.
+     * </li> <li> <p><code>egress.ip-permission.prefix-list-id</code> - The
+     * ID (prefix) of the AWS service to which the security group allows
+     * access. </li> <li> <p><code>group-id</code> - The ID of the security
+     * group. </li> <li> <p><code>group-name</code> - The name of the
+     * security group. </li> <li> <p><code>ip-permission.cidr</code> - A CIDR
+     * range that has been granted permission. </li> <li>
      * <p><code>ip-permission.from-port</code> - The start of port range for
      * the TCP and UDP protocols, or an ICMP type number. </li> <li>
      * <p><code>ip-permission.group-id</code> - The ID of a security group
@@ -430,14 +442,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters One or more filters. <ul> <li> <p><code>description</code> - The
-     *         description of the security group. </li> <li>
-     *         <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix)
-     *         of the AWS service to which the security group allows access. </li>
-     *         <li> <p><code>group-id</code> - The ID of the security group. </li>
-     *         <li> <p><code>group-name</code> - The name of the security group.
-     *         </li> <li> <p><code>ip-permission.cidr</code> - A CIDR range that has
-     *         been granted permission. </li> <li>
+     * @param filters One or more filters. If using multiple filters for rules, the results
+     *         include security groups for which any combination of rules - not
+     *         necessarily a single rule - match all filters. <ul> <li>
+     *         <p><code>description</code> - The description of the security group.
+     *         </li> <li> <p><code>egress.ip-permission.prefix-list-id</code> - The
+     *         ID (prefix) of the AWS service to which the security group allows
+     *         access. </li> <li> <p><code>group-id</code> - The ID of the security
+     *         group. </li> <li> <p><code>group-name</code> - The name of the
+     *         security group. </li> <li> <p><code>ip-permission.cidr</code> - A CIDR
+     *         range that has been granted permission. </li> <li>
      *         <p><code>ip-permission.from-port</code> - The start of port range for
      *         the TCP and UDP protocols, or an ICMP type number. </li> <li>
      *         <p><code>ip-permission.group-id</code> - The ID of a security group
@@ -469,14 +483,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * One or more filters. <ul> <li> <p><code>description</code> - The
-     * description of the security group. </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix)
-     * of the AWS service to which the security group allows access. </li>
-     * <li> <p><code>group-id</code> - The ID of the security group. </li>
-     * <li> <p><code>group-name</code> - The name of the security group.
-     * </li> <li> <p><code>ip-permission.cidr</code> - A CIDR range that has
-     * been granted permission. </li> <li>
+     * One or more filters. If using multiple filters for rules, the results
+     * include security groups for which any combination of rules - not
+     * necessarily a single rule - match all filters. <ul> <li>
+     * <p><code>description</code> - The description of the security group.
+     * </li> <li> <p><code>egress.ip-permission.prefix-list-id</code> - The
+     * ID (prefix) of the AWS service to which the security group allows
+     * access. </li> <li> <p><code>group-id</code> - The ID of the security
+     * group. </li> <li> <p><code>group-name</code> - The name of the
+     * security group. </li> <li> <p><code>ip-permission.cidr</code> - A CIDR
+     * range that has been granted permission. </li> <li>
      * <p><code>ip-permission.from-port</code> - The start of port range for
      * the TCP and UDP protocols, or an ICMP type number. </li> <li>
      * <p><code>ip-permission.group-id</code> - The ID of a security group
@@ -498,14 +514,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters One or more filters. <ul> <li> <p><code>description</code> - The
-     *         description of the security group. </li> <li>
-     *         <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix)
-     *         of the AWS service to which the security group allows access. </li>
-     *         <li> <p><code>group-id</code> - The ID of the security group. </li>
-     *         <li> <p><code>group-name</code> - The name of the security group.
-     *         </li> <li> <p><code>ip-permission.cidr</code> - A CIDR range that has
-     *         been granted permission. </li> <li>
+     * @param filters One or more filters. If using multiple filters for rules, the results
+     *         include security groups for which any combination of rules - not
+     *         necessarily a single rule - match all filters. <ul> <li>
+     *         <p><code>description</code> - The description of the security group.
+     *         </li> <li> <p><code>egress.ip-permission.prefix-list-id</code> - The
+     *         ID (prefix) of the AWS service to which the security group allows
+     *         access. </li> <li> <p><code>group-id</code> - The ID of the security
+     *         group. </li> <li> <p><code>group-name</code> - The name of the
+     *         security group. </li> <li> <p><code>ip-permission.cidr</code> - A CIDR
+     *         range that has been granted permission. </li> <li>
      *         <p><code>ip-permission.from-port</code> - The start of port range for
      *         the TCP and UDP protocols, or an ICMP type number. </li> <li>
      *         <p><code>ip-permission.group-id</code> - The ID of a security group

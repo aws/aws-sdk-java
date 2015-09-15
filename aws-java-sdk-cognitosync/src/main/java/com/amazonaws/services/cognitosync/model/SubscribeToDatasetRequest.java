@@ -39,7 +39,7 @@ public class SubscribeToDatasetRequest extends AmazonWebServiceRequest implement
      * Cognito. The ID of the pool to which the identity belongs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      */
     private String identityPoolId;
@@ -48,7 +48,7 @@ public class SubscribeToDatasetRequest extends AmazonWebServiceRequest implement
      * Unique ID for this identity.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      */
     private String identityId;
@@ -76,7 +76,7 @@ public class SubscribeToDatasetRequest extends AmazonWebServiceRequest implement
      * Cognito. The ID of the pool to which the identity belongs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @return A name-spaced GUID (for example,
@@ -93,7 +93,7 @@ public class SubscribeToDatasetRequest extends AmazonWebServiceRequest implement
      * Cognito. The ID of the pool to which the identity belongs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityPoolId A name-spaced GUID (for example,
@@ -112,7 +112,7 @@ public class SubscribeToDatasetRequest extends AmazonWebServiceRequest implement
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityPoolId A name-spaced GUID (for example,
@@ -131,7 +131,7 @@ public class SubscribeToDatasetRequest extends AmazonWebServiceRequest implement
      * Unique ID for this identity.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @return Unique ID for this identity.
@@ -144,7 +144,7 @@ public class SubscribeToDatasetRequest extends AmazonWebServiceRequest implement
      * Unique ID for this identity.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityId Unique ID for this identity.
@@ -159,7 +159,7 @@ public class SubscribeToDatasetRequest extends AmazonWebServiceRequest implement
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityId Unique ID for this identity.

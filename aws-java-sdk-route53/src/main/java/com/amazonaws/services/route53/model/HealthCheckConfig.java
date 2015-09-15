@@ -48,7 +48,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED
      */
     private String type;
 
@@ -102,6 +102,42 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <b>Range: </b>1 - 10<br/>
      */
     private Integer failureThreshold;
+
+    /**
+     * A Boolean value that indicates whether you want Route 53 to measure
+     * the latency between health checkers in multiple AWS regions and your
+     * endpoint and to display CloudWatch latency graphs in the Route 53
+     * console.
+     */
+    private Boolean measureLatency;
+
+    /**
+     * A boolean value that indicates whether the status of health check
+     * should be inverted. For example, if a health check is healthy but
+     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
+     * the health check to be unhealthy.
+     */
+    private Boolean inverted;
+
+    /**
+     * The minimum number of child health checks that must be healthy for
+     * Route 53 to consider the parent health check to be healthy. Valid
+     * values are integers between 0 and 256, inclusive.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 256<br/>
+     */
+    private Integer healthThreshold;
+
+    /**
+     * For a specified parent health check, a list of
+     * <code>HealthCheckId</code> values for the associated child health
+     * checks.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> childHealthChecks;
 
     /**
      * IP Address of the instance being checked.
@@ -213,7 +249,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED
      *
      * @return The type of health check to be performed. Currently supported types
      *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
@@ -229,7 +265,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED
      *
      * @param type The type of health check to be performed. Currently supported types
      *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
@@ -247,7 +283,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED
      *
      * @param type The type of health check to be performed. Currently supported types
      *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
@@ -267,7 +303,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED
      *
      * @param type The type of health check to be performed. Currently supported types
      *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
@@ -285,7 +321,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP
+     * <b>Allowed Values: </b>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED
      *
      * @param type The type of health check to be performed. Currently supported types
      *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
@@ -577,6 +613,293 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     }
 
     /**
+     * A Boolean value that indicates whether you want Route 53 to measure
+     * the latency between health checkers in multiple AWS regions and your
+     * endpoint and to display CloudWatch latency graphs in the Route 53
+     * console.
+     *
+     * @return A Boolean value that indicates whether you want Route 53 to measure
+     *         the latency between health checkers in multiple AWS regions and your
+     *         endpoint and to display CloudWatch latency graphs in the Route 53
+     *         console.
+     */
+    public Boolean isMeasureLatency() {
+        return measureLatency;
+    }
+    
+    /**
+     * A Boolean value that indicates whether you want Route 53 to measure
+     * the latency between health checkers in multiple AWS regions and your
+     * endpoint and to display CloudWatch latency graphs in the Route 53
+     * console.
+     *
+     * @param measureLatency A Boolean value that indicates whether you want Route 53 to measure
+     *         the latency between health checkers in multiple AWS regions and your
+     *         endpoint and to display CloudWatch latency graphs in the Route 53
+     *         console.
+     */
+    public void setMeasureLatency(Boolean measureLatency) {
+        this.measureLatency = measureLatency;
+    }
+    
+    /**
+     * A Boolean value that indicates whether you want Route 53 to measure
+     * the latency between health checkers in multiple AWS regions and your
+     * endpoint and to display CloudWatch latency graphs in the Route 53
+     * console.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param measureLatency A Boolean value that indicates whether you want Route 53 to measure
+     *         the latency between health checkers in multiple AWS regions and your
+     *         endpoint and to display CloudWatch latency graphs in the Route 53
+     *         console.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HealthCheckConfig withMeasureLatency(Boolean measureLatency) {
+        this.measureLatency = measureLatency;
+        return this;
+    }
+
+    /**
+     * A Boolean value that indicates whether you want Route 53 to measure
+     * the latency between health checkers in multiple AWS regions and your
+     * endpoint and to display CloudWatch latency graphs in the Route 53
+     * console.
+     *
+     * @return A Boolean value that indicates whether you want Route 53 to measure
+     *         the latency between health checkers in multiple AWS regions and your
+     *         endpoint and to display CloudWatch latency graphs in the Route 53
+     *         console.
+     */
+    public Boolean getMeasureLatency() {
+        return measureLatency;
+    }
+
+    /**
+     * A boolean value that indicates whether the status of health check
+     * should be inverted. For example, if a health check is healthy but
+     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
+     * the health check to be unhealthy.
+     *
+     * @return A boolean value that indicates whether the status of health check
+     *         should be inverted. For example, if a health check is healthy but
+     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
+     *         the health check to be unhealthy.
+     */
+    public Boolean isInverted() {
+        return inverted;
+    }
+    
+    /**
+     * A boolean value that indicates whether the status of health check
+     * should be inverted. For example, if a health check is healthy but
+     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
+     * the health check to be unhealthy.
+     *
+     * @param inverted A boolean value that indicates whether the status of health check
+     *         should be inverted. For example, if a health check is healthy but
+     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
+     *         the health check to be unhealthy.
+     */
+    public void setInverted(Boolean inverted) {
+        this.inverted = inverted;
+    }
+    
+    /**
+     * A boolean value that indicates whether the status of health check
+     * should be inverted. For example, if a health check is healthy but
+     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
+     * the health check to be unhealthy.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param inverted A boolean value that indicates whether the status of health check
+     *         should be inverted. For example, if a health check is healthy but
+     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
+     *         the health check to be unhealthy.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HealthCheckConfig withInverted(Boolean inverted) {
+        this.inverted = inverted;
+        return this;
+    }
+
+    /**
+     * A boolean value that indicates whether the status of health check
+     * should be inverted. For example, if a health check is healthy but
+     * <code>Inverted</code> is <code>True</code>, then Route 53 considers
+     * the health check to be unhealthy.
+     *
+     * @return A boolean value that indicates whether the status of health check
+     *         should be inverted. For example, if a health check is healthy but
+     *         <code>Inverted</code> is <code>True</code>, then Route 53 considers
+     *         the health check to be unhealthy.
+     */
+    public Boolean getInverted() {
+        return inverted;
+    }
+
+    /**
+     * The minimum number of child health checks that must be healthy for
+     * Route 53 to consider the parent health check to be healthy. Valid
+     * values are integers between 0 and 256, inclusive.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 256<br/>
+     *
+     * @return The minimum number of child health checks that must be healthy for
+     *         Route 53 to consider the parent health check to be healthy. Valid
+     *         values are integers between 0 and 256, inclusive.
+     */
+    public Integer getHealthThreshold() {
+        return healthThreshold;
+    }
+    
+    /**
+     * The minimum number of child health checks that must be healthy for
+     * Route 53 to consider the parent health check to be healthy. Valid
+     * values are integers between 0 and 256, inclusive.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 256<br/>
+     *
+     * @param healthThreshold The minimum number of child health checks that must be healthy for
+     *         Route 53 to consider the parent health check to be healthy. Valid
+     *         values are integers between 0 and 256, inclusive.
+     */
+    public void setHealthThreshold(Integer healthThreshold) {
+        this.healthThreshold = healthThreshold;
+    }
+    
+    /**
+     * The minimum number of child health checks that must be healthy for
+     * Route 53 to consider the parent health check to be healthy. Valid
+     * values are integers between 0 and 256, inclusive.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 256<br/>
+     *
+     * @param healthThreshold The minimum number of child health checks that must be healthy for
+     *         Route 53 to consider the parent health check to be healthy. Valid
+     *         values are integers between 0 and 256, inclusive.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HealthCheckConfig withHealthThreshold(Integer healthThreshold) {
+        this.healthThreshold = healthThreshold;
+        return this;
+    }
+
+    /**
+     * For a specified parent health check, a list of
+     * <code>HealthCheckId</code> values for the associated child health
+     * checks.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     *
+     * @return For a specified parent health check, a list of
+     *         <code>HealthCheckId</code> values for the associated child health
+     *         checks.
+     */
+    public java.util.List<String> getChildHealthChecks() {
+        if (childHealthChecks == null) {
+              childHealthChecks = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              childHealthChecks.setAutoConstruct(true);
+        }
+        return childHealthChecks;
+    }
+    
+    /**
+     * For a specified parent health check, a list of
+     * <code>HealthCheckId</code> values for the associated child health
+     * checks.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     *
+     * @param childHealthChecks For a specified parent health check, a list of
+     *         <code>HealthCheckId</code> values for the associated child health
+     *         checks.
+     */
+    public void setChildHealthChecks(java.util.Collection<String> childHealthChecks) {
+        if (childHealthChecks == null) {
+            this.childHealthChecks = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> childHealthChecksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(childHealthChecks.size());
+        childHealthChecksCopy.addAll(childHealthChecks);
+        this.childHealthChecks = childHealthChecksCopy;
+    }
+    
+    /**
+     * For a specified parent health check, a list of
+     * <code>HealthCheckId</code> values for the associated child health
+     * checks.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setChildHealthChecks(java.util.Collection)} or
+     * {@link #withChildHealthChecks(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     *
+     * @param childHealthChecks For a specified parent health check, a list of
+     *         <code>HealthCheckId</code> values for the associated child health
+     *         checks.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HealthCheckConfig withChildHealthChecks(String... childHealthChecks) {
+        if (getChildHealthChecks() == null) setChildHealthChecks(new java.util.ArrayList<String>(childHealthChecks.length));
+        for (String value : childHealthChecks) {
+            getChildHealthChecks().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * For a specified parent health check, a list of
+     * <code>HealthCheckId</code> values for the associated child health
+     * checks.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     *
+     * @param childHealthChecks For a specified parent health check, a list of
+     *         <code>HealthCheckId</code> values for the associated child health
+     *         checks.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HealthCheckConfig withChildHealthChecks(java.util.Collection<String> childHealthChecks) {
+        if (childHealthChecks == null) {
+            this.childHealthChecks = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> childHealthChecksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(childHealthChecks.size());
+            childHealthChecksCopy.addAll(childHealthChecks);
+            this.childHealthChecks = childHealthChecksCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -595,7 +918,11 @@ public class HealthCheckConfig implements Serializable, Cloneable {
         if (getFullyQualifiedDomainName() != null) sb.append("FullyQualifiedDomainName: " + getFullyQualifiedDomainName() + ",");
         if (getSearchString() != null) sb.append("SearchString: " + getSearchString() + ",");
         if (getRequestInterval() != null) sb.append("RequestInterval: " + getRequestInterval() + ",");
-        if (getFailureThreshold() != null) sb.append("FailureThreshold: " + getFailureThreshold() );
+        if (getFailureThreshold() != null) sb.append("FailureThreshold: " + getFailureThreshold() + ",");
+        if (isMeasureLatency() != null) sb.append("MeasureLatency: " + isMeasureLatency() + ",");
+        if (isInverted() != null) sb.append("Inverted: " + isInverted() + ",");
+        if (getHealthThreshold() != null) sb.append("HealthThreshold: " + getHealthThreshold() + ",");
+        if (getChildHealthChecks() != null) sb.append("ChildHealthChecks: " + getChildHealthChecks() );
         sb.append("}");
         return sb.toString();
     }
@@ -613,6 +940,10 @@ public class HealthCheckConfig implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSearchString() == null) ? 0 : getSearchString().hashCode()); 
         hashCode = prime * hashCode + ((getRequestInterval() == null) ? 0 : getRequestInterval().hashCode()); 
         hashCode = prime * hashCode + ((getFailureThreshold() == null) ? 0 : getFailureThreshold().hashCode()); 
+        hashCode = prime * hashCode + ((isMeasureLatency() == null) ? 0 : isMeasureLatency().hashCode()); 
+        hashCode = prime * hashCode + ((isInverted() == null) ? 0 : isInverted().hashCode()); 
+        hashCode = prime * hashCode + ((getHealthThreshold() == null) ? 0 : getHealthThreshold().hashCode()); 
+        hashCode = prime * hashCode + ((getChildHealthChecks() == null) ? 0 : getChildHealthChecks().hashCode()); 
         return hashCode;
     }
     
@@ -640,6 +971,14 @@ public class HealthCheckConfig implements Serializable, Cloneable {
         if (other.getRequestInterval() != null && other.getRequestInterval().equals(this.getRequestInterval()) == false) return false; 
         if (other.getFailureThreshold() == null ^ this.getFailureThreshold() == null) return false;
         if (other.getFailureThreshold() != null && other.getFailureThreshold().equals(this.getFailureThreshold()) == false) return false; 
+        if (other.isMeasureLatency() == null ^ this.isMeasureLatency() == null) return false;
+        if (other.isMeasureLatency() != null && other.isMeasureLatency().equals(this.isMeasureLatency()) == false) return false; 
+        if (other.isInverted() == null ^ this.isInverted() == null) return false;
+        if (other.isInverted() != null && other.isInverted().equals(this.isInverted()) == false) return false; 
+        if (other.getHealthThreshold() == null ^ this.getHealthThreshold() == null) return false;
+        if (other.getHealthThreshold() != null && other.getHealthThreshold().equals(this.getHealthThreshold()) == false) return false; 
+        if (other.getChildHealthChecks() == null ^ this.getChildHealthChecks() == null) return false;
+        if (other.getChildHealthChecks() != null && other.getChildHealthChecks().equals(this.getChildHealthChecks()) == false) return false; 
         return true;
     }
     

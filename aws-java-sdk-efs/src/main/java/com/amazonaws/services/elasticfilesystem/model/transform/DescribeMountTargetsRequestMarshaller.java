@@ -86,6 +86,14 @@ public class DescribeMountTargetsRequestMarshaller
             request.addParameter("FileSystemId", fileSystemId);
         }
 
+        String mountTargetId = (describeMountTargetsRequest.getMountTargetId() == null) ? null
+                : StringUtils.fromString(describeMountTargetsRequest
+                        .getMountTargetId());
+
+        if (mountTargetId != null) {
+            request.addParameter("MountTargetId", mountTargetId);
+        }
+
         request.setContent(new ByteArrayInputStream(new byte[0]));
         if (!request.getHeaders().containsKey("Content-Type")) {
             request.addHeader("Content-Type", "binary/octet-stream");

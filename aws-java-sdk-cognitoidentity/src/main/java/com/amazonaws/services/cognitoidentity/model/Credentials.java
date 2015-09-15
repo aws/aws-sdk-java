@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Credentials for the the provided identity ID.
+ * Credentials for the provided identity ID.
  * </p>
  */
 public class Credentials implements Serializable, Cloneable {

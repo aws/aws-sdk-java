@@ -41,10 +41,20 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
     private String marker;
     /**
      * <p>
-     * String. The ID of the file system whose mount targets you want to list.
+     * Optional. String. The ID of the file system whose mount targets you want
+     * to list. It must be included in your request if
+     * <code>MountTargetId</code> is not included.
      * </p>
      */
     private String fileSystemId;
+    /**
+     * <p>
+     * Optional. String. The ID of the mount target that you want to have
+     * described. It must be included in your request if
+     * <code>FileSystemId</code> is not included.
+     * </p>
+     */
+    private String mountTargetId;
 
     /**
      * <p>
@@ -145,12 +155,15 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * String. The ID of the file system whose mount targets you want to list.
+     * Optional. String. The ID of the file system whose mount targets you want
+     * to list. It must be included in your request if
+     * <code>MountTargetId</code> is not included.
      * </p>
      * 
      * @param fileSystemId
-     *        String. The ID of the file system whose mount targets you want to
-     *        list.
+     *        Optional. String. The ID of the file system whose mount targets
+     *        you want to list. It must be included in your request if
+     *        <code>MountTargetId</code> is not included.
      */
     public void setFileSystemId(String fileSystemId) {
         this.fileSystemId = fileSystemId;
@@ -158,11 +171,14 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * String. The ID of the file system whose mount targets you want to list.
+     * Optional. String. The ID of the file system whose mount targets you want
+     * to list. It must be included in your request if
+     * <code>MountTargetId</code> is not included.
      * </p>
      * 
-     * @return String. The ID of the file system whose mount targets you want to
-     *         list.
+     * @return Optional. String. The ID of the file system whose mount targets
+     *         you want to list. It must be included in your request if
+     *         <code>MountTargetId</code> is not included.
      */
     public String getFileSystemId() {
         return this.fileSystemId;
@@ -170,17 +186,70 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * String. The ID of the file system whose mount targets you want to list.
+     * Optional. String. The ID of the file system whose mount targets you want
+     * to list. It must be included in your request if
+     * <code>MountTargetId</code> is not included.
      * </p>
      * 
      * @param fileSystemId
-     *        String. The ID of the file system whose mount targets you want to
-     *        list.
+     *        Optional. String. The ID of the file system whose mount targets
+     *        you want to list. It must be included in your request if
+     *        <code>MountTargetId</code> is not included.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
     public DescribeMountTargetsRequest withFileSystemId(String fileSystemId) {
         setFileSystemId(fileSystemId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional. String. The ID of the mount target that you want to have
+     * described. It must be included in your request if
+     * <code>FileSystemId</code> is not included.
+     * </p>
+     * 
+     * @param mountTargetId
+     *        Optional. String. The ID of the mount target that you want to have
+     *        described. It must be included in your request if
+     *        <code>FileSystemId</code> is not included.
+     */
+    public void setMountTargetId(String mountTargetId) {
+        this.mountTargetId = mountTargetId;
+    }
+
+    /**
+     * <p>
+     * Optional. String. The ID of the mount target that you want to have
+     * described. It must be included in your request if
+     * <code>FileSystemId</code> is not included.
+     * </p>
+     * 
+     * @return Optional. String. The ID of the mount target that you want to
+     *         have described. It must be included in your request if
+     *         <code>FileSystemId</code> is not included.
+     */
+    public String getMountTargetId() {
+        return this.mountTargetId;
+    }
+
+    /**
+     * <p>
+     * Optional. String. The ID of the mount target that you want to have
+     * described. It must be included in your request if
+     * <code>FileSystemId</code> is not included.
+     * </p>
+     * 
+     * @param mountTargetId
+     *        Optional. String. The ID of the mount target that you want to have
+     *        described. It must be included in your request if
+     *        <code>FileSystemId</code> is not included.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeMountTargetsRequest withMountTargetId(String mountTargetId) {
+        setMountTargetId(mountTargetId);
         return this;
     }
 
@@ -201,7 +270,9 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
         if (getMarker() != null)
             sb.append("Marker: " + getMarker() + ",");
         if (getFileSystemId() != null)
-            sb.append("FileSystemId: " + getFileSystemId());
+            sb.append("FileSystemId: " + getFileSystemId() + ",");
+        if (getMountTargetId() != null)
+            sb.append("MountTargetId: " + getMountTargetId());
         sb.append("}");
         return sb.toString();
     }
@@ -231,6 +302,11 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
         if (other.getFileSystemId() != null
                 && other.getFileSystemId().equals(this.getFileSystemId()) == false)
             return false;
+        if (other.getMountTargetId() == null ^ this.getMountTargetId() == null)
+            return false;
+        if (other.getMountTargetId() != null
+                && other.getMountTargetId().equals(this.getMountTargetId()) == false)
+            return false;
         return true;
     }
 
@@ -246,6 +322,10 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
         hashCode = prime
                 * hashCode
                 + ((getFileSystemId() == null) ? 0 : getFileSystemId()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getMountTargetId() == null) ? 0 : getMountTargetId()
                         .hashCode());
         return hashCode;
     }

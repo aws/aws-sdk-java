@@ -124,6 +124,29 @@ public class UpdateHealthCheckRequestMarshaller implements Marshaller<Request<Up
         if (updateHealthCheckRequest.getFailureThreshold() != null) {
             xmlWriter.startElement("FailureThreshold").value(updateHealthCheckRequest.getFailureThreshold()).endElement();
         }
+        if (updateHealthCheckRequest.isInverted() != null) {
+            xmlWriter.startElement("Inverted").value(updateHealthCheckRequest.isInverted()).endElement();
+        }
+        if (updateHealthCheckRequest.getHealthThreshold() != null) {
+            xmlWriter.startElement("HealthThreshold").value(updateHealthCheckRequest.getHealthThreshold()).endElement();
+        }
+
+        if (updateHealthCheckRequest != null) {
+            java.util.List<String> UpdateHealthCheckRequestchildHealthChecksList = updateHealthCheckRequest.getChildHealthChecks();
+            if (UpdateHealthCheckRequestchildHealthChecksList != null && UpdateHealthCheckRequestchildHealthChecksList.size() > 0) {
+                int UpdateHealthCheckRequestchildHealthChecksListIndex = 1;
+                xmlWriter.startElement("ChildHealthChecks");
+                for (String UpdateHealthCheckRequestchildHealthChecksListValue : UpdateHealthCheckRequestchildHealthChecksList) {
+
+                xmlWriter.startElement("ChildHealthCheck");
+                    xmlWriter.value(UpdateHealthCheckRequestchildHealthChecksListValue);
+                xmlWriter.endElement();
+
+                    UpdateHealthCheckRequestchildHealthChecksListIndex++;
+                }
+                xmlWriter.endElement();
+            }
+        }
 
             xmlWriter.endElement();
 

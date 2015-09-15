@@ -253,6 +253,9 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
 
                 launchSpecificationsListIndex++;
             }
+            if (spotFleetRequestConfigDataSpotFleetRequestConfig.getAllocationStrategy() != null) {
+                request.addParameter("SpotFleetRequestConfig.AllocationStrategy", StringUtils.fromString(spotFleetRequestConfigDataSpotFleetRequestConfig.getAllocationStrategy()));
+            }
         }
 
         return request;

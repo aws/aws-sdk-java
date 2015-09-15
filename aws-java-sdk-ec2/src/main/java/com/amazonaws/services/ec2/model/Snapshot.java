@@ -24,12 +24,13 @@ import java.io.Serializable;
 public class Snapshot implements Serializable, Cloneable {
 
     /**
-     * The ID of the snapshot.
+     * The ID of the snapshot. Each snapshot receives a unique identifier
+     * when it is created.
      */
     private String snapshotId;
 
     /**
-     * The ID of the volume.
+     * The ID of the volume that was used to create the snapshot.
      */
     private String volumeId;
 
@@ -40,6 +41,16 @@ public class Snapshot implements Serializable, Cloneable {
      * <b>Allowed Values: </b>pending, completed, error
      */
     private String state;
+
+    /**
+     * Encrypted Amazon EBS snapshots are copied asynchronously. If a
+     * snapshot copy operation fails (for example, if the proper AWS Key
+     * Management Service (AWS KMS) permissions are not obtained) this field
+     * displays error state details to help you diagnose why the error
+     * occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.
+     */
+    private String stateMessage;
 
     /**
      * The time stamp when the snapshot was initiated.
@@ -90,29 +101,47 @@ public class Snapshot implements Serializable, Cloneable {
     private String kmsKeyId;
 
     /**
-     * The ID of the snapshot.
+     * The data encryption key identifier for the snapshot. This value is a
+     * unique identifier that corresponds to the data encryption key that was
+     * used to encrypt the original volume or snapshot copy. Because data
+     * encryption keys are inherited by volumes created from snapshots, and
+     * vice versa, if snapshots share the same data encryption key
+     * identifier, then they belong to the same volume/snapshot lineage. This
+     * parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.
+     */
+    private String dataEncryptionKeyId;
+
+    /**
+     * The ID of the snapshot. Each snapshot receives a unique identifier
+     * when it is created.
      *
-     * @return The ID of the snapshot.
+     * @return The ID of the snapshot. Each snapshot receives a unique identifier
+     *         when it is created.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The ID of the snapshot.
+     * The ID of the snapshot. Each snapshot receives a unique identifier
+     * when it is created.
      *
-     * @param snapshotId The ID of the snapshot.
+     * @param snapshotId The ID of the snapshot. Each snapshot receives a unique identifier
+     *         when it is created.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The ID of the snapshot.
+     * The ID of the snapshot. Each snapshot receives a unique identifier
+     * when it is created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotId The ID of the snapshot.
+     * @param snapshotId The ID of the snapshot. Each snapshot receives a unique identifier
+     *         when it is created.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -123,29 +152,29 @@ public class Snapshot implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the volume.
+     * The ID of the volume that was used to create the snapshot.
      *
-     * @return The ID of the volume.
+     * @return The ID of the volume that was used to create the snapshot.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * The ID of the volume.
+     * The ID of the volume that was used to create the snapshot.
      *
-     * @param volumeId The ID of the volume.
+     * @param volumeId The ID of the volume that was used to create the snapshot.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * The ID of the volume.
+     * The ID of the volume that was used to create the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeId The ID of the volume.
+     * @param volumeId The ID of the volume that was used to create the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -234,6 +263,69 @@ public class Snapshot implements Serializable, Cloneable {
      */
     public Snapshot withState(SnapshotState state) {
         this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * Encrypted Amazon EBS snapshots are copied asynchronously. If a
+     * snapshot copy operation fails (for example, if the proper AWS Key
+     * Management Service (AWS KMS) permissions are not obtained) this field
+     * displays error state details to help you diagnose why the error
+     * occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.
+     *
+     * @return Encrypted Amazon EBS snapshots are copied asynchronously. If a
+     *         snapshot copy operation fails (for example, if the proper AWS Key
+     *         Management Service (AWS KMS) permissions are not obtained) this field
+     *         displays error state details to help you diagnose why the error
+     *         occurred. This parameter is only returned by the
+     *         <a>DescribeSnapshots</a> API operation.
+     */
+    public String getStateMessage() {
+        return stateMessage;
+    }
+    
+    /**
+     * Encrypted Amazon EBS snapshots are copied asynchronously. If a
+     * snapshot copy operation fails (for example, if the proper AWS Key
+     * Management Service (AWS KMS) permissions are not obtained) this field
+     * displays error state details to help you diagnose why the error
+     * occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.
+     *
+     * @param stateMessage Encrypted Amazon EBS snapshots are copied asynchronously. If a
+     *         snapshot copy operation fails (for example, if the proper AWS Key
+     *         Management Service (AWS KMS) permissions are not obtained) this field
+     *         displays error state details to help you diagnose why the error
+     *         occurred. This parameter is only returned by the
+     *         <a>DescribeSnapshots</a> API operation.
+     */
+    public void setStateMessage(String stateMessage) {
+        this.stateMessage = stateMessage;
+    }
+    
+    /**
+     * Encrypted Amazon EBS snapshots are copied asynchronously. If a
+     * snapshot copy operation fails (for example, if the proper AWS Key
+     * Management Service (AWS KMS) permissions are not obtained) this field
+     * displays error state details to help you diagnose why the error
+     * occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param stateMessage Encrypted Amazon EBS snapshots are copied asynchronously. If a
+     *         snapshot copy operation fails (for example, if the proper AWS Key
+     *         Management Service (AWS KMS) permissions are not obtained) this field
+     *         displays error state details to help you diagnose why the error
+     *         occurred. This parameter is only returned by the
+     *         <a>DescribeSnapshots</a> API operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Snapshot withStateMessage(String stateMessage) {
+        this.stateMessage = stateMessage;
         return this;
     }
 
@@ -602,6 +694,81 @@ public class Snapshot implements Serializable, Cloneable {
     }
 
     /**
+     * The data encryption key identifier for the snapshot. This value is a
+     * unique identifier that corresponds to the data encryption key that was
+     * used to encrypt the original volume or snapshot copy. Because data
+     * encryption keys are inherited by volumes created from snapshots, and
+     * vice versa, if snapshots share the same data encryption key
+     * identifier, then they belong to the same volume/snapshot lineage. This
+     * parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.
+     *
+     * @return The data encryption key identifier for the snapshot. This value is a
+     *         unique identifier that corresponds to the data encryption key that was
+     *         used to encrypt the original volume or snapshot copy. Because data
+     *         encryption keys are inherited by volumes created from snapshots, and
+     *         vice versa, if snapshots share the same data encryption key
+     *         identifier, then they belong to the same volume/snapshot lineage. This
+     *         parameter is only returned by the <a>DescribeSnapshots</a> API
+     *         operation.
+     */
+    public String getDataEncryptionKeyId() {
+        return dataEncryptionKeyId;
+    }
+    
+    /**
+     * The data encryption key identifier for the snapshot. This value is a
+     * unique identifier that corresponds to the data encryption key that was
+     * used to encrypt the original volume or snapshot copy. Because data
+     * encryption keys are inherited by volumes created from snapshots, and
+     * vice versa, if snapshots share the same data encryption key
+     * identifier, then they belong to the same volume/snapshot lineage. This
+     * parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.
+     *
+     * @param dataEncryptionKeyId The data encryption key identifier for the snapshot. This value is a
+     *         unique identifier that corresponds to the data encryption key that was
+     *         used to encrypt the original volume or snapshot copy. Because data
+     *         encryption keys are inherited by volumes created from snapshots, and
+     *         vice versa, if snapshots share the same data encryption key
+     *         identifier, then they belong to the same volume/snapshot lineage. This
+     *         parameter is only returned by the <a>DescribeSnapshots</a> API
+     *         operation.
+     */
+    public void setDataEncryptionKeyId(String dataEncryptionKeyId) {
+        this.dataEncryptionKeyId = dataEncryptionKeyId;
+    }
+    
+    /**
+     * The data encryption key identifier for the snapshot. This value is a
+     * unique identifier that corresponds to the data encryption key that was
+     * used to encrypt the original volume or snapshot copy. Because data
+     * encryption keys are inherited by volumes created from snapshots, and
+     * vice versa, if snapshots share the same data encryption key
+     * identifier, then they belong to the same volume/snapshot lineage. This
+     * parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dataEncryptionKeyId The data encryption key identifier for the snapshot. This value is a
+     *         unique identifier that corresponds to the data encryption key that was
+     *         used to encrypt the original volume or snapshot copy. Because data
+     *         encryption keys are inherited by volumes created from snapshots, and
+     *         vice versa, if snapshots share the same data encryption key
+     *         identifier, then they belong to the same volume/snapshot lineage. This
+     *         parameter is only returned by the <a>DescribeSnapshots</a> API
+     *         operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Snapshot withDataEncryptionKeyId(String dataEncryptionKeyId) {
+        this.dataEncryptionKeyId = dataEncryptionKeyId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -616,6 +783,7 @@ public class Snapshot implements Serializable, Cloneable {
         if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");
         if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");
         if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getStateMessage() != null) sb.append("StateMessage: " + getStateMessage() + ",");
         if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");
         if (getProgress() != null) sb.append("Progress: " + getProgress() + ",");
         if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");
@@ -624,7 +792,8 @@ public class Snapshot implements Serializable, Cloneable {
         if (getOwnerAlias() != null) sb.append("OwnerAlias: " + getOwnerAlias() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ",");
-        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+        if (getDataEncryptionKeyId() != null) sb.append("DataEncryptionKeyId: " + getDataEncryptionKeyId() );
         sb.append("}");
         return sb.toString();
     }
@@ -637,6 +806,7 @@ public class Snapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode()); 
         hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode()); 
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getStateMessage() == null) ? 0 : getStateMessage().hashCode()); 
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode()); 
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode()); 
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode()); 
@@ -646,6 +816,7 @@ public class Snapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
+        hashCode = prime * hashCode + ((getDataEncryptionKeyId() == null) ? 0 : getDataEncryptionKeyId().hashCode()); 
         return hashCode;
     }
     
@@ -663,6 +834,8 @@ public class Snapshot implements Serializable, Cloneable {
         if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false) return false; 
         if (other.getState() == null ^ this.getState() == null) return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getStateMessage() == null ^ this.getStateMessage() == null) return false;
+        if (other.getStateMessage() != null && other.getStateMessage().equals(this.getStateMessage()) == false) return false; 
         if (other.getStartTime() == null ^ this.getStartTime() == null) return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false) return false; 
         if (other.getProgress() == null ^ this.getProgress() == null) return false;
@@ -681,6 +854,8 @@ public class Snapshot implements Serializable, Cloneable {
         if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
+        if (other.getDataEncryptionKeyId() == null ^ this.getDataEncryptionKeyId() == null) return false;
+        if (other.getDataEncryptionKeyId() != null && other.getDataEncryptionKeyId().equals(this.getDataEncryptionKeyId()) == false) return false; 
         return true;
     }
     

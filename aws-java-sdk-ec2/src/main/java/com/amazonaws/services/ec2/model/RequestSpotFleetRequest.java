@@ -26,12 +26,26 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotFleetRequestMarshal
  * Creates a Spot fleet request.
  * </p>
  * <p>
- * You can submit a single request that specifies multiple instance
- * types, each with its own instance weighting that reflects its value to
- * your application workload. Amazon EC2 computes the bid price for each
- * launch specification and requests Spot Instances in the Spot pool
- * where the price per unit is the lowest. For more information, see
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html"> Spot Fleets </a>
+ * You can submit a single request that includes multiple launch
+ * specifications that vary by instance type, AMI, Availability Zone, or
+ * subnet.
+ * </p>
+ * <p>
+ * By default, the Spot fleet requests Spot instances in the Spot pool
+ * where the price per unit is the lowest. Each launch specification can
+ * include its own instance weighting that reflects the value of the
+ * instance type to your application workload.
+ * </p>
+ * <p>
+ * Alternatively, you can specify that the Spot fleet distribute the
+ * target capacity across the Spot pools included in its launch
+ * specifications. By ensuring that the Spot instances in your Spot fleet
+ * are in different Spot pools, you can improve the availability of your
+ * fleet.
+ * </p>
+ * <p>
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html"> Spot Fleet Requests </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *

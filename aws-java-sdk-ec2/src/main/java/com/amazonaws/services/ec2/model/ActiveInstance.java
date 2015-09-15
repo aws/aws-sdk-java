@@ -34,7 +34,7 @@ public class ActiveInstance implements Serializable, Cloneable {
     private String instanceId;
 
     /**
-     * The ID of the Spot Instance request.
+     * The ID of the Spot instance request.
      */
     private String spotInstanceRequestId;
 
@@ -105,29 +105,29 @@ public class ActiveInstance implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the Spot Instance request.
+     * The ID of the Spot instance request.
      *
-     * @return The ID of the Spot Instance request.
+     * @return The ID of the Spot instance request.
      */
     public String getSpotInstanceRequestId() {
         return spotInstanceRequestId;
     }
     
     /**
-     * The ID of the Spot Instance request.
+     * The ID of the Spot instance request.
      *
-     * @param spotInstanceRequestId The ID of the Spot Instance request.
+     * @param spotInstanceRequestId The ID of the Spot instance request.
      */
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
     }
     
     /**
-     * The ID of the Spot Instance request.
+     * The ID of the Spot instance request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequestId The ID of the Spot Instance request.
+     * @param spotInstanceRequestId The ID of the Spot instance request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

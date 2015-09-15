@@ -74,6 +74,22 @@ public class HealthCheckConfigStaxUnmarshaller implements Unmarshaller<HealthChe
                     healthCheckConfig.setFailureThreshold(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("MeasureLatency", targetDepth)) {
+                    healthCheckConfig.setMeasureLatency(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Inverted", targetDepth)) {
+                    healthCheckConfig.setInverted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("HealthThreshold", targetDepth)) {
+                    healthCheckConfig.setHealthThreshold(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ChildHealthChecks/ChildHealthCheck", targetDepth)) {
+                    healthCheckConfig.getChildHealthChecks().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return healthCheckConfig;

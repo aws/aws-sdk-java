@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.services.route53.model;
+package com.amazonaws.services.ec2.model;
 
 /**
- * Health Check Type
+ * Allocation Strategy
  */
-public enum HealthCheckType {
+public enum AllocationStrategy {
     
-    HTTP("HTTP"),
-    HTTPS("HTTPS"),
-    HTTP_STR_MATCH("HTTP_STR_MATCH"),
-    HTTPS_STR_MATCH("HTTPS_STR_MATCH"),
-    TCP("TCP"),
-    CALCULATED("CALCULATED");
+    LowestPrice("lowestPrice"),
+    Diversified("diversified");
 
     private String value;
 
-    private HealthCheckType(String value) {
+    private AllocationStrategy(String value) {
         this.value = value;
     }
 
@@ -42,24 +38,16 @@ public enum HealthCheckType {
      *
      * @param value
      *            real value
-     * @return HealthCheckType corresponding to the value
+     * @return AllocationStrategy corresponding to the value
      */
-    public static HealthCheckType fromValue(String value) {
+    public static AllocationStrategy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
-        } else if ("HTTP".equals(value)) {
-            return HealthCheckType.HTTP;
-        } else if ("HTTPS".equals(value)) {
-            return HealthCheckType.HTTPS;
-        } else if ("HTTP_STR_MATCH".equals(value)) {
-            return HealthCheckType.HTTP_STR_MATCH;
-        } else if ("HTTPS_STR_MATCH".equals(value)) {
-            return HealthCheckType.HTTPS_STR_MATCH;
-        } else if ("TCP".equals(value)) {
-            return HealthCheckType.TCP;
-        } else if ("CALCULATED".equals(value)) {
-            return HealthCheckType.CALCULATED;
+        } else if ("lowestPrice".equals(value)) {
+            return AllocationStrategy.LowestPrice;
+        } else if ("diversified".equals(value)) {
+            return AllocationStrategy.Diversified;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

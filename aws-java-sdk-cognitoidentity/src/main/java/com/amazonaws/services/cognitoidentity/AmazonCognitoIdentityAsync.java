@@ -73,8 +73,16 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Creates a new identity pool. The identity pool is a store of user
      * identity information that is specific to your AWS account. The limit on
-     * identity pools is 60 per account. You must use AWS Developer credentials
-     * to call this API.
+     * identity pools is 60 per account. The keys for
+     * <code>SupportedLoginProviders</code> are as follows:
+     * <ul>
+     * <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Google: <code>accounts.google.com</code></li>
+     * <li>Amazon: <code>www.amazon.com</code></li>
+     * <li>Twitter: <code>api.twitter.com</code></li>
+     * <li>Digits: <code>www.digits.com</code></li>
+     * </ul>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      * 
      * @param createIdentityPoolRequest
@@ -89,8 +97,16 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Creates a new identity pool. The identity pool is a store of user
      * identity information that is specific to your AWS account. The limit on
-     * identity pools is 60 per account. You must use AWS Developer credentials
-     * to call this API.
+     * identity pools is 60 per account. The keys for
+     * <code>SupportedLoginProviders</code> are as follows:
+     * <ul>
+     * <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Google: <code>accounts.google.com</code></li>
+     * <li>Amazon: <code>www.amazon.com</code></li>
+     * <li>Twitter: <code>api.twitter.com</code></li>
+     * <li>Digits: <code>www.digits.com</code></li>
+     * </ul>
+     * You must use AWS Developer credentials to call this API.
      * </p>
      * 
      * @param createIdentityPoolRequest
@@ -265,7 +281,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
 
     /**
      * <p>
-     * Returns credentials for the the provided identity ID. Any provided logins
+     * Returns credentials for the provided identity ID. Any provided logins
      * will be validated against supported login providers. If the token is for
      * cognito-identity.amazonaws.com, it will be passed through to AWS Security
      * Token Service with the appropriate role for the token.
@@ -284,7 +300,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
 
     /**
      * <p>
-     * Returns credentials for the the provided identity ID. Any provided logins
+     * Returns credentials for the provided identity ID. Any provided logins
      * will be validated against supported login providers. If the token is for
      * cognito-identity.amazonaws.com, it will be passed through to AWS Security
      * Token Service with the appropriate role for the token.
@@ -313,9 +329,6 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * create an implicit linked account.
      * </p>
      * <p>
-     * token+";"+tokenSecret.
-     * </p>
-     * <p>
      * This is a public API. You do not need any credentials to call this API.
      * </p>
      * 
@@ -331,9 +344,6 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * <p>
      * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
      * create an implicit linked account.
-     * </p>
-     * <p>
-     * token+";"+tokenSecret.
      * </p>
      * <p>
      * This is a public API. You do not need any credentials to call this API.
@@ -556,7 +566,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * Lists all of the Cognito identity pools registered for your account.
      * </p>
      * <p>
-     * This is a public API. You do not need any credentials to call this API.
+     * You must use AWS Developer credentials to call this API.
      * </p>
      * 
      * @param listIdentityPoolsRequest
@@ -572,7 +582,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * Lists all of the Cognito identity pools registered for your account.
      * </p>
      * <p>
-     * This is a public API. You do not need any credentials to call this API.
+     * You must use AWS Developer credentials to call this API.
      * </p>
      * 
      * @param listIdentityPoolsRequest
@@ -746,7 +756,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * becomes inaccessible.
      * </p>
      * <p>
-     * This is a public API. You do not need any credentials to call this API.
+     * You must use AWS Developer credentials to call this API.
      * </p>
      * 
      * @param unlinkDeveloperIdentityRequest
@@ -764,7 +774,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * becomes inaccessible.
      * </p>
      * <p>
-     * This is a public API. You do not need any credentials to call this API.
+     * You must use AWS Developer credentials to call this API.
      * </p>
      * 
      * @param unlinkDeveloperIdentityRequest

@@ -24,34 +24,34 @@ import java.io.Serializable;
 public class DescribeSpotDatafeedSubscriptionResult implements Serializable, Cloneable {
 
     /**
-     * The Spot Instance data feed subscription.
+     * The Spot instance data feed subscription.
      */
     private SpotDatafeedSubscription spotDatafeedSubscription;
 
     /**
-     * The Spot Instance data feed subscription.
+     * The Spot instance data feed subscription.
      *
-     * @return The Spot Instance data feed subscription.
+     * @return The Spot instance data feed subscription.
      */
     public SpotDatafeedSubscription getSpotDatafeedSubscription() {
         return spotDatafeedSubscription;
     }
     
     /**
-     * The Spot Instance data feed subscription.
+     * The Spot instance data feed subscription.
      *
-     * @param spotDatafeedSubscription The Spot Instance data feed subscription.
+     * @param spotDatafeedSubscription The Spot instance data feed subscription.
      */
     public void setSpotDatafeedSubscription(SpotDatafeedSubscription spotDatafeedSubscription) {
         this.spotDatafeedSubscription = spotDatafeedSubscription;
     }
     
     /**
-     * The Spot Instance data feed subscription.
+     * The Spot instance data feed subscription.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotDatafeedSubscription The Spot Instance data feed subscription.
+     * @param spotDatafeedSubscription The Spot instance data feed subscription.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the status of a Spot Instance request.
+ * Describes the status of a Spot instance request.
  * </p>
  */
 public class SpotInstanceStatus implements Serializable, Cloneable {

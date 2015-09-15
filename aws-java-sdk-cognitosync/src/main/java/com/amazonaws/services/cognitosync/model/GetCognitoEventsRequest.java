@@ -38,7 +38,7 @@ public class GetCognitoEventsRequest extends AmazonWebServiceRequest implements 
      * The Cognito Identity Pool ID for the request
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      */
     private String identityPoolId;
@@ -47,7 +47,7 @@ public class GetCognitoEventsRequest extends AmazonWebServiceRequest implements 
      * The Cognito Identity Pool ID for the request
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @return The Cognito Identity Pool ID for the request
@@ -60,7 +60,7 @@ public class GetCognitoEventsRequest extends AmazonWebServiceRequest implements 
      * The Cognito Identity Pool ID for the request
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityPoolId The Cognito Identity Pool ID for the request
@@ -75,7 +75,7 @@ public class GetCognitoEventsRequest extends AmazonWebServiceRequest implements 
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityPoolId The Cognito Identity Pool ID for the request

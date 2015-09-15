@@ -24,14 +24,14 @@ import java.io.Serializable;
 public class CancelSpotInstanceRequestsResult implements Serializable, Cloneable {
 
     /**
-     * One or more Spot Instance requests.
+     * One or more Spot instance requests.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests;
 
     /**
-     * One or more Spot Instance requests.
+     * One or more Spot instance requests.
      *
-     * @return One or more Spot Instance requests.
+     * @return One or more Spot instance requests.
      */
     public java.util.List<CancelledSpotInstanceRequest> getCancelledSpotInstanceRequests() {
         if (cancelledSpotInstanceRequests == null) {
@@ -42,9 +42,9 @@ public class CancelSpotInstanceRequestsResult implements Serializable, Cloneable
     }
     
     /**
-     * One or more Spot Instance requests.
+     * One or more Spot instance requests.
      *
-     * @param cancelledSpotInstanceRequests One or more Spot Instance requests.
+     * @param cancelledSpotInstanceRequests One or more Spot instance requests.
      */
     public void setCancelledSpotInstanceRequests(java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
         if (cancelledSpotInstanceRequests == null) {
@@ -57,7 +57,7 @@ public class CancelSpotInstanceRequestsResult implements Serializable, Cloneable
     }
     
     /**
-     * One or more Spot Instance requests.
+     * One or more Spot instance requests.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link
@@ -67,7 +67,7 @@ public class CancelSpotInstanceRequestsResult implements Serializable, Cloneable
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cancelledSpotInstanceRequests One or more Spot Instance requests.
+     * @param cancelledSpotInstanceRequests One or more Spot instance requests.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -81,11 +81,11 @@ public class CancelSpotInstanceRequestsResult implements Serializable, Cloneable
     }
     
     /**
-     * One or more Spot Instance requests.
+     * One or more Spot instance requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cancelledSpotInstanceRequests One or more Spot Instance requests.
+     * @param cancelledSpotInstanceRequests One or more Spot instance requests.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

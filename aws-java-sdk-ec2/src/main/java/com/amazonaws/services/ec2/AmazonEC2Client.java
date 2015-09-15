@@ -1393,7 +1393,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the Spot Price history. The prices returned are listed in
+     * Describes the Spot price history. The prices returned are listed in
      * chronological order, from the oldest to the most recent, for up to the
      * past 90 days. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html"> Spot Instance Pricing History </a>
@@ -2199,7 +2199,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the data feed for Spot Instances. For more information, see
+     * Describes the data feed for Spot instances. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -4350,12 +4350,26 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Creates a Spot fleet request.
      * </p>
      * <p>
-     * You can submit a single request that specifies multiple instance
-     * types, each with its own instance weighting that reflects its value to
-     * your application workload. Amazon EC2 computes the bid price for each
-     * launch specification and requests Spot Instances in the Spot pool
-     * where the price per unit is the lowest. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html"> Spot Fleets </a>
+     * You can submit a single request that includes multiple launch
+     * specifications that vary by instance type, AMI, Availability Zone, or
+     * subnet.
+     * </p>
+     * <p>
+     * By default, the Spot fleet requests Spot instances in the Spot pool
+     * where the price per unit is the lowest. Each launch specification can
+     * include its own instance weighting that reflects the value of the
+     * instance type to your application workload.
+     * </p>
+     * <p>
+     * Alternatively, you can specify that the Spot fleet distribute the
+     * target capacity across the Spot pools included in its launch
+     * specifications. By ensuring that the Spot instances in your Spot fleet
+     * are in different Spot pools, you can improve the availability of your
+     * fleet.
+     * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html"> Spot Fleet Requests </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
@@ -5049,8 +5063,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Creates a data feed for Spot Instances, enabling you to view Spot
-     * Instance usage logs. You can create one data feed per AWS account. For
+     * Creates a data feed for Spot instances, enabling you to view Spot
+     * instance usage logs. You can create one data feed per AWS account. For
      * more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -6361,18 +6375,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the Spot Instance requests that belong to your account.
-     * Spot Instances are instances that Amazon EC2 launches when the bid
-     * price that you specify exceeds the current Spot Price. Amazon EC2
-     * periodically sets the Spot Price based on available Spot Instance
-     * capacity and current Spot Instance requests. For more information, see
+     * Describes the Spot instance requests that belong to your account.
+     * Spot instances are instances that Amazon EC2 launches when the bid
+     * price that you specify exceeds the current Spot price. Amazon EC2
+     * periodically sets the Spot price based on available Spot instance
+     * capacity and current Spot instance requests. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a
-     * running Spot Instance by examining the response. If the status of the
-     * Spot Instance is <code>fulfilled</code> , the instance ID appears in
+     * running Spot instance by examining the response. If the status of the
+     * Spot instance is <code>fulfilled</code> , the instance ID appears in
      * the response and contains the identifier of the instance.
      * Alternatively, you can use DescribeInstances with a filter to look for
      * instances where the instance lifecycle is <code>spot</code> .
@@ -7000,10 +7014,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Creates a Spot Instance request. Spot Instances are instances that
+     * Creates a Spot instance request. Spot instances are instances that
      * Amazon EC2 launches when the bid price that you specify exceeds the
-     * current Spot Price. Amazon EC2 periodically sets the Spot Price based
-     * on available Spot Instance capacity and current Spot Instance
+     * current Spot price. Amazon EC2 periodically sets the Spot price based
+     * on available Spot Instance capacity and current Spot instance
      * requests. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -7440,17 +7454,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Cancels one or more Spot Instance requests. Spot Instances are
+     * Cancels one or more Spot instance requests. Spot instances are
      * instances that Amazon EC2 starts on your behalf when the bid price
-     * that you specify exceeds the current Spot Price. Amazon EC2
-     * periodically sets the Spot Price based on available Spot Instance
-     * capacity and current Spot Instance requests. For more information, see
+     * that you specify exceeds the current Spot price. Amazon EC2
+     * periodically sets the Spot price based on available Spot instance
+     * capacity and current Spot instance requests. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Canceling a Spot Instance request does not
-     * terminate running Spot Instances associated with the request.
+     * <b>IMPORTANT:</b> Canceling a Spot instance request does not
+     * terminate running Spot instances associated with the request.
      * </p>
      *
      * @param cancelSpotInstanceRequestsRequest Container for the necessary
@@ -7839,9 +7853,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Deletes the data feed for Spot Instances. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * Deletes the data feed for Spot instances.
      * </p>
      *
      * @param deleteSpotDatafeedSubscriptionRequest Container for the
@@ -10224,7 +10236,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the Spot Price history. The prices returned are listed in
+     * Describes the Spot price history. The prices returned are listed in
      * chronological order, from the oldest to the most recent, for up to the
      * past 90 days. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html"> Spot Instance Pricing History </a>
@@ -10351,7 +10363,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the data feed for Spot Instances. For more information, see
+     * Describes the data feed for Spot instances. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -11192,18 +11204,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the Spot Instance requests that belong to your account.
-     * Spot Instances are instances that Amazon EC2 launches when the bid
-     * price that you specify exceeds the current Spot Price. Amazon EC2
-     * periodically sets the Spot Price based on available Spot Instance
-     * capacity and current Spot Instance requests. For more information, see
+     * Describes the Spot instance requests that belong to your account.
+     * Spot instances are instances that Amazon EC2 launches when the bid
+     * price that you specify exceeds the current Spot price. Amazon EC2
+     * periodically sets the Spot price based on available Spot instance
+     * capacity and current Spot instance requests. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a
-     * running Spot Instance by examining the response. If the status of the
-     * Spot Instance is <code>fulfilled</code> , the instance ID appears in
+     * running Spot instance by examining the response. If the status of the
+     * Spot instance is <code>fulfilled</code> , the instance ID appears in
      * the response and contains the identifier of the instance.
      * Alternatively, you can use DescribeInstances with a filter to look for
      * instances where the instance lifecycle is <code>spot</code> .
@@ -11395,9 +11407,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Deletes the data feed for Spot Instances. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * Deletes the data feed for Spot instances.
      * </p>
      * 
      * 

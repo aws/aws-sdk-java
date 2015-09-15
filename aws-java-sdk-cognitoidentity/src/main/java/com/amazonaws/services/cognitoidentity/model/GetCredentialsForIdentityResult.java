@@ -33,7 +33,7 @@ public class GetCredentialsForIdentityResult implements Serializable, Cloneable 
     private String identityId;
     /**
      * <p>
-     * Credentials for the the provided identity ID.
+     * Credentials for the provided identity ID.
      * </p>
      */
     private Credentials credentials;
@@ -78,11 +78,11 @@ public class GetCredentialsForIdentityResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Credentials for the the provided identity ID.
+     * Credentials for the provided identity ID.
      * </p>
      * 
      * @param credentials
-     *        Credentials for the the provided identity ID.
+     *        Credentials for the provided identity ID.
      */
     public void setCredentials(Credentials credentials) {
         this.credentials = credentials;
@@ -90,10 +90,10 @@ public class GetCredentialsForIdentityResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Credentials for the the provided identity ID.
+     * Credentials for the provided identity ID.
      * </p>
      * 
-     * @return Credentials for the the provided identity ID.
+     * @return Credentials for the provided identity ID.
      */
     public Credentials getCredentials() {
         return this.credentials;
@@ -101,11 +101,11 @@ public class GetCredentialsForIdentityResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Credentials for the the provided identity ID.
+     * Credentials for the provided identity ID.
      * </p>
      * 
      * @param credentials
-     *        Credentials for the the provided identity ID.
+     *        Credentials for the provided identity ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

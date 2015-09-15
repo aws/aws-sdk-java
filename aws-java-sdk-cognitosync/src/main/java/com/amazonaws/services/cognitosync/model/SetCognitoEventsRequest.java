@@ -40,7 +40,7 @@ public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements 
      * The Cognito Identity Pool to use when configuring Cognito Events
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      */
     private String identityPoolId;
@@ -57,7 +57,7 @@ public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements 
      * The Cognito Identity Pool to use when configuring Cognito Events
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @return The Cognito Identity Pool to use when configuring Cognito Events
@@ -70,7 +70,7 @@ public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements 
      * The Cognito Identity Pool to use when configuring Cognito Events
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityPoolId The Cognito Identity Pool to use when configuring Cognito Events
@@ -85,7 +85,7 @@ public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements 
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityPoolId The Cognito Identity Pool to use when configuring Cognito Events

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the launch specification for one or more Spot Instances.
+ * Describes the launch specification for one or more Spot instances.
  * </p>
  */
 public class SpotFleetLaunchSpecification implements Serializable, Cloneable {

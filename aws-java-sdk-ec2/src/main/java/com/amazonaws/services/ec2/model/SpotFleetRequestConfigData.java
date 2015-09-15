@@ -54,32 +54,43 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At
-     * this point, no new Spot Instance requests are placed or enabled to
+     * this point, no new Spot instance requests are placed or enabled to
      * fulfill the request.
      */
     private java.util.Date validUntil;
 
     /**
-     * Indicates whether running instances should be terminated when the Spot
-     * fleet request expires.
+     * Indicates whether running Spot instances should be terminated when the
+     * Spot fleet request expires.
      */
     private Boolean terminateInstancesWithExpiration;
 
     /**
-     * Grants the Spot fleet service permission to terminate instances on
-     * your behalf when you cancel a Spot fleet request using
+     * Grants the Spot fleet permission to terminate Spot instances on your
+     * behalf when you cancel its Spot fleet request using
      * <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires,
      * if you set <code>terminateInstancesWithExpiration</code>.
      */
     private String iamFleetRole;
 
     /**
-     * Information about the launch specifications for the instances.
+     * Information about the launch specifications for the Spot fleet
+     * request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SpotFleetLaunchSpecification> launchSpecifications;
+
+    /**
+     * Determines how to allocate the target capacity across the Spot pools
+     * specified by the Spot fleet request. The default is
+     * <code>lowestPrice</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lowestPrice, diversified
+     */
+    private String allocationStrategy;
 
     /**
      * A unique, case-sensitive identifier you provide to ensure idempotency
@@ -264,12 +275,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At
-     * this point, no new Spot Instance requests are placed or enabled to
+     * this point, no new Spot instance requests are placed or enabled to
      * fulfill the request.
      *
      * @return The end date and time of the request, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At
-     *         this point, no new Spot Instance requests are placed or enabled to
+     *         this point, no new Spot instance requests are placed or enabled to
      *         fulfill the request.
      */
     public java.util.Date getValidUntil() {
@@ -279,12 +290,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At
-     * this point, no new Spot Instance requests are placed or enabled to
+     * this point, no new Spot instance requests are placed or enabled to
      * fulfill the request.
      *
      * @param validUntil The end date and time of the request, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At
-     *         this point, no new Spot Instance requests are placed or enabled to
+     *         this point, no new Spot instance requests are placed or enabled to
      *         fulfill the request.
      */
     public void setValidUntil(java.util.Date validUntil) {
@@ -294,14 +305,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At
-     * this point, no new Spot Instance requests are placed or enabled to
+     * this point, no new Spot instance requests are placed or enabled to
      * fulfill the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param validUntil The end date and time of the request, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At
-     *         this point, no new Spot Instance requests are placed or enabled to
+     *         this point, no new Spot instance requests are placed or enabled to
      *         fulfill the request.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -313,35 +324,35 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether running instances should be terminated when the Spot
-     * fleet request expires.
+     * Indicates whether running Spot instances should be terminated when the
+     * Spot fleet request expires.
      *
-     * @return Indicates whether running instances should be terminated when the Spot
-     *         fleet request expires.
+     * @return Indicates whether running Spot instances should be terminated when the
+     *         Spot fleet request expires.
      */
     public Boolean isTerminateInstancesWithExpiration() {
         return terminateInstancesWithExpiration;
     }
     
     /**
-     * Indicates whether running instances should be terminated when the Spot
-     * fleet request expires.
+     * Indicates whether running Spot instances should be terminated when the
+     * Spot fleet request expires.
      *
-     * @param terminateInstancesWithExpiration Indicates whether running instances should be terminated when the Spot
-     *         fleet request expires.
+     * @param terminateInstancesWithExpiration Indicates whether running Spot instances should be terminated when the
+     *         Spot fleet request expires.
      */
     public void setTerminateInstancesWithExpiration(Boolean terminateInstancesWithExpiration) {
         this.terminateInstancesWithExpiration = terminateInstancesWithExpiration;
     }
     
     /**
-     * Indicates whether running instances should be terminated when the Spot
-     * fleet request expires.
+     * Indicates whether running Spot instances should be terminated when the
+     * Spot fleet request expires.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param terminateInstancesWithExpiration Indicates whether running instances should be terminated when the Spot
-     *         fleet request expires.
+     * @param terminateInstancesWithExpiration Indicates whether running Spot instances should be terminated when the
+     *         Spot fleet request expires.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -352,24 +363,24 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether running instances should be terminated when the Spot
-     * fleet request expires.
+     * Indicates whether running Spot instances should be terminated when the
+     * Spot fleet request expires.
      *
-     * @return Indicates whether running instances should be terminated when the Spot
-     *         fleet request expires.
+     * @return Indicates whether running Spot instances should be terminated when the
+     *         Spot fleet request expires.
      */
     public Boolean getTerminateInstancesWithExpiration() {
         return terminateInstancesWithExpiration;
     }
 
     /**
-     * Grants the Spot fleet service permission to terminate instances on
-     * your behalf when you cancel a Spot fleet request using
+     * Grants the Spot fleet permission to terminate Spot instances on your
+     * behalf when you cancel its Spot fleet request using
      * <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires,
      * if you set <code>terminateInstancesWithExpiration</code>.
      *
-     * @return Grants the Spot fleet service permission to terminate instances on
-     *         your behalf when you cancel a Spot fleet request using
+     * @return Grants the Spot fleet permission to terminate Spot instances on your
+     *         behalf when you cancel its Spot fleet request using
      *         <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires,
      *         if you set <code>terminateInstancesWithExpiration</code>.
      */
@@ -378,13 +389,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
     
     /**
-     * Grants the Spot fleet service permission to terminate instances on
-     * your behalf when you cancel a Spot fleet request using
+     * Grants the Spot fleet permission to terminate Spot instances on your
+     * behalf when you cancel its Spot fleet request using
      * <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires,
      * if you set <code>terminateInstancesWithExpiration</code>.
      *
-     * @param iamFleetRole Grants the Spot fleet service permission to terminate instances on
-     *         your behalf when you cancel a Spot fleet request using
+     * @param iamFleetRole Grants the Spot fleet permission to terminate Spot instances on your
+     *         behalf when you cancel its Spot fleet request using
      *         <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires,
      *         if you set <code>terminateInstancesWithExpiration</code>.
      */
@@ -393,15 +404,15 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
     
     /**
-     * Grants the Spot fleet service permission to terminate instances on
-     * your behalf when you cancel a Spot fleet request using
+     * Grants the Spot fleet permission to terminate Spot instances on your
+     * behalf when you cancel its Spot fleet request using
      * <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires,
      * if you set <code>terminateInstancesWithExpiration</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param iamFleetRole Grants the Spot fleet service permission to terminate instances on
-     *         your behalf when you cancel a Spot fleet request using
+     * @param iamFleetRole Grants the Spot fleet permission to terminate Spot instances on your
+     *         behalf when you cancel its Spot fleet request using
      *         <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires,
      *         if you set <code>terminateInstancesWithExpiration</code>.
      *
@@ -414,12 +425,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
 
     /**
-     * Information about the launch specifications for the instances.
+     * Information about the launch specifications for the Spot fleet
+     * request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return Information about the launch specifications for the instances.
+     * @return Information about the launch specifications for the Spot fleet
+     *         request.
      */
     public java.util.List<SpotFleetLaunchSpecification> getLaunchSpecifications() {
         if (launchSpecifications == null) {
@@ -430,12 +443,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
     
     /**
-     * Information about the launch specifications for the instances.
+     * Information about the launch specifications for the Spot fleet
+     * request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param launchSpecifications Information about the launch specifications for the instances.
+     * @param launchSpecifications Information about the launch specifications for the Spot fleet
+     *         request.
      */
     public void setLaunchSpecifications(java.util.Collection<SpotFleetLaunchSpecification> launchSpecifications) {
         if (launchSpecifications == null) {
@@ -448,7 +463,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
     
     /**
-     * Information about the launch specifications for the instances.
+     * Information about the launch specifications for the Spot fleet
+     * request.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLaunchSpecifications(java.util.Collection)} or
@@ -460,7 +476,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param launchSpecifications Information about the launch specifications for the instances.
+     * @param launchSpecifications Information about the launch specifications for the Spot fleet
+     *         request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -474,14 +491,16 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
     
     /**
-     * Information about the launch specifications for the instances.
+     * Information about the launch specifications for the Spot fleet
+     * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param launchSpecifications Information about the launch specifications for the instances.
+     * @param launchSpecifications Information about the launch specifications for the Spot fleet
+     *         request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -495,6 +514,108 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
             this.launchSpecifications = launchSpecificationsCopy;
         }
 
+        return this;
+    }
+
+    /**
+     * Determines how to allocate the target capacity across the Spot pools
+     * specified by the Spot fleet request. The default is
+     * <code>lowestPrice</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lowestPrice, diversified
+     *
+     * @return Determines how to allocate the target capacity across the Spot pools
+     *         specified by the Spot fleet request. The default is
+     *         <code>lowestPrice</code>.
+     *
+     * @see AllocationStrategy
+     */
+    public String getAllocationStrategy() {
+        return allocationStrategy;
+    }
+    
+    /**
+     * Determines how to allocate the target capacity across the Spot pools
+     * specified by the Spot fleet request. The default is
+     * <code>lowestPrice</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lowestPrice, diversified
+     *
+     * @param allocationStrategy Determines how to allocate the target capacity across the Spot pools
+     *         specified by the Spot fleet request. The default is
+     *         <code>lowestPrice</code>.
+     *
+     * @see AllocationStrategy
+     */
+    public void setAllocationStrategy(String allocationStrategy) {
+        this.allocationStrategy = allocationStrategy;
+    }
+    
+    /**
+     * Determines how to allocate the target capacity across the Spot pools
+     * specified by the Spot fleet request. The default is
+     * <code>lowestPrice</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lowestPrice, diversified
+     *
+     * @param allocationStrategy Determines how to allocate the target capacity across the Spot pools
+     *         specified by the Spot fleet request. The default is
+     *         <code>lowestPrice</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see AllocationStrategy
+     */
+    public SpotFleetRequestConfigData withAllocationStrategy(String allocationStrategy) {
+        this.allocationStrategy = allocationStrategy;
+        return this;
+    }
+
+    /**
+     * Determines how to allocate the target capacity across the Spot pools
+     * specified by the Spot fleet request. The default is
+     * <code>lowestPrice</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lowestPrice, diversified
+     *
+     * @param allocationStrategy Determines how to allocate the target capacity across the Spot pools
+     *         specified by the Spot fleet request. The default is
+     *         <code>lowestPrice</code>.
+     *
+     * @see AllocationStrategy
+     */
+    public void setAllocationStrategy(AllocationStrategy allocationStrategy) {
+        this.allocationStrategy = allocationStrategy.toString();
+    }
+    
+    /**
+     * Determines how to allocate the target capacity across the Spot pools
+     * specified by the Spot fleet request. The default is
+     * <code>lowestPrice</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lowestPrice, diversified
+     *
+     * @param allocationStrategy Determines how to allocate the target capacity across the Spot pools
+     *         specified by the Spot fleet request. The default is
+     *         <code>lowestPrice</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see AllocationStrategy
+     */
+    public SpotFleetRequestConfigData withAllocationStrategy(AllocationStrategy allocationStrategy) {
+        this.allocationStrategy = allocationStrategy.toString();
         return this;
     }
 
@@ -517,7 +638,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
         if (getValidUntil() != null) sb.append("ValidUntil: " + getValidUntil() + ",");
         if (isTerminateInstancesWithExpiration() != null) sb.append("TerminateInstancesWithExpiration: " + isTerminateInstancesWithExpiration() + ",");
         if (getIamFleetRole() != null) sb.append("IamFleetRole: " + getIamFleetRole() + ",");
-        if (getLaunchSpecifications() != null) sb.append("LaunchSpecifications: " + getLaunchSpecifications() );
+        if (getLaunchSpecifications() != null) sb.append("LaunchSpecifications: " + getLaunchSpecifications() + ",");
+        if (getAllocationStrategy() != null) sb.append("AllocationStrategy: " + getAllocationStrategy() );
         sb.append("}");
         return sb.toString();
     }
@@ -535,6 +657,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((isTerminateInstancesWithExpiration() == null) ? 0 : isTerminateInstancesWithExpiration().hashCode()); 
         hashCode = prime * hashCode + ((getIamFleetRole() == null) ? 0 : getIamFleetRole().hashCode()); 
         hashCode = prime * hashCode + ((getLaunchSpecifications() == null) ? 0 : getLaunchSpecifications().hashCode()); 
+        hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode()); 
         return hashCode;
     }
     
@@ -562,6 +685,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
         if (other.getIamFleetRole() != null && other.getIamFleetRole().equals(this.getIamFleetRole()) == false) return false; 
         if (other.getLaunchSpecifications() == null ^ this.getLaunchSpecifications() == null) return false;
         if (other.getLaunchSpecifications() != null && other.getLaunchSpecifications().equals(this.getLaunchSpecifications()) == false) return false; 
+        if (other.getAllocationStrategy() == null ^ this.getAllocationStrategy() == null) return false;
+        if (other.getAllocationStrategy() != null && other.getAllocationStrategy().equals(this.getAllocationStrategy()) == false) return false; 
         return true;
     }
     

@@ -18,45 +18,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a Spot Instance state change.
+ * Describes a Spot instance state change.
  * </p>
  */
 public class SpotInstanceStateFault implements Serializable, Cloneable {
 
     /**
-     * The reason code for the Spot Instance state change.
+     * The reason code for the Spot instance state change.
      */
     private String code;
 
     /**
-     * The message for the Spot Instance state change.
+     * The message for the Spot instance state change.
      */
     private String message;
 
     /**
-     * The reason code for the Spot Instance state change.
+     * The reason code for the Spot instance state change.
      *
-     * @return The reason code for the Spot Instance state change.
+     * @return The reason code for the Spot instance state change.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * The reason code for the Spot Instance state change.
+     * The reason code for the Spot instance state change.
      *
-     * @param code The reason code for the Spot Instance state change.
+     * @param code The reason code for the Spot instance state change.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * The reason code for the Spot Instance state change.
+     * The reason code for the Spot instance state change.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code The reason code for the Spot Instance state change.
+     * @param code The reason code for the Spot instance state change.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -67,29 +67,29 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
     }
 
     /**
-     * The message for the Spot Instance state change.
+     * The message for the Spot instance state change.
      *
-     * @return The message for the Spot Instance state change.
+     * @return The message for the Spot instance state change.
      */
     public String getMessage() {
         return message;
     }
     
     /**
-     * The message for the Spot Instance state change.
+     * The message for the Spot instance state change.
      *
-     * @param message The message for the Spot Instance state change.
+     * @param message The message for the Spot instance state change.
      */
     public void setMessage(String message) {
         this.message = message;
     }
     
     /**
-     * The message for the Spot Instance state change.
+     * The message for the Spot instance state change.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param message The message for the Spot Instance state change.
+     * @param message The message for the Spot instance state change.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

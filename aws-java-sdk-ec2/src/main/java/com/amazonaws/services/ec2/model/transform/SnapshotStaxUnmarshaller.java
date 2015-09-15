@@ -55,6 +55,10 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     snapshot.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("statusMessage", targetDepth)) {
+                    snapshot.setStateMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("startTime", targetDepth)) {
                     snapshot.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -89,6 +93,10 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
                     snapshot.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("dataEncryptionKeyId", targetDepth)) {
+                    snapshot.setDataEncryptionKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

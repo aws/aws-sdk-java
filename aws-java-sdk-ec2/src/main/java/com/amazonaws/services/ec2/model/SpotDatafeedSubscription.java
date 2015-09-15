@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the data feed for a Spot Instance.
+ * Describes the data feed for a Spot instance.
  * </p>
  */
 public class SpotDatafeedSubscription implements Serializable, Cloneable {
@@ -29,7 +29,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     private String ownerId;
 
     /**
-     * The Amazon S3 bucket where the Spot Instance data feed is located.
+     * The Amazon S3 bucket where the Spot instance data feed is located.
      */
     private String bucket;
 
@@ -39,7 +39,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     private String prefix;
 
     /**
-     * The state of the Spot Instance data feed subscription.
+     * The state of the Spot instance data feed subscription.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
@@ -47,7 +47,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     private String state;
 
     /**
-     * The fault codes for the Spot Instance request, if any.
+     * The fault codes for the Spot instance request, if any.
      */
     private SpotInstanceStateFault fault;
 
@@ -85,29 +85,29 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon S3 bucket where the Spot Instance data feed is located.
+     * The Amazon S3 bucket where the Spot instance data feed is located.
      *
-     * @return The Amazon S3 bucket where the Spot Instance data feed is located.
+     * @return The Amazon S3 bucket where the Spot instance data feed is located.
      */
     public String getBucket() {
         return bucket;
     }
     
     /**
-     * The Amazon S3 bucket where the Spot Instance data feed is located.
+     * The Amazon S3 bucket where the Spot instance data feed is located.
      *
-     * @param bucket The Amazon S3 bucket where the Spot Instance data feed is located.
+     * @param bucket The Amazon S3 bucket where the Spot instance data feed is located.
      */
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
     
     /**
-     * The Amazon S3 bucket where the Spot Instance data feed is located.
+     * The Amazon S3 bucket where the Spot instance data feed is located.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bucket The Amazon S3 bucket where the Spot Instance data feed is located.
+     * @param bucket The Amazon S3 bucket where the Spot instance data feed is located.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -151,12 +151,12 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     }
 
     /**
-     * The state of the Spot Instance data feed subscription.
+     * The state of the Spot instance data feed subscription.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @return The state of the Spot Instance data feed subscription.
+     * @return The state of the Spot instance data feed subscription.
      *
      * @see DatafeedSubscriptionState
      */
@@ -165,12 +165,12 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     }
     
     /**
-     * The state of the Spot Instance data feed subscription.
+     * The state of the Spot instance data feed subscription.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param state The state of the Spot Instance data feed subscription.
+     * @param state The state of the Spot instance data feed subscription.
      *
      * @see DatafeedSubscriptionState
      */
@@ -179,14 +179,14 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     }
     
     /**
-     * The state of the Spot Instance data feed subscription.
+     * The state of the Spot instance data feed subscription.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param state The state of the Spot Instance data feed subscription.
+     * @param state The state of the Spot instance data feed subscription.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -199,12 +199,12 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     }
 
     /**
-     * The state of the Spot Instance data feed subscription.
+     * The state of the Spot instance data feed subscription.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param state The state of the Spot Instance data feed subscription.
+     * @param state The state of the Spot instance data feed subscription.
      *
      * @see DatafeedSubscriptionState
      */
@@ -213,14 +213,14 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     }
     
     /**
-     * The state of the Spot Instance data feed subscription.
+     * The state of the Spot instance data feed subscription.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param state The state of the Spot Instance data feed subscription.
+     * @param state The state of the Spot instance data feed subscription.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -233,29 +233,29 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     }
 
     /**
-     * The fault codes for the Spot Instance request, if any.
+     * The fault codes for the Spot instance request, if any.
      *
-     * @return The fault codes for the Spot Instance request, if any.
+     * @return The fault codes for the Spot instance request, if any.
      */
     public SpotInstanceStateFault getFault() {
         return fault;
     }
     
     /**
-     * The fault codes for the Spot Instance request, if any.
+     * The fault codes for the Spot instance request, if any.
      *
-     * @param fault The fault codes for the Spot Instance request, if any.
+     * @param fault The fault codes for the Spot instance request, if any.
      */
     public void setFault(SpotInstanceStateFault fault) {
         this.fault = fault;
     }
     
     /**
-     * The fault codes for the Spot Instance request, if any.
+     * The fault codes for the Spot instance request, if any.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param fault The fault codes for the Spot Instance request, if any.
+     * @param fault The fault codes for the Spot instance request, if any.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

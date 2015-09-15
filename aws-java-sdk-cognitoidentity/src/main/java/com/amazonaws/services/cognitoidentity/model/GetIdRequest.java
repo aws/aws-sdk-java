@@ -39,7 +39,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * <li>Facebook: <code>graph.facebook.com</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
-     * <li>Twitter: <code>www.twitter.com</code></li>
+     * <li>Twitter: <code>api.twitter.com</code></li>
      * <li>Digits: <code>www.digits.com</code></li>
      * </ul>
      * </p>
@@ -121,7 +121,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * <li>Facebook: <code>graph.facebook.com</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
-     * <li>Twitter: <code>www.twitter.com</code></li>
+     * <li>Twitter: <code>api.twitter.com</code></li>
      * <li>Digits: <code>www.digits.com</code></li>
      * </ul>
      * </p>
@@ -135,7 +135,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      *         <li>Facebook: <code>graph.facebook.com</code></li>
      *         <li>Google: <code>accounts.google.com</code></li>
      *         <li>Amazon: <code>www.amazon.com</code></li>
-     *         <li>Twitter: <code>www.twitter.com</code></li>
+     *         <li>Twitter: <code>api.twitter.com</code></li>
      *         <li>Digits: <code>www.digits.com</code></li>
      *         </ul>
      */
@@ -154,7 +154,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * <li>Facebook: <code>graph.facebook.com</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
-     * <li>Twitter: <code>www.twitter.com</code></li>
+     * <li>Twitter: <code>api.twitter.com</code></li>
      * <li>Digits: <code>www.digits.com</code></li>
      * </ul>
      * </p>
@@ -169,7 +169,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      *        <li>Facebook: <code>graph.facebook.com</code></li>
      *        <li>Google: <code>accounts.google.com</code></li>
      *        <li>Amazon: <code>www.amazon.com</code></li>
-     *        <li>Twitter: <code>www.twitter.com</code></li>
+     *        <li>Twitter: <code>api.twitter.com</code></li>
      *        <li>Digits: <code>www.digits.com</code></li>
      *        </ul>
      */
@@ -188,7 +188,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * <li>Facebook: <code>graph.facebook.com</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
-     * <li>Twitter: <code>www.twitter.com</code></li>
+     * <li>Twitter: <code>api.twitter.com</code></li>
      * <li>Digits: <code>www.digits.com</code></li>
      * </ul>
      * </p>
@@ -203,7 +203,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      *        <li>Facebook: <code>graph.facebook.com</code></li>
      *        <li>Google: <code>accounts.google.com</code></li>
      *        <li>Amazon: <code>www.amazon.com</code></li>
-     *        <li>Twitter: <code>www.twitter.com</code></li>
+     *        <li>Twitter: <code>api.twitter.com</code></li>
      *        <li>Digits: <code>www.digits.com</code></li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be

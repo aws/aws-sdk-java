@@ -38,7 +38,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements Se
      * Cognito. Here, the ID of the pool that the identity belongs to.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      */
     private String identityPoolId;
@@ -47,7 +47,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements Se
      * The unique ID for this identity.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      */
     private String identityId;
@@ -71,7 +71,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements Se
      * Cognito. Here, the ID of the pool that the identity belongs to.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @return A name-spaced GUID (for example,
@@ -88,7 +88,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements Se
      * Cognito. Here, the ID of the pool that the identity belongs to.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityPoolId A name-spaced GUID (for example,
@@ -107,7 +107,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityPoolId A name-spaced GUID (for example,
@@ -126,7 +126,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements Se
      * The unique ID for this identity.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @return The unique ID for this identity.
@@ -139,7 +139,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements Se
      * The unique ID for this identity.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityId The unique ID for this identity.
@@ -154,7 +154,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 50<br/>
+     * <b>Length: </b>1 - 55<br/>
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      *
      * @param identityId The unique ID for this identity.

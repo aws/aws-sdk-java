@@ -192,7 +192,7 @@ public interface AmazonElasticFileSystem {
      * can resolve the mount target's DNS name to its IP address. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation"
-     * >How it Works: Implementation Overview</a>
+     * >How it Works: Implementation Overview</a>.
      * </p>
      * <p>
      * Note that you can create mount targets for a file system in only one VPC,
@@ -254,7 +254,7 @@ public interface AmazonElasticFileSystem {
      * more information, go to <a href="http://aws.amazon.com/efs/">Amazon
      * EFS</a> product detail page. In addition, by always using a mount target
      * local to the instance's Availability Zone, you eliminate a partial
-     * failure scenario; if the Availablity Zone in which your mount target is
+     * failure scenario; if the Availability Zone in which your mount target is
      * created goes down, then you won't be able to access your file system
      * through that mount target.
      * </p>
@@ -263,16 +263,16 @@ public interface AmazonElasticFileSystem {
      * system:
      * </p>
      * <ul>
-     * <li><code>elasticfilesystem:CreateMountTarget</code></li>
+     * <li> <code>elasticfilesystem:CreateMountTarget</code></li>
      * </ul>
      * <p>
      * This operation also requires permission for the following Amazon EC2
      * actions:
      * </p>
      * <ul>
-     * <li><code>ec2:DescribeSubnets</code></li>
-     * <li><code>ec2:DescribeNetworkInterfaces</code></li>
-     * <li><code>ec2:CreateNetworkInterface</code></li>
+     * <li> <code>ec2:DescribeSubnets</code></li>
+     * <li> <code>ec2:DescribeNetworkInterfaces</code></li>
+     * <li> <code>ec2:CreateNetworkInterface</code></li>
      * </ul>
      * 
      * @param createMountTargetRequest
@@ -405,7 +405,7 @@ public interface AmazonElasticFileSystem {
      * system:
      * </p>
      * <ul>
-     * <li><code>elasticfilesystem:DeleteMountTarget</code></li>
+     * <li> <code>elasticfilesystem:DeleteMountTarget</code></li>
      * </ul>
      * <note>The <code>DeleteMountTarget</code> call returns while the mount
      * target state is still "deleting". You can check the mount target deletion
@@ -416,7 +416,7 @@ public interface AmazonElasticFileSystem {
      * action on the mount target's network interface:
      * </p>
      * <ul>
-     * <li><code>ec2:DeleteNetworkInterface</code></li>
+     * <li> <code>ec2:DeleteNetworkInterface</code></li>
      * </ul>
      * 
      * @param deleteMountTargetRequest
@@ -430,8 +430,8 @@ public interface AmazonElasticFileSystem {
      *         The service timed out trying to fulfill the request, and the
      *         client should try the call again.
      * @throws MountTargetNotFoundException
-     *         Returned if there is no mount target with the specified ID is
-     *         found in the caller's account.
+     *         Returned if there is no mount target with the specified ID found
+     *         in the caller's account.
      */
     void deleteMountTarget(DeleteMountTargetRequest deleteMountTargetRequest);
 
@@ -553,8 +553,8 @@ public interface AmazonElasticFileSystem {
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws MountTargetNotFoundException
-     *         Returned if there is no mount target with the specified ID is
-     *         found in the caller's account.
+     *         Returned if there is no mount target with the specified ID found
+     *         in the caller's account.
      * @throws IncorrectMountTargetStateException
      *         Returned if the mount target is not in the correct state for the
      *         operation.
@@ -564,13 +564,17 @@ public interface AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Returns the descriptions of the current mount targets for a file system.
-     * The order of mount targets returned in the response is unspecified.
+     * Returns the descriptions of all the current mount targets, or a specific
+     * mount target, for a file system. When requesting all of the current mount
+     * targets, the order of mount targets returned in the response is
+     * unspecified.
      * </p>
      * <p>
      * This operation requires permission for the
-     * <code>elasticfilesystem:DescribeMountTargets</code> action on the file
-     * system <code>FileSystemId</code>.
+     * <code>elasticfilesystem:DescribeMountTargets</code> action, on either the
+     * file system id that you specify in <code>FileSystemId</code>, or on the
+     * file system of the mount target that you specify in
+     * <code>MountTargetId</code>.
      * </p>
      * 
      * @param describeMountTargetsRequest
@@ -585,6 +589,9 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not
      *         exist in the requester's AWS account.
+     * @throws MountTargetNotFoundException
+     *         Returned if there is no mount target with the specified ID found
+     *         in the caller's account.
      */
     DescribeMountTargetsResult describeMountTargets(
             DescribeMountTargetsRequest describeMountTargetsRequest);
@@ -646,8 +653,8 @@ public interface AmazonElasticFileSystem {
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws MountTargetNotFoundException
-     *         Returned if there is no mount target with the specified ID is
-     *         found in the caller's account.
+     *         Returned if there is no mount target with the specified ID found
+     *         in the caller's account.
      * @throws IncorrectMountTargetStateException
      *         Returned if the mount target is not in the correct state for the
      *         operation.

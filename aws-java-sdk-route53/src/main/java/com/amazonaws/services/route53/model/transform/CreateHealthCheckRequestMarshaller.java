@@ -123,6 +123,32 @@ public class CreateHealthCheckRequestMarshaller implements Marshaller<Request<Cr
                 if (healthCheckConfigHealthCheckConfig.getFailureThreshold() != null) {
                     xmlWriter.startElement("FailureThreshold").value(healthCheckConfigHealthCheckConfig.getFailureThreshold()).endElement();
                 }
+                if (healthCheckConfigHealthCheckConfig.isMeasureLatency() != null) {
+                    xmlWriter.startElement("MeasureLatency").value(healthCheckConfigHealthCheckConfig.isMeasureLatency()).endElement();
+                }
+                if (healthCheckConfigHealthCheckConfig.isInverted() != null) {
+                    xmlWriter.startElement("Inverted").value(healthCheckConfigHealthCheckConfig.isInverted()).endElement();
+                }
+                if (healthCheckConfigHealthCheckConfig.getHealthThreshold() != null) {
+                    xmlWriter.startElement("HealthThreshold").value(healthCheckConfigHealthCheckConfig.getHealthThreshold()).endElement();
+                }
+
+                if (healthCheckConfigHealthCheckConfig != null) {
+                    java.util.List<String> healthCheckConfigHealthCheckConfigchildHealthChecksList = healthCheckConfigHealthCheckConfig.getChildHealthChecks();
+                    if (healthCheckConfigHealthCheckConfigchildHealthChecksList != null && healthCheckConfigHealthCheckConfigchildHealthChecksList.size() > 0) {
+                        int healthCheckConfigHealthCheckConfigchildHealthChecksListIndex = 1;
+                        xmlWriter.startElement("ChildHealthChecks");
+                        for (String healthCheckConfigHealthCheckConfigchildHealthChecksListValue : healthCheckConfigHealthCheckConfigchildHealthChecksList) {
+
+                        xmlWriter.startElement("ChildHealthCheck");
+                            xmlWriter.value(healthCheckConfigHealthCheckConfigchildHealthChecksListValue);
+                        xmlWriter.endElement();
+
+                            healthCheckConfigHealthCheckConfigchildHealthChecksListIndex++;
+                        }
+                        xmlWriter.endElement();
+                    }
+                }
                 xmlWriter.endElement();
             }
         }

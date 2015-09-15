@@ -23,10 +23,10 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotInstancesRequestMar
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest) RequestSpotInstances operation}.
  * <p>
- * Creates a Spot Instance request. Spot Instances are instances that
+ * Creates a Spot instance request. Spot instances are instances that
  * Amazon EC2 launches when the bid price that you specify exceeds the
- * current Spot Price. Amazon EC2 periodically sets the Spot Price based
- * on available Spot Instance capacity and current Spot Instance
+ * current Spot price. Amazon EC2 periodically sets the Spot price based
+ * on available Spot Instance capacity and current Spot instance
  * requests. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -37,7 +37,7 @@ import com.amazonaws.services.ec2.model.transform.RequestSpotInstancesRequestMar
 public class RequestSpotInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<RequestSpotInstancesRequest> {
 
     /**
-     * The maximum hourly price (bid) for any Spot Instance launched to
+     * The maximum hourly price (bid) for any Spot instance launched to
      * fulfill the request.
      */
     private String spotPrice;
@@ -52,12 +52,12 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     private String clientToken;
 
     /**
-     * The maximum number of Spot Instances to launch. <p>Default: 1
+     * The maximum number of Spot instances to launch. <p>Default: 1
      */
     private Integer instanceCount;
 
     /**
-     * The Spot Instance request type. <p>Default: <code>one-time</code>
+     * The Spot instance request type. <p>Default: <code>one-time</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
@@ -84,7 +84,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     private java.util.Date validUntil;
 
     /**
-     * The instance launch group. Launch groups are Spot Instances that
+     * The instance launch group. Launch groups are Spot instances that
      * launch together and terminate together. <p>Default: Instances are
      * launched and terminated individually
      */
@@ -93,18 +93,18 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     /**
      * The user-specified name for a logical grouping of bids. <p>When you
      * specify an Availability Zone group in a Spot Instance request, all
-     * Spot Instances in the request are launched in the same Availability
+     * Spot instances in the request are launched in the same Availability
      * Zone. Instance proximity is maintained with this parameter, but the
      * choice of Availability Zone is not. The group applies only to bids for
-     * Spot Instances of the same instance type. Any additional Spot Instance
+     * Spot Instances of the same instance type. Any additional Spot instance
      * requests that are specified with the same Availability Zone group name
      * are launched in that same Availability Zone, as long as at least one
      * instance from the group is still active. <p>If there is no active
      * instance running in the Availability Zone group that you specify for a
-     * new Spot Instance request (all instances are terminated, the bid is
+     * new Spot instance request (all instances are terminated, the bid is
      * expired, or the bid falls below current market), then Amazon EC2
      * launches the instance in any Availability Zone where the constraint
-     * can be met. Consequently, the subsequent set of Spot Instances could
+     * can be met. Consequently, the subsequent set of Spot instances could
      * be placed in a different zone from the original request, even if you
      * specified the same Availability Zone group. <p>Default: Instances are
      * launched in any available Availability Zone.
@@ -127,7 +127,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param spotPrice The maximum hourly price (bid) for any Spot Instance
+     * @param spotPrice The maximum hourly price (bid) for any Spot instance
      * launched to fulfill the request.
      */
     public RequestSpotInstancesRequest(String spotPrice) {
@@ -135,10 +135,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The maximum hourly price (bid) for any Spot Instance launched to
+     * The maximum hourly price (bid) for any Spot instance launched to
      * fulfill the request.
      *
-     * @return The maximum hourly price (bid) for any Spot Instance launched to
+     * @return The maximum hourly price (bid) for any Spot instance launched to
      *         fulfill the request.
      */
     public String getSpotPrice() {
@@ -146,10 +146,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The maximum hourly price (bid) for any Spot Instance launched to
+     * The maximum hourly price (bid) for any Spot instance launched to
      * fulfill the request.
      *
-     * @param spotPrice The maximum hourly price (bid) for any Spot Instance launched to
+     * @param spotPrice The maximum hourly price (bid) for any Spot instance launched to
      *         fulfill the request.
      */
     public void setSpotPrice(String spotPrice) {
@@ -157,12 +157,12 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The maximum hourly price (bid) for any Spot Instance launched to
+     * The maximum hourly price (bid) for any Spot instance launched to
      * fulfill the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPrice The maximum hourly price (bid) for any Spot Instance launched to
+     * @param spotPrice The maximum hourly price (bid) for any Spot instance launched to
      *         fulfill the request.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -231,29 +231,29 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The maximum number of Spot Instances to launch. <p>Default: 1
+     * The maximum number of Spot instances to launch. <p>Default: 1
      *
-     * @return The maximum number of Spot Instances to launch. <p>Default: 1
+     * @return The maximum number of Spot instances to launch. <p>Default: 1
      */
     public Integer getInstanceCount() {
         return instanceCount;
     }
     
     /**
-     * The maximum number of Spot Instances to launch. <p>Default: 1
+     * The maximum number of Spot instances to launch. <p>Default: 1
      *
-     * @param instanceCount The maximum number of Spot Instances to launch. <p>Default: 1
+     * @param instanceCount The maximum number of Spot instances to launch. <p>Default: 1
      */
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
     
     /**
-     * The maximum number of Spot Instances to launch. <p>Default: 1
+     * The maximum number of Spot instances to launch. <p>Default: 1
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceCount The maximum number of Spot Instances to launch. <p>Default: 1
+     * @param instanceCount The maximum number of Spot instances to launch. <p>Default: 1
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -264,12 +264,12 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The Spot Instance request type. <p>Default: <code>one-time</code>
+     * The Spot instance request type. <p>Default: <code>one-time</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @return The Spot Instance request type. <p>Default: <code>one-time</code>
+     * @return The Spot instance request type. <p>Default: <code>one-time</code>
      *
      * @see SpotInstanceType
      */
@@ -278,12 +278,12 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The Spot Instance request type. <p>Default: <code>one-time</code>
+     * The Spot instance request type. <p>Default: <code>one-time</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type The Spot Instance request type. <p>Default: <code>one-time</code>
+     * @param type The Spot instance request type. <p>Default: <code>one-time</code>
      *
      * @see SpotInstanceType
      */
@@ -292,14 +292,14 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The Spot Instance request type. <p>Default: <code>one-time</code>
+     * The Spot instance request type. <p>Default: <code>one-time</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type The Spot Instance request type. <p>Default: <code>one-time</code>
+     * @param type The Spot instance request type. <p>Default: <code>one-time</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -312,12 +312,12 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The Spot Instance request type. <p>Default: <code>one-time</code>
+     * The Spot instance request type. <p>Default: <code>one-time</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type The Spot Instance request type. <p>Default: <code>one-time</code>
+     * @param type The Spot instance request type. <p>Default: <code>one-time</code>
      *
      * @see SpotInstanceType
      */
@@ -326,14 +326,14 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The Spot Instance request type. <p>Default: <code>one-time</code>
+     * The Spot instance request type. <p>Default: <code>one-time</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type The Spot Instance request type. <p>Default: <code>one-time</code>
+     * @param type The Spot instance request type. <p>Default: <code>one-time</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -466,11 +466,11 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The instance launch group. Launch groups are Spot Instances that
+     * The instance launch group. Launch groups are Spot instances that
      * launch together and terminate together. <p>Default: Instances are
      * launched and terminated individually
      *
-     * @return The instance launch group. Launch groups are Spot Instances that
+     * @return The instance launch group. Launch groups are Spot instances that
      *         launch together and terminate together. <p>Default: Instances are
      *         launched and terminated individually
      */
@@ -479,11 +479,11 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The instance launch group. Launch groups are Spot Instances that
+     * The instance launch group. Launch groups are Spot instances that
      * launch together and terminate together. <p>Default: Instances are
      * launched and terminated individually
      *
-     * @param launchGroup The instance launch group. Launch groups are Spot Instances that
+     * @param launchGroup The instance launch group. Launch groups are Spot instances that
      *         launch together and terminate together. <p>Default: Instances are
      *         launched and terminated individually
      */
@@ -492,13 +492,13 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * The instance launch group. Launch groups are Spot Instances that
+     * The instance launch group. Launch groups are Spot instances that
      * launch together and terminate together. <p>Default: Instances are
      * launched and terminated individually
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchGroup The instance launch group. Launch groups are Spot Instances that
+     * @param launchGroup The instance launch group. Launch groups are Spot instances that
      *         launch together and terminate together. <p>Default: Instances are
      *         launched and terminated individually
      *
@@ -513,36 +513,36 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     /**
      * The user-specified name for a logical grouping of bids. <p>When you
      * specify an Availability Zone group in a Spot Instance request, all
-     * Spot Instances in the request are launched in the same Availability
+     * Spot instances in the request are launched in the same Availability
      * Zone. Instance proximity is maintained with this parameter, but the
      * choice of Availability Zone is not. The group applies only to bids for
-     * Spot Instances of the same instance type. Any additional Spot Instance
+     * Spot Instances of the same instance type. Any additional Spot instance
      * requests that are specified with the same Availability Zone group name
      * are launched in that same Availability Zone, as long as at least one
      * instance from the group is still active. <p>If there is no active
      * instance running in the Availability Zone group that you specify for a
-     * new Spot Instance request (all instances are terminated, the bid is
+     * new Spot instance request (all instances are terminated, the bid is
      * expired, or the bid falls below current market), then Amazon EC2
      * launches the instance in any Availability Zone where the constraint
-     * can be met. Consequently, the subsequent set of Spot Instances could
+     * can be met. Consequently, the subsequent set of Spot instances could
      * be placed in a different zone from the original request, even if you
      * specified the same Availability Zone group. <p>Default: Instances are
      * launched in any available Availability Zone.
      *
      * @return The user-specified name for a logical grouping of bids. <p>When you
      *         specify an Availability Zone group in a Spot Instance request, all
-     *         Spot Instances in the request are launched in the same Availability
+     *         Spot instances in the request are launched in the same Availability
      *         Zone. Instance proximity is maintained with this parameter, but the
      *         choice of Availability Zone is not. The group applies only to bids for
-     *         Spot Instances of the same instance type. Any additional Spot Instance
+     *         Spot Instances of the same instance type. Any additional Spot instance
      *         requests that are specified with the same Availability Zone group name
      *         are launched in that same Availability Zone, as long as at least one
      *         instance from the group is still active. <p>If there is no active
      *         instance running in the Availability Zone group that you specify for a
-     *         new Spot Instance request (all instances are terminated, the bid is
+     *         new Spot instance request (all instances are terminated, the bid is
      *         expired, or the bid falls below current market), then Amazon EC2
      *         launches the instance in any Availability Zone where the constraint
-     *         can be met. Consequently, the subsequent set of Spot Instances could
+     *         can be met. Consequently, the subsequent set of Spot instances could
      *         be placed in a different zone from the original request, even if you
      *         specified the same Availability Zone group. <p>Default: Instances are
      *         launched in any available Availability Zone.
@@ -554,36 +554,36 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     /**
      * The user-specified name for a logical grouping of bids. <p>When you
      * specify an Availability Zone group in a Spot Instance request, all
-     * Spot Instances in the request are launched in the same Availability
+     * Spot instances in the request are launched in the same Availability
      * Zone. Instance proximity is maintained with this parameter, but the
      * choice of Availability Zone is not. The group applies only to bids for
-     * Spot Instances of the same instance type. Any additional Spot Instance
+     * Spot Instances of the same instance type. Any additional Spot instance
      * requests that are specified with the same Availability Zone group name
      * are launched in that same Availability Zone, as long as at least one
      * instance from the group is still active. <p>If there is no active
      * instance running in the Availability Zone group that you specify for a
-     * new Spot Instance request (all instances are terminated, the bid is
+     * new Spot instance request (all instances are terminated, the bid is
      * expired, or the bid falls below current market), then Amazon EC2
      * launches the instance in any Availability Zone where the constraint
-     * can be met. Consequently, the subsequent set of Spot Instances could
+     * can be met. Consequently, the subsequent set of Spot instances could
      * be placed in a different zone from the original request, even if you
      * specified the same Availability Zone group. <p>Default: Instances are
      * launched in any available Availability Zone.
      *
      * @param availabilityZoneGroup The user-specified name for a logical grouping of bids. <p>When you
      *         specify an Availability Zone group in a Spot Instance request, all
-     *         Spot Instances in the request are launched in the same Availability
+     *         Spot instances in the request are launched in the same Availability
      *         Zone. Instance proximity is maintained with this parameter, but the
      *         choice of Availability Zone is not. The group applies only to bids for
-     *         Spot Instances of the same instance type. Any additional Spot Instance
+     *         Spot Instances of the same instance type. Any additional Spot instance
      *         requests that are specified with the same Availability Zone group name
      *         are launched in that same Availability Zone, as long as at least one
      *         instance from the group is still active. <p>If there is no active
      *         instance running in the Availability Zone group that you specify for a
-     *         new Spot Instance request (all instances are terminated, the bid is
+     *         new Spot instance request (all instances are terminated, the bid is
      *         expired, or the bid falls below current market), then Amazon EC2
      *         launches the instance in any Availability Zone where the constraint
-     *         can be met. Consequently, the subsequent set of Spot Instances could
+     *         can be met. Consequently, the subsequent set of Spot instances could
      *         be placed in a different zone from the original request, even if you
      *         specified the same Availability Zone group. <p>Default: Instances are
      *         launched in any available Availability Zone.
@@ -595,18 +595,18 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     /**
      * The user-specified name for a logical grouping of bids. <p>When you
      * specify an Availability Zone group in a Spot Instance request, all
-     * Spot Instances in the request are launched in the same Availability
+     * Spot instances in the request are launched in the same Availability
      * Zone. Instance proximity is maintained with this parameter, but the
      * choice of Availability Zone is not. The group applies only to bids for
-     * Spot Instances of the same instance type. Any additional Spot Instance
+     * Spot Instances of the same instance type. Any additional Spot instance
      * requests that are specified with the same Availability Zone group name
      * are launched in that same Availability Zone, as long as at least one
      * instance from the group is still active. <p>If there is no active
      * instance running in the Availability Zone group that you specify for a
-     * new Spot Instance request (all instances are terminated, the bid is
+     * new Spot instance request (all instances are terminated, the bid is
      * expired, or the bid falls below current market), then Amazon EC2
      * launches the instance in any Availability Zone where the constraint
-     * can be met. Consequently, the subsequent set of Spot Instances could
+     * can be met. Consequently, the subsequent set of Spot instances could
      * be placed in a different zone from the original request, even if you
      * specified the same Availability Zone group. <p>Default: Instances are
      * launched in any available Availability Zone.
@@ -615,18 +615,18 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *
      * @param availabilityZoneGroup The user-specified name for a logical grouping of bids. <p>When you
      *         specify an Availability Zone group in a Spot Instance request, all
-     *         Spot Instances in the request are launched in the same Availability
+     *         Spot instances in the request are launched in the same Availability
      *         Zone. Instance proximity is maintained with this parameter, but the
      *         choice of Availability Zone is not. The group applies only to bids for
-     *         Spot Instances of the same instance type. Any additional Spot Instance
+     *         Spot Instances of the same instance type. Any additional Spot instance
      *         requests that are specified with the same Availability Zone group name
      *         are launched in that same Availability Zone, as long as at least one
      *         instance from the group is still active. <p>If there is no active
      *         instance running in the Availability Zone group that you specify for a
-     *         new Spot Instance request (all instances are terminated, the bid is
+     *         new Spot instance request (all instances are terminated, the bid is
      *         expired, or the bid falls below current market), then Amazon EC2
      *         launches the instance in any Availability Zone where the constraint
-     *         can be met. Consequently, the subsequent set of Spot Instances could
+     *         can be met. Consequently, the subsequent set of Spot instances could
      *         be placed in a different zone from the original request, even if you
      *         specified the same Availability Zone group. <p>Default: Instances are
      *         launched in any available Availability Zone.

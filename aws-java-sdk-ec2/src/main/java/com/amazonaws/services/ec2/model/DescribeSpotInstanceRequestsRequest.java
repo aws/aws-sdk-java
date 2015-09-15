@@ -23,18 +23,18 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotInstanceRequestsRe
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest) DescribeSpotInstanceRequests operation}.
  * <p>
- * Describes the Spot Instance requests that belong to your account. Spot
- * Instances are instances that Amazon EC2 launches when the bid price
- * that you specify exceeds the current Spot Price. Amazon EC2
- * periodically sets the Spot Price based on available Spot Instance
- * capacity and current Spot Instance requests. For more information, see
+ * Describes the Spot instance requests that belong to your account. Spot
+ * instances are instances that Amazon EC2 launches when the bid price
+ * that you specify exceeds the current Spot price. Amazon EC2
+ * periodically sets the Spot price based on available Spot instance
+ * capacity and current Spot instance requests. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html"> Spot Instance Requests </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
  * You can use <code>DescribeSpotInstanceRequests</code> to find a
- * running Spot Instance by examining the response. If the status of the
- * Spot Instance is <code>fulfilled</code> , the instance ID appears in
+ * running Spot instance by examining the response. If the status of the
+ * Spot instance is <code>fulfilled</code> , the instance ID appears in
  * the response and contains the identifier of the instance.
  * Alternatively, you can use DescribeInstances with a filter to look for
  * instances where the instance lifecycle is <code>spot</code> .
@@ -45,19 +45,19 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotInstanceRequestsRe
 public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeSpotInstanceRequestsRequest> {
 
     /**
-     * One or more Spot Instance request IDs.
+     * One or more Spot instance request IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> spotInstanceRequestIds;
 
     /**
      * One or more filters. <ul> <li> <p><code>availability-zone-group</code>
      * - The Availability Zone group. </li> <li> <p><code>create-time</code>
-     * - The time stamp when the Spot Instance request was created. </li>
+     * - The time stamp when the Spot instance request was created. </li>
      * <li> <p><code>fault-code</code> - The fault code related to the
      * request. </li> <li> <p><code>fault-message</code> - The fault message
      * related to the request. </li> <li> <p><code>instance-id</code> - The
      * ID of the instance that fulfilled the request. </li> <li>
-     * <p><code>launch-group</code> - The Spot Instance launch group. </li>
+     * <p><code>launch-group</code> - The Spot instance launch group. </li>
      * <li> <p><code>launch.block-device-mapping.delete-on-termination</code>
      * - Indicates whether the Amazon EBS volume is deleted on instance
      * termination. </li> <li>
@@ -78,7 +78,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>launch.key-name</code> - The name of the key pair the
      * instance launched with. </li> <li>
      * <p><code>launch.monitoring-enabled</code> - Whether monitoring is
-     * enabled for the Spot Instance. </li> <li>
+     * enabled for the Spot instance. </li> <li>
      * <p><code>launch.ramdisk-id</code> - The RAM disk ID. </li> <li>
      * <p><code>network-interface.network-interface-id</code> - The ID of the
      * network interface. </li> <li>
@@ -101,20 +101,20 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>product-description</code> - The product description
      * associated with the instance (<code>Linux/UNIX</code> |
      * <code>Windows</code>). </li> <li>
-     * <p><code>spot-instance-request-id</code> - The Spot Instance request
+     * <p><code>spot-instance-request-id</code> - The Spot instance request
      * ID. </li> <li> <p><code>spot-price</code> - The maximum hourly price
-     * for any Spot Instance launched to fulfill the request. </li> <li>
-     * <p><code>state</code> - The state of the Spot Instance request
+     * for any Spot instance launched to fulfill the request. </li> <li>
+     * <p><code>state</code> - The state of the Spot instance request
      * (<code>open</code> | <code>active</code> | <code>closed</code> |
      * <code>cancelled</code> | <code>failed</code>). Spot bid status
-     * information can help you track your Amazon EC2 Spot Instance requests.
+     * information can help you track your Amazon EC2 Spot instance requests.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide. </li>
      * <li> <p><code>status-code</code> - The short code describing the most
-     * recent evaluation of your Spot Instance request. </li> <li>
+     * recent evaluation of your Spot instance request. </li> <li>
      * <p><code>status-message</code> - The message explaining the status of
-     * the Spot Instance request. </li> <li>
+     * the Spot instance request. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -127,7 +127,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
-     * filter. </li> <li> <p><code>type</code> - The type of Spot Instance
+     * filter. </li> <li> <p><code>type</code> - The type of Spot instance
      * request (<code>one-time</code> | <code>persistent</code>). </li> <li>
      * <p><code>launched-availability-zone</code> - The Availability Zone in
      * which the bid is launched. </li> <li> <p><code>valid-from</code> - The
@@ -137,9 +137,9 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * One or more Spot Instance request IDs.
+     * One or more Spot instance request IDs.
      *
-     * @return One or more Spot Instance request IDs.
+     * @return One or more Spot instance request IDs.
      */
     public java.util.List<String> getSpotInstanceRequestIds() {
         if (spotInstanceRequestIds == null) {
@@ -150,9 +150,9 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * One or more Spot Instance request IDs.
+     * One or more Spot instance request IDs.
      *
-     * @param spotInstanceRequestIds One or more Spot Instance request IDs.
+     * @param spotInstanceRequestIds One or more Spot instance request IDs.
      */
     public void setSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
         if (spotInstanceRequestIds == null) {
@@ -165,7 +165,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * One or more Spot Instance request IDs.
+     * One or more Spot instance request IDs.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setSpotInstanceRequestIds(java.util.Collection)} or
@@ -174,7 +174,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequestIds One or more Spot Instance request IDs.
+     * @param spotInstanceRequestIds One or more Spot instance request IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -188,11 +188,11 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * One or more Spot Instance request IDs.
+     * One or more Spot instance request IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequestIds One or more Spot Instance request IDs.
+     * @param spotInstanceRequestIds One or more Spot instance request IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -212,12 +212,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     /**
      * One or more filters. <ul> <li> <p><code>availability-zone-group</code>
      * - The Availability Zone group. </li> <li> <p><code>create-time</code>
-     * - The time stamp when the Spot Instance request was created. </li>
+     * - The time stamp when the Spot instance request was created. </li>
      * <li> <p><code>fault-code</code> - The fault code related to the
      * request. </li> <li> <p><code>fault-message</code> - The fault message
      * related to the request. </li> <li> <p><code>instance-id</code> - The
      * ID of the instance that fulfilled the request. </li> <li>
-     * <p><code>launch-group</code> - The Spot Instance launch group. </li>
+     * <p><code>launch-group</code> - The Spot instance launch group. </li>
      * <li> <p><code>launch.block-device-mapping.delete-on-termination</code>
      * - Indicates whether the Amazon EBS volume is deleted on instance
      * termination. </li> <li>
@@ -238,7 +238,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>launch.key-name</code> - The name of the key pair the
      * instance launched with. </li> <li>
      * <p><code>launch.monitoring-enabled</code> - Whether monitoring is
-     * enabled for the Spot Instance. </li> <li>
+     * enabled for the Spot instance. </li> <li>
      * <p><code>launch.ramdisk-id</code> - The RAM disk ID. </li> <li>
      * <p><code>network-interface.network-interface-id</code> - The ID of the
      * network interface. </li> <li>
@@ -261,20 +261,20 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>product-description</code> - The product description
      * associated with the instance (<code>Linux/UNIX</code> |
      * <code>Windows</code>). </li> <li>
-     * <p><code>spot-instance-request-id</code> - The Spot Instance request
+     * <p><code>spot-instance-request-id</code> - The Spot instance request
      * ID. </li> <li> <p><code>spot-price</code> - The maximum hourly price
-     * for any Spot Instance launched to fulfill the request. </li> <li>
-     * <p><code>state</code> - The state of the Spot Instance request
+     * for any Spot instance launched to fulfill the request. </li> <li>
+     * <p><code>state</code> - The state of the Spot instance request
      * (<code>open</code> | <code>active</code> | <code>closed</code> |
      * <code>cancelled</code> | <code>failed</code>). Spot bid status
-     * information can help you track your Amazon EC2 Spot Instance requests.
+     * information can help you track your Amazon EC2 Spot instance requests.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide. </li>
      * <li> <p><code>status-code</code> - The short code describing the most
-     * recent evaluation of your Spot Instance request. </li> <li>
+     * recent evaluation of your Spot instance request. </li> <li>
      * <p><code>status-message</code> - The message explaining the status of
-     * the Spot Instance request. </li> <li>
+     * the Spot instance request. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -287,7 +287,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
-     * filter. </li> <li> <p><code>type</code> - The type of Spot Instance
+     * filter. </li> <li> <p><code>type</code> - The type of Spot instance
      * request (<code>one-time</code> | <code>persistent</code>). </li> <li>
      * <p><code>launched-availability-zone</code> - The Availability Zone in
      * which the bid is launched. </li> <li> <p><code>valid-from</code> - The
@@ -296,12 +296,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *
      * @return One or more filters. <ul> <li> <p><code>availability-zone-group</code>
      *         - The Availability Zone group. </li> <li> <p><code>create-time</code>
-     *         - The time stamp when the Spot Instance request was created. </li>
+     *         - The time stamp when the Spot instance request was created. </li>
      *         <li> <p><code>fault-code</code> - The fault code related to the
      *         request. </li> <li> <p><code>fault-message</code> - The fault message
      *         related to the request. </li> <li> <p><code>instance-id</code> - The
      *         ID of the instance that fulfilled the request. </li> <li>
-     *         <p><code>launch-group</code> - The Spot Instance launch group. </li>
+     *         <p><code>launch-group</code> - The Spot instance launch group. </li>
      *         <li> <p><code>launch.block-device-mapping.delete-on-termination</code>
      *         - Indicates whether the Amazon EBS volume is deleted on instance
      *         termination. </li> <li>
@@ -322,7 +322,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>launch.key-name</code> - The name of the key pair the
      *         instance launched with. </li> <li>
      *         <p><code>launch.monitoring-enabled</code> - Whether monitoring is
-     *         enabled for the Spot Instance. </li> <li>
+     *         enabled for the Spot instance. </li> <li>
      *         <p><code>launch.ramdisk-id</code> - The RAM disk ID. </li> <li>
      *         <p><code>network-interface.network-interface-id</code> - The ID of the
      *         network interface. </li> <li>
@@ -345,20 +345,20 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>product-description</code> - The product description
      *         associated with the instance (<code>Linux/UNIX</code> |
      *         <code>Windows</code>). </li> <li>
-     *         <p><code>spot-instance-request-id</code> - The Spot Instance request
+     *         <p><code>spot-instance-request-id</code> - The Spot instance request
      *         ID. </li> <li> <p><code>spot-price</code> - The maximum hourly price
-     *         for any Spot Instance launched to fulfill the request. </li> <li>
-     *         <p><code>state</code> - The state of the Spot Instance request
+     *         for any Spot instance launched to fulfill the request. </li> <li>
+     *         <p><code>state</code> - The state of the Spot instance request
      *         (<code>open</code> | <code>active</code> | <code>closed</code> |
      *         <code>cancelled</code> | <code>failed</code>). Spot bid status
-     *         information can help you track your Amazon EC2 Spot Instance requests.
+     *         information can help you track your Amazon EC2 Spot instance requests.
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      *         Bid Status</a> in the Amazon Elastic Compute Cloud User Guide. </li>
      *         <li> <p><code>status-code</code> - The short code describing the most
-     *         recent evaluation of your Spot Instance request. </li> <li>
+     *         recent evaluation of your Spot instance request. </li> <li>
      *         <p><code>status-message</code> - The message explaining the status of
-     *         the Spot Instance request. </li> <li>
+     *         the Spot instance request. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -371,7 +371,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
-     *         filter. </li> <li> <p><code>type</code> - The type of Spot Instance
+     *         filter. </li> <li> <p><code>type</code> - The type of Spot instance
      *         request (<code>one-time</code> | <code>persistent</code>). </li> <li>
      *         <p><code>launched-availability-zone</code> - The Availability Zone in
      *         which the bid is launched. </li> <li> <p><code>valid-from</code> - The
@@ -389,12 +389,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     /**
      * One or more filters. <ul> <li> <p><code>availability-zone-group</code>
      * - The Availability Zone group. </li> <li> <p><code>create-time</code>
-     * - The time stamp when the Spot Instance request was created. </li>
+     * - The time stamp when the Spot instance request was created. </li>
      * <li> <p><code>fault-code</code> - The fault code related to the
      * request. </li> <li> <p><code>fault-message</code> - The fault message
      * related to the request. </li> <li> <p><code>instance-id</code> - The
      * ID of the instance that fulfilled the request. </li> <li>
-     * <p><code>launch-group</code> - The Spot Instance launch group. </li>
+     * <p><code>launch-group</code> - The Spot instance launch group. </li>
      * <li> <p><code>launch.block-device-mapping.delete-on-termination</code>
      * - Indicates whether the Amazon EBS volume is deleted on instance
      * termination. </li> <li>
@@ -415,7 +415,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>launch.key-name</code> - The name of the key pair the
      * instance launched with. </li> <li>
      * <p><code>launch.monitoring-enabled</code> - Whether monitoring is
-     * enabled for the Spot Instance. </li> <li>
+     * enabled for the Spot instance. </li> <li>
      * <p><code>launch.ramdisk-id</code> - The RAM disk ID. </li> <li>
      * <p><code>network-interface.network-interface-id</code> - The ID of the
      * network interface. </li> <li>
@@ -438,20 +438,20 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>product-description</code> - The product description
      * associated with the instance (<code>Linux/UNIX</code> |
      * <code>Windows</code>). </li> <li>
-     * <p><code>spot-instance-request-id</code> - The Spot Instance request
+     * <p><code>spot-instance-request-id</code> - The Spot instance request
      * ID. </li> <li> <p><code>spot-price</code> - The maximum hourly price
-     * for any Spot Instance launched to fulfill the request. </li> <li>
-     * <p><code>state</code> - The state of the Spot Instance request
+     * for any Spot instance launched to fulfill the request. </li> <li>
+     * <p><code>state</code> - The state of the Spot instance request
      * (<code>open</code> | <code>active</code> | <code>closed</code> |
      * <code>cancelled</code> | <code>failed</code>). Spot bid status
-     * information can help you track your Amazon EC2 Spot Instance requests.
+     * information can help you track your Amazon EC2 Spot instance requests.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide. </li>
      * <li> <p><code>status-code</code> - The short code describing the most
-     * recent evaluation of your Spot Instance request. </li> <li>
+     * recent evaluation of your Spot instance request. </li> <li>
      * <p><code>status-message</code> - The message explaining the status of
-     * the Spot Instance request. </li> <li>
+     * the Spot instance request. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -464,7 +464,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
-     * filter. </li> <li> <p><code>type</code> - The type of Spot Instance
+     * filter. </li> <li> <p><code>type</code> - The type of Spot instance
      * request (<code>one-time</code> | <code>persistent</code>). </li> <li>
      * <p><code>launched-availability-zone</code> - The Availability Zone in
      * which the bid is launched. </li> <li> <p><code>valid-from</code> - The
@@ -473,12 +473,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *
      * @param filters One or more filters. <ul> <li> <p><code>availability-zone-group</code>
      *         - The Availability Zone group. </li> <li> <p><code>create-time</code>
-     *         - The time stamp when the Spot Instance request was created. </li>
+     *         - The time stamp when the Spot instance request was created. </li>
      *         <li> <p><code>fault-code</code> - The fault code related to the
      *         request. </li> <li> <p><code>fault-message</code> - The fault message
      *         related to the request. </li> <li> <p><code>instance-id</code> - The
      *         ID of the instance that fulfilled the request. </li> <li>
-     *         <p><code>launch-group</code> - The Spot Instance launch group. </li>
+     *         <p><code>launch-group</code> - The Spot instance launch group. </li>
      *         <li> <p><code>launch.block-device-mapping.delete-on-termination</code>
      *         - Indicates whether the Amazon EBS volume is deleted on instance
      *         termination. </li> <li>
@@ -499,7 +499,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>launch.key-name</code> - The name of the key pair the
      *         instance launched with. </li> <li>
      *         <p><code>launch.monitoring-enabled</code> - Whether monitoring is
-     *         enabled for the Spot Instance. </li> <li>
+     *         enabled for the Spot instance. </li> <li>
      *         <p><code>launch.ramdisk-id</code> - The RAM disk ID. </li> <li>
      *         <p><code>network-interface.network-interface-id</code> - The ID of the
      *         network interface. </li> <li>
@@ -522,20 +522,20 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>product-description</code> - The product description
      *         associated with the instance (<code>Linux/UNIX</code> |
      *         <code>Windows</code>). </li> <li>
-     *         <p><code>spot-instance-request-id</code> - The Spot Instance request
+     *         <p><code>spot-instance-request-id</code> - The Spot instance request
      *         ID. </li> <li> <p><code>spot-price</code> - The maximum hourly price
-     *         for any Spot Instance launched to fulfill the request. </li> <li>
-     *         <p><code>state</code> - The state of the Spot Instance request
+     *         for any Spot instance launched to fulfill the request. </li> <li>
+     *         <p><code>state</code> - The state of the Spot instance request
      *         (<code>open</code> | <code>active</code> | <code>closed</code> |
      *         <code>cancelled</code> | <code>failed</code>). Spot bid status
-     *         information can help you track your Amazon EC2 Spot Instance requests.
+     *         information can help you track your Amazon EC2 Spot instance requests.
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      *         Bid Status</a> in the Amazon Elastic Compute Cloud User Guide. </li>
      *         <li> <p><code>status-code</code> - The short code describing the most
-     *         recent evaluation of your Spot Instance request. </li> <li>
+     *         recent evaluation of your Spot instance request. </li> <li>
      *         <p><code>status-message</code> - The message explaining the status of
-     *         the Spot Instance request. </li> <li>
+     *         the Spot instance request. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -548,7 +548,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
-     *         filter. </li> <li> <p><code>type</code> - The type of Spot Instance
+     *         filter. </li> <li> <p><code>type</code> - The type of Spot instance
      *         request (<code>one-time</code> | <code>persistent</code>). </li> <li>
      *         <p><code>launched-availability-zone</code> - The Availability Zone in
      *         which the bid is launched. </li> <li> <p><code>valid-from</code> - The
@@ -568,12 +568,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     /**
      * One or more filters. <ul> <li> <p><code>availability-zone-group</code>
      * - The Availability Zone group. </li> <li> <p><code>create-time</code>
-     * - The time stamp when the Spot Instance request was created. </li>
+     * - The time stamp when the Spot instance request was created. </li>
      * <li> <p><code>fault-code</code> - The fault code related to the
      * request. </li> <li> <p><code>fault-message</code> - The fault message
      * related to the request. </li> <li> <p><code>instance-id</code> - The
      * ID of the instance that fulfilled the request. </li> <li>
-     * <p><code>launch-group</code> - The Spot Instance launch group. </li>
+     * <p><code>launch-group</code> - The Spot instance launch group. </li>
      * <li> <p><code>launch.block-device-mapping.delete-on-termination</code>
      * - Indicates whether the Amazon EBS volume is deleted on instance
      * termination. </li> <li>
@@ -594,7 +594,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>launch.key-name</code> - The name of the key pair the
      * instance launched with. </li> <li>
      * <p><code>launch.monitoring-enabled</code> - Whether monitoring is
-     * enabled for the Spot Instance. </li> <li>
+     * enabled for the Spot instance. </li> <li>
      * <p><code>launch.ramdisk-id</code> - The RAM disk ID. </li> <li>
      * <p><code>network-interface.network-interface-id</code> - The ID of the
      * network interface. </li> <li>
@@ -617,20 +617,20 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>product-description</code> - The product description
      * associated with the instance (<code>Linux/UNIX</code> |
      * <code>Windows</code>). </li> <li>
-     * <p><code>spot-instance-request-id</code> - The Spot Instance request
+     * <p><code>spot-instance-request-id</code> - The Spot instance request
      * ID. </li> <li> <p><code>spot-price</code> - The maximum hourly price
-     * for any Spot Instance launched to fulfill the request. </li> <li>
-     * <p><code>state</code> - The state of the Spot Instance request
+     * for any Spot instance launched to fulfill the request. </li> <li>
+     * <p><code>state</code> - The state of the Spot instance request
      * (<code>open</code> | <code>active</code> | <code>closed</code> |
      * <code>cancelled</code> | <code>failed</code>). Spot bid status
-     * information can help you track your Amazon EC2 Spot Instance requests.
+     * information can help you track your Amazon EC2 Spot instance requests.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide. </li>
      * <li> <p><code>status-code</code> - The short code describing the most
-     * recent evaluation of your Spot Instance request. </li> <li>
+     * recent evaluation of your Spot instance request. </li> <li>
      * <p><code>status-message</code> - The message explaining the status of
-     * the Spot Instance request. </li> <li>
+     * the Spot instance request. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -643,7 +643,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
-     * filter. </li> <li> <p><code>type</code> - The type of Spot Instance
+     * filter. </li> <li> <p><code>type</code> - The type of Spot instance
      * request (<code>one-time</code> | <code>persistent</code>). </li> <li>
      * <p><code>launched-availability-zone</code> - The Availability Zone in
      * which the bid is launched. </li> <li> <p><code>valid-from</code> - The
@@ -659,12 +659,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *
      * @param filters One or more filters. <ul> <li> <p><code>availability-zone-group</code>
      *         - The Availability Zone group. </li> <li> <p><code>create-time</code>
-     *         - The time stamp when the Spot Instance request was created. </li>
+     *         - The time stamp when the Spot instance request was created. </li>
      *         <li> <p><code>fault-code</code> - The fault code related to the
      *         request. </li> <li> <p><code>fault-message</code> - The fault message
      *         related to the request. </li> <li> <p><code>instance-id</code> - The
      *         ID of the instance that fulfilled the request. </li> <li>
-     *         <p><code>launch-group</code> - The Spot Instance launch group. </li>
+     *         <p><code>launch-group</code> - The Spot instance launch group. </li>
      *         <li> <p><code>launch.block-device-mapping.delete-on-termination</code>
      *         - Indicates whether the Amazon EBS volume is deleted on instance
      *         termination. </li> <li>
@@ -685,7 +685,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>launch.key-name</code> - The name of the key pair the
      *         instance launched with. </li> <li>
      *         <p><code>launch.monitoring-enabled</code> - Whether monitoring is
-     *         enabled for the Spot Instance. </li> <li>
+     *         enabled for the Spot instance. </li> <li>
      *         <p><code>launch.ramdisk-id</code> - The RAM disk ID. </li> <li>
      *         <p><code>network-interface.network-interface-id</code> - The ID of the
      *         network interface. </li> <li>
@@ -708,20 +708,20 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>product-description</code> - The product description
      *         associated with the instance (<code>Linux/UNIX</code> |
      *         <code>Windows</code>). </li> <li>
-     *         <p><code>spot-instance-request-id</code> - The Spot Instance request
+     *         <p><code>spot-instance-request-id</code> - The Spot instance request
      *         ID. </li> <li> <p><code>spot-price</code> - The maximum hourly price
-     *         for any Spot Instance launched to fulfill the request. </li> <li>
-     *         <p><code>state</code> - The state of the Spot Instance request
+     *         for any Spot instance launched to fulfill the request. </li> <li>
+     *         <p><code>state</code> - The state of the Spot instance request
      *         (<code>open</code> | <code>active</code> | <code>closed</code> |
      *         <code>cancelled</code> | <code>failed</code>). Spot bid status
-     *         information can help you track your Amazon EC2 Spot Instance requests.
+     *         information can help you track your Amazon EC2 Spot instance requests.
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      *         Bid Status</a> in the Amazon Elastic Compute Cloud User Guide. </li>
      *         <li> <p><code>status-code</code> - The short code describing the most
-     *         recent evaluation of your Spot Instance request. </li> <li>
+     *         recent evaluation of your Spot instance request. </li> <li>
      *         <p><code>status-message</code> - The message explaining the status of
-     *         the Spot Instance request. </li> <li>
+     *         the Spot instance request. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -734,7 +734,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
-     *         filter. </li> <li> <p><code>type</code> - The type of Spot Instance
+     *         filter. </li> <li> <p><code>type</code> - The type of Spot instance
      *         request (<code>one-time</code> | <code>persistent</code>). </li> <li>
      *         <p><code>launched-availability-zone</code> - The Availability Zone in
      *         which the bid is launched. </li> <li> <p><code>valid-from</code> - The
@@ -755,12 +755,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     /**
      * One or more filters. <ul> <li> <p><code>availability-zone-group</code>
      * - The Availability Zone group. </li> <li> <p><code>create-time</code>
-     * - The time stamp when the Spot Instance request was created. </li>
+     * - The time stamp when the Spot instance request was created. </li>
      * <li> <p><code>fault-code</code> - The fault code related to the
      * request. </li> <li> <p><code>fault-message</code> - The fault message
      * related to the request. </li> <li> <p><code>instance-id</code> - The
      * ID of the instance that fulfilled the request. </li> <li>
-     * <p><code>launch-group</code> - The Spot Instance launch group. </li>
+     * <p><code>launch-group</code> - The Spot instance launch group. </li>
      * <li> <p><code>launch.block-device-mapping.delete-on-termination</code>
      * - Indicates whether the Amazon EBS volume is deleted on instance
      * termination. </li> <li>
@@ -781,7 +781,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>launch.key-name</code> - The name of the key pair the
      * instance launched with. </li> <li>
      * <p><code>launch.monitoring-enabled</code> - Whether monitoring is
-     * enabled for the Spot Instance. </li> <li>
+     * enabled for the Spot instance. </li> <li>
      * <p><code>launch.ramdisk-id</code> - The RAM disk ID. </li> <li>
      * <p><code>network-interface.network-interface-id</code> - The ID of the
      * network interface. </li> <li>
@@ -804,20 +804,20 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>product-description</code> - The product description
      * associated with the instance (<code>Linux/UNIX</code> |
      * <code>Windows</code>). </li> <li>
-     * <p><code>spot-instance-request-id</code> - The Spot Instance request
+     * <p><code>spot-instance-request-id</code> - The Spot instance request
      * ID. </li> <li> <p><code>spot-price</code> - The maximum hourly price
-     * for any Spot Instance launched to fulfill the request. </li> <li>
-     * <p><code>state</code> - The state of the Spot Instance request
+     * for any Spot instance launched to fulfill the request. </li> <li>
+     * <p><code>state</code> - The state of the Spot instance request
      * (<code>open</code> | <code>active</code> | <code>closed</code> |
      * <code>cancelled</code> | <code>failed</code>). Spot bid status
-     * information can help you track your Amazon EC2 Spot Instance requests.
+     * information can help you track your Amazon EC2 Spot instance requests.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide. </li>
      * <li> <p><code>status-code</code> - The short code describing the most
-     * recent evaluation of your Spot Instance request. </li> <li>
+     * recent evaluation of your Spot instance request. </li> <li>
      * <p><code>status-message</code> - The message explaining the status of
-     * the Spot Instance request. </li> <li>
+     * the Spot instance request. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -830,7 +830,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
-     * filter. </li> <li> <p><code>type</code> - The type of Spot Instance
+     * filter. </li> <li> <p><code>type</code> - The type of Spot instance
      * request (<code>one-time</code> | <code>persistent</code>). </li> <li>
      * <p><code>launched-availability-zone</code> - The Availability Zone in
      * which the bid is launched. </li> <li> <p><code>valid-from</code> - The
@@ -841,12 +841,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *
      * @param filters One or more filters. <ul> <li> <p><code>availability-zone-group</code>
      *         - The Availability Zone group. </li> <li> <p><code>create-time</code>
-     *         - The time stamp when the Spot Instance request was created. </li>
+     *         - The time stamp when the Spot instance request was created. </li>
      *         <li> <p><code>fault-code</code> - The fault code related to the
      *         request. </li> <li> <p><code>fault-message</code> - The fault message
      *         related to the request. </li> <li> <p><code>instance-id</code> - The
      *         ID of the instance that fulfilled the request. </li> <li>
-     *         <p><code>launch-group</code> - The Spot Instance launch group. </li>
+     *         <p><code>launch-group</code> - The Spot instance launch group. </li>
      *         <li> <p><code>launch.block-device-mapping.delete-on-termination</code>
      *         - Indicates whether the Amazon EBS volume is deleted on instance
      *         termination. </li> <li>
@@ -867,7 +867,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>launch.key-name</code> - The name of the key pair the
      *         instance launched with. </li> <li>
      *         <p><code>launch.monitoring-enabled</code> - Whether monitoring is
-     *         enabled for the Spot Instance. </li> <li>
+     *         enabled for the Spot instance. </li> <li>
      *         <p><code>launch.ramdisk-id</code> - The RAM disk ID. </li> <li>
      *         <p><code>network-interface.network-interface-id</code> - The ID of the
      *         network interface. </li> <li>
@@ -890,20 +890,20 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>product-description</code> - The product description
      *         associated with the instance (<code>Linux/UNIX</code> |
      *         <code>Windows</code>). </li> <li>
-     *         <p><code>spot-instance-request-id</code> - The Spot Instance request
+     *         <p><code>spot-instance-request-id</code> - The Spot instance request
      *         ID. </li> <li> <p><code>spot-price</code> - The maximum hourly price
-     *         for any Spot Instance launched to fulfill the request. </li> <li>
-     *         <p><code>state</code> - The state of the Spot Instance request
+     *         for any Spot instance launched to fulfill the request. </li> <li>
+     *         <p><code>state</code> - The state of the Spot instance request
      *         (<code>open</code> | <code>active</code> | <code>closed</code> |
      *         <code>cancelled</code> | <code>failed</code>). Spot bid status
-     *         information can help you track your Amazon EC2 Spot Instance requests.
+     *         information can help you track your Amazon EC2 Spot instance requests.
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      *         Bid Status</a> in the Amazon Elastic Compute Cloud User Guide. </li>
      *         <li> <p><code>status-code</code> - The short code describing the most
-     *         recent evaluation of your Spot Instance request. </li> <li>
+     *         recent evaluation of your Spot instance request. </li> <li>
      *         <p><code>status-message</code> - The message explaining the status of
-     *         the Spot Instance request. </li> <li>
+     *         the Spot instance request. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -916,7 +916,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
-     *         filter. </li> <li> <p><code>type</code> - The type of Spot Instance
+     *         filter. </li> <li> <p><code>type</code> - The type of Spot instance
      *         request (<code>one-time</code> | <code>persistent</code>). </li> <li>
      *         <p><code>launched-availability-zone</code> - The Availability Zone in
      *         which the bid is launched. </li> <li> <p><code>valid-from</code> - The

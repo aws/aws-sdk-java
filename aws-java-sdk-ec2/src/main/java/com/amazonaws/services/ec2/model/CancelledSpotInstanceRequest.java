@@ -18,18 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a request to cancel a Spot Instance.
+ * Describes a request to cancel a Spot instance.
  * </p>
  */
 public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
 
     /**
-     * The ID of the Spot Instance request.
+     * The ID of the Spot instance request.
      */
     private String spotInstanceRequestId;
 
     /**
-     * The state of the Spot Instance request.
+     * The state of the Spot instance request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, open, closed, cancelled, completed
@@ -37,29 +37,29 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
     private String state;
 
     /**
-     * The ID of the Spot Instance request.
+     * The ID of the Spot instance request.
      *
-     * @return The ID of the Spot Instance request.
+     * @return The ID of the Spot instance request.
      */
     public String getSpotInstanceRequestId() {
         return spotInstanceRequestId;
     }
     
     /**
-     * The ID of the Spot Instance request.
+     * The ID of the Spot instance request.
      *
-     * @param spotInstanceRequestId The ID of the Spot Instance request.
+     * @param spotInstanceRequestId The ID of the Spot instance request.
      */
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
     }
     
     /**
-     * The ID of the Spot Instance request.
+     * The ID of the Spot instance request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequestId The ID of the Spot Instance request.
+     * @param spotInstanceRequestId The ID of the Spot instance request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -70,12 +70,12 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
     }
 
     /**
-     * The state of the Spot Instance request.
+     * The state of the Spot instance request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, open, closed, cancelled, completed
      *
-     * @return The state of the Spot Instance request.
+     * @return The state of the Spot instance request.
      *
      * @see CancelSpotInstanceRequestState
      */
@@ -84,12 +84,12 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
     }
     
     /**
-     * The state of the Spot Instance request.
+     * The state of the Spot instance request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, open, closed, cancelled, completed
      *
-     * @param state The state of the Spot Instance request.
+     * @param state The state of the Spot instance request.
      *
      * @see CancelSpotInstanceRequestState
      */
@@ -98,14 +98,14 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
     }
     
     /**
-     * The state of the Spot Instance request.
+     * The state of the Spot instance request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, open, closed, cancelled, completed
      *
-     * @param state The state of the Spot Instance request.
+     * @param state The state of the Spot instance request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -118,12 +118,12 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
     }
 
     /**
-     * The state of the Spot Instance request.
+     * The state of the Spot instance request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, open, closed, cancelled, completed
      *
-     * @param state The state of the Spot Instance request.
+     * @param state The state of the Spot instance request.
      *
      * @see CancelSpotInstanceRequestState
      */
@@ -132,14 +132,14 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
     }
     
     /**
-     * The state of the Spot Instance request.
+     * The state of the Spot instance request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>active, open, closed, cancelled, completed
      *
-     * @param state The state of the Spot Instance request.
+     * @param state The state of the Spot instance request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

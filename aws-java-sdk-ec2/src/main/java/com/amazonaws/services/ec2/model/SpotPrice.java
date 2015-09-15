@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the maximum hourly price (bid) for any Spot Instance
+ * Describes the maximum hourly price (bid) for any Spot instance
  * launched to fulfill the request.
  * </p>
  */
@@ -42,7 +42,7 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * The maximum price (bid) that you are willing to pay for a Spot
-     * Instance.
+     * instance.
      */
     private String spotPrice;
 
@@ -223,10 +223,10 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * The maximum price (bid) that you are willing to pay for a Spot
-     * Instance.
+     * instance.
      *
      * @return The maximum price (bid) that you are willing to pay for a Spot
-     *         Instance.
+     *         instance.
      */
     public String getSpotPrice() {
         return spotPrice;
@@ -234,10 +234,10 @@ public class SpotPrice implements Serializable, Cloneable {
     
     /**
      * The maximum price (bid) that you are willing to pay for a Spot
-     * Instance.
+     * instance.
      *
      * @param spotPrice The maximum price (bid) that you are willing to pay for a Spot
-     *         Instance.
+     *         instance.
      */
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
@@ -245,12 +245,12 @@ public class SpotPrice implements Serializable, Cloneable {
     
     /**
      * The maximum price (bid) that you are willing to pay for a Spot
-     * Instance.
+     * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotPrice The maximum price (bid) that you are willing to pay for a Spot
-     *         Instance.
+     *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned if there is no mount target with the specified ID is found in the
+ * Returned if there is no mount target with the specified ID found in the
  * caller's account.
  * </p>
  */

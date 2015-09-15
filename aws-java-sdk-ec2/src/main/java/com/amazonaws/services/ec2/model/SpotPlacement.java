@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes Spot Instance placement.
+ * Describes Spot instance placement.
  * </p>
  */
 public class SpotPlacement implements Serializable, Cloneable {

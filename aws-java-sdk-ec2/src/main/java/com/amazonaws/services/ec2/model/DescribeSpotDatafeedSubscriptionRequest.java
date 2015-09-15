@@ -23,7 +23,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotDatafeedSubscripti
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest) DescribeSpotDatafeedSubscription operation}.
  * <p>
- * Describes the data feed for Spot Instances. For more information, see
+ * Describes the data feed for Spot instances. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
