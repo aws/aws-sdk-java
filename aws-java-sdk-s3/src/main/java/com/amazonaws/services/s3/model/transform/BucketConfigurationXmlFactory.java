@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
+import java.util.List;
 import java.util.Map;
 
 import com.amazonaws.AmazonClientException;
@@ -228,6 +229,9 @@ public class BucketConfigurationXmlFactory {
             final ReplicationDestinationConfig config = rule.getDestinationConfig();
             xml.start("Destination");
             xml.start("Bucket").value(config.getBucketARN()).end();
+            if (config.getStorageClass() != null) {
+                xml.start("StorageClass").value(config.getStorageClass()).end();
+            }
             xml.end();
 
             xml.end();
@@ -399,41 +403,8 @@ public class BucketConfigurationXmlFactory {
         xml.start("Prefix").value(rule.getPrefix()).end();
         xml.start("Status").value(rule.getStatus()).end();
 
-        Transition transition = rule.getTransition();
-        if (transition != null) {
-            xml.start("Transition");
-            if (transition.getDate() != null) {
-                xml.start("Date");
-                xml.value(ServiceUtils.formatIso8601Date(transition.getDate()));
-                xml.end();
-            }
-            if (transition.getDays() != -1) {
-                xml.start("Days");
-                xml.value(Integer.toString(transition.getDays()));
-                xml.end();
-            }
-
-            xml.start("StorageClass");
-            xml.value(transition.getStorageClass().toString());
-            xml.end(); // <StorageClass>
-            xml.end(); // </Transition>
-        }
-
-        NoncurrentVersionTransition ncvTransition =
-            rule.getNoncurrentVersionTransition();
-        if (ncvTransition != null) {
-            xml.start("NoncurrentVersionTransition");
-            if (ncvTransition.getDays() != -1) {
-                xml.start("NoncurrentDays");
-                xml.value(Integer.toString(ncvTransition.getDays()));
-                xml.end();
-            }
-
-            xml.start("StorageClass");
-            xml.value(ncvTransition.getStorageClass().toString());
-            xml.end();  // </StorageClass>
-            xml.end();  // </NoncurrentVersionTransition>
-        }
+        addTransitions(xml, rule.getTransitions());
+        addNoncurrentTransitions(xml, rule.getNoncurrentVersionTransitions());
 
         if (rule.getExpirationInDays() != -1) {
             xml.start("Expiration");
@@ -457,6 +428,56 @@ public class BucketConfigurationXmlFactory {
         }
 
         xml.end(); // </Rule>
+    }
+
+    private void addTransitions(XmlWriter xml, List<Transition> transitions) {
+        if (transitions == null || transitions.isEmpty()) {
+            return;
+        }
+
+        for (Transition t : transitions) {
+            if (t != null) {
+                xml.start("Transition");
+                if (t.getDate() != null) {
+                    xml.start("Date");
+                    xml.value(ServiceUtils.formatIso8601Date(t.getDate()));
+                    xml.end();
+                }
+                if (t.getDays() != -1) {
+                    xml.start("Days");
+                    xml.value(Integer.toString(t.getDays()));
+                    xml.end();
+                }
+
+                xml.start("StorageClass");
+                xml.value(t.getStorageClass().toString());
+                xml.end(); // <StorageClass>
+                xml.end(); // </Transition>
+            }
+        }
+    }
+
+    private void addNoncurrentTransitions(XmlWriter xml,
+            List<NoncurrentVersionTransition> transitions) {
+        if (transitions == null || transitions.isEmpty()) {
+            return;
+        }
+
+        for (NoncurrentVersionTransition t : transitions) {
+            if (t != null) {
+                xml.start("NoncurrentVersionTransition");
+                if (t.getDays() != -1) {
+                    xml.start("NoncurrentDays");
+                    xml.value(Integer.toString(t.getDays()));
+                    xml.end();
+                }
+
+                xml.start("StorageClass");
+                xml.value(t.getStorageClass().toString());
+                xml.end(); // </StorageClass>
+                xml.end(); // </NoncurrentVersionTransition>
+            }
+        }
     }
 
     private void writeRule(XmlWriter xml, CORSRule rule) {

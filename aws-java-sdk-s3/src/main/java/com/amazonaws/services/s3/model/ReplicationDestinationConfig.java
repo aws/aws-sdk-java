@@ -28,6 +28,11 @@ public class ReplicationDestinationConfig {
     private String bucketARN;
 
     /**
+     * Storage class for the replica.
+     */
+    private String storageClass;
+
+    /**
      * Returns the Amazon S3 bucket ARN where the replicas are present.
      */
     public String getBucketARN() {
@@ -58,6 +63,63 @@ public class ReplicationDestinationConfig {
     public ReplicationDestinationConfig withBucketARN(String bucketARN) {
         setBucketARN(bucketARN);
         return this;
+    }
+
+    /**
+     * Sets the storage class for the replication destination.
+     *
+     * @throws IllegalArgumentException
+     *             if the storageClass is null.
+     */
+    public void setStorageClass(String storageClass) {
+        if (storageClass == null) {
+            throw new IllegalArgumentException("Storage Class cannot be null");
+        }
+        this.storageClass = storageClass;
+    }
+
+    /**
+     * Sets the storage class for the replication destination.
+     *
+     * @throws IllegalArgumentException
+     *             if the storageClass is null.
+     */
+    public void setStorageClass(StorageClass storageClass) {
+        setStorageClass(storageClass.toString());
+    }
+
+    /**
+     * Sets the storage class for the replication destination. Returns the
+     * updated object.
+     *
+     * @throws IllegalArgumentException
+     *             if the storageClass is null.
+     * @return the updated {@link ReplicationDestinationConfig} object
+     */
+    public ReplicationDestinationConfig withStorageClass(String storageClass) {
+        setStorageClass(storageClass);
+        return this;
+    }
+
+    /**
+     * Sets the storage class for the replication destination. Returns the
+     * updated object.
+     *
+     * @throws IllegalArgumentException
+     *             if the storageClass is null.
+     * @return the updated {@link ReplicationDestinationConfig} object
+     */
+    public ReplicationDestinationConfig withStorageClass(StorageClass storageClass) {
+        setStorageClass(storageClass.toString());
+        return this;
+    }
+
+    /**
+     * Returns the storage class associated with the replication destination
+     * configuration.
+     */
+    public String getStorageClass() {
+        return storageClass;
     }
 
     @Override

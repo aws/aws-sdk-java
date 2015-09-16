@@ -54,7 +54,14 @@ public enum StorageClass {
      * This storage class means your object's data is stored in Amazon Glacier,
      * and Amazon S3 stores a reference to the data in the Amazon S3 bucket.
      */
-    Glacier("GLACIER");
+    Glacier("GLACIER"),
+
+    /**
+     * Standard Infrequent Access storage class
+     */
+    StandardInfrequentAccess("STANDARD_IA"),
+
+    ;
 
     /**
      * Returns the Amazon S3 {@link StorageClass} enumeration value representing the

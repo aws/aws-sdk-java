@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -111,8 +112,15 @@ public class BucketLifecycleConfiguration {
          */
         private Date expirationDate;
 
-        private Transition transition;
-        private NoncurrentVersionTransition noncurrentVersionTransition;
+        /**
+         * Transition rules for the objects in the bucket.
+         */
+        private List<Transition> transitions;
+
+        /**
+         * Transition rules for the non current objects in the bucket.
+         */
+        private List<NoncurrentVersionTransition> noncurrentVersionTransitions;
 
         /**
          * Sets the ID of this rule. Rules must be less than 255 alphanumeric
@@ -278,56 +286,170 @@ public class BucketLifecycleConfiguration {
 
         /**
          * Sets the transition describing how this object will move between
-         * different storage classes in Amazon S3.
+         * different storage classes in Amazon S3. Bucket Life cycle
+         * configuration can now accept multiple transitions in a rule. Note :
+         * This method overwrites all the existing transitions with given
+         * transition. @Deprecated in favor of {@link #setTransitions(List)}
          */
+        @Deprecated
         public void setTransition(Transition transition) {
-            this.transition = transition;
+            setTransitions(Arrays.asList(transition));
         }
 
         /**
-         * Returns the transition attribute of the rule.
+         * Returns the transition associated with the rule. If there are more
+         * than one transition associated with a given rule, this method returns
+         * the last transition rule.
+         * @Deprecated in favor of {@link #getTransitions()}
          */
+        @Deprecated
         public Transition getTransition() {
-            return this.transition;
+            final List<Transition> transitions = getTransitions();
+            return (transitions != null && !transitions.isEmpty())
+                    ? transitions.get(transitions.size() - 1)
+                    : null;
         }
 
         /**
          * Sets the transition describing how this object will move between
-         * different storage classes in Amazon S3 and returns a reference to
-         * this object(Rule) for method chaining.
+         * different storage classes in Amazon S3. Bucket Life cycle
+         * configuration can now accept multiple transitions in a rule.
+         * @Deprecated in favor of {@link #withTransitions(List)}
+         * Returns an updated reference of this object.
          */
+        @Deprecated
         public Rule withTransition(Transition transition) {
-            this.transition = transition;
+            setTransitions(Arrays.asList(transition));
             return this;
         }
 
         /**
          * Sets the transition describing how non-current versions of objects
-         * will move between different storage classes in Amazon S3.
+         * will move between different storage classes in Amazon S3. Bucket Life
+         * cycle configuration can now accept multiple non current transitions
+         * in a rule. Note: This method overwrites all the existing transitions
+         * with given transition. @Deprecated in favor of
+         * {@link #setNoncurrentVersionTransitions(List)}
          */
+        @Deprecated
         public void setNoncurrentVersionTransition(
-                NoncurrentVersionTransition value) {
+                NoncurrentVersionTransition nonCurrentVersionTransition) {
 
-            noncurrentVersionTransition = value;
+            setNoncurrentVersionTransitions(Arrays
+                    .asList(nonCurrentVersionTransition));
         }
 
         /**
-         * Returns the transition describing how non-current versions of
-         * objects will move between different storage classes in Amazon S3.
+         * Returns the non-current transition associated with the life cycle
+         * configuration rule. If there are more than one transitions associated
+         * with a rule, this method returns the last transition in the rule. @Deprecated
+         * in favor of {@link #getNoncurrentVersionTransitions()}
          */
+        @Deprecated
         public NoncurrentVersionTransition getNoncurrentVersionTransition() {
-            return noncurrentVersionTransition;
+            final List<NoncurrentVersionTransition> transitions = getNoncurrentVersionTransitions();
+            return (transitions != null && !transitions.isEmpty())
+                    ? transitions.get(transitions.size() - 1)
+                    : null;
         }
 
         /**
          * Sets the transition describing how non-current versions of objects
-         * will move between different storage classes in Amazon S3, and
-         * returns a reference to this object for method chaining.
+         * will move between different storage classes in Amazon S3. Bucket Life
+         * cycle configuration can now accept multiple non current transitions
+         * in a rule. @Deprecated in favor of
+         * {@link #withNoncurrentVersionTransitions(List)}
+         * Returns a updated reference of this object.
          */
+        @Deprecated
         public Rule withNoncurrentVersionTransition(
-                NoncurrentVersionTransition value) {
+                NoncurrentVersionTransition nonCurrentVersionTransition) {
 
-            setNoncurrentVersionTransition(value);
+            setNoncurrentVersionTransitions(Arrays
+                    .asList(nonCurrentVersionTransition));
+            return this;
+        }
+
+        /**
+         * Returns the Amazon S3 object transition rules associated with the
+         * given rule.
+         */
+        public List<Transition> getTransitions() {
+            return transitions;
+        }
+
+        /**
+         * Sets the Amazon S3 object transition rules for the given bucket.
+         */
+        public void setTransitions(List<Transition> transitions) {
+            this.transitions = new ArrayList<Transition>(transitions);
+        }
+
+        /**
+         * Sets the Amazon S3 object transition rules for the given bucket.
+         * Returns an updated version of this object.
+         */
+        public Rule withTransitions(List<Transition> transitions) {
+            setTransitions(transitions);
+            return this;
+        }
+
+        /**
+         * Adds a new transition to the rule.
+         */
+        public Rule addTransition(Transition transition) {
+            if (transition == null) {
+                throw new IllegalArgumentException("Transition cannot be null.");
+            }
+
+            if (transitions == null) {
+                transitions = new ArrayList<BucketLifecycleConfiguration.Transition>();
+            }
+            transitions.add(transition);
+            return this;
+        }
+
+        /**
+         * Returns the Amazon S3 non current object transition rules associated
+         * with the given rule.
+         */
+        public List<NoncurrentVersionTransition> getNoncurrentVersionTransitions() {
+            return noncurrentVersionTransitions;
+        }
+
+        /**
+         * Sets the Amazon S3 non current object transition rules for the given bucket.
+         */
+        public void setNoncurrentVersionTransitions(
+                List<NoncurrentVersionTransition> noncurrentVersionTransitions) {
+            this.noncurrentVersionTransitions = new ArrayList<NoncurrentVersionTransition>(
+                    noncurrentVersionTransitions);
+        }
+
+        /**
+         * Sets the Amazon S3 non current object transition rules for the given bucket.
+         * Returns an updated version of this object.
+         */
+        public Rule withNoncurrentVersionTransitions(
+                List<NoncurrentVersionTransition> noncurrentVersionTransitions) {
+            setNoncurrentVersionTransitions(noncurrentVersionTransitions);
+            return this;
+        }
+
+        /**
+         * Adds a new Non current transition to the rule.
+         */
+        public Rule addNoncurrentVersionTransition(
+                NoncurrentVersionTransition noncurrentVersionTransition) {
+            if (noncurrentVersionTransition == null) {
+                throw new IllegalArgumentException(
+                        "NoncurrentVersionTransition cannot be null.");
+            }
+
+            if (noncurrentVersionTransitions == null) {
+                noncurrentVersionTransitions = new ArrayList<BucketLifecycleConfiguration.NoncurrentVersionTransition>();
+            }
+            noncurrentVersionTransitions.add(noncurrentVersionTransition);
             return this;
         }
     }

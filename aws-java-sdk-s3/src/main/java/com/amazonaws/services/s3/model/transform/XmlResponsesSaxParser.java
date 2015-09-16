@@ -1823,6 +1823,7 @@ public class XmlResponsesSaxParser {
         private static final String PREFIX = "Prefix";
         private static final String STATUS = "Status";
         private static final String BUCKET = "Bucket";
+        private static final String STORAGECLASS = "StorageClass";
 
         public BucketReplicationConfiguration getConfiguration() {
             return bucketReplicationConfiguration;
@@ -1871,6 +1872,8 @@ public class XmlResponsesSaxParser {
             } else if (in(REPLICATION_CONFIG, RULE, DESTINATION)) {
                 if (name.equals(BUCKET)) {
                     destinationConfig.setBucketARN(getText());
+                } else if (name.equals(STORAGECLASS)) {
+                    destinationConfig.setStorageClass(getText());
                 }
             }
         }
@@ -2035,8 +2038,8 @@ public class XmlResponsesSaxParser {
         }
     }
 
-    /*
-    HTTP/1.1 200 OK
+    /**
+     * HTTP/1.1 200 OK
     x-amz-id-2: Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==
     x-amz-request-id: 656c76696e6727732072657175657374
     Date: Tue, 20 Sep 2012 20:34:56 GMT
@@ -2051,6 +2054,10 @@ public class XmlResponsesSaxParser {
           <Status>Enabled</Status>
           <Transition>
               <Days>30</Days>
+              <StorageClass>STANDARD_IA</StorageClass>
+          </Transition>
+          <Transition>
+              <Days>90</Days>
               <StorageClass>GLACIER</StorageClass>
           </Transition>
           <Expiration>
@@ -2058,10 +2065,14 @@ public class XmlResponsesSaxParser {
           </Expiration>
           <NoncurrentVersionTransition>
               <NoncurrentDays>7</NoncurrentDays>
+              <StorageClass>STANDARD_IA</StorageClass>
+          </NoncurrentVersionTransition>
+          <NoncurrentVersionTransition>
+              <NoncurrentDays>14</NoncurrentDays>
               <StorageClass>GLACIER</StorageClass>
           </NoncurrentVersionTransition>
           <NoncurrentVersionExpiration>
-              <NoncurrentDays>14</NoncurrentDays>
+              <NoncurrentDays>365</NoncurrentDays>
           </NoncurrentVersionExpiration>
      </Rule>
      <Rule>
@@ -2077,7 +2088,7 @@ public class XmlResponsesSaxParser {
          </Expiration>
      </Rule>
   </LifecycleConfiguration>
-    */
+     */
     public static class BucketLifecycleConfigurationHandler extends AbstractHandler {
 
         private final BucketLifecycleConfiguration configuration =
@@ -2131,11 +2142,11 @@ public class XmlResponsesSaxParser {
                     currentRule.setStatus(getText());
 
                 } else if (name.equals("Transition")) {
-                    currentRule.setTransition(currentTransition);
+                    currentRule.addTransition(currentTransition);
                     currentTransition = null;
 
                 } else if (name.equals("NoncurrentVersionTransition")) {
-                    currentRule.setNoncurrentVersionTransition(
+                    currentRule.addNoncurrentVersionTransition(
                             currentNcvTransition);
                     currentNcvTransition = null;
                 }
