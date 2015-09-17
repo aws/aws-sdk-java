@@ -1,594 +1,529 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.logs.AWSLogs#filterLogEvents(FilterLogEventsRequest) FilterLogEvents operation}.
- * <p>
- * Retrieves log events, optionally filtered by a filter pattern from
- * the specified log group. You can provide an optional time range to
- * filter the results on the event <code>timestamp</code> . You can limit
- * the streams searched to an explicit list of
- * <code>logStreamNames</code> .
  * 
- * </p>
- * <p>
- * By default, this operation returns as much matching log events as can
- * fit in a response size of 1MB, up to 10,000 log events, or all the
- * events found within a time-bounded scan window. If the response
- * includes a <code>nextToken</code> , then there is more data to search,
- * and the search can be resumed with a new request providing the
- * nextToken. The response will contain a list of
- * <code>searchedLogStreams</code> that contains information about which
- * streams were searched in the request and whether they have been
- * searched completely or require further pagination. The
- * <code>limit</code> parameter in the request. can be used to specify
- * the maximum number of events to return in a page.
- * </p>
- *
- * @see com.amazonaws.services.logs.AWSLogs#filterLogEvents(FilterLogEventsRequest)
  */
-public class FilterLogEventsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The name of the log group to query.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     * The name of the log group to query.
+     * </p>
      */
     private String logGroupName;
-
     /**
+     * <p>
      * Optional list of log stream names within the specified log group to
      * search. Defaults to all the log streams in the log group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> logStreamNames;
-
+    private com.amazonaws.internal.SdkInternalList<String> logStreamNames;
     /**
-     * A unix timestamp indicating the start time of the range for the
-     * request. If provided, events with a timestamp prior to this time will
-     * not be returned.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
+     * A unix timestamp indicating the start time of the range for the request.
+     * If provided, events with a timestamp prior to this time will not be
+     * returned.
+     * </p>
      */
     private Long startTime;
-
     /**
-     * A unix timestamp indicating the end time of the range for the request.
-     * If provided, events with a timestamp later than this time will not be
-     * returned.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
+     * A unix timestamp indicating the end time of the range for the request. If
+     * provided, events with a timestamp later than this time will not be
+     * returned.
+     * </p>
      */
     private Long endTime;
-
     /**
-     * A valid CloudWatch Logs filter pattern to use for filtering the
-     * response. If not provided, all the events are matched.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 512<br/>
+     * A valid CloudWatch Logs filter pattern to use for filtering the response.
+     * If not provided, all the events are matched.
+     * </p>
      */
     private String filterPattern;
-
     /**
-     * A pagination token obtained from a <code
-     * class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
+     * A pagination token obtained from a
+     * <code class="code">FilterLogEvents</code> response to continue paginating
+     * the FilterLogEvents results.
+     * </p>
      */
     private String nextToken;
-
     /**
-     * The maximum number of events to return in a page of results. Default
-     * is 10,000 events.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
+     * The maximum number of events to return in a page of results. Default is
+     * 10,000 events.
+     * </p>
      */
     private Integer limit;
-
     /**
+     * <p>
      * If provided, the API will make a best effort to provide responses that
-     * contain events from multiple log streams within the log group
-     * interleaved in a single response. If not provided, all the matched log
-     * events in the first log stream will be searched first, then those in
-     * the next log stream, etc.
+     * contain events from multiple log streams within the log group interleaved
+     * in a single response. If not provided, all the matched log events in the
+     * first log stream will be searched first, then those in the next log
+     * stream, etc.
+     * </p>
      */
     private Boolean interleaved;
 
     /**
-     * The name of the log group to query.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
-     *
-     * @return The name of the log group to query.
-     */
-    public String getLogGroupName() {
-        return logGroupName;
-    }
-    
-    /**
      * The name of the log group to query.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
-     *
-     * @param logGroupName The name of the log group to query.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the log group to query.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
-    
+
     /**
+     * <p>
      * The name of the log group to query.
+     * </p>
+     * 
+     * @return The name of the log group to query.
+     */
+    public String getLogGroupName() {
+        return this.logGroupName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
-     *
-     * @param logGroupName The name of the log group to query.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the log group to query.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the log group to query.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public FilterLogEventsRequest withLogGroupName(String logGroupName) {
-        this.logGroupName = logGroupName;
+        setLogGroupName(logGroupName);
         return this;
     }
 
     /**
+     * <p>
      * Optional list of log stream names within the specified log group to
      * search. Defaults to all the log streams in the log group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @return Optional list of log stream names within the specified log group to
-     *         search. Defaults to all the log streams in the log group.
+     * </p>
+     * 
+     * @return Optional list of log stream names within the specified log group
+     *         to search. Defaults to all the log streams in the log group.
      */
     public java.util.List<String> getLogStreamNames() {
         if (logStreamNames == null) {
-              logStreamNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              logStreamNames.setAutoConstruct(true);
+            logStreamNames = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return logStreamNames;
     }
-    
+
     /**
+     * <p>
      * Optional list of log stream names within the specified log group to
      * search. Defaults to all the log streams in the log group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @param logStreamNames Optional list of log stream names within the specified log group to
-     *         search. Defaults to all the log streams in the log group.
+     * </p>
+     * 
+     * @param logStreamNames
+     *        Optional list of log stream names within the specified log group
+     *        to search. Defaults to all the log streams in the log group.
      */
     public void setLogStreamNames(java.util.Collection<String> logStreamNames) {
         if (logStreamNames == null) {
             this.logStreamNames = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> logStreamNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(logStreamNames.size());
-        logStreamNamesCopy.addAll(logStreamNames);
-        this.logStreamNames = logStreamNamesCopy;
+
+        this.logStreamNames = new com.amazonaws.internal.SdkInternalList<String>(
+                logStreamNames);
     }
-    
+
     /**
+     * <p>
      * Optional list of log stream names within the specified log group to
      * search. Defaults to all the log streams in the log group.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLogStreamNames(java.util.Collection)} or {@link
-     * #withLogStreamNames(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @param logStreamNames Optional list of log stream names within the specified log group to
-     *         search. Defaults to all the log streams in the log group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setLogStreamNames(java.util.Collection)} or
+     * {@link #withLogStreamNames(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param logStreamNames
+     *        Optional list of log stream names within the specified log group
+     *        to search. Defaults to all the log streams in the log group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public FilterLogEventsRequest withLogStreamNames(String... logStreamNames) {
-        if (getLogStreamNames() == null) setLogStreamNames(new java.util.ArrayList<String>(logStreamNames.length));
-        for (String value : logStreamNames) {
-            getLogStreamNames().add(value);
+        if (this.logStreamNames == null) {
+            setLogStreamNames(new com.amazonaws.internal.SdkInternalList<String>(
+                    logStreamNames.length));
+        }
+        for (String ele : logStreamNames) {
+            this.logStreamNames.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * Optional list of log stream names within the specified log group to
      * search. Defaults to all the log streams in the log group.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
-     *
-     * @param logStreamNames Optional list of log stream names within the specified log group to
-     *         search. Defaults to all the log streams in the log group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param logStreamNames
+     *        Optional list of log stream names within the specified log group
+     *        to search. Defaults to all the log streams in the log group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public FilterLogEventsRequest withLogStreamNames(java.util.Collection<String> logStreamNames) {
-        if (logStreamNames == null) {
-            this.logStreamNames = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> logStreamNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(logStreamNames.size());
-            logStreamNamesCopy.addAll(logStreamNames);
-            this.logStreamNames = logStreamNamesCopy;
-        }
-
+    public FilterLogEventsRequest withLogStreamNames(
+            java.util.Collection<String> logStreamNames) {
+        setLogStreamNames(logStreamNames);
         return this;
     }
 
     /**
-     * A unix timestamp indicating the start time of the range for the
-     * request. If provided, events with a timestamp prior to this time will
-     * not be returned.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @return A unix timestamp indicating the start time of the range for the
-     *         request. If provided, events with a timestamp prior to this time will
-     *         not be returned.
-     */
-    public Long getStartTime() {
-        return startTime;
-    }
-    
-    /**
-     * A unix timestamp indicating the start time of the range for the
-     * request. If provided, events with a timestamp prior to this time will
-     * not be returned.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param startTime A unix timestamp indicating the start time of the range for the
-     *         request. If provided, events with a timestamp prior to this time will
-     *         not be returned.
+     * A unix timestamp indicating the start time of the range for the request.
+     * If provided, events with a timestamp prior to this time will not be
+     * returned.
+     * </p>
+     * 
+     * @param startTime
+     *        A unix timestamp indicating the start time of the range for the
+     *        request. If provided, events with a timestamp prior to this time
+     *        will not be returned.
      */
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
-    
+
     /**
-     * A unix timestamp indicating the start time of the range for the
-     * request. If provided, events with a timestamp prior to this time will
-     * not be returned.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * A unix timestamp indicating the start time of the range for the request.
+     * If provided, events with a timestamp prior to this time will not be
+     * returned.
+     * </p>
+     * 
+     * @return A unix timestamp indicating the start time of the range for the
+     *         request. If provided, events with a timestamp prior to this time
+     *         will not be returned.
+     */
+    public Long getStartTime() {
+        return this.startTime;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param startTime A unix timestamp indicating the start time of the range for the
-     *         request. If provided, events with a timestamp prior to this time will
-     *         not be returned.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A unix timestamp indicating the start time of the range for the request.
+     * If provided, events with a timestamp prior to this time will not be
+     * returned.
+     * </p>
+     * 
+     * @param startTime
+     *        A unix timestamp indicating the start time of the range for the
+     *        request. If provided, events with a timestamp prior to this time
+     *        will not be returned.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public FilterLogEventsRequest withStartTime(Long startTime) {
-        this.startTime = startTime;
+        setStartTime(startTime);
         return this;
     }
 
     /**
-     * A unix timestamp indicating the end time of the range for the request.
-     * If provided, events with a timestamp later than this time will not be
-     * returned.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @return A unix timestamp indicating the end time of the range for the request.
-     *         If provided, events with a timestamp later than this time will not be
-     *         returned.
-     */
-    public Long getEndTime() {
-        return endTime;
-    }
-    
-    /**
-     * A unix timestamp indicating the end time of the range for the request.
-     * If provided, events with a timestamp later than this time will not be
+     * A unix timestamp indicating the end time of the range for the request. If
+     * provided, events with a timestamp later than this time will not be
      * returned.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param endTime A unix timestamp indicating the end time of the range for the request.
-     *         If provided, events with a timestamp later than this time will not be
-     *         returned.
+     * </p>
+     * 
+     * @param endTime
+     *        A unix timestamp indicating the end time of the range for the
+     *        request. If provided, events with a timestamp later than this time
+     *        will not be returned.
      */
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
-    
+
     /**
-     * A unix timestamp indicating the end time of the range for the request.
-     * If provided, events with a timestamp later than this time will not be
+     * <p>
+     * A unix timestamp indicating the end time of the range for the request. If
+     * provided, events with a timestamp later than this time will not be
      * returned.
+     * </p>
+     * 
+     * @return A unix timestamp indicating the end time of the range for the
+     *         request. If provided, events with a timestamp later than this
+     *         time will not be returned.
+     */
+    public Long getEndTime() {
+        return this.endTime;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param endTime A unix timestamp indicating the end time of the range for the request.
-     *         If provided, events with a timestamp later than this time will not be
-     *         returned.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A unix timestamp indicating the end time of the range for the request. If
+     * provided, events with a timestamp later than this time will not be
+     * returned.
+     * </p>
+     * 
+     * @param endTime
+     *        A unix timestamp indicating the end time of the range for the
+     *        request. If provided, events with a timestamp later than this time
+     *        will not be returned.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public FilterLogEventsRequest withEndTime(Long endTime) {
-        this.endTime = endTime;
+        setEndTime(endTime);
         return this;
     }
 
     /**
-     * A valid CloudWatch Logs filter pattern to use for filtering the
-     * response. If not provided, all the events are matched.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 512<br/>
-     *
-     * @return A valid CloudWatch Logs filter pattern to use for filtering the
-     *         response. If not provided, all the events are matched.
-     */
-    public String getFilterPattern() {
-        return filterPattern;
-    }
-    
-    /**
-     * A valid CloudWatch Logs filter pattern to use for filtering the
-     * response. If not provided, all the events are matched.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 512<br/>
-     *
-     * @param filterPattern A valid CloudWatch Logs filter pattern to use for filtering the
-     *         response. If not provided, all the events are matched.
+     * A valid CloudWatch Logs filter pattern to use for filtering the response.
+     * If not provided, all the events are matched.
+     * </p>
+     * 
+     * @param filterPattern
+     *        A valid CloudWatch Logs filter pattern to use for filtering the
+     *        response. If not provided, all the events are matched.
      */
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
     }
-    
+
     /**
-     * A valid CloudWatch Logs filter pattern to use for filtering the
-     * response. If not provided, all the events are matched.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 512<br/>
-     *
-     * @param filterPattern A valid CloudWatch Logs filter pattern to use for filtering the
+     * A valid CloudWatch Logs filter pattern to use for filtering the response.
+     * If not provided, all the events are matched.
+     * </p>
+     * 
+     * @return A valid CloudWatch Logs filter pattern to use for filtering the
      *         response. If not provided, all the events are matched.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getFilterPattern() {
+        return this.filterPattern;
+    }
+
+    /**
+     * <p>
+     * A valid CloudWatch Logs filter pattern to use for filtering the response.
+     * If not provided, all the events are matched.
+     * </p>
+     * 
+     * @param filterPattern
+     *        A valid CloudWatch Logs filter pattern to use for filtering the
+     *        response. If not provided, all the events are matched.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public FilterLogEventsRequest withFilterPattern(String filterPattern) {
-        this.filterPattern = filterPattern;
+        setFilterPattern(filterPattern);
         return this;
     }
 
     /**
-     * A pagination token obtained from a <code
-     * class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @return A pagination token obtained from a <code
-     *         class="code">FilterLogEvents</code> response to continue paginating
-     *         the FilterLogEvents results.
-     */
-    public String getNextToken() {
-        return nextToken;
-    }
-    
-    /**
-     * A pagination token obtained from a <code
-     * class="code">FilterLogEvents</code> response to continue paginating
+     * A pagination token obtained from a
+     * <code class="code">FilterLogEvents</code> response to continue paginating
      * the FilterLogEvents results.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @param nextToken A pagination token obtained from a <code
-     *         class="code">FilterLogEvents</code> response to continue paginating
-     *         the FilterLogEvents results.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token obtained from a
+     *        <code class="code">FilterLogEvents</code> response to continue
+     *        paginating the FilterLogEvents results.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
-    
+
     /**
-     * A pagination token obtained from a <code
-     * class="code">FilterLogEvents</code> response to continue paginating
+     * <p>
+     * A pagination token obtained from a
+     * <code class="code">FilterLogEvents</code> response to continue paginating
      * the FilterLogEvents results.
+     * </p>
+     * 
+     * @return A pagination token obtained from a
+     *         <code class="code">FilterLogEvents</code> response to continue
+     *         paginating the FilterLogEvents results.
+     */
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @param nextToken A pagination token obtained from a <code
-     *         class="code">FilterLogEvents</code> response to continue paginating
-     *         the FilterLogEvents results.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A pagination token obtained from a
+     * <code class="code">FilterLogEvents</code> response to continue paginating
+     * the FilterLogEvents results.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token obtained from a
+     *        <code class="code">FilterLogEvents</code> response to continue
+     *        paginating the FilterLogEvents results.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public FilterLogEventsRequest withNextToken(String nextToken) {
-        this.nextToken = nextToken;
+        setNextToken(nextToken);
         return this;
     }
 
     /**
-     * The maximum number of events to return in a page of results. Default
-     * is 10,000 events.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
-     *
-     * @return The maximum number of events to return in a page of results. Default
-     *         is 10,000 events.
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-    
-    /**
-     * The maximum number of events to return in a page of results. Default
-     * is 10,000 events.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
-     *
-     * @param limit The maximum number of events to return in a page of results. Default
-     *         is 10,000 events.
+     * The maximum number of events to return in a page of results. Default is
+     * 10,000 events.
+     * </p>
+     * 
+     * @param limit
+     *        The maximum number of events to return in a page of results.
+     *        Default is 10,000 events.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-    
+
     /**
-     * The maximum number of events to return in a page of results. Default
-     * is 10,000 events.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The maximum number of events to return in a page of results. Default is
+     * 10,000 events.
+     * </p>
+     * 
+     * @return The maximum number of events to return in a page of results.
+     *         Default is 10,000 events.
+     */
+    public Integer getLimit() {
+        return this.limit;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
-     *
-     * @param limit The maximum number of events to return in a page of results. Default
-     *         is 10,000 events.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The maximum number of events to return in a page of results. Default is
+     * 10,000 events.
+     * </p>
+     * 
+     * @param limit
+     *        The maximum number of events to return in a page of results.
+     *        Default is 10,000 events.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public FilterLogEventsRequest withLimit(Integer limit) {
-        this.limit = limit;
+        setLimit(limit);
         return this;
     }
 
     /**
+     * <p>
      * If provided, the API will make a best effort to provide responses that
-     * contain events from multiple log streams within the log group
-     * interleaved in a single response. If not provided, all the matched log
-     * events in the first log stream will be searched first, then those in
-     * the next log stream, etc.
-     *
-     * @return If provided, the API will make a best effort to provide responses that
-     *         contain events from multiple log streams within the log group
-     *         interleaved in a single response. If not provided, all the matched log
-     *         events in the first log stream will be searched first, then those in
-     *         the next log stream, etc.
-     */
-    public Boolean isInterleaved() {
-        return interleaved;
-    }
-    
-    /**
-     * If provided, the API will make a best effort to provide responses that
-     * contain events from multiple log streams within the log group
-     * interleaved in a single response. If not provided, all the matched log
-     * events in the first log stream will be searched first, then those in
-     * the next log stream, etc.
-     *
-     * @param interleaved If provided, the API will make a best effort to provide responses that
-     *         contain events from multiple log streams within the log group
-     *         interleaved in a single response. If not provided, all the matched log
-     *         events in the first log stream will be searched first, then those in
-     *         the next log stream, etc.
+     * contain events from multiple log streams within the log group interleaved
+     * in a single response. If not provided, all the matched log events in the
+     * first log stream will be searched first, then those in the next log
+     * stream, etc.
+     * </p>
+     * 
+     * @param interleaved
+     *        If provided, the API will make a best effort to provide responses
+     *        that contain events from multiple log streams within the log group
+     *        interleaved in a single response. If not provided, all the matched
+     *        log events in the first log stream will be searched first, then
+     *        those in the next log stream, etc.
      */
     public void setInterleaved(Boolean interleaved) {
         this.interleaved = interleaved;
     }
-    
+
     /**
-     * If provided, the API will make a best effort to provide responses that
-     * contain events from multiple log streams within the log group
-     * interleaved in a single response. If not provided, all the matched log
-     * events in the first log stream will be searched first, then those in
-     * the next log stream, etc.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param interleaved If provided, the API will make a best effort to provide responses that
-     *         contain events from multiple log streams within the log group
-     *         interleaved in a single response. If not provided, all the matched log
-     *         events in the first log stream will be searched first, then those in
-     *         the next log stream, etc.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * If provided, the API will make a best effort to provide responses that
+     * contain events from multiple log streams within the log group interleaved
+     * in a single response. If not provided, all the matched log events in the
+     * first log stream will be searched first, then those in the next log
+     * stream, etc.
+     * </p>
+     * 
+     * @return If provided, the API will make a best effort to provide responses
+     *         that contain events from multiple log streams within the log
+     *         group interleaved in a single response. If not provided, all the
+     *         matched log events in the first log stream will be searched
+     *         first, then those in the next log stream, etc.
+     */
+    public Boolean getInterleaved() {
+        return this.interleaved;
+    }
+
+    /**
+     * <p>
+     * If provided, the API will make a best effort to provide responses that
+     * contain events from multiple log streams within the log group interleaved
+     * in a single response. If not provided, all the matched log events in the
+     * first log stream will be searched first, then those in the next log
+     * stream, etc.
+     * </p>
+     * 
+     * @param interleaved
+     *        If provided, the API will make a best effort to provide responses
+     *        that contain events from multiple log streams within the log group
+     *        interleaved in a single response. If not provided, all the matched
+     *        log events in the first log stream will be searched first, then
+     *        those in the next log stream, etc.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public FilterLogEventsRequest withInterleaved(Boolean interleaved) {
-        this.interleaved = interleaved;
+        setInterleaved(interleaved);
         return this;
     }
 
     /**
+     * <p>
      * If provided, the API will make a best effort to provide responses that
-     * contain events from multiple log streams within the log group
-     * interleaved in a single response. If not provided, all the matched log
-     * events in the first log stream will be searched first, then those in
-     * the next log stream, etc.
-     *
-     * @return If provided, the API will make a best effort to provide responses that
-     *         contain events from multiple log streams within the log group
-     *         interleaved in a single response. If not provided, all the matched log
-     *         events in the first log stream will be searched first, then those in
-     *         the next log stream, etc.
+     * contain events from multiple log streams within the log group interleaved
+     * in a single response. If not provided, all the matched log events in the
+     * first log stream will be searched first, then those in the next log
+     * stream, etc.
+     * </p>
+     * 
+     * @return If provided, the API will make a best effort to provide responses
+     *         that contain events from multiple log streams within the log
+     *         group interleaved in a single response. If not provided, all the
+     *         matched log events in the first log stream will be searched
+     *         first, then those in the next log stream, etc.
      */
-    public Boolean getInterleaved() {
-        return interleaved;
+    public Boolean isInterleaved() {
+        return this.interleaved;
     }
 
     /**
@@ -603,66 +538,113 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements S
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLogGroupName() != null) sb.append("LogGroupName: " + getLogGroupName() + ",");
-        if (getLogStreamNames() != null) sb.append("LogStreamNames: " + getLogStreamNames() + ",");
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");
-        if (getFilterPattern() != null) sb.append("FilterPattern: " + getFilterPattern() + ",");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
-        if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");
-        if (isInterleaved() != null) sb.append("Interleaved: " + isInterleaved() );
+        if (getLogGroupName() != null)
+            sb.append("LogGroupName: " + getLogGroupName() + ",");
+        if (getLogStreamNames() != null)
+            sb.append("LogStreamNames: " + getLogStreamNames() + ",");
+        if (getStartTime() != null)
+            sb.append("StartTime: " + getStartTime() + ",");
+        if (getEndTime() != null)
+            sb.append("EndTime: " + getEndTime() + ",");
+        if (getFilterPattern() != null)
+            sb.append("FilterPattern: " + getFilterPattern() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken() + ",");
+        if (getLimit() != null)
+            sb.append("Limit: " + getLimit() + ",");
+        if (getInterleaved() != null)
+            sb.append("Interleaved: " + getInterleaved());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof FilterLogEventsRequest == false)
+            return false;
+        FilterLogEventsRequest other = (FilterLogEventsRequest) obj;
+        if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
+            return false;
+        if (other.getLogGroupName() != null
+                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+            return false;
+        if (other.getLogStreamNames() == null
+                ^ this.getLogStreamNames() == null)
+            return false;
+        if (other.getLogStreamNames() != null
+                && other.getLogStreamNames().equals(this.getLogStreamNames()) == false)
+            return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null
+                && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
+        if (other.getEndTime() == null ^ this.getEndTime() == null)
+            return false;
+        if (other.getEndTime() != null
+                && other.getEndTime().equals(this.getEndTime()) == false)
+            return false;
+        if (other.getFilterPattern() == null ^ this.getFilterPattern() == null)
+            return false;
+        if (other.getFilterPattern() != null
+                && other.getFilterPattern().equals(this.getFilterPattern()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null
+                && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getLimit() == null ^ this.getLimit() == null)
+            return false;
+        if (other.getLimit() != null
+                && other.getLimit().equals(this.getLimit()) == false)
+            return false;
+        if (other.getInterleaved() == null ^ this.getInterleaved() == null)
+            return false;
+        if (other.getInterleaved() != null
+                && other.getInterleaved().equals(this.getInterleaved()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode()); 
-        hashCode = prime * hashCode + ((getLogStreamNames() == null) ? 0 : getLogStreamNames().hashCode()); 
-        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode()); 
-        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode()); 
-        hashCode = prime * hashCode + ((getFilterPattern() == null) ? 0 : getFilterPattern().hashCode()); 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
-        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode()); 
-        hashCode = prime * hashCode + ((isInterleaved() == null) ? 0 : isInterleaved().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLogStreamNames() == null) ? 0 : getLogStreamNames()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode
+                + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getFilterPattern() == null) ? 0 : getFilterPattern()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode
+                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInterleaved() == null) ? 0 : getInterleaved().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof FilterLogEventsRequest == false) return false;
-        FilterLogEventsRequest other = (FilterLogEventsRequest)obj;
-        
-        if (other.getLogGroupName() == null ^ this.getLogGroupName() == null) return false;
-        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false) return false; 
-        if (other.getLogStreamNames() == null ^ this.getLogStreamNames() == null) return false;
-        if (other.getLogStreamNames() != null && other.getLogStreamNames().equals(this.getLogStreamNames()) == false) return false; 
-        if (other.getStartTime() == null ^ this.getStartTime() == null) return false;
-        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false) return false; 
-        if (other.getEndTime() == null ^ this.getEndTime() == null) return false;
-        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false) return false; 
-        if (other.getFilterPattern() == null ^ this.getFilterPattern() == null) return false;
-        if (other.getFilterPattern() != null && other.getFilterPattern().equals(this.getFilterPattern()) == false) return false; 
-        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
-        if (other.getLimit() == null ^ this.getLimit() == null) return false;
-        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false) return false; 
-        if (other.isInterleaved() == null ^ this.isInterleaved() == null) return false;
-        if (other.isInterleaved() != null && other.isInterleaved().equals(this.isInterleaved()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public FilterLogEventsRequest clone() {
-        
-            return (FilterLogEventsRequest) super.clone();
+        return (FilterLogEventsRequest) super.clone();
     }
-
 }
-    

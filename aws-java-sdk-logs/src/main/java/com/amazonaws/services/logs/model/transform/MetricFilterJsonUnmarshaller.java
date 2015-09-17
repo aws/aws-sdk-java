@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Metric Filter JSON Unmarshaller
+ * MetricFilter JSON Unmarshaller
  */
-public class MetricFilterJsonUnmarshaller implements Unmarshaller<MetricFilter, JsonUnmarshallerContext> {
+public class MetricFilterJsonUnmarshaller implements
+        Unmarshaller<MetricFilter, JsonUnmarshallerContext> {
 
-    public MetricFilter unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public MetricFilter unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         MetricFilter metricFilter = new MetricFilter();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,45 +40,58 @@ public class MetricFilterJsonUnmarshaller implements Unmarshaller<MetricFilter, 
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filterName", targetDepth)) {
                     context.nextToken();
-                    metricFilter.setFilterName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    metricFilter.setFilterName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("filterPattern", targetDepth)) {
                     context.nextToken();
-                    metricFilter.setFilterPattern(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    metricFilter.setFilterPattern(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("metricTransformations", targetDepth)) {
+                if (context
+                        .testExpression("metricTransformations", targetDepth)) {
                     context.nextToken();
-                    metricFilter.setMetricTransformations(new ListUnmarshaller<MetricTransformation>(MetricTransformationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    metricFilter
+                            .setMetricTransformations(new ListUnmarshaller<MetricTransformation>(
+                                    MetricTransformationJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    metricFilter.setCreationTime(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                    metricFilter.setCreationTime(LongJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return metricFilter;
     }
 
     private static MetricFilterJsonUnmarshaller instance;
+
     public static MetricFilterJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new MetricFilterJsonUnmarshaller();
+        if (instance == null)
+            instance = new MetricFilterJsonUnmarshaller();
         return instance;
     }
 }
-    

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Subscription Filter JSON Unmarshaller
+ * SubscriptionFilter JSON Unmarshaller
  */
-public class SubscriptionFilterJsonUnmarshaller implements Unmarshaller<SubscriptionFilter, JsonUnmarshallerContext> {
+public class SubscriptionFilterJsonUnmarshaller implements
+        Unmarshaller<SubscriptionFilter, JsonUnmarshallerContext> {
 
-    public SubscriptionFilter unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public SubscriptionFilter unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         SubscriptionFilter subscriptionFilter = new SubscriptionFilter();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,53 +40,65 @@ public class SubscriptionFilterJsonUnmarshaller implements Unmarshaller<Subscrip
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filterName", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setFilterName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    subscriptionFilter.setFilterName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("logGroupName", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setLogGroupName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    subscriptionFilter.setLogGroupName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("filterPattern", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setFilterPattern(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    subscriptionFilter.setFilterPattern(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("destinationArn", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setDestinationArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    subscriptionFilter.setDestinationArn(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setRoleArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    subscriptionFilter.setRoleArn(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setCreationTime(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                    subscriptionFilter.setCreationTime(LongJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return subscriptionFilter;
     }
 
     private static SubscriptionFilterJsonUnmarshaller instance;
+
     public static SubscriptionFilterJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new SubscriptionFilterJsonUnmarshaller();
+        if (instance == null)
+            instance = new SubscriptionFilterJsonUnmarshaller();
         return instance;
     }
 }
-    

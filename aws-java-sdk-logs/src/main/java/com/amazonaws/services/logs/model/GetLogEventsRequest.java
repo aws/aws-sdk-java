@@ -1,123 +1,88 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.logs.AWSLogs#getLogEvents(GetLogEventsRequest) GetLogEvents operation}.
- * <p>
- * Retrieves log events from the specified log stream. You can provide
- * an optional time range to filter the results on the event
- * <code>timestamp</code> .
  * 
- * </p>
- * <p>
- * By default, this operation returns as much log events as can fit in a
- * response size of 1MB, up to 10,000 log events. The response will
- * always include a <code>nextForwardToken</code> and a
- * <code>nextBackwardToken</code> in the response body. You can use any
- * of these tokens in subsequent <code>GetLogEvents</code> requests to
- * paginate through events in either forward or backward direction. You
- * can also limit the number of log events returned in the response by
- * specifying the <code>limit</code> parameter in the request.
- * </p>
- *
- * @see com.amazonaws.services.logs.AWSLogs#getLogEvents(GetLogEventsRequest)
  */
-public class GetLogEventsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class GetLogEventsRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The name of the log group to query.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     * The name of the log group to query.
+     * </p>
      */
     private String logGroupName;
-
     /**
-     * The name of the log stream to query.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[^:*]*<br/>
+     * The name of the log stream to query.
+     * </p>
      */
     private String logStreamName;
 
-    /**
-     * A point in time expressed as the number of milliseconds since Jan 1,
-     * 1970 00:00:00 UTC.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     */
     private Long startTime;
 
-    /**
-     * A point in time expressed as the number of milliseconds since Jan 1,
-     * 1970 00:00:00 UTC.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     */
     private Long endTime;
-
     /**
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the <code
-     * class="code">nextForwardToken</code> or <code
-     * class="code">nextBackwardToken</code> fields in the response of the
-     * previous <code class="code">GetLogEvents</code> request.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
+     * A string token used for pagination that points to the next page of
+     * results. It must be a value obtained from the
+     * <code class="code">nextForwardToken</code> or
+     * <code class="code">nextBackwardToken</code> fields in the response of the
+     * previous <code class="code">GetLogEvents</code> request.
+     * </p>
      */
     private String nextToken;
-
     /**
-     * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as many log events as
-     * can fit in a response size of 1MB, up to 10,000 log events.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
+     * The maximum number of log events returned in the response. If you don't
+     * specify a value, the request would return as many log events as can fit
+     * in a response size of 1MB, up to 10,000 log events.
+     * </p>
      */
     private Integer limit;
-
     /**
+     * <p>
      * If set to true, the earliest log events would be returned first. The
      * default is false (the latest log events are returned first).
+     * </p>
      */
     private Boolean startFromHead;
 
     /**
-     * Default constructor for a new GetLogEventsRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for GetLogEventsRequest object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize the object
+     * after creating it.
      */
-    public GetLogEventsRequest() {}
-    
+    public GetLogEventsRequest() {
+    }
+
     /**
-     * Constructs a new GetLogEventsRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new GetLogEventsRequest object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize any additional
+     * object members.
      * 
-     * @param logGroupName The name of the log group to query.
-     * @param logStreamName The name of the log stream to query.
+     * @param logGroupName
+     *        The name of the log group to query.
+     * @param logStreamName
+     *        The name of the log stream to query.
      */
     public GetLogEventsRequest(String logGroupName, String logStreamName) {
         setLogGroupName(logGroupName);
@@ -125,359 +90,314 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The name of the log group to query.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
-     *
-     * @return The name of the log group to query.
-     */
-    public String getLogGroupName() {
-        return logGroupName;
-    }
-    
-    /**
      * The name of the log group to query.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
-     *
-     * @param logGroupName The name of the log group to query.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the log group to query.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
-    
+
     /**
+     * <p>
      * The name of the log group to query.
+     * </p>
+     * 
+     * @return The name of the log group to query.
+     */
+    public String getLogGroupName() {
+        return this.logGroupName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
-     *
-     * @param logGroupName The name of the log group to query.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the log group to query.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the log group to query.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetLogEventsRequest withLogGroupName(String logGroupName) {
-        this.logGroupName = logGroupName;
+        setLogGroupName(logGroupName);
         return this;
     }
 
     /**
-     * The name of the log stream to query.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[^:*]*<br/>
-     *
-     * @return The name of the log stream to query.
-     */
-    public String getLogStreamName() {
-        return logStreamName;
-    }
-    
-    /**
      * The name of the log stream to query.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[^:*]*<br/>
-     *
-     * @param logStreamName The name of the log stream to query.
+     * </p>
+     * 
+     * @param logStreamName
+     *        The name of the log stream to query.
      */
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
-    
+
     /**
+     * <p>
      * The name of the log stream to query.
+     * </p>
+     * 
+     * @return The name of the log stream to query.
+     */
+    public String getLogStreamName() {
+        return this.logStreamName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[^:*]*<br/>
-     *
-     * @param logStreamName The name of the log stream to query.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the log stream to query.
+     * </p>
+     * 
+     * @param logStreamName
+     *        The name of the log stream to query.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetLogEventsRequest withLogStreamName(String logStreamName) {
-        this.logStreamName = logStreamName;
+        setLogStreamName(logStreamName);
         return this;
     }
 
     /**
-     * A point in time expressed as the number of milliseconds since Jan 1,
-     * 1970 00:00:00 UTC.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @return A point in time expressed as the number of milliseconds since Jan 1,
-     *         1970 00:00:00 UTC.
-     */
-    public Long getStartTime() {
-        return startTime;
-    }
-    
-    /**
-     * A point in time expressed as the number of milliseconds since Jan 1,
-     * 1970 00:00:00 UTC.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param startTime A point in time expressed as the number of milliseconds since Jan 1,
-     *         1970 00:00:00 UTC.
+     * Sets the value of the StartTime property for this object.
+     * 
+     * @param startTime
+     *        The new value for the StartTime property for this object.
      */
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
-    
+
     /**
-     * A point in time expressed as the number of milliseconds since Jan 1,
-     * 1970 00:00:00 UTC.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param startTime A point in time expressed as the number of milliseconds since Jan 1,
-     *         1970 00:00:00 UTC.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Returns the value of the StartTime property for this object.
+     * 
+     * @return The value of the StartTime property for this object.
+     */
+    public Long getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * Sets the value of the StartTime property for this object.
+     * 
+     * @param startTime
+     *        The new value for the StartTime property for this object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetLogEventsRequest withStartTime(Long startTime) {
-        this.startTime = startTime;
+        setStartTime(startTime);
         return this;
     }
 
     /**
-     * A point in time expressed as the number of milliseconds since Jan 1,
-     * 1970 00:00:00 UTC.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @return A point in time expressed as the number of milliseconds since Jan 1,
-     *         1970 00:00:00 UTC.
-     */
-    public Long getEndTime() {
-        return endTime;
-    }
-    
-    /**
-     * A point in time expressed as the number of milliseconds since Jan 1,
-     * 1970 00:00:00 UTC.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param endTime A point in time expressed as the number of milliseconds since Jan 1,
-     *         1970 00:00:00 UTC.
+     * Sets the value of the EndTime property for this object.
+     * 
+     * @param endTime
+     *        The new value for the EndTime property for this object.
      */
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
-    
+
     /**
-     * A point in time expressed as the number of milliseconds since Jan 1,
-     * 1970 00:00:00 UTC.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - <br/>
-     *
-     * @param endTime A point in time expressed as the number of milliseconds since Jan 1,
-     *         1970 00:00:00 UTC.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Returns the value of the EndTime property for this object.
+     * 
+     * @return The value of the EndTime property for this object.
+     */
+    public Long getEndTime() {
+        return this.endTime;
+    }
+
+    /**
+     * Sets the value of the EndTime property for this object.
+     * 
+     * @param endTime
+     *        The new value for the EndTime property for this object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetLogEventsRequest withEndTime(Long endTime) {
-        this.endTime = endTime;
+        setEndTime(endTime);
         return this;
     }
 
     /**
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the <code
-     * class="code">nextForwardToken</code> or <code
-     * class="code">nextBackwardToken</code> fields in the response of the
-     * previous <code class="code">GetLogEvents</code> request.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @return A string token used for pagination that points to the next page of
-     *         results. It must be a value obtained from the <code
-     *         class="code">nextForwardToken</code> or <code
-     *         class="code">nextBackwardToken</code> fields in the response of the
-     *         previous <code class="code">GetLogEvents</code> request.
-     */
-    public String getNextToken() {
-        return nextToken;
-    }
-    
-    /**
      * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the <code
-     * class="code">nextForwardToken</code> or <code
-     * class="code">nextBackwardToken</code> fields in the response of the
+     * results. It must be a value obtained from the
+     * <code class="code">nextForwardToken</code> or
+     * <code class="code">nextBackwardToken</code> fields in the response of the
      * previous <code class="code">GetLogEvents</code> request.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @param nextToken A string token used for pagination that points to the next page of
-     *         results. It must be a value obtained from the <code
-     *         class="code">nextForwardToken</code> or <code
-     *         class="code">nextBackwardToken</code> fields in the response of the
-     *         previous <code class="code">GetLogEvents</code> request.
+     * </p>
+     * 
+     * @param nextToken
+     *        A string token used for pagination that points to the next page of
+     *        results. It must be a value obtained from the
+     *        <code class="code">nextForwardToken</code> or
+     *        <code class="code">nextBackwardToken</code> fields in the response
+     *        of the previous <code class="code">GetLogEvents</code> request.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
-    
+
     /**
+     * <p>
      * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the <code
-     * class="code">nextForwardToken</code> or <code
-     * class="code">nextBackwardToken</code> fields in the response of the
+     * results. It must be a value obtained from the
+     * <code class="code">nextForwardToken</code> or
+     * <code class="code">nextBackwardToken</code> fields in the response of the
      * previous <code class="code">GetLogEvents</code> request.
+     * </p>
+     * 
+     * @return A string token used for pagination that points to the next page
+     *         of results. It must be a value obtained from the
+     *         <code class="code">nextForwardToken</code> or
+     *         <code class="code">nextBackwardToken</code> fields in the
+     *         response of the previous <code class="code">GetLogEvents</code>
+     *         request.
+     */
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @param nextToken A string token used for pagination that points to the next page of
-     *         results. It must be a value obtained from the <code
-     *         class="code">nextForwardToken</code> or <code
-     *         class="code">nextBackwardToken</code> fields in the response of the
-     *         previous <code class="code">GetLogEvents</code> request.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A string token used for pagination that points to the next page of
+     * results. It must be a value obtained from the
+     * <code class="code">nextForwardToken</code> or
+     * <code class="code">nextBackwardToken</code> fields in the response of the
+     * previous <code class="code">GetLogEvents</code> request.
+     * </p>
+     * 
+     * @param nextToken
+     *        A string token used for pagination that points to the next page of
+     *        results. It must be a value obtained from the
+     *        <code class="code">nextForwardToken</code> or
+     *        <code class="code">nextBackwardToken</code> fields in the response
+     *        of the previous <code class="code">GetLogEvents</code> request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetLogEventsRequest withNextToken(String nextToken) {
-        this.nextToken = nextToken;
+        setNextToken(nextToken);
         return this;
     }
 
     /**
-     * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as many log events as
-     * can fit in a response size of 1MB, up to 10,000 log events.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
-     *
-     * @return The maximum number of log events returned in the response. If you
-     *         don't specify a value, the request would return as many log events as
-     *         can fit in a response size of 1MB, up to 10,000 log events.
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-    
-    /**
-     * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as many log events as
-     * can fit in a response size of 1MB, up to 10,000 log events.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
-     *
-     * @param limit The maximum number of log events returned in the response. If you
-     *         don't specify a value, the request would return as many log events as
-     *         can fit in a response size of 1MB, up to 10,000 log events.
+     * The maximum number of log events returned in the response. If you don't
+     * specify a value, the request would return as many log events as can fit
+     * in a response size of 1MB, up to 10,000 log events.
+     * </p>
+     * 
+     * @param limit
+     *        The maximum number of log events returned in the response. If you
+     *        don't specify a value, the request would return as many log events
+     *        as can fit in a response size of 1MB, up to 10,000 log events.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-    
+
     /**
-     * The maximum number of log events returned in the response. If you
-     * don't specify a value, the request would return as many log events as
-     * can fit in a response size of 1MB, up to 10,000 log events.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The maximum number of log events returned in the response. If you don't
+     * specify a value, the request would return as many log events as can fit
+     * in a response size of 1MB, up to 10,000 log events.
+     * </p>
+     * 
+     * @return The maximum number of log events returned in the response. If you
+     *         don't specify a value, the request would return as many log
+     *         events as can fit in a response size of 1MB, up to 10,000 log
+     *         events.
+     */
+    public Integer getLimit() {
+        return this.limit;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
-     *
-     * @param limit The maximum number of log events returned in the response. If you
-     *         don't specify a value, the request would return as many log events as
-     *         can fit in a response size of 1MB, up to 10,000 log events.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The maximum number of log events returned in the response. If you don't
+     * specify a value, the request would return as many log events as can fit
+     * in a response size of 1MB, up to 10,000 log events.
+     * </p>
+     * 
+     * @param limit
+     *        The maximum number of log events returned in the response. If you
+     *        don't specify a value, the request would return as many log events
+     *        as can fit in a response size of 1MB, up to 10,000 log events.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetLogEventsRequest withLimit(Integer limit) {
-        this.limit = limit;
+        setLimit(limit);
         return this;
     }
 
     /**
+     * <p>
      * If set to true, the earliest log events would be returned first. The
      * default is false (the latest log events are returned first).
-     *
-     * @return If set to true, the earliest log events would be returned first. The
-     *         default is false (the latest log events are returned first).
-     */
-    public Boolean isStartFromHead() {
-        return startFromHead;
-    }
-    
-    /**
-     * If set to true, the earliest log events would be returned first. The
-     * default is false (the latest log events are returned first).
-     *
-     * @param startFromHead If set to true, the earliest log events would be returned first. The
-     *         default is false (the latest log events are returned first).
+     * </p>
+     * 
+     * @param startFromHead
+     *        If set to true, the earliest log events would be returned first.
+     *        The default is false (the latest log events are returned first).
      */
     public void setStartFromHead(Boolean startFromHead) {
         this.startFromHead = startFromHead;
     }
-    
+
     /**
+     * <p>
      * If set to true, the earliest log events would be returned first. The
      * default is false (the latest log events are returned first).
+     * </p>
+     * 
+     * @return If set to true, the earliest log events would be returned first.
+     *         The default is false (the latest log events are returned first).
+     */
+    public Boolean getStartFromHead() {
+        return this.startFromHead;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param startFromHead If set to true, the earliest log events would be returned first. The
-     *         default is false (the latest log events are returned first).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * If set to true, the earliest log events would be returned first. The
+     * default is false (the latest log events are returned first).
+     * </p>
+     * 
+     * @param startFromHead
+     *        If set to true, the earliest log events would be returned first.
+     *        The default is false (the latest log events are returned first).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetLogEventsRequest withStartFromHead(Boolean startFromHead) {
-        this.startFromHead = startFromHead;
+        setStartFromHead(startFromHead);
         return this;
     }
 
     /**
+     * <p>
      * If set to true, the earliest log events would be returned first. The
      * default is false (the latest log events are returned first).
-     *
-     * @return If set to true, the earliest log events would be returned first. The
-     *         default is false (the latest log events are returned first).
+     * </p>
+     * 
+     * @return If set to true, the earliest log events would be returned first.
+     *         The default is false (the latest log events are returned first).
      */
-    public Boolean getStartFromHead() {
-        return startFromHead;
+    public Boolean isStartFromHead() {
+        return this.startFromHead;
     }
 
     /**
@@ -492,62 +412,102 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements Seri
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLogGroupName() != null) sb.append("LogGroupName: " + getLogGroupName() + ",");
-        if (getLogStreamName() != null) sb.append("LogStreamName: " + getLogStreamName() + ",");
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
-        if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");
-        if (isStartFromHead() != null) sb.append("StartFromHead: " + isStartFromHead() );
+        if (getLogGroupName() != null)
+            sb.append("LogGroupName: " + getLogGroupName() + ",");
+        if (getLogStreamName() != null)
+            sb.append("LogStreamName: " + getLogStreamName() + ",");
+        if (getStartTime() != null)
+            sb.append("StartTime: " + getStartTime() + ",");
+        if (getEndTime() != null)
+            sb.append("EndTime: " + getEndTime() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken() + ",");
+        if (getLimit() != null)
+            sb.append("Limit: " + getLimit() + ",");
+        if (getStartFromHead() != null)
+            sb.append("StartFromHead: " + getStartFromHead());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetLogEventsRequest == false)
+            return false;
+        GetLogEventsRequest other = (GetLogEventsRequest) obj;
+        if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
+            return false;
+        if (other.getLogGroupName() != null
+                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+            return false;
+        if (other.getLogStreamName() == null ^ this.getLogStreamName() == null)
+            return false;
+        if (other.getLogStreamName() != null
+                && other.getLogStreamName().equals(this.getLogStreamName()) == false)
+            return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null
+                && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
+        if (other.getEndTime() == null ^ this.getEndTime() == null)
+            return false;
+        if (other.getEndTime() != null
+                && other.getEndTime().equals(this.getEndTime()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null
+                && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getLimit() == null ^ this.getLimit() == null)
+            return false;
+        if (other.getLimit() != null
+                && other.getLimit().equals(this.getLimit()) == false)
+            return false;
+        if (other.getStartFromHead() == null ^ this.getStartFromHead() == null)
+            return false;
+        if (other.getStartFromHead() != null
+                && other.getStartFromHead().equals(this.getStartFromHead()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode()); 
-        hashCode = prime * hashCode + ((getLogStreamName() == null) ? 0 : getLogStreamName().hashCode()); 
-        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode()); 
-        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode()); 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
-        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode()); 
-        hashCode = prime * hashCode + ((isStartFromHead() == null) ? 0 : isStartFromHead().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLogStreamName() == null) ? 0 : getLogStreamName()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode
+                + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode
+                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode
+                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStartFromHead() == null) ? 0 : getStartFromHead()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof GetLogEventsRequest == false) return false;
-        GetLogEventsRequest other = (GetLogEventsRequest)obj;
-        
-        if (other.getLogGroupName() == null ^ this.getLogGroupName() == null) return false;
-        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false) return false; 
-        if (other.getLogStreamName() == null ^ this.getLogStreamName() == null) return false;
-        if (other.getLogStreamName() != null && other.getLogStreamName().equals(this.getLogStreamName()) == false) return false; 
-        if (other.getStartTime() == null ^ this.getStartTime() == null) return false;
-        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false) return false; 
-        if (other.getEndTime() == null ^ this.getEndTime() == null) return false;
-        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false) return false; 
-        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
-        if (other.getLimit() == null ^ this.getLimit() == null) return false;
-        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false) return false; 
-        if (other.isStartFromHead() == null ^ this.isStartFromHead() == null) return false;
-        if (other.isStartFromHead() != null && other.isStartFromHead().equals(this.isStartFromHead()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public GetLogEventsRequest clone() {
-        
-            return (GetLogEventsRequest) super.clone();
+        return (GetLogEventsRequest) super.clone();
     }
-
 }
-    

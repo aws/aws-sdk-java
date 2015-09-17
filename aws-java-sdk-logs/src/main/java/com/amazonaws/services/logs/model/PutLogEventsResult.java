@@ -1,137 +1,96 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
 
 /**
- * Put Log Events Result
+ * 
  */
 public class PutLogEventsResult implements Serializable, Cloneable {
 
-    /**
-     * A string token used for making PutLogEvents requests. A <code
-     * class="code">sequenceToken</code> can only be used once, and
-     * PutLogEvents requests must include the <code
-     * class="code">sequenceToken</code> obtained from the response of the
-     * previous request.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     */
     private String nextSequenceToken;
 
     private RejectedLogEventsInfo rejectedLogEventsInfo;
 
     /**
-     * A string token used for making PutLogEvents requests. A <code
-     * class="code">sequenceToken</code> can only be used once, and
-     * PutLogEvents requests must include the <code
-     * class="code">sequenceToken</code> obtained from the response of the
-     * previous request.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @return A string token used for making PutLogEvents requests. A <code
-     *         class="code">sequenceToken</code> can only be used once, and
-     *         PutLogEvents requests must include the <code
-     *         class="code">sequenceToken</code> obtained from the response of the
-     *         previous request.
-     */
-    public String getNextSequenceToken() {
-        return nextSequenceToken;
-    }
-    
-    /**
-     * A string token used for making PutLogEvents requests. A <code
-     * class="code">sequenceToken</code> can only be used once, and
-     * PutLogEvents requests must include the <code
-     * class="code">sequenceToken</code> obtained from the response of the
-     * previous request.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @param nextSequenceToken A string token used for making PutLogEvents requests. A <code
-     *         class="code">sequenceToken</code> can only be used once, and
-     *         PutLogEvents requests must include the <code
-     *         class="code">sequenceToken</code> obtained from the response of the
-     *         previous request.
+     * Sets the value of the NextSequenceToken property for this object.
+     * 
+     * @param nextSequenceToken
+     *        The new value for the NextSequenceToken property for this object.
      */
     public void setNextSequenceToken(String nextSequenceToken) {
         this.nextSequenceToken = nextSequenceToken;
     }
-    
+
     /**
-     * A string token used for making PutLogEvents requests. A <code
-     * class="code">sequenceToken</code> can only be used once, and
-     * PutLogEvents requests must include the <code
-     * class="code">sequenceToken</code> obtained from the response of the
-     * previous request.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     *
-     * @param nextSequenceToken A string token used for making PutLogEvents requests. A <code
-     *         class="code">sequenceToken</code> can only be used once, and
-     *         PutLogEvents requests must include the <code
-     *         class="code">sequenceToken</code> obtained from the response of the
-     *         previous request.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Returns the value of the NextSequenceToken property for this object.
+     * 
+     * @return The value of the NextSequenceToken property for this object.
+     */
+    public String getNextSequenceToken() {
+        return this.nextSequenceToken;
+    }
+
+    /**
+     * Sets the value of the NextSequenceToken property for this object.
+     * 
+     * @param nextSequenceToken
+     *        The new value for the NextSequenceToken property for this object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PutLogEventsResult withNextSequenceToken(String nextSequenceToken) {
-        this.nextSequenceToken = nextSequenceToken;
+        setNextSequenceToken(nextSequenceToken);
         return this;
     }
 
     /**
-     * Returns the value of the RejectedLogEventsInfo property for this
-     * object.
-     *
+     * Sets the value of the RejectedLogEventsInfo property for this object.
+     * 
+     * @param rejectedLogEventsInfo
+     *        The new value for the RejectedLogEventsInfo property for this
+     *        object.
+     */
+    public void setRejectedLogEventsInfo(
+            RejectedLogEventsInfo rejectedLogEventsInfo) {
+        this.rejectedLogEventsInfo = rejectedLogEventsInfo;
+    }
+
+    /**
+     * Returns the value of the RejectedLogEventsInfo property for this object.
+     * 
      * @return The value of the RejectedLogEventsInfo property for this object.
      */
     public RejectedLogEventsInfo getRejectedLogEventsInfo() {
-        return rejectedLogEventsInfo;
+        return this.rejectedLogEventsInfo;
     }
-    
+
     /**
      * Sets the value of the RejectedLogEventsInfo property for this object.
-     *
-     * @param rejectedLogEventsInfo The new value for the RejectedLogEventsInfo property for this object.
+     * 
+     * @param rejectedLogEventsInfo
+     *        The new value for the RejectedLogEventsInfo property for this
+     *        object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public void setRejectedLogEventsInfo(RejectedLogEventsInfo rejectedLogEventsInfo) {
-        this.rejectedLogEventsInfo = rejectedLogEventsInfo;
-    }
-    
-    /**
-     * Sets the value of the RejectedLogEventsInfo property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param rejectedLogEventsInfo The new value for the RejectedLogEventsInfo property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public PutLogEventsResult withRejectedLogEventsInfo(RejectedLogEventsInfo rejectedLogEventsInfo) {
-        this.rejectedLogEventsInfo = rejectedLogEventsInfo;
+    public PutLogEventsResult withRejectedLogEventsInfo(
+            RejectedLogEventsInfo rejectedLogEventsInfo) {
+        setRejectedLogEventsInfo(rejectedLogEventsInfo);
         return this;
     }
 
@@ -147,50 +106,65 @@ public class PutLogEventsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextSequenceToken() != null) sb.append("NextSequenceToken: " + getNextSequenceToken() + ",");
-        if (getRejectedLogEventsInfo() != null) sb.append("RejectedLogEventsInfo: " + getRejectedLogEventsInfo() );
+        if (getNextSequenceToken() != null)
+            sb.append("NextSequenceToken: " + getNextSequenceToken() + ",");
+        if (getRejectedLogEventsInfo() != null)
+            sb.append("RejectedLogEventsInfo: " + getRejectedLogEventsInfo());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PutLogEventsResult == false)
+            return false;
+        PutLogEventsResult other = (PutLogEventsResult) obj;
+        if (other.getNextSequenceToken() == null
+                ^ this.getNextSequenceToken() == null)
+            return false;
+        if (other.getNextSequenceToken() != null
+                && other.getNextSequenceToken().equals(
+                        this.getNextSequenceToken()) == false)
+            return false;
+        if (other.getRejectedLogEventsInfo() == null
+                ^ this.getRejectedLogEventsInfo() == null)
+            return false;
+        if (other.getRejectedLogEventsInfo() != null
+                && other.getRejectedLogEventsInfo().equals(
+                        this.getRejectedLogEventsInfo()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getNextSequenceToken() == null) ? 0 : getNextSequenceToken().hashCode()); 
-        hashCode = prime * hashCode + ((getRejectedLogEventsInfo() == null) ? 0 : getRejectedLogEventsInfo().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getNextSequenceToken() == null) ? 0
+                        : getNextSequenceToken().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRejectedLogEventsInfo() == null) ? 0
+                        : getRejectedLogEventsInfo().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof PutLogEventsResult == false) return false;
-        PutLogEventsResult other = (PutLogEventsResult)obj;
-        
-        if (other.getNextSequenceToken() == null ^ this.getNextSequenceToken() == null) return false;
-        if (other.getNextSequenceToken() != null && other.getNextSequenceToken().equals(this.getNextSequenceToken()) == false) return false; 
-        if (other.getRejectedLogEventsInfo() == null ^ this.getRejectedLogEventsInfo() == null) return false;
-        if (other.getRejectedLogEventsInfo() != null && other.getRejectedLogEventsInfo().equals(this.getRejectedLogEventsInfo()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public PutLogEventsResult clone() {
         try {
             return (PutLogEventsResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

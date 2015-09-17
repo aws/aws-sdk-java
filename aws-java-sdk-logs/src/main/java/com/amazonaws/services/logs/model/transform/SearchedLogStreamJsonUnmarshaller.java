@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Searched Log Stream JSON Unmarshaller
+ * SearchedLogStream JSON Unmarshaller
  */
-public class SearchedLogStreamJsonUnmarshaller implements Unmarshaller<SearchedLogStream, JsonUnmarshallerContext> {
+public class SearchedLogStreamJsonUnmarshaller implements
+        Unmarshaller<SearchedLogStream, JsonUnmarshallerContext> {
 
-    public SearchedLogStream unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public SearchedLogStream unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         SearchedLogStream searchedLogStream = new SearchedLogStream();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,37 +40,46 @@ public class SearchedLogStreamJsonUnmarshaller implements Unmarshaller<SearchedL
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logStreamName", targetDepth)) {
                     context.nextToken();
-                    searchedLogStream.setLogStreamName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    searchedLogStream.setLogStreamName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("searchedCompletely", targetDepth)) {
                     context.nextToken();
-                    searchedLogStream.setSearchedCompletely(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    searchedLogStream
+                            .setSearchedCompletely(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return searchedLogStream;
     }
 
     private static SearchedLogStreamJsonUnmarshaller instance;
+
     public static SearchedLogStreamJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new SearchedLogStreamJsonUnmarshaller();
+        if (instance == null)
+            instance = new SearchedLogStreamJsonUnmarshaller();
         return instance;
     }
 }
-    
