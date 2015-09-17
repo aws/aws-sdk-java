@@ -1,76 +1,60 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.logs.AWSLogs#createLogStream(CreateLogStreamRequest) CreateLogStream operation}.
- * <p>
- * Creates a new log stream in the specified log group. The name of the
- * log stream must be unique within the log group. There is no limit on
- * the number of log streams that can exist in a log group.
- * </p>
- * <p>
- * You must use the following guidelines when naming a log stream:
- * <ul>
- * <li>Log stream names can be between 1 and 512 characters long.</li>
- * <li>The ':' colon character is not allowed.</li>
  * 
- * </ul>
- * 
- * </p>
- *
- * @see com.amazonaws.services.logs.AWSLogs#createLogStream(CreateLogStreamRequest)
  */
-public class CreateLogStreamRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CreateLogStreamRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The name of the log group under which the log stream is to be created.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
+     * The name of the log group under which the log stream is to be created.
+     * </p>
      */
     private String logGroupName;
-
     /**
-     * The name of the log stream to create.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[^:*]*<br/>
+     * The name of the log stream to create.
+     * </p>
      */
     private String logStreamName;
 
     /**
-     * Default constructor for a new CreateLogStreamRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for CreateLogStreamRequest object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize the object
+     * after creating it.
      */
-    public CreateLogStreamRequest() {}
-    
+    public CreateLogStreamRequest() {
+    }
+
     /**
-     * Constructs a new CreateLogStreamRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new CreateLogStreamRequest object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize any additional
+     * object members.
      * 
-     * @param logGroupName The name of the log group under which the log
-     * stream is to be created.
-     * @param logStreamName The name of the log stream to create.
+     * @param logGroupName
+     *        The name of the log group under which the log stream is to be
+     *        created.
+     * @param logStreamName
+     *        The name of the log stream to create.
      */
     public CreateLogStreamRequest(String logGroupName, String logStreamName) {
         setLogGroupName(logGroupName);
@@ -78,92 +62,81 @@ public class CreateLogStreamRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * The name of the log group under which the log stream is to be created.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
-     *
-     * @return The name of the log group under which the log stream is to be created.
-     */
-    public String getLogGroupName() {
-        return logGroupName;
-    }
-    
-    /**
      * The name of the log group under which the log stream is to be created.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
-     *
-     * @param logGroupName The name of the log group under which the log stream is to be created.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the log group under which the log stream is to be
+     *        created.
      */
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
-    
+
     /**
+     * <p>
      * The name of the log group under which the log stream is to be created.
+     * </p>
+     * 
+     * @return The name of the log group under which the log stream is to be
+     *         created.
+     */
+    public String getLogGroupName() {
+        return this.logGroupName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[\.\-_/#A-Za-z0-9]+<br/>
-     *
-     * @param logGroupName The name of the log group under which the log stream is to be created.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the log group under which the log stream is to be created.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the log group under which the log stream is to be
+     *        created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateLogStreamRequest withLogGroupName(String logGroupName) {
-        this.logGroupName = logGroupName;
+        setLogGroupName(logGroupName);
         return this;
     }
 
     /**
-     * The name of the log stream to create.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[^:*]*<br/>
-     *
-     * @return The name of the log stream to create.
-     */
-    public String getLogStreamName() {
-        return logStreamName;
-    }
-    
-    /**
      * The name of the log stream to create.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[^:*]*<br/>
-     *
-     * @param logStreamName The name of the log stream to create.
+     * </p>
+     * 
+     * @param logStreamName
+     *        The name of the log stream to create.
      */
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
-    
+
     /**
+     * <p>
      * The name of the log stream to create.
+     * </p>
+     * 
+     * @return The name of the log stream to create.
+     */
+    public String getLogStreamName() {
+        return this.logStreamName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>[^:*]*<br/>
-     *
-     * @param logStreamName The name of the log stream to create.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the log stream to create.
+     * </p>
+     * 
+     * @param logStreamName
+     *        The name of the log stream to create.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateLogStreamRequest withLogStreamName(String logStreamName) {
-        this.logStreamName = logStreamName;
+        setLogStreamName(logStreamName);
         return this;
     }
 
@@ -179,42 +152,55 @@ public class CreateLogStreamRequest extends AmazonWebServiceRequest implements S
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLogGroupName() != null) sb.append("LogGroupName: " + getLogGroupName() + ",");
-        if (getLogStreamName() != null) sb.append("LogStreamName: " + getLogStreamName() );
+        if (getLogGroupName() != null)
+            sb.append("LogGroupName: " + getLogGroupName() + ",");
+        if (getLogStreamName() != null)
+            sb.append("LogStreamName: " + getLogStreamName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateLogStreamRequest == false)
+            return false;
+        CreateLogStreamRequest other = (CreateLogStreamRequest) obj;
+        if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
+            return false;
+        if (other.getLogGroupName() != null
+                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+            return false;
+        if (other.getLogStreamName() == null ^ this.getLogStreamName() == null)
+            return false;
+        if (other.getLogStreamName() != null
+                && other.getLogStreamName().equals(this.getLogStreamName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode()); 
-        hashCode = prime * hashCode + ((getLogStreamName() == null) ? 0 : getLogStreamName().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLogStreamName() == null) ? 0 : getLogStreamName()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateLogStreamRequest == false) return false;
-        CreateLogStreamRequest other = (CreateLogStreamRequest)obj;
-        
-        if (other.getLogGroupName() == null ^ this.getLogGroupName() == null) return false;
-        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false) return false; 
-        if (other.getLogStreamName() == null ^ this.getLogStreamName() == null) return false;
-        if (other.getLogStreamName() != null && other.getLogStreamName().equals(this.getLogStreamName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateLogStreamRequest clone() {
-        
-            return (CreateLogStreamRequest) super.clone();
+        return (CreateLogStreamRequest) super.clone();
     }
-
 }
-    

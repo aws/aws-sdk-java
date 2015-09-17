@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,2271 +14,1253 @@
  */
 package com.amazonaws.services.logs;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.handlers.AsyncHandler;
-import com.amazonaws.ClientConfiguration;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
-
 import com.amazonaws.services.logs.model.*;
 
 /**
- * Asynchronous client for accessing AWSLogs.
- * All asynchronous calls made using this client are non-blocking. Callers could either
- * process the result and handle the exceptions in the worker thread by providing a callback handler
- * when making the call, or use the returned Future object to check the result of the call in the calling thread.
- * Amazon CloudWatch Logs API Reference <p>
- * This is the <i>Amazon CloudWatch Logs API Reference</i> . Amazon
- * CloudWatch Logs enables you to monitor, store, and access your system,
- * application, and custom log files. This guide provides detailed
- * information about Amazon CloudWatch Logs actions, data types,
- * parameters, and errors. For detailed information about Amazon
- * CloudWatch Logs features and their associated API calls, go to the
- * <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide"> Amazon CloudWatch Developer Guide </a>
- * .
+ * Interface for accessing Amazon CloudWatch Logs asynchronously. Each
+ * asynchronous method will return a Java Future object representing the
+ * asynchronous operation; overloads which accept an {@code AsyncHandler} can be
+ * used to receive notification when an asynchronous operation completes.
+ * <p>
+ * <fullname>Amazon CloudWatch Logs API Reference</fullname>
+ * <p>
+ * This is the <i>Amazon CloudWatch Logs API Reference</i>. Amazon CloudWatch
+ * Logs enables you to monitor, store, and access your system, application, and
+ * custom log files. This guide provides detailed information about Amazon
+ * CloudWatch Logs actions, data types, parameters, and errors. For detailed
+ * information about Amazon CloudWatch Logs features and their associated API
+ * calls, go to the <a
+ * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide"
+ * >Amazon CloudWatch Developer Guide</a>.
  * </p>
  * <p>
- * Use the following links to get started using the <i>Amazon CloudWatch
- * Logs API Reference</i> :
+ * Use the following links to get started using the <i>Amazon CloudWatch Logs
+ * API Reference</i>:
  * </p>
- * 
  * <ul>
- * <li>
- * <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Operations.html"> Actions </a>
- * : An alphabetical list of all Amazon CloudWatch Logs actions.</li>
- * <li>
- * <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Types.html"> Data Types </a>
- * : An alphabetical list of all Amazon CloudWatch Logs data types.</li>
- * <li>
- * <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html"> Common Parameters </a>
- * : Parameters that all Query actions can use.</li>
- * <li>
- * <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonErrors.html"> Common Errors </a>
- * : Client and server errors that all actions can return.</li>
- * <li>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a>
- * : Itemized regions and endpoints for all AWS products.</li>
- * 
+ * <li><a href=
+ * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Operations.html"
+ * >Actions</a>: An alphabetical list of all Amazon CloudWatch Logs actions.</li>
+ * <li><a href=
+ * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Types.html"
+ * >Data Types</a>: An alphabetical list of all Amazon CloudWatch Logs data
+ * types.</li>
+ * <li><a href=
+ * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html"
+ * >Common Parameters</a>: Parameters that all Query actions can use.</li>
+ * <li><a href=
+ * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonErrors.html"
+ * >Common Errors</a>: Client and server errors that all actions can return.</li>
+ * <li><a
+ * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"
+ * >Regions and Endpoints</a>: Itemized regions and endpoints for all AWS
+ * products.</li>
  * </ul>
  * <p>
- * In addition to using the Amazon CloudWatch Logs API, you can also use
- * the following SDKs and third-party libraries to access Amazon
- * CloudWatch Logs programmatically.
+ * In addition to using the Amazon CloudWatch Logs API, you can also use the
+ * following SDKs and third-party libraries to access Amazon CloudWatch Logs
+ * programmatically.
  * </p>
- * 
  * <ul>
- * <li>
- * <a href="http://aws.amazon.com/documentation/sdkforjava/"> AWS SDK for Java Documentation </a>
- * </li>
- * <li>
- * <a href="http://aws.amazon.com/documentation/sdkfornet/"> AWS SDK for .NET Documentation </a>
- * </li>
- * <li>
- * <a href="http://aws.amazon.com/documentation/sdkforphp/"> AWS SDK for PHP Documentation </a>
- * </li>
- * <li>
- * <a href="http://aws.amazon.com/documentation/sdkforruby/"> AWS SDK for Ruby Documentation </a>
- * </li>
- * 
+ * <li><a href="http://aws.amazon.com/documentation/sdkforjava/">AWS SDK for
+ * Java Documentation</a></li>
+ * <li><a href="http://aws.amazon.com/documentation/sdkfornet/">AWS SDK for .NET
+ * Documentation</a></li>
+ * <li><a href="http://aws.amazon.com/documentation/sdkforphp/">AWS SDK for PHP
+ * Documentation</a></li>
+ * <li><a href="http://aws.amazon.com/documentation/sdkforruby/">AWS SDK for
+ * Ruby Documentation</a></li>
  * </ul>
  * <p>
- * Developers in the AWS developer community also provide their own
- * libraries, which you can find at the following AWS developer centers:
+ * Developers in the AWS developer community also provide their own libraries,
+ * which you can find at the following AWS developer centers:
  * </p>
- * 
  * <ul>
- * <li>
- * <a href="http://aws.amazon.com/java/"> AWS Java Developer Center </a>
- * </li>
- * <li>
- * <a href="http://aws.amazon.com/php/"> AWS PHP Developer Center </a>
- * </li>
- * <li>
- * <a href="http://aws.amazon.com/python/"> AWS Python Developer Center </a>
- * </li>
- * <li>
- * <a href="http://aws.amazon.com/ruby/"> AWS Ruby Developer Center </a>
- * </li>
- * <li>
- * <a href="http://aws.amazon.com/net/"> AWS Windows and .NET Developer Center </a>
- * </li>
- * 
+ * <li><a href="http://aws.amazon.com/java/">AWS Java Developer Center</a></li>
+ * <li><a href="http://aws.amazon.com/php/">AWS PHP Developer Center</a></li>
+ * <li><a href="http://aws.amazon.com/python/">AWS Python Developer Center</a></li>
+ * <li><a href="http://aws.amazon.com/ruby/">AWS Ruby Developer Center</a></li>
+ * <li><a href="http://aws.amazon.com/net/">AWS Windows and .NET Developer
+ * Center</a></li>
  * </ul>
  */
-public class AWSLogsAsyncClient extends AWSLogsClient
-        implements AWSLogsAsync {
-
-    /**
-     * Executor service for executing asynchronous requests.
-     */
-    private final ExecutorService executorService;
+public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
+    private final java.util.concurrent.ExecutorService executorService;
+
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AWSLogs.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * CloudWatch Logs. A credentials provider chain will be used that searches
+     * for credentials in this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Credential profiles file at the default location (~/.aws/credentials)
+     * shared by all AWS SDKs and the AWS CLI</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
-     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * 50 threads (to match the default maximum number of concurrent connections
+     * to the service).
      *
-     * @see DefaultAWSCredentialsProviderChain
+     * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSLogsAsyncClient() {
-        this(new DefaultAWSCredentialsProviderChain());
+        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AWSLogs.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * CloudWatch Logs. A credentials provider chain will be used that searches
+     * for credentials in this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Credential profiles file at the default location (~/.aws/credentials)
+     * shared by all AWS SDKs and the AWS CLI</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
-     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * a number of threads equal to the maximum number of concurrent connections
+     * configured via {@code ClientConfiguration.getMaxConnections()}.
      *
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AWSLogs
-     *                       (ex: proxy settings, retry counts, etc.).
-     *
-     * @see DefaultAWSCredentialsProviderChain
-     */
-    public AWSLogsAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AWSLogs using the specified AWS account credentials.
-     * Default client settings will be used, and a fixed size thread pool will be
-     * created for executing the asynchronous tasks.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentials The AWS credentials (access key ID and secret key) to use
-     *                       when authenticating with AWS services.
-     */
-    public AWSLogsAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AWSLogs using the specified AWS account credentials
-     * and executor service.  Default client settings will be used.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentials
-     *            The AWS credentials (access key ID and secret key) to use
-     *            when authenticating with AWS services.
-     * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
-     */
-    public AWSLogsAsyncClient(AWSCredentials awsCredentials, ExecutorService executorService) {
-        super(awsCredentials);
-        this.executorService = executorService;
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AWSLogs using the specified AWS account credentials,
-     * executor service, and client configuration options.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentials
-     *            The AWS credentials (access key ID and secret key) to use
-     *            when authenticating with AWS services.
      * @param clientConfiguration
-     *            Client configuration options (ex: max retry limit, proxy
-     *            settings, etc).
-     * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
+     *        The client configuration options controlling how this client
+     *        connects to Amazon CloudWatch Logs (ex: proxy settings, retry
+     *        counts, etc).
+     *
+     * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AWSLogsAsyncClient(AWSCredentials awsCredentials,
-                ClientConfiguration clientConfiguration, ExecutorService executorService) {
+    public AWSLogsAsyncClient(
+            com.amazonaws.ClientConfiguration clientConfiguration) {
+        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(),
+                clientConfiguration, java.util.concurrent.Executors
+                        .newFixedThreadPool(clientConfiguration
+                                .getMaxConnections()));
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * CloudWatch Logs using the specified AWS account credentials.
+     * <p>
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * 50 threads (to match the default maximum number of concurrent connections
+     * to the service).
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     */
+    public AWSLogsAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials) {
+        this(awsCredentials, java.util.concurrent.Executors
+                .newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * CloudWatch Logs using the specified AWS account credentials and executor
+     * service. Default client settings will be used.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @param executorService
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
+     */
+    public AWSLogsAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials,
+            java.util.concurrent.ExecutorService executorService) {
+
+        this(awsCredentials, new com.amazonaws.ClientConfiguration(),
+                executorService);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * CloudWatch Logs using the specified AWS account credentials, executor
+     * service, and client configuration options.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @param clientConfiguration
+     *        Client configuration options (ex: max retry limit, proxy settings,
+     *        etc).
+     * @param executorService
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
+     */
+    public AWSLogsAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials,
+            com.amazonaws.ClientConfiguration clientConfiguration,
+            java.util.concurrent.ExecutorService executorService) {
+
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AWSLogs using the specified AWS account credentials provider.
-     * Default client settings will be used, and a fixed size thread pool will be
-     * created for executing the asynchronous tasks.
-     *
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * CloudWatch Logs using the specified AWS account credentials provider.
+     * Default client settings will be used.
      * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * 50 threads (to match the default maximum number of concurrent connections
+     * to the service).
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AWSLogsAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    public AWSLogsAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, java.util.concurrent.Executors
+                .newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AWSLogs using the specified AWS account credentials provider
-     * and executor service.  Default client settings will be used.
-     *
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * CloudWatch Logs using the provided AWS account credentials provider and
+     * client configuration options.
      * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * a number of threads equal to the maximum number of concurrent connections
+     * configured via {@code ClientConfiguration.getMaxConnections()}.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
-     */
-    public AWSLogsAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
-        this(awsCredentialsProvider, new ClientConfiguration(), executorService);
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AWSLogs using the specified AWS account credentials
-     * provider and client configuration options.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
      * @param clientConfiguration
-     *            Client configuration options (ex: max retry limit, proxy
-     *            settings, etc).
+     *        Client configuration options (ex: max retry limit, proxy settings,
+     *        etc).
+     *
+     * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AWSLogsAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
-                ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    public AWSLogsAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
+            com.amazonaws.ClientConfiguration clientConfiguration) {
+
+        this(awsCredentialsProvider, clientConfiguration,
+                java.util.concurrent.Executors
+                        .newFixedThreadPool(clientConfiguration
+                                .getMaxConnections()));
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AWSLogs using the specified AWS account credentials
-     * provider, executor service, and client configuration options.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * CloudWatch Logs using the specified AWS account credentials provider and
+     * executor service. Default client settings will be used.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param clientConfiguration
-     *            Client configuration options (ex: max retry limit, proxy
-     *            settings, etc).
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
      * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
      */
-    public AWSLogsAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
-                ClientConfiguration clientConfiguration, ExecutorService executorService) {
+    public AWSLogsAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
+            java.util.concurrent.ExecutorService executorService) {
+
+        this(awsCredentialsProvider, new com.amazonaws.ClientConfiguration(),
+                executorService);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * CloudWatch Logs using the specified AWS account credentials provider,
+     * executor service, and client configuration options.
+     *
+     * @param awsCredentialsProvider
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        Client configuration options (ex: max retry limit, proxy settings,
+     *        etc).
+     * @param executorService
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
+     */
+    public AWSLogsAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
+            com.amazonaws.ClientConfiguration clientConfiguration,
+            java.util.concurrent.ExecutorService executorService) {
+
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
 
     /**
-     * Returns the executor service used by this async client to execute
+     * Returns the executor service used by this client to execute async
      * requests.
      *
-     * @return The executor service used by this async client to execute
+     * @return The executor service used by this client to execute async
      *         requests.
      */
-    public ExecutorService getExecutorService() {
+    public java.util.concurrent.ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> cancelExportTaskAsync(
+            CancelExportTaskRequest request) {
+
+        return cancelExportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> cancelExportTaskAsync(
+            final CancelExportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            cancelExportTask(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExportTaskResult> createExportTaskAsync(
+            CreateExportTaskRequest request) {
+
+        return createExportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExportTaskResult> createExportTaskAsync(
+            final CreateExportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateExportTaskRequest, CreateExportTaskResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateExportTaskResult>() {
+                    @Override
+                    public CreateExportTaskResult call() throws Exception {
+                        CreateExportTaskResult result;
+
+                        try {
+                            result = createExportTask(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> createLogGroupAsync(
+            CreateLogGroupRequest request) {
+
+        return createLogGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> createLogGroupAsync(
+            final CreateLogGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            createLogGroup(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> createLogStreamAsync(
+            CreateLogStreamRequest request) {
+
+        return createLogStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> createLogStreamAsync(
+            final CreateLogStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            createLogStream(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteDestinationAsync(
+            DeleteDestinationRequest request) {
+
+        return deleteDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteDestinationAsync(
+            final DeleteDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            deleteDestination(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteLogGroupAsync(
+            DeleteLogGroupRequest request) {
+
+        return deleteLogGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteLogGroupAsync(
+            final DeleteLogGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            deleteLogGroup(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteLogStreamAsync(
+            DeleteLogStreamRequest request) {
+
+        return deleteLogStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteLogStreamAsync(
+            final DeleteLogStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            deleteLogStream(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteMetricFilterAsync(
+            DeleteMetricFilterRequest request) {
+
+        return deleteMetricFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteMetricFilterAsync(
+            final DeleteMetricFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            deleteMetricFilter(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteRetentionPolicyAsync(
+            DeleteRetentionPolicyRequest request) {
+
+        return deleteRetentionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteRetentionPolicyAsync(
+            final DeleteRetentionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            deleteRetentionPolicy(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteSubscriptionFilterAsync(
+            DeleteSubscriptionFilterRequest request) {
+
+        return deleteSubscriptionFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteSubscriptionFilterAsync(
+            final DeleteSubscriptionFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            deleteSubscriptionFilter(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDestinationsResult> describeDestinationsAsync(
+            DescribeDestinationsRequest request) {
+
+        return describeDestinationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDestinationsResult> describeDestinationsAsync(
+            final DescribeDestinationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDestinationsRequest, DescribeDestinationsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeDestinationsResult>() {
+                    @Override
+                    public DescribeDestinationsResult call() throws Exception {
+                        DescribeDestinationsResult result;
+
+                        try {
+                            result = describeDestinations(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the DescribeDestinations operation.
+     *
+     * @see #describeDestinationsAsync(DescribeDestinationsRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<DescribeDestinationsResult> describeDestinationsAsync() {
+
+        return describeDestinationsAsync(new DescribeDestinationsRequest());
+    }
+
+    /**
+     * Simplified method form for invoking the DescribeDestinations operation
+     * with an AsyncHandler.
+     *
+     * @see #describeDestinationsAsync(DescribeDestinationsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<DescribeDestinationsResult> describeDestinationsAsync(
+            com.amazonaws.handlers.AsyncHandler<DescribeDestinationsRequest, DescribeDestinationsResult> asyncHandler) {
+
+        return describeDestinationsAsync(new DescribeDestinationsRequest(),
+                asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(
+            DescribeExportTasksRequest request) {
+
+        return describeExportTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(
+            final DescribeExportTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeExportTasksResult>() {
+                    @Override
+                    public DescribeExportTasksResult call() throws Exception {
+                        DescribeExportTasksResult result;
+
+                        try {
+                            result = describeExportTasks(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLogGroupsResult> describeLogGroupsAsync(
+            DescribeLogGroupsRequest request) {
+
+        return describeLogGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLogGroupsResult> describeLogGroupsAsync(
+            final DescribeLogGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLogGroupsRequest, DescribeLogGroupsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeLogGroupsResult>() {
+                    @Override
+                    public DescribeLogGroupsResult call() throws Exception {
+                        DescribeLogGroupsResult result;
+
+                        try {
+                            result = describeLogGroups(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the DescribeLogGroups operation.
+     *
+     * @see #describeLogGroupsAsync(DescribeLogGroupsRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<DescribeLogGroupsResult> describeLogGroupsAsync() {
+
+        return describeLogGroupsAsync(new DescribeLogGroupsRequest());
+    }
+
+    /**
+     * Simplified method form for invoking the DescribeLogGroups operation with
+     * an AsyncHandler.
+     *
+     * @see #describeLogGroupsAsync(DescribeLogGroupsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<DescribeLogGroupsResult> describeLogGroupsAsync(
+            com.amazonaws.handlers.AsyncHandler<DescribeLogGroupsRequest, DescribeLogGroupsResult> asyncHandler) {
+
+        return describeLogGroupsAsync(new DescribeLogGroupsRequest(),
+                asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLogStreamsResult> describeLogStreamsAsync(
+            DescribeLogStreamsRequest request) {
+
+        return describeLogStreamsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLogStreamsResult> describeLogStreamsAsync(
+            final DescribeLogStreamsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLogStreamsRequest, DescribeLogStreamsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeLogStreamsResult>() {
+                    @Override
+                    public DescribeLogStreamsResult call() throws Exception {
+                        DescribeLogStreamsResult result;
+
+                        try {
+                            result = describeLogStreams(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMetricFiltersResult> describeMetricFiltersAsync(
+            DescribeMetricFiltersRequest request) {
+
+        return describeMetricFiltersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMetricFiltersResult> describeMetricFiltersAsync(
+            final DescribeMetricFiltersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeMetricFiltersRequest, DescribeMetricFiltersResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeMetricFiltersResult>() {
+                    @Override
+                    public DescribeMetricFiltersResult call() throws Exception {
+                        DescribeMetricFiltersResult result;
+
+                        try {
+                            result = describeMetricFilters(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSubscriptionFiltersResult> describeSubscriptionFiltersAsync(
+            DescribeSubscriptionFiltersRequest request) {
+
+        return describeSubscriptionFiltersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSubscriptionFiltersResult> describeSubscriptionFiltersAsync(
+            final DescribeSubscriptionFiltersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSubscriptionFiltersRequest, DescribeSubscriptionFiltersResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeSubscriptionFiltersResult>() {
+                    @Override
+                    public DescribeSubscriptionFiltersResult call()
+                            throws Exception {
+                        DescribeSubscriptionFiltersResult result;
+
+                        try {
+                            result = describeSubscriptionFilters(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<FilterLogEventsResult> filterLogEventsAsync(
+            FilterLogEventsRequest request) {
+
+        return filterLogEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<FilterLogEventsResult> filterLogEventsAsync(
+            final FilterLogEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<FilterLogEventsRequest, FilterLogEventsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<FilterLogEventsResult>() {
+                    @Override
+                    public FilterLogEventsResult call() throws Exception {
+                        FilterLogEventsResult result;
+
+                        try {
+                            result = filterLogEvents(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogEventsResult> getLogEventsAsync(
+            GetLogEventsRequest request) {
+
+        return getLogEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogEventsResult> getLogEventsAsync(
+            final GetLogEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLogEventsRequest, GetLogEventsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetLogEventsResult>() {
+                    @Override
+                    public GetLogEventsResult call() throws Exception {
+                        GetLogEventsResult result;
+
+                        try {
+                            result = getLogEvents(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDestinationResult> putDestinationAsync(
+            PutDestinationRequest request) {
+
+        return putDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDestinationResult> putDestinationAsync(
+            final PutDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutDestinationRequest, PutDestinationResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<PutDestinationResult>() {
+                    @Override
+                    public PutDestinationResult call() throws Exception {
+                        PutDestinationResult result;
+
+                        try {
+                            result = putDestination(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> putDestinationPolicyAsync(
+            PutDestinationPolicyRequest request) {
+
+        return putDestinationPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> putDestinationPolicyAsync(
+            final PutDestinationPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            putDestinationPolicy(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLogEventsResult> putLogEventsAsync(
+            PutLogEventsRequest request) {
+
+        return putLogEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLogEventsResult> putLogEventsAsync(
+            final PutLogEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutLogEventsRequest, PutLogEventsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<PutLogEventsResult>() {
+                    @Override
+                    public PutLogEventsResult call() throws Exception {
+                        PutLogEventsResult result;
+
+                        try {
+                            result = putLogEvents(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> putMetricFilterAsync(
+            PutMetricFilterRequest request) {
+
+        return putMetricFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> putMetricFilterAsync(
+            final PutMetricFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            putMetricFilter(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> putRetentionPolicyAsync(
+            PutRetentionPolicyRequest request) {
+
+        return putRetentionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> putRetentionPolicyAsync(
+            final PutRetentionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            putRetentionPolicy(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> putSubscriptionFilterAsync(
+            PutSubscriptionFilterRequest request) {
+
+        return putSubscriptionFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> putSubscriptionFilterAsync(
+            final PutSubscriptionFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            putSubscriptionFilter(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestMetricFilterResult> testMetricFilterAsync(
+            TestMetricFilterRequest request) {
+
+        return testMetricFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestMetricFilterResult> testMetricFilterAsync(
+            final TestMetricFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<TestMetricFilterResult>() {
+                    @Override
+                    public TestMetricFilterResult call() throws Exception {
+                        TestMetricFilterResult result;
+
+                        try {
+                            result = testMetricFilter(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     /**
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() followed by
-     * getExecutorService().awaitTermination() prior to calling this method.
+     * call {@code getExecutorService().shutdown()} followed by
+     * {@code getExecutorService().awaitTermination()} prior to calling this
+     * method.
      */
     @Override
     public void shutdown() {
         super.shutdown();
         executorService.shutdownNow();
     }
-            
-    /**
-     * <p>
-     * Sets the retention of the specified log group. A retention policy
-     * allows you to configure the number of days you want to retain log
-     * events in the specified log group.
-     * </p>
-     *
-     * @param putRetentionPolicyRequest Container for the necessary
-     *           parameters to execute the PutRetentionPolicy operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutRetentionPolicy service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> putRetentionPolicyAsync(final PutRetentionPolicyRequest putRetentionPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                putRetentionPolicy(putRetentionPolicyRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Sets the retention of the specified log group. A retention policy
-     * allows you to configure the number of days you want to retain log
-     * events in the specified log group.
-     * </p>
-     *
-     * @param putRetentionPolicyRequest Container for the necessary
-     *           parameters to execute the PutRetentionPolicy operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutRetentionPolicy service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> putRetentionPolicyAsync(
-            final PutRetentionPolicyRequest putRetentionPolicyRequest,
-            final AsyncHandler<PutRetentionPolicyRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                putRetentionPolicy(putRetentionPolicyRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(putRetentionPolicyRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes the destination with the specified name and eventually
-     * disables all the subscription filters that publish to it. This will
-     * not delete the physical resource encapsulated by the destination.
-     * </p>
-     *
-     * @param deleteDestinationRequest Container for the necessary parameters
-     *           to execute the DeleteDestination operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteDestination service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteDestinationAsync(final DeleteDestinationRequest deleteDestinationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteDestination(deleteDestinationRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes the destination with the specified name and eventually
-     * disables all the subscription filters that publish to it. This will
-     * not delete the physical resource encapsulated by the destination.
-     * </p>
-     *
-     * @param deleteDestinationRequest Container for the necessary parameters
-     *           to execute the DeleteDestination operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteDestination service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteDestinationAsync(
-            final DeleteDestinationRequest deleteDestinationRequest,
-            final AsyncHandler<DeleteDestinationRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteDestination(deleteDestinationRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteDestinationRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns all the subscription filters associated with the specified
-     * log group. The list returned in the response is ASCII-sorted by filter
-     * name.
-     * </p>
-     * <p>
-     * By default, this operation returns up to 50 subscription filters. If
-     * there are more subscription filters to list, the response would
-     * contain a <code>nextToken</code> value in the response body. You can
-     * also limit the number of subscription filters returned in the response
-     * by specifying the <code>limit</code> parameter in the request.
-     * </p>
-     *
-     * @param describeSubscriptionFiltersRequest Container for the necessary
-     *           parameters to execute the DescribeSubscriptionFilters operation on
-     *           AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeSubscriptionFilters service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeSubscriptionFiltersResult> describeSubscriptionFiltersAsync(final DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeSubscriptionFiltersResult>() {
-            public DescribeSubscriptionFiltersResult call() throws Exception {
-                return describeSubscriptionFilters(describeSubscriptionFiltersRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns all the subscription filters associated with the specified
-     * log group. The list returned in the response is ASCII-sorted by filter
-     * name.
-     * </p>
-     * <p>
-     * By default, this operation returns up to 50 subscription filters. If
-     * there are more subscription filters to list, the response would
-     * contain a <code>nextToken</code> value in the response body. You can
-     * also limit the number of subscription filters returned in the response
-     * by specifying the <code>limit</code> parameter in the request.
-     * </p>
-     *
-     * @param describeSubscriptionFiltersRequest Container for the necessary
-     *           parameters to execute the DescribeSubscriptionFilters operation on
-     *           AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeSubscriptionFilters service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeSubscriptionFiltersResult> describeSubscriptionFiltersAsync(
-            final DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest,
-            final AsyncHandler<DescribeSubscriptionFiltersRequest, DescribeSubscriptionFiltersResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeSubscriptionFiltersResult>() {
-            public DescribeSubscriptionFiltersResult call() throws Exception {
-              DescribeSubscriptionFiltersResult result;
-                try {
-                result = describeSubscriptionFilters(describeSubscriptionFiltersRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeSubscriptionFiltersRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes a subscription filter associated with the specified log
-     * group.
-     * </p>
-     *
-     * @param deleteSubscriptionFilterRequest Container for the necessary
-     *           parameters to execute the DeleteSubscriptionFilter operation on
-     *           AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteSubscriptionFilter service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteSubscriptionFilterAsync(final DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteSubscriptionFilter(deleteSubscriptionFilterRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes a subscription filter associated with the specified log
-     * group.
-     * </p>
-     *
-     * @param deleteSubscriptionFilterRequest Container for the necessary
-     *           parameters to execute the DeleteSubscriptionFilter operation on
-     *           AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteSubscriptionFilter service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteSubscriptionFilterAsync(
-            final DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest,
-            final AsyncHandler<DeleteSubscriptionFilterRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteSubscriptionFilter(deleteSubscriptionFilterRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteSubscriptionFilterRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns all the metrics filters associated with the specified log
-     * group. The list returned in the response is ASCII-sorted by filter
-     * name.
-     * </p>
-     * <p>
-     * By default, this operation returns up to 50 metric filters. If there
-     * are more metric filters to list, the response would contain a
-     * <code>nextToken</code> value in the response body. You can also limit
-     * the number of metric filters returned in the response by specifying
-     * the <code>limit</code> parameter in the request.
-     * </p>
-     *
-     * @param describeMetricFiltersRequest Container for the necessary
-     *           parameters to execute the DescribeMetricFilters operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeMetricFilters service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeMetricFiltersResult> describeMetricFiltersAsync(final DescribeMetricFiltersRequest describeMetricFiltersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeMetricFiltersResult>() {
-            public DescribeMetricFiltersResult call() throws Exception {
-                return describeMetricFilters(describeMetricFiltersRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns all the metrics filters associated with the specified log
-     * group. The list returned in the response is ASCII-sorted by filter
-     * name.
-     * </p>
-     * <p>
-     * By default, this operation returns up to 50 metric filters. If there
-     * are more metric filters to list, the response would contain a
-     * <code>nextToken</code> value in the response body. You can also limit
-     * the number of metric filters returned in the response by specifying
-     * the <code>limit</code> parameter in the request.
-     * </p>
-     *
-     * @param describeMetricFiltersRequest Container for the necessary
-     *           parameters to execute the DescribeMetricFilters operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeMetricFilters service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeMetricFiltersResult> describeMetricFiltersAsync(
-            final DescribeMetricFiltersRequest describeMetricFiltersRequest,
-            final AsyncHandler<DescribeMetricFiltersRequest, DescribeMetricFiltersResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeMetricFiltersResult>() {
-            public DescribeMetricFiltersResult call() throws Exception {
-              DescribeMetricFiltersResult result;
-                try {
-                result = describeMetricFilters(describeMetricFiltersRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeMetricFiltersRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns all the log streams that are associated with the specified
-     * log group. The list returned in the response is ASCII-sorted by log
-     * stream name.
-     * </p>
-     * <p>
-     * By default, this operation returns up to 50 log streams. If there are
-     * more log streams to list, the response would contain a
-     * <code>nextToken</code> value in the response body. You can also limit
-     * the number of log streams returned in the response by specifying the
-     * <code>limit</code> parameter in the request. This operation has a
-     * limit of five transactions per second, after which transactions are
-     * throttled.
-     * </p>
-     *
-     * @param describeLogStreamsRequest Container for the necessary
-     *           parameters to execute the DescribeLogStreams operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeLogStreams service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeLogStreamsResult> describeLogStreamsAsync(final DescribeLogStreamsRequest describeLogStreamsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeLogStreamsResult>() {
-            public DescribeLogStreamsResult call() throws Exception {
-                return describeLogStreams(describeLogStreamsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns all the log streams that are associated with the specified
-     * log group. The list returned in the response is ASCII-sorted by log
-     * stream name.
-     * </p>
-     * <p>
-     * By default, this operation returns up to 50 log streams. If there are
-     * more log streams to list, the response would contain a
-     * <code>nextToken</code> value in the response body. You can also limit
-     * the number of log streams returned in the response by specifying the
-     * <code>limit</code> parameter in the request. This operation has a
-     * limit of five transactions per second, after which transactions are
-     * throttled.
-     * </p>
-     *
-     * @param describeLogStreamsRequest Container for the necessary
-     *           parameters to execute the DescribeLogStreams operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeLogStreams service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeLogStreamsResult> describeLogStreamsAsync(
-            final DescribeLogStreamsRequest describeLogStreamsRequest,
-            final AsyncHandler<DescribeLogStreamsRequest, DescribeLogStreamsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeLogStreamsResult>() {
-            public DescribeLogStreamsResult call() throws Exception {
-              DescribeLogStreamsResult result;
-                try {
-                result = describeLogStreams(describeLogStreamsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeLogStreamsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes the log group with the specified name and permanently deletes
-     * all the archived log events associated with it.
-     * </p>
-     *
-     * @param deleteLogGroupRequest Container for the necessary parameters to
-     *           execute the DeleteLogGroup operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteLogGroup service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteLogGroupAsync(final DeleteLogGroupRequest deleteLogGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteLogGroup(deleteLogGroupRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes the log group with the specified name and permanently deletes
-     * all the archived log events associated with it.
-     * </p>
-     *
-     * @param deleteLogGroupRequest Container for the necessary parameters to
-     *           execute the DeleteLogGroup operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteLogGroup service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteLogGroupAsync(
-            final DeleteLogGroupRequest deleteLogGroupRequest,
-            final AsyncHandler<DeleteLogGroupRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteLogGroup(deleteLogGroupRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteLogGroupRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates a new log group with the specified name. The name of the log
-     * group must be unique within a region for an AWS account. You can
-     * create up to 500 log groups per account.
-     * </p>
-     * <p>
-     * You must use the following guidelines when naming a log group:
-     * <ul>
-     * <li>Log group names can be between 1 and 512 characters long.</li>
-     * <li>Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-'
-     * (hyphen), '/' (forward slash), and '.' (period).</li>
-     * 
-     * </ul>
-     * 
-     * </p>
-     *
-     * @param createLogGroupRequest Container for the necessary parameters to
-     *           execute the CreateLogGroup operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateLogGroup service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> createLogGroupAsync(final CreateLogGroupRequest createLogGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                createLogGroup(createLogGroupRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates a new log group with the specified name. The name of the log
-     * group must be unique within a region for an AWS account. You can
-     * create up to 500 log groups per account.
-     * </p>
-     * <p>
-     * You must use the following guidelines when naming a log group:
-     * <ul>
-     * <li>Log group names can be between 1 and 512 characters long.</li>
-     * <li>Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-'
-     * (hyphen), '/' (forward slash), and '.' (period).</li>
-     * 
-     * </ul>
-     * 
-     * </p>
-     *
-     * @param createLogGroupRequest Container for the necessary parameters to
-     *           execute the CreateLogGroup operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateLogGroup service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> createLogGroupAsync(
-            final CreateLogGroupRequest createLogGroupRequest,
-            final AsyncHandler<CreateLogGroupRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                createLogGroup(createLogGroupRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createLogGroupRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates or updates a subscription filter and associates it with the
-     * specified log group. Subscription filters allow you to subscribe to a
-     * real-time stream of log events ingested through
-     * <code>PutLogEvents</code> requests and have them delivered to a
-     * specific destination. Currently, the supported destinations are:
-     * <ul>
-     * <li> A Amazon Kinesis stream belonging to the same account as the
-     * subscription filter, for same-account delivery. </li>
-     * <li> A logical destination (used via an ARN of
-     * <code>Destination</code> ) belonging to a different account, for
-     * cross-account delivery. </li>
-     * 
-     * </ul>
-     * 
-     * </p>
-     * <p>
-     * Currently there can only be one subscription filter associated with a
-     * log group.
-     * </p>
-     *
-     * @param putSubscriptionFilterRequest Container for the necessary
-     *           parameters to execute the PutSubscriptionFilter operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutSubscriptionFilter service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> putSubscriptionFilterAsync(final PutSubscriptionFilterRequest putSubscriptionFilterRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                putSubscriptionFilter(putSubscriptionFilterRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates or updates a subscription filter and associates it with the
-     * specified log group. Subscription filters allow you to subscribe to a
-     * real-time stream of log events ingested through
-     * <code>PutLogEvents</code> requests and have them delivered to a
-     * specific destination. Currently, the supported destinations are:
-     * <ul>
-     * <li> A Amazon Kinesis stream belonging to the same account as the
-     * subscription filter, for same-account delivery. </li>
-     * <li> A logical destination (used via an ARN of
-     * <code>Destination</code> ) belonging to a different account, for
-     * cross-account delivery. </li>
-     * 
-     * </ul>
-     * 
-     * </p>
-     * <p>
-     * Currently there can only be one subscription filter associated with a
-     * log group.
-     * </p>
-     *
-     * @param putSubscriptionFilterRequest Container for the necessary
-     *           parameters to execute the PutSubscriptionFilter operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutSubscriptionFilter service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> putSubscriptionFilterAsync(
-            final PutSubscriptionFilterRequest putSubscriptionFilterRequest,
-            final AsyncHandler<PutSubscriptionFilterRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                putSubscriptionFilter(putSubscriptionFilterRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(putSubscriptionFilterRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Tests the filter pattern of a metric filter against a sample of log
-     * event messages. You can use this operation to validate the correctness
-     * of a metric filter pattern.
-     * </p>
-     *
-     * @param testMetricFilterRequest Container for the necessary parameters
-     *           to execute the TestMetricFilter operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         TestMetricFilter service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<TestMetricFilterResult> testMetricFilterAsync(final TestMetricFilterRequest testMetricFilterRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<TestMetricFilterResult>() {
-            public TestMetricFilterResult call() throws Exception {
-                return testMetricFilter(testMetricFilterRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Tests the filter pattern of a metric filter against a sample of log
-     * event messages. You can use this operation to validate the correctness
-     * of a metric filter pattern.
-     * </p>
-     *
-     * @param testMetricFilterRequest Container for the necessary parameters
-     *           to execute the TestMetricFilter operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         TestMetricFilter service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<TestMetricFilterResult> testMetricFilterAsync(
-            final TestMetricFilterRequest testMetricFilterRequest,
-            final AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<TestMetricFilterResult>() {
-            public TestMetricFilterResult call() throws Exception {
-              TestMetricFilterResult result;
-                try {
-                result = testMetricFilter(testMetricFilterRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(testMetricFilterRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates or updates a metric filter and associates it with the
-     * specified log group. Metric filters allow you to configure rules to
-     * extract metric data from log events ingested through
-     * <code>PutLogEvents</code> requests.
-     * </p>
-     * <p>
-     * The maximum number of metric filters that can be associated with a
-     * log group is 100.
-     * </p>
-     *
-     * @param putMetricFilterRequest Container for the necessary parameters
-     *           to execute the PutMetricFilter operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutMetricFilter service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> putMetricFilterAsync(final PutMetricFilterRequest putMetricFilterRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                putMetricFilter(putMetricFilterRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates or updates a metric filter and associates it with the
-     * specified log group. Metric filters allow you to configure rules to
-     * extract metric data from log events ingested through
-     * <code>PutLogEvents</code> requests.
-     * </p>
-     * <p>
-     * The maximum number of metric filters that can be associated with a
-     * log group is 100.
-     * </p>
-     *
-     * @param putMetricFilterRequest Container for the necessary parameters
-     *           to execute the PutMetricFilter operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutMetricFilter service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> putMetricFilterAsync(
-            final PutMetricFilterRequest putMetricFilterRequest,
-            final AsyncHandler<PutMetricFilterRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                putMetricFilter(putMetricFilterRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(putMetricFilterRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes a metric filter associated with the specified log group.
-     * </p>
-     *
-     * @param deleteMetricFilterRequest Container for the necessary
-     *           parameters to execute the DeleteMetricFilter operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteMetricFilter service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteMetricFilterAsync(final DeleteMetricFilterRequest deleteMetricFilterRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteMetricFilter(deleteMetricFilterRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes a metric filter associated with the specified log group.
-     * </p>
-     *
-     * @param deleteMetricFilterRequest Container for the necessary
-     *           parameters to execute the DeleteMetricFilter operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteMetricFilter service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteMetricFilterAsync(
-            final DeleteMetricFilterRequest deleteMetricFilterRequest,
-            final AsyncHandler<DeleteMetricFilterRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteMetricFilter(deleteMetricFilterRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteMetricFilterRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Retrieves log events, optionally filtered by a filter pattern from
-     * the specified log group. You can provide an optional time range to
-     * filter the results on the event <code>timestamp</code> . You can limit
-     * the streams searched to an explicit list of
-     * <code>logStreamNames</code> .
-     * </p>
-     * <p>
-     * By default, this operation returns as much matching log events as can
-     * fit in a response size of 1MB, up to 10,000 log events, or all the
-     * events found within a time-bounded scan window. If the response
-     * includes a <code>nextToken</code> , then there is more data to search,
-     * and the search can be resumed with a new request providing the
-     * nextToken. The response will contain a list of
-     * <code>searchedLogStreams</code> that contains information about which
-     * streams were searched in the request and whether they have been
-     * searched completely or require further pagination. The
-     * <code>limit</code> parameter in the request. can be used to specify
-     * the maximum number of events to return in a page.
-     * </p>
-     *
-     * @param filterLogEventsRequest Container for the necessary parameters
-     *           to execute the FilterLogEvents operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         FilterLogEvents service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<FilterLogEventsResult> filterLogEventsAsync(final FilterLogEventsRequest filterLogEventsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<FilterLogEventsResult>() {
-            public FilterLogEventsResult call() throws Exception {
-                return filterLogEvents(filterLogEventsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Retrieves log events, optionally filtered by a filter pattern from
-     * the specified log group. You can provide an optional time range to
-     * filter the results on the event <code>timestamp</code> . You can limit
-     * the streams searched to an explicit list of
-     * <code>logStreamNames</code> .
-     * </p>
-     * <p>
-     * By default, this operation returns as much matching log events as can
-     * fit in a response size of 1MB, up to 10,000 log events, or all the
-     * events found within a time-bounded scan window. If the response
-     * includes a <code>nextToken</code> , then there is more data to search,
-     * and the search can be resumed with a new request providing the
-     * nextToken. The response will contain a list of
-     * <code>searchedLogStreams</code> that contains information about which
-     * streams were searched in the request and whether they have been
-     * searched completely or require further pagination. The
-     * <code>limit</code> parameter in the request. can be used to specify
-     * the maximum number of events to return in a page.
-     * </p>
-     *
-     * @param filterLogEventsRequest Container for the necessary parameters
-     *           to execute the FilterLogEvents operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         FilterLogEvents service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<FilterLogEventsResult> filterLogEventsAsync(
-            final FilterLogEventsRequest filterLogEventsRequest,
-            final AsyncHandler<FilterLogEventsRequest, FilterLogEventsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<FilterLogEventsResult>() {
-            public FilterLogEventsResult call() throws Exception {
-              FilterLogEventsResult result;
-                try {
-                result = filterLogEvents(filterLogEventsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(filterLogEventsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Uploads a batch of log events to the specified log stream.
-     * </p>
-     * <p>
-     * Every PutLogEvents request must include the
-     * <code>sequenceToken</code> obtained from the response of the previous
-     * request. An upload in a newly created log stream does not require a
-     * <code>sequenceToken</code> .
-     * </p>
-     * <p>
-     * The batch of events must satisfy the following constraints:
-     * <ul>
-     * <li>The maximum batch size is 1,048,576 bytes, and this size is
-     * calculated as the sum of all event messages in UTF-8, plus 26 bytes
-     * for each log event.</li>
-     * <li>None of the log events in the batch can be more than 2 hours in
-     * the future.</li>
-     * <li>None of the log events in the batch can be older than 14 days or
-     * the retention period of the log group.</li>
-     * <li>The log events in the batch must be in chronological ordered by
-     * their <code>timestamp</code> .</li>
-     * <li>The maximum number of log events in a batch is 10,000.</li>
-     * 
-     * </ul>
-     * 
-     * </p>
-     *
-     * @param putLogEventsRequest Container for the necessary parameters to
-     *           execute the PutLogEvents operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutLogEvents service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<PutLogEventsResult> putLogEventsAsync(final PutLogEventsRequest putLogEventsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<PutLogEventsResult>() {
-            public PutLogEventsResult call() throws Exception {
-                return putLogEvents(putLogEventsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Uploads a batch of log events to the specified log stream.
-     * </p>
-     * <p>
-     * Every PutLogEvents request must include the
-     * <code>sequenceToken</code> obtained from the response of the previous
-     * request. An upload in a newly created log stream does not require a
-     * <code>sequenceToken</code> .
-     * </p>
-     * <p>
-     * The batch of events must satisfy the following constraints:
-     * <ul>
-     * <li>The maximum batch size is 1,048,576 bytes, and this size is
-     * calculated as the sum of all event messages in UTF-8, plus 26 bytes
-     * for each log event.</li>
-     * <li>None of the log events in the batch can be more than 2 hours in
-     * the future.</li>
-     * <li>None of the log events in the batch can be older than 14 days or
-     * the retention period of the log group.</li>
-     * <li>The log events in the batch must be in chronological ordered by
-     * their <code>timestamp</code> .</li>
-     * <li>The maximum number of log events in a batch is 10,000.</li>
-     * 
-     * </ul>
-     * 
-     * </p>
-     *
-     * @param putLogEventsRequest Container for the necessary parameters to
-     *           execute the PutLogEvents operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutLogEvents service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<PutLogEventsResult> putLogEventsAsync(
-            final PutLogEventsRequest putLogEventsRequest,
-            final AsyncHandler<PutLogEventsRequest, PutLogEventsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<PutLogEventsResult>() {
-            public PutLogEventsResult call() throws Exception {
-              PutLogEventsResult result;
-                try {
-                result = putLogEvents(putLogEventsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(putLogEventsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes the retention policy of the specified log group. Log events
-     * would not expire if they belong to log groups without a retention
-     * policy.
-     * </p>
-     *
-     * @param deleteRetentionPolicyRequest Container for the necessary
-     *           parameters to execute the DeleteRetentionPolicy operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteRetentionPolicy service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteRetentionPolicyAsync(final DeleteRetentionPolicyRequest deleteRetentionPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteRetentionPolicy(deleteRetentionPolicyRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes the retention policy of the specified log group. Log events
-     * would not expire if they belong to log groups without a retention
-     * policy.
-     * </p>
-     *
-     * @param deleteRetentionPolicyRequest Container for the necessary
-     *           parameters to execute the DeleteRetentionPolicy operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteRetentionPolicy service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteRetentionPolicyAsync(
-            final DeleteRetentionPolicyRequest deleteRetentionPolicyRequest,
-            final AsyncHandler<DeleteRetentionPolicyRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteRetentionPolicy(deleteRetentionPolicyRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteRetentionPolicyRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Retrieves log events from the specified log stream. You can provide
-     * an optional time range to filter the results on the event
-     * <code>timestamp</code> .
-     * </p>
-     * <p>
-     * By default, this operation returns as much log events as can fit in a
-     * response size of 1MB, up to 10,000 log events. The response will
-     * always include a <code>nextForwardToken</code> and a
-     * <code>nextBackwardToken</code> in the response body. You can use any
-     * of these tokens in subsequent <code>GetLogEvents</code> requests to
-     * paginate through events in either forward or backward direction. You
-     * can also limit the number of log events returned in the response by
-     * specifying the <code>limit</code> parameter in the request.
-     * </p>
-     *
-     * @param getLogEventsRequest Container for the necessary parameters to
-     *           execute the GetLogEvents operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetLogEvents service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetLogEventsResult> getLogEventsAsync(final GetLogEventsRequest getLogEventsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetLogEventsResult>() {
-            public GetLogEventsResult call() throws Exception {
-                return getLogEvents(getLogEventsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Retrieves log events from the specified log stream. You can provide
-     * an optional time range to filter the results on the event
-     * <code>timestamp</code> .
-     * </p>
-     * <p>
-     * By default, this operation returns as much log events as can fit in a
-     * response size of 1MB, up to 10,000 log events. The response will
-     * always include a <code>nextForwardToken</code> and a
-     * <code>nextBackwardToken</code> in the response body. You can use any
-     * of these tokens in subsequent <code>GetLogEvents</code> requests to
-     * paginate through events in either forward or backward direction. You
-     * can also limit the number of log events returned in the response by
-     * specifying the <code>limit</code> parameter in the request.
-     * </p>
-     *
-     * @param getLogEventsRequest Container for the necessary parameters to
-     *           execute the GetLogEvents operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetLogEvents service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetLogEventsResult> getLogEventsAsync(
-            final GetLogEventsRequest getLogEventsRequest,
-            final AsyncHandler<GetLogEventsRequest, GetLogEventsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetLogEventsResult>() {
-            public GetLogEventsResult call() throws Exception {
-              GetLogEventsResult result;
-                try {
-                result = getLogEvents(getLogEventsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getLogEventsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates a new log stream in the specified log group. The name of the
-     * log stream must be unique within the log group. There is no limit on
-     * the number of log streams that can exist in a log group.
-     * </p>
-     * <p>
-     * You must use the following guidelines when naming a log stream:
-     * <ul>
-     * <li>Log stream names can be between 1 and 512 characters long.</li>
-     * <li>The ':' colon character is not allowed.</li>
-     * 
-     * </ul>
-     * 
-     * </p>
-     *
-     * @param createLogStreamRequest Container for the necessary parameters
-     *           to execute the CreateLogStream operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateLogStream service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> createLogStreamAsync(final CreateLogStreamRequest createLogStreamRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                createLogStream(createLogStreamRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates a new log stream in the specified log group. The name of the
-     * log stream must be unique within the log group. There is no limit on
-     * the number of log streams that can exist in a log group.
-     * </p>
-     * <p>
-     * You must use the following guidelines when naming a log stream:
-     * <ul>
-     * <li>Log stream names can be between 1 and 512 characters long.</li>
-     * <li>The ':' colon character is not allowed.</li>
-     * 
-     * </ul>
-     * 
-     * </p>
-     *
-     * @param createLogStreamRequest Container for the necessary parameters
-     *           to execute the CreateLogStream operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateLogStream service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> createLogStreamAsync(
-            final CreateLogStreamRequest createLogStreamRequest,
-            final AsyncHandler<CreateLogStreamRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                createLogStream(createLogStreamRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createLogStreamRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates or updates a <code>Destination</code> . A destination
-     * encapsulates a physical resource (such as a Kinesis stream) and allows
-     * you to subscribe to a real-time stream of log events of a different
-     * account, ingested through <code>PutLogEvents</code> requests.
-     * Currently, the only supported physical resource is a Amazon Kinesis
-     * stream belonging to the same account as the destination.
-     * </p>
-     * <p>
-     * A destination controls what is written to its Amazon Kinesis stream
-     * through an access policy. By default, PutDestination does not set any
-     * access policy with the destination, which means a cross-account user
-     * will not be able to call <code>PutSubscriptionFilter</code> against
-     * this destination. To enable that, the destination owner must call
-     * <code>PutDestinationPolicy</code> after PutDestination.
-     * </p>
-     *
-     * @param putDestinationRequest Container for the necessary parameters to
-     *           execute the PutDestination operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutDestination service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<PutDestinationResult> putDestinationAsync(final PutDestinationRequest putDestinationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<PutDestinationResult>() {
-            public PutDestinationResult call() throws Exception {
-                return putDestination(putDestinationRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates or updates a <code>Destination</code> . A destination
-     * encapsulates a physical resource (such as a Kinesis stream) and allows
-     * you to subscribe to a real-time stream of log events of a different
-     * account, ingested through <code>PutLogEvents</code> requests.
-     * Currently, the only supported physical resource is a Amazon Kinesis
-     * stream belonging to the same account as the destination.
-     * </p>
-     * <p>
-     * A destination controls what is written to its Amazon Kinesis stream
-     * through an access policy. By default, PutDestination does not set any
-     * access policy with the destination, which means a cross-account user
-     * will not be able to call <code>PutSubscriptionFilter</code> against
-     * this destination. To enable that, the destination owner must call
-     * <code>PutDestinationPolicy</code> after PutDestination.
-     * </p>
-     *
-     * @param putDestinationRequest Container for the necessary parameters to
-     *           execute the PutDestination operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutDestination service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<PutDestinationResult> putDestinationAsync(
-            final PutDestinationRequest putDestinationRequest,
-            final AsyncHandler<PutDestinationRequest, PutDestinationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<PutDestinationResult>() {
-            public PutDestinationResult call() throws Exception {
-              PutDestinationResult result;
-                try {
-                result = putDestination(putDestinationRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(putDestinationRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates or updates an access policy associated with an existing
-     * <code>Destination</code> . An access policy is an
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html"> IAM policy document </a>
-     * that is used to authorize claims to register a subscription filter
-     * against a given destination.
-     * </p>
-     *
-     * @param putDestinationPolicyRequest Container for the necessary
-     *           parameters to execute the PutDestinationPolicy operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutDestinationPolicy service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> putDestinationPolicyAsync(final PutDestinationPolicyRequest putDestinationPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                putDestinationPolicy(putDestinationPolicyRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates or updates an access policy associated with an existing
-     * <code>Destination</code> . An access policy is an
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html"> IAM policy document </a>
-     * that is used to authorize claims to register a subscription filter
-     * against a given destination.
-     * </p>
-     *
-     * @param putDestinationPolicyRequest Container for the necessary
-     *           parameters to execute the PutDestinationPolicy operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         PutDestinationPolicy service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> putDestinationPolicyAsync(
-            final PutDestinationPolicyRequest putDestinationPolicyRequest,
-            final AsyncHandler<PutDestinationPolicyRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                putDestinationPolicy(putDestinationPolicyRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(putDestinationPolicyRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes a log stream and permanently deletes all the archived log
-     * events associated with it.
-     * </p>
-     *
-     * @param deleteLogStreamRequest Container for the necessary parameters
-     *           to execute the DeleteLogStream operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteLogStream service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteLogStreamAsync(final DeleteLogStreamRequest deleteLogStreamRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteLogStream(deleteLogStreamRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes a log stream and permanently deletes all the archived log
-     * events associated with it.
-     * </p>
-     *
-     * @param deleteLogStreamRequest Container for the necessary parameters
-     *           to execute the DeleteLogStream operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteLogStream service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteLogStreamAsync(
-            final DeleteLogStreamRequest deleteLogStreamRequest,
-            final AsyncHandler<DeleteLogStreamRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteLogStream(deleteLogStreamRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteLogStreamRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns all the log groups that are associated with the AWS account
-     * making the request. The list returned in the response is ASCII-sorted
-     * by log group name.
-     * </p>
-     * <p>
-     * By default, this operation returns up to 50 log groups. If there are
-     * more log groups to list, the response would contain a
-     * <code>nextToken</code> value in the response body. You can also limit
-     * the number of log groups returned in the response by specifying the
-     * <code>limit</code> parameter in the request.
-     * </p>
-     *
-     * @param describeLogGroupsRequest Container for the necessary parameters
-     *           to execute the DescribeLogGroups operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeLogGroups service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeLogGroupsResult> describeLogGroupsAsync(final DescribeLogGroupsRequest describeLogGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeLogGroupsResult>() {
-            public DescribeLogGroupsResult call() throws Exception {
-                return describeLogGroups(describeLogGroupsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns all the log groups that are associated with the AWS account
-     * making the request. The list returned in the response is ASCII-sorted
-     * by log group name.
-     * </p>
-     * <p>
-     * By default, this operation returns up to 50 log groups. If there are
-     * more log groups to list, the response would contain a
-     * <code>nextToken</code> value in the response body. You can also limit
-     * the number of log groups returned in the response by specifying the
-     * <code>limit</code> parameter in the request.
-     * </p>
-     *
-     * @param describeLogGroupsRequest Container for the necessary parameters
-     *           to execute the DescribeLogGroups operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeLogGroups service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeLogGroupsResult> describeLogGroupsAsync(
-            final DescribeLogGroupsRequest describeLogGroupsRequest,
-            final AsyncHandler<DescribeLogGroupsRequest, DescribeLogGroupsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeLogGroupsResult>() {
-            public DescribeLogGroupsResult call() throws Exception {
-              DescribeLogGroupsResult result;
-                try {
-                result = describeLogGroups(describeLogGroupsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeLogGroupsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns all the destinations that are associated with the AWS account
-     * making the request. The list returned in the response is ASCII-sorted
-     * by destination name.
-     * </p>
-     * <p>
-     * By default, this operation returns up to 50 destinations. If there
-     * are more destinations to list, the response would contain a
-     * <code>nextToken</code> value in the response body. You can also limit
-     * the number of destinations returned in the response by specifying the
-     * <code>limit</code> parameter in the request.
-     * </p>
-     *
-     * @param describeDestinationsRequest Container for the necessary
-     *           parameters to execute the DescribeDestinations operation on AWSLogs.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDestinations service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDestinationsResult> describeDestinationsAsync(final DescribeDestinationsRequest describeDestinationsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDestinationsResult>() {
-            public DescribeDestinationsResult call() throws Exception {
-                return describeDestinations(describeDestinationsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns all the destinations that are associated with the AWS account
-     * making the request. The list returned in the response is ASCII-sorted
-     * by destination name.
-     * </p>
-     * <p>
-     * By default, this operation returns up to 50 destinations. If there
-     * are more destinations to list, the response would contain a
-     * <code>nextToken</code> value in the response body. You can also limit
-     * the number of destinations returned in the response by specifying the
-     * <code>limit</code> parameter in the request.
-     * </p>
-     *
-     * @param describeDestinationsRequest Container for the necessary
-     *           parameters to execute the DescribeDestinations operation on AWSLogs.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDestinations service method, as returned by AWSLogs.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLogs indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDestinationsResult> describeDestinationsAsync(
-            final DescribeDestinationsRequest describeDestinationsRequest,
-            final AsyncHandler<DescribeDestinationsRequest, DescribeDestinationsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDestinationsResult>() {
-            public DescribeDestinationsResult call() throws Exception {
-              DescribeDestinationsResult result;
-                try {
-                result = describeDestinations(describeDestinationsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeDestinationsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
 }
-        

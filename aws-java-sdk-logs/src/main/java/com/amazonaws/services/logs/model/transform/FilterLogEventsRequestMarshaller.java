@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.logs.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,38 +40,44 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Filter Log Events Request Marshaller
+ * FilterLogEventsRequest Marshaller
  */
-public class FilterLogEventsRequestMarshaller implements Marshaller<Request<FilterLogEventsRequest>, FilterLogEventsRequest> {
+public class FilterLogEventsRequestMarshaller implements
+        Marshaller<Request<FilterLogEventsRequest>, FilterLogEventsRequest> {
 
-    public Request<FilterLogEventsRequest> marshall(FilterLogEventsRequest filterLogEventsRequest) {
+    public Request<FilterLogEventsRequest> marshall(
+            FilterLogEventsRequest filterLogEventsRequest) {
+
         if (filterLogEventsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<FilterLogEventsRequest> request = new DefaultRequest<FilterLogEventsRequest>(filterLogEventsRequest, "AWSLogs");
-        String target = "Logs_20140328.FilterLogEvents";
-        request.addHeader("X-Amz-Target", target);
+        Request<FilterLogEventsRequest> request = new DefaultRequest<FilterLogEventsRequest>(
+                filterLogEventsRequest, "AWSLogs");
+        request.addHeader("X-Amz-Target", "Logs_20140328.FilterLogEvents");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (filterLogEventsRequest.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(filterLogEventsRequest.getLogGroupName());
+                jsonWriter.key("logGroupName").value(
+                        filterLogEventsRequest.getLogGroupName());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> logStreamNamesList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(filterLogEventsRequest.getLogStreamNames());
-            if (logStreamNamesList != null && !(logStreamNamesList.isAutoConstruct() && logStreamNamesList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> logStreamNamesList = (com.amazonaws.internal.SdkInternalList<String>) filterLogEventsRequest
+                    .getLogStreamNames();
+            if (!logStreamNamesList.isEmpty()
+                    || !logStreamNamesList.isAutoConstruct()) {
                 jsonWriter.key("logStreamNames");
                 jsonWriter.array();
-
                 for (String logStreamNamesListValue : logStreamNamesList) {
                     if (logStreamNamesListValue != null) {
                         jsonWriter.value(logStreamNamesListValue);
@@ -78,36 +85,51 @@ public class FilterLogEventsRequestMarshaller implements Marshaller<Request<Filt
                 }
                 jsonWriter.endArray();
             }
+
             if (filterLogEventsRequest.getStartTime() != null) {
-                jsonWriter.key("startTime").value(filterLogEventsRequest.getStartTime());
+                jsonWriter.key("startTime").value(
+                        filterLogEventsRequest.getStartTime());
             }
+
             if (filterLogEventsRequest.getEndTime() != null) {
-                jsonWriter.key("endTime").value(filterLogEventsRequest.getEndTime());
+                jsonWriter.key("endTime").value(
+                        filterLogEventsRequest.getEndTime());
             }
+
             if (filterLogEventsRequest.getFilterPattern() != null) {
-                jsonWriter.key("filterPattern").value(filterLogEventsRequest.getFilterPattern());
+                jsonWriter.key("filterPattern").value(
+                        filterLogEventsRequest.getFilterPattern());
             }
+
             if (filterLogEventsRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(filterLogEventsRequest.getNextToken());
+                jsonWriter.key("nextToken").value(
+                        filterLogEventsRequest.getNextToken());
             }
+
             if (filterLogEventsRequest.getLimit() != null) {
-                jsonWriter.key("limit").value(filterLogEventsRequest.getLimit());
-            }
-            if (filterLogEventsRequest.isInterleaved() != null) {
-                jsonWriter.key("interleaved").value(filterLogEventsRequest.isInterleaved());
+                jsonWriter.key("limit")
+                        .value(filterLogEventsRequest.getLimit());
             }
 
-          jsonWriter.endObject();
+            if (filterLogEventsRequest.getInterleaved() != null) {
+                jsonWriter.key("interleaved").value(
+                        filterLogEventsRequest.getInterleaved());
+            }
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            jsonWriter.endObject();
+
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

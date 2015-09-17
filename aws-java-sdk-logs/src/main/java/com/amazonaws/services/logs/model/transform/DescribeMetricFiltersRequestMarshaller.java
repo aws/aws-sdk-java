@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.logs.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,52 +40,68 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Describe Metric Filters Request Marshaller
+ * DescribeMetricFiltersRequest Marshaller
  */
-public class DescribeMetricFiltersRequestMarshaller implements Marshaller<Request<DescribeMetricFiltersRequest>, DescribeMetricFiltersRequest> {
+public class DescribeMetricFiltersRequestMarshaller
+        implements
+        Marshaller<Request<DescribeMetricFiltersRequest>, DescribeMetricFiltersRequest> {
 
-    public Request<DescribeMetricFiltersRequest> marshall(DescribeMetricFiltersRequest describeMetricFiltersRequest) {
+    public Request<DescribeMetricFiltersRequest> marshall(
+            DescribeMetricFiltersRequest describeMetricFiltersRequest) {
+
         if (describeMetricFiltersRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeMetricFiltersRequest> request = new DefaultRequest<DescribeMetricFiltersRequest>(describeMetricFiltersRequest, "AWSLogs");
-        String target = "Logs_20140328.DescribeMetricFilters";
-        request.addHeader("X-Amz-Target", target);
+        Request<DescribeMetricFiltersRequest> request = new DefaultRequest<DescribeMetricFiltersRequest>(
+                describeMetricFiltersRequest, "AWSLogs");
+        request.addHeader("X-Amz-Target", "Logs_20140328.DescribeMetricFilters");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+            jsonWriter.object();
+
             if (describeMetricFiltersRequest.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(describeMetricFiltersRequest.getLogGroupName());
+                jsonWriter.key("logGroupName").value(
+                        describeMetricFiltersRequest.getLogGroupName());
             }
+
             if (describeMetricFiltersRequest.getFilterNamePrefix() != null) {
-                jsonWriter.key("filterNamePrefix").value(describeMetricFiltersRequest.getFilterNamePrefix());
+                jsonWriter.key("filterNamePrefix").value(
+                        describeMetricFiltersRequest.getFilterNamePrefix());
             }
+
             if (describeMetricFiltersRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(describeMetricFiltersRequest.getNextToken());
+                jsonWriter.key("nextToken").value(
+                        describeMetricFiltersRequest.getNextToken());
             }
+
             if (describeMetricFiltersRequest.getLimit() != null) {
-                jsonWriter.key("limit").value(describeMetricFiltersRequest.getLimit());
+                jsonWriter.key("limit").value(
+                        describeMetricFiltersRequest.getLimit());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

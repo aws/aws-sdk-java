@@ -1,98 +1,94 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
 
 /**
- * Test Metric Filter Result
+ * 
  */
 public class TestMetricFilterResult implements Serializable, Cloneable {
 
-    private com.amazonaws.internal.ListWithAutoConstructFlag<MetricFilterMatchRecord> matches;
+    private com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord> matches;
 
     /**
      * Returns the value of the Matches property for this object.
-     *
+     * 
      * @return The value of the Matches property for this object.
      */
     public java.util.List<MetricFilterMatchRecord> getMatches() {
         if (matches == null) {
-              matches = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricFilterMatchRecord>();
-              matches.setAutoConstruct(true);
+            matches = new com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>();
         }
         return matches;
     }
-    
+
     /**
      * Sets the value of the Matches property for this object.
-     *
-     * @param matches The new value for the Matches property for this object.
+     * 
+     * @param matches
+     *        The new value for the Matches property for this object.
      */
     public void setMatches(java.util.Collection<MetricFilterMatchRecord> matches) {
         if (matches == null) {
             this.matches = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<MetricFilterMatchRecord> matchesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricFilterMatchRecord>(matches.size());
-        matchesCopy.addAll(matches);
-        this.matches = matchesCopy;
+
+        this.matches = new com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>(
+                matches);
     }
-    
+
     /**
      * Sets the value of the Matches property for this object.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMatches(java.util.Collection)} or {@link
-     * #withMatches(java.util.Collection)} if you want to override the
+     * any). Use {@link #setMatches(java.util.Collection)} or
+     * {@link #withMatches(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param matches The new value for the Matches property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param matches
+     *        The new value for the Matches property for this object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public TestMetricFilterResult withMatches(MetricFilterMatchRecord... matches) {
-        if (getMatches() == null) setMatches(new java.util.ArrayList<MetricFilterMatchRecord>(matches.length));
-        for (MetricFilterMatchRecord value : matches) {
-            getMatches().add(value);
+    public TestMetricFilterResult withMatches(
+            MetricFilterMatchRecord... matches) {
+        if (this.matches == null) {
+            setMatches(new com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>(
+                    matches.length));
+        }
+        for (MetricFilterMatchRecord ele : matches) {
+            this.matches.add(ele);
         }
         return this;
     }
-    
+
     /**
      * Sets the value of the Matches property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param matches The new value for the Matches property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * 
+     * @param matches
+     *        The new value for the Matches property for this object.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public TestMetricFilterResult withMatches(java.util.Collection<MetricFilterMatchRecord> matches) {
-        if (matches == null) {
-            this.matches = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<MetricFilterMatchRecord> matchesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricFilterMatchRecord>(matches.size());
-            matchesCopy.addAll(matches);
-            this.matches = matchesCopy;
-        }
-
+    public TestMetricFilterResult withMatches(
+            java.util.Collection<MetricFilterMatchRecord> matches) {
+        setMatches(matches);
         return this;
     }
 
@@ -108,46 +104,48 @@ public class TestMetricFilterResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMatches() != null) sb.append("Matches: " + getMatches() );
+        if (getMatches() != null)
+            sb.append("Matches: " + getMatches());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof TestMetricFilterResult == false)
+            return false;
+        TestMetricFilterResult other = (TestMetricFilterResult) obj;
+        if (other.getMatches() == null ^ this.getMatches() == null)
+            return false;
+        if (other.getMatches() != null
+                && other.getMatches().equals(this.getMatches()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getMatches() == null) ? 0 : getMatches().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getMatches() == null) ? 0 : getMatches().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof TestMetricFilterResult == false) return false;
-        TestMetricFilterResult other = (TestMetricFilterResult)obj;
-        
-        if (other.getMatches() == null ^ this.getMatches() == null) return false;
-        if (other.getMatches() != null && other.getMatches().equals(this.getMatches()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public TestMetricFilterResult clone() {
         try {
             return (TestMetricFilterResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    
