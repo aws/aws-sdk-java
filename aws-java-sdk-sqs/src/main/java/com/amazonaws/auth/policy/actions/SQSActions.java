@@ -21,43 +21,43 @@ import com.amazonaws.auth.policy.Action;
  */
 public enum SQSActions implements Action {
     /** Represents any action executed on Amazon SQS. */
-    AllSQSActions("sqs:*"),
+    AllSQSActions("SQS:*"),
 
     /** Action for the AddPermission operation. */
-    AddPermission("sqs:AddPermission"),
+    AddPermission("SQS:AddPermission"),
 
     /** Action for the ChangeMessageVisibility operation. */
-    ChangeMessageVisibility("sqs:ChangeMessageVisibility"),
+    ChangeMessageVisibility("SQS:ChangeMessageVisibility"),
 
     /** Action for the CreateQueue operation. */
-    CreateQueue("sqs:CreateQueue"),
+    CreateQueue("SQS:CreateQueue"),
 
     /** Action for the DeleteMessage operation. */
-    DeleteMessage("sqs:DeleteMessage"),
+    DeleteMessage("SQS:DeleteMessage"),
 
     /** Action for the DeleteQueue operation. */
-    DeleteQueue("sqs:DeleteQueue"),
+    DeleteQueue("SQS:DeleteQueue"),
 
     /** Action for the GetQueueAttributes operation. */
-    GetQueueAttributes("sqs:GetQueueAttributes"),
+    GetQueueAttributes("SQS:GetQueueAttributes"),
 
     /** Action for the GetQueueUrl operation. */
-    GetQueueUrl("sqs:GetQueueUrl"),
+    GetQueueUrl("SQS:GetQueueUrl"),
 
     /** Action for the ListQueues operation. */
-    ListQueues("sqs:ListQueues"),
+    ListQueues("SQS:ListQueues"),
 
     /** Action for the ReceiveMessage operation. */
-    ReceiveMessage("sqs:ReceiveMessage"),
+    ReceiveMessage("SQS:ReceiveMessage"),
 
     /** Action for the RemovePermission operation. */
-    RemovePermission("sqs:RemovePermission"),
+    RemovePermission("SQS:RemovePermission"),
 
     /** Action for the SendMessage operation. */
-    SendMessage("sqs:SendMessage"),
+    SendMessage("SQS:SendMessage"),
 
     /** Action for the SetQueueAttributes operation. */
-    SetQueueAttributes("sqs:SetQueueAttributes");
+    SetQueueAttributes("SQS:SetQueueAttributes");
 
     private final String action;
 
