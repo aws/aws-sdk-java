@@ -25,6 +25,12 @@
       <version>1.10.20</version>
       <optional>false</optional>
     </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+      <optional>false</optional>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

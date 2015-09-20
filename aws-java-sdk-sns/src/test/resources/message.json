@@ -1,0 +1,17 @@
+{
+  "Type" : "Notification",
+  "MessageId" : "d39649d4-bf5b-5b80-af75-07acb3dd9b4a",
+  "TopicArn" : "arn:aws:sns:us-east-1:810605503585:just_testing",
+  "Subject" : "this is raw",
+  "Message" : "boo",
+  "Timestamp" : "2015-09-20T01:22:14.001Z",
+  "SignatureVersion" : "1",
+  "Signature" : "fQh5DUyhpw41y6tx/BJuqK2Clvs7uY6N7poaOfzK08E+C6saKq9dMz5b9A0lGWWU7VsB+qHELBaL3OdS9U4BmFI36Ppt5Q6BsWmqSho+1hgwBYFFFZghO6BYXxsNmLml1yZl2X+MQKy3D516hgN7pUvYnvvq2cfsvy21ivU6Oiv96gcte2s+aPUi6O9CAdc2GfZRXCqC9wowKoxhFUUQW/UTHQfxt/60qWgNxhhVwAbPtnXWkAXwxixYKl5qOHcl3u2TxkAHn+1X8XmgjnpvEO5p0vQvOEHXBnGsjPglRXE9g5FVnAFXjhvHXeTWUcVLNI0eSRJeOBPbKpkjeDsR4g==",
+  "SigningCertURL" : "https://sns.us-east-1.amazonaws.com/SimpleNotificationService-bb750dd426d95ee9390147a5624348ee.pem",
+  "UnsubscribeURL" : "https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:810605503585:just_testing:3c6297c1-326e-4931-9351-ccc48e02f08a",
+  "MessageAttributes" : {
+    "AWS.SNS.MOBILE.MPNS.Type" : {"Type":"String","Value":"token"},
+    "AWS.SNS.MOBILE.MPNS.NotificationClass" : {"Type":"String","Value":"realtime"},
+    "AWS.SNS.MOBILE.WNS.Type" : {"Type":"String","Value":"wns/badge"}
+  }
+}
