@@ -162,7 +162,7 @@ public class SignatureChecker {
         Map<String, String> parsed = new HashMap<String, String>();
         JsonFactory jf = new JsonFactory();
         try {
-            JsonParser parser = jf.createJsonParser(jsonmessage);
+            JsonParser parser = jf.createParser(jsonmessage);
             parser.nextToken(); //shift past the START_OBJECT that begins the JSON
             while (parser.nextToken() != JsonToken.END_OBJECT) {
                 String fieldname = parser.getCurrentName();
