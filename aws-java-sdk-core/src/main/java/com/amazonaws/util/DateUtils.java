@@ -52,7 +52,7 @@ public class DateUtils {
 
     /** RFC 822 format */
     protected static final DateTimeFormatter rfc822DateFormat =
-        DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss z")
+        DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss 'GMT'")
                       .withLocale(Locale.US)
                       .withZone(GMT);
 
