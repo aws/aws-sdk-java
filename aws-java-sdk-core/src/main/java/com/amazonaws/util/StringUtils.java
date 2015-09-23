@@ -141,7 +141,7 @@ public class StringUtils {
         int indexOf = buffer.indexOf( partToMatch );
         while ( indexOf != -1 ) {
             buffer = buffer.replace( indexOf, indexOf + partToMatch.length(), replacement );
-            indexOf = buffer.indexOf( partToMatch );
+            indexOf = buffer.indexOf( partToMatch, indexOf + replacement.length() );
         }
 
         return buffer.toString();
