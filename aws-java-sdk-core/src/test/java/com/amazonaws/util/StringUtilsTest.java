@@ -62,7 +62,7 @@ public class StringUtilsTest {
     
     @Test
     public void testReplace() {
-        assertEquals("123\\\\456", StringUtils.replace("123\\456", "\\", "\\\\"))
+        assertEquals("123\\\\456", StringUtils.replace("123\\456", "\\", "\\\\"));
     }
 
 }
