@@ -59,5 +59,10 @@ public class StringUtilsTest {
     public void testUTF8Charset() {
         assertEquals(UTF8.displayName(), "UTF-8");
     }
+    
+    @Test
+    public void testReplace() {
+        assertEquals("123\\\\456", StringUtils.replace("123\\456", "\\", "\\\\"))
+    }
 
 }
