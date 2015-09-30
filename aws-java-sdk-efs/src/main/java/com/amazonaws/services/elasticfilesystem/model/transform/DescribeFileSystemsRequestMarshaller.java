@@ -46,6 +46,8 @@ public class DescribeFileSystemsRequestMarshaller
         implements
         Marshaller<Request<DescribeFileSystemsRequest>, DescribeFileSystemsRequest> {
 
+    private static final String DEFAULT_CONTENT_TYPE = "";
+
     public Request<DescribeFileSystemsRequest> marshall(
             DescribeFileSystemsRequest describeFileSystemsRequest) {
 

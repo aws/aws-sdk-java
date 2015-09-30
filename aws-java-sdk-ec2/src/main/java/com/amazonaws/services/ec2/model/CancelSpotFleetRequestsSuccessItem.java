@@ -32,7 +32,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * The current state of the Spot fleet request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      */
     private String currentSpotFleetRequestState;
 
@@ -40,7 +40,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * The previous state of the Spot fleet request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      */
     private String previousSpotFleetRequestState;
 
@@ -81,7 +81,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * The current state of the Spot fleet request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      *
      * @return The current state of the Spot fleet request.
      *
@@ -95,7 +95,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * The current state of the Spot fleet request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      *
      * @param currentSpotFleetRequestState The current state of the Spot fleet request.
      *
@@ -111,7 +111,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      *
      * @param currentSpotFleetRequestState The current state of the Spot fleet request.
      *
@@ -129,7 +129,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * The current state of the Spot fleet request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      *
      * @param currentSpotFleetRequestState The current state of the Spot fleet request.
      *
@@ -145,7 +145,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      *
      * @param currentSpotFleetRequestState The current state of the Spot fleet request.
      *
@@ -163,7 +163,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * The previous state of the Spot fleet request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      *
      * @return The previous state of the Spot fleet request.
      *
@@ -177,7 +177,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * The previous state of the Spot fleet request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      *
      * @param previousSpotFleetRequestState The previous state of the Spot fleet request.
      *
@@ -193,7 +193,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      *
      * @param previousSpotFleetRequestState The previous state of the Spot fleet request.
      *
@@ -211,7 +211,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * The previous state of the Spot fleet request.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      *
      * @param previousSpotFleetRequestState The previous state of the Spot fleet request.
      *
@@ -227,7 +227,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating
+     * <b>Allowed Values: </b>submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying
      *
      * @param previousSpotFleetRequestState The previous state of the Spot fleet request.
      *

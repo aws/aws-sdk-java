@@ -98,6 +98,17 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
 
             capabilitiesListIndex++;
         }
+
+        java.util.List<String> resourceTypesList = createStackRequest.getResourceTypes();
+        int resourceTypesListIndex = 1;
+
+        for (String resourceTypesListValue : resourceTypesList) {
+            if (resourceTypesListValue != null) {
+                request.addParameter("ResourceTypes.member." + resourceTypesListIndex, StringUtils.fromString(resourceTypesListValue));
+            }
+
+            resourceTypesListIndex++;
+        }
         if (createStackRequest.getOnFailure() != null) {
             request.addParameter("OnFailure", StringUtils.fromString(createStackRequest.getOnFailure()));
         }

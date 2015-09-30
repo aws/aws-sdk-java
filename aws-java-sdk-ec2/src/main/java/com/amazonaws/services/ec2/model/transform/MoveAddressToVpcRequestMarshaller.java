@@ -39,7 +39,7 @@ public class MoveAddressToVpcRequestMarshaller implements Marshaller<Request<Mov
 
         Request<MoveAddressToVpcRequest> request = new DefaultRequest<MoveAddressToVpcRequest>(moveAddressToVpcRequest, "AmazonEC2");
         request.addParameter("Action", "MoveAddressToVpc");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (moveAddressToVpcRequest.getPublicIp() != null) {
             request.addParameter("PublicIp", StringUtils.fromString(moveAddressToVpcRequest.getPublicIp()));

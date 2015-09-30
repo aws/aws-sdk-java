@@ -39,7 +39,7 @@ public class DeleteFlowLogsRequestMarshaller implements Marshaller<Request<Delet
 
         Request<DeleteFlowLogsRequest> request = new DefaultRequest<DeleteFlowLogsRequest>(deleteFlowLogsRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteFlowLogs");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         java.util.List<String> flowLogIdsList = deleteFlowLogsRequest.getFlowLogIds();
         int flowLogIdsListIndex = 1;

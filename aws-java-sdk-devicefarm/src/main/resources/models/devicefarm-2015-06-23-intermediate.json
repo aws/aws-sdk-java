@@ -19,11 +19,11 @@
     "jsonContentVersion" : "application/x-amz-json-1.1",
     "endpointPrefix" : "devicefarm",
     "signingName" : "devicefarm",
-    "serviceName" : "AWS Device Farm",
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "serviceName" : "AWS Device Farm"
   },
   "operations" : {
     "CreateDevicePool" : {

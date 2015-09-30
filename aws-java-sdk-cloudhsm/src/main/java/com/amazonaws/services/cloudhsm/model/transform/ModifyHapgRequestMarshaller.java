@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudhsm.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,41 +40,47 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Modify Hapg Request Marshaller
+ * ModifyHapgRequest Marshaller
  */
-public class ModifyHapgRequestMarshaller implements Marshaller<Request<ModifyHapgRequest>, ModifyHapgRequest> {
+public class ModifyHapgRequestMarshaller implements
+        Marshaller<Request<ModifyHapgRequest>, ModifyHapgRequest> {
 
-    public Request<ModifyHapgRequest> marshall(ModifyHapgRequest modifyHapgRequest) {
+    public Request<ModifyHapgRequest> marshall(
+            ModifyHapgRequest modifyHapgRequest) {
+
         if (modifyHapgRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifyHapgRequest> request = new DefaultRequest<ModifyHapgRequest>(modifyHapgRequest, "AWSCloudHSM");
-        String target = "CloudHsmFrontendService.ModifyHapg";
-        request.addHeader("X-Amz-Target", target);
+        Request<ModifyHapgRequest> request = new DefaultRequest<ModifyHapgRequest>(
+                modifyHapgRequest, "AWSCloudHSM");
+        request.addHeader("X-Amz-Target", "CloudHsmFrontendService.ModifyHapg");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (modifyHapgRequest.getHapgArn() != null) {
                 jsonWriter.key("HapgArn").value(modifyHapgRequest.getHapgArn());
             }
+
             if (modifyHapgRequest.getLabel() != null) {
                 jsonWriter.key("Label").value(modifyHapgRequest.getLabel());
             }
 
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> partitionSerialListList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(modifyHapgRequest.getPartitionSerialList());
-            if (partitionSerialListList != null && !(partitionSerialListList.isAutoConstruct() && partitionSerialListList.isEmpty())) {
-
+            com.amazonaws.internal.SdkInternalList<String> partitionSerialListList = (com.amazonaws.internal.SdkInternalList<String>) modifyHapgRequest
+                    .getPartitionSerialList();
+            if (!partitionSerialListList.isEmpty()
+                    || !partitionSerialListList.isAutoConstruct()) {
                 jsonWriter.key("PartitionSerialList");
                 jsonWriter.array();
-
                 for (String partitionSerialListListValue : partitionSerialListList) {
                     if (partitionSerialListListValue != null) {
                         jsonWriter.value(partitionSerialListListValue);
@@ -82,17 +89,20 @@ public class ModifyHapgRequestMarshaller implements Marshaller<Request<ModifyHap
                 jsonWriter.endArray();
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

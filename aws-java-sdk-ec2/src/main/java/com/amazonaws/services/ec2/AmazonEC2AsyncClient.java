@@ -5443,6 +5443,15 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * Cancels the specified Spot fleet requests.
      * </p>
+     * <p>
+     * After you cancel a Spot fleet request, the Spot fleet launches no new
+     * Spot instances. You must specify whether the Spot fleet should also
+     * terminate its Spot instances. If you terminate the instances, the Spot
+     * fleet request enters the <code>cancelled_terminating</code> state.
+     * Otherwise, the Spot fleet request enters the
+     * <code>cancelled_running</code> state and the instances continue to run
+     * until they are interrupted or you terminate them manually.
+     * </p>
      *
      * @param cancelSpotFleetRequestsRequest Container for the necessary
      *           parameters to execute the CancelSpotFleetRequests operation on
@@ -5472,6 +5481,15 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Cancels the specified Spot fleet requests.
+     * </p>
+     * <p>
+     * After you cancel a Spot fleet request, the Spot fleet launches no new
+     * Spot instances. You must specify whether the Spot fleet should also
+     * terminate its Spot instances. If you terminate the instances, the Spot
+     * fleet request enters the <code>cancelled_terminating</code> state.
+     * Otherwise, the Spot fleet request enters the
+     * <code>cancelled_running</code> state and the instances continue to run
+     * until they are interrupted or you terminate them manually.
      * </p>
      *
      * @param cancelSpotFleetRequestsRequest Container for the necessary
@@ -12319,6 +12337,132 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
               }
               asyncHandler.onSuccess(disableVgwRoutePropagationRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Modifies the specified Spot fleet request.
+     * </p>
+     * <p>
+     * While the Spot fleet request is being modified, it is in the
+     * <code>modifying</code> state.
+     * </p>
+     * <p>
+     * To scale up your Spot fleet, increase its target capacity. The Spot
+     * fleet launches the additional Spot instances according to the
+     * allocation strategy for the Spot fleet request. If the allocation
+     * strategy is <code>lowestPrice</code> , the Spot fleet launches
+     * instances using the Spot pool with the lowest price. If the allocation
+     * strategy is <code>diversified</code> , the Spot fleet distributes the
+     * instances across the Spot pools.
+     * </p>
+     * <p>
+     * To scale down your Spot fleet, decrease its target capacity. First,
+     * the Spot fleet cancels any open bids that exceed the new target
+     * capacity. You can request that the Spot fleet terminate Spot instances
+     * until the size of the fleet no longer exceeds the new target capacity.
+     * If the allocation strategy is <code>lowestPrice</code> , the Spot
+     * fleet terminates the instances with the highest price per unit. If the
+     * allocation strategy is <code>diversified</code> , the Spot fleet
+     * terminates instances across the Spot pools. Alternatively, you can
+     * request that the Spot fleet keep the fleet at its current size, but
+     * not replace any Spot instances that are interrupted or that you
+     * terminate manually.
+     * </p>
+     *
+     * @param modifySpotFleetRequestRequest Container for the necessary
+     *           parameters to execute the ModifySpotFleetRequest operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifySpotFleetRequest service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ModifySpotFleetRequestResult> modifySpotFleetRequestAsync(final ModifySpotFleetRequestRequest modifySpotFleetRequestRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ModifySpotFleetRequestResult>() {
+            public ModifySpotFleetRequestResult call() throws Exception {
+                return modifySpotFleetRequest(modifySpotFleetRequestRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Modifies the specified Spot fleet request.
+     * </p>
+     * <p>
+     * While the Spot fleet request is being modified, it is in the
+     * <code>modifying</code> state.
+     * </p>
+     * <p>
+     * To scale up your Spot fleet, increase its target capacity. The Spot
+     * fleet launches the additional Spot instances according to the
+     * allocation strategy for the Spot fleet request. If the allocation
+     * strategy is <code>lowestPrice</code> , the Spot fleet launches
+     * instances using the Spot pool with the lowest price. If the allocation
+     * strategy is <code>diversified</code> , the Spot fleet distributes the
+     * instances across the Spot pools.
+     * </p>
+     * <p>
+     * To scale down your Spot fleet, decrease its target capacity. First,
+     * the Spot fleet cancels any open bids that exceed the new target
+     * capacity. You can request that the Spot fleet terminate Spot instances
+     * until the size of the fleet no longer exceeds the new target capacity.
+     * If the allocation strategy is <code>lowestPrice</code> , the Spot
+     * fleet terminates the instances with the highest price per unit. If the
+     * allocation strategy is <code>diversified</code> , the Spot fleet
+     * terminates instances across the Spot pools. Alternatively, you can
+     * request that the Spot fleet keep the fleet at its current size, but
+     * not replace any Spot instances that are interrupted or that you
+     * terminate manually.
+     * </p>
+     *
+     * @param modifySpotFleetRequestRequest Container for the necessary
+     *           parameters to execute the ModifySpotFleetRequest operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifySpotFleetRequest service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ModifySpotFleetRequestResult> modifySpotFleetRequestAsync(
+            final ModifySpotFleetRequestRequest modifySpotFleetRequestRequest,
+            final AsyncHandler<ModifySpotFleetRequestRequest, ModifySpotFleetRequestResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ModifySpotFleetRequestResult>() {
+            public ModifySpotFleetRequestResult call() throws Exception {
+              ModifySpotFleetRequestResult result;
+                try {
+                result = modifySpotFleetRequest(modifySpotFleetRequestRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifySpotFleetRequestRequest, result);
+                 return result;
         }
     });
     }

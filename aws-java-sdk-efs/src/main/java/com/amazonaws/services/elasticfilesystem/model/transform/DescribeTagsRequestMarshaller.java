@@ -45,6 +45,8 @@ import com.amazonaws.util.json.*;
 public class DescribeTagsRequestMarshaller implements
         Marshaller<Request<DescribeTagsRequest>, DescribeTagsRequest> {
 
+    private static final String DEFAULT_CONTENT_TYPE = "";
+
     public Request<DescribeTagsRequest> marshall(
             DescribeTagsRequest describeTagsRequest) {
 

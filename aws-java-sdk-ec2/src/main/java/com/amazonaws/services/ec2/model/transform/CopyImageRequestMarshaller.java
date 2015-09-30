@@ -39,7 +39,7 @@ public class CopyImageRequestMarshaller implements Marshaller<Request<CopyImageR
 
         Request<CopyImageRequest> request = new DefaultRequest<CopyImageRequest>(copyImageRequest, "AmazonEC2");
         request.addParameter("Action", "CopyImage");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (copyImageRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(copyImageRequest.getSourceRegion()));

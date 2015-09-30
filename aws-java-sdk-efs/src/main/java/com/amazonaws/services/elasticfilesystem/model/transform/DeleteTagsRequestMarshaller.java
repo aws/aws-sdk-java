@@ -45,6 +45,8 @@ import com.amazonaws.util.json.*;
 public class DeleteTagsRequestMarshaller implements
         Marshaller<Request<DeleteTagsRequest>, DeleteTagsRequest> {
 
+    private static final String DEFAULT_CONTENT_TYPE = "";
+
     public Request<DeleteTagsRequest> marshall(
             DeleteTagsRequest deleteTagsRequest) {
 
@@ -93,7 +95,7 @@ public class DeleteTagsRequestMarshaller implements
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", "application/json");
+                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
             }
         } catch (Throwable t) {
             throw new AmazonClientException(

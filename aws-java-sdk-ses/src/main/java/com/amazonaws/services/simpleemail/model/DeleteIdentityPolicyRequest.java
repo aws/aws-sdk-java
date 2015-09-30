@@ -59,7 +59,6 @@ public class DeleteIdentityPolicyRequest extends AmazonWebServiceRequest impleme
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[^\\/\?\*\s]+<br/>
      */
     private String policyName;
 
@@ -131,7 +130,6 @@ public class DeleteIdentityPolicyRequest extends AmazonWebServiceRequest impleme
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[^\\/\?\*\s]+<br/>
      *
      * @return The name of the policy to be deleted.
      */
@@ -144,7 +142,6 @@ public class DeleteIdentityPolicyRequest extends AmazonWebServiceRequest impleme
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[^\\/\?\*\s]+<br/>
      *
      * @param policyName The name of the policy to be deleted.
      */
@@ -159,7 +156,6 @@ public class DeleteIdentityPolicyRequest extends AmazonWebServiceRequest impleme
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[^\\/\?\*\s]+<br/>
      *
      * @param policyName The name of the policy to be deleted.
      *

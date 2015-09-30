@@ -39,7 +39,7 @@ public class GetConsoleOutputRequestMarshaller implements Marshaller<Request<Get
 
         Request<GetConsoleOutputRequest> request = new DefaultRequest<GetConsoleOutputRequest>(getConsoleOutputRequest, "AmazonEC2");
         request.addParameter("Action", "GetConsoleOutput");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (getConsoleOutputRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(getConsoleOutputRequest.getInstanceId()));

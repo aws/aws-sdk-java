@@ -39,7 +39,7 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
 
         Request<DescribeKeyPairsRequest> request = new DefaultRequest<DescribeKeyPairsRequest>(describeKeyPairsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeKeyPairs");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         java.util.List<String> keyNamesList = describeKeyPairsRequest.getKeyNames();
         int keyNamesListIndex = 1;

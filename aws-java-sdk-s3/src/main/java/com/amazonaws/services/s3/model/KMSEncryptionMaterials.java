@@ -26,7 +26,7 @@ import javax.crypto.SecretKey;
  */
 public class KMSEncryptionMaterials extends EncryptionMaterials {
     /**
-     * Name of the materail description to be persisted in S3 for the KMS's
+     * Name of the material description to be persisted in S3 for the KMS's
      * customer master key id.
      */
     public static final String CUSTOMER_MASTER_KEY_ID = "kms_cmk_id"; 

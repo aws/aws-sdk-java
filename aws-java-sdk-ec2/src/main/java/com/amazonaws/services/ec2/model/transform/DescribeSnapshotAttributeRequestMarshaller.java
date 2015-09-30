@@ -39,7 +39,7 @@ public class DescribeSnapshotAttributeRequestMarshaller implements Marshaller<Re
 
         Request<DescribeSnapshotAttributeRequest> request = new DefaultRequest<DescribeSnapshotAttributeRequest>(describeSnapshotAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSnapshotAttribute");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (describeSnapshotAttributeRequest.getSnapshotId() != null) {
             request.addParameter("SnapshotId", StringUtils.fromString(describeSnapshotAttributeRequest.getSnapshotId()));

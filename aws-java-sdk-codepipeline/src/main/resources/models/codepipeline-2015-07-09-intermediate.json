@@ -1226,8 +1226,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ActionState",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ActionState>",
           "templateImplType" : "java.util.ArrayList<ActionState>"
@@ -1468,8 +1468,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ActionState",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ActionState>",
             "templateImplType" : "java.util.ArrayList<ActionState>"
@@ -6439,8 +6439,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ActionConfigurationProperty",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ActionConfigurationProperty>",
           "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -6887,8 +6887,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ActionConfigurationProperty",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ActionConfigurationProperty>",
             "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -11473,8 +11473,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ThirdPartyJob",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ThirdPartyJob>",
           "templateImplType" : "java.util.ArrayList<ThirdPartyJob>"
@@ -11611,8 +11611,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ThirdPartyJob",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ThirdPartyJob>",
             "templateImplType" : "java.util.ArrayList<ThirdPartyJob>"
@@ -13746,8 +13746,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "StageDeclaration",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<StageDeclaration>",
           "templateImplType" : "java.util.ArrayList<StageDeclaration>"
@@ -13987,8 +13987,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "StageDeclaration",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<StageDeclaration>",
             "templateImplType" : "java.util.ArrayList<StageDeclaration>"
@@ -14322,8 +14322,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "BlockerDeclaration",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<BlockerDeclaration>",
           "templateImplType" : "java.util.ArrayList<BlockerDeclaration>"
@@ -14437,8 +14437,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ActionDeclaration",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ActionDeclaration>",
           "templateImplType" : "java.util.ArrayList<ActionDeclaration>"
@@ -14627,8 +14627,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "BlockerDeclaration",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<BlockerDeclaration>",
             "templateImplType" : "java.util.ArrayList<BlockerDeclaration>"
@@ -14743,8 +14743,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ActionDeclaration",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ActionDeclaration>",
             "templateImplType" : "java.util.ArrayList<ActionDeclaration>"
@@ -15588,8 +15588,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Job",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Job>",
           "templateImplType" : "java.util.ArrayList<Job>"
@@ -15726,8 +15726,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Job",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Job>",
             "templateImplType" : "java.util.ArrayList<Job>"
@@ -16007,8 +16007,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Artifact",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -16122,8 +16122,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Artifact",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -16673,8 +16673,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Artifact",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -16789,8 +16789,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Artifact",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -20254,8 +20254,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "PipelineSummary",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<PipelineSummary>",
           "templateImplType" : "java.util.ArrayList<PipelineSummary>"
@@ -20495,8 +20495,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "PipelineSummary",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<PipelineSummary>",
             "templateImplType" : "java.util.ArrayList<PipelineSummary>"
@@ -20908,8 +20908,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Artifact",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -21023,8 +21023,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Artifact",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -21574,8 +21574,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Artifact",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -21690,8 +21690,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Artifact",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -22688,8 +22688,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "OutputArtifact",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<OutputArtifact>",
           "templateImplType" : "java.util.ArrayList<OutputArtifact>"
@@ -22803,8 +22803,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "InputArtifact",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<InputArtifact>",
           "templateImplType" : "java.util.ArrayList<InputArtifact>"
@@ -23096,8 +23096,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "OutputArtifact",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<OutputArtifact>",
             "templateImplType" : "java.util.ArrayList<OutputArtifact>"
@@ -23264,8 +23264,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "InputArtifact",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<InputArtifact>",
             "templateImplType" : "java.util.ArrayList<InputArtifact>"
@@ -23751,8 +23751,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ActionConfigurationProperty",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ActionConfigurationProperty>",
           "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -24307,8 +24307,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ActionConfigurationProperty",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ActionConfigurationProperty>",
             "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -25368,8 +25368,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ActionType",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ActionType>",
           "templateImplType" : "java.util.ArrayList<ActionType>"
@@ -25609,8 +25609,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ActionType",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ActionType>",
             "templateImplType" : "java.util.ArrayList<ActionType>"
@@ -26916,8 +26916,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "StageState",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<StageState>",
           "templateImplType" : "java.util.ArrayList<StageState>"
@@ -27208,8 +27208,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "StageState",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<StageState>",
             "templateImplType" : "java.util.ArrayList<StageState>"

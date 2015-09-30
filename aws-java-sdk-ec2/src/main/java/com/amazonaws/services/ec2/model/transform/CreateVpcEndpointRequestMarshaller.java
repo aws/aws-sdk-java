@@ -39,7 +39,7 @@ public class CreateVpcEndpointRequestMarshaller implements Marshaller<Request<Cr
 
         Request<CreateVpcEndpointRequest> request = new DefaultRequest<CreateVpcEndpointRequest>(createVpcEndpointRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpcEndpoint");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (createVpcEndpointRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(createVpcEndpointRequest.getVpcId()));

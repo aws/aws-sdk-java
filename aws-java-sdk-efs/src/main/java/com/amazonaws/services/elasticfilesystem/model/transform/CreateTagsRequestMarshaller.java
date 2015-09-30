@@ -45,6 +45,8 @@ import com.amazonaws.util.json.*;
 public class CreateTagsRequestMarshaller implements
         Marshaller<Request<CreateTagsRequest>, CreateTagsRequest> {
 
+    private static final String DEFAULT_CONTENT_TYPE = "";
+
     public Request<CreateTagsRequest> marshall(
             CreateTagsRequest createTagsRequest) {
 
@@ -95,7 +97,7 @@ public class CreateTagsRequestMarshaller implements
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", "application/json");
+                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
             }
         } catch (Throwable t) {
             throw new AmazonClientException(

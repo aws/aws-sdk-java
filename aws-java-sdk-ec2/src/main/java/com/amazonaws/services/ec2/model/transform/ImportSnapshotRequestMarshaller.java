@@ -39,7 +39,7 @@ public class ImportSnapshotRequestMarshaller implements Marshaller<Request<Impor
 
         Request<ImportSnapshotRequest> request = new DefaultRequest<ImportSnapshotRequest>(importSnapshotRequest, "AmazonEC2");
         request.addParameter("Action", "ImportSnapshot");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (importSnapshotRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(importSnapshotRequest.getDescription()));

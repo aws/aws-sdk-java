@@ -39,7 +39,7 @@ public class DescribeSpotFleetRequestHistoryRequestMarshaller implements Marshal
 
         Request<DescribeSpotFleetRequestHistoryRequest> request = new DefaultRequest<DescribeSpotFleetRequestHistoryRequest>(describeSpotFleetRequestHistoryRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotFleetRequestHistory");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (describeSpotFleetRequestHistoryRequest.getSpotFleetRequestId() != null) {
             request.addParameter("SpotFleetRequestId", StringUtils.fromString(describeSpotFleetRequestHistoryRequest.getSpotFleetRequestId()));

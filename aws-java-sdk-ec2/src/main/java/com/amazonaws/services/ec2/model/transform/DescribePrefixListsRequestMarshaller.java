@@ -39,7 +39,7 @@ public class DescribePrefixListsRequestMarshaller implements Marshaller<Request<
 
         Request<DescribePrefixListsRequest> request = new DefaultRequest<DescribePrefixListsRequest>(describePrefixListsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribePrefixLists");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         java.util.List<String> prefixListIdsList = describePrefixListsRequest.getPrefixListIds();
         int prefixListIdsListIndex = 1;

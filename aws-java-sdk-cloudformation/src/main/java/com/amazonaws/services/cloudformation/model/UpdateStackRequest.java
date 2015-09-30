@@ -65,8 +65,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must specify either the <code>TemplateBody</code> or the
@@ -146,6 +146,21 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * returns an InsufficientCapabilities error.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
+
+    /**
+     * The template resource types that you have permissions to work with for
+     * this update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     * <p>If the list of resource types doesn't include a resource that
+     * you're updating, the stack update fails. By default, AWS
+     * CloudFormation grants permissions to all resource types. AWS Identity
+     * and Access Management (IAM) uses this parameter for AWS
+     * CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypes;
 
     /**
      * Structure containing a new stack policy body. You can specify either
@@ -291,8 +306,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must specify either the <code>TemplateBody</code> or the
@@ -302,8 +317,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1024<br/>
      *
      * @return Location of file containing the template body. The URL must point to a
-     *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to <a
+     *         template that is located in an Amazon S3 bucket. For more information,
+     *         go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must specify either the <code>TemplateBody</code> or the
@@ -315,8 +330,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must specify either the <code>TemplateBody</code> or the
@@ -326,8 +341,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to <a
+     *         template that is located in an Amazon S3 bucket. For more information,
+     *         go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must specify either the <code>TemplateBody</code> or the
@@ -339,8 +354,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must specify either the <code>TemplateBody</code> or the
@@ -352,8 +367,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to <a
+     *         template that is located in an Amazon S3 bucket. For more information,
+     *         go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must specify either the <code>TemplateBody</code> or the
@@ -997,6 +1012,159 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * The template resource types that you have permissions to work with for
+     * this update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     * <p>If the list of resource types doesn't include a resource that
+     * you're updating, the stack update fails. By default, AWS
+     * CloudFormation grants permissions to all resource types. AWS Identity
+     * and Access Management (IAM) uses this parameter for AWS
+     * CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>
+     *
+     * @return The template resource types that you have permissions to work with for
+     *         this update stack action, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     *         <p>If the list of resource types doesn't include a resource that
+     *         you're updating, the stack update fails. By default, AWS
+     *         CloudFormation grants permissions to all resource types. AWS Identity
+     *         and Access Management (IAM) uses this parameter for AWS
+     *         CloudFormation-specific condition keys in IAM policies. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *         Access with AWS Identity and Access Management</a>
+     */
+    public java.util.List<String> getResourceTypes() {
+        if (resourceTypes == null) {
+              resourceTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              resourceTypes.setAutoConstruct(true);
+        }
+        return resourceTypes;
+    }
+    
+    /**
+     * The template resource types that you have permissions to work with for
+     * this update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     * <p>If the list of resource types doesn't include a resource that
+     * you're updating, the stack update fails. By default, AWS
+     * CloudFormation grants permissions to all resource types. AWS Identity
+     * and Access Management (IAM) uses this parameter for AWS
+     * CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>
+     *
+     * @param resourceTypes The template resource types that you have permissions to work with for
+     *         this update stack action, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     *         <p>If the list of resource types doesn't include a resource that
+     *         you're updating, the stack update fails. By default, AWS
+     *         CloudFormation grants permissions to all resource types. AWS Identity
+     *         and Access Management (IAM) uses this parameter for AWS
+     *         CloudFormation-specific condition keys in IAM policies. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *         Access with AWS Identity and Access Management</a>
+     */
+    public void setResourceTypes(java.util.Collection<String> resourceTypes) {
+        if (resourceTypes == null) {
+            this.resourceTypes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(resourceTypes.size());
+        resourceTypesCopy.addAll(resourceTypes);
+        this.resourceTypes = resourceTypesCopy;
+    }
+    
+    /**
+     * The template resource types that you have permissions to work with for
+     * this update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     * <p>If the list of resource types doesn't include a resource that
+     * you're updating, the stack update fails. By default, AWS
+     * CloudFormation grants permissions to all resource types. AWS Identity
+     * and Access Management (IAM) uses this parameter for AWS
+     * CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setResourceTypes(java.util.Collection)} or {@link
+     * #withResourceTypes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceTypes The template resource types that you have permissions to work with for
+     *         this update stack action, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     *         <p>If the list of resource types doesn't include a resource that
+     *         you're updating, the stack update fails. By default, AWS
+     *         CloudFormation grants permissions to all resource types. AWS Identity
+     *         and Access Management (IAM) uses this parameter for AWS
+     *         CloudFormation-specific condition keys in IAM policies. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *         Access with AWS Identity and Access Management</a>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateStackRequest withResourceTypes(String... resourceTypes) {
+        if (getResourceTypes() == null) setResourceTypes(new java.util.ArrayList<String>(resourceTypes.length));
+        for (String value : resourceTypes) {
+            getResourceTypes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The template resource types that you have permissions to work with for
+     * this update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     * <p>If the list of resource types doesn't include a resource that
+     * you're updating, the stack update fails. By default, AWS
+     * CloudFormation grants permissions to all resource types. AWS Identity
+     * and Access Management (IAM) uses this parameter for AWS
+     * CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceTypes The template resource types that you have permissions to work with for
+     *         this update stack action, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     *         <p>If the list of resource types doesn't include a resource that
+     *         you're updating, the stack update fails. By default, AWS
+     *         CloudFormation grants permissions to all resource types. AWS Identity
+     *         and Access Management (IAM) uses this parameter for AWS
+     *         CloudFormation-specific condition keys in IAM policies. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *         Access with AWS Identity and Access Management</a>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateStackRequest withResourceTypes(java.util.Collection<String> resourceTypes) {
+        if (resourceTypes == null) {
+            this.resourceTypes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(resourceTypes.size());
+            resourceTypesCopy.addAll(resourceTypes);
+            this.resourceTypes = resourceTypesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Structure containing a new stack policy body. You can specify either
      * the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      * parameter, but not both. <p>You might update the stack policy, for
@@ -1265,6 +1433,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         if (getStackPolicyDuringUpdateURL() != null) sb.append("StackPolicyDuringUpdateURL: " + getStackPolicyDuringUpdateURL() + ",");
         if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");
         if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");
+        if (getResourceTypes() != null) sb.append("ResourceTypes: " + getResourceTypes() + ",");
         if (getStackPolicyBody() != null) sb.append("StackPolicyBody: " + getStackPolicyBody() + ",");
         if (getStackPolicyURL() != null) sb.append("StackPolicyURL: " + getStackPolicyURL() + ",");
         if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() );
@@ -1285,6 +1454,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getStackPolicyDuringUpdateURL() == null) ? 0 : getStackPolicyDuringUpdateURL().hashCode()); 
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode()); 
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceTypes() == null) ? 0 : getResourceTypes().hashCode()); 
         hashCode = prime * hashCode + ((getStackPolicyBody() == null) ? 0 : getStackPolicyBody().hashCode()); 
         hashCode = prime * hashCode + ((getStackPolicyURL() == null) ? 0 : getStackPolicyURL().hashCode()); 
         hashCode = prime * hashCode + ((getNotificationARNs() == null) ? 0 : getNotificationARNs().hashCode()); 
@@ -1315,6 +1485,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false) return false; 
         if (other.getCapabilities() == null ^ this.getCapabilities() == null) return false;
         if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false) return false; 
+        if (other.getResourceTypes() == null ^ this.getResourceTypes() == null) return false;
+        if (other.getResourceTypes() != null && other.getResourceTypes().equals(this.getResourceTypes()) == false) return false; 
         if (other.getStackPolicyBody() == null ^ this.getStackPolicyBody() == null) return false;
         if (other.getStackPolicyBody() != null && other.getStackPolicyBody().equals(this.getStackPolicyBody()) == false) return false; 
         if (other.getStackPolicyURL() == null ^ this.getStackPolicyURL() == null) return false;

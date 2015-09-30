@@ -50,9 +50,10 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * The name of the region for the Availability Zone (for example,
      * <code>us-east-1</code>). </li> <li> <p><code>state</code> - The state
      * of the Availability Zone (<code>available</code> |
-     * <code>impaired</code> | <code>unavailable</code>). </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for
-     * example, <code>us-east-1a</code>). </li> </ul>
+     * <code>information</code> | <code>impaired</code> |
+     * <code>unavailable</code>). </li> <li> <p><code>zone-name</code> - The
+     * name of the Availability Zone (for example, <code>us-east-1a</code>).
+     * </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
@@ -135,18 +136,20 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * The name of the region for the Availability Zone (for example,
      * <code>us-east-1</code>). </li> <li> <p><code>state</code> - The state
      * of the Availability Zone (<code>available</code> |
-     * <code>impaired</code> | <code>unavailable</code>). </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for
-     * example, <code>us-east-1a</code>). </li> </ul>
+     * <code>information</code> | <code>impaired</code> |
+     * <code>unavailable</code>). </li> <li> <p><code>zone-name</code> - The
+     * name of the Availability Zone (for example, <code>us-east-1a</code>).
+     * </li> </ul>
      *
      * @return One or more filters. <ul> <li> <p><code>message</code> - Information
      *         about the Availability Zone. </li> <li> <p><code>region-name</code> -
      *         The name of the region for the Availability Zone (for example,
      *         <code>us-east-1</code>). </li> <li> <p><code>state</code> - The state
      *         of the Availability Zone (<code>available</code> |
-     *         <code>impaired</code> | <code>unavailable</code>). </li> <li>
-     *         <p><code>zone-name</code> - The name of the Availability Zone (for
-     *         example, <code>us-east-1a</code>). </li> </ul>
+     *         <code>information</code> | <code>impaired</code> |
+     *         <code>unavailable</code>). </li> <li> <p><code>zone-name</code> - The
+     *         name of the Availability Zone (for example, <code>us-east-1a</code>).
+     *         </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -162,18 +165,20 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * The name of the region for the Availability Zone (for example,
      * <code>us-east-1</code>). </li> <li> <p><code>state</code> - The state
      * of the Availability Zone (<code>available</code> |
-     * <code>impaired</code> | <code>unavailable</code>). </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for
-     * example, <code>us-east-1a</code>). </li> </ul>
+     * <code>information</code> | <code>impaired</code> |
+     * <code>unavailable</code>). </li> <li> <p><code>zone-name</code> - The
+     * name of the Availability Zone (for example, <code>us-east-1a</code>).
+     * </li> </ul>
      *
      * @param filters One or more filters. <ul> <li> <p><code>message</code> - Information
      *         about the Availability Zone. </li> <li> <p><code>region-name</code> -
      *         The name of the region for the Availability Zone (for example,
      *         <code>us-east-1</code>). </li> <li> <p><code>state</code> - The state
      *         of the Availability Zone (<code>available</code> |
-     *         <code>impaired</code> | <code>unavailable</code>). </li> <li>
-     *         <p><code>zone-name</code> - The name of the Availability Zone (for
-     *         example, <code>us-east-1a</code>). </li> </ul>
+     *         <code>information</code> | <code>impaired</code> |
+     *         <code>unavailable</code>). </li> <li> <p><code>zone-name</code> - The
+     *         name of the Availability Zone (for example, <code>us-east-1a</code>).
+     *         </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -191,9 +196,10 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * The name of the region for the Availability Zone (for example,
      * <code>us-east-1</code>). </li> <li> <p><code>state</code> - The state
      * of the Availability Zone (<code>available</code> |
-     * <code>impaired</code> | <code>unavailable</code>). </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for
-     * example, <code>us-east-1a</code>). </li> </ul>
+     * <code>information</code> | <code>impaired</code> |
+     * <code>unavailable</code>). </li> <li> <p><code>zone-name</code> - The
+     * name of the Availability Zone (for example, <code>us-east-1a</code>).
+     * </li> </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setFilters(java.util.Collection)} or {@link
@@ -207,9 +213,10 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         The name of the region for the Availability Zone (for example,
      *         <code>us-east-1</code>). </li> <li> <p><code>state</code> - The state
      *         of the Availability Zone (<code>available</code> |
-     *         <code>impaired</code> | <code>unavailable</code>). </li> <li>
-     *         <p><code>zone-name</code> - The name of the Availability Zone (for
-     *         example, <code>us-east-1a</code>). </li> </ul>
+     *         <code>information</code> | <code>impaired</code> |
+     *         <code>unavailable</code>). </li> <li> <p><code>zone-name</code> - The
+     *         name of the Availability Zone (for example, <code>us-east-1a</code>).
+     *         </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -228,9 +235,10 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * The name of the region for the Availability Zone (for example,
      * <code>us-east-1</code>). </li> <li> <p><code>state</code> - The state
      * of the Availability Zone (<code>available</code> |
-     * <code>impaired</code> | <code>unavailable</code>). </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for
-     * example, <code>us-east-1a</code>). </li> </ul>
+     * <code>information</code> | <code>impaired</code> |
+     * <code>unavailable</code>). </li> <li> <p><code>zone-name</code> - The
+     * name of the Availability Zone (for example, <code>us-east-1a</code>).
+     * </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -239,9 +247,10 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         The name of the region for the Availability Zone (for example,
      *         <code>us-east-1</code>). </li> <li> <p><code>state</code> - The state
      *         of the Availability Zone (<code>available</code> |
-     *         <code>impaired</code> | <code>unavailable</code>). </li> <li>
-     *         <p><code>zone-name</code> - The name of the Availability Zone (for
-     *         example, <code>us-east-1a</code>). </li> </ul>
+     *         <code>information</code> | <code>impaired</code> |
+     *         <code>unavailable</code>). </li> <li> <p><code>zone-name</code> - The
+     *         name of the Availability Zone (for example, <code>us-east-1a</code>).
+     *         </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

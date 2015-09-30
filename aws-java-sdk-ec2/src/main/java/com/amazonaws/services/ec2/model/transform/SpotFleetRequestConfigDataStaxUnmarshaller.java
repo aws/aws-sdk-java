@@ -75,6 +75,10 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                     spotFleetRequestConfigData.getLaunchSpecifications().add(SpotFleetLaunchSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("excessCapacityTerminationPolicy", targetDepth)) {
+                    spotFleetRequestConfigData.setExcessCapacityTerminationPolicy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("allocationStrategy", targetDepth)) {
                     spotFleetRequestConfigData.setAllocationStrategy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

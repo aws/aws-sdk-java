@@ -39,7 +39,7 @@ public class DescribeFlowLogsRequestMarshaller implements Marshaller<Request<Des
 
         Request<DescribeFlowLogsRequest> request = new DefaultRequest<DescribeFlowLogsRequest>(describeFlowLogsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeFlowLogs");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         java.util.List<String> flowLogIdsList = describeFlowLogsRequest.getFlowLogIds();
         int flowLogIdsListIndex = 1;

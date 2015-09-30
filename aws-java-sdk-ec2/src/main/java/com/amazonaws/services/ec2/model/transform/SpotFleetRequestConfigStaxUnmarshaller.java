@@ -55,6 +55,10 @@ public class SpotFleetRequestConfigStaxUnmarshaller implements Unmarshaller<Spot
                     spotFleetRequestConfig.setSpotFleetRequestConfig(SpotFleetRequestConfigDataStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("createTime", targetDepth)) {
+                    spotFleetRequestConfig.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotFleetRequestConfig;

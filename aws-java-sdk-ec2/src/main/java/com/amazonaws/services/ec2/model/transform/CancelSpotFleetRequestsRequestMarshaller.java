@@ -39,7 +39,7 @@ public class CancelSpotFleetRequestsRequestMarshaller implements Marshaller<Requ
 
         Request<CancelSpotFleetRequestsRequest> request = new DefaultRequest<CancelSpotFleetRequestsRequest>(cancelSpotFleetRequestsRequest, "AmazonEC2");
         request.addParameter("Action", "CancelSpotFleetRequests");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         java.util.List<String> spotFleetRequestIdsList = cancelSpotFleetRequestsRequest.getSpotFleetRequestIds();
         int spotFleetRequestIdsListIndex = 1;

@@ -39,7 +39,7 @@ public class AssociateDhcpOptionsRequestMarshaller implements Marshaller<Request
 
         Request<AssociateDhcpOptionsRequest> request = new DefaultRequest<AssociateDhcpOptionsRequest>(associateDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "AssociateDhcpOptions");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (associateDhcpOptionsRequest.getDhcpOptionsId() != null) {
             request.addParameter("DhcpOptionsId", StringUtils.fromString(associateDhcpOptionsRequest.getDhcpOptionsId()));

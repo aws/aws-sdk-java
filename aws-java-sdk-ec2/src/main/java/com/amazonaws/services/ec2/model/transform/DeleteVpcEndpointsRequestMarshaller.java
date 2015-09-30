@@ -39,7 +39,7 @@ public class DeleteVpcEndpointsRequestMarshaller implements Marshaller<Request<D
 
         Request<DeleteVpcEndpointsRequest> request = new DefaultRequest<DeleteVpcEndpointsRequest>(deleteVpcEndpointsRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVpcEndpoints");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         java.util.List<String> vpcEndpointIdsList = deleteVpcEndpointsRequest.getVpcEndpointIds();
         int vpcEndpointIdsListIndex = 1;

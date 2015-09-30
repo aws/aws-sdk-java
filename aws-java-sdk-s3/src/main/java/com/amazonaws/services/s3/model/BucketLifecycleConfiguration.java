@@ -473,11 +473,11 @@ public class BucketLifecycleConfiguration {
          */
         private Date date;
 
-        private StorageClass storageClass;
+        private String storageClass;
 
         /**
-         * Sets the time, in days, between when an object is uploaded to the
-         * bucket and when it expires.
+         * Sets the time, in days, between when an object is uploaded to the bucket and when it
+         * expires.
          */
         public void setDays(int expirationInDays) {
             this.days = expirationInDays;
@@ -506,22 +506,57 @@ public class BucketLifecycleConfiguration {
          * Sets the storage class of this object.
          */
         public void setStorageClass(StorageClass storageClass) {
+            if (storageClass == null) {
+                setStorageClass((String) null);
+            } else {
+                setStorageClass(storageClass.toString());
+            }
+        }
+
+        /**
+         * Sets the storage class of this object.
+         */
+        public void setStorageClass(String storageClass) {
             this.storageClass = storageClass;
         }
 
         /**
          * Returns the storage class of this object.
+         * 
+         * @deprecated This method should not be used. Use {@link #getStorageClassAsString()}
+         *             instead.
          */
+        @Deprecated
         public StorageClass getStorageClass() {
+            try {
+                return StorageClass.fromValue(this.storageClass);
+            } catch (IllegalArgumentException ignored) {
+                return null;
+            }
+        }
+
+        /**
+         * Returns the storage class of this object.
+         */
+        public String getStorageClassAsString() {
             return this.storageClass;
         }
 
         /**
-         * Sets the storage class of this object and returns a reference to this
-         * object(Transition) for method chaining.
+         * Sets the storage class of this object and returns a reference to this object for method
+         * chaining.
          */
         public Transition withStorageClass(StorageClass storageClass) {
-            this.storageClass = storageClass;
+            setStorageClass(storageClass);
+            return this;
+        }
+
+        /**
+         * Sets the storage class of this object and returns a reference to this object for method
+         * chaining.
+         */
+        public Transition withStorageClass(String storageClass) {
+            setStorageClass(storageClass);
             return this;
         }
 
@@ -563,7 +598,7 @@ public class BucketLifecycleConfiguration {
          */
         private int days = -1;
 
-        private StorageClass storageClass;
+        private String storageClass;
 
         /**
          * Sets the time, in days, between when a new version of the object
@@ -595,24 +630,57 @@ public class BucketLifecycleConfiguration {
          * Sets the storage class of this object.
          */
         public void setStorageClass(StorageClass storageClass) {
+            if (storageClass == null) {
+                setStorageClass((String) null);
+            } else {
+                setStorageClass(storageClass.toString());
+            }
+        }
+
+        /**
+         * Sets the storage class of this object.
+         */
+        public void setStorageClass(String storageClass) {
             this.storageClass = storageClass;
         }
 
         /**
          * Returns the storage class of this object.
+         * 
+         * @deprecated This method should not be used. Use {@link #getStorageClassAsString()}
+         *             instead.
          */
+        @Deprecated
         public StorageClass getStorageClass() {
+            try {
+                return StorageClass.fromValue(this.storageClass);
+            } catch (IllegalArgumentException ignored) {
+                return null;
+            }
+        }
+
+        /**
+         * Returns the storage class of this object.
+         */
+        public String getStorageClassAsString() {
             return this.storageClass;
         }
 
         /**
-         * Sets the storage class of this object and returns a reference to
-         * this object for method chaining.
+         * Sets the storage class of this object and returns a reference to this object for method
+         * chaining.
          */
-        public NoncurrentVersionTransition withStorageClass(
-                StorageClass storageClass) {
+        public NoncurrentVersionTransition withStorageClass(StorageClass storageClass) {
+            setStorageClass(storageClass);
+            return this;
+        }
 
-            this.storageClass = storageClass;
+        /**
+         * Sets the storage class of this object and returns a reference to this object for method
+         * chaining.
+         */
+        public NoncurrentVersionTransition withStorageClass(String storageClass) {
+            setStorageClass(storageClass);
             return this;
         }
     }

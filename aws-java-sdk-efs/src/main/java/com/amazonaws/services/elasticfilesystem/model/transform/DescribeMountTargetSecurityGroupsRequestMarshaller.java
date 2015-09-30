@@ -46,6 +46,8 @@ public class DescribeMountTargetSecurityGroupsRequestMarshaller
         implements
         Marshaller<Request<DescribeMountTargetSecurityGroupsRequest>, DescribeMountTargetSecurityGroupsRequest> {
 
+    private static final String DEFAULT_CONTENT_TYPE = "";
+
     public Request<DescribeMountTargetSecurityGroupsRequest> marshall(
             DescribeMountTargetSecurityGroupsRequest describeMountTargetSecurityGroupsRequest) {
 

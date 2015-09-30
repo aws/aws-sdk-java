@@ -89,7 +89,7 @@ public class Item {
      * Returns the value of the specified attribute in the current item as a
      * string; or null if the attribute either doesn't exist or the attribute
      * value is null.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -114,7 +114,7 @@ public class Item {
      * Returns the value of the specified attribute in the current item as a
      * <code>BigDecimal</code>; or null if the attribute either doesn't exist or
      * the attribute value is null.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -131,8 +131,8 @@ public class Item {
     private BigDecimal toBigDecimal(Object val) {
         if (val == null)
             return null;
-        return val instanceof BigDecimal 
-             ?  (BigDecimal) val 
+        return val instanceof BigDecimal
+             ?  (BigDecimal) val
              : new BigDecimal(val.toString())
              ;
     }
@@ -140,7 +140,7 @@ public class Item {
     /**
      * Returns the value of the specified attribute in the current item as an
      * <code>BigInteger</code>; or null if the attribute doesn't exist.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -158,7 +158,7 @@ public class Item {
     /**
      * Returns the value of the specified attribute in the current item as a
      * <code>short</code>.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -179,7 +179,7 @@ public class Item {
     /**
      * Returns the value of the specified attribute in the current item as an
      * <code>int</code>.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -200,7 +200,7 @@ public class Item {
     /**
      * Returns the value of the specified attribute in the current item as an
      * <code>long</code>.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -221,7 +221,7 @@ public class Item {
     /**
      * Returns the value of the specified attribute in the current item as a
      * <code>float</code>.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -242,7 +242,7 @@ public class Item {
     /**
      * Returns the value of the specified attribute in the current item as a
      * <code>double</code>.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -338,14 +338,14 @@ public class Item {
      * Returns the value of the specified attribute in the current item as a
      * byte array; or null if the attribute either doesn't exist or the
      * attribute value is null.
-     * 
+     *
      * @throws UnsupportedOperationException
      *             If the attribute value involves a byte buffer which is not
      *             backed by an accessible array
-     * 
+     *
      * @throws IncompatibleTypeException
      *             if the attribute value cannot be converted into a byte array
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -363,7 +363,7 @@ public class Item {
      *
      * @throws IncompatibleTypeException
      *             if the attribute value cannot be converted into a byte array
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -435,11 +435,11 @@ public class Item {
      * Returns the value of the specified attribute in the current item as a set
      * of strings; or null if the attribute either doesn't exist or the
      * attribute value is null.
-     * 
+     *
      * @throws IncompatibleTypeException
      *             if the attribute value cannot be converted into a set of
      *             strings because of duplicate elements
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -493,7 +493,7 @@ public class Item {
      * Returns the value of the specified attribute in the current item as a set
      * of BigDecimal's; or null if the attribute either doesn't exist or the
      * attribute value is null.
-     * 
+     *
      * @throws NumberFormatException
      *             if the attribute involves a value that is not a valid
      *             representation of a {@code BigDecimal}.
@@ -501,7 +501,7 @@ public class Item {
      * @throws IncompatibleTypeException
      *             if the attribute value cannot be converted into a set of
      *             <code>BigDecimal</code>'s because of duplicate elements
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -586,7 +586,7 @@ public class Item {
      * @throws IncompatibleTypeException
      *             if the attribute value cannot be converted into a set of byte
      *             arrays
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -632,7 +632,7 @@ public class Item {
      * @throws IncompatibleTypeException
      *             if the attribute value cannot be converted into a set of
      *             <code>ByteBuffer</code>
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -726,11 +726,11 @@ public class Item {
      * Returns the value of the specified attribute in the current item as a set
      * of <code>T</code>'s.; or null if the attribute either doesn't exist or
      * the attribute value is null.
-     * 
+     *
      * @throws ClassCastException
      *             if the attribute involves a value that cannot be casted to
      *             <code>T</code>
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -789,7 +789,7 @@ public class Item {
      * map is always canonicalized into <code>BigDecimal</code>, and therefore
      * if <code>T</code> referred to a <code>Number</code> type, it would need
      * to be <code>BigDecimal</code> to avoid a class cast exception.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -808,7 +808,7 @@ public class Item {
      * as a (copy of) map of string-to-<code>T</code>'s where T must be a
      * subclass of <code>Number</code>; or null if the attribute doesn't
      * exist.
-     * 
+     *
      * @param attrName
      *            the attribute name
      * @param valueType
@@ -823,7 +823,7 @@ public class Item {
      *            <li><code>BigDecimal</code></li>
      *            <li><code>BigInteger</code></li>
      *            </ul>are supported.
-     * 
+     *
      * @throws UnsupportedOperationException
      *             if the value type is not supported
      * @throws ClassCastException
@@ -844,7 +844,7 @@ public class Item {
                 (Map<String, BigDecimal>)attributes.get(attrName);
             if (src == null)
                 return null;
-            final Map<String, T> dst = new LinkedHashMap<String, T>(src.size()); 
+            final Map<String, T> dst = new LinkedHashMap<String, T>(src.size());
             for (Map.Entry<String,BigDecimal> e: src.entrySet()) {
                 final String key = e.getKey();
                 final BigDecimal val = e.getValue();
@@ -878,7 +878,7 @@ public class Item {
      * current item as a map of string-to-<code>Object</code>'s; or null if the
      * attribute either doesn't exist or the attribute value is null. Note that
      * any numeric type of the map will be returned as <code>BigDecimal</code>.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -907,7 +907,7 @@ public class Item {
      */
     public Item withJSON(String attrName, String json) {
         checkInvalidAttribute(attrName, json);
-        attributes.put(attrName, 
+        attributes.put(attrName,
             valueConformer.transform(Jackson.fromJsonString(json, Map.class)));
         return this;
     }
@@ -916,7 +916,7 @@ public class Item {
      * Returns the value of the specified attribute in the current item as a
      * JSON string; or null if the attribute either doesn't
      * exist or the attribute value is null.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -932,7 +932,7 @@ public class Item {
      * Returns the value of the specified attribute in the current item as a
      * JSON string with pretty indentation; or null if the attribute either
      * doesn't exist or the attribute value is null.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -947,11 +947,11 @@ public class Item {
     /**
      * Returns the value of the specified attribute in the current item as a
      * non-null Boolean.
-     * 
+     *
      * @throws IncompatibleTypeException
      *             if either the attribute doesn't exist or if the attribute
      *             value cannot be converted into a non-null Boolean value
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -976,7 +976,7 @@ public class Item {
     /**
      * Returns the value of the specified attribute in the current item as a
      * primitive boolean.
-     * 
+     *
      * @throws IncompatibleTypeException
      *             if either the attribute doesn't exist or if the attribute
      *             value cannot be converted into a boolean value
@@ -1149,7 +1149,7 @@ public class Item {
      * <li>map (with string key to value of any of the types on this list)</li>
      * <li>set (of any of the types on this list)</li>
      * </ul>
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -1162,7 +1162,7 @@ public class Item {
     /**
      * Returns the type of the specified attribute in the current item; or null
      * if the attribute either doesn't exist or the attribute value is null.
-     * 
+     *
      * @see #isNull(String) #isNull(String) to check if the attribute value is
      *      null.
      * @see #isPresent(String) #isPresent(String) to check if the attribute
@@ -1187,6 +1187,13 @@ public class Item {
      */
     public Iterable<Entry<String, Object>> attributes() {
         return new LinkedHashMap<String, Object>(attributes).entrySet();
+    }
+
+    /**
+     * Returns true if this item has the specified attribute; false otherwise.
+     */
+    public boolean hasAttribute(String attrName) {
+        return attributes.containsKey(attrName);
     }
 
     /**
@@ -1222,7 +1229,7 @@ public class Item {
     /**
      * Convenient factory method - instantiates an <code>Item</code> from the
      * given JSON string.
-     * 
+     *
      * @return an <code>Item</code> initialized from the given JSON document;
      * or null if the input is null.
      */
@@ -1246,11 +1253,11 @@ public class Item {
     /**
      * Utility method to decode the designated binary attributes from base-64
      * encoding; converting binary lists into binary sets.
-     * 
+     *
      * @param binaryAttrNames
      *            names of binary attributes or binary set attributes currently
      *            base-64 encoded (typically when converted from a JSON string.)
-     * 
+     *
      * @see #fromJSON(String)
      */
     public Item base64Decode(String ... binaryAttrNames) {
@@ -1267,7 +1274,7 @@ public class Item {
                     Base64.decode(b64);
             }
         }
-        // Decodes b64 into binary 
+        // Decodes b64 into binary
         for (String attrName: binaryAttrNames) {
             if (String.class == getTypeOf(attrName)) {
                 String b64 = getString(attrName);
@@ -1288,10 +1295,10 @@ public class Item {
      * Utility method to converts the designated attributes from
      * <code>List</code> into <code>Set</code>, throwing
      * <code>IllegalArgumentException</code> should there be duplicate elements.
-     * 
+     *
      * @param listAttrNames
      *            names of attributes to be converted.
-     * 
+     *
      * @see #fromJSON(String)
      */
     public Item convertListsToSets(String ... listAttrNames) {
@@ -1369,6 +1376,18 @@ public class Item {
         return "{ Item: " + attributes.toString() + " }";
     }
 
- // hchar: let's not define the equals method until we figure out a more full
- // proof solution to define it's meaning and the corresponding hashCode method.
+    @Override
+    public int hashCode() {
+        return attributes.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object in) {
+        if (in instanceof Item) {
+            Item that = (Item)in;
+            return this.attributes.equals(that.attributes);
+        } else {
+            return false;
+        }
+    }
 }

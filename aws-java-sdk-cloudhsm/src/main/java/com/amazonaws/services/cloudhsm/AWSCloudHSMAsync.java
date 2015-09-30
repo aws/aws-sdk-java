@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,72 +14,17 @@
  */
 package com.amazonaws.services.cloudhsm;
 
-import java.util.concurrent.Future;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.handlers.AsyncHandler;
 import com.amazonaws.services.cloudhsm.model.*;
 
 /**
- * Interface for accessing AWSCloudHSM asynchronously.
- * Each asynchronous method will return a Java Future object, and users are also allowed
- * to provide a callback handler.
- * AWS CloudHSM Service
+ * Interface for accessing CloudHSM asynchronously. Each asynchronous method
+ * will return a Java Future object representing the asynchronous operation;
+ * overloads which accept an {@code AsyncHandler} can be used to receive
+ * notification when an asynchronous operation completes.
+ * <p>
+ * <fullname>AWS CloudHSM Service</fullname>
  */
 public interface AWSCloudHSMAsync extends AWSCloudHSM {
-    /**
-     * <p>
-     * Gets the configuration files necessary to connect to all high
-     * availability partition groups the client is associated with.
-     * </p>
-     *
-     * @param getConfigRequest Container for the necessary parameters to
-     *           execute the GetConfig operation on AWSCloudHSM.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetConfig service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetConfigResult> getConfigAsync(GetConfigRequest getConfigRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets the configuration files necessary to connect to all high
-     * availability partition groups the client is associated with.
-     * </p>
-     *
-     * @param getConfigRequest Container for the necessary parameters to
-     *           execute the GetConfig operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetConfig service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetConfigResult> getConfigAsync(GetConfigRequest getConfigRequest,
-            AsyncHandler<GetConfigRequest, GetConfigResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
@@ -87,24 +32,14 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * partition group is a group of partitions that spans multiple physical
      * HSMs.
      * </p>
-     *
-     * @param createHapgRequest Container for the necessary parameters to
-     *           execute the CreateHapg operation on AWSCloudHSM.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateHapg service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createHapgRequest
+     *        Contains the inputs for the <a>CreateHapgRequest</a> action.
+     * @return A Java Future containing the result of the CreateHapg operation
+     *         returned by the service.
      */
-    public Future<CreateHapgResult> createHapgAsync(CreateHapgRequest createHapgRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateHapgResult> createHapgAsync(
+            CreateHapgRequest createHapgRequest);
 
     /**
      * <p>
@@ -112,740 +47,647 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * partition group is a group of partitions that spans multiple physical
      * HSMs.
      * </p>
-     *
-     * @param createHapgRequest Container for the necessary parameters to
-     *           execute the CreateHapg operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateHapg service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param createHapgRequest
+     *        Contains the inputs for the <a>CreateHapgRequest</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateHapg operation
+     *         returned by the service.
      */
-    public Future<CreateHapgResult> createHapgAsync(CreateHapgRequest createHapgRequest,
-            AsyncHandler<CreateHapgRequest, CreateHapgResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<CreateHapgResult> createHapgAsync(
+            CreateHapgRequest createHapgRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateHapgRequest, CreateHapgResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an uninitialized HSM instance. Running this command provisions an
+     * HSM appliance and will result in charges to your AWS account for the HSM.
+     * </p>
+     * 
+     * @param createHsmRequest
+     *        Contains the inputs for the <a>CreateHsm</a> action.
+     * @return A Java Future containing the result of the CreateHsm operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<CreateHsmResult> createHsmAsync(
+            CreateHsmRequest createHsmRequest);
+
+    /**
+     * <p>
+     * Creates an uninitialized HSM instance. Running this command provisions an
+     * HSM appliance and will result in charges to your AWS account for the HSM.
+     * </p>
+     * 
+     * @param createHsmRequest
+     *        Contains the inputs for the <a>CreateHsm</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateHsm operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<CreateHsmResult> createHsmAsync(
+            CreateHsmRequest createHsmRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateHsmRequest, CreateHsmResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an HSM client.
+     * </p>
+     * 
+     * @param createLunaClientRequest
+     *        Contains the inputs for the <a>CreateLunaClient</a> action.
+     * @return A Java Future containing the result of the CreateLunaClient
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<CreateLunaClientResult> createLunaClientAsync(
+            CreateLunaClientRequest createLunaClientRequest);
+
+    /**
+     * <p>
+     * Creates an HSM client.
+     * </p>
+     * 
+     * @param createLunaClientRequest
+     *        Contains the inputs for the <a>CreateLunaClient</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLunaClient
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<CreateLunaClientResult> createLunaClientAsync(
+            CreateLunaClientRequest createLunaClientRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLunaClientRequest, CreateLunaClientResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a high-availability partition group.
+     * </p>
+     * 
+     * @param deleteHapgRequest
+     *        Contains the inputs for the <a>DeleteHapg</a> action.
+     * @return A Java Future containing the result of the DeleteHapg operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<DeleteHapgResult> deleteHapgAsync(
+            DeleteHapgRequest deleteHapgRequest);
+
+    /**
+     * <p>
+     * Deletes a high-availability partition group.
+     * </p>
+     * 
+     * @param deleteHapgRequest
+     *        Contains the inputs for the <a>DeleteHapg</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteHapg operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<DeleteHapgResult> deleteHapgAsync(
+            DeleteHapgRequest deleteHapgRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteHapgRequest, DeleteHapgResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an HSM. Once complete, this operation cannot be undone and your
+     * key material cannot be recovered.
+     * </p>
+     * 
+     * @param deleteHsmRequest
+     *        Contains the inputs for the <a>DeleteHsm</a> action.
+     * @return A Java Future containing the result of the DeleteHsm operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<DeleteHsmResult> deleteHsmAsync(
+            DeleteHsmRequest deleteHsmRequest);
+
+    /**
+     * <p>
+     * Deletes an HSM. Once complete, this operation cannot be undone and your
+     * key material cannot be recovered.
+     * </p>
+     * 
+     * @param deleteHsmRequest
+     *        Contains the inputs for the <a>DeleteHsm</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteHsm operation
+     *         returned by the service.
+     */
+    java.util.concurrent.Future<DeleteHsmResult> deleteHsmAsync(
+            DeleteHsmRequest deleteHsmRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteHsmRequest, DeleteHsmResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a client.
+     * </p>
+     * 
+     * @param deleteLunaClientRequest
+     *        null
+     * @return A Java Future containing the result of the DeleteLunaClient
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteLunaClientResult> deleteLunaClientAsync(
+            DeleteLunaClientRequest deleteLunaClientRequest);
+
+    /**
+     * <p>
+     * Deletes a client.
+     * </p>
+     * 
+     * @param deleteLunaClientRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLunaClient
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<DeleteLunaClientResult> deleteLunaClientAsync(
+            DeleteLunaClientRequest deleteLunaClientRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLunaClientRequest, DeleteLunaClientResult> asyncHandler);
 
     /**
      * <p>
      * Retrieves information about a high-availability partition group.
      * </p>
-     *
-     * @param describeHapgRequest Container for the necessary parameters to
-     *           execute the DescribeHapg operation on AWSCloudHSM.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeHapg service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeHapgRequest
+     *        Contains the inputs for the <a>DescribeHapg</a> action.
+     * @return A Java Future containing the result of the DescribeHapg operation
+     *         returned by the service.
      */
-    public Future<DescribeHapgResult> describeHapgAsync(DescribeHapgRequest describeHapgRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeHapgResult> describeHapgAsync(
+            DescribeHapgRequest describeHapgRequest);
 
     /**
      * <p>
      * Retrieves information about a high-availability partition group.
      * </p>
-     *
-     * @param describeHapgRequest Container for the necessary parameters to
-     *           execute the DescribeHapg operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         DescribeHapg service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeHapgRequest
+     *        Contains the inputs for the <a>DescribeHapg</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeHapg operation
+     *         returned by the service.
      */
-    public Future<DescribeHapgResult> describeHapgAsync(DescribeHapgRequest describeHapgRequest,
-            AsyncHandler<DescribeHapgRequest, DescribeHapgResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeHapgResult> describeHapgAsync(
+            DescribeHapgRequest describeHapgRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeHapgRequest, DescribeHapgResult> asyncHandler);
 
     /**
      * <p>
-     * Lists the Availability Zones that have available AWS CloudHSM
-     * capacity.
+     * Retrieves information about an HSM. You can identify the HSM by its ARN
+     * or its serial number.
      * </p>
-     *
-     * @param listAvailableZonesRequest Container for the necessary
-     *           parameters to execute the ListAvailableZones operation on AWSCloudHSM.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListAvailableZones service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeHsmRequest
+     *        Contains the inputs for the <a>DescribeHsm</a> action.
+     * @return A Java Future containing the result of the DescribeHsm operation
+     *         returned by the service.
      */
-    public Future<ListAvailableZonesResult> listAvailableZonesAsync(ListAvailableZonesRequest listAvailableZonesRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(
+            DescribeHsmRequest describeHsmRequest);
 
     /**
      * <p>
-     * Lists the Availability Zones that have available AWS CloudHSM
-     * capacity.
+     * Retrieves information about an HSM. You can identify the HSM by its ARN
+     * or its serial number.
      * </p>
-     *
-     * @param listAvailableZonesRequest Container for the necessary
-     *           parameters to execute the ListAvailableZones operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListAvailableZones service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeHsmRequest
+     *        Contains the inputs for the <a>DescribeHsm</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeHsm operation
+     *         returned by the service.
      */
-    public Future<ListAvailableZonesResult> listAvailableZonesAsync(ListAvailableZonesRequest listAvailableZonesRequest,
-            AsyncHandler<ListAvailableZonesRequest, ListAvailableZonesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(
+            DescribeHsmRequest describeHsmRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeHsmRequest, DescribeHsmResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the DescribeHsm operation.
+     *
+     * @see #describeHsmAsync(DescribeHsmRequest)
+     */
+    java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync();
+
+    /**
+     * Simplified method form for invoking the DescribeHsm operation with an
+     * AsyncHandler.
+     *
+     * @see #describeHsmAsync(DescribeHsmRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(
+            com.amazonaws.handlers.AsyncHandler<DescribeHsmRequest, DescribeHsmResult> asyncHandler);
 
     /**
      * <p>
-     * Modifies an HSM.
+     * Retrieves information about an HSM client.
      * </p>
-     *
-     * @param modifyHsmRequest Container for the necessary parameters to
-     *           execute the ModifyHsm operation on AWSCloudHSM.
      * 
-     * @return A Java Future object containing the response from the
-     *         ModifyHsm service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeLunaClientRequest
+     *        null
+     * @return A Java Future containing the result of the DescribeLunaClient
+     *         operation returned by the service.
      */
-    public Future<ModifyHsmResult> modifyHsmAsync(ModifyHsmRequest modifyHsmRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(
+            DescribeLunaClientRequest describeLunaClientRequest);
 
     /**
      * <p>
-     * Modifies an HSM.
+     * Retrieves information about an HSM client.
      * </p>
-     *
-     * @param modifyHsmRequest Container for the necessary parameters to
-     *           execute the ModifyHsm operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         ModifyHsm service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param describeLunaClientRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLunaClient
+     *         operation returned by the service.
      */
-    public Future<ModifyHsmResult> modifyHsmAsync(ModifyHsmRequest modifyHsmRequest,
-            AsyncHandler<ModifyHsmRequest, ModifyHsmResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(
+            DescribeLunaClientRequest describeLunaClientRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLunaClientRequest, DescribeLunaClientResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the DescribeLunaClient operation.
+     *
+     * @see #describeLunaClientAsync(DescribeLunaClientRequest)
+     */
+    java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync();
+
+    /**
+     * Simplified method form for invoking the DescribeLunaClient operation with
+     * an AsyncHandler.
+     *
+     * @see #describeLunaClientAsync(DescribeLunaClientRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(
+            com.amazonaws.handlers.AsyncHandler<DescribeLunaClientRequest, DescribeLunaClientResult> asyncHandler);
 
     /**
      * <p>
-     * Lists all of the clients.
+     * Gets the configuration files necessary to connect to all high
+     * availability partition groups the client is associated with.
      * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListLunaClients to retrieve the next set of items.
-     * </p>
-     *
-     * @param listLunaClientsRequest Container for the necessary parameters
-     *           to execute the ListLunaClients operation on AWSCloudHSM.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListLunaClients service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param getConfigRequest
+     *        null
+     * @return A Java Future containing the result of the GetConfig operation
+     *         returned by the service.
      */
-    public Future<ListLunaClientsResult> listLunaClientsAsync(ListLunaClientsRequest listLunaClientsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<GetConfigResult> getConfigAsync(
+            GetConfigRequest getConfigRequest);
 
     /**
      * <p>
-     * Lists all of the clients.
+     * Gets the configuration files necessary to connect to all high
+     * availability partition groups the client is associated with.
      * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListLunaClients to retrieve the next set of items.
-     * </p>
-     *
-     * @param listLunaClientsRequest Container for the necessary parameters
-     *           to execute the ListLunaClients operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListLunaClients service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param getConfigRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConfig operation
+     *         returned by the service.
      */
-    public Future<ListLunaClientsResult> listLunaClientsAsync(ListLunaClientsRequest listLunaClientsRequest,
-            AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<GetConfigResult> getConfigAsync(
+            GetConfigRequest getConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConfigRequest, GetConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the Availability Zones that have available AWS CloudHSM capacity.
+     * </p>
+     * 
+     * @param listAvailableZonesRequest
+     *        Contains the inputs for the <a>ListAvailableZones</a> action.
+     * @return A Java Future containing the result of the ListAvailableZones
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(
+            ListAvailableZonesRequest listAvailableZonesRequest);
+
+    /**
+     * <p>
+     * Lists the Availability Zones that have available AWS CloudHSM capacity.
+     * </p>
+     * 
+     * @param listAvailableZonesRequest
+     *        Contains the inputs for the <a>ListAvailableZones</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAvailableZones
+     *         operation returned by the service.
+     */
+    java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(
+            ListAvailableZonesRequest listAvailableZonesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAvailableZonesRequest, ListAvailableZonesResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListAvailableZones operation.
+     *
+     * @see #listAvailableZonesAsync(ListAvailableZonesRequest)
+     */
+    java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync();
+
+    /**
+     * Simplified method form for invoking the ListAvailableZones operation with
+     * an AsyncHandler.
+     *
+     * @see #listAvailableZonesAsync(ListAvailableZonesRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(
+            com.amazonaws.handlers.AsyncHandler<ListAvailableZonesRequest, ListAvailableZonesResult> asyncHandler);
 
     /**
      * <p>
      * Lists the high-availability partition groups for the account.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListHapgs to retrieve the next set of items.
+     * This operation supports pagination with the use of the <i>NextToken</i>
+     * member. If more results are available, the <i>NextToken</i> member of the
+     * response contains a token that you pass in the next call to
+     * <a>ListHapgs</a> to retrieve the next set of items.
      * </p>
-     *
-     * @param listHapgsRequest Container for the necessary parameters to
-     *           execute the ListHapgs operation on AWSCloudHSM.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListHapgs service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listHapgsRequest
+     *        null
+     * @return A Java Future containing the result of the ListHapgs operation
+     *         returned by the service.
      */
-    public Future<ListHapgsResult> listHapgsAsync(ListHapgsRequest listHapgsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListHapgsResult> listHapgsAsync(
+            ListHapgsRequest listHapgsRequest);
 
     /**
      * <p>
      * Lists the high-availability partition groups for the account.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListHapgs to retrieve the next set of items.
+     * This operation supports pagination with the use of the <i>NextToken</i>
+     * member. If more results are available, the <i>NextToken</i> member of the
+     * response contains a token that you pass in the next call to
+     * <a>ListHapgs</a> to retrieve the next set of items.
      * </p>
-     *
-     * @param listHapgsRequest Container for the necessary parameters to
-     *           execute the ListHapgs operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListHapgs service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listHapgsRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListHapgs operation
+     *         returned by the service.
      */
-    public Future<ListHapgsResult> listHapgsAsync(ListHapgsRequest listHapgsRequest,
-            AsyncHandler<ListHapgsRequest, ListHapgsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListHapgsResult> listHapgsAsync(
+            ListHapgsRequest listHapgsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListHapgsRequest, ListHapgsResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListHapgs operation.
+     *
+     * @see #listHapgsAsync(ListHapgsRequest)
+     */
+    java.util.concurrent.Future<ListHapgsResult> listHapgsAsync();
+
+    /**
+     * Simplified method form for invoking the ListHapgs operation with an
+     * AsyncHandler.
+     *
+     * @see #listHapgsAsync(ListHapgsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListHapgsResult> listHapgsAsync(
+            com.amazonaws.handlers.AsyncHandler<ListHapgsRequest, ListHapgsResult> asyncHandler);
 
     /**
      * <p>
-     * Deletes an HSM. Once complete, this operation cannot be undone and
-     * your key material cannot be recovered.
+     * Retrieves the identifiers of all of the HSMs provisioned for the current
+     * customer.
      * </p>
-     *
-     * @param deleteHsmRequest Container for the necessary parameters to
-     *           execute the DeleteHsm operation on AWSCloudHSM.
+     * <p>
+     * This operation supports pagination with the use of the <i>NextToken</i>
+     * member. If more results are available, the <i>NextToken</i> member of the
+     * response contains a token that you pass in the next call to
+     * <a>ListHsms</a> to retrieve the next set of items.
+     * </p>
      * 
-     * @return A Java Future object containing the response from the
-     *         DeleteHsm service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listHsmsRequest
+     *        null
+     * @return A Java Future containing the result of the ListHsms operation
+     *         returned by the service.
      */
-    public Future<DeleteHsmResult> deleteHsmAsync(DeleteHsmRequest deleteHsmRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListHsmsResult> listHsmsAsync(
+            ListHsmsRequest listHsmsRequest);
 
     /**
      * <p>
-     * Deletes an HSM. Once complete, this operation cannot be undone and
-     * your key material cannot be recovered.
+     * Retrieves the identifiers of all of the HSMs provisioned for the current
+     * customer.
      * </p>
-     *
-     * @param deleteHsmRequest Container for the necessary parameters to
-     *           execute the DeleteHsm operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
+     * <p>
+     * This operation supports pagination with the use of the <i>NextToken</i>
+     * member. If more results are available, the <i>NextToken</i> member of the
+     * response contains a token that you pass in the next call to
+     * <a>ListHsms</a> to retrieve the next set of items.
+     * </p>
      * 
-     * @return A Java Future object containing the response from the
-     *         DeleteHsm service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listHsmsRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListHsms operation
+     *         returned by the service.
      */
-    public Future<DeleteHsmResult> deleteHsmAsync(DeleteHsmRequest deleteHsmRequest,
-            AsyncHandler<DeleteHsmRequest, DeleteHsmResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListHsmsResult> listHsmsAsync(
+            ListHsmsRequest listHsmsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListHsmsRequest, ListHsmsResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListHsms operation.
+     *
+     * @see #listHsmsAsync(ListHsmsRequest)
+     */
+    java.util.concurrent.Future<ListHsmsResult> listHsmsAsync();
+
+    /**
+     * Simplified method form for invoking the ListHsms operation with an
+     * AsyncHandler.
+     *
+     * @see #listHsmsAsync(ListHsmsRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListHsmsResult> listHsmsAsync(
+            com.amazonaws.handlers.AsyncHandler<ListHsmsRequest, ListHsmsResult> asyncHandler);
 
     /**
      * <p>
-     * Creates an uninitialized HSM instance. Running this command
-     * provisions an HSM appliance and will result in charges to your AWS
-     * account for the HSM.
+     * Lists all of the clients.
      * </p>
-     *
-     * @param createHsmRequest Container for the necessary parameters to
-     *           execute the CreateHsm operation on AWSCloudHSM.
+     * <p>
+     * This operation supports pagination with the use of the <i>NextToken</i>
+     * member. If more results are available, the <i>NextToken</i> member of the
+     * response contains a token that you pass in the next call to
+     * <a>ListLunaClients</a> to retrieve the next set of items.
+     * </p>
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateHsm service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listLunaClientsRequest
+     *        null
+     * @return A Java Future containing the result of the ListLunaClients
+     *         operation returned by the service.
      */
-    public Future<CreateHsmResult> createHsmAsync(CreateHsmRequest createHsmRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync(
+            ListLunaClientsRequest listLunaClientsRequest);
 
     /**
      * <p>
-     * Creates an uninitialized HSM instance. Running this command
-     * provisions an HSM appliance and will result in charges to your AWS
-     * account for the HSM.
+     * Lists all of the clients.
      * </p>
-     *
-     * @param createHsmRequest Container for the necessary parameters to
-     *           execute the CreateHsm operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
+     * <p>
+     * This operation supports pagination with the use of the <i>NextToken</i>
+     * member. If more results are available, the <i>NextToken</i> member of the
+     * response contains a token that you pass in the next call to
+     * <a>ListLunaClients</a> to retrieve the next set of items.
+     * </p>
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateHsm service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param listLunaClientsRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLunaClients
+     *         operation returned by the service.
      */
-    public Future<CreateHsmResult> createHsmAsync(CreateHsmRequest createHsmRequest,
-            AsyncHandler<CreateHsmRequest, CreateHsmResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync(
+            ListLunaClientsRequest listLunaClientsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult> asyncHandler);
 
     /**
-     * <p>
-     * Retrieves the identifiers of all of the HSMs provisioned for the
-     * current customer.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListHsms to retrieve the next set of items.
-     * </p>
+     * Simplified method form for invoking the ListLunaClients operation.
      *
-     * @param listHsmsRequest Container for the necessary parameters to
-     *           execute the ListHsms operation on AWSCloudHSM.
-     * 
-     * @return A Java Future object containing the response from the ListHsms
-     *         service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @see #listLunaClientsAsync(ListLunaClientsRequest)
      */
-    public Future<ListHsmsResult> listHsmsAsync(ListHsmsRequest listHsmsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync();
 
     /**
-     * <p>
-     * Retrieves the identifiers of all of the HSMs provisioned for the
-     * current customer.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListHsms to retrieve the next set of items.
-     * </p>
+     * Simplified method form for invoking the ListLunaClients operation with an
+     * AsyncHandler.
      *
-     * @param listHsmsRequest Container for the necessary parameters to
-     *           execute the ListHsms operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the ListHsms
-     *         service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @see #listLunaClientsAsync(ListLunaClientsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
      */
-    public Future<ListHsmsResult> listHsmsAsync(ListHsmsRequest listHsmsRequest,
-            AsyncHandler<ListHsmsRequest, ListHsmsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Retrieves information about an HSM. You can identify the HSM by its
-     * ARN or its serial number.
-     * </p>
-     *
-     * @param describeHsmRequest Container for the necessary parameters to
-     *           execute the DescribeHsm operation on AWSCloudHSM.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeHsm service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeHsmResult> describeHsmAsync(DescribeHsmRequest describeHsmRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Retrieves information about an HSM. You can identify the HSM by its
-     * ARN or its serial number.
-     * </p>
-     *
-     * @param describeHsmRequest Container for the necessary parameters to
-     *           execute the DescribeHsm operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeHsm service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeHsmResult> describeHsmAsync(DescribeHsmRequest describeHsmRequest,
-            AsyncHandler<DescribeHsmRequest, DescribeHsmResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a high-availability partition group.
-     * </p>
-     *
-     * @param deleteHapgRequest Container for the necessary parameters to
-     *           execute the DeleteHapg operation on AWSCloudHSM.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteHapg service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteHapgResult> deleteHapgAsync(DeleteHapgRequest deleteHapgRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a high-availability partition group.
-     * </p>
-     *
-     * @param deleteHapgRequest Container for the necessary parameters to
-     *           execute the DeleteHapg operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteHapg service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteHapgResult> deleteHapgAsync(DeleteHapgRequest deleteHapgRequest,
-            AsyncHandler<DeleteHapgRequest, DeleteHapgResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync(
+            com.amazonaws.handlers.AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult> asyncHandler);
 
     /**
      * <p>
      * Modifies an existing high-availability partition group.
      * </p>
-     *
-     * @param modifyHapgRequest Container for the necessary parameters to
-     *           execute the ModifyHapg operation on AWSCloudHSM.
      * 
-     * @return A Java Future object containing the response from the
-     *         ModifyHapg service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param modifyHapgRequest
+     *        null
+     * @return A Java Future containing the result of the ModifyHapg operation
+     *         returned by the service.
      */
-    public Future<ModifyHapgResult> modifyHapgAsync(ModifyHapgRequest modifyHapgRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ModifyHapgResult> modifyHapgAsync(
+            ModifyHapgRequest modifyHapgRequest);
 
     /**
      * <p>
      * Modifies an existing high-availability partition group.
      * </p>
-     *
-     * @param modifyHapgRequest Container for the necessary parameters to
-     *           execute the ModifyHapg operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         ModifyHapg service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param modifyHapgRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyHapg operation
+     *         returned by the service.
      */
-    public Future<ModifyHapgResult> modifyHapgAsync(ModifyHapgRequest modifyHapgRequest,
-            AsyncHandler<ModifyHapgRequest, ModifyHapgResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ModifyHapgResult> modifyHapgAsync(
+            ModifyHapgRequest modifyHapgRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyHapgRequest, ModifyHapgResult> asyncHandler);
 
     /**
      * <p>
-     * Creates an HSM client.
+     * Modifies an HSM.
      * </p>
-     *
-     * @param createLunaClientRequest Container for the necessary parameters
-     *           to execute the CreateLunaClient operation on AWSCloudHSM.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateLunaClient service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param modifyHsmRequest
+     *        Contains the inputs for the <a>ModifyHsm</a> action.
+     * @return A Java Future containing the result of the ModifyHsm operation
+     *         returned by the service.
      */
-    public Future<CreateLunaClientResult> createLunaClientAsync(CreateLunaClientRequest createLunaClientRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ModifyHsmResult> modifyHsmAsync(
+            ModifyHsmRequest modifyHsmRequest);
 
     /**
      * <p>
-     * Creates an HSM client.
+     * Modifies an HSM.
      * </p>
-     *
-     * @param createLunaClientRequest Container for the necessary parameters
-     *           to execute the CreateLunaClient operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         CreateLunaClient service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param modifyHsmRequest
+     *        Contains the inputs for the <a>ModifyHsm</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyHsm operation
+     *         returned by the service.
      */
-    public Future<CreateLunaClientResult> createLunaClientAsync(CreateLunaClientRequest createLunaClientRequest,
-            AsyncHandler<CreateLunaClientRequest, CreateLunaClientResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a client.
-     * </p>
-     *
-     * @param deleteLunaClientRequest Container for the necessary parameters
-     *           to execute the DeleteLunaClient operation on AWSCloudHSM.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteLunaClient service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteLunaClientResult> deleteLunaClientAsync(DeleteLunaClientRequest deleteLunaClientRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a client.
-     * </p>
-     *
-     * @param deleteLunaClientRequest Container for the necessary parameters
-     *           to execute the DeleteLunaClient operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteLunaClient service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeleteLunaClientResult> deleteLunaClientAsync(DeleteLunaClientRequest deleteLunaClientRequest,
-            AsyncHandler<DeleteLunaClientRequest, DeleteLunaClientResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ModifyHsmResult> modifyHsmAsync(
+            ModifyHsmRequest modifyHsmRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyHsmRequest, ModifyHsmResult> asyncHandler);
 
     /**
      * <p>
@@ -855,24 +697,14 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * This action can potentially start a workflow to install the new
      * certificate on the client's HSMs.
      * </p>
-     *
-     * @param modifyLunaClientRequest Container for the necessary parameters
-     *           to execute the ModifyLunaClient operation on AWSCloudHSM.
      * 
-     * @return A Java Future object containing the response from the
-     *         ModifyLunaClient service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param modifyLunaClientRequest
+     *        null
+     * @return A Java Future containing the result of the ModifyLunaClient
+     *         operation returned by the service.
      */
-    public Future<ModifyLunaClientResult> modifyLunaClientAsync(ModifyLunaClientRequest modifyLunaClientRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ModifyLunaClientResult> modifyLunaClientAsync(
+            ModifyLunaClientRequest modifyLunaClientRequest);
 
     /**
      * <p>
@@ -882,79 +714,19 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * This action can potentially start a workflow to install the new
      * certificate on the client's HSMs.
      * </p>
-     *
-     * @param modifyLunaClientRequest Container for the necessary parameters
-     *           to execute the ModifyLunaClient operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         ModifyLunaClient service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @param modifyLunaClientRequest
+     *        null
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyLunaClient
+     *         operation returned by the service.
      */
-    public Future<ModifyLunaClientResult> modifyLunaClientAsync(ModifyLunaClientRequest modifyLunaClientRequest,
-            AsyncHandler<ModifyLunaClientRequest, ModifyLunaClientResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
+    java.util.concurrent.Future<ModifyLunaClientResult> modifyLunaClientAsync(
+            ModifyLunaClientRequest modifyLunaClientRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyLunaClientRequest, ModifyLunaClientResult> asyncHandler);
 
-    /**
-     * <p>
-     * Retrieves information about an HSM client.
-     * </p>
-     *
-     * @param describeLunaClientRequest Container for the necessary
-     *           parameters to execute the DescribeLunaClient operation on AWSCloudHSM.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeLunaClient service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeLunaClientResult> describeLunaClientAsync(DescribeLunaClientRequest describeLunaClientRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Retrieves information about an HSM client.
-     * </p>
-     *
-     * @param describeLunaClientRequest Container for the necessary
-     *           parameters to execute the DescribeLunaClient operation on AWSCloudHSM.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeLunaClient service method, as returned by AWSCloudHSM.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeLunaClientResult> describeLunaClientAsync(DescribeLunaClientRequest describeLunaClientRequest,
-            AsyncHandler<DescribeLunaClientRequest, DescribeLunaClientResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
 }
-        

@@ -2164,9 +2164,7 @@ public class XmlResponsesSaxParser {
 
             else if (in("LifecycleConfiguration", "Rule", "Transition")) {
                 if (name.equals("StorageClass")) {
-                    currentTransition.setStorageClass(
-                            StorageClass.fromValue(getText()));
-
+                    currentTransition.setStorageClass(getText());
                 } else if (name.equals("Date")) {
                     currentTransition.setDate(
                             ServiceUtils.parseIso8601Date(getText()));
@@ -2185,9 +2183,7 @@ public class XmlResponsesSaxParser {
 
             else if (in("LifecycleConfiguration", "Rule", "NoncurrentVersionTransition")) {
                 if (name.equals("StorageClass")) {
-                    currentNcvTransition.setStorageClass(
-                            StorageClass.fromValue(getText()));
-
+                    currentNcvTransition.setStorageClass(getText());
                 } else if (name.equals("NoncurrentDays")) {
                     currentNcvTransition.setDays(Integer.parseInt(getText()));
                 }

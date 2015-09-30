@@ -45,8 +45,8 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
@@ -137,8 +137,8 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
@@ -148,8 +148,8 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
      * <b>Length: </b>1 - 1024<br/>
      *
      * @return Location of file containing the template body. The URL must point to a
-     *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to <a
+     *         template that is located in an Amazon S3 bucket. For more information,
+     *         go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
@@ -161,8 +161,8 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
@@ -172,8 +172,8 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to <a
+     *         template that is located in an Amazon S3 bucket. For more information,
+     *         go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
@@ -185,8 +185,8 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information,
+     * go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
@@ -198,8 +198,8 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to <a
+     *         template that is located in an Amazon S3 bucket. For more information,
+     *         go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If

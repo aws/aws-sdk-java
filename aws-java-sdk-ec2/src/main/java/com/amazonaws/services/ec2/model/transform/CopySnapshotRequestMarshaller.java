@@ -39,7 +39,7 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
 
         Request<CopySnapshotRequest> request = new DefaultRequest<CopySnapshotRequest>(copySnapshotRequest, "AmazonEC2");
         request.addParameter("Action", "CopySnapshot");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (copySnapshotRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(copySnapshotRequest.getSourceRegion()));

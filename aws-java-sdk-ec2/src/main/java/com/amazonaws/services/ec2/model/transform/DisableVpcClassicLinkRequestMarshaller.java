@@ -39,7 +39,7 @@ public class DisableVpcClassicLinkRequestMarshaller implements Marshaller<Reques
 
         Request<DisableVpcClassicLinkRequest> request = new DefaultRequest<DisableVpcClassicLinkRequest>(disableVpcClassicLinkRequest, "AmazonEC2");
         request.addParameter("Action", "DisableVpcClassicLink");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (disableVpcClassicLinkRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(disableVpcClassicLinkRequest.getVpcId()));

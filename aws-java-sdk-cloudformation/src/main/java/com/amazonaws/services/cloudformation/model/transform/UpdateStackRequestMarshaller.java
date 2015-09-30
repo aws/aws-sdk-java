@@ -90,6 +90,17 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
 
             capabilitiesListIndex++;
         }
+
+        java.util.List<String> resourceTypesList = updateStackRequest.getResourceTypes();
+        int resourceTypesListIndex = 1;
+
+        for (String resourceTypesListValue : resourceTypesList) {
+            if (resourceTypesListValue != null) {
+                request.addParameter("ResourceTypes.member." + resourceTypesListIndex, StringUtils.fromString(resourceTypesListValue));
+            }
+
+            resourceTypesListIndex++;
+        }
         if (updateStackRequest.getStackPolicyBody() != null) {
             request.addParameter("StackPolicyBody", StringUtils.fromString(updateStackRequest.getStackPolicyBody()));
         }

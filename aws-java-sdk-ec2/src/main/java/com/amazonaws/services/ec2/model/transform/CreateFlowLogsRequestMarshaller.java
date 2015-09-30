@@ -39,7 +39,7 @@ public class CreateFlowLogsRequestMarshaller implements Marshaller<Request<Creat
 
         Request<CreateFlowLogsRequest> request = new DefaultRequest<CreateFlowLogsRequest>(createFlowLogsRequest, "AmazonEC2");
         request.addParameter("Action", "CreateFlowLogs");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         java.util.List<String> resourceIdsList = createFlowLogsRequest.getResourceIds();
         int resourceIdsListIndex = 1;

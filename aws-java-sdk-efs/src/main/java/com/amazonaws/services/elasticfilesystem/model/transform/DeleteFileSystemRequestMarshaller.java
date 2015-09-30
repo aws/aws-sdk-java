@@ -45,6 +45,8 @@ import com.amazonaws.util.json.*;
 public class DeleteFileSystemRequestMarshaller implements
         Marshaller<Request<DeleteFileSystemRequest>, DeleteFileSystemRequest> {
 
+    private static final String DEFAULT_CONTENT_TYPE = "";
+
     public Request<DeleteFileSystemRequest> marshall(
             DeleteFileSystemRequest deleteFileSystemRequest) {
 

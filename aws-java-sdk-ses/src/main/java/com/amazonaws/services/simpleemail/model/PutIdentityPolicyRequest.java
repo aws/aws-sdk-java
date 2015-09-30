@@ -58,7 +58,6 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[^\\/\?\*\s]+<br/>
      */
     private String policyName;
 
@@ -137,7 +136,6 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[^\\/\?\*\s]+<br/>
      *
      * @return The name of the policy. <p>The policy name cannot exceed 64 characters
      *         and can only include alphanumeric characters, dashes, and underscores.
@@ -152,7 +150,6 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[^\\/\?\*\s]+<br/>
      *
      * @param policyName The name of the policy. <p>The policy name cannot exceed 64 characters
      *         and can only include alphanumeric characters, dashes, and underscores.
@@ -169,7 +166,6 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[^\\/\?\*\s]+<br/>
      *
      * @param policyName The name of the policy. <p>The policy name cannot exceed 64 characters
      *         and can only include alphanumeric characters, dashes, and underscores.

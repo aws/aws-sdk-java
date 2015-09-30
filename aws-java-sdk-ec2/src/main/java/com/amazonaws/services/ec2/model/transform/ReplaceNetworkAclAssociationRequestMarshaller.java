@@ -39,7 +39,7 @@ public class ReplaceNetworkAclAssociationRequestMarshaller implements Marshaller
 
         Request<ReplaceNetworkAclAssociationRequest> request = new DefaultRequest<ReplaceNetworkAclAssociationRequest>(replaceNetworkAclAssociationRequest, "AmazonEC2");
         request.addParameter("Action", "ReplaceNetworkAclAssociation");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (replaceNetworkAclAssociationRequest.getAssociationId() != null) {
             request.addParameter("AssociationId", StringUtils.fromString(replaceNetworkAclAssociationRequest.getAssociationId()));

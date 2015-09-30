@@ -39,7 +39,7 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
 
         Request<RequestSpotFleetRequest> request = new DefaultRequest<RequestSpotFleetRequest>(requestSpotFleetRequest, "AmazonEC2");
         request.addParameter("Action", "RequestSpotFleet");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         SpotFleetRequestConfigData spotFleetRequestConfigDataSpotFleetRequestConfig = requestSpotFleetRequest.getSpotFleetRequestConfig();
         if (spotFleetRequestConfigDataSpotFleetRequestConfig != null) {
@@ -252,6 +252,9 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                 }
 
                 launchSpecificationsListIndex++;
+            }
+            if (spotFleetRequestConfigDataSpotFleetRequestConfig.getExcessCapacityTerminationPolicy() != null) {
+                request.addParameter("SpotFleetRequestConfig.ExcessCapacityTerminationPolicy", StringUtils.fromString(spotFleetRequestConfigDataSpotFleetRequestConfig.getExcessCapacityTerminationPolicy()));
             }
             if (spotFleetRequestConfigDataSpotFleetRequestConfig.getAllocationStrategy() != null) {
                 request.addParameter("SpotFleetRequestConfig.AllocationStrategy", StringUtils.fromString(spotFleetRequestConfigDataSpotFleetRequestConfig.getAllocationStrategy()));

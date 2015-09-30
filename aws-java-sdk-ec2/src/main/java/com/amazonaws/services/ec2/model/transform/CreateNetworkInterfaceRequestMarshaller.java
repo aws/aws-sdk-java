@@ -39,7 +39,7 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
 
         Request<CreateNetworkInterfaceRequest> request = new DefaultRequest<CreateNetworkInterfaceRequest>(createNetworkInterfaceRequest, "AmazonEC2");
         request.addParameter("Action", "CreateNetworkInterface");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (createNetworkInterfaceRequest.getSubnetId() != null) {
             request.addParameter("SubnetId", StringUtils.fromString(createNetworkInterfaceRequest.getSubnetId()));

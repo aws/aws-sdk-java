@@ -39,7 +39,7 @@ public class DescribeVpcPeeringConnectionsRequestMarshaller implements Marshalle
 
         Request<DescribeVpcPeeringConnectionsRequest> request = new DefaultRequest<DescribeVpcPeeringConnectionsRequest>(describeVpcPeeringConnectionsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpcPeeringConnections");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         java.util.List<String> vpcPeeringConnectionIdsList = describeVpcPeeringConnectionsRequest.getVpcPeeringConnectionIds();
         int vpcPeeringConnectionIdsListIndex = 1;

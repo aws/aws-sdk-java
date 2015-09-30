@@ -238,6 +238,54 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Retrieves your account's AWS CloudFormation limits, such as the
+     * maximum number of stacks that you can create in your account.
+     * </p>
+     *
+     * @param describeAccountLimitsRequest Container for the necessary
+     *           parameters to execute the DescribeAccountLimits service method on
+     *           AmazonCloudFormation.
+     * 
+     * @return The response from the DescribeAccountLimits service method, as
+     *         returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeAccountLimitsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAccountLimitsRequest> request = null;
+        Response<DescribeAccountLimitsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAccountLimitsRequestMarshaller().marshall(super.beforeMarshalling(describeAccountLimitsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeAccountLimitsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Returns information about a new or existing template. The
      * <code>GetTemplateSummary</code> action is useful for viewing parameter
      * information, such as default parameter values and parameter types,
@@ -743,6 +791,54 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
+     * Sends a signal to the specified resource with a success or failure
+     * status. You can use the SignalResource API in conjunction with a
+     * creation policy or update policy. AWS CloudFormation doesn't proceed
+     * with a stack creation or update until resources receive the required
+     * number of signals or the timeout period is exceeded. The
+     * SignalResource API is useful in cases where you want to send signals
+     * from anywhere other than an Amazon EC2 instance.
+     * </p>
+     *
+     * @param signalResourceRequest Container for the necessary parameters to
+     *           execute the SignalResource service method on AmazonCloudFormation.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void signalResource(SignalResourceRequest signalResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(signalResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SignalResourceRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SignalResourceRequestMarshaller().marshall(super.beforeMarshalling(signalResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            invoke(request, null, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
      * Returns a description of the specified resource in the specified
      * stack.
      * </p>
@@ -795,61 +891,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Sends a signal to the specified resource with a success or failure
-     * status. You can use the SignalResource API in conjunction with a
-     * creation policy or update policy. AWS CloudFormation doesn't proceed
-     * with a stack creation or update until resources receive the required
-     * number of signals or the timeout period is exceeded. The
-     * SignalResource API is useful in cases where you want to send signals
-     * from anywhere other than an Amazon EC2 instance.
-     * </p>
-     *
-     * @param signalResourceRequest Container for the necessary parameters to
-     *           execute the SignalResource service method on AmazonCloudFormation.
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void signalResource(SignalResourceRequest signalResourceRequest) {
-        ExecutionContext executionContext = createExecutionContext(signalResourceRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<SignalResourceRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new SignalResourceRequestMarshaller().marshall(super.beforeMarshalling(signalResourceRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            invoke(request, null, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Cancels an update on the specified stack. If the call completes
-     * successfully, the stack will roll back the update and revert to the
+     * successfully, the stack rolls back the update and reverts to the
      * previous stack configuration.
      * </p>
      * <p>
-     * <b>NOTE:</b>Only stacks that are in the UPDATE_IN_PROGRESS state can
-     * be canceled.
+     * <b>NOTE:</b>You can cancel only stacks that are in the
+     * UPDATE_IN_PROGRESS state.
      * </p>
      *
      * @param cancelUpdateStackRequest Container for the necessary parameters
@@ -1122,6 +1170,28 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             
             endClientExecution(awsRequestMetrics, request, null);
         }
+    }
+    
+    /**
+     * <p>
+     * Retrieves your account's AWS CloudFormation limits, such as the
+     * maximum number of stacks that you can create in your account.
+     * </p>
+     * 
+     * @return The response from the DescribeAccountLimits service method, as
+     *         returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAccountLimitsResult describeAccountLimits() throws AmazonServiceException, AmazonClientException {
+        return describeAccountLimits(new DescribeAccountLimitsRequest());
     }
     
     /**

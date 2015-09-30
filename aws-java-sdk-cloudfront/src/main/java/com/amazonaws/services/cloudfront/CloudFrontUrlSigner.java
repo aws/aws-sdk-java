@@ -51,10 +51,10 @@ import com.amazonaws.util.StringUtils;
  * Protocol protocol = Protocol.http;
  * String distributionDomain = "d1b2c3a4g5h6.cloudfront.net";
  * File privateKeyFile = new File("/path/to/cfcurlCloud/rsa-private-key.pem");
- * String s3ObjectKey = "/a/b/images.jpeg";
+ * String s3ObjectKey = "a/b/images.jpeg";
  * String keyPairId = "APKAJCEOKRHC3XIVU5NA";
- * Date dateLessThan = DateUtils.parseIso8601Date("2012-11-14T22:20:00.000Z");
- * Date dateGreaterThan = DateUtils.parseIso8601Date("2011-11-14T22:20:00.000Z")
+ * Date dateLessThan = DateUtils.parseISO8601Date("2012-11-14T22:20:00.000Z");
+ * Date dateGreaterThan = DateUtils.parseISO8601Date("2011-11-14T22:20:00.000Z");
  * String ipRange = "192.168.0.1/24";
  *
  * String url1 = CloudFrontUrlSigner.getSignedURLWithCannedPolicy(

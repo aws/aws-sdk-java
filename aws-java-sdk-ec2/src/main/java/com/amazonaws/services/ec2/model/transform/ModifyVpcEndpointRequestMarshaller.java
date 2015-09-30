@@ -39,7 +39,7 @@ public class ModifyVpcEndpointRequestMarshaller implements Marshaller<Request<Mo
 
         Request<ModifyVpcEndpointRequest> request = new DefaultRequest<ModifyVpcEndpointRequest>(modifyVpcEndpointRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyVpcEndpoint");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (modifyVpcEndpointRequest.getVpcEndpointId() != null) {
             request.addParameter("VpcEndpointId", StringUtils.fromString(modifyVpcEndpointRequest.getVpcEndpointId()));

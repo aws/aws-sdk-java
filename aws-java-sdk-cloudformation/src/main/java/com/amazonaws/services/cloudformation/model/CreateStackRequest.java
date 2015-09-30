@@ -54,8 +54,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) located in an S3 bucket in the same
-     * region as the stack. For more information, go to the <a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3
+     * bucket. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must specify either the <code>TemplateBody</code> or the
@@ -128,6 +128,28 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * returns an <code>InsufficientCapabilities</code> error.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
+
+    /**
+     * The template resource types that you have permissions to work with for
+     * this create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     * Use the following syntax to describe template resource types:
+     * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code>
+     * (for all custom resources), <code>Custom::<i>logical_ID</i></code>
+     * (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     * particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     * a specific AWS resource). <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By
+     * default, AWS CloudFormation grants permissions to all resource types.
+     * AWS Identity and Access Management (IAM) uses this parameter for AWS
+     * CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypes;
 
     /**
      * Determines what action will be taken if stack creation fails. This
@@ -303,8 +325,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) located in an S3 bucket in the same
-     * region as the stack. For more information, go to the <a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3
+     * bucket. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must specify either the <code>TemplateBody</code> or the
@@ -314,8 +336,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1024<br/>
      *
      * @return Location of file containing the template body. The URL must point to a
-     *         template (max size: 460,800 bytes) located in an S3 bucket in the same
-     *         region as the stack. For more information, go to the <a
+     *         template (max size: 460,800 bytes) that is located in an Amazon S3
+     *         bucket. For more information, go to the <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must specify either the <code>TemplateBody</code> or the
@@ -327,8 +349,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) located in an S3 bucket in the same
-     * region as the stack. For more information, go to the <a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3
+     * bucket. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must specify either the <code>TemplateBody</code> or the
@@ -338,8 +360,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template (max size: 460,800 bytes) located in an S3 bucket in the same
-     *         region as the stack. For more information, go to the <a
+     *         template (max size: 460,800 bytes) that is located in an Amazon S3
+     *         bucket. For more information, go to the <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must specify either the <code>TemplateBody</code> or the
@@ -351,8 +373,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) located in an S3 bucket in the same
-     * region as the stack. For more information, go to the <a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3
+     * bucket. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must specify either the <code>TemplateBody</code> or the
@@ -364,8 +386,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template (max size: 460,800 bytes) located in an S3 bucket in the same
-     *         region as the stack. For more information, go to the <a
+     *         template (max size: 460,800 bytes) that is located in an Amazon S3
+     *         bucket. For more information, go to the <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must specify either the <code>TemplateBody</code> or the
@@ -1016,6 +1038,215 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * The template resource types that you have permissions to work with for
+     * this create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     * Use the following syntax to describe template resource types:
+     * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code>
+     * (for all custom resources), <code>Custom::<i>logical_ID</i></code>
+     * (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     * particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     * a specific AWS resource). <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By
+     * default, AWS CloudFormation grants permissions to all resource types.
+     * AWS Identity and Access Management (IAM) uses this parameter for AWS
+     * CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.
+     *
+     * @return The template resource types that you have permissions to work with for
+     *         this create stack action, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     *         Use the following syntax to describe template resource types:
+     *         <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code>
+     *         (for all custom resources), <code>Custom::<i>logical_ID</i></code>
+     *         (for a specific custom resource),
+     *         <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     *         particular AWS service), and
+     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     *         a specific AWS resource). <p>If the list of resource types doesn't
+     *         include a resource that you're creating, the stack creation fails. By
+     *         default, AWS CloudFormation grants permissions to all resource types.
+     *         AWS Identity and Access Management (IAM) uses this parameter for AWS
+     *         CloudFormation-specific condition keys in IAM policies. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *         Access with AWS Identity and Access Management</a>.
+     */
+    public java.util.List<String> getResourceTypes() {
+        if (resourceTypes == null) {
+              resourceTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              resourceTypes.setAutoConstruct(true);
+        }
+        return resourceTypes;
+    }
+    
+    /**
+     * The template resource types that you have permissions to work with for
+     * this create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     * Use the following syntax to describe template resource types:
+     * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code>
+     * (for all custom resources), <code>Custom::<i>logical_ID</i></code>
+     * (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     * particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     * a specific AWS resource). <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By
+     * default, AWS CloudFormation grants permissions to all resource types.
+     * AWS Identity and Access Management (IAM) uses this parameter for AWS
+     * CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.
+     *
+     * @param resourceTypes The template resource types that you have permissions to work with for
+     *         this create stack action, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     *         Use the following syntax to describe template resource types:
+     *         <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code>
+     *         (for all custom resources), <code>Custom::<i>logical_ID</i></code>
+     *         (for a specific custom resource),
+     *         <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     *         particular AWS service), and
+     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     *         a specific AWS resource). <p>If the list of resource types doesn't
+     *         include a resource that you're creating, the stack creation fails. By
+     *         default, AWS CloudFormation grants permissions to all resource types.
+     *         AWS Identity and Access Management (IAM) uses this parameter for AWS
+     *         CloudFormation-specific condition keys in IAM policies. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *         Access with AWS Identity and Access Management</a>.
+     */
+    public void setResourceTypes(java.util.Collection<String> resourceTypes) {
+        if (resourceTypes == null) {
+            this.resourceTypes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(resourceTypes.size());
+        resourceTypesCopy.addAll(resourceTypes);
+        this.resourceTypes = resourceTypesCopy;
+    }
+    
+    /**
+     * The template resource types that you have permissions to work with for
+     * this create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     * Use the following syntax to describe template resource types:
+     * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code>
+     * (for all custom resources), <code>Custom::<i>logical_ID</i></code>
+     * (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     * particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     * a specific AWS resource). <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By
+     * default, AWS CloudFormation grants permissions to all resource types.
+     * AWS Identity and Access Management (IAM) uses this parameter for AWS
+     * CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setResourceTypes(java.util.Collection)} or {@link
+     * #withResourceTypes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceTypes The template resource types that you have permissions to work with for
+     *         this create stack action, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     *         Use the following syntax to describe template resource types:
+     *         <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code>
+     *         (for all custom resources), <code>Custom::<i>logical_ID</i></code>
+     *         (for a specific custom resource),
+     *         <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     *         particular AWS service), and
+     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     *         a specific AWS resource). <p>If the list of resource types doesn't
+     *         include a resource that you're creating, the stack creation fails. By
+     *         default, AWS CloudFormation grants permissions to all resource types.
+     *         AWS Identity and Access Management (IAM) uses this parameter for AWS
+     *         CloudFormation-specific condition keys in IAM policies. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *         Access with AWS Identity and Access Management</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateStackRequest withResourceTypes(String... resourceTypes) {
+        if (getResourceTypes() == null) setResourceTypes(new java.util.ArrayList<String>(resourceTypes.length));
+        for (String value : resourceTypes) {
+            getResourceTypes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The template resource types that you have permissions to work with for
+     * this create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     * Use the following syntax to describe template resource types:
+     * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code>
+     * (for all custom resources), <code>Custom::<i>logical_ID</i></code>
+     * (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     * particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     * a specific AWS resource). <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By
+     * default, AWS CloudFormation grants permissions to all resource types.
+     * AWS Identity and Access Management (IAM) uses this parameter for AWS
+     * CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceTypes The template resource types that you have permissions to work with for
+     *         this create stack action, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.
+     *         Use the following syntax to describe template resource types:
+     *         <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code>
+     *         (for all custom resources), <code>Custom::<i>logical_ID</i></code>
+     *         (for a specific custom resource),
+     *         <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+     *         particular AWS service), and
+     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     *         a specific AWS resource). <p>If the list of resource types doesn't
+     *         include a resource that you're creating, the stack creation fails. By
+     *         default, AWS CloudFormation grants permissions to all resource types.
+     *         AWS Identity and Access Management (IAM) uses this parameter for AWS
+     *         CloudFormation-specific condition keys in IAM policies. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *         Access with AWS Identity and Access Management</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateStackRequest withResourceTypes(java.util.Collection<String> resourceTypes) {
+        if (resourceTypes == null) {
+            this.resourceTypes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(resourceTypes.size());
+            resourceTypesCopy.addAll(resourceTypes);
+            this.resourceTypes = resourceTypesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Determines what action will be taken if stack creation fails. This
      * must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
      * either <code>OnFailure</code> or <code>DisableRollback</code>, but not
@@ -1376,6 +1607,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ",");
         if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ",");
         if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");
+        if (getResourceTypes() != null) sb.append("ResourceTypes: " + getResourceTypes() + ",");
         if (getOnFailure() != null) sb.append("OnFailure: " + getOnFailure() + ",");
         if (getStackPolicyBody() != null) sb.append("StackPolicyBody: " + getStackPolicyBody() + ",");
         if (getStackPolicyURL() != null) sb.append("StackPolicyURL: " + getStackPolicyURL() + ",");
@@ -1397,6 +1629,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode()); 
         hashCode = prime * hashCode + ((getNotificationARNs() == null) ? 0 : getNotificationARNs().hashCode()); 
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceTypes() == null) ? 0 : getResourceTypes().hashCode()); 
         hashCode = prime * hashCode + ((getOnFailure() == null) ? 0 : getOnFailure().hashCode()); 
         hashCode = prime * hashCode + ((getStackPolicyBody() == null) ? 0 : getStackPolicyBody().hashCode()); 
         hashCode = prime * hashCode + ((getStackPolicyURL() == null) ? 0 : getStackPolicyURL().hashCode()); 
@@ -1428,6 +1661,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         if (other.getNotificationARNs() != null && other.getNotificationARNs().equals(this.getNotificationARNs()) == false) return false; 
         if (other.getCapabilities() == null ^ this.getCapabilities() == null) return false;
         if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false) return false; 
+        if (other.getResourceTypes() == null ^ this.getResourceTypes() == null) return false;
+        if (other.getResourceTypes() != null && other.getResourceTypes().equals(this.getResourceTypes()) == false) return false; 
         if (other.getOnFailure() == null ^ this.getOnFailure() == null) return false;
         if (other.getOnFailure() != null && other.getOnFailure().equals(this.getOnFailure()) == false) return false; 
         if (other.getStackPolicyBody() == null ^ this.getStackPolicyBody() == null) return false;

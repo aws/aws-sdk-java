@@ -39,7 +39,7 @@ public class DescribeVpcEndpointServicesRequestMarshaller implements Marshaller<
 
         Request<DescribeVpcEndpointServicesRequest> request = new DefaultRequest<DescribeVpcEndpointServicesRequest>(describeVpcEndpointServicesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpcEndpointServices");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (describeVpcEndpointServicesRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeVpcEndpointServicesRequest.getMaxResults()));

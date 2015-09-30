@@ -55,6 +55,9 @@ public class AwsHostNameUtils {
     public static String parseRegionName(final String host,
                                          final String serviceHint) {
 
+        if (host == null) {
+            throw new IllegalArgumentException("hostname cannot be null");
+        }
         String regionNameInInternalConfig = parseRegionNameByInternalConfig(host);
         if (regionNameInInternalConfig != null) {
             return regionNameInInternalConfig;

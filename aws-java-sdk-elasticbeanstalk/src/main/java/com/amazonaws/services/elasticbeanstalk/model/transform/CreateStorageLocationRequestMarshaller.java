@@ -47,6 +47,7 @@ public class CreateStorageLocationRequestMarshaller
                 createStorageLocationRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "CreateStorageLocation");
         request.addParameter("Version", "2010-12-01");
+        request.setHttpMethod(HttpMethodName.POST);
 
         return request;
     }

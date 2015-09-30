@@ -45,6 +45,8 @@ import com.amazonaws.util.json.*;
 public class DeleteMountTargetRequestMarshaller implements
         Marshaller<Request<DeleteMountTargetRequest>, DeleteMountTargetRequest> {
 
+    private static final String DEFAULT_CONTENT_TYPE = "";
+
     public Request<DeleteMountTargetRequest> marshall(
             DeleteMountTargetRequest deleteMountTargetRequest) {
 

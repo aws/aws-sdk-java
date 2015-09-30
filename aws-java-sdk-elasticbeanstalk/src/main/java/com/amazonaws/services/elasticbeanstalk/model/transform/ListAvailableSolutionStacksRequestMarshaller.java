@@ -47,6 +47,7 @@ public class ListAvailableSolutionStacksRequestMarshaller
                 listAvailableSolutionStacksRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "ListAvailableSolutionStacks");
         request.addParameter("Version", "2010-12-01");
+        request.setHttpMethod(HttpMethodName.POST);
 
         return request;
     }

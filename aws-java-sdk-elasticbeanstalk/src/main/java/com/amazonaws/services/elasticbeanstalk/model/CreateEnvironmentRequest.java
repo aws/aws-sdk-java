@@ -112,8 +112,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
     private String templateName;
     /**
      * <p>
-     * This is an alternative to specifying a configuration name. If specified,
-     * AWS Elastic Beanstalk sets the configuration values to the default values
+     * This is an alternative to specifying a template name. If specified, AWS
+     * Elastic Beanstalk sets the configuration values to the default values
      * associated with the specified solution stack.
      * </p>
      * <p>
@@ -749,8 +749,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * This is an alternative to specifying a configuration name. If specified,
-     * AWS Elastic Beanstalk sets the configuration values to the default values
+     * This is an alternative to specifying a template name. If specified, AWS
+     * Elastic Beanstalk sets the configuration values to the default values
      * associated with the specified solution stack.
      * </p>
      * <p>
@@ -762,7 +762,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param solutionStackName
-     *        This is an alternative to specifying a configuration name. If
+     *        This is an alternative to specifying a template name. If
      *        specified, AWS Elastic Beanstalk sets the configuration values to
      *        the default values associated with the specified solution stack.
      *        </p>
@@ -780,8 +780,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * This is an alternative to specifying a configuration name. If specified,
-     * AWS Elastic Beanstalk sets the configuration values to the default values
+     * This is an alternative to specifying a template name. If specified, AWS
+     * Elastic Beanstalk sets the configuration values to the default values
      * associated with the specified solution stack.
      * </p>
      * <p>
@@ -792,7 +792,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * <code>MissingRequiredParameter</code> error.
      * </p>
      * 
-     * @return This is an alternative to specifying a configuration name. If
+     * @return This is an alternative to specifying a template name. If
      *         specified, AWS Elastic Beanstalk sets the configuration values to
      *         the default values associated with the specified solution stack.
      *         </p>
@@ -810,8 +810,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * This is an alternative to specifying a configuration name. If specified,
-     * AWS Elastic Beanstalk sets the configuration values to the default values
+     * This is an alternative to specifying a template name. If specified, AWS
+     * Elastic Beanstalk sets the configuration values to the default values
      * associated with the specified solution stack.
      * </p>
      * <p>
@@ -823,7 +823,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param solutionStackName
-     *        This is an alternative to specifying a configuration name. If
+     *        This is an alternative to specifying a template name. If
      *        specified, AWS Elastic Beanstalk sets the configuration values to
      *        the default values associated with the specified solution stack.
      *        </p>

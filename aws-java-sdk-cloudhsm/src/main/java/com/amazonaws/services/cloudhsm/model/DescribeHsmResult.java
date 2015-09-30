@@ -1,1190 +1,1066 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudhsm.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output of the DescribeHsm action.
+ * Contains the output of the <a>DescribeHsm</a> action.
  * </p>
  */
 public class DescribeHsmResult implements Serializable, Cloneable {
 
     /**
-     * The ARN of the HSM.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\-]*:[0-9]{12}:hsm-[0-9a-f]{8}<br/>
+     * The ARN of the HSM.
+     * </p>
      */
     private String hsmArn;
-
     /**
-     * The status of the HSM.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED
+     * The status of the HSM.
+     * </p>
      */
     private String status;
-
     /**
-     * Contains additional information about the status of the HSM.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
+     * Contains additional information about the status of the HSM.
+     * </p>
      */
     private String statusDetails;
-
     /**
-     * The Availability Zone that the HSM is in.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[a-zA-Z0-9\-]*<br/>
+     * The Availability Zone that the HSM is in.
+     * </p>
      */
     private String availabilityZone;
-
     /**
+     * <p>
      * The identifier of the elastic network interface (ENI) attached to the
      * HSM.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>eni-[0-9a-f]{8}<br/>
+     * </p>
      */
     private String eniId;
-
     /**
-     * The IP address assigned to the HSM's ENI.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}<br/>
+     * The IP address assigned to the HSM's ENI.
+     * </p>
      */
     private String eniIp;
-
     /**
-     * The subscription type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PRODUCTION
+     * The subscription type.
+     * </p>
      */
     private String subscriptionType;
-
     /**
-     * The subscription start date.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
+     * The subscription start date.
+     * </p>
      */
     private String subscriptionStartDate;
-
     /**
-     * The subscription end date.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
+     * The subscription end date.
+     * </p>
      */
     private String subscriptionEndDate;
-
     /**
-     * The identifier of the VPC that the HSM is in.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>vpc-[0-9a-f]{8}<br/>
+     * The identifier of the VPC that the HSM is in.
+     * </p>
      */
     private String vpcId;
-
     /**
-     * The identifier of the subnet the HSM is in.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>subnet-[0-9a-f]{8}<br/>
+     * The identifier of the subnet the HSM is in.
+     * </p>
      */
     private String subnetId;
-
     /**
-     * The ARN of the IAM role assigned to the HSM.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws(-iso)?:iam::[0-9]{12}:role/[a-zA-Z0-9_\+=,\.\-@]{1,64}<br/>
+     * The ARN of the IAM role assigned to the HSM.
+     * </p>
      */
     private String iamRoleArn;
-
     /**
-     * The serial number of the HSM.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d{1,16}<br/>
+     * The serial number of the HSM.
+     * </p>
      */
     private String serialNumber;
-
     /**
-     * The name of the HSM vendor.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
+     * The name of the HSM vendor.
+     * </p>
      */
     private String vendorName;
-
     /**
-     * The HSM model type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
+     * The HSM model type.
+     * </p>
      */
     private String hsmType;
-
     /**
-     * The HSM software version.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
+     * The HSM software version.
+     * </p>
      */
     private String softwareVersion;
-
     /**
-     * The public SSH key.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[a-zA-Z0-9+/= ._:\\@-]*<br/>
+     * The public SSH key.
+     * </p>
      */
     private String sshPublicKey;
-
     /**
-     * The date and time the SSH key was last updated.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
+     * The date and time the SSH key was last updated.
+     * </p>
      */
     private String sshKeyLastUpdated;
-
     /**
-     * The URI of the certificate server.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
+     * The URI of the certificate server.
+     * </p>
      */
     private String serverCertUri;
-
     /**
-     * The date and time the server certificate was last updated.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
+     * The date and time the server certificate was last updated.
+     * </p>
      */
     private String serverCertLastUpdated;
-
     /**
+     * <p>
      * The list of partitions on the HSM.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> partitions;
+    private com.amazonaws.internal.SdkInternalList<String> partitions;
 
     /**
-     * The ARN of the HSM.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\-]*:[0-9]{12}:hsm-[0-9a-f]{8}<br/>
-     *
-     * @return The ARN of the HSM.
-     */
-    public String getHsmArn() {
-        return hsmArn;
-    }
-    
-    /**
      * The ARN of the HSM.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\-]*:[0-9]{12}:hsm-[0-9a-f]{8}<br/>
-     *
-     * @param hsmArn The ARN of the HSM.
+     * </p>
+     * 
+     * @param hsmArn
+     *        The ARN of the HSM.
      */
     public void setHsmArn(String hsmArn) {
         this.hsmArn = hsmArn;
     }
-    
+
     /**
+     * <p>
      * The ARN of the HSM.
+     * </p>
+     * 
+     * @return The ARN of the HSM.
+     */
+    public String getHsmArn() {
+        return this.hsmArn;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\-]*:[0-9]{12}:hsm-[0-9a-f]{8}<br/>
-     *
-     * @param hsmArn The ARN of the HSM.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ARN of the HSM.
+     * </p>
+     * 
+     * @param hsmArn
+     *        The ARN of the HSM.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withHsmArn(String hsmArn) {
-        this.hsmArn = hsmArn;
+        setHsmArn(hsmArn);
         return this;
     }
 
     /**
-     * The status of the HSM.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED
-     *
-     * @return The status of the HSM.
-     *
-     * @see HsmStatus
-     */
-    public String getStatus() {
-        return status;
-    }
-    
-    /**
      * The status of the HSM.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED
-     *
-     * @param status The status of the HSM.
-     *
+     * </p>
+     * 
+     * @param status
+     *        The status of the HSM.
      * @see HsmStatus
      */
     public void setStatus(String status) {
         this.status = status;
     }
-    
+
     /**
+     * <p>
      * The status of the HSM.
+     * </p>
+     * 
+     * @return The status of the HSM.
+     * @see HsmStatus
+     */
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED
-     *
-     * @param status The status of the HSM.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The status of the HSM.
+     * </p>
+     * 
+     * @param status
+     *        The status of the HSM.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see HsmStatus
      */
     public DescribeHsmResult withStatus(String status) {
-        this.status = status;
+        setStatus(status);
         return this;
     }
 
     /**
-     * The status of the HSM.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED
-     *
-     * @param status The status of the HSM.
-     *
+     * The status of the HSM.
+     * </p>
+     * 
+     * @param status
+     *        The status of the HSM.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see HsmStatus
      */
     public void setStatus(HsmStatus status) {
         this.status = status.toString();
     }
-    
+
     /**
+     * <p>
      * The status of the HSM.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED
-     *
-     * @param status The status of the HSM.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param status
+     *        The status of the HSM.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see HsmStatus
      */
     public DescribeHsmResult withStatus(HsmStatus status) {
-        this.status = status.toString();
+        setStatus(status);
         return this;
     }
 
     /**
-     * Contains additional information about the status of the HSM.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @return Contains additional information about the status of the HSM.
-     */
-    public String getStatusDetails() {
-        return statusDetails;
-    }
-    
-    /**
      * Contains additional information about the status of the HSM.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @param statusDetails Contains additional information about the status of the HSM.
+     * </p>
+     * 
+     * @param statusDetails
+     *        Contains additional information about the status of the HSM.
      */
     public void setStatusDetails(String statusDetails) {
         this.statusDetails = statusDetails;
     }
-    
+
     /**
+     * <p>
      * Contains additional information about the status of the HSM.
+     * </p>
+     * 
+     * @return Contains additional information about the status of the HSM.
+     */
+    public String getStatusDetails() {
+        return this.statusDetails;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @param statusDetails Contains additional information about the status of the HSM.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Contains additional information about the status of the HSM.
+     * </p>
+     * 
+     * @param statusDetails
+     *        Contains additional information about the status of the HSM.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withStatusDetails(String statusDetails) {
-        this.statusDetails = statusDetails;
+        setStatusDetails(statusDetails);
         return this;
     }
 
     /**
-     * The Availability Zone that the HSM is in.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[a-zA-Z0-9\-]*<br/>
-     *
-     * @return The Availability Zone that the HSM is in.
-     */
-    public String getAvailabilityZone() {
-        return availabilityZone;
-    }
-    
-    /**
      * The Availability Zone that the HSM is in.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[a-zA-Z0-9\-]*<br/>
-     *
-     * @param availabilityZone The Availability Zone that the HSM is in.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone that the HSM is in.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
-    
+
     /**
+     * <p>
      * The Availability Zone that the HSM is in.
+     * </p>
+     * 
+     * @return The Availability Zone that the HSM is in.
+     */
+    public String getAvailabilityZone() {
+        return this.availabilityZone;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[a-zA-Z0-9\-]*<br/>
-     *
-     * @param availabilityZone The Availability Zone that the HSM is in.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Availability Zone that the HSM is in.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone that the HSM is in.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withAvailabilityZone(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
+        setAvailabilityZone(availabilityZone);
         return this;
     }
 
     /**
+     * <p>
      * The identifier of the elastic network interface (ENI) attached to the
      * HSM.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>eni-[0-9a-f]{8}<br/>
-     *
-     * @return The identifier of the elastic network interface (ENI) attached to the
-     *         HSM.
-     */
-    public String getEniId() {
-        return eniId;
-    }
-    
-    /**
-     * The identifier of the elastic network interface (ENI) attached to the
-     * HSM.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>eni-[0-9a-f]{8}<br/>
-     *
-     * @param eniId The identifier of the elastic network interface (ENI) attached to the
-     *         HSM.
+     * </p>
+     * 
+     * @param eniId
+     *        The identifier of the elastic network interface (ENI) attached to
+     *        the HSM.
      */
     public void setEniId(String eniId) {
         this.eniId = eniId;
     }
-    
+
     /**
+     * <p>
      * The identifier of the elastic network interface (ENI) attached to the
      * HSM.
+     * </p>
+     * 
+     * @return The identifier of the elastic network interface (ENI) attached to
+     *         the HSM.
+     */
+    public String getEniId() {
+        return this.eniId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>eni-[0-9a-f]{8}<br/>
-     *
-     * @param eniId The identifier of the elastic network interface (ENI) attached to the
-     *         HSM.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier of the elastic network interface (ENI) attached to the
+     * HSM.
+     * </p>
+     * 
+     * @param eniId
+     *        The identifier of the elastic network interface (ENI) attached to
+     *        the HSM.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withEniId(String eniId) {
-        this.eniId = eniId;
+        setEniId(eniId);
         return this;
     }
 
     /**
-     * The IP address assigned to the HSM's ENI.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}<br/>
-     *
-     * @return The IP address assigned to the HSM's ENI.
-     */
-    public String getEniIp() {
-        return eniIp;
-    }
-    
-    /**
      * The IP address assigned to the HSM's ENI.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}<br/>
-     *
-     * @param eniIp The IP address assigned to the HSM's ENI.
+     * </p>
+     * 
+     * @param eniIp
+     *        The IP address assigned to the HSM's ENI.
      */
     public void setEniIp(String eniIp) {
         this.eniIp = eniIp;
     }
-    
+
     /**
+     * <p>
      * The IP address assigned to the HSM's ENI.
+     * </p>
+     * 
+     * @return The IP address assigned to the HSM's ENI.
+     */
+    public String getEniIp() {
+        return this.eniIp;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}<br/>
-     *
-     * @param eniIp The IP address assigned to the HSM's ENI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The IP address assigned to the HSM's ENI.
+     * </p>
+     * 
+     * @param eniIp
+     *        The IP address assigned to the HSM's ENI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withEniIp(String eniIp) {
-        this.eniIp = eniIp;
+        setEniIp(eniIp);
         return this;
     }
 
     /**
-     * The subscription type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PRODUCTION
-     *
-     * @return The subscription type.
-     *
-     * @see SubscriptionType
-     */
-    public String getSubscriptionType() {
-        return subscriptionType;
-    }
-    
-    /**
      * The subscription type.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PRODUCTION
-     *
-     * @param subscriptionType The subscription type.
-     *
+     * </p>
+     * 
+     * @param subscriptionType
+     *        The subscription type.
      * @see SubscriptionType
      */
     public void setSubscriptionType(String subscriptionType) {
         this.subscriptionType = subscriptionType;
     }
-    
+
     /**
+     * <p>
      * The subscription type.
+     * </p>
+     * 
+     * @return The subscription type.
+     * @see SubscriptionType
+     */
+    public String getSubscriptionType() {
+        return this.subscriptionType;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PRODUCTION
-     *
-     * @param subscriptionType The subscription type.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The subscription type.
+     * </p>
+     * 
+     * @param subscriptionType
+     *        The subscription type.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see SubscriptionType
      */
     public DescribeHsmResult withSubscriptionType(String subscriptionType) {
-        this.subscriptionType = subscriptionType;
+        setSubscriptionType(subscriptionType);
         return this;
     }
 
     /**
-     * The subscription type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PRODUCTION
-     *
-     * @param subscriptionType The subscription type.
-     *
+     * The subscription type.
+     * </p>
+     * 
+     * @param subscriptionType
+     *        The subscription type.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see SubscriptionType
      */
     public void setSubscriptionType(SubscriptionType subscriptionType) {
         this.subscriptionType = subscriptionType.toString();
     }
-    
+
     /**
+     * <p>
      * The subscription type.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PRODUCTION
-     *
-     * @param subscriptionType The subscription type.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param subscriptionType
+     *        The subscription type.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see SubscriptionType
      */
-    public DescribeHsmResult withSubscriptionType(SubscriptionType subscriptionType) {
-        this.subscriptionType = subscriptionType.toString();
+    public DescribeHsmResult withSubscriptionType(
+            SubscriptionType subscriptionType) {
+        setSubscriptionType(subscriptionType);
         return this;
     }
 
     /**
-     * The subscription start date.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @return The subscription start date.
-     */
-    public String getSubscriptionStartDate() {
-        return subscriptionStartDate;
-    }
-    
-    /**
      * The subscription start date.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @param subscriptionStartDate The subscription start date.
+     * </p>
+     * 
+     * @param subscriptionStartDate
+     *        The subscription start date.
      */
     public void setSubscriptionStartDate(String subscriptionStartDate) {
         this.subscriptionStartDate = subscriptionStartDate;
     }
-    
+
     /**
+     * <p>
      * The subscription start date.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @param subscriptionStartDate The subscription start date.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The subscription start date.
      */
-    public DescribeHsmResult withSubscriptionStartDate(String subscriptionStartDate) {
-        this.subscriptionStartDate = subscriptionStartDate;
+    public String getSubscriptionStartDate() {
+        return this.subscriptionStartDate;
+    }
+
+    /**
+     * <p>
+     * The subscription start date.
+     * </p>
+     * 
+     * @param subscriptionStartDate
+     *        The subscription start date.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeHsmResult withSubscriptionStartDate(
+            String subscriptionStartDate) {
+        setSubscriptionStartDate(subscriptionStartDate);
         return this;
     }
 
     /**
-     * The subscription end date.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @return The subscription end date.
-     */
-    public String getSubscriptionEndDate() {
-        return subscriptionEndDate;
-    }
-    
-    /**
      * The subscription end date.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @param subscriptionEndDate The subscription end date.
+     * </p>
+     * 
+     * @param subscriptionEndDate
+     *        The subscription end date.
      */
     public void setSubscriptionEndDate(String subscriptionEndDate) {
         this.subscriptionEndDate = subscriptionEndDate;
     }
-    
+
     /**
+     * <p>
      * The subscription end date.
+     * </p>
+     * 
+     * @return The subscription end date.
+     */
+    public String getSubscriptionEndDate() {
+        return this.subscriptionEndDate;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @param subscriptionEndDate The subscription end date.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The subscription end date.
+     * </p>
+     * 
+     * @param subscriptionEndDate
+     *        The subscription end date.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withSubscriptionEndDate(String subscriptionEndDate) {
-        this.subscriptionEndDate = subscriptionEndDate;
+        setSubscriptionEndDate(subscriptionEndDate);
         return this;
     }
 
     /**
-     * The identifier of the VPC that the HSM is in.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>vpc-[0-9a-f]{8}<br/>
-     *
-     * @return The identifier of the VPC that the HSM is in.
-     */
-    public String getVpcId() {
-        return vpcId;
-    }
-    
-    /**
      * The identifier of the VPC that the HSM is in.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>vpc-[0-9a-f]{8}<br/>
-     *
-     * @param vpcId The identifier of the VPC that the HSM is in.
+     * </p>
+     * 
+     * @param vpcId
+     *        The identifier of the VPC that the HSM is in.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
-    
+
     /**
+     * <p>
      * The identifier of the VPC that the HSM is in.
+     * </p>
+     * 
+     * @return The identifier of the VPC that the HSM is in.
+     */
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>vpc-[0-9a-f]{8}<br/>
-     *
-     * @param vpcId The identifier of the VPC that the HSM is in.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier of the VPC that the HSM is in.
+     * </p>
+     * 
+     * @param vpcId
+     *        The identifier of the VPC that the HSM is in.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withVpcId(String vpcId) {
-        this.vpcId = vpcId;
+        setVpcId(vpcId);
         return this;
     }
 
     /**
-     * The identifier of the subnet the HSM is in.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>subnet-[0-9a-f]{8}<br/>
-     *
-     * @return The identifier of the subnet the HSM is in.
-     */
-    public String getSubnetId() {
-        return subnetId;
-    }
-    
-    /**
      * The identifier of the subnet the HSM is in.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>subnet-[0-9a-f]{8}<br/>
-     *
-     * @param subnetId The identifier of the subnet the HSM is in.
+     * </p>
+     * 
+     * @param subnetId
+     *        The identifier of the subnet the HSM is in.
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
-    
+
     /**
+     * <p>
      * The identifier of the subnet the HSM is in.
+     * </p>
+     * 
+     * @return The identifier of the subnet the HSM is in.
+     */
+    public String getSubnetId() {
+        return this.subnetId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>subnet-[0-9a-f]{8}<br/>
-     *
-     * @param subnetId The identifier of the subnet the HSM is in.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier of the subnet the HSM is in.
+     * </p>
+     * 
+     * @param subnetId
+     *        The identifier of the subnet the HSM is in.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withSubnetId(String subnetId) {
-        this.subnetId = subnetId;
+        setSubnetId(subnetId);
         return this;
     }
 
     /**
-     * The ARN of the IAM role assigned to the HSM.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws(-iso)?:iam::[0-9]{12}:role/[a-zA-Z0-9_\+=,\.\-@]{1,64}<br/>
-     *
-     * @return The ARN of the IAM role assigned to the HSM.
-     */
-    public String getIamRoleArn() {
-        return iamRoleArn;
-    }
-    
-    /**
      * The ARN of the IAM role assigned to the HSM.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws(-iso)?:iam::[0-9]{12}:role/[a-zA-Z0-9_\+=,\.\-@]{1,64}<br/>
-     *
-     * @param iamRoleArn The ARN of the IAM role assigned to the HSM.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The ARN of the IAM role assigned to the HSM.
      */
     public void setIamRoleArn(String iamRoleArn) {
         this.iamRoleArn = iamRoleArn;
     }
-    
+
     /**
+     * <p>
      * The ARN of the IAM role assigned to the HSM.
+     * </p>
+     * 
+     * @return The ARN of the IAM role assigned to the HSM.
+     */
+    public String getIamRoleArn() {
+        return this.iamRoleArn;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws(-iso)?:iam::[0-9]{12}:role/[a-zA-Z0-9_\+=,\.\-@]{1,64}<br/>
-     *
-     * @param iamRoleArn The ARN of the IAM role assigned to the HSM.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ARN of the IAM role assigned to the HSM.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The ARN of the IAM role assigned to the HSM.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withIamRoleArn(String iamRoleArn) {
-        this.iamRoleArn = iamRoleArn;
+        setIamRoleArn(iamRoleArn);
         return this;
     }
 
     /**
-     * The serial number of the HSM.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d{1,16}<br/>
-     *
-     * @return The serial number of the HSM.
-     */
-    public String getSerialNumber() {
-        return serialNumber;
-    }
-    
-    /**
      * The serial number of the HSM.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d{1,16}<br/>
-     *
-     * @param serialNumber The serial number of the HSM.
+     * </p>
+     * 
+     * @param serialNumber
+     *        The serial number of the HSM.
      */
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
-    
+
     /**
+     * <p>
      * The serial number of the HSM.
+     * </p>
+     * 
+     * @return The serial number of the HSM.
+     */
+    public String getSerialNumber() {
+        return this.serialNumber;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d{1,16}<br/>
-     *
-     * @param serialNumber The serial number of the HSM.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The serial number of the HSM.
+     * </p>
+     * 
+     * @param serialNumber
+     *        The serial number of the HSM.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
+        setSerialNumber(serialNumber);
         return this;
     }
 
     /**
-     * The name of the HSM vendor.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @return The name of the HSM vendor.
-     */
-    public String getVendorName() {
-        return vendorName;
-    }
-    
-    /**
      * The name of the HSM vendor.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @param vendorName The name of the HSM vendor.
+     * </p>
+     * 
+     * @param vendorName
+     *        The name of the HSM vendor.
      */
     public void setVendorName(String vendorName) {
         this.vendorName = vendorName;
     }
-    
+
     /**
+     * <p>
      * The name of the HSM vendor.
+     * </p>
+     * 
+     * @return The name of the HSM vendor.
+     */
+    public String getVendorName() {
+        return this.vendorName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @param vendorName The name of the HSM vendor.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the HSM vendor.
+     * </p>
+     * 
+     * @param vendorName
+     *        The name of the HSM vendor.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withVendorName(String vendorName) {
-        this.vendorName = vendorName;
+        setVendorName(vendorName);
         return this;
     }
 
     /**
-     * The HSM model type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @return The HSM model type.
-     */
-    public String getHsmType() {
-        return hsmType;
-    }
-    
-    /**
      * The HSM model type.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @param hsmType The HSM model type.
+     * </p>
+     * 
+     * @param hsmType
+     *        The HSM model type.
      */
     public void setHsmType(String hsmType) {
         this.hsmType = hsmType;
     }
-    
+
     /**
+     * <p>
      * The HSM model type.
+     * </p>
+     * 
+     * @return The HSM model type.
+     */
+    public String getHsmType() {
+        return this.hsmType;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @param hsmType The HSM model type.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The HSM model type.
+     * </p>
+     * 
+     * @param hsmType
+     *        The HSM model type.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withHsmType(String hsmType) {
-        this.hsmType = hsmType;
+        setHsmType(hsmType);
         return this;
     }
 
     /**
-     * The HSM software version.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @return The HSM software version.
-     */
-    public String getSoftwareVersion() {
-        return softwareVersion;
-    }
-    
-    /**
      * The HSM software version.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @param softwareVersion The HSM software version.
+     * </p>
+     * 
+     * @param softwareVersion
+     *        The HSM software version.
      */
     public void setSoftwareVersion(String softwareVersion) {
         this.softwareVersion = softwareVersion;
     }
-    
+
     /**
+     * <p>
      * The HSM software version.
+     * </p>
+     * 
+     * @return The HSM software version.
+     */
+    public String getSoftwareVersion() {
+        return this.softwareVersion;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @param softwareVersion The HSM software version.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The HSM software version.
+     * </p>
+     * 
+     * @param softwareVersion
+     *        The HSM software version.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withSoftwareVersion(String softwareVersion) {
-        this.softwareVersion = softwareVersion;
+        setSoftwareVersion(softwareVersion);
         return this;
     }
 
     /**
-     * The public SSH key.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[a-zA-Z0-9+/= ._:\\@-]*<br/>
-     *
-     * @return The public SSH key.
-     */
-    public String getSshPublicKey() {
-        return sshPublicKey;
-    }
-    
-    /**
      * The public SSH key.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[a-zA-Z0-9+/= ._:\\@-]*<br/>
-     *
-     * @param sshPublicKey The public SSH key.
+     * </p>
+     * 
+     * @param sshPublicKey
+     *        The public SSH key.
      */
     public void setSshPublicKey(String sshPublicKey) {
         this.sshPublicKey = sshPublicKey;
     }
-    
+
     /**
+     * <p>
      * The public SSH key.
+     * </p>
+     * 
+     * @return The public SSH key.
+     */
+    public String getSshPublicKey() {
+        return this.sshPublicKey;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[a-zA-Z0-9+/= ._:\\@-]*<br/>
-     *
-     * @param sshPublicKey The public SSH key.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The public SSH key.
+     * </p>
+     * 
+     * @param sshPublicKey
+     *        The public SSH key.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withSshPublicKey(String sshPublicKey) {
-        this.sshPublicKey = sshPublicKey;
+        setSshPublicKey(sshPublicKey);
         return this;
     }
 
     /**
-     * The date and time the SSH key was last updated.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @return The date and time the SSH key was last updated.
-     */
-    public String getSshKeyLastUpdated() {
-        return sshKeyLastUpdated;
-    }
-    
-    /**
      * The date and time the SSH key was last updated.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @param sshKeyLastUpdated The date and time the SSH key was last updated.
+     * </p>
+     * 
+     * @param sshKeyLastUpdated
+     *        The date and time the SSH key was last updated.
      */
     public void setSshKeyLastUpdated(String sshKeyLastUpdated) {
         this.sshKeyLastUpdated = sshKeyLastUpdated;
     }
-    
+
     /**
+     * <p>
      * The date and time the SSH key was last updated.
+     * </p>
+     * 
+     * @return The date and time the SSH key was last updated.
+     */
+    public String getSshKeyLastUpdated() {
+        return this.sshKeyLastUpdated;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @param sshKeyLastUpdated The date and time the SSH key was last updated.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The date and time the SSH key was last updated.
+     * </p>
+     * 
+     * @param sshKeyLastUpdated
+     *        The date and time the SSH key was last updated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withSshKeyLastUpdated(String sshKeyLastUpdated) {
-        this.sshKeyLastUpdated = sshKeyLastUpdated;
+        setSshKeyLastUpdated(sshKeyLastUpdated);
         return this;
     }
 
     /**
-     * The URI of the certificate server.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @return The URI of the certificate server.
-     */
-    public String getServerCertUri() {
-        return serverCertUri;
-    }
-    
-    /**
      * The URI of the certificate server.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @param serverCertUri The URI of the certificate server.
+     * </p>
+     * 
+     * @param serverCertUri
+     *        The URI of the certificate server.
      */
     public void setServerCertUri(String serverCertUri) {
         this.serverCertUri = serverCertUri;
     }
-    
+
     /**
+     * <p>
      * The URI of the certificate server.
+     * </p>
+     * 
+     * @return The URI of the certificate server.
+     */
+    public String getServerCertUri() {
+        return this.serverCertUri;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\w :+=./\\-]*<br/>
-     *
-     * @param serverCertUri The URI of the certificate server.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The URI of the certificate server.
+     * </p>
+     * 
+     * @param serverCertUri
+     *        The URI of the certificate server.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withServerCertUri(String serverCertUri) {
-        this.serverCertUri = serverCertUri;
+        setServerCertUri(serverCertUri);
         return this;
     }
 
     /**
-     * The date and time the server certificate was last updated.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @return The date and time the server certificate was last updated.
-     */
-    public String getServerCertLastUpdated() {
-        return serverCertLastUpdated;
-    }
-    
-    /**
      * The date and time the server certificate was last updated.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @param serverCertLastUpdated The date and time the server certificate was last updated.
+     * </p>
+     * 
+     * @param serverCertLastUpdated
+     *        The date and time the server certificate was last updated.
      */
     public void setServerCertLastUpdated(String serverCertLastUpdated) {
         this.serverCertLastUpdated = serverCertLastUpdated;
     }
-    
+
     /**
+     * <p>
      * The date and time the server certificate was last updated.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\d*<br/>
-     *
-     * @param serverCertLastUpdated The date and time the server certificate was last updated.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The date and time the server certificate was last updated.
      */
-    public DescribeHsmResult withServerCertLastUpdated(String serverCertLastUpdated) {
-        this.serverCertLastUpdated = serverCertLastUpdated;
+    public String getServerCertLastUpdated() {
+        return this.serverCertLastUpdated;
+    }
+
+    /**
+     * <p>
+     * The date and time the server certificate was last updated.
+     * </p>
+     * 
+     * @param serverCertLastUpdated
+     *        The date and time the server certificate was last updated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeHsmResult withServerCertLastUpdated(
+            String serverCertLastUpdated) {
+        setServerCertLastUpdated(serverCertLastUpdated);
         return this;
     }
 
     /**
+     * <p>
      * The list of partitions on the HSM.
-     *
+     * </p>
+     * 
      * @return The list of partitions on the HSM.
      */
     public java.util.List<String> getPartitions() {
         if (partitions == null) {
-              partitions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              partitions.setAutoConstruct(true);
+            partitions = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return partitions;
     }
-    
+
     /**
+     * <p>
      * The list of partitions on the HSM.
-     *
-     * @param partitions The list of partitions on the HSM.
+     * </p>
+     * 
+     * @param partitions
+     *        The list of partitions on the HSM.
      */
     public void setPartitions(java.util.Collection<String> partitions) {
         if (partitions == null) {
             this.partitions = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> partitionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(partitions.size());
-        partitionsCopy.addAll(partitions);
-        this.partitions = partitionsCopy;
+
+        this.partitions = new com.amazonaws.internal.SdkInternalList<String>(
+                partitions);
     }
-    
+
     /**
+     * <p>
      * The list of partitions on the HSM.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPartitions(java.util.Collection)} or {@link
-     * #withPartitions(java.util.Collection)} if you want to override the
+     * any). Use {@link #setPartitions(java.util.Collection)} or
+     * {@link #withPartitions(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param partitions The list of partitions on the HSM.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param partitions
+     *        The list of partitions on the HSM.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeHsmResult withPartitions(String... partitions) {
-        if (getPartitions() == null) setPartitions(new java.util.ArrayList<String>(partitions.length));
-        for (String value : partitions) {
-            getPartitions().add(value);
+        if (this.partitions == null) {
+            setPartitions(new com.amazonaws.internal.SdkInternalList<String>(
+                    partitions.length));
+        }
+        for (String ele : partitions) {
+            this.partitions.add(ele);
         }
         return this;
     }
-    
-    /**
-     * The list of partitions on the HSM.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param partitions The list of partitions on the HSM.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribeHsmResult withPartitions(java.util.Collection<String> partitions) {
-        if (partitions == null) {
-            this.partitions = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> partitionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(partitions.size());
-            partitionsCopy.addAll(partitions);
-            this.partitions = partitionsCopy;
-        }
 
+    /**
+     * <p>
+     * The list of partitions on the HSM.
+     * </p>
+     * 
+     * @param partitions
+     *        The list of partitions on the HSM.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeHsmResult withPartitions(
+            java.util.Collection<String> partitions) {
+        setPartitions(partitions);
         return this;
     }
 
@@ -1200,126 +1076,265 @@ public class DescribeHsmResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getHsmArn() != null) sb.append("HsmArn: " + getHsmArn() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
-        if (getStatusDetails() != null) sb.append("StatusDetails: " + getStatusDetails() + ",");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
-        if (getEniId() != null) sb.append("EniId: " + getEniId() + ",");
-        if (getEniIp() != null) sb.append("EniIp: " + getEniIp() + ",");
-        if (getSubscriptionType() != null) sb.append("SubscriptionType: " + getSubscriptionType() + ",");
-        if (getSubscriptionStartDate() != null) sb.append("SubscriptionStartDate: " + getSubscriptionStartDate() + ",");
-        if (getSubscriptionEndDate() != null) sb.append("SubscriptionEndDate: " + getSubscriptionEndDate() + ",");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
-        if (getIamRoleArn() != null) sb.append("IamRoleArn: " + getIamRoleArn() + ",");
-        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");
-        if (getVendorName() != null) sb.append("VendorName: " + getVendorName() + ",");
-        if (getHsmType() != null) sb.append("HsmType: " + getHsmType() + ",");
-        if (getSoftwareVersion() != null) sb.append("SoftwareVersion: " + getSoftwareVersion() + ",");
-        if (getSshPublicKey() != null) sb.append("SshPublicKey: " + getSshPublicKey() + ",");
-        if (getSshKeyLastUpdated() != null) sb.append("SshKeyLastUpdated: " + getSshKeyLastUpdated() + ",");
-        if (getServerCertUri() != null) sb.append("ServerCertUri: " + getServerCertUri() + ",");
-        if (getServerCertLastUpdated() != null) sb.append("ServerCertLastUpdated: " + getServerCertLastUpdated() + ",");
-        if (getPartitions() != null) sb.append("Partitions: " + getPartitions() );
+        if (getHsmArn() != null)
+            sb.append("HsmArn: " + getHsmArn() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus() + ",");
+        if (getStatusDetails() != null)
+            sb.append("StatusDetails: " + getStatusDetails() + ",");
+        if (getAvailabilityZone() != null)
+            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getEniId() != null)
+            sb.append("EniId: " + getEniId() + ",");
+        if (getEniIp() != null)
+            sb.append("EniIp: " + getEniIp() + ",");
+        if (getSubscriptionType() != null)
+            sb.append("SubscriptionType: " + getSubscriptionType() + ",");
+        if (getSubscriptionStartDate() != null)
+            sb.append("SubscriptionStartDate: " + getSubscriptionStartDate()
+                    + ",");
+        if (getSubscriptionEndDate() != null)
+            sb.append("SubscriptionEndDate: " + getSubscriptionEndDate() + ",");
+        if (getVpcId() != null)
+            sb.append("VpcId: " + getVpcId() + ",");
+        if (getSubnetId() != null)
+            sb.append("SubnetId: " + getSubnetId() + ",");
+        if (getIamRoleArn() != null)
+            sb.append("IamRoleArn: " + getIamRoleArn() + ",");
+        if (getSerialNumber() != null)
+            sb.append("SerialNumber: " + getSerialNumber() + ",");
+        if (getVendorName() != null)
+            sb.append("VendorName: " + getVendorName() + ",");
+        if (getHsmType() != null)
+            sb.append("HsmType: " + getHsmType() + ",");
+        if (getSoftwareVersion() != null)
+            sb.append("SoftwareVersion: " + getSoftwareVersion() + ",");
+        if (getSshPublicKey() != null)
+            sb.append("SshPublicKey: " + getSshPublicKey() + ",");
+        if (getSshKeyLastUpdated() != null)
+            sb.append("SshKeyLastUpdated: " + getSshKeyLastUpdated() + ",");
+        if (getServerCertUri() != null)
+            sb.append("ServerCertUri: " + getServerCertUri() + ",");
+        if (getServerCertLastUpdated() != null)
+            sb.append("ServerCertLastUpdated: " + getServerCertLastUpdated()
+                    + ",");
+        if (getPartitions() != null)
+            sb.append("Partitions: " + getPartitions());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeHsmResult == false)
+            return false;
+        DescribeHsmResult other = (DescribeHsmResult) obj;
+        if (other.getHsmArn() == null ^ this.getHsmArn() == null)
+            return false;
+        if (other.getHsmArn() != null
+                && other.getHsmArn().equals(this.getHsmArn()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null
+                && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getStatusDetails() == null ^ this.getStatusDetails() == null)
+            return false;
+        if (other.getStatusDetails() != null
+                && other.getStatusDetails().equals(this.getStatusDetails()) == false)
+            return false;
+        if (other.getAvailabilityZone() == null
+                ^ this.getAvailabilityZone() == null)
+            return false;
+        if (other.getAvailabilityZone() != null
+                && other.getAvailabilityZone().equals(
+                        this.getAvailabilityZone()) == false)
+            return false;
+        if (other.getEniId() == null ^ this.getEniId() == null)
+            return false;
+        if (other.getEniId() != null
+                && other.getEniId().equals(this.getEniId()) == false)
+            return false;
+        if (other.getEniIp() == null ^ this.getEniIp() == null)
+            return false;
+        if (other.getEniIp() != null
+                && other.getEniIp().equals(this.getEniIp()) == false)
+            return false;
+        if (other.getSubscriptionType() == null
+                ^ this.getSubscriptionType() == null)
+            return false;
+        if (other.getSubscriptionType() != null
+                && other.getSubscriptionType().equals(
+                        this.getSubscriptionType()) == false)
+            return false;
+        if (other.getSubscriptionStartDate() == null
+                ^ this.getSubscriptionStartDate() == null)
+            return false;
+        if (other.getSubscriptionStartDate() != null
+                && other.getSubscriptionStartDate().equals(
+                        this.getSubscriptionStartDate()) == false)
+            return false;
+        if (other.getSubscriptionEndDate() == null
+                ^ this.getSubscriptionEndDate() == null)
+            return false;
+        if (other.getSubscriptionEndDate() != null
+                && other.getSubscriptionEndDate().equals(
+                        this.getSubscriptionEndDate()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null
+                && other.getVpcId().equals(this.getVpcId()) == false)
+            return false;
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
+            return false;
+        if (other.getSubnetId() != null
+                && other.getSubnetId().equals(this.getSubnetId()) == false)
+            return false;
+        if (other.getIamRoleArn() == null ^ this.getIamRoleArn() == null)
+            return false;
+        if (other.getIamRoleArn() != null
+                && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
+            return false;
+        if (other.getSerialNumber() == null ^ this.getSerialNumber() == null)
+            return false;
+        if (other.getSerialNumber() != null
+                && other.getSerialNumber().equals(this.getSerialNumber()) == false)
+            return false;
+        if (other.getVendorName() == null ^ this.getVendorName() == null)
+            return false;
+        if (other.getVendorName() != null
+                && other.getVendorName().equals(this.getVendorName()) == false)
+            return false;
+        if (other.getHsmType() == null ^ this.getHsmType() == null)
+            return false;
+        if (other.getHsmType() != null
+                && other.getHsmType().equals(this.getHsmType()) == false)
+            return false;
+        if (other.getSoftwareVersion() == null
+                ^ this.getSoftwareVersion() == null)
+            return false;
+        if (other.getSoftwareVersion() != null
+                && other.getSoftwareVersion().equals(this.getSoftwareVersion()) == false)
+            return false;
+        if (other.getSshPublicKey() == null ^ this.getSshPublicKey() == null)
+            return false;
+        if (other.getSshPublicKey() != null
+                && other.getSshPublicKey().equals(this.getSshPublicKey()) == false)
+            return false;
+        if (other.getSshKeyLastUpdated() == null
+                ^ this.getSshKeyLastUpdated() == null)
+            return false;
+        if (other.getSshKeyLastUpdated() != null
+                && other.getSshKeyLastUpdated().equals(
+                        this.getSshKeyLastUpdated()) == false)
+            return false;
+        if (other.getServerCertUri() == null ^ this.getServerCertUri() == null)
+            return false;
+        if (other.getServerCertUri() != null
+                && other.getServerCertUri().equals(this.getServerCertUri()) == false)
+            return false;
+        if (other.getServerCertLastUpdated() == null
+                ^ this.getServerCertLastUpdated() == null)
+            return false;
+        if (other.getServerCertLastUpdated() != null
+                && other.getServerCertLastUpdated().equals(
+                        this.getServerCertLastUpdated()) == false)
+            return false;
+        if (other.getPartitions() == null ^ this.getPartitions() == null)
+            return false;
+        if (other.getPartitions() != null
+                && other.getPartitions().equals(this.getPartitions()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getHsmArn() == null) ? 0 : getHsmArn().hashCode()); 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode()); 
-        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
-        hashCode = prime * hashCode + ((getEniId() == null) ? 0 : getEniId().hashCode()); 
-        hashCode = prime * hashCode + ((getEniIp() == null) ? 0 : getEniIp().hashCode()); 
-        hashCode = prime * hashCode + ((getSubscriptionType() == null) ? 0 : getSubscriptionType().hashCode()); 
-        hashCode = prime * hashCode + ((getSubscriptionStartDate() == null) ? 0 : getSubscriptionStartDate().hashCode()); 
-        hashCode = prime * hashCode + ((getSubscriptionEndDate() == null) ? 0 : getSubscriptionEndDate().hashCode()); 
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
-        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
-        hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode()); 
-        hashCode = prime * hashCode + ((getSerialNumber() == null) ? 0 : getSerialNumber().hashCode()); 
-        hashCode = prime * hashCode + ((getVendorName() == null) ? 0 : getVendorName().hashCode()); 
-        hashCode = prime * hashCode + ((getHsmType() == null) ? 0 : getHsmType().hashCode()); 
-        hashCode = prime * hashCode + ((getSoftwareVersion() == null) ? 0 : getSoftwareVersion().hashCode()); 
-        hashCode = prime * hashCode + ((getSshPublicKey() == null) ? 0 : getSshPublicKey().hashCode()); 
-        hashCode = prime * hashCode + ((getSshKeyLastUpdated() == null) ? 0 : getSshKeyLastUpdated().hashCode()); 
-        hashCode = prime * hashCode + ((getServerCertUri() == null) ? 0 : getServerCertUri().hashCode()); 
-        hashCode = prime * hashCode + ((getServerCertLastUpdated() == null) ? 0 : getServerCertLastUpdated().hashCode()); 
-        hashCode = prime * hashCode + ((getPartitions() == null) ? 0 : getPartitions().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getHsmArn() == null) ? 0 : getHsmArn().hashCode());
+        hashCode = prime * hashCode
+                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStatusDetails() == null) ? 0 : getStatusDetails()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getEniId() == null) ? 0 : getEniId().hashCode());
+        hashCode = prime * hashCode
+                + ((getEniIp() == null) ? 0 : getEniIp().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSubscriptionType() == null) ? 0 : getSubscriptionType()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSubscriptionStartDate() == null) ? 0
+                        : getSubscriptionStartDate().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSubscriptionEndDate() == null) ? 0
+                        : getSubscriptionEndDate().hashCode());
+        hashCode = prime * hashCode
+                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode
+                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode
+                + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSerialNumber() == null) ? 0 : getSerialNumber()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getVendorName() == null) ? 0 : getVendorName().hashCode());
+        hashCode = prime * hashCode
+                + ((getHsmType() == null) ? 0 : getHsmType().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSoftwareVersion() == null) ? 0 : getSoftwareVersion()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSshPublicKey() == null) ? 0 : getSshPublicKey()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSshKeyLastUpdated() == null) ? 0
+                        : getSshKeyLastUpdated().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getServerCertUri() == null) ? 0 : getServerCertUri()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getServerCertLastUpdated() == null) ? 0
+                        : getServerCertLastUpdated().hashCode());
+        hashCode = prime * hashCode
+                + ((getPartitions() == null) ? 0 : getPartitions().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeHsmResult == false) return false;
-        DescribeHsmResult other = (DescribeHsmResult)obj;
-        
-        if (other.getHsmArn() == null ^ this.getHsmArn() == null) return false;
-        if (other.getHsmArn() != null && other.getHsmArn().equals(this.getHsmArn()) == false) return false; 
-        if (other.getStatus() == null ^ this.getStatus() == null) return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
-        if (other.getStatusDetails() == null ^ this.getStatusDetails() == null) return false;
-        if (other.getStatusDetails() != null && other.getStatusDetails().equals(this.getStatusDetails()) == false) return false; 
-        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
-        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
-        if (other.getEniId() == null ^ this.getEniId() == null) return false;
-        if (other.getEniId() != null && other.getEniId().equals(this.getEniId()) == false) return false; 
-        if (other.getEniIp() == null ^ this.getEniIp() == null) return false;
-        if (other.getEniIp() != null && other.getEniIp().equals(this.getEniIp()) == false) return false; 
-        if (other.getSubscriptionType() == null ^ this.getSubscriptionType() == null) return false;
-        if (other.getSubscriptionType() != null && other.getSubscriptionType().equals(this.getSubscriptionType()) == false) return false; 
-        if (other.getSubscriptionStartDate() == null ^ this.getSubscriptionStartDate() == null) return false;
-        if (other.getSubscriptionStartDate() != null && other.getSubscriptionStartDate().equals(this.getSubscriptionStartDate()) == false) return false; 
-        if (other.getSubscriptionEndDate() == null ^ this.getSubscriptionEndDate() == null) return false;
-        if (other.getSubscriptionEndDate() != null && other.getSubscriptionEndDate().equals(this.getSubscriptionEndDate()) == false) return false; 
-        if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
-        if (other.getSubnetId() == null ^ this.getSubnetId() == null) return false;
-        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false) return false; 
-        if (other.getIamRoleArn() == null ^ this.getIamRoleArn() == null) return false;
-        if (other.getIamRoleArn() != null && other.getIamRoleArn().equals(this.getIamRoleArn()) == false) return false; 
-        if (other.getSerialNumber() == null ^ this.getSerialNumber() == null) return false;
-        if (other.getSerialNumber() != null && other.getSerialNumber().equals(this.getSerialNumber()) == false) return false; 
-        if (other.getVendorName() == null ^ this.getVendorName() == null) return false;
-        if (other.getVendorName() != null && other.getVendorName().equals(this.getVendorName()) == false) return false; 
-        if (other.getHsmType() == null ^ this.getHsmType() == null) return false;
-        if (other.getHsmType() != null && other.getHsmType().equals(this.getHsmType()) == false) return false; 
-        if (other.getSoftwareVersion() == null ^ this.getSoftwareVersion() == null) return false;
-        if (other.getSoftwareVersion() != null && other.getSoftwareVersion().equals(this.getSoftwareVersion()) == false) return false; 
-        if (other.getSshPublicKey() == null ^ this.getSshPublicKey() == null) return false;
-        if (other.getSshPublicKey() != null && other.getSshPublicKey().equals(this.getSshPublicKey()) == false) return false; 
-        if (other.getSshKeyLastUpdated() == null ^ this.getSshKeyLastUpdated() == null) return false;
-        if (other.getSshKeyLastUpdated() != null && other.getSshKeyLastUpdated().equals(this.getSshKeyLastUpdated()) == false) return false; 
-        if (other.getServerCertUri() == null ^ this.getServerCertUri() == null) return false;
-        if (other.getServerCertUri() != null && other.getServerCertUri().equals(this.getServerCertUri()) == false) return false; 
-        if (other.getServerCertLastUpdated() == null ^ this.getServerCertLastUpdated() == null) return false;
-        if (other.getServerCertLastUpdated() != null && other.getServerCertLastUpdated().equals(this.getServerCertLastUpdated()) == false) return false; 
-        if (other.getPartitions() == null ^ this.getPartitions() == null) return false;
-        if (other.getPartitions() != null && other.getPartitions().equals(this.getPartitions()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeHsmResult clone() {
         try {
             return (DescribeHsmResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

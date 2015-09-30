@@ -39,7 +39,7 @@ public class RestoreAddressToClassicRequestMarshaller implements Marshaller<Requ
 
         Request<RestoreAddressToClassicRequest> request = new DefaultRequest<RestoreAddressToClassicRequest>(restoreAddressToClassicRequest, "AmazonEC2");
         request.addParameter("Action", "RestoreAddressToClassic");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (restoreAddressToClassicRequest.getPublicIp() != null) {
             request.addParameter("PublicIp", StringUtils.fromString(restoreAddressToClassicRequest.getPublicIp()));

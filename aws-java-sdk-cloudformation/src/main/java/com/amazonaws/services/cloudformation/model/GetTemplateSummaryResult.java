@@ -52,6 +52,21 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
     private String capabilitiesReason;
 
     /**
+     * A list of all the template resource types that are defined in the
+     * template, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     * describe template resource types: <code>AWS::*</code> (for all AWS
+     * resources), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     * resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
+     * of a particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     * a specific AWS resource).
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypes;
+
+    /**
      * The AWS template format version, which identifies the capabilities of
      * the template.
      */
@@ -369,6 +384,159 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
     }
 
     /**
+     * A list of all the template resource types that are defined in the
+     * template, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     * describe template resource types: <code>AWS::*</code> (for all AWS
+     * resources), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     * resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
+     * of a particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     * a specific AWS resource).
+     *
+     * @return A list of all the template resource types that are defined in the
+     *         template, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::Dynamo::Table</code>, and
+     *         <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     *         describe template resource types: <code>AWS::*</code> (for all AWS
+     *         resources), <code>Custom::*</code> (for all custom resources),
+     *         <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *         resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
+     *         of a particular AWS service), and
+     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     *         a specific AWS resource).
+     */
+    public java.util.List<String> getResourceTypes() {
+        if (resourceTypes == null) {
+              resourceTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              resourceTypes.setAutoConstruct(true);
+        }
+        return resourceTypes;
+    }
+    
+    /**
+     * A list of all the template resource types that are defined in the
+     * template, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     * describe template resource types: <code>AWS::*</code> (for all AWS
+     * resources), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     * resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
+     * of a particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     * a specific AWS resource).
+     *
+     * @param resourceTypes A list of all the template resource types that are defined in the
+     *         template, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::Dynamo::Table</code>, and
+     *         <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     *         describe template resource types: <code>AWS::*</code> (for all AWS
+     *         resources), <code>Custom::*</code> (for all custom resources),
+     *         <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *         resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
+     *         of a particular AWS service), and
+     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     *         a specific AWS resource).
+     */
+    public void setResourceTypes(java.util.Collection<String> resourceTypes) {
+        if (resourceTypes == null) {
+            this.resourceTypes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(resourceTypes.size());
+        resourceTypesCopy.addAll(resourceTypes);
+        this.resourceTypes = resourceTypesCopy;
+    }
+    
+    /**
+     * A list of all the template resource types that are defined in the
+     * template, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     * describe template resource types: <code>AWS::*</code> (for all AWS
+     * resources), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     * resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
+     * of a particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     * a specific AWS resource).
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setResourceTypes(java.util.Collection)} or {@link
+     * #withResourceTypes(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceTypes A list of all the template resource types that are defined in the
+     *         template, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::Dynamo::Table</code>, and
+     *         <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     *         describe template resource types: <code>AWS::*</code> (for all AWS
+     *         resources), <code>Custom::*</code> (for all custom resources),
+     *         <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *         resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
+     *         of a particular AWS service), and
+     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     *         a specific AWS resource).
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetTemplateSummaryResult withResourceTypes(String... resourceTypes) {
+        if (getResourceTypes() == null) setResourceTypes(new java.util.ArrayList<String>(resourceTypes.length));
+        for (String value : resourceTypes) {
+            getResourceTypes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of all the template resource types that are defined in the
+     * template, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     * describe template resource types: <code>AWS::*</code> (for all AWS
+     * resources), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     * resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
+     * of a particular AWS service), and
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     * a specific AWS resource).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceTypes A list of all the template resource types that are defined in the
+     *         template, such as <code>AWS::EC2::Instance</code>,
+     *         <code>AWS::Dynamo::Table</code>, and
+     *         <code>Custom::MyCustomInstance</code>. Use the following syntax to
+     *         describe template resource types: <code>AWS::*</code> (for all AWS
+     *         resources), <code>Custom::*</code> (for all custom resources),
+     *         <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *         resource), <code>AWS::<i>service_name</i>::*</code> (for all resources
+     *         of a particular AWS service), and
+     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for
+     *         a specific AWS resource).
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetTemplateSummaryResult withResourceTypes(java.util.Collection<String> resourceTypes) {
+        if (resourceTypes == null) {
+            this.resourceTypes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> resourceTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(resourceTypes.size());
+            resourceTypesCopy.addAll(resourceTypes);
+            this.resourceTypes = resourceTypesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * The AWS template format version, which identifies the capabilities of
      * the template.
      *
@@ -462,6 +630,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");
         if (getCapabilitiesReason() != null) sb.append("CapabilitiesReason: " + getCapabilitiesReason() + ",");
+        if (getResourceTypes() != null) sb.append("ResourceTypes: " + getResourceTypes() + ",");
         if (getVersion() != null) sb.append("Version: " + getVersion() + ",");
         if (getMetadata() != null) sb.append("Metadata: " + getMetadata() );
         sb.append("}");
@@ -477,6 +646,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode()); 
         hashCode = prime * hashCode + ((getCapabilitiesReason() == null) ? 0 : getCapabilitiesReason().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceTypes() == null) ? 0 : getResourceTypes().hashCode()); 
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode()); 
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode()); 
         return hashCode;
@@ -498,6 +668,8 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
         if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false) return false; 
         if (other.getCapabilitiesReason() == null ^ this.getCapabilitiesReason() == null) return false;
         if (other.getCapabilitiesReason() != null && other.getCapabilitiesReason().equals(this.getCapabilitiesReason()) == false) return false; 
+        if (other.getResourceTypes() == null ^ this.getResourceTypes() == null) return false;
+        if (other.getResourceTypes() != null && other.getResourceTypes().equals(this.getResourceTypes()) == false) return false; 
         if (other.getVersion() == null ^ this.getVersion() == null) return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false) return false; 
         if (other.getMetadata() == null ^ this.getMetadata() == null) return false;

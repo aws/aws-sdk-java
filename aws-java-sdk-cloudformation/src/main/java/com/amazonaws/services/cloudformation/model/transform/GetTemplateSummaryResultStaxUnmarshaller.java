@@ -59,6 +59,10 @@ public class GetTemplateSummaryResultStaxUnmarshaller implements Unmarshaller<Ge
                     getTemplateSummaryResult.setCapabilitiesReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ResourceTypes/member", targetDepth)) {
+                    getTemplateSummaryResult.getResourceTypes().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Version", targetDepth)) {
                     getTemplateSummaryResult.setVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

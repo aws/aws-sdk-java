@@ -296,6 +296,84 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
             
     /**
      * <p>
+     * Retrieves your account's AWS CloudFormation limits, such as the
+     * maximum number of stacks that you can create in your account.
+     * </p>
+     *
+     * @param describeAccountLimitsRequest Container for the necessary
+     *           parameters to execute the DescribeAccountLimits operation on
+     *           AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAccountLimits service method, as returned by
+     *         AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(final DescribeAccountLimitsRequest describeAccountLimitsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeAccountLimitsResult>() {
+            public DescribeAccountLimitsResult call() throws Exception {
+                return describeAccountLimits(describeAccountLimitsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Retrieves your account's AWS CloudFormation limits, such as the
+     * maximum number of stacks that you can create in your account.
+     * </p>
+     *
+     * @param describeAccountLimitsRequest Container for the necessary
+     *           parameters to execute the DescribeAccountLimits operation on
+     *           AmazonCloudFormation.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAccountLimits service method, as returned by
+     *         AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(
+            final DescribeAccountLimitsRequest describeAccountLimitsRequest,
+            final AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeAccountLimitsResult>() {
+            public DescribeAccountLimitsResult call() throws Exception {
+              DescribeAccountLimitsResult result;
+                try {
+                result = describeAccountLimits(describeAccountLimitsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeAccountLimitsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns information about a new or existing template. The
      * <code>GetTemplateSummary</code> action is useful for viewing parameter
      * information, such as default parameter values and parameter types,
@@ -1112,6 +1190,90 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     
     /**
      * <p>
+     * Sends a signal to the specified resource with a success or failure
+     * status. You can use the SignalResource API in conjunction with a
+     * creation policy or update policy. AWS CloudFormation doesn't proceed
+     * with a stack creation or update until resources receive the required
+     * number of signals or the timeout period is exceeded. The
+     * SignalResource API is useful in cases where you want to send signals
+     * from anywhere other than an Amazon EC2 instance.
+     * </p>
+     *
+     * @param signalResourceRequest Container for the necessary parameters to
+     *           execute the SignalResource operation on AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SignalResource service method, as returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> signalResourceAsync(final SignalResourceRequest signalResourceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                signalResource(signalResourceRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Sends a signal to the specified resource with a success or failure
+     * status. You can use the SignalResource API in conjunction with a
+     * creation policy or update policy. AWS CloudFormation doesn't proceed
+     * with a stack creation or update until resources receive the required
+     * number of signals or the timeout period is exceeded. The
+     * SignalResource API is useful in cases where you want to send signals
+     * from anywhere other than an Amazon EC2 instance.
+     * </p>
+     *
+     * @param signalResourceRequest Container for the necessary parameters to
+     *           execute the SignalResource operation on AmazonCloudFormation.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SignalResource service method, as returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> signalResourceAsync(
+            final SignalResourceRequest signalResourceRequest,
+            final AsyncHandler<SignalResourceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                signalResource(signalResourceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(signalResourceRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns a description of the specified resource in the specified
      * stack.
      * </p>
@@ -1198,97 +1360,13 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     
     /**
      * <p>
-     * Sends a signal to the specified resource with a success or failure
-     * status. You can use the SignalResource API in conjunction with a
-     * creation policy or update policy. AWS CloudFormation doesn't proceed
-     * with a stack creation or update until resources receive the required
-     * number of signals or the timeout period is exceeded. The
-     * SignalResource API is useful in cases where you want to send signals
-     * from anywhere other than an Amazon EC2 instance.
-     * </p>
-     *
-     * @param signalResourceRequest Container for the necessary parameters to
-     *           execute the SignalResource operation on AmazonCloudFormation.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SignalResource service method, as returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> signalResourceAsync(final SignalResourceRequest signalResourceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                signalResource(signalResourceRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Sends a signal to the specified resource with a success or failure
-     * status. You can use the SignalResource API in conjunction with a
-     * creation policy or update policy. AWS CloudFormation doesn't proceed
-     * with a stack creation or update until resources receive the required
-     * number of signals or the timeout period is exceeded. The
-     * SignalResource API is useful in cases where you want to send signals
-     * from anywhere other than an Amazon EC2 instance.
-     * </p>
-     *
-     * @param signalResourceRequest Container for the necessary parameters to
-     *           execute the SignalResource operation on AmazonCloudFormation.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SignalResource service method, as returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> signalResourceAsync(
-            final SignalResourceRequest signalResourceRequest,
-            final AsyncHandler<SignalResourceRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                signalResource(signalResourceRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(signalResourceRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Cancels an update on the specified stack. If the call completes
-     * successfully, the stack will roll back the update and revert to the
+     * successfully, the stack rolls back the update and reverts to the
      * previous stack configuration.
      * </p>
      * <p>
-     * <b>NOTE:</b>Only stacks that are in the UPDATE_IN_PROGRESS state can
-     * be canceled.
+     * <b>NOTE:</b>You can cancel only stacks that are in the
+     * UPDATE_IN_PROGRESS state.
      * </p>
      *
      * @param cancelUpdateStackRequest Container for the necessary parameters
@@ -1319,12 +1397,12 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     /**
      * <p>
      * Cancels an update on the specified stack. If the call completes
-     * successfully, the stack will roll back the update and revert to the
+     * successfully, the stack rolls back the update and reverts to the
      * previous stack configuration.
      * </p>
      * <p>
-     * <b>NOTE:</b>Only stacks that are in the UPDATE_IN_PROGRESS state can
-     * be canceled.
+     * <b>NOTE:</b>You can cancel only stacks that are in the
+     * UPDATE_IN_PROGRESS state.
      * </p>
      *
      * @param cancelUpdateStackRequest Container for the necessary parameters

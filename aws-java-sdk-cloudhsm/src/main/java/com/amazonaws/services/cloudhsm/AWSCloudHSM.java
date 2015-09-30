@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,43 +16,46 @@ package com.amazonaws.services.cloudhsm;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
+
 import com.amazonaws.services.cloudhsm.model.*;
 
 /**
- * Interface for accessing AWSCloudHSM.
- * AWS CloudHSM Service
+ * Interface for accessing CloudHSM.
+ * <p>
+ * <fullname>AWS CloudHSM Service</fullname>
  */
 public interface AWSCloudHSM {
 
     /**
-     * Overrides the default endpoint for this client ("https://cloudhsm.us-east-1.amazonaws.com/").
-     * Callers can use this method to control which AWS region they want to work with.
+     * Overrides the default endpoint for this client
+     * ("https://cloudhsm.us-east-1.amazonaws.com/"). Callers can use this
+     * method to control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "cloudhsm.us-east-1.amazonaws.com/") or a full
-     * URL, including the protocol (ex: "https://cloudhsm.us-east-1.amazonaws.com/"). If the
+     * Callers can pass in just the endpoint (ex:
+     * "cloudhsm.us-east-1.amazonaws.com/") or a full URL, including the
+     * protocol (ex: "https://cloudhsm.us-east-1.amazonaws.com/"). If the
      * protocol is not specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * a complete list of all available endpoints for all AWS services, see: <a
+     * href=
+     * "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912"
+     * > http://developer.amazonwebservices.com/connect/entry.jspa?externalID=
+     * 3912</a>
      * <p>
-     * <b>This method is not threadsafe. An endpoint should be configured when the
-     * client is created and before any service requests are made. Changing it
-     * afterwards creates inevitable race conditions for any service requests in
-     * transit or retrying.</b>
+     * <b>This method is not threadsafe. An endpoint should be configured when
+     * the client is created and before any service requests are made. Changing
+     * it afterwards creates inevitable race conditions for any service requests
+     * in transit or retrying.</b>
      *
      * @param endpoint
-     *            The endpoint (ex: "cloudhsm.us-east-1.amazonaws.com/") or a full URL,
-     *            including the protocol (ex: "https://cloudhsm.us-east-1.amazonaws.com/") of
-     *            the region specific AWS endpoint this client will communicate
-     *            with.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
+     *        The endpoint (ex: "cloudhsm.us-east-1.amazonaws.com/") or a full
+     *        URL, including the protocol (ex:
+     *        "https://cloudhsm.us-east-1.amazonaws.com/") of the region
+     *        specific AWS endpoint this client will communicate with.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
+    void setEndpoint(String endpoint);
 
     /**
      * An alternative to {@link AWSCloudHSM#setEndpoint(String)}, sets the
@@ -69,44 +72,17 @@ public interface AWSCloudHSM {
      * transit or retrying.</b>
      *
      * @param region
-     *            The region this client will communicate with. See
-     *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
-     *            accessing a given region.
-     * @throws java.lang.IllegalArgumentException
-     *             If the given region is null, or if this service isn't
-     *             available in the given region. See
-     *             {@link Region#isServiceSupported(String)}
+     *        The region this client will communicate with. See
+     *        {@link Region#getRegion(com.amazonaws.regions.Regions)} for
+     *        accessing a given region. Must not be null and must be a region
+     *        where the service is available.
+     *
      * @see Region#getRegion(com.amazonaws.regions.Regions)
-     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#createClient(Class,
+     *      com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
+     * @see Region#isServiceSupported(String)
      */
-    public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-    
-    /**
-     * <p>
-     * Gets the configuration files necessary to connect to all high
-     * availability partition groups the client is associated with.
-     * </p>
-     *
-     * @param getConfigRequest Container for the necessary parameters to
-     *           execute the GetConfig service method on AWSCloudHSM.
-     * 
-     * @return The response from the GetConfig service method, as returned by
-     *         AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetConfigResult getConfig(GetConfigRequest getConfigRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    void setRegion(Region region);
 
     /**
      * <p>
@@ -114,390 +90,361 @@ public interface AWSCloudHSM {
      * partition group is a group of partitions that spans multiple physical
      * HSMs.
      * </p>
-     *
-     * @param createHapgRequest Container for the necessary parameters to
-     *           execute the CreateHapg service method on AWSCloudHSM.
      * 
-     * @return The response from the CreateHapg service method, as returned
-     *         by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
+     * @param createHapgRequest
+     *        Contains the inputs for the <a>CreateHapgRequest</a> action.
+     * @return Result of the CreateHapg operation returned by the service.
      * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
      */
-    public CreateHapgResult createHapg(CreateHapgRequest createHapgRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    CreateHapgResult createHapg(CreateHapgRequest createHapgRequest);
+
+    /**
+     * <p>
+     * Creates an uninitialized HSM instance. Running this command provisions an
+     * HSM appliance and will result in charges to your AWS account for the HSM.
+     * </p>
+     * 
+     * @param createHsmRequest
+     *        Contains the inputs for the <a>CreateHsm</a> action.
+     * @return Result of the CreateHsm operation returned by the service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     */
+    CreateHsmResult createHsm(CreateHsmRequest createHsmRequest);
+
+    /**
+     * <p>
+     * Creates an HSM client.
+     * </p>
+     * 
+     * @param createLunaClientRequest
+     *        Contains the inputs for the <a>CreateLunaClient</a> action.
+     * @return Result of the CreateLunaClient operation returned by the service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     */
+    CreateLunaClientResult createLunaClient(
+            CreateLunaClientRequest createLunaClientRequest);
+
+    /**
+     * <p>
+     * Deletes a high-availability partition group.
+     * </p>
+     * 
+     * @param deleteHapgRequest
+     *        Contains the inputs for the <a>DeleteHapg</a> action.
+     * @return Result of the DeleteHapg operation returned by the service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     */
+    DeleteHapgResult deleteHapg(DeleteHapgRequest deleteHapgRequest);
+
+    /**
+     * <p>
+     * Deletes an HSM. Once complete, this operation cannot be undone and your
+     * key material cannot be recovered.
+     * </p>
+     * 
+     * @param deleteHsmRequest
+     *        Contains the inputs for the <a>DeleteHsm</a> action.
+     * @return Result of the DeleteHsm operation returned by the service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     */
+    DeleteHsmResult deleteHsm(DeleteHsmRequest deleteHsmRequest);
+
+    /**
+     * <p>
+     * Deletes a client.
+     * </p>
+     * 
+     * @param deleteLunaClientRequest
+     *        null
+     * @return Result of the DeleteLunaClient operation returned by the service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     */
+    DeleteLunaClientResult deleteLunaClient(
+            DeleteLunaClientRequest deleteLunaClientRequest);
 
     /**
      * <p>
      * Retrieves information about a high-availability partition group.
      * </p>
-     *
-     * @param describeHapgRequest Container for the necessary parameters to
-     *           execute the DescribeHapg service method on AWSCloudHSM.
      * 
-     * @return The response from the DescribeHapg service method, as returned
-     *         by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
+     * @param describeHapgRequest
+     *        Contains the inputs for the <a>DescribeHapg</a> action.
+     * @return Result of the DescribeHapg operation returned by the service.
      * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
      */
-    public DescribeHapgResult describeHapg(DescribeHapgRequest describeHapgRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeHapgResult describeHapg(DescribeHapgRequest describeHapgRequest);
 
     /**
      * <p>
-     * Lists the Availability Zones that have available AWS CloudHSM
-     * capacity.
+     * Retrieves information about an HSM. You can identify the HSM by its ARN
+     * or its serial number.
      * </p>
-     *
-     * @param listAvailableZonesRequest Container for the necessary
-     *           parameters to execute the ListAvailableZones service method on
-     *           AWSCloudHSM.
      * 
-     * @return The response from the ListAvailableZones service method, as
-     *         returned by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
+     * @param describeHsmRequest
+     *        Contains the inputs for the <a>DescribeHsm</a> action.
+     * @return Result of the DescribeHsm operation returned by the service.
      * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
      */
-    public ListAvailableZonesResult listAvailableZones(ListAvailableZonesRequest listAvailableZonesRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeHsmResult describeHsm(DescribeHsmRequest describeHsmRequest);
+
+    /**
+     * Simplified method form for invoking the DescribeHsm operation.
+     *
+     * @see #describeHsm(DescribeHsmRequest)
+     */
+    DescribeHsmResult describeHsm();
 
     /**
      * <p>
-     * Modifies an HSM.
+     * Retrieves information about an HSM client.
      * </p>
-     *
-     * @param modifyHsmRequest Container for the necessary parameters to
-     *           execute the ModifyHsm service method on AWSCloudHSM.
      * 
-     * @return The response from the ModifyHsm service method, as returned by
-     *         AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
+     * @param describeLunaClientRequest
+     *        null
+     * @return Result of the DescribeLunaClient operation returned by the
+     *         service.
      * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
      */
-    public ModifyHsmResult modifyHsm(ModifyHsmRequest modifyHsmRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    DescribeLunaClientResult describeLunaClient(
+            DescribeLunaClientRequest describeLunaClientRequest);
+
+    /**
+     * Simplified method form for invoking the DescribeLunaClient operation.
+     *
+     * @see #describeLunaClient(DescribeLunaClientRequest)
+     */
+    DescribeLunaClientResult describeLunaClient();
 
     /**
      * <p>
-     * Lists all of the clients.
+     * Gets the configuration files necessary to connect to all high
+     * availability partition groups the client is associated with.
      * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListLunaClients to retrieve the next set of items.
-     * </p>
-     *
-     * @param listLunaClientsRequest Container for the necessary parameters
-     *           to execute the ListLunaClients service method on AWSCloudHSM.
      * 
-     * @return The response from the ListLunaClients service method, as
-     *         returned by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
+     * @param getConfigRequest
+     *        null
+     * @return Result of the GetConfig operation returned by the service.
      * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
      */
-    public ListLunaClientsResult listLunaClients(ListLunaClientsRequest listLunaClientsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    GetConfigResult getConfig(GetConfigRequest getConfigRequest);
+
+    /**
+     * <p>
+     * Lists the Availability Zones that have available AWS CloudHSM capacity.
+     * </p>
+     * 
+     * @param listAvailableZonesRequest
+     *        Contains the inputs for the <a>ListAvailableZones</a> action.
+     * @return Result of the ListAvailableZones operation returned by the
+     *         service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     */
+    ListAvailableZonesResult listAvailableZones(
+            ListAvailableZonesRequest listAvailableZonesRequest);
+
+    /**
+     * Simplified method form for invoking the ListAvailableZones operation.
+     *
+     * @see #listAvailableZones(ListAvailableZonesRequest)
+     */
+    ListAvailableZonesResult listAvailableZones();
 
     /**
      * <p>
      * Lists the high-availability partition groups for the account.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListHapgs to retrieve the next set of items.
+     * This operation supports pagination with the use of the <i>NextToken</i>
+     * member. If more results are available, the <i>NextToken</i> member of the
+     * response contains a token that you pass in the next call to
+     * <a>ListHapgs</a> to retrieve the next set of items.
      * </p>
-     *
-     * @param listHapgsRequest Container for the necessary parameters to
-     *           execute the ListHapgs service method on AWSCloudHSM.
      * 
-     * @return The response from the ListHapgs service method, as returned by
-     *         AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
+     * @param listHapgsRequest
+     *        null
+     * @return Result of the ListHapgs operation returned by the service.
      * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
      */
-    public ListHapgsResult listHapgs(ListHapgsRequest listHapgsRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListHapgsResult listHapgs(ListHapgsRequest listHapgsRequest);
+
+    /**
+     * Simplified method form for invoking the ListHapgs operation.
+     *
+     * @see #listHapgs(ListHapgsRequest)
+     */
+    ListHapgsResult listHapgs();
 
     /**
      * <p>
-     * Deletes an HSM. Once complete, this operation cannot be undone and
-     * your key material cannot be recovered.
+     * Retrieves the identifiers of all of the HSMs provisioned for the current
+     * customer.
      * </p>
-     *
-     * @param deleteHsmRequest Container for the necessary parameters to
-     *           execute the DeleteHsm service method on AWSCloudHSM.
+     * <p>
+     * This operation supports pagination with the use of the <i>NextToken</i>
+     * member. If more results are available, the <i>NextToken</i> member of the
+     * response contains a token that you pass in the next call to
+     * <a>ListHsms</a> to retrieve the next set of items.
+     * </p>
      * 
-     * @return The response from the DeleteHsm service method, as returned by
-     *         AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
+     * @param listHsmsRequest
+     *        null
+     * @return Result of the ListHsms operation returned by the service.
      * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
      */
-    public DeleteHsmResult deleteHsm(DeleteHsmRequest deleteHsmRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListHsmsResult listHsms(ListHsmsRequest listHsmsRequest);
+
+    /**
+     * Simplified method form for invoking the ListHsms operation.
+     *
+     * @see #listHsms(ListHsmsRequest)
+     */
+    ListHsmsResult listHsms();
 
     /**
      * <p>
-     * Creates an uninitialized HSM instance. Running this command
-     * provisions an HSM appliance and will result in charges to your AWS
-     * account for the HSM.
+     * Lists all of the clients.
      * </p>
-     *
-     * @param createHsmRequest Container for the necessary parameters to
-     *           execute the CreateHsm service method on AWSCloudHSM.
+     * <p>
+     * This operation supports pagination with the use of the <i>NextToken</i>
+     * member. If more results are available, the <i>NextToken</i> member of the
+     * response contains a token that you pass in the next call to
+     * <a>ListLunaClients</a> to retrieve the next set of items.
+     * </p>
      * 
-     * @return The response from the CreateHsm service method, as returned by
-     *         AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
+     * @param listLunaClientsRequest
+     *        null
+     * @return Result of the ListLunaClients operation returned by the service.
      * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
      */
-    public CreateHsmResult createHsm(CreateHsmRequest createHsmRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListLunaClientsResult listLunaClients(
+            ListLunaClientsRequest listLunaClientsRequest);
 
     /**
-     * <p>
-     * Retrieves the identifiers of all of the HSMs provisioned for the
-     * current customer.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListHsms to retrieve the next set of items.
-     * </p>
+     * Simplified method form for invoking the ListLunaClients operation.
      *
-     * @param listHsmsRequest Container for the necessary parameters to
-     *           execute the ListHsms service method on AWSCloudHSM.
-     * 
-     * @return The response from the ListHsms service method, as returned by
-     *         AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @see #listLunaClients(ListLunaClientsRequest)
      */
-    public ListHsmsResult listHsms(ListHsmsRequest listHsmsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Retrieves information about an HSM. You can identify the HSM by its
-     * ARN or its serial number.
-     * </p>
-     *
-     * @param describeHsmRequest Container for the necessary parameters to
-     *           execute the DescribeHsm service method on AWSCloudHSM.
-     * 
-     * @return The response from the DescribeHsm service method, as returned
-     *         by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeHsmResult describeHsm(DescribeHsmRequest describeHsmRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a high-availability partition group.
-     * </p>
-     *
-     * @param deleteHapgRequest Container for the necessary parameters to
-     *           execute the DeleteHapg service method on AWSCloudHSM.
-     * 
-     * @return The response from the DeleteHapg service method, as returned
-     *         by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteHapgResult deleteHapg(DeleteHapgRequest deleteHapgRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ListLunaClientsResult listLunaClients();
 
     /**
      * <p>
      * Modifies an existing high-availability partition group.
      * </p>
-     *
-     * @param modifyHapgRequest Container for the necessary parameters to
-     *           execute the ModifyHapg service method on AWSCloudHSM.
      * 
-     * @return The response from the ModifyHapg service method, as returned
-     *         by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
+     * @param modifyHapgRequest
+     *        null
+     * @return Result of the ModifyHapg operation returned by the service.
      * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
      */
-    public ModifyHapgResult modifyHapg(ModifyHapgRequest modifyHapgRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ModifyHapgResult modifyHapg(ModifyHapgRequest modifyHapgRequest);
 
     /**
      * <p>
-     * Creates an HSM client.
+     * Modifies an HSM.
      * </p>
-     *
-     * @param createLunaClientRequest Container for the necessary parameters
-     *           to execute the CreateLunaClient service method on AWSCloudHSM.
      * 
-     * @return The response from the CreateLunaClient service method, as
-     *         returned by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
+     * @param modifyHsmRequest
+     *        Contains the inputs for the <a>ModifyHsm</a> action.
+     * @return Result of the ModifyHsm operation returned by the service.
      * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateLunaClientResult createLunaClient(CreateLunaClientRequest createLunaClientRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a client.
-     * </p>
-     *
-     * @param deleteLunaClientRequest Container for the necessary parameters
-     *           to execute the DeleteLunaClient service method on AWSCloudHSM.
-     * 
-     * @return The response from the DeleteLunaClient service method, as
-     *         returned by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
      * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
      */
-    public DeleteLunaClientResult deleteLunaClient(DeleteLunaClientRequest deleteLunaClientRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ModifyHsmResult modifyHsm(ModifyHsmRequest modifyHsmRequest);
 
     /**
      * <p>
@@ -507,206 +454,16 @@ public interface AWSCloudHSM {
      * This action can potentially start a workflow to install the new
      * certificate on the client's HSMs.
      * </p>
-     *
-     * @param modifyLunaClientRequest Container for the necessary parameters
-     *           to execute the ModifyLunaClient service method on AWSCloudHSM.
      * 
-     * @return The response from the ModifyLunaClient service method, as
-     *         returned by AWSCloudHSM.
-     * 
+     * @param modifyLunaClientRequest
+     *        null
+     * @return Result of the ModifyLunaClient operation returned by the service.
      * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
      */
-    public ModifyLunaClientResult modifyLunaClient(ModifyLunaClientRequest modifyLunaClientRequest) 
-            throws AmazonServiceException, AmazonClientException;
+    ModifyLunaClientResult modifyLunaClient(
+            ModifyLunaClientRequest modifyLunaClientRequest);
 
-    /**
-     * <p>
-     * Retrieves information about an HSM client.
-     * </p>
-     *
-     * @param describeLunaClientRequest Container for the necessary
-     *           parameters to execute the DescribeLunaClient service method on
-     *           AWSCloudHSM.
-     * 
-     * @return The response from the DescribeLunaClient service method, as
-     *         returned by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeLunaClientResult describeLunaClient(DescribeLunaClientRequest describeLunaClientRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Lists the Availability Zones that have available AWS CloudHSM
-     * capacity.
-     * </p>
-     * 
-     * @return The response from the ListAvailableZones service method, as
-     *         returned by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListAvailableZonesResult listAvailableZones() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Lists all of the clients.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListLunaClients to retrieve the next set of items.
-     * </p>
-     * 
-     * @return The response from the ListLunaClients service method, as
-     *         returned by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListLunaClientsResult listLunaClients() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Lists the high-availability partition groups for the account.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListHapgs to retrieve the next set of items.
-     * </p>
-     * 
-     * @return The response from the ListHapgs service method, as returned by
-     *         AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListHapgsResult listHapgs() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Retrieves the identifiers of all of the HSMs provisioned for the
-     * current customer.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the
-     * <i>NextToken</i> member. If more results are available, the
-     * <i>NextToken</i> member of the response contains a token that you pass
-     * in the next call to ListHsms to retrieve the next set of items.
-     * </p>
-     * 
-     * @return The response from the ListHsms service method, as returned by
-     *         AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListHsmsResult listHsms() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Retrieves information about an HSM. You can identify the HSM by its
-     * ARN or its serial number.
-     * </p>
-     * 
-     * @return The response from the DescribeHsm service method, as returned
-     *         by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeHsmResult describeHsm() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Retrieves information about an HSM client.
-     * </p>
-     * 
-     * @return The response from the DescribeLunaClient service method, as
-     *         returned by AWSCloudHSM.
-     * 
-     * @throws InvalidRequestException
-     * @throws CloudHsmInternalException
-     * @throws CloudHsmServiceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudHSM indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeLunaClientResult describeLunaClient() throws AmazonServiceException, AmazonClientException;
-    
     /**
      * Shuts down this client object, releasing any resources that might be held
      * open. This is an optional method, and callers are not expected to call
@@ -714,24 +471,25 @@ public interface AWSCloudHSM {
      * client has been shutdown, it should not be used to make any more
      * requests.
      */
-    public void shutdown();
-    
+    void shutdown();
+
     /**
-     * Returns additional metadata for a previously executed successful request, typically used for
-     * debugging issues where a service isn't acting as expected.  This data isn't considered part
-     * of the result data returned by an operation, so it's available through this separate,
-     * diagnostic interface.
+     * Returns additional metadata for a previously executed successful request,
+     * typically used for debugging issues where a service isn't acting as
+     * expected. This data isn't considered part of the result data returned by
+     * an operation, so it's available through this separate, diagnostic
+     * interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you need to access
-     * this extra diagnostic information for an executed request, you should use this method
-     * to retrieve it as soon as possible after executing a request.
+     * Response metadata is only cached for a limited period of time, so if you
+     * need to access this extra diagnostic information for an executed request,
+     * you should use this method to retrieve it as soon as possible after
+     * executing a request.
      *
      * @param request
-     *            The originally executed request.
+     *        The originally executed request.
      *
      * @return The response metadata for the specified request, or null if none
      *         is available.
      */
-    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+    ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 }
-        

@@ -46,6 +46,8 @@ public class ModifyMountTargetSecurityGroupsRequestMarshaller
         implements
         Marshaller<Request<ModifyMountTargetSecurityGroupsRequest>, ModifyMountTargetSecurityGroupsRequest> {
 
+    private static final String DEFAULT_CONTENT_TYPE = "";
+
     public Request<ModifyMountTargetSecurityGroupsRequest> marshall(
             ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest) {
 
@@ -99,7 +101,7 @@ public class ModifyMountTargetSecurityGroupsRequestMarshaller
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", "application/json");
+                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
             }
         } catch (Throwable t) {
             throw new AmazonClientException(

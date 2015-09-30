@@ -147,7 +147,8 @@
   }, {
     "key" : "AmazonSimpleEmailServiceClient",
     "config" : {
-      "serviceName" : "email"
+      "serviceName" : "email",
+      "regionMetadataServiceName": "email" // for region metadata
     }
   }, {
     "key" : "AWSSecurityTokenServiceClient",

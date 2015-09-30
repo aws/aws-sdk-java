@@ -39,7 +39,7 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
 
         Request<RevokeSecurityGroupEgressRequest> request = new DefaultRequest<RevokeSecurityGroupEgressRequest>(revokeSecurityGroupEgressRequest, "AmazonEC2");
         request.addParameter("Action", "RevokeSecurityGroupEgress");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (revokeSecurityGroupEgressRequest.getGroupId() != null) {
             request.addParameter("GroupId", StringUtils.fromString(revokeSecurityGroupEgressRequest.getGroupId()));

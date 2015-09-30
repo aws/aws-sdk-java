@@ -34,7 +34,7 @@ public class Stack implements Serializable, Cloneable {
     private String stackName;
 
     /**
-     * User defined description associated with the stack.
+     * A user-defined description associated with the stack.
      */
     private String description;
 
@@ -44,7 +44,7 @@ public class Stack implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
-     * Time at which the stack was created.
+     * The time at which the stack was created.
      */
     private java.util.Date creationTime;
 
@@ -173,29 +173,29 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
-     * User defined description associated with the stack.
+     * A user-defined description associated with the stack.
      *
-     * @return User defined description associated with the stack.
+     * @return A user-defined description associated with the stack.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * User defined description associated with the stack.
+     * A user-defined description associated with the stack.
      *
-     * @param description User defined description associated with the stack.
+     * @param description A user-defined description associated with the stack.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * User defined description associated with the stack.
+     * A user-defined description associated with the stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description User defined description associated with the stack.
+     * @param description A user-defined description associated with the stack.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -279,29 +279,29 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
-     * Time at which the stack was created.
+     * The time at which the stack was created.
      *
-     * @return Time at which the stack was created.
+     * @return The time at which the stack was created.
      */
     public java.util.Date getCreationTime() {
         return creationTime;
     }
     
     /**
-     * Time at which the stack was created.
+     * The time at which the stack was created.
      *
-     * @param creationTime Time at which the stack was created.
+     * @param creationTime The time at which the stack was created.
      */
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
     
     /**
-     * Time at which the stack was created.
+     * The time at which the stack was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param creationTime Time at which the stack was created.
+     * @param creationTime The time at which the stack was created.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudhsm.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -39,64 +40,84 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Create Hsm Request Marshaller
+ * CreateHsmRequest Marshaller
  */
-public class CreateHsmRequestMarshaller implements Marshaller<Request<CreateHsmRequest>, CreateHsmRequest> {
+public class CreateHsmRequestMarshaller implements
+        Marshaller<Request<CreateHsmRequest>, CreateHsmRequest> {
 
     public Request<CreateHsmRequest> marshall(CreateHsmRequest createHsmRequest) {
+
         if (createHsmRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateHsmRequest> request = new DefaultRequest<CreateHsmRequest>(createHsmRequest, "AWSCloudHSM");
-        String target = "CloudHsmFrontendService.CreateHsm";
-        request.addHeader("X-Amz-Target", target);
+        Request<CreateHsmRequest> request = new DefaultRequest<CreateHsmRequest>(
+                createHsmRequest, "AWSCloudHSM");
+        request.addHeader("X-Amz-Target", "CloudHsmFrontendService.CreateHsm");
 
         request.setHttpMethod(HttpMethodName.POST);
-        request.setResourcePath("");
-        
-        try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-          jsonWriter.object();
-          
+        request.setResourcePath("");
+
+        try {
+            StringWriter stringWriter = new StringWriter();
+            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+            jsonWriter.object();
+
             if (createHsmRequest.getSubnetId() != null) {
-                jsonWriter.key("SubnetId").value(createHsmRequest.getSubnetId());
+                jsonWriter.key("SubnetId")
+                        .value(createHsmRequest.getSubnetId());
             }
+
             if (createHsmRequest.getSshKey() != null) {
                 jsonWriter.key("SshKey").value(createHsmRequest.getSshKey());
             }
+
             if (createHsmRequest.getEniIp() != null) {
                 jsonWriter.key("EniIp").value(createHsmRequest.getEniIp());
             }
+
             if (createHsmRequest.getIamRoleArn() != null) {
-                jsonWriter.key("IamRoleArn").value(createHsmRequest.getIamRoleArn());
+                jsonWriter.key("IamRoleArn").value(
+                        createHsmRequest.getIamRoleArn());
             }
+
             if (createHsmRequest.getExternalId() != null) {
-                jsonWriter.key("ExternalId").value(createHsmRequest.getExternalId());
+                jsonWriter.key("ExternalId").value(
+                        createHsmRequest.getExternalId());
             }
+
             if (createHsmRequest.getSubscriptionType() != null) {
-                jsonWriter.key("SubscriptionType").value(createHsmRequest.getSubscriptionType());
+                jsonWriter.key("SubscriptionType").value(
+                        createHsmRequest.getSubscriptionType());
             }
+
             if (createHsmRequest.getClientToken() != null) {
-                jsonWriter.key("ClientToken").value(createHsmRequest.getClientToken());
+                jsonWriter.key("ClientToken").value(
+                        createHsmRequest.getClientToken());
             }
+
             if (createHsmRequest.getSyslogIp() != null) {
-                jsonWriter.key("SyslogIp").value(createHsmRequest.getSyslogIp());
+                jsonWriter.key("SyslogIp")
+                        .value(createHsmRequest.getSyslogIp());
             }
 
-          jsonWriter.endObject();
+            jsonWriter.endObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            String snippet = stringWriter.toString();
+            byte[] content = snippet.getBytes(UTF8);
+            request.setContent(new StringInputStream(snippet));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

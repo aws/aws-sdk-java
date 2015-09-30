@@ -46,6 +46,8 @@ public class DescribeMountTargetsRequestMarshaller
         implements
         Marshaller<Request<DescribeMountTargetsRequest>, DescribeMountTargetsRequest> {
 
+    private static final String DEFAULT_CONTENT_TYPE = "";
+
     public Request<DescribeMountTargetsRequest> marshall(
             DescribeMountTargetsRequest describeMountTargetsRequest) {
 

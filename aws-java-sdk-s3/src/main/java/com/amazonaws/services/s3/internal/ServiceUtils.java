@@ -304,31 +304,33 @@ public class ServiceUtils {
             closeQuietly(s3Object.getObjectContent(), log);
         }
 
-        byte[] clientSideHash = null;
-        byte[] serverSideHash = null;
-        try {
-            // Multipart Uploads don't have an MD5 calculated on the service
-            // side
-            // Server Side encryption with AWS KMS enabled objects has MD5 of
-            // cipher text. So the MD5 validation needs to be skipped.
-            final ObjectMetadata metadata = s3Object.getObjectMetadata();
-            if (metadata != null) {
-                final String etag = metadata.getETag();
-                if (!ServiceUtils.isMultipartUploadETag(etag)
-                &&  !skipMd5CheckPerResponse(metadata))
-                {
-                    clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(dstfile));
-                    serverSideHash = BinaryUtils.fromHex(etag);
+        if (performIntegrityCheck) {
+            byte[] clientSideHash = null;
+            byte[] serverSideHash = null;
+            try {
+                // Multipart Uploads don't have an MD5 calculated on the service
+                // side
+                // Server Side encryption with AWS KMS enabled objects has MD5 of
+                // cipher text. So the MD5 validation needs to be skipped.
+                final ObjectMetadata metadata = s3Object.getObjectMetadata();
+                if (metadata != null) {
+                    final String etag = metadata.getETag();
+                    if (!ServiceUtils.isMultipartUploadETag(etag)
+                    &&  !skipMd5CheckPerResponse(metadata))
+                    {
+                        clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(dstfile));
+                        serverSideHash = BinaryUtils.fromHex(etag);
+                    }
                 }
+            } catch (Exception e) {
+                log.warn("Unable to calculate MD5 hash to validate download: " + e.getMessage(), e);
             }
-        } catch (Exception e) {
-            log.warn("Unable to calculate MD5 hash to validate download: " + e.getMessage(), e);
-        }
 
-        if (performIntegrityCheck && clientSideHash != null && serverSideHash != null && !Arrays.equals(clientSideHash, serverSideHash)) {
-            throw new AmazonClientException("Unable to verify integrity of data download.  " +
-                    "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
-                    "The data stored in '" + dstfile.getAbsolutePath() + "' may be corrupt.");
+            if (clientSideHash != null && serverSideHash != null && !Arrays.equals(clientSideHash, serverSideHash)) {
+                throw new AmazonClientException("Unable to verify integrity of data download.  " +
+                        "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
+                        "The data stored in '" + dstfile.getAbsolutePath() + "' may be corrupt.");
+            }
         }
     }
 
@@ -384,11 +386,13 @@ public class ServiceUtils {
                         retryableS3DownloadTask.needIntegrityCheck(),
                         appendData);
             } catch (AmazonClientException ace) {
-                if (!ace.isRetryable())
+                if (!ace.isRetryable()) {
+                    s3Object.getObjectContent().abort();
                     throw ace;
+                }
                 // Determine whether an immediate retry is needed according to the captured AmazonClientException.
                 // (There are three cases when downloadObjectToFile() throws AmazonClientException:
-                //         1) SocketException or SSLProtocolException when writing to disk (e.g. when user aborts the download)
+                //        1) SocketException or SSLProtocolException when writing to disk (e.g. when user aborts the download)
                 //        2) Other IOException when writing to disk
                 //        3) MD5 hashes don't match
                 // The current code will retry the download only when case 2) or 3) happens.
@@ -396,15 +400,14 @@ public class ServiceUtils {
                     throw ace;
                 } else {
                     needRetry = true;
-                    if ( hasRetried )
+                    if ( hasRetried ) {
+                        s3Object.getObjectContent().abort();
                         throw ace;
-                    else {
+                    } else {
                         log.info("Retry the download of object " + s3Object.getKey() + " (bucket " + s3Object.getBucketName() + ")", ace);
                         hasRetried = true;
                     }
                 }
-            } finally {
-                s3Object.getObjectContent().abort();
             }
         } while ( needRetry );
         return s3Object;

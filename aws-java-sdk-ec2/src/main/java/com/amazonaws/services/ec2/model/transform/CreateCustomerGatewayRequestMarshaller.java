@@ -39,7 +39,7 @@ public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Reques
 
         Request<CreateCustomerGatewayRequest> request = new DefaultRequest<CreateCustomerGatewayRequest>(createCustomerGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "CreateCustomerGateway");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (createCustomerGatewayRequest.getType() != null) {
             request.addParameter("Type", StringUtils.fromString(createCustomerGatewayRequest.getType()));

@@ -39,7 +39,7 @@ public class ResetInstanceAttributeRequestMarshaller implements Marshaller<Reque
 
         Request<ResetInstanceAttributeRequest> request = new DefaultRequest<ResetInstanceAttributeRequest>(resetInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetInstanceAttribute");
-        request.addParameter("Version", "2015-04-15");
+        request.addParameter("Version", "2015-10-01");
 
         if (resetInstanceAttributeRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(resetInstanceAttributeRequest.getInstanceId()));

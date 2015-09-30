@@ -26,7 +26,7 @@ import com.amazonaws.services.dynamodbv2.document.internal.InternalUtils;
  */
 public class PrimaryKey {
     private final Map<String, KeyAttribute> components = new LinkedHashMap<String, KeyAttribute>();
-    
+
     public PrimaryKey() {}
 
     /**
@@ -69,6 +69,14 @@ public class PrimaryKey {
     }
 
     /**
+     * Returns true if this primary has the specified key attribute name;
+     * false otherwise.
+     */
+    public boolean hasComponent(String attrName) {
+        return components.containsKey(attrName);
+    }
+
+    /**
      * Add one or multiple key components to this primary key.
      *
      * Note adding a key component with the same name as that of an existing
@@ -86,12 +94,12 @@ public class PrimaryKey {
 
     /**
      * Add a key component to this primary key.
-     * 
+     *
      * Note adding a key component with the same name as that of an existing
      * one would overwrite and become a single key component instead of two.
      */
     public PrimaryKey addComponent(String keyAttributeName, Object keyAttributeValue) {
-        components.put(keyAttributeName, 
+        components.put(keyAttributeName,
             new KeyAttribute(keyAttributeName, keyAttributeValue));
         return this;
     }
@@ -99,5 +107,20 @@ public class PrimaryKey {
     @Override
     public String toString() {
         return String.valueOf(components);
+    }
+
+    @Override
+    public int hashCode() {
+        return components.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object in) {
+        if (in instanceof PrimaryKey) {
+            PrimaryKey that = (PrimaryKey)in;
+            return this.components.equals(that.components);
+        } else {
+            return false;
+        }
     }
 }
