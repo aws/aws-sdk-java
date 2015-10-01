@@ -30,34 +30,48 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class StartLoggingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of the trail for which CloudTrail logs AWS API calls.
+     * Specifies the name or the CloudTrail ARN of the trail for which
+     * CloudTrail logs AWS API calls. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     private String name;
 
     /**
-     * The name of the trail for which CloudTrail logs AWS API calls.
+     * Specifies the name or the CloudTrail ARN of the trail for which
+     * CloudTrail logs AWS API calls. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
-     * @return The name of the trail for which CloudTrail logs AWS API calls.
+     * @return Specifies the name or the CloudTrail ARN of the trail for which
+     *         CloudTrail logs AWS API calls. The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The name of the trail for which CloudTrail logs AWS API calls.
+     * Specifies the name or the CloudTrail ARN of the trail for which
+     * CloudTrail logs AWS API calls. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
-     * @param name The name of the trail for which CloudTrail logs AWS API calls.
+     * @param name Specifies the name or the CloudTrail ARN of the trail for which
+     *         CloudTrail logs AWS API calls. The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The name of the trail for which CloudTrail logs AWS API calls.
+     * Specifies the name or the CloudTrail ARN of the trail for which
+     * CloudTrail logs AWS API calls. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The name of the trail for which CloudTrail logs AWS API calls.
+     * @param name Specifies the name or the CloudTrail ARN of the trail for which
+     *         CloudTrail logs AWS API calls. The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

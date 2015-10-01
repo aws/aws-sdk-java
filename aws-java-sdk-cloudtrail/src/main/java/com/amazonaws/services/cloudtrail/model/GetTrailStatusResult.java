@@ -34,7 +34,12 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * attempting to deliver log files to the designated bucket. For more
      * information see the topic <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference.
+     * Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     * only when there is a problem with the destination S3 bucket and will
+     * not occur for timeouts. To resolve the issue, create a new bucket and
+     * call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
+     * </note>
      */
     private String latestDeliveryError;
 
@@ -85,6 +90,56 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
     private java.util.Date latestCloudWatchLogsDeliveryTime;
 
     /**
+     * Specifies the date and time that CloudTrail last delivered a digest
+     * file to an account's Amazon S3 bucket.
+     */
+    private java.util.Date latestDigestDeliveryTime;
+
+    /**
+     * Displays any Amazon S3 error that CloudTrail encountered when
+     * attempting to deliver a digest file to the designated bucket. For more
+     * information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     * only when there is a problem with the destination S3 bucket and will
+     * not occur for timeouts. To resolve the issue, create a new bucket and
+     * call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
+     * </note>
+     */
+    private String latestDigestDeliveryError;
+
+    /**
+     * This field is deprecated.
+     */
+    private String latestDeliveryAttemptTime;
+
+    /**
+     * This field is deprecated.
+     */
+    private String latestNotificationAttemptTime;
+
+    /**
+     * This field is deprecated.
+     */
+    private String latestNotificationAttemptSucceeded;
+
+    /**
+     * This field is deprecated.
+     */
+    private String latestDeliveryAttemptSucceeded;
+
+    /**
+     * This field is deprecated.
+     */
+    private String timeLoggingStarted;
+
+    /**
+     * This field is deprecated.
+     */
+    private String timeLoggingStopped;
+
+    /**
      * Whether the CloudTrail is currently logging AWS API calls.
      *
      * @return Whether the CloudTrail is currently logging AWS API calls.
@@ -131,13 +186,23 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * attempting to deliver log files to the designated bucket. For more
      * information see the topic <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference.
+     * Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     * only when there is a problem with the destination S3 bucket and will
+     * not occur for timeouts. To resolve the issue, create a new bucket and
+     * call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
+     * </note>
      *
      * @return Displays any Amazon S3 error that CloudTrail encountered when
      *         attempting to deliver log files to the designated bucket. For more
      *         information see the topic <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     *         Responses</a> in the Amazon S3 API Reference.
+     *         Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     *         only when there is a problem with the destination S3 bucket and will
+     *         not occur for timeouts. To resolve the issue, create a new bucket and
+     *         call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     *         existing objects so that CloudTrail can again write to the bucket.
+     *         </note>
      */
     public String getLatestDeliveryError() {
         return latestDeliveryError;
@@ -148,13 +213,23 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * attempting to deliver log files to the designated bucket. For more
      * information see the topic <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference.
+     * Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     * only when there is a problem with the destination S3 bucket and will
+     * not occur for timeouts. To resolve the issue, create a new bucket and
+     * call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
+     * </note>
      *
      * @param latestDeliveryError Displays any Amazon S3 error that CloudTrail encountered when
      *         attempting to deliver log files to the designated bucket. For more
      *         information see the topic <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     *         Responses</a> in the Amazon S3 API Reference.
+     *         Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     *         only when there is a problem with the destination S3 bucket and will
+     *         not occur for timeouts. To resolve the issue, create a new bucket and
+     *         call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     *         existing objects so that CloudTrail can again write to the bucket.
+     *         </note>
      */
     public void setLatestDeliveryError(String latestDeliveryError) {
         this.latestDeliveryError = latestDeliveryError;
@@ -165,7 +240,12 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * attempting to deliver log files to the designated bucket. For more
      * information see the topic <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference.
+     * Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     * only when there is a problem with the destination S3 bucket and will
+     * not occur for timeouts. To resolve the issue, create a new bucket and
+     * call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
+     * </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -173,7 +253,12 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *         attempting to deliver log files to the designated bucket. For more
      *         information see the topic <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     *         Responses</a> in the Amazon S3 API Reference.
+     *         Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     *         only when there is a problem with the destination S3 bucket and will
+     *         not occur for timeouts. To resolve the issue, create a new bucket and
+     *         call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     *         existing objects so that CloudTrail can again write to the bucket.
+     *         </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -481,6 +566,330 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
     }
 
     /**
+     * Specifies the date and time that CloudTrail last delivered a digest
+     * file to an account's Amazon S3 bucket.
+     *
+     * @return Specifies the date and time that CloudTrail last delivered a digest
+     *         file to an account's Amazon S3 bucket.
+     */
+    public java.util.Date getLatestDigestDeliveryTime() {
+        return latestDigestDeliveryTime;
+    }
+    
+    /**
+     * Specifies the date and time that CloudTrail last delivered a digest
+     * file to an account's Amazon S3 bucket.
+     *
+     * @param latestDigestDeliveryTime Specifies the date and time that CloudTrail last delivered a digest
+     *         file to an account's Amazon S3 bucket.
+     */
+    public void setLatestDigestDeliveryTime(java.util.Date latestDigestDeliveryTime) {
+        this.latestDigestDeliveryTime = latestDigestDeliveryTime;
+    }
+    
+    /**
+     * Specifies the date and time that CloudTrail last delivered a digest
+     * file to an account's Amazon S3 bucket.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param latestDigestDeliveryTime Specifies the date and time that CloudTrail last delivered a digest
+     *         file to an account's Amazon S3 bucket.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetTrailStatusResult withLatestDigestDeliveryTime(java.util.Date latestDigestDeliveryTime) {
+        this.latestDigestDeliveryTime = latestDigestDeliveryTime;
+        return this;
+    }
+
+    /**
+     * Displays any Amazon S3 error that CloudTrail encountered when
+     * attempting to deliver a digest file to the designated bucket. For more
+     * information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     * only when there is a problem with the destination S3 bucket and will
+     * not occur for timeouts. To resolve the issue, create a new bucket and
+     * call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
+     * </note>
+     *
+     * @return Displays any Amazon S3 error that CloudTrail encountered when
+     *         attempting to deliver a digest file to the designated bucket. For more
+     *         information see the topic <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     *         Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     *         only when there is a problem with the destination S3 bucket and will
+     *         not occur for timeouts. To resolve the issue, create a new bucket and
+     *         call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     *         existing objects so that CloudTrail can again write to the bucket.
+     *         </note>
+     */
+    public String getLatestDigestDeliveryError() {
+        return latestDigestDeliveryError;
+    }
+    
+    /**
+     * Displays any Amazon S3 error that CloudTrail encountered when
+     * attempting to deliver a digest file to the designated bucket. For more
+     * information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     * only when there is a problem with the destination S3 bucket and will
+     * not occur for timeouts. To resolve the issue, create a new bucket and
+     * call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
+     * </note>
+     *
+     * @param latestDigestDeliveryError Displays any Amazon S3 error that CloudTrail encountered when
+     *         attempting to deliver a digest file to the designated bucket. For more
+     *         information see the topic <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     *         Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     *         only when there is a problem with the destination S3 bucket and will
+     *         not occur for timeouts. To resolve the issue, create a new bucket and
+     *         call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     *         existing objects so that CloudTrail can again write to the bucket.
+     *         </note>
+     */
+    public void setLatestDigestDeliveryError(String latestDigestDeliveryError) {
+        this.latestDigestDeliveryError = latestDigestDeliveryError;
+    }
+    
+    /**
+     * Displays any Amazon S3 error that CloudTrail encountered when
+     * attempting to deliver a digest file to the designated bucket. For more
+     * information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     * only when there is a problem with the destination S3 bucket and will
+     * not occur for timeouts. To resolve the issue, create a new bucket and
+     * call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     * existing objects so that CloudTrail can again write to the bucket.
+     * </note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param latestDigestDeliveryError Displays any Amazon S3 error that CloudTrail encountered when
+     *         attempting to deliver a digest file to the designated bucket. For more
+     *         information see the topic <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     *         Responses</a> in the Amazon S3 API Reference. <note>This error occurs
+     *         only when there is a problem with the destination S3 bucket and will
+     *         not occur for timeouts. To resolve the issue, create a new bucket and
+     *         call <code>UpdateTrail</code> to specify the new bucket, or fix the
+     *         existing objects so that CloudTrail can again write to the bucket.
+     *         </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetTrailStatusResult withLatestDigestDeliveryError(String latestDigestDeliveryError) {
+        this.latestDigestDeliveryError = latestDigestDeliveryError;
+        return this;
+    }
+
+    /**
+     * This field is deprecated.
+     *
+     * @return This field is deprecated.
+     */
+    public String getLatestDeliveryAttemptTime() {
+        return latestDeliveryAttemptTime;
+    }
+    
+    /**
+     * This field is deprecated.
+     *
+     * @param latestDeliveryAttemptTime This field is deprecated.
+     */
+    public void setLatestDeliveryAttemptTime(String latestDeliveryAttemptTime) {
+        this.latestDeliveryAttemptTime = latestDeliveryAttemptTime;
+    }
+    
+    /**
+     * This field is deprecated.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param latestDeliveryAttemptTime This field is deprecated.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetTrailStatusResult withLatestDeliveryAttemptTime(String latestDeliveryAttemptTime) {
+        this.latestDeliveryAttemptTime = latestDeliveryAttemptTime;
+        return this;
+    }
+
+    /**
+     * This field is deprecated.
+     *
+     * @return This field is deprecated.
+     */
+    public String getLatestNotificationAttemptTime() {
+        return latestNotificationAttemptTime;
+    }
+    
+    /**
+     * This field is deprecated.
+     *
+     * @param latestNotificationAttemptTime This field is deprecated.
+     */
+    public void setLatestNotificationAttemptTime(String latestNotificationAttemptTime) {
+        this.latestNotificationAttemptTime = latestNotificationAttemptTime;
+    }
+    
+    /**
+     * This field is deprecated.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param latestNotificationAttemptTime This field is deprecated.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetTrailStatusResult withLatestNotificationAttemptTime(String latestNotificationAttemptTime) {
+        this.latestNotificationAttemptTime = latestNotificationAttemptTime;
+        return this;
+    }
+
+    /**
+     * This field is deprecated.
+     *
+     * @return This field is deprecated.
+     */
+    public String getLatestNotificationAttemptSucceeded() {
+        return latestNotificationAttemptSucceeded;
+    }
+    
+    /**
+     * This field is deprecated.
+     *
+     * @param latestNotificationAttemptSucceeded This field is deprecated.
+     */
+    public void setLatestNotificationAttemptSucceeded(String latestNotificationAttemptSucceeded) {
+        this.latestNotificationAttemptSucceeded = latestNotificationAttemptSucceeded;
+    }
+    
+    /**
+     * This field is deprecated.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param latestNotificationAttemptSucceeded This field is deprecated.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetTrailStatusResult withLatestNotificationAttemptSucceeded(String latestNotificationAttemptSucceeded) {
+        this.latestNotificationAttemptSucceeded = latestNotificationAttemptSucceeded;
+        return this;
+    }
+
+    /**
+     * This field is deprecated.
+     *
+     * @return This field is deprecated.
+     */
+    public String getLatestDeliveryAttemptSucceeded() {
+        return latestDeliveryAttemptSucceeded;
+    }
+    
+    /**
+     * This field is deprecated.
+     *
+     * @param latestDeliveryAttemptSucceeded This field is deprecated.
+     */
+    public void setLatestDeliveryAttemptSucceeded(String latestDeliveryAttemptSucceeded) {
+        this.latestDeliveryAttemptSucceeded = latestDeliveryAttemptSucceeded;
+    }
+    
+    /**
+     * This field is deprecated.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param latestDeliveryAttemptSucceeded This field is deprecated.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetTrailStatusResult withLatestDeliveryAttemptSucceeded(String latestDeliveryAttemptSucceeded) {
+        this.latestDeliveryAttemptSucceeded = latestDeliveryAttemptSucceeded;
+        return this;
+    }
+
+    /**
+     * This field is deprecated.
+     *
+     * @return This field is deprecated.
+     */
+    public String getTimeLoggingStarted() {
+        return timeLoggingStarted;
+    }
+    
+    /**
+     * This field is deprecated.
+     *
+     * @param timeLoggingStarted This field is deprecated.
+     */
+    public void setTimeLoggingStarted(String timeLoggingStarted) {
+        this.timeLoggingStarted = timeLoggingStarted;
+    }
+    
+    /**
+     * This field is deprecated.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param timeLoggingStarted This field is deprecated.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetTrailStatusResult withTimeLoggingStarted(String timeLoggingStarted) {
+        this.timeLoggingStarted = timeLoggingStarted;
+        return this;
+    }
+
+    /**
+     * This field is deprecated.
+     *
+     * @return This field is deprecated.
+     */
+    public String getTimeLoggingStopped() {
+        return timeLoggingStopped;
+    }
+    
+    /**
+     * This field is deprecated.
+     *
+     * @param timeLoggingStopped This field is deprecated.
+     */
+    public void setTimeLoggingStopped(String timeLoggingStopped) {
+        this.timeLoggingStopped = timeLoggingStopped;
+    }
+    
+    /**
+     * This field is deprecated.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param timeLoggingStopped This field is deprecated.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetTrailStatusResult withTimeLoggingStopped(String timeLoggingStopped) {
+        this.timeLoggingStopped = timeLoggingStopped;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -500,7 +909,15 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
         if (getStartLoggingTime() != null) sb.append("StartLoggingTime: " + getStartLoggingTime() + ",");
         if (getStopLoggingTime() != null) sb.append("StopLoggingTime: " + getStopLoggingTime() + ",");
         if (getLatestCloudWatchLogsDeliveryError() != null) sb.append("LatestCloudWatchLogsDeliveryError: " + getLatestCloudWatchLogsDeliveryError() + ",");
-        if (getLatestCloudWatchLogsDeliveryTime() != null) sb.append("LatestCloudWatchLogsDeliveryTime: " + getLatestCloudWatchLogsDeliveryTime() );
+        if (getLatestCloudWatchLogsDeliveryTime() != null) sb.append("LatestCloudWatchLogsDeliveryTime: " + getLatestCloudWatchLogsDeliveryTime() + ",");
+        if (getLatestDigestDeliveryTime() != null) sb.append("LatestDigestDeliveryTime: " + getLatestDigestDeliveryTime() + ",");
+        if (getLatestDigestDeliveryError() != null) sb.append("LatestDigestDeliveryError: " + getLatestDigestDeliveryError() + ",");
+        if (getLatestDeliveryAttemptTime() != null) sb.append("LatestDeliveryAttemptTime: " + getLatestDeliveryAttemptTime() + ",");
+        if (getLatestNotificationAttemptTime() != null) sb.append("LatestNotificationAttemptTime: " + getLatestNotificationAttemptTime() + ",");
+        if (getLatestNotificationAttemptSucceeded() != null) sb.append("LatestNotificationAttemptSucceeded: " + getLatestNotificationAttemptSucceeded() + ",");
+        if (getLatestDeliveryAttemptSucceeded() != null) sb.append("LatestDeliveryAttemptSucceeded: " + getLatestDeliveryAttemptSucceeded() + ",");
+        if (getTimeLoggingStarted() != null) sb.append("TimeLoggingStarted: " + getTimeLoggingStarted() + ",");
+        if (getTimeLoggingStopped() != null) sb.append("TimeLoggingStopped: " + getTimeLoggingStopped() );
         sb.append("}");
         return sb.toString();
     }
@@ -519,6 +936,14 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStopLoggingTime() == null) ? 0 : getStopLoggingTime().hashCode()); 
         hashCode = prime * hashCode + ((getLatestCloudWatchLogsDeliveryError() == null) ? 0 : getLatestCloudWatchLogsDeliveryError().hashCode()); 
         hashCode = prime * hashCode + ((getLatestCloudWatchLogsDeliveryTime() == null) ? 0 : getLatestCloudWatchLogsDeliveryTime().hashCode()); 
+        hashCode = prime * hashCode + ((getLatestDigestDeliveryTime() == null) ? 0 : getLatestDigestDeliveryTime().hashCode()); 
+        hashCode = prime * hashCode + ((getLatestDigestDeliveryError() == null) ? 0 : getLatestDigestDeliveryError().hashCode()); 
+        hashCode = prime * hashCode + ((getLatestDeliveryAttemptTime() == null) ? 0 : getLatestDeliveryAttemptTime().hashCode()); 
+        hashCode = prime * hashCode + ((getLatestNotificationAttemptTime() == null) ? 0 : getLatestNotificationAttemptTime().hashCode()); 
+        hashCode = prime * hashCode + ((getLatestNotificationAttemptSucceeded() == null) ? 0 : getLatestNotificationAttemptSucceeded().hashCode()); 
+        hashCode = prime * hashCode + ((getLatestDeliveryAttemptSucceeded() == null) ? 0 : getLatestDeliveryAttemptSucceeded().hashCode()); 
+        hashCode = prime * hashCode + ((getTimeLoggingStarted() == null) ? 0 : getTimeLoggingStarted().hashCode()); 
+        hashCode = prime * hashCode + ((getTimeLoggingStopped() == null) ? 0 : getTimeLoggingStopped().hashCode()); 
         return hashCode;
     }
     
@@ -548,6 +973,22 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
         if (other.getLatestCloudWatchLogsDeliveryError() != null && other.getLatestCloudWatchLogsDeliveryError().equals(this.getLatestCloudWatchLogsDeliveryError()) == false) return false; 
         if (other.getLatestCloudWatchLogsDeliveryTime() == null ^ this.getLatestCloudWatchLogsDeliveryTime() == null) return false;
         if (other.getLatestCloudWatchLogsDeliveryTime() != null && other.getLatestCloudWatchLogsDeliveryTime().equals(this.getLatestCloudWatchLogsDeliveryTime()) == false) return false; 
+        if (other.getLatestDigestDeliveryTime() == null ^ this.getLatestDigestDeliveryTime() == null) return false;
+        if (other.getLatestDigestDeliveryTime() != null && other.getLatestDigestDeliveryTime().equals(this.getLatestDigestDeliveryTime()) == false) return false; 
+        if (other.getLatestDigestDeliveryError() == null ^ this.getLatestDigestDeliveryError() == null) return false;
+        if (other.getLatestDigestDeliveryError() != null && other.getLatestDigestDeliveryError().equals(this.getLatestDigestDeliveryError()) == false) return false; 
+        if (other.getLatestDeliveryAttemptTime() == null ^ this.getLatestDeliveryAttemptTime() == null) return false;
+        if (other.getLatestDeliveryAttemptTime() != null && other.getLatestDeliveryAttemptTime().equals(this.getLatestDeliveryAttemptTime()) == false) return false; 
+        if (other.getLatestNotificationAttemptTime() == null ^ this.getLatestNotificationAttemptTime() == null) return false;
+        if (other.getLatestNotificationAttemptTime() != null && other.getLatestNotificationAttemptTime().equals(this.getLatestNotificationAttemptTime()) == false) return false; 
+        if (other.getLatestNotificationAttemptSucceeded() == null ^ this.getLatestNotificationAttemptSucceeded() == null) return false;
+        if (other.getLatestNotificationAttemptSucceeded() != null && other.getLatestNotificationAttemptSucceeded().equals(this.getLatestNotificationAttemptSucceeded()) == false) return false; 
+        if (other.getLatestDeliveryAttemptSucceeded() == null ^ this.getLatestDeliveryAttemptSucceeded() == null) return false;
+        if (other.getLatestDeliveryAttemptSucceeded() != null && other.getLatestDeliveryAttemptSucceeded().equals(this.getLatestDeliveryAttemptSucceeded()) == false) return false; 
+        if (other.getTimeLoggingStarted() == null ^ this.getTimeLoggingStarted() == null) return false;
+        if (other.getTimeLoggingStarted() != null && other.getTimeLoggingStarted().equals(this.getTimeLoggingStarted()) == false) return false; 
+        if (other.getTimeLoggingStopped() == null ^ this.getTimeLoggingStopped() == null) return false;
+        if (other.getTimeLoggingStopped() != null && other.getTimeLoggingStopped().equals(this.getTimeLoggingStopped()) == false) return false; 
         return true;
     }
     

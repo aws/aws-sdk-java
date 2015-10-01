@@ -76,11 +76,17 @@ public class UpdateTrailRequestMarshaller implements Marshaller<Request<UpdateTr
             if (updateTrailRequest.isIncludeGlobalServiceEvents() != null) {
                 jsonWriter.key("IncludeGlobalServiceEvents").value(updateTrailRequest.isIncludeGlobalServiceEvents());
             }
+            if (updateTrailRequest.isEnableLogFileValidation() != null) {
+                jsonWriter.key("EnableLogFileValidation").value(updateTrailRequest.isEnableLogFileValidation());
+            }
             if (updateTrailRequest.getCloudWatchLogsLogGroupArn() != null) {
                 jsonWriter.key("CloudWatchLogsLogGroupArn").value(updateTrailRequest.getCloudWatchLogsLogGroupArn());
             }
             if (updateTrailRequest.getCloudWatchLogsRoleArn() != null) {
                 jsonWriter.key("CloudWatchLogsRoleArn").value(updateTrailRequest.getCloudWatchLogsRoleArn());
+            }
+            if (updateTrailRequest.getKmsKeyId() != null) {
+                jsonWriter.key("KmsKeyId").value(updateTrailRequest.getKmsKeyId());
             }
 
           jsonWriter.endObject();

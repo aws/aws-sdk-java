@@ -1285,8 +1285,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "AssociationFilter",
           "simple" : false,
+          "simpleType" : "AssociationFilter",
           "map" : false,
           "templateType" : "java.util.List<AssociationFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>"
@@ -1633,8 +1633,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "AssociationFilter",
             "simple" : false,
+            "simpleType" : "AssociationFilter",
             "map" : false,
             "templateType" : "java.util.List<AssociationFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>"
@@ -3808,8 +3808,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "DocumentIdentifier",
           "simple" : false,
+          "simpleType" : "DocumentIdentifier",
           "map" : false,
           "templateType" : "java.util.List<DocumentIdentifier>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>"
@@ -3997,8 +3997,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "DocumentIdentifier",
             "simple" : false,
+            "simpleType" : "DocumentIdentifier",
             "map" : false,
             "templateType" : "java.util.List<DocumentIdentifier>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>"
@@ -6445,8 +6445,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "DocumentFilter",
           "simple" : false,
+          "simpleType" : "DocumentFilter",
           "map" : false,
           "templateType" : "java.util.List<DocumentFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>"
@@ -6741,8 +6741,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "DocumentFilter",
             "simple" : false,
+            "simpleType" : "DocumentFilter",
             "map" : false,
             "templateType" : "java.util.List<DocumentFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>"
@@ -7162,8 +7162,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "AssociationDescription",
           "simple" : false,
+          "simpleType" : "AssociationDescription",
           "map" : false,
           "templateType" : "java.util.List<AssociationDescription>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>"
@@ -7277,8 +7277,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "FailedCreateAssociation",
           "simple" : false,
+          "simpleType" : "FailedCreateAssociation",
           "map" : false,
           "templateType" : "java.util.List<FailedCreateAssociation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>"
@@ -7415,8 +7415,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "AssociationDescription",
             "simple" : false,
+            "simpleType" : "AssociationDescription",
             "map" : false,
             "templateType" : "java.util.List<AssociationDescription>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>"
@@ -7531,8 +7531,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "FailedCreateAssociation",
             "simple" : false,
+            "simpleType" : "FailedCreateAssociation",
             "map" : false,
             "templateType" : "java.util.List<FailedCreateAssociation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>"
@@ -7868,8 +7868,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "CreateAssociationBatchRequestEntry",
           "simple" : false,
+          "simpleType" : "CreateAssociationBatchRequestEntry",
           "map" : false,
           "templateType" : "java.util.List<CreateAssociationBatchRequestEntry>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>"
@@ -8010,8 +8010,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "CreateAssociationBatchRequestEntry",
             "simple" : false,
+            "simpleType" : "CreateAssociationBatchRequestEntry",
             "map" : false,
             "templateType" : "java.util.List<CreateAssociationBatchRequestEntry>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>"
@@ -8579,8 +8579,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Association",
           "simple" : false,
+          "simpleType" : "Association",
           "map" : false,
           "templateType" : "java.util.List<Association>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>"
@@ -8820,8 +8820,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Association",
             "simple" : false,
+            "simpleType" : "Association",
             "map" : false,
             "templateType" : "java.util.List<Association>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>"

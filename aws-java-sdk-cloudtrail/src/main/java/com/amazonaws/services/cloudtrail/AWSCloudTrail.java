@@ -108,9 +108,42 @@ public interface AWSCloudTrail {
     
     /**
      * <p>
+     * Lists the tags for the trail in the current region.
+     * </p>
+     *
+     * @param listTagsRequest Container for the necessary parameters to
+     *           execute the ListTags service method on AWSCloudTrail.
+     * 
+     * @return The response from the ListTags service method, as returned by
+     *         AWSCloudTrail.
+     * 
+     * @throws ResourceTypeNotSupportedException
+     * @throws ResourceNotFoundException
+     * @throws UnsupportedOperationException
+     * @throws CloudTrailARNInvalidException
+     * @throws InvalidTrailNameException
+     * @throws InvalidTokenException
+     * @throws OperationNotPermittedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTagsResult listTags(ListTagsRequest listTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns a JSON-formatted list of information about the specified
      * trail. Fields include information on delivery errors, Amazon SNS and
      * Amazon S3 errors, and start and stop logging times for each trail.
+     * This operation returns trail status from a single region. To return
+     * trail status from all regions, you must call the operation on each
+     * region.
      * </p>
      *
      * @param getTrailStatusRequest Container for the necessary parameters to
@@ -135,7 +168,38 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Deletes a trail.
+     * Removes the specified tags from a trail.
+     * </p>
+     *
+     * @param removeTagsRequest Container for the necessary parameters to
+     *           execute the RemoveTags service method on AWSCloudTrail.
+     * 
+     * @return The response from the RemoveTags service method, as returned
+     *         by AWSCloudTrail.
+     * 
+     * @throws ResourceTypeNotSupportedException
+     * @throws ResourceNotFoundException
+     * @throws UnsupportedOperationException
+     * @throws CloudTrailARNInvalidException
+     * @throws InvalidTrailNameException
+     * @throws InvalidTagParameterException
+     * @throws OperationNotPermittedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes a trail. This operation must be called from the region in
+     * which the trail was created.
      * </p>
      *
      * @param deleteTrailRequest Container for the necessary parameters to
@@ -207,9 +271,6 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * From the command line, use <code>create-subscription</code> .
-     * </p>
-     * <p>
      * Creates a trail that specifies the settings for delivery of log data
      * to an Amazon S3 bucket.
      * </p>
@@ -220,17 +281,24 @@ public interface AWSCloudTrail {
      * @return The response from the CreateTrail service method, as returned
      *         by AWSCloudTrail.
      * 
-     * @throws S3BucketDoesNotExistException
-     * @throws InvalidS3PrefixException
+     * @throws InsufficientEncryptionPolicyException
      * @throws InvalidTrailNameException
-     * @throws InvalidCloudWatchLogsRoleArnException
      * @throws InvalidCloudWatchLogsLogGroupArnException
      * @throws TrailAlreadyExistsException
-     * @throws MaximumNumberOfTrailsExceededException
      * @throws InvalidS3BucketNameException
-     * @throws InsufficientSnsTopicPolicyException
+     * @throws KmsKeyDisabledException
+     * @throws TrailNotProvidedException
      * @throws InvalidSnsTopicNameException
+     * @throws S3BucketDoesNotExistException
+     * @throws UnsupportedOperationException
+     * @throws KmsKeyNotFoundException
+     * @throws InvalidS3PrefixException
+     * @throws InvalidCloudWatchLogsRoleArnException
+     * @throws MaximumNumberOfTrailsExceededException
+     * @throws InvalidKmsKeyIdException
+     * @throws InsufficientSnsTopicPolicyException
      * @throws CloudWatchLogsDeliveryUnavailableException
+     * @throws OperationNotPermittedException
      * @throws InsufficientS3BucketPolicyException
      *
      * @throws AmazonClientException
@@ -246,9 +314,6 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * From the command line, use <code>update-subscription</code> .
-     * </p>
-     * <p>
      * Updates the settings that specify delivery of log files. Changes to a
      * trail do not require stopping the CloudTrail service. Use this action
      * to designate an existing bucket for log delivery. If the existing
@@ -262,17 +327,24 @@ public interface AWSCloudTrail {
      * @return The response from the UpdateTrail service method, as returned
      *         by AWSCloudTrail.
      * 
-     * @throws S3BucketDoesNotExistException
-     * @throws InvalidS3PrefixException
+     * @throws InsufficientEncryptionPolicyException
      * @throws InvalidTrailNameException
-     * @throws InvalidCloudWatchLogsRoleArnException
      * @throws InvalidCloudWatchLogsLogGroupArnException
      * @throws InvalidS3BucketNameException
-     * @throws InsufficientSnsTopicPolicyException
+     * @throws KmsKeyDisabledException
+     * @throws TrailNotProvidedException
      * @throws InvalidSnsTopicNameException
+     * @throws S3BucketDoesNotExistException
+     * @throws UnsupportedOperationException
+     * @throws KmsKeyNotFoundException
+     * @throws InvalidCloudWatchLogsRoleArnException
+     * @throws InvalidS3PrefixException
+     * @throws InvalidKmsKeyIdException
+     * @throws InsufficientSnsTopicPolicyException
      * @throws CloudWatchLogsDeliveryUnavailableException
-     * @throws InsufficientS3BucketPolicyException
+     * @throws OperationNotPermittedException
      * @throws TrailNotFoundException
+     * @throws InsufficientS3BucketPolicyException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -283,30 +355,6 @@ public interface AWSCloudTrail {
      *             either a problem with the data in the request, or a server side issue.
      */
     public UpdateTrailResult updateTrail(UpdateTrailRequest updateTrailRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Retrieves settings for the trail associated with the current region
-     * for your account.
-     * </p>
-     *
-     * @param describeTrailsRequest Container for the necessary parameters to
-     *           execute the DescribeTrails service method on AWSCloudTrail.
-     * 
-     * @return The response from the DescribeTrails service method, as
-     *         returned by AWSCloudTrail.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudTrail indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeTrailsResult describeTrails(DescribeTrailsRequest describeTrailsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -335,6 +383,104 @@ public interface AWSCloudTrail {
      *             either a problem with the data in the request, or a server side issue.
      */
     public StopLoggingResult stopLogging(StopLoggingRequest stopLoggingRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Retrieves settings for the trail associated with the current region
+     * for your account.
+     * </p>
+     *
+     * @param describeTrailsRequest Container for the necessary parameters to
+     *           execute the DescribeTrails service method on AWSCloudTrail.
+     * 
+     * @return The response from the DescribeTrails service method, as
+     *         returned by AWSCloudTrail.
+     * 
+     * @throws UnsupportedOperationException
+     * @throws OperationNotPermittedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTrailsResult describeTrails(DescribeTrailsRequest describeTrailsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns all public keys whose private keys were used to sign the
+     * digest files within the specified time range. The public key is needed
+     * to validate digest files that were signed with its corresponding
+     * private key.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>CloudTrail uses different private/public key pairs per
+     * region. Each digest file is signed with a private key unique to its
+     * region. Therefore, when you validate a digest file from a particular
+     * region, you must look in the same region for its corresponding public
+     * key.
+     * </p>
+     *
+     * @param listPublicKeysRequest Container for the necessary parameters to
+     *           execute the ListPublicKeys service method on AWSCloudTrail.
+     * 
+     * @return The response from the ListPublicKeys service method, as
+     *         returned by AWSCloudTrail.
+     * 
+     * @throws UnsupportedOperationException
+     * @throws InvalidTokenException
+     * @throws OperationNotPermittedException
+     * @throws InvalidTimeRangeException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListPublicKeysResult listPublicKeys(ListPublicKeysRequest listPublicKeysRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Adds one or more tags to a trail, up to a limit of 10. Tags must be
+     * unique per trail. Overwrites an existing tag's value when a new value
+     * is specified for an existing tag key. If you specify a key without a
+     * value, the tag will be created with the specified key and a value of
+     * null.
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags service method on AWSCloudTrail.
+     * 
+     * @return The response from the AddTags service method, as returned by
+     *         AWSCloudTrail.
+     * 
+     * @throws ResourceTypeNotSupportedException
+     * @throws TagsLimitExceededException
+     * @throws ResourceNotFoundException
+     * @throws UnsupportedOperationException
+     * @throws CloudTrailARNInvalidException
+     * @throws InvalidTrailNameException
+     * @throws InvalidTagParameterException
+     * @throws OperationNotPermittedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AddTagsResult addTags(AddTagsRequest addTagsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -415,6 +561,8 @@ public interface AWSCloudTrail {
      * @return The response from the DescribeTrails service method, as
      *         returned by AWSCloudTrail.
      * 
+     * @throws UnsupportedOperationException
+     * @throws OperationNotPermittedException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -425,6 +573,39 @@ public interface AWSCloudTrail {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeTrailsResult describeTrails() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns all public keys whose private keys were used to sign the
+     * digest files within the specified time range. The public key is needed
+     * to validate digest files that were signed with its corresponding
+     * private key.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>CloudTrail uses different private/public key pairs per
+     * region. Each digest file is signed with a private key unique to its
+     * region. Therefore, when you validate a digest file from a particular
+     * region, you must look in the same region for its corresponding public
+     * key.
+     * </p>
+     * 
+     * @return The response from the ListPublicKeys service method, as
+     *         returned by AWSCloudTrail.
+     * 
+     * @throws UnsupportedOperationException
+     * @throws InvalidTokenException
+     * @throws OperationNotPermittedException
+     * @throws InvalidTimeRangeException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListPublicKeysResult listPublicKeys() throws AmazonServiceException, AmazonClientException;
     
     /**
      * Shuts down this client object, releasing any resources that might be held

@@ -22,6 +22,8 @@ import org.junit.Test;
 
 import com.amazonaws.auth.AWS4Signer;
 import com.amazonaws.auth.QueryStringSigner;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
 
 public class AmazonWebServiceClientTest {
 
@@ -62,6 +64,17 @@ public class AmazonWebServiceClientTest {
         assertFalse(serviceNameOverride.equals(client.getServiceName()));
         client.setServiceNameIntern(serviceNameOverride);
         assertEquals(serviceNameOverride, client.getServiceName());
+    }
+
+    @Test
+    public void setEndpoint() {
+        AmazonTestClient client = new AmazonTestClient();
+        Assert.assertEquals(client.getServiceName(), client.getEndpointPrefix());
+        String endpointPrefixOverride = "foo";
+        Assert.assertNotEquals(endpointPrefixOverride, client.getServiceName());
+        client.setEndpointPrefix(endpointPrefixOverride);
+        Assert.assertEquals(endpointPrefixOverride, client.getEndpointPrefix());
+        Assert.assertNotEquals(client.getEndpointPrefix(), client.getServiceName());
     }
 
     private static class AmazonTestClient extends AmazonWebServiceClient {

@@ -30,14 +30,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The trail returned.
+     * Specifies a list of trail names, trail ARNs, or both, of the trails to
+     * describe. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * If an empty list is specified, information for the trail in the
+     * current region is returned.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> trailNameList;
 
     /**
-     * The trail returned.
+     * Specifies a list of trail names, trail ARNs, or both, of the trails to
+     * describe. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * If an empty list is specified, information for the trail in the
+     * current region is returned.
      *
-     * @return The trail returned.
+     * @return Specifies a list of trail names, trail ARNs, or both, of the trails to
+     *         describe. The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     *         If an empty list is specified, information for the trail in the
+     *         current region is returned.
      */
     public java.util.List<String> getTrailNameList() {
         if (trailNameList == null) {
@@ -48,9 +60,17 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The trail returned.
+     * Specifies a list of trail names, trail ARNs, or both, of the trails to
+     * describe. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * If an empty list is specified, information for the trail in the
+     * current region is returned.
      *
-     * @param trailNameList The trail returned.
+     * @param trailNameList Specifies a list of trail names, trail ARNs, or both, of the trails to
+     *         describe. The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     *         If an empty list is specified, information for the trail in the
+     *         current region is returned.
      */
     public void setTrailNameList(java.util.Collection<String> trailNameList) {
         if (trailNameList == null) {
@@ -63,7 +83,11 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The trail returned.
+     * Specifies a list of trail names, trail ARNs, or both, of the trails to
+     * describe. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * If an empty list is specified, information for the trail in the
+     * current region is returned.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTrailNameList(java.util.Collection)} or {@link
@@ -72,7 +96,11 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param trailNameList The trail returned.
+     * @param trailNameList Specifies a list of trail names, trail ARNs, or both, of the trails to
+     *         describe. The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     *         If an empty list is specified, information for the trail in the
+     *         current region is returned.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -86,11 +114,19 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The trail returned.
+     * Specifies a list of trail names, trail ARNs, or both, of the trails to
+     * describe. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * If an empty list is specified, information for the trail in the
+     * current region is returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param trailNameList The trail returned.
+     * @param trailNameList Specifies a list of trail names, trail ARNs, or both, of the trails to
+     *         describe. The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     *         If an empty list is specified, information for the trail in the
+     *         current region is returned.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

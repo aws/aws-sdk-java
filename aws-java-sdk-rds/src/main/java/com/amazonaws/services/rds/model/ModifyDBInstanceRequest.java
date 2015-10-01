@@ -89,7 +89,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
      * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     * db.t2.large</code>
      */
     private String dBInstanceClass;
 
@@ -137,12 +138,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * completion of the request, the <code>MasterUserPassword</code> element
      * exists in the <code>PendingModifiedValues</code> element of the
      * operation response. <p>Default: Uses existing setting <p>Constraints:
-     * Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
-     * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
-     * <note> Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if
-     * the password is lost. This includes restoring privileges that might
-     * have been accidentally revoked. </note>
+     * Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
+     * to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
+     * characters (SQL Server). <note> Amazon RDS API actions never return
+     * the password, so this action provides a way to regain access to a
+     * primary instance user if the password is lost. This includes restoring
+     * privileges that might have been accidentally revoked. </note>
      */
     private String masterUserPassword;
 
@@ -338,6 +339,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * instance.
      */
     private String cACertificateIdentifier;
+
+    /**
+     * True to copy all tags from the DB instance to snapshots of the DB
+     * instance; otherwise false. The default is false.
+     */
+    private Boolean copyTagsToSnapshot;
 
     /**
      * Default constructor for a new ModifyDBInstanceRequest object.  Callers should use the
@@ -661,7 +668,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
      * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     * db.t2.large</code>
      *
      * @return The new compute and memory capacity of the DB instance. To determine
      *         the instance classes that are available for a particular DB engine,
@@ -674,7 +682,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
      *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     *         db.t2.large</code>
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -692,7 +701,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
      * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     * db.t2.large</code>
      *
      * @param dBInstanceClass The new compute and memory capacity of the DB instance. To determine
      *         the instance classes that are available for a particular DB engine,
@@ -705,7 +715,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
      *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     *         db.t2.large</code>
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -723,7 +734,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
      * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     * db.t2.large</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -738,7 +750,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
      *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
      *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
-     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
+     *         db.t2.large</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1112,12 +1125,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * completion of the request, the <code>MasterUserPassword</code> element
      * exists in the <code>PendingModifiedValues</code> element of the
      * operation response. <p>Default: Uses existing setting <p>Constraints:
-     * Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
-     * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
-     * <note> Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if
-     * the password is lost. This includes restoring privileges that might
-     * have been accidentally revoked. </note>
+     * Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
+     * to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
+     * characters (SQL Server). <note> Amazon RDS API actions never return
+     * the password, so this action provides a way to regain access to a
+     * primary instance user if the password is lost. This includes restoring
+     * privileges that might have been accidentally revoked. </note>
      *
      * @return The new password for the DB instance master user. Can be any printable
      *         ASCII character except "/", """, or "@". <p> Changing this parameter
@@ -1126,12 +1139,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         completion of the request, the <code>MasterUserPassword</code> element
      *         exists in the <code>PendingModifiedValues</code> element of the
      *         operation response. <p>Default: Uses existing setting <p>Constraints:
-     *         Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
-     *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
-     *         <note> Amazon RDS API actions never return the password, so this
-     *         action provides a way to regain access to a primary instance user if
-     *         the password is lost. This includes restoring privileges that might
-     *         have been accidentally revoked. </note>
+     *         Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
+     *         to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
+     *         characters (SQL Server). <note> Amazon RDS API actions never return
+     *         the password, so this action provides a way to regain access to a
+     *         primary instance user if the password is lost. This includes restoring
+     *         privileges that might have been accidentally revoked. </note>
      */
     public String getMasterUserPassword() {
         return masterUserPassword;
@@ -1145,12 +1158,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * completion of the request, the <code>MasterUserPassword</code> element
      * exists in the <code>PendingModifiedValues</code> element of the
      * operation response. <p>Default: Uses existing setting <p>Constraints:
-     * Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
-     * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
-     * <note> Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if
-     * the password is lost. This includes restoring privileges that might
-     * have been accidentally revoked. </note>
+     * Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
+     * to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
+     * characters (SQL Server). <note> Amazon RDS API actions never return
+     * the password, so this action provides a way to regain access to a
+     * primary instance user if the password is lost. This includes restoring
+     * privileges that might have been accidentally revoked. </note>
      *
      * @param masterUserPassword The new password for the DB instance master user. Can be any printable
      *         ASCII character except "/", """, or "@". <p> Changing this parameter
@@ -1159,12 +1172,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         completion of the request, the <code>MasterUserPassword</code> element
      *         exists in the <code>PendingModifiedValues</code> element of the
      *         operation response. <p>Default: Uses existing setting <p>Constraints:
-     *         Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
-     *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
-     *         <note> Amazon RDS API actions never return the password, so this
-     *         action provides a way to regain access to a primary instance user if
-     *         the password is lost. This includes restoring privileges that might
-     *         have been accidentally revoked. </note>
+     *         Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
+     *         to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
+     *         characters (SQL Server). <note> Amazon RDS API actions never return
+     *         the password, so this action provides a way to regain access to a
+     *         primary instance user if the password is lost. This includes restoring
+     *         privileges that might have been accidentally revoked. </note>
      */
     public void setMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
@@ -1178,12 +1191,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * completion of the request, the <code>MasterUserPassword</code> element
      * exists in the <code>PendingModifiedValues</code> element of the
      * operation response. <p>Default: Uses existing setting <p>Constraints:
-     * Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
-     * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
-     * <note> Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if
-     * the password is lost. This includes restoring privileges that might
-     * have been accidentally revoked. </note>
+     * Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
+     * to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
+     * characters (SQL Server). <note> Amazon RDS API actions never return
+     * the password, so this action provides a way to regain access to a
+     * primary instance user if the password is lost. This includes restoring
+     * privileges that might have been accidentally revoked. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1194,12 +1207,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         completion of the request, the <code>MasterUserPassword</code> element
      *         exists in the <code>PendingModifiedValues</code> element of the
      *         operation response. <p>Default: Uses existing setting <p>Constraints:
-     *         Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
-     *         characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
-     *         <note> Amazon RDS API actions never return the password, so this
-     *         action provides a way to regain access to a primary instance user if
-     *         the password is lost. This includes restoring privileges that might
-     *         have been accidentally revoked. </note>
+     *         Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
+     *         to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric
+     *         characters (SQL Server). <note> Amazon RDS API actions never return
+     *         the password, so this action provides a way to regain access to a
+     *         primary instance user if the password is lost. This includes restoring
+     *         privileges that might have been accidentally revoked. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -2478,6 +2491,56 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * True to copy all tags from the DB instance to snapshots of the DB
+     * instance; otherwise false. The default is false.
+     *
+     * @return True to copy all tags from the DB instance to snapshots of the DB
+     *         instance; otherwise false. The default is false.
+     */
+    public Boolean isCopyTagsToSnapshot() {
+        return copyTagsToSnapshot;
+    }
+    
+    /**
+     * True to copy all tags from the DB instance to snapshots of the DB
+     * instance; otherwise false. The default is false.
+     *
+     * @param copyTagsToSnapshot True to copy all tags from the DB instance to snapshots of the DB
+     *         instance; otherwise false. The default is false.
+     */
+    public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        this.copyTagsToSnapshot = copyTagsToSnapshot;
+    }
+    
+    /**
+     * True to copy all tags from the DB instance to snapshots of the DB
+     * instance; otherwise false. The default is false.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param copyTagsToSnapshot True to copy all tags from the DB instance to snapshots of the DB
+     *         instance; otherwise false. The default is false.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyDBInstanceRequest withCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        this.copyTagsToSnapshot = copyTagsToSnapshot;
+        return this;
+    }
+
+    /**
+     * True to copy all tags from the DB instance to snapshots of the DB
+     * instance; otherwise false. The default is false.
+     *
+     * @return True to copy all tags from the DB instance to snapshots of the DB
+     *         instance; otherwise false. The default is false.
+     */
+    public Boolean getCopyTagsToSnapshot() {
+        return copyTagsToSnapshot;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2510,7 +2573,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
         if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
         if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() + ",");
-        if (getCACertificateIdentifier() != null) sb.append("CACertificateIdentifier: " + getCACertificateIdentifier() );
+        if (getCACertificateIdentifier() != null) sb.append("CACertificateIdentifier: " + getCACertificateIdentifier() + ",");
+        if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() );
         sb.append("}");
         return sb.toString();
     }
@@ -2542,6 +2606,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode()); 
         hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((isCopyTagsToSnapshot() == null) ? 0 : isCopyTagsToSnapshot().hashCode()); 
         return hashCode;
     }
     
@@ -2597,6 +2662,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.getTdeCredentialPassword() != null && other.getTdeCredentialPassword().equals(this.getTdeCredentialPassword()) == false) return false; 
         if (other.getCACertificateIdentifier() == null ^ this.getCACertificateIdentifier() == null) return false;
         if (other.getCACertificateIdentifier() != null && other.getCACertificateIdentifier().equals(this.getCACertificateIdentifier()) == false) return false; 
+        if (other.isCopyTagsToSnapshot() == null ^ this.isCopyTagsToSnapshot() == null) return false;
+        if (other.isCopyTagsToSnapshot() != null && other.isCopyTagsToSnapshot().equals(this.isCopyTagsToSnapshot()) == false) return false; 
         return true;
     }
     

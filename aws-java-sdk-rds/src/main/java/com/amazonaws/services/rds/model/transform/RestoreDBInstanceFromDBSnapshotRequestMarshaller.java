@@ -109,6 +109,9 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
         if (restoreDBInstanceFromDBSnapshotRequest.getTdeCredentialPassword() != null) {
             request.addParameter("TdeCredentialPassword", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getTdeCredentialPassword()));
         }
+        if (restoreDBInstanceFromDBSnapshotRequest.isCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.isCopyTagsToSnapshot()));
+        }
 
         return request;
     }

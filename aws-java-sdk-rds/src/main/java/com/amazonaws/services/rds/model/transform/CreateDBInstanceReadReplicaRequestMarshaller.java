@@ -91,6 +91,9 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements Marshaller<
         if (createDBInstanceReadReplicaRequest.getStorageType() != null) {
             request.addParameter("StorageType", StringUtils.fromString(createDBInstanceReadReplicaRequest.getStorageType()));
         }
+        if (createDBInstanceReadReplicaRequest.isCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.isCopyTagsToSnapshot()));
+        }
 
         return request;
     }

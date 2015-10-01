@@ -227,22 +227,35 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
     private void init() {
         jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
         jsonErrorUnmarshallers.add(new TrailAlreadyExistsExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidS3BucketNameExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidSnsTopicNameExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new KmsKeyDisabledExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new TrailNotProvidedExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new UnsupportedOperationExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new KmsKeyNotFoundExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidMaxResultsExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidS3PrefixExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new MaximumNumberOfTrailsExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new CloudWatchLogsDeliveryUnavailableExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidTokenExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InsufficientSnsTopicPolicyExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new TrailNotFoundExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidTimeRangeExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new TagsLimitExceededExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidTrailNameExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InsufficientEncryptionPolicyExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidCloudWatchLogsLogGroupArnExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new S3BucketDoesNotExistExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidCloudWatchLogsRoleArnExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ResourceTypeNotSupportedExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidLookupAttributesExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidTagParameterExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidS3BucketNameExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidSnsTopicNameExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new CloudTrailARNInvalidExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new MaximumNumberOfTrailsExceededExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new CloudWatchLogsDeliveryUnavailableExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new OperationNotPermittedExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidTimeRangeExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new S3BucketDoesNotExistExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidCloudWatchLogsRoleArnExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidKmsKeyIdExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
         
@@ -264,9 +277,70 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
+     * Lists the tags for the trail in the current region.
+     * </p>
+     *
+     * @param listTagsRequest Container for the necessary parameters to
+     *           execute the ListTags service method on AWSCloudTrail.
+     * 
+     * @return The response from the ListTags service method, as returned by
+     *         AWSCloudTrail.
+     * 
+     * @throws ResourceTypeNotSupportedException
+     * @throws ResourceNotFoundException
+     * @throws UnsupportedOperationException
+     * @throws CloudTrailARNInvalidException
+     * @throws InvalidTrailNameException
+     * @throws InvalidTokenException
+     * @throws OperationNotPermittedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTagsResult listTags(ListTagsRequest listTagsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsRequest> request = null;
+        Response<ListTagsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsRequestMarshaller().marshall(super.beforeMarshalling(listTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<ListTagsResult, JsonUnmarshallerContext> unmarshaller =
+                new ListTagsResultJsonUnmarshaller();
+            JsonResponseHandler<ListTagsResult> responseHandler =
+                new JsonResponseHandler<ListTagsResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a JSON-formatted list of information about the specified
      * trail. Fields include information on delivery errors, Amazon SNS and
      * Amazon S3 errors, and start and stop logging times for each trail.
+     * This operation returns trail status from a single region. To return
+     * trail status from all regions, you must call the operation on each
+     * region.
      * </p>
      *
      * @param getTrailStatusRequest Container for the necessary parameters to
@@ -319,7 +393,66 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Deletes a trail.
+     * Removes the specified tags from a trail.
+     * </p>
+     *
+     * @param removeTagsRequest Container for the necessary parameters to
+     *           execute the RemoveTags service method on AWSCloudTrail.
+     * 
+     * @return The response from the RemoveTags service method, as returned
+     *         by AWSCloudTrail.
+     * 
+     * @throws ResourceTypeNotSupportedException
+     * @throws ResourceNotFoundException
+     * @throws UnsupportedOperationException
+     * @throws CloudTrailARNInvalidException
+     * @throws InvalidTrailNameException
+     * @throws InvalidTagParameterException
+     * @throws OperationNotPermittedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveTagsRequest> request = null;
+        Response<RemoveTagsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveTagsRequestMarshaller().marshall(super.beforeMarshalling(removeTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<RemoveTagsResult, JsonUnmarshallerContext> unmarshaller =
+                new RemoveTagsResultJsonUnmarshaller();
+            JsonResponseHandler<RemoveTagsResult> responseHandler =
+                new JsonResponseHandler<RemoveTagsResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a trail. This operation must be called from the region in
+     * which the trail was created.
      * </p>
      *
      * @param deleteTrailRequest Container for the necessary parameters to
@@ -447,9 +580,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * From the command line, use <code>create-subscription</code> .
-     * </p>
-     * <p>
      * Creates a trail that specifies the settings for delivery of log data
      * to an Amazon S3 bucket.
      * </p>
@@ -460,17 +590,24 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @return The response from the CreateTrail service method, as returned
      *         by AWSCloudTrail.
      * 
-     * @throws S3BucketDoesNotExistException
-     * @throws InvalidS3PrefixException
+     * @throws InsufficientEncryptionPolicyException
      * @throws InvalidTrailNameException
-     * @throws InvalidCloudWatchLogsRoleArnException
      * @throws InvalidCloudWatchLogsLogGroupArnException
      * @throws TrailAlreadyExistsException
-     * @throws MaximumNumberOfTrailsExceededException
      * @throws InvalidS3BucketNameException
-     * @throws InsufficientSnsTopicPolicyException
+     * @throws KmsKeyDisabledException
+     * @throws TrailNotProvidedException
      * @throws InvalidSnsTopicNameException
+     * @throws S3BucketDoesNotExistException
+     * @throws UnsupportedOperationException
+     * @throws KmsKeyNotFoundException
+     * @throws InvalidS3PrefixException
+     * @throws InvalidCloudWatchLogsRoleArnException
+     * @throws MaximumNumberOfTrailsExceededException
+     * @throws InvalidKmsKeyIdException
+     * @throws InsufficientSnsTopicPolicyException
      * @throws CloudWatchLogsDeliveryUnavailableException
+     * @throws OperationNotPermittedException
      * @throws InsufficientS3BucketPolicyException
      *
      * @throws AmazonClientException
@@ -514,9 +651,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * From the command line, use <code>update-subscription</code> .
-     * </p>
-     * <p>
      * Updates the settings that specify delivery of log files. Changes to a
      * trail do not require stopping the CloudTrail service. Use this action
      * to designate an existing bucket for log delivery. If the existing
@@ -530,17 +664,24 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @return The response from the UpdateTrail service method, as returned
      *         by AWSCloudTrail.
      * 
-     * @throws S3BucketDoesNotExistException
-     * @throws InvalidS3PrefixException
+     * @throws InsufficientEncryptionPolicyException
      * @throws InvalidTrailNameException
-     * @throws InvalidCloudWatchLogsRoleArnException
      * @throws InvalidCloudWatchLogsLogGroupArnException
      * @throws InvalidS3BucketNameException
-     * @throws InsufficientSnsTopicPolicyException
+     * @throws KmsKeyDisabledException
+     * @throws TrailNotProvidedException
      * @throws InvalidSnsTopicNameException
+     * @throws S3BucketDoesNotExistException
+     * @throws UnsupportedOperationException
+     * @throws KmsKeyNotFoundException
+     * @throws InvalidCloudWatchLogsRoleArnException
+     * @throws InvalidS3PrefixException
+     * @throws InvalidKmsKeyIdException
+     * @throws InsufficientSnsTopicPolicyException
      * @throws CloudWatchLogsDeliveryUnavailableException
-     * @throws InsufficientS3BucketPolicyException
+     * @throws OperationNotPermittedException
      * @throws TrailNotFoundException
+     * @throws InsufficientS3BucketPolicyException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -571,58 +712,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 new UpdateTrailResultJsonUnmarshaller();
             JsonResponseHandler<UpdateTrailResult> responseHandler =
                 new JsonResponseHandler<UpdateTrailResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Retrieves settings for the trail associated with the current region
-     * for your account.
-     * </p>
-     *
-     * @param describeTrailsRequest Container for the necessary parameters to
-     *           execute the DescribeTrails service method on AWSCloudTrail.
-     * 
-     * @return The response from the DescribeTrails service method, as
-     *         returned by AWSCloudTrail.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSCloudTrail indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeTrailsResult describeTrails(DescribeTrailsRequest describeTrailsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeTrailsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeTrailsRequest> request = null;
-        Response<DescribeTrailsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeTrailsRequestMarshaller().marshall(super.beforeMarshalling(describeTrailsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DescribeTrailsResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeTrailsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeTrailsResult> responseHandler =
-                new JsonResponseHandler<DescribeTrailsResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -679,6 +768,188 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 new StopLoggingResultJsonUnmarshaller();
             JsonResponseHandler<StopLoggingResult> responseHandler =
                 new JsonResponseHandler<StopLoggingResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves settings for the trail associated with the current region
+     * for your account.
+     * </p>
+     *
+     * @param describeTrailsRequest Container for the necessary parameters to
+     *           execute the DescribeTrails service method on AWSCloudTrail.
+     * 
+     * @return The response from the DescribeTrails service method, as
+     *         returned by AWSCloudTrail.
+     * 
+     * @throws UnsupportedOperationException
+     * @throws OperationNotPermittedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTrailsResult describeTrails(DescribeTrailsRequest describeTrailsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeTrailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrailsRequest> request = null;
+        Response<DescribeTrailsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrailsRequestMarshaller().marshall(super.beforeMarshalling(describeTrailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<DescribeTrailsResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeTrailsResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeTrailsResult> responseHandler =
+                new JsonResponseHandler<DescribeTrailsResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns all public keys whose private keys were used to sign the
+     * digest files within the specified time range. The public key is needed
+     * to validate digest files that were signed with its corresponding
+     * private key.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>CloudTrail uses different private/public key pairs per
+     * region. Each digest file is signed with a private key unique to its
+     * region. Therefore, when you validate a digest file from a particular
+     * region, you must look in the same region for its corresponding public
+     * key.
+     * </p>
+     *
+     * @param listPublicKeysRequest Container for the necessary parameters to
+     *           execute the ListPublicKeys service method on AWSCloudTrail.
+     * 
+     * @return The response from the ListPublicKeys service method, as
+     *         returned by AWSCloudTrail.
+     * 
+     * @throws UnsupportedOperationException
+     * @throws InvalidTokenException
+     * @throws OperationNotPermittedException
+     * @throws InvalidTimeRangeException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListPublicKeysResult listPublicKeys(ListPublicKeysRequest listPublicKeysRequest) {
+        ExecutionContext executionContext = createExecutionContext(listPublicKeysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPublicKeysRequest> request = null;
+        Response<ListPublicKeysResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPublicKeysRequestMarshaller().marshall(super.beforeMarshalling(listPublicKeysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<ListPublicKeysResult, JsonUnmarshallerContext> unmarshaller =
+                new ListPublicKeysResultJsonUnmarshaller();
+            JsonResponseHandler<ListPublicKeysResult> responseHandler =
+                new JsonResponseHandler<ListPublicKeysResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags to a trail, up to a limit of 10. Tags must be
+     * unique per trail. Overwrites an existing tag's value when a new value
+     * is specified for an existing tag key. If you specify a key without a
+     * value, the tag will be created with the specified key and a value of
+     * null.
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags service method on AWSCloudTrail.
+     * 
+     * @return The response from the AddTags service method, as returned by
+     *         AWSCloudTrail.
+     * 
+     * @throws ResourceTypeNotSupportedException
+     * @throws TagsLimitExceededException
+     * @throws ResourceNotFoundException
+     * @throws UnsupportedOperationException
+     * @throws CloudTrailARNInvalidException
+     * @throws InvalidTrailNameException
+     * @throws InvalidTagParameterException
+     * @throws OperationNotPermittedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+        ExecutionContext executionContext = createExecutionContext(addTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddTagsRequest> request = null;
+        Response<AddTagsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddTagsRequestMarshaller().marshall(super.beforeMarshalling(addTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            Unmarshaller<AddTagsResult, JsonUnmarshallerContext> unmarshaller =
+                new AddTagsResultJsonUnmarshaller();
+            JsonResponseHandler<AddTagsResult> responseHandler =
+                new JsonResponseHandler<AddTagsResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -797,6 +1068,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @return The response from the DescribeTrails service method, as
      *         returned by AWSCloudTrail.
      * 
+     * @throws UnsupportedOperationException
+     * @throws OperationNotPermittedException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -808,6 +1081,41 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     public DescribeTrailsResult describeTrails() throws AmazonServiceException, AmazonClientException {
         return describeTrails(new DescribeTrailsRequest());
+    }
+    
+    /**
+     * <p>
+     * Returns all public keys whose private keys were used to sign the
+     * digest files within the specified time range. The public key is needed
+     * to validate digest files that were signed with its corresponding
+     * private key.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>CloudTrail uses different private/public key pairs per
+     * region. Each digest file is signed with a private key unique to its
+     * region. Therefore, when you validate a digest file from a particular
+     * region, you must look in the same region for its corresponding public
+     * key.
+     * </p>
+     * 
+     * @return The response from the ListPublicKeys service method, as
+     *         returned by AWSCloudTrail.
+     * 
+     * @throws UnsupportedOperationException
+     * @throws InvalidTokenException
+     * @throws OperationNotPermittedException
+     * @throws InvalidTimeRangeException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListPublicKeysResult listPublicKeys() throws AmazonServiceException, AmazonClientException {
+        return listPublicKeys(new ListPublicKeysRequest());
     }
 
     @Override

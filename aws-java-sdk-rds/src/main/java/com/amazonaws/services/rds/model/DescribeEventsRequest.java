@@ -54,7 +54,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * events are returned.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
      */
     private String sourceType;
 
@@ -223,7 +223,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * events are returned.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
      *
      * @return The event source to retrieve events for. If no value is specified, all
      *         events are returned.
@@ -239,7 +239,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * events are returned.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
      *         events are returned.
@@ -257,7 +257,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
      *         events are returned.
@@ -277,7 +277,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * events are returned.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
      *         events are returned.
@@ -295,7 +295,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-cluster, db-cluster-snapshot
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
      *         events are returned.

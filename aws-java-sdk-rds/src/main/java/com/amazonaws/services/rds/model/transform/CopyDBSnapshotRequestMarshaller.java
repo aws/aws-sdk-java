@@ -64,6 +64,9 @@ public class CopyDBSnapshotRequestMarshaller implements Marshaller<Request<CopyD
 
             tagsListIndex++;
         }
+        if (copyDBSnapshotRequest.isCopyTags() != null) {
+            request.addParameter("CopyTags", StringUtils.fromBoolean(copyDBSnapshotRequest.isCopyTags()));
+        }
 
         return request;
     }

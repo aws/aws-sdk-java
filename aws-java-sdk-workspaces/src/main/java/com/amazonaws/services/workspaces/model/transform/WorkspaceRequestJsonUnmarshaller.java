@@ -65,6 +65,26 @@ public class WorkspaceRequestJsonUnmarshaller implements
                     workspaceRequest.setBundleId(StringJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VolumeEncryptionKey", targetDepth)) {
+                    context.nextToken();
+                    workspaceRequest
+                            .setVolumeEncryptionKey(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("UserVolumeEncryptionEnabled",
+                        targetDepth)) {
+                    context.nextToken();
+                    workspaceRequest
+                            .setUserVolumeEncryptionEnabled(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RootVolumeEncryptionEnabled",
+                        targetDepth)) {
+                    context.nextToken();
+                    workspaceRequest
+                            .setRootVolumeEncryptionEnabled(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

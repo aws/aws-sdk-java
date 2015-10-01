@@ -76,11 +76,17 @@ public class CreateTrailRequestMarshaller implements Marshaller<Request<CreateTr
             if (createTrailRequest.isIncludeGlobalServiceEvents() != null) {
                 jsonWriter.key("IncludeGlobalServiceEvents").value(createTrailRequest.isIncludeGlobalServiceEvents());
             }
+            if (createTrailRequest.isEnableLogFileValidation() != null) {
+                jsonWriter.key("EnableLogFileValidation").value(createTrailRequest.isEnableLogFileValidation());
+            }
             if (createTrailRequest.getCloudWatchLogsLogGroupArn() != null) {
                 jsonWriter.key("CloudWatchLogsLogGroupArn").value(createTrailRequest.getCloudWatchLogsLogGroupArn());
             }
             if (createTrailRequest.getCloudWatchLogsRoleArn() != null) {
                 jsonWriter.key("CloudWatchLogsRoleArn").value(createTrailRequest.getCloudWatchLogsRoleArn());
+            }
+            if (createTrailRequest.getKmsKeyId() != null) {
+                jsonWriter.key("KmsKeyId").value(createTrailRequest.getKmsKeyId());
             }
 
           jsonWriter.endObject();

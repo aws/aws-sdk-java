@@ -67,7 +67,6 @@ public class DescribeMountTargetsRequestMarshaller
         String maxItems = (describeMountTargetsRequest.getMaxItems() == null) ? null
                 : StringUtils.fromInteger(describeMountTargetsRequest
                         .getMaxItems());
-
         if (maxItems != null) {
             request.addParameter("MaxItems", maxItems);
         }
@@ -75,7 +74,6 @@ public class DescribeMountTargetsRequestMarshaller
         String marker = (describeMountTargetsRequest.getMarker() == null) ? null
                 : StringUtils.fromString(describeMountTargetsRequest
                         .getMarker());
-
         if (marker != null) {
             request.addParameter("Marker", marker);
         }
@@ -83,7 +81,6 @@ public class DescribeMountTargetsRequestMarshaller
         String fileSystemId = (describeMountTargetsRequest.getFileSystemId() == null) ? null
                 : StringUtils.fromString(describeMountTargetsRequest
                         .getFileSystemId());
-
         if (fileSystemId != null) {
             request.addParameter("FileSystemId", fileSystemId);
         }
@@ -91,7 +88,6 @@ public class DescribeMountTargetsRequestMarshaller
         String mountTargetId = (describeMountTargetsRequest.getMountTargetId() == null) ? null
                 : StringUtils.fromString(describeMountTargetsRequest
                         .getMountTargetId());
-
         if (mountTargetId != null) {
             request.addParameter("MountTargetId", mountTargetId);
         }

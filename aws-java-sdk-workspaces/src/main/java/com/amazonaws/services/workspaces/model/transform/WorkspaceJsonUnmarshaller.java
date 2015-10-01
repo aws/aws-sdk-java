@@ -95,6 +95,30 @@ public class WorkspaceJsonUnmarshaller implements
                     workspace.setErrorCode(StringJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("ComputerName", targetDepth)) {
+                    context.nextToken();
+                    workspace.setComputerName(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("VolumeEncryptionKey", targetDepth)) {
+                    context.nextToken();
+                    workspace.setVolumeEncryptionKey(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("UserVolumeEncryptionEnabled",
+                        targetDepth)) {
+                    context.nextToken();
+                    workspace
+                            .setUserVolumeEncryptionEnabled(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RootVolumeEncryptionEnabled",
+                        targetDepth)) {
+                    context.nextToken();
+                    workspace
+                            .setRootVolumeEncryptionEnabled(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

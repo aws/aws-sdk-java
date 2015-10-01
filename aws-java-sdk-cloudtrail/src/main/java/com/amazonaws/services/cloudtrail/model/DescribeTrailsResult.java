@@ -25,14 +25,14 @@ import java.io.Serializable;
 public class DescribeTrailsResult implements Serializable, Cloneable {
 
     /**
-     * The list of trails.
+     * The list of trail objects.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Trail> trailList;
 
     /**
-     * The list of trails.
+     * The list of trail objects.
      *
-     * @return The list of trails.
+     * @return The list of trail objects.
      */
     public java.util.List<Trail> getTrailList() {
         if (trailList == null) {
@@ -43,9 +43,9 @@ public class DescribeTrailsResult implements Serializable, Cloneable {
     }
     
     /**
-     * The list of trails.
+     * The list of trail objects.
      *
-     * @param trailList The list of trails.
+     * @param trailList The list of trail objects.
      */
     public void setTrailList(java.util.Collection<Trail> trailList) {
         if (trailList == null) {
@@ -58,7 +58,7 @@ public class DescribeTrailsResult implements Serializable, Cloneable {
     }
     
     /**
-     * The list of trails.
+     * The list of trail objects.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTrailList(java.util.Collection)} or {@link
@@ -67,7 +67,7 @@ public class DescribeTrailsResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param trailList The list of trails.
+     * @param trailList The list of trail objects.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -81,11 +81,11 @@ public class DescribeTrailsResult implements Serializable, Cloneable {
     }
     
     /**
-     * The list of trails.
+     * The list of trail objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param trailList The list of trails.
+     * @param trailList The list of trail objects.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

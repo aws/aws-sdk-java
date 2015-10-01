@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudtrail.AWSCloudTrail#deleteTrail(DeleteTrailRequest) DeleteTrail operation}.
  * <p>
- * Deletes a trail.
+ * Deletes a trail. This operation must be called from the region in
+ * which the trail was created.
  * </p>
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#deleteTrail(DeleteTrailRequest)
@@ -29,34 +30,48 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteTrailRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of a trail to be deleted.
+     * Specifies the name or the CloudTrail ARN of the trail to be deleted.
+     * The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     private String name;
 
     /**
-     * The name of a trail to be deleted.
+     * Specifies the name or the CloudTrail ARN of the trail to be deleted.
+     * The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
-     * @return The name of a trail to be deleted.
+     * @return Specifies the name or the CloudTrail ARN of the trail to be deleted.
+     *         The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The name of a trail to be deleted.
+     * Specifies the name or the CloudTrail ARN of the trail to be deleted.
+     * The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
-     * @param name The name of a trail to be deleted.
+     * @param name Specifies the name or the CloudTrail ARN of the trail to be deleted.
+     *         The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The name of a trail to be deleted.
+     * Specifies the name or the CloudTrail ARN of the trail to be deleted.
+     * The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The name of a trail to be deleted.
+     * @param name Specifies the name or the CloudTrail ARN of the trail to be deleted.
+     *         The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

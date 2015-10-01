@@ -65,6 +65,21 @@ public class WorkspaceRequestJsonMarshaller {
                         .value(workspaceRequest.getBundleId());
             }
 
+            if (workspaceRequest.getVolumeEncryptionKey() != null) {
+                jsonWriter.key("VolumeEncryptionKey").value(
+                        workspaceRequest.getVolumeEncryptionKey());
+            }
+
+            if (workspaceRequest.getUserVolumeEncryptionEnabled() != null) {
+                jsonWriter.key("UserVolumeEncryptionEnabled").value(
+                        workspaceRequest.getUserVolumeEncryptionEnabled());
+            }
+
+            if (workspaceRequest.getRootVolumeEncryptionEnabled() != null) {
+                jsonWriter.key("RootVolumeEncryptionEnabled").value(
+                        workspaceRequest.getRootVolumeEncryptionEnabled());
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

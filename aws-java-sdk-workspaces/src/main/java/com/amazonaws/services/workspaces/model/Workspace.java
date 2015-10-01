@@ -80,6 +80,32 @@ public class Workspace implements Serializable, Cloneable {
      * </p>
      */
     private String errorCode;
+    /**
+     * <p>
+     * The name of the WorkSpace as seen by the operating system.
+     * </p>
+     */
+    private String computerName;
+    /**
+     * <p>
+     * The KMS key used to encrypt data stored on your WorkSpace.
+     * </p>
+     */
+    private String volumeEncryptionKey;
+    /**
+     * <p>
+     * Specifies whether the data stored on the user volume, or D: drive, is
+     * encrypted.
+     * </p>
+     */
+    private Boolean userVolumeEncryptionEnabled;
+    /**
+     * <p>
+     * Specifies whether the data stored on the root volume, or C: drive, is
+     * encrypted.
+     * </p>
+     */
+    private Boolean rootVolumeEncryptionEnabled;
 
     /**
      * <p>
@@ -473,6 +499,200 @@ public class Workspace implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the WorkSpace as seen by the operating system.
+     * </p>
+     * 
+     * @param computerName
+     *        The name of the WorkSpace as seen by the operating system.
+     */
+    public void setComputerName(String computerName) {
+        this.computerName = computerName;
+    }
+
+    /**
+     * <p>
+     * The name of the WorkSpace as seen by the operating system.
+     * </p>
+     * 
+     * @return The name of the WorkSpace as seen by the operating system.
+     */
+    public String getComputerName() {
+        return this.computerName;
+    }
+
+    /**
+     * <p>
+     * The name of the WorkSpace as seen by the operating system.
+     * </p>
+     * 
+     * @param computerName
+     *        The name of the WorkSpace as seen by the operating system.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Workspace withComputerName(String computerName) {
+        setComputerName(computerName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The KMS key used to encrypt data stored on your WorkSpace.
+     * </p>
+     * 
+     * @param volumeEncryptionKey
+     *        The KMS key used to encrypt data stored on your WorkSpace.
+     */
+    public void setVolumeEncryptionKey(String volumeEncryptionKey) {
+        this.volumeEncryptionKey = volumeEncryptionKey;
+    }
+
+    /**
+     * <p>
+     * The KMS key used to encrypt data stored on your WorkSpace.
+     * </p>
+     * 
+     * @return The KMS key used to encrypt data stored on your WorkSpace.
+     */
+    public String getVolumeEncryptionKey() {
+        return this.volumeEncryptionKey;
+    }
+
+    /**
+     * <p>
+     * The KMS key used to encrypt data stored on your WorkSpace.
+     * </p>
+     * 
+     * @param volumeEncryptionKey
+     *        The KMS key used to encrypt data stored on your WorkSpace.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Workspace withVolumeEncryptionKey(String volumeEncryptionKey) {
+        setVolumeEncryptionKey(volumeEncryptionKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the data stored on the user volume, or D: drive, is
+     * encrypted.
+     * </p>
+     * 
+     * @param userVolumeEncryptionEnabled
+     *        Specifies whether the data stored on the user volume, or D: drive,
+     *        is encrypted.
+     */
+    public void setUserVolumeEncryptionEnabled(
+            Boolean userVolumeEncryptionEnabled) {
+        this.userVolumeEncryptionEnabled = userVolumeEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the data stored on the user volume, or D: drive, is
+     * encrypted.
+     * </p>
+     * 
+     * @return Specifies whether the data stored on the user volume, or D:
+     *         drive, is encrypted.
+     */
+    public Boolean getUserVolumeEncryptionEnabled() {
+        return this.userVolumeEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the data stored on the user volume, or D: drive, is
+     * encrypted.
+     * </p>
+     * 
+     * @param userVolumeEncryptionEnabled
+     *        Specifies whether the data stored on the user volume, or D: drive,
+     *        is encrypted.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Workspace withUserVolumeEncryptionEnabled(
+            Boolean userVolumeEncryptionEnabled) {
+        setUserVolumeEncryptionEnabled(userVolumeEncryptionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the data stored on the user volume, or D: drive, is
+     * encrypted.
+     * </p>
+     * 
+     * @return Specifies whether the data stored on the user volume, or D:
+     *         drive, is encrypted.
+     */
+    public Boolean isUserVolumeEncryptionEnabled() {
+        return this.userVolumeEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the data stored on the root volume, or C: drive, is
+     * encrypted.
+     * </p>
+     * 
+     * @param rootVolumeEncryptionEnabled
+     *        Specifies whether the data stored on the root volume, or C: drive,
+     *        is encrypted.
+     */
+    public void setRootVolumeEncryptionEnabled(
+            Boolean rootVolumeEncryptionEnabled) {
+        this.rootVolumeEncryptionEnabled = rootVolumeEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the data stored on the root volume, or C: drive, is
+     * encrypted.
+     * </p>
+     * 
+     * @return Specifies whether the data stored on the root volume, or C:
+     *         drive, is encrypted.
+     */
+    public Boolean getRootVolumeEncryptionEnabled() {
+        return this.rootVolumeEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the data stored on the root volume, or C: drive, is
+     * encrypted.
+     * </p>
+     * 
+     * @param rootVolumeEncryptionEnabled
+     *        Specifies whether the data stored on the root volume, or C: drive,
+     *        is encrypted.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Workspace withRootVolumeEncryptionEnabled(
+            Boolean rootVolumeEncryptionEnabled) {
+        setRootVolumeEncryptionEnabled(rootVolumeEncryptionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the data stored on the root volume, or C: drive, is
+     * encrypted.
+     * </p>
+     * 
+     * @return Specifies whether the data stored on the root volume, or C:
+     *         drive, is encrypted.
+     */
+    public Boolean isRootVolumeEncryptionEnabled() {
+        return this.rootVolumeEncryptionEnabled;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -501,7 +721,17 @@ public class Workspace implements Serializable, Cloneable {
         if (getErrorMessage() != null)
             sb.append("ErrorMessage: " + getErrorMessage() + ",");
         if (getErrorCode() != null)
-            sb.append("ErrorCode: " + getErrorCode());
+            sb.append("ErrorCode: " + getErrorCode() + ",");
+        if (getComputerName() != null)
+            sb.append("ComputerName: " + getComputerName() + ",");
+        if (getVolumeEncryptionKey() != null)
+            sb.append("VolumeEncryptionKey: " + getVolumeEncryptionKey() + ",");
+        if (getUserVolumeEncryptionEnabled() != null)
+            sb.append("UserVolumeEncryptionEnabled: "
+                    + getUserVolumeEncryptionEnabled() + ",");
+        if (getRootVolumeEncryptionEnabled() != null)
+            sb.append("RootVolumeEncryptionEnabled: "
+                    + getRootVolumeEncryptionEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -561,6 +791,32 @@ public class Workspace implements Serializable, Cloneable {
         if (other.getErrorCode() != null
                 && other.getErrorCode().equals(this.getErrorCode()) == false)
             return false;
+        if (other.getComputerName() == null ^ this.getComputerName() == null)
+            return false;
+        if (other.getComputerName() != null
+                && other.getComputerName().equals(this.getComputerName()) == false)
+            return false;
+        if (other.getVolumeEncryptionKey() == null
+                ^ this.getVolumeEncryptionKey() == null)
+            return false;
+        if (other.getVolumeEncryptionKey() != null
+                && other.getVolumeEncryptionKey().equals(
+                        this.getVolumeEncryptionKey()) == false)
+            return false;
+        if (other.getUserVolumeEncryptionEnabled() == null
+                ^ this.getUserVolumeEncryptionEnabled() == null)
+            return false;
+        if (other.getUserVolumeEncryptionEnabled() != null
+                && other.getUserVolumeEncryptionEnabled().equals(
+                        this.getUserVolumeEncryptionEnabled()) == false)
+            return false;
+        if (other.getRootVolumeEncryptionEnabled() == null
+                ^ this.getRootVolumeEncryptionEnabled() == null)
+            return false;
+        if (other.getRootVolumeEncryptionEnabled() != null
+                && other.getRootVolumeEncryptionEnabled().equals(
+                        this.getRootVolumeEncryptionEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -591,6 +847,22 @@ public class Workspace implements Serializable, Cloneable {
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getComputerName() == null) ? 0 : getComputerName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVolumeEncryptionKey() == null) ? 0
+                        : getVolumeEncryptionKey().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getUserVolumeEncryptionEnabled() == null) ? 0
+                        : getUserVolumeEncryptionEnabled().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRootVolumeEncryptionEnabled() == null) ? 0
+                        : getRootVolumeEncryptionEnabled().hashCode());
         return hashCode;
     }
 

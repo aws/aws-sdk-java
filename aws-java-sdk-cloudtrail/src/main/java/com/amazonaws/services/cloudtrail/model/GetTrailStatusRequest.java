@@ -24,6 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Returns a JSON-formatted list of information about the specified
  * trail. Fields include information on delivery errors, Amazon SNS and
  * Amazon S3 errors, and start and stop logging times for each trail.
+ * This operation returns trail status from a single region. To return
+ * trail status from all regions, you must call the operation on each
+ * region.
  * </p>
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#getTrailStatus(GetTrailStatusRequest)
@@ -31,34 +34,48 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetTrailStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of the trail for which you are requesting the current status.
+     * Specifies the name or the CloudTrail ARN of the trail for which you
+     * are requesting status. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     private String name;
 
     /**
-     * The name of the trail for which you are requesting the current status.
+     * Specifies the name or the CloudTrail ARN of the trail for which you
+     * are requesting status. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
-     * @return The name of the trail for which you are requesting the current status.
+     * @return Specifies the name or the CloudTrail ARN of the trail for which you
+     *         are requesting status. The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The name of the trail for which you are requesting the current status.
+     * Specifies the name or the CloudTrail ARN of the trail for which you
+     * are requesting status. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
-     * @param name The name of the trail for which you are requesting the current status.
+     * @param name Specifies the name or the CloudTrail ARN of the trail for which you
+     *         are requesting status. The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The name of the trail for which you are requesting the current status.
+     * Specifies the name or the CloudTrail ARN of the trail for which you
+     * are requesting status. The format of a trail ARN is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The name of the trail for which you are requesting the current status.
+     * @param name Specifies the name or the CloudTrail ARN of the trail for which you
+     *         are requesting status. The format of a trail ARN is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

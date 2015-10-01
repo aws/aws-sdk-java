@@ -89,6 +89,9 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
         if (restoreDBInstanceToPointInTimeRequest.getOptionGroupName() != null) {
             request.addParameter("OptionGroupName", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getOptionGroupName()));
         }
+        if (restoreDBInstanceToPointInTimeRequest.isCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.isCopyTagsToSnapshot()));
+        }
 
         java.util.List<Tag> tagsList = restoreDBInstanceToPointInTimeRequest.getTags();
         int tagsListIndex = 1;

@@ -86,6 +86,26 @@ public class WorkspaceJsonMarshaller {
                 jsonWriter.key("ErrorCode").value(workspace.getErrorCode());
             }
 
+            if (workspace.getComputerName() != null) {
+                jsonWriter.key("ComputerName").value(
+                        workspace.getComputerName());
+            }
+
+            if (workspace.getVolumeEncryptionKey() != null) {
+                jsonWriter.key("VolumeEncryptionKey").value(
+                        workspace.getVolumeEncryptionKey());
+            }
+
+            if (workspace.getUserVolumeEncryptionEnabled() != null) {
+                jsonWriter.key("UserVolumeEncryptionEnabled").value(
+                        workspace.getUserVolumeEncryptionEnabled());
+            }
+
+            if (workspace.getRootVolumeEncryptionEnabled() != null) {
+                jsonWriter.key("RootVolumeEncryptionEnabled").value(
+                        workspace.getRootVolumeEncryptionEnabled());
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

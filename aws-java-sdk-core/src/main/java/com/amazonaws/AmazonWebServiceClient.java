@@ -55,6 +55,7 @@ public abstract class AmazonWebServiceClient {
 
     private static final Log log =
         LogFactory.getLog(AmazonWebServiceClient.class);
+
     static {
         // Configures the internal logging of the signers and core
         // classes to use Jakarta Commons Logging to stay consistent with the
@@ -102,6 +103,12 @@ public abstract class AmazonWebServiceClient {
      * Thread safe so it's backward compatible.
      */
     private volatile String serviceName;
+
+    /**
+     * The service name in region metadata, i.e. the prefix of endpoint.
+     */
+    private String endpointPrefix;
+
     /**
      * Constructs a new AmazonWebServiceClient object using the specified
      * configuration.
@@ -350,7 +357,7 @@ public abstract class AmazonWebServiceClient {
         if (region == null) {
             throw new IllegalArgumentException("No region provided");
         }
-        final String serviceNameForEndpoint = getServiceNameForRegionMetadata();
+        final String serviceNameForEndpoint = getEndpointPrefix();
         final String serviceNameForSigner = getServiceNameIntern();
         URI uri = new DefaultServiceEndpointBuilder(serviceNameForEndpoint, clientConfiguration.getProtocol()
                 .toString()).withRegion(region).getServiceEndpoint();
@@ -626,17 +633,32 @@ public abstract class AmazonWebServiceClient {
      *         otherwise it returns the same service name that is used for
      *         request signing.
      */
-    private String getServiceNameForRegionMetadata() {
+    String getEndpointPrefix() {
+
+        if (endpointPrefix != null) return endpointPrefix;
+
         String httpClientName = getHttpClientName();
         String serviceNameInRegionMetadata = ServiceNameFactory
                 .getServiceNameInRegionMetadata(httpClientName);
 
         if (serviceNameInRegionMetadata != null) {
-            return serviceNameInRegionMetadata;
+            return endpointPrefix = serviceNameInRegionMetadata;
         } else {
-            return getServiceNameIntern();
+            return endpointPrefix = getServiceNameIntern();
         }
 
+    }
+
+    /**
+     * An internal method used to explicitly override the service name for region metadata.
+     * This service name is used to compute the region endpoints.
+     */
+    protected void setEndpointPrefix(String endpointPrefix) {
+        if (endpointPrefix == null) {
+            throw new IllegalArgumentException(
+                    "The parameter endpointPrefix must be specified!");
+        }
+        this.endpointPrefix = endpointPrefix;
     }
 
     /**

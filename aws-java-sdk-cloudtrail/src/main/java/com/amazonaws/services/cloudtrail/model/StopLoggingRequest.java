@@ -32,41 +32,55 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class StopLoggingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Communicates to CloudTrail the name of the trail for which to stop
-     * logging AWS API calls.
+     * Specifies the name or the CloudTrail ARN of the trail for which
+     * CloudTrail will stop logging AWS API calls. The format of a trail ARN
+     * is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     private String name;
 
     /**
-     * Communicates to CloudTrail the name of the trail for which to stop
-     * logging AWS API calls.
+     * Specifies the name or the CloudTrail ARN of the trail for which
+     * CloudTrail will stop logging AWS API calls. The format of a trail ARN
+     * is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
-     * @return Communicates to CloudTrail the name of the trail for which to stop
-     *         logging AWS API calls.
+     * @return Specifies the name or the CloudTrail ARN of the trail for which
+     *         CloudTrail will stop logging AWS API calls. The format of a trail ARN
+     *         is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Communicates to CloudTrail the name of the trail for which to stop
-     * logging AWS API calls.
+     * Specifies the name or the CloudTrail ARN of the trail for which
+     * CloudTrail will stop logging AWS API calls. The format of a trail ARN
+     * is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
-     * @param name Communicates to CloudTrail the name of the trail for which to stop
-     *         logging AWS API calls.
+     * @param name Specifies the name or the CloudTrail ARN of the trail for which
+     *         CloudTrail will stop logging AWS API calls. The format of a trail ARN
+     *         is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Communicates to CloudTrail the name of the trail for which to stop
-     * logging AWS API calls.
+     * Specifies the name or the CloudTrail ARN of the trail for which
+     * CloudTrail will stop logging AWS API calls. The format of a trail ARN
+     * is
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name Communicates to CloudTrail the name of the trail for which to stop
-     *         logging AWS API calls.
+     * @param name Specifies the name or the CloudTrail ARN of the trail for which
+     *         CloudTrail will stop logging AWS API calls. The format of a trail ARN
+     *         is
+     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

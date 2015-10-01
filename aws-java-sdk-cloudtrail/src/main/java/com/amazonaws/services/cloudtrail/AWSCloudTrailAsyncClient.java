@@ -295,9 +295,84 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
             
     /**
      * <p>
+     * Lists the tags for the trail in the current region.
+     * </p>
+     *
+     * @param listTagsRequest Container for the necessary parameters to
+     *           execute the ListTags operation on AWSCloudTrail.
+     * 
+     * @return A Java Future object containing the response from the ListTags
+     *         service method, as returned by AWSCloudTrail.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTagsResult> listTagsAsync(final ListTagsRequest listTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTagsResult>() {
+            public ListTagsResult call() throws Exception {
+                return listTags(listTagsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Lists the tags for the trail in the current region.
+     * </p>
+     *
+     * @param listTagsRequest Container for the necessary parameters to
+     *           execute the ListTags operation on AWSCloudTrail.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the ListTags
+     *         service method, as returned by AWSCloudTrail.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTagsResult> listTagsAsync(
+            final ListTagsRequest listTagsRequest,
+            final AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTagsResult>() {
+            public ListTagsResult call() throws Exception {
+              ListTagsResult result;
+                try {
+                result = listTags(listTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listTagsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns a JSON-formatted list of information about the specified
      * trail. Fields include information on delivery errors, Amazon SNS and
      * Amazon S3 errors, and start and stop logging times for each trail.
+     * This operation returns trail status from a single region. To return
+     * trail status from all regions, you must call the operation on each
+     * region.
      * </p>
      *
      * @param getTrailStatusRequest Container for the necessary parameters to
@@ -329,6 +404,9 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
      * Returns a JSON-formatted list of information about the specified
      * trail. Fields include information on delivery errors, Amazon SNS and
      * Amazon S3 errors, and start and stop logging times for each trail.
+     * This operation returns trail status from a single region. To return
+     * trail status from all regions, you must call the operation on each
+     * region.
      * </p>
      *
      * @param getTrailStatusRequest Container for the necessary parameters to
@@ -371,7 +449,80 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     
     /**
      * <p>
-     * Deletes a trail.
+     * Removes the specified tags from a trail.
+     * </p>
+     *
+     * @param removeTagsRequest Container for the necessary parameters to
+     *           execute the RemoveTags operation on AWSCloudTrail.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RemoveTags service method, as returned by AWSCloudTrail.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RemoveTagsResult> removeTagsAsync(final RemoveTagsRequest removeTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<RemoveTagsResult>() {
+            public RemoveTagsResult call() throws Exception {
+                return removeTags(removeTagsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Removes the specified tags from a trail.
+     * </p>
+     *
+     * @param removeTagsRequest Container for the necessary parameters to
+     *           execute the RemoveTags operation on AWSCloudTrail.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RemoveTags service method, as returned by AWSCloudTrail.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RemoveTagsResult> removeTagsAsync(
+            final RemoveTagsRequest removeTagsRequest,
+            final AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<RemoveTagsResult>() {
+            public RemoveTagsResult call() throws Exception {
+              RemoveTagsResult result;
+                try {
+                result = removeTags(removeTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(removeTagsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes a trail. This operation must be called from the region in
+     * which the trail was created.
      * </p>
      *
      * @param deleteTrailRequest Container for the necessary parameters to
@@ -400,7 +551,8 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
 
     /**
      * <p>
-     * Deletes a trail.
+     * Deletes a trail. This operation must be called from the region in
+     * which the trail was created.
      * </p>
      *
      * @param deleteTrailRequest Container for the necessary parameters to
@@ -555,9 +707,6 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     
     /**
      * <p>
-     * From the command line, use <code>create-subscription</code> .
-     * </p>
-     * <p>
      * Creates a trail that specifies the settings for delivery of log data
      * to an Amazon S3 bucket.
      * </p>
@@ -587,9 +736,6 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     }
 
     /**
-     * <p>
-     * From the command line, use <code>create-subscription</code> .
-     * </p>
      * <p>
      * Creates a trail that specifies the settings for delivery of log data
      * to an Amazon S3 bucket.
@@ -635,9 +781,6 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     
     /**
      * <p>
-     * From the command line, use <code>update-subscription</code> .
-     * </p>
-     * <p>
      * Updates the settings that specify delivery of log files. Changes to a
      * trail do not require stopping the CloudTrail service. Use this action
      * to designate an existing bucket for log delivery. If the existing
@@ -670,9 +813,6 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     }
 
     /**
-     * <p>
-     * From the command line, use <code>update-subscription</code> .
-     * </p>
      * <p>
      * Updates the settings that specify delivery of log files. Changes to a
      * trail do not require stopping the CloudTrail service. Use this action
@@ -714,6 +854,84 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
             throw ex;
               }
               asyncHandler.onSuccess(updateTrailRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Suspends the recording of AWS API calls and log file delivery for the
+     * specified trail. Under most circumstances, there is no need to use
+     * this action. You can update a trail without stopping it first. This
+     * action is the only way to stop recording.
+     * </p>
+     *
+     * @param stopLoggingRequest Container for the necessary parameters to
+     *           execute the StopLogging operation on AWSCloudTrail.
+     * 
+     * @return A Java Future object containing the response from the
+     *         StopLogging service method, as returned by AWSCloudTrail.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<StopLoggingResult> stopLoggingAsync(final StopLoggingRequest stopLoggingRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<StopLoggingResult>() {
+            public StopLoggingResult call() throws Exception {
+                return stopLogging(stopLoggingRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Suspends the recording of AWS API calls and log file delivery for the
+     * specified trail. Under most circumstances, there is no need to use
+     * this action. You can update a trail without stopping it first. This
+     * action is the only way to stop recording.
+     * </p>
+     *
+     * @param stopLoggingRequest Container for the necessary parameters to
+     *           execute the StopLogging operation on AWSCloudTrail.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         StopLogging service method, as returned by AWSCloudTrail.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<StopLoggingResult> stopLoggingAsync(
+            final StopLoggingRequest stopLoggingRequest,
+            final AsyncHandler<StopLoggingRequest, StopLoggingResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<StopLoggingResult>() {
+            public StopLoggingResult call() throws Exception {
+              StopLoggingResult result;
+                try {
+                result = stopLogging(stopLoggingRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(stopLoggingRequest, result);
                  return result;
         }
     });
@@ -795,17 +1013,24 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
     
     /**
      * <p>
-     * Suspends the recording of AWS API calls and log file delivery for the
-     * specified trail. Under most circumstances, there is no need to use
-     * this action. You can update a trail without stopping it first. This
-     * action is the only way to stop recording.
+     * Returns all public keys whose private keys were used to sign the
+     * digest files within the specified time range. The public key is needed
+     * to validate digest files that were signed with its corresponding
+     * private key.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>CloudTrail uses different private/public key pairs per
+     * region. Each digest file is signed with a private key unique to its
+     * region. Therefore, when you validate a digest file from a particular
+     * region, you must look in the same region for its corresponding public
+     * key.
      * </p>
      *
-     * @param stopLoggingRequest Container for the necessary parameters to
-     *           execute the StopLogging operation on AWSCloudTrail.
+     * @param listPublicKeysRequest Container for the necessary parameters to
+     *           execute the ListPublicKeys operation on AWSCloudTrail.
      * 
      * @return A Java Future object containing the response from the
-     *         StopLogging service method, as returned by AWSCloudTrail.
+     *         ListPublicKeys service method, as returned by AWSCloudTrail.
      * 
      *
      * @throws AmazonClientException
@@ -816,32 +1041,39 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
      *             If an error response is returned by AWSCloudTrail indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<StopLoggingResult> stopLoggingAsync(final StopLoggingRequest stopLoggingRequest) 
+    public Future<ListPublicKeysResult> listPublicKeysAsync(final ListPublicKeysRequest listPublicKeysRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<StopLoggingResult>() {
-            public StopLoggingResult call() throws Exception {
-                return stopLogging(stopLoggingRequest);
+        return executorService.submit(new Callable<ListPublicKeysResult>() {
+            public ListPublicKeysResult call() throws Exception {
+                return listPublicKeys(listPublicKeysRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Suspends the recording of AWS API calls and log file delivery for the
-     * specified trail. Under most circumstances, there is no need to use
-     * this action. You can update a trail without stopping it first. This
-     * action is the only way to stop recording.
+     * Returns all public keys whose private keys were used to sign the
+     * digest files within the specified time range. The public key is needed
+     * to validate digest files that were signed with its corresponding
+     * private key.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>CloudTrail uses different private/public key pairs per
+     * region. Each digest file is signed with a private key unique to its
+     * region. Therefore, when you validate a digest file from a particular
+     * region, you must look in the same region for its corresponding public
+     * key.
      * </p>
      *
-     * @param stopLoggingRequest Container for the necessary parameters to
-     *           execute the StopLogging operation on AWSCloudTrail.
+     * @param listPublicKeysRequest Container for the necessary parameters to
+     *           execute the ListPublicKeys operation on AWSCloudTrail.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         StopLogging service method, as returned by AWSCloudTrail.
+     *         ListPublicKeys service method, as returned by AWSCloudTrail.
      * 
      *
      * @throws AmazonClientException
@@ -852,20 +1084,100 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient
      *             If an error response is returned by AWSCloudTrail indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<StopLoggingResult> stopLoggingAsync(
-            final StopLoggingRequest stopLoggingRequest,
-            final AsyncHandler<StopLoggingRequest, StopLoggingResult> asyncHandler)
+    public Future<ListPublicKeysResult> listPublicKeysAsync(
+            final ListPublicKeysRequest listPublicKeysRequest,
+            final AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<StopLoggingResult>() {
-            public StopLoggingResult call() throws Exception {
-              StopLoggingResult result;
+        return executorService.submit(new Callable<ListPublicKeysResult>() {
+            public ListPublicKeysResult call() throws Exception {
+              ListPublicKeysResult result;
                 try {
-                result = stopLogging(stopLoggingRequest);
+                result = listPublicKeys(listPublicKeysRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(stopLoggingRequest, result);
+              asyncHandler.onSuccess(listPublicKeysRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Adds one or more tags to a trail, up to a limit of 10. Tags must be
+     * unique per trail. Overwrites an existing tag's value when a new value
+     * is specified for an existing tag key. If you specify a key without a
+     * value, the tag will be created with the specified key and a value of
+     * null.
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags operation on AWSCloudTrail.
+     * 
+     * @return A Java Future object containing the response from the AddTags
+     *         service method, as returned by AWSCloudTrail.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddTagsResult> addTagsAsync(final AddTagsRequest addTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AddTagsResult>() {
+            public AddTagsResult call() throws Exception {
+                return addTags(addTagsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags to a trail, up to a limit of 10. Tags must be
+     * unique per trail. Overwrites an existing tag's value when a new value
+     * is specified for an existing tag key. If you specify a key without a
+     * value, the tag will be created with the specified key and a value of
+     * null.
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags operation on AWSCloudTrail.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the AddTags
+     *         service method, as returned by AWSCloudTrail.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSCloudTrail indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddTagsResult> addTagsAsync(
+            final AddTagsRequest addTagsRequest,
+            final AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AddTagsResult>() {
+            public AddTagsResult call() throws Exception {
+              AddTagsResult result;
+                try {
+                result = addTags(addTagsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(addTagsRequest, result);
                  return result;
         }
     });

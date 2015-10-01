@@ -70,14 +70,12 @@ public class DescribeTagsRequestMarshaller implements
 
         String maxItems = (describeTagsRequest.getMaxItems() == null) ? null
                 : StringUtils.fromInteger(describeTagsRequest.getMaxItems());
-
         if (maxItems != null) {
             request.addParameter("MaxItems", maxItems);
         }
 
         String marker = (describeTagsRequest.getMarker() == null) ? null
                 : StringUtils.fromString(describeTagsRequest.getMarker());
-
         if (marker != null) {
             request.addParameter("Marker", marker);
         }

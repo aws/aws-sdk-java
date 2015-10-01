@@ -4035,6 +4035,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBClusterStateException
      * @throws InvalidDBSecurityGroupStateException
      * @throws InvalidSubnetException
+     * @throws DBClusterAlreadyExistsException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -4771,39 +4772,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     
     /**
      * <p>
-     * The DeleteDBCluster action deletes a previously provisioned DB
-     * cluster. A successful response from the web service indicates the
-     * request was received correctly. When you delete a DB cluster, all
-     * automated backups for that DB cluster are deleted and cannot be
-     * recovered. Manual DB cluster snapshots of the DB cluster to be deleted
-     * are not deleted.
-     * </p>
-     * <p>
-     * For more information on Amazon Aurora, see
-     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
-     * in the <i>Amazon RDS User Guide.</i>
-     * </p>
-     * 
-     * @return The response from the DeleteDBCluster service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBClusterNotFoundException
-     * @throws InvalidDBClusterStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBCluster deleteDBCluster() throws AmazonServiceException, AmazonClientException {
-        return deleteDBCluster(new DeleteDBClusterRequest());
-    }
-    
-    /**
-     * <p>
      * Returns a list of <code>DBSecurityGroup</code> descriptions. If a
      * <code>DBSecurityGroupName</code> is specified, the list will contain
      * only the descriptions of the specified DB security group.
@@ -4905,40 +4873,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      */
     public DescribeEventSubscriptionsResult describeEventSubscriptions() throws AmazonServiceException, AmazonClientException {
         return describeEventSubscriptions(new DescribeEventSubscriptionsRequest());
-    }
-    
-    /**
-     * <p>
-     * Creates a new Amazon Aurora DB cluster. For more information on
-     * Amazon Aurora, see
-     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
-     * in the <i>Amazon RDS User Guide.</i>
-     * </p>
-     * 
-     * @return The response from the CreateDBCluster service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBClusterQuotaExceededException
-     * @throws DBSubnetGroupNotFoundException
-     * @throws StorageQuotaExceededException
-     * @throws InvalidVPCNetworkStateException
-     * @throws DBClusterParameterGroupNotFoundException
-     * @throws InvalidDBSubnetGroupStateException
-     * @throws InvalidDBClusterStateException
-     * @throws InvalidSubnetException
-     * @throws DBClusterAlreadyExistsException
-     * @throws InsufficientStorageClusterCapacityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBCluster createDBCluster() throws AmazonServiceException, AmazonClientException {
-        return createDBCluster(new CreateDBClusterRequest());
     }
     
     /**
@@ -5074,42 +5008,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      */
     public DBCluster failoverDBCluster() throws AmazonServiceException, AmazonClientException {
         return failoverDBCluster(new FailoverDBClusterRequest());
-    }
-    
-    /**
-     * <p>
-     * Modify a setting for an Amazon Aurora DB cluster. You can change one
-     * or more database configuration parameters by specifying these
-     * parameters and the new values in the request. For more information on
-     * Amazon Aurora, see
-     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"> Aurora on Amazon RDS </a>
-     * in the <i>Amazon RDS User Guide.</i>
-     * </p>
-     * 
-     * @return The response from the ModifyDBCluster service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBSubnetGroupNotFoundException
-     * @throws StorageQuotaExceededException
-     * @throws InvalidVPCNetworkStateException
-     * @throws DBClusterParameterGroupNotFoundException
-     * @throws InvalidDBSubnetGroupStateException
-     * @throws DBClusterNotFoundException
-     * @throws InvalidDBInstanceStateException
-     * @throws InvalidDBClusterStateException
-     * @throws InvalidDBSecurityGroupStateException
-     * @throws InvalidSubnetException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBCluster modifyDBCluster() throws AmazonServiceException, AmazonClientException {
-        return modifyDBCluster(new ModifyDBClusterRequest());
     }
     
     /**

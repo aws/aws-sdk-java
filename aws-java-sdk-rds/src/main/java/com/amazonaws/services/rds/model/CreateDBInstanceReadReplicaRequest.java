@@ -70,8 +70,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
      * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     * db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
-     * from the source DB instance.
+     * db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * <p>Default: Inherits from the source DB instance.
      */
     private String dBInstanceClass;
 
@@ -155,6 +155,12 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * <code>standard</code>
      */
     private String storageType;
+
+    /**
+     * True to copy all tags from the Read Replica to snapshots of the Read
+     * Replica; otherwise false. The default is false.
+     */
+    private Boolean copyTagsToSnapshot;
 
     /**
      * Default constructor for a new CreateDBInstanceReadReplicaRequest object.  Callers should use the
@@ -353,16 +359,16 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
      * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     * db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
-     * from the source DB instance.
+     * db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * <p>Default: Inherits from the source DB instance.
      *
      * @return The compute and memory capacity of the Read Replica. <p> Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
      *         db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     *         db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
-     *         from the source DB instance.
+     *         db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     *         <p>Default: Inherits from the source DB instance.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -374,16 +380,16 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
      * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     * db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
-     * from the source DB instance.
+     * db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * <p>Default: Inherits from the source DB instance.
      *
      * @param dBInstanceClass The compute and memory capacity of the Read Replica. <p> Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
      *         db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     *         db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
-     *         from the source DB instance.
+     *         db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     *         <p>Default: Inherits from the source DB instance.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -395,8 +401,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
      * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     * db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
-     * from the source DB instance.
+     * db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * <p>Default: Inherits from the source DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -405,8 +411,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
      *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
      *         db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
-     *         db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
-     *         from the source DB instance.
+     *         db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     *         <p>Default: Inherits from the source DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1016,6 +1022,56 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * True to copy all tags from the Read Replica to snapshots of the Read
+     * Replica; otherwise false. The default is false.
+     *
+     * @return True to copy all tags from the Read Replica to snapshots of the Read
+     *         Replica; otherwise false. The default is false.
+     */
+    public Boolean isCopyTagsToSnapshot() {
+        return copyTagsToSnapshot;
+    }
+    
+    /**
+     * True to copy all tags from the Read Replica to snapshots of the Read
+     * Replica; otherwise false. The default is false.
+     *
+     * @param copyTagsToSnapshot True to copy all tags from the Read Replica to snapshots of the Read
+     *         Replica; otherwise false. The default is false.
+     */
+    public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        this.copyTagsToSnapshot = copyTagsToSnapshot;
+    }
+    
+    /**
+     * True to copy all tags from the Read Replica to snapshots of the Read
+     * Replica; otherwise false. The default is false.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param copyTagsToSnapshot True to copy all tags from the Read Replica to snapshots of the Read
+     *         Replica; otherwise false. The default is false.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceReadReplicaRequest withCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        this.copyTagsToSnapshot = copyTagsToSnapshot;
+        return this;
+    }
+
+    /**
+     * True to copy all tags from the Read Replica to snapshots of the Read
+     * Replica; otherwise false. The default is false.
+     *
+     * @return True to copy all tags from the Read Replica to snapshots of the Read
+     *         Replica; otherwise false. The default is false.
+     */
+    public Boolean getCopyTagsToSnapshot() {
+        return copyTagsToSnapshot;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1038,7 +1094,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
-        if (getStorageType() != null) sb.append("StorageType: " + getStorageType() );
+        if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
+        if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() );
         sb.append("}");
         return sb.toString();
     }
@@ -1060,6 +1117,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getDBSubnetGroupName() == null) ? 0 : getDBSubnetGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
+        hashCode = prime * hashCode + ((isCopyTagsToSnapshot() == null) ? 0 : isCopyTagsToSnapshot().hashCode()); 
         return hashCode;
     }
     
@@ -1095,6 +1153,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         if (other.getDBSubnetGroupName() != null && other.getDBSubnetGroupName().equals(this.getDBSubnetGroupName()) == false) return false; 
         if (other.getStorageType() == null ^ this.getStorageType() == null) return false;
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
+        if (other.isCopyTagsToSnapshot() == null ^ this.isCopyTagsToSnapshot() == null) return false;
+        if (other.isCopyTagsToSnapshot() != null && other.isCopyTagsToSnapshot().equals(this.isCopyTagsToSnapshot()) == false) return false; 
         return true;
     }
     

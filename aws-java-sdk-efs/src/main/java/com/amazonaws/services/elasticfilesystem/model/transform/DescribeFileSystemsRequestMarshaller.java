@@ -67,7 +67,6 @@ public class DescribeFileSystemsRequestMarshaller
         String maxItems = (describeFileSystemsRequest.getMaxItems() == null) ? null
                 : StringUtils.fromInteger(describeFileSystemsRequest
                         .getMaxItems());
-
         if (maxItems != null) {
             request.addParameter("MaxItems", maxItems);
         }
@@ -75,7 +74,6 @@ public class DescribeFileSystemsRequestMarshaller
         String marker = (describeFileSystemsRequest.getMarker() == null) ? null
                 : StringUtils
                         .fromString(describeFileSystemsRequest.getMarker());
-
         if (marker != null) {
             request.addParameter("Marker", marker);
         }
@@ -83,7 +81,6 @@ public class DescribeFileSystemsRequestMarshaller
         String creationToken = (describeFileSystemsRequest.getCreationToken() == null) ? null
                 : StringUtils.fromString(describeFileSystemsRequest
                         .getCreationToken());
-
         if (creationToken != null) {
             request.addParameter("CreationToken", creationToken);
         }
@@ -91,7 +88,6 @@ public class DescribeFileSystemsRequestMarshaller
         String fileSystemId = (describeFileSystemsRequest.getFileSystemId() == null) ? null
                 : StringUtils.fromString(describeFileSystemsRequest
                         .getFileSystemId());
-
         if (fileSystemId != null) {
             request.addParameter("FileSystemId", fileSystemId);
         }

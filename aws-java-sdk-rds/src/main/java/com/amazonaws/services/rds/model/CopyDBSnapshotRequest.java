@@ -58,6 +58,12 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
+     * True to copy all tags from the source DB snapshot to the target DB
+     * snapshot; otherwise false. The default is false.
+     */
+    private Boolean copyTags;
+
+    /**
      * The identifier for the source DB snapshot. <p>Constraints: <ul>
      * <li>Must specify a valid system snapshot in the "available"
      * state.</li> <li>If the source snapshot is in the same region as the
@@ -275,6 +281,56 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * True to copy all tags from the source DB snapshot to the target DB
+     * snapshot; otherwise false. The default is false.
+     *
+     * @return True to copy all tags from the source DB snapshot to the target DB
+     *         snapshot; otherwise false. The default is false.
+     */
+    public Boolean isCopyTags() {
+        return copyTags;
+    }
+    
+    /**
+     * True to copy all tags from the source DB snapshot to the target DB
+     * snapshot; otherwise false. The default is false.
+     *
+     * @param copyTags True to copy all tags from the source DB snapshot to the target DB
+     *         snapshot; otherwise false. The default is false.
+     */
+    public void setCopyTags(Boolean copyTags) {
+        this.copyTags = copyTags;
+    }
+    
+    /**
+     * True to copy all tags from the source DB snapshot to the target DB
+     * snapshot; otherwise false. The default is false.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param copyTags True to copy all tags from the source DB snapshot to the target DB
+     *         snapshot; otherwise false. The default is false.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CopyDBSnapshotRequest withCopyTags(Boolean copyTags) {
+        this.copyTags = copyTags;
+        return this;
+    }
+
+    /**
+     * True to copy all tags from the source DB snapshot to the target DB
+     * snapshot; otherwise false. The default is false.
+     *
+     * @return True to copy all tags from the source DB snapshot to the target DB
+     *         snapshot; otherwise false. The default is false.
+     */
+    public Boolean getCopyTags() {
+        return copyTags;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -288,7 +344,8 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
         sb.append("{");
         if (getSourceDBSnapshotIdentifier() != null) sb.append("SourceDBSnapshotIdentifier: " + getSourceDBSnapshotIdentifier() + ",");
         if (getTargetDBSnapshotIdentifier() != null) sb.append("TargetDBSnapshotIdentifier: " + getTargetDBSnapshotIdentifier() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (isCopyTags() != null) sb.append("CopyTags: " + isCopyTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -301,6 +358,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getSourceDBSnapshotIdentifier() == null) ? 0 : getSourceDBSnapshotIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getTargetDBSnapshotIdentifier() == null) ? 0 : getTargetDBSnapshotIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((isCopyTags() == null) ? 0 : isCopyTags().hashCode()); 
         return hashCode;
     }
     
@@ -318,6 +376,8 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
         if (other.getTargetDBSnapshotIdentifier() != null && other.getTargetDBSnapshotIdentifier().equals(this.getTargetDBSnapshotIdentifier()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.isCopyTags() == null ^ this.isCopyTags() == null) return false;
+        if (other.isCopyTags() != null && other.isCopyTags().equals(this.isCopyTags()) == false) return false; 
         return true;
     }
     

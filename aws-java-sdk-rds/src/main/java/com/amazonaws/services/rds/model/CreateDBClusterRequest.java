@@ -92,13 +92,13 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
 
     /**
      * The name of the database engine to be used for this DB cluster.
-     * <p>Valid Values: <code>MySQL</code>
+     * <p>Valid Values: <code>aurora</code>
      */
     private String engine;
 
     /**
      * The version number of the database engine to use. <p> <b>Aurora</b>
-     * <p>Example: <code>5.6.0</code>
+     * <p>Example: <code>5.6.10a</code>
      */
     private String engineVersion;
 
@@ -632,10 +632,10 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
 
     /**
      * The name of the database engine to be used for this DB cluster.
-     * <p>Valid Values: <code>MySQL</code>
+     * <p>Valid Values: <code>aurora</code>
      *
      * @return The name of the database engine to be used for this DB cluster.
-     *         <p>Valid Values: <code>MySQL</code>
+     *         <p>Valid Values: <code>aurora</code>
      */
     public String getEngine() {
         return engine;
@@ -643,10 +643,10 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
     
     /**
      * The name of the database engine to be used for this DB cluster.
-     * <p>Valid Values: <code>MySQL</code>
+     * <p>Valid Values: <code>aurora</code>
      *
      * @param engine The name of the database engine to be used for this DB cluster.
-     *         <p>Valid Values: <code>MySQL</code>
+     *         <p>Valid Values: <code>aurora</code>
      */
     public void setEngine(String engine) {
         this.engine = engine;
@@ -654,12 +654,12 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
     
     /**
      * The name of the database engine to be used for this DB cluster.
-     * <p>Valid Values: <code>MySQL</code>
+     * <p>Valid Values: <code>aurora</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine The name of the database engine to be used for this DB cluster.
-     *         <p>Valid Values: <code>MySQL</code>
+     *         <p>Valid Values: <code>aurora</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -671,10 +671,10 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
 
     /**
      * The version number of the database engine to use. <p> <b>Aurora</b>
-     * <p>Example: <code>5.6.0</code>
+     * <p>Example: <code>5.6.10a</code>
      *
      * @return The version number of the database engine to use. <p> <b>Aurora</b>
-     *         <p>Example: <code>5.6.0</code>
+     *         <p>Example: <code>5.6.10a</code>
      */
     public String getEngineVersion() {
         return engineVersion;
@@ -682,10 +682,10 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
     
     /**
      * The version number of the database engine to use. <p> <b>Aurora</b>
-     * <p>Example: <code>5.6.0</code>
+     * <p>Example: <code>5.6.10a</code>
      *
      * @param engineVersion The version number of the database engine to use. <p> <b>Aurora</b>
-     *         <p>Example: <code>5.6.0</code>
+     *         <p>Example: <code>5.6.10a</code>
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -693,12 +693,12 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
     
     /**
      * The version number of the database engine to use. <p> <b>Aurora</b>
-     * <p>Example: <code>5.6.0</code>
+     * <p>Example: <code>5.6.10a</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The version number of the database engine to use. <p> <b>Aurora</b>
-     *         <p>Example: <code>5.6.0</code>
+     *         <p>Example: <code>5.6.10a</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

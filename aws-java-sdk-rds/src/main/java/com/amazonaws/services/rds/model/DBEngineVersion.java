@@ -63,6 +63,12 @@ public class DBEngineVersion implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<CharacterSet> supportedCharacterSets;
 
     /**
+     * A list of engine versions that this database engine version can be
+     * upgraded to.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<UpgradeTarget> validUpgradeTarget;
+
+    /**
      * Default constructor for a new DBEngineVersion object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -360,6 +366,87 @@ public class DBEngineVersion implements Serializable, Cloneable {
     }
 
     /**
+     * A list of engine versions that this database engine version can be
+     * upgraded to.
+     *
+     * @return A list of engine versions that this database engine version can be
+     *         upgraded to.
+     */
+    public java.util.List<UpgradeTarget> getValidUpgradeTarget() {
+        if (validUpgradeTarget == null) {
+              validUpgradeTarget = new com.amazonaws.internal.ListWithAutoConstructFlag<UpgradeTarget>();
+              validUpgradeTarget.setAutoConstruct(true);
+        }
+        return validUpgradeTarget;
+    }
+    
+    /**
+     * A list of engine versions that this database engine version can be
+     * upgraded to.
+     *
+     * @param validUpgradeTarget A list of engine versions that this database engine version can be
+     *         upgraded to.
+     */
+    public void setValidUpgradeTarget(java.util.Collection<UpgradeTarget> validUpgradeTarget) {
+        if (validUpgradeTarget == null) {
+            this.validUpgradeTarget = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<UpgradeTarget> validUpgradeTargetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<UpgradeTarget>(validUpgradeTarget.size());
+        validUpgradeTargetCopy.addAll(validUpgradeTarget);
+        this.validUpgradeTarget = validUpgradeTargetCopy;
+    }
+    
+    /**
+     * A list of engine versions that this database engine version can be
+     * upgraded to.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setValidUpgradeTarget(java.util.Collection)} or
+     * {@link #withValidUpgradeTarget(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param validUpgradeTarget A list of engine versions that this database engine version can be
+     *         upgraded to.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBEngineVersion withValidUpgradeTarget(UpgradeTarget... validUpgradeTarget) {
+        if (getValidUpgradeTarget() == null) setValidUpgradeTarget(new java.util.ArrayList<UpgradeTarget>(validUpgradeTarget.length));
+        for (UpgradeTarget value : validUpgradeTarget) {
+            getValidUpgradeTarget().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of engine versions that this database engine version can be
+     * upgraded to.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param validUpgradeTarget A list of engine versions that this database engine version can be
+     *         upgraded to.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBEngineVersion withValidUpgradeTarget(java.util.Collection<UpgradeTarget> validUpgradeTarget) {
+        if (validUpgradeTarget == null) {
+            this.validUpgradeTarget = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<UpgradeTarget> validUpgradeTargetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<UpgradeTarget>(validUpgradeTarget.size());
+            validUpgradeTargetCopy.addAll(validUpgradeTarget);
+            this.validUpgradeTarget = validUpgradeTargetCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -377,7 +464,8 @@ public class DBEngineVersion implements Serializable, Cloneable {
         if (getDBEngineDescription() != null) sb.append("DBEngineDescription: " + getDBEngineDescription() + ",");
         if (getDBEngineVersionDescription() != null) sb.append("DBEngineVersionDescription: " + getDBEngineVersionDescription() + ",");
         if (getDefaultCharacterSet() != null) sb.append("DefaultCharacterSet: " + getDefaultCharacterSet() + ",");
-        if (getSupportedCharacterSets() != null) sb.append("SupportedCharacterSets: " + getSupportedCharacterSets() );
+        if (getSupportedCharacterSets() != null) sb.append("SupportedCharacterSets: " + getSupportedCharacterSets() + ",");
+        if (getValidUpgradeTarget() != null) sb.append("ValidUpgradeTarget: " + getValidUpgradeTarget() );
         sb.append("}");
         return sb.toString();
     }
@@ -394,6 +482,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBEngineVersionDescription() == null) ? 0 : getDBEngineVersionDescription().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultCharacterSet() == null) ? 0 : getDefaultCharacterSet().hashCode()); 
         hashCode = prime * hashCode + ((getSupportedCharacterSets() == null) ? 0 : getSupportedCharacterSets().hashCode()); 
+        hashCode = prime * hashCode + ((getValidUpgradeTarget() == null) ? 0 : getValidUpgradeTarget().hashCode()); 
         return hashCode;
     }
     
@@ -419,6 +508,8 @@ public class DBEngineVersion implements Serializable, Cloneable {
         if (other.getDefaultCharacterSet() != null && other.getDefaultCharacterSet().equals(this.getDefaultCharacterSet()) == false) return false; 
         if (other.getSupportedCharacterSets() == null ^ this.getSupportedCharacterSets() == null) return false;
         if (other.getSupportedCharacterSets() != null && other.getSupportedCharacterSets().equals(this.getSupportedCharacterSets()) == false) return false; 
+        if (other.getValidUpgradeTarget() == null ^ this.getValidUpgradeTarget() == null) return false;
+        if (other.getValidUpgradeTarget() != null && other.getValidUpgradeTarget().equals(this.getValidUpgradeTarget()) == false) return false; 
         return true;
     }
     
