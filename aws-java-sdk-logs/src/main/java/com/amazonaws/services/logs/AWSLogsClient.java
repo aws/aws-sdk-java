@@ -361,7 +361,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -420,9 +423,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new CreateExportTaskResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<CreateExportTaskResult> responseHandler = new JsonResponseHandler<CreateExportTaskResult>(
+                    new CreateExportTaskResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -482,7 +486,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -535,7 +542,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -583,7 +593,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -629,7 +642,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -675,7 +691,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -721,7 +740,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -768,7 +790,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -814,7 +839,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -866,9 +894,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeDestinationsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeDestinationsResult> responseHandler = new JsonResponseHandler<DescribeDestinationsResult>(
+                    new DescribeDestinationsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -928,9 +957,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeExportTasksResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeExportTasksResult> responseHandler = new JsonResponseHandler<DescribeExportTasksResult>(
+                    new DescribeExportTasksResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -984,9 +1014,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeLogGroupsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeLogGroupsResult> responseHandler = new JsonResponseHandler<DescribeLogGroupsResult>(
+                    new DescribeLogGroupsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1049,9 +1080,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeLogStreamsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeLogStreamsResult> responseHandler = new JsonResponseHandler<DescribeLogStreamsResult>(
+                    new DescribeLogStreamsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1106,9 +1138,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeMetricFiltersResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeMetricFiltersResult> responseHandler = new JsonResponseHandler<DescribeMetricFiltersResult>(
+                    new DescribeMetricFiltersResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1163,9 +1196,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeSubscriptionFiltersResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeSubscriptionFiltersResult> responseHandler = new JsonResponseHandler<DescribeSubscriptionFiltersResult>(
+                    new DescribeSubscriptionFiltersResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1228,9 +1262,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new FilterLogEventsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<FilterLogEventsResult> responseHandler = new JsonResponseHandler<FilterLogEventsResult>(
+                    new FilterLogEventsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1289,8 +1324,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new GetLogEventsResultJsonUnmarshaller(), executionContext);
+            JsonResponseHandler<GetLogEventsResult> responseHandler = new JsonResponseHandler<GetLogEventsResult>(
+                    new GetLogEventsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1350,9 +1387,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new PutDestinationResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<PutDestinationResult> responseHandler = new JsonResponseHandler<PutDestinationResult>(
+                    new PutDestinationResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1402,7 +1440,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -1474,8 +1515,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new PutLogEventsResultJsonUnmarshaller(), executionContext);
+            JsonResponseHandler<PutLogEventsResult> responseHandler = new JsonResponseHandler<PutLogEventsResult>(
+                    new PutLogEventsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1532,7 +1575,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -1580,7 +1626,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -1643,7 +1692,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -1687,9 +1739,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new TestMetricFilterResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<TestMetricFilterResult> responseHandler = new JsonResponseHandler<TestMetricFilterResult>(
+                    new TestMetricFilterResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1724,7 +1777,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
             Request<Y> request,
-            Unmarshaller<X, JsonUnmarshallerContext> unmarshaller,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
@@ -1747,8 +1800,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
         executionContext.setCredentials(credentials);
 
-        JsonResponseHandler<X> responseHandler = new JsonResponseHandler<X>(
-                unmarshaller);
         JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
                 jsonErrorUnmarshallers);
 

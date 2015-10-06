@@ -307,8 +307,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new CancelJobResultStaxUnmarshaller(),
-                    executionContext);
+            StaxResponseHandler<CancelJobResult> responseHandler = new StaxResponseHandler<CancelJobResult>(
+                    new CancelJobResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -397,8 +398,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new CreateJobResultStaxUnmarshaller(),
-                    executionContext);
+            StaxResponseHandler<CreateJobResult> responseHandler = new StaxResponseHandler<CreateJobResult>(
+                    new CreateJobResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -454,9 +456,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new GetShippingLabelResultStaxUnmarshaller(),
-                    executionContext);
+            StaxResponseHandler<GetShippingLabelResult> responseHandler = new StaxResponseHandler<GetShippingLabelResult>(
+                    new GetShippingLabelResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -509,8 +511,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new GetStatusResultStaxUnmarshaller(),
-                    executionContext);
+            StaxResponseHandler<GetStatusResult> responseHandler = new StaxResponseHandler<GetStatusResult>(
+                    new GetStatusResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -559,8 +562,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ListJobsResultStaxUnmarshaller(),
-                    executionContext);
+            StaxResponseHandler<ListJobsResult> responseHandler = new StaxResponseHandler<ListJobsResult>(
+                    new ListJobsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -655,8 +659,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new UpdateJobResultStaxUnmarshaller(),
-                    executionContext);
+            StaxResponseHandler<UpdateJobResult> responseHandler = new StaxResponseHandler<UpdateJobResult>(
+                    new UpdateJobResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -691,7 +696,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
 
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
             Request<Y> request,
-            Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
@@ -714,8 +719,6 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(
-                unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(
                 exceptionUnmarshallers);
 

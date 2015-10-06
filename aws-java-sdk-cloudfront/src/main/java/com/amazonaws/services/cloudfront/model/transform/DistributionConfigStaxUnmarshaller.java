@@ -94,6 +94,10 @@ public class DistributionConfigStaxUnmarshaller implements Unmarshaller<Distribu
                     distributionConfig.setRestrictions(RestrictionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("WebACLId", targetDepth)) {
+                    distributionConfig.setWebACLId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return distributionConfig;

@@ -70,6 +70,12 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
     private Map<String, List<String>> customQueryParameters;
 
     /**
+     * The source object from which the current object was cloned; or null
+     * if there isn't one.
+     */
+    private AmazonWebServiceRequest cloneSource;
+
+    /**
      * Sets the optional credentials to use for this request, overriding the
      * default credentials set at the client level.
      *
@@ -271,6 +277,32 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
     }
 
     /**
+     * Returns the source object from which the current object was cloned; or null
+     * if there isn't one.
+     */
+    public AmazonWebServiceRequest getCloneSource() {
+        return cloneSource;
+    }
+
+    /**
+     * Returns the root object from which the current object was cloned; or null
+     * if there isn't one.
+     */
+    public AmazonWebServiceRequest getCloneRoot() {
+        AmazonWebServiceRequest cloneRoot = cloneSource;
+        if (cloneRoot != null) {
+            while (cloneRoot.getCloneSource() != null) {
+                cloneRoot = cloneRoot.getCloneSource();
+            }
+        }
+        return cloneRoot;
+    }
+
+    private void setCloneSource(AmazonWebServiceRequest cloneSource) {
+        this.cloneSource = cloneSource;
+    }
+
+    /**
      * Creates a shallow clone of this request. Explicitly does <em>not</em>
      * clone the deep structure of the request object.
      *
@@ -279,7 +311,9 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
     @Override
     public AmazonWebServiceRequest clone() {
         try {
-            return (AmazonWebServiceRequest) super.clone();
+            AmazonWebServiceRequest cloned = (AmazonWebServiceRequest) super.clone();
+            cloned.setCloneSource(this);
+            return cloned;
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "

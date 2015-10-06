@@ -247,19 +247,15 @@ public class AmazonHttpClient {
             return;
         }
 
-        try {
-            SchemeRegistry schemeRegistry = httpClient.getConnectionManager().getSchemeRegistry();
-            SSLSocketFactory sf = config.getApacheHttpClientConfig().getSslSocketFactory();
-            if (sf == null) {
-                sf = new SdkTLSSocketFactory(
-                        SSLContext.getDefault(),
-                        SSLSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
-            }
-            Scheme https = new Scheme("https", 443, sf);
-            schemeRegistry.register(https);
-        } catch (NoSuchAlgorithmException e) {
-            throw new AmazonClientException("Unable to access default SSL context to disable strict hostname verification");
+        SchemeRegistry schemeRegistry = httpClient.getConnectionManager().getSchemeRegistry();
+        SSLSocketFactory sf = config.getApacheHttpClientConfig().getSslSocketFactory();
+        if (sf == null) {
+            sf = new SdkTLSSocketFactory(
+                    HttpClientFactory.createSSLContext(config),
+                    SSLSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
         }
+        Scheme https = new Scheme("https", 443, sf);
+        schemeRegistry.register(https);
     }
     /**
      * Executes the request and returns the result.
@@ -1083,7 +1079,10 @@ public class AmazonHttpClient {
                 throw new RuntimeException("Unable to unmarshall response metadata. Response Code: " +
                         httpResponse.getStatusCode() + ", Response Text: " + httpResponse.getStatusText());
 
-            responseMetadataCache.add(request.getOriginalRequest(), awsResponse.getResponseMetadata());
+            AmazonWebServiceRequest userRequest = request.getOriginalRequest();
+            if (userRequest.getCloneRoot() != null)
+                userRequest = userRequest.getCloneRoot();
+            responseMetadataCache.add(userRequest, awsResponse.getResponseMetadata());
             final String awsRequestId = awsResponse.getRequestId();
 
             if (requestLog.isDebugEnabled()) {

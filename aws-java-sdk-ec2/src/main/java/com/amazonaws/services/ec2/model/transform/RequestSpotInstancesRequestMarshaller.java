@@ -65,6 +65,9 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
         if (requestSpotInstancesRequest.getAvailabilityZoneGroup() != null) {
             request.addParameter("AvailabilityZoneGroup", StringUtils.fromString(requestSpotInstancesRequest.getAvailabilityZoneGroup()));
         }
+        if (requestSpotInstancesRequest.getBlockDurationMinutes() != null) {
+            request.addParameter("BlockDurationMinutes", StringUtils.fromInteger(requestSpotInstancesRequest.getBlockDurationMinutes()));
+        }
         LaunchSpecification launchSpecificationLaunchSpecification = requestSpotInstancesRequest.getLaunchSpecification();
         if (launchSpecificationLaunchSpecification != null) {
             if (launchSpecificationLaunchSpecification.getImageId() != null) {

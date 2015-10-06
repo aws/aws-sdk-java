@@ -59,6 +59,7 @@
         "exceptionName" : "InvalidInstanceIdException",
         "documentation" : "<p>You must specify the ID of a running instance.</p>"
       } ],
+      "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Associates the specified configuration document with the specified instance.</p> <p>When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.</p> <p>If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.</p>\n@param createAssociationRequest null\n@return Result of the CreateAssociation operation returned by the service.\n@throws AssociationAlreadyExistsException The specified association already exists.\n@throws AssociationLimitExceededException You can have at most 2,000 active associations.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The configuration document is not valid.\n@throws InvalidInstanceIdException You must specify the ID of a running instance.*/",
       "asyncDocumentation" : "/**<p>Associates the specified configuration document with the specified instance.</p> <p>When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.</p> <p>If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.</p>\n@param createAssociationRequest null\n@return A Java Future containing the result of the CreateAssociation operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Associates the specified configuration document with the specified instance.</p> <p>When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.</p> <p>If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.</p>\n@param createAssociationRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateAssociation operation returned by the service.*/",
@@ -102,6 +103,7 @@
         "exceptionName" : "AssociationLimitExceededException",
         "documentation" : "<p>You can have at most 2,000 active associations.</p>"
       } ],
+      "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Associates the specified configuration documents with the specified instances.</p> <p>When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.</p> <p>If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.</p>\n@param createAssociationBatchRequest null\n@return Result of the CreateAssociationBatch operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The configuration document is not valid.\n@throws InvalidInstanceIdException You must specify the ID of a running instance.\n@throws DuplicateInstanceIdException You cannot specify an instance ID in more than one association.\n@throws AssociationLimitExceededException You can have at most 2,000 active associations.*/",
       "asyncDocumentation" : "/**<p>Associates the specified configuration documents with the specified instances.</p> <p>When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.</p> <p>If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.</p>\n@param createAssociationBatchRequest null\n@return A Java Future containing the result of the CreateAssociationBatch operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Associates the specified configuration documents with the specified instances.</p> <p>When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.</p> <p>If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.</p>\n@param createAssociationBatchRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateAssociationBatch operation returned by the service.*/",
@@ -145,6 +147,7 @@
         "exceptionName" : "DocumentLimitExceededException",
         "documentation" : "<p>You can have at most 100 active configuration documents.</p>"
       } ],
+      "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Creates a configuration document.</p> <p>After you create a configuration document, you can use <a>CreateAssociation</a> to associate it with one or more running instances.</p>\n@param createDocumentRequest null\n@return Result of the CreateDocument operation returned by the service.\n@throws DocumentAlreadyExistsException The specified configuration document already exists.\n@throws MaxDocumentSizeExceededException The size limit of a configuration document is 64 KB.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentContentException The content for the configuration document is not valid.\n@throws DocumentLimitExceededException You can have at most 100 active configuration documents.*/",
       "asyncDocumentation" : "/**<p>Creates a configuration document.</p> <p>After you create a configuration document, you can use <a>CreateAssociation</a> to associate it with one or more running instances.</p>\n@param createDocumentRequest null\n@return A Java Future containing the result of the CreateDocument operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Creates a configuration document.</p> <p>After you create a configuration document, you can use <a>CreateAssociation</a> to associate it with one or more running instances.</p>\n@param createDocumentRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateDocument operation returned by the service.*/",
@@ -188,6 +191,7 @@
         "exceptionName" : "TooManyUpdatesException",
         "documentation" : "<p>There are concurrent updates for a resource that supports one update at a time.</p>"
       } ],
+      "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Disassociates the specified configuration document from the specified instance.</p> <p>When you disassociate a configuration document from an instance, it does not change the configuration of the instance. To change the configuration state of an instance after you disassociate a configuration document, you must create a new configuration document with the desired configuration and associate it with the instance.</p>\n@param deleteAssociationRequest null\n@return Result of the DeleteAssociation operation returned by the service.\n@throws AssociationDoesNotExistException The specified association does not exist.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The configuration document is not valid.\n@throws InvalidInstanceIdException You must specify the ID of a running instance.\n@throws TooManyUpdatesException There are concurrent updates for a resource that supports one update at a time.*/",
       "asyncDocumentation" : "/**<p>Disassociates the specified configuration document from the specified instance.</p> <p>When you disassociate a configuration document from an instance, it does not change the configuration of the instance. To change the configuration state of an instance after you disassociate a configuration document, you must create a new configuration document with the desired configuration and associate it with the instance.</p>\n@param deleteAssociationRequest null\n@return A Java Future containing the result of the DeleteAssociation operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Disassociates the specified configuration document from the specified instance.</p> <p>When you disassociate a configuration document from an instance, it does not change the configuration of the instance. To change the configuration state of an instance after you disassociate a configuration document, you must create a new configuration document with the desired configuration and associate it with the instance.</p>\n@param deleteAssociationRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteAssociation operation returned by the service.*/",
@@ -225,6 +229,7 @@
         "exceptionName" : "AssociatedInstancesException",
         "documentation" : "<p>You must disassociate a configuration document from all instances before you can delete it.</p>"
       } ],
+      "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Deletes the specified configuration document.</p> <p>You must use <a>DeleteAssociation</a> to disassociate all instances that are associated with the configuration document before you can delete it.</p>\n@param deleteDocumentRequest null\n@return Result of the DeleteDocument operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The configuration document is not valid.\n@throws AssociatedInstancesException You must disassociate a configuration document from all instances before you can delete it.*/",
       "asyncDocumentation" : "/**<p>Deletes the specified configuration document.</p> <p>You must use <a>DeleteAssociation</a> to disassociate all instances that are associated with the configuration document before you can delete it.</p>\n@param deleteDocumentRequest null\n@return A Java Future containing the result of the DeleteDocument operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Deletes the specified configuration document.</p> <p>You must use <a>DeleteAssociation</a> to disassociate all instances that are associated with the configuration document before you can delete it.</p>\n@param deleteDocumentRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteDocument operation returned by the service.*/",
@@ -265,6 +270,7 @@
         "exceptionName" : "InvalidInstanceIdException",
         "documentation" : "<p>You must specify the ID of a running instance.</p>"
       } ],
+      "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Describes the associations for the specified configuration document or instance.</p>\n@param describeAssociationRequest null\n@return Result of the DescribeAssociation operation returned by the service.\n@throws AssociationDoesNotExistException The specified association does not exist.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The configuration document is not valid.\n@throws InvalidInstanceIdException You must specify the ID of a running instance.*/",
       "asyncDocumentation" : "/**<p>Describes the associations for the specified configuration document or instance.</p>\n@param describeAssociationRequest null\n@return A Java Future containing the result of the DescribeAssociation operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Describes the associations for the specified configuration document or instance.</p>\n@param describeAssociationRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeAssociation operation returned by the service.*/",
@@ -299,6 +305,7 @@
         "exceptionName" : "InvalidDocumentException",
         "documentation" : "<p>The configuration document is not valid.</p>"
       } ],
+      "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Describes the specified configuration document.</p>\n@param describeDocumentRequest null\n@return Result of the DescribeDocument operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The configuration document is not valid.*/",
       "asyncDocumentation" : "/**<p>Describes the specified configuration document.</p>\n@param describeDocumentRequest null\n@return A Java Future containing the result of the DescribeDocument operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Describes the specified configuration document.</p>\n@param describeDocumentRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeDocument operation returned by the service.*/",
@@ -333,6 +340,7 @@
         "exceptionName" : "InvalidDocumentException",
         "documentation" : "<p>The configuration document is not valid.</p>"
       } ],
+      "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Gets the contents of the specified configuration document.</p>\n@param getDocumentRequest null\n@return Result of the GetDocument operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The configuration document is not valid.*/",
       "asyncDocumentation" : "/**<p>Gets the contents of the specified configuration document.</p>\n@param getDocumentRequest null\n@return A Java Future containing the result of the GetDocument operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Gets the contents of the specified configuration document.</p>\n@param getDocumentRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetDocument operation returned by the service.*/",
@@ -367,6 +375,7 @@
         "exceptionName" : "InvalidNextTokenException",
         "documentation" : "<p>The specified token is not valid.</p>"
       } ],
+      "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Lists the associations for the specified configuration document or instance.</p>\n@param listAssociationsRequest null\n@return Result of the ListAssociations operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidNextTokenException The specified token is not valid.*/",
       "asyncDocumentation" : "/**<p>Lists the associations for the specified configuration document or instance.</p>\n@param listAssociationsRequest null\n@return A Java Future containing the result of the ListAssociations operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Lists the associations for the specified configuration document or instance.</p>\n@param listAssociationsRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListAssociations operation returned by the service.*/",
@@ -401,6 +410,7 @@
         "exceptionName" : "InvalidNextTokenException",
         "documentation" : "<p>The specified token is not valid.</p>"
       } ],
+      "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Describes one or more of your configuration documents.</p>\n@param listDocumentsRequest null\n@return Result of the ListDocuments operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidNextTokenException The specified token is not valid.*/",
       "asyncDocumentation" : "/**<p>Describes one or more of your configuration documents.</p>\n@param listDocumentsRequest null\n@return A Java Future containing the result of the ListDocuments operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Describes one or more of your configuration documents.</p>\n@param listDocumentsRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListDocuments operation returned by the service.*/",
@@ -447,6 +457,7 @@
         "exceptionName" : "TooManyUpdatesException",
         "documentation" : "<p>There are concurrent updates for a resource that supports one update at a time.</p>"
       } ],
+      "hasBlobMemberAsPayload" : false,
       "syncDocumentation" : "/**<p>Updates the status of the configuration document associated with the specified instance.</p>\n@param updateAssociationStatusRequest null\n@return Result of the UpdateAssociationStatus operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidInstanceIdException You must specify the ID of a running instance.\n@throws InvalidDocumentException The configuration document is not valid.\n@throws AssociationDoesNotExistException The specified association does not exist.\n@throws StatusUnchangedException The updated status is the same as the current status.\n@throws TooManyUpdatesException There are concurrent updates for a resource that supports one update at a time.*/",
       "asyncDocumentation" : "/**<p>Updates the status of the configuration document associated with the specified instance.</p>\n@param updateAssociationStatusRequest null\n@return A Java Future containing the result of the UpdateAssociationStatus operation returned by the service.*/",
       "asyncDocumentationWithHandler" : "/**<p>Updates the status of the configuration document associated with the specified instance.</p>\n@param updateAssociationStatusRequest null\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateAssociationStatus operation returned by the service.*/",
@@ -1285,8 +1296,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "AssociationFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<AssociationFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>"
@@ -1633,8 +1644,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "AssociationFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<AssociationFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>"
@@ -3808,8 +3819,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "DocumentIdentifier",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<DocumentIdentifier>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>"
@@ -3997,8 +4008,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "DocumentIdentifier",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<DocumentIdentifier>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>"
@@ -6445,8 +6456,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "DocumentFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<DocumentFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>"
@@ -6741,8 +6752,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "DocumentFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<DocumentFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>"
@@ -7162,8 +7173,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "AssociationDescription",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<AssociationDescription>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>"
@@ -7277,8 +7288,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "FailedCreateAssociation",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<FailedCreateAssociation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>"
@@ -7415,8 +7426,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "AssociationDescription",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<AssociationDescription>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>"
@@ -7531,8 +7542,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "FailedCreateAssociation",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<FailedCreateAssociation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>"
@@ -7868,8 +7879,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "CreateAssociationBatchRequestEntry",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<CreateAssociationBatchRequestEntry>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>"
@@ -8010,8 +8021,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "CreateAssociationBatchRequestEntry",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<CreateAssociationBatchRequestEntry>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>"
@@ -8579,8 +8590,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Association",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Association>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>"
@@ -8820,8 +8831,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Association",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Association>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>"

@@ -290,9 +290,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new CreateDevicePoolResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<CreateDevicePoolResult> responseHandler = new JsonResponseHandler<CreateDevicePoolResult>(
+                    new CreateDevicePoolResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -340,8 +341,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new CreateProjectResultJsonUnmarshaller(), executionContext);
+            JsonResponseHandler<CreateProjectResult> responseHandler = new JsonResponseHandler<CreateProjectResult>(
+                    new CreateProjectResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -389,8 +392,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new CreateUploadResultJsonUnmarshaller(), executionContext);
+            JsonResponseHandler<CreateUploadResult> responseHandler = new JsonResponseHandler<CreateUploadResult>(
+                    new CreateUploadResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -440,9 +445,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new GetAccountSettingsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<GetAccountSettingsResult> responseHandler = new JsonResponseHandler<GetAccountSettingsResult>(
+                    new GetAccountSettingsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -489,8 +495,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new GetDeviceResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<GetDeviceResult> responseHandler = new JsonResponseHandler<GetDeviceResult>(
+                    new GetDeviceResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -538,8 +546,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new GetDevicePoolResultJsonUnmarshaller(), executionContext);
+            JsonResponseHandler<GetDevicePoolResult> responseHandler = new JsonResponseHandler<GetDevicePoolResult>(
+                    new GetDevicePoolResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -589,9 +599,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new GetDevicePoolCompatibilityResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<GetDevicePoolCompatibilityResult> responseHandler = new JsonResponseHandler<GetDevicePoolCompatibilityResult>(
+                    new GetDevicePoolCompatibilityResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -637,8 +648,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new GetJobResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<GetJobResult> responseHandler = new JsonResponseHandler<GetJobResult>(
+                    new GetJobResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -685,8 +698,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new GetProjectResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<GetProjectResult> responseHandler = new JsonResponseHandler<GetProjectResult>(
+                    new GetProjectResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -732,8 +747,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new GetRunResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<GetRunResult> responseHandler = new JsonResponseHandler<GetRunResult>(
+                    new GetRunResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -780,8 +797,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new GetSuiteResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<GetSuiteResult> responseHandler = new JsonResponseHandler<GetSuiteResult>(
+                    new GetSuiteResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -828,8 +847,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new GetTestResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<GetTestResult> responseHandler = new JsonResponseHandler<GetTestResult>(
+                    new GetTestResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -876,8 +897,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new GetUploadResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<GetUploadResult> responseHandler = new JsonResponseHandler<GetUploadResult>(
+                    new GetUploadResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -925,8 +948,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new ListArtifactsResultJsonUnmarshaller(), executionContext);
+            JsonResponseHandler<ListArtifactsResult> responseHandler = new JsonResponseHandler<ListArtifactsResult>(
+                    new ListArtifactsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -974,9 +999,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new ListDevicePoolsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListDevicePoolsResult> responseHandler = new JsonResponseHandler<ListDevicePoolsResult>(
+                    new ListDevicePoolsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1023,8 +1049,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ListDevicesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListDevicesResult> responseHandler = new JsonResponseHandler<ListDevicesResult>(
+                    new ListDevicesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1071,8 +1099,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ListJobsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListJobsResult> responseHandler = new JsonResponseHandler<ListJobsResult>(
+                    new ListJobsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1120,8 +1150,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new ListProjectsResultJsonUnmarshaller(), executionContext);
+            JsonResponseHandler<ListProjectsResult> responseHandler = new JsonResponseHandler<ListProjectsResult>(
+                    new ListProjectsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1168,8 +1200,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ListRunsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListRunsResult> responseHandler = new JsonResponseHandler<ListRunsResult>(
+                    new ListRunsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1216,8 +1250,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ListSamplesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListSamplesResult> responseHandler = new JsonResponseHandler<ListSamplesResult>(
+                    new ListSamplesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1264,8 +1300,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ListSuitesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListSuitesResult> responseHandler = new JsonResponseHandler<ListSuitesResult>(
+                    new ListSuitesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1312,8 +1350,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ListTestsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListTestsResult> responseHandler = new JsonResponseHandler<ListTestsResult>(
+                    new ListTestsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1362,9 +1402,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new ListUniqueProblemsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListUniqueProblemsResult> responseHandler = new JsonResponseHandler<ListUniqueProblemsResult>(
+                    new ListUniqueProblemsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1411,8 +1452,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ListUploadsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListUploadsResult> responseHandler = new JsonResponseHandler<ListUploadsResult>(
+                    new ListUploadsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1461,8 +1504,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ScheduleRunResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ScheduleRunResult> responseHandler = new JsonResponseHandler<ScheduleRunResult>(
+                    new ScheduleRunResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1497,7 +1542,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
             Request<Y> request,
-            Unmarshaller<X, JsonUnmarshallerContext> unmarshaller,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
@@ -1520,8 +1565,6 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonResponseHandler<X> responseHandler = new JsonResponseHandler<X>(
-                unmarshaller);
         JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
                 jsonErrorUnmarshallers);
 

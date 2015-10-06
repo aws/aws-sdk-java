@@ -321,7 +321,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -384,9 +387,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new CreateElasticsearchDomainResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<CreateElasticsearchDomainResult> responseHandler = new JsonResponseHandler<CreateElasticsearchDomainResult>(
+                    new CreateElasticsearchDomainResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -442,9 +446,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DeleteElasticsearchDomainResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DeleteElasticsearchDomainResult> responseHandler = new JsonResponseHandler<DeleteElasticsearchDomainResult>(
+                    new DeleteElasticsearchDomainResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -500,9 +505,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeElasticsearchDomainResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeElasticsearchDomainResult> responseHandler = new JsonResponseHandler<DescribeElasticsearchDomainResult>(
+                    new DescribeElasticsearchDomainResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -560,10 +566,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(
-                    request,
-                    new DescribeElasticsearchDomainConfigResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeElasticsearchDomainConfigResult> responseHandler = new JsonResponseHandler<DescribeElasticsearchDomainConfigResult>(
+                    new DescribeElasticsearchDomainConfigResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -617,9 +623,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeElasticsearchDomainsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeElasticsearchDomainsResult> responseHandler = new JsonResponseHandler<DescribeElasticsearchDomainsResult>(
+                    new DescribeElasticsearchDomainsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -665,9 +672,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new ListDomainNamesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListDomainNamesResult> responseHandler = new JsonResponseHandler<ListDomainNamesResult>(
+                    new ListDomainNamesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -721,8 +729,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ListTagsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListTagsResult> responseHandler = new JsonResponseHandler<ListTagsResult>(
+                    new ListTagsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -773,7 +783,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            invoke(request, null, executionContext);
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -833,10 +846,10 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(
-                    request,
-                    new UpdateElasticsearchDomainConfigResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<UpdateElasticsearchDomainConfigResult> responseHandler = new JsonResponseHandler<UpdateElasticsearchDomainConfigResult>(
+                    new UpdateElasticsearchDomainConfigResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -871,7 +884,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
 
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
             Request<Y> request,
-            Unmarshaller<X, JsonUnmarshallerContext> unmarshaller,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
@@ -894,8 +907,6 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonResponseHandler<X> responseHandler = new JsonResponseHandler<X>(
-                unmarshaller);
         JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
                 jsonErrorUnmarshallers);
 

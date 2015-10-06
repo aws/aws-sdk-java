@@ -42,7 +42,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
     private static final Map<String, String> STATIC_QUERY_PARAMS;
     private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
     static {
-        String path = "2015-04-17/distribution/{Id}/config";
+        String path = "2015-07-27/distribution/{Id}/config";
         Map<String, String> staticMap = new HashMap<String, String>();
         Map<String, String> dynamicMap = new HashMap<String, String>();
 
@@ -102,7 +102,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
         }
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2015-04-17/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2015-07-27/");
 
                     if (updateDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = updateDistributionRequest.getDistributionConfig();
@@ -711,6 +711,9 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                         }
                         xmlWriter.endElement();
                     }
+                }
+                if (distributionConfigDistributionConfig.getWebACLId() != null) {
+                    xmlWriter.startElement("WebACLId").value(distributionConfigDistributionConfig.getWebACLId()).endElement();
                 }
                 xmlWriter.endElement();
             }
