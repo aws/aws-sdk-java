@@ -15,6 +15,7 @@
 package com.amazonaws;
 
 import java.net.InetAddress;
+import java.security.SecureRandom;
 
 import org.apache.http.annotation.NotThreadSafe;
 
@@ -225,6 +226,12 @@ public class ClientConfiguration {
      * The DNS Resolver to resolve IP addresses of Amazon Web Services.
      */
     private DnsResolver dnsResolver = new SystemDefaultDnsResolver();
+
+    /**
+     * An instance of {@link SecureRandom} configured by the user; or the JDK
+     * default will be used if it is set to null or not explicitly configured.
+     */
+    private SecureRandom secureRandom;
 
     /**
      * Can be used to specify custom specific Apache HTTP client configurations.
@@ -1335,5 +1342,32 @@ public class ClientConfiguration {
      */
     public ApacheHttpClientConfig getApacheHttpClientConfig() {
         return apacheHttpClientConfig;
+    }
+
+    /**
+     * Returns the instance of {@link SecureRandom} configured by the user; or
+     * the JDK default if it is null.
+     *
+     * @return a non-null instance of SecureRandom.
+     */
+    public SecureRandom getSecureRandom() {
+        if (secureRandom == null)
+            secureRandom = new SecureRandom();
+        return secureRandom;
+    }
+
+    /**
+     * Sets an instance of {@link SecureRandom} to be used by the SDK.
+     */
+    public void setSecureRandom(SecureRandom secureRandom) {
+        this.secureRandom = secureRandom;
+    }
+
+    /**
+     * Fluent API for {@link #setSecureRandom(SecureRandom)}.
+     */
+    public ClientConfiguration withSecureRandom(SecureRandom secureRandom) {
+        setSecureRandom(secureRandom);
+        return this;
     }
 }

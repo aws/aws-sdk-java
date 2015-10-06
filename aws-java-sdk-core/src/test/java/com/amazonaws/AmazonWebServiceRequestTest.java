@@ -22,6 +22,21 @@ import com.amazonaws.metrics.RequestMetricCollector;
 public class AmazonWebServiceRequestTest {
 
     @Test
+    public void testClone() {
+        AmazonWebServiceRequest root = new AmazonWebServiceRequest() {};
+        assertNull(root.getCloneSource());
+        assertNull(root.getCloneRoot());
+
+        AmazonWebServiceRequest clone = root.clone();
+        assertEquals(root, clone.getCloneSource());
+        assertEquals(root, clone.getCloneRoot());
+
+        AmazonWebServiceRequest clone2 = clone.clone();
+        assertEquals(clone, clone2.getCloneSource());
+        assertEquals(root, clone2.getCloneRoot());
+    }
+
+    @Test
     public void copyBaseTo() {
         final ProgressListener listener = new SyncProgressListener() {
             @Override

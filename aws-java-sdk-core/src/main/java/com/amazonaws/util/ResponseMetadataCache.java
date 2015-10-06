@@ -63,7 +63,7 @@ public class ResponseMetadataCache {
      * @return The response metadata associated with the given object key,
      *         otherwise null if no metadata is associated with that object.
      */
-    public ResponseMetadata get(Object obj) {
+    public synchronized ResponseMetadata get(Object obj) {
         // System.identityHashCode isn't guaranteed to be unique
         // on all platforms, but should be reasonable enough to use
         // for a few requests at a time.  We can always easily move
@@ -78,6 +78,7 @@ public class ResponseMetadataCache {
      * LRU(ish) cache that automatically evicts old entries.
      */
     private static final class InternalCache extends LinkedHashMap<Integer, ResponseMetadata> {
+        private static final long serialVersionUID = 1L;
         private int maxSize;
 
         public InternalCache(int maxSize) {
@@ -86,7 +87,7 @@ public class ResponseMetadataCache {
         }
 
         @Override
-        protected boolean removeEldestEntry(Entry eldest) {
+        protected boolean removeEldestEntry(Entry<Integer,ResponseMetadata> eldest) {
             return size() > maxSize;
         }
     }

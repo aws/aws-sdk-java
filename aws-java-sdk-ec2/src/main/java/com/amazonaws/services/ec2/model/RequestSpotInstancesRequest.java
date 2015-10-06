@@ -112,6 +112,18 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     private String availabilityZoneGroup;
 
     /**
+     * The required duration for the Spot instances, in minutes. This value
+     * must be a multiple of 60 (60, 120, 180, 240, 300, or 360). <p>The
+     * duration period starts as soon as your Spot instance receives its
+     * instance ID. At the end of the duration period, Amazon EC2 marks the
+     * Spot instance for termination and provides a Spot instance termination
+     * notice, which gives the instance a two-minute warning before it
+     * terminates. <p>Note that you can't specify an Availability Zone group
+     * or a launch group if you specify a required duration.
+     */
+    private Integer blockDurationMinutes;
+
+    /**
      * The launch specification.
      */
     private LaunchSpecification launchSpecification;
@@ -640,6 +652,81 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
+     * The required duration for the Spot instances, in minutes. This value
+     * must be a multiple of 60 (60, 120, 180, 240, 300, or 360). <p>The
+     * duration period starts as soon as your Spot instance receives its
+     * instance ID. At the end of the duration period, Amazon EC2 marks the
+     * Spot instance for termination and provides a Spot instance termination
+     * notice, which gives the instance a two-minute warning before it
+     * terminates. <p>Note that you can't specify an Availability Zone group
+     * or a launch group if you specify a required duration.
+     *
+     * @return The required duration for the Spot instances, in minutes. This value
+     *         must be a multiple of 60 (60, 120, 180, 240, 300, or 360). <p>The
+     *         duration period starts as soon as your Spot instance receives its
+     *         instance ID. At the end of the duration period, Amazon EC2 marks the
+     *         Spot instance for termination and provides a Spot instance termination
+     *         notice, which gives the instance a two-minute warning before it
+     *         terminates. <p>Note that you can't specify an Availability Zone group
+     *         or a launch group if you specify a required duration.
+     */
+    public Integer getBlockDurationMinutes() {
+        return blockDurationMinutes;
+    }
+    
+    /**
+     * The required duration for the Spot instances, in minutes. This value
+     * must be a multiple of 60 (60, 120, 180, 240, 300, or 360). <p>The
+     * duration period starts as soon as your Spot instance receives its
+     * instance ID. At the end of the duration period, Amazon EC2 marks the
+     * Spot instance for termination and provides a Spot instance termination
+     * notice, which gives the instance a two-minute warning before it
+     * terminates. <p>Note that you can't specify an Availability Zone group
+     * or a launch group if you specify a required duration.
+     *
+     * @param blockDurationMinutes The required duration for the Spot instances, in minutes. This value
+     *         must be a multiple of 60 (60, 120, 180, 240, 300, or 360). <p>The
+     *         duration period starts as soon as your Spot instance receives its
+     *         instance ID. At the end of the duration period, Amazon EC2 marks the
+     *         Spot instance for termination and provides a Spot instance termination
+     *         notice, which gives the instance a two-minute warning before it
+     *         terminates. <p>Note that you can't specify an Availability Zone group
+     *         or a launch group if you specify a required duration.
+     */
+    public void setBlockDurationMinutes(Integer blockDurationMinutes) {
+        this.blockDurationMinutes = blockDurationMinutes;
+    }
+    
+    /**
+     * The required duration for the Spot instances, in minutes. This value
+     * must be a multiple of 60 (60, 120, 180, 240, 300, or 360). <p>The
+     * duration period starts as soon as your Spot instance receives its
+     * instance ID. At the end of the duration period, Amazon EC2 marks the
+     * Spot instance for termination and provides a Spot instance termination
+     * notice, which gives the instance a two-minute warning before it
+     * terminates. <p>Note that you can't specify an Availability Zone group
+     * or a launch group if you specify a required duration.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param blockDurationMinutes The required duration for the Spot instances, in minutes. This value
+     *         must be a multiple of 60 (60, 120, 180, 240, 300, or 360). <p>The
+     *         duration period starts as soon as your Spot instance receives its
+     *         instance ID. At the end of the duration period, Amazon EC2 marks the
+     *         Spot instance for termination and provides a Spot instance termination
+     *         notice, which gives the instance a two-minute warning before it
+     *         terminates. <p>Note that you can't specify an Availability Zone group
+     *         or a launch group if you specify a required duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RequestSpotInstancesRequest withBlockDurationMinutes(Integer blockDurationMinutes) {
+        this.blockDurationMinutes = blockDurationMinutes;
+        return this;
+    }
+
+    /**
      * The launch specification.
      *
      * @return The launch specification.
@@ -704,6 +791,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         if (getValidUntil() != null) sb.append("ValidUntil: " + getValidUntil() + ",");
         if (getLaunchGroup() != null) sb.append("LaunchGroup: " + getLaunchGroup() + ",");
         if (getAvailabilityZoneGroup() != null) sb.append("AvailabilityZoneGroup: " + getAvailabilityZoneGroup() + ",");
+        if (getBlockDurationMinutes() != null) sb.append("BlockDurationMinutes: " + getBlockDurationMinutes() + ",");
         if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() );
         sb.append("}");
         return sb.toString();
@@ -722,6 +810,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getValidUntil() == null) ? 0 : getValidUntil().hashCode()); 
         hashCode = prime * hashCode + ((getLaunchGroup() == null) ? 0 : getLaunchGroup().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZoneGroup() == null) ? 0 : getAvailabilityZoneGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getBlockDurationMinutes() == null) ? 0 : getBlockDurationMinutes().hashCode()); 
         hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode()); 
         return hashCode;
     }
@@ -750,6 +839,8 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         if (other.getLaunchGroup() != null && other.getLaunchGroup().equals(this.getLaunchGroup()) == false) return false; 
         if (other.getAvailabilityZoneGroup() == null ^ this.getAvailabilityZoneGroup() == null) return false;
         if (other.getAvailabilityZoneGroup() != null && other.getAvailabilityZoneGroup().equals(this.getAvailabilityZoneGroup()) == false) return false; 
+        if (other.getBlockDurationMinutes() == null ^ this.getBlockDurationMinutes() == null) return false;
+        if (other.getBlockDurationMinutes() != null && other.getBlockDurationMinutes().equals(this.getBlockDurationMinutes()) == false) return false; 
         if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null) return false;
         if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false) return false; 
         return true;

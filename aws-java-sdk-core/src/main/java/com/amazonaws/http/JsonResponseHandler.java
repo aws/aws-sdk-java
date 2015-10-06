@@ -51,6 +51,7 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
 
     public boolean needsConnectionLeftOpen = false;
 
+    private boolean isPayloadJson = true;
 
     /**
      * Constructs a new response handler that will use the specified JSON
@@ -88,7 +89,7 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
 
         JsonParser jsonParser = null;
 
-        if (!needsConnectionLeftOpen) {
+        if (shouldParsePayloadAsJson()) {
             if (CRC32Checksum != null) {
                 crc32ChecksumInputStream = new CRC32ChecksumCalculatingInputStream(response.getContent());
                 jsonParser = jsonFactory.createParser(crc32ChecksumInputStream);
@@ -122,7 +123,7 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             log.trace("Done parsing service response");
             return awsResponse;
         } finally {
-            if (!needsConnectionLeftOpen) {
+            if (shouldParsePayloadAsJson()) {
                 try {
                     jsonParser.close();
                 } catch (IOException e) {
@@ -142,15 +143,26 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      */
     protected void registerAdditionalMetadataExpressions(JsonUnmarshallerContext unmarshallerContext) {}
 
-    /**
-     * Since this response handler completely consumes all the data from the
-     * underlying HTTP connection during the handle method, we don't need to
-     * keep the HTTP connection open.
-     *
-     * @see com.amazonaws.http.HttpResponseHandler#needsConnectionLeftOpen()
-     */
     public boolean needsConnectionLeftOpen() {
         return needsConnectionLeftOpen;
+    }
+
+    public void setNeedsConnectionLeftOpen(boolean needsConnectionLeftOpen) {
+        this.needsConnectionLeftOpen = needsConnectionLeftOpen;
+    }
+
+    /**
+     * Sets whether the payload contains JSON.
+     */
+    public void setIsPayloadJson(boolean parsePayloadAsJson) {
+        this.isPayloadJson = parsePayloadAsJson;
+    }
+
+    /**
+     * @return True if the payload will be parsed as JSON, false otherwise.
+     */
+    private boolean shouldParsePayloadAsJson() {
+        return !needsConnectionLeftOpen && isPayloadJson;
     }
 
 }

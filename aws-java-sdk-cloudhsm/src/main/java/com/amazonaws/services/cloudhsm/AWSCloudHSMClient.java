@@ -273,8 +273,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new CreateHapgResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<CreateHapgResult> responseHandler = new JsonResponseHandler<CreateHapgResult>(
+                    new CreateHapgResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -321,8 +323,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new CreateHsmResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<CreateHsmResult> responseHandler = new JsonResponseHandler<CreateHsmResult>(
+                    new CreateHsmResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -369,9 +373,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new CreateLunaClientResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<CreateLunaClientResult> responseHandler = new JsonResponseHandler<CreateLunaClientResult>(
+                    new CreateLunaClientResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -417,8 +422,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new DeleteHapgResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DeleteHapgResult> responseHandler = new JsonResponseHandler<DeleteHapgResult>(
+                    new DeleteHapgResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -465,8 +472,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new DeleteHsmResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DeleteHsmResult> responseHandler = new JsonResponseHandler<DeleteHsmResult>(
+                    new DeleteHsmResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -513,9 +522,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DeleteLunaClientResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DeleteLunaClientResult> responseHandler = new JsonResponseHandler<DeleteLunaClientResult>(
+                    new DeleteLunaClientResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -562,8 +572,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeHapgResultJsonUnmarshaller(), executionContext);
+            JsonResponseHandler<DescribeHapgResult> responseHandler = new JsonResponseHandler<DescribeHapgResult>(
+                    new DescribeHapgResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -610,8 +622,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new DescribeHsmResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeHsmResult> responseHandler = new JsonResponseHandler<DescribeHsmResult>(
+                    new DescribeHsmResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -664,9 +678,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeLunaClientResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeLunaClientResult> responseHandler = new JsonResponseHandler<DescribeLunaClientResult>(
+                    new DescribeLunaClientResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -718,8 +733,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new GetConfigResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<GetConfigResult> responseHandler = new JsonResponseHandler<GetConfigResult>(
+                    new GetConfigResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -767,9 +784,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new ListAvailableZonesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListAvailableZonesResult> responseHandler = new JsonResponseHandler<ListAvailableZonesResult>(
+                    new ListAvailableZonesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -826,8 +844,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ListHapgsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListHapgsResult> responseHandler = new JsonResponseHandler<ListHapgsResult>(
+                    new ListHapgsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -885,8 +905,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ListHsmsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListHsmsResult> responseHandler = new JsonResponseHandler<ListHsmsResult>(
+                    new ListHsmsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -944,9 +966,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new ListLunaClientsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListLunaClientsResult> responseHandler = new JsonResponseHandler<ListLunaClientsResult>(
+                    new ListLunaClientsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -997,8 +1020,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ModifyHapgResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ModifyHapgResult> responseHandler = new JsonResponseHandler<ModifyHapgResult>(
+                    new ModifyHapgResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1044,8 +1069,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new ModifyHsmResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ModifyHsmResult> responseHandler = new JsonResponseHandler<ModifyHsmResult>(
+                    new ModifyHsmResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1091,9 +1118,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new ModifyLunaClientResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ModifyLunaClientResult> responseHandler = new JsonResponseHandler<ModifyLunaClientResult>(
+                    new ModifyLunaClientResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1128,7 +1156,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
 
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
             Request<Y> request,
-            Unmarshaller<X, JsonUnmarshallerContext> unmarshaller,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
@@ -1151,8 +1179,6 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonResponseHandler<X> responseHandler = new JsonResponseHandler<X>(
-                unmarshaller);
         JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
                 jsonErrorUnmarshallers);
 

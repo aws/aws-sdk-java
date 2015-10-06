@@ -104,6 +104,11 @@ public class DistributionSummary implements Serializable, Cloneable {
     private Restrictions restrictions;
 
     /**
+     * The Web ACL Id (if any) associated with the distribution.
+     */
+    private String webACLId;
+
+    /**
      * Default constructor for a new DistributionSummary object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -710,6 +715,39 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * The Web ACL Id (if any) associated with the distribution.
+     *
+     * @return The Web ACL Id (if any) associated with the distribution.
+     */
+    public String getWebACLId() {
+        return webACLId;
+    }
+    
+    /**
+     * The Web ACL Id (if any) associated with the distribution.
+     *
+     * @param webACLId The Web ACL Id (if any) associated with the distribution.
+     */
+    public void setWebACLId(String webACLId) {
+        this.webACLId = webACLId;
+    }
+    
+    /**
+     * The Web ACL Id (if any) associated with the distribution.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param webACLId The Web ACL Id (if any) associated with the distribution.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DistributionSummary withWebACLId(String webACLId) {
+        this.webACLId = webACLId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -734,7 +772,8 @@ public class DistributionSummary implements Serializable, Cloneable {
         if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ",");
         if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");
         if (getViewerCertificate() != null) sb.append("ViewerCertificate: " + getViewerCertificate() + ",");
-        if (getRestrictions() != null) sb.append("Restrictions: " + getRestrictions() );
+        if (getRestrictions() != null) sb.append("Restrictions: " + getRestrictions() + ",");
+        if (getWebACLId() != null) sb.append("WebACLId: " + getWebACLId() );
         sb.append("}");
         return sb.toString();
     }
@@ -758,6 +797,7 @@ public class DistributionSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
         hashCode = prime * hashCode + ((getViewerCertificate() == null) ? 0 : getViewerCertificate().hashCode()); 
         hashCode = prime * hashCode + ((getRestrictions() == null) ? 0 : getRestrictions().hashCode()); 
+        hashCode = prime * hashCode + ((getWebACLId() == null) ? 0 : getWebACLId().hashCode()); 
         return hashCode;
     }
     
@@ -797,6 +837,8 @@ public class DistributionSummary implements Serializable, Cloneable {
         if (other.getViewerCertificate() != null && other.getViewerCertificate().equals(this.getViewerCertificate()) == false) return false; 
         if (other.getRestrictions() == null ^ this.getRestrictions() == null) return false;
         if (other.getRestrictions() != null && other.getRestrictions().equals(this.getRestrictions()) == false) return false; 
+        if (other.getWebACLId() == null ^ this.getWebACLId() == null) return false;
+        if (other.getWebACLId() != null && other.getWebACLId().equals(this.getWebACLId()) == false) return false; 
         return true;
     }
     

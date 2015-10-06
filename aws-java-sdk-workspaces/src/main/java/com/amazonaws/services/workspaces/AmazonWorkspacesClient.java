@@ -285,9 +285,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new CreateWorkspacesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<CreateWorkspacesResult> responseHandler = new JsonResponseHandler<CreateWorkspacesResult>(
+                    new CreateWorkspacesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -343,9 +344,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeWorkspaceBundlesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeWorkspaceBundlesResult> responseHandler = new JsonResponseHandler<DescribeWorkspaceBundlesResult>(
+                    new DescribeWorkspaceBundlesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -403,9 +405,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeWorkspaceDirectoriesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeWorkspaceDirectoriesResult> responseHandler = new JsonResponseHandler<DescribeWorkspaceDirectoriesResult>(
+                    new DescribeWorkspaceDirectoriesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -467,9 +470,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeWorkspacesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeWorkspacesResult> responseHandler = new JsonResponseHandler<DescribeWorkspacesResult>(
+                    new DescribeWorkspacesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -525,9 +529,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new RebootWorkspacesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<RebootWorkspacesResult> responseHandler = new JsonResponseHandler<RebootWorkspacesResult>(
+                    new RebootWorkspacesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -593,9 +598,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new RebuildWorkspacesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<RebuildWorkspacesResult> responseHandler = new JsonResponseHandler<RebuildWorkspacesResult>(
+                    new RebuildWorkspacesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -652,9 +658,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new TerminateWorkspacesResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<TerminateWorkspacesResult> responseHandler = new JsonResponseHandler<TerminateWorkspacesResult>(
+                    new TerminateWorkspacesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -689,7 +696,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
 
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
             Request<Y> request,
-            Unmarshaller<X, JsonUnmarshallerContext> unmarshaller,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
@@ -712,8 +719,6 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonResponseHandler<X> responseHandler = new JsonResponseHandler<X>(
-                unmarshaller);
         JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
                 jsonErrorUnmarshallers);
 

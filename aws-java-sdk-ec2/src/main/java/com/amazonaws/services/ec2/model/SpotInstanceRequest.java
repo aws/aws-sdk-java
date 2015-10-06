@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describe a Spot instance request.
+ * Describes a Spot instance request.
  * </p>
  */
 public class SpotInstanceRequest implements Serializable, Cloneable {
@@ -29,7 +29,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     private String spotInstanceRequestId;
 
     /**
-     * The maximum hourly price (bid) for any Spot instance launched to
+     * The maximum hourly price (bid) for the Spot instance launched to
      * fulfill the request.
      */
     private String spotPrice;
@@ -67,22 +67,18 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * The start date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     * this is a one-time request, the request becomes active at this date
-     * and time and remains active until all instances launch, the request
-     * expires, or the request is canceled. If the request is persistent, the
-     * request becomes active at this date and time and remains active until
-     * it expires or is canceled.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The
+     * request becomes active at this date and time.
      */
     private java.util.Date validFrom;
 
     /**
      * The end date of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     * this is a one-time request, the request remains active until all
-     * instances launch, the request is canceled, or this date is reached. If
-     * the request is persistent, it remains active until it is canceled or
-     * this date is reached.
+     * this is a one-time request, it remains active until all instances
+     * launch, the request is canceled, or this date is reached. If the
+     * request is persistent, it remains active until it is canceled or this
+     * date is reached.
      */
     private java.util.Date validUntil;
 
@@ -124,6 +120,18 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      */
     private String productDescription;
+
+    /**
+     * The required duration for the Spot instance, in minutes.
+     */
+    private Integer blockDurationMinutes;
+
+    /**
+     * If you specified a required duration and your request was fulfilled,
+     * this is the fixed hourly price in effect for the Spot instance while
+     * it runs.
+     */
+    private String actualBlockHourlyPrice;
 
     /**
      * Any tags assigned to the resource.
@@ -169,10 +177,10 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     }
 
     /**
-     * The maximum hourly price (bid) for any Spot instance launched to
+     * The maximum hourly price (bid) for the Spot instance launched to
      * fulfill the request.
      *
-     * @return The maximum hourly price (bid) for any Spot instance launched to
+     * @return The maximum hourly price (bid) for the Spot instance launched to
      *         fulfill the request.
      */
     public String getSpotPrice() {
@@ -180,10 +188,10 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     }
     
     /**
-     * The maximum hourly price (bid) for any Spot instance launched to
+     * The maximum hourly price (bid) for the Spot instance launched to
      * fulfill the request.
      *
-     * @param spotPrice The maximum hourly price (bid) for any Spot instance launched to
+     * @param spotPrice The maximum hourly price (bid) for the Spot instance launched to
      *         fulfill the request.
      */
     public void setSpotPrice(String spotPrice) {
@@ -191,12 +199,12 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     }
     
     /**
-     * The maximum hourly price (bid) for any Spot instance launched to
+     * The maximum hourly price (bid) for the Spot instance launched to
      * fulfill the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPrice The maximum hourly price (bid) for any Spot instance launched to
+     * @param spotPrice The maximum hourly price (bid) for the Spot instance launched to
      *         fulfill the request.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -485,20 +493,12 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * The start date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     * this is a one-time request, the request becomes active at this date
-     * and time and remains active until all instances launch, the request
-     * expires, or the request is canceled. If the request is persistent, the
-     * request becomes active at this date and time and remains active until
-     * it expires or is canceled.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The
+     * request becomes active at this date and time.
      *
      * @return The start date of the request, in UTC format (for example,
-     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     *         this is a one-time request, the request becomes active at this date
-     *         and time and remains active until all instances launch, the request
-     *         expires, or the request is canceled. If the request is persistent, the
-     *         request becomes active at this date and time and remains active until
-     *         it expires or is canceled.
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The
+     *         request becomes active at this date and time.
      */
     public java.util.Date getValidFrom() {
         return validFrom;
@@ -506,20 +506,12 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     
     /**
      * The start date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     * this is a one-time request, the request becomes active at this date
-     * and time and remains active until all instances launch, the request
-     * expires, or the request is canceled. If the request is persistent, the
-     * request becomes active at this date and time and remains active until
-     * it expires or is canceled.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The
+     * request becomes active at this date and time.
      *
      * @param validFrom The start date of the request, in UTC format (for example,
-     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     *         this is a one-time request, the request becomes active at this date
-     *         and time and remains active until all instances launch, the request
-     *         expires, or the request is canceled. If the request is persistent, the
-     *         request becomes active at this date and time and remains active until
-     *         it expires or is canceled.
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The
+     *         request becomes active at this date and time.
      */
     public void setValidFrom(java.util.Date validFrom) {
         this.validFrom = validFrom;
@@ -527,22 +519,14 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     
     /**
      * The start date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     * this is a one-time request, the request becomes active at this date
-     * and time and remains active until all instances launch, the request
-     * expires, or the request is canceled. If the request is persistent, the
-     * request becomes active at this date and time and remains active until
-     * it expires or is canceled.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The
+     * request becomes active at this date and time.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param validFrom The start date of the request, in UTC format (for example,
-     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     *         this is a one-time request, the request becomes active at this date
-     *         and time and remains active until all instances launch, the request
-     *         expires, or the request is canceled. If the request is persistent, the
-     *         request becomes active at this date and time and remains active until
-     *         it expires or is canceled.
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The
+     *         request becomes active at this date and time.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -555,17 +539,17 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     /**
      * The end date of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     * this is a one-time request, the request remains active until all
-     * instances launch, the request is canceled, or this date is reached. If
-     * the request is persistent, it remains active until it is canceled or
-     * this date is reached.
+     * this is a one-time request, it remains active until all instances
+     * launch, the request is canceled, or this date is reached. If the
+     * request is persistent, it remains active until it is canceled or this
+     * date is reached.
      *
      * @return The end date of the request, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     *         this is a one-time request, the request remains active until all
-     *         instances launch, the request is canceled, or this date is reached. If
-     *         the request is persistent, it remains active until it is canceled or
-     *         this date is reached.
+     *         this is a one-time request, it remains active until all instances
+     *         launch, the request is canceled, or this date is reached. If the
+     *         request is persistent, it remains active until it is canceled or this
+     *         date is reached.
      */
     public java.util.Date getValidUntil() {
         return validUntil;
@@ -574,17 +558,17 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     /**
      * The end date of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     * this is a one-time request, the request remains active until all
-     * instances launch, the request is canceled, or this date is reached. If
-     * the request is persistent, it remains active until it is canceled or
-     * this date is reached.
+     * this is a one-time request, it remains active until all instances
+     * launch, the request is canceled, or this date is reached. If the
+     * request is persistent, it remains active until it is canceled or this
+     * date is reached.
      *
      * @param validUntil The end date of the request, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     *         this is a one-time request, the request remains active until all
-     *         instances launch, the request is canceled, or this date is reached. If
-     *         the request is persistent, it remains active until it is canceled or
-     *         this date is reached.
+     *         this is a one-time request, it remains active until all instances
+     *         launch, the request is canceled, or this date is reached. If the
+     *         request is persistent, it remains active until it is canceled or this
+     *         date is reached.
      */
     public void setValidUntil(java.util.Date validUntil) {
         this.validUntil = validUntil;
@@ -593,19 +577,19 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     /**
      * The end date of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     * this is a one-time request, the request remains active until all
-     * instances launch, the request is canceled, or this date is reached. If
-     * the request is persistent, it remains active until it is canceled or
-     * this date is reached.
+     * this is a one-time request, it remains active until all instances
+     * launch, the request is canceled, or this date is reached. If the
+     * request is persistent, it remains active until it is canceled or this
+     * date is reached.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param validUntil The end date of the request, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If
-     *         this is a one-time request, the request remains active until all
-     *         instances launch, the request is canceled, or this date is reached. If
-     *         the request is persistent, it remains active until it is canceled or
-     *         this date is reached.
+     *         this is a one-time request, it remains active until all instances
+     *         launch, the request is canceled, or this date is reached. If the
+     *         request is persistent, it remains active until it is canceled or this
+     *         date is reached.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -899,6 +883,84 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     }
 
     /**
+     * The required duration for the Spot instance, in minutes.
+     *
+     * @return The required duration for the Spot instance, in minutes.
+     */
+    public Integer getBlockDurationMinutes() {
+        return blockDurationMinutes;
+    }
+    
+    /**
+     * The required duration for the Spot instance, in minutes.
+     *
+     * @param blockDurationMinutes The required duration for the Spot instance, in minutes.
+     */
+    public void setBlockDurationMinutes(Integer blockDurationMinutes) {
+        this.blockDurationMinutes = blockDurationMinutes;
+    }
+    
+    /**
+     * The required duration for the Spot instance, in minutes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param blockDurationMinutes The required duration for the Spot instance, in minutes.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public SpotInstanceRequest withBlockDurationMinutes(Integer blockDurationMinutes) {
+        this.blockDurationMinutes = blockDurationMinutes;
+        return this;
+    }
+
+    /**
+     * If you specified a required duration and your request was fulfilled,
+     * this is the fixed hourly price in effect for the Spot instance while
+     * it runs.
+     *
+     * @return If you specified a required duration and your request was fulfilled,
+     *         this is the fixed hourly price in effect for the Spot instance while
+     *         it runs.
+     */
+    public String getActualBlockHourlyPrice() {
+        return actualBlockHourlyPrice;
+    }
+    
+    /**
+     * If you specified a required duration and your request was fulfilled,
+     * this is the fixed hourly price in effect for the Spot instance while
+     * it runs.
+     *
+     * @param actualBlockHourlyPrice If you specified a required duration and your request was fulfilled,
+     *         this is the fixed hourly price in effect for the Spot instance while
+     *         it runs.
+     */
+    public void setActualBlockHourlyPrice(String actualBlockHourlyPrice) {
+        this.actualBlockHourlyPrice = actualBlockHourlyPrice;
+    }
+    
+    /**
+     * If you specified a required duration and your request was fulfilled,
+     * this is the fixed hourly price in effect for the Spot instance while
+     * it runs.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param actualBlockHourlyPrice If you specified a required duration and your request was fulfilled,
+     *         this is the fixed hourly price in effect for the Spot instance while
+     *         it runs.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public SpotInstanceRequest withActualBlockHourlyPrice(String actualBlockHourlyPrice) {
+        this.actualBlockHourlyPrice = actualBlockHourlyPrice;
+        return this;
+    }
+
+    /**
      * Any tags assigned to the resource.
      *
      * @return Any tags assigned to the resource.
@@ -1030,6 +1092,8 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ",");
         if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");
+        if (getBlockDurationMinutes() != null) sb.append("BlockDurationMinutes: " + getBlockDurationMinutes() + ",");
+        if (getActualBlockHourlyPrice() != null) sb.append("ActualBlockHourlyPrice: " + getActualBlockHourlyPrice() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getLaunchedAvailabilityZone() != null) sb.append("LaunchedAvailabilityZone: " + getLaunchedAvailabilityZone() );
         sb.append("}");
@@ -1055,6 +1119,8 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode()); 
         hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getBlockDurationMinutes() == null) ? 0 : getBlockDurationMinutes().hashCode()); 
+        hashCode = prime * hashCode + ((getActualBlockHourlyPrice() == null) ? 0 : getActualBlockHourlyPrice().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getLaunchedAvailabilityZone() == null) ? 0 : getLaunchedAvailabilityZone().hashCode()); 
         return hashCode;
@@ -1096,6 +1162,10 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
         if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false) return false; 
         if (other.getProductDescription() == null ^ this.getProductDescription() == null) return false;
         if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false) return false; 
+        if (other.getBlockDurationMinutes() == null ^ this.getBlockDurationMinutes() == null) return false;
+        if (other.getBlockDurationMinutes() != null && other.getBlockDurationMinutes().equals(this.getBlockDurationMinutes()) == false) return false; 
+        if (other.getActualBlockHourlyPrice() == null ^ this.getActualBlockHourlyPrice() == null) return false;
+        if (other.getActualBlockHourlyPrice() != null && other.getActualBlockHourlyPrice().equals(this.getActualBlockHourlyPrice()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         if (other.getLaunchedAvailabilityZone() == null ^ this.getLaunchedAvailabilityZone() == null) return false;

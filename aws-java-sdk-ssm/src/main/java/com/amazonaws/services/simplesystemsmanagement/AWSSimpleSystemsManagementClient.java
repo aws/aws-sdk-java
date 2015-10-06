@@ -373,9 +373,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new CreateAssociationResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<CreateAssociationResult> responseHandler = new JsonResponseHandler<CreateAssociationResult>(
+                    new CreateAssociationResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -437,9 +438,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new CreateAssociationBatchResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<CreateAssociationBatchResult> responseHandler = new JsonResponseHandler<CreateAssociationBatchResult>(
+                    new CreateAssociationBatchResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -494,9 +496,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new CreateDocumentResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<CreateDocumentResult> responseHandler = new JsonResponseHandler<CreateDocumentResult>(
+                    new CreateDocumentResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -556,9 +559,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DeleteAssociationResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DeleteAssociationResult> responseHandler = new JsonResponseHandler<DeleteAssociationResult>(
+                    new DeleteAssociationResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -609,9 +613,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DeleteDocumentResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DeleteDocumentResult> responseHandler = new JsonResponseHandler<DeleteDocumentResult>(
+                    new DeleteDocumentResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -661,9 +666,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeAssociationResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeAssociationResult> responseHandler = new JsonResponseHandler<DescribeAssociationResult>(
+                    new DescribeAssociationResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -707,9 +713,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new DescribeDocumentResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<DescribeDocumentResult> responseHandler = new JsonResponseHandler<DescribeDocumentResult>(
+                    new DescribeDocumentResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -752,8 +759,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request, new GetDocumentResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<GetDocumentResult> responseHandler = new JsonResponseHandler<GetDocumentResult>(
+                    new GetDocumentResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -798,9 +807,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new ListAssociationsResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<ListAssociationsResult> responseHandler = new JsonResponseHandler<ListAssociationsResult>(
+                    new ListAssociationsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -844,8 +854,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new ListDocumentsResultJsonUnmarshaller(), executionContext);
+            JsonResponseHandler<ListDocumentsResult> responseHandler = new JsonResponseHandler<ListDocumentsResult>(
+                    new ListDocumentsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -905,9 +917,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            response = invoke(request,
-                    new UpdateAssociationStatusResultJsonUnmarshaller(),
-                    executionContext);
+            JsonResponseHandler<UpdateAssociationStatusResult> responseHandler = new JsonResponseHandler<UpdateAssociationStatusResult>(
+                    new UpdateAssociationStatusResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -942,7 +955,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
             Request<Y> request,
-            Unmarshaller<X, JsonUnmarshallerContext> unmarshaller,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
@@ -965,8 +978,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
         executionContext.setCredentials(credentials);
 
-        JsonResponseHandler<X> responseHandler = new JsonResponseHandler<X>(
-                unmarshaller);
         JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
                 jsonErrorUnmarshallers);
 

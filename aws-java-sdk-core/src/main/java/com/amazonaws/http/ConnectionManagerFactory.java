@@ -16,8 +16,11 @@ package com.amazonaws.http;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.http.conn.scheme.PlainSocketFactory;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeRegistry;
+import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.conn.PoolingClientConnectionManager;
-import org.apache.http.impl.conn.SchemeRegistryFactory;
 import org.apache.http.params.HttpParams;
 
 import com.amazonaws.ClientConfiguration;
@@ -30,10 +33,11 @@ class ConnectionManagerFactory {
 
     public static PoolingClientConnectionManager createPoolingClientConnManager(
             ClientConfiguration config,
-            HttpParams httpClientParams) {
+            HttpParams httpClientParams,
+            SSLSocketFactory socketFactory) {
 
         PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager(
-                SchemeRegistryFactory.createDefault(),
+                createSchemeRegistry(socketFactory),
                 config.getConnectionTTL(),
                 TimeUnit.MILLISECONDS,
                 new DelegatingDnsResolver(config.getDnsResolver()));
@@ -46,5 +50,14 @@ class ConnectionManagerFactory {
         }
 
         return connectionManager;
+    }
+
+    private static SchemeRegistry createSchemeRegistry(SSLSocketFactory socketFactory) {
+        final SchemeRegistry registry = new SchemeRegistry();
+        registry.register(
+                new Scheme("http", 80, PlainSocketFactory.getSocketFactory()));
+        registry.register(
+                new Scheme("https", 443, socketFactory));
+        return registry;
     }
 }
