@@ -599,7 +599,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createStorageLocationRequest
-     *        null
      * @return Result of the CreateStorageLocation operation returned by the
      *         service.
      * @throws TooManyBucketsException
@@ -1065,7 +1064,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         The request is invalid, please check parameters and their values
      * @throws ElasticBeanstalkServiceException
-     *         null
      */
     @Override
     public DescribeEnvironmentHealthResult describeEnvironmentHealth(
@@ -1260,7 +1258,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         The request is invalid, please check parameters and their values
      * @throws ElasticBeanstalkServiceException
-     *         null
      */
     @Override
     public DescribeInstancesHealthResult describeInstancesHealth(
@@ -1301,7 +1298,6 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param listAvailableSolutionStacksRequest
-     *        null
      * @return Result of the ListAvailableSolutionStacks operation returned by
      *         the service.
      */

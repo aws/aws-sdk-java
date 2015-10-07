@@ -79,6 +79,17 @@ public class PutDeliveryChannelRequestMarshaller implements Marshaller<Request<P
                 if (deliveryChannel.getSnsTopicARN() != null) {
                     jsonWriter.key("snsTopicARN").value(deliveryChannel.getSnsTopicARN());
                 }
+                ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties = deliveryChannel.getConfigSnapshotDeliveryProperties();
+                if (configSnapshotDeliveryProperties != null) {
+
+                    jsonWriter.key("configSnapshotDeliveryProperties");
+                    jsonWriter.object();
+
+                    if (configSnapshotDeliveryProperties.getDeliveryFrequency() != null) {
+                        jsonWriter.key("deliveryFrequency").value(configSnapshotDeliveryProperties.getDeliveryFrequency());
+                    }
+                    jsonWriter.endObject();
+                }
                 jsonWriter.endObject();
             }
 

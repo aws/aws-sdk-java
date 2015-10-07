@@ -76,15 +76,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * Each Amazon Kinesis record includes a value,
- * <code>ApproximateArrivalTimestamp</code> ,
- * that is set when an Amazon Kinesis stream successfully
- * receives and stores a record. This is commonly referred to as a
- * server-side timestamp, which is different than a client-side
- * timestamp, where the timestamp is set when a data producer creates or
- * sends the record to a stream. The timestamp has millisecond precision.
- * There are no guarantees about the timestamp accuracy, or that the
- * timestamp is always increasing. For example, records in a shard or
- * across a stream might have timestamps that are out of order.
+ * <code>ApproximateArrivalTimestamp</code> , that is set when an Amazon
+ * Kinesis stream successfully receives and stores a record. This is
+ * commonly referred to as a server-side timestamp, which is different
+ * than a client-side timestamp, where the timestamp is set when a data
+ * producer creates or sends the record to a stream. The timestamp has
+ * millisecond precision. There are no guarantees about the timestamp
+ * accuracy, or that the timestamp is always increasing. For example,
+ * records in a shard or across a stream might have timestamps that are
+ * out of order.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#getRecords(GetRecordsRequest)

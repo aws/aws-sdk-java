@@ -255,7 +255,6 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param createStorageLocationRequest
-     *        null
      * @return Result of the CreateStorageLocation operation returned by the
      *         service.
      * @throws TooManyBucketsException
@@ -465,7 +464,6 @@ public interface AWSElasticBeanstalk {
      * @throws InvalidRequestException
      *         The request is invalid, please check parameters and their values
      * @throws ElasticBeanstalkServiceException
-     *         null
      */
     DescribeEnvironmentHealthResult describeEnvironmentHealth(
             DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest);
@@ -544,7 +542,6 @@ public interface AWSElasticBeanstalk {
      * @throws InvalidRequestException
      *         The request is invalid, please check parameters and their values
      * @throws ElasticBeanstalkServiceException
-     *         null
      */
     DescribeInstancesHealthResult describeInstancesHealth(
             DescribeInstancesHealthRequest describeInstancesHealthRequest);
@@ -555,7 +552,6 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param listAvailableSolutionStacksRequest
-     *        null
      * @return Result of the ListAvailableSolutionStacks operation returned by
      *         the service.
      */

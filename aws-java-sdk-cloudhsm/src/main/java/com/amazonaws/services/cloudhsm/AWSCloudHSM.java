@@ -185,7 +185,6 @@ public interface AWSCloudHSM {
      * </p>
      * 
      * @param deleteLunaClientRequest
-     *        null
      * @return Result of the DeleteLunaClient operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -248,7 +247,6 @@ public interface AWSCloudHSM {
      * </p>
      * 
      * @param describeLunaClientRequest
-     *        null
      * @return Result of the DescribeLunaClient operation returned by the
      *         service.
      * @throws CloudHsmServiceException
@@ -276,7 +274,6 @@ public interface AWSCloudHSM {
      * </p>
      * 
      * @param getConfigRequest
-     *        null
      * @return Result of the GetConfig operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -327,7 +324,6 @@ public interface AWSCloudHSM {
      * </p>
      * 
      * @param listHapgsRequest
-     *        null
      * @return Result of the ListHapgs operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -359,7 +355,6 @@ public interface AWSCloudHSM {
      * </p>
      * 
      * @param listHsmsRequest
-     *        null
      * @return Result of the ListHsms operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -390,7 +385,6 @@ public interface AWSCloudHSM {
      * </p>
      * 
      * @param listLunaClientsRequest
-     *        null
      * @return Result of the ListLunaClients operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -416,7 +410,6 @@ public interface AWSCloudHSM {
      * </p>
      * 
      * @param modifyHapgRequest
-     *        null
      * @return Result of the ModifyHapg operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -456,7 +449,6 @@ public interface AWSCloudHSM {
      * </p>
      * 
      * @param modifyLunaClientRequest
-     *        null
      * @return Result of the ModifyLunaClient operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.

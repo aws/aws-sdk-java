@@ -415,7 +415,6 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      * to ship your device to AWS for processing.
      * 
      * @param getShippingLabelRequest
-     *        null
      * @return Result of the GetShippingLabel operation returned by the service.
      * @throws InvalidJobIdException
      *         The JOBID was missing, not found, or not associated with the AWS

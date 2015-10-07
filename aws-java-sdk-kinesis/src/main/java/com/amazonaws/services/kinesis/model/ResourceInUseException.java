@@ -18,9 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The resource is not available for this operation. For example, you
- * attempted to split a shard but the stream is not in the
- * <code>ACTIVE</code> state.
+ * The resource is not available for this operation. For successful
+ * operation, the resource needs to be in the <code>ACTIVE</code> state.
  * </p>
  */        
 public class ResourceInUseException extends AmazonServiceException {

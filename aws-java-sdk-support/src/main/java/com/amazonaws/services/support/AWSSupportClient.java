@@ -336,7 +336,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param addAttachmentsToSetRequest
-     *        null
      * @return Result of the AddAttachmentsToSet operation returned by the
      *         service.
      * @throws InternalServerErrorException
@@ -507,7 +506,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createCaseRequest
-     *        null
      * @return Result of the CreateCase operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
@@ -562,7 +560,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeAttachmentRequest
-     *        null
      * @return Result of the DescribeAttachment operation returned by the
      *         service.
      * @throws InternalServerErrorException
@@ -631,7 +628,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </ol>
      * 
      * @param describeCasesRequest
-     *        null
      * @return Result of the DescribeCases operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
@@ -697,7 +693,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeCommunicationsRequest
-     *        null
      * @return Result of the DescribeCommunications operation returned by the
      *         service.
      * @throws InternalServerErrorException
@@ -759,7 +754,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeServicesRequest
-     *        null
      * @return Result of the DescribeServices operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
@@ -811,7 +805,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeSeverityLevelsRequest
-     *        null
      * @return Result of the DescribeSeverityLevels operation returned by the
      *         service.
      * @throws InternalServerErrorException
@@ -864,7 +857,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeTrustedAdvisorCheckRefreshStatusesRequest
-     *        null
      * @return Result of the DescribeTrustedAdvisorCheckRefreshStatuses
      *         operation returned by the service.
      * @throws InternalServerErrorException
@@ -930,7 +922,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </ul>
      * 
      * @param describeTrustedAdvisorCheckResultRequest
-     *        null
      * @return Result of the DescribeTrustedAdvisorCheckResult operation
      *         returned by the service.
      * @throws InternalServerErrorException
@@ -982,7 +973,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeTrustedAdvisorCheckSummariesRequest
-     *        null
      * @return Result of the DescribeTrustedAdvisorCheckSummaries operation
      *         returned by the service.
      * @throws InternalServerErrorException
@@ -1032,7 +1022,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeTrustedAdvisorChecksRequest
-     *        null
      * @return Result of the DescribeTrustedAdvisorChecks operation returned by
      *         the service.
      * @throws InternalServerErrorException
@@ -1091,7 +1080,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </ul>
      * 
      * @param refreshTrustedAdvisorCheckRequest
-     *        null
      * @return Result of the RefreshTrustedAdvisorCheck operation returned by
      *         the service.
      * @throws InternalServerErrorException
@@ -1139,7 +1127,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param resolveCaseRequest
-     *        null
      * @return Result of the ResolveCase operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.

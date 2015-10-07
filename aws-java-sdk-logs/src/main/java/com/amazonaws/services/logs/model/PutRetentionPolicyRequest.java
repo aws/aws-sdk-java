@@ -49,7 +49,6 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest
      * @param logGroupName
      *        The name of the log group to associate the retention policy with.
      * @param retentionInDays
-     *        null
      */
     public PutRetentionPolicyRequest(String logGroupName,
             Integer retentionInDays) {

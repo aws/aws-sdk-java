@@ -392,7 +392,6 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB
      *        Developer Guide</i>.
      * @param provisionedThroughput
-     *        null
      */
     public CreateTableRequest(
             java.util.List<AttributeDefinition> attributeDefinitions,

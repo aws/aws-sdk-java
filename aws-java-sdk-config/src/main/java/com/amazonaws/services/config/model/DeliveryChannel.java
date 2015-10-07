@@ -52,6 +52,12 @@ public class DeliveryChannel implements Serializable, Cloneable {
     private String snsTopicARN;
 
     /**
+     * Options for how AWS Config delivers configuration snapshots to the
+     * Amazon S3 bucket in your delivery channel.
+     */
+    private ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties;
+
+    /**
      * The name of the delivery channel. By default, AWS Config automatically
      * assigns the name "default" when creating the delivery channel. You
      * cannot change the assigned name.
@@ -217,6 +223,45 @@ public class DeliveryChannel implements Serializable, Cloneable {
     }
 
     /**
+     * Options for how AWS Config delivers configuration snapshots to the
+     * Amazon S3 bucket in your delivery channel.
+     *
+     * @return Options for how AWS Config delivers configuration snapshots to the
+     *         Amazon S3 bucket in your delivery channel.
+     */
+    public ConfigSnapshotDeliveryProperties getConfigSnapshotDeliveryProperties() {
+        return configSnapshotDeliveryProperties;
+    }
+    
+    /**
+     * Options for how AWS Config delivers configuration snapshots to the
+     * Amazon S3 bucket in your delivery channel.
+     *
+     * @param configSnapshotDeliveryProperties Options for how AWS Config delivers configuration snapshots to the
+     *         Amazon S3 bucket in your delivery channel.
+     */
+    public void setConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties) {
+        this.configSnapshotDeliveryProperties = configSnapshotDeliveryProperties;
+    }
+    
+    /**
+     * Options for how AWS Config delivers configuration snapshots to the
+     * Amazon S3 bucket in your delivery channel.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param configSnapshotDeliveryProperties Options for how AWS Config delivers configuration snapshots to the
+     *         Amazon S3 bucket in your delivery channel.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DeliveryChannel withConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties) {
+        this.configSnapshotDeliveryProperties = configSnapshotDeliveryProperties;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -231,7 +276,8 @@ public class DeliveryChannel implements Serializable, Cloneable {
         if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getS3BucketName() != null) sb.append("S3BucketName: " + getS3BucketName() + ",");
         if (getS3KeyPrefix() != null) sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
-        if (getSnsTopicARN() != null) sb.append("SnsTopicARN: " + getSnsTopicARN() );
+        if (getSnsTopicARN() != null) sb.append("SnsTopicARN: " + getSnsTopicARN() + ",");
+        if (getConfigSnapshotDeliveryProperties() != null) sb.append("ConfigSnapshotDeliveryProperties: " + getConfigSnapshotDeliveryProperties() );
         sb.append("}");
         return sb.toString();
     }
@@ -245,6 +291,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getS3BucketName() == null) ? 0 : getS3BucketName().hashCode()); 
         hashCode = prime * hashCode + ((getS3KeyPrefix() == null) ? 0 : getS3KeyPrefix().hashCode()); 
         hashCode = prime * hashCode + ((getSnsTopicARN() == null) ? 0 : getSnsTopicARN().hashCode()); 
+        hashCode = prime * hashCode + ((getConfigSnapshotDeliveryProperties() == null) ? 0 : getConfigSnapshotDeliveryProperties().hashCode()); 
         return hashCode;
     }
     
@@ -264,6 +311,8 @@ public class DeliveryChannel implements Serializable, Cloneable {
         if (other.getS3KeyPrefix() != null && other.getS3KeyPrefix().equals(this.getS3KeyPrefix()) == false) return false; 
         if (other.getSnsTopicARN() == null ^ this.getSnsTopicARN() == null) return false;
         if (other.getSnsTopicARN() != null && other.getSnsTopicARN().equals(this.getSnsTopicARN()) == false) return false; 
+        if (other.getConfigSnapshotDeliveryProperties() == null ^ this.getConfigSnapshotDeliveryProperties() == null) return false;
+        if (other.getConfigSnapshotDeliveryProperties() != null && other.getConfigSnapshotDeliveryProperties().equals(this.getConfigSnapshotDeliveryProperties()) == false) return false; 
         return true;
     }
     

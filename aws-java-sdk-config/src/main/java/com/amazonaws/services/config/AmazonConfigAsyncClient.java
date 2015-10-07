@@ -304,21 +304,18 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
             
     /**
      * <p>
-     * Returns the current status of the specified delivery channel. If a
-     * delivery channel is not specified, this action returns the current
-     * status of all delivery channels associated with the account.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Currently, you can specify only one delivery channel per
-     * account.
+     * Returns the evaluation results for the specified AWS resource. The
+     * results indicate which AWS Config rules were used to evaluate the
+     * resource, when each rule was last used, and whether the resource
+     * complies with each rule.
      * </p>
      *
-     * @param describeDeliveryChannelStatusRequest Container for the
-     *           necessary parameters to execute the DescribeDeliveryChannelStatus
+     * @param getComplianceDetailsByResourceRequest Container for the
+     *           necessary parameters to execute the GetComplianceDetailsByResource
      *           operation on AmazonConfig.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeDeliveryChannelStatus service method, as returned by
+     *         GetComplianceDetailsByResource service method, as returned by
      *         AmazonConfig.
      * 
      *
@@ -330,28 +327,25 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
      *             If an error response is returned by AmazonConfig indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(final DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest) 
+    public Future<GetComplianceDetailsByResourceResult> getComplianceDetailsByResourceAsync(final GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDeliveryChannelStatusResult>() {
-            public DescribeDeliveryChannelStatusResult call() throws Exception {
-                return describeDeliveryChannelStatus(describeDeliveryChannelStatusRequest);
+        return executorService.submit(new Callable<GetComplianceDetailsByResourceResult>() {
+            public GetComplianceDetailsByResourceResult call() throws Exception {
+                return getComplianceDetailsByResource(getComplianceDetailsByResourceRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Returns the current status of the specified delivery channel. If a
-     * delivery channel is not specified, this action returns the current
-     * status of all delivery channels associated with the account.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Currently, you can specify only one delivery channel per
-     * account.
+     * Returns the evaluation results for the specified AWS resource. The
+     * results indicate which AWS Config rules were used to evaluate the
+     * resource, when each rule was last used, and whether the resource
+     * complies with each rule.
      * </p>
      *
-     * @param describeDeliveryChannelStatusRequest Container for the
-     *           necessary parameters to execute the DescribeDeliveryChannelStatus
+     * @param getComplianceDetailsByResourceRequest Container for the
+     *           necessary parameters to execute the GetComplianceDetailsByResource
      *           operation on AmazonConfig.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
@@ -359,7 +353,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeDeliveryChannelStatus service method, as returned by
+     *         GetComplianceDetailsByResource service method, as returned by
      *         AmazonConfig.
      * 
      *
@@ -371,20 +365,20 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
      *             If an error response is returned by AmazonConfig indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(
-            final DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest,
-            final AsyncHandler<DescribeDeliveryChannelStatusRequest, DescribeDeliveryChannelStatusResult> asyncHandler)
+    public Future<GetComplianceDetailsByResourceResult> getComplianceDetailsByResourceAsync(
+            final GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest,
+            final AsyncHandler<GetComplianceDetailsByResourceRequest, GetComplianceDetailsByResourceResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDeliveryChannelStatusResult>() {
-            public DescribeDeliveryChannelStatusResult call() throws Exception {
-              DescribeDeliveryChannelStatusResult result;
+        return executorService.submit(new Callable<GetComplianceDetailsByResourceResult>() {
+            public GetComplianceDetailsByResourceResult call() throws Exception {
+              GetComplianceDetailsByResourceResult result;
                 try {
-                result = describeDeliveryChannelStatus(describeDeliveryChannelStatusRequest);
+                result = getComplianceDetailsByResource(getComplianceDetailsByResourceRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(describeDeliveryChannelStatusRequest, result);
+              asyncHandler.onSuccess(getComplianceDetailsByResourceRequest, result);
                  return result;
         }
     });
@@ -392,21 +386,92 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
     
     /**
      * <p>
-     * Returns the name of one or more specified configuration recorders.
-     * If the recorder name is not specified, this action returns the names
-     * of all the configuration recorders associated with the account.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Currently, you can specify only one configuration
-     * recorder per account.
+     * Used by an AWS Lambda function to deliver evaluation results to AWS
+     * Config. This action is required in every AWS Lambda function that is
+     * invoked by an AWS Config rule.
      * </p>
      *
-     * @param describeConfigurationRecordersRequest Container for the
-     *           necessary parameters to execute the DescribeConfigurationRecorders
+     * @param putEvaluationsRequest Container for the necessary parameters to
+     *           execute the PutEvaluations operation on AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutEvaluations service method, as returned by AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<PutEvaluationsResult> putEvaluationsAsync(final PutEvaluationsRequest putEvaluationsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<PutEvaluationsResult>() {
+            public PutEvaluationsResult call() throws Exception {
+                return putEvaluations(putEvaluationsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Used by an AWS Lambda function to deliver evaluation results to AWS
+     * Config. This action is required in every AWS Lambda function that is
+     * invoked by an AWS Config rule.
+     * </p>
+     *
+     * @param putEvaluationsRequest Container for the necessary parameters to
+     *           execute the PutEvaluations operation on AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutEvaluations service method, as returned by AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<PutEvaluationsResult> putEvaluationsAsync(
+            final PutEvaluationsRequest putEvaluationsRequest,
+            final AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<PutEvaluationsResult>() {
+            public PutEvaluationsResult call() throws Exception {
+              PutEvaluationsResult result;
+                try {
+                result = putEvaluations(putEvaluationsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(putEvaluationsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the number of AWS Config rules that are compliant and
+     * noncompliant, up to a maximum of 25 for each.
+     * </p>
+     *
+     * @param getComplianceSummaryByConfigRuleRequest Container for the
+     *           necessary parameters to execute the GetComplianceSummaryByConfigRule
      *           operation on AmazonConfig.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeConfigurationRecorders service method, as returned by
+     *         GetComplianceSummaryByConfigRule service method, as returned by
      *         AmazonConfig.
      * 
      *
@@ -418,28 +483,23 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
      *             If an error response is returned by AmazonConfig indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeConfigurationRecordersResult> describeConfigurationRecordersAsync(final DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest) 
+    public Future<GetComplianceSummaryByConfigRuleResult> getComplianceSummaryByConfigRuleAsync(final GetComplianceSummaryByConfigRuleRequest getComplianceSummaryByConfigRuleRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeConfigurationRecordersResult>() {
-            public DescribeConfigurationRecordersResult call() throws Exception {
-                return describeConfigurationRecorders(describeConfigurationRecordersRequest);
+        return executorService.submit(new Callable<GetComplianceSummaryByConfigRuleResult>() {
+            public GetComplianceSummaryByConfigRuleResult call() throws Exception {
+                return getComplianceSummaryByConfigRule(getComplianceSummaryByConfigRuleRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Returns the name of one or more specified configuration recorders.
-     * If the recorder name is not specified, this action returns the names
-     * of all the configuration recorders associated with the account.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Currently, you can specify only one configuration
-     * recorder per account.
+     * Returns the number of AWS Config rules that are compliant and
+     * noncompliant, up to a maximum of 25 for each.
      * </p>
      *
-     * @param describeConfigurationRecordersRequest Container for the
-     *           necessary parameters to execute the DescribeConfigurationRecorders
+     * @param getComplianceSummaryByConfigRuleRequest Container for the
+     *           necessary parameters to execute the GetComplianceSummaryByConfigRule
      *           operation on AmazonConfig.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
@@ -447,7 +507,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeConfigurationRecorders service method, as returned by
+     *         GetComplianceSummaryByConfigRule service method, as returned by
      *         AmazonConfig.
      * 
      *
@@ -459,20 +519,236 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
      *             If an error response is returned by AmazonConfig indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeConfigurationRecordersResult> describeConfigurationRecordersAsync(
-            final DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest,
-            final AsyncHandler<DescribeConfigurationRecordersRequest, DescribeConfigurationRecordersResult> asyncHandler)
+    public Future<GetComplianceSummaryByConfigRuleResult> getComplianceSummaryByConfigRuleAsync(
+            final GetComplianceSummaryByConfigRuleRequest getComplianceSummaryByConfigRuleRequest,
+            final AsyncHandler<GetComplianceSummaryByConfigRuleRequest, GetComplianceSummaryByConfigRuleResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeConfigurationRecordersResult>() {
-            public DescribeConfigurationRecordersResult call() throws Exception {
-              DescribeConfigurationRecordersResult result;
+        return executorService.submit(new Callable<GetComplianceSummaryByConfigRuleResult>() {
+            public GetComplianceSummaryByConfigRuleResult call() throws Exception {
+              GetComplianceSummaryByConfigRuleResult result;
                 try {
-                result = describeConfigurationRecorders(describeConfigurationRecordersRequest);
+                result = getComplianceSummaryByConfigRule(getComplianceSummaryByConfigRuleRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(describeConfigurationRecordersRequest, result);
+              asyncHandler.onSuccess(getComplianceSummaryByConfigRuleRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the number of resources that are compliant and the number
+     * that are noncompliant. You can specify one or more resource types to
+     * get these numbers for each resource type. The maximum number returned
+     * is 100.
+     * </p>
+     *
+     * @param getComplianceSummaryByResourceTypeRequest Container for the
+     *           necessary parameters to execute the GetComplianceSummaryByResourceType
+     *           operation on AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetComplianceSummaryByResourceType service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetComplianceSummaryByResourceTypeResult> getComplianceSummaryByResourceTypeAsync(final GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetComplianceSummaryByResourceTypeResult>() {
+            public GetComplianceSummaryByResourceTypeResult call() throws Exception {
+                return getComplianceSummaryByResourceType(getComplianceSummaryByResourceTypeRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the number of resources that are compliant and the number
+     * that are noncompliant. You can specify one or more resource types to
+     * get these numbers for each resource type. The maximum number returned
+     * is 100.
+     * </p>
+     *
+     * @param getComplianceSummaryByResourceTypeRequest Container for the
+     *           necessary parameters to execute the GetComplianceSummaryByResourceType
+     *           operation on AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetComplianceSummaryByResourceType service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetComplianceSummaryByResourceTypeResult> getComplianceSummaryByResourceTypeAsync(
+            final GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest,
+            final AsyncHandler<GetComplianceSummaryByResourceTypeRequest, GetComplianceSummaryByResourceTypeResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetComplianceSummaryByResourceTypeResult>() {
+            public GetComplianceSummaryByResourceTypeResult call() throws Exception {
+              GetComplianceSummaryByResourceTypeResult result;
+                try {
+                result = getComplianceSummaryByResourceType(getComplianceSummaryByResourceTypeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getComplianceSummaryByResourceTypeRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Indicates whether the specified AWS Config rules are compliant. If a
+     * rule is noncompliant, this action returns the number of AWS resources
+     * that do not comply with the rule.
+     * </p>
+     * <p>
+     * A rule is compliant if all of the evaluated resources comply with it,
+     * and it is noncompliant if any of these resources do not comply.
+     * </p>
+     * <p>
+     * If AWS Config has no current evaluation results for the rule, it
+     * returns <code>InsufficientData</code> . This result might indicate one
+     * of the following conditions:
+     * <ul>
+     * <li>AWS Config has never invoked an evaluation for the rule. To check
+     * whether it has, use the
+     * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
+     * <code>LastSuccessfulInvocationTime</code> and
+     * <code>LastFailedInvocationTime</code> .</li>
+     * <li>The rule's AWS Lambda function is failing to send evaluation
+     * results to AWS Config. Verify that the role that you assigned to your
+     * configuration recorder includes the <code>config:PutEvaluations</code>
+     * permission. If the rule is a customer managed rule, verify that the
+     * AWS Lambda execution role includes the
+     * <code>config:PutEvaluations</code> permission.</li>
+     * <li>The rule's AWS Lambda function has returned
+     * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur
+     * if the resources were deleted or removed from the rule's scope.</li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     *
+     * @param describeComplianceByConfigRuleRequest Container for the
+     *           necessary parameters to execute the DescribeComplianceByConfigRule
+     *           operation on AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeComplianceByConfigRule service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeComplianceByConfigRuleResult> describeComplianceByConfigRuleAsync(final DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeComplianceByConfigRuleResult>() {
+            public DescribeComplianceByConfigRuleResult call() throws Exception {
+                return describeComplianceByConfigRule(describeComplianceByConfigRuleRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Indicates whether the specified AWS Config rules are compliant. If a
+     * rule is noncompliant, this action returns the number of AWS resources
+     * that do not comply with the rule.
+     * </p>
+     * <p>
+     * A rule is compliant if all of the evaluated resources comply with it,
+     * and it is noncompliant if any of these resources do not comply.
+     * </p>
+     * <p>
+     * If AWS Config has no current evaluation results for the rule, it
+     * returns <code>InsufficientData</code> . This result might indicate one
+     * of the following conditions:
+     * <ul>
+     * <li>AWS Config has never invoked an evaluation for the rule. To check
+     * whether it has, use the
+     * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
+     * <code>LastSuccessfulInvocationTime</code> and
+     * <code>LastFailedInvocationTime</code> .</li>
+     * <li>The rule's AWS Lambda function is failing to send evaluation
+     * results to AWS Config. Verify that the role that you assigned to your
+     * configuration recorder includes the <code>config:PutEvaluations</code>
+     * permission. If the rule is a customer managed rule, verify that the
+     * AWS Lambda execution role includes the
+     * <code>config:PutEvaluations</code> permission.</li>
+     * <li>The rule's AWS Lambda function has returned
+     * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur
+     * if the resources were deleted or removed from the rule's scope.</li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     *
+     * @param describeComplianceByConfigRuleRequest Container for the
+     *           necessary parameters to execute the DescribeComplianceByConfigRule
+     *           operation on AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeComplianceByConfigRule service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeComplianceByConfigRuleResult> describeComplianceByConfigRuleAsync(
+            final DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest,
+            final AsyncHandler<DescribeComplianceByConfigRuleRequest, DescribeComplianceByConfigRuleResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeComplianceByConfigRuleResult>() {
+            public DescribeComplianceByConfigRuleResult call() throws Exception {
+              DescribeComplianceByConfigRuleResult result;
+                try {
+                result = describeComplianceByConfigRule(describeComplianceByConfigRuleRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeComplianceByConfigRuleRequest, result);
                  return result;
         }
     });
@@ -666,6 +942,694 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
     
     /**
      * <p>
+     * Returns the evaluation results for the specified AWS Config rule. The
+     * results indicate which AWS resources were evaluated by the rule, when
+     * each resource was last evaluated, and whether each resource complies
+     * with the rule.
+     * </p>
+     *
+     * @param getComplianceDetailsByConfigRuleRequest Container for the
+     *           necessary parameters to execute the GetComplianceDetailsByConfigRule
+     *           operation on AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetComplianceDetailsByConfigRule service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetComplianceDetailsByConfigRuleResult> getComplianceDetailsByConfigRuleAsync(final GetComplianceDetailsByConfigRuleRequest getComplianceDetailsByConfigRuleRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetComplianceDetailsByConfigRuleResult>() {
+            public GetComplianceDetailsByConfigRuleResult call() throws Exception {
+                return getComplianceDetailsByConfigRule(getComplianceDetailsByConfigRuleRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the evaluation results for the specified AWS Config rule. The
+     * results indicate which AWS resources were evaluated by the rule, when
+     * each resource was last evaluated, and whether each resource complies
+     * with the rule.
+     * </p>
+     *
+     * @param getComplianceDetailsByConfigRuleRequest Container for the
+     *           necessary parameters to execute the GetComplianceDetailsByConfigRule
+     *           operation on AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetComplianceDetailsByConfigRule service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetComplianceDetailsByConfigRuleResult> getComplianceDetailsByConfigRuleAsync(
+            final GetComplianceDetailsByConfigRuleRequest getComplianceDetailsByConfigRuleRequest,
+            final AsyncHandler<GetComplianceDetailsByConfigRuleRequest, GetComplianceDetailsByConfigRuleResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetComplianceDetailsByConfigRuleResult>() {
+            public GetComplianceDetailsByConfigRuleResult call() throws Exception {
+              GetComplianceDetailsByConfigRuleResult result;
+                try {
+                result = getComplianceDetailsByConfigRule(getComplianceDetailsByConfigRuleRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getComplianceDetailsByConfigRuleRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns status information for each of your AWS managed Config rules.
+     * The status includes information such as the last time AWS Config
+     * invoked the rule, the last time AWS Config failed to invoke the rule,
+     * and the related error for the last failure.
+     * </p>
+     *
+     * @param describeConfigRuleEvaluationStatusRequest Container for the
+     *           necessary parameters to execute the DescribeConfigRuleEvaluationStatus
+     *           operation on AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeConfigRuleEvaluationStatus service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeConfigRuleEvaluationStatusResult> describeConfigRuleEvaluationStatusAsync(final DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeConfigRuleEvaluationStatusResult>() {
+            public DescribeConfigRuleEvaluationStatusResult call() throws Exception {
+                return describeConfigRuleEvaluationStatus(describeConfigRuleEvaluationStatusRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns status information for each of your AWS managed Config rules.
+     * The status includes information such as the last time AWS Config
+     * invoked the rule, the last time AWS Config failed to invoke the rule,
+     * and the related error for the last failure.
+     * </p>
+     *
+     * @param describeConfigRuleEvaluationStatusRequest Container for the
+     *           necessary parameters to execute the DescribeConfigRuleEvaluationStatus
+     *           operation on AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeConfigRuleEvaluationStatus service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeConfigRuleEvaluationStatusResult> describeConfigRuleEvaluationStatusAsync(
+            final DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest,
+            final AsyncHandler<DescribeConfigRuleEvaluationStatusRequest, DescribeConfigRuleEvaluationStatusResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeConfigRuleEvaluationStatusResult>() {
+            public DescribeConfigRuleEvaluationStatusResult call() throws Exception {
+              DescribeConfigRuleEvaluationStatusResult result;
+                try {
+                result = describeConfigRuleEvaluationStatus(describeConfigRuleEvaluationStatusRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeConfigRuleEvaluationStatusRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns details about the specified delivery channel. If a delivery
+     * channel is not specified, this action returns the details of all
+     * delivery channels associated with the account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Currently, you can specify only one delivery channel per
+     * account.
+     * </p>
+     *
+     * @param describeDeliveryChannelsRequest Container for the necessary
+     *           parameters to execute the DescribeDeliveryChannels operation on
+     *           AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDeliveryChannels service method, as returned by AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDeliveryChannelsResult> describeDeliveryChannelsAsync(final DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDeliveryChannelsResult>() {
+            public DescribeDeliveryChannelsResult call() throws Exception {
+                return describeDeliveryChannels(describeDeliveryChannelsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns details about the specified delivery channel. If a delivery
+     * channel is not specified, this action returns the details of all
+     * delivery channels associated with the account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Currently, you can specify only one delivery channel per
+     * account.
+     * </p>
+     *
+     * @param describeDeliveryChannelsRequest Container for the necessary
+     *           parameters to execute the DescribeDeliveryChannels operation on
+     *           AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDeliveryChannels service method, as returned by AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDeliveryChannelsResult> describeDeliveryChannelsAsync(
+            final DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest,
+            final AsyncHandler<DescribeDeliveryChannelsRequest, DescribeDeliveryChannelsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDeliveryChannelsResult>() {
+            public DescribeDeliveryChannelsResult call() throws Exception {
+              DescribeDeliveryChannelsResult result;
+                try {
+                result = describeDeliveryChannels(describeDeliveryChannelsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDeliveryChannelsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the current status of the specified delivery channel. If a
+     * delivery channel is not specified, this action returns the current
+     * status of all delivery channels associated with the account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Currently, you can specify only one delivery channel per
+     * account.
+     * </p>
+     *
+     * @param describeDeliveryChannelStatusRequest Container for the
+     *           necessary parameters to execute the DescribeDeliveryChannelStatus
+     *           operation on AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDeliveryChannelStatus service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(final DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDeliveryChannelStatusResult>() {
+            public DescribeDeliveryChannelStatusResult call() throws Exception {
+                return describeDeliveryChannelStatus(describeDeliveryChannelStatusRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the current status of the specified delivery channel. If a
+     * delivery channel is not specified, this action returns the current
+     * status of all delivery channels associated with the account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Currently, you can specify only one delivery channel per
+     * account.
+     * </p>
+     *
+     * @param describeDeliveryChannelStatusRequest Container for the
+     *           necessary parameters to execute the DescribeDeliveryChannelStatus
+     *           operation on AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDeliveryChannelStatus service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(
+            final DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest,
+            final AsyncHandler<DescribeDeliveryChannelStatusRequest, DescribeDeliveryChannelStatusResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDeliveryChannelStatusResult>() {
+            public DescribeDeliveryChannelStatusResult call() throws Exception {
+              DescribeDeliveryChannelStatusResult result;
+                try {
+                result = describeDeliveryChannelStatus(describeDeliveryChannelStatusRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeDeliveryChannelStatusRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the name of one or more specified configuration recorders. If
+     * the recorder name is not specified, this action returns the names of
+     * all the configuration recorders associated with the account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Currently, you can specify only one configuration
+     * recorder per account.
+     * </p>
+     *
+     * @param describeConfigurationRecordersRequest Container for the
+     *           necessary parameters to execute the DescribeConfigurationRecorders
+     *           operation on AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeConfigurationRecorders service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeConfigurationRecordersResult> describeConfigurationRecordersAsync(final DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeConfigurationRecordersResult>() {
+            public DescribeConfigurationRecordersResult call() throws Exception {
+                return describeConfigurationRecorders(describeConfigurationRecordersRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the name of one or more specified configuration recorders. If
+     * the recorder name is not specified, this action returns the names of
+     * all the configuration recorders associated with the account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Currently, you can specify only one configuration
+     * recorder per account.
+     * </p>
+     *
+     * @param describeConfigurationRecordersRequest Container for the
+     *           necessary parameters to execute the DescribeConfigurationRecorders
+     *           operation on AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeConfigurationRecorders service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeConfigurationRecordersResult> describeConfigurationRecordersAsync(
+            final DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest,
+            final AsyncHandler<DescribeConfigurationRecordersRequest, DescribeConfigurationRecordersResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeConfigurationRecordersResult>() {
+            public DescribeConfigurationRecordersResult call() throws Exception {
+              DescribeConfigurationRecordersResult result;
+                try {
+                result = describeConfigurationRecorders(describeConfigurationRecordersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeConfigurationRecordersRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Adds or updates an AWS Config rule for evaluating whether your AWS
+     * resources comply with your desired configurations.
+     * </p>
+     * <p>
+     * You can use this action for customer managed Config rules and AWS
+     * managed Config rules. A customer managed Config rule is a custom rule
+     * that you develop and maintain. An AWS managed Config rule is a
+     * customizable, predefined rule that is provided by AWS Config.
+     * </p>
+     * <p>
+     * If you are adding a new customer managed Config rule, you must first
+     * create the AWS Lambda function that the rule invokes to evaluate your
+     * resources. When you use the <code>PutConfigRule</code> action to add
+     * the rule to AWS Config, you must specify the Amazon Resource Name
+     * (ARN) that AWS Lambda assigns to the function. Specify the ARN for the
+     * <code>SourceIdentifier</code> key. This key is part of the
+     * <code>Source</code> object, which is part of the
+     * <code>ConfigRule</code> object.
+     * </p>
+     * <p>
+     * If you are adding a new AWS managed Config rule, specify the rule's
+     * identifier for the <code>SourceIdentifier</code> key. To reference AWS
+     * managed Config rule identifiers, see
+     * <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"> Using AWS Managed Config Rules </a>
+     * .
+     * </p>
+     * <p>
+     * For any new rule that you add, specify the
+     * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do
+     * not specify the <code>ConfigRuleArn</code> or the
+     * <code>ConfigRuleId</code> . These values are generated by AWS Config
+     * for new rules.
+     * </p>
+     * <p>
+     * If you are updating a rule that you have added previously, specify
+     * the rule's <code>ConfigRuleName</code> , <code>ConfigRuleId</code> ,
+     * or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type
+     * that you use in this request.
+     * </p>
+     * <p>
+     * The maximum number of rules that AWS Config supports is 25.
+     * </p>
+     * <p>
+     * For more information about developing and using AWS Config rules, see
+     * <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html"> Evaluating AWS Resource Configurations with AWS Config </a>
+     * in the <i>AWS Config Developer Guide</i> .
+     * </p>
+     * <p>
+     * 
+     * </p>
+     *
+     * @param putConfigRuleRequest Container for the necessary parameters to
+     *           execute the PutConfigRule operation on AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutConfigRule service method, as returned by AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> putConfigRuleAsync(final PutConfigRuleRequest putConfigRuleRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                putConfigRule(putConfigRuleRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Adds or updates an AWS Config rule for evaluating whether your AWS
+     * resources comply with your desired configurations.
+     * </p>
+     * <p>
+     * You can use this action for customer managed Config rules and AWS
+     * managed Config rules. A customer managed Config rule is a custom rule
+     * that you develop and maintain. An AWS managed Config rule is a
+     * customizable, predefined rule that is provided by AWS Config.
+     * </p>
+     * <p>
+     * If you are adding a new customer managed Config rule, you must first
+     * create the AWS Lambda function that the rule invokes to evaluate your
+     * resources. When you use the <code>PutConfigRule</code> action to add
+     * the rule to AWS Config, you must specify the Amazon Resource Name
+     * (ARN) that AWS Lambda assigns to the function. Specify the ARN for the
+     * <code>SourceIdentifier</code> key. This key is part of the
+     * <code>Source</code> object, which is part of the
+     * <code>ConfigRule</code> object.
+     * </p>
+     * <p>
+     * If you are adding a new AWS managed Config rule, specify the rule's
+     * identifier for the <code>SourceIdentifier</code> key. To reference AWS
+     * managed Config rule identifiers, see
+     * <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"> Using AWS Managed Config Rules </a>
+     * .
+     * </p>
+     * <p>
+     * For any new rule that you add, specify the
+     * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do
+     * not specify the <code>ConfigRuleArn</code> or the
+     * <code>ConfigRuleId</code> . These values are generated by AWS Config
+     * for new rules.
+     * </p>
+     * <p>
+     * If you are updating a rule that you have added previously, specify
+     * the rule's <code>ConfigRuleName</code> , <code>ConfigRuleId</code> ,
+     * or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type
+     * that you use in this request.
+     * </p>
+     * <p>
+     * The maximum number of rules that AWS Config supports is 25.
+     * </p>
+     * <p>
+     * For more information about developing and using AWS Config rules, see
+     * <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html"> Evaluating AWS Resource Configurations with AWS Config </a>
+     * in the <i>AWS Config Developer Guide</i> .
+     * </p>
+     * <p>
+     * 
+     * </p>
+     *
+     * @param putConfigRuleRequest Container for the necessary parameters to
+     *           execute the PutConfigRule operation on AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutConfigRule service method, as returned by AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> putConfigRuleAsync(
+            final PutConfigRuleRequest putConfigRuleRequest,
+            final AsyncHandler<PutConfigRuleRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                putConfigRule(putConfigRuleRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(putConfigRuleRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified AWS Config rule and all of its evaluation
+     * results.
+     * </p>
+     * <p>
+     * AWS Config sets the state of a rule to <code>DELETING</code> until
+     * the deletion is complete. You cannot update a rule while it is in this
+     * state. If you make a <code>PutConfigRule</code> request for the rule,
+     * you will receive a <code>ResourceInUseException</code> .
+     * </p>
+     * <p>
+     * You can check the state of a rule by using the
+     * <code>DescribeConfigRules</code> request.
+     * </p>
+     *
+     * @param deleteConfigRuleRequest Container for the necessary parameters
+     *           to execute the DeleteConfigRule operation on AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteConfigRule service method, as returned by AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteConfigRuleAsync(final DeleteConfigRuleRequest deleteConfigRuleRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteConfigRule(deleteConfigRuleRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes the specified AWS Config rule and all of its evaluation
+     * results.
+     * </p>
+     * <p>
+     * AWS Config sets the state of a rule to <code>DELETING</code> until
+     * the deletion is complete. You cannot update a rule while it is in this
+     * state. If you make a <code>PutConfigRule</code> request for the rule,
+     * you will receive a <code>ResourceInUseException</code> .
+     * </p>
+     * <p>
+     * You can check the state of a rule by using the
+     * <code>DescribeConfigRules</code> request.
+     * </p>
+     *
+     * @param deleteConfigRuleRequest Container for the necessary parameters
+     *           to execute the DeleteConfigRule operation on AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteConfigRule service method, as returned by AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteConfigRuleAsync(
+            final DeleteConfigRuleRequest deleteConfigRuleRequest,
+            final AsyncHandler<DeleteConfigRuleRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteConfigRule(deleteConfigRuleRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteConfigRuleRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Deletes the specified delivery channel.
      * </p>
      * <p>
@@ -746,6 +1710,80 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
               }
               asyncHandler.onSuccess(deleteDeliveryChannelRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns details about your AWS Config rules.
+     * </p>
+     *
+     * @param describeConfigRulesRequest Container for the necessary
+     *           parameters to execute the DescribeConfigRules operation on
+     *           AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeConfigRules service method, as returned by AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeConfigRulesResult> describeConfigRulesAsync(final DescribeConfigRulesRequest describeConfigRulesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeConfigRulesResult>() {
+            public DescribeConfigRulesResult call() throws Exception {
+                return describeConfigRules(describeConfigRulesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns details about your AWS Config rules.
+     * </p>
+     *
+     * @param describeConfigRulesRequest Container for the necessary
+     *           parameters to execute the DescribeConfigRules operation on
+     *           AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeConfigRules service method, as returned by AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeConfigRulesResult> describeConfigRulesAsync(
+            final DescribeConfigRulesRequest describeConfigRulesRequest,
+            final AsyncHandler<DescribeConfigRulesRequest, DescribeConfigRulesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeConfigRulesResult>() {
+            public DescribeConfigRulesResult call() throws Exception {
+              DescribeConfigRulesResult result;
+                try {
+                result = describeConfigRules(describeConfigRulesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeConfigRulesRequest, result);
+                 return result;
         }
     });
     }
@@ -1026,6 +2064,144 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
     
     /**
      * <p>
+     * Indicates whether the specified AWS resources are compliant. If a
+     * resource is noncompliant, this action returns the number of AWS Config
+     * rules that the resource does not comply with.
+     * </p>
+     * <p>
+     * A resource is compliant if it complies with all the AWS Config rules
+     * that evaluate it. It is noncompliant if it does not comply with one or
+     * more of these rules.
+     * </p>
+     * <p>
+     * If AWS Config has no current evaluation results for the resource, it
+     * returns <code>InsufficientData</code> . This result might indicate one
+     * of the following conditions about the rules that evaluate the
+     * resource:
+     * <ul>
+     * <li>AWS Config has never invoked an evaluation for the rule. To check
+     * whether it has, use the
+     * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
+     * <code>LastSuccessfulInvocationTime</code> and
+     * <code>LastFailedInvocationTime</code> .</li>
+     * <li>The rule's AWS Lambda function is failing to send evaluation
+     * results to AWS Config. Verify that the role that you assigned to your
+     * configuration recorder includes the <code>config:PutEvaluations</code>
+     * permission. If the rule is a customer managed rule, verify that the
+     * AWS Lambda execution role includes the
+     * <code>config:PutEvaluations</code> permission.</li>
+     * <li>The rule's AWS Lambda function has returned
+     * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur
+     * if the resources were deleted or removed from the rule's scope.</li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     *
+     * @param describeComplianceByResourceRequest Container for the necessary
+     *           parameters to execute the DescribeComplianceByResource operation on
+     *           AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeComplianceByResource service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeComplianceByResourceResult> describeComplianceByResourceAsync(final DescribeComplianceByResourceRequest describeComplianceByResourceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeComplianceByResourceResult>() {
+            public DescribeComplianceByResourceResult call() throws Exception {
+                return describeComplianceByResource(describeComplianceByResourceRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Indicates whether the specified AWS resources are compliant. If a
+     * resource is noncompliant, this action returns the number of AWS Config
+     * rules that the resource does not comply with.
+     * </p>
+     * <p>
+     * A resource is compliant if it complies with all the AWS Config rules
+     * that evaluate it. It is noncompliant if it does not comply with one or
+     * more of these rules.
+     * </p>
+     * <p>
+     * If AWS Config has no current evaluation results for the resource, it
+     * returns <code>InsufficientData</code> . This result might indicate one
+     * of the following conditions about the rules that evaluate the
+     * resource:
+     * <ul>
+     * <li>AWS Config has never invoked an evaluation for the rule. To check
+     * whether it has, use the
+     * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
+     * <code>LastSuccessfulInvocationTime</code> and
+     * <code>LastFailedInvocationTime</code> .</li>
+     * <li>The rule's AWS Lambda function is failing to send evaluation
+     * results to AWS Config. Verify that the role that you assigned to your
+     * configuration recorder includes the <code>config:PutEvaluations</code>
+     * permission. If the rule is a customer managed rule, verify that the
+     * AWS Lambda execution role includes the
+     * <code>config:PutEvaluations</code> permission.</li>
+     * <li>The rule's AWS Lambda function has returned
+     * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur
+     * if the resources were deleted or removed from the rule's scope.</li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     *
+     * @param describeComplianceByResourceRequest Container for the necessary
+     *           parameters to execute the DescribeComplianceByResource operation on
+     *           AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeComplianceByResource service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeComplianceByResourceResult> describeComplianceByResourceAsync(
+            final DescribeComplianceByResourceRequest describeComplianceByResourceRequest,
+            final AsyncHandler<DescribeComplianceByResourceRequest, DescribeComplianceByResourceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeComplianceByResourceResult>() {
+            public DescribeComplianceByResourceResult call() throws Exception {
+              DescribeComplianceByResourceResult result;
+                try {
+                result = describeComplianceByResource(describeComplianceByResourceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeComplianceByResourceRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns a list of configuration items for the specified resource. The
      * list contains details about each state of the resource during the
      * specified time interval.
@@ -1125,180 +2301,6 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
             throw ex;
               }
               asyncHandler.onSuccess(getResourceConfigHistoryRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns details about the specified delivery channel. If a delivery
-     * channel is not specified, this action returns the details of all
-     * delivery channels associated with the account.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Currently, you can specify only one delivery channel per
-     * account.
-     * </p>
-     *
-     * @param describeDeliveryChannelsRequest Container for the necessary
-     *           parameters to execute the DescribeDeliveryChannels operation on
-     *           AmazonConfig.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDeliveryChannels service method, as returned by AmazonConfig.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonConfig indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDeliveryChannelsResult> describeDeliveryChannelsAsync(final DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDeliveryChannelsResult>() {
-            public DescribeDeliveryChannelsResult call() throws Exception {
-                return describeDeliveryChannels(describeDeliveryChannelsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns details about the specified delivery channel. If a delivery
-     * channel is not specified, this action returns the details of all
-     * delivery channels associated with the account.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Currently, you can specify only one delivery channel per
-     * account.
-     * </p>
-     *
-     * @param describeDeliveryChannelsRequest Container for the necessary
-     *           parameters to execute the DescribeDeliveryChannels operation on
-     *           AmazonConfig.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDeliveryChannels service method, as returned by AmazonConfig.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonConfig indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDeliveryChannelsResult> describeDeliveryChannelsAsync(
-            final DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest,
-            final AsyncHandler<DescribeDeliveryChannelsRequest, DescribeDeliveryChannelsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDeliveryChannelsResult>() {
-            public DescribeDeliveryChannelsResult call() throws Exception {
-              DescribeDeliveryChannelsResult result;
-                try {
-                result = describeDeliveryChannels(describeDeliveryChannelsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeDeliveryChannelsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns the current status of the specified configuration recorder.
-     * If a configuration recorder is not specified, this action returns the
-     * status of all configuration recorder associated with the account.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Currently, you can specify only one configuration
-     * recorder per account.
-     * </p>
-     *
-     * @param describeConfigurationRecorderStatusRequest Container for the
-     *           necessary parameters to execute the
-     *           DescribeConfigurationRecorderStatus operation on AmazonConfig.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeConfigurationRecorderStatus service method, as returned by
-     *         AmazonConfig.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonConfig indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeConfigurationRecorderStatusResult> describeConfigurationRecorderStatusAsync(final DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeConfigurationRecorderStatusResult>() {
-            public DescribeConfigurationRecorderStatusResult call() throws Exception {
-                return describeConfigurationRecorderStatus(describeConfigurationRecorderStatusRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns the current status of the specified configuration recorder.
-     * If a configuration recorder is not specified, this action returns the
-     * status of all configuration recorder associated with the account.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Currently, you can specify only one configuration
-     * recorder per account.
-     * </p>
-     *
-     * @param describeConfigurationRecorderStatusRequest Container for the
-     *           necessary parameters to execute the
-     *           DescribeConfigurationRecorderStatus operation on AmazonConfig.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeConfigurationRecorderStatus service method, as returned by
-     *         AmazonConfig.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonConfig indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeConfigurationRecorderStatusResult> describeConfigurationRecorderStatusAsync(
-            final DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest,
-            final AsyncHandler<DescribeConfigurationRecorderStatusRequest, DescribeConfigurationRecorderStatusResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeConfigurationRecorderStatusResult>() {
-            public DescribeConfigurationRecorderStatusResult call() throws Exception {
-              DescribeConfigurationRecorderStatusResult result;
-                try {
-                result = describeConfigurationRecorderStatus(describeConfigurationRecorderStatusRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeConfigurationRecorderStatusRequest, result);
                  return result;
         }
     });
@@ -1409,6 +2411,94 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient
             throw ex;
               }
               asyncHandler.onSuccess(listDiscoveredResourcesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the current status of the specified configuration recorder.
+     * If a configuration recorder is not specified, this action returns the
+     * status of all configuration recorder associated with the account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Currently, you can specify only one configuration
+     * recorder per account.
+     * </p>
+     *
+     * @param describeConfigurationRecorderStatusRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeConfigurationRecorderStatus operation on AmazonConfig.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeConfigurationRecorderStatus service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeConfigurationRecorderStatusResult> describeConfigurationRecorderStatusAsync(final DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeConfigurationRecorderStatusResult>() {
+            public DescribeConfigurationRecorderStatusResult call() throws Exception {
+                return describeConfigurationRecorderStatus(describeConfigurationRecorderStatusRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the current status of the specified configuration recorder.
+     * If a configuration recorder is not specified, this action returns the
+     * status of all configuration recorder associated with the account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Currently, you can specify only one configuration
+     * recorder per account.
+     * </p>
+     *
+     * @param describeConfigurationRecorderStatusRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeConfigurationRecorderStatus operation on AmazonConfig.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeConfigurationRecorderStatus service method, as returned by
+     *         AmazonConfig.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonConfig indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeConfigurationRecorderStatusResult> describeConfigurationRecorderStatusAsync(
+            final DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest,
+            final AsyncHandler<DescribeConfigurationRecorderStatusRequest, DescribeConfigurationRecorderStatusResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeConfigurationRecorderStatusResult>() {
+            public DescribeConfigurationRecorderStatusResult call() throws Exception {
+              DescribeConfigurationRecorderStatusResult result;
+                try {
+                result = describeConfigurationRecorderStatus(describeConfigurationRecorderStatusRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeConfigurationRecorderStatusRequest, result);
                  return result;
         }
     });

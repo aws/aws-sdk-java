@@ -134,7 +134,6 @@ public interface AmazonElasticFileSystem {
      * </p>
      * 
      * @param createFileSystemRequest
-     *        null
      * @return Result of the CreateFileSystem operation returned by the service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
@@ -276,7 +275,6 @@ public interface AmazonElasticFileSystem {
      * </ul>
      * 
      * @param createMountTargetRequest
-     *        null
      * @return Result of the CreateMountTarget operation returned by the
      *         service.
      * @throws BadRequestException
@@ -315,7 +313,6 @@ public interface AmazonElasticFileSystem {
      *         Returned if one of the specified security groups does not exist
      *         in the subnet's VPC.
      * @throws UnsupportedAvailabilityZoneException
-     *         null
      */
     CreateMountTargetResult createMountTarget(
             CreateMountTargetRequest createMountTargetRequest);
@@ -335,7 +332,6 @@ public interface AmazonElasticFileSystem {
      * </p>
      * 
      * @param createTagsRequest
-     *        null
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -372,7 +368,6 @@ public interface AmazonElasticFileSystem {
      * </p>
      * 
      * @param deleteFileSystemRequest
-     *        null
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -420,7 +415,6 @@ public interface AmazonElasticFileSystem {
      * </ul>
      * 
      * @param deleteMountTargetRequest
-     *        null
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -451,7 +445,6 @@ public interface AmazonElasticFileSystem {
      * </p>
      * 
      * @param deleteTagsRequest
-     *        null
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -504,7 +497,6 @@ public interface AmazonElasticFileSystem {
      * </p>
      * 
      * @param describeFileSystemsRequest
-     *        null
      * @return Result of the DescribeFileSystems operation returned by the
      *         service.
      * @throws BadRequestException
@@ -544,7 +536,6 @@ public interface AmazonElasticFileSystem {
      * </ul>
      * 
      * @param describeMountTargetSecurityGroupsRequest
-     *        null
      * @return Result of the DescribeMountTargetSecurityGroups operation
      *         returned by the service.
      * @throws BadRequestException
@@ -578,7 +569,6 @@ public interface AmazonElasticFileSystem {
      * </p>
      * 
      * @param describeMountTargetsRequest
-     *        null
      * @return Result of the DescribeMountTargets operation returned by the
      *         service.
      * @throws BadRequestException
@@ -609,7 +599,6 @@ public interface AmazonElasticFileSystem {
      * </p>
      * 
      * @param describeTagsRequest
-     *        null
      * @return Result of the DescribeTags operation returned by the service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
@@ -646,7 +635,6 @@ public interface AmazonElasticFileSystem {
      * </ul>
      * 
      * @param modifyMountTargetSecurityGroupsRequest
-     *        null
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.

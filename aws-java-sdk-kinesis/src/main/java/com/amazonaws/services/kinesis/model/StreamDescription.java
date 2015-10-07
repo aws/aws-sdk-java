@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output for <code>DescribeStream</code> .
+ * Represents the output for DescribeStream.
  * </p>
  */
 public class StreamDescription implements Serializable, Cloneable {
@@ -67,6 +67,14 @@ public class StreamDescription implements Serializable, Cloneable {
      * to describe.
      */
     private Boolean hasMoreShards;
+
+    /**
+     * The current retention period, in hours.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>24 - 168<br/>
+     */
+    private Integer retentionPeriodHours;
 
     /**
      * The name of the stream being described.
@@ -472,6 +480,48 @@ public class StreamDescription implements Serializable, Cloneable {
     }
 
     /**
+     * The current retention period, in hours.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>24 - 168<br/>
+     *
+     * @return The current retention period, in hours.
+     */
+    public Integer getRetentionPeriodHours() {
+        return retentionPeriodHours;
+    }
+    
+    /**
+     * The current retention period, in hours.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>24 - 168<br/>
+     *
+     * @param retentionPeriodHours The current retention period, in hours.
+     */
+    public void setRetentionPeriodHours(Integer retentionPeriodHours) {
+        this.retentionPeriodHours = retentionPeriodHours;
+    }
+    
+    /**
+     * The current retention period, in hours.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>24 - 168<br/>
+     *
+     * @param retentionPeriodHours The current retention period, in hours.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public StreamDescription withRetentionPeriodHours(Integer retentionPeriodHours) {
+        this.retentionPeriodHours = retentionPeriodHours;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -487,7 +537,8 @@ public class StreamDescription implements Serializable, Cloneable {
         if (getStreamARN() != null) sb.append("StreamARN: " + getStreamARN() + ",");
         if (getStreamStatus() != null) sb.append("StreamStatus: " + getStreamStatus() + ",");
         if (getShards() != null) sb.append("Shards: " + getShards() + ",");
-        if (isHasMoreShards() != null) sb.append("HasMoreShards: " + isHasMoreShards() );
+        if (isHasMoreShards() != null) sb.append("HasMoreShards: " + isHasMoreShards() + ",");
+        if (getRetentionPeriodHours() != null) sb.append("RetentionPeriodHours: " + getRetentionPeriodHours() );
         sb.append("}");
         return sb.toString();
     }
@@ -502,6 +553,7 @@ public class StreamDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStreamStatus() == null) ? 0 : getStreamStatus().hashCode()); 
         hashCode = prime * hashCode + ((getShards() == null) ? 0 : getShards().hashCode()); 
         hashCode = prime * hashCode + ((isHasMoreShards() == null) ? 0 : isHasMoreShards().hashCode()); 
+        hashCode = prime * hashCode + ((getRetentionPeriodHours() == null) ? 0 : getRetentionPeriodHours().hashCode()); 
         return hashCode;
     }
     
@@ -523,6 +575,8 @@ public class StreamDescription implements Serializable, Cloneable {
         if (other.getShards() != null && other.getShards().equals(this.getShards()) == false) return false; 
         if (other.isHasMoreShards() == null ^ this.isHasMoreShards() == null) return false;
         if (other.isHasMoreShards() != null && other.isHasMoreShards().equals(this.isHasMoreShards()) == false) return false; 
+        if (other.getRetentionPeriodHours() == null ^ this.getRetentionPeriodHours() == null) return false;
+        if (other.getRetentionPeriodHours() != null && other.getRetentionPeriodHours().equals(this.getRetentionPeriodHours()) == false) return false; 
         return true;
     }
     

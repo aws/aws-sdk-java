@@ -109,7 +109,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param createBatchPredictionRequest
-     *        null
      * @return Result of the CreateBatchPrediction operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -152,7 +151,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param createDataSourceFromRDSRequest
-     *        null
      * @return Result of the CreateDataSourceFromRDS operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -216,7 +214,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param createDataSourceFromRedshiftRequest
-     *        null
      * @return Result of the CreateDataSourceFromRedshift operation returned by
      *         the service.
      * @throws InvalidInputException
@@ -280,7 +277,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param createDataSourceFromS3Request
-     *        null
      * @return Result of the CreateDataSourceFromS3 operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -324,7 +320,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param createEvaluationRequest
-     *        null
      * @return Result of the CreateEvaluation operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -369,7 +364,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param createMLModelRequest
-     *        null
      * @return Result of the CreateMLModel operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -392,7 +386,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param createRealtimeEndpointRequest
-     *        null
      * @return Result of the CreateRealtimeEndpoint operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -422,7 +415,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param deleteBatchPredictionRequest
-     *        null
      * @return Result of the DeleteBatchPrediction operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -452,7 +444,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param deleteDataSourceRequest
-     *        null
      * @return Result of the DeleteDataSource operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -481,7 +472,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param deleteEvaluationRequest
-     *        null
      * @return Result of the DeleteEvaluation operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -510,7 +500,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param deleteMLModelRequest
-     *        null
      * @return Result of the DeleteMLModel operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -528,7 +517,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param deleteRealtimeEndpointRequest
-     *        null
      * @return Result of the DeleteRealtimeEndpoint operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -549,7 +537,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param describeBatchPredictionsRequest
-     *        null
      * @return Result of the DescribeBatchPredictions operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -576,7 +563,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param describeDataSourcesRequest
-     *        null
      * @return Result of the DescribeDataSources operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -602,7 +588,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param describeEvaluationsRequest
-     *        null
      * @return Result of the DescribeEvaluations operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -628,7 +613,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param describeMLModelsRequest
-     *        null
      * @return Result of the DescribeMLModels operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -654,7 +638,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param getBatchPredictionRequest
-     *        null
      * @return Result of the GetBatchPrediction operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -681,7 +664,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param getDataSourceRequest
-     *        null
      * @return Result of the GetDataSource operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -700,7 +682,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param getEvaluationRequest
-     *        null
      * @return Result of the GetEvaluation operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -723,7 +704,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param getMLModelRequest
-     *        null
      * @return Result of the GetMLModel operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -748,7 +728,6 @@ public interface AmazonMachineLearning {
      * </note>
      * 
      * @param predictRequest
-     *        null
      * @return Result of the Predict operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -778,7 +757,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param updateBatchPredictionRequest
-     *        null
      * @return Result of the UpdateBatchPrediction operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -802,7 +780,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param updateDataSourceRequest
-     *        null
      * @return Result of the UpdateDataSource operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -825,7 +802,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param updateEvaluationRequest
-     *        null
      * @return Result of the UpdateEvaluation operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an
@@ -849,7 +825,6 @@ public interface AmazonMachineLearning {
      * </p>
      * 
      * @param updateMLModelRequest
-     *        null
      * @return Result of the UpdateMLModel operation returned by the service.
      * @throws InvalidInputException
      *         An error on the client occurred. Typically, the cause is an

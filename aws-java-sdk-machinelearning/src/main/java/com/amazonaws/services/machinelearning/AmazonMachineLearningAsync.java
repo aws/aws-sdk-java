@@ -51,7 +51,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createBatchPredictionRequest
-     *        null
      * @return A Java Future containing the result of the CreateBatchPrediction
      *         operation returned by the service.
      */
@@ -83,7 +82,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createBatchPredictionRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -123,7 +121,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createDataSourceFromRDSRequest
-     *        null
      * @return A Java Future containing the result of the
      *         CreateDataSourceFromRDS operation returned by the service.
      */
@@ -157,7 +154,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createDataSourceFromRDSRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -218,7 +214,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createDataSourceFromRedshiftRequest
-     *        null
      * @return A Java Future containing the result of the
      *         CreateDataSourceFromRedshift operation returned by the service.
      */
@@ -273,7 +268,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createDataSourceFromRedshiftRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -334,7 +328,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createDataSourceFromS3Request
-     *        null
      * @return A Java Future containing the result of the CreateDataSourceFromS3
      *         operation returned by the service.
      */
@@ -389,7 +382,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createDataSourceFromS3Request
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -430,7 +422,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createEvaluationRequest
-     *        null
      * @return A Java Future containing the result of the CreateEvaluation
      *         operation returned by the service.
      */
@@ -465,7 +456,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createEvaluationRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -508,7 +498,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createMLModelRequest
-     *        null
      * @return A Java Future containing the result of the CreateMLModel
      *         operation returned by the service.
      */
@@ -545,7 +534,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createMLModelRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -567,7 +555,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createRealtimeEndpointRequest
-     *        null
      * @return A Java Future containing the result of the CreateRealtimeEndpoint
      *         operation returned by the service.
      */
@@ -583,7 +570,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param createRealtimeEndpointRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -612,7 +598,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param deleteBatchPredictionRequest
-     *        null
      * @return A Java Future containing the result of the DeleteBatchPrediction
      *         operation returned by the service.
      */
@@ -635,7 +620,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param deleteBatchPredictionRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -664,7 +648,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param deleteDataSourceRequest
-     *        null
      * @return A Java Future containing the result of the DeleteDataSource
      *         operation returned by the service.
      */
@@ -687,7 +670,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param deleteDataSourceRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -716,7 +698,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param deleteEvaluationRequest
-     *        null
      * @return A Java Future containing the result of the DeleteEvaluation
      *         operation returned by the service.
      */
@@ -739,7 +720,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param deleteEvaluationRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -768,7 +748,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param deleteMLModelRequest
-     *        null
      * @return A Java Future containing the result of the DeleteMLModel
      *         operation returned by the service.
      */
@@ -791,7 +770,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param deleteMLModelRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -810,7 +788,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param deleteRealtimeEndpointRequest
-     *        null
      * @return A Java Future containing the result of the DeleteRealtimeEndpoint
      *         operation returned by the service.
      */
@@ -823,7 +800,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param deleteRealtimeEndpointRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -843,7 +819,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param describeBatchPredictionsRequest
-     *        null
      * @return A Java Future containing the result of the
      *         DescribeBatchPredictions operation returned by the service.
      */
@@ -857,7 +832,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param describeBatchPredictionsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -895,7 +869,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param describeDataSourcesRequest
-     *        null
      * @return A Java Future containing the result of the DescribeDataSources
      *         operation returned by the service.
      */
@@ -909,7 +882,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param describeDataSourcesRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -946,7 +918,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param describeEvaluationsRequest
-     *        null
      * @return A Java Future containing the result of the DescribeEvaluations
      *         operation returned by the service.
      */
@@ -960,7 +931,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param describeEvaluationsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -997,7 +967,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param describeMLModelsRequest
-     *        null
      * @return A Java Future containing the result of the DescribeMLModels
      *         operation returned by the service.
      */
@@ -1011,7 +980,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param describeMLModelsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1049,7 +1017,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param getBatchPredictionRequest
-     *        null
      * @return A Java Future containing the result of the GetBatchPrediction
      *         operation returned by the service.
      */
@@ -1064,7 +1031,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param getBatchPredictionRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1090,7 +1056,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param getDataSourceRequest
-     *        null
      * @return A Java Future containing the result of the GetDataSource
      *         operation returned by the service.
      */
@@ -1110,7 +1075,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param getDataSourceRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1130,7 +1094,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param getEvaluationRequest
-     *        null
      * @return A Java Future containing the result of the GetEvaluation
      *         operation returned by the service.
      */
@@ -1144,7 +1107,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param getEvaluationRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1168,7 +1130,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param getMLModelRequest
-     *        null
      * @return A Java Future containing the result of the GetMLModel operation
      *         returned by the service.
      */
@@ -1186,7 +1147,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param getMLModelRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1212,7 +1172,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </note>
      * 
      * @param predictRequest
-     *        null
      * @return A Java Future containing the result of the Predict operation
      *         returned by the service.
      */
@@ -1232,7 +1191,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </note>
      * 
      * @param predictRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1256,7 +1214,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param updateBatchPredictionRequest
-     *        null
      * @return A Java Future containing the result of the UpdateBatchPrediction
      *         operation returned by the service.
      */
@@ -1274,7 +1231,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param updateBatchPredictionRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1297,7 +1253,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param updateDataSourceRequest
-     *        null
      * @return A Java Future containing the result of the UpdateDataSource
      *         operation returned by the service.
      */
@@ -1314,7 +1269,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param updateDataSourceRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1337,7 +1291,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param updateEvaluationRequest
-     *        null
      * @return A Java Future containing the result of the UpdateEvaluation
      *         operation returned by the service.
      */
@@ -1354,7 +1307,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param updateEvaluationRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1378,7 +1330,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param updateMLModelRequest
-     *        null
      * @return A Java Future containing the result of the UpdateMLModel
      *         operation returned by the service.
      */
@@ -1396,7 +1347,6 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * </p>
      * 
      * @param updateMLModelRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

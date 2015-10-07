@@ -18,8 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The requested resource could not be found. It might not be specified
- * correctly, or it might not be in the <code>ACTIVE</code> state.
+ * The requested resource could not be found. The stream might not be
+ * specified correctly, or it might not be in the <code>ACTIVE</code>
+ * state if the operation requires it.
  * </p>
  */        
 public class ResourceNotFoundException extends AmazonServiceException {

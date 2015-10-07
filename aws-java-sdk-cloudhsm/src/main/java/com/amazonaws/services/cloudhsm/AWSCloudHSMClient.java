@@ -491,7 +491,6 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteLunaClientRequest
-     *        null
      * @return Result of the DeleteLunaClient operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -646,7 +645,6 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeLunaClientRequest
-     *        null
      * @return Result of the DescribeLunaClient operation returned by the
      *         service.
      * @throws CloudHsmServiceException
@@ -703,7 +701,6 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param getConfigRequest
-     *        null
      * @return Result of the GetConfig operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -814,7 +811,6 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param listHapgsRequest
-     *        null
      * @return Result of the ListHapgs operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -875,7 +871,6 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param listHsmsRequest
-     *        null
      * @return Result of the ListHsms operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -935,7 +930,6 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param listLunaClientsRequest
-     *        null
      * @return Result of the ListLunaClients operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -990,7 +984,6 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifyHapgRequest
-     *        null
      * @return Result of the ModifyHapg operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -1092,7 +1085,6 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifyLunaClientRequest
-     *        null
      * @return Result of the ModifyLunaClient operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.

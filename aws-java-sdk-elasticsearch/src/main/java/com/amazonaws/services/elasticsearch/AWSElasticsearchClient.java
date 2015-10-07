@@ -341,7 +341,6 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createElasticsearchDomainRequest
-     *        null
      * @return Result of the CreateElasticsearchDomain operation returned by the
      *         service.
      * @throws BaseException
@@ -643,7 +642,6 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param listDomainNamesRequest
-     *        null
      * @return Result of the ListDomainNames operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.

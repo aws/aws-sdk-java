@@ -105,7 +105,6 @@ public interface AmazonImportExportAsync extends AmazonImportExport {
      * to ship your device to AWS for processing.
      * 
      * @param getShippingLabelRequest
-     *        null
      * @return A Java Future containing the result of the GetShippingLabel
      *         operation returned by the service.
      */
@@ -117,7 +116,6 @@ public interface AmazonImportExportAsync extends AmazonImportExport {
      * to ship your device to AWS for processing.
      * 
      * @param getShippingLabelRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

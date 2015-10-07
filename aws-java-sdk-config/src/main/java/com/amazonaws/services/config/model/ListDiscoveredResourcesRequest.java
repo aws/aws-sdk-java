@@ -37,8 +37,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The response is paginated, and by default AWS Config lists 100
  * resource identifiers on each page. You can customize this number with
  * the <code>limit</code> parameter. The response includes a
- * <code>nextToken</code> string, and to get the next
- * page of results, run the request again and enter this string for the
+ * <code>nextToken</code> string, and to get the next page of results,
+ * run the request again and enter this string for the
  * <code>nextToken</code> parameter.
  * </p>
  *

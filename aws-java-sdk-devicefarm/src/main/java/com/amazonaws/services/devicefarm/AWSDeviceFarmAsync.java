@@ -133,7 +133,6 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * </p>
      * 
      * @param getAccountSettingsRequest
-     *        null
      * @return A Java Future containing the result of the GetAccountSettings
      *         operation returned by the service.
      */
@@ -147,7 +146,6 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * </p>
      * 
      * @param getAccountSettingsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

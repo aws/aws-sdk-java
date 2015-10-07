@@ -299,7 +299,6 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param createStorageLocationRequest
-     *        null
      * @return A Java Future containing the result of the CreateStorageLocation
      *         operation returned by the service.
      */
@@ -315,7 +314,6 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param createStorageLocationRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -916,7 +914,6 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param listAvailableSolutionStacksRequest
-     *        null
      * @return A Java Future containing the result of the
      *         ListAvailableSolutionStacks operation returned by the service.
      */
@@ -929,7 +926,6 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param listAvailableSolutionStacksRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

@@ -364,7 +364,6 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * object members.
      * 
      * @param value
-     *        null
      */
     public ExpectedAttributeValue(AttributeValue value) {
         setValue(value);

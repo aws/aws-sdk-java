@@ -93,7 +93,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param cancelExportTaskRequest
-     *        null
      */
     java.util.concurrent.Future<Void> cancelExportTaskAsync(
             CancelExportTaskRequest cancelExportTaskRequest);
@@ -105,7 +104,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param cancelExportTaskRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -129,7 +127,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param createExportTaskRequest
-     *        null
      * @return A Java Future containing the result of the CreateExportTask
      *         operation returned by the service.
      */
@@ -149,7 +146,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param createExportTaskRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -178,7 +174,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param createLogGroupRequest
-     *        null
      */
     java.util.concurrent.Future<Void> createLogGroupAsync(
             CreateLogGroupRequest createLogGroupRequest);
@@ -199,7 +194,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param createLogGroupRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -225,7 +219,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param createLogStreamRequest
-     *        null
      */
     java.util.concurrent.Future<Void> createLogStreamAsync(
             CreateLogStreamRequest createLogStreamRequest);
@@ -245,7 +238,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param createLogStreamRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -264,7 +256,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteDestinationRequest
-     *        null
      */
     java.util.concurrent.Future<Void> deleteDestinationAsync(
             DeleteDestinationRequest deleteDestinationRequest);
@@ -277,7 +268,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteDestinationRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -295,7 +285,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteLogGroupRequest
-     *        null
      */
     java.util.concurrent.Future<Void> deleteLogGroupAsync(
             DeleteLogGroupRequest deleteLogGroupRequest);
@@ -307,7 +296,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteLogGroupRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -325,7 +313,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteLogStreamRequest
-     *        null
      */
     java.util.concurrent.Future<Void> deleteLogStreamAsync(
             DeleteLogStreamRequest deleteLogStreamRequest);
@@ -337,7 +324,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteLogStreamRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -354,7 +340,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteMetricFilterRequest
-     *        null
      */
     java.util.concurrent.Future<Void> deleteMetricFilterAsync(
             DeleteMetricFilterRequest deleteMetricFilterRequest);
@@ -365,7 +350,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteMetricFilterRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -383,7 +367,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteRetentionPolicyRequest
-     *        null
      */
     java.util.concurrent.Future<Void> deleteRetentionPolicyAsync(
             DeleteRetentionPolicyRequest deleteRetentionPolicyRequest);
@@ -395,7 +378,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteRetentionPolicyRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -412,7 +394,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteSubscriptionFilterRequest
-     *        null
      */
     java.util.concurrent.Future<Void> deleteSubscriptionFilterAsync(
             DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest);
@@ -423,7 +404,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteSubscriptionFilterRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -449,7 +429,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeDestinationsRequest
-     *        null
      * @return A Java Future containing the result of the DescribeDestinations
      *         operation returned by the service.
      */
@@ -471,7 +450,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeDestinationsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -517,7 +495,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeExportTasksRequest
-     *        null
      * @return A Java Future containing the result of the DescribeExportTasks
      *         operation returned by the service.
      */
@@ -540,7 +517,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeExportTasksRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -568,7 +544,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeLogGroupsRequest
-     *        null
      * @return A Java Future containing the result of the DescribeLogGroups
      *         operation returned by the service.
      */
@@ -590,7 +565,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeLogGroupsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -637,7 +611,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeLogStreamsRequest
-     *        null
      * @return A Java Future containing the result of the DescribeLogStreams
      *         operation returned by the service.
      */
@@ -661,7 +634,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeLogStreamsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -688,7 +660,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeMetricFiltersRequest
-     *        null
      * @return A Java Future containing the result of the DescribeMetricFilters
      *         operation returned by the service.
      */
@@ -709,7 +680,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeMetricFiltersRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -736,7 +706,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeSubscriptionFiltersRequest
-     *        null
      * @return A Java Future containing the result of the
      *         DescribeSubscriptionFilters operation returned by the service.
      */
@@ -757,7 +726,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param describeSubscriptionFiltersRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -793,7 +761,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param filterLogEventsRequest
-     *        null
      * @return A Java Future containing the result of the FilterLogEvents
      *         operation returned by the service.
      */
@@ -823,7 +790,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param filterLogEventsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -855,7 +821,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param getLogEventsRequest
-     *        null
      * @return A Java Future containing the result of the GetLogEvents operation
      *         returned by the service.
      */
@@ -881,7 +846,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param getLogEventsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -913,7 +877,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putDestinationRequest
-     *        null
      * @return A Java Future containing the result of the PutDestination
      *         operation returned by the service.
      */
@@ -939,7 +902,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putDestinationRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -962,7 +924,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putDestinationPolicyRequest
-     *        null
      */
     java.util.concurrent.Future<Void> putDestinationPolicyAsync(
             PutDestinationPolicyRequest putDestinationPolicyRequest);
@@ -977,7 +938,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putDestinationPolicyRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1015,7 +975,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putLogEventsRequest
-     *        null
      * @return A Java Future containing the result of the PutLogEvents operation
      *         returned by the service.
      */
@@ -1049,7 +1008,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putLogEventsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1075,7 +1033,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putMetricFilterRequest
-     *        null
      */
     java.util.concurrent.Future<Void> putMetricFilterAsync(
             PutMetricFilterRequest putMetricFilterRequest);
@@ -1093,7 +1050,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putMetricFilterRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1112,7 +1068,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putRetentionPolicyRequest
-     *        null
      */
     java.util.concurrent.Future<Void> putRetentionPolicyAsync(
             PutRetentionPolicyRequest putRetentionPolicyRequest);
@@ -1125,7 +1080,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putRetentionPolicyRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1156,7 +1110,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putSubscriptionFilterRequest
-     *        null
      */
     java.util.concurrent.Future<Void> putSubscriptionFilterAsync(
             PutSubscriptionFilterRequest putSubscriptionFilterRequest);
@@ -1181,7 +1134,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putSubscriptionFilterRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1200,7 +1152,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param testMetricFilterRequest
-     *        null
      * @return A Java Future containing the result of the TestMetricFilter
      *         operation returned by the service.
      */
@@ -1215,7 +1166,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param testMetricFilterRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

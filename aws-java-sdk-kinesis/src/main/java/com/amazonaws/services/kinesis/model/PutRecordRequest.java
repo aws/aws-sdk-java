@@ -74,8 +74,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <code>ProvisionedThroughputExceededException</code> .
  * </p>
  * <p>
- * Data records are accessible for only 24 hours from the time that they
- * are added to an Amazon Kinesis stream.
+ * By default, data records are accessible for only 24 hours from the
+ * time that they are added to an Amazon Kinesis stream. This retention
+ * period can be modified using the DecreaseStreamRetentionPeriod and
+ * IncreaseStreamRetentionPeriod operations.
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#putRecord(PutRecordRequest)

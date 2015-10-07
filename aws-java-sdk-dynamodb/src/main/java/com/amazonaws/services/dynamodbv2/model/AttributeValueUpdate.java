@@ -168,7 +168,6 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * object members.
      * 
      * @param value
-     *        null
      * @param action
      *        Specifies how to perform the update. Valid values are
      *        <code>PUT</code> (default), <code>DELETE</code>, and
@@ -296,7 +295,6 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * object members.
      * 
      * @param value
-     *        null
      * @param action
      *        Specifies how to perform the update. Valid values are
      *        <code>PUT</code> (default), <code>DELETE</code>, and

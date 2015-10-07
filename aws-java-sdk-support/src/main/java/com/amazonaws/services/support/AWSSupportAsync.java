@@ -103,7 +103,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param addAttachmentsToSetRequest
-     *        null
      * @return A Java Future containing the result of the AddAttachmentsToSet
      *         operation returned by the service.
      */
@@ -127,7 +126,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param addAttachmentsToSetRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -251,7 +249,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param createCaseRequest
-     *        null
      * @return A Java Future containing the result of the CreateCase operation
      *         returned by the service.
      */
@@ -313,7 +310,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param createCaseRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -336,7 +332,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeAttachmentRequest
-     *        null
      * @return A Java Future containing the result of the DescribeAttachment
      *         operation returned by the service.
      */
@@ -353,7 +348,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeAttachmentRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -390,7 +384,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </ol>
      * 
      * @param describeCasesRequest
-     *        null
      * @return A Java Future containing the result of the DescribeCases
      *         operation returned by the service.
      */
@@ -421,7 +414,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </ol>
      * 
      * @param describeCasesRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -471,7 +463,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeCommunicationsRequest
-     *        null
      * @return A Java Future containing the result of the DescribeCommunications
      *         operation returned by the service.
      */
@@ -498,7 +489,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeCommunicationsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -531,7 +521,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeServicesRequest
-     *        null
      * @return A Java Future containing the result of the DescribeServices
      *         operation returned by the service.
      */
@@ -558,7 +547,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeServicesRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -596,7 +584,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeSeverityLevelsRequest
-     *        null
      * @return A Java Future containing the result of the DescribeSeverityLevels
      *         operation returned by the service.
      */
@@ -611,7 +598,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeSeverityLevelsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -649,7 +635,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeTrustedAdvisorCheckRefreshStatusesRequest
-     *        null
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorCheckRefreshStatuses operation returned by
      *         the service.
@@ -665,7 +650,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeTrustedAdvisorCheckRefreshStatusesRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -705,7 +689,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </ul>
      * 
      * @param describeTrustedAdvisorCheckResultRequest
-     *        null
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorCheckResult operation returned by the
      *         service.
@@ -739,7 +722,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </ul>
      * 
      * @param describeTrustedAdvisorCheckResultRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -765,7 +747,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeTrustedAdvisorCheckSummariesRequest
-     *        null
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorCheckSummaries operation returned by the
      *         service.
@@ -785,7 +766,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeTrustedAdvisorCheckSummariesRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -809,7 +789,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeTrustedAdvisorChecksRequest
-     *        null
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorChecks operation returned by the service.
      */
@@ -826,7 +805,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param describeTrustedAdvisorChecksRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -858,7 +836,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </ul>
      * 
      * @param refreshTrustedAdvisorCheckRequest
-     *        null
      * @return A Java Future containing the result of the
      *         RefreshTrustedAdvisorCheck operation returned by the service.
      */
@@ -884,7 +861,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </ul>
      * 
      * @param refreshTrustedAdvisorCheckRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -905,7 +881,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param resolveCaseRequest
-     *        null
      * @return A Java Future containing the result of the ResolveCase operation
      *         returned by the service.
      */
@@ -920,7 +895,6 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * 
      * @param resolveCaseRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

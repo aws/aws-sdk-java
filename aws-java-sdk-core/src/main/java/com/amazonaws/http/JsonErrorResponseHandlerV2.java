@@ -24,6 +24,7 @@ import org.apache.commons.logging.LogFactory;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.internal.http.JsonErrorCodeParser;
+import com.amazonaws.internal.http.JsonErrorMessageParser;
 import com.amazonaws.transform.JsonErrorUnmarshallerV2;
 import com.amazonaws.util.IOUtils;
 import com.fasterxml.jackson.core.JsonParser;
@@ -36,14 +37,28 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
 
     private final List<JsonErrorUnmarshallerV2> unmarshallers;
     private final JsonErrorCodeParser errorCodeParser;
+    private final JsonErrorMessageParser errorMessageParser;
 
-    public JsonErrorResponseHandlerV2(List<JsonErrorUnmarshallerV2> errorUnmarshallers) {
-        this(errorUnmarshallers, JsonErrorCodeParser.DEFAULT_ERROR_CODE_PARSER);
+    public JsonErrorResponseHandlerV2(
+            List<JsonErrorUnmarshallerV2> errorUnmarshallers) {
+        this(errorUnmarshallers, JsonErrorCodeParser.DEFAULT_ERROR_CODE_PARSER,
+                JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER);
     }
 
-    public JsonErrorResponseHandlerV2(List<JsonErrorUnmarshallerV2> errorUnmarshallers, JsonErrorCodeParser errorCodeParser) {
+    public JsonErrorResponseHandlerV2(
+            List<JsonErrorUnmarshallerV2> errorUnmarshallers,
+            JsonErrorCodeParser errorCodeParser) {
+        this(errorUnmarshallers, errorCodeParser,
+                JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER);
+    }
+
+    public JsonErrorResponseHandlerV2(
+            List<JsonErrorUnmarshallerV2> errorUnmarshallers,
+            JsonErrorCodeParser errorCodeParser,
+            JsonErrorMessageParser errorMessageParser) {
         this.unmarshallers = errorUnmarshallers;
         this.errorCodeParser = errorCodeParser;
+        this.errorMessageParser = errorMessageParser;
     }
 
     @Override
@@ -56,6 +71,14 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
         JsonContent jsonContent = JsonContent.createJsonContent(response);
         String errorCode = errorCodeParser.parseErrorCode(response.getHeaders(), jsonContent.jsonNode);
         AmazonServiceException ase = createException(errorCode, jsonContent);
+
+        // Jackson has special-casing for 'message' values when deserializing
+        // Throwables, but sometimes the service passes the error message in
+        // other JSON fields - handle it here.
+        if (ase.getErrorMessage() == null) {
+            ase.setErrorMessage(errorMessageParser
+                    .parseErrorMessage(jsonContent.jsonNode));
+        }
 
         ase.setErrorCode(errorCode);
         ase.setServiceName(response.getRequest().getServiceName());

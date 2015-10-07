@@ -60,7 +60,8 @@ public class JsonErrorResponseHandlerV2Test {
         httpResponse = new HttpResponse(new DefaultRequest<String>(SERVICE_NAME), null);
         httpResponse.setContent(new StringInputStream("{}"));
 
-        responseHandler = new JsonErrorResponseHandlerV2(Arrays.asList(unmarshaller), errorCodeParser);
+        responseHandler = new JsonErrorResponseHandlerV2(
+                Arrays.asList(unmarshaller), errorCodeParser);
     }
 
     @Test

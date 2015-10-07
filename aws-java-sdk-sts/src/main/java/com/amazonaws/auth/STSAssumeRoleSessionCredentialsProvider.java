@@ -15,9 +15,10 @@
 
 package com.amazonaws.auth;
 
-import java.util.Date;
+import java.util.concurrent.atomic.AtomicReference;
 
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenService;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClient;
@@ -30,6 +31,7 @@ import com.amazonaws.services.securitytoken.model.Credentials;
  * Service to assume a Role and create temporary, short-lived sessions to use
  * for authentication.
  */
+@ThreadSafe
 public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCredentialsProvider {
 
     /** Default duration for started sessions. */
@@ -41,23 +43,20 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
     /** The client for starting STS sessions. */
     private final AWSSecurityTokenService securityTokenService;
 
-    /** The current session credentials. */
-    private AWSSessionCredentials sessionCredentials;
-
-    /** The expiration time for the current session credentials. */
-    private Date sessionCredentialsExpiration;
+    /** The current session credentials and expiration time. */
+    private final AtomicReference<Credentials> sessionCredentials = new AtomicReference<Credentials>();
 
     /** The arn of the role to be assumed. */
-    private String roleArn;
+    private final String roleArn;
 
     /** An identifier for the assumed role session. */
-    private String roleSessionName;
+    private final String roleSessionName;
     
     /** An external Id parameter for the assumed role session */
-    private String roleExternalId;
+    private final String roleExternalId;
     
     /** The Duration for assume role sessions. */
-    private int roleSessionDurationSeconds;
+    private final int roleSessionDurationSeconds;
 
     /**
      * Constructs a new STSAssumeRoleSessionCredentialsProvider, which makes a
@@ -238,7 +237,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      */
     public void setSTSClientEndpoint(String endpoint) {
         securityTokenService.setEndpoint(endpoint);
-        sessionCredentials = null;
+        sessionCredentials.set(null);
     }
 
     
@@ -247,7 +246,9 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
         if (needsNewSession()) {
             startSession();
         }
-        return sessionCredentials;
+        Credentials tempCredentials = sessionCredentials.get();
+        return new BasicSessionCredentials(tempCredentials.getAccessKeyId(),
+            tempCredentials.getSecretAccessKey(), tempCredentials.getSessionToken());
     }
 
     @Override
@@ -271,9 +272,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
         AssumeRoleResult assumeRoleResult = securityTokenService.assumeRole(assumeRoleRequest);
         Credentials stsCredentials = assumeRoleResult.getCredentials();
 
-        sessionCredentials = new BasicSessionCredentials(stsCredentials.getAccessKeyId(),
-                stsCredentials.getSecretAccessKey(), stsCredentials.getSessionToken());
-        sessionCredentialsExpiration = stsCredentials.getExpiration();
+        sessionCredentials.set(stsCredentials);
     }
 
     /**
@@ -284,10 +283,11 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      * @return True if a new STS session needs to be started.
      */
     private boolean needsNewSession() {
-        if (sessionCredentials == null) {
+        Credentials tempCredentials = sessionCredentials.get();
+        if (tempCredentials == null) {
             return true;
         }
-        long timeRemaining = sessionCredentialsExpiration.getTime() - System.currentTimeMillis();
+        long timeRemaining = tempCredentials.getExpiration().getTime() - System.currentTimeMillis();
         return timeRemaining < EXPIRY_TIME_MILLIS;
     }
     

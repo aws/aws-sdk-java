@@ -2342,6 +2342,14 @@ public interface AmazonS3 extends S3DirectSpi {
      * the request headers before any of the data is sent.
      * </p>
      * <p>
+     * When using an {@link java.io.BufferedInputStream} as data source,
+     * please remember to use a buffer of size no less than
+     * {@link com.amazonaws.RequestClientOptions#DEFAULT_STREAM_BUFFER_SIZE}
+     * while initializing the BufferedInputStream.
+     * This is to ensure that the SDK can correctly mark and reset the stream with
+     * enough memory buffer during signing and retries.
+     * </p>
+     * <p>
      * If versioning is enabled for the specified bucket, this operation will
      * never overwrite an existing object at the same key, but instead will keep
      * the existing object around as an older version until that version is

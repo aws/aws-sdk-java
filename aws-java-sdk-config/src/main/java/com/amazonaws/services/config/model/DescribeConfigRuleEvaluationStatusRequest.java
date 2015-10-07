@@ -1,0 +1,191 @@
+/*
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+package com.amazonaws.services.config.model;
+
+import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * Container for the parameters to the {@link com.amazonaws.services.config.AmazonConfig#describeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest) DescribeConfigRuleEvaluationStatus operation}.
+ * <p>
+ * Returns status information for each of your AWS managed Config rules.
+ * The status includes information such as the last time AWS Config
+ * invoked the rule, the last time AWS Config failed to invoke the rule,
+ * and the related error for the last failure.
+ * </p>
+ *
+ * @see com.amazonaws.services.config.AmazonConfig#describeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest)
+ */
+public class DescribeConfigRuleEvaluationStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * The name of the AWS managed Config rules for which you want status
+     * information. If you do not specify any names, AWS Config returns
+     * status information for all AWS managed Config rules that you use.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 25<br/>
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> configRuleNames;
+
+    /**
+     * The name of the AWS managed Config rules for which you want status
+     * information. If you do not specify any names, AWS Config returns
+     * status information for all AWS managed Config rules that you use.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 25<br/>
+     *
+     * @return The name of the AWS managed Config rules for which you want status
+     *         information. If you do not specify any names, AWS Config returns
+     *         status information for all AWS managed Config rules that you use.
+     */
+    public java.util.List<String> getConfigRuleNames() {
+        if (configRuleNames == null) {
+              configRuleNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              configRuleNames.setAutoConstruct(true);
+        }
+        return configRuleNames;
+    }
+    
+    /**
+     * The name of the AWS managed Config rules for which you want status
+     * information. If you do not specify any names, AWS Config returns
+     * status information for all AWS managed Config rules that you use.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 25<br/>
+     *
+     * @param configRuleNames The name of the AWS managed Config rules for which you want status
+     *         information. If you do not specify any names, AWS Config returns
+     *         status information for all AWS managed Config rules that you use.
+     */
+    public void setConfigRuleNames(java.util.Collection<String> configRuleNames) {
+        if (configRuleNames == null) {
+            this.configRuleNames = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> configRuleNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(configRuleNames.size());
+        configRuleNamesCopy.addAll(configRuleNames);
+        this.configRuleNames = configRuleNamesCopy;
+    }
+    
+    /**
+     * The name of the AWS managed Config rules for which you want status
+     * information. If you do not specify any names, AWS Config returns
+     * status information for all AWS managed Config rules that you use.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConfigRuleNames(java.util.Collection)} or {@link
+     * #withConfigRuleNames(java.util.Collection)} if you want to override
+     * the existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 25<br/>
+     *
+     * @param configRuleNames The name of the AWS managed Config rules for which you want status
+     *         information. If you do not specify any names, AWS Config returns
+     *         status information for all AWS managed Config rules that you use.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeConfigRuleEvaluationStatusRequest withConfigRuleNames(String... configRuleNames) {
+        if (getConfigRuleNames() == null) setConfigRuleNames(new java.util.ArrayList<String>(configRuleNames.length));
+        for (String value : configRuleNames) {
+            getConfigRuleNames().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The name of the AWS managed Config rules for which you want status
+     * information. If you do not specify any names, AWS Config returns
+     * status information for all AWS managed Config rules that you use.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 25<br/>
+     *
+     * @param configRuleNames The name of the AWS managed Config rules for which you want status
+     *         information. If you do not specify any names, AWS Config returns
+     *         status information for all AWS managed Config rules that you use.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeConfigRuleEvaluationStatusRequest withConfigRuleNames(java.util.Collection<String> configRuleNames) {
+        if (configRuleNames == null) {
+            this.configRuleNames = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> configRuleNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(configRuleNames.size());
+            configRuleNamesCopy.addAll(configRuleNames);
+            this.configRuleNames = configRuleNamesCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getConfigRuleNames() != null) sb.append("ConfigRuleNames: " + getConfigRuleNames() );
+        sb.append("}");
+        return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getConfigRuleNames() == null) ? 0 : getConfigRuleNames().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+
+        if (obj instanceof DescribeConfigRuleEvaluationStatusRequest == false) return false;
+        DescribeConfigRuleEvaluationStatusRequest other = (DescribeConfigRuleEvaluationStatusRequest)obj;
+        
+        if (other.getConfigRuleNames() == null ^ this.getConfigRuleNames() == null) return false;
+        if (other.getConfigRuleNames() != null && other.getConfigRuleNames().equals(this.getConfigRuleNames()) == false) return false; 
+        return true;
+    }
+    
+    @Override
+    public DescribeConfigRuleEvaluationStatusRequest clone() {
+        
+            return (DescribeConfigRuleEvaluationStatusRequest) super.clone();
+    }
+
+}
+    

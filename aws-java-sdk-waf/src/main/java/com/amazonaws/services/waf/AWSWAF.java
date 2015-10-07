@@ -125,7 +125,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param createByteMatchSetRequest
-     *        null
      * @return Result of the CreateByteMatchSet operation returned by the
      *         service.
      * @throws WAFDisallowedNameException
@@ -205,7 +204,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param createIPSetRequest
-     *        null
      * @return Result of the CreateIPSet operation returned by the service.
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or
@@ -299,7 +297,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param createRuleRequest
-     *        null
      * @return Result of the CreateRule operation returned by the service.
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or
@@ -465,7 +462,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param createWebACLRequest
-     *        null
      * @return Result of the CreateWebACL operation returned by the service.
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or
@@ -534,7 +530,6 @@ public interface AWSWAF {
      * </ol>
      * 
      * @param deleteByteMatchSetRequest
-     *        null
      * @return Result of the DeleteByteMatchSet operation returned by the
      *         service.
      * @throws WAFInternalErrorException
@@ -599,7 +594,6 @@ public interface AWSWAF {
      * </ol>
      * 
      * @param deleteIPSetRequest
-     *        null
      * @return Result of the DeleteIPSet operation returned by the service.
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or
@@ -662,7 +656,6 @@ public interface AWSWAF {
      * </ol>
      * 
      * @param deleteRuleRequest
-     *        null
      * @return Result of the DeleteRule operation returned by the service.
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or
@@ -785,7 +778,6 @@ public interface AWSWAF {
      * </ol>
      * 
      * @param deleteWebACLRequest
-     *        null
      * @return Result of the DeleteWebACL operation returned by the service.
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or
@@ -830,7 +822,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param getByteMatchSetRequest
-     *        null
      * @return Result of the GetByteMatchSet operation returned by the service.
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
@@ -868,7 +859,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param getChangeTokenRequest
-     *        null
      * @return Result of the GetChangeToken operation returned by the service.
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
@@ -893,7 +883,6 @@ public interface AWSWAF {
      * </ul>
      * 
      * @param getChangeTokenStatusRequest
-     *        null
      * @return Result of the GetChangeTokenStatus operation returned by the
      *         service.
      * @throws WAFNonexistentItemException
@@ -911,7 +900,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param getIPSetRequest
-     *        null
      * @return Result of the GetIPSet operation returned by the service.
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
@@ -931,7 +919,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param getRuleRequest
-     *        null
      * @return Result of the GetRule operation returned by the service.
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
@@ -962,7 +949,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param getSampledRequestsRequest
-     *        null
      * @return Result of the GetSampledRequests operation returned by the
      *         service.
      * @throws WAFNonexistentItemException
@@ -999,7 +985,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param getWebACLRequest
-     *        null
      * @return Result of the GetWebACL operation returned by the service.
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
@@ -1018,7 +1003,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param listByteMatchSetsRequest
-     *        null
      * @return Result of the ListByteMatchSets operation returned by the
      *         service.
      * @throws WAFInternalErrorException
@@ -1037,7 +1021,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param listIPSetsRequest
-     *        null
      * @return Result of the ListIPSets operation returned by the service.
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
@@ -1054,7 +1037,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param listRulesRequest
-     *        null
      * @return Result of the ListRules operation returned by the service.
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
@@ -1091,7 +1073,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param listWebACLsRequest
-     *        null
      * @return Result of the ListWebACLs operation returned by the service.
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
@@ -1151,7 +1132,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param updateByteMatchSetRequest
-     *        null
      * @return Result of the UpdateByteMatchSet operation returned by the
      *         service.
      * @throws WAFInternalErrorException
@@ -1290,7 +1270,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param updateIPSetRequest
-     *        null
      * @return Result of the UpdateIPSet operation returned by the service.
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or
@@ -1431,7 +1410,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param updateRuleRequest
-     *        null
      * @return Result of the UpdateRule operation returned by the service.
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or
@@ -1711,7 +1689,6 @@ public interface AWSWAF {
      * </p>
      * 
      * @param updateWebACLRequest
-     *        null
      * @return Result of the UpdateWebACL operation returned by the service.
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or

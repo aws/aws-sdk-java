@@ -65,6 +65,10 @@ public class StreamDescriptionJsonUnmarshaller implements Unmarshaller<StreamDes
                     context.nextToken();
                     streamDescription.setHasMoreShards(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RetentionPeriodHours", targetDepth)) {
+                    context.nextToken();
+                    streamDescription.setRetentionPeriodHours(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

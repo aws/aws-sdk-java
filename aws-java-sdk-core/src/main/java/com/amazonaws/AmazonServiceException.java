@@ -216,9 +216,15 @@ public class AmazonServiceException extends AmazonClientException {
         return errorMessage;
     }
 
-    // Jackson has special-casing for 'message' values when deserializing
-    // Throwables, but sometimes we get 'Message' instead - handle it here.
-    @JsonProperty("Message")
+    /**
+     * Sets the human-readable error message provided by the service.
+     *
+     * NOTE: errorMessage by default is set to the same as the message value
+     * passed to the constructor of AmazonServiceException.
+     *
+     * @see AmazonServiceException#AmazonServiceException(String)
+     * @see AmazonServiceException#AmazonServiceException(String, Exception))
+     */
     public void setErrorMessage(String value) {
         errorMessage = value;
     }

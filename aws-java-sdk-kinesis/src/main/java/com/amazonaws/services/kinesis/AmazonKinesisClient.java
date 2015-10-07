@@ -337,8 +337,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <code>ProvisionedThroughputExceededException</code> .
      * </p>
      * <p>
-     * Data records are accessible for only 24 hours from the time that they
-     * are added to an Amazon Kinesis stream.
+     * By default, data records are accessible for only 24 hours from the
+     * time that they are added to an Amazon Kinesis stream. This retention
+     * period can be modified using the DecreaseStreamRetentionPeriod and
+     * IncreaseStreamRetentionPeriod operations.
      * </p>
      *
      * @param putRecordRequest Container for the necessary parameters to
@@ -473,6 +475,61 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateStreamRequestMarshaller().marshall(super.beforeMarshalling(createStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
+     * Decreases the stream's retention period, which is the length of time
+     * data records are accessible after they are added to the stream. The
+     * minimum value of a stream???s retention period is 24 hours.
+     * </p>
+     * <p>
+     * This operation may result in lost data. For example, if the stream's
+     * retention period is 48 hours and is decreased to 24 hours, any data
+     * already in the stream that is older than 24 hours is inaccessible.
+     * </p>
+     *
+     * @param decreaseStreamRetentionPeriodRequest Container for the
+     *           necessary parameters to execute the DecreaseStreamRetentionPeriod
+     *           service method on AmazonKinesis.
+     * 
+     * 
+     * @throws LimitExceededException
+     * @throws ResourceInUseException
+     * @throws InvalidArgumentException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonKinesis indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void decreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest) {
+        ExecutionContext executionContext = createExecutionContext(decreaseStreamRetentionPeriodRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DecreaseStreamRetentionPeriodRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DecreaseStreamRetentionPeriodRequestMarshaller().marshall(super.beforeMarshalling(decreaseStreamRetentionPeriodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -739,8 +796,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
-     * Data records are accessible for only 24 hours from the time that they
-     * are added to an Amazon Kinesis stream.
+     * By default, data records are accessible for only 24 hours from the
+     * time that they are added to an Amazon Kinesis stream. This retention
+     * period can be modified using the DecreaseStreamRetentionPeriod and
+     * IncreaseStreamRetentionPeriod operations.
      * </p>
      *
      * @param putRecordsRequest Container for the necessary parameters to
@@ -1263,6 +1322,66 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * Increases the stream's retention period, which is the length of time
+     * data records are accessible after they are added to the stream. The
+     * maximum value of a stream???s retention period is 168 hours (7 days).
+     * </p>
+     * <p>
+     * Upon choosing a longer stream retention period, this operation will
+     * increase the time period records are accessible that have not yet
+     * expired. However, it will not make previous data that has expired
+     * (older than the stream???s previous retention period) accessible after
+     * the operation has been called. For example, if a stream???s retention
+     * period is set to 24 hours and is increased to 168 hours, any data that
+     * is older than 24 hours will remain inaccessible to consumer
+     * applications.
+     * </p>
+     *
+     * @param increaseStreamRetentionPeriodRequest Container for the
+     *           necessary parameters to execute the IncreaseStreamRetentionPeriod
+     *           service method on AmazonKinesis.
+     * 
+     * 
+     * @throws LimitExceededException
+     * @throws ResourceInUseException
+     * @throws InvalidArgumentException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonKinesis indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void increaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest) {
+        ExecutionContext executionContext = createExecutionContext(increaseStreamRetentionPeriodRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<IncreaseStreamRetentionPeriodRequest> request = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new IncreaseStreamRetentionPeriodRequestMarshaller().marshall(super.beforeMarshalling(increaseStreamRetentionPeriodRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+    
+    /**
+     * <p>
      * Deletes tags from the specified Amazon Kinesis stream.
      * </p>
      * <p>
@@ -1485,8 +1604,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <code>ProvisionedThroughputExceededException</code> .
      * </p>
      * <p>
-     * Data records are accessible for only 24 hours from the time that they
-     * are added to an Amazon Kinesis stream.
+     * By default, data records are accessible for only 24 hours from the
+     * time that they are added to an Amazon Kinesis stream. This retention
+     * period can be modified using the DecreaseStreamRetentionPeriod and
+     * IncreaseStreamRetentionPeriod operations.
      * </p>
      * 
      * @param streamName The name of the stream to put the data record into.
@@ -1583,8 +1704,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <code>ProvisionedThroughputExceededException</code> .
      * </p>
      * <p>
-     * Data records are accessible for only 24 hours from the time that they
-     * are added to an Amazon Kinesis stream.
+     * By default, data records are accessible for only 24 hours from the
+     * time that they are added to an Amazon Kinesis stream. This retention
+     * period can be modified using the DecreaseStreamRetentionPeriod and
+     * IncreaseStreamRetentionPeriod operations.
      * </p>
      * 
      * @param streamName The name of the stream to put the data record into.

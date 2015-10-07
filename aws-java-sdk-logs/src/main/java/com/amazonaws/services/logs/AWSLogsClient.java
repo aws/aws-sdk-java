@@ -331,7 +331,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param cancelExportTaskRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -385,7 +384,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param createExportTaskRequest
-     *        null
      * @return Result of the CreateExportTask operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
@@ -452,7 +450,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param createLogGroupRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceAlreadyExistsException
@@ -512,7 +509,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param createLogStreamRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceAlreadyExistsException
@@ -561,7 +557,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteDestinationRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -611,7 +606,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteLogGroupRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -660,7 +654,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteLogStreamRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -708,7 +701,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteMetricFilterRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -758,7 +750,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteRetentionPolicyRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -807,7 +798,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteSubscriptionFilterRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -865,7 +855,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param describeDestinationsRequest
-     *        null
      * @return Result of the DescribeDestinations operation returned by the
      *         service.
      * @throws InvalidParameterException
@@ -928,7 +917,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param describeExportTasksRequest
-     *        null
      * @return Result of the DescribeExportTasks operation returned by the
      *         service.
      * @throws InvalidParameterException
@@ -985,7 +973,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param describeLogGroupsRequest
-     *        null
      * @return Result of the DescribeLogGroups operation returned by the
      *         service.
      * @throws InvalidParameterException
@@ -1049,7 +1036,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param describeLogStreamsRequest
-     *        null
      * @return Result of the DescribeLogStreams operation returned by the
      *         service.
      * @throws InvalidParameterException
@@ -1107,7 +1093,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param describeMetricFiltersRequest
-     *        null
      * @return Result of the DescribeMetricFilters operation returned by the
      *         service.
      * @throws InvalidParameterException
@@ -1165,7 +1150,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param describeSubscriptionFiltersRequest
-     *        null
      * @return Result of the DescribeSubscriptionFilters operation returned by
      *         the service.
      * @throws InvalidParameterException
@@ -1232,7 +1216,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param filterLogEventsRequest
-     *        null
      * @return Result of the FilterLogEvents operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
@@ -1294,7 +1277,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param getLogEventsRequest
-     *        null
      * @return Result of the GetLogEvents operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
@@ -1356,7 +1338,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param putDestinationRequest
-     *        null
      * @return Result of the PutDestination operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
@@ -1410,7 +1391,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param putDestinationPolicyRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws OperationAbortedException
@@ -1478,14 +1458,11 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param putLogEventsRequest
-     *        null
      * @return Result of the PutLogEvents operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws InvalidSequenceTokenException
-     *         null
      * @throws DataAlreadyAcceptedException
-     *         null
      * @throws ResourceNotFoundException
      *         Returned if the specified resource does not exist.
      * @throws OperationAbortedException
@@ -1541,7 +1518,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param putMetricFilterRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -1594,7 +1570,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param putRetentionPolicyRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -1657,7 +1632,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param putSubscriptionFilterRequest
-     *        null
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -1711,7 +1685,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param testMetricFilterRequest
-     *        null
      * @return Result of the TestMetricFilter operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.

@@ -338,7 +338,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param createAssociationRequest
-     *        null
      * @return Result of the CreateAssociation operation returned by the
      *         service.
      * @throws AssociationAlreadyExistsException
@@ -403,7 +402,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param createAssociationBatchRequest
-     *        null
      * @return Result of the CreateAssociationBatch operation returned by the
      *         service.
      * @throws InternalServerErrorException
@@ -462,7 +460,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param createDocumentRequest
-     *        null
      * @return Result of the CreateDocument operation returned by the service.
      * @throws DocumentAlreadyExistsException
      *         The specified configuration document already exists.
@@ -523,7 +520,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteAssociationRequest
-     *        null
      * @return Result of the DeleteAssociation operation returned by the
      *         service.
      * @throws AssociationDoesNotExistException
@@ -582,7 +578,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteDocumentRequest
-     *        null
      * @return Result of the DeleteDocument operation returned by the service.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
@@ -633,7 +628,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param describeAssociationRequest
-     *        null
      * @return Result of the DescribeAssociation operation returned by the
      *         service.
      * @throws AssociationDoesNotExistException
@@ -685,7 +679,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param describeDocumentRequest
-     *        null
      * @return Result of the DescribeDocument operation returned by the service.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
@@ -732,7 +725,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param getDocumentRequest
-     *        null
      * @return Result of the GetDocument operation returned by the service.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
@@ -779,7 +771,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param listAssociationsRequest
-     *        null
      * @return Result of the ListAssociations operation returned by the service.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
@@ -826,7 +817,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param listDocumentsRequest
-     *        null
      * @return Result of the ListDocuments operation returned by the service.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
@@ -879,7 +869,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param updateAssociationStatusRequest
-     *        null
      * @return Result of the UpdateAssociationStatus operation returned by the
      *         service.
      * @throws InternalServerErrorException

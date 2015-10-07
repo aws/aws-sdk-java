@@ -104,7 +104,6 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * @param tableName
      *        The name of the table to be updated.
      * @param provisionedThroughput
-     *        null
      */
     public UpdateTableRequest(String tableName,
             ProvisionedThroughput provisionedThroughput) {

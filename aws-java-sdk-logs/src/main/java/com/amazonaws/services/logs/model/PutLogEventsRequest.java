@@ -64,7 +64,6 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * @param logStreamName
      *        The name of the log stream to put log events to.
      * @param logEvents
-     *        null
      */
     public PutLogEventsRequest(String logGroupName, String logStreamName,
             java.util.List<InputLogEvent> logEvents) {

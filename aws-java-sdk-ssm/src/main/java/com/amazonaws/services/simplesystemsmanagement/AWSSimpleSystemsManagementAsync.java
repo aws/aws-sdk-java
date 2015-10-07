@@ -77,7 +77,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param createAssociationRequest
-     *        null
      * @return A Java Future containing the result of the CreateAssociation
      *         operation returned by the service.
      */
@@ -101,7 +100,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param createAssociationRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -131,7 +129,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param createAssociationBatchRequest
-     *        null
      * @return A Java Future containing the result of the CreateAssociationBatch
      *         operation returned by the service.
      */
@@ -155,7 +152,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param createAssociationBatchRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -179,7 +175,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param createDocumentRequest
-     *        null
      * @return A Java Future containing the result of the CreateDocument
      *         operation returned by the service.
      */
@@ -197,7 +192,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param createDocumentRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -224,7 +218,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param deleteAssociationRequest
-     *        null
      * @return A Java Future containing the result of the DeleteAssociation
      *         operation returned by the service.
      */
@@ -245,7 +238,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param deleteAssociationRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -268,7 +260,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param deleteDocumentRequest
-     *        null
      * @return A Java Future containing the result of the DeleteDocument
      *         operation returned by the service.
      */
@@ -285,7 +276,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param deleteDocumentRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -305,7 +295,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param describeAssociationRequest
-     *        null
      * @return A Java Future containing the result of the DescribeAssociation
      *         operation returned by the service.
      */
@@ -319,7 +308,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param describeAssociationRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -338,7 +326,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param describeDocumentRequest
-     *        null
      * @return A Java Future containing the result of the DescribeDocument
      *         operation returned by the service.
      */
@@ -351,7 +338,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param describeDocumentRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -370,7 +356,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param getDocumentRequest
-     *        null
      * @return A Java Future containing the result of the GetDocument operation
      *         returned by the service.
      */
@@ -383,7 +368,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param getDocumentRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -403,7 +387,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param listAssociationsRequest
-     *        null
      * @return A Java Future containing the result of the ListAssociations
      *         operation returned by the service.
      */
@@ -417,7 +400,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param listAssociationsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -436,7 +418,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param listDocumentsRequest
-     *        null
      * @return A Java Future containing the result of the ListDocuments
      *         operation returned by the service.
      */
@@ -449,7 +430,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param listDocumentsRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -486,7 +466,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param updateAssociationStatusRequest
-     *        null
      * @return A Java Future containing the result of the
      *         UpdateAssociationStatus operation returned by the service.
      */
@@ -500,7 +479,6 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * 
      * @param updateAssociationStatusRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

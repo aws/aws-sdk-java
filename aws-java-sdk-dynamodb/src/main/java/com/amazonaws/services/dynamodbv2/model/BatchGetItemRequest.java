@@ -521,7 +521,6 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      * @param returnConsumedCapacity
-     *        null
      */
     public BatchGetItemRequest(
             java.util.Map<String, KeysAndAttributes> requestItems,
@@ -693,7 +692,6 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      * @param returnConsumedCapacity
-     *        null
      */
     public BatchGetItemRequest(
             java.util.Map<String, KeysAndAttributes> requestItems,

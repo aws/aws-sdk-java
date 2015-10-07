@@ -65,6 +65,10 @@ public class ConfigExportDeliveryInfoJsonUnmarshaller implements Unmarshaller<Co
                     context.nextToken();
                     configExportDeliveryInfo.setLastSuccessfulTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("nextDeliveryTime", targetDepth)) {
+                    context.nextToken();
+                    configExportDeliveryInfo.setNextDeliveryTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

@@ -153,7 +153,6 @@ public interface AWSDeviceFarm {
      * </p>
      * 
      * @param getAccountSettingsRequest
-     *        null
      * @return Result of the GetAccountSettings operation returned by the
      *         service.
      * @throws ArgumentException

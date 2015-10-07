@@ -410,8 +410,10 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * <code>ProvisionedThroughputExceededException</code> .
      * </p>
      * <p>
-     * Data records are accessible for only 24 hours from the time that they
-     * are added to an Amazon Kinesis stream.
+     * By default, data records are accessible for only 24 hours from the
+     * time that they are added to an Amazon Kinesis stream. This retention
+     * period can be modified using the DecreaseStreamRetentionPeriod and
+     * IncreaseStreamRetentionPeriod operations.
      * </p>
      *
      * @param putRecordRequest Container for the necessary parameters to
@@ -493,8 +495,10 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * <code>ProvisionedThroughputExceededException</code> .
      * </p>
      * <p>
-     * Data records are accessible for only 24 hours from the time that they
-     * are added to an Amazon Kinesis stream.
+     * By default, data records are accessible for only 24 hours from the
+     * time that they are added to an Amazon Kinesis stream. This retention
+     * period can be modified using the DecreaseStreamRetentionPeriod and
+     * IncreaseStreamRetentionPeriod operations.
      * </p>
      *
      * @param putRecordRequest Container for the necessary parameters to
@@ -706,6 +710,96 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
             throw ex;
               }
               asyncHandler.onSuccess(createStreamRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Decreases the stream's retention period, which is the length of time
+     * data records are accessible after they are added to the stream. The
+     * minimum value of a stream???s retention period is 24 hours.
+     * </p>
+     * <p>
+     * This operation may result in lost data. For example, if the stream's
+     * retention period is 48 hours and is decreased to 24 hours, any data
+     * already in the stream that is older than 24 hours is inaccessible.
+     * </p>
+     *
+     * @param decreaseStreamRetentionPeriodRequest Container for the
+     *           necessary parameters to execute the DecreaseStreamRetentionPeriod
+     *           operation on AmazonKinesis.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DecreaseStreamRetentionPeriod service method, as returned by
+     *         AmazonKinesis.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonKinesis indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> decreaseStreamRetentionPeriodAsync(final DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                decreaseStreamRetentionPeriod(decreaseStreamRetentionPeriodRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Decreases the stream's retention period, which is the length of time
+     * data records are accessible after they are added to the stream. The
+     * minimum value of a stream???s retention period is 24 hours.
+     * </p>
+     * <p>
+     * This operation may result in lost data. For example, if the stream's
+     * retention period is 48 hours and is decreased to 24 hours, any data
+     * already in the stream that is older than 24 hours is inaccessible.
+     * </p>
+     *
+     * @param decreaseStreamRetentionPeriodRequest Container for the
+     *           necessary parameters to execute the DecreaseStreamRetentionPeriod
+     *           operation on AmazonKinesis.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DecreaseStreamRetentionPeriod service method, as returned by
+     *         AmazonKinesis.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonKinesis indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> decreaseStreamRetentionPeriodAsync(
+            final DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest,
+            final AsyncHandler<DecreaseStreamRetentionPeriodRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                decreaseStreamRetentionPeriod(decreaseStreamRetentionPeriodRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(decreaseStreamRetentionPeriodRequest, null);
                  return null;
         }
     });
@@ -1091,8 +1185,10 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
-     * Data records are accessible for only 24 hours from the time that they
-     * are added to an Amazon Kinesis stream.
+     * By default, data records are accessible for only 24 hours from the
+     * time that they are added to an Amazon Kinesis stream. This retention
+     * period can be modified using the DecreaseStreamRetentionPeriod and
+     * IncreaseStreamRetentionPeriod operations.
      * </p>
      *
      * @param putRecordsRequest Container for the necessary parameters to
@@ -1201,8 +1297,10 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
      * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
-     * Data records are accessible for only 24 hours from the time that they
-     * are added to an Amazon Kinesis stream.
+     * By default, data records are accessible for only 24 hours from the
+     * time that they are added to an Amazon Kinesis stream. This retention
+     * period can be modified using the DecreaseStreamRetentionPeriod and
+     * IncreaseStreamRetentionPeriod operations.
      * </p>
      *
      * @param putRecordsRequest Container for the necessary parameters to
@@ -2010,6 +2108,106 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient
             throw ex;
               }
               asyncHandler.onSuccess(splitShardRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Increases the stream's retention period, which is the length of time
+     * data records are accessible after they are added to the stream. The
+     * maximum value of a stream???s retention period is 168 hours (7 days).
+     * </p>
+     * <p>
+     * Upon choosing a longer stream retention period, this operation will
+     * increase the time period records are accessible that have not yet
+     * expired. However, it will not make previous data that has expired
+     * (older than the stream???s previous retention period) accessible after
+     * the operation has been called. For example, if a stream???s retention
+     * period is set to 24 hours and is increased to 168 hours, any data that
+     * is older than 24 hours will remain inaccessible to consumer
+     * applications.
+     * </p>
+     *
+     * @param increaseStreamRetentionPeriodRequest Container for the
+     *           necessary parameters to execute the IncreaseStreamRetentionPeriod
+     *           operation on AmazonKinesis.
+     * 
+     * @return A Java Future object containing the response from the
+     *         IncreaseStreamRetentionPeriod service method, as returned by
+     *         AmazonKinesis.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonKinesis indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> increaseStreamRetentionPeriodAsync(final IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                increaseStreamRetentionPeriod(increaseStreamRetentionPeriodRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Increases the stream's retention period, which is the length of time
+     * data records are accessible after they are added to the stream. The
+     * maximum value of a stream???s retention period is 168 hours (7 days).
+     * </p>
+     * <p>
+     * Upon choosing a longer stream retention period, this operation will
+     * increase the time period records are accessible that have not yet
+     * expired. However, it will not make previous data that has expired
+     * (older than the stream???s previous retention period) accessible after
+     * the operation has been called. For example, if a stream???s retention
+     * period is set to 24 hours and is increased to 168 hours, any data that
+     * is older than 24 hours will remain inaccessible to consumer
+     * applications.
+     * </p>
+     *
+     * @param increaseStreamRetentionPeriodRequest Container for the
+     *           necessary parameters to execute the IncreaseStreamRetentionPeriod
+     *           operation on AmazonKinesis.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         IncreaseStreamRetentionPeriod service method, as returned by
+     *         AmazonKinesis.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonKinesis indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> increaseStreamRetentionPeriodAsync(
+            final IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest,
+            final AsyncHandler<IncreaseStreamRetentionPeriodRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                increaseStreamRetentionPeriod(increaseStreamRetentionPeriodRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(increaseStreamRetentionPeriodRequest, null);
                  return null;
         }
     });

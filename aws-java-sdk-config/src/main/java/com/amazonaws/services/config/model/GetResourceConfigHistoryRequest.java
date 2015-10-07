@@ -29,8 +29,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The response is paginated, and by default, AWS Config returns a limit
  * of 10 configuration items per page. You can customize this number with
  * the <code>limit</code> parameter. The response includes a
- * <code>nextToken</code> string, and to get the next
- * page of results, run the request again and enter this string for the
+ * <code>nextToken</code> string, and to get the next page of results,
+ * run the request again and enter this string for the
  * <code>nextToken</code> parameter.
  * </p>
  * <p>

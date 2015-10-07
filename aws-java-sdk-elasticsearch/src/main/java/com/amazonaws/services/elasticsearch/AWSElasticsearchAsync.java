@@ -87,7 +87,6 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * </p>
      * 
      * @param createElasticsearchDomainRequest
-     *        null
      * @return A Java Future containing the result of the
      *         CreateElasticsearchDomain operation returned by the service.
      */
@@ -103,7 +102,6 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * </p>
      * 
      * @param createElasticsearchDomainRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -283,7 +281,6 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * </p>
      * 
      * @param listDomainNamesRequest
-     *        null
      * @return A Java Future containing the result of the ListDomainNames
      *         operation returned by the service.
      */
@@ -297,7 +294,6 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * </p>
      * 
      * @param listDomainNamesRequest
-     *        null
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

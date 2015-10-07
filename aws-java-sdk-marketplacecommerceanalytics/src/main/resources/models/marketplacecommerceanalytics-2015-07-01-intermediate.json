@@ -1,0 +1,997 @@
+{
+  "metadata" : {
+    "apiVersion" : "2015-07-01",
+    "exceptionUnmarshallerImpl" : null,
+    "protocol" : "json",
+    "checksumFormat" : null,
+    "documentation" : "Provides AWS Marketplace business intelligence data on-demand.",
+    "defaultEndpoint" : "https://marketplacecommerceanalytics.us-east-1.amazonaws.com",
+    "defaultEndpointWithoutHttpProtocol" : "marketplacecommerceanalytics.us-east-1.amazonaws.com",
+    "syncInterface" : "AWSMarketplaceCommerceAnalytics",
+    "syncClient" : "AWSMarketplaceCommerceAnalyticsClient",
+    "asyncInterface" : "AWSMarketplaceCommerceAnalyticsAsync",
+    "asyncClient" : "AWSMarketplaceCommerceAnalyticsAsyncClient",
+    "packageName" : "com.amazonaws.services.marketplacecommerceanalytics",
+    "packagePath" : "com/amazonaws/services/marketplacecommerceanalytics",
+    "serviceAbbreviation" : null,
+    "serviceFullName" : "AWS Marketplace Commerce Analytics",
+    "hasApiWithStreamInput" : false,
+    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "endpointPrefix" : "marketplacecommerceanalytics",
+    "signingName" : "marketplacecommerceanalytics",
+    "serviceName" : "AWS Marketplace Commerce Analytics",
+    "jsonProtocol" : true,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+  },
+  "operations" : {
+    "GenerateDataSet" : {
+      "documentation" : "Given a data set type and data set publication date, asynchronously publishes the requested data set to the specified S3 bucket and notifies the specified SNS topic once the data is available. Returns a unique request identifier that can be used to correlate requests with notifications from the SNS topic. Data sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD.csv. If a file with the same name already exists (e.g. if the same data set is requested twice), the original file will be overwritten by the new file. Requires a Role with an attached permissions policy providing Allow permissions for the following actions: s3:PutObject, s3:getBucketLocation, sns:SetRegion, sns:ListTopics, sns:Publish, iam:GetRolePolicy.",
+      "operationName" : "GenerateDataSet",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "generateDataSetRequest",
+        "variableType" : "GenerateDataSetRequest",
+        "variableDeclarationType" : "GenerateDataSetRequest",
+        "documentation" : "Container for the parameters to the GenerateDataSet operation.",
+        "simpleType" : "GenerateDataSetRequest",
+        "variableSetterType" : "GenerateDataSetRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "GenerateDataSetResult",
+        "documentation" : "Container for the result of the GenerateDataSet operation."
+      },
+      "exceptions" : [ {
+        "exceptionName" : "MarketplaceCommerceAnalyticsException",
+        "documentation" : "This exception is thrown when an internal service error occurs."
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "asyncDocumentationWithHandler" : "/**Given a data set type and data set publication date, asynchronously publishes the requested data set to the specified S3 bucket and notifies the specified SNS topic once the data is available. Returns a unique request identifier that can be used to correlate requests with notifications from the SNS topic. Data sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD.csv. If a file with the same name already exists (e.g. if the same data set is requested twice), the original file will be overwritten by the new file. Requires a Role with an attached permissions policy providing Allow permissions for the following actions: s3:PutObject, s3:getBucketLocation, sns:SetRegion, sns:ListTopics, sns:Publish, iam:GetRolePolicy.\n@param generateDataSetRequest Container for the parameters to the GenerateDataSet operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GenerateDataSet operation returned by the service.*/",
+      "syncDocumentation" : "/**Given a data set type and data set publication date, asynchronously publishes the requested data set to the specified S3 bucket and notifies the specified SNS topic once the data is available. Returns a unique request identifier that can be used to correlate requests with notifications from the SNS topic. Data sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD.csv. If a file with the same name already exists (e.g. if the same data set is requested twice), the original file will be overwritten by the new file. Requires a Role with an attached permissions policy providing Allow permissions for the following actions: s3:PutObject, s3:getBucketLocation, sns:SetRegion, sns:ListTopics, sns:Publish, iam:GetRolePolicy.\n@param generateDataSetRequest Container for the parameters to the GenerateDataSet operation.\n@return Result of the GenerateDataSet operation returned by the service.\n@throws MarketplaceCommerceAnalyticsException This exception is thrown when an internal service error occurs.*/",
+      "asyncDocumentation" : "/**Given a data set type and data set publication date, asynchronously publishes the requested data set to the specified S3 bucket and notifies the specified SNS topic once the data is available. Returns a unique request identifier that can be used to correlate requests with notifications from the SNS topic. Data sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD.csv. If a file with the same name already exists (e.g. if the same data set is requested twice), the original file will be overwritten by the new file. Requires a Role with an attached permissions policy providing Allow permissions for the following actions: s3:PutObject, s3:getBucketLocation, sns:SetRegion, sns:ListTopics, sns:Publish, iam:GetRolePolicy.\n@param generateDataSetRequest Container for the parameters to the GenerateDataSet operation.\n@return A Java Future containing the result of the GenerateDataSet operation returned by the service.*/",
+      "syncReturnType" : "GenerateDataSetResult",
+      "asyncReturnType" : "GenerateDataSetResult",
+      "asyncFutureType" : "java.util.concurrent.Future<GenerateDataSetResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<GenerateDataSetResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GenerateDataSetRequest, GenerateDataSetResult>",
+      "methodName" : "generateDataSet"
+    }
+  },
+  "shapes" : {
+    "GenerateDataSetResult" : {
+      "c2jName" : "GenerateDataSetResult",
+      "documentation" : "Container for the result of the GenerateDataSet operation.",
+      "shapeName" : "GenerateDataSetResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : null,
+        "name" : "DataSetRequestId",
+        "c2jName" : "dataSetRequestId",
+        "c2jShape" : "DataSetRequestId",
+        "variable" : {
+          "variableName" : "dataSetRequestId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "dataSetRequestId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "dataSetRequestId",
+          "marshallLocationName" : "dataSetRequestId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the DataSetRequestId property for this object.\n@return The value of the DataSetRequestId property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "generateDataSetResult",
+        "variableType" : "GenerateDataSetResult",
+        "variableDeclarationType" : "GenerateDataSetResult",
+        "documentation" : null,
+        "simpleType" : "GenerateDataSetResult",
+        "variableSetterType" : "GenerateDataSetResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "DataSetRequestId" : {
+          "documentation" : null,
+          "name" : "DataSetRequestId",
+          "c2jName" : "dataSetRequestId",
+          "c2jShape" : "DataSetRequestId",
+          "variable" : {
+            "variableName" : "dataSetRequestId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "dataSetRequestId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "dataSetRequestId",
+            "marshallLocationName" : "dataSetRequestId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the DataSetRequestId property for this object.\n@return The value of the DataSetRequestId property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the DataSetRequestId property for this object.\n@param dataSetRequestId The new value for the DataSetRequestId property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "GenerateDataSetRequest" : {
+      "c2jName" : "GenerateDataSetRequest",
+      "documentation" : "Container for the parameters to the GenerateDataSet operation.",
+      "shapeName" : "GenerateDataSetRequest",
+      "deprecated" : false,
+      "required" : [ "dataSetType", "dataSetPublicationDate", "roleNameArn", "destinationS3BucketName", "snsTopicArn" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : null,
+        "name" : "DataSetType",
+        "c2jName" : "dataSetType",
+        "c2jShape" : "DataSetType",
+        "variable" : {
+          "variableName" : "dataSetType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "dataSetType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "dataSetType",
+          "marshallLocationName" : "dataSetType",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "DataSetType",
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@see DataSetType*/",
+        "getterDocumentation" : "/**Returns the value of the DataSetType property for this object.\n@return The value of the DataSetType property for this object.\n@see DataSetType*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
+        "varargSetterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/"
+      }, {
+        "documentation" : null,
+        "name" : "DataSetPublicationDate",
+        "c2jName" : "dataSetPublicationDate",
+        "c2jShape" : "DataSetPublicationDate",
+        "variable" : {
+          "variableName" : "dataSetPublicationDate",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : null,
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "setterModel" : {
+          "variableName" : "dataSetPublicationDate",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : null,
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "dataSetPublicationDate",
+          "marshallLocationName" : "dataSetPublicationDate",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the DataSetPublicationDate property for this object.\n@return The value of the DataSetPublicationDate property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : null,
+        "name" : "RoleNameArn",
+        "c2jName" : "roleNameArn",
+        "c2jShape" : "RoleNameArn",
+        "variable" : {
+          "variableName" : "roleNameArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "roleNameArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "roleNameArn",
+          "marshallLocationName" : "roleNameArn",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the RoleNameArn property for this object.\n@return The value of the RoleNameArn property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : null,
+        "name" : "DestinationS3BucketName",
+        "c2jName" : "destinationS3BucketName",
+        "c2jShape" : "DestinationS3BucketName",
+        "variable" : {
+          "variableName" : "destinationS3BucketName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "destinationS3BucketName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "destinationS3BucketName",
+          "marshallLocationName" : "destinationS3BucketName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the DestinationS3BucketName property for this object.\n@return The value of the DestinationS3BucketName property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : null,
+        "name" : "DestinationS3Prefix",
+        "c2jName" : "destinationS3Prefix",
+        "c2jShape" : "DestinationS3Prefix",
+        "variable" : {
+          "variableName" : "destinationS3Prefix",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "destinationS3Prefix",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "destinationS3Prefix",
+          "marshallLocationName" : "destinationS3Prefix",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the DestinationS3Prefix property for this object.\n@return The value of the DestinationS3Prefix property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : null,
+        "name" : "SnsTopicArn",
+        "c2jName" : "snsTopicArn",
+        "c2jShape" : "SnsTopicArn",
+        "variable" : {
+          "variableName" : "snsTopicArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "snsTopicArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : null,
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "snsTopicArn",
+          "marshallLocationName" : "snsTopicArn",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.*/",
+        "getterDocumentation" : "/**Returns the value of the SnsTopicArn property for this object.\n@return The value of the SnsTopicArn property for this object.*/",
+        "fluentSetterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "generateDataSetRequest",
+        "variableType" : "GenerateDataSetRequest",
+        "variableDeclarationType" : "GenerateDataSetRequest",
+        "documentation" : null,
+        "simpleType" : "GenerateDataSetRequest",
+        "variableSetterType" : "GenerateDataSetRequest"
+      },
+      "marshaller" : {
+        "action" : "GenerateDataSet",
+        "verb" : "POST",
+        "target" : "MarketplaceCommerceAnalytics20150701.GenerateDataSet",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "DestinationS3Prefix" : {
+          "documentation" : null,
+          "name" : "DestinationS3Prefix",
+          "c2jName" : "destinationS3Prefix",
+          "c2jShape" : "DestinationS3Prefix",
+          "variable" : {
+            "variableName" : "destinationS3Prefix",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "destinationS3Prefix",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "destinationS3Prefix",
+            "marshallLocationName" : "destinationS3Prefix",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the DestinationS3Prefix property for this object.\n@return The value of the DestinationS3Prefix property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the DestinationS3Prefix property for this object.\n@param destinationS3Prefix The new value for the DestinationS3Prefix property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "DataSetPublicationDate" : {
+          "documentation" : null,
+          "name" : "DataSetPublicationDate",
+          "c2jName" : "dataSetPublicationDate",
+          "c2jShape" : "DataSetPublicationDate",
+          "variable" : {
+            "variableName" : "dataSetPublicationDate",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : null,
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "setterModel" : {
+            "variableName" : "dataSetPublicationDate",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : null,
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "dataSetPublicationDate",
+            "marshallLocationName" : "dataSetPublicationDate",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the DataSetPublicationDate property for this object.\n@return The value of the DataSetPublicationDate property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the DataSetPublicationDate property for this object.\n@param dataSetPublicationDate The new value for the DataSetPublicationDate property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "SnsTopicArn" : {
+          "documentation" : null,
+          "name" : "SnsTopicArn",
+          "c2jName" : "snsTopicArn",
+          "c2jShape" : "SnsTopicArn",
+          "variable" : {
+            "variableName" : "snsTopicArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "snsTopicArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "snsTopicArn",
+            "marshallLocationName" : "snsTopicArn",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the SnsTopicArn property for this object.\n@return The value of the SnsTopicArn property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the SnsTopicArn property for this object.\n@param snsTopicArn The new value for the SnsTopicArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "DestinationS3BucketName" : {
+          "documentation" : null,
+          "name" : "DestinationS3BucketName",
+          "c2jName" : "destinationS3BucketName",
+          "c2jShape" : "DestinationS3BucketName",
+          "variable" : {
+            "variableName" : "destinationS3BucketName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "destinationS3BucketName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "destinationS3BucketName",
+            "marshallLocationName" : "destinationS3BucketName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the DestinationS3BucketName property for this object.\n@return The value of the DestinationS3BucketName property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the DestinationS3BucketName property for this object.\n@param destinationS3BucketName The new value for the DestinationS3BucketName property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "DataSetType" : {
+          "documentation" : null,
+          "name" : "DataSetType",
+          "c2jName" : "dataSetType",
+          "c2jShape" : "DataSetType",
+          "variable" : {
+            "variableName" : "dataSetType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "dataSetType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "dataSetType",
+            "marshallLocationName" : "dataSetType",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "DataSetType",
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@see DataSetType*/",
+          "getterDocumentation" : "/**Returns the value of the DataSetType property for this object.\n@return The value of the DataSetType property for this object.\n@see DataSetType*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
+          "varargSetterDocumentation" : "/**Sets the value of the DataSetType property for this object.\n@param dataSetType The new value for the DataSetType property for this object.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/"
+        },
+        "RoleNameArn" : {
+          "documentation" : null,
+          "name" : "RoleNameArn",
+          "c2jName" : "roleNameArn",
+          "c2jShape" : "RoleNameArn",
+          "variable" : {
+            "variableName" : "roleNameArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "roleNameArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : null,
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "roleNameArn",
+            "marshallLocationName" : "roleNameArn",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.*/",
+          "getterDocumentation" : "/**Returns the value of the RoleNameArn property for this object.\n@return The value of the RoleNameArn property for this object.*/",
+          "fluentSetterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**Sets the value of the RoleNameArn property for this object.\n@param roleNameArn The new value for the RoleNameArn property for this object.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "MarketplaceCommerceAnalyticsException" : {
+      "c2jName" : "MarketplaceCommerceAnalyticsException",
+      "documentation" : "This exception is thrown when an internal service error occurs.",
+      "shapeName" : "MarketplaceCommerceAnalyticsException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "marketplaceCommerceAnalyticsException",
+        "variableType" : "MarketplaceCommerceAnalyticsException",
+        "variableDeclarationType" : "MarketplaceCommerceAnalyticsException",
+        "documentation" : null,
+        "simpleType" : "MarketplaceCommerceAnalyticsException",
+        "variableSetterType" : "MarketplaceCommerceAnalyticsException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "MarketplaceCommerceAnalyticsException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "DataSetType" : {
+      "c2jName" : "DataSetType",
+      "documentation" : "The type of the data set to publish.",
+      "shapeName" : "DataSetType",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "Customer_subscriber_hourly_monthly_subscriptions",
+        "value" : "customer_subscriber_hourly_monthly_subscriptions"
+      }, {
+        "name" : "Customer_subscriber_annual_subscriptions",
+        "value" : "customer_subscriber_annual_subscriptions"
+      }, {
+        "name" : "Daily_business_usage_by_instance_type",
+        "value" : "daily_business_usage_by_instance_type"
+      }, {
+        "name" : "Daily_business_fees",
+        "value" : "daily_business_fees"
+      }, {
+        "name" : "Daily_business_free_trial_conversions",
+        "value" : "daily_business_free_trial_conversions"
+      }, {
+        "name" : "Daily_business_new_instances",
+        "value" : "daily_business_new_instances"
+      }, {
+        "name" : "Daily_business_new_product_subscribers",
+        "value" : "daily_business_new_product_subscribers"
+      }, {
+        "name" : "Daily_business_canceled_product_subscribers",
+        "value" : "daily_business_canceled_product_subscribers"
+      }, {
+        "name" : "Monthly_revenue_billing_and_revenue_data",
+        "value" : "monthly_revenue_billing_and_revenue_data"
+      }, {
+        "name" : "Monthly_revenue_annual_subscriptions",
+        "value" : "monthly_revenue_annual_subscriptions"
+      }, {
+        "name" : "Disbursed_amount_by_product",
+        "value" : "disbursed_amount_by_product"
+      }, {
+        "name" : "Disbursed_amount_by_customer_geo",
+        "value" : "disbursed_amount_by_customer_geo"
+      }, {
+        "name" : "Disbursed_amount_by_age_of_uncollected_funds",
+        "value" : "disbursed_amount_by_age_of_uncollected_funds"
+      }, {
+        "name" : "Disbursed_amount_by_age_of_disbursed_funds",
+        "value" : "disbursed_amount_by_age_of_disbursed_funds"
+      }, {
+        "name" : "Customer_profile_by_industry",
+        "value" : "customer_profile_by_industry"
+      }, {
+        "name" : "Customer_profile_by_revenue",
+        "value" : "customer_profile_by_revenue"
+      } ],
+      "variable" : {
+        "variableName" : "dataSetType",
+        "variableType" : "DataSetType",
+        "variableDeclarationType" : "DataSetType",
+        "documentation" : null,
+        "simpleType" : "DataSetType",
+        "variableSetterType" : "DataSetType"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    }
+  },
+  "customizationConfig" : {
+    "requestMetrics" : null,
+    "useAutoConstructList" : false,
+    "useAutoConstructMap" : false,
+    "serviceClientHoldInputStream" : false,
+    "operationsWithResponseStreamContentLengthValidation" : null,
+    "customExceptionUnmarshallerImpl" : null,
+    "customClientConfiguration" : null,
+    "customResponseMetadataClassName" : null,
+    "skipInterfaceAdditions" : false,
+    "customServiceNameForRequest" : null,
+    "requiredParamValidationEnabled" : false,
+    "additionalShapeConstructors" : null,
+    "simpleMethods" : null,
+    "authPolicyActions" : {
+      "skip" : true,
+      "actionPrefix" : null,
+      "fileNamePrefix" : null
+    },
+    "customCodeTemplates" : null,
+    "operationModifiers" : null,
+    "shapeSubstitutions" : null,
+    "shapeModifiers" : null
+  },
+  "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
+}

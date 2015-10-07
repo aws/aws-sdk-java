@@ -161,7 +161,6 @@ public interface AWSSupport {
      * </p>
      * 
      * @param addAttachmentsToSetRequest
-     *        null
      * @return Result of the AddAttachmentsToSet operation returned by the
      *         service.
      * @throws InternalServerErrorException
@@ -270,7 +269,6 @@ public interface AWSSupport {
      * </p>
      * 
      * @param createCaseRequest
-     *        null
      * @return Result of the CreateCase operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
@@ -294,7 +292,6 @@ public interface AWSSupport {
      * </p>
      * 
      * @param describeAttachmentRequest
-     *        null
      * @return Result of the DescribeAttachment operation returned by the
      *         service.
      * @throws InternalServerErrorException
@@ -332,7 +329,6 @@ public interface AWSSupport {
      * </ol>
      * 
      * @param describeCasesRequest
-     *        null
      * @return Result of the DescribeCases operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
@@ -368,7 +364,6 @@ public interface AWSSupport {
      * </p>
      * 
      * @param describeCommunicationsRequest
-     *        null
      * @return Result of the DescribeCommunications operation returned by the
      *         service.
      * @throws InternalServerErrorException
@@ -399,7 +394,6 @@ public interface AWSSupport {
      * </p>
      * 
      * @param describeServicesRequest
-     *        null
      * @return Result of the DescribeServices operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
@@ -422,7 +416,6 @@ public interface AWSSupport {
      * </p>
      * 
      * @param describeSeverityLevelsRequest
-     *        null
      * @return Result of the DescribeSeverityLevels operation returned by the
      *         service.
      * @throws InternalServerErrorException
@@ -446,7 +439,6 @@ public interface AWSSupport {
      * </p>
      * 
      * @param describeTrustedAdvisorCheckRefreshStatusesRequest
-     *        null
      * @return Result of the DescribeTrustedAdvisorCheckRefreshStatuses
      *         operation returned by the service.
      * @throws InternalServerErrorException
@@ -481,7 +473,6 @@ public interface AWSSupport {
      * </ul>
      * 
      * @param describeTrustedAdvisorCheckResultRequest
-     *        null
      * @return Result of the DescribeTrustedAdvisorCheckResult operation
      *         returned by the service.
      * @throws InternalServerErrorException
@@ -502,7 +493,6 @@ public interface AWSSupport {
      * </p>
      * 
      * @param describeTrustedAdvisorCheckSummariesRequest
-     *        null
      * @return Result of the DescribeTrustedAdvisorCheckSummaries operation
      *         returned by the service.
      * @throws InternalServerErrorException
@@ -521,7 +511,6 @@ public interface AWSSupport {
      * </p>
      * 
      * @param describeTrustedAdvisorChecksRequest
-     *        null
      * @return Result of the DescribeTrustedAdvisorChecks operation returned by
      *         the service.
      * @throws InternalServerErrorException
@@ -549,7 +538,6 @@ public interface AWSSupport {
      * </ul>
      * 
      * @param refreshTrustedAdvisorCheckRequest
-     *        null
      * @return Result of the RefreshTrustedAdvisorCheck operation returned by
      *         the service.
      * @throws InternalServerErrorException
@@ -566,7 +554,6 @@ public interface AWSSupport {
      * </p>
      * 
      * @param resolveCaseRequest
-     *        null
      * @return Result of the ResolveCase operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.

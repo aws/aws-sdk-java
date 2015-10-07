@@ -61,6 +61,10 @@ public class DeliveryChannelJsonUnmarshaller implements Unmarshaller<DeliveryCha
                     context.nextToken();
                     deliveryChannel.setSnsTopicARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("configSnapshotDeliveryProperties", targetDepth)) {
+                    context.nextToken();
+                    deliveryChannel.setConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;
